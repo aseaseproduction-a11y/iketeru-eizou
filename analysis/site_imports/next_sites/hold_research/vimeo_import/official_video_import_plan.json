@@ -1,0 +1,43 @@
+{
+  "generatedAt": "2026-08-19T06:45:05.428Z",
+  "source": "指定サイト公式掲載動画",
+  "counts": {
+    "verifiedCandidates": 1
+  },
+  "imports": [
+    {
+      "id": "982944535",
+      "platform": "vimeo",
+      "title": "CRMC",
+      "sourceTitle": "CRMC CRMC",
+      "videoUrl": "https://vimeo.com/982944535",
+      "embedUrl": "https://player.vimeo.com/video/982944535",
+      "source": "signif",
+      "sourceLabel": "SIGNIF 公式制作実績",
+      "allTags": [
+        "SIGNIF 公式制作実績",
+        "公式制作実績",
+        "Vimeo"
+      ],
+      "productions": [],
+      "curationNote": {
+        "purpose": "映像表現のリファレンス収集",
+        "background": "SIGNIF 公式制作実績の公式掲載ページに掲載。 公式掲載タイトル: CRMC CRMC",
+        "evaluation": "公式掲載作品として確認された映像。",
+        "sourceUrls": [
+          "https://signif.jp/work/crmc/"
+        ]
+      },
+      "awards": [],
+      "addedDate": "2026-08-19",
+      "verification": {
+        "method": "official_portfolio_vimeo_page_id_url_title_match",
+        "sourceTitle": "CRMC CRMC",
+        "retrievedTitle": "CRMC",
+        "sourceUrls": [
+          "https://signif.jp/work/crmc/"
+        ]
+      }
+    }
+  ]
+}

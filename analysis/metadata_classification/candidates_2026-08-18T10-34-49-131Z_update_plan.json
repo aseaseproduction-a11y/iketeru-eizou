@@ -1,0 +1,589 @@
+{
+  "generatedAt": "2026-08-18T10:40:48.127Z",
+  "candidatePath": "analysis/metadata_classification/candidates_2026-08-18T10-34-49-131Z.json",
+  "updates": [
+    {
+      "id": "YdFa2NAdt3g",
+      "title": "【MV】BREAK MY PHASE / All-Aporia Staff【ブレイクマイケース】",
+      "confidence": 0.85,
+      "evidence": "タイトルに【MV】が明記。掲載者コメントに「オシャレ〜〜〜。」とあるためトーンにstylishを割当て。"
+    },
+    {
+      "id": "v094-E3Pmtk",
+      "title": "스텔라이브 (StelLive) I 'STAR TRAIL (스타트레일)'",
+      "confidence": 0.9,
+      "evidence": "掲載者コメントに「星座のモーショングラフィックスが気持ちよすぎる」と明記。"
+    },
+    {
+      "id": "rtTbKXsLBHo",
+      "title": "picco × D.watt × ななひら - 『 歓迎光臨☆デビュー・ザ・ワールド 』",
+      "confidence": 0.9,
+      "evidence": "掲載者コメントに「元気バキバキMV。」と明記。"
+    },
+    {
+      "id": "v-Xrlrul_RQ",
+      "title": "【48104】わたしたちの都市計画 - 感情市街記録【 式浦躁吾 × CONA 】",
+      "confidence": 0.9,
+      "evidence": "掲載者コメントに「実写とイラスト素材で遊び倒す系MVのアイデアが大量に詰まっている」と明記。"
+    },
+    {
+      "id": "xBsuBOrsFJs",
+      "title": "気になるあの娘 (Ki ni naru ano ko) - 相対性理論 // covered by 長瀬有花",
+      "confidence": 0.9,
+      "evidence": "掲載者メモに「ガンギマリMV。」とあり、タイトル／コメントでMVが明記されているためmvを割当て。"
+    },
+    {
+      "id": "QCsb89zRVVE",
+      "title": "【学マス】『H.I.F編』ゲーム内OPアニメーション【アイドルマスター】",
+      "confidence": 0.95,
+      "evidence": "タイトルに「ゲーム内OPアニメーション」と明記。掲載者コメントでも「日常OPみたいに…」とあるためopeningに該当。"
+    },
+    {
+      "id": "zx785_jorck",
+      "title": "なんて言ってほしいの – 礼衣 Music Video",
+      "confidence": 0.95,
+      "evidence": "タイトルに\"Music Video\"が明記されているためmvを割当て。掲載者コメントはデザインに関する所見のみ。"
+    },
+    {
+      "id": "OKuuD3VwV2k",
+      "title": "未明 – 織重 夕　オリジナルMV",
+      "confidence": 0.9,
+      "evidence": "タイトルに「オリジナルMV」。掲載者メモ: これ保存してなかった。美しすぎる〜〜〜。"
+    },
+    {
+      "id": "yfz2c9LE6ew",
+      "title": "《记忆管理局》False Memory | Official Trailer (August 2 Premiere)",
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: 超絶ウルトラ最高アニメーション。"
+    },
+    {
+      "id": "LPybmqH3weU",
+      "title": "【KASUMi】「EZ GAME」Official Music Video【UnknownRecords】",
+      "confidence": 0.9,
+      "evidence": "タイトルに「Official Music Video」。掲載者メモ: 画面構成と展開おもろい。キャラデザが先なのか映像が先なのか気になる。"
+    },
+    {
+      "id": "M1GYqy0tHV0",
+      "title": "プリマドンナ / 星街すいせい(official)",
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: やはり映像はアニメが最強定期。圧倒的なパワー映像。"
+    },
+    {
+      "id": "rHlLzmlc69I",
+      "title": "TVアニメ『Fate/strange Fake』ノンクレジットエンディングアニメーション ver.2｜「潜在的なアイ」13.3g",
+      "confidence": 0.95,
+      "evidence": "タイトルに「ノンクレジットエンディングアニメーション」。掲載者コメントでもEDに言及。"
+    },
+    {
+      "id": "LxVv4QneUuU",
+      "title": "Chenomio -フィクションです。feat.重音テト",
+      "confidence": 0.95,
+      "evidence": "掲載者メモ: アクション作画MVだ〜〜〜〜うおおおおおおお！！！（明示的にMVと作画を指摘）"
+    },
+    {
+      "id": "2R8AoWzgHpU",
+      "title": "【MV】わがままらぶちゅ／織姫星【にじさんじ】",
+      "confidence": 0.9,
+      "evidence": "タイトルに「MV」。掲載者メモ: 3Dの絵文字の質感が可愛い。色味の調整が上手くてキレイ。"
+    },
+    {
+      "id": "WPD-U0hlIy0",
+      "title": "NEUN「対象について」Official Music Video",
+      "confidence": 0.95,
+      "evidence": "タイトルに「Official Music Video」。掲載者メモ: 冒頭のモーショングラフィックス好き。"
+    },
+    {
+      "id": "xdG8yu5BQpw",
+      "title": "『黄金の経験値』コミックス第4巻発売記念PV（CV：永瀬アンナ）",
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: このグラデーションとカメラワークはっ！ リッチなコンポ。"
+    },
+    {
+      "id": "DvMuwONIP5E",
+      "title": "あだち充作品×スキマスイッチ「ガラナ」 コラボレーションMV",
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: 「あだち充作品×スキマスイッチ コラボレーションMV」「実写でやるからこその面白さ」"
+    },
+    {
+      "id": "zRq_DlEzygk",
+      "title": "[MV] CHEEZE(치즈) _ Today's Mood(오늘의 기분)",
+      "confidence": 0.9,
+      "evidence": "タイトルに[MV]、掲載者メモ: 「カラコレと構図」"
+    },
+    {
+      "id": "lpg5nhWapjU",
+      "title": "【TVアニメOP】ずっと真夜中でいいのに。『ultra魂』MV (ZUTOMAYO - ultra soul)",
+      "confidence": 0.9,
+      "evidence": "タイトルに「TVアニメOP」と表記"
+    },
+    {
+      "id": "ROgtZR8gAyE",
+      "title": "【MV】再放送、再ロウド。 - テクノポップ・有機・シンセサイザーちゃん",
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: 「イラスト素材で遊び倒す系MV」"
+    },
+    {
+      "id": "WnjZUl-FFPc",
+      "title": "【公式】『エクソシストを堕とせない』七つの大罪PV【NA:高橋李依】",
+      "confidence": 0.85,
+      "evidence": "タイトルにPV、掲載者メモ: 「リッチだ〜〜。コンポ、構図。」"
+    },
+    {
+      "id": "OHAjc-ayhus",
+      "title": "ヨルシカ - あぶく（OFFICIAL VIDEO）",
+      "confidence": 0.9,
+      "evidence": "タイトルに「OFFICIAL VIDEO」表記"
+    },
+    {
+      "id": "ZhMakZuBU-o",
+      "title": "アニメーション映画『秒速5センチメートル』主題歌「One more time, One more chance」PV",
+      "confidence": 0.85,
+      "evidence": "タイトルに「主題歌…PV」表記（アニメ映画主題歌のPV）"
+    },
+    {
+      "id": "rQ0S_0CepIo",
+      "title": "【ノンクレジットOP】TVアニメ「とんがり帽子のアトリエ」ノンクレジットオープニング映像｜Eve「風のアンセム」feat. suis from ヨルシカ",
+      "confidence": 0.95,
+      "evidence": "タイトルに「ノンクレジットOP」「TVアニメ」と明記"
+    },
+    {
+      "id": "QxTnn7qnorg",
+      "title": "タワーダンジョン｜6巻発売記念PV",
+      "confidence": 0.85,
+      "evidence": "タイトルに「6巻発売記念PV」、掲載者メモ: 「カメラの揺れが他と違う印象」"
+    },
+    {
+      "id": "O4Fni_Xv1v0",
+      "title": "DeNeel - HONEY  (Official Music Video )",
+      "confidence": 0.9,
+      "evidence": "タイトルに「Official Music Video」表記、掲載者メモ: 「色、音の取り方、グラフィック、画面構成」"
+    },
+    {
+      "id": "X1xcOhkgc4c",
+      "title": "初星学園 「ヨルニテ」Official Music Video (HATSUBOSHI GAKUEN - yorunite)",
+      "confidence": 0.9,
+      "evidence": "タイトルに「Official Music Video」。掲載者コメント: 理解を超えすぎてて絶句。勢い。怖い。"
+    },
+    {
+      "id": "zpDB6GzOXq0",
+      "title": "初星学園 「真っ白いページと水彩の主人公」Official Music Video (A Blank White Page and a Watercolor Hero)",
+      "confidence": 0.9,
+      "evidence": "タイトルに「Official Music Video」。掲載者コメント: 立体絵本おもろい。展開良い〜〜〜。"
+    },
+    {
+      "id": "L9NkTB11jqs",
+      "title": "【OrJourney(伊藤昌弘＆廣澤優也)】「笑うことに理由なんていらない」Live Music Video",
+      "confidence": 0.9,
+      "evidence": "タイトルに「Live Music Video」。掲載者コメント: コラージュタイポモーション、上に処理重ねるコラージュリファレンス。"
+    },
+    {
+      "id": "NJqTSGz3KaU",
+      "title": "Navy / 梓川【Official Music Video】",
+      "confidence": 0.9,
+      "evidence": "タイトルに「Official Music Video」。掲載者コメント: グラフィック可愛い。"
+    },
+    {
+      "id": "NxaqqN-wJJ8",
+      "title": "時速36km / 網膜の奥、ハートの側【MusicVideo】",
+      "confidence": 0.9,
+      "evidence": "タイトルに「MusicVideo」。掲載者コメント: 実写をなぞる手書きのライン ←かなりCute。"
+    },
+    {
+      "id": "AbxzlgJTM-I",
+      "title": "初星学園 「VEIL」Official Music Video (HATSUBOSHI GAKUEN - VEIL)",
+      "confidence": 0.9,
+      "evidence": "タイトルに「Official Music Video」。掲載者コメント: スタイリッシュバキバキリファレンス。"
+    },
+    {
+      "id": "ySpIrrCmiCU",
+      "title": "風のアンセム feat. suis from ヨルシカ  (Wind's Anthem) - Eve Music Video",
+      "confidence": 0.9,
+      "evidence": "タイトルにMusic Video表記。掲載者コメント: 画面が良すぎる。"
+    },
+    {
+      "id": "sBm4KJD6P7Q",
+      "title": "【オリジナル楽曲】ときのそら「Diva」【Official Music Video】",
+      "confidence": 0.9,
+      "evidence": "タイトルに「Official Music Video」。掲載者コメント: サビのカメララーク好き。"
+    },
+    {
+      "id": "ajk1-WYk_Ls",
+      "title": "VESPERBELL「MACH」Official Music Video",
+      "confidence": 0.9,
+      "evidence": "タイトルに「Official Music Video」。掲載者メモに多様な映像技法への言及（コレクション説明）。"
+    },
+    {
+      "id": "QulHtowM_6o",
+      "title": "初星学園 「ときめきエモーション」Official Music Video (HATSUBOSHI GAKUEN -  Tokimeki Emotion)",
+      "confidence": 0.9,
+      "evidence": "タイトルに「Official Music Video」。掲載者コメント: すごくリッチで高品質なコンポ。"
+    },
+    {
+      "id": "nW2CpHcmlo4",
+      "title": "TVアニメ『日本三國』ノンクレジットオープニング映像｜キタニタツヤ「火種」",
+      "confidence": 0.9,
+      "evidence": "タイトルに「ノンクレジットオープニング映像」。掲載者コメント: 絵のパワーがすごい。"
+    },
+    {
+      "id": "St6iWNWhsZw",
+      "title": "渋滞 ┃ きのホ。-Music Video-",
+      "confidence": 0.9,
+      "evidence": "タイトルに「-Music Video-」の明記と、掲載者メモに「Googleストリートビューを使ったみたいな映像」とあるため（Music Video 明示、映像手法の言及）。"
+    },
+    {
+      "id": "n3Um77HqZV0",
+      "title": "【歌ってみた】蜜月アン・ドゥ・トロワ / covered by 明石繆",
+      "confidence": 0.95,
+      "evidence": "掲載者メモにタイトル表記『【歌ってみた】蜜月アン・ドゥ・トロワ / covered by 明石繆』とあり、'歌ってみた' が明記されているため。"
+    },
+    {
+      "id": "FJ0HD6RC6PY",
+      "title": "千夏 エキシビション「夢を描くサンプル」｜ゼンレスゾーンゼロ",
+      "confidence": 0.95,
+      "evidence": "タイトルとチャンネルに『ゼンレスゾーンゼロ』および『ゼンレスゾーンゼロ-ZZZ-公式』とあり、公式ゲーム関連コンテンツであることが明記。掲載者メモに「すっごい可愛く動く3D映像」「UIとか小物とかのディティール感好き」と記載あり（3D映像の言及）。"
+    },
+    {
+      "id": "YvYii6dluM8",
+      "title": "【Ado】ビバリウム (Vivarium)",
+      "confidence": 0.95,
+      "evidence": "チャンネルが『Ado』で、掲載者メモに映像編集やカメラワークに関する具体的な言及（イントロのカット刻み、長回し、特定カットの印象）があるため音楽映像であることが明示されている。"
+    },
+    {
+      "id": "PYyj9HkrWbA",
+      "title": "Aiobahn +81 feat. MOSAIC.WAV - 妄想きゅきゅん (Official Music Video) [Zenless Zone Zero]",
+      "confidence": 0.95,
+      "evidence": "タイトルに 'Official Music Video' とあり、さらにタイトル内に『Zenless Zone Zero』が明記されているためゲーム関連楽曲のMVであることが示唆される。掲載者メモに『モーショングラフィックス』の明記あり。"
+    },
+    {
+      "id": "RH1U7Qf7MSg",
+      "title": "【歌ってみた】青空Jumping Heart 【にじさんじ / うみゃみー】",
+      "confidence": 0.95,
+      "evidence": "掲載者メモに『【歌ってみた】青空Jumping Heart 【にじさんじ / うみゃみー】』と明記されているため（'歌ってみた' の明示）。"
+    },
+    {
+      "id": "mMEqHkUiypQ",
+      "title": "このひとひらの欠落と / ナースロボ_タイプT -With This Single Missing Piece-",
+      "confidence": 0.95,
+      "evidence": "掲載者メモに『ミニマムでカッコいい。イラスト無し文字グラフィックMV』と明記されているため（文字グラフィックMV＝モーショングラフィックスの明記）。"
+    },
+    {
+      "id": "QE9KoUaJFy8",
+      "title": "𝗣𝗢𝗣𝗣𝗜𝗘𝗦 𝗣𝗩 𝟮𝟬𝟮𝟲",
+      "confidence": 0.9,
+      "evidence": "タイトルに『PV』が明記され、掲載者メモに『アニメ映像』『グラフィック可愛くて好き』とあるため（PV＝ミュージックビデオ、アニメ表現の明記）。"
+    },
+    {
+      "id": "tK2pu1i1OqQ",
+      "title": "九州新幹線全線開業「祝！九州」",
+      "confidence": 0.95,
+      "evidence": "チャンネルが『JR九州公式チャンネル』で、タイトルが『九州新幹線全線開業「祝！九州」』とあるため、鉄道関連の公式（企業）映像であることが明記されている。"
+    },
+    {
+      "id": "Y_KJnyhbOoE",
+      "title": "JUMP MV /『BLEACH』×『アフターダーク』| ASIAN KUNG-FU GENERATION",
+      "confidence": 0.9,
+      "evidence": "タイトルに「JUMP MV /」が含まれるため（「MV」の明示）。掲載者コメントは印象的な画面について述べているが、追加ジャンル/演出/トーンの明示はない。"
+    },
+    {
+      "id": "yssVDzyinMA",
+      "title": "Meg Bonus - TO THE YOU (ME) I MET BEFORE [Official Music Video]",
+      "confidence": 0.85,
+      "evidence": "タイトルに「[Official Music Video]」。掲載者コメント: 「パーティクルキレイ。」（MVの明示とパーティクル言及より）"
+    },
+    {
+      "id": "5idM5supHqA",
+      "title": "Internet Swagger / NEOIZ【Official Music Video】",
+      "confidence": 0.85,
+      "evidence": "タイトルに「【Official Music Video】」。掲載者コメント: 「Aメロの余白大きめのグラフィック好き。」（MVの明示とグラフィック言及より）"
+    },
+    {
+      "id": "mxOEtJ9GPQg",
+      "title": "国際工科専門職大学 2026年度TVCM「BE A GLOBAL PROFESSIONAL.」篇",
+      "confidence": 0.95,
+      "evidence": "タイトルに「TVCM」と明記。掲載者コメント: 「コラージュ映像。青白黒。」（ジャンルの明示より）"
+    },
+    {
+      "id": "ux3QETpLcPs",
+      "title": "劇場版『チェンソーマン レゼ篇』オープニングムービー 　主題歌：米津玄師「IRIS OUT」“Chainsaw Man – The Movie: Reze Arc” – Opening Movie",
+      "confidence": 0.95,
+      "evidence": "タイトルに「オープニングムービー」と明記（劇場版作品のオープニングムービー）。"
+    },
+    {
+      "id": "efOw9v7QP6c",
+      "title": "amazarashi『小市民イーア』Lyric Video",
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: グランジノリ 掲載者コメントに基づく注目点: グランジノリ"
+    },
+    {
+      "id": "PJ2N9qFVp1g",
+      "title": "菅原圭 - アネモネ (Official Video)",
+      "confidence": 0.85,
+      "evidence": "掲載者メモ: オシャ 掲載者コメントに基づく注目点: オシャ"
+    },
+    {
+      "id": "HRvdLH4mzMQ",
+      "title": "【Official】Music Video 「Hardsync」桔梗 小夜曲(CV:原田 彩楓)",
+      "confidence": 0.85,
+      "evidence": "掲載者メモ: 💗【Official】Music Video 「Hardsync」桔梗 小夜曲(CV:原田 彩楓)やっぱモザイクトランジションってかわいい 掲載者コメントに基づく注目点: 💗【Official】Music Video 「Hardsync」桔梗 小夜曲(CV:原田 彩楓)やっぱモザイクトランジションってかわいい"
+    },
+    {
+      "id": "TO4W5iUe4Jw",
+      "title": "ReGLOSS 'アワータイムイエロー' OFFICIAL MV",
+      "confidence": 0.85,
+      "evidence": "掲載者メモ: オシャレ〜〜〜。全カットキマってて画面展開が面白い。 掲載者コメントに基づく注目点: オシャレ〜〜〜。全カットキマってて画面展開が面白い。"
+    },
+    {
+      "id": "xlTSnRAoh_A",
+      "title": "Odd - Anguish【Official Music Video】",
+      "confidence": 0.85,
+      "evidence": "掲載者メモ: 💗Odd - Anguish【Official Music Video】キラキラキューブ好き。走るシーンのカメラワーク（傾くとこ）すき。 掲載者コメントに基づく注目点: 💗Odd - Anguish【Official Music Video】キラキラキューブ好き。走るシーンのカメラワーク（傾くとこ）すき。"
+    },
+    {
+      "id": "Sfj6HCmHmeg",
+      "title": "【マガポケ10周年記念】ASIAN KUNG-FU GENERATION『未来の破片』スペシャルPV",
+      "confidence": 0.85,
+      "evidence": "掲載者メモ: グラフィック好き〜〜〜 掲載者コメントに基づく注目点: グラフィック好き〜〜〜"
+    },
+    {
+      "id": "7WGmWlaYMzI",
+      "title": "Sou「Q.E.D.」MV（TVアニメ「アルネの事件簿」オープニングテーマ）",
+      "confidence": 0.85,
+      "evidence": "掲載者メモ: 物語性、トンデモクレジット。 掲載者コメントに基づく注目点: 物語性、トンデモクレジット。"
+    },
+    {
+      "id": "WCDLyXJgbIo",
+      "title": "初星学園「自己肯定感爆上げ↑↑しゅきしゅきソング」Official Music Video (Self-affirmation Explosion! Love Love Song)",
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: すげえ 掲載者コメントに基づく注目点: すげえ"
+    },
+    {
+      "id": "JqUWua4MrIM",
+      "title": "8月10日（日）より放送／TVアニメ「ONE PIECE」オープニング主題歌「カーマイン」ELLEGARDEN",
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: 色 掲載者コメントに基づく注目点: 色"
+    },
+    {
+      "id": "PysVvOp0jiU",
+      "title": "ゴーストアベニュー(Ghost Avenue) - Eve Music Video",
+      "confidence": 0.85,
+      "evidence": "掲載者メモ: 💗ゴーストアベニュー(Ghost Avenue) - Eve Music Video物語性タグ。最後のドアに手を伸ばす表情良い。 掲載者コメントに基づく注目点: 💗ゴーストアベニュー(Ghost Avenue) - Eve Music Video物語性タグ。最後のドアに手を伸ばす表情良い。"
+    },
+    {
+      "id": "CWZ0lTUs5Mk",
+      "title": "Official髭男dism「らしさ」✕ 劇場アニメ「ひゃくえむ。」コラボレーションMV",
+      "confidence": 0.85,
+      "evidence": "タイトルに「コラボレーションMV」、および「劇場アニメ」と明記されているため（掲載者メモ: 上手い）。"
+    },
+    {
+      "id": "qROogTC60pI",
+      "title": "TVスペシャルアニメーション『五等分の花嫁∽』ノンクレジットOP",
+      "confidence": 0.9,
+      "evidence": "タイトルに「TVスペシャルアニメーション」「ノンクレジットOP」と明記されているため（掲載者メモ: 質感と動き）。"
+    },
+    {
+      "id": "8FAbFnWdcWs",
+      "title": "Project NPD (프로젝트 엔피디) | Animation Short Film 2026｜청강애니",
+      "confidence": 0.88,
+      "evidence": "タイトルに「Animation Short Film」と明記され、掲載者メモに「レイアウト、カラースクリプト、コンポジット」とあるため。"
+    },
+    {
+      "id": "276082478",
+      "title": "ESPN - Youth Idents - Basketball",
+      "confidence": 0.85,
+      "evidence": "タイトルに「ESPN - Youth Idents - Basketball」、掲載者メモに「配色、粒度のコントロールされたパーティクル」とありモーショングラフィックス的表現が示唆されるため。"
+    },
+    {
+      "id": "cnjSVom_vEE",
+      "title": "Vibrance motion graphics",
+      "confidence": 0.95,
+      "evidence": "タイトルに「motion graphics」、掲載者メモに「高品質モーショングラフィックス」と明記されているため。"
+    },
+    {
+      "id": "NEnDR9ALBDU",
+      "title": "スリーズブーケ 「Celebration! 」 リリックビデオ （ラブライブ！蓮ノ空女学院スクールアイドルクラブ）",
+      "confidence": 0.85,
+      "evidence": "タイトルに「リリックビデオ（リリックビデオ）」と明記され、掲載者メモに「サイズ感、配色」とあるため。"
+    },
+    {
+      "id": "BC74zTA-tDE",
+      "title": "DAZBEE (ダズビー) | ‘才能’ M/V",
+      "confidence": 0.85,
+      "evidence": "タイトルに「M/V」と明記され、掲載者メモに「モチーフ」とあるため。"
+    },
+    {
+      "id": "OhHYTXfg9nQ",
+      "title": "卒業制作アニメーション 「Relocation」 (Animation MV)",
+      "confidence": 0.9,
+      "evidence": "タイトルに「卒業制作アニメーション (Animation MV)」と明記され、掲載者メモでもアニメーション作品として評価されているため。"
+    },
+    {
+      "id": "LoLhAaPna9A",
+      "title": "【MV】あぁ、馬鹿みたいに音楽を。/  星宮とと + muyu",
+      "confidence": 0.9,
+      "evidence": "タイトルに「【MV】」の表記あり"
+    },
+    {
+      "id": "l96CCKCktOU",
+      "title": "アイオライト (Iolite) - Eve Music Video",
+      "confidence": 0.9,
+      "evidence": "タイトルに「Music Video」の表記あり"
+    },
+    {
+      "id": "7r65KZdTRNg",
+      "title": "【MV】導凰 | TAO - HypeX (Prod. JitteryJackal)",
+      "confidence": 0.9,
+      "evidence": "タイトルに「【MV】」の表記あり"
+    },
+    {
+      "id": "MqKDozk20eA",
+      "title": "「紫雲寺家の子供たち」ノンクレジットOP映像｜NACHERRY「ハニーレモン」",
+      "confidence": 0.9,
+      "evidence": "タイトルに「OP映像」の表記あり"
+    },
+    {
+      "id": "PwZBiq1c6Mc",
+      "title": "JUMP MV /『ハイキュー!!』×『ヒカリアレ』| BURNOUT SYNDROMES",
+      "confidence": 0.9,
+      "evidence": "タイトルに「JUMP MV」と明記。"
+    },
+    {
+      "id": "gOTNI5smH2E",
+      "title": "アニメ『BEASTARS FINAL SEASON』 Part1ノンクレジットOP│神前 暁/ issei「Into the world」",
+      "confidence": 0.9,
+      "evidence": "タイトルに「ノンクレジットOP（オープニング）」と明記。"
+    },
+    {
+      "id": "a-fGvE-EwHc",
+      "title": "楠木ともり「浮遊」Lyric Video",
+      "confidence": 0.9,
+      "evidence": "タイトルに「Lyric Video」と明記。"
+    },
+    {
+      "id": "RjhLcPQ2EWg",
+      "title": "ロクデナシ「イオ」/ Rokudenashi - Io【Official Music Video】",
+      "confidence": 0.85,
+      "evidence": "タイトルに「Official Music Video」。掲載者メモに「パーティクルの粒度、空間の広さ」と記載。"
+    },
+    {
+      "id": "vQ_NFqtGDgo",
+      "title": "Aiobahn & TAK feat. 初音ミク - DIVA (Official Music Video)",
+      "confidence": 0.9,
+      "evidence": "タイトルに「Official Music Video」と明記。"
+    },
+    {
+      "id": "sg5emEMIqls",
+      "title": "sanetii(ｻﾈｯﾃｨ） - クロノス（Official Music Video）",
+      "confidence": 0.9,
+      "evidence": "タイトルに「Official Music Video」と明記。"
+    },
+    {
+      "id": "ZZQVqz5G6Eo",
+      "title": "【歌ってみた】怪物/YOASOBI covered by MeltyNoah【メルティーノア】おらんじ～な,空衣御侍,キミトス,梵人",
+      "confidence": 0.85,
+      "evidence": "タイトルに「歌ってみた」と明記。掲載者メモに「高品質3DCG」とある。"
+    },
+    {
+      "id": "OKaMMvTujHY",
+      "title": "SARUKANI - CROWN（Official Lyric Video）",
+      "confidence": 0.95,
+      "evidence": "タイトルに「Official Lyric Video」表記あり"
+    },
+    {
+      "id": "igVN1P3Em20",
+      "title": "JUMP MV /『カグラバチ』×『エッジワース・カイパーベルト』| PEOPLE 1",
+      "confidence": 0.95,
+      "evidence": "タイトルに「JUMP MV」と明記あり"
+    },
+    {
+      "id": "ltfLkRqYgxA",
+      "title": "明透 - ルートキュア / ASU - ROOT CURE (Official Music Video)",
+      "confidence": 0.95,
+      "evidence": "タイトルに「Official Music Video」と明記あり"
+    },
+    {
+      "id": "TCRg30fGsXU",
+      "title": "【MV】Fortune Spinner【hololive English -Myth- Original Song】",
+      "confidence": 0.95,
+      "evidence": "タイトルに「【MV】」と明記あり"
+    },
+    {
+      "id": "XvFFSjDXP5U",
+      "title": "漫画『ワンダンス』× ELSEE『Wondrous』｜スペシャルMV",
+      "confidence": 0.95,
+      "evidence": "タイトルに「スペシャルMV」と明記あり／掲載者メモにデザイン性への注目あり"
+    },
+    {
+      "id": "jU4rXrirGgA",
+      "title": "【楽曲PV】『シュガーと噓とぼく』宮苑巴(CV:広瀬裕也)【東京カラーソニック!! ”Sugar Pop”】",
+      "confidence": 0.85,
+      "evidence": "タイトルに「楽曲PV」と表記あり／掲載者メモ: 動きに注目（ALINCOLONY掲載）"
+    },
+    {
+      "id": "S7tXPL8_SJc",
+      "title": "【MAD/AMV】 Look Back - Are You Lost? 【ルックバック】",
+      "confidence": 0.9,
+      "evidence": "タイトルに「MAD/AMV」と明記あり／掲載者メモ: 漫画演出映像と記載"
+    },
+    {
+      "id": "r8DNI89MKj8",
+      "title": "いゔどっと - シャボン MV",
+      "confidence": 0.9,
+      "evidence": "タイトルに「MV」と記載。"
+    },
+    {
+      "id": "X8p4rDwlt-w",
+      "title": "DeNeel - 存在A (Official Music Video)",
+      "confidence": 0.9,
+      "evidence": "タイトルに「Official Music Video」と記載。"
+    },
+    {
+      "id": "OWxY7gbycwg",
+      "title": "『アオアシ』阿久津渚 #shorts #アオアシ",
+      "confidence": 0.9,
+      "evidence": "タイトルに「#shorts」表記。"
+    },
+    {
+      "id": "0EUHdiy8WV0",
+      "title": "藍月なくる - ロマネスクミラージュ(Official Video)",
+      "confidence": 0.9,
+      "evidence": "タイトルに「Official Video」と記載。"
+    },
+    {
+      "id": "uS4DKbOIQfc",
+      "title": "「GOES ON」阪神タイガーススタメン紹介前OP映像",
+      "confidence": 0.85,
+      "evidence": "タイトルに「OP映像」。タイトルに「阪神タイガース」（スポーツ）。掲載者メモ: かなり高品質コラージュ。"
+    },
+    {
+      "id": "ZC3IC2GrPUw",
+      "title": "『真・侍伝 YAIBA』ノンクレジットオープニング | BLUE ENCOUNT「BLADE -絆ver-」",
+      "confidence": 0.9,
+      "evidence": "タイトルに「ノンクレジットオープニング」と明記"
+    },
+    {
+      "id": "eg5fHKcO0bE",
+      "title": "アニメ『龍族Ⅱ -The Mourner's Eyes-』ノンクレジットOPムービー｜「WE ARE MADE」鷺巣詩郎",
+      "confidence": 0.95,
+      "evidence": "タイトルに「アニメ」「ノンクレジットOPムービー」と明記"
+    },
+    {
+      "id": "VRwhsKfdk8I",
+      "title": "Suspended 4th - Advance（OFFICIAL VIDEO）",
+      "confidence": 0.9,
+      "evidence": "タイトルに「OFFICIAL VIDEO」と明記／掲載者メモに音関連の指摘あり"
+    },
+    {
+      "id": "1moa2h4eQ3M",
+      "title": "【MV】ヨンダラン！／莉犬",
+      "confidence": 0.95,
+      "evidence": "タイトルに「MV」と明記／掲載者メモに画面構成への言及あり"
+    },
+    {
+      "id": "PE_iyDsY5xM",
+      "title": "初星学園 「一体いつから」Official Music Video (HATSUBOSHI GAKUEN - Ittai itsukara)",
+      "confidence": 0.95,
+      "evidence": "タイトルに「Official Music Video」と明記／掲載者メモに物語性・コンポジットの言及あり"
+    }
+  ],
+  "held": []
+}

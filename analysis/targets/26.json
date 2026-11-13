@@ -1,0 +1,26 @@
+{
+  "index": 26,
+  "total": 1782,
+  "target": {
+    "id": "1040121603",
+    "platform": "vimeo",
+    "title": "Web CM  TV CM   AI ADS - Travel",
+    "videoUrl": "https://vimeo.com/1040121603",
+    "channelTitle": "",
+    "source": "vook",
+    "sourceLabel": "Vook イケてる映像",
+    "existingMetadata": {
+      "genres": "[{\"name\":\"TV CM\",\"slug\":\"tv-cm\"},{\"name\":\"Web CM\",\"slug\":\"web-cm\"}]",
+      "products": "[{\"name\":\"IT / 通信 / ネットサービス\",\"slug\":\"it\"},{\"name\":\"旅行 / 宿泊\",\"slug\":\"travel\"}]",
+      "directions": "[]",
+      "tones": "[]",
+      "allTags": "[]",
+      "purposes": "[]",
+      "expressions": "[]",
+      "toneEmotions": "[]",
+      "toneVisuals": "[]",
+      "toneTechniques": "[]",
+      "productions": "[]"
+    }
+  }
+}

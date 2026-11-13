@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "イケてる映像に追加",
+  "version": "1.0.0",
+  "description": "開いている動画ページをイケてる映像コレクションの追加画面へ引き継ぎます。",
+  "permissions": ["activeTab"],
+  "action": {
+    "default_title": "イケてる映像に追加",
+    "default_popup": "popup.html"
+  }
+}

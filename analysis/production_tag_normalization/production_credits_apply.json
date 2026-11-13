@@ -1,0 +1,2335 @@
+{
+  "mode": "apply",
+  "generatedAt": "2026-08-21T05:59:24.713Z",
+  "totalVideos": 4825,
+  "changedVideos": 1,
+  "unresolvedVideos": 226,
+  "unchangedVideos": 4598,
+  "changes": [
+    {
+      "id": "5KsXVs8Vg7U",
+      "title": "角巻わため Everlasting Soul MV",
+      "productionsBefore": [
+        "Vocal:角巻わため",
+        "作詞:hotaru",
+        "作曲:Tom-H@ck",
+        "編曲:RINZO",
+        "Guitar:奈良悠樹",
+        "Others Instruments:RINZO",
+        "Recording & Mixing Engineer:NNZN",
+        "Vocal Direction:かっさん",
+        "タナカリョウ",
+        "リリックモーション:yujureal works",
+        "プロダクション:イアリンジャパン",
+        "Support:Kenji Kawasaki",
+        "Tatsumi Watanabe",
+        "Q-taro",
+        "角巻Production team",
+        "fts",
+        "T-chan",
+        "Special thanks:わためいと",
+        "watamates",
+        "Vocal: Tsunomaki Watame",
+        "Songwriter: Hotaru",
+        "Composer: Tom-H@ck",
+        "Instrumentalist: Rinzo",
+        "Guitarist: Yuki Nara",
+        "Sound Mixer: NNZN",
+        "Kassan",
+        "Video: Ryo Tanaka",
+        "yujureal works",
+        "Eallin Japan Co.",
+        "Ltd. イアリンジャパン",
+        "Support: Tatsuki Watanabe",
+        "Support: Q-taro",
+        "Support: kenji kawasaki 川サキ ケンジ"
+      ],
+      "productionsAfter": [
+        "作詞:hotaru",
+        "作曲:Tom-H@ck",
+        "編曲:RINZO",
+        "Guitar:奈良悠樹",
+        "Others Instruments:RINZO",
+        "Recording & Mixing Engineer:NNZN",
+        "タナカリョウ",
+        "リリックモーション:yujureal works",
+        "プロダクション:イアリンジャパン",
+        "Support:Kenji Kawasaki",
+        "Tatsumi Watanabe",
+        "Q-taro",
+        "角巻Production team",
+        "fts",
+        "T-chan",
+        "Special thanks:わためいと",
+        "watamates",
+        "Songwriter: Hotaru",
+        "Composer: Tom-H@ck",
+        "Instrumentalist: Rinzo",
+        "Guitarist: Yuki Nara",
+        "Sound Mixer: NNZN",
+        "Kassan",
+        "Video: Ryo Tanaka",
+        "yujureal works",
+        "Eallin Japan Co.",
+        "Ltd. イアリンジャパン",
+        "Support: Tatsuki Watanabe",
+        "Support: Q-taro",
+        "Support: kenji kawasaki 川サキ ケンジ"
+      ],
+      "creditsBefore": [
+        {
+          "name": "Vocal:角巻わため",
+          "roles": [],
+          "entityType": "unknown"
+        },
+        {
+          "name": "作詞:hotaru",
+          "roles": [],
+          "entityType": "unknown"
+        },
+        {
+          "name": "作曲:Tom-H@ck",
+          "roles": [],
+          "entityType": "unknown"
+        },
+        {
+          "name": "編曲:RINZO",
+          "roles": [],
+          "entityType": "unknown"
+        },
+        {
+          "name": "Guitar:奈良悠樹",
+          "roles": [],
+          "entityType": "unknown"
+        },
+        {
+          "name": "Others Instruments:RINZO",
+          "roles": [],
+          "entityType": "unknown"
+        },
+        {
+          "name": "Recording & Mixing Engineer:NNZN",
+          "roles": [],
+          "entityType": "unknown"
+        },
+        {
+          "name": "Vocal Direction:かっさん",
+          "roles": [],
+          "entityType": "unknown"
+        },
+        {
+          "name": "タナカリョウ",
+          "roles": [
+            "制作"
+          ],
+          "entityType": "person"
+        },
+        {
+          "name": "リリックモーション:yujureal works",
+          "roles": [],
+          "entityType": "unknown"
+        },
+        {
+          "name": "プロダクション:イアリンジャパン",
+          "roles": [],
+          "entityType": "company"
+        },
+        {
+          "name": "Support:Kenji Kawasaki",
+          "roles": [],
+          "entityType": "unknown"
+        },
+        {
+          "name": "Tatsumi Watanabe",
+          "roles": [],
+          "entityType": "person"
+        },
+        {
+          "name": "Q-taro",
+          "roles": [],
+          "entityType": "person"
+        },
+        {
+          "name": "角巻Production team",
+          "roles": [],
+          "entityType": "person"
+        },
+        {
+          "name": "fts",
+          "roles": [
+            "制作",
+            "デザイン"
+          ],
+          "entityType": "person"
+        },
+        {
+          "name": "T-chan",
+          "roles": [
+            "制作",
+            "デザイン"
+          ],
+          "entityType": "person"
+        },
+        {
+          "name": "Special thanks:わためいと",
+          "roles": [],
+          "entityType": "unknown"
+        },
+        {
+          "name": "watamates",
+          "roles": [],
+          "entityType": "person"
+        },
+        {
+          "name": "Vocal: Tsunomaki Watame",
+          "roles": [],
+          "entityType": "unknown"
+        },
+        {
+          "name": "Songwriter: Hotaru",
+          "roles": [],
+          "entityType": "unknown"
+        },
+        {
+          "name": "Composer: Tom-H@ck",
+          "roles": [],
+          "entityType": "unknown"
+        },
+        {
+          "name": "Instrumentalist: Rinzo",
+          "roles": [],
+          "entityType": "unknown"
+        },
+        {
+          "name": "Guitarist: Yuki Nara",
+          "roles": [],
+          "entityType": "unknown"
+        },
+        {
+          "name": "Sound Mixer: NNZN",
+          "roles": [],
+          "entityType": "unknown"
+        },
+        {
+          "name": "Kassan",
+          "roles": [
+            "監督"
+          ],
+          "entityType": "person"
+        },
+        {
+          "name": "Video: Ryo Tanaka",
+          "roles": [],
+          "entityType": "unknown"
+        },
+        {
+          "name": "yujureal works",
+          "roles": [
+            "モーショングラフィックス"
+          ],
+          "entityType": "person"
+        },
+        {
+          "name": "Eallin Japan Co.",
+          "roles": [
+            "プロデューサー"
+          ],
+          "entityType": "person"
+        },
+        {
+          "name": "Ltd. イアリンジャパン",
+          "roles": [
+            "プロデューサー"
+          ],
+          "entityType": "company"
+        },
+        {
+          "name": "Support: Tatsuki Watanabe",
+          "roles": [],
+          "entityType": "unknown"
+        },
+        {
+          "name": "Support: Q-taro",
+          "roles": [],
+          "entityType": "unknown"
+        },
+        {
+          "name": "Support: kenji kawasaki 川サキ ケンジ",
+          "roles": [],
+          "entityType": "unknown"
+        }
+      ],
+      "creditsAfter": [
+        {
+          "name": "作詞:hotaru",
+          "roles": [],
+          "entityType": "unknown"
+        },
+        {
+          "name": "作曲:Tom-H@ck",
+          "roles": [],
+          "entityType": "unknown"
+        },
+        {
+          "name": "編曲:RINZO",
+          "roles": [],
+          "entityType": "unknown"
+        },
+        {
+          "name": "Guitar:奈良悠樹",
+          "roles": [],
+          "entityType": "unknown"
+        },
+        {
+          "name": "Others Instruments:RINZO",
+          "roles": [],
+          "entityType": "unknown"
+        },
+        {
+          "name": "Recording & Mixing Engineer:NNZN",
+          "roles": [],
+          "entityType": "unknown"
+        },
+        {
+          "name": "タナカリョウ",
+          "roles": [
+            "制作"
+          ],
+          "entityType": "person"
+        },
+        {
+          "name": "リリックモーション:yujureal works",
+          "roles": [],
+          "entityType": "unknown"
+        },
+        {
+          "name": "プロダクション:イアリンジャパン",
+          "roles": [],
+          "entityType": "company"
+        },
+        {
+          "name": "Support:Kenji Kawasaki",
+          "roles": [],
+          "entityType": "unknown"
+        },
+        {
+          "name": "Tatsumi Watanabe",
+          "roles": [],
+          "entityType": "person"
+        },
+        {
+          "name": "Q-taro",
+          "roles": [],
+          "entityType": "person"
+        },
+        {
+          "name": "角巻Production team",
+          "roles": [],
+          "entityType": "person"
+        },
+        {
+          "name": "fts",
+          "roles": [
+            "制作",
+            "デザイン"
+          ],
+          "entityType": "person"
+        },
+        {
+          "name": "T-chan",
+          "roles": [
+            "制作",
+            "デザイン"
+          ],
+          "entityType": "person"
+        },
+        {
+          "name": "Special thanks:わためいと",
+          "roles": [],
+          "entityType": "unknown"
+        },
+        {
+          "name": "watamates",
+          "roles": [],
+          "entityType": "person"
+        },
+        {
+          "name": "Songwriter: Hotaru",
+          "roles": [],
+          "entityType": "unknown"
+        },
+        {
+          "name": "Composer: Tom-H@ck",
+          "roles": [],
+          "entityType": "unknown"
+        },
+        {
+          "name": "Instrumentalist: Rinzo",
+          "roles": [],
+          "entityType": "unknown"
+        },
+        {
+          "name": "Guitarist: Yuki Nara",
+          "roles": [],
+          "entityType": "unknown"
+        },
+        {
+          "name": "Sound Mixer: NNZN",
+          "roles": [],
+          "entityType": "unknown"
+        },
+        {
+          "name": "Kassan",
+          "roles": [
+            "監督"
+          ],
+          "entityType": "person"
+        },
+        {
+          "name": "Video: Ryo Tanaka",
+          "roles": [],
+          "entityType": "unknown"
+        },
+        {
+          "name": "yujureal works",
+          "roles": [
+            "モーショングラフィックス"
+          ],
+          "entityType": "person"
+        },
+        {
+          "name": "Eallin Japan Co.",
+          "roles": [
+            "プロデューサー"
+          ],
+          "entityType": "person"
+        },
+        {
+          "name": "Ltd. イアリンジャパン",
+          "roles": [
+            "プロデューサー"
+          ],
+          "entityType": "company"
+        },
+        {
+          "name": "Support: Tatsuki Watanabe",
+          "roles": [],
+          "entityType": "unknown"
+        },
+        {
+          "name": "Support: Q-taro",
+          "roles": [],
+          "entityType": "unknown"
+        },
+        {
+          "name": "Support: kenji kawasaki 川サキ ケンジ",
+          "roles": [],
+          "entityType": "unknown"
+        }
+      ],
+      "rolesAfter": [
+        "制作",
+        "デザイン",
+        "監督",
+        "モーショングラフィックス",
+        "プロデューサー"
+      ],
+      "allTagsBefore": [
+        "映像作家100人",
+        "2022選出",
+        "3DCG",
+        "Music video",
+        "制作",
+        "デザイン",
+        "監督",
+        "モーショングラフィックス",
+        "プロデューサー",
+        "Vocal:角巻わため",
+        "作詞:hotaru",
+        "作曲:Tom-H@ck",
+        "編曲:RINZO",
+        "Guitar:奈良悠樹",
+        "Others Instruments:RINZO",
+        "Recording & Mixing Engineer:NNZN",
+        "Vocal Direction:かっさん",
+        "タナカリョウ",
+        "リリックモーション:yujureal works",
+        "プロダクション:イアリンジャパン",
+        "Support:Kenji Kawasaki",
+        "Tatsumi Watanabe",
+        "Q-taro",
+        "角巻Production team",
+        "fts",
+        "T-chan",
+        "Special thanks:わためいと",
+        "watamates",
+        "Vocal: Tsunomaki Watame",
+        "Songwriter: Hotaru",
+        "Composer: Tom-H@ck",
+        "Instrumentalist: Rinzo",
+        "Guitarist: Yuki Nara",
+        "Sound Mixer: NNZN",
+        "Kassan",
+        "Video: Ryo Tanaka",
+        "yujureal works",
+        "Eallin Japan Co.",
+        "Ltd. イアリンジャパン",
+        "Support: Tatsuki Watanabe",
+        "Support: Q-taro",
+        "Support: kenji kawasaki 川サキ ケンジ"
+      ],
+      "allTagsAfter": [
+        "映像作家100人",
+        "2022選出",
+        "3DCG",
+        "Music video",
+        "制作",
+        "デザイン",
+        "監督",
+        "モーショングラフィックス",
+        "プロデューサー",
+        "作詞:hotaru",
+        "作曲:Tom-H@ck",
+        "編曲:RINZO",
+        "Guitar:奈良悠樹",
+        "Others Instruments:RINZO",
+        "Recording & Mixing Engineer:NNZN",
+        "タナカリョウ",
+        "リリックモーション:yujureal works",
+        "プロダクション:イアリンジャパン",
+        "Support:Kenji Kawasaki",
+        "Tatsumi Watanabe",
+        "Q-taro",
+        "角巻Production team",
+        "fts",
+        "T-chan",
+        "Special thanks:わためいと",
+        "watamates",
+        "Songwriter: Hotaru",
+        "Composer: Tom-H@ck",
+        "Instrumentalist: Rinzo",
+        "Guitarist: Yuki Nara",
+        "Sound Mixer: NNZN",
+        "Kassan",
+        "Video: Ryo Tanaka",
+        "yujureal works",
+        "Eallin Japan Co.",
+        "Ltd. イアリンジャパン",
+        "Support: Tatsuki Watanabe",
+        "Support: Q-taro",
+        "Support: kenji kawasaki 川サキ ケンジ"
+      ],
+      "updatedAt": "2026-08-21 05:54:49"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "_9cGKFO4mm8",
+      "title": "乃木坂46 山下美月、チョコラタイムで心も体もキレイに！？　“弟役”細田佳央太とユニークなやり取りも　『チョコラBB』新CM",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "_H-Y1ZhWYIE",
+      "title": "【CM公開!!】2024シーズン、まもなく開幕!!",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "_ve4M4UsJQo",
+      "title": "Honda - The Cog",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "_ZBz2CPRyJA",
+      "title": "資生堂150周年記念CM",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "-4yTZgWJ9Kg",
+      "title": "2024 FC TOKYO 『東京が熱狂』",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "-5fhRq5PV2o",
+      "title": "自動貯金アプリ「finbee（フィンビー）」サービス紹介動画",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "-9ljRYIEWfU",
+      "title": "菅田将暉＆中村倫也がCM初共演　若手ビジネスマンの後輩・先輩に　アサヒビール「アサヒスーパードライ」新CMが公開",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "-PXeNWSj3Y0",
+      "title": "神戸鈑金工業株式会社 - 企業PRムービー",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "06xEQSbisQk",
+      "title": "ネイエ CM「窓」編（30秒）",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "0lGZItJxYOs",
+      "title": "【Nulbarich / JQ】Vaundyとの音楽談議/「トラック全取っ替え」から「ASH」ができるまで/世界進出も視野に入れた今後10年間でのVaundyの展望【J-WAVE・WOW MUSIC】",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "0WIruaknrA0",
+      "title": "グリー株式会社新卒採用ムービー_full ver.",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "0ZHSsBfb3W8",
+      "title": "【OpenWorkのご紹介】「働く」のすべてを、オープンに。",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "1049880661",
+      "title": "三井不動産株式会社 採用コンセプトムービー",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "19BPUjDc4rA",
+      "title": "【株式会社タイセイ】コーポレートブランドムービー「つくっているのは、まだないもの」",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "1A8XH1h-6Vk",
+      "title": "Behind the scenes of Vaundy 泣き地蔵 Music Video",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "216654563",
+      "title": "BLOOM DANCE",
+      "productionsBefore": [
+        "Director / Designer：Tatsuki KondoProject Supervisor：Hiroshi OuchiProducer / Programer：Fumihito AnzaiLED Lighting：Color Kinetics Japan"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "287627514",
+      "title": "Sin So Seek(新層C区) – AUN [Official Video]",
+      "productionsBefore": [
+        "チーム・Sharaku Town（写楽街）による音楽ユニット・新層C区のミュージックビデオ。写楽街制作のドキュメンタリー作品『心霊×カルト×アウトロー』のテーマソングとなる楽曲。MVは全編iPhoneでの撮影を敢行"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "2aTCCypED3Y",
+      "title": "TV CM  美容 / 化粧品   MARO公式CM「この男、やってます。」篇 60秒",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "2bnkeUhw3xc",
+      "title": "Google 広告活用事例（新規顧客獲得：株式会社 SASAKI 様）",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "2cSUsZyyQDA",
+      "title": "【森岡毅】カギは知財。日本のクリエイティブは世界でもっと稼げる / 「刀」がIPOを目指す理由",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "2nGPUtId7vM",
+      "title": "KDDIブランドメッセージ",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "328599590",
+      "title": "MAKIN’ MOVES 2",
+      "productionsBefore": [
+        "\"Calm The Fuck Down\" by Broke For Free"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "3HjS-zK8v-U",
+      "title": "『チェンソーマン』ジャンプフェスタ2022 スペシャルPV解禁",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "3iUgKH8c7p4",
+      "title": "いますぐ輪廻 / 初音ミク",
+      "productionsBefore": [
+        "CAST"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "3uMM8KcfOVM",
+      "title": "100円の旅 ～みなさまのご支援で (2016年の活動成果) /日本ユニセフ協会",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "3wg3NwIZWfo",
+      "title": "Make the Next Fashion Empire | Everything to Sell Anything | Squarespace",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "3Y1EdJA-fGw",
+      "title": "HUNTER×HUNTER37巻PV【Teaser】",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "3yr19mwt5go",
+      "title": "【郡山市】職員採用PR動画（導入編）～だから、おもしろい　こおりやま～",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "441587476",
+      "title": "WOW AR",
+      "productionsBefore": [
+        "の祖先とも言われる、フェナキストスコープ。最古の技術と現代の技術を組み合わせ、どの時代でも変わらず繰り返される、さまざまな生命の活動を描いた作品"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "4aNe_cUJgDU",
+      "title": "kemioやアニメ「リコリス・リコイル」らの名シーンが登場！／リクルートWeb動画",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "5iCRz5AeipE",
+      "title": "neco眠る「猫がニャ～て、犬がワンッ!」",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "5MZo9otAWAw",
+      "title": "King Gnu - SPECIALZ (King Gnu Dome Tour THE GREATEST UNKNOWN at TOKYO DOME)",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "5pHXxaR67HE",
+      "title": "【NICT】コンセプトムービー『 知の限界を超える 』",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "6_6YfJpi9M0",
+      "title": "サントリー天然水 丸搾りSPARK無糖『MARUSHIBO PARK』篇 88秒 武藤敬司 サントリー",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "6q8P4OcRfPo",
+      "title": "「ASTARI　～いつも行くお店があなたの健康を応援～」【TIS株式会社】",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "6tm60ECODsY",
+      "title": "「ゲンバの星」コンセプトムービー60秒字幕付き",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "6yuTYteg3a0",
+      "title": "採用コンセプトムービー/コニカミノルタ",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "778470625",
+      "title": "SHOWREEL 2022 | Kaito Note",
+      "productionsBefore": [
+        "ImBN"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "7JtCo1pcnq4",
+      "title": "グリー10周年記念ムービー【GREE】",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "7OdDlNHR4oI",
+      "title": "映画『はじまりはヒップホップ』予告編",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "7PMmxKld0_0",
+      "title": "24卒採用選考実施中【シンプレクス】あなたの挑戦を待っています。",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "7qfmjwVj9tQ",
+      "title": "ニッカ フロンティア CM「FRONTIER 新登場」篇 15秒 福山雅治",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "7rm4m_Pzo3M",
+      "title": "ケイト KATE SCHOOL 120秒",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "7RtkVGt7ElY",
+      "title": "海外アーティストに絶賛された！日本のシニアダンス集団【シニアモンスターズ】We're \"Japanese Senior Entertainers\"!",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "8-YGxENU8Ug",
+      "title": "偽り　MV",
+      "productionsBefore": [
+        "Animation"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "8Fc_ONZEppo",
+      "title": "IPPUDO×JAPANESE WONDER TO THE WORLD",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "8j4wul3Eg8E",
+      "title": "【ブランドムービー】その人は、デロイト トーマツ ―その情熱が、未来を拓く。",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "8pvavm3KXng",
+      "title": "『スタートアップ: 夢の扉』公式ティーザー予告編 - Netflix",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "8ZN40f8R7eg",
+      "title": "YOASOBI「UNDEAD」 from 『YOASOBI 5th ANNIVERSARY DOME LIVE 2024 \"超現実\"』2024.11.10@東京ドーム",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "9ltHtXPc_zo",
+      "title": "ブランデッドムービー  Web CM   音楽人5,000人が選ぶのは、どの歌だ。 | MUSIC AWARDS JAPAN 2026",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "9n8PZMWXUzM",
+      "title": "イチローPOST　柳井社長×イチローさん対談 フルバージョン（46分）",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "9Wpdg4LWY48",
+      "title": "永谷園 お茶づけ海苔 CM 出演:松村雅史「ただいまお茶づけ中2022」篇 30秒",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "abD0dHg6MZY",
+      "title": "花譜　#31 「ハミングがきこえる」【不可解エンドロールver.】",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "aCGySByzqOE",
+      "title": "KAORU Concept Movie ーすべては、身につける前から美しいー",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "av1JxIJ0U4c",
+      "title": "KAJINON Inc. 採用コンセプトムービー",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "ay0L2KCFC0I",
+      "title": "【期間限定公開】「ヒプマイvsカリスマ Battle Anthem EVIL A LIVE 2024 」MV",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "B2wF5XMk0Ek",
+      "title": "DENTSU Inc. RECRUITING オープニングムービー",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "b6p4iBDtm7w",
+      "title": "【公式PV】OPEN YOUR WORLD｜メタバースプラットフォーム cluster",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "Bcvj6-aEa6Q",
+      "title": "「サイバーセキュリティを格好いい仕事に」　サイバーセキュリティ研究所　井上 大介 編",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "bfv-VaaAlxc",
+      "title": "『HUNTER×HUNTER』―念能力者たち―【最新37巻発売／冨樫義博展 -PUZZLE- 開催記念PV】",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "BHCOvooEdy8",
+      "title": "パナソニック株式会社　Make New「オープニング」篇",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "bLXSLP4tYvQ",
+      "title": "Amazonの新オフィス: 多様性と働きやすさを追求",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "BwsIU-KG2oU",
+      "title": "3分でわかる「リノベる。」サービス説明動画",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "C54WZTLoaXQ",
+      "title": "福田道路ブランドムービー 60秒篇",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "cTt2PB60VaA",
+      "title": "Otsuka 大塚製薬 Calorie Mate CM 「狭い広い世界で」篇 120秒",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "CxoGjX3JvHI",
+      "title": "💻 One Day in Life of SAP Software Engineer",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "cYyaRePolog",
+      "title": "バスケ日本代表・河村勇輝、全国地上波CM初出演！華麗なドリブルを披露　「ザバスMILK PROTEIN」新TVCM『Be A Challenger』篇",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "d0LAeUdMp-0",
+      "title": "SHIBUYA SKY | CONCEPT MOVIE",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "DFwlNZpaq1o",
+      "title": "漆黒のオフィス紹介｜ようこそ、ブラックな企業へ。",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "dhLlzFO-fng",
+      "title": "80秒で分かる、京セラのアメーバ経営",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "DTXlkJH6TJA",
+      "title": "パソコン1台で、10億人の人生を変えられるかもしれない｜メルカリ CTO 名村卓",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "DVVm2ORs4DM",
+      "title": "【JR東日本】コンセプトムービー",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "DzgD7vuUvTA",
+      "title": "バンダイ・BANDAI SPIRITS 新卒採用ムービー",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "edeskzo7MUw",
+      "title": "7月日曜劇場『VIVANT』“限界突破! アドベンチャードラマ”始動!!【TBS】",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "eFxxe7YIH-k",
+      "title": "【ピー・シー・エー株式会社】企業紹介ムービー",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "EuBzlo46uA0",
+      "title": "【永瀬拓矢王座、永世称号獲得なるか】8/31開幕！第71期王座戦 五番勝負│ABEMA将棋",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "ewxB-3Fm3Ds",
+      "title": "【2022年10月】AaaS for start up 企業【動画広告】",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "EX_axESFHpE",
+      "title": "渡辺直美のNYライフに密着！お気に入りの場所、恋愛事情、夢を叶えるためのルーティンは？| My Routine | VOGUE JAPAN",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "EzEFCikg4tk",
+      "title": "【博報堂／博報堂ＤＹメディアパートナーズ 】答えは、きみの中にある。",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "EzwOuu-v2To",
+      "title": "東京造形大学「映画・映像を学ぶ。―で終わるな。」",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "FgbfzuaoLZo",
+      "title": "カケハシ スカイソリューションズ　採用コンセプトムービー",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "FrOLeoXrvLU",
+      "title": "[MV] 가호 - Running [스타트업 OST Part.5 (START-UP OST Part.5)]",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "fX9NK-_YqlI",
+      "title": "『ONE PIECE』103巻発売記念ムービー「ついにギア５」",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "FzSY_bWUyBQ",
+      "title": "高知県警察PV2021年[警察官A採用募集PV]",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "G59XstT19K8",
+      "title": "チャットモンチー　『「世界が終わる夜に」Music Video』",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "GIc9OGJstSw",
+      "title": "Behind the Scenes of Red Bull Race Day TVCM Shooting",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "GjAlzb787n0",
+      "title": "KANMON U.W. MOVIE",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "gKvLwRk5O60",
+      "title": "TV CM  美容 / 化粧品   花王 メリット 「一年生になった日」篇 CM",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "GoQ6WypKaIw",
+      "title": "【特報】名取さな2nd Live、11/13開催！",
+      "productionsBefore": [
+        "名取さな"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "gQicUHlGLd0",
+      "title": "dSPACE Japan – Purposeムービー",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "GsrokwoNlmc",
+      "title": "花ノ厨子",
+      "productionsBefore": [
+        "を制作するにあたって、まず楽器の資料が必要になり、blenderで 3Dモデルを作るところから始めました。作画はモノクロで描き、最終的に2色になるようにグラデーションマップという補正をかけています"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "GTH5gf-MtM8",
+      "title": "「BOSS」平成最後の特別CM　宇宙人ジョーンズ、タモリ、大杉漣さん……豪華キャストで4月30日に一夜限り放送",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "GtlG84mHxcM",
+      "title": "【西九州新幹線開業記念「かもめ楽団」SPECIAL MOVIE】",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "GV1QlzXMFLI",
+      "title": "Lead the way　明日への道をともに拓く。",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "gxH2jl5vczQ",
+      "title": "キユーピー マヨネーズ 「時間の旅」篇 15秒 CM",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "H8zxxS9WEJU",
+      "title": "バカリズム、コクヨ社員に直撃インタビュー「コクヨ社員ヤバイですね」",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "haa-qAEopOA",
+      "title": "佐藤製線グループ　企業紹介PV",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "HL356D8irXw",
+      "title": "山科精器株式会社 会社案内",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "hSiafYCrIYA",
+      "title": "「おたがいさまの歌 赤羽根家ver」動画（70秒）",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "HSNWJbkIsmo",
+      "title": "Kenshi Yonezu - KICK BACK（Live with Daiki Tsuneta）\"Chainsaw Man\" OP",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "Ht0ZBDsc-so",
+      "title": "ゼスプリCMのキャラクターはどのように生まれた？愛されるヒントは「笑い」にあった - 木下舞耶 / 15MIN",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "HTbFt-GeuuU",
+      "title": "TV CM  食品 / 飲料 / 飲食   全人類ガツン、と化計画篇",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "HWEYU0xSjTY",
+      "title": "【ヤーマン 公式】ヤーマン企業ブランドムービー「きれいの魔法篇」",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "Hy8kmNEo1i8",
+      "title": "Scatman (ski-ba-bop-ba-dop-bop) Official Video HD - Scatman John",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "Hz-VBzYHA0k",
+      "title": "サカナクション / ミュージック from LIVE Blu-ray/DVD「SAKANAQUARIUM 2024”turn“」",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "I-p0ZlXYSms",
+      "title": "PILOT's Purpose 「人と創造力をつなぐ。」",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "i12U2VVjAEI",
+      "title": "リクルート動画第3弾！～就活戦線に異変アリ編　フルver～",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "ihr_3AO1PP8",
+      "title": "\"JSB IN BLACK\" Photo Shooting Behind & Interview Vol.1 / 三代目 J SOUL BROTHERS from EXILE TRIBE",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "IjqKL-Aovzo",
+      "title": "【公式】Chatworkコーポレートブランドムービー「働くをもっと楽しく、創造的に」",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "IwX8kj-f_Ug",
+      "title": "ポカリスエットCM｜「君はきっと、誰かの太陽。」篇 90秒",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "IySMN6pRvU0",
+      "title": "Web制作のすべてがここに：Wixの魅力を50秒で紹介 | Wix.com",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "izEzTI03z0E",
+      "title": "【公式】青森屋｜コンセプトムービー",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "jCtAr2v4ZNg",
+      "title": "鹿島 ビジョンムービー「土木をコードで書きかえろ。」",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "Jw2wuAsLxJ4",
+      "title": "清 竜人２５「Will♡You♡Marry♡Me?」Music Video",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "k_ubvE7k2Mk",
+      "title": "LION NONIO CM 「変わっていける。電動付」篇 30秒 ST",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "K2guvfMV2I4",
+      "title": "METASPEED™+ - 勝ち方は、ひとつだけか。‐ ｜ASICS RUNNING ｜ アシックス",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "k3d_xeVxEOE",
+      "title": "Web CM  IT / 通信 / ネットサービス   Refreshed.",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "KAtfotiVtkM",
+      "title": "杉咲花、フレッシュなスーツ姿で爽やか笑顔　地元を愛する新人JA職員に　JAバンク新TVCM",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "kIhb5pEo_j0",
+      "title": "Web CM  IT / 通信 / ネットサービス   ChatGPT | The Intelligence Age",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "kNE67SfNTWQ",
+      "title": "東武鉄道 新型特急スペーシアの愛称が決定！",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "kOsni-Q4cFI",
+      "title": "風船とロケット",
+      "productionsBefore": [
+        "外山光男"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "kqj7b59D85Y",
+      "title": "雑魚 / 亞北ネル",
+      "productionsBefore": [
+        "CAST"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "Kr5_e3polxA",
+      "title": "OSMIC FIRST CM 【約束します篇】",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "kRHTEDuTUHM",
+      "title": "【煽り映像】(YouTube Ver.) 朝倉未来 vs. ダニエル・サラス / Mikuru Asakura vs. Daniel Salas - RIZIN.21",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "kV1XPrAyD5Q",
+      "title": "リクルート SUUMO CM 「最後の上映会」篇",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "kw7D7Il13_k",
+      "title": "Pure Pure (not)",
+      "productionsBefore": [
+        "CAST"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "kZ2PRYkjX5A",
+      "title": "サントリー緑茶 伊右衛門『伊右衛門　心に、京都を。春。』篇 30秒 奈緒 青木柚 サントリー",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "l3Mufe5jY60",
+      "title": "BEAMS40周年記念『今夜はブギー・バック』で観るTOKYO CULTURE STORY／BEAMS40周年記念動画『今夜はブギー・バック』MV",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "lLYWfUBV4ps",
+      "title": "【サンゲツグループ】ブランドムービー｜「空間デザインって、なんだろう」",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "LXyOMoXy1RY",
+      "title": "POTLUCK YAESU　コンセプトムービー",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "ly_4WV4rdts",
+      "title": "米津玄師 × 常田大希 - KICK BACK 対談",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "m117HStoJjg",
+      "title": "SUPERDRY\"SAKURA\"ASAHI",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "M9bqdgISy1s",
+      "title": "山野楽器ブランドムービー",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "mI9MSQGlbH0",
+      "title": "TV CM  交通 / 物流 / 産業素材   西鉄企業イメージCM「つぎは、あなたのほしい明日」 30s",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "MJeqcGPtTqQ",
+      "title": "amazarashi『空に歌えば』“Singin' to the Sky” Music Video｜「僕のヒーローアカデミア」OP曲",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "mlnB13VUEUw",
+      "title": "The Weeknd - Echoes of Silence (Behind The Scene Documentary)",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "Mlxn5YCMRVo",
+      "title": "Caravan Palace - Lone Digger (Live)",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "NE4A_xcN7xw",
+      "title": "「わたしもつくれる」篇(字幕あり) | キントーン WEBムービー",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "NGIOjQCpEAw",
+      "title": "Cristiano Ronaldo | Behind the Mercurial Dream Speed 3 | Nike Football",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "NKH7NoI5aK4",
+      "title": "【採用ブランドムービー】きのうのじぶんを超えていく、じぶんへ。",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "oBnqkL9TETo",
+      "title": "さすガねっと「カスガスダンス」篇１５秒",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "ogWJQ07hufY",
+      "title": "クラフトボス『Flash Back Memories』3分39秒 宮崎吐夢 サントリー",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "OMoWj-3r6ms",
+      "title": "土木系新卒採用ムービー「シミズノヒト」",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "ovZMIrc3yAI",
+      "title": "【ISID】新卒採用2024「アドリブ力」篇",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "pe9jqlfnSMQ",
+      "title": "TOKYO MODE GAKUEN 東京モード学園 CM 「好きで行け」篇 15秒",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "pG6he8BhzaM",
+      "title": "【選ぶなら、HiKOKI】ヒロミCCO就任 スペシャルインタビュー",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "pkzw_vy1ja0",
+      "title": "Spotify CM「Spotify Town」篇 Vaundy",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "poYWNrf1dLU",
+      "title": "企業 / 商品VP / コンテスト作品  Web CM   Behind the Design of Powerbeats Pro 2 I Beats",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "PRHExtNB2cA",
+      "title": "ペットショップCOO＆RIKU「無料配送」クーアンドリクは店舗移動無料　クーリク",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "PTUWo4gvI8k",
+      "title": "【公式】星のや東京｜ブランドムービー「塔の日本旅館」",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "pWY-S_wGlOs",
+      "title": "清 竜人２５「Mr.PLAY BOY…♡」Music Video",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "qiOna02AViI",
+      "title": "２０２４ CM『Detail of レバテックフリーランス「言いづらい取引」』篇（４０秒 WEB CM ver.）字幕あり / レバテック",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "Qk7_QufdZv0",
+      "title": "Creepy Nuts「Mirage」Shibuya Scramble Crossing",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "QTG8qL8H9zg",
+      "title": "LINEヤフーコミュニケーションズ（旧LINE Fukuoka）オフィス紹介動画 2023",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "quDgXkbqypE",
+      "title": "電通総研 ブランドムービー「いままでにない総研」",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "QXLv4lH_TxY",
+      "title": "JTBブランド動画　スポーツ編　「挑戦を支え続ける」30秒ver",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "rcw5ILVeJec",
+      "title": "TOKYO MODE GAKUEN 東京モード学園 CM 「承認欲求」篇 15秒",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "rGUEKKOc61A",
+      "title": "α7S III:映像ディレクター YP 作品完成後インタビュー動画【ソニー公式】",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "Rk86toqNRmM",
+      "title": "時計じかけのオレンジ・日本版予告",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "rM1alOYRREc",
+      "title": "せんめんじょ",
+      "productionsBefore": [
+        "下嶋やゆん"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "rON_9zSnU2k",
+      "title": "三井のオフィス",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "SLsJQ870d0M",
+      "title": "【カッコ良すぎ】群馬の町工場が本気で映像作ってみた　株式会社石井工機",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "SssUzcSEU80",
+      "title": "野村総合研究所　横浜総合センター紹介",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "sUW4dDWiz-A",
+      "title": "神聖かまってちゃん-夕暮れの鳥／Shinsei Kamattechan-Yuugure no tori",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "SZUDd5eKjX0",
+      "title": "TOMOVSKY - 我に返るスキマを埋めろ(PV)",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "t0q1akhrqCM",
+      "title": "【NIPPON STEEL】カーボンニュートラル動画（60秒ver.）",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "t97O8WhW9h0",
+      "title": "【PLAYER1】",
+      "productionsBefore": [
+        "アニメーションこうぼう。"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "Tfllpi6XT04",
+      "title": "おうちのIoTポータルアプリ「ienowa」サービス紹介動画",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "TJ_N2xtHwfM",
+      "title": "KAGOME HISTORY",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "tLEjcDBvl5o",
+      "title": "【freee】ブランドムービー「スモールビジネスを、世界の主役に。」",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "trCCLgkJcY8",
+      "title": "17LIVE CM 「人生は、いつもライブだ。」篇 30秒",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "tsPIHZy2Osg",
+      "title": "【リクルート新卒採用】　会社説明動画『20分で解説　まるわかり！リクルート』",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "tUe_7Yhk1zw",
+      "title": "「LiGLLY（リグリー）」アプリ紹介動画（Crevo制作実績）",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "TzL0vKGVM4k",
+      "title": "［HD資生堂廣告1］TSUBAKI 09 日本女性之美(素人篇)HD",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "UbccXqm-s7M",
+      "title": "虎ノ門ヒルズムービー2023｜WELCOME TO TORANOMON HILLS",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "ui4NKt-Z5Ks",
+      "title": "⼀年後へ。⼀歩進む。〜＋１（プラスワン）メッセージ〜 TOKYO2020",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "UNbJzCFgjnU",
+      "title": "祝！九州　九州新幹線全線開CM１８０秒",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "UNEW2GulsrE",
+      "title": "西松建設　未来を創る現場力篇0CXQ21GB01",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "UVtOVSSHGjQ",
+      "title": "「6つ子とバカボンのパパ（バカボンのパパ Ver.）」篇",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "Uywq8FzxWiU",
+      "title": "femme fatale「だいしきゅーだいしゅき」Music Video",
+      "productionsBefore": [
+        "も豪華で、ど頭のOPのアニメーションはmisaさんに、女の子の見てる夢の中という内容でお願いしました。めちゃくちゃ可愛くて最高です"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "Vgqhpza-E7w",
+      "title": "清 竜人25 再結成",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "Vi7Ag7K52Vo",
+      "title": "【BILCOM RECRUITING】ビルコム株式会社 採用メッセージムービー「見えるPRへ。」",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "VIYF8VnmGYs",
+      "title": "トヨタシステムズ　コンセプトムービー",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "vlpLgjnRPhI",
+      "title": "Caravan Palace - Miracle (Live)",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "vpyeQeTDGFA",
+      "title": "Honda \"Paper\" by PES | Emmy Nominated Commercial",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "VQFPdVe6WyQ",
+      "title": "ポカリスエットCM｜「君はきっと、誰かの太陽。」篇 History Video",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "vsPbfdv41-w",
+      "title": "【公式】タコピーの原罪【上巻発売記念PV】",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "vtC11L1y3WE",
+      "title": "森下仁丹 第四新卒採用「オッサンたちへ」篇",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "VvUzDn5usVw",
+      "title": "世界初かわいい味噌汁/Definition of Japanese Kawaii",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "vZArHdJT1do",
+      "title": "Kanehide Group 75th Archives",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "w06MRLEb5kY",
+      "title": "3年A組タイトルオープニング",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "w4eTR7tci6A",
+      "title": "Dropbox Intro Video",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "W5GnNx9Uz-8",
+      "title": "アップルCM「Think Different.」（声：スティーブ・ジョブズ）［日本語字幕］",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "w6IiZVp7vlg",
+      "title": "ONE OK ROCK×HondaJet「Go Vantage Point 」60秒 Honda CM",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "w8QgUN09cqk",
+      "title": "パーパスムービー2023「ONE PERSON ONE PURPOSE」",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "WIJeU5iGvZw",
+      "title": "会社紹介動画 ―旭化成",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "WOABEBtJ4iA",
+      "title": "神戸市交通局安心安全の取り組み「何時でも日々の暮らしを守る」",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "wu2PoOH4AL4",
+      "title": "Web CM  IT / 通信 / ネットサービス   あっバイトの時間だ　No.1篇（30秒）",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "wx_H_pxbwdE",
+      "title": "あなたのやりたいことはデザインかもしれない ｜Goodpatch",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "X2Er1654hlo",
+      "title": "POLYSICS 『I My Me Mine（All Star ver.）』",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "X6ZwuV3gjhE",
+      "title": "部活を支える“部長”たちの葛藤と熱さを描く！楽曲はTikTok「ロクデナシ」で話題のにんじんが担当　カロリーメイトWEB動画「今日、部長になった」篇",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "x7mSpHbqOGs",
+      "title": "FUJITSU RECRUIT",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "xi6wmx3J8mc",
+      "title": "スポティファイ　cm インフェルノ",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "xpK_ijHAdpY",
+      "title": "LTR EXPO YT P2 230831",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "xpn5Ax2pz14",
+      "title": "KETE 2022 Brand Movie No More Rules",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "xroJDVM2v28",
+      "title": "SURGE（サージ）サービス紹介動画",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "XxOPsfG7-7E",
+      "title": "【チェンソーマン】TASAKIコラボスペシャルPV",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "XZOOP9QUvas",
+      "title": "「変革2027」コンセプト編",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "y8lzv_AD6aw",
+      "title": "Our music is so good you'll forget you're actually working | Artlist.io",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "YAMYlTE6_Go",
+      "title": "DESCENTE x 石川祐希 「MAKE THE MOMENT」FULL",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "YatJsm5i8Jw",
+      "title": "Hump Back - 星丘公園 Music Video",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "YH2qyPanqK4",
+      "title": "【リクルート新卒採用】コンセプトムービー『PLAY RECRUIT, PLAY OPPORTUNITIES.』(Short Ver.)",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "yjY0fReXPKo",
+      "title": "三菱地所「また明日、この街と」大手町・丸の内・有楽町ブランドムービー",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "Yn1oHuQKQn8",
+      "title": "電気グルーヴの石野卓球がアップデート! カッコ良すぎる新WEB動画",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "yRv-MikY3d0",
+      "title": "「その瞬間に、心がはずむ。」ザ・パークハビオ コンセプトムービー｜三菱地所レジデンス",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "yS95IYj_6Bs",
+      "title": "【綾野剛×常田大希】「闇と光を行き来している」",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "YWoxH0OH3qc",
+      "title": "未来のものづくり：Japan Manufacturing Tomorrow～Connected Industries～",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "z-7-lo37M8I",
+      "title": "何度見てもかっこいい #timelesz project #タイプロ #ネトフリでタイプロ",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "Zbh2twswOS4",
+      "title": "80秒で分かる、京セラのファインセラミックス",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "zE6LrM2L4Vw",
+      "title": "プロフェッショナル 仕事の流儀 田中みな実 ～求められて、私は輝く～ PR動画",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "Zg5CJXz4rrU",
+      "title": "ADK RECRUIT 2020 スタメン採用",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "ZgXOpDVD2M4",
+      "title": "WEATHER WARS | 崎永海運株式会社 企業PRウェブムービー",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "ZjWvFj3Mesk",
+      "title": "【新卒採用/KCCS】コンセプトムービー「a Day in The Life by KCCS」",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "znp6seVRF2s",
+      "title": "【milet】AIとの音楽対談/人前で歌ったことで思いがけず歌手への道を歩み始めたAIとmilet / AIのライブでのこだわりと2人がライブでよくやってしまうこと【J-WAVE・WOW MUSIC】",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "zUdppx_9gz4",
+      "title": "【JSW 日本製鋼所】 斎藤工CM「私たちの使命篇」15秒Ver",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    },
+    {
+      "id": "ZUG9qYTJMsI",
+      "title": "DollarShaveClub.com - Our Blades Are F***ing Great",
+      "productionsBefore": [
+        "不明"
+      ],
+      "reason": "人物・会社名として安全に分離できない値を含むため自動更新しない"
+    }
+  ]
+}

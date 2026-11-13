@@ -1,0 +1,56 @@
+{
+  "kind": "youtube#videoListResponse",
+  "etag": "dJdgO82izPPYjKsX7sIMZAhMaQU",
+  "items": [
+    {
+      "kind": "youtube#video",
+      "etag": "4rlyR6ZW0daZQQoUmK7LJY7U8Z0",
+      "id": "9S8dljRfZDU",
+      "snippet": {
+        "publishedAt": "2025-10-18T10:00:06Z",
+        "channelId": "UCGWa1dMU_sDCaRQjdabsVgg",
+        "title": "flos/covered by 如月れん",
+        "description": "たくさんの人の優しさでここまで来れました。\n\noriginal: https://youtu.be/bUbOc97FpUA?si=zSoACdqC9TuYGaVZ\ninst:The Herb Shop様\nmix:さんかくずわり様\nillustration:沙月様\nmovie:塚田サオ様\nspecial thanks:胡桃のあ 橘ひなの",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/9S8dljRfZDU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/9S8dljRfZDU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/9S8dljRfZDU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/9S8dljRfZDU/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/9S8dljRfZDU/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "如月れん -Ren kisaragi-",
+        "categoryId": "20",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "ja",
+        "localized": {
+          "title": "flos/covered by 如月れん",
+          "description": "たくさんの人の優しさでここまで来れました。\n\noriginal: https://youtu.be/bUbOc97FpUA?si=zSoACdqC9TuYGaVZ\ninst:The Herb Shop様\nmix:さんかくずわり様\nillustration:沙月様\nmovie:塚田サオ様\nspecial thanks:胡桃のあ 橘ひなの"
+        }
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 1,
+    "resultsPerPage": 1
+  }
+}

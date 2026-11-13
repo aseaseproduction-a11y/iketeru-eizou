@@ -1,0 +1,4635 @@
+{
+  "generatedAt": "2026-08-19T09:35:35.636Z",
+  "summary": {
+    "total": 165,
+    "verified": 73,
+    "bova_verified": 1,
+    "video_refs_verified": 55,
+    "hold": 92,
+    "video_refs_hold": 15,
+    "shirotaeisuke_hold": 77,
+    "shirotaeisuke_verified": 17
+  },
+  "rows": [
+    {
+      "platform": "youtube",
+      "id": "8oPGJuZByzg",
+      "url": "https://www.youtube.com/watch?v=8oPGJuZByzg",
+      "source": "bova",
+      "sourceLabel": "BOVA",
+      "productionName": null,
+      "sourceUrls": [
+        "https://awardg.sendenkaigi.com/bova"
+      ],
+      "sourceContext": [
+        {
+          "source": "bova",
+          "sourceUrl": "https://awardg.sendenkaigi.com/bova",
+          "sourceLabel": "BOVA",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=8oPGJuZByzg",
+      "sourceUrl": "https://awardg.sendenkaigi.com/bova",
+      "title": "ロッテ「Let's ギューリッシュ」第11回BOVAグランプリ",
+      "retrievedTitle": "ロッテ「Let's ギューリッシュ」第11回BOVAグランプリ",
+      "thumbnail": "https://i.ytimg.com/vi/8oPGJuZByzg/hqdefault.jpg",
+      "channelTitle": "BOVA",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "edC4PfRGB2k",
+      "url": "https://www.youtube.com/watch?v=edC4PfRGB2k",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=edC4PfRGB2k",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "アドビ 学生・教職員個人版 | アドビで新しいスキルを身に着けよう",
+      "retrievedTitle": "アドビ 学生・教職員個人版 | アドビで新しいスキルを身に着けよう",
+      "thumbnail": "https://i.ytimg.com/vi/edC4PfRGB2k/hqdefault.jpg",
+      "channelTitle": "Adobe Creative Cloud Japan",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "yEHtc3-Hgjo",
+      "url": "https://www.youtube.com/watch?v=yEHtc3-Hgjo",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=yEHtc3-Hgjo",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "株式会社テクノシステム事業紹介動画",
+      "retrievedTitle": "株式会社テクノシステム事業紹介動画",
+      "thumbnail": "https://i.ytimg.com/vi/yEHtc3-Hgjo/hqdefault.jpg",
+      "channelTitle": "テクノシステム",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "SUH_lEfFU8g",
+      "url": "https://www.youtube.com/watch?v=SUH_lEfFU8g",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=SUH_lEfFU8g",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "SDG Animation",
+      "retrievedTitle": "SDG Animation",
+      "thumbnail": "https://i.ytimg.com/vi/SUH_lEfFU8g/hqdefault.jpg",
+      "channelTitle": "Bumbuku Creatives",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "f8WgZEZMMwM",
+      "url": "https://www.youtube.com/watch?v=f8WgZEZMMwM",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=f8WgZEZMMwM",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "SDGs Animation",
+      "retrievedTitle": "SDGs Animation",
+      "thumbnail": "https://i.ytimg.com/vi/f8WgZEZMMwM/hqdefault.jpg",
+      "channelTitle": "UNICBeirut1",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "sgYF_M5yPkU",
+      "url": "https://www.youtube.com/watch?v=sgYF_M5yPkU",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=sgYF_M5yPkU",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "【beBit】社長インタビュー",
+      "retrievedTitle": "【beBit】社長インタビュー",
+      "thumbnail": "https://i.ytimg.com/vi/sgYF_M5yPkU/hqdefault.jpg",
+      "channelTitle": "beBit",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "R6N0NbRSmdM",
+      "url": "https://www.youtube.com/watch?v=R6N0NbRSmdM",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=R6N0NbRSmdM",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "youtube",
+      "id": "hVv0PDrlhD8",
+      "url": "https://www.youtube.com/watch?v=hVv0PDrlhD8",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=hVv0PDrlhD8",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "【インタビュー映像】株式会社ジェイテック様_企業理念浸透動画",
+      "retrievedTitle": "【インタビュー映像】株式会社ジェイテック様_企業理念浸透動画",
+      "thumbnail": "https://i.ytimg.com/vi/hVv0PDrlhD8/hqdefault.jpg",
+      "channelTitle": "動画制作・映像制作のプルークス",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "x8FTI2PkAtI",
+      "url": "https://www.youtube.com/watch?v=x8FTI2PkAtI",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=x8FTI2PkAtI",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "１．関谷社長_リクルートインタビュー",
+      "retrievedTitle": "１．関谷社長_リクルートインタビュー",
+      "thumbnail": "https://i.ytimg.com/vi/x8FTI2PkAtI/hqdefault.jpg",
+      "channelTitle": "OASYS",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "7C_IOgKKQrM",
+      "url": "https://www.youtube.com/watch?v=7C_IOgKKQrM",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=7C_IOgKKQrM",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "高橋一生、心の葛藤を微妙な顔の変化で表現　『保険のビュッフェ』新TVCM「米寿」「実家に挨拶」篇",
+      "retrievedTitle": "高橋一生、心の葛藤を微妙な顔の変化で表現　『保険のビュッフェ』新TVCM「米寿」「実家に挨拶」篇",
+      "thumbnail": "https://i.ytimg.com/vi/7C_IOgKKQrM/hqdefault.jpg",
+      "channelTitle": "oricon",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "rdOWZsoneT4",
+      "url": "https://www.youtube.com/watch?v=rdOWZsoneT4",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=rdOWZsoneT4",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "高橋一生、出産に立ち会い中、お金の不安抱く　『保険のビュッフェ』新CM「出産」篇",
+      "retrievedTitle": "高橋一生、出産に立ち会い中、お金の不安抱く　『保険のビュッフェ』新CM「出産」篇",
+      "thumbnail": "https://i.ytimg.com/vi/rdOWZsoneT4/hqdefault.jpg",
+      "channelTitle": "oricon",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "f0IFhZ1yHyE",
+      "url": "https://www.youtube.com/watch?v=f0IFhZ1yHyE",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=f0IFhZ1yHyE",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "東海大学　理学部",
+      "retrievedTitle": "東海大学　理学部",
+      "thumbnail": "https://i.ytimg.com/vi/f0IFhZ1yHyE/hqdefault.jpg",
+      "channelTitle": "TOKAI UNIVERSITY 東海大学 入試広報担当",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "Jy-M0tRZWyQ",
+      "url": "https://www.youtube.com/watch?v=Jy-M0tRZWyQ",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=Jy-M0tRZWyQ",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "【公式】2019選手紹介Full（ツエーゲン金沢）",
+      "retrievedTitle": "【公式】2019選手紹介Full（ツエーゲン金沢）",
+      "thumbnail": "https://i.ytimg.com/vi/Jy-M0tRZWyQ/hqdefault.jpg",
+      "channelTitle": "(公式)ツエーゲン金沢「Zweigen Channel ZONEZ」",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "_8aDLzJdlbo",
+      "url": "https://www.youtube.com/watch?v=_8aDLzJdlbo",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=_8aDLzJdlbo",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "youtube",
+      "id": "EhmPzkJA1tQ",
+      "url": "https://www.youtube.com/watch?v=EhmPzkJA1tQ",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=EhmPzkJA1tQ",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "入金消込を効率化させる「Victory-ONE」",
+      "retrievedTitle": "入金消込を効率化させる「Victory-ONE」",
+      "thumbnail": "https://i.ytimg.com/vi/EhmPzkJA1tQ/hqdefault.jpg",
+      "channelTitle": "R&AC",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "MEdrty6Zdzk",
+      "url": "https://www.youtube.com/watch?v=MEdrty6Zdzk",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=MEdrty6Zdzk",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "youtube",
+      "id": "S7UmB-jGSbE",
+      "url": "https://www.youtube.com/watch?v=S7UmB-jGSbE",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=S7UmB-jGSbE",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "iPhoneで写真を検索する方法 — Apple",
+      "retrievedTitle": "iPhoneで写真を検索する方法 — Apple",
+      "thumbnail": "https://i.ytimg.com/vi/S7UmB-jGSbE/hqdefault.jpg",
+      "channelTitle": "Apple Japan",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "dkAYAQtIRno",
+      "url": "https://www.youtube.com/watch?v=dkAYAQtIRno",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=dkAYAQtIRno",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "youtube",
+      "id": "J09zchCsFcM",
+      "url": "https://www.youtube.com/watch?v=J09zchCsFcM",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=J09zchCsFcM",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "【宇治市ＰＲ動画】観光アクションゲーム「宇治市〜宇治茶と源氏物語のまち〜」",
+      "retrievedTitle": "【宇治市ＰＲ動画】観光アクションゲーム「宇治市〜宇治茶と源氏物語のまち〜」",
+      "thumbnail": "https://i.ytimg.com/vi/J09zchCsFcM/hqdefault.jpg",
+      "channelTitle": "ujicity",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "tN-yGi-Z_9w",
+      "url": "https://www.youtube.com/watch?v=tN-yGi-Z_9w",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=tN-yGi-Z_9w",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "【SDGs】sustain+R【Motion Graphics】",
+      "retrievedTitle": "【SDGs】sustain+R【Motion Graphics】",
+      "thumbnail": "https://i.ytimg.com/vi/tN-yGi-Z_9w/hqdefault.jpg",
+      "channelTitle": "実質",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "QzFgkJM5bxY",
+      "url": "https://www.youtube.com/watch?v=QzFgkJM5bxY",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=QzFgkJM5bxY",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "高槻市ＰＲアニメーション「MY LIFE, MORE LIFE.」",
+      "retrievedTitle": "高槻市ＰＲアニメーション「MY LIFE, MORE LIFE.」",
+      "thumbnail": "https://i.ytimg.com/vi/QzFgkJM5bxY/hqdefault.jpg",
+      "channelTitle": "ponycanyon",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "d90eljvU1rY",
+      "url": "https://www.youtube.com/watch?v=d90eljvU1rY",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=d90eljvU1rY",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "先輩、後輩、売り子…　美女10人からのアプローチに思わず「汗る」",
+      "retrievedTitle": "先輩、後輩、売り子…　美女10人からのアプローチに思わず「汗る」",
+      "thumbnail": "https://i.ytimg.com/vi/d90eljvU1rY/hqdefault.jpg",
+      "channelTitle": "MANTAN TV",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "sCl3cpGX4wE",
+      "url": "https://www.youtube.com/watch?v=sCl3cpGX4wE",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=sCl3cpGX4wE",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "youtube",
+      "id": "XN2mOAeIDNU",
+      "url": "https://www.youtube.com/watch?v=XN2mOAeIDNU",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=XN2mOAeIDNU",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "youtube",
+      "id": "GbKPCL_9Hx8",
+      "url": "https://www.youtube.com/watch?v=GbKPCL_9Hx8",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=GbKPCL_9Hx8",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "youtube",
+      "id": "GTRaCNpgffk",
+      "url": "https://www.youtube.com/watch?v=GTRaCNpgffk",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=GTRaCNpgffk",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "映像素材001_伊予市五色姫海浜公園",
+      "retrievedTitle": "映像素材001_伊予市五色姫海浜公園",
+      "thumbnail": "https://i.ytimg.com/vi/GTRaCNpgffk/hqdefault.jpg",
+      "channelTitle": "愛媛県伊予市_映像素材",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "PxkSQTzx8HQ",
+      "url": "https://www.youtube.com/watch?v=PxkSQTzx8HQ",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=PxkSQTzx8HQ",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "happy short trip 秋篇（山口県防府市周南市の観光イメージ動画 秋篇）",
+      "retrievedTitle": "happy short trip 秋篇（山口県防府市周南市の観光イメージ動画 秋篇）",
+      "thumbnail": "https://i.ytimg.com/vi/PxkSQTzx8HQ/hqdefault.jpg",
+      "channelTitle": "防府市・周南市 観光連携推進協議会",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "5cNfpnmRcfU",
+      "url": "https://www.youtube.com/watch?v=5cNfpnmRcfU",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=5cNfpnmRcfU",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "Tokyo's hidden islands　小笠原諸島　Bonin Islands",
+      "retrievedTitle": "Tokyo's hidden islands　小笠原諸島　Bonin Islands",
+      "thumbnail": "https://i.ytimg.com/vi/5cNfpnmRcfU/hqdefault.jpg",
+      "channelTitle": "小笠原村観光局",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "0eNxg1AlCdw",
+      "url": "https://www.youtube.com/watch?v=0eNxg1AlCdw",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=0eNxg1AlCdw",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "所沢市PR空撮動画（完成版）",
+      "retrievedTitle": "所沢市PR空撮動画（完成版）",
+      "thumbnail": "https://i.ytimg.com/vi/0eNxg1AlCdw/hqdefault.jpg",
+      "channelTitle": "所沢市公式YouTubeチャンネル",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "1ST54X7sotc",
+      "url": "https://www.youtube.com/watch?v=1ST54X7sotc",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=1ST54X7sotc",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "ひじまち純粋度100％MOVIE「しあわせリボンの町」ドラマ篇",
+      "retrievedTitle": "ひじまち純粋度100％MOVIE「しあわせリボンの町」ドラマ篇",
+      "thumbnail": "https://i.ytimg.com/vi/1ST54X7sotc/hqdefault.jpg",
+      "channelTitle": "大分県日出町公式チャンネル",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "8BxKB-kY570",
+      "url": "https://www.youtube.com/watch?v=8BxKB-kY570",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=8BxKB-kY570",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "シミトリー小",
+      "retrievedTitle": "シミトリー小",
+      "thumbnail": "https://i.ytimg.com/vi/8BxKB-kY570/hqdefault.jpg",
+      "channelTitle": "すっぴん美白専門サロン",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "oVNz-tLAwfI",
+      "url": "https://www.youtube.com/watch?v=oVNz-tLAwfI",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=oVNz-tLAwfI",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "youtube",
+      "id": "YdkBLUwksrQ",
+      "url": "https://www.youtube.com/watch?v=YdkBLUwksrQ",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=YdkBLUwksrQ",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "稼げると話題の妹のノートとは！？",
+      "retrievedTitle": "稼げると話題の妹のノートとは！？",
+      "thumbnail": "https://i.ytimg.com/vi/YdkBLUwksrQ/hqdefault.jpg",
+      "channelTitle": "無料で稼げる極秘情報研究所",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "sD7_6en5xxQ",
+      "url": "https://www.youtube.com/watch?v=sD7_6en5xxQ",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=sD7_6en5xxQ",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "aya動画",
+      "retrievedTitle": "aya動画",
+      "thumbnail": "https://i.ytimg.com/vi/sD7_6en5xxQ/hqdefault.jpg",
+      "channelTitle": "未成年OK!の安心安全スマホ副業",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "4PojHU4ckSk",
+      "url": "https://www.youtube.com/watch?v=4PojHU4ckSk",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=4PojHU4ckSk",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "株式会社ティー・シー・ピー　OEM事業紹介",
+      "retrievedTitle": "株式会社ティー・シー・ピー　OEM事業紹介",
+      "thumbnail": "https://i.ytimg.com/vi/4PojHU4ckSk/hqdefault.jpg",
+      "channelTitle": "TCPチャンネル",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "92IAMsrCloQ",
+      "url": "https://www.youtube.com/watch?v=92IAMsrCloQ",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=92IAMsrCloQ",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "The United Nations Sustainable Development Goals",
+      "retrievedTitle": "The United Nations Sustainable Development Goals",
+      "thumbnail": "https://i.ytimg.com/vi/92IAMsrCloQ/hqdefault.jpg",
+      "channelTitle": "JCI Philippines",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "0oioI53EGU0",
+      "url": "https://www.youtube.com/watch?v=0oioI53EGU0",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=0oioI53EGU0",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "Ascent Business Consulting株式会社の事業・サービスをご紹介します",
+      "retrievedTitle": "Ascent Business Consulting株式会社の事業・サービスをご紹介します",
+      "thumbnail": "https://i.ytimg.com/vi/0oioI53EGU0/hqdefault.jpg",
+      "channelTitle": "【公式】Ascent Business Consulting 株式会社",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "LYZYR-6aPaQ",
+      "url": "https://www.youtube.com/watch?v=LYZYR-6aPaQ",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=LYZYR-6aPaQ",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "東芝インフラシステムズ株式会社 事業領域紹介（採用・事業紹介）",
+      "retrievedTitle": "東芝インフラシステムズ株式会社 事業領域紹介（採用・事業紹介）",
+      "thumbnail": "https://i.ytimg.com/vi/LYZYR-6aPaQ/hqdefault.jpg",
+      "channelTitle": "TOSHIBA Infrastructure Systems & Solutions",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "gUB1fwNhbDs",
+      "url": "https://www.youtube.com/watch?v=gUB1fwNhbDs",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=gUB1fwNhbDs",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "SDGsに関する取り組みの紹介動画",
+      "retrievedTitle": "SDGsに関する取り組みの紹介動画",
+      "thumbnail": "https://i.ytimg.com/vi/gUB1fwNhbDs/hqdefault.jpg",
+      "channelTitle": "TOPPANグループ公式チャンネル / TOPPAN Group Official Channel",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "n7JS_wd4JUY",
+      "url": "https://www.youtube.com/watch?v=n7JS_wd4JUY",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=n7JS_wd4JUY",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "【TikTok】#だれでもダンスWEBムービー ギネス世界記録™挑戦編",
+      "retrievedTitle": "【TikTok】#だれでもダンスWEBムービー ギネス世界記録™挑戦編",
+      "thumbnail": "https://i.ytimg.com/vi/n7JS_wd4JUY/hqdefault.jpg",
+      "channelTitle": "TikTok Japan",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "hke89JHcUug",
+      "url": "https://www.youtube.com/watch?v=hke89JHcUug",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=hke89JHcUug",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "【MUD7】新潟県南魚沼市を、遊びつくせ",
+      "retrievedTitle": "【MUD7】新潟県南魚沼市を、遊びつくせ",
+      "thumbnail": "https://i.ytimg.com/vi/hke89JHcUug/hqdefault.jpg",
+      "channelTitle": "MINAMI-UONUMA ART PROJECT",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "ozXLK4DChRQ",
+      "url": "https://www.youtube.com/watch?v=ozXLK4DChRQ",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=ozXLK4DChRQ",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "＃一勝に賭けた青春　募集編",
+      "retrievedTitle": "＃一勝に賭けた青春　募集編",
+      "thumbnail": "https://i.ytimg.com/vi/ozXLK4DChRQ/hqdefault.jpg",
+      "channelTitle": "宇佐市 Usa City",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "7gAyMOSFiR4",
+      "url": "https://www.youtube.com/watch?v=7gAyMOSFiR4",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=7gAyMOSFiR4",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "神山つなプロ #4　孫の手プロジェクト［高校プロジェクト・その１］",
+      "retrievedTitle": "神山つなプロ #4　孫の手プロジェクト［高校プロジェクト・その１］",
+      "thumbnail": "https://i.ytimg.com/vi/7gAyMOSFiR4/hqdefault.jpg",
+      "channelTitle": "神山つなぐ公社",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "3E5MpokSwhk",
+      "url": "https://www.youtube.com/watch?v=3E5MpokSwhk",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=3E5MpokSwhk",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "Head | Vimeo Create | :15 | 16x9",
+      "retrievedTitle": "Head | Vimeo Create | :15 | 16x9",
+      "thumbnail": "https://i.ytimg.com/vi/3E5MpokSwhk/hqdefault.jpg",
+      "channelTitle": "Vimeo",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "cnoH93IgRUs",
+      "url": "https://www.youtube.com/watch?v=cnoH93IgRUs",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=cnoH93IgRUs",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "youtube",
+      "id": "V-k9JE9xcyU",
+      "url": "https://www.youtube.com/watch?v=V-k9JE9xcyU",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=V-k9JE9xcyU",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "株式会社イワキ 会社紹介・社員インタビュー動画【メンテナンス本部】",
+      "retrievedTitle": "株式会社イワキ 会社紹介・社員インタビュー動画【メンテナンス本部】",
+      "thumbnail": "https://i.ytimg.com/vi/V-k9JE9xcyU/hqdefault.jpg",
+      "channelTitle": "IWAKI PUMPS",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "j8betCwqkB0",
+      "url": "https://www.youtube.com/watch?v=j8betCwqkB0",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=j8betCwqkB0",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "【採用動画】カルビー株式会社様（LOCUS制作実績）",
+      "retrievedTitle": "【採用動画】カルビー株式会社様（LOCUS制作実績）",
+      "thumbnail": "https://i.ytimg.com/vi/j8betCwqkB0/hqdefault.jpg",
+      "channelTitle": "動画制作の株式会社LOCUS",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "ajoyTQAzSio",
+      "url": "https://www.youtube.com/watch?v=ajoyTQAzSio",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=ajoyTQAzSio",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "youtube",
+      "id": "kEDGAM21sqs",
+      "url": "https://www.youtube.com/watch?v=kEDGAM21sqs",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=kEDGAM21sqs",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "松阪牛動画",
+      "retrievedTitle": "松阪牛動画",
+      "thumbnail": "https://i.ytimg.com/vi/kEDGAM21sqs/hqdefault.jpg",
+      "channelTitle": "松阪市観光協会",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "6iS6mNvkNjQ",
+      "url": "https://www.youtube.com/watch?v=6iS6mNvkNjQ",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=6iS6mNvkNjQ",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "youtube",
+      "id": "bXsM9eKnt0c",
+      "url": "https://www.youtube.com/watch?v=bXsM9eKnt0c",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=bXsM9eKnt0c",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "株式会社メディックス『新卒採用サイト』会社紹介動画",
+      "retrievedTitle": "株式会社メディックス『新卒採用サイト』会社紹介動画",
+      "thumbnail": "https://i.ytimg.com/vi/bXsM9eKnt0c/hqdefault.jpg",
+      "channelTitle": "Medix新卒採用",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "zyAZHKmhe1I",
+      "url": "https://www.youtube.com/watch?v=zyAZHKmhe1I",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=zyAZHKmhe1I",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "セキ株式会社｜新卒採用「考える人。」",
+      "retrievedTitle": "セキ株式会社｜新卒採用「考える人。」",
+      "thumbnail": "https://i.ytimg.com/vi/zyAZHKmhe1I/hqdefault.jpg",
+      "channelTitle": "セキ株式会社",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "nWV5w8Ctmks",
+      "url": "https://www.youtube.com/watch?v=nWV5w8Ctmks",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=nWV5w8Ctmks",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "【WEBCM】株式会社ポテパン「POTEPAN CAMP」 プロモーション動画【CINEMATO制作実績】",
+      "retrievedTitle": "【WEBCM】株式会社ポテパン「POTEPAN CAMP」 プロモーション動画【CINEMATO制作実績】",
+      "thumbnail": "https://i.ytimg.com/vi/nWV5w8Ctmks/hqdefault.jpg",
+      "channelTitle": "CINEMATO - 動画制作・映像制作サービス -",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "UcUFHf9HMf0",
+      "url": "https://www.youtube.com/watch?v=UcUFHf9HMf0",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=UcUFHf9HMf0",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "採用向け会社紹介動画「株式会社グローバルビジョンテクノロジー」（Crevo制作実績）",
+      "retrievedTitle": "採用向け会社紹介動画「株式会社グローバルビジョンテクノロジー」（Crevo制作実績）",
+      "thumbnail": "https://i.ytimg.com/vi/UcUFHf9HMf0/hqdefault.jpg",
+      "channelTitle": "動画制作会社Crevo (クレボ)",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "XKn1BaaV2u0",
+      "url": "https://www.youtube.com/watch?v=XKn1BaaV2u0",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=XKn1BaaV2u0",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "Wix.com（ウィックス）Web CM |「毎日7万人に選ばれるウェブサイト作成ツール」",
+      "retrievedTitle": "Wix.com（ウィックス）Web CM |「毎日7万人に選ばれるウェブサイト作成ツール」",
+      "thumbnail": "https://i.ytimg.com/vi/XKn1BaaV2u0/hqdefault.jpg",
+      "channelTitle": "Wix Japan",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "vT4bIQjIXJo",
+      "url": "https://www.youtube.com/watch?v=vT4bIQjIXJo",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=vT4bIQjIXJo",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "BOSAI POINT サービス紹介 LP",
+      "retrievedTitle": "BOSAI POINT サービス紹介 LP",
+      "thumbnail": "https://i.ytimg.com/vi/vT4bIQjIXJo/hqdefault.jpg",
+      "channelTitle": "POINT BOSAI",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "oRegu_E0p8g",
+      "url": "https://www.youtube.com/watch?v=oRegu_E0p8g",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=oRegu_E0p8g",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "youtube",
+      "id": "eRQ1Hq-oSd4",
+      "url": "https://www.youtube.com/watch?v=eRQ1Hq-oSd4",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=eRQ1Hq-oSd4",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "Start Your Own Business for What Success Means to You, with the help of Shopify (JP-Long)",
+      "retrievedTitle": "Start Your Own Business for What Success Means to You, with the help of Shopify (JP-Long)",
+      "thumbnail": "https://i.ytimg.com/vi/eRQ1Hq-oSd4/hqdefault.jpg",
+      "channelTitle": "Shopify",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "twQaPrifeQc",
+      "url": "https://www.youtube.com/watch?v=twQaPrifeQc",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=twQaPrifeQc",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "【まなびポケット】サービス紹介動画",
+      "retrievedTitle": "【まなびポケット】サービス紹介動画",
+      "thumbnail": "https://i.ytimg.com/vi/twQaPrifeQc/hqdefault.jpg",
+      "channelTitle": "教育クラウドプラットフォームまなびポケット",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "x2BA1-LMqb4",
+      "url": "https://www.youtube.com/watch?v=x2BA1-LMqb4",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=x2BA1-LMqb4",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "youtube",
+      "id": "NA4QZ43N7uE",
+      "url": "https://www.youtube.com/watch?v=NA4QZ43N7uE",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=NA4QZ43N7uE",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "周年記念動画　タクシー配車アプリ「DiDi（ディディ）」（Crevo制作実績）",
+      "retrievedTitle": "周年記念動画　タクシー配車アプリ「DiDi（ディディ）」（Crevo制作実績）",
+      "thumbnail": "https://i.ytimg.com/vi/NA4QZ43N7uE/hqdefault.jpg",
+      "channelTitle": "動画制作会社Crevo (クレボ)",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "eGbM4QlN3N0",
+      "url": "https://www.youtube.com/watch?v=eGbM4QlN3N0",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=eGbM4QlN3N0",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "【動画広告・WebCM】GO株式会社様（LOCUS制作実績）",
+      "retrievedTitle": "【動画広告・WebCM】GO株式会社様（LOCUS制作実績）",
+      "thumbnail": "https://i.ytimg.com/vi/eGbM4QlN3N0/hqdefault.jpg",
+      "channelTitle": "動画制作の株式会社LOCUS",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "aUydbON1Pec",
+      "url": "https://www.youtube.com/watch?v=aUydbON1Pec",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=aUydbON1Pec",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "JET Globalサービス紹介動画",
+      "retrievedTitle": "JET Globalサービス紹介動画",
+      "thumbnail": "https://i.ytimg.com/vi/aUydbON1Pec/hqdefault.jpg",
+      "channelTitle": "株式会社EXIDEA",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "zG55V0NmwjQ",
+      "url": "https://www.youtube.com/watch?v=zG55V0NmwjQ",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=zG55V0NmwjQ",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "Polarify生体認証サービス紹介映像",
+      "retrievedTitle": "Polarify生体認証サービス紹介映像",
+      "thumbnail": "https://i.ytimg.com/vi/zG55V0NmwjQ/hqdefault.jpg",
+      "channelTitle": "株式会社EXIDEA",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "4l4_X9kH6f4",
+      "url": "https://www.youtube.com/watch?v=4l4_X9kH6f4",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=4l4_X9kH6f4",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "youtube",
+      "id": "hfSL499YuwU",
+      "url": "https://www.youtube.com/watch?v=hfSL499YuwU",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=hfSL499YuwU",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "総合診療医 紹介ビデオ(Full ver.)",
+      "retrievedTitle": "総合診療医 紹介ビデオ(Full ver.)",
+      "thumbnail": "https://i.ytimg.com/vi/hfSL499YuwU/hqdefault.jpg",
+      "channelTitle": "日本プライマリ・ケア連合学会 公式チャンネル",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "ezF1ZJurYig",
+      "url": "https://www.youtube.com/watch?v=ezF1ZJurYig",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=ezF1ZJurYig",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "youtube",
+      "id": "PxfHeL0RR8E",
+      "url": "https://www.youtube.com/watch?v=PxfHeL0RR8E",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=PxfHeL0RR8E",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "Rediscover Paradise Okinawa - 土山直純",
+      "retrievedTitle": "Rediscover Paradise Okinawa - 土山直純",
+      "thumbnail": "https://i.ytimg.com/vi/PxfHeL0RR8E/hqdefault.jpg",
+      "channelTitle": "Corona Extra Japan",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "8KyjgJHmKC8",
+      "url": "https://www.youtube.com/watch?v=8KyjgJHmKC8",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=8KyjgJHmKC8",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "霧島酒造 ブランドムービー",
+      "retrievedTitle": "霧島酒造 ブランドムービー",
+      "thumbnail": "https://i.ytimg.com/vi/8KyjgJHmKC8/hqdefault.jpg",
+      "channelTitle": "霧島チャンネル",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "xOviz0ZS6Ks",
+      "url": "https://www.youtube.com/watch?v=xOviz0ZS6Ks",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=xOviz0ZS6Ks",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "VALORANT Gameplay Trailer 16x9 01m00s JP ja v002",
+      "retrievedTitle": "VALORANT Gameplay Trailer 16x9 01m00s JP ja v002",
+      "thumbnail": "https://i.ytimg.com/vi/xOviz0ZS6Ks/hqdefault.jpg",
+      "channelTitle": "VALORANT",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "fB5mqWx15Dg",
+      "url": "https://www.youtube.com/watch?v=fB5mqWx15Dg",
+      "source": "video_refs",
+      "sourceLabel": "Video Refs",
+      "productionName": null,
+      "sourceUrls": [
+        "https://video-refs.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "video_refs",
+          "sourceUrl": "https://video-refs.com/",
+          "sourceLabel": "Video Refs",
+          "productionName": null
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=fB5mqWx15Dg",
+      "sourceUrl": "https://video-refs.com/",
+      "title": "New: The Chore Blazer",
+      "retrievedTitle": "New: The Chore Blazer",
+      "thumbnail": "https://i.ytimg.com/vi/fB5mqWx15Dg/hqdefault.jpg",
+      "channelTitle": "H&M",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "vimeo",
+      "id": "1211577422",
+      "url": "https://vimeo.com/1211577422",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/1211577422",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "youtube",
+      "id": "CU9cVc0zIkU",
+      "url": "https://www.youtube.com/watch?v=CU9cVc0zIkU",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=CU9cVc0zIkU",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "あの日から、すべては2026年のために。｜最高の景色を2026　FOR OUR GRATEST STAGE",
+      "retrievedTitle": "あの日から、すべては2026年のために。｜最高の景色を2026　FOR OUR GRATEST STAGE",
+      "thumbnail": "https://i.ytimg.com/vi/CU9cVc0zIkU/hqdefault.jpg",
+      "channelTitle": "JFATV",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "vimeo",
+      "id": "1211580290",
+      "url": "https://vimeo.com/1211580290",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/1211580290",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "1120357423",
+      "url": "https://vimeo.com/1120357423",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/1120357423",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "1025113137",
+      "url": "https://vimeo.com/1025113137",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/1025113137",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "785226636",
+      "url": "https://vimeo.com/785226636",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/785226636",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "962002040",
+      "url": "https://vimeo.com/962002040",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/962002040",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "308535994",
+      "url": "https://vimeo.com/308535994",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/308535994",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "youtube",
+      "id": "wSqORcAwi54",
+      "url": "https://www.youtube.com/watch?v=wSqORcAwi54",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=wSqORcAwi54",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "STARBUCKS Autumn is Coming - STARBUCKS Autumn 2021",
+      "retrievedTitle": "STARBUCKS Autumn is Coming - STARBUCKS Autumn 2021",
+      "thumbnail": "https://i.ytimg.com/vi/wSqORcAwi54/hqdefault.jpg",
+      "channelTitle": "スターバックス 公式",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "vimeo",
+      "id": "395637186",
+      "url": "https://vimeo.com/395637186",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/395637186",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "946475628",
+      "url": "https://vimeo.com/946475628",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/946475628",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "924310433",
+      "url": "https://vimeo.com/924310433",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/924310433",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "youtube",
+      "id": "VPB_J6Egi28",
+      "url": "https://www.youtube.com/watch?v=VPB_J6Egi28",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=VPB_J6Egi28",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "『チェンソーマン』9 巻発売記念スペシャルPV",
+      "retrievedTitle": "『チェンソーマン』9 巻発売記念スペシャルPV",
+      "thumbnail": "https://i.ytimg.com/vi/VPB_J6Egi28/hqdefault.jpg",
+      "channelTitle": "ジャンプチャンネル",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "-Sb4wxbHh-4",
+      "url": "https://www.youtube.com/watch?v=-Sb4wxbHh-4",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=-Sb4wxbHh-4",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "『ONE PIECE』106巻 公式テーマソング「未来島 ~Future Island~」PV",
+      "retrievedTitle": "『ONE PIECE』106巻 公式テーマソング「未来島 ~Future Island~」PV",
+      "thumbnail": "https://i.ytimg.com/vi/-Sb4wxbHh-4/hqdefault.jpg",
+      "channelTitle": "ONE PIECE公式YouTubeチャンネル",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "fX9NK-_YqlI",
+      "url": "https://www.youtube.com/watch?v=fX9NK-_YqlI",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=fX9NK-_YqlI",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "『ONE PIECE』103巻発売記念ムービー「ついにギア５」",
+      "retrievedTitle": "『ONE PIECE』103巻発売記念ムービー「ついにギア５」",
+      "thumbnail": "https://i.ytimg.com/vi/fX9NK-_YqlI/hqdefault.jpg",
+      "channelTitle": "ONE PIECE公式YouTubeチャンネル",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "CvKzGGZhouI",
+      "url": "https://www.youtube.com/watch?v=CvKzGGZhouI",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=CvKzGGZhouI",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "【公式】『カグラバチ』7巻発売記念PV｜“全話、斬新。”【週刊少年ジャンプ】",
+      "retrievedTitle": "【公式】『カグラバチ』7巻発売記念PV｜“全話、斬新。”【週刊少年ジャンプ】",
+      "thumbnail": "https://i.ytimg.com/vi/CvKzGGZhouI/hqdefault.jpg",
+      "channelTitle": "ジャンプチャンネル",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "vimeo",
+      "id": "728734191",
+      "url": "https://vimeo.com/728734191",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/728734191",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "1120360297",
+      "url": "https://vimeo.com/1120360297",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/1120360297",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "298202444",
+      "url": "https://vimeo.com/298202444",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/298202444",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "288767275",
+      "url": "https://vimeo.com/288767275",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/288767275",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "youtube",
+      "id": "Co03Hc0CIXQ",
+      "url": "https://www.youtube.com/watch?v=Co03Hc0CIXQ",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=Co03Hc0CIXQ",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "【LUMINE】GIFT OF VOICE LUMINE CHRISTMAS 2021",
+      "retrievedTitle": "【LUMINE】GIFT OF VOICE LUMINE CHRISTMAS 2021",
+      "thumbnail": "https://i.ytimg.com/vi/Co03Hc0CIXQ/hqdefault.jpg",
+      "channelTitle": "LUMINE Official ルミネ公式",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "vimeo",
+      "id": "946480291",
+      "url": "https://vimeo.com/946480291",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/946480291",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "468107351",
+      "url": "https://vimeo.com/468107351",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/468107351",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "416877234",
+      "url": "https://vimeo.com/416877234",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/416877234",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "577065675",
+      "url": "https://vimeo.com/577065675",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/577065675",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "339967162",
+      "url": "https://vimeo.com/339967162",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/339967162",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "385956998",
+      "url": "https://vimeo.com/385956998",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/385956998",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "577084413",
+      "url": "https://vimeo.com/577084413",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/577084413",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "298959522",
+      "url": "https://vimeo.com/298959522",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/298959522",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "298960474",
+      "url": "https://vimeo.com/298960474",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/298960474",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "360952149",
+      "url": "https://vimeo.com/360952149",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/360952149",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "381098225",
+      "url": "https://vimeo.com/381098225",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/381098225",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "302466642",
+      "url": "https://vimeo.com/302466642",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/302466642",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "451874275",
+      "url": "https://vimeo.com/451874275",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/451874275",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "468107441",
+      "url": "https://vimeo.com/468107441",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/468107441",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "416856313",
+      "url": "https://vimeo.com/416856313",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/416856313",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "352826578",
+      "url": "https://vimeo.com/352826578",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/352826578",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "298203959",
+      "url": "https://vimeo.com/298203959",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/298203959",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "288761598",
+      "url": "https://vimeo.com/288761598",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/288761598",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "735709535",
+      "url": "https://vimeo.com/735709535",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/735709535",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "1211590454",
+      "url": "https://vimeo.com/1211590454",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/1211590454",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "298959658",
+      "url": "https://vimeo.com/298959658",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/298959658",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "416855354",
+      "url": "https://vimeo.com/416855354",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/416855354",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "298960531",
+      "url": "https://vimeo.com/298960531",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/298960531",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "299032565",
+      "url": "https://vimeo.com/299032565",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/299032565",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "169067986",
+      "url": "https://vimeo.com/169067986",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/169067986",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "299033601",
+      "url": "https://vimeo.com/299033601",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/299033601",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "298959728",
+      "url": "https://vimeo.com/298959728",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/298959728",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "298959840",
+      "url": "https://vimeo.com/298959840",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/298959840",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "298959939",
+      "url": "https://vimeo.com/298959939",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/298959939",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "298960333",
+      "url": "https://vimeo.com/298960333",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/298960333",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "298960401",
+      "url": "https://vimeo.com/298960401",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/298960401",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "298960276",
+      "url": "https://vimeo.com/298960276",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/298960276",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "298960171",
+      "url": "https://vimeo.com/298960171",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/298960171",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "416861971",
+      "url": "https://vimeo.com/416861971",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/416861971",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "299033839",
+      "url": "https://vimeo.com/299033839",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/299033839",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "417457840",
+      "url": "https://vimeo.com/417457840",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/417457840",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "youtube",
+      "id": "z_qWsQNWSVI",
+      "url": "https://www.youtube.com/watch?v=z_qWsQNWSVI",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=z_qWsQNWSVI",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "「この男、シャンクスではない。」 『ONE PIECE』113巻発売記念PV",
+      "retrievedTitle": "「この男、シャンクスではない。」 『ONE PIECE』113巻発売記念PV",
+      "thumbnail": "https://i.ytimg.com/vi/z_qWsQNWSVI/hqdefault.jpg",
+      "channelTitle": "ONE PIECE公式YouTubeチャンネル",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "azRlNFUs440",
+      "url": "https://www.youtube.com/watch?v=azRlNFUs440",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=azRlNFUs440",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "英雄譚 -『僕のヒーローアカデミア』連載完結記念動画",
+      "retrievedTitle": "英雄譚 -『僕のヒーローアカデミア』連載完結記念動画",
+      "thumbnail": "https://i.ytimg.com/vi/azRlNFUs440/hqdefault.jpg",
+      "channelTitle": "ジャンプチャンネル",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "Hl0oZ-70QAI",
+      "url": "https://www.youtube.com/watch?v=Hl0oZ-70QAI",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=Hl0oZ-70QAI",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "『僕のヒーローアカデミア』最終42巻発売記念PV",
+      "retrievedTitle": "『僕のヒーローアカデミア』最終42巻発売記念PV",
+      "thumbnail": "https://i.ytimg.com/vi/Hl0oZ-70QAI/hqdefault.jpg",
+      "channelTitle": "ジャンプチャンネル",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "JTQ_cw7-1-g",
+      "url": "https://www.youtube.com/watch?v=JTQ_cw7-1-g",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=JTQ_cw7-1-g",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "『呪術廻戦』劇場版公開／18巻発売記念スペシャルPV",
+      "retrievedTitle": "『呪術廻戦』劇場版公開／18巻発売記念スペシャルPV",
+      "thumbnail": "https://i.ytimg.com/vi/JTQ_cw7-1-g/hqdefault.jpg",
+      "channelTitle": "ジャンプチャンネル",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "cwju1yRv3Ag",
+      "url": "https://www.youtube.com/watch?v=cwju1yRv3Ag",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=cwju1yRv3Ag",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "【公式】『HUNTER×HUNTER 』38巻発売記念PV 【幻影旅団 -The Phantom Troupe-】",
+      "retrievedTitle": "【公式】『HUNTER×HUNTER 』38巻発売記念PV 【幻影旅団 -The Phantom Troupe-】",
+      "thumbnail": "https://i.ytimg.com/vi/cwju1yRv3Ag/hqdefault.jpg",
+      "channelTitle": "ジャンプチャンネル",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "vimeo",
+      "id": "989449961",
+      "url": "https://vimeo.com/989449961",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/989449961",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "youtube",
+      "id": "LuF7zWmVlgs",
+      "url": "https://www.youtube.com/watch?v=LuF7zWmVlgs",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=LuF7zWmVlgs",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "『チェンソーマン』19巻発売記念PV【チェンソー協奏曲 -歓喜の歌-】",
+      "retrievedTitle": "『チェンソーマン』19巻発売記念PV【チェンソー協奏曲 -歓喜の歌-】",
+      "thumbnail": "https://i.ytimg.com/vi/LuF7zWmVlgs/hqdefault.jpg",
+      "channelTitle": "ジャンプラチャンネル",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "3HjS-zK8v-U",
+      "url": "https://www.youtube.com/watch?v=3HjS-zK8v-U",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=3HjS-zK8v-U",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "『チェンソーマン』ジャンプフェスタ2022 スペシャルPV解禁",
+      "retrievedTitle": "『チェンソーマン』ジャンプフェスタ2022 スペシャルPV解禁",
+      "thumbnail": "https://i.ytimg.com/vi/3HjS-zK8v-U/hqdefault.jpg",
+      "channelTitle": "ジャンプチャンネル",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "vimeo",
+      "id": "1120353241",
+      "url": "https://vimeo.com/1120353241",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/1120353241",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "924314198",
+      "url": "https://vimeo.com/924314198",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/924314198",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "youtube",
+      "id": "kAv0kE-ODhk",
+      "url": "https://www.youtube.com/watch?v=kAv0kE-ODhk",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=kAv0kE-ODhk",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "QUBIT - \"Beautiful Days\" Official Music Video",
+      "retrievedTitle": "QUBIT - \"Beautiful Days\" Official Music Video",
+      "thumbnail": "https://i.ytimg.com/vi/kAv0kE-ODhk/hqdefault.jpg",
+      "channelTitle": "QUBIT",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "youtube",
+      "id": "-OdsFe8yOs8",
+      "url": "https://www.youtube.com/watch?v=-OdsFe8yOs8",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=-OdsFe8yOs8",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "KIRINJI - 再会 Meeting Again",
+      "retrievedTitle": "KIRINJI - 再会 Meeting Again",
+      "thumbnail": "https://i.ytimg.com/vi/-OdsFe8yOs8/hqdefault.jpg",
+      "channelTitle": "KIRINJIVEVO",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "vimeo",
+      "id": "453552129",
+      "url": "https://vimeo.com/453552129",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/453552129",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "417593699",
+      "url": "https://vimeo.com/417593699",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/417593699",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "451869360",
+      "url": "https://vimeo.com/451869360",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/451869360",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "308533881",
+      "url": "https://vimeo.com/308533881",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/308533881",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "324772189",
+      "url": "https://vimeo.com/324772189",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/324772189",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "288759452",
+      "url": "https://vimeo.com/288759452",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/288759452",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "451868703",
+      "url": "https://vimeo.com/451868703",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/451868703",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "451866716",
+      "url": "https://vimeo.com/451866716",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/451866716",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "298962518",
+      "url": "https://vimeo.com/298962518",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/298962518",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "237533255",
+      "url": "https://vimeo.com/237533255",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/237533255",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "Frasco - Viewtiful",
+      "retrievedTitle": "Frasco - Viewtiful",
+      "thumbnail": "https://i.vimeocdn.com/video/659975008-e392ae80988994a18937ab8426e723fe3b918bccac39f9fbd3b043312afcc5c1-d_640?region=us",
+      "channelTitle": "Eisuke Shirota",
+      "titleMatch": true,
+      "result": "verified",
+      "verificationReason": "official_source_direct_video_url_public_oembed_title"
+    },
+    {
+      "platform": "vimeo",
+      "id": "204638678",
+      "url": "https://vimeo.com/204638678",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/204638678",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "201792825",
+      "url": "https://vimeo.com/201792825",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/201792825",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "201792040",
+      "url": "https://vimeo.com/201792040",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/201792040",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "299033974",
+      "url": "https://vimeo.com/299033974",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/299033974",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "299043846",
+      "url": "https://vimeo.com/299043846",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/299043846",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "168909375",
+      "url": "https://vimeo.com/168909375",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/168909375",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "169067195",
+      "url": "https://vimeo.com/169067195",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/169067195",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "169273361",
+      "url": "https://vimeo.com/169273361",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/169273361",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "299034124",
+      "url": "https://vimeo.com/299034124",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/299034124",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "169067268",
+      "url": "https://vimeo.com/169067268",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/169067268",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "169067229",
+      "url": "https://vimeo.com/169067229",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/169067229",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "451862631",
+      "url": "https://vimeo.com/451862631",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/451862631",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "169273263",
+      "url": "https://vimeo.com/169273263",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/169273263",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "169067303",
+      "url": "https://vimeo.com/169067303",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/169067303",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    },
+    {
+      "platform": "vimeo",
+      "id": "168909480",
+      "url": "https://vimeo.com/168909480",
+      "source": "shirotaeisuke",
+      "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+      "productionName": "Eisuke Shirota",
+      "sourceUrls": [
+        "https://shirotaeisuke.com/"
+      ],
+      "sourceContext": [
+        {
+          "source": "shirotaeisuke",
+          "sourceUrl": "https://shirotaeisuke.com/",
+          "sourceLabel": "Eisuke Shirota 公式ポートフォリオ",
+          "productionName": "Eisuke Shirota"
+        }
+      ],
+      "videoUrl": "https://vimeo.com/168909480",
+      "sourceUrl": "https://shirotaeisuke.com/",
+      "title": "",
+      "retrievedTitle": "",
+      "thumbnail": "",
+      "channelTitle": "",
+      "titleMatch": false,
+      "result": "hold",
+      "verificationReason": "public_oembed_unavailable"
+    }
+  ]
+}

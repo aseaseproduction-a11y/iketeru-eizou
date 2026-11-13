@@ -1,0 +1,77 @@
+{
+  "generatedAt": "2026-08-20T00:58:15.159Z",
+  "source": "指定サイト公式掲載動画",
+  "counts": {
+    "verifiedCandidates": 2
+  },
+  "imports": [
+    {
+      "id": "dD4O1f5-CKU",
+      "platform": "youtube",
+      "title": "【コカ･コーラ】 一緒だともっとおいしい「お花見」篇 Coca-Cola",
+      "thumbnail": "https://i.ytimg.com/vi/dD4O1f5-CKU/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=dD4O1f5-CKU",
+      "embedUrl": "https://www.youtube.com/embed/dD4O1f5-CKU",
+      "source": "creshore",
+      "sourceLabel": "Creshore公開投稿",
+      "channelTitle": "コカ・コーラ",
+      "allTags": [
+        "Creshore公開投稿",
+        "公式制作実績",
+        "YouTube"
+      ],
+      "productions": [],
+      "curationNote": {
+        "purpose": "映像表現のリファレンス収集",
+        "background": "Creshore公開投稿の公式掲載ページに掲載。 公式掲載タイトル: undefined",
+        "evaluation": "公式掲載作品として確認された映像。",
+        "sourceUrls": [
+          "https://creshore.jp/api/v1/top"
+        ]
+      },
+      "awards": [],
+      "addedDate": "2026-08-19",
+      "verification": {
+        "method": "public_oembed_and_source_title_video_id_canonical_url_verified",
+        "retrievedTitle": "【コカ･コーラ】 一緒だともっとおいしい「お花見」篇 Coca-Cola",
+        "sourceUrls": [
+          "https://creshore.jp/api/v1/top"
+        ]
+      }
+    },
+    {
+      "id": "1175847608",
+      "platform": "vimeo",
+      "title": "SABERA",
+      "thumbnail": "https://i.vimeocdn.com/video/2136776374-8b4dc3ca5b2af9c89f478f30f30932e74184badb0ea8e3e14bdf5338b01c088b-d_295x166?region=us",
+      "videoUrl": "https://vimeo.com/1175847608",
+      "embedUrl": "https://player.vimeo.com/video/1175847608",
+      "source": "creshore",
+      "sourceLabel": "Creshore公開投稿",
+      "channelTitle": "IN FOCUS",
+      "allTags": [
+        "Creshore公開投稿",
+        "公式制作実績",
+        "Vimeo"
+      ],
+      "productions": [],
+      "curationNote": {
+        "purpose": "映像表現のリファレンス収集",
+        "background": "Creshore公開投稿の公式掲載ページに掲載。 公式掲載タイトル: undefined",
+        "evaluation": "公式掲載作品として確認された映像。",
+        "sourceUrls": [
+          "https://creshore.jp/api/v1/top?refresh=3"
+        ]
+      },
+      "awards": [],
+      "addedDate": "2026-08-19",
+      "verification": {
+        "method": "public_oembed_and_source_title_video_id_canonical_url_verified",
+        "retrievedTitle": "SABERA",
+        "sourceUrls": [
+          "https://creshore.jp/api/v1/top?refresh=3"
+        ]
+      }
+    }
+  ]
+}

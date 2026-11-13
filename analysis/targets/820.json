@@ -1,0 +1,26 @@
+{
+  "index": 820,
+  "total": 1782,
+  "target": {
+    "id": "XaH1Iwel7OA",
+    "platform": "youtube",
+    "title": "Kiepi キエピー 'Rocket Science' MV",
+    "videoUrl": "https://www.youtube.com/watch?v=XaH1Iwel7OA",
+    "channelTitle": "",
+    "source": "youtube_search",
+    "sourceLabel": "YouTube検索（自動キーワード）",
+    "existingMetadata": {
+      "genres": "[{\"name\":\"MV\",\"slug\":\"mv\"}]",
+      "products": "[{\"name\":\"IT / 通信 / ネットサービス\",\"slug\":\"it\"}]",
+      "directions": "[]",
+      "tones": "[]",
+      "allTags": "[]",
+      "purposes": "[]",
+      "expressions": "[]",
+      "toneEmotions": "[]",
+      "toneVisuals": "[]",
+      "toneTechniques": "[]",
+      "productions": "[]"
+    }
+  }
+}

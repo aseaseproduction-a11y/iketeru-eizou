@@ -1,0 +1,78 @@
+{
+  "mode": "dry-run",
+  "generatedAt": "2026-08-19T06:34:32.956Z",
+  "totalVideos": 4195,
+  "changedVideos": 2,
+  "unchangedVideos": 4193,
+  "changes": [
+    {
+      "id": "0v78WbIc4BM",
+      "title": "ロッテ クーリッシュ・爽 WEBCM「冷たくて青い夏が来た」篇 90秒",
+      "purposesBefore": [
+        "プロモーション",
+        "商品ブランディング",
+        "夏季キャンペーン",
+        "IPファン層へのリーチ"
+      ],
+      "purposesAfter": [
+        "プロモーション",
+        "ブランディングムービー"
+      ],
+      "expressionsBefore": [
+        "実写+2Dアニメーション",
+        "実写コンポジット",
+        "MV文法",
+        "青春モンタージュ",
+        "商品シズル",
+        "コピーによる締め"
+      ],
+      "expressionsAfter": [
+        "実写+アニメーション",
+        "実写"
+      ],
+      "removedPurposes": [
+        "商品ブランディング",
+        "夏季キャンペーン",
+        "IPファン層へのリーチ"
+      ],
+      "removedExpressions": [
+        "実写+2Dアニメーション",
+        "実写コンポジット",
+        "MV文法",
+        "青春モンタージュ",
+        "商品シズル",
+        "コピーによる締め"
+      ]
+    },
+    {
+      "id": "lJXaNYTVjrQ",
+      "title": "THE COOK | Award-Winning Short Film",
+      "purposesBefore": [
+        "物語体験の提供",
+        "期待を裏切る感情喚起",
+        "人物の主観と現実の対比"
+      ],
+      "purposesAfter": [],
+      "expressionsBefore": [
+        "ジャンルパロディ",
+        "ツイスト構成",
+        "マッチカット",
+        "視覚的反復",
+        "無言劇"
+      ],
+      "expressionsAfter": [],
+      "removedPurposes": [
+        "物語体験の提供",
+        "期待を裏切る感情喚起",
+        "人物の主観と現実の対比"
+      ],
+      "removedExpressions": [
+        "ジャンルパロディ",
+        "ツイスト構成",
+        "マッチカット",
+        "視覚的反復",
+        "無言劇"
+      ]
+    }
+  ]
+}

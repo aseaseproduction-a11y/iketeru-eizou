@@ -1,0 +1,444 @@
+{
+  "mode": "apply",
+  "completedAt": "2026-08-19T09:38:01.228Z",
+  "counts": {
+    "planned": 73,
+    "insertable": 65,
+    "inserted": 65,
+    "skipped": 8
+  },
+  "inserted": [
+    {
+      "id": "8oPGJuZByzg",
+      "title": "ロッテ「Let's ギューリッシュ」第11回BOVAグランプリ",
+      "source": "bova",
+      "videoUrl": "https://www.youtube.com/watch?v=8oPGJuZByzg"
+    },
+    {
+      "id": "edC4PfRGB2k",
+      "title": "アドビ 学生・教職員個人版 | アドビで新しいスキルを身に着けよう",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=edC4PfRGB2k"
+    },
+    {
+      "id": "yEHtc3-Hgjo",
+      "title": "株式会社テクノシステム事業紹介動画",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=yEHtc3-Hgjo"
+    },
+    {
+      "id": "SUH_lEfFU8g",
+      "title": "SDG Animation",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=SUH_lEfFU8g"
+    },
+    {
+      "id": "f8WgZEZMMwM",
+      "title": "SDGs Animation",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=f8WgZEZMMwM"
+    },
+    {
+      "id": "sgYF_M5yPkU",
+      "title": "【beBit】社長インタビュー",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=sgYF_M5yPkU"
+    },
+    {
+      "id": "hVv0PDrlhD8",
+      "title": "【インタビュー映像】株式会社ジェイテック様_企業理念浸透動画",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=hVv0PDrlhD8"
+    },
+    {
+      "id": "x8FTI2PkAtI",
+      "title": "１．関谷社長_リクルートインタビュー",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=x8FTI2PkAtI"
+    },
+    {
+      "id": "7C_IOgKKQrM",
+      "title": "高橋一生、心の葛藤を微妙な顔の変化で表現　『保険のビュッフェ』新TVCM「米寿」「実家に挨拶」篇",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=7C_IOgKKQrM"
+    },
+    {
+      "id": "rdOWZsoneT4",
+      "title": "高橋一生、出産に立ち会い中、お金の不安抱く　『保険のビュッフェ』新CM「出産」篇",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=rdOWZsoneT4"
+    },
+    {
+      "id": "f0IFhZ1yHyE",
+      "title": "東海大学　理学部",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=f0IFhZ1yHyE"
+    },
+    {
+      "id": "Jy-M0tRZWyQ",
+      "title": "【公式】2019選手紹介Full（ツエーゲン金沢）",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=Jy-M0tRZWyQ"
+    },
+    {
+      "id": "EhmPzkJA1tQ",
+      "title": "入金消込を効率化させる「Victory-ONE」",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=EhmPzkJA1tQ"
+    },
+    {
+      "id": "S7UmB-jGSbE",
+      "title": "iPhoneで写真を検索する方法 — Apple",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=S7UmB-jGSbE"
+    },
+    {
+      "id": "J09zchCsFcM",
+      "title": "【宇治市ＰＲ動画】観光アクションゲーム「宇治市〜宇治茶と源氏物語のまち〜」",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=J09zchCsFcM"
+    },
+    {
+      "id": "tN-yGi-Z_9w",
+      "title": "【SDGs】sustain+R【Motion Graphics】",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=tN-yGi-Z_9w"
+    },
+    {
+      "id": "QzFgkJM5bxY",
+      "title": "高槻市ＰＲアニメーション「MY LIFE, MORE LIFE.」",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=QzFgkJM5bxY"
+    },
+    {
+      "id": "d90eljvU1rY",
+      "title": "先輩、後輩、売り子…　美女10人からのアプローチに思わず「汗る」",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=d90eljvU1rY"
+    },
+    {
+      "id": "GTRaCNpgffk",
+      "title": "映像素材001_伊予市五色姫海浜公園",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=GTRaCNpgffk"
+    },
+    {
+      "id": "PxkSQTzx8HQ",
+      "title": "happy short trip 秋篇（山口県防府市周南市の観光イメージ動画 秋篇）",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=PxkSQTzx8HQ"
+    },
+    {
+      "id": "5cNfpnmRcfU",
+      "title": "Tokyo's hidden islands　小笠原諸島　Bonin Islands",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=5cNfpnmRcfU"
+    },
+    {
+      "id": "0eNxg1AlCdw",
+      "title": "所沢市PR空撮動画（完成版）",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=0eNxg1AlCdw"
+    },
+    {
+      "id": "1ST54X7sotc",
+      "title": "ひじまち純粋度100％MOVIE「しあわせリボンの町」ドラマ篇",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=1ST54X7sotc"
+    },
+    {
+      "id": "8BxKB-kY570",
+      "title": "シミトリー小",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=8BxKB-kY570"
+    },
+    {
+      "id": "YdkBLUwksrQ",
+      "title": "稼げると話題の妹のノートとは！？",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=YdkBLUwksrQ"
+    },
+    {
+      "id": "sD7_6en5xxQ",
+      "title": "aya動画",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=sD7_6en5xxQ"
+    },
+    {
+      "id": "4PojHU4ckSk",
+      "title": "株式会社ティー・シー・ピー　OEM事業紹介",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=4PojHU4ckSk"
+    },
+    {
+      "id": "92IAMsrCloQ",
+      "title": "The United Nations Sustainable Development Goals",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=92IAMsrCloQ"
+    },
+    {
+      "id": "0oioI53EGU0",
+      "title": "Ascent Business Consulting株式会社の事業・サービスをご紹介します",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=0oioI53EGU0"
+    },
+    {
+      "id": "LYZYR-6aPaQ",
+      "title": "東芝インフラシステムズ株式会社 事業領域紹介（採用・事業紹介）",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=LYZYR-6aPaQ"
+    },
+    {
+      "id": "gUB1fwNhbDs",
+      "title": "SDGsに関する取り組みの紹介動画",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=gUB1fwNhbDs"
+    },
+    {
+      "id": "n7JS_wd4JUY",
+      "title": "【TikTok】#だれでもダンスWEBムービー ギネス世界記録™挑戦編",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=n7JS_wd4JUY"
+    },
+    {
+      "id": "hke89JHcUug",
+      "title": "【MUD7】新潟県南魚沼市を、遊びつくせ",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=hke89JHcUug"
+    },
+    {
+      "id": "ozXLK4DChRQ",
+      "title": "＃一勝に賭けた青春　募集編",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=ozXLK4DChRQ"
+    },
+    {
+      "id": "7gAyMOSFiR4",
+      "title": "神山つなプロ #4　孫の手プロジェクト［高校プロジェクト・その１］",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=7gAyMOSFiR4"
+    },
+    {
+      "id": "3E5MpokSwhk",
+      "title": "Head | Vimeo Create | :15 | 16x9",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=3E5MpokSwhk"
+    },
+    {
+      "id": "V-k9JE9xcyU",
+      "title": "株式会社イワキ 会社紹介・社員インタビュー動画【メンテナンス本部】",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=V-k9JE9xcyU"
+    },
+    {
+      "id": "j8betCwqkB0",
+      "title": "【採用動画】カルビー株式会社様（LOCUS制作実績）",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=j8betCwqkB0"
+    },
+    {
+      "id": "kEDGAM21sqs",
+      "title": "松阪牛動画",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=kEDGAM21sqs"
+    },
+    {
+      "id": "bXsM9eKnt0c",
+      "title": "株式会社メディックス『新卒採用サイト』会社紹介動画",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=bXsM9eKnt0c"
+    },
+    {
+      "id": "zyAZHKmhe1I",
+      "title": "セキ株式会社｜新卒採用「考える人。」",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=zyAZHKmhe1I"
+    },
+    {
+      "id": "nWV5w8Ctmks",
+      "title": "【WEBCM】株式会社ポテパン「POTEPAN CAMP」 プロモーション動画【CINEMATO制作実績】",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=nWV5w8Ctmks"
+    },
+    {
+      "id": "UcUFHf9HMf0",
+      "title": "採用向け会社紹介動画「株式会社グローバルビジョンテクノロジー」（Crevo制作実績）",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=UcUFHf9HMf0"
+    },
+    {
+      "id": "XKn1BaaV2u0",
+      "title": "Wix.com（ウィックス）Web CM |「毎日7万人に選ばれるウェブサイト作成ツール」",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=XKn1BaaV2u0"
+    },
+    {
+      "id": "vT4bIQjIXJo",
+      "title": "BOSAI POINT サービス紹介 LP",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=vT4bIQjIXJo"
+    },
+    {
+      "id": "eRQ1Hq-oSd4",
+      "title": "Start Your Own Business for What Success Means to You, with the help of Shopify (JP-Long)",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=eRQ1Hq-oSd4"
+    },
+    {
+      "id": "twQaPrifeQc",
+      "title": "【まなびポケット】サービス紹介動画",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=twQaPrifeQc"
+    },
+    {
+      "id": "NA4QZ43N7uE",
+      "title": "周年記念動画　タクシー配車アプリ「DiDi（ディディ）」（Crevo制作実績）",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=NA4QZ43N7uE"
+    },
+    {
+      "id": "eGbM4QlN3N0",
+      "title": "【動画広告・WebCM】GO株式会社様（LOCUS制作実績）",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=eGbM4QlN3N0"
+    },
+    {
+      "id": "aUydbON1Pec",
+      "title": "JET Globalサービス紹介動画",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=aUydbON1Pec"
+    },
+    {
+      "id": "zG55V0NmwjQ",
+      "title": "Polarify生体認証サービス紹介映像",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=zG55V0NmwjQ"
+    },
+    {
+      "id": "hfSL499YuwU",
+      "title": "総合診療医 紹介ビデオ(Full ver.)",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=hfSL499YuwU"
+    },
+    {
+      "id": "PxfHeL0RR8E",
+      "title": "Rediscover Paradise Okinawa - 土山直純",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=PxfHeL0RR8E"
+    },
+    {
+      "id": "8KyjgJHmKC8",
+      "title": "霧島酒造 ブランドムービー",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=8KyjgJHmKC8"
+    },
+    {
+      "id": "xOviz0ZS6Ks",
+      "title": "VALORANT Gameplay Trailer 16x9 01m00s JP ja v002",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=xOviz0ZS6Ks"
+    },
+    {
+      "id": "fB5mqWx15Dg",
+      "title": "New: The Chore Blazer",
+      "source": "video_refs",
+      "videoUrl": "https://www.youtube.com/watch?v=fB5mqWx15Dg"
+    },
+    {
+      "id": "CU9cVc0zIkU",
+      "title": "あの日から、すべては2026年のために。｜最高の景色を2026　FOR OUR GRATEST STAGE",
+      "source": "shirotaeisuke",
+      "videoUrl": "https://www.youtube.com/watch?v=CU9cVc0zIkU"
+    },
+    {
+      "id": "-Sb4wxbHh-4",
+      "title": "『ONE PIECE』106巻 公式テーマソング「未来島 ~Future Island~」PV",
+      "source": "shirotaeisuke",
+      "videoUrl": "https://www.youtube.com/watch?v=-Sb4wxbHh-4"
+    },
+    {
+      "id": "Co03Hc0CIXQ",
+      "title": "【LUMINE】GIFT OF VOICE LUMINE CHRISTMAS 2021",
+      "source": "shirotaeisuke",
+      "videoUrl": "https://www.youtube.com/watch?v=Co03Hc0CIXQ"
+    },
+    {
+      "id": "z_qWsQNWSVI",
+      "title": "「この男、シャンクスではない。」 『ONE PIECE』113巻発売記念PV",
+      "source": "shirotaeisuke",
+      "videoUrl": "https://www.youtube.com/watch?v=z_qWsQNWSVI"
+    },
+    {
+      "id": "Hl0oZ-70QAI",
+      "title": "『僕のヒーローアカデミア』最終42巻発売記念PV",
+      "source": "shirotaeisuke",
+      "videoUrl": "https://www.youtube.com/watch?v=Hl0oZ-70QAI"
+    },
+    {
+      "id": "JTQ_cw7-1-g",
+      "title": "『呪術廻戦』劇場版公開／18巻発売記念スペシャルPV",
+      "source": "shirotaeisuke",
+      "videoUrl": "https://www.youtube.com/watch?v=JTQ_cw7-1-g"
+    },
+    {
+      "id": "cwju1yRv3Ag",
+      "title": "【公式】『HUNTER×HUNTER 』38巻発売記念PV 【幻影旅団 -The Phantom Troupe-】",
+      "source": "shirotaeisuke",
+      "videoUrl": "https://www.youtube.com/watch?v=cwju1yRv3Ag"
+    },
+    {
+      "id": "LuF7zWmVlgs",
+      "title": "『チェンソーマン』19巻発売記念PV【チェンソー協奏曲 -歓喜の歌-】",
+      "source": "shirotaeisuke",
+      "videoUrl": "https://www.youtube.com/watch?v=LuF7zWmVlgs"
+    },
+    {
+      "id": "kAv0kE-ODhk",
+      "title": "QUBIT - \"Beautiful Days\" Official Music Video",
+      "source": "shirotaeisuke",
+      "videoUrl": "https://www.youtube.com/watch?v=kAv0kE-ODhk"
+    }
+  ],
+  "skipped": [
+    {
+      "id": "wSqORcAwi54",
+      "title": "STARBUCKS Autumn is Coming - STARBUCKS Autumn 2021",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "VPB_J6Egi28",
+      "title": "『チェンソーマン』9 巻発売記念スペシャルPV",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "fX9NK-_YqlI",
+      "title": "『ONE PIECE』103巻発売記念ムービー「ついにギア５」",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "CvKzGGZhouI",
+      "title": "【公式】『カグラバチ』7巻発売記念PV｜“全話、斬新。”【週刊少年ジャンプ】",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "azRlNFUs440",
+      "title": "英雄譚 -『僕のヒーローアカデミア』連載完結記念動画",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "3HjS-zK8v-U",
+      "title": "『チェンソーマン』ジャンプフェスタ2022 スペシャルPV解禁",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "-OdsFe8yOs8",
+      "title": "KIRINJI - 再会 Meeting Again",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "237533255",
+      "title": "Frasco - Viewtiful",
+      "reason": "duplicate_normalized_title"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "genres": { "type": "array", "minItems": 1, "items": { "type": "string", "enum": ["tv-cm", "web-cm", "branded-movie", "youtube-sns", "mv", "corporate", "film", "opening", "making", "documentary"] } },
+    "products": { "type": "array", "minItems": 1, "items": { "type": "string", "enum": ["beauty", "fashion", "food", "daily", "automotive", "gaming", "it", "travel", "medical", "real-estate", "transport", "entertainment", "electronics", "sports"] } },
+    "directions": { "type": "array", "minItems": 1, "items": { "type": "string", "enum": ["live-action", "vfx-3dcg", "motion-graphics", "generative-ai", "camera-work", "motion-control", "stop-motion", "virtual-production", "illustration"] } },
+    "tones": { "type": "array", "minItems": 1, "items": { "type": "string", "enum": ["stylish", "comical", "emotional", "luxury"] } },
+    "purposes": { "type": "array", "minItems": 1, "items": { "type": "string", "enum": ["MV", "ブランディングムービー", "プロモーション", "事業・サービス紹介", "OPED", "インタビュー", "ティザー", "アート", "企画系", "その他"] } },
+    "expressions": { "type": "array", "minItems": 1, "items": { "type": "string", "enum": ["2D", "3D", "アニメーション", "実写", "イラスト", "実写+アニメーション", "生成AI"] } },
+    "privateRating": { "type": "string", "enum": ["S", "A", "B", "C", "D"] },
+    "aiOverallRating": { "type": "string", "enum": ["S", "A", "B", "C", "D"] },
+    "aiDirectionRating": { "type": "string", "enum": ["S", "A", "B", "C", "D"] },
+    "aiTechniqueRating": { "type": "string", "enum": ["S", "A", "B", "C", "D"] },
+    "aiAnalysis": { "type": "string" },
+    "curationPurpose": { "type": "string" },
+    "curationBackground": { "type": "string" },
+    "curationEvaluation": { "type": "string" },
+    "confidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": { "genres": { "type": "number", "minimum": 0, "maximum": 1 }, "products": { "type": "number", "minimum": 0, "maximum": 1 }, "directions": { "type": "number", "minimum": 0, "maximum": 1 }, "tones": { "type": "number", "minimum": 0, "maximum": 1 }, "purposes": { "type": "number", "minimum": 0, "maximum": 1 }, "expressions": { "type": "number", "minimum": 0, "maximum": 1 }, "ratings": { "type": "number", "minimum": 0, "maximum": 1 }, "analysis": { "type": "number", "minimum": 0, "maximum": 1 } },
+      "required": ["genres", "products", "directions", "tones", "purposes", "expressions", "ratings", "analysis"]
+    },
+    "evidence": { "type": "string" }
+  },
+  "required": ["genres", "products", "directions", "tones", "purposes", "expressions", "privateRating", "aiOverallRating", "aiDirectionRating", "aiTechniqueRating", "aiAnalysis", "curationPurpose", "curationBackground", "curationEvaluation", "confidence", "evidence"]
+}

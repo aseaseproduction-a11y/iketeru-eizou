@@ -1,0 +1,274 @@
+{
+  "summary": {
+    "mode": "dry-run",
+    "inputs": 3,
+    "responseRows": 3,
+    "validStructuredOutputs": 3,
+    "tripleMatchedUpdates": 3,
+    "acceptedFields": 5,
+    "updated": 0
+  },
+  "updates": [
+    {
+      "id": "t5jPgM_VKZo",
+      "title": "みみめめMIMI「Mr. Darling」MV",
+      "videoUrl": "https://www.youtube.com/watch?v=t5jPgM_VKZo",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "purposes": [
+        "MV"
+      ],
+      "expressions": [],
+      "privateRating": "",
+      "aiOverallRating": "",
+      "aiDirectionRating": "",
+      "aiTechniqueRating": "",
+      "aiAnalysis": "",
+      "metadataClassificationAudit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.272Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "みみめめMIMI「Mr. Darling」MV",
+          "tags": [
+            "LIGHT THE WAY",
+            "公式制作実績",
+            "YouTube"
+          ]
+        },
+        "aiMetadataCompletion": {
+          "model": "gpt-5-mini",
+          "analyzedAt": "2026-08-19T10:47:31.354Z",
+          "evidenceType": "ai_analysis",
+          "identityTripleMatch": true,
+          "confidence": {
+            "analysis": 0,
+            "directions": 0,
+            "expressions": 0,
+            "genres": 0.95,
+            "products": 0,
+            "purposes": 0.95,
+            "ratings": 0,
+            "tones": 0
+          },
+          "evidence": {
+            "aiAnalysis": [],
+            "aiDirectionRating": [],
+            "aiOverallRating": [],
+            "aiTechniqueRating": [],
+            "directions": [],
+            "expressions": [],
+            "genres": [
+              "MV"
+            ],
+            "privateRating": [],
+            "products": [],
+            "purposes": [
+              "MV"
+            ],
+            "tones": []
+          },
+          "input": {
+            "title": "みみめめMIMI「Mr. Darling」MV",
+            "videoUrl": "https://www.youtube.com/watch?v=t5jPgM_VKZo",
+            "source": "light_the_way",
+            "channelTitle": "みみめめMIMI",
+            "tags": [
+              "LIGHT THE WAY",
+              "公式制作実績",
+              "YouTube"
+            ]
+          },
+          "eligibleFields": [
+            "genres",
+            "purposes"
+          ],
+          "rejectedFields": {
+            "products": "empty_candidate",
+            "directions": "empty_candidate",
+            "tones": "empty_candidate",
+            "expressions": "empty_candidate",
+            "privateRating": "empty_candidate",
+            "aiOverallRating": "empty_candidate",
+            "aiDirectionRating": "empty_candidate",
+            "aiTechniqueRating": "empty_candidate",
+            "aiAnalysis": "empty_candidate"
+          },
+          "appliedMissing": []
+        }
+      }
+    },
+    {
+      "id": "0ScUM-7ivK4",
+      "title": "商品撮影 ｜  三ツ矢サイダーをCMっぽく撮ってみた結果が衝撃的だった、、！",
+      "videoUrl": "https://www.youtube.com/watch?v=0ScUM-7ivK4",
+      "genres": [],
+      "products": [
+        {
+          "slug": "food",
+          "name": "食品 / 飲料 / 飲食"
+        }
+      ],
+      "directions": [],
+      "tones": [],
+      "purposes": [],
+      "expressions": [],
+      "privateRating": "",
+      "aiOverallRating": "",
+      "aiDirectionRating": "",
+      "aiTechniqueRating": "",
+      "aiAnalysis": "",
+      "metadataClassificationAudit": {
+        "aiMetadataCompletion": {
+          "model": "gpt-5-mini",
+          "analyzedAt": "2026-08-19T10:47:31.355Z",
+          "evidenceType": "ai_analysis",
+          "identityTripleMatch": true,
+          "confidence": {
+            "analysis": 0,
+            "directions": 0,
+            "expressions": 0,
+            "genres": 0,
+            "products": 0.95,
+            "purposes": 0,
+            "ratings": 0,
+            "tones": 0
+          },
+          "evidence": {
+            "aiAnalysis": [],
+            "aiDirectionRating": [],
+            "aiOverallRating": [],
+            "aiTechniqueRating": [],
+            "directions": [],
+            "expressions": [],
+            "genres": [],
+            "privateRating": [],
+            "products": [
+              "三ツ矢サイダー"
+            ],
+            "purposes": [],
+            "tones": []
+          },
+          "input": {
+            "title": "商品撮影 ｜  三ツ矢サイダーをCMっぽく撮ってみた結果が衝撃的だった、、！",
+            "videoUrl": "https://www.youtube.com/watch?v=0ScUM-7ivK4",
+            "source": "youtube",
+            "channelTitle": "ガダバウツ × 商品撮影",
+            "tags": []
+          },
+          "eligibleFields": [
+            "products"
+          ],
+          "rejectedFields": {
+            "genres": "empty_candidate",
+            "directions": "empty_candidate",
+            "tones": "empty_candidate",
+            "purposes": "empty_candidate",
+            "expressions": "empty_candidate",
+            "privateRating": "empty_candidate",
+            "aiOverallRating": "empty_candidate",
+            "aiDirectionRating": "empty_candidate",
+            "aiTechniqueRating": "empty_candidate",
+            "aiAnalysis": "empty_candidate"
+          },
+          "appliedMissing": [
+            "products"
+          ]
+        }
+      }
+    },
+    {
+      "id": "2bQM0J4hGeE",
+      "title": "Human Vapor | Official Teaser | Netflix",
+      "videoUrl": "https://www.youtube.com/watch?v=2bQM0J4hGeE",
+      "genres": [],
+      "products": [],
+      "directions": [
+        {
+          "slug": "vfx-3dcg",
+          "name": "合成 / VFX / 3DCG"
+        }
+      ],
+      "tones": [],
+      "purposes": [
+        "ティザー"
+      ],
+      "expressions": [],
+      "privateRating": "",
+      "aiOverallRating": "",
+      "aiDirectionRating": "",
+      "aiTechniqueRating": "",
+      "aiAnalysis": "",
+      "metadataClassificationAudit": {
+        "aiMetadataCompletion": {
+          "model": "gpt-5-mini",
+          "analyzedAt": "2026-08-19T10:47:31.355Z",
+          "evidenceType": "ai_analysis",
+          "identityTripleMatch": true,
+          "confidence": {
+            "analysis": 0,
+            "directions": 0.95,
+            "expressions": 0,
+            "genres": 0,
+            "products": 0.95,
+            "purposes": 0.95,
+            "ratings": 0,
+            "tones": 0
+          },
+          "evidence": {
+            "aiAnalysis": [],
+            "aiDirectionRating": [],
+            "aiOverallRating": [],
+            "aiTechniqueRating": [],
+            "directions": [
+              "VFX by the Academy Award-winning team Shirogumi"
+            ],
+            "expressions": [],
+            "genres": [],
+            "privateRating": [],
+            "products": [
+              "Netflix is one of the world\u0019s leading entertainment services offering TV series, films, games and live programming"
+            ],
+            "purposes": [
+              "Official Teaser"
+            ],
+            "tones": []
+          },
+          "input": {
+            "title": "Human Vapor | Official Teaser | Netflix",
+            "videoUrl": "https://www.youtube.com/watch?v=2bQM0J4hGeE",
+            "source": "youtube",
+            "channelTitle": "Netflix Philippines",
+            "tags": []
+          },
+          "eligibleFields": [
+            "directions",
+            "purposes"
+          ],
+          "rejectedFields": {
+            "genres": "empty_candidate",
+            "products": "ungrounded_evidence",
+            "tones": "empty_candidate",
+            "expressions": "empty_candidate",
+            "privateRating": "empty_candidate",
+            "aiOverallRating": "empty_candidate",
+            "aiDirectionRating": "empty_candidate",
+            "aiTechniqueRating": "empty_candidate",
+            "aiAnalysis": "empty_candidate"
+          },
+          "appliedMissing": [
+            "directions",
+            "purposes"
+          ]
+        }
+      }
+    }
+  ]
+}

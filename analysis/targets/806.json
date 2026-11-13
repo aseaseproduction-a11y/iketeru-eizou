@@ -1,0 +1,26 @@
+{
+  "index": 806,
+  "total": 1782,
+  "target": {
+    "id": "SL3QWImbpiQ",
+    "platform": "youtube",
+    "title": "実写の僕をAIでアニメ化してMVにしたら、映画の主人公になった件。『丸の内ムービースター』Official AI MV",
+    "videoUrl": "https://www.youtube.com/watch?v=SL3QWImbpiQ",
+    "channelTitle": "",
+    "source": "youtube_search",
+    "sourceLabel": "YouTube検索（自動キーワード）",
+    "existingMetadata": {
+      "genres": "[{\"name\":\"MV\",\"slug\":\"mv\"},{\"name\":\"映画 / ドラマ / ショートフィルム\",\"slug\":\"film\"}]",
+      "products": "[{\"name\":\"IT / 通信 / ネットサービス\",\"slug\":\"it\"}]",
+      "directions": "[{\"name\":\"実写\",\"slug\":\"live-action\"},{\"name\":\"イラスト / アニメーション\",\"slug\":\"illustration\"}]",
+      "tones": "[]",
+      "allTags": "[]",
+      "purposes": "[]",
+      "expressions": "[]",
+      "toneEmotions": "[]",
+      "toneVisuals": "[]",
+      "toneTechniques": "[]",
+      "productions": "[]"
+    }
+  }
+}

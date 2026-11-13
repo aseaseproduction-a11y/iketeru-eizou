@@ -1,0 +1,57 @@
+{
+  "kind": "youtube#videoListResponse",
+  "etag": "eNOO8Lga1tdCdRP3YmYd9SX-IqU",
+  "items": [
+    {
+      "kind": "youtube#video",
+      "etag": "Ed1TZkRT87gcrOXsXLY6CRSk7hs",
+      "id": "4Lo9ChANhr4",
+      "snippet": {
+        "publishedAt": "2025-05-27T08:00:06Z",
+        "channelId": "UCvq3kUGY5Dbsdkr3DZx25Sw",
+        "title": "Giga & 堀江晶太(kemu) - 拍動(HAKUDO) ft. GUMI SV",
+        "description": "Streaming Link → https://nex-tone.link/A00186064\n\nVocal : GUMI SV\nMusic, Lyrics : SHOTA HORIE(kemu) https://x.com/kemu8888\nMusic, Vocal Edit : Giga https://x.com/GigaMozuku\nIllust : Oshima Tsukumo https://x.com/tsukumonomo\nMovie : Tsukada Sao https://x.com/Tsukadasao\n\nアニメ「#コンパス2ꓸ0」は2025年4月、テレ東6局ネット、BS日テレほかにて放送開始！\n\n＜INTRODUCTION＞\n戦闘摂理解析システム「#コンパス2ꓸ0」の世界は、さまざまな異世界から集められたヒーローと人間のパートナーがともに過ごす夢のような空間。\n#コンパス2ꓸ0 の運営に必要なエナジーを生むため、ヒーローとパートナーは日々バトルに励んでいた。\nそんな中、パートナー探しもバトルも拒否し続けるワケありヒーロー・13（サーティーン）はついに#コンパス2ꓸ0 から追放寸前!?　\nでも、ある大事件をきっかけに新米プレイヤー・塵（じん）が彼のパートナーになり……？　\n問題児と初心者の凸凹コンビは世界に平和を取り戻せるのか！\n\n--------------------------------------------\n■アニメ公式サイト\nhttps://www.compass-anime.com/\n■ゲーム公式サイト\nhttp://app.nhn-playart.com/compass/\n■ニコニコ公式チャンネル \nhttp://ch.nicovideo.jp/compass-niconico  \n■「#コンパス2ꓸ0」アニメ公式X\nhttps://x.com/cps_mediamix",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/4Lo9ChANhr4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/4Lo9ChANhr4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/4Lo9ChANhr4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/4Lo9ChANhr4/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/4Lo9ChANhr4/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Giga",
+        "categoryId": "10",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "ja",
+        "localized": {
+          "title": "Giga & 堀江晶太(kemu) - 拍動(HAKUDO) ft. GUMI SV",
+          "description": "Streaming Link → https://nex-tone.link/A00186064\n\nVocal : GUMI SV\nMusic, Lyrics : SHOTA HORIE(kemu) https://x.com/kemu8888\nMusic, Vocal Edit : Giga https://x.com/GigaMozuku\nIllust : Oshima Tsukumo https://x.com/tsukumonomo\nMovie : Tsukada Sao https://x.com/Tsukadasao\n\nアニメ「#コンパス2ꓸ0」は2025年4月、テレ東6局ネット、BS日テレほかにて放送開始！\n\n＜INTRODUCTION＞\n戦闘摂理解析システム「#コンパス2ꓸ0」の世界は、さまざまな異世界から集められたヒーローと人間のパートナーがともに過ごす夢のような空間。\n#コンパス2ꓸ0 の運営に必要なエナジーを生むため、ヒーローとパートナーは日々バトルに励んでいた。\nそんな中、パートナー探しもバトルも拒否し続けるワケありヒーロー・13（サーティーン）はついに#コンパス2ꓸ0 から追放寸前!?　\nでも、ある大事件をきっかけに新米プレイヤー・塵（じん）が彼のパートナーになり……？　\n問題児と初心者の凸凹コンビは世界に平和を取り戻せるのか！\n\n--------------------------------------------\n■アニメ公式サイト\nhttps://www.compass-anime.com/\n■ゲーム公式サイト\nhttp://app.nhn-playart.com/compass/\n■ニコニコ公式チャンネル \nhttp://ch.nicovideo.jp/compass-niconico  \n■「#コンパス2ꓸ0」アニメ公式X\nhttps://x.com/cps_mediamix"
+        },
+        "defaultAudioLanguage": "en"
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 1,
+    "resultsPerPage": 1
+  }
+}

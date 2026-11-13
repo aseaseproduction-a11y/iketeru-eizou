@@ -1,0 +1,475 @@
+{
+  "generatedAt": "2026-08-19T01:49:32.132Z",
+  "candidatePath": "analysis/metadata_classification/candidates_2026-08-19T01-47-14-689Z.json",
+  "updates": [
+    {
+      "id": "mUG2kOxjNpY",
+      "title": "日本マクドナルド ”夜マック” TVCMアニメーション",
+      "confidence": 0.9,
+      "evidence": "タイトル・説明: 日本マクドナルドのTVCMアニメーション／タグ: TV-CM、Web CM"
+    },
+    {
+      "id": "1077023305",
+      "title": "THE TIME, オープニングムービー",
+      "confidence": 0.9,
+      "evidence": "説明: オープニングムービー（TBS『THE TIME,』）／タグ: Opening movie、3DCG"
+    },
+    {
+      "id": "dHuwdd6hf2Q",
+      "title": "PASCOM MUSIC CLUB – Memory of the moment",
+      "confidence": 0.9,
+      "evidence": "タグ: 3DCG、Music video／説明に3DCGで疾走感のある映像を目指したと記載"
+    },
+    {
+      "id": "j3GKa5hbmRo",
+      "title": "Japanese footsteps – 『Link』Music Video",
+      "confidence": 0.9,
+      "evidence": "タイトルに'Music Video'記載／タグ: 3DCG、Movie"
+    },
+    {
+      "id": "dgAgrV_ScCI",
+      "title": "水曜日のカンパネラ “幽霊と作家” Lyric video",
+      "confidence": 0.9,
+      "evidence": "タグ: 2D animation、3DCG、Motion graphics、Music video／説明に歌詞ビデオの意図あり"
+    },
+    {
+      "id": "LU3f8ZGfd5g",
+      "title": "【Official Music Video】トゲナシトゲアリ「爆ぜて咲く」 – アニメ「ガールズバンドクライ」",
+      "confidence": 0.9,
+      "evidence": "タグ: 3DCG、Music video／説明: TVシリーズに先駆けて制作されたMusicVideoと明記"
+    },
+    {
+      "id": "965829130",
+      "title": "spherephony",
+      "confidence": 0.85,
+      "evidence": "タグ: 3DCG、Experimental film、Motion graphics、Music video（実験的なミュージックビデオと明記）"
+    },
+    {
+      "id": "WUwv4isYJuY",
+      "title": "ONE another （映画『トランスフォーマー／ONE』公開記念ストップモーション－スタジオシリーズ－）",
+      "confidence": 0.9,
+      "evidence": "タグ: Promotion／PV／Web movie／Stopmotion／映画『トランスフォーマー／ONE』公開記念"
+    },
+    {
+      "id": "1073816481",
+      "title": "夢みる薬膳研究室はじまりの物語",
+      "confidence": 0.9,
+      "evidence": "タグ: Brand movie／Advertisement／CM／Web CM／Stopmotion／2D animation／説明: 薬膳料理を提供する店の物語"
+    },
+    {
+      "id": "WUVnv2m67As",
+      "title": "JACK BUNNY 2025 SS",
+      "confidence": 0.9,
+      "evidence": "タグ: Brand movie／Fashion film（JACK BUNNY 2025 SS、ブランド映像）"
+    },
+    {
+      "id": "_zlbRZ1PS0M",
+      "title": "Expo 2025 大阪・関西万博 シグネチャーパビリオン河森正治プロデュース「いのちめぐる冒険」　超時空シアター「499秒 わたしの合体」",
+      "confidence": 0.9,
+      "evidence": "タグ: 3DCG／Animation／AR／VR／MR／Real-time Graphics／Motion graphics（万博専用シアター、VR/MR記載）"
+    },
+    {
+      "id": "Zy4cxufYqKI",
+      "title": "NHKみんなのうた「ラーメン地球号」",
+      "confidence": 0.9,
+      "evidence": "タグ: 2D animation／Animation／Music video／TV（NHKみんなのうた）"
+    },
+    {
+      "id": "C__fp8UeA2Q",
+      "title": "パンの赤ちゃん 短編アニメーション",
+      "confidence": 0.9,
+      "evidence": "タグ: 3DCG／Animation／Short film（短編アニメーション）"
+    },
+    {
+      "id": "922399355",
+      "title": "ANTEPRIMA Fall-Winter 2024-25 Collection",
+      "confidence": 0.9,
+      "evidence": "タグ: Fashion film／Live opening animation／Motion graphics（ミラノ・ファッションウィークのランウェイ映像演出）"
+    },
+    {
+      "id": "1003005012",
+      "title": "anicecompnay X SUNJUNJIE – Shinjuku Cross Vision 3DOOH",
+      "confidence": 0.9,
+      "evidence": "タグ: 3DCG／Advertisement／説明: フレグランスブランド 'SINN PURETE' とコラボ"
+    },
+    {
+      "id": "ljuPXEz9s4k",
+      "title": "board game",
+      "confidence": 0.9,
+      "evidence": "説明: 実写アニメーション、全編iPhone撮影、コマ撮りやCGを駆使して制作"
+    },
+    {
+      "id": "1018644295",
+      "title": "Odd",
+      "confidence": 0.9,
+      "evidence": "タグ: 3DCG／Animation／Motion graphics／Short film（実験的短編）"
+    },
+    {
+      "id": "u6B_t0Tqg4s",
+      "title": "プラネタリネア – 長瀬有花 (Official Visualizer)",
+      "confidence": 0.9,
+      "evidence": "タグ: 3DCG／Animation／Music video／PV（Official Visualizer／Music videoタグ）"
+    },
+    {
+      "id": "802977485",
+      "title": "ShowReel 2023",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Motion graphics、Opening movie、Advertisement 等（ShowReel 2023）"
+    },
+    {
+      "id": "fjQOfhJZpsg",
+      "title": "[Coloso] 全行程をBlenderだけで創るNPRアニメーション映像",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Animation（Blenderで制作）"
+    },
+    {
+      "id": "V8T_TJ7kmwY",
+      "title": "ダンジョン＆テレビジョン　パイロットフィルム",
+      "confidence": 0.85,
+      "evidence": "掲載カテゴリ: PV、Short film／自主制作パイロットフィルム"
+    },
+    {
+      "id": "cGKUhpvWNAQ",
+      "title": "ねむるま えほん",
+      "confidence": 0.85,
+      "evidence": "掲載カテゴリ: Animation、Broadcast、Motion graphics／穏やかな気持ちと眠りを誘う（ねむるま えほん）"
+    },
+    {
+      "id": "587cC9zvpio",
+      "title": "JapEn 20th┃Pen Spinning",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Motion graphics、Music video（JapEn 20th┃Pen Spinning）"
+    },
+    {
+      "id": "x4vv-WiA9UE",
+      "title": "YUC’e – あいまいハートスパイス (Official Music Video)",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Music video（YUC’e – あいまいハートスパイス）"
+    },
+    {
+      "id": "iL1RmBRXnp0",
+      "title": "TVアニメ第2期「ブルーロック VS. U-20 JAPAN」ED",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Ending movie、Music video（TVアニメ第2期 ED）"
+    },
+    {
+      "id": "1vqrWnoT7hc",
+      "title": "みせたいすがた　縦型ドラマ「私は上司を指摘したい」　出汁編",
+      "confidence": 0.85,
+      "evidence": "掲載カテゴリ: 縦型コントドラマ／撮影・演者・編集ギミック等の記述（縦型ドラマ「私は上司を指摘したい」）"
+    },
+    {
+      "id": "QF35h_RVkIQ",
+      "title": "テレビ東京　シナぷしゅ『たい したい』",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Comedy、2D animation、Animation（テレビ東京 シナぷしゅ『たい したい』）"
+    },
+    {
+      "id": "q4AEGSogO4M",
+      "title": "Chasms Call",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Art work、Competition work（Chasms Call）"
+    },
+    {
+      "id": "bndAZmgw5Qc",
+      "title": "Qiddiya Gaming – Official Trailer",
+      "confidence": 0.85,
+      "evidence": "クレジットに＜LIVE ACTION＞および VFX クレジット、撮影・カメラ職の記載あり（Qiddiya Gaming – Official Trailer）"
+    },
+    {
+      "id": "5-ksCGXpquM",
+      "title": "Sou「バブル」MV",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Animation、Music video（Sou「バブル」MV）"
+    },
+    {
+      "id": "c_9UTrrqcLI",
+      "title": "DORIDORI – ‘Lucky Doki’ Official M/V",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Animation、Motion graphics、Music video（DORIDORI – ‘Lucky Doki’）"
+    },
+    {
+      "id": "bqigIHMComE",
+      "title": "ヨルシカ 「斜陽」",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Music video（ヨルシカ 「斜陽」）"
+    },
+    {
+      "id": "_5XZMPbbJIk",
+      "title": "讐復を能える。",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Music video / タグ: 3DCG, Music video"
+    },
+    {
+      "id": "86QKOEYu53Q",
+      "title": "未来の科学者たちへ#19「ハルバッハ配列」",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Short film / コメント: NIMSのYouTubeオフィシャルチャンネル内で公開"
+    },
+    {
+      "id": "bydHXIb7vqU",
+      "title": "Tele | ぱらいそ – Music Video",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video / タグ: Music video"
+    },
+    {
+      "id": "FFyrwWMPfrs",
+      "title": "Roniit “Purify” (Original Work)",
+      "confidence": 0.85,
+      "evidence": "掲載カテゴリ: 3DCG、Music video / コメント: 3DCGを軸にAI技術も実験的に取り入れたと記載"
+    },
+    {
+      "id": "ZxbNMcEJypo",
+      "title": "第10回 新千歳空港国際アニメーション映画祭 公式トレーラー映像 / New Chitose 2023 Signal Film",
+      "confidence": 0.9,
+      "evidence": "掲載: 公式トレーラー映像 / 掲載カテゴリ: 3DCG、Promotion"
+    },
+    {
+      "id": "jz8O2t2r8Gs",
+      "title": "King Gnu / ねっこ",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Music video / タグ: Music video"
+    },
+    {
+      "id": "ot8oo1Dvh_k",
+      "title": "Glancent",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Art work、Motion graphics / タグ: Motion graphics"
+    },
+    {
+      "id": "4tQoXsIhDm8",
+      "title": "第11回 新千歳空港国際アニメーション映画祭 公式トレーラー / New Chitose 2024 Signal Film",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Opening movie、Promotion、Web CM、劇場映画（掲載カテゴリから抜粋）"
+    },
+    {
+      "id": "Jy-QS27q7lA",
+      "title": "Mrs. GREEN APPLE「ケセラセラ」",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Music video / タグ: 3DCG, Music video"
+    },
+    {
+      "id": "lfw8W3uWO7s",
+      "title": "Ado「オールナイトレディオ」",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Animation、Music video / コメント: CGパートのデザイン・モデリング・アニメーションを担当と記載"
+    },
+    {
+      "id": "1XZ_t2xtWMk",
+      "title": "へんしん!／莉犬",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Comedy、Music video / タグ: Comedy, Music video"
+    },
+    {
+      "id": "OTUN6kQUrds",
+      "title": "ドラマチューズ！『星屑テレパス』",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: TV / コメント: 「実写映像でも感じられるように」と明記"
+    },
+    {
+      "id": "1046062913",
+      "title": "A Composition for Upright Displays #01",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Art work、Installation、Motion graphics、Music Visualization / タグ: Motion graphics"
+    },
+    {
+      "id": "HJMz868rX74",
+      "title": "NHK みんなのうた「MEME」",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Music video / タグ: Music video"
+    },
+    {
+      "id": "Zc_TGoO71xA",
+      "title": "Omodaka「Hokkai Bon Uta」",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Animation、Motion graphics、Music video、Short film / タグ: Motion graphics, Music video"
+    },
+    {
+      "id": "1041875369",
+      "title": "星宮とと+ SOZEN OTSUBO – Hi-fi (Official Music Video)",
+      "confidence": 0.9,
+      "evidence": "タグ: Music video、3DCG ／ 掲載コメントに「Hi-fi のMV」「3DCG」を明記"
+    },
+    {
+      "id": "bE0x50-wngU",
+      "title": "あの街／春春舞",
+      "confidence": 0.9,
+      "evidence": "タグ: Music video、2D animation ／ 掲載コメントに「帰路」「記憶」「郷愁」をキーワードと明記"
+    },
+    {
+      "id": "1S4ks0_nr1o",
+      "title": "ちびゴジラの逆襲（シーズン２）",
+      "confidence": 0.9,
+      "evidence": "タグ: 2D animation、Comedy、TV ／ 掲載コメントに『軽快な会話劇キャラクターアニメーション』『Comedy』記載"
+    },
+    {
+      "id": "CUSUhXqThjY",
+      "title": "Aimer 「白色蜻蛉」 MV",
+      "confidence": 0.95,
+      "evidence": "タグ: Live action、Music video ／ 掲載コメントに撮影クルー(Director of Photography, Steadicam等)を列挙"
+    },
+    {
+      "id": "924836911",
+      "title": "雨の音が聞こえる　　　I hear the sound of rain",
+      "confidence": 0.9,
+      "evidence": "タグ: Short film、2D animation、3DCG ／ 掲載コメントに記憶・思い出を残す旨の記述"
+    },
+    {
+      "id": "Hj8Hov45ewE",
+      "title": "テレビ東京　シナぷしゅ　月歌(5月)　『ドライブ』",
+      "confidence": 0.9,
+      "evidence": "タグ: 2D animation、Animation、TV ／ 掲載コメントにテレビ東京の0〜2歳向け番組のアニメーション制作と明記"
+    },
+    {
+      "id": "1069078944",
+      "title": "sankaku REEL 2025",
+      "confidence": 0.85,
+      "evidence": "タグ: CM、Motion graphics、2D animation、3DCG が明記"
+    },
+    {
+      "id": "1023733257",
+      "title": "Motion Reel 2024",
+      "confidence": 0.9,
+      "evidence": "タグ: Brand movie、Motion graphics、Generative Art、3DCG が明記"
+    },
+    {
+      "id": "Hz3yr-YtDtI",
+      "title": "CONTINUITY24 Type2",
+      "confidence": 0.85,
+      "evidence": "タグ: 3DCG、Motion graphics、Art work ／ 掲載カテゴリに3DCGを明記"
+    },
+    {
+      "id": "sfhZwklssig",
+      "title": "並列計算される遺伝子",
+      "confidence": 0.9,
+      "evidence": "タグ: Coding、Generative Art、Interactive ／ 掲載コメントにGPGPUやリアルタイムシミュレーションの記述"
+    },
+    {
+      "id": "W9uBD8Mr66c",
+      "title": "影",
+      "confidence": 0.9,
+      "evidence": "タグ: Short film、2D animation、3DCG、Stopmotion、Motion graphics が明記／自主制作短編との記述"
+    },
+    {
+      "id": "1023678841",
+      "title": "BREAK THROUGH",
+      "confidence": 0.95,
+      "evidence": "タグ: Concept Movie、Motion graphics ／ 掲載コメントに『小野薬品のコーポレートスローガン』『コンセプトムービー』と明記（小野薬品は医薬品企業）"
+    },
+    {
+      "id": "8V2nwBtFGKw",
+      "title": "トリプルファイヤー – シルバースタッフ (Official Music Video)",
+      "confidence": 0.9,
+      "evidence": "タグ: Music video、2D animation、Animation が明記／タイトルにOfficial Music Video と明示"
+    },
+    {
+      "id": "AV1G0EMaunc",
+      "title": "EXPO WORLDs | 世界と世界が、つくる世界。",
+      "confidence": 0.85,
+      "evidence": "タグ: 2D animation、3DCG、AI、Animation が明記"
+    },
+    {
+      "id": "KAksFXhj2_k",
+      "title": "azma ex",
+      "confidence": 0.85,
+      "evidence": "タグ: Short film、2D animation、3DCG、Animation が明記／掲載コメントに作品コンセプト（モバイルTCGへの着想）記載"
+    },
+    {
+      "id": "880587651",
+      "title": "Perrier Jouet 3DOOH at Omotesando",
+      "confidence": 0.9,
+      "evidence": "タグ: 3DCG、Advertisement ／ 掲載コメントにPerrier-Jouëtの3D屋外広告と明記（Perrier-Jouëtは飲料ブランド）"
+    },
+    {
+      "id": "LUyMBC4spCw",
+      "title": "アニメシリーズ「デッドデッドデーモンズデデデデデストラクション」OP映像",
+      "confidence": 0.9,
+      "evidence": "タイトルと説明に「オープニング映像」を明記。掲載カテゴリに「3DCG」「Live action」がある。"
+    },
+    {
+      "id": "u0na3n8LQbs",
+      "title": "【オリジナルMV】HOMEYA",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリに「Music video」、本文に「企画、監督、出演…完成まですべての工程に携わった」、タグに「Comedy」。"
+    },
+    {
+      "id": "zzJf7Jy2Xdc",
+      "title": "LMYK – I LUV U 2",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリに「Music video」がある。"
+    },
+    {
+      "id": "F34IukKc3ys",
+      "title": "ヒプノシスマイク -Dream Rap Battle- OP映像",
+      "confidence": 0.9,
+      "evidence": "タイトルに「OP映像」、掲載カテゴリに「3DCG」「Motion graphics」がある。"
+    },
+    {
+      "id": "aNa3VKAnC3k",
+      "title": "Windfall",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリに「Stopmotion」「Music video」。本文で「ストップモーションMV」と明記。"
+    },
+    {
+      "id": "o7AIdYEqt3M",
+      "title": "BUCK-TICK / 雷神 風神 – レゾナンス MUSIC VIDEO",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリに「2D animation」「Music video」「Art work」がある（Music videoとして明記）。"
+    },
+    {
+      "id": "AlVqiVg5BvQ",
+      "title": "Asteroid – PEPETTERZ",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリに「3DCG」「Live action」「Music video」がある。"
+    },
+    {
+      "id": "sOWWV6SzCtQ",
+      "title": "「埃人間」 – Music Video",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリに「2D animation」「Music video」。作品はMusic videoとして紹介されている。"
+    },
+    {
+      "id": "ZpsLVASQ3yQ",
+      "title": "PAS TASTA – B.B.M. ft. ピノキオピー",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリに「3DCG」「Music video」「PV」がある。"
+    },
+    {
+      "id": "jSdeEU-LTwE",
+      "title": "Snail’s House ”メテオガール” (METEORGIRL) MV",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリに「2D animation」「Music video」がある。"
+    },
+    {
+      "id": "JRYdJA-QsVI",
+      "title": "【MV】六道伍感さんぽ／戌亥とこ",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリに「3DCG」「Music video」「Pixel Art」。"
+    },
+    {
+      "id": "GyOv5_oyiuY",
+      "title": "夏、スペースコロニー",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、3DCG。説明: 「2D animation」「3DCG」と明記。"
+    },
+    {
+      "id": "K-C7YJACfZk",
+      "title": "Box in the Air x 3D Gaussian Splatting",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Experimental film。説明: 3D Gaussian Splatting（3DCG）や「34台のカメラ」を用いた記述あり。"
+    },
+    {
+      "id": "3MP8oRa0XG0",
+      "title": "シナぷしゅ　うた「おふろどうぶつえん」",
+      "confidence": 0.95,
+      "evidence": "掲載カテゴリ: Animation、Stopmotion、TV。説明: テレビ東京の番組コーナーで、切り絵とコマ撮り（ストップモーション）で制作と明記。"
+    },
+    {
+      "id": "911945134",
+      "title": "Mid Tide #3",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Experimental film、Installation。説明: 3チャンネルの映像インスタレーション、Experimental filmと明記。"
+    }
+  ],
+  "held": []
+}

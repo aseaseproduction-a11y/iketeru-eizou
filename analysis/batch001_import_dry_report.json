@@ -1,0 +1,398 @@
+{
+  "inputPath": "/home/ubuntu/video_analysis_batch_001.json",
+  "apply": false,
+  "processed": 3,
+  "updatedVideoViewed": 3,
+  "updatedMetadataOnly": 0,
+  "skipped": [
+    {
+      "id": "1",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "2",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "3",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "4",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "5",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "move_action_06",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "7",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "9",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "10",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "11",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "12",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "13",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "1WptOu1D00_hqhguqhtdqF_WzrRRh0Uh1",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "15",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "16",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "17",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "18",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "19",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "20",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "22",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "1FyX9VltMf3kfqbAk1Z10bII2UYPptlVJ",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "24",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "17BoRL2dpVMaONc0k-8Y1chVJDWFsgOs_",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "26",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "27",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "1PzYd1KKn75Jyb39yNrnYHt0uOPH6JJjK",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "29",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "30",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "31",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "32",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "33",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "706",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "35",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "36",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "37",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "38",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "39",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "40",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "41",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "42",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "43",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "video_44",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "45",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "46",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "47",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "48",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "49",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "50",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "49",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "52",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "53",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "54",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "55",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "56",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "1QYT233nxJ0pl-Qz_cQpBiyOlsSagnb2G",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "58",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "59",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "60",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "18_F3Jz3vZMLvqeHrm6GFfsAGHAZcOpd0",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "62",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "file_63_metadata_only",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "64",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "65",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "66",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "67",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "68",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "69",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "70",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "71",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "72",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "73",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "74",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "75",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "76",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "77",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "78",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "79",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "81",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "82",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "83",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "84",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "85",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "86",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "87",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "88",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "89",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "90",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "91",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "92",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "93",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "94",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "v_095",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "96",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "97",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "98",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "99",
+      "reason": "video_not_found"
+    },
+    {
+      "id": "100",
+      "reason": "video_not_found"
+    }
+  ],
+  "errors": []
+}

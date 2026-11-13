@@ -1,0 +1,151 @@
+{
+  "generatedAt": "2026-08-19T07:05:12.639Z",
+  "policy": "ALLd.は公式トップページで動画URLを確認した埋め込みVimeo配信を、案件名未対応と明記して限定登録する。FAVVIDは外部動画URLを確認できる既存38件のみが登録候補で、URL未確認カードは登録しない。",
+  "summary": {
+    "alldEmbeddedVimeoRows": 7,
+    "favvidDirectVideoRows": 38,
+    "favvidCardsWithoutConfirmedExternalUrl": 114
+  },
+  "rows": [
+    {
+      "id": "1086992497",
+      "platform": "vimeo",
+      "videoUrl": "https://vimeo.com/1086992497",
+      "title": "ALLd. 公式掲載映像 / Vimeo 1086992497",
+      "retrievedTitle": "ALLd. 公式掲載映像 / Vimeo 1086992497",
+      "thumbnail": "https://vumbnail.com/1086992497.jpg",
+      "channelTitle": "ALLd.",
+      "source": "alld",
+      "sourceLabel": "ALLd. 公式掲載映像（案件名未対応）",
+      "sourceUrl": "https://alld.jp/",
+      "sourceUrls": [
+        "https://alld.jp/"
+      ],
+      "productionName": "ALLd.",
+      "result": "verified",
+      "titleMatch": true,
+      "verificationReason": "official_listing_embedded_vimeo_url_relaxed_project_title_unavailable",
+      "sourceContext": "ALLd.公式トップページの埋め込みVimeo配信URLを確認。個別案件名との対応は公式データ上で未確認。"
+    },
+    {
+      "id": "1127041639",
+      "platform": "vimeo",
+      "videoUrl": "https://vimeo.com/1127041639",
+      "title": "ALLd. 公式掲載映像 / Vimeo 1127041639",
+      "retrievedTitle": "ALLd. 公式掲載映像 / Vimeo 1127041639",
+      "thumbnail": "https://vumbnail.com/1127041639.jpg",
+      "channelTitle": "ALLd.",
+      "source": "alld",
+      "sourceLabel": "ALLd. 公式掲載映像（案件名未対応）",
+      "sourceUrl": "https://alld.jp/",
+      "sourceUrls": [
+        "https://alld.jp/"
+      ],
+      "productionName": "ALLd.",
+      "result": "verified",
+      "titleMatch": true,
+      "verificationReason": "official_listing_embedded_vimeo_url_relaxed_project_title_unavailable",
+      "sourceContext": "ALLd.公式トップページの埋め込みVimeo配信URLを確認。個別案件名との対応は公式データ上で未確認。"
+    },
+    {
+      "id": "1059446980",
+      "platform": "vimeo",
+      "videoUrl": "https://vimeo.com/1059446980",
+      "title": "ALLd. 公式掲載映像 / Vimeo 1059446980",
+      "retrievedTitle": "ALLd. 公式掲載映像 / Vimeo 1059446980",
+      "thumbnail": "https://vumbnail.com/1059446980.jpg",
+      "channelTitle": "ALLd.",
+      "source": "alld",
+      "sourceLabel": "ALLd. 公式掲載映像（案件名未対応）",
+      "sourceUrl": "https://alld.jp/",
+      "sourceUrls": [
+        "https://alld.jp/"
+      ],
+      "productionName": "ALLd.",
+      "result": "verified",
+      "titleMatch": true,
+      "verificationReason": "official_listing_embedded_vimeo_url_relaxed_project_title_unavailable",
+      "sourceContext": "ALLd.公式トップページの埋め込みVimeo配信URLを確認。個別案件名との対応は公式データ上で未確認。"
+    },
+    {
+      "id": "1059430588",
+      "platform": "vimeo",
+      "videoUrl": "https://vimeo.com/1059430588",
+      "title": "ALLd. 公式掲載映像 / Vimeo 1059430588",
+      "retrievedTitle": "ALLd. 公式掲載映像 / Vimeo 1059430588",
+      "thumbnail": "https://vumbnail.com/1059430588.jpg",
+      "channelTitle": "ALLd.",
+      "source": "alld",
+      "sourceLabel": "ALLd. 公式掲載映像（案件名未対応）",
+      "sourceUrl": "https://alld.jp/",
+      "sourceUrls": [
+        "https://alld.jp/"
+      ],
+      "productionName": "ALLd.",
+      "result": "verified",
+      "titleMatch": true,
+      "verificationReason": "official_listing_embedded_vimeo_url_relaxed_project_title_unavailable",
+      "sourceContext": "ALLd.公式トップページの埋め込みVimeo配信URLを確認。個別案件名との対応は公式データ上で未確認。"
+    },
+    {
+      "id": "1059442962",
+      "platform": "vimeo",
+      "videoUrl": "https://vimeo.com/1059442962",
+      "title": "ALLd. 公式掲載映像 / Vimeo 1059442962",
+      "retrievedTitle": "ALLd. 公式掲載映像 / Vimeo 1059442962",
+      "thumbnail": "https://vumbnail.com/1059442962.jpg",
+      "channelTitle": "ALLd.",
+      "source": "alld",
+      "sourceLabel": "ALLd. 公式掲載映像（案件名未対応）",
+      "sourceUrl": "https://alld.jp/",
+      "sourceUrls": [
+        "https://alld.jp/"
+      ],
+      "productionName": "ALLd.",
+      "result": "verified",
+      "titleMatch": true,
+      "verificationReason": "official_listing_embedded_vimeo_url_relaxed_project_title_unavailable",
+      "sourceContext": "ALLd.公式トップページの埋め込みVimeo配信URLを確認。個別案件名との対応は公式データ上で未確認。"
+    },
+    {
+      "id": "1059595106",
+      "platform": "vimeo",
+      "videoUrl": "https://vimeo.com/1059595106",
+      "title": "ALLd. 公式掲載映像 / Vimeo 1059595106",
+      "retrievedTitle": "ALLd. 公式掲載映像 / Vimeo 1059595106",
+      "thumbnail": "https://vumbnail.com/1059595106.jpg",
+      "channelTitle": "ALLd.",
+      "source": "alld",
+      "sourceLabel": "ALLd. 公式掲載映像（案件名未対応）",
+      "sourceUrl": "https://alld.jp/",
+      "sourceUrls": [
+        "https://alld.jp/"
+      ],
+      "productionName": "ALLd.",
+      "result": "verified",
+      "titleMatch": true,
+      "verificationReason": "official_listing_embedded_vimeo_url_relaxed_project_title_unavailable",
+      "sourceContext": "ALLd.公式トップページの埋め込みVimeo配信URLを確認。個別案件名との対応は公式データ上で未確認。"
+    },
+    {
+      "id": "1061161784",
+      "platform": "vimeo",
+      "videoUrl": "https://vimeo.com/1061161784",
+      "title": "ALLd. 公式掲載映像 / Vimeo 1061161784",
+      "retrievedTitle": "ALLd. 公式掲載映像 / Vimeo 1061161784",
+      "thumbnail": "https://vumbnail.com/1061161784.jpg",
+      "channelTitle": "ALLd.",
+      "source": "alld",
+      "sourceLabel": "ALLd. 公式掲載映像（案件名未対応）",
+      "sourceUrl": "https://alld.jp/",
+      "sourceUrls": [
+        "https://alld.jp/"
+      ],
+      "productionName": "ALLd.",
+      "result": "verified",
+      "titleMatch": true,
+      "verificationReason": "official_listing_embedded_vimeo_url_relaxed_project_title_unavailable",
+      "sourceContext": "ALLd.公式トップページの埋め込みVimeo配信URLを確認。個別案件名との対応は公式データ上で未確認。"
+    }
+  ]
+}

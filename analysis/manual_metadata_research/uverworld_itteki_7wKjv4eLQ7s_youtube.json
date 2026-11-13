@@ -1,0 +1,86 @@
+{
+  "kind": "youtube#videoListResponse",
+  "etag": "zc-rI-LTL83lQ54cq2tZwxu80qM",
+  "items": [
+    {
+      "kind": "youtube#video",
+      "etag": "aCY2wrSaSv-6i-Vo5g4knXrkV4Q",
+      "id": "7wKjv4eLQ7s",
+      "snippet": {
+        "publishedAt": "2017-02-13T03:00:00Z",
+        "channelId": "UCnziFQs4Ihms4UtxmVZP6cg",
+        "title": "UVERworld 『一滴の影響 -ダブル・ライフ-』",
+        "description": "UVERworld、2017.02.01にリリースしBillboard JAPAN Top Singles Sales1位を獲得した「一滴の影響」のミュージックビデオが公開！\n\n監督：大久保拓朗",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/7wKjv4eLQ7s/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/7wKjv4eLQ7s/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/7wKjv4eLQ7s/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/7wKjv4eLQ7s/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/7wKjv4eLQ7s/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "UVERworld Official YouTube Channel",
+        "tags": [
+          "PV",
+          "MV",
+          "UVERworld",
+          "ウーバーワールド",
+          "一滴の影響",
+          "イッテキノエイキョウ",
+          "UVER",
+          "ウーバー",
+          "I LOVE THE WORLD",
+          "TAKUYA∞",
+          "TAKUYA",
+          "たくや",
+          "克哉",
+          "かつや",
+          "信人",
+          "のぶと",
+          "誠果",
+          "せいか",
+          "彰",
+          "あきら",
+          "真太郎",
+          "しんたろう",
+          "WE ARE GO",
+          "ウィーアーゴー",
+          "Premium Live on X'mas 2015",
+          "LIVE",
+          "live",
+          "Roots"
+        ],
+        "categoryId": "10",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "ja",
+        "localized": {
+          "title": "UVERworld 『一滴の影響 -ダブル・ライフ-』",
+          "description": "UVERworld、2017.02.01にリリースしBillboard JAPAN Top Singles Sales1位を獲得した「一滴の影響」のミュージックビデオが公開！\n\n監督：大久保拓朗"
+        }
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 1,
+    "resultsPerPage": 1
+  }
+}

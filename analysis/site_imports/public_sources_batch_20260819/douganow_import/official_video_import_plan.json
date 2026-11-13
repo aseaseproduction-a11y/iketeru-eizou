@@ -1,0 +1,43 @@
+{
+  "generatedAt": "2026-08-20T00:24:25.255Z",
+  "source": "指定サイト公式掲載動画",
+  "counts": {
+    "verifiedCandidates": 1
+  },
+  "imports": [
+    {
+      "id": "PiPm_Ieiov4",
+      "platform": "youtube",
+      "title": "PEACH JOHN BEAUTY × 森香澄 コラボ第2弾💖フェムケアアイテム",
+      "thumbnail": "https://i.ytimg.com/vi/PiPm_Ieiov4/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=PiPm_Ieiov4",
+      "embedUrl": "https://www.youtube.com/embed/PiPm_Ieiov4",
+      "source": "douganow",
+      "sourceLabel": "動画NOW",
+      "channelTitle": "PEACH JOHN",
+      "allTags": [
+        "動画NOW",
+        "公式制作実績",
+        "YouTube"
+      ],
+      "productions": [],
+      "curationNote": {
+        "purpose": "映像表現のリファレンス収集",
+        "background": "動画NOWの公式掲載ページに掲載。 公式掲載タイトル: undefined",
+        "evaluation": "公式掲載作品として確認された映像。",
+        "sourceUrls": [
+          "https://douganow.jp/archives/20260819524035.html"
+        ]
+      },
+      "awards": [],
+      "addedDate": "2026-08-19",
+      "verification": {
+        "method": "public_oembed_and_source_title_video_id_canonical_url_verified",
+        "retrievedTitle": "PEACH JOHN BEAUTY × 森香澄 コラボ第2弾💖フェムケアアイテム",
+        "sourceUrls": [
+          "https://douganow.jp/archives/20260819524035.html"
+        ]
+      }
+    }
+  ]
+}

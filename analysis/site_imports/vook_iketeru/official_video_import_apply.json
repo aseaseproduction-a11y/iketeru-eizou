@@ -1,0 +1,2165 @@
+{
+  "mode": "apply",
+  "completedAt": "2026-08-19T09:03:18.930Z",
+  "counts": {
+    "planned": 429,
+    "insertable": 6,
+    "inserted": 6,
+    "skipped": 423
+  },
+  "inserted": [
+    {
+      "id": "WlwRWYWB61Q",
+      "title": "河合優実、阿波おどりに初挑戦！特技のダンスの経験を生かし短時間で振り付けを習得！撮影裏も公開　「サントリー生ビール」新TV-CM「あゆみさんと祭り」篇",
+      "source": "vook_iketeru",
+      "videoUrl": "https://www.youtube.com/watch?v=WlwRWYWB61Q"
+    },
+    {
+      "id": "-Nsrg3eVBBw",
+      "title": "サントリー生ビール『あゆみさんと祭り』篇 60秒 河合優実",
+      "source": "vook_iketeru",
+      "videoUrl": "https://www.youtube.com/watch?v=-Nsrg3eVBBw"
+    },
+    {
+      "id": "8A6F10zDt2Y",
+      "title": "キリン 午後の紅茶　遠くの町の夏の午後篇　Behind The Scenes",
+      "source": "vook_iketeru",
+      "videoUrl": "https://www.youtube.com/watch?v=8A6F10zDt2Y"
+    },
+    {
+      "id": "lJJ2MJlIazI",
+      "title": "キリン 午後の紅茶　「遠くの町の夏の午後」篇　60秒",
+      "source": "vook_iketeru",
+      "videoUrl": "https://www.youtube.com/watch?v=lJJ2MJlIazI"
+    },
+    {
+      "id": "LA3W8raOsy8",
+      "title": "カロリーメイト ゼリー CM |「怪獣たちの夏休み」篇　30秒",
+      "source": "vook_iketeru",
+      "videoUrl": "https://www.youtube.com/watch?v=LA3W8raOsy8"
+    },
+    {
+      "id": "BmV1TPKs2Wg",
+      "title": "【公式】カーセンサー　「あの夏の思い出　～もしも平成にあのちゃんとドライブデートしたら～」篇（ロング）",
+      "source": "vook_iketeru",
+      "videoUrl": "https://www.youtube.com/watch?v=BmV1TPKs2Wg"
+    }
+  ],
+  "skipped": [
+    {
+      "id": "WvFsPFtAojs",
+      "title": "オーイシマサヨシ - ハイメンテナンスガール [Official Video]",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "FtVDq7cLTZo",
+      "title": "ORANGE RANGE – CURRY食べたい feat.ソイソース (Music Video)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "RGAemb7OtO4",
+      "title": "千葉雄喜(Yuki Chiba), Lil Moshpit, ちゃんみな ― アニョハセヨ (ちゃんみな Remix)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "pvEc9lBSe9Q",
+      "title": "長谷川白紙, ハハとヘアピンズ - 窒息日記 (Official Video)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "qFhspt7zsXg",
+      "title": "Number_i - BUGS LIFE (Official Music Video)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "2OQEgEYjPY4",
+      "title": "【MV】私立恵比寿中学「えびチリ、はじめました」",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "XNxrBwdfUzo",
+      "title": "X VORDER RUNWAY｜Official Teaser",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1209789301",
+      "title": "J SPORTS Filler Movie",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "tdJh94wvxDg",
+      "title": "記憶汚染展 公式ティザーPV",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "CkrF14xSRNg",
+      "title": "東京テアトル ムービングロゴ ｜「集合」「スポット」「回転」「呼吸」「巻き物」",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "iu_9z0IHRTw",
+      "title": "Focus Focus Music Video (Behind the scenes)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "fgQ_NH-hvGI",
+      "title": "Kyary Pamyu Pamyu - Focus Focus(きゃりーぱみゅぱみゅ-Focus Focus)Official Music Video",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "_V16BMOhIuU",
+      "title": "ハスラー テレビCM「STYLISH or WILD？」15秒編",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "EjaQdBcF6K4",
+      "title": "YOASOBI × Overwatch 「オリオン / Orion」Official Music Video",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "L6CfQwa25HY",
+      "title": "【OP映像】「ストレンジ -伊藤潤二の夜も眠れぬ奇妙な話-」7月3日（金）深夜24時12分スタート！",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "GOfC_4qCa9c",
+      "title": "オリジナルTVアニメ『さよならララ』オープニング映像 |いきものがかり「さよならララ」",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "SltunrTo4Rc",
+      "title": "WWF | Team Forest | Behind The Scenes",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "yp0-VHmJNac",
+      "title": "TEAM FOREST | Official Film",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "U6Bo4Pawlxw",
+      "title": "キユーピーハーフ「NEW KEWPIE HALF」篇 15秒",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "8Dl4BLOx9mY",
+      "title": "【新CM】私を生きる篇 30秒ver",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "T5oDqnvQiss",
+      "title": "LAFORET GRAND BAZAR 2026 SUMMER(15s)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "3DQvBJrZcYI",
+      "title": "Spotify | 聴けば毎日が踊り出す",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "FEeCAAVLYLg",
+      "title": "KANEBO 「唇に輪郭を。世界にドラマを。」60秒 CM",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "BqFknuFhsCU",
+      "title": "TOMONARI SORA - \"Teacher\"［Music Video］(Theme Song for Assassination Classroom: The Movie)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "R-iuG8oCIpg",
+      "title": "宇多田ヒカル　パッパパラダイス feat.甲本ヒロト Music Video",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "wxsMgidzapI",
+      "title": "踊ってばかりの国『Blowin' in the wind』Music Video(2026)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "w4RVYzflU_E",
+      "title": "Motoki Ohmori –「催し」MV Behind The Scene",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "fR7RPEW6YE0",
+      "title": "Motoki Ohmori -「催し」Official MV",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "YjPMupS1Lg4",
+      "title": "米津玄師 - 烏　Kenshi Yonezu -  Karasu",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "5i6sslqgeio",
+      "title": "桑田佳祐 – 人誑し / ひとたらし [Official Music Video]",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "hqrmKSerA5M",
+      "title": "DAILY SPORTS ANIMATION",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "yIDJTdHhC_w",
+      "title": "【清 竜人FRIENDS】 Teaser③",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "h21k6I_vQ1E",
+      "title": "絢香 / OK! GO! Music Video",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "_d3Y3mAWcqk",
+      "title": "秘めごと「リンネ」MV",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "xuMPDuZmz9A",
+      "title": "Capretto／Chevon【Music Video】",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "g_sb1tEONpQ",
+      "title": "テレビ大阪 ネクストIPプロジェクト 番宣V",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "hVzEHFuUosY",
+      "title": "超展開てんこ盛り『ダンダダン』5周年PV",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "pI9KcBKe_EY",
+      "title": "糸ようじスルッと入るタイプWEB「最狂ギコギコRemix」篇（1YS-0034）",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "w9Mx7pjeIpk",
+      "title": "VFX Breakdown |  LE SSERAFIM x ILLIT x KATSEYE 'ICONIC BY MISTAKE' Official MV",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "27C4pfRsf9g",
+      "title": "LE SSERAFIM (르세라핌) x ILLIT (아일릿) x KATSEYE (캣츠아이) 'ICONIC BY MISTAKE' Official MV",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "V1Lr-_AxeR8",
+      "title": "LE SSERAFIM (르세라핌) 'BOOMPALA' OFFICIAL MV",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "gWbtdecjzRM",
+      "title": "Behind The Scenes of『箱の中の羊』| ソニーPCL「360°カメラカー」によるバーチャルプロダクション撮影",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "BAScFIEfrOc",
+      "title": "Uber TVCM 「タクシーを、思いのままに　第六感篇」メイキング映像 | Uber",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "M9mqT8NE6iQ",
+      "title": "タクシーを、思いのままに 第六感篇 | Uber",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "ljAGMeHn5Rk",
+      "title": "はてな『参?』（読み:さんじょう）Official Music Video",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "T9yz6pZIDTc",
+      "title": "Lucky Kilimanjaro - 朝日 ［Official Music Video］",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "6gUu7J9w65I",
+      "title": "BE:FIRST / BE:FIRST ALL DAY -Music Video-",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "9NJI7cLZ2Qg",
+      "title": "Mrs. GREEN APPLE「風と町」Official Music Video",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "0u_zA8BJG6A",
+      "title": "イデアが溢れて眠れない / Vaundy：MUSIC VIDEO",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "oJzmamTmr8o",
+      "title": "Max Cooper - The Shape Of Memory (Official Video by Factory Fifteen)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "j0oGNWHi3UU",
+      "title": "【Super-ONE】WEB MOVIE「Super-ONE × BLUE GIANT SUPER SESSION」 篇",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "TVDch8Hnjb4",
+      "title": "色空間 「溺れているのです」（MUSIC VIDEO）",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "9_uSzn_yYNA",
+      "title": "辻村深月、3年ぶり長編『ファイア・ドーム』TVCM",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "3jNbe0uOrsg",
+      "title": "tofubeats - Angels On The Dancefloor",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "_EZk4P5tl94",
+      "title": "ポカリスエットweb movie｜Behind the scenes of「POCARI HUMAN CHALLENGE」",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "4y9q0_TktCA",
+      "title": "ポカリスエットCM｜「POCARI HUMAN CHALLENGE」篇 90秒",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "TWLSA6wRcC4",
+      "title": "ผ้าอ้อม99999 - not mika Guernica Helvetica Remix（Official Lyric Video）",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "4FOSHKro21k",
+      "title": "【MV】きゃわぽっぴんどぅー / iLiFE!",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "DC6uY64giQA",
+      "title": "かわいそうな知性 (Music Video)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "A7KbelltKEM",
+      "title": "HoYoHoYoにしてあげる♪ / 初音ミク×銀狼LV.999【崩壊：スターレイル】",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "Kxg5V3nyDi8",
+      "title": "MNNK Bro. (Takashi Murakami & JP THE WAVY) - SHUTOKO TOKYO (Official Music Video)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "qA28fwy82lw",
+      "title": "BREIMEN 「めんどいな...」 Official Music Video",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "3eyUprsFRt8",
+      "title": "お～いお茶 「純国産茶葉100％」篇 （日本国内版）",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "Y1u2CHJPpzc",
+      "title": "最優秀アーティスト賞 ノミニー | MUSIC AWARDS JAPAN 2026",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "9ltHtXPc_zo",
+      "title": "音楽人5,000人が選ぶのは、どの歌だ。 | MUSIC AWARDS JAPAN 2026",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "faT0iIP2EGk",
+      "title": "ADC 105th Annual Awards - Full Length Film",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "s8e7Nf8pKyg",
+      "title": "Japan in Snow is Absolute Cinema",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1179837107",
+      "title": "POP OUT CITY by PLATEAU",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "6NVAzWEgTXo",
+      "title": "On | Shape of Dreams, starring Zendaya. Written and directed by Spike Jonze.",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "Zb-H7nXcouI",
+      "title": "むかしむかし… | 地獄に堕ちるわよ | Netflix Japan",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "MIHU_e2GcsE",
+      "title": "【KOSÉ Beauty Days】5月からの美肌ケアは”守り7：攻め3”",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "l2bsPeED5nY",
+      "title": "丸亀製麺「本能全開ッ！丸亀うどんメシ誕生」ソース篇​",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "YndcCUSp6BY",
+      "title": "丸亀製麺「本能全開ッ！丸亀うどんメシ誕生」ねぎ塩篇​",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "d5_32FP-7IM",
+      "title": "ビスコ「愛がビスコをつよくした」篇（30”）",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "l7hbIgnyhe0",
+      "title": "れびてーしょん / キタニタツヤ - LEVITATION / Tatsuya Kitani",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "FYbCZvawN3Y",
+      "title": "幽艶 - 重音テト, 藤ちょこ, もう石田, 原口沙輔",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "BahAJCRll6c",
+      "title": "ผ้าอ้อม99999 - Junk Pop (Official Music Video)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "oZ7qjq-L9oc",
+      "title": "水曜日のカンパネラ『スキピオ』",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "5AdyRrLeQzk",
+      "title": "【バッファロー公式】TVCM　森江康太氏篇",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "t75qlQPXJGw",
+      "title": "ヨルシカ - 千鳥（OFFICIAL VIDEO）",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "trfICAvffBs",
+      "title": "The SILENCE / Vaundy：MUSIC VIDEO",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "HA3WzXw8vM8",
+      "title": "Fujii Kaze - It's Alright [Official Video]",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "I04rdnJQ0x4",
+      "title": "明日があるさ / 坂本九 | アニメカバー",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "LO_qACuZ5fc",
+      "title": "眉村ちあき「渋谷ふりーふぉーる」（Official Music Video）",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "3EY8uuF5WVo",
+      "title": "THE UNSEEN BEAUTY  -AI × BLIND CREATORS -　もし、視覚障害のあるクリエイター（全盲）がAIを使ってミュージックビデオを監督したら？",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "PtCzVhUE57s",
+      "title": "SARUKANI - CROWN (Water Remix) /『The Unseen Beauty』Project",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "g0UwIWrXZQc",
+      "title": "m-flo loves Diggy-MO' & しのだりょうすけ / \"GateWay\" Official Music Video",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "IPjnpdZ-KuM",
+      "title": "ジェットコースターで近大行ってみた（大阪周遊編） |近畿大学",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "EAtYC9fkjGA",
+      "title": "【Honda Power Products】 The Making of “Hakoniwa – A World in Miniature”",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "hyfcLfbD-VU",
+      "title": "【Honda Power Products】Hakoniwa – A World in Miniature",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "q6s2lNqBHW8",
+      "title": "OURO 魔裟斗揺るぎない挑戦篇 30秒ver",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "t0WhBbq-BRw",
+      "title": "創る未来は、想像以上に進化する。FCS 新TVCM",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "OErS5TvQ9A4",
+      "title": "１本満足バー「ザクッと満足チャージ」篇 30秒",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "bB9tSdpd1fM",
+      "title": "ウェブCM「世界は、よくばってつくれ。」",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "HPp7gHiqiWU",
+      "title": "大成建設グループＣＭ「挑戦」篇　30秒",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "MLXxSsdAgN4",
+      "title": "クレカ乗車「みんながつながる」篇_60秒　【三井住友カード公式】",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "S5M6xk9eU60",
+      "title": "どんな一歩も、App Storeと。 ｜ ゲーム・ノート・タクシー ｜ Apple",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "OhOsgjjBUmQ",
+      "title": "どんな一歩も、App Storeと。 ｜ メッセージ・ニュース・ゲーム・乗換案内 ｜ Apple",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "Iw1deC5hggg",
+      "title": "どんな一歩も、App Storeと。 ｜ マンガ・クリエイティブツール・レシピ・睡眠管理 ｜ Apple",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "W6FWzPjrzqU",
+      "title": "Hello, Special Times.『THE “LIVE” IMAGINATION』篇 60秒 | JRA公式",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "Sk8OfLS3D70",
+      "title": "ザ・ピール『果皮の逆襲　ラッキー７』篇 15秒 大泉洋 斎藤工 池松壮亮 サントリー CM",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "TuAaNC_VBVw",
+      "title": "ザ・プレミアム・モルツ『プレモル子ちゃん・一新』篇 30秒 広瀬すず 伊藤沙莉 オダギリジョー 津田健次郎 サントリー CM",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "5U_t1clzIMc",
+      "title": "ヨドコウCM第2弾「おさまるな。ヨドコウ　自分との闘い」篇30秒",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "tSS02BbCNrU",
+      "title": "SUNTORY WHISKY 碧Ao『Be a traveler』3分17秒",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "gR0hTNDgYPE",
+      "title": "OTO MART【PV】",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "-K2c-HL9cIA",
+      "title": "「灯そう。みんなで。」30秒編",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "eP5IQuYU_3A",
+      "title": "ザ・プレミアム・モルツ マスターズドリーム『麦の個性』篇 69秒 サントリー CM",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "63vqob-MljQ",
+      "title": "Kylie Minogue - Come Into My World (Official Video) [Full HD Remastered]",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "ohvN6A7Onos",
+      "title": "The CHANEL 25 Handbag Campaign",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "D86h-iOyZIY",
+      "title": "Adobe Women's FA Cup | Official Trailer | Channel 4",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "AusVvo_NU2o",
+      "title": "Your Way Out | Behind The Scenes",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "HQJMzTpckPo",
+      "title": "Your Way Out | Extended Cut",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "0V4CCxskN_0",
+      "title": "Your Way Out",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "3APvI_L6yJI",
+      "title": "Thundercat - 'She Knows Too Much (feat. Mac Miller)' (Official Video)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "jRxF8tqQg8Y",
+      "title": "HUGEN –「パッピドゥ/Pappidoo」 Video",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "iIL_CB_YjFk",
+      "title": "講談社ブランデッドフィルム | LIGHT HOLE",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "XbuRfdBErro",
+      "title": "「オレと吉野家」篇「オレと牛丼」篇　メイキングムービー",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "I6SqNnSiA8c",
+      "title": "「オレと吉野家」篇　30秒",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "YtzWcS476Ls",
+      "title": "TIME by Ode | from the album 'The Whole Inside' (Official Video)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "SXX-YotJDVU",
+      "title": "J. Cole - The Fall-Off is Inevitable (Official Music Video)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "u3SIKAmPXY4",
+      "title": "Hello, MacBook Neo",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "GOO8BJJuJ1U",
+      "title": "サントリー天然水 特製ジンジャーエール『ジンジャー！ジャジャーン！』篇 55秒 柏木悠 サントリー",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "a77rMT94J5I",
+      "title": "サントリー天然水 特製ジンジャーエール CM『あとで解説します』篇",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1151598827",
+      "title": "Etherea - Behind The Scenes",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1151511255",
+      "title": "ETHEREA",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "Un3lkxv9Hxo",
+      "title": "BACK IN MY DAYS / あの日の記憶がきこえる",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "mEVl0NS0vu8",
+      "title": "That's AI (2026) - Short Film",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "zhHB4dZTChw",
+      "title": "KiiiKiii 키키 '404 (New Era)' MV",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "F7sGJVUrkjQ",
+      "title": "Hearts2Hearts 하츠투하츠 'RUDE!' MV",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "9qkpcLK422o",
+      "title": "IVE 아이브 'BANG BANG' MV",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1Lmy7qwmSMc",
+      "title": "IVE 아이브 'BLACKHOLE' MV",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "2GJfWMYCWY0",
+      "title": "BLACKPINK - ‘GO’ M/V",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "B9u8V8odLAE",
+      "title": "ミルクレア チョコとバニラ どーゆーこと篇 長尺",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "K7DT1uY3QXo",
+      "title": "クラフトボス 甘くないイタリアーノ『宇宙人ジョーンズ・真実かフェイクか／第1弾』篇 30秒 トミー・リー・ジョーンズ 役所広司 杉咲花 河合優実 サントリー CM",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "oBj6dxLNzU4",
+      "title": "「いい肌に、なる準備。」発酵導入美容液 | MUJI 無印良品",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "AlegGiZcIEo",
+      "title": "『バイオハザード レクイエム』 夢グループ　テレビショッピング映像",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1155088773",
+      "title": "CONTACT by Anecdote",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "4jaHcz3d85w",
+      "title": "Max Cooper - A Sense Of Getting Closer (Official video by Conner Griffith)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "PEj5FoAFOgY",
+      "title": "ผ้าอ้อม99999 - 忙忙忙ー忙・忙ー忙忙 (Official Music Video)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "obqsSgY4oU8",
+      "title": "영파씨 (YOUNG POSSE) 'VISA' MV",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "uKJ7vQBsFCI",
+      "title": "【MON7A】「TOGE TOGE」（Music Video）",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "zz2a9Q2Wru0",
+      "title": "King Gnu - AIZO",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1154070144",
+      "title": "The Sound of Japan",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1147780380",
+      "title": "Kate Spade - Spark Something Beautiful",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "JOMlt1vgewc",
+      "title": "東京ガスCM「つむいだ歴史、つむぐ未来」篇（90秒）",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "6UoR65lOf64",
+      "title": "NURO「感動を止めるな。」独白篇 メイキング＆インタビュー",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "8oS-Y_f45yk",
+      "title": "NURO「感動を止めるな。」独白篇　30秒",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "qlMSibxFgZ8",
+      "title": "Discover Your Future 2026 | What Next? | Netflix",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "3sZTNgCAWJE",
+      "title": "ビズリーチCMの歴史",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "U9dE9oanmFE",
+      "title": "影ぼう – 開拓者 , KageBow - Pioneer",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "W3e7HKPLKgQ",
+      "title": "STUTS & ZOT on the WAVE -  Final Destination feat. Campanella, Candee, 鎮座DOPENESS",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "ur6zaH2uxAQ",
+      "title": "んoon - HEBITORA",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "0g7QpAMeZvQ",
+      "title": "eye / eye",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "p2gds5ggFOc",
+      "title": "オートフォーカス  |   Music Video",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "l-M6hT3L-do",
+      "title": "NGK TVCM「なんでも技術で変えていく　歌篇」　15秒",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "nSin0MhfRRk",
+      "title": "LAFORET GRAND BAZAR WINTER 2026(30s)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "ISYIEmQxs2M",
+      "title": "Introducing Apple Creator Studio",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "nzMKs_Xh1Co",
+      "title": "Chenomio - Phonky Donky Crazy feat.重音テト",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "HE-vmyTaaBo",
+      "title": "【アニメーションMV】あいあいあいあい♡あいらぶゆー(兎田ぺこら/不知火フレア/白銀ノエル/宝鐘マリン) 【 #HOLOLIVEFANTASY 】",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "sEDOdlmU2I8",
+      "title": "GEZAN / 数字 （Official Music Video)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "4gaeqtEONrQ",
+      "title": "Awich - Wax On Wax Off -Japan Remix- feat. R-指定, NENE, 鎮座DOPENESS & C.O.S.A. (Prod. RZA) (360 RA)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "tHriCp3rnx8",
+      "title": "valknee - ぷに（PUNI）【Music Video】",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "ARqP5ohiubY",
+      "title": "YOASOBI「アドレナ」Official Music Video",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "-xH_wmyWi5w",
+      "title": "星野源 - Glitch [Official Video]",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "sssoyDLFPWE",
+      "title": "ZICO (지코), Lilas (YOASOBI’s ikura) ‘DUET’ Official MV",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "izrNtySDNrQ",
+      "title": "リポビタンD TVCM「リポビタンDays（はじまり）」篇　60秒",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "8hWFuL8omTg",
+      "title": "KANEBO 「生きることは、いつだって途中だ。」60秒",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "rxVb5kw20G0",
+      "title": "「ゴシゴシはしません 通販番組」篇　今日はマジックリンでこすらんDay",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1142529539",
+      "title": "MOBLINKS - IT WILL MAKE SENSE",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "5CfITO98wMc",
+      "title": "「さぁ、次はなんだ？」｜第1弾｜Netflix",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "J5tRnYiHifE",
+      "title": "【Official MV】私は、わたしの事が好き。(Short ver.) – HoneyWorks / かぐや(cv.夏吉ゆうこ) from 超かぐや姫！",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "k9IOvReNOyA",
+      "title": "JUMP MV /「週刊少年ジャンプ」×『JUMP』| 梅田サイファー",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "FKzoujV28GQ",
+      "title": "坂本商店より感謝祭開催のお知らせ【SAKAMOTO DAYS】",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "UccHEifTIo4",
+      "title": "TVCM「新しいワクワクヘ」篇　30秒",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "GxqpeDxqoMQ",
+      "title": "Board a fan. Arrive an Otaku.",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "B5EOLFSKNh8",
+      "title": "Board a fan. Arrive an Otaku.",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "aCc1hshe808",
+      "title": "Board a fan. Arrive an Otaku.",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "LBamicVzCNI",
+      "title": "SEEDA  - ちょっちゅね！！！ Ft. R-指定 (Music Video)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "oTyn9eP8oGE",
+      "title": "Daoko「Rhythm in the Sunset」",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "ynsLjv1AyEg",
+      "title": "羊羊 - NullPointerException (Official video) #オリジナル曲",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "k6V5yGjakC8",
+      "title": "【original anime MV】VAVAVA！バーチャル大分【白銀ノエル/ホロライブ】",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "FCpP3TZSWoM",
+      "title": "JP THE WAVY - READY OR NOT feat. LEX (Official Music Video)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "j6OqLm0lQ68",
+      "title": "KISS OF LIFE (키스오브라이프) 'Lucky' Official Music Video",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "piSq8IioghU",
+      "title": "ITZY \"TUNNEL VISION\" M/V",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "Yy6fByUmPuE",
+      "title": "Coca-Cola | Holidays Are Coming",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "JNLKEblx2_o",
+      "title": "Suchard 2025 | Son todas Navidades",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "z1bRlnyQeDk",
+      "title": "Where Love Lives | John Lewis & Partners | Christmas Ad 2025",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "9GlTylX4S7Y",
+      "title": "A Disney Holiday Short: Best Christmas Ever",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "Nn2KZOiYgUY",
+      "title": "Mariah Carey - It's Time!!!! (2025)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1135619204",
+      "title": "MULTRA Brand Film",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "HffHAUk7Um0",
+      "title": "1リッター分の愛をこめて / Vaundy：MUSIC VIDEO",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "3Oyy8JnYMyA",
+      "title": "BE:FIRST / I Want You Back -Music Video-",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "dtTdjRB4Q4g",
+      "title": "Max Cooper & Félix Gerbelot - On Being (Official video by Masanobu Hiraoka)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "JneUL8iwqMo",
+      "title": "林響太朗 × Vehicle Shooting｜「Anemoi」",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "Wnk-7FdwOV0",
+      "title": "「Anemoi」",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "TAktzGD4Wz8",
+      "title": "永谷園パキット_WEBCM_アニメーション：あらゐけいいち",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "-E2nOUXBwhU",
+      "title": "【メイキング】ロケットナウ ゼロ配刑事編｜ゼロ配ならロケットナウ！撮影の舞台裏",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "4k5zlZyKsew",
+      "title": "【公式】ロケットナウ ゼロ配刑事編｜ゼロ配ならロケットナウ！（30秒）",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "FIOqG5ZMgMQ",
+      "title": "JR東海 会いにいこう、を支えていく。「集まってるんじゃない。」篇60秒",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "Sq2H3dVMJwc",
+      "title": "TVCM〈みずほ〉の青い挑戦 #001 ～宇宙の可能性を広げる～【〈みずほ〉公式】",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "TDXzEjwqbaw",
+      "title": "mercari GEARS 2025 Opening Movie",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "7Q4tHIp8UoI",
+      "title": "Google Montage",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "6sX_BfDnyrg",
+      "title": "This is just the beginning.",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "TNa6TaQScpQ",
+      "title": "Missact -  Music Video",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "vGpkZC4OqbY",
+      "title": "The Future of Fashion: Woven with AI",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "43h61QAXjpY",
+      "title": "WAVE",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "D8QkeUff8iE",
+      "title": "MV with Gemini ｜ LAUSBUB × 山口祐果 監督　#Gemini #MVwithGemini",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "DTSDjgFV2f8",
+      "title": "LAUSBUB - golden lighter (MV with Gemini)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "PuEIzcG5plA",
+      "title": "MV with Gemini｜TOWA TEI × 中村剛 監督  #Gemini #MVwithGemini",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "9K_4qe3DMoo",
+      "title": "\"APPLE\"  TOWA TEI  feat. SHEENA RINGO ( MV with Gemini )",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "kHJdIZf74tw",
+      "title": "LUCIDO スキンケアシリーズ 巨像篇 30秒",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "LDZ_6jAGGDY",
+      "title": "本木雅弘、水のフラフープで舞う！世界的ダンサー・Aya Sato振付／サントリー 特水 CM＋インタビュー＋メイキング",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "r-N7Ji6D3kQ",
+      "title": "サントリー 特水『特別な水　登場』篇 15秒 本木雅弘 サントリーCM",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "zdUc4AqZKmY",
+      "title": "【センチュリー】TVCM One of One篇",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "175wT4xfXhE",
+      "title": "【トヨタブランド広告】TO YOU篇 60秒",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "-ueUb6PNwbs",
+      "title": "Design Is How It Works",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "cpP0SW8kFLY",
+      "title": "BMSG ALLSTARS / GRAND CHAMP -Music Video-",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "ud0lMojStCs",
+      "title": "Fujii Kaze - I Need U Back [Official Video]",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "29io5-F-4xM",
+      "title": "HANA / My Body -Music Video-",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "TLJqi0IjMwo",
+      "title": "Mrs. GREEN APPLE「GOOD DAY」Official Music Video",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "FiTRogMY0Tc",
+      "title": "【MV】FRUITS ZIPPER「はちゃめちゃわちゃライフ！」",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "BuS4D7FtGm4",
+      "title": "TVCM ブランド広告 「わたしにダイハツメイ」篇(60秒)　ダイハツ公式",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "JxgqPk1RCCU",
+      "title": "The Living Tombstone - \"Everything Is Fine (Remix)\"",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "C_Pb2cLqmk4",
+      "title": "Close to you",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "d4st4aEjQ28",
+      "title": "King Gnu - SO BAD",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1119375393",
+      "title": "OFFFMX 2025 Main Titles by XK Studio",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1117240355",
+      "title": "OFFF Montréal Main Titles by Will MacNeil",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1119694353",
+      "title": "Microsoft Teams - Connecting Communities",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "cwJ4rK6nrWU",
+      "title": "BOUNC | Buff Motion",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "NanJxbbyZJ8",
+      "title": "Welcome to Essential",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "dNsRh4CdX44",
+      "title": "KizunaAI「ハンドサイン」Official Music Video",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "UqAX0WQas7I",
+      "title": "「カルテNo.2222」MV/きゅるりんってしてみて",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "RwRDJkriXU4",
+      "title": "水曜日のカンパネラ『ウォーアイニー』",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "8E8aWeY-pAc",
+      "title": "お返事まだカナ💦❓おじさん構文😁❗️ / 雨衣",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "Z7iVt-eghT0",
+      "title": "Adam Buxton - Dancing in the Middle (Official Video)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "qQt-dj109Ss",
+      "title": "夢の中でゲームするときコントローラー使ってなくない？",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "nWoDxPNHSlE",
+      "title": "カルチャー / キタニタツヤ - CULTURE / Tatsuya Kitani",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "FN5yqNreuTU",
+      "title": "Kein Projekt ohne Drama. Ein HORNBACH Film.​",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "H9QPHpXvG1g",
+      "title": "オリオン ザ・ドラフト OUR HAPPY HOUR篇 30秒",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "Le23TammN8k",
+      "title": "KANEBO 「化粧品よ、TAISHI（大志）を抱け。」60秒",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "ijFmjbYrfAY",
+      "title": "Free Your Feet - The Uncomfortable Truth About \"Normal\" Shoes",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "oXBn8tcxS60",
+      "title": "丸眞株式会社　CM（30秒ver.）",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "h4uXQwet8g0",
+      "title": "カンロ飴 70周年記念ムービー「やさしくありたい」",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "kBZbpvprHwc",
+      "title": "ピーナッツくん - Stop Motion feat. 魔界ノりりむ (Official Music Video)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "07kA8TvOl_0",
+      "title": "KOBELCO120周年記念アニメーション『あしたのありか』30秒CM",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "g6brOy044HU",
+      "title": "Aston Martin × Zenless Zone Zero Collaboration PV: Start Your Engine, Race Through New Eridu!",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "iG1AOY9QjHw",
+      "title": "DUSTCELL - 灯火 / TOMOSHIBI TV Anime｢ガチアクタ -GACHIAKUTA-｣ Collaboration Music Video",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "eGS-IjCUEzA",
+      "title": "言葉遊び / feat.Yi Xi",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "dp-x87l413o",
+      "title": "初星学園 「ミラクルナナウ(ﾟ∀ﾟ)！」Official Music Video (HATSUBOSHI GAKUEN - Mirakulu Na Now(ﾟ∀ﾟ)！)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "YEwzRue45cg",
+      "title": "マジか！ / 梓川【Official Music Video】",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "hEalzEnT70k",
+      "title": "Action Mode: How iPhone Helps Make Filming  More Accessible",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "bSwb4J1Fy00",
+      "title": "【公式】※閲覧注意※甘くいざなう建物事件｜『Pokémon LEGENDS Z-A』",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "g-Npu15LuVY",
+      "title": "ランドリン「希望の気配がする。」篇  メイキング映像",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "FEHDuTuhGFw",
+      "title": "ランドリン「希望の気配がする。」篇 フルバージョン",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "BEYeHsfGXJw",
+      "title": "10周年スペシャルムービー「次のエピソードへ」90秒 | Netflix Japan",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "6Ro7NubzE9A",
+      "title": "bbno$ - 1-800 (ft. ironmouse)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "uPrOrDDaP3E",
+      "title": "Happy Applecore: Crumpton Oaks x DJ Hixxy | 90s Rave Cider Vibes",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "aI769CgHfLc",
+      "title": "【original anime MV】スキスキDieスキ超Ayeシテル【hololive/宝鐘マリン】",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "sDdUy2EHN7o",
+      "title": "YouTubeテーマソング２／ヒカキン＆セイキン",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "gYKThyv0mW0",
+      "title": "Columbia. Engineered For Whatever.",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "IF1b5kn3UAs",
+      "title": "東京妄想地図「利根川東遷事業」Official Music Video",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "HX3UcwUYMjM",
+      "title": "MADE IN VIETNAM | DTAP x NSND Thanh Hoa x Trúc Nhân x Phương Mỹ Chi | OFFICIAL MV",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "rH8FCwzOdpI",
+      "title": "アニメ『怪獣８号』第２期ノンクレジットOP｜AURORA「You Can't Run From Yourself」｜毎週土曜23時～放送・配信",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "pfWmr3wqZF8",
+      "title": "Number_i - 未確認領域 (U.M.A.) [Official Music Video]",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1094939674",
+      "title": "VIVO S30 Animation",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "B4yErk4f8ks",
+      "title": "るーるる『ルールる！』MUSIC VIDEO",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "VXUbEH0DvSM",
+      "title": "【オリジナル楽曲】ひっひっふー / しぐれうい【じん】",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "pd97iwzFF74",
+      "title": "Praxis: The Redemptive Frame",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "Zn-lceyLDpM",
+      "title": "no.9 orchestra / The moment",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "J0ben1SI4QY",
+      "title": "星野源 - Mad Hope (feat. Louis Cole, Sam Gendel, Sam Wilkes) [Official Video]",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "9Ks5XU-hxQI",
+      "title": "水曜日のカンパネラ『シャトーブリアン』",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "fdYFKOMQGUU",
+      "title": "ORANGE RANGE – イケナイ太陽 (令和ver. Music Video)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "d926ZOS84VA",
+      "title": "Joe Hisaishi - Summer (Official Short Film)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "JoSfK4SAyCo",
+      "title": "一生ガツン、と篇",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "UCiSWcHSdYE",
+      "title": "Dear \"Stranger\" | 浮生若夢 by Junie Lau · Google I/O 2025",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "BmECe8LlQik",
+      "title": "\"Electric Pink\" by Henry Daubrez  • Google I/O 2025",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "0md0S8u8XXE",
+      "title": "\"Freelancers\" by Dave Clark | Google I/O 2025 | Made with Flow",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "-QMftwmyW-A",
+      "title": "Disney approved our insane AI Kalshi ad to run during the NBA Finals 🤣",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "WLDARkKs-T4",
+      "title": "The Making of ANCESTRA | Darren Aronofsky x Google DeepMind",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "HEs9miwtwh4",
+      "title": "ANCESTRA by Eliza McNitt",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "sbD7SBCyfsM",
+      "title": "【パルコ】25年夏 PARCOグランバザール",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "u4RbPRvEYLE",
+      "title": "ライフカード「LaLaLaLife 」篇30秒【公式】",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "_e1h2ZTJb2k",
+      "title": "Herpes Foundation - The Best Place in the World to Have Herpes (case study)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "YDaAgeyVXiw",
+      "title": "KFC Thailand - Let There Be Cake (Case Study) | Campaign",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "GpFYcj2sJ3A",
+      "title": "Bodyform | Never Just a Period",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "_m8jRiOpcTA",
+      "title": "The True Story of the Iconic Tagline “Because I’m Worth It.” | The Final Copy of Ilon Specht",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "LO4wamMlCKQ",
+      "title": "iPhone 15 Precision Fnding  - Find Your Friends - Apple 1080p",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "_n5ZDERgrdc",
+      "title": "RENAULT - ARGENTINA - PUBLICIS CONSEIL",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "dWkdxN_Is2o",
+      "title": "Micro TDH, Ovy On the Drums - Guao Guao (Official Video)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "bUs_mNTNwvE",
+      "title": "Considering What? | Paris 2024 Paralympic Games",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "5URefVYaJrA",
+      "title": "A$AP Rocky - Tailor Swif (Official Video)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "3qtmrJd_YJM",
+      "title": "A Tale As Old As Websites (Extended) | Big Game Commercial 2025 | Squarespace",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "qaJOvhueiOg",
+      "title": "Telstra | Together is for Christmas",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "umO4Ge6ddk0",
+      "title": "NENE - KITERU (Official Music Video)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1046889896",
+      "title": "Powell Lacrosse | Brand ID - Bemo Studio",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "gh6PEFedmLg",
+      "title": "Coca-Cola Frozen: SIP. FREEZE. REPEAT. | Golden Wolf",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "LjdKELKgWFE",
+      "title": "70 Years of Lightness",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "3JTnFRGazWY",
+      "title": "TAMTAM - Dragon in the Lagoon [Official Music Video]",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "KHSr80Rnm9k",
+      "title": "YURI - SURREAL Completely AI-Generated Music Video | AI.TALK",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "DNDKKtYOx4o",
+      "title": "Ooochie Koochie 「ショーラー」Music Video",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "mN3uDmbxYrw",
+      "title": "Nintendo Switch™ 2『龍が如く０ 誓いの場所 Director's Cut』プロモーション映像「友達と遊ぼう！」編",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "cSHluvSoWQY",
+      "title": "立命館大学「アートやデザインは無関係だと思っている若者を振り向かせる動画」第12回BOVAゴールド",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "dG-0YigGsDE",
+      "title": "トレンドマイクロ「高齢の親とその子供が一緒に詐欺対策をしたくなる動画」第12回BOVAグランプリ",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "HCdLEiXoxwg",
+      "title": "ちゃんみな - WORK HARD (Official Music Video)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "XetjWv82REA",
+      "title": "DUA•RHYTHM／Chevon 【Music Video】",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "evtoG-4dLM4",
+      "title": "YOASOBI「Watch me!」Official Music Video",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "SaMza0m209g",
+      "title": "星野源 - Star [Official Video]",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "fzpGJ6Iq2xI",
+      "title": "An update is required…",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "S5BXmfQfqlY",
+      "title": "iPhone | Find My | Apple",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "FcIFvzP8-mg",
+      "title": "iPhone | Stolen Device Protection | Apple",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "Rh-s5CtbASw",
+      "title": "iPhone | Ceramic Shield | Apple",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "dyXqDm4Exwg",
+      "title": "iPhone | App Store | Apple",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "5c-e84MY6T8",
+      "title": "Airbnb Experiences",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "A0VttaLy4sU",
+      "title": "Introducing Flow | Google’s New AI Filmmaking Tool",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1080372107",
+      "title": "Life360 - I Think of You (Dying)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1078424906",
+      "title": "Revolut - Money Possibilities DC",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "xSLyQdsBdZY",
+      "title": "Pikapocalypse",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "WLJ8s3nZhMw",
+      "title": "寶礦力水特2025全新電視廣告 《THE FUTURE NEEDS SWEAT》— 足本版",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "fEWipyOVIgY",
+      "title": "しちにんのかりちゅま「とってもかりちゅま」MV",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "2_opjVlYhi4",
+      "title": "【original anime MV】A Horny Money World ~伝説の夜~【hololive/宝鐘マリン】",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "4doUQStIgb0",
+      "title": "RADWIMPS - 賜物 [Official Music Video]",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "ReuFa_D1Vok",
+      "title": "櫻坂46『Addiction』MUSIC VIDEO",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "MsQaIXSMDSU",
+      "title": "宇多田ヒカル『Mine or Yours』Music Video Behind the Scenes",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "n9Nrl9qXxow",
+      "title": "宇多田ヒカル『Mine or Yours』Music Video",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "5GtnMh38LuA",
+      "title": "Charge up with the new Beats Cables I Beats",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "CuKYTWxj3OQ",
+      "title": "Insta360 X5 - Unbelievable Low-Light Shots (ft. AndrasRa)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1067426859",
+      "title": "Behind the Scenes - 'See it Differently' - Britbox - Directed by Nicos Livesey",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1069311388",
+      "title": "'See it Differently' - Britbox - Directed by Nicos Livesey",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "rseqmSGH7xk",
+      "title": "Last Dance with Mary Jane ft. Tom Petty & Jelly Roll (Official Music Video)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "_EKQKF4qPPI",
+      "title": "PMI Behind the Project: The Making of OK Go’s Love Music Video",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "gz9BRl7DVSM",
+      "title": "OK Go - Love (Official Video)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "Q9Fjdz-Pqaw",
+      "title": "どんな一歩も、App Storeと。 ｜ おでかけ・マンガ・ゲーム ｜ Apple",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "qrm_oamXPds",
+      "title": "サントリー生ビール『サン生のCM決まったよ』篇 60秒 JUNON LEO サントリー CM",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "Ug0N4qGRp_w",
+      "title": "けっかおーらい / こっちのけんと MV",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "jUlAbq1lfdo",
+      "title": "MAZZEL / King Kila Game -Music Video-",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "aHVogxvuwXQ",
+      "title": "ano「ロりロっきゅんロぼ♡」Music Video",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "ZfR_FP_7w00",
+      "title": "YOASOBI「PLAYERS」Official Music Video",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "qIcIpSyHcyM",
+      "title": "King Gnu - TWILIGHT!!!",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "HrrIxSRH9Kc",
+      "title": "4s4ki - trance train (Official Music Video)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "qayP_YUrf9I",
+      "title": "BABYMETAL - from me to u feat. Poppy (OFFICIAL MUSIC VIDEO)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "XwUhFsrkuNY",
+      "title": "Mrs. GREEN APPLE「クスシキ」Behind the Scenes",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "RCaTLn4qoz4",
+      "title": "Mrs. GREEN APPLE「クスシキ」Official Music Video",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "2tFkJThiv4s",
+      "title": "第2話「好きピに女が居すぎて滅なんだけど！」#令和特撮 | 呪縛少女バギラちゃん! 【Ghost Cat Girl BAGIRA】",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "j62wQR6G5q4",
+      "title": "【ドM】チャリで富士山までいく【ギアなしママチャリ】",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1unIR_Re4Cw",
+      "title": "〈フルver.〉ワンビル開業ムービー | NEO FUKUOKA ONE FUKUOKA",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "mI9MSQGlbH0",
+      "title": "西鉄企業イメージCM「つぎは、あなたのほしい明日」 30s",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "4gdfbrEBoUU",
+      "title": "香取慎吾 「Circus Funk（feat. Chevon）」Music Video",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "kutJ5Azv3fo",
+      "title": "【4大ドームツアー開催！男性ソロ史上最年少 】Vaundy DOME TOUR 2026",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "zPmSwXMQtRk",
+      "title": "ME:I (ミーアイ) ⊹ 'MUSE' Official MV",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "Nr5OEA1PvJ8",
+      "title": "ティロリミックス｜Ado×YOASOBI×星街すいせい",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "dGB6XWFXb0A",
+      "title": "東京妄想地図「好きです かわさき 思い出の街」Official Music Video〈川崎市非公式テーマソング〉",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "ZhynJZGwIHk",
+      "title": "青は止まれ - しじまのはて（Prod by なみぐる）【Music Video】",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "03iKTXFKFFU",
+      "title": "KizunaAI「かもね」Official Music Video",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "DHHICFBP2Ag",
+      "title": "NIKO NIKO TAN TAN - 想｜像 (Official Music Video)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "_Y-yD_JPNDE",
+      "title": "YENTOWN - バグり feat. kZm, Awich, PETZ, MonyHorse & JNKMN (Prod. DJ JAM)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "a8dgNdJVluc",
+      "title": "サカナクション / 怪獣　-Music Video-",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "M-Eyhjkepy0",
+      "title": "米津玄師 Kenshi Yonezu - BOW AND ARROW",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "K7kzy1DhAHw",
+      "title": "全人類ガツン、と化計画 メイキング",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "HTbFt-GeuuU",
+      "title": "全人類ガツン、と化計画篇",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "MWicqFNnFmg",
+      "title": "礼賛 - 鏡に恋して",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "3tJTkaW2isM",
+      "title": "Sigma Aizu, Japan 2025",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "2aTCCypED3Y",
+      "title": "MARO公式CM「この男、やってます。」篇 60秒",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "X-Q6bmFdDkY",
+      "title": "MNNK Bro. (Takashi Murakami & JP THE WAVY) - LV MURAKAMI (Behind The Scenes)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "yVX34hPLKtI",
+      "title": "MNNK Bro. (Takashi Murakami & JP THE WAVY) - LV MURAKAMI (Official Music Video)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "poYWNrf1dLU",
+      "title": "Redesigning an Icon: Inside the Powerbeats Pro 2 Engineering Process",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1048512036",
+      "title": "京东 JINGDONG Furniture",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "JRUBnGqYrA8",
+      "title": "BMSG POSSE, peko, KennyDoes, テークエム / MINNA BLING BLING - Remix - (Music Video)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "k3d_xeVxEOE",
+      "title": "Refreshed.",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "i1pBVMu-2Mg",
+      "title": "Yuto Horigome X McLaren Artura #yutohorigome #skateboarding #McLaren",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "Br764gSJEDA",
+      "title": "「冒険する人が好きだ」篇",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "u3oEOW1TB-Y",
+      "title": "ジムニー ノマド　コンセプトムービー",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "jzuoAwVpL_c",
+      "title": "【Honda SPORTS】WEB MOVIE「両R最強」篇 Hondaは走り。だろ？ver.",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "qRDqSVqoI9Y",
+      "title": "Pringles U.S. - Pringles | The Call of The Mustaches | Extended Version",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "77pKccDhB1Y",
+      "title": "んoon - Kaiya",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "kQGY-z8hhEs",
+      "title": "あなたは、まだ知らない。| NEXT ON NETFLIX 2025",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "ED0pgqgVUE4",
+      "title": "XG - XDM Unidentified Waves (Visualizer)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "de2a2teVPNo",
+      "title": "ゆず『flowers』MUSIC VIDEO",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "Vv2n31gL85I",
+      "title": "Official髭男dism - 50% [Official Video]",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "JXvOlJOGU5Y",
+      "title": "ビーナスバグ / 星街すいせい(official)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "a5RAx7qNaAE",
+      "title": "Number_i - GOD_i (Official Music Video)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "UhQoETqgcfQ",
+      "title": "Dios - 黄昏 (Dios - Twilight / Official Music Video)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "nMF3nLV-m24",
+      "title": "Google Chrome アニメ #3「がんばれ！くろーむ  \"ゆーざーさんぜったいまもる！の巻\"」",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "DlRm3Q58A4w",
+      "title": "Google Chrome アニメ #2「がんばれ！くろーむ \"ゆーざーさんにたよられたい！の巻\"」",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "3Ghk_9FsrBk",
+      "title": "Google Chrome アニメ #1「がんばれ！くろーむ  \"ゆーざーさんのえがおがみたい！の巻\"」",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "CQdeuG6Uy14",
+      "title": "「がんばれ！くろーむ」 メイキング - Google Chrome",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "F50bCrlTbIs",
+      "title": "「がんばれ！くろーむ」 MV - Google Chrome",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "tBjMJP6Bz5M",
+      "title": "100年の物語　メイキングムービー",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "mrO-E5JAqGQ",
+      "title": "100年の物語",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "iQNM-GFEWAs",
+      "title": "【崩壊：スターレイル】Nameless Faces - Japanese Ver. feat.幾田りら Music Video",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "fp3F6TqBsAU",
+      "title": "米津玄師  Kenshi Yonezu - Plazma",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "tY7hI-mPqr8",
+      "title": "PMI Behind the Scenes: The OK Go Project",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "MOEULOSVNK4",
+      "title": "OK Go - A Stone Only Rolls Downhill (Official Video)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1040121603",
+      "title": "AI ADS -  Travel",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1032202784",
+      "title": "Node Fest 2024",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "K3YeC2Kh4uQ",
+      "title": "BURN/BOND",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "S1CbhpKC6SE",
+      "title": "Nintendo Switch 2 予告映像",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "Kyqhsds2gzw",
+      "title": "Rally Driver Vs Drift Mountain Challenge",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "uPYErkgHLzk",
+      "title": "This is the new Sandisk.",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "8zxQpYYSvTM",
+      "title": "Cybertruck Rave",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "XJaSY9ZHdBw",
+      "title": "五ヶ瀬ハイランドスキー場 2025シーズン CM",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "BnTJ_BEM_9U",
+      "title": "オーイシマサヨシ – 主人公になろう！ feat.鈴木愛理 [Official Video]",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "VUdlL8NKT1w",
+      "title": "【三菱商事】“アドベンチャースピリット。60秒” CM",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "TTYFRDqFsmA",
+      "title": "セコム箱根駅伝CM「日本中の声援」編（30秒）",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "n1dQtXTyxGI",
+      "title": "【2025年】年越しリアルタイムアタック（バグあり）新記録",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "WMRip0eRER8",
+      "title": "Why the world's most famous car race is in Monaco",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "J7uBf1gD6JY",
+      "title": "Colette: The French resistance fighter confronting fascism - Oscars 2021 Short Documentary Winner",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "D_vdPkCz23g",
+      "title": "Palau Legacy Project - Palau Pledge（パラオ誓約）｜Cannes Lions 2018",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "wSqORcAwi54",
+      "title": "STARBUCKS Autumn is Coming - STARBUCKS Autumn 2021",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "54_5-czTMjM",
+      "title": "ビジネスレザーファクトリー ブランドムービー",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "AYVf9xT7m5c",
+      "title": "鷹匠 ｜ Game Hawker",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "brVVmfMLrts",
+      "title": "Our People, Our Home: David, Lakes District Museum",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "p9Q5a1Vn-Hk",
+      "title": "Inside OpenAI, the Architect of ChatGPT, featuring Mira Murati | The Circuit with Emily Chang",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "ABHve3X94Bg",
+      "title": "The Ultimate Monaco Grand Prix Quiz With FOUR F1 Drivers!",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "OFwnJ00b538",
+      "title": "We make moving pictures. | Patagonia Films (Trailer)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "X_dVQErdQvk",
+      "title": "Drowning in Noise: Sound Waves and Sea Creatures | National Geographic",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "aJwdWeiSc8c",
+      "title": "A Day With a Barista in One of NYC's Busiest Coffee Shops | On the Job | Priya Krishna | NYT Cooking",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "ZMynJCgJIQk",
+      "title": "Into the Volume: A Behind-the-Scenes Look into the Virtual Production of 1899",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "2DQ4arfP-ls",
+      "title": "Think you know Singapore?",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "5JK7vjVaIvo",
+      "title": "Grand Train Tour of Switzerland: The ride of a lifetime | Switzerland Tourism",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "RATHbP1bAhI",
+      "title": "7-Eleven Is Reinventing Its $17B Food Business to Be More Japanese | WSJ The Economics Of",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "E-uxHGaxbzk",
+      "title": "ショートフィルム「The IZAKAYA DIALOGUE」",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "txLXlBJEFjw",
+      "title": "What does Liverpool FC mean to its fans? | Nothing Beats Being There",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "7KJhlT8Rcqc",
+      "title": "リーボックが3年の歳月をかけて開発。PUREMOVE BRA（ピュアムーブ ブラ）誕生秘話。",
+      "reason": "duplicate_id"
+    }
+  ]
+}

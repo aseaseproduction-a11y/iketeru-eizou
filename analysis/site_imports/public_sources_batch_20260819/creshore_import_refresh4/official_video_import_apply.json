@@ -1,0 +1,30 @@
+{
+  "mode": "apply",
+  "completedAt": "2026-08-20T01:00:19.715Z",
+  "counts": {
+    "planned": 3,
+    "insertable": 1,
+    "inserted": 1,
+    "skipped": 2
+  },
+  "inserted": [
+    {
+      "id": "U0Klb45BNlQ",
+      "title": "Mom Don't wipe floor",
+      "source": "creshore",
+      "videoUrl": "https://www.youtube.com/watch?v=U0Klb45BNlQ"
+    }
+  ],
+  "skipped": [
+    {
+      "id": "dD4O1f5-CKU",
+      "title": "【コカ･コーラ】 一緒だともっとおいしい「お花見」篇 Coca-Cola",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1175847608",
+      "title": "SABERA",
+      "reason": "duplicate_id"
+    }
+  ]
+}

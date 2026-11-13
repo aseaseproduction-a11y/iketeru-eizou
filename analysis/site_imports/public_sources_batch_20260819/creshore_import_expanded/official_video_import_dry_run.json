@@ -1,0 +1,18 @@
+{
+  "mode": "dry-run",
+  "completedAt": "2026-08-20T00:58:17.752Z",
+  "counts": {
+    "planned": 2,
+    "insertable": 1,
+    "inserted": 0,
+    "skipped": 1
+  },
+  "inserted": [],
+  "skipped": [
+    {
+      "id": "dD4O1f5-CKU",
+      "title": "【コカ･コーラ】 一緒だともっとおいしい「お花見」篇 Coca-Cola",
+      "reason": "duplicate_id"
+    }
+  ]
+}

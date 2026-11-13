@@ -1,0 +1,57 @@
+{
+  "kind": "youtube#videoListResponse",
+  "etag": "M3VSO-FQUbBaLDoWWxXHLB56lIE",
+  "items": [
+    {
+      "kind": "youtube#video",
+      "etag": "-pprV2w_oFD9VDNhYgJyNqt8Se4",
+      "id": "zRJS0P1GwC4",
+      "snippet": {
+        "publishedAt": "2026-01-25T01:45:12Z",
+        "channelId": "UCLhgIX2L5ZCaWdlaxR_oTAg",
+        "title": "『DRAGON BALL』40周年記念スペシャル映像",
+        "description": "鳥山明先生のカラーイラストや名場面の数々が最新技術によるアニメーションで動き出す‼\n\n鳥山明先生のイラストの質感や色味をそのまま動かすことに徹底的にこだわり、孫悟空の成長と冒険を感じさせる躍動感あふれた映像として完成しました。\n\n『DRAGON BALL』40周年スペシャル映像\n原作：「DRAGON BALL」鳥山明（集英社『ジャンプコミックス』刊）\n監督：宮原 直樹\nCGディレクター：牧野 快\n作画監督：久保田 誓\nテーマ曲「Infinite Future」\n作曲：ハンス・ジマー\n編曲：トム・ルーカス\n製作：東映アニメーション\n\nドラゴンボールオフィシャル\n https://dragon-ball-official.com/\nドラゴンボールオフィシャル X\nhttps://twitter.com/DB_official_jp/\n\nテーマ曲再生サービス一覧：https://sonymusicjapan.lnk.to/InfiniteFuture_HZ\nテーマ曲詳細：https://www.sonymusic.co.jp/artist/hanszimmer/info/580504",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/zRJS0P1GwC4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/zRJS0P1GwC4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/zRJS0P1GwC4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/zRJS0P1GwC4/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/zRJS0P1GwC4/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "東映アニメーション公式YouTubeチャンネル",
+        "categoryId": "1",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "ja",
+        "localized": {
+          "title": "『DRAGON BALL』40周年記念スペシャル映像",
+          "description": "鳥山明先生のカラーイラストや名場面の数々が最新技術によるアニメーションで動き出す‼\n\n鳥山明先生のイラストの質感や色味をそのまま動かすことに徹底的にこだわり、孫悟空の成長と冒険を感じさせる躍動感あふれた映像として完成しました。\n\n『DRAGON BALL』40周年スペシャル映像\n原作：「DRAGON BALL」鳥山明（集英社『ジャンプコミックス』刊）\n監督：宮原 直樹\nCGディレクター：牧野 快\n作画監督：久保田 誓\nテーマ曲「Infinite Future」\n作曲：ハンス・ジマー\n編曲：トム・ルーカス\n製作：東映アニメーション\n\nドラゴンボールオフィシャル\n https://dragon-ball-official.com/\nドラゴンボールオフィシャル X\nhttps://twitter.com/DB_official_jp/\n\nテーマ曲再生サービス一覧：https://sonymusicjapan.lnk.to/InfiniteFuture_HZ\nテーマ曲詳細：https://www.sonymusic.co.jp/artist/hanszimmer/info/580504"
+        },
+        "defaultAudioLanguage": "ja"
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 1,
+    "resultsPerPage": 1
+  }
+}

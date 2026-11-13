@@ -1,0 +1,26 @@
+{
+  "model": "gpt-5-mini",
+  "messages": [
+    {"role": "system", "content": "Output JSON only."},
+    {"role": "user", "content": "Return a source-grounded JSON note for: purpose=testing, background=official document, evaluation=listed."}
+  ],
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "output",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "purpose": {"type": "string"},
+          "background": {"type": "string"},
+          "evaluation": {"type": "string"},
+          "evidence": {"type": "string"},
+          "confidence": {"type": "string", "enum": ["official", "none"]}
+        },
+        "required": ["purpose", "background", "evaluation", "evidence", "confidence"],
+        "additionalProperties": false
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "kind": "youtube#videoListResponse",
+  "etag": "4zcQCi7c_VDfTB4RWY2TxGFkAUM",
+  "items": [
+    {
+      "kind": "youtube#video",
+      "etag": "j-CRAfYMDNUCVpukLVqGAnmRK2E",
+      "id": "D58D8Fp_NBY",
+      "snippet": {
+        "publishedAt": "2026-01-05T13:18:20Z",
+        "channelId": "UCLZuVssUFLeHQL4FLIWnY3w",
+        "title": "ARForest - Styx 257 【EZ2ON REBOOT : R】",
+        "description": "〈Styx 257〉\nComposed by ARForest │ Visualized by Pictor, yusi.\n\n─ EZ2ON REBOOT : R 「Lucent Soirée Music Pack」\n\n【EZ2ON REBOOT : R】 \nCopyright © Neonovice Co., Ltd All Rights Reserved.\nCopyright © 2011-2026 SQUARE PIXELS All Rights Reserved.\n\n*The unauthorized reproduction or distribution of the work is strictly prohibited.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/D58D8Fp_NBY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/D58D8Fp_NBY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/D58D8Fp_NBY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/D58D8Fp_NBY/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/D58D8Fp_NBY/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "EZ2ON PLAY",
+        "categoryId": "10",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "en",
+        "localized": {
+          "title": "ARForest - Styx 257 【EZ2ON REBOOT : R】",
+          "description": "〈Styx 257〉\nComposed by ARForest │ Visualized by Pictor, yusi.\n\n─ EZ2ON REBOOT : R 「Lucent Soirée Music Pack」\n\n【EZ2ON REBOOT : R】 \nCopyright © Neonovice Co., Ltd All Rights Reserved.\nCopyright © 2011-2026 SQUARE PIXELS All Rights Reserved.\n\n*The unauthorized reproduction or distribution of the work is strictly prohibited."
+        }
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 1,
+    "resultsPerPage": 1
+  }
+}

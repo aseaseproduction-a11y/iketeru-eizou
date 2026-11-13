@@ -1,0 +1,17 @@
+{
+  "generatedAt": "2026-08-21T08:51:45.571Z",
+  "sourceVideoRows": 2604,
+  "people": 3521,
+  "companies": 279,
+  "unclassifiedLegacyValues": 433,
+  "flaggedRecords": 3800,
+  "variantCandidateGroups": 122,
+  "files": [
+    "creator_directory_audit.md",
+    "creator_directory_all.csv",
+    "creator_directory_people.csv",
+    "creator_directory_companies.csv",
+    "creator_name_variant_candidates.csv",
+    "creator_unclassified_legacy_values.csv"
+  ]
+}

@@ -1,0 +1,717 @@
+{
+  "dryRun": false,
+  "generatedAt": "2026-08-19T10:14:41.228Z",
+  "total": 62,
+  "updated": 62,
+  "verified": 0,
+  "skipped": 0,
+  "held": 0,
+  "results": [
+    {
+      "id": "03QVwcXmBtY",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "minimal",
+          "name": "ミニマル"
+        }
+      ]
+    },
+    {
+      "id": "0BHY0Gs0ZZM",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "pop",
+          "name": "ポップ"
+        }
+      ]
+    },
+    {
+      "id": "0S43IwBF0uM",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "minimal",
+          "name": "ミニマル"
+        }
+      ]
+    },
+    {
+      "id": "0zVssDpHo3w",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "minimal",
+          "name": "ミニマル"
+        }
+      ]
+    },
+    {
+      "id": "1044346460",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "minimal",
+          "name": "ミニマル"
+        }
+      ]
+    },
+    {
+      "id": "2egnpgEfQcg",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "minimal",
+          "name": "ミニマル"
+        }
+      ]
+    },
+    {
+      "id": "30h4k-Dud70",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "pop",
+          "name": "ポップ"
+        }
+      ]
+    },
+    {
+      "id": "3iUgKH8c7p4",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "pop",
+          "name": "ポップ"
+        }
+      ]
+    },
+    {
+      "id": "3Y1EdJA-fGw",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "minimal",
+          "name": "ミニマル"
+        }
+      ]
+    },
+    {
+      "id": "4sr8LDdc-uA",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "minimal",
+          "name": "ミニマル"
+        }
+      ]
+    },
+    {
+      "id": "6joyFSwUehI",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "pop",
+          "name": "ポップ"
+        }
+      ]
+    },
+    {
+      "id": "7yQKFMJjw2g",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "minimal",
+          "name": "ミニマル"
+        }
+      ]
+    },
+    {
+      "id": "814114690",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "minimal",
+          "name": "ミニマル"
+        }
+      ]
+    },
+    {
+      "id": "8tOIjOPZ5sA",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "pop",
+          "name": "ポップ"
+        }
+      ]
+    },
+    {
+      "id": "8ZP5eqm4JqM",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "pop",
+          "name": "ポップ"
+        }
+      ]
+    },
+    {
+      "id": "903206574",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "pop",
+          "name": "ポップ"
+        }
+      ]
+    },
+    {
+      "id": "974816790",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "minimal",
+          "name": "ミニマル"
+        }
+      ]
+    },
+    {
+      "id": "993382821",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "pop",
+          "name": "ポップ"
+        },
+        {
+          "slug": "minimal",
+          "name": "ミニマル"
+        }
+      ]
+    },
+    {
+      "id": "a8dgNdJVluc",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "minimal",
+          "name": "ミニマル"
+        }
+      ]
+    },
+    {
+      "id": "AapMUfnxitk",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "minimal",
+          "name": "ミニマル"
+        }
+      ]
+    },
+    {
+      "id": "Av_lAz5s_Ic",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "pop",
+          "name": "ポップ"
+        }
+      ]
+    },
+    {
+      "id": "AXtfzKaKr4I",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "pop",
+          "name": "ポップ"
+        }
+      ]
+    },
+    {
+      "id": "B6vKLsh09Qw",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "minimal",
+          "name": "ミニマル"
+        }
+      ]
+    },
+    {
+      "id": "BI9Ue6JwJic",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "pop",
+          "name": "ポップ"
+        }
+      ]
+    },
+    {
+      "id": "BotWB9NBQ8o",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "pop",
+          "name": "ポップ"
+        }
+      ]
+    },
+    {
+      "id": "BwsIU-KG2oU",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "minimal",
+          "name": "ミニマル"
+        },
+        {
+          "slug": "pop",
+          "name": "ポップ"
+        }
+      ]
+    },
+    {
+      "id": "ck_qok3Vp88",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "minimal",
+          "name": "ミニマル"
+        }
+      ]
+    },
+    {
+      "id": "CN-Ja6jCweA",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "pop",
+          "name": "ポップ"
+        }
+      ]
+    },
+    {
+      "id": "EzEFCikg4tk",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "pop",
+          "name": "ポップ"
+        },
+        {
+          "slug": "minimal",
+          "name": "ミニマル"
+        }
+      ]
+    },
+    {
+      "id": "Hz-VBzYHA0k",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "minimal",
+          "name": "ミニマル"
+        }
+      ]
+    },
+    {
+      "id": "iWzUxFQQAKY",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "minimal",
+          "name": "ミニマル"
+        }
+      ]
+    },
+    {
+      "id": "Jj1_mfUzjOs",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "minimal",
+          "name": "ミニマル"
+        }
+      ]
+    },
+    {
+      "id": "JlXxUo0MGQw",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "pop",
+          "name": "ポップ"
+        }
+      ]
+    },
+    {
+      "id": "JqwKeddXPOg",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "minimal",
+          "name": "ミニマル"
+        }
+      ]
+    },
+    {
+      "id": "kIhb5pEo_j0",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "minimal",
+          "name": "ミニマル"
+        }
+      ]
+    },
+    {
+      "id": "klIxS5o65C4",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "pop",
+          "name": "ポップ"
+        }
+      ]
+    },
+    {
+      "id": "KP7SZGylejQ",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "minimal",
+          "name": "ミニマル"
+        }
+      ]
+    },
+    {
+      "id": "kqj7b59D85Y",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "minimal",
+          "name": "ミニマル"
+        },
+        {
+          "slug": "pop",
+          "name": "ポップ"
+        }
+      ]
+    },
+    {
+      "id": "M92c6pl10u0",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "pop",
+          "name": "ポップ"
+        },
+        {
+          "slug": "minimal",
+          "name": "ミニマル"
+        }
+      ]
+    },
+    {
+      "id": "mq88yUFdVng",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "pop",
+          "name": "ポップ"
+        }
+      ]
+    },
+    {
+      "id": "mYHJPb9PuUM",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "minimal",
+          "name": "ミニマル"
+        }
+      ]
+    },
+    {
+      "id": "Mz2csaOL8Ho",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "pop",
+          "name": "ポップ"
+        }
+      ]
+    },
+    {
+      "id": "N3VYDcJt93M",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "pop",
+          "name": "ポップ"
+        }
+      ]
+    },
+    {
+      "id": "nau5suuZ98w",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "pop",
+          "name": "ポップ"
+        },
+        {
+          "slug": "minimal",
+          "name": "ミニマル"
+        }
+      ]
+    },
+    {
+      "id": "NZdiH3TrbKU",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "pop",
+          "name": "ポップ"
+        }
+      ]
+    },
+    {
+      "id": "o4OsvOqHnZM",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "pop",
+          "name": "ポップ"
+        }
+      ]
+    },
+    {
+      "id": "Oyc1zJ4L6UA",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "minimal",
+          "name": "ミニマル"
+        }
+      ]
+    },
+    {
+      "id": "PCp2iXA1uLE",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "minimal",
+          "name": "ミニマル"
+        }
+      ]
+    },
+    {
+      "id": "pjkOB8rXs6E",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "pop",
+          "name": "ポップ"
+        }
+      ]
+    },
+    {
+      "id": "pkzw_vy1ja0",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "pop",
+          "name": "ポップ"
+        }
+      ]
+    },
+    {
+      "id": "pWY-S_wGlOs",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "pop",
+          "name": "ポップ"
+        }
+      ]
+    },
+    {
+      "id": "sDzPtgBJWqQ",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "pop",
+          "name": "ポップ"
+        }
+      ]
+    },
+    {
+      "id": "siLATA3R6oI",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "pop",
+          "name": "ポップ"
+        }
+      ]
+    },
+    {
+      "id": "SzxxIlqAQv4",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "minimal",
+          "name": "ミニマル"
+        }
+      ]
+    },
+    {
+      "id": "W_yKEhESgUI",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "pop",
+          "name": "ポップ"
+        }
+      ]
+    },
+    {
+      "id": "wgk69V2XUDg",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "pop",
+          "name": "ポップ"
+        }
+      ]
+    },
+    {
+      "id": "X0hyTmlsBUI",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "minimal",
+          "name": "ミニマル"
+        }
+      ]
+    },
+    {
+      "id": "Yd8kUoB72xU",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "minimal",
+          "name": "ミニマル"
+        }
+      ]
+    },
+    {
+      "id": "yH0eJZb_540",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "pop",
+          "name": "ポップ"
+        }
+      ]
+    },
+    {
+      "id": "yVX34hPLKtI",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "pop",
+          "name": "ポップ"
+        }
+      ]
+    },
+    {
+      "id": "zPmSwXMQtRk",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "pop",
+          "name": "ポップ"
+        }
+      ]
+    },
+    {
+      "id": "zYPWhivOG5M",
+      "status": "updated",
+      "field": "tones",
+      "values": [
+        {
+          "slug": "pop",
+          "name": "ポップ"
+        }
+      ]
+    }
+  ]
+}

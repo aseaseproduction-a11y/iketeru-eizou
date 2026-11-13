@@ -1,0 +1,624 @@
+{
+  "kind": "youtube#videoListResponse",
+  "etag": "S7nxRBVEfYTGbRVUlyHLoag02JU",
+  "items": [
+    {
+      "kind": "youtube#video",
+      "etag": "L25I9Pj7vR2rIq9-kslARkwvtAI",
+      "id": "QI4N-A9wQdk",
+      "snippet": {
+        "publishedAt": "2024-04-02T09:00:18Z",
+        "channelId": "UC47AYUs8AVU1QsT5LhpXjaw",
+        "title": "【SAKAMOTO DAYS】 ORDER PV 【最新16巻発売記念】",
+        "description": "ORDERの各キャラに焦点を当てた16巻発売記念PVを公開。\n『SAKAMOTO DAYS』の動画はコチラから：https://www.youtube.com/playlist?list=PLMyQxaghEY1FkTOHsQ2vy6aKlUMWoFDJA\n\n ©鈴木祐斗／集英社\n\n▼「SAKAMOTO DAYS」関連動画はこちら\n・最強の三人PV　https://youtu.be/7C1Jx2eJWWo\n・8bit 風作業用BGM　https://youtu.be/IuKVLnivH94\n・10巻PVはこちら\n（シンver）https://youtu.be/gMIKh_39PeA\n（晶ver）    https://youtu.be/CrNz3WVlhv4          \n・9巻PV　https://youtu.be/pCDiE2WihKE\n・8巻PV　https://youtu.be/Yx0kI6zuxec\n・7巻PV　 https://youtu.be/RQit69n7AIM\n・坂本ヒットカウントPV　 https://youtu.be/6IwT4YTOMCE\n\n☆合計300万再生突破！ボイスコミック版はこちらから☆\n第１話　https://youtu.be/HcOL9M0_E7Q（完全版）\n第２話　https://youtu.be/X4Uk_AcxlOA\n第３話　https://youtu.be/g17hOl6T98Q\n\n★週刊少年ジャンプ公式HPはこちら▼ https://www.shonenjump.com/j/ \n★ジャンプチャンネル公式X（Twitter）はこちら▼ https://twitter.com/jumpch_youtube \n★少年ジャンプ編集部公式X（Twitter）はこちら▼ https://twitter.com/jump_henshubu",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/QI4N-A9wQdk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/QI4N-A9wQdk/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/QI4N-A9wQdk/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/QI4N-A9wQdk/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/QI4N-A9wQdk/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "ジャンプチャンネル",
+        "tags": [
+          "週刊少年ジャンプ",
+          "ジャンプ",
+          "JUMP",
+          "漫画",
+          "漫画動画",
+          "アニメ",
+          "ボイスコミック",
+          "ハイキュー",
+          "鬼滅の刃",
+          "チェンソーマン",
+          "仄見える少年",
+          "呪術廻戦",
+          "ガラク",
+          "ロッカールーム",
+          "僕のヒーローアカデミア",
+          "Dr.STONE",
+          "ONEPIECE",
+          "約束のネバーランド",
+          "銀魂",
+          "BLEACH",
+          "怪獣8号"
+        ],
+        "categoryId": "1",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "ja",
+        "localized": {
+          "title": "【SAKAMOTO DAYS】 ORDER PV 【最新16巻発売記念】",
+          "description": "ORDERの各キャラに焦点を当てた16巻発売記念PVを公開。\n『SAKAMOTO DAYS』の動画はコチラから：https://www.youtube.com/playlist?list=PLMyQxaghEY1FkTOHsQ2vy6aKlUMWoFDJA\n\n ©鈴木祐斗／集英社\n\n▼「SAKAMOTO DAYS」関連動画はこちら\n・最強の三人PV　https://youtu.be/7C1Jx2eJWWo\n・8bit 風作業用BGM　https://youtu.be/IuKVLnivH94\n・10巻PVはこちら\n（シンver）https://youtu.be/gMIKh_39PeA\n（晶ver）    https://youtu.be/CrNz3WVlhv4          \n・9巻PV　https://youtu.be/pCDiE2WihKE\n・8巻PV　https://youtu.be/Yx0kI6zuxec\n・7巻PV　 https://youtu.be/RQit69n7AIM\n・坂本ヒットカウントPV　 https://youtu.be/6IwT4YTOMCE\n\n☆合計300万再生突破！ボイスコミック版はこちらから☆\n第１話　https://youtu.be/HcOL9M0_E7Q（完全版）\n第２話　https://youtu.be/X4Uk_AcxlOA\n第３話　https://youtu.be/g17hOl6T98Q\n\n★週刊少年ジャンプ公式HPはこちら▼ https://www.shonenjump.com/j/ \n★ジャンプチャンネル公式X（Twitter）はこちら▼ https://twitter.com/jumpch_youtube \n★少年ジャンプ編集部公式X（Twitter）はこちら▼ https://twitter.com/jump_henshubu"
+        },
+        "defaultAudioLanguage": "ja"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "izaj95rzqR5Ar4D549JmVqMFiws",
+      "id": "k-IcSVRdxKY",
+      "snippet": {
+        "publishedAt": "2023-10-12T11:00:08Z",
+        "channelId": "UC47AYUs8AVU1QsT5LhpXjaw",
+        "title": "【NARUTO -ナルト- 】螺旋丸PV",
+        "description": "螺旋丸紹介スペシャルPVを公開。\n©岸本斉史 スコット／集英社\n\n★『NARUTO -ナルト-』関連動画はコチラから\n・ナルト＆サスケ　比較PV：https://youtu.be/fYgdxb9qTew\n・うずまきナルトPV：https://youtu.be/CCawClrxLUI\n・うちはサスケPV：https://youtu.be/X2yVAfI-uqo\n・『NARUTO -ナルト-』×『シルエット』| KANA-BOON\n：https://youtu.be/0cWTmV3WmVk\n・波風ミナトPV：https://youtu.be/ig0S0vzxMBA\n・『NARUTO -ナルト-』×『遥か彼方』ASIAN KUNG-FU GENERATION\n：https://youtu.be/nsw-ddleSII\n・火の意志PV：https://youtu.be/_CepR88c3AM\n・暁PV：https://youtu.be/swq--rdN-2k\n\n#NARUTO ＃うずまきナルト #螺旋丸 #週刊少年ジャンプ  #ナルト\n\n★『NARUTO -ナルト-』作品紹介\n週刊少年ジャンプにて連載していた岸本斉史による少年漫画。\n1999年の連載開始からまたたく間に人気を博し、2002年よりTVアニメーションを放送開始。2014年に700回をもって連載終了。完結後もイベント、ゲーム、グッズなどが発売され続ける国民的作品。海外からの評価も高く、発行部数は全世界累計2億5000万部を突破、\n2006年にはニューズウィーク日本版の特集「世界が尊敬する日本人100人」に\n主人公、うずまきナルトが架空の人物として唯一選出される。\n現在は続編である『BORUTO-ボルト-』の第二部『BORUTO-ボルト- -TWO BLUE VORTEX-』（原作・監修：岸本斉史 漫画：池本幹雄）がVジャンプにて連載中。\n（NARUTO OFFICIAL SITEより引用：https://naruto-official.com/about ）\n\n\n★週刊少年ジャンプ公式HPはこちら▼\nhttps://www.shonenjump.com/j/\n★ジャンプチャンネル公式Twitterはこちら▼\nhttps://twitter.com/jumpch_youtube\n★少年ジャンプ編集部公式Twitterはこちら▼\nhttps://twitter.com/jump_henshubu",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/k-IcSVRdxKY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/k-IcSVRdxKY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/k-IcSVRdxKY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/k-IcSVRdxKY/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/k-IcSVRdxKY/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "ジャンプチャンネル",
+        "tags": [
+          "週刊少年ジャンプ",
+          "ジャンプ",
+          "JUMP",
+          "漫画",
+          "漫画動画",
+          "アニメ",
+          "ボイスコミック",
+          "ハイキュー",
+          "鬼滅の刃",
+          "チェンソーマン",
+          "仄見える少年",
+          "呪術廻戦",
+          "ガラク",
+          "ロッカールーム",
+          "僕のヒーローアカデミア",
+          "Dr.STONE",
+          "ONEPIECE",
+          "約束のネバーランド",
+          "銀魂",
+          "BLEACH",
+          "怪獣8号"
+        ],
+        "categoryId": "1",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "ja",
+        "localized": {
+          "title": "【NARUTO -ナルト- 】螺旋丸PV",
+          "description": "螺旋丸紹介スペシャルPVを公開。\n©岸本斉史 スコット／集英社\n\n★『NARUTO -ナルト-』関連動画はコチラから\n・ナルト＆サスケ　比較PV：https://youtu.be/fYgdxb9qTew\n・うずまきナルトPV：https://youtu.be/CCawClrxLUI\n・うちはサスケPV：https://youtu.be/X2yVAfI-uqo\n・『NARUTO -ナルト-』×『シルエット』| KANA-BOON\n：https://youtu.be/0cWTmV3WmVk\n・波風ミナトPV：https://youtu.be/ig0S0vzxMBA\n・『NARUTO -ナルト-』×『遥か彼方』ASIAN KUNG-FU GENERATION\n：https://youtu.be/nsw-ddleSII\n・火の意志PV：https://youtu.be/_CepR88c3AM\n・暁PV：https://youtu.be/swq--rdN-2k\n\n#NARUTO ＃うずまきナルト #螺旋丸 #週刊少年ジャンプ  #ナルト\n\n★『NARUTO -ナルト-』作品紹介\n週刊少年ジャンプにて連載していた岸本斉史による少年漫画。\n1999年の連載開始からまたたく間に人気を博し、2002年よりTVアニメーションを放送開始。2014年に700回をもって連載終了。完結後もイベント、ゲーム、グッズなどが発売され続ける国民的作品。海外からの評価も高く、発行部数は全世界累計2億5000万部を突破、\n2006年にはニューズウィーク日本版の特集「世界が尊敬する日本人100人」に\n主人公、うずまきナルトが架空の人物として唯一選出される。\n現在は続編である『BORUTO-ボルト-』の第二部『BORUTO-ボルト- -TWO BLUE VORTEX-』（原作・監修：岸本斉史 漫画：池本幹雄）がVジャンプにて連載中。\n（NARUTO OFFICIAL SITEより引用：https://naruto-official.com/about ）\n\n\n★週刊少年ジャンプ公式HPはこちら▼\nhttps://www.shonenjump.com/j/\n★ジャンプチャンネル公式Twitterはこちら▼\nhttps://twitter.com/jumpch_youtube\n★少年ジャンプ編集部公式Twitterはこちら▼\nhttps://twitter.com/jump_henshubu"
+        },
+        "defaultAudioLanguage": "ja"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "F6MdO-8xTqbjgM3krI6FzWKInvA",
+      "id": "MQ5QrHlv5Pg",
+      "snippet": {
+        "publishedAt": "2023-09-23T14:30:12Z",
+        "channelId": "UC14QT5j2nQI8lKBCGtrrBQA",
+        "title": "TVアニメ『BLEACH 千年血戦篇』#11〜#24 LOOKBACK／２０２３年７月8日テレビ東京系列ほかにて第2クール放送中",
+        "description": "#森田成一 #BLEACH #久保帯人\nhttps://bleach-anime.com/\nTVアニメ『BLEACH 千年血戦篇-訣別譚-』\n2023年7月8日よりテレビ東京系列ほかにて放送中。\n\n■放送情報\n・第2クール最終回1時間スペシャル（#25,#26）\nテレビ東京系にて9月30日（土）23:00～\n※その他放送情報は公式サイトをご確認ください。\n\n◆放送情報\n2023年7月8日よりテレビ東京系列にて放送開始\nテレビ東京系列：7月8日より 毎週土曜 23:00～\nテレビ静岡：7月9日より毎週日曜5：30～\n新潟放送：7月11日より毎週火曜25：30～\n広島テレビ：7月11日より毎週火曜25：29～　\n仙台放送：7月17日より毎週月曜25：30～\nAT-X：7月12日より毎週水曜21：30～　※リピート放送あり\nアニマックス：8月10日より毎週木曜19：00～　\n※放送日時は予告なく変更となる場合がございます。\n\n◆配信情報\n〇毎週日曜12:00～最新話配信（見放題・都度課金配信）\nLemino ／ アニメタイムズ ／ Disney+ ／ アニメ放題 ／ U-NEXT ／dアニメストア ／\nバンダイチャンネル ／Amazon Prime Video ／　Hulu ／ FOD ／ ABEMA ／ Netflix ／ DMM TV ／\nRakutenTV ／ Google Play ／ HAPPY!動画 ／ MOVIEFULL\n○毎週月曜18:00～最新話配信（見放題・都度課金配信）\nバンダイチャンネル\n○毎週月曜24:00～最新話配信（見放題・都度課金配信）\nTELASA　／ J:COM オンデマンド　／ milplus　／ auスマートパスプレミアム\n○毎週木曜24:00～最新話配信（無料）\nABEMA　／ TVer　／ ネットもテレ東 ／ ニコニコチャンネル ／ ニコニコ生放送 ／ Lemino\n※配信開始日は予告なく変更となる場合がございます。詳しくは各配信サービスの情報をご確認ください。\n\n【『#BLEACH 千年血戦篇』作品情報】\n◆スタッフ\n原作　： #久保帯人 「BLEACH」（集英社 ジャンプコミックス刊）\n監督　：田口智久\nシリーズ構成　：田口智久、平松正樹\nチーフ演出 ：村田 光、サトウ光敏\nキャラクターデザイン　：工藤昌史\n総作画監督　：長谷川亨雄、小松原聖、高柳久美子\nアクション・エフェクト作画監督　：酒井智史、橋本敬史、若林厚史\n美術監督　：谷岡善王\n美術設定　：天田俊貴\n色彩設計　：合田沙織\n編集　：三嶋章紀\n撮影監督　：山田和弘\nCG監督　：佐々木俊宏、後藤和史\n音響監督　：長崎行男\n音響制作　：ザック・プロモーション\n音楽　：鷺巣詩郎\nアニメーション制作　：studioぴえろ\n\n◆キャスト\n黒崎一護：#森田成一\n朽木ルキア：折笠富美子\n阿散井恋次：伊藤健太郎\n\n京楽春水：大塚明夫\n平子真子：小野坂昌也\n朽木白哉：置鮎龍太郎\n狛村左陣：稲田徹\n日番谷冬獅郎：朴璐美\n更木剣八：立木文彦\n涅マユリ：中尾隆聖\n\n兵主部一兵衛：楠見尚己\n\nユーハバッハ：菅生隆之\n石田雨竜：杉山紀彰\nユーグラム・ハッシュヴァルト：梅原裕一郎\nアスキン・ナックルヴァール：武内駿輔\nバンビエッタ・バスターバイン：竹達彩奈\nエス・ノト：松岡禎丞\nバズビー：小野友樹\nグレミィ・トゥミュー：花江夏樹\n\n◆イントロダクション\n最後の聖戦、迫る――。\n\n『週刊少年ジャンプ』で連載され、シリーズ累計発行部数は1億3000万部を超えるなど、\n完結後も世界中で根強い人気を誇る『BLEACH』。\n\n2004年10月より放送を開始したTVアニメは、\nこれまでに360話以上が制作され、長編劇場アニメも4作を数える。\n\nそしてついに、シリーズの最終章 “千年血戦篇”のアニメプロジェクトの幕が上がる\n\n監督とシリーズ構成は、数々の作品で卓越したビジュアルセンスを発揮してきた田口智久。\nキャラクターデザインの工藤昌史、音楽の鷺巣詩郎は、最初期からアニメ『BLEACH』を支え続けるオリジナルメンバー。\nアニメーション制作もこれまでのシリーズ同様、studioぴえろが担当する。\n\nまさしく「最終決戦」にふさわしい実力派スタッフ陣で挑む、ファイナル・シリーズ。\n\nはたして、黒崎一護がたどり着くのは――。\n\n◆第2クールストーリー\n千年の時を経て、死神vs滅却師の血戦が幕を開けた。\n突如《見えざる帝国》の襲撃を受けた尸魂界を救うべく、\n死神代行・黒崎一護は、躊躇うことなく戦いに身を投じる。\n\nだが、滅却師の始祖・ユーハバッハの命を受けた星十字騎士団の侵攻により、\n多くの死神たちが次々と無惨に散っていった。\n卍解を奪う手段をも持つ星十字騎士団の面々に、護廷十三隊は隊長格すら苦戦し、\n奮闘する一護もまた、ユーハバッハを前にしては力及ばず、刀を折られてしまう。\n\n斬月を治せず失意の一護に、父・一心が語った過去。\nそれは、一護の出生の秘密。死神の父と滅却師の母の、出会いと別れの記憶。\n己を知り、決意と共に再び立ち上がった一護は今、導かれ修練の時へ踏み出す。\n新たな力をその手に、大切な仲間を、全てを護るために――。\n\n一方、一護とは異なる行動をとっていた、滅却師の末裔・石田雨竜。\n記録を紐解き真実を求めた雨竜が辿り着いた答えとは――。\n\nユーハバッハが指名した「後継者」が《見えざる帝国》に波紋を呼び、\n戦況は新たな局面へと様相を変えていく。\n\n『世界の終わる９日間』\n\n瀞霊廷は闇に消え、やがて訣別の刻が訪れる――。\n\n◆WEB\n公式X（旧Twitter） ：https://twitter.com/BLEACHanimation\n公式Instagram ：https://www.instagram.com/accounts/login/?next=/bleach_official_anime/\n公式Tiktok：https://www.tiktok.com/@bleachanimation",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/MQ5QrHlv5Pg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/MQ5QrHlv5Pg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/MQ5QrHlv5Pg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/MQ5QrHlv5Pg/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/MQ5QrHlv5Pg/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "アニプレックス チャンネル",
+        "categoryId": "1",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "ja",
+        "localized": {
+          "title": "TVアニメ『BLEACH 千年血戦篇』#11〜#24 LOOKBACK／２０２３年７月8日テレビ東京系列ほかにて第2クール放送中",
+          "description": "#森田成一 #BLEACH #久保帯人\nhttps://bleach-anime.com/\nTVアニメ『BLEACH 千年血戦篇-訣別譚-』\n2023年7月8日よりテレビ東京系列ほかにて放送中。\n\n■放送情報\n・第2クール最終回1時間スペシャル（#25,#26）\nテレビ東京系にて9月30日（土）23:00～\n※その他放送情報は公式サイトをご確認ください。\n\n◆放送情報\n2023年7月8日よりテレビ東京系列にて放送開始\nテレビ東京系列：7月8日より 毎週土曜 23:00～\nテレビ静岡：7月9日より毎週日曜5：30～\n新潟放送：7月11日より毎週火曜25：30～\n広島テレビ：7月11日より毎週火曜25：29～　\n仙台放送：7月17日より毎週月曜25：30～\nAT-X：7月12日より毎週水曜21：30～　※リピート放送あり\nアニマックス：8月10日より毎週木曜19：00～　\n※放送日時は予告なく変更となる場合がございます。\n\n◆配信情報\n〇毎週日曜12:00～最新話配信（見放題・都度課金配信）\nLemino ／ アニメタイムズ ／ Disney+ ／ アニメ放題 ／ U-NEXT ／dアニメストア ／\nバンダイチャンネル ／Amazon Prime Video ／　Hulu ／ FOD ／ ABEMA ／ Netflix ／ DMM TV ／\nRakutenTV ／ Google Play ／ HAPPY!動画 ／ MOVIEFULL\n○毎週月曜18:00～最新話配信（見放題・都度課金配信）\nバンダイチャンネル\n○毎週月曜24:00～最新話配信（見放題・都度課金配信）\nTELASA　／ J:COM オンデマンド　／ milplus　／ auスマートパスプレミアム\n○毎週木曜24:00～最新話配信（無料）\nABEMA　／ TVer　／ ネットもテレ東 ／ ニコニコチャンネル ／ ニコニコ生放送 ／ Lemino\n※配信開始日は予告なく変更となる場合がございます。詳しくは各配信サービスの情報をご確認ください。\n\n【『#BLEACH 千年血戦篇』作品情報】\n◆スタッフ\n原作　： #久保帯人 「BLEACH」（集英社 ジャンプコミックス刊）\n監督　：田口智久\nシリーズ構成　：田口智久、平松正樹\nチーフ演出 ：村田 光、サトウ光敏\nキャラクターデザイン　：工藤昌史\n総作画監督　：長谷川亨雄、小松原聖、高柳久美子\nアクション・エフェクト作画監督　：酒井智史、橋本敬史、若林厚史\n美術監督　：谷岡善王\n美術設定　：天田俊貴\n色彩設計　：合田沙織\n編集　：三嶋章紀\n撮影監督　：山田和弘\nCG監督　：佐々木俊宏、後藤和史\n音響監督　：長崎行男\n音響制作　：ザック・プロモーション\n音楽　：鷺巣詩郎\nアニメーション制作　：studioぴえろ\n\n◆キャスト\n黒崎一護：#森田成一\n朽木ルキア：折笠富美子\n阿散井恋次：伊藤健太郎\n\n京楽春水：大塚明夫\n平子真子：小野坂昌也\n朽木白哉：置鮎龍太郎\n狛村左陣：稲田徹\n日番谷冬獅郎：朴璐美\n更木剣八：立木文彦\n涅マユリ：中尾隆聖\n\n兵主部一兵衛：楠見尚己\n\nユーハバッハ：菅生隆之\n石田雨竜：杉山紀彰\nユーグラム・ハッシュヴァルト：梅原裕一郎\nアスキン・ナックルヴァール：武内駿輔\nバンビエッタ・バスターバイン：竹達彩奈\nエス・ノト：松岡禎丞\nバズビー：小野友樹\nグレミィ・トゥミュー：花江夏樹\n\n◆イントロダクション\n最後の聖戦、迫る――。\n\n『週刊少年ジャンプ』で連載され、シリーズ累計発行部数は1億3000万部を超えるなど、\n完結後も世界中で根強い人気を誇る『BLEACH』。\n\n2004年10月より放送を開始したTVアニメは、\nこれまでに360話以上が制作され、長編劇場アニメも4作を数える。\n\nそしてついに、シリーズの最終章 “千年血戦篇”のアニメプロジェクトの幕が上がる\n\n監督とシリーズ構成は、数々の作品で卓越したビジュアルセンスを発揮してきた田口智久。\nキャラクターデザインの工藤昌史、音楽の鷺巣詩郎は、最初期からアニメ『BLEACH』を支え続けるオリジナルメンバー。\nアニメーション制作もこれまでのシリーズ同様、studioぴえろが担当する。\n\nまさしく「最終決戦」にふさわしい実力派スタッフ陣で挑む、ファイナル・シリーズ。\n\nはたして、黒崎一護がたどり着くのは――。\n\n◆第2クールストーリー\n千年の時を経て、死神vs滅却師の血戦が幕を開けた。\n突如《見えざる帝国》の襲撃を受けた尸魂界を救うべく、\n死神代行・黒崎一護は、躊躇うことなく戦いに身を投じる。\n\nだが、滅却師の始祖・ユーハバッハの命を受けた星十字騎士団の侵攻により、\n多くの死神たちが次々と無惨に散っていった。\n卍解を奪う手段をも持つ星十字騎士団の面々に、護廷十三隊は隊長格すら苦戦し、\n奮闘する一護もまた、ユーハバッハを前にしては力及ばず、刀を折られてしまう。\n\n斬月を治せず失意の一護に、父・一心が語った過去。\nそれは、一護の出生の秘密。死神の父と滅却師の母の、出会いと別れの記憶。\n己を知り、決意と共に再び立ち上がった一護は今、導かれ修練の時へ踏み出す。\n新たな力をその手に、大切な仲間を、全てを護るために――。\n\n一方、一護とは異なる行動をとっていた、滅却師の末裔・石田雨竜。\n記録を紐解き真実を求めた雨竜が辿り着いた答えとは――。\n\nユーハバッハが指名した「後継者」が《見えざる帝国》に波紋を呼び、\n戦況は新たな局面へと様相を変えていく。\n\n『世界の終わる９日間』\n\n瀞霊廷は闇に消え、やがて訣別の刻が訪れる――。\n\n◆WEB\n公式X（旧Twitter） ：https://twitter.com/BLEACHanimation\n公式Instagram ：https://www.instagram.com/accounts/login/?next=/bleach_official_anime/\n公式Tiktok：https://www.tiktok.com/@bleachanimation"
+        },
+        "defaultAudioLanguage": "ja"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "Gu2Nr1V_O77GAYEZCAFGc-sgf9U",
+      "id": "LNTFxDv4UQo",
+      "snippet": {
+        "publishedAt": "2023-11-02T03:01:07Z",
+        "channelId": "UChmpWpfoh3-c0ENFtrphTsQ",
+        "title": "ONE・村田雄介による平熱系最強ヒーロー“サイタマ”の日常ノックアウトコミック!!『ワンパンマン』29巻好評発売中‼",
+        "description": "★試し読みと連載最新話はコチラ！  \nhttps://tonarinoyj.jp/episode/13932016480028985383\n\n『ワンパンマン』　原作/ONE 漫画/村田雄介\n\n 【となりのヤングジャンプ連載】\n時代が求めたニューヒーロー『一撃男』と言えば?!? 『WEB界のカリスマ』と『最強ジャンプ遺伝子』の超強力タッグが描き出す！ 平熱系最強ヒーロー“サイタマ”の日常ノックアウトコミック!!\n\n■公式マンガアプリ「ヤンジャン！」\nhttps://ynjn.jp/\nhttps://twitter.com/ynjn_jp\n\n■完全無料のWEBコミックサイト「となりのヤングジャンプ」\nhttps://tonarinoyj.jp/\nhttps://twitter.com/tonarinoyj \n\n 【デジタル版ヤングジャンプの購入はコチラ！】\nhttps://youngjump.jp/digital/\n【お得なヤングジャンプ定期購読デジタル】 \nhttps://www.youngjump.world/ \n\n■週刊ヤングジャンプ公式サイト\nhttp://youngjump.jp/ \n■公式ツイッター \nhttps://twitter.com/young_jump \n\n#試し読みは概要欄から#となりのヤングジャンプ#ワンパンマン#漫画",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/LNTFxDv4UQo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/LNTFxDv4UQo/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/LNTFxDv4UQo/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/LNTFxDv4UQo/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/LNTFxDv4UQo/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "ヤンジャン漫画TV【集英社ヤングジャンプ公式】",
+        "tags": [
+          "ワンパンマン",
+          "onepunchuman",
+          "ONE",
+          "村田雄介",
+          "ヤンジャン",
+          "ヤンジャン漫画TV",
+          "公式",
+          "PV",
+          "コミック"
+        ],
+        "categoryId": "24",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "ja",
+        "localized": {
+          "title": "ONE・村田雄介による平熱系最強ヒーロー“サイタマ”の日常ノックアウトコミック!!『ワンパンマン』29巻好評発売中‼",
+          "description": "★試し読みと連載最新話はコチラ！  \nhttps://tonarinoyj.jp/episode/13932016480028985383\n\n『ワンパンマン』　原作/ONE 漫画/村田雄介\n\n 【となりのヤングジャンプ連載】\n時代が求めたニューヒーロー『一撃男』と言えば?!? 『WEB界のカリスマ』と『最強ジャンプ遺伝子』の超強力タッグが描き出す！ 平熱系最強ヒーロー“サイタマ”の日常ノックアウトコミック!!\n\n■公式マンガアプリ「ヤンジャン！」\nhttps://ynjn.jp/\nhttps://twitter.com/ynjn_jp\n\n■完全無料のWEBコミックサイト「となりのヤングジャンプ」\nhttps://tonarinoyj.jp/\nhttps://twitter.com/tonarinoyj \n\n 【デジタル版ヤングジャンプの購入はコチラ！】\nhttps://youngjump.jp/digital/\n【お得なヤングジャンプ定期購読デジタル】 \nhttps://www.youngjump.world/ \n\n■週刊ヤングジャンプ公式サイト\nhttp://youngjump.jp/ \n■公式ツイッター \nhttps://twitter.com/young_jump \n\n#試し読みは概要欄から#となりのヤングジャンプ#ワンパンマン#漫画"
+        },
+        "defaultAudioLanguage": "ja"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "pwKLmJFbkSW7XtLo-ylSKQhdFgk",
+      "id": "4pmxtJwlloM",
+      "snippet": {
+        "publishedAt": "2023-07-07T10:00:04Z",
+        "channelId": "UCKZRL75vTjqbgd0WVdqF3Qg",
+        "title": "【オリジナル】僕らは夏を待っていた。 / 天月",
+        "description": "Music Bokura ha natsuwomatteita\nSong by Amatsuki\n---------------------------------------------------------------------\n\n◆Vocal：天月\n\n◆Lyric&Music：渡辺拓也、天月\n\n◆Arrange：渡辺拓也\nhttps://twitter.com/takuya88699231\n\n◆Mix：kain\nhttps://twitter.com/kain2525\n\n◆Bass：垣下祐紀\nhttps://twitter.com/yu_can15\n\n◆Storyboard&Illustration：小夏一花\nhttps://twitter.com/konatsu_ichika\n\n◆Background Arts：小岩井おっさ\nhttps://twitter.com/OoSa6\n\n◆Movie：イクミ\nhttps://twitter.com/ikumi_OH20\n\n◆Inst：https://onl.tw/L61Yq6Z\n\nhttps://www.youtube.com/playlist?list=PLdO122Yin8p5vMpgH289CriMvNnswuFa2\n\n---------------------------------------------------------------------\n\nあ、夏が来る匂いがする\nもう何度目の季節だろう\n風はやがて僕を連れて\n君といた街に還る\n \nあれからどれだけの時が過ぎた？\n今年も花火は上がるみたいだ\n本当は蒸し暑くて嫌だったけど\n君の横顔が綺麗過ぎて\n \n遠くで夏が鳴いた\n想いは宙を飛び越えた\nちょっと思い出すね\nあの日の僕ら\n恋してた梅雨明け\n \n「はぐれないで」と繋ぐ手と手\n君の声とラムネの味\n \nいつもどおりの君との日常\n夜空を塗りつぶした赤 青 黄色\n「好きだよ」って溢れた一言が\n君の瞳に向けられない\n \n遠くで夏が鳴いた\n願いは星と溶け合った\n君の頬が 赤く染まった\n暑さのせいですか？\n \n跳ね上がった水溜まりと\n輝いた色とりどり \n風に揺れた 後ろ姿に\n「恋」していた\n \n僕らは夏を待っていた。\n永遠に咲いた恋花火\n \n遠くで夏が鳴いた\n想いは宙を飛び越えた\nちょっと思い出すね あの日の僕ら\n恋してた梅雨明け\nはじまりの夏の日\n\n---------------------------------------------------------------------\n\n前回投稿動画⇩ \nバイトル！／meiyo feat.天月【オリジナルMV】\nhttps://www.youtube.com/watch?v=5lktJO-acqk\n\nチャンネル登録＆高評価よろしくお願いします！\n---------------------------------------------------------------------\n\n★公式サイト：https://amatsuki.jp\n★Twitter：https://twitter.com/_amatsuki_\n★Instagram：https://www.instagram.com/amatsuki_official/\n★公式LINE：https://line.me/R/ti/p/@amatsuki?from=page&openQrModal=true&searchId=amatsuki#~\n★サブチャンネル：https://www.youtube.com/@--amatsukich.6525\n★公式Tiktok：https://www.tiktok.com/@amatsukiofficial\n\n#天月 #僕らは夏を待っていた。 #オリジナル",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/4pmxtJwlloM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/4pmxtJwlloM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/4pmxtJwlloM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/4pmxtJwlloM/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          }
+        },
+        "channelTitle": "天月-あまつき-YouTube Official Channel",
+        "categoryId": "10",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "ja",
+        "localized": {
+          "title": "【オリジナル】僕らは夏を待っていた。 / 天月",
+          "description": "Music Bokura ha natsuwomatteita\nSong by Amatsuki\n---------------------------------------------------------------------\n\n◆Vocal：天月\n\n◆Lyric&Music：渡辺拓也、天月\n\n◆Arrange：渡辺拓也\nhttps://twitter.com/takuya88699231\n\n◆Mix：kain\nhttps://twitter.com/kain2525\n\n◆Bass：垣下祐紀\nhttps://twitter.com/yu_can15\n\n◆Storyboard&Illustration：小夏一花\nhttps://twitter.com/konatsu_ichika\n\n◆Background Arts：小岩井おっさ\nhttps://twitter.com/OoSa6\n\n◆Movie：イクミ\nhttps://twitter.com/ikumi_OH20\n\n◆Inst：https://onl.tw/L61Yq6Z\n\nhttps://www.youtube.com/playlist?list=PLdO122Yin8p5vMpgH289CriMvNnswuFa2\n\n---------------------------------------------------------------------\n\nあ、夏が来る匂いがする\nもう何度目の季節だろう\n風はやがて僕を連れて\n君といた街に還る\n \nあれからどれだけの時が過ぎた？\n今年も花火は上がるみたいだ\n本当は蒸し暑くて嫌だったけど\n君の横顔が綺麗過ぎて\n \n遠くで夏が鳴いた\n想いは宙を飛び越えた\nちょっと思い出すね\nあの日の僕ら\n恋してた梅雨明け\n \n「はぐれないで」と繋ぐ手と手\n君の声とラムネの味\n \nいつもどおりの君との日常\n夜空を塗りつぶした赤 青 黄色\n「好きだよ」って溢れた一言が\n君の瞳に向けられない\n \n遠くで夏が鳴いた\n願いは星と溶け合った\n君の頬が 赤く染まった\n暑さのせいですか？\n \n跳ね上がった水溜まりと\n輝いた色とりどり \n風に揺れた 後ろ姿に\n「恋」していた\n \n僕らは夏を待っていた。\n永遠に咲いた恋花火\n \n遠くで夏が鳴いた\n想いは宙を飛び越えた\nちょっと思い出すね あの日の僕ら\n恋してた梅雨明け\nはじまりの夏の日\n\n---------------------------------------------------------------------\n\n前回投稿動画⇩ \nバイトル！／meiyo feat.天月【オリジナルMV】\nhttps://www.youtube.com/watch?v=5lktJO-acqk\n\nチャンネル登録＆高評価よろしくお願いします！\n---------------------------------------------------------------------\n\n★公式サイト：https://amatsuki.jp\n★Twitter：https://twitter.com/_amatsuki_\n★Instagram：https://www.instagram.com/amatsuki_official/\n★公式LINE：https://line.me/R/ti/p/@amatsuki?from=page&openQrModal=true&searchId=amatsuki#~\n★サブチャンネル：https://www.youtube.com/@--amatsukich.6525\n★公式Tiktok：https://www.tiktok.com/@amatsukiofficial\n\n#天月 #僕らは夏を待っていた。 #オリジナル"
+        },
+        "defaultAudioLanguage": "ja"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "QkDsvitWeGhwm0t0X5Vt8Za_T-k",
+      "id": "DOPsCO91jcU",
+      "snippet": {
+        "publishedAt": "2023-10-21T03:00:05Z",
+        "channelId": "UC47AYUs8AVU1QsT5LhpXjaw",
+        "title": "【僕のヒーローアカデミア】ー未成年の主張ー【ジャンプアニメイズム】",
+        "description": "【ジャンプアニメイズム】3作品目は、『僕のヒーローアカデミア』（堀越耕平）\n『僕のヒーローアカデミア』の動画はコチラから\nhttps://www.youtube.com/playlist?list=PLMyQxaghEY1HCFF-d4o4tWPyQYof9Lf-0\n ©堀越耕平／集英社\n\n★【ジャンプアニメイズム】とは \nTVアニメ『アンデッドアンラック』が放送される、“スーパーアニメイズム”枠おしりにて、毎週金曜深夜1:50〜MBS/TBS系全国28局ネットにて放送中！\n週刊少年ジャンプにて連載中の大人気漫画作品の新作PVを順次放送予定で、色とりどりの各作品の魅力を凝縮してお贈りします！\n\n【ジャンプアニメイズムナビゲーター】\nアンディ：中村悠一\n出雲風子：佳原萌枝\n\n【ナレーション】\n丸山京夏\n\n★『僕のヒーローアカデミア』作品紹介\n特殊能力者ここに集結!!\n超ド級ヒーローアクション!!\n誰もが何かしらの超常能力・\"個性\"を持つようになった世界！\"個性\"を悪用する敵＜ヴィラン＞を、圧倒的な力で取り締まる「ヒーロー」は皆の憧れの存在となっていた！主人公・緑谷出久（通称「デク」）もまた「ヒーロー」になることを夢見る少年だったのだが...!?\n\n★コミックス『僕のヒーローアカデミア』最新39巻は11月2日（木）発売！！\nhttps://www.shueisha.co.jp/books/items/contents.html?isbn=978-4-08-883662-1\n\n購入・試し読みはこちらから！\nhttps://www.shueisha.co.jp/books/search/search.html?seriesid=37062\n\n★『僕のヒーローアカデミア』関連動画はコチラから \n■【ヒロアカ】1－AスペシャルPV　https://youtu.be/XAARiL43z1c\n■【ヒロアカ】プロヒーローPV　https://youtu.be/gJP6uEftlxQ\n■【ヒロアカ】ヴィランPV　https://youtu.be/HWlJpv1sFJM\n■【ヒロアカ】緑谷出久PV　https://youtu.be/ed_2VdQDUMk\n■【ヒロアカ】轟焦凍PV　https://youtu.be/vxI-PM0WKzo\n■【ヒロアカ】8bit 風作業用BGM　https://youtu.be/wjtOEgj6DZM\n\n★デジタル版定期購読はこちら▼\nhttps://www.shonenjump.com/p/sp/2020/teikikodoku_pr/\n\n★週刊少年ジャンプ公式HPはこちら▼ https://www.shonenjump.com/j/ \n★ジャンプチャンネル公式X（Twitter）はこちら▼ https://twitter.com/jumpch_youtube \n★少年ジャンプ編集部公式X（Twitter）はこちら▼ https://twitter.com/jump_henshubu",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/DOPsCO91jcU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/DOPsCO91jcU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/DOPsCO91jcU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/DOPsCO91jcU/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/DOPsCO91jcU/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "ジャンプチャンネル",
+        "tags": [
+          "週刊少年ジャンプ",
+          "ジャンプ",
+          "JUMP",
+          "漫画",
+          "漫画動画",
+          "アニメ",
+          "ボイスコミック",
+          "ハイキュー",
+          "鬼滅の刃",
+          "チェンソーマン",
+          "仄見える少年",
+          "呪術廻戦",
+          "ガラク",
+          "ロッカールーム",
+          "僕のヒーローアカデミア",
+          "Dr.STONE",
+          "ONEPIECE",
+          "約束のネバーランド",
+          "銀魂",
+          "BLEACH",
+          "怪獣8号"
+        ],
+        "categoryId": "1",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "ja",
+        "localized": {
+          "title": "【僕のヒーローアカデミア】ー未成年の主張ー【ジャンプアニメイズム】",
+          "description": "【ジャンプアニメイズム】3作品目は、『僕のヒーローアカデミア』（堀越耕平）\n『僕のヒーローアカデミア』の動画はコチラから\nhttps://www.youtube.com/playlist?list=PLMyQxaghEY1HCFF-d4o4tWPyQYof9Lf-0\n ©堀越耕平／集英社\n\n★【ジャンプアニメイズム】とは \nTVアニメ『アンデッドアンラック』が放送される、“スーパーアニメイズム”枠おしりにて、毎週金曜深夜1:50〜MBS/TBS系全国28局ネットにて放送中！\n週刊少年ジャンプにて連載中の大人気漫画作品の新作PVを順次放送予定で、色とりどりの各作品の魅力を凝縮してお贈りします！\n\n【ジャンプアニメイズムナビゲーター】\nアンディ：中村悠一\n出雲風子：佳原萌枝\n\n【ナレーション】\n丸山京夏\n\n★『僕のヒーローアカデミア』作品紹介\n特殊能力者ここに集結!!\n超ド級ヒーローアクション!!\n誰もが何かしらの超常能力・\"個性\"を持つようになった世界！\"個性\"を悪用する敵＜ヴィラン＞を、圧倒的な力で取り締まる「ヒーロー」は皆の憧れの存在となっていた！主人公・緑谷出久（通称「デク」）もまた「ヒーロー」になることを夢見る少年だったのだが...!?\n\n★コミックス『僕のヒーローアカデミア』最新39巻は11月2日（木）発売！！\nhttps://www.shueisha.co.jp/books/items/contents.html?isbn=978-4-08-883662-1\n\n購入・試し読みはこちらから！\nhttps://www.shueisha.co.jp/books/search/search.html?seriesid=37062\n\n★『僕のヒーローアカデミア』関連動画はコチラから \n■【ヒロアカ】1－AスペシャルPV　https://youtu.be/XAARiL43z1c\n■【ヒロアカ】プロヒーローPV　https://youtu.be/gJP6uEftlxQ\n■【ヒロアカ】ヴィランPV　https://youtu.be/HWlJpv1sFJM\n■【ヒロアカ】緑谷出久PV　https://youtu.be/ed_2VdQDUMk\n■【ヒロアカ】轟焦凍PV　https://youtu.be/vxI-PM0WKzo\n■【ヒロアカ】8bit 風作業用BGM　https://youtu.be/wjtOEgj6DZM\n\n★デジタル版定期購読はこちら▼\nhttps://www.shonenjump.com/p/sp/2020/teikikodoku_pr/\n\n★週刊少年ジャンプ公式HPはこちら▼ https://www.shonenjump.com/j/ \n★ジャンプチャンネル公式X（Twitter）はこちら▼ https://twitter.com/jumpch_youtube \n★少年ジャンプ編集部公式X（Twitter）はこちら▼ https://twitter.com/jump_henshubu"
+        },
+        "defaultAudioLanguage": "ja"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "MneSO93Z9gZpXYs4NVdwE3LFbcw",
+      "id": "mBfyiYuxbM4",
+      "snippet": {
+        "publishedAt": "2023-12-19T03:00:24Z",
+        "channelId": "UC47AYUs8AVU1QsT5LhpXjaw",
+        "title": "【NA：宮野真守】『The JOJOLands』最新2巻 絶賛発売中ッ！",
+        "description": "『The JOJOLands』最新2巻発売を記念したPVを公開！\nナレーション：宮野真守\n\nご購入はこちらから\nhttps://www.shueisha.co.jp/books/search/search.html?seriesid=102654&order=1\n\nジョジョの奇妙な冒険 公式Twitter\n https://twitter.com/araki_jojo\n\n\n◆『JOJO magazine 2023 WINTER』好評発売中ッ！\n\nhttps://youtu.be/RakO6vctNmY\n\n2022年原作35周年を記念して刊行された『JOJO magazine 2022 SPRING』、その好評を受けて登場した2号目となる『JOJO magazine 2022 WINTER』に続き、この度、待望の3号目となる『JOJO magazine 2023 WINTER』の刊行が決定！\n荒木飛呂彦描き下ろしのカバーのほか、この本でしか読めない企画や小説、漫画など内容盛りだくさん！\n『ジョジョ』を愛する全ての人に贈る一冊です。\n※デジタル版に「JOJOスペシャルステッカー」は付きません。\n※詳しい掲載内容については、下記公式Xアカウント、HPなどをチェックください。\n\nHP・ご購入はこちらから\nhttps://jojo-portal.com/special/jojo-magazine/\n\nJOJO magazine公式Twitter\n https://twitter.com/JOJO_magazine\n\n\n#ジョジョの奇妙な冒険 #荒木飛呂彦 #宮野真守",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/mBfyiYuxbM4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/mBfyiYuxbM4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/mBfyiYuxbM4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/mBfyiYuxbM4/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/mBfyiYuxbM4/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "ジャンプチャンネル",
+        "tags": [
+          "週刊少年ジャンプ",
+          "ジャンプ",
+          "JUMP",
+          "漫画",
+          "漫画動画",
+          "アニメ",
+          "ボイスコミック",
+          "ハイキュー",
+          "鬼滅の刃",
+          "チェンソーマン",
+          "仄見える少年",
+          "呪術廻戦",
+          "ガラク",
+          "ロッカールーム",
+          "僕のヒーローアカデミア",
+          "Dr.STONE",
+          "ONEPIECE",
+          "約束のネバーランド",
+          "銀魂",
+          "BLEACH",
+          "怪獣8号"
+        ],
+        "categoryId": "1",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "ja",
+        "localized": {
+          "title": "【NA：宮野真守】『The JOJOLands』最新2巻 絶賛発売中ッ！",
+          "description": "『The JOJOLands』最新2巻発売を記念したPVを公開！\nナレーション：宮野真守\n\nご購入はこちらから\nhttps://www.shueisha.co.jp/books/search/search.html?seriesid=102654&order=1\n\nジョジョの奇妙な冒険 公式Twitter\n https://twitter.com/araki_jojo\n\n\n◆『JOJO magazine 2023 WINTER』好評発売中ッ！\n\nhttps://youtu.be/RakO6vctNmY\n\n2022年原作35周年を記念して刊行された『JOJO magazine 2022 SPRING』、その好評を受けて登場した2号目となる『JOJO magazine 2022 WINTER』に続き、この度、待望の3号目となる『JOJO magazine 2023 WINTER』の刊行が決定！\n荒木飛呂彦描き下ろしのカバーのほか、この本でしか読めない企画や小説、漫画など内容盛りだくさん！\n『ジョジョ』を愛する全ての人に贈る一冊です。\n※デジタル版に「JOJOスペシャルステッカー」は付きません。\n※詳しい掲載内容については、下記公式Xアカウント、HPなどをチェックください。\n\nHP・ご購入はこちらから\nhttps://jojo-portal.com/special/jojo-magazine/\n\nJOJO magazine公式Twitter\n https://twitter.com/JOJO_magazine\n\n\n#ジョジョの奇妙な冒険 #荒木飛呂彦 #宮野真守"
+        },
+        "defaultAudioLanguage": "ja"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "_QuRqWq-hufy34bkLQRQB2pB-Do",
+      "id": "er1EzEzE9XE",
+      "snippet": {
+        "publishedAt": "2023-07-28T10:00:27Z",
+        "channelId": "UCKZRL75vTjqbgd0WVdqF3Qg",
+        "title": "Mela! ／ 緑黄色社会(cover) by 天月",
+        "description": "Music：Mela!\nCovered Vocal : Amatsuki\n\n本家様：https://youtu.be/aRDURmIYBZ4\n\nWords：長屋晴子, 小林壱誓\nMusic：peppe, 穴見真吾\n\nArrange：fu-rin https://twitter.com/furin5\n\nMix：kain https://twitter.com/kain2525\n\nIllustrator：メレ https://twitter.com/mele_ck\n\nMovie：イクミ https://twitter.com/ikumi_OH20\n\nVocal：天月\n\nChorus：un:c、kain、Gero、少年T、そらる、超学生、となりの坂田。、luz\n\nhttps://www.youtube.com/playlist?list=PLdO122Yin8p7aQ1YjqmHRAFocts1TTQTh\nhttps://www.youtube.com/playlist?list=PLdO122Yin8p7CRRZ6bhEzM1SaGQlQO1m3\n\n\n--------------------------------------------------------------------- \n前回投稿動画⇩ \n【オリジナル】僕らは夏を待っていた。 / 天月\nhttps://youtu.be/4pmxtJwlloM\n\nチャンネル登録＆高評価よろしくお願いします！\n---------------------------------------------------------------------\n\n★公式サイト：http://amatsuki.jp/\u200b\u200b\u200b\n★Twitter：http://twitter.com/_amatsuki_\u200b\u200b\u200b\n★Instagram：https://tinyurl.com/yyhz5sgf\u200b\u200b\n★公式LINE：https://lin.ee/vLUzLKp\u200b\u200b\u200b\n★サブチャンネル：http://urx.blue/VE8u\u200b\u200b\u200b\n★公式Tiktok：https://tinyurl.com/y5yznvmw\u200b\u200b\n\n#天月 #mela ! #緑黄色社会 #歌ってみた #cover",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/er1EzEzE9XE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/er1EzEzE9XE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/er1EzEzE9XE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/er1EzEzE9XE/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/er1EzEzE9XE/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "天月-あまつき-YouTube Official Channel",
+        "categoryId": "10",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "ja",
+        "localized": {
+          "title": "Mela! ／ 緑黄色社会(cover) by 天月",
+          "description": "Music：Mela!\nCovered Vocal : Amatsuki\n\n本家様：https://youtu.be/aRDURmIYBZ4\n\nWords：長屋晴子, 小林壱誓\nMusic：peppe, 穴見真吾\n\nArrange：fu-rin https://twitter.com/furin5\n\nMix：kain https://twitter.com/kain2525\n\nIllustrator：メレ https://twitter.com/mele_ck\n\nMovie：イクミ https://twitter.com/ikumi_OH20\n\nVocal：天月\n\nChorus：un:c、kain、Gero、少年T、そらる、超学生、となりの坂田。、luz\n\nhttps://www.youtube.com/playlist?list=PLdO122Yin8p7aQ1YjqmHRAFocts1TTQTh\nhttps://www.youtube.com/playlist?list=PLdO122Yin8p7CRRZ6bhEzM1SaGQlQO1m3\n\n\n--------------------------------------------------------------------- \n前回投稿動画⇩ \n【オリジナル】僕らは夏を待っていた。 / 天月\nhttps://youtu.be/4pmxtJwlloM\n\nチャンネル登録＆高評価よろしくお願いします！\n---------------------------------------------------------------------\n\n★公式サイト：http://amatsuki.jp/\u200b\u200b\u200b\n★Twitter：http://twitter.com/_amatsuki_\u200b\u200b\u200b\n★Instagram：https://tinyurl.com/yyhz5sgf\u200b\u200b\n★公式LINE：https://lin.ee/vLUzLKp\u200b\u200b\u200b\n★サブチャンネル：http://urx.blue/VE8u\u200b\u200b\u200b\n★公式Tiktok：https://tinyurl.com/y5yznvmw\u200b\u200b\n\n#天月 #mela ! #緑黄色社会 #歌ってみた #cover"
+        },
+        "defaultAudioLanguage": "ja"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "8qY3AlGaniWKG92JrkwYEAw-iiE",
+      "id": "fYgdxb9qTew",
+      "snippet": {
+        "publishedAt": "2023-10-11T11:00:09Z",
+        "channelId": "UC47AYUs8AVU1QsT5LhpXjaw",
+        "title": "【NARUTO -ナルト- 】うずまきナルト＆うちはサスケ 比較PV",
+        "description": "うずまきナルトの誕生日PVの公開を皮切りに、ナルト＆サスケの比較PVを公開\n©岸本斉史 スコット／集英社\n\n★『NARUTO -ナルト-』関連動画はコチラから\n・螺旋丸PV：https://youtu.be/k-IcSVRdxKY\n・うずまきナルトPV：https://youtu.be/CCawClrxLUI\n・うちはサスケPV：https://youtu.be/X2yVAfI-uqo\n・『NARUTO -ナルト-』×『シルエット』| KANA-BOON\n：https://youtu.be/0cWTmV3WmVk\n・波風ミナトPV：https://youtu.be/ig0S0vzxMBA\n・『NARUTO -ナルト-』×『遥か彼方』ASIAN KUNG-FU GENERATION\n：https://youtu.be/nsw-ddleSII\n・火の意志PV：https://youtu.be/_CepR88c3AM\n・暁PV：https://youtu.be/swq--rdN-2k\n\n#NARUTO ＃うずまきナルト #うちはサスケ #週刊少年ジャンプ  #ナルト\n\n★『NARUTO -ナルト-』作品紹介\n週刊少年ジャンプにて連載していた岸本斉史による少年漫画。\n1999年の連載開始からまたたく間に人気を博し、2002年よりTVアニメーションを放送開始。2014年に700回をもって連載終了。完結後もイベント、ゲーム、グッズなどが発売され続ける国民的作品。海外からの評価も高く、発行部数は全世界累計2億5000万部を突破、\n2006年にはニューズウィーク日本版の特集「世界が尊敬する日本人100人」に\n主人公、うずまきナルトが架空の人物として唯一選出される。\n現在は続編である『BORUTO-ボルト-』の第二部『BORUTO-ボルト- -TWO BLUE VORTEX-』（原作・監修：岸本斉史 漫画：池本幹雄）がVジャンプにて連載中。\n（NARUTO OFFICIAL SITEより引用：https://naruto-official.com/about ）\n\n\n★週刊少年ジャンプ公式HPはこちら▼\nhttps://www.shonenjump.com/j/\n★ジャンプチャンネル公式Twitterはこちら▼\nhttps://twitter.com/jumpch_youtube\n★少年ジャンプ編集部公式Twitterはこちら▼\nhttps://twitter.com/jump_henshubu",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/fYgdxb9qTew/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/fYgdxb9qTew/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/fYgdxb9qTew/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/fYgdxb9qTew/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/fYgdxb9qTew/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "ジャンプチャンネル",
+        "tags": [
+          "週刊少年ジャンプ",
+          "ジャンプ",
+          "JUMP",
+          "漫画",
+          "漫画動画",
+          "アニメ",
+          "ボイスコミック",
+          "ハイキュー",
+          "鬼滅の刃",
+          "チェンソーマン",
+          "仄見える少年",
+          "呪術廻戦",
+          "ガラク",
+          "ロッカールーム",
+          "僕のヒーローアカデミア",
+          "Dr.STONE",
+          "ONEPIECE",
+          "約束のネバーランド",
+          "銀魂",
+          "BLEACH",
+          "怪獣8号"
+        ],
+        "categoryId": "1",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "ja",
+        "localized": {
+          "title": "【NARUTO -ナルト- 】うずまきナルト＆うちはサスケ 比較PV",
+          "description": "うずまきナルトの誕生日PVの公開を皮切りに、ナルト＆サスケの比較PVを公開\n©岸本斉史 スコット／集英社\n\n★『NARUTO -ナルト-』関連動画はコチラから\n・螺旋丸PV：https://youtu.be/k-IcSVRdxKY\n・うずまきナルトPV：https://youtu.be/CCawClrxLUI\n・うちはサスケPV：https://youtu.be/X2yVAfI-uqo\n・『NARUTO -ナルト-』×『シルエット』| KANA-BOON\n：https://youtu.be/0cWTmV3WmVk\n・波風ミナトPV：https://youtu.be/ig0S0vzxMBA\n・『NARUTO -ナルト-』×『遥か彼方』ASIAN KUNG-FU GENERATION\n：https://youtu.be/nsw-ddleSII\n・火の意志PV：https://youtu.be/_CepR88c3AM\n・暁PV：https://youtu.be/swq--rdN-2k\n\n#NARUTO ＃うずまきナルト #うちはサスケ #週刊少年ジャンプ  #ナルト\n\n★『NARUTO -ナルト-』作品紹介\n週刊少年ジャンプにて連載していた岸本斉史による少年漫画。\n1999年の連載開始からまたたく間に人気を博し、2002年よりTVアニメーションを放送開始。2014年に700回をもって連載終了。完結後もイベント、ゲーム、グッズなどが発売され続ける国民的作品。海外からの評価も高く、発行部数は全世界累計2億5000万部を突破、\n2006年にはニューズウィーク日本版の特集「世界が尊敬する日本人100人」に\n主人公、うずまきナルトが架空の人物として唯一選出される。\n現在は続編である『BORUTO-ボルト-』の第二部『BORUTO-ボルト- -TWO BLUE VORTEX-』（原作・監修：岸本斉史 漫画：池本幹雄）がVジャンプにて連載中。\n（NARUTO OFFICIAL SITEより引用：https://naruto-official.com/about ）\n\n\n★週刊少年ジャンプ公式HPはこちら▼\nhttps://www.shonenjump.com/j/\n★ジャンプチャンネル公式Twitterはこちら▼\nhttps://twitter.com/jumpch_youtube\n★少年ジャンプ編集部公式Twitterはこちら▼\nhttps://twitter.com/jump_henshubu"
+        },
+        "defaultAudioLanguage": "ja"
+      }
+    },
+    {
+      "kind": "youtube#video",
+      "etag": "Y6ZFBmnCENYQ1GHdog5AXgUShNI",
+      "id": "S-T_fpSGxzs",
+      "snippet": {
+        "publishedAt": "2024-05-01T09:02:45Z",
+        "channelId": "UC47AYUs8AVU1QsT5LhpXjaw",
+        "title": "【公式】『カグラバチ』2巻発売PV【週刊少年ジャンプ】",
+        "description": "カグラバチ2巻発売を記念したPVを公開！\nJC『カグラバチ』最新2巻　5月2日（木）発売！\n\n外薗健先生が描く「六平チヒロ＆双城厳一」:https://youtu.be/GoHEq3fl7tE\n\n★『カグラバチ』ボイスコミックはこちら▼\n#1: https://youtu.be/5caXT1eEilA\n#2:https://youtu.be/ezrRAIgXWA4\n#3:https://youtu.be/sV35OSS3oOQ\n\n★外薗健先生の『カグラバチ』電子書籍の試し読みはこちらから▼\nhttps://shonenjumpplus.com/episode/14079602755222998036\n★週刊少年ジャンプの定期購読はこちらから！\nhttps://shonenjumpplus.com/subscription\n★週刊少年ジャンプへの持ち込みは下記をチェック！\nhttps://www.jump-mangasho.com/become/mochikomi/\n★コミックスが購入できる電子書籍ストアはこちら！▼\nhttps://zebrack-comic.shueisha.co.jp/\n★週刊少年ジャンプ公式HPはこちら▼\nhttps://www.shonenjump.com/j/\n★ジャンプ+アプリはこちら▼\nhttps://shonenjumpplus.com/app\n★ジャンプチャンネル公式Twitterはこちら▼\nhttps://twitter.com/jumpch_youtube\n★少年ジャンプ編集部公式Twitterはこちら▼\nhttps://twitter.com/jump_henshubu\n\n#ジャンプ漫画　#カグラバチ　#週刊少年ジャンプ",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/S-T_fpSGxzs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/S-T_fpSGxzs/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/S-T_fpSGxzs/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/S-T_fpSGxzs/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/S-T_fpSGxzs/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "ジャンプチャンネル",
+        "tags": [
+          "週刊少年ジャンプ",
+          "ジャンプ",
+          "JUMP",
+          "漫画",
+          "漫画動画",
+          "アニメ",
+          "ボイスコミック",
+          "ハイキュー",
+          "鬼滅の刃",
+          "チェンソーマン",
+          "仄見える少年",
+          "呪術廻戦",
+          "ガラク",
+          "ロッカールーム",
+          "僕のヒーローアカデミア",
+          "Dr.STONE",
+          "ONEPIECE",
+          "約束のネバーランド",
+          "銀魂",
+          "BLEACH",
+          "怪獣8号"
+        ],
+        "categoryId": "1",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "ja",
+        "localized": {
+          "title": "【公式】『カグラバチ』2巻発売PV【週刊少年ジャンプ】",
+          "description": "カグラバチ2巻発売を記念したPVを公開！\nJC『カグラバチ』最新2巻　5月2日（木）発売！\n\n外薗健先生が描く「六平チヒロ＆双城厳一」:https://youtu.be/GoHEq3fl7tE\n\n★『カグラバチ』ボイスコミックはこちら▼\n#1: https://youtu.be/5caXT1eEilA\n#2:https://youtu.be/ezrRAIgXWA4\n#3:https://youtu.be/sV35OSS3oOQ\n\n★外薗健先生の『カグラバチ』電子書籍の試し読みはこちらから▼\nhttps://shonenjumpplus.com/episode/14079602755222998036\n★週刊少年ジャンプの定期購読はこちらから！\nhttps://shonenjumpplus.com/subscription\n★週刊少年ジャンプへの持ち込みは下記をチェック！\nhttps://www.jump-mangasho.com/become/mochikomi/\n★コミックスが購入できる電子書籍ストアはこちら！▼\nhttps://zebrack-comic.shueisha.co.jp/\n★週刊少年ジャンプ公式HPはこちら▼\nhttps://www.shonenjump.com/j/\n★ジャンプ+アプリはこちら▼\nhttps://shonenjumpplus.com/app\n★ジャンプチャンネル公式Twitterはこちら▼\nhttps://twitter.com/jumpch_youtube\n★少年ジャンプ編集部公式Twitterはこちら▼\nhttps://twitter.com/jump_henshubu\n\n#ジャンプ漫画　#カグラバチ　#週刊少年ジャンプ"
+        },
+        "defaultAudioLanguage": "ja"
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 10,
+    "resultsPerPage": 10
+  }
+}

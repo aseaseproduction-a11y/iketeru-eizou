@@ -1,0 +1,15 @@
+HTTP/2 200 
+server: nginx
+date: Tue, 18 Aug 2026 06:55:04 GMT
+content-type: application/json; charset=UTF-8
+set-cookie: swpm_session=a03e6ddf8ad7096d7ce4c0707f3112de; path=/
+x-robots-tag: noindex
+link: <https://eizo100.jp/wp-json/>; rel="https://api.w.org/"
+x-content-type-options: nosniff
+access-control-expose-headers: X-WP-Total, X-WP-TotalPages, Link
+access-control-allow-headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type
+x-wp-total: 0
+x-wp-totalpages: 0
+allow: GET
+vary: Origin
+

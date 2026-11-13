@@ -1,0 +1,22 @@
+CREATE TABLE `videos` (
+	`id` varchar(64) NOT NULL,
+	`platform` varchar(16) NOT NULL,
+	`title` text NOT NULL,
+	`thumbnail` text,
+	`videoUrl` text NOT NULL,
+	`embedUrl` text,
+	`source` varchar(64),
+	`sourceLabel` text,
+	`channelId` varchar(64),
+	`channelTitle` text,
+	`genres` text NOT NULL DEFAULT ('[]'),
+	`products` text NOT NULL DEFAULT ('[]'),
+	`directions` text NOT NULL DEFAULT ('[]'),
+	`tones` text NOT NULL DEFAULT ('[]'),
+	`allTags` text NOT NULL DEFAULT ('[]'),
+	`iketeruPoints` text,
+	`addedDate` varchar(16),
+	`createdAt` timestamp NOT NULL DEFAULT (now()),
+	`updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,
+	CONSTRAINT `videos_id` PRIMARY KEY(`id`)
+);

@@ -1,0 +1,60 @@
+{
+  "kind": "youtube#videoListResponse",
+  "etag": "1oDUOMa623G_FW3oJYXFEuxvmTg",
+  "items": [
+    {
+      "kind": "youtube#video",
+      "etag": "WO7_8iJDcRcB0bFOBtk98M77otw",
+      "id": "GoQ6WypKaIw",
+      "snippet": {
+        "publishedAt": "2025-11-11T03:00:17Z",
+        "channelId": "UCIdEIHpS0TdkqRkHL5OkLtA",
+        "title": "【特報】名取さな2nd Live、11/13開催！",
+        "description": "名取さな 2nd Live「独ゼン者」の会場チケット・配信チケット発売中！\n\n●開催日時\n2025年11月13日(木)\n昼の部：13時00分開場 / 13時30分配信開場 / 14時00分開演\n夜の部：17時30分開場 / 18時00分配信開場 / 18時30分開演\n●会場\nZepp Haneda(TOKYO)\n●イベントオフィシャルサイト\nhttps://bakutan.natorisana.com/e/natorisana-2ndlive\n●会場チケット購入\n昼の部：https://tribalcon.zaiko.io/e/natorisana-2ndlive-day\n夜の部：https://tribalcon.zaiko.io/e/natorisana-2ndlive-night\n一般発売：2025年10月19日(日) 10時00分 ～\n●配信チケット購入\nhttps://www.zan-live.com/ja/live/detail/10643\n販売期間：2025年9月19日(金) 21:00 ～ 2025年12月21日(日) 23:59",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/GoQ6WypKaIw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/GoQ6WypKaIw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/GoQ6WypKaIw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/GoQ6WypKaIw/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/GoQ6WypKaIw/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "さなちゃんねる",
+        "tags": [
+          "名取さな"
+        ],
+        "categoryId": "24",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "ja",
+        "localized": {
+          "title": "【特報】名取さな2nd Live、11/13開催！",
+          "description": "名取さな 2nd Live「独ゼン者」の会場チケット・配信チケット発売中！\n\n●開催日時\n2025年11月13日(木)\n昼の部：13時00分開場 / 13時30分配信開場 / 14時00分開演\n夜の部：17時30分開場 / 18時00分配信開場 / 18時30分開演\n●会場\nZepp Haneda(TOKYO)\n●イベントオフィシャルサイト\nhttps://bakutan.natorisana.com/e/natorisana-2ndlive\n●会場チケット購入\n昼の部：https://tribalcon.zaiko.io/e/natorisana-2ndlive-day\n夜の部：https://tribalcon.zaiko.io/e/natorisana-2ndlive-night\n一般発売：2025年10月19日(日) 10時00分 ～\n●配信チケット購入\nhttps://www.zan-live.com/ja/live/detail/10643\n販売期間：2025年9月19日(金) 21:00 ～ 2025年12月21日(日) 23:59"
+        },
+        "defaultAudioLanguage": "ja"
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 1,
+    "resultsPerPage": 1
+  }
+}

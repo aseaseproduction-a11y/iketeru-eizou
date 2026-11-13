@@ -1,0 +1,165 @@
+{
+  "summary": {
+    "mode": "dry-run",
+    "inputs": 5,
+    "responseRows": 5,
+    "validStructuredOutputs": 2,
+    "tripleMatchedUpdates": 2,
+    "acceptedFields": 0,
+    "updated": 0
+  },
+  "updates": [
+    {
+      "id": "-TX3-2Q82gs",
+      "title": "日本のお掃除グッズに絶叫する海外ニキネキ #海外の反応",
+      "videoUrl": "https://youtube.com/shorts/-TX3-2Q82gs",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "purposes": [],
+      "expressions": [],
+      "privateRating": "",
+      "aiOverallRating": "",
+      "aiDirectionRating": "",
+      "aiTechniqueRating": "",
+      "aiAnalysis": "",
+      "metadataClassificationAudit": {
+        "aiMetadataCompletion": {
+          "model": "gpt-5-mini",
+          "analyzedAt": "2026-08-19T16:55:10.061Z",
+          "evidenceType": "ai_analysis",
+          "identityTripleMatch": true,
+          "confidence": {
+            "analysis": 0,
+            "directions": 0,
+            "expressions": 0,
+            "genres": 0,
+            "products": 0,
+            "purposes": 0,
+            "ratings": 0,
+            "tones": 0
+          },
+          "evidence": {
+            "aiAnalysis": [],
+            "aiDirectionRating": [],
+            "aiOverallRating": [],
+            "aiTechniqueRating": [],
+            "directions": [],
+            "expressions": [],
+            "genres": [],
+            "privateRating": [],
+            "products": [],
+            "purposes": [],
+            "tones": []
+          },
+          "input": {
+            "title": "日本のお掃除グッズに絶叫する海外ニキネキ #海外の反応",
+            "videoUrl": "https://youtube.com/shorts/-TX3-2Q82gs",
+            "source": "youtube_works_awards_2026",
+            "channelTitle": "アース製薬情報局",
+            "tags": [
+              "YouTube Works Awards Japan 2026",
+              "PDF資料掲載",
+              "資料p.65"
+            ]
+          },
+          "eligibleFields": [],
+          "rejectedFields": {
+            "genres": "empty_candidate",
+            "products": "empty_candidate",
+            "directions": "empty_candidate",
+            "tones": "empty_candidate",
+            "purposes": "empty_candidate",
+            "expressions": "empty_candidate",
+            "privateRating": "empty_candidate",
+            "aiOverallRating": "empty_candidate",
+            "aiDirectionRating": "empty_candidate",
+            "aiTechniqueRating": "empty_candidate",
+            "aiAnalysis": "empty_candidate"
+          },
+          "appliedMissing": []
+        }
+      }
+    },
+    {
+      "id": "-uYiAxvzMs0",
+      "title": "Top 5 Japanese Movies #japanese #movie #shortsfeed",
+      "videoUrl": "https://www.youtube.com/watch?v=-uYiAxvzMs0",
+      "genres": [
+        {
+          "name": "YouTube / SNS / 縦型動画",
+          "slug": "youtube-sns"
+        }
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "purposes": [],
+      "expressions": [],
+      "privateRating": "",
+      "aiOverallRating": "",
+      "aiDirectionRating": "",
+      "aiTechniqueRating": "",
+      "aiAnalysis": "",
+      "metadataClassificationAudit": {
+        "aiMetadataCompletion": {
+          "model": "gpt-5-mini",
+          "analyzedAt": "2026-08-19T16:55:10.062Z",
+          "evidenceType": "ai_analysis",
+          "identityTripleMatch": true,
+          "confidence": {
+            "analysis": 0,
+            "directions": 0,
+            "expressions": 0,
+            "genres": 0.95,
+            "products": 0,
+            "purposes": 0,
+            "ratings": 0,
+            "tones": 0
+          },
+          "evidence": {
+            "aiAnalysis": [],
+            "aiDirectionRating": [],
+            "aiOverallRating": [],
+            "aiTechniqueRating": [],
+            "directions": [],
+            "expressions": [],
+            "genres": [
+              "YouTube / SNS / 縦型動画",
+              "#movie"
+            ],
+            "privateRating": [],
+            "products": [],
+            "purposes": [],
+            "tones": []
+          },
+          "input": {
+            "title": "Top 5 Japanese Movies #japanese #movie #shortsfeed",
+            "videoUrl": "https://www.youtube.com/watch?v=-uYiAxvzMs0",
+            "source": "youtube",
+            "channelTitle": "Any Vibe",
+            "tags": [
+              "YouTube / SNS / 縦型動画"
+            ]
+          },
+          "eligibleFields": [],
+          "rejectedFields": {
+            "genres": "indirect_category_mapping",
+            "products": "empty_candidate",
+            "directions": "empty_candidate",
+            "tones": "empty_candidate",
+            "purposes": "empty_candidate",
+            "expressions": "empty_candidate",
+            "privateRating": "empty_candidate",
+            "aiOverallRating": "empty_candidate",
+            "aiDirectionRating": "empty_candidate",
+            "aiTechniqueRating": "empty_candidate",
+            "aiAnalysis": "empty_candidate"
+          },
+          "appliedMissing": []
+        }
+      }
+    }
+  ]
+}

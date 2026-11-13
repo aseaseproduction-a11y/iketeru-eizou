@@ -1,0 +1,74 @@
+{
+  "kind": "youtube#videoListResponse",
+  "etag": "YjuLJ_crKpjiLmbCAExM3twckVg",
+  "items": [
+    {
+      "kind": "youtube#video",
+      "etag": "t_s-dxPkz8KhfExh7dj6UHojusI",
+      "id": "56EG957YinM",
+      "snippet": {
+        "publishedAt": "2013-05-30T18:00:04Z",
+        "channelId": "UCMcKMXSgmGSGFTdGJeQO7aQ",
+        "title": "PAPERS",
+        "description": "「PAPERS」の８ミリフィルムをテレシネしてデジタル化したオリジナルを公開します。\nWe will be exhibiting the original \"PAPERS\" digitized from the 8mm film telecine.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/56EG957YinM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/56EG957YinM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/56EG957YinM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/56EG957YinM/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/56EG957YinM/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "yoshinaoよしながき",
+        "tags": [
+          "Yoshinao",
+          "henkama",
+          "エビ天",
+          "えびぞり巨匠天国",
+          "papers",
+          "PAPERS",
+          "YOSHINAO",
+          "よしながき",
+          "animation",
+          "art",
+          "art animation",
+          "アニメーション",
+          "コマ撮り",
+          "パラパラマンガ",
+          "photoanimation"
+        ],
+        "categoryId": "1",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "ja",
+        "localized": {
+          "title": "PAPERS",
+          "description": "「PAPERS」の８ミリフィルムをテレシネしてデジタル化したオリジナルを公開します。\nWe will be exhibiting the original \"PAPERS\" digitized from the 8mm film telecine."
+        },
+        "defaultAudioLanguage": "ja"
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 1,
+    "resultsPerPage": 1
+  }
+}

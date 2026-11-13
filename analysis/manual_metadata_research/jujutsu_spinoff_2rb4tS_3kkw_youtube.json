@@ -1,0 +1,80 @@
+{
+  "kind": "youtube#videoListResponse",
+  "etag": "btzuomLJhC7tW2XWj0pum4h1KV4",
+  "items": [
+    {
+      "kind": "youtube#video",
+      "etag": "eXmu4j9ch8cmnyWrL6krQQ03_HA",
+      "id": "2rb4tS_3kkw",
+      "snippet": {
+        "publishedAt": "2026-01-04T15:02:57Z",
+        "channelId": "UC47AYUs8AVU1QsT5LhpXjaw",
+        "title": "【NA：榎木淳弥】『呪術廻戦≡』1巻発売記念PV【「死滅回游」から68年後を描く『呪術廻戦』近未来スピンオフ】",
+        "description": "未知と呪術が邂逅する時、呪いは再び廻り出す。\n『呪術廻戦』近未来スピンオフ『呪術廻戦≡』の1巻発売を記念したPVを公開。\n\n\n「死滅回游」から68年後。2086年 宇宙船、並びにシムリア星人を名乗る地球外生命体が突如現れた。地球の命運を握るのは日本の呪術師・乙骨真剣と乙骨憂花。呪術師と宇宙人、未知なる邂逅が引き起こすのは...。\n\nhttps://www.shonenjump.com/j/rensai/jujutsu-modulo.html\n\n\n#呪術モジュロ #呪術廻戦 #週刊少年ジャンプ",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/2rb4tS_3kkw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/2rb4tS_3kkw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/2rb4tS_3kkw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/2rb4tS_3kkw/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/2rb4tS_3kkw/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "ジャンプチャンネル",
+        "tags": [
+          "週刊少年ジャンプ",
+          "ジャンプ",
+          "JUMP",
+          "漫画",
+          "漫画動画",
+          "アニメ",
+          "ボイスコミック",
+          "ハイキュー",
+          "鬼滅の刃",
+          "チェンソーマン",
+          "仄見える少年",
+          "呪術廻戦",
+          "ガラク",
+          "ロッカールーム",
+          "僕のヒーローアカデミア",
+          "Dr.STONE",
+          "ONEPIECE",
+          "約束のネバーランド",
+          "銀魂",
+          "BLEACH",
+          "怪獣8号"
+        ],
+        "categoryId": "1",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "ja",
+        "localized": {
+          "title": "【NA：榎木淳弥】『呪術廻戦≡』1巻発売記念PV【「死滅回游」から68年後を描く『呪術廻戦』近未来スピンオフ】",
+          "description": "未知と呪術が邂逅する時、呪いは再び廻り出す。\n『呪術廻戦』近未来スピンオフ『呪術廻戦≡』の1巻発売を記念したPVを公開。\n\n\n「死滅回游」から68年後。2086年 宇宙船、並びにシムリア星人を名乗る地球外生命体が突如現れた。地球の命運を握るのは日本の呪術師・乙骨真剣と乙骨憂花。呪術師と宇宙人、未知なる邂逅が引き起こすのは...。\n\nhttps://www.shonenjump.com/j/rensai/jujutsu-modulo.html\n\n\n#呪術モジュロ #呪術廻戦 #週刊少年ジャンプ"
+        },
+        "defaultAudioLanguage": "ja"
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 1,
+    "resultsPerPage": 1
+  }
+}

@@ -1,0 +1,3804 @@
+{
+  "summary": {
+    "mode": "apply",
+    "candidates": 147,
+    "updated": 147,
+    "byGenre": {
+      "tv-cm": 3,
+      "web-cm": 10,
+      "branded-movie": 3,
+      "youtube-sns": 0,
+      "mv": 53,
+      "corporate": 0,
+      "film": 43,
+      "opening": 29,
+      "making": 2,
+      "documentary": 4
+    }
+  },
+  "updates": [
+    {
+      "id": "_2dl3blJgy8",
+      "title": "TVアニメ「多聞くん今どっち！？」ノンクレジットエンディング映像｜F/ACE「花と夢」",
+      "videoUrl": "https://youtu.be/_2dl3blJgy8",
+      "genres": [
+        {
+          "slug": "opening",
+          "name": "オープニング映像"
+        }
+      ],
+      "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.262Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+          "title": "TVアニメ「多聞くん今どっち！？」ノンクレジットエンディング映像｜F/ACE「花と夢」",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "_7VNKU010JI",
+      "title": "ロッテ プレミアムガーナ TVCM「劇的一粒」篇 15秒(5品) 木村拓哉",
+      "videoUrl": "https://www.youtube.com/watch?v=_7VNKU010JI",
+      "genres": [
+        {
+          "slug": "tv-cm",
+          "name": "TV CM"
+        }
+      ],
+      "reason": "タイトル・公式タグにTVCM/TV CMの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.262Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにTVCM/TV CMの明示",
+          "title": "ロッテ プレミアムガーナ TVCM「劇的一粒」篇 15秒(5品) 木村拓哉",
+          "tags": [
+            "YouTube Works Awards Japan 2026",
+            "PDF資料掲載",
+            "資料p.103"
+          ]
+        }
+      }
+    },
+    {
+      "id": "-J3OnxCEzl0",
+      "title": "【MV】ZeroGravity / 上水流宇宙 【オリジナル曲】#ヴイアラ",
+      "videoUrl": "https://youtu.be/-J3OnxCEzl0",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.263Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "【MV】ZeroGravity / 上水流宇宙 【オリジナル曲】#ヴイアラ",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "-JSmb0WRERA",
+      "title": "ロッテ プレミアムガーナ WEBCM「プレミアムガーナ食べてみた 芳醇カカオ」篇 6秒 木村拓哉",
+      "videoUrl": "https://www.youtube.com/shorts/-JSmb0WRERA",
+      "genres": [
+        {
+          "slug": "web-cm",
+          "name": "Web CM"
+        }
+      ],
+      "reason": "タイトル・公式タグにWeb CMの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.263Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにWeb CMの明示",
+          "title": "ロッテ プレミアムガーナ WEBCM「プレミアムガーナ食べてみた 芳醇カカオ」篇 6秒 木村拓哉",
+          "tags": [
+            "YouTube Works Awards Japan 2026",
+            "PDF資料掲載",
+            "資料p.103"
+          ]
+        }
+      }
+    },
+    {
+      "id": "-WL3IPgkzDQ",
+      "title": "言っちゃった！ / 梓川【Official Music Video】",
+      "videoUrl": "https://youtu.be/-WL3IPgkzDQ",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.263Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "言っちゃった！ / 梓川【Official Music Video】",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "08TGBLLK8RE",
+      "title": "Anime Series Gachiakuta 2nd Cour Non-credit Ending Video／karanoah「BAN」",
+      "videoUrl": "https://youtu.be/08TGBLLK8RE",
+      "genres": [
+        {
+          "slug": "opening",
+          "name": "オープニング映像"
+        }
+      ],
+      "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.263Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+          "title": "Anime Series Gachiakuta 2nd Cour Non-credit Ending Video／karanoah「BAN」",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "0FMABOJLSc8",
+      "title": "Japan Autumn 4K 🍁 Peaceful Nature Relaxation Film with Meditation Music",
+      "videoUrl": "https://www.youtube.com/watch?v=0FMABOJLSc8",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.263Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "Japan Autumn 4K 🍁 Peaceful Nature Relaxation Film with Meditation Music",
+          "tags": []
+        }
+      }
+    },
+    {
+      "id": "1186447729",
+      "title": "Element",
+      "videoUrl": "https://vimeo.com/1186447729",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.263Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "Element",
+          "tags": [
+            "映像作家100人",
+            "2026選出",
+            "2D animation",
+            "Experimental film"
+          ]
+        }
+      }
+    },
+    {
+      "id": "1198718318",
+      "title": "Airalo - final film - (for website)",
+      "videoUrl": "https://vimeo.com/1198718318",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.263Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "Airalo - final film - (for website)",
+          "tags": [
+            "Stink Studios 公式制作実績",
+            "公式制作実績",
+            "Vimeo"
+          ]
+        }
+      }
+    },
+    {
+      "id": "1rzCDwmSvzQ",
+      "title": "Aiobahn +81 feat. FUWAMOCO - side by side (Official Music Video) [Ending Theme for NEKOPARA After]",
+      "videoUrl": "https://youtu.be/1rzCDwmSvzQ",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.264Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "Aiobahn +81 feat. FUWAMOCO - side by side (Official Music Video) [Ending Theme for NEKOPARA After]",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "1vmwepDkQog",
+      "title": "パイの音やってみたよー💜🥧私のパイの音が使われたMVが10月30日(木)から公開されるからみんなチェックしてみてね(ˊo̴̶̷̤   o̴̶̷̤ˋ)♡#PR #パイの実 #パイの音",
+      "videoUrl": "https://www.youtube.com/shorts/1vmwepDkQog",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.264Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "パイの音やってみたよー💜🥧私のパイの音が使われたMVが10月30日(木)から公開されるからみんなチェックしてみてね(ˊo̴̶̷̤   o̴̶̷̤ˋ)♡#PR #パイの実 #パイの音",
+          "tags": [
+            "YouTube Works Awards Japan 2026",
+            "PDF資料掲載",
+            "資料p.176"
+          ]
+        }
+      }
+    },
+    {
+      "id": "263522520",
+      "title": "Come Out – TTT_MSW",
+      "videoUrl": "https://vimeo.com/263522520",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.264Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "Come Out – TTT_MSW",
+          "tags": [
+            "映像作家100人",
+            "2018選出",
+            "3DCG",
+            "Animation",
+            "Fashion film",
+            "Promotion"
+          ]
+        }
+      }
+    },
+    {
+      "id": "266093174",
+      "title": "RENDER",
+      "videoUrl": "https://vimeo.com/266093174",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.264Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "RENDER",
+          "tags": [
+            "映像作家100人",
+            "2018選出",
+            "3DCG",
+            "Experimental film",
+            "Installation",
+            "Motion graphics"
+          ]
+        }
+      }
+    },
+    {
+      "id": "266278215",
+      "title": "『モブサイコ100』テレビCM",
+      "videoUrl": "https://vimeo.com/266278215",
+      "genres": [
+        {
+          "slug": "tv-cm",
+          "name": "TV CM"
+        }
+      ],
+      "reason": "タイトル・公式タグにTVCM/TV CMの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.264Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにTVCM/TV CMの明示",
+          "title": "『モブサイコ100』テレビCM",
+          "tags": [
+            "映像作家100人",
+            "2018選出",
+            "2D animation",
+            "Animation",
+            "CM",
+            "Title movie",
+            "TV drama opening title"
+          ]
+        }
+      }
+    },
+    {
+      "id": "266679387",
+      "title": "映画『ガチ星』",
+      "videoUrl": "https://vimeo.com/266679387",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.264Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "映画『ガチ星』",
+          "tags": [
+            "映像作家100人",
+            "2018選出",
+            "Original",
+            "劇場映画"
+          ]
+        }
+      }
+    },
+    {
+      "id": "267562304",
+      "title": "群生地放送",
+      "videoUrl": "https://vimeo.com/267562304",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.264Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "群生地放送",
+          "tags": [
+            "映像作家100人",
+            "2018選出",
+            "3DCG",
+            "Animation",
+            "Experimental film",
+            "Installation",
+            "Motion graphics"
+          ]
+        }
+      }
+    },
+    {
+      "id": "2zgWIIWNUu8",
+      "title": "【公式】レイク WebCM「サングラスが無い」篇",
+      "videoUrl": "https://youtu.be/2zgWIIWNUu8",
+      "genres": [
+        {
+          "slug": "web-cm",
+          "name": "Web CM"
+        }
+      ],
+      "reason": "タイトル・公式タグにWeb CMの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.264Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにWeb CMの明示",
+          "title": "【公式】レイク WebCM「サングラスが無い」篇",
+          "tags": [
+            "YouTube Works Awards Japan 2026",
+            "PDF資料掲載",
+            "資料p.88"
+          ]
+        }
+      }
+    },
+    {
+      "id": "328599590",
+      "title": "MAKIN’ MOVES 2",
+      "videoUrl": "https://vimeo.com/328599590",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.264Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "MAKIN’ MOVES 2",
+          "tags": [
+            "映像作家100人",
+            "2019選出",
+            "3DCG",
+            "Animation",
+            "Comedy",
+            "Experimental film",
+            "Original"
+          ]
+        }
+      }
+    },
+    {
+      "id": "334627874",
+      "title": "非天譚-HITENTAN-",
+      "videoUrl": "https://vimeo.com/334627874",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.264Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "非天譚-HITENTAN-",
+          "tags": [
+            "映像作家100人",
+            "2020選出",
+            "2D animation",
+            "3DCG",
+            "AD",
+            "Art work",
+            "Experimental film",
+            "Title movie"
+          ]
+        }
+      }
+    },
+    {
+      "id": "358220955",
+      "title": "交",
+      "videoUrl": "https://vimeo.com/358220955",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.264Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "交",
+          "tags": [
+            "映像作家100人",
+            "2021選出",
+            "Experimental film"
+          ]
+        }
+      }
+    },
+    {
+      "id": "3eOsjk1RVm8",
+      "title": "僕のパイの音が使われたMVが10月30日(木)から観れるみたい！「※フライパンで飴コーティングしたパイの実は熱くなっている場合がありますので、ご注意ください」 #PR #パイの実 #パイの音",
+      "videoUrl": "https://www.youtube.com/shorts/3eOsjk1RVm8",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.265Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "僕のパイの音が使われたMVが10月30日(木)から観れるみたい！「※フライパンで飴コーティングしたパイの実は熱くなっている場合がありますので、ご注意ください」 #PR #パイの実 #パイの音",
+          "tags": [
+            "YouTube Works Awards Japan 2026",
+            "PDF資料掲載",
+            "資料p.176"
+          ]
+        }
+      }
+    },
+    {
+      "id": "435965238",
+      "title": "FENDI Spring/Summer 2020 Strap YOU",
+      "videoUrl": "https://vimeo.com/435965238",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.265Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "FENDI Spring/Summer 2020 Strap YOU",
+          "tags": [
+            "映像作家100人",
+            "2021選出",
+            "3DCG",
+            "AD",
+            "Advertisement",
+            "Animation",
+            "Concert movie",
+            "Fashion film"
+          ]
+        }
+      }
+    },
+    {
+      "id": "47GuClGEtyM",
+      "title": "DARLING in the FRANXX OPENING",
+      "videoUrl": "https://www.youtube.com/watch?v=47GuClGEtyM",
+      "genres": [
+        {
+          "slug": "opening",
+          "name": "オープニング映像"
+        }
+      ],
+      "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.265Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+          "title": "DARLING in the FRANXX OPENING",
+          "tags": [
+            "映像作家100人",
+            "2019選出",
+            "2D animation",
+            "Animation",
+            "Motion graphics"
+          ]
+        }
+      }
+    },
+    {
+      "id": "499480741",
+      "title": "STUDY",
+      "videoUrl": "https://vimeo.com/499480741",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.265Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "STUDY",
+          "tags": [
+            "映像作家100人",
+            "2021選出",
+            "Animation",
+            "Art work",
+            "Experimental film",
+            "Motion graphics",
+            "Paper craft",
+            "Stopmotion"
+          ]
+        }
+      }
+    },
+    {
+      "id": "4PP3v4onGXs",
+      "title": "【MV】EMOSEARCH ／ 霧島ハル【ハルルナ】",
+      "videoUrl": "https://www.youtube.com/watch?v=4PP3v4onGXs",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.265Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "【MV】EMOSEARCH ／ 霧島ハル【ハルルナ】",
+          "tags": [
+            "FAVVID",
+            "映像リファレンス",
+            "モーショングラフィックス",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "4qIuupc5vCs",
+      "title": "【公式】レイク WebCM「サングラスが無い」篇 15秒Ver. Bタイプ",
+      "videoUrl": "https://youtu.be/4qIuupc5vCs",
+      "genres": [
+        {
+          "slug": "web-cm",
+          "name": "Web CM"
+        }
+      ],
+      "reason": "タイトル・公式タグにWeb CMの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.265Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにWeb CMの明示",
+          "title": "【公式】レイク WebCM「サングラスが無い」篇 15秒Ver. Bタイプ",
+          "tags": [
+            "YouTube Works Awards Japan 2026",
+            "PDF資料掲載",
+            "資料p.88"
+          ]
+        }
+      }
+    },
+    {
+      "id": "5eDQ2SSsmEk",
+      "title": "&quot;Slice of Life&quot; - Award Winning Short SCI-FI film",
+      "videoUrl": "https://www.youtube.com/watch?v=5eDQ2SSsmEk",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.265Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "&quot;Slice of Life&quot; - Award Winning Short SCI-FI film",
+          "tags": []
+        }
+      }
+    },
+    {
+      "id": "5y1VTGkO1YI",
+      "title": "Jordan Dennis - The Link (Prod JUJO) (Official Music Video)",
+      "videoUrl": "https://www.youtube.com/watch?v=5y1VTGkO1YI",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.265Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "Jordan Dennis - The Link (Prod JUJO) (Official Music Video)",
+          "tags": [
+            "TYO 公式制作実績",
+            "公式制作実績",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "661835461",
+      "title": "SHOW REEL 2022",
+      "videoUrl": "https://vimeo.com/661835461",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.265Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "SHOW REEL 2022",
+          "tags": [
+            "映像作家100人",
+            "2022選出",
+            "2D animation",
+            "3DCG",
+            "Advertisement",
+            "Event",
+            "Motion graphics",
+            "Original",
+            "Showreel",
+            "劇場映画"
+          ]
+        }
+      }
+    },
+    {
+      "id": "769341658",
+      "title": "SiM XR LiVE MAKING",
+      "videoUrl": "https://vimeo.com/769341658",
+      "genres": [
+        {
+          "slug": "making",
+          "name": "メイキング / Behind The Scenes"
+        }
+      ],
+      "reason": "タイトル・公式タグにメイキングの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.265Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにメイキングの明示",
+          "title": "SiM XR LiVE MAKING",
+          "tags": [
+            "フラッパー3 公式制作実績",
+            "公式制作実績",
+            "Vimeo"
+          ]
+        }
+      }
+    },
+    {
+      "id": "7pmd0kt3FOs",
+      "title": "『葬送のフリーレン』ノンクレジットED",
+      "videoUrl": "https://www.youtube.com/watch?v=7pmd0kt3FOs",
+      "genres": [
+        {
+          "slug": "opening",
+          "name": "オープニング映像"
+        }
+      ],
+      "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.265Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+          "title": "『葬送のフリーレン』ノンクレジットED",
+          "tags": [
+            "映像作家100人",
+            "2024選出",
+            "2D animation",
+            "TV"
+          ]
+        }
+      }
+    },
+    {
+      "id": "7t4zT1RAttk",
+      "title": "The best place to buy film in Japan  🎞️ Film Stock Heaven in Tokyo",
+      "videoUrl": "https://www.youtube.com/watch?v=7t4zT1RAttk",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.265Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "The best place to buy film in Japan  🎞️ Film Stock Heaven in Tokyo",
+          "tags": []
+        }
+      }
+    },
+    {
+      "id": "814331964",
+      "title": "Senpookyaku Hoshiko Reel 2023",
+      "videoUrl": "https://vimeo.com/814331964",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.266Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "Senpookyaku Hoshiko Reel 2023",
+          "tags": [
+            "映像作家100人",
+            "2023選出",
+            "2D animation",
+            "3DCG",
+            "Animation",
+            "Experimental film",
+            "Motion graphics",
+            "Showreel",
+            "Web"
+          ]
+        }
+      }
+    },
+    {
+      "id": "864291204",
+      "title": "Peloton - Global Campaign Film - Fall/Autumn 2023 (feat. Tunde)",
+      "videoUrl": "https://vimeo.com/864291204",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.266Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "Peloton - Global Campaign Film - Fall/Autumn 2023 (feat. Tunde)",
+          "tags": [
+            "Stink Studios 公式制作実績",
+            "公式制作実績",
+            "Vimeo"
+          ]
+        }
+      }
+    },
+    {
+      "id": "918864647",
+      "title": "Slack Tide #1",
+      "videoUrl": "https://vimeo.com/918864647",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.266Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "Slack Tide #1",
+          "tags": [
+            "映像作家100人",
+            "2025選出",
+            "Experimental film",
+            "Installation"
+          ]
+        }
+      }
+    },
+    {
+      "id": "9BK88SvNceI",
+      "title": "Karma",
+      "videoUrl": "https://www.youtube.com/watch?v=9BK88SvNceI",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.266Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "Karma",
+          "tags": [
+            "映像作家100人",
+            "2019選出",
+            "Art work",
+            "Experimental film"
+          ]
+        }
+      }
+    },
+    {
+      "id": "9tcWWQiV4Bg",
+      "title": "第9回 新千歳空港国際アニメーション映画祭 公式トレーラー映像",
+      "videoUrl": "https://www.youtube.com/watch?v=9tcWWQiV4Bg",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.266Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "第9回 新千歳空港国際アニメーション映画祭 公式トレーラー映像",
+          "tags": [
+            "映像作家100人",
+            "2023選出",
+            "2D animation",
+            "Animation",
+            "Event",
+            "Title movie"
+          ]
+        }
+      }
+    },
+    {
+      "id": "A6OuodiGgIs",
+      "title": "RYUCHELL / Hands up!! If you’re Awesome",
+      "videoUrl": "https://www.youtube.com/watch?v=A6OuodiGgIs",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.266Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "RYUCHELL / Hands up!! If you’re Awesome",
+          "tags": [
+            "映像作家100人",
+            "2018選出",
+            "2D animation",
+            "3DCG",
+            "Advertisement",
+            "Animation",
+            "Comedy",
+            "Experimental film",
+            "Fashion film",
+            "Installation",
+            "Live action",
+            "Motion graphics"
+          ]
+        }
+      }
+    },
+    {
+      "id": "AGfC3lCFPRM",
+      "title": "feel like  - Eve Music Video",
+      "videoUrl": "https://youtu.be/AGfC3lCFPRM",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.266Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "feel like  - Eve Music Video",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "arTfphYkhCQ",
+      "title": "DRIP | Awareness Spot über Ausfluss",
+      "videoUrl": "https://www.youtube.com/watch?v=arTfphYkhCQ",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.266Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "DRIP | Awareness Spot über Ausfluss",
+          "tags": [
+            "受賞作",
+            "ONE Screen Short Film Festival",
+            "2024",
+            "Student Film"
+          ]
+        }
+      }
+    },
+    {
+      "id": "axQmWplSlXw",
+      "title": "ILLIT (아일릿) ‘I’LL LIKE YOU’ Brand Film",
+      "videoUrl": "https://www.youtube.com/watch?v=axQmWplSlXw",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.266Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "ILLIT (아일릿) ‘I’LL LIKE YOU’ Brand Film",
+          "tags": [
+            "TYO 公式制作実績",
+            "公式制作実績",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "BerwUFzdj4U",
+      "title": "【Animation MV】flower rhapsody / さくらみこ (official)",
+      "videoUrl": "https://www.youtube.com/watch?v=BerwUFzdj4U",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.266Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "【Animation MV】flower rhapsody / さくらみこ (official)",
+          "tags": [
+            "FAVVID",
+            "映像リファレンス",
+            "モーショングラフィックス",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "bxVTrX8TjrU",
+      "title": "【original anime MV】コンプレックス♡プリンセス【hololive/宝鐘マリン】",
+      "videoUrl": "https://www.youtube.com/watch?v=bxVTrX8TjrU",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.266Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "【original anime MV】コンプレックス♡プリンセス【hololive/宝鐘マリン】",
+          "tags": [
+            "FAVVID",
+            "映像リファレンス",
+            "モーショングラフィックス",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "c3jtjNqANhU",
+      "title": "ロッテ プレミアムガーナ WEBCM「プレミアムガーナ食べてみたクレームショコラ」篇 6秒 木村拓哉",
+      "videoUrl": "https://www.youtube.com/shorts/c3jtjNqANhU",
+      "genres": [
+        {
+          "slug": "web-cm",
+          "name": "Web CM"
+        }
+      ],
+      "reason": "タイトル・公式タグにWeb CMの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.266Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにWeb CMの明示",
+          "title": "ロッテ プレミアムガーナ WEBCM「プレミアムガーナ食べてみたクレームショコラ」篇 6秒 木村拓哉",
+          "tags": [
+            "YouTube Works Awards Japan 2026",
+            "PDF資料掲載",
+            "資料p.103"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ChxDEAN8EtY",
+      "title": "JAPAN | Sony FX30 | Cinematic Travel Film | Tamron 17-70mm f/2.8",
+      "videoUrl": "https://www.youtube.com/watch?v=ChxDEAN8EtY",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.268Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "JAPAN | Sony FX30 | Cinematic Travel Film | Tamron 17-70mm f/2.8",
+          "tags": []
+        }
+      }
+    },
+    {
+      "id": "CmWsrT-4Qys",
+      "title": "TVCM | au「有村架純のつながる放送局」篇",
+      "videoUrl": "https://www.youtube.com/watch?v=CmWsrT-4Qys",
+      "genres": [
+        {
+          "slug": "tv-cm",
+          "name": "TV CM"
+        }
+      ],
+      "reason": "タイトル・公式タグにTVCM/TV CMの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.268Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにTVCM/TV CMの明示",
+          "title": "TVCM | au「有村架純のつながる放送局」篇",
+          "tags": [
+            "AOI Pro. 公式制作実績",
+            "公式制作実績",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cvMiulucpJk",
+      "title": "『新幹線大爆破』オープニング映像 | Netflix Japan",
+      "videoUrl": "https://youtu.be/cvMiulucpJk",
+      "genres": [
+        {
+          "slug": "opening",
+          "name": "オープニング映像"
+        }
+      ],
+      "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.268Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+          "title": "『新幹線大爆破』オープニング映像 | Netflix Japan",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "CWhNI_x9W6c",
+      "title": "【MAZDAドキュメンタリー】RX-7と過ごした25年間、最後の3日間　〜クルマが残してくれたもの〜",
+      "videoUrl": "https://www.youtube.com/watch?v=CWhNI_x9W6c",
+      "genres": [
+        {
+          "slug": "documentary",
+          "name": "ドキュメンタリー"
+        }
+      ],
+      "reason": "タイトル・公式タグにドキュメンタリーの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.268Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにドキュメンタリーの明示",
+          "title": "【MAZDAドキュメンタリー】RX-7と過ごした25年間、最後の3日間　〜クルマが残してくれたもの〜",
+          "tags": [
+            "受賞作",
+            "映文連アワード",
+            "2025",
+            "経済産業大臣賞"
+          ]
+        }
+      }
+    },
+    {
+      "id": "DhUWbErUqlg",
+      "title": "＜エンディング映像フル＞「The 1」muque／TVアニメ「ONE PIECE」",
+      "videoUrl": "https://youtu.be/DhUWbErUqlg",
+      "genres": [
+        {
+          "slug": "opening",
+          "name": "オープニング映像"
+        }
+      ],
+      "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.268Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+          "title": "＜エンディング映像フル＞「The 1」muque／TVアニメ「ONE PIECE」",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "dHywSNVzdfQ",
+      "title": "七次元生徒会！『即物的アンサンブル』Official  Music Video",
+      "videoUrl": "https://www.youtube.com/watch?v=dHywSNVzdfQ",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.268Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "七次元生徒会！『即物的アンサンブル』Official  Music Video",
+          "tags": [
+            "映像作家100人",
+            "2026選出",
+            "2D animation",
+            "3DCG",
+            "Animation"
+          ]
+        }
+      }
+    },
+    {
+      "id": "Dqey9ZXH5Mk",
+      "title": "No.043　幸祜 -KOKO- 「シャングリラ」【Official Music Video】",
+      "videoUrl": "https://youtu.be/Dqey9ZXH5Mk",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.268Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "No.043　幸祜 -KOKO- 「シャングリラ」【Official Music Video】",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "eEiMPYiNZAo",
+      "title": "花譜 # 145「アポカリプスより」【オリジナルMV】",
+      "videoUrl": "https://www.youtube.com/watch?v=eEiMPYiNZAo",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.269Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "花譜 # 145「アポカリプスより」【オリジナルMV】",
+          "tags": [
+            "FAVVID",
+            "映像リファレンス",
+            "モーショングラフィックス",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "EFgIleWNxbo",
+      "title": "you-to「奮って。」ミュージックビデオ",
+      "videoUrl": "https://www.youtube.com/watch?v=EFgIleWNxbo",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.269Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "you-to「奮って。」ミュージックビデオ",
+          "tags": [
+            "映像作家100人",
+            "2026選出",
+            "Motion graphics"
+          ]
+        }
+      }
+    },
+    {
+      "id": "eFJxPBP0eBU",
+      "title": "琶舞 - ファーストエイド/ BEMA - FIRST AID(Official Music Video)【神椿】",
+      "videoUrl": "https://youtu.be/eFJxPBP0eBU",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.269Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "琶舞 - ファーストエイド/ BEMA - FIRST AID(Official Music Video)【神椿】",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "EHYX4mtY5so",
+      "title": "【MV】にじさんじ – ヨナガオルケスタ",
+      "videoUrl": "https://www.youtube.com/watch?v=EHYX4mtY5so",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.269Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "【MV】にじさんじ – ヨナガオルケスタ",
+          "tags": [
+            "FAVVID",
+            "映像リファレンス",
+            "モーショングラフィックス",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "EMH4UE5TYsc",
+      "title": "映画『わたしの知らない子どもたち』【10月16日公開】本予告映像",
+      "videoUrl": "https://www.youtube.com/watch?v=EMH4UE5TYsc",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.269Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "映画『わたしの知らない子どもたち』【10月16日公開】本予告映像",
+          "tags": [
+            "AOI Pro. 公式制作実績",
+            "公式制作実績",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "EvkXc8puoOA",
+      "title": "スカイライン 二次創作ショートmV",
+      "videoUrl": "https://youtu.be/EvkXc8puoOA",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.269Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "スカイライン 二次創作ショートmV",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "fGjwu1MkaLw",
+      "title": "空知らぬ雨「ひとりあそび」/ SORASHIRA - Monologue【Official Music Video】",
+      "videoUrl": "https://www.youtube.com/watch?v=fGjwu1MkaLw",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.269Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "空知らぬ雨「ひとりあそび」/ SORASHIRA - Monologue【Official Music Video】",
+          "tags": [
+            "FAVVID",
+            "映像リファレンス",
+            "モーショングラフィックス",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "fLar7DSdnz0",
+      "title": "ロッテ プレミアムガーナ WEBCM「プレミアムガーナ食べてみた フルーツショコラ」篇 6秒 木村拓哉",
+      "videoUrl": "https://www.youtube.com/shorts/fLar7DSdnz0",
+      "genres": [
+        {
+          "slug": "web-cm",
+          "name": "Web CM"
+        }
+      ],
+      "reason": "タイトル・公式タグにWeb CMの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.269Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにWeb CMの明示",
+          "title": "ロッテ プレミアムガーナ WEBCM「プレミアムガーナ食べてみた フルーツショコラ」篇 6秒 木村拓哉",
+          "tags": [
+            "YouTube Works Awards Japan 2026",
+            "PDF資料掲載",
+            "資料p.103"
+          ]
+        }
+      }
+    },
+    {
+      "id": "FlqDBh8QjZk",
+      "title": "TVアニメ「正反対な君と僕」第2期ノンクレジットエンディング映像",
+      "videoUrl": "https://youtu.be/FlqDBh8QjZk",
+      "genres": [
+        {
+          "slug": "opening",
+          "name": "オープニング映像"
+        }
+      ],
+      "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.269Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+          "title": "TVアニメ「正反対な君と僕」第2期ノンクレジットエンディング映像",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "FmKaVcSRzy0",
+      "title": "【PVメイキング】超激動 -SUPER GEKIDO- / カウントダウン",
+      "videoUrl": "https://youtu.be/FmKaVcSRzy0",
+      "genres": [
+        {
+          "slug": "making",
+          "name": "メイキング / Behind The Scenes"
+        }
+      ],
+      "reason": "タイトル・公式タグにメイキングの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.269Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにメイキングの明示",
+          "title": "【PVメイキング】超激動 -SUPER GEKIDO- / カウントダウン",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ftdQYWTlL7I",
+      "title": "Sony History Official Corporate Film 1970s Japan",
+      "videoUrl": "https://www.youtube.com/watch?v=ftdQYWTlL7I",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.269Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "Sony History Official Corporate Film 1970s Japan",
+          "tags": []
+        }
+      }
+    },
+    {
+      "id": "fUU_VKLXzRQ",
+      "title": "オープニングムービー完全版｜TVアニメ『上伊那ぼたん、酔へる姿は百合の花』",
+      "videoUrl": "https://www.youtube.com/watch?v=fUU_VKLXzRQ",
+      "genres": [
+        {
+          "slug": "opening",
+          "name": "オープニング映像"
+        }
+      ],
+      "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.269Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+          "title": "オープニングムービー完全版｜TVアニメ『上伊那ぼたん、酔へる姿は百合の花』",
+          "tags": [
+            "OPED",
+            "2D",
+            "アニメーション",
+            "soigne",
+            "ちな",
+            "佐久間貴史",
+            "渡部さくら",
+            "ALINCOLONY",
+            "よかった映像まとめ"
+          ]
+        }
+      }
+    },
+    {
+      "id": "FYuKV7m_CqM",
+      "title": "アニメ「負けヒロインが多すぎる！」ノンクレジットED映像【feel my soul】",
+      "videoUrl": "https://youtu.be/FYuKV7m_CqM",
+      "genres": [
+        {
+          "slug": "opening",
+          "name": "オープニング映像"
+        }
+      ],
+      "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.269Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+          "title": "アニメ「負けヒロインが多すぎる！」ノンクレジットED映像【feel my soul】",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "g6Zj_mu_QZ8",
+      "title": "【MV】『遊☆戯☆王』×『OVERLAP』KIMERU【『遊☆戯☆王』原作30周年記念】",
+      "videoUrl": "https://youtu.be/g6Zj_mu_QZ8",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.269Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "【MV】『遊☆戯☆王』×『OVERLAP』KIMERU【『遊☆戯☆王』原作30周年記念】",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "GfDXqY-V0EY",
+      "title": "ずっと真夜中でいいのに。『嘘じゃない』MV (ZUTOMAYO – Truth In Lies)",
+      "videoUrl": "https://youtu.be/GfDXqY-V0EY",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.269Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "ずっと真夜中でいいのに。『嘘じゃない』MV (ZUTOMAYO – Truth In Lies)",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "gI2aoykWBEY",
+      "title": "【MV】Outline /  星宮とと + EAERAN + phritz",
+      "videoUrl": "https://youtu.be/gI2aoykWBEY",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.269Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "【MV】Outline /  星宮とと + EAERAN + phritz",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "GINrMfMq4qo",
+      "title": "第12回 新千歳空港国際アニメーション映画祭 公式トレーラー映像 / New Chitose 2025 Signal Film",
+      "videoUrl": "https://www.youtube.com/watch?v=GINrMfMq4qo",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.269Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "第12回 新千歳空港国際アニメーション映画祭 公式トレーラー映像 / New Chitose 2025 Signal Film",
+          "tags": [
+            "映像作家100人",
+            "2026選出",
+            "2D animation",
+            "3DCG",
+            "AI",
+            "Animation",
+            "CM",
+            "Experimental film",
+            "Promotion",
+            "Title movie"
+          ]
+        }
+      }
+    },
+    {
+      "id": "GrYJCuB2PGI",
+      "title": "Music Video 最果てのスーパースター / Gero×天月×FAKE TYPE.",
+      "videoUrl": "https://youtu.be/GrYJCuB2PGI",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.269Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "Music Video 最果てのスーパースター / Gero×天月×FAKE TYPE.",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "GTwK3D_QWMQ",
+      "title": "【MV】†ハロウィンマジック†にかかっちゃいな！【ゼンゼロ | ZZZ】",
+      "videoUrl": "https://www.youtube.com/watch?v=GTwK3D_QWMQ",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.269Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "【MV】†ハロウィンマジック†にかかっちゃいな！【ゼンゼロ | ZZZ】",
+          "tags": [
+            "FAVVID",
+            "映像リファレンス",
+            "モーショングラフィックス",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "hfRj2Hlh22M",
+      "title": "花火王国 新潟／NIIGATA The KINGDOM of FIREWORKS",
+      "videoUrl": "https://www.youtube.com/watch?v=hfRj2Hlh22M",
+      "genres": [
+        {
+          "slug": "documentary",
+          "name": "ドキュメンタリー"
+        }
+      ],
+      "reason": "タイトル・公式タグにドキュメンタリーの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.269Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにドキュメンタリーの明示",
+          "title": "花火王国 新潟／NIIGATA The KINGDOM of FIREWORKS",
+          "tags": [
+            "受賞作",
+            "日本国際観光映像祭",
+            "2025",
+            "文化ドキュメンタリー優秀映像賞"
+          ]
+        }
+      }
+    },
+    {
+      "id": "hsKzVWWZsps",
+      "title": "TVアニメ「メタリックルージュ」ノンクレジットEDムービー／ダズビー「Scarlet」",
+      "videoUrl": "https://youtu.be/hsKzVWWZsps",
+      "genres": [
+        {
+          "slug": "opening",
+          "name": "オープニング映像"
+        }
+      ],
+      "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.269Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+          "title": "TVアニメ「メタリックルージュ」ノンクレジットEDムービー／ダズビー「Scarlet」",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "HXvZ7Y7uYbo",
+      "title": "アニメ「Dr. STONE SCIENCE FUTURE」最終シーズン 第2クール エンディング",
+      "videoUrl": "https://www.youtube.com/watch?v=HXvZ7Y7uYbo",
+      "genres": [
+        {
+          "slug": "opening",
+          "name": "オープニング映像"
+        }
+      ],
+      "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.269Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+          "title": "アニメ「Dr. STONE SCIENCE FUTURE」最終シーズン 第2クール エンディング",
+          "tags": [
+            "映像作家100人",
+            "2026選出",
+            "2D animation",
+            "3DCG",
+            "Animation",
+            "Broadcast"
+          ]
+        }
+      }
+    },
+    {
+      "id": "hzPTZUAiRa4",
+      "title": "服部グラフィクス低解像度GIFシリーズ2022（前半）",
+      "videoUrl": "https://www.youtube.com/watch?v=hzPTZUAiRa4",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.269Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "服部グラフィクス低解像度GIFシリーズ2022（前半）",
+          "tags": [
+            "映像作家100人",
+            "2022選出",
+            "2D animation",
+            "Animation",
+            "Art work",
+            "Experimental film",
+            "Original",
+            "Showreel"
+          ]
+        }
+      }
+    },
+    {
+      "id": "I0jHbsidh1g",
+      "title": "lazy cat  – Eve MV",
+      "videoUrl": "https://www.youtube.com/watch?v=I0jHbsidh1g",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.269Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "lazy cat  – Eve MV",
+          "tags": [
+            "FAVVID",
+            "映像リファレンス",
+            "モーショングラフィックス",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "Iaz4LSua6ik",
+      "title": "【ヒロアカアニメ10周年記念】JUMP MV /『僕のヒーローアカデミア』×『THE REVO』| ポルノグラフィティ",
+      "videoUrl": "https://youtu.be/Iaz4LSua6ik",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.270Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "【ヒロアカアニメ10周年記念】JUMP MV /『僕のヒーローアカデミア』×『THE REVO』| ポルノグラフィティ",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "iiiLtE4w2pE",
+      "title": "初星学園 「Wildest Flower」Official Music Video",
+      "videoUrl": "https://www.youtube.com/watch?v=iiiLtE4w2pE",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.270Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "初星学園 「Wildest Flower」Official Music Video",
+          "tags": [
+            "映像作家100人",
+            "2026選出",
+            "2D animation",
+            "ALINCOLONY",
+            "よかった映像まとめ"
+          ]
+        }
+      }
+    },
+    {
+      "id": "iVAVffggNlw",
+      "title": "#わたなれ ノンクレジットエンディング映像｜EDテーマ▶フィロソフィーのダンス「迷っちゃうわ」｜TVアニメ『わたしが恋人になれるわけないじゃん、ムリムリ!（※ムリじゃなかった!?）』",
+      "videoUrl": "https://youtu.be/iVAVffggNlw",
+      "genres": [
+        {
+          "slug": "opening",
+          "name": "オープニング映像"
+        }
+      ],
+      "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.270Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+          "title": "#わたなれ ノンクレジットエンディング映像｜EDテーマ▶フィロソフィーのダンス「迷っちゃうわ」｜TVアニメ『わたしが恋人になれるわけないじゃん、ムリムリ!（※ムリじゃなかった!?）』",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "j2XnTjH55TY",
+      "title": "JUMP MV /『ニセコイ』×『プリズム』| ササノマリイ",
+      "videoUrl": "https://youtu.be/j2XnTjH55TY",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.270Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "JUMP MV /『ニセコイ』×『プリズム』| ササノマリイ",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "Jh7AAapWJ-A",
+      "title": "TVアニメ『帝乃三姉妹は案外、チョロい。』ED映像",
+      "videoUrl": "https://www.youtube.com/watch?v=Jh7AAapWJ-A",
+      "genres": [
+        {
+          "slug": "opening",
+          "name": "オープニング映像"
+        }
+      ],
+      "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.270Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+          "title": "TVアニメ『帝乃三姉妹は案外、チョロい。』ED映像",
+          "tags": [
+            "映像作家100人",
+            "2026選出",
+            "2D animation",
+            "Animation",
+            "TV",
+            "TVアニメ ending"
+          ]
+        }
+      }
+    },
+    {
+      "id": "JodF9Ls9ydA",
+      "title": "出すべきは、やる気じゃない。蒸気だ。「ズボラーの新常識、なんでもスチーム篇」ハンディスチーマー SC 1 Multi - WEBCM",
+      "videoUrl": "https://www.youtube.com/watch?v=JodF9Ls9ydA",
+      "genres": [
+        {
+          "slug": "web-cm",
+          "name": "Web CM"
+        }
+      ],
+      "reason": "タイトル・公式タグにWeb CMの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.270Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにWeb CMの明示",
+          "title": "出すべきは、やる気じゃない。蒸気だ。「ズボラーの新常識、なんでもスチーム篇」ハンディスチーマー SC 1 Multi - WEBCM",
+          "tags": [
+            "ピラミッドフィルム 公式制作実績",
+            "公式制作実績",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "jsQXgDZIIrY",
+      "title": "【MV】Intergalactic Bound by Yunosuke & CircusP feat. Hatsune Miku【MIKU EXPO 10th】",
+      "videoUrl": "https://youtu.be/jsQXgDZIIrY",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.270Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "【MV】Intergalactic Bound by Yunosuke & CircusP feat. Hatsune Miku【MIKU EXPO 10th】",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "Ju9OLNOBxeg",
+      "title": "Myuk - Black Sheep (Music Video)【Prod by Guiano】",
+      "videoUrl": "https://www.youtube.com/watch?v=Ju9OLNOBxeg",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.270Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "Myuk - Black Sheep (Music Video)【Prod by Guiano】",
+          "tags": [
+            "FAVVID",
+            "映像リファレンス",
+            "モーショングラフィックス",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "jvKtHf7kDYs",
+      "title": "【第34回東京国際映画祭】アジアの未来 作品賞：『世界、北半球』ホセイン・テヘラニ監督",
+      "videoUrl": "https://www.youtube.com/watch?v=jvKtHf7kDYs",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.270Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "【第34回東京国際映画祭】アジアの未来 作品賞：『世界、北半球』ホセイン・テヘラニ監督",
+          "tags": [
+            "受賞作",
+            "東京国際映画祭 アジアの未来",
+            "2021",
+            "アジアの未来 作品賞"
+          ]
+        }
+      }
+    },
+    {
+      "id": "kG6Uyc8WC8E",
+      "title": "Experimental Film + Projection Mapping",
+      "videoUrl": "https://www.youtube.com/watch?v=kG6Uyc8WC8E",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.270Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "Experimental Film + Projection Mapping",
+          "tags": []
+        }
+      }
+    },
+    {
+      "id": "KjQk3e3w_NY",
+      "title": "ポカリスエットCMソング｜ena mori & Tomggg 「なんてね」MV",
+      "videoUrl": "https://youtu.be/KjQk3e3w_NY",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.270Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "ポカリスエットCMソング｜ena mori & Tomggg 「なんてね」MV",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "KOh3qsUh_9E",
+      "title": "アニメーションMV合作　生命 / オヨイダキビス",
+      "videoUrl": "https://youtu.be/KOh3qsUh_9E",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.270Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "アニメーションMV合作　生命 / オヨイダキビス",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "KPSvI5K6O_k",
+      "title": "TVアニメ『姫様”拷問”の時間です』第2期ノンクレジットオープニング映像｜ILLIT「Sunday Morning」",
+      "videoUrl": "https://youtu.be/KPSvI5K6O_k",
+      "genres": [
+        {
+          "slug": "opening",
+          "name": "オープニング映像"
+        }
+      ],
+      "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.270Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+          "title": "TVアニメ『姫様”拷問”の時間です』第2期ノンクレジットオープニング映像｜ILLIT「Sunday Morning」",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "L2rDaGCCXSE",
+      "title": "NEW DAYS (Prod. by ミツキヨ) / KMNZ [Official Music Video]",
+      "videoUrl": "https://www.youtube.com/watch?v=L2rDaGCCXSE",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.270Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "NEW DAYS (Prod. by ミツキヨ) / KMNZ [Official Music Video]",
+          "tags": [
+            "FAVVID",
+            "映像リファレンス",
+            "モーショングラフィックス",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "l7Lq9OzVsMo",
+      "title": "【Official】Music Video 「Rhythmic Ride」明坂 芹菜(CV:新田 恵海)",
+      "videoUrl": "https://www.youtube.com/watch?v=l7Lq9OzVsMo",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.270Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "【Official】Music Video 「Rhythmic Ride」明坂 芹菜(CV:新田 恵海)",
+          "tags": [
+            "FAVVID",
+            "映像リファレンス",
+            "モーショングラフィックス",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "lCewomFFung",
+      "title": "【公式】レイク WebCM「サングラスが無い」篇 縦型",
+      "videoUrl": "https://youtube.com/shorts/lCewomFFung?feature=share",
+      "genres": [
+        {
+          "slug": "web-cm",
+          "name": "Web CM"
+        }
+      ],
+      "reason": "タイトル・公式タグにWeb CMの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.270Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにWeb CMの明示",
+          "title": "【公式】レイク WebCM「サングラスが無い」篇 縦型",
+          "tags": [
+            "YouTube Works Awards Japan 2026",
+            "PDF資料掲載",
+            "資料p.88"
+          ]
+        }
+      }
+    },
+    {
+      "id": "lJ6dDUwWOis",
+      "title": "TVアニメ『二十世紀電氣目録-ユーレカ・エヴリカ-』｜ノンクレジットED",
+      "videoUrl": "https://youtu.be/lJ6dDUwWOis",
+      "genres": [
+        {
+          "slug": "opening",
+          "name": "オープニング映像"
+        }
+      ],
+      "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.270Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+          "title": "TVアニメ『二十世紀電氣目録-ユーレカ・エヴリカ-』｜ノンクレジットED",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "lWuDDX9NZNE",
+      "title": "KAIKO 2022 SHOW IN BACKROOMS",
+      "videoUrl": "https://www.youtube.com/watch?v=lWuDDX9NZNE",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.270Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "KAIKO 2022 SHOW IN BACKROOMS",
+          "tags": [
+            "映像作家100人",
+            "2023選出",
+            "3DCG",
+            "Fashion film",
+            "Promotion"
+          ]
+        }
+      }
+    },
+    {
+      "id": "m-wQjGojpXU",
+      "title": "誘導灯 / 梓川【Official Music Video】",
+      "videoUrl": "https://youtu.be/m-wQjGojpXU",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.270Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "誘導灯 / 梓川【Official Music Video】",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "Mkbo5HbFCSs",
+      "title": "TVアニメ『NEEDY GIRL OVERDOSE』ノンクレジットエンディング映像│キタニタツヤ「れびてーしょん」",
+      "videoUrl": "https://youtu.be/Mkbo5HbFCSs",
+      "genres": [
+        {
+          "slug": "opening",
+          "name": "オープニング映像"
+        }
+      ],
+      "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.271Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+          "title": "TVアニメ『NEEDY GIRL OVERDOSE』ノンクレジットエンディング映像│キタニタツヤ「れびてーしょん」",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "MwdWFubq9V0",
+      "title": "みみみとうちゅうじん[予告]",
+      "videoUrl": "https://www.youtube.com/watch?v=MwdWFubq9V0",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.271Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "みみみとうちゅうじん[予告]",
+          "tags": [
+            "映像作家100人",
+            "2024選出",
+            "2D animation",
+            "3DCG",
+            "Animation",
+            "Art work",
+            "Experimental film"
+          ]
+        }
+      }
+    },
+    {
+      "id": "MXWTuX-QC00",
+      "title": "初星学園 「White Night! White Wish!」Official Music Video (HATSUBOSHI GAKUEN - White Night! White Wish!)",
+      "videoUrl": "https://www.youtube.com/watch?v=MXWTuX-QC00",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.271Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "初星学園 「White Night! White Wish!」Official Music Video (HATSUBOSHI GAKUEN - White Night! White Wish!)",
+          "tags": [
+            "FAVVID",
+            "映像リファレンス",
+            "モーショングラフィックス",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "mxYqXOL5uLk",
+      "title": "TVアニメ『TRIGUN STAMPEDE』ノンクレジットOP映像",
+      "videoUrl": "https://www.youtube.com/watch?v=mxYqXOL5uLk",
+      "genres": [
+        {
+          "slug": "opening",
+          "name": "オープニング映像"
+        }
+      ],
+      "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.271Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+          "title": "TVアニメ『TRIGUN STAMPEDE』ノンクレジットOP映像",
+          "tags": [
+            "SIGNIF 公式制作実績",
+            "公式制作実績",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "N3d5hV-G5VY",
+      "title": "【MV】偽善／そうま",
+      "videoUrl": "https://youtu.be/N3d5hV-G5VY",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.271Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "【MV】偽善／そうま",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "n6R6BSDTFPU",
+      "title": "葛葉監督へ『Never-ending tale』Covered by 神速高校野球部員",
+      "videoUrl": "https://youtu.be/n6R6BSDTFPU",
+      "genres": [
+        {
+          "slug": "opening",
+          "name": "オープニング映像"
+        }
+      ],
+      "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.271Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+          "title": "葛葉監督へ『Never-ending tale』Covered by 神速高校野球部員",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "O9URRAdhB-4",
+      "title": "【漫画】『【推しの子】』映画編　PV【12巻発売記念】【ヤングジャンプ連載】",
+      "videoUrl": "https://youtu.be/O9URRAdhB-4",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.271Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "【漫画】『【推しの子】』映画編　PV【12巻発売記念】【ヤングジャンプ連載】",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ODshOf0l-aY",
+      "title": "MEGA TSKR / かめりあ ft. ななひら (Camellia ft. Nanahira) 「 ORIGINAL MV 」",
+      "videoUrl": "https://youtu.be/ODshOf0l-aY",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.271Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "MEGA TSKR / かめりあ ft. ななひら (Camellia ft. Nanahira) 「 ORIGINAL MV 」",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "oHdplOiFB1U",
+      "title": "【MV】相性×優勝ドロップス - Idios",
+      "videoUrl": "https://youtu.be/oHdplOiFB1U",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.271Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "【MV】相性×優勝ドロップス - Idios",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "p4eAR2Gw5RU",
+      "title": "旧奈良監獄～奈良赤レンガFESTIVAL2023～PV",
+      "videoUrl": "https://www.youtube.com/watch?v=p4eAR2Gw5RU",
+      "genres": [
+        {
+          "slug": "documentary",
+          "name": "ドキュメンタリー"
+        }
+      ],
+      "reason": "タイトル・公式タグにドキュメンタリーの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.271Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにドキュメンタリーの明示",
+          "title": "旧奈良監獄～奈良赤レンガFESTIVAL2023～PV",
+          "tags": [
+            "受賞作",
+            "日本国際観光映像祭",
+            "2025",
+            "建築ドキュメンタリー部門 優秀賞"
+          ]
+        }
+      }
+    },
+    {
+      "id": "Q4C1O2A-Cqg",
+      "title": "ULTIMA BRAND MOVIE",
+      "videoUrl": "https://www.youtube.com/watch?v=Q4C1O2A-Cqg",
+      "genres": [
+        {
+          "slug": "branded-movie",
+          "name": "ブランデッドムービー"
+        }
+      ],
+      "reason": "タイトル・公式タグにブランデッドムービーの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.271Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにブランデッドムービーの明示",
+          "title": "ULTIMA BRAND MOVIE",
+          "tags": [
+            "ピラミッドフィルム 公式制作実績",
+            "公式制作実績",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "Q7PJyggUWqs",
+      "title": "Japan a Sense of Nostalgia | Cinematic Travel Film | Sony A7Siii",
+      "videoUrl": "https://www.youtube.com/watch?v=Q7PJyggUWqs",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.271Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "Japan a Sense of Nostalgia | Cinematic Travel Film | Sony A7Siii",
+          "tags": []
+        }
+      }
+    },
+    {
+      "id": "QsM2k1xva8Q",
+      "title": "室内のダンボール迷路、実は巨大殺人迷路だった…／映画『キラー・メイズ』予告編（シッチェス映画祭）",
+      "videoUrl": "https://youtu.be/QsM2k1xva8Q",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.272Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "室内のダンボール迷路、実は巨大殺人迷路だった…／映画『キラー・メイズ』予告編（シッチェス映画祭）",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "R0sHb1a79yo",
+      "title": "[PYLONORG]  ∈Y∋ × COSMICLAB",
+      "videoUrl": "https://www.youtube.com/watch?v=R0sHb1a79yo",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.272Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "[PYLONORG]  ∈Y∋ × COSMICLAB",
+          "tags": [
+            "映像作家100人",
+            "2022選出",
+            "3DCG",
+            "AR",
+            "Audio visual performance",
+            "Event",
+            "Experimental film",
+            "Generative Art",
+            "Interactive",
+            "Original",
+            "Performance",
+            "Real-time Graphics",
+            "Showreel",
+            "XR"
+          ]
+        }
+      }
+    },
+    {
+      "id": "r1Bic3Go2dY",
+      "title": "ランドセル選びドキュメンタリー篇【セイバン公式】",
+      "videoUrl": "https://www.youtube.com/watch?v=r1Bic3Go2dY",
+      "genres": [
+        {
+          "slug": "documentary",
+          "name": "ドキュメンタリー"
+        }
+      ],
+      "reason": "タイトル・公式タグにドキュメンタリーの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.272Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにドキュメンタリーの明示",
+          "title": "ランドセル選びドキュメンタリー篇【セイバン公式】",
+          "tags": [
+            "受賞作",
+            "YouTube Works Awards Japan",
+            "2024",
+            "Force for Good"
+          ]
+        }
+      }
+    },
+    {
+      "id": "R9PEnLmv6zI",
+      "title": "初星学園 「Atmosphere」Official Music Video (HATSUBOSHI GAKUEN - Atmosphere)",
+      "videoUrl": "https://youtu.be/R9PEnLmv6zI",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.272Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "初星学園 「Atmosphere」Official Music Video (HATSUBOSHI GAKUEN - Atmosphere)",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "RFYP-tY6xOg",
+      "title": "TVアニメ「らんま1/2」 ノンクレジットオープニング｜ano「許婚っきゅん」 ／ \"Ranma1/2\" Opening Movie",
+      "videoUrl": "https://www.youtube.com/watch?v=RFYP-tY6xOg",
+      "genres": [
+        {
+          "slug": "opening",
+          "name": "オープニング映像"
+        }
+      ],
+      "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.272Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+          "title": "TVアニメ「らんま1/2」 ノンクレジットオープニング｜ano「許婚っきゅん」 ／ \"Ranma1/2\" Opening Movie",
+          "tags": [
+            "FAVVID",
+            "映像リファレンス",
+            "モーショングラフィックス",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "rNPXKST8SOE",
+      "title": "「その化学は、すべてに愛をつなぐ」篇　ナミックス株式会社 | ブランドムービー",
+      "videoUrl": "https://www.youtube.com/watch?v=rNPXKST8SOE",
+      "genres": [
+        {
+          "slug": "branded-movie",
+          "name": "ブランデッドムービー"
+        }
+      ],
+      "reason": "タイトル・公式タグにブランデッドムービーの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.272Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにブランデッドムービーの明示",
+          "title": "「その化学は、すべてに愛をつなぐ」篇　ナミックス株式会社 | ブランドムービー",
+          "tags": [
+            "ピラミッドフィルム 公式制作実績",
+            "公式制作実績",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "rrBlQZsc0MY",
+      "title": "「びっクリナップ！」洗エールレンジフード篇【WebCM 15秒】",
+      "videoUrl": "https://www.youtube.com/watch?v=rrBlQZsc0MY",
+      "genres": [
+        {
+          "slug": "web-cm",
+          "name": "Web CM"
+        }
+      ],
+      "reason": "タイトル・公式タグにWeb CMの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.272Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにWeb CMの明示",
+          "title": "「びっクリナップ！」洗エールレンジフード篇【WebCM 15秒】",
+          "tags": [
+            "YouTube Works Awards Japan 2026",
+            "PDF資料掲載",
+            "資料p.77"
+          ]
+        }
+      }
+    },
+    {
+      "id": "rSDxc4zp7W4",
+      "title": "Imy - 宝石を宿す (feat. 秋奈) Music Video",
+      "videoUrl": "https://www.youtube.com/watch?v=rSDxc4zp7W4",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.272Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "Imy - 宝石を宿す (feat. 秋奈) Music Video",
+          "tags": [
+            "FAVVID",
+            "映像リファレンス",
+            "モーショングラフィックス",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "Rz8_lGd2JzQ",
+      "title": "【MV】Genesis - 3SKM",
+      "videoUrl": "https://youtu.be/Rz8_lGd2JzQ",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.272Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "【MV】Genesis - 3SKM",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ScRGVhBBqM8",
+      "title": "JUMP MV /『呪術廻戦』×『SPECIALZ』| King Gnu ―災の目―",
+      "videoUrl": "https://youtu.be/ScRGVhBBqM8",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.272Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "JUMP MV /『呪術廻戦』×『SPECIALZ』| King Gnu ―災の目―",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "t5jPgM_VKZo",
+      "title": "みみめめMIMI「Mr. Darling」MV",
+      "videoUrl": "https://www.youtube.com/watch?v=t5jPgM_VKZo",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.272Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "みみめめMIMI「Mr. Darling」MV",
+          "tags": [
+            "LIGHT THE WAY",
+            "公式制作実績",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "TwumA6YhQp4",
+      "title": "TVアニメ『ヤニねこ』ノンクレジットエンディング映像｜ネクライトーキー「煙とブルー」",
+      "videoUrl": "https://youtu.be/TwumA6YhQp4",
+      "genres": [
+        {
+          "slug": "opening",
+          "name": "オープニング映像"
+        }
+      ],
+      "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.272Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+          "title": "TVアニメ『ヤニねこ』ノンクレジットエンディング映像｜ネクライトーキー「煙とブルー」",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "tXXI5xRqD_I",
+      "title": "Bad girl / IMI【Official MV】",
+      "videoUrl": "https://www.youtube.com/watch?v=tXXI5xRqD_I",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.272Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "Bad girl / IMI【Official MV】",
+          "tags": [
+            "FAVVID",
+            "映像リファレンス",
+            "モーショングラフィックス",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "U-FuKvu5RV0",
+      "title": "Imy - Dreamscape (feat. 藍月なくる) Music Video",
+      "videoUrl": "https://www.youtube.com/watch?v=U-FuKvu5RV0",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.272Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "Imy - Dreamscape (feat. 藍月なくる) Music Video",
+          "tags": [
+            "FAVVID",
+            "映像リファレンス",
+            "モーショングラフィックス",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "uagcz49Xtwk",
+      "title": "&quot;MABITO&quot; | Short Horror Film",
+      "videoUrl": "https://www.youtube.com/watch?v=uagcz49Xtwk",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.272Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "&quot;MABITO&quot; | Short Horror Film",
+          "tags": [
+            "IT / 通信 / ネットサービス"
+          ]
+        }
+      }
+    },
+    {
+      "id": "uIEUBqG9GoE",
+      "title": "【公式】レイク WebCM「サングラスが無い」篇 15秒Ver. Aタイプ",
+      "videoUrl": "https://youtu.be/uIEUBqG9GoE",
+      "genres": [
+        {
+          "slug": "web-cm",
+          "name": "Web CM"
+        }
+      ],
+      "reason": "タイトル・公式タグにWeb CMの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.272Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにWeb CMの明示",
+          "title": "【公式】レイク WebCM「サングラスが無い」篇 15秒Ver. Aタイプ",
+          "tags": [
+            "YouTube Works Awards Japan 2026",
+            "PDF資料掲載",
+            "資料p.88"
+          ]
+        }
+      }
+    },
+    {
+      "id": "UvGwIFVUK7M",
+      "title": "Jindal Steel | The Steel Of India | Brand Film",
+      "videoUrl": "https://www.youtube.com/watch?v=UvGwIFVUK7M",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.273Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "Jindal Steel | The Steel Of India | Brand Film",
+          "tags": [
+            "受賞作",
+            "Spikes Asia",
+            "2025",
+            "Film Craft",
+            "Grand Prix",
+            "Jindal Steel"
+          ]
+        }
+      }
+    },
+    {
+      "id": "v1P8uQHzGL4",
+      "title": "「真夜中ぱんチ」ノンクレジットED｜真咲（CV.長谷川育美）「編集点」",
+      "videoUrl": "https://youtu.be/v1P8uQHzGL4",
+      "genres": [
+        {
+          "slug": "opening",
+          "name": "オープニング映像"
+        }
+      ],
+      "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.273Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+          "title": "「真夜中ぱんチ」ノンクレジットED｜真咲（CV.長谷川育美）「編集点」",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "V2-uBNWpHck",
+      "title": "映画『わたしの知らない子どもたち』【10月16日公開】トロント国際映画祭正式出品決定",
+      "videoUrl": "https://www.youtube.com/watch?v=V2-uBNWpHck",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.273Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "映画『わたしの知らない子どもたち』【10月16日公開】トロント国際映画祭正式出品決定",
+          "tags": [
+            "AOI Pro. 公式制作実績",
+            "公式制作実績",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "VEb3rctB3dc",
+      "title": "アニメ「ギルドの受付嬢ですが、残業は嫌なのでボスをソロ討伐しようと思います」ノンクレジットエンディング映像｜2025年1月10日（金）より各局にて放送！",
+      "videoUrl": "https://youtu.be/VEb3rctB3dc",
+      "genres": [
+        {
+          "slug": "opening",
+          "name": "オープニング映像"
+        }
+      ],
+      "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.273Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+          "title": "アニメ「ギルドの受付嬢ですが、残業は嫌なのでボスをソロ討伐しようと思います」ノンクレジットエンディング映像｜2025年1月10日（金）より各局にて放送！",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "VS9LAp4tj64",
+      "title": "小林私「可塑」Music Video",
+      "videoUrl": "https://youtu.be/VS9LAp4tj64",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.273Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "小林私「可塑」Music Video",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "WMdXTiLrT2g",
+      "title": "【ロシデレ】ノンクレジットOP｜「1番輝く星」アーリャ（CV：上坂すみれ）",
+      "videoUrl": "https://youtu.be/WMdXTiLrT2g",
+      "genres": [
+        {
+          "slug": "opening",
+          "name": "オープニング映像"
+        }
+      ],
+      "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.273Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+          "title": "【ロシデレ】ノンクレジットOP｜「1番輝く星」アーリャ（CV：上坂すみれ）",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "wphwtON0O1g",
+      "title": "【Official】Music Video 「Here the Our MIRAI!」イロドリミドリ",
+      "videoUrl": "https://www.youtube.com/watch?v=wphwtON0O1g",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.273Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "【Official】Music Video 「Here the Our MIRAI!」イロドリミドリ",
+          "tags": [
+            "FAVVID",
+            "映像リファレンス",
+            "モーショングラフィックス",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "xjjpvrY_tGM",
+      "title": "【期間限定】TVアニメ『炎炎ノ消防隊 参ノ章』壱話エンディング映像｜梅田サイファー「ウルサイレン」",
+      "videoUrl": "https://youtu.be/xjjpvrY_tGM",
+      "genres": [
+        {
+          "slug": "opening",
+          "name": "オープニング映像"
+        }
+      ],
+      "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.273Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+          "title": "【期間限定】TVアニメ『炎炎ノ消防隊 参ノ章』壱話エンディング映像｜梅田サイファー「ウルサイレン」",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "xRU1XXHIpIc",
+      "title": "ILLIT (아일릿) 'bomb' Brand Film (little monster MV)",
+      "videoUrl": "https://www.youtube.com/watch?v=xRU1XXHIpIc",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.273Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "ILLIT (아일릿) 'bomb' Brand Film (little monster MV)",
+          "tags": [
+            "TYO 公式制作実績",
+            "公式制作実績",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "Xs6cG_1551o",
+      "title": "【アニメMV】しょーがいゼッタイそーあい宣言♥/エスプリ【official】",
+      "videoUrl": "https://youtu.be/Xs6cG_1551o",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.273Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "【アニメMV】しょーがいゼッタイそーあい宣言♥/エスプリ【official】",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "xUHK7xuX5jU",
+      "title": "実写映画公開記念｜アニメ『秒速5センチメートル』ビデオコンテ比較【公式】",
+      "videoUrl": "https://youtu.be/xUHK7xuX5jU",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.273Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "実写映画公開記念｜アニメ『秒速5センチメートル』ビデオコンテ比較【公式】",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "XWxvfvisBFE",
+      "title": "KEITA MARUYAMA × PITTA MASK | Rakuten Fashion Week TOKYO 2021 S/S",
+      "videoUrl": "https://www.youtube.com/watch?v=XWxvfvisBFE",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.273Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "KEITA MARUYAMA × PITTA MASK | Rakuten Fashion Week TOKYO 2021 S/S",
+          "tags": [
+            "映像作家100人",
+            "2023選出",
+            "3DCG",
+            "Fashion film"
+          ]
+        }
+      }
+    },
+    {
+      "id": "yIEIaBfhTN8",
+      "title": "ロッテ プレミアムガーナ WEBCM「プレミアムガーナ食べてみた トリュフ」篇 6秒 木村拓哉",
+      "videoUrl": "https://www.youtube.com/shorts/yIEIaBfhTN8",
+      "genres": [
+        {
+          "slug": "web-cm",
+          "name": "Web CM"
+        }
+      ],
+      "reason": "タイトル・公式タグにWeb CMの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.273Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにWeb CMの明示",
+          "title": "ロッテ プレミアムガーナ WEBCM「プレミアムガーナ食べてみた トリュフ」篇 6秒 木村拓哉",
+          "tags": [
+            "YouTube Works Awards Japan 2026",
+            "PDF資料掲載",
+            "資料p.103"
+          ]
+        }
+      }
+    },
+    {
+      "id": "yKO4Z3j_Haw",
+      "title": "【MV】Move on!／すとぷり",
+      "videoUrl": "https://youtu.be/yKO4Z3j_Haw",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.273Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "【MV】Move on!／すとぷり",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "yRURaSoB7CY",
+      "title": "I Tried to Shoot a CINEMATIC Ski Film in Japan | Sony FX3",
+      "videoUrl": "https://www.youtube.com/watch?v=yRURaSoB7CY",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.273Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "I Tried to Shoot a CINEMATIC Ski Film in Japan | Sony FX3",
+          "tags": []
+        }
+      }
+    },
+    {
+      "id": "yS-fsWrARw8",
+      "title": "初星学園 「ふわふわ」Official Music Video (HATSUBOSHI GAKUEN - Fuwafuwa)",
+      "videoUrl": "https://www.youtube.com/watch?v=yS-fsWrARw8",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.273Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "初星学園 「ふわふわ」Official Music Video (HATSUBOSHI GAKUEN - Fuwafuwa)",
+          "tags": [
+            "SIGNIF 公式制作実績",
+            "公式制作実績",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "YvYiAqC3Mb8",
+      "title": "『機動戦士ガンダム 水星の魔女』Season2 エンディング映像",
+      "videoUrl": "https://www.youtube.com/watch?v=YvYiAqC3Mb8",
+      "genres": [
+        {
+          "slug": "opening",
+          "name": "オープニング映像"
+        }
+      ],
+      "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.273Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+          "title": "『機動戦士ガンダム 水星の魔女』Season2 エンディング映像",
+          "tags": [
+            "映像作家100人",
+            "2024選出",
+            "Broadcast"
+          ]
+        }
+      }
+    },
+    {
+      "id": "z4r3l2aAdrg",
+      "title": "BrokenDaybreak / 七篠さよ -Music Video -",
+      "videoUrl": "https://www.youtube.com/watch?v=z4r3l2aAdrg",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.273Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "BrokenDaybreak / 七篠さよ -Music Video -",
+          "tags": [
+            "FAVVID",
+            "映像リファレンス",
+            "モーショングラフィックス",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "Z8E6an5X_Y8",
+      "title": "TVアニメ「ポプテピピック TVアニメーション作品第二シリーズ」第8話 エンディング映像",
+      "videoUrl": "https://www.youtube.com/watch?v=Z8E6an5X_Y8",
+      "genres": [
+        {
+          "slug": "opening",
+          "name": "オープニング映像"
+        }
+      ],
+      "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.274Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+          "title": "TVアニメ「ポプテピピック TVアニメーション作品第二シリーズ」第8話 エンディング映像",
+          "tags": [
+            "映像作家100人",
+            "2023選出",
+            "Motion graphics",
+            "TV"
+          ]
+        }
+      }
+    },
+    {
+      "id": "zedAegmrEAo",
+      "title": "「TRIGUN STAMPEDE」エンディングアニメーション",
+      "videoUrl": "https://www.youtube.com/watch?v=zedAegmrEAo",
+      "genres": [
+        {
+          "slug": "opening",
+          "name": "オープニング映像"
+        }
+      ],
+      "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.274Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+          "title": "「TRIGUN STAMPEDE」エンディングアニメーション",
+          "tags": [
+            "映像作家100人",
+            "2023選出",
+            "2D animation",
+            "Animation",
+            "Ending movie",
+            "TV"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ZGvDTx2rf80",
+      "title": "映画『きみの色』主題歌 Mr.Children「in the pocket」スペシャルムービー",
+      "videoUrl": "https://youtu.be/ZGvDTx2rf80",
+      "genres": [
+        {
+          "slug": "film",
+          "name": "映画 / ドラマ / ショートフィルム"
+        }
+      ],
+      "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.274Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグに映画・ショートフィルムの明示",
+          "title": "映画『きみの色』主題歌 Mr.Children「in the pocket」スペシャルムービー",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "zJtsfgrJiWE",
+      "title": "漫画『メダリスト』× HANA『Cold Night』｜スペシャル MV",
+      "videoUrl": "https://youtu.be/zJtsfgrJiWE",
+      "genres": [
+        {
+          "slug": "mv",
+          "name": "MV"
+        }
+      ],
+      "reason": "タイトル・公式タグにMV/Music Videoの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.274Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにMV/Music Videoの明示",
+          "title": "漫画『メダリスト』× HANA『Cold Night』｜スペシャル MV",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ZJwo4lw4TUI",
+      "title": "「君のいる町」オープニングテーマ　みみめめMIMI「センチメンタルラブ」",
+      "videoUrl": "https://www.youtube.com/watch?v=ZJwo4lw4TUI",
+      "genres": [
+        {
+          "slug": "opening",
+          "name": "オープニング映像"
+        }
+      ],
+      "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.274Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+          "title": "「君のいる町」オープニングテーマ　みみめめMIMI「センチメンタルラブ」",
+          "tags": [
+            "LIGHT THE WAY",
+            "公式制作実績",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "zPDMm7XUpkI",
+      "title": "日本大学理工学部建築学科ブランドムービー “建築はつづく。未来がはじまる。”ver.2",
+      "videoUrl": "https://www.youtube.com/watch?v=zPDMm7XUpkI",
+      "genres": [
+        {
+          "slug": "branded-movie",
+          "name": "ブランデッドムービー"
+        }
+      ],
+      "reason": "タイトル・公式タグにブランデッドムービーの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.274Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにブランデッドムービーの明示",
+          "title": "日本大学理工学部建築学科ブランドムービー “建築はつづく。未来がはじまる。”ver.2",
+          "tags": [
+            "LIGHT THE WAY",
+            "公式制作実績",
+            "YouTube"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ZWvFR00t-NE",
+      "title": "【推しの子】第3期ノンクレジットエンディング｜なとり「セレナーデ」",
+      "videoUrl": "https://youtu.be/ZWvFR00t-NE",
+      "genres": [
+        {
+          "slug": "opening",
+          "name": "オープニング映像"
+        }
+      ],
+      "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+      "audit": {
+        "explicitGenreCompletion": {
+          "completedAt": "2026-08-19T08:50:10.274Z",
+          "evidenceType": "explicit_title_or_official_tag",
+          "reason": "タイトル・公式タグにオープニング/エンディングの明示",
+          "title": "【推しの子】第3期ノンクレジットエンディング｜なとり「セレナーデ」",
+          "tags": [
+            "ALINCOLONY",
+            "よかった映像まとめ",
+            "YouTube"
+          ]
+        }
+      }
+    }
+  ]
+}

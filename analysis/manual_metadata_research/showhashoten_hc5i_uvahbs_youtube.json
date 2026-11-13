@@ -1,0 +1,56 @@
+{
+  "kind": "youtube#videoListResponse",
+  "etag": "7q8N34vHKhX1lQs9HUQ0vptl_sE",
+  "items": [
+    {
+      "kind": "youtube#video",
+      "etag": "ByAfB6_GFDUi5Wzy5k5Au_rLgGI",
+      "id": "Hc5i_uvAhBs",
+      "snippet": {
+        "publishedAt": "2025-09-03T15:00:33Z",
+        "channelId": "UCbR8Q0BcAzkknTtVCytnENQ",
+        "title": "『ショーハショーテン！』JC最終11巻発売記念PV",
+        "description": "笑-1甲子園、ついに決着。\n熱戦の末、優勝を手にするのはーーー。\n\n▽１話試し読みはこちらから！\nhttps://jumpsq.shueisha.co.jp/rensai/showhashowten/read/\n\n▽ジャンプSQ.にて好評連載中！\nhttps://jumpsq.shueisha.co.jp/\n\n©浅倉秋成・小畑健／集英社",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Hc5i_uvAhBs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Hc5i_uvAhBs/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Hc5i_uvAhBs/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/Hc5i_uvAhBs/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/Hc5i_uvAhBs/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "ジャンプSQ.チャンネル",
+        "categoryId": "24",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "ja",
+        "localized": {
+          "title": "『ショーハショーテン！』JC最終11巻発売記念PV",
+          "description": "笑-1甲子園、ついに決着。\n熱戦の末、優勝を手にするのはーーー。\n\n▽１話試し読みはこちらから！\nhttps://jumpsq.shueisha.co.jp/rensai/showhashowten/read/\n\n▽ジャンプSQ.にて好評連載中！\nhttps://jumpsq.shueisha.co.jp/\n\n©浅倉秋成・小畑健／集英社"
+        }
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 1,
+    "resultsPerPage": 1
+  }
+}

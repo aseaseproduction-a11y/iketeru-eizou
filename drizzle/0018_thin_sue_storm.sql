@@ -1,0 +1,1 @@
+ALTER TABLE `dailyCollectionRuns` ADD `updatedCount` int DEFAULT 0 NOT NULL;

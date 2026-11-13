@@ -1,0 +1,57 @@
+{
+  "kind": "youtube#videoListResponse",
+  "etag": "8m8s0Aix0_h0EVW5LbdkhV9ARgs",
+  "items": [
+    {
+      "kind": "youtube#video",
+      "etag": "1MUe1zX0PstAruZeBPSuYCd9ldg",
+      "id": "cnjSVom_vEE",
+      "snippet": {
+        "publishedAt": "2025-06-08T11:01:04Z",
+        "channelId": "UC4mR9c6KXNzLQ7kfBM1fI-Q",
+        "title": "Vibrance motion graphics",
+        "description": "When I work with the big tech companies, Google and Samsung,\nThere were few explorations and tests that I made and liked, but didn’t out to final ver.\nI thought It’d be good to archive them somewhere!\n\nSo I make this vibrance visual motion graphics,\nrecreated some shots used the google style and focused on transition.\n\nIf you want to see\nwhat I worked for Google with ordinary folks, link here:)\nhttps://youtu.be/qbqZQFOVfA8?si=9Q6ph4iWN8V-DYIH\n\nmusic\nCosmonkey - Bubbles Drop\n\ncontact\n\ninsta        seven_playstudy\ndiscord    seven_playstudy\nemail       seven.playstudy@gmail.com\n\nAll rights reserved PlayStudy seven 2025",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/cnjSVom_vEE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/cnjSVom_vEE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/cnjSVom_vEE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/cnjSVom_vEE/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/cnjSVom_vEE/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "seven",
+        "categoryId": "22",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "en",
+        "localized": {
+          "title": "Vibrance motion graphics",
+          "description": "When I work with the big tech companies, Google and Samsung,\nThere were few explorations and tests that I made and liked, but didn’t out to final ver.\nI thought It’d be good to archive them somewhere!\n\nSo I make this vibrance visual motion graphics,\nrecreated some shots used the google style and focused on transition.\n\nIf you want to see\nwhat I worked for Google with ordinary folks, link here:)\nhttps://youtu.be/qbqZQFOVfA8?si=9Q6ph4iWN8V-DYIH\n\nmusic\nCosmonkey - Bubbles Drop\n\ncontact\n\ninsta        seven_playstudy\ndiscord    seven_playstudy\nemail       seven.playstudy@gmail.com\n\nAll rights reserved PlayStudy seven 2025"
+        },
+        "defaultAudioLanguage": "en"
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 1,
+    "resultsPerPage": 1
+  }
+}

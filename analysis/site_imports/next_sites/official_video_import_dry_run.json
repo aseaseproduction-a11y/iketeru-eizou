@@ -1,0 +1,38 @@
+{
+  "mode": "dry-run",
+  "completedAt": "2026-08-19T06:18:55.344Z",
+  "counts": {
+    "planned": 63,
+    "insertable": 58,
+    "inserted": 0,
+    "skipped": 5
+  },
+  "inserted": [],
+  "skipped": [
+    {
+      "id": "998498092",
+      "title": "SHIBUYA DOGENZAKA FLAG Sigange - 02 / Matsumoto Kiyoshi",
+      "reason": "duplicate_normalized_title"
+    },
+    {
+      "id": "807801469",
+      "title": "ISSEY MIYAKE / IM MEN “FLAT MEN”",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "c_9UTrrqcLI",
+      "title": "[MV] TAK - 'Lucky Doki' feat. xei",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "staQ0DR6oaY",
+      "title": "神聖かまってちゃん「死にたいひまわり」Music Video",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "5i6sslqgeio",
+      "title": "桑田佳祐 – 人誑し / ひとたらし [Official Music Video]",
+      "reason": "duplicate_id"
+    }
+  ]
+}

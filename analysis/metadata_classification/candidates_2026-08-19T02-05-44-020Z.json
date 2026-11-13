@@ -1,0 +1,4507 @@
+{
+  "generatedAt": "2026-08-19T02:08:00.508Z",
+  "model": "gpt-5-mini",
+  "taxonomy": {
+    "genres": [
+      "tv-cm",
+      "web-cm",
+      "branded-movie",
+      "youtube-sns",
+      "mv",
+      "corporate",
+      "film",
+      "opening",
+      "making",
+      "documentary"
+    ],
+    "products": [
+      "beauty",
+      "fashion",
+      "food",
+      "daily",
+      "automotive",
+      "gaming",
+      "it",
+      "travel",
+      "medical",
+      "real-estate",
+      "transport",
+      "entertainment",
+      "electronics",
+      "sports"
+    ],
+    "directions": [
+      "live-action",
+      "vfx-3dcg",
+      "motion-graphics",
+      "generative-ai",
+      "camera-work",
+      "motion-control",
+      "stop-motion",
+      "virtual-production",
+      "illustration"
+    ],
+    "tones": [
+      "stylish",
+      "comical",
+      "emotional",
+      "luxury"
+    ]
+  },
+  "inputCount": 100,
+  "candidateCount": 100,
+  "acceptedCount": 73,
+  "inputs": [
+    {
+      "id": "WaLQMwpaRHI",
+      "title": "Ichigo - M4rkim | Znow",
+      "videoUrl": "https://youtu.be/WaLQMwpaRHI",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "znow_aex",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗Ichigo - M4rkim | Znow水面反射っぽいエフェクト 掲載者コメントに基づく注目点: 💗Ichigo - M4rkim | Znow水面反射っぽいエフェクト"
+    },
+    {
+      "id": "P6ZLs39MBlk",
+      "title": "永遠の銀 / 大神ミオ Cover.",
+      "videoUrl": "https://youtu.be/P6ZLs39MBlk",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Mio Channel 大神ミオ",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗永遠の銀 / 大神ミオ Cover.おもしろ映像量産しとる 掲載者コメントに基づく注目点: 💗永遠の銀 / 大神ミオ Cover.おもしろ映像量産しとる"
+    },
+    {
+      "id": "hHhzZzXIeOI",
+      "title": "オリジナル作品「ETERNITY」",
+      "videoUrl": "https://www.youtube.com/watch?v=hHhzZzXIeOI",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2023",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2023選出",
+        "2D animation",
+        "3DCG",
+        "Animation",
+        "Experimental film",
+        "Original",
+        "Short film"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2023」の選出作品として、オリジナル作品「ETERNITY」を作品アーカイブで紹介する。 目覚めた少年の目に映るのは永遠の姿 「映像作家100人 2023」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、3DCG、Animation、Experimental film、Original、Short film。"
+    },
+    {
+      "id": "783562288",
+      "title": "WOW25 “Viewpoints” from Unlearning the Visuals",
+      "videoUrl": "https://vimeo.com/783562288",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2023",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2023選出",
+        "3DCG",
+        "Animation",
+        "Event",
+        "Installation",
+        "Motion graphics",
+        "Original",
+        "Projection mapping"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2023」の選出作品として、WOW25 “Viewpoints” from Unlearning the Visualsを作品アーカイブで紹介する。 「視点」を変えると新しいものが見えてくること、感じ方や考え方が変わることは、誰もが身に覚えのあるだろう。 本作では、視点を変えたり特定の視点のみにフォーカスすることで、 意図して景色が再構成され嗜みを生みだすことにチャレンジした。 「映像作家100人 2023」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 3DCG、Animation、Event、Installation、Motion graphics、Original、Projection mapping。"
+    },
+    {
+      "id": "GmetlootbhE",
+      "title": "パソコン音楽クラブ – SIGN feat. 藤井隆",
+      "videoUrl": "https://www.youtube.com/watch?v=GmetlootbhE",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2023",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2023選出",
+        "Music video",
+        "Short film"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2023」の選出作品として、パソコン音楽クラブ – SIGN feat. 藤井隆を作品アーカイブで紹介する。 パソコン音楽クラブ - SIGN feat. 藤井隆 「映像作家100人 2023」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: Music video、Short film。"
+    },
+    {
+      "id": "9tcWWQiV4Bg",
+      "title": "第9回 新千歳空港国際アニメーション映画祭 公式トレーラー映像",
+      "videoUrl": "https://www.youtube.com/watch?v=9tcWWQiV4Bg",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2023",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2023選出",
+        "2D animation",
+        "Animation",
+        "Event",
+        "Title movie"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2023」の選出作品として、第9回 新千歳空港国際アニメーション映画祭 公式トレーラー映像を作品アーカイブで紹介する。 映画祭メインビジュアルの自身のイラストレーションをコンセプトアートとしてアニメーションに落とし込んだ。複雑性を孕みながら洗練されたグラフィックを動かすために、動きにおける描写と抜けのバランスを意識し、変化し続けるという映画祭のコンセプトを体現することを目指した。 「映像作家100人 2023」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、Animation、Event、Title movie。"
+    },
+    {
+      "id": "giJKMtRnD20",
+      "title": "CHAINSAW MAN #9 Ending│Aimer「Deep down」",
+      "videoUrl": "https://www.youtube.com/watch?v=giJKMtRnD20",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2023",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2023選出",
+        "2D animation",
+        "Animation",
+        "Short film"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2023」の選出作品として、CHAINSAW MAN #9 Ending│Aimer「Deep down」を作品アーカイブで紹介する。 ©藤本タツキ／集英社・MAPPA | 2022\r\n\r\nCHAINSAW MAN #9 Ending│Aimer「Deep down」 「映像作家100人 2023」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、Animation、Short film。"
+    },
+    {
+      "id": "827675053",
+      "title": "アニメ「電器少女」EDアニメーション",
+      "videoUrl": "https://vimeo.com/827675053",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2023",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2023選出",
+        "2D animation",
+        "Animation",
+        "Art work",
+        "Music video",
+        "Opening movie"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2023」の選出作品として、アニメ「電器少女」EDアニメーションを作品アーカイブで紹介する。 「電器少女」は、主人公が擬人化した自宅の冷蔵庫との日常を描いたアニメ作品。\r\nエンディングアニメーションにおいては、日常の些細な出来事の中に平穏な幸せがあることを表現するため、「春に百花あり 秋に月あり、夏に涼風あり 冬に雪あり、もし閑事の心頭に挂こと無くんば、すなわち是れ人間の好時節」という詩からモチーフを借り、四季流転を描いた。\r\nまた、インクと水彩を使った作画に加え、手帳をコラージュする時よく使うシールやスタンプのイメージを取り入れ、「貴重な日々を丁寧に記録した」という雰囲気を表そうとした。 「映像作家100人 2023」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、Animation、Art work、Music video、Opening movie。"
+    },
+    {
+      "id": "Ep0YHnNRAds",
+      "title": "アサヒスーパードライ「ビア語り　父とビール」",
+      "videoUrl": "https://www.youtube.com/watch?v=Ep0YHnNRAds",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2023",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2023選出",
+        "2D animation",
+        "Animation",
+        "Promotion",
+        "Web CM",
+        "Web movie"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2023」の選出作品として、アサヒスーパードライ「ビア語り　父とビール」を作品アーカイブで紹介する。 自主制作で実験をしていた「一筆書きマンガ」という手法を、初めてクライアントワークに取り入れた作品。\r\n描くエピソードは毎回テーマに沿って応募してもらい、おそらく実話が元になっているため、話にリアリティがある。\r\n一筆書きが描かれていく様子は独特の魅力がある。 「映像作家100人 2023」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、Animation、Promotion、Web CM、Web movie。"
+    },
+    {
+      "id": "3sSQt6N4WgY",
+      "title": "立川翼 梅ふわり",
+      "videoUrl": "https://www.youtube.com/watch?v=3sSQt6N4WgY",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2023",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2023選出",
+        "2D animation",
+        "Animation",
+        "Music video"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2023」の選出作品として、立川翼 梅ふわりを作品アーカイブで紹介する。 立川翼「梅ふわり」のミュージックビデオ。\r\n楽曲の暖かさを鉛筆アニメーションで表現。 「映像作家100人 2023」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、Animation、Music video。"
+    },
+    {
+      "id": "JKque0N2bww",
+      "title": "パックマンMV『We are PAC-MAN!』",
+      "videoUrl": "https://www.youtube.com/watch?v=JKque0N2bww",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2023",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2023選出",
+        "2D animation",
+        "Animation",
+        "Music video"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2023」の選出作品として、パックマンMV『We are PAC-MAN!』を作品アーカイブで紹介する。 株式会社バンダイナムコエンターテインメントの「パックマン」公式MV、『We are PAC-MAN!』Character Style(手描きタッチ)パートのアニメーションを担当しました。\r\n\r\n紙ドローイング(筆ペン・コピック・カラーインク)\r\nAftereffects\r\nPhotoshop\r\nCLIP STUDIO PAINT(iPad版を下書き作業で使用) 「映像作家100人 2023」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、Animation、Music video。"
+    },
+    {
+      "id": "774363499",
+      "title": "PLEATS PLEASE ISSEY MIYAKE “ENCHANT and ONE STEP” 2022 HOLIDAYMOVIE",
+      "videoUrl": "https://vimeo.com/774363499",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2023",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2023選出",
+        "3DCG",
+        "Animation",
+        "Brand movie",
+        "Short film",
+        "Web CM",
+        "Web movie"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2023」の選出作品として、PLEATS PLEASE ISSEY MIYAKE “ENCHANT and ONE STEP” 2022 HOLIDAYMOVIEを作品アーカイブで紹介する。 With the appearance of three unique characters, a skier, an astronaut, and a climber, the print of ENCHANT is transformed into a stage with colorful flags, outer space, and colorful bouldering stones.\r\n\r\nThis movie expresses the positive mood of PLEATS PLEASE ISSEY MIYAKE, which makes you excited just by wearing it.\r\n\r\nさまざまな職業のキャラクターを散りばめたプリントシリーズ「ONE STEP」と、シチュエーションを自由に想像できる、つぶつぶとした柄が特徴的なシリーズ「ENCHANT」の世界観を表現した特別なムービーを公開しました。\r\n\r\n\r\nFocusing on the skier, astronaut, and climber from the ONE STEP characters, the video expresses each character's personality in a relaxed manner.\r\n\r\nONE STEPのキャラクターの中からスキーヤー、宇宙飛行士、クライマーにフォーカスし,それぞれのキャラクターの個性を伸び伸びと表現した映像に仕上げました。 「映像作家100人 2023」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 3DCG、Animation、Brand movie、Short film、Web CM、Web movie。"
+    },
+    {
+      "id": "mzRzwSSRRjo",
+      "title": "『ピギーワン SUPER SPARK』1st Trailer",
+      "videoUrl": "https://www.youtube.com/watch?v=mzRzwSSRRjo",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2023",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2023選出",
+        "2D animation",
+        "Animation",
+        "R&amp;D"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2023」の選出作品として、『ピギーワン SUPER SPARK』1st Trailerを作品アーカイブで紹介する。 アニメーターはなぶしと個人ゲーム開発者hako 生活がタッグを組んだ2Ｄドットアクションゲーム。\r\n2023年発売予定。 「映像作家100人 2023」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、Animation、R&amp;D。"
+    },
+    {
+      "id": "665641207",
+      "title": "山火事 / a forest fire",
+      "videoUrl": "https://vimeo.com/665641207",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2023",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2023選出",
+        "2D animation",
+        "Animation",
+        "Short film"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2023」の選出作品として、山火事 / a forest fireを作品アーカイブで紹介する。 江戸時代末期の小さな村に山火事が迫る四日間の過程です。\r\nコロナウイルスによる目に見えない不安に覆われ、真偽の区別がつかない噂や情報に翻弄されるこの時代に、自分の身を自分達で守らざるを得なかったかつての時代の、小さな共同体として危機に立ち遭った人々を描きました。\r\n擬人化した炎は、パフォーマーによる炎のパントマイム表現を実写で撮影し、実写からアニメーションに描き起こすロトスコープの手法で作成しました。 「映像作家100人 2023」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、Animation、Short film。"
+    },
+    {
+      "id": "suguLfCgn88",
+      "title": "昭和一二四年 SHOWA124 予告編",
+      "videoUrl": "https://www.youtube.com/watch?v=suguLfCgn88",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2023",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2023選出",
+        "3DCG",
+        "Animation",
+        "Short film"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2023」の選出作品として、昭和一二四年 SHOWA124 予告編を作品アーカイブで紹介する。 Blenderを使った個人制作のフルCGアニメーションのティザームービーです。Twitter上で115万再生を記録いたしました。「存在しない未来へのノスタルジー」をビジュアルコンセプトにおき、人類の衰退後AIにより無限に再構築され続ける「東京」を舞台に、ある使命を帯びた少女の旅を描きます。今冬に第一話を公開する予定です。 「映像作家100人 2023」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 3DCG、Animation、Short film。"
+    },
+    {
+      "id": "656729574",
+      "title": "BOTTEGA VENETA – Issued by Bottega / ISSUE 03",
+      "videoUrl": "https://vimeo.com/656729574",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2023",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2023選出",
+        "Fashion film",
+        "Web"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2023」の選出作品として、BOTTEGA VENETA – Issued by Bottega / ISSUE 03を作品アーカイブで紹介する。 ラグジュアリーブランドとのコラボレーションビジュアルをブランドのデジタルジャーナル上で発表。今期のコンセプト「Salon」をテーマに、ネオンをモチーフとした単純な線の明滅のみで構成されるミニマルなループアニメーションを制作。コレクションのプロダクト・カラー・テクスチャを用いて、華やかながらストイックであるブランドの新しいアイデンティティを表現しました。 「映像作家100人 2023」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: Fashion film、Web。"
+    },
+    {
+      "id": "S4QdVgId5J0",
+      "title": "柴田聡子「雑感」",
+      "videoUrl": "https://www.youtube.com/watch?v=S4QdVgId5J0",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2023",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2023選出",
+        "Music video"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2023」の選出作品として、柴田聡子「雑感」を作品アーカイブで紹介する。 アーティストコレクティブのヨフが作品制作において重視してきた「虚実を横断させる視覚経験」を、映像制作工程（映像撮影→ポストプロダクション）へ適応させる方法論を探りながら、アイディアを練っていきました。実際には、ワンカットロングショットによる撮影と、ポスプロでの時間軸の操作により制作しています。\r\nワンカットの撮影ではサビの間、紙吹雪が舞い落ちる中、柴田聡子さんだけピタッと静止し続けることが、このMVのアイディア実現の条件へつながっています。ポスプロにて部分ごとに細かな時間軸の操作を施すことで、静止する柴田さんに変化はなくとも、周囲でパラパラと落下していた紙吹雪だけが、逆行したり、画面の中心に吸い込まれるような動きや、極度に圧縮されノイズのように変質するなど、様々な振る舞いが作り出されます。このような静と動の対比によるリアリティの歪みを演出のベースとしました。\r\nさらに中盤では、柴田さんの画角を固定したままカメラを動かすことで、背景までもグニャりと歪ませ、キラキラと舞い落ちる紙片が曲の展開と相まり、どこか銀河の果てのような非現実的な世界観を醸し出す印象的なシーンとなっています。 「映像作家100人 2023」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: Music video。"
+    },
+    {
+      "id": "VxUL2E8jpTY",
+      "title": "CHILLOUT製品紹介動画",
+      "videoUrl": "https://www.youtube.com/watch?v=VxUL2E8jpTY",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2023",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2023選出",
+        "3DCG",
+        "Animation",
+        "Web CM"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2023」の選出作品として、CHILLOUT製品紹介動画を作品アーカイブで紹介する。 キャラクターアニメーションを効果的に用いることによって、最後まで楽しく見続けられる製品紹介動画を制作しました。 「映像作家100人 2023」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 3DCG、Animation、Web CM。"
+    },
+    {
+      "id": "mHuGTWkdQiM",
+      "title": "GEZAN with Million Wish Collective 「We Were The World」（Official Music Video)",
+      "videoUrl": "https://www.youtube.com/watch?v=mHuGTWkdQiM",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2023",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2023選出",
+        "3DCG",
+        "Animation",
+        "Music video"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2023」の選出作品として、GEZAN with Million Wish Collective 「We Were The World」（Official Music Video)を作品アーカイブで紹介する。 Unreal Engine 5 で制作 「映像作家100人 2023」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 3DCG、Animation、Music video。"
+    },
+    {
+      "id": "1LPKTkxLAKc",
+      "title": "Casper Caan “Last Chance” MV",
+      "videoUrl": "https://www.youtube.com/watch?v=1LPKTkxLAKc",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2023",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2023選出",
+        "2D animation",
+        "3DCG",
+        "Music video"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2023」の選出作品として、Casper Caan “Last Chance” MVを作品アーカイブで紹介する。 Casper Caanの楽曲「Last Chance」の世界観とメッセージ性を、2Dアニメーションとコラージュ技法を用いた物語により表現。 「映像作家100人 2023」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、3DCG、Music video。"
+    },
+    {
+      "id": "f8si675mZP4",
+      "title": "HIYADAM – Dishhh! (feat. MonyHorse)【Official Video】",
+      "videoUrl": "https://www.youtube.com/watch?v=f8si675mZP4",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2023",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2023選出",
+        "Music video"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2023」の選出作品として、HIYADAM – Dishhh! (feat. MonyHorse)【Official Video】を作品アーカイブで紹介する。 GoproMAXのみで撮影しました 「映像作家100人 2023」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: Music video。"
+    },
+    {
+      "id": "H8brapawOXM",
+      "title": "Kaleidoscope",
+      "videoUrl": "https://www.youtube.com/watch?v=H8brapawOXM",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2023",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2023選出",
+        "Audio visual performance",
+        "Installation",
+        "Projection mapping"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2023」の選出作品として、Kaleidoscopeを作品アーカイブで紹介する。 「Kaleidoscope」はペーチ大聖堂の再建に焦点を当て、色彩の象徴と「光」の表現をテーマにした映像を制作しました。\r\n2021にハンガリーのペーチ大聖堂でプロジェクションされました。 「映像作家100人 2023」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: Audio visual performance、Installation、Projection mapping。"
+    },
+    {
+      "id": "pKF_p_IIujI",
+      "title": "Kabanagu + 諭吉佳作/men「すなばピクニック」MV",
+      "videoUrl": "https://www.youtube.com/watch?v=pKF_p_IIujI",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "Music video"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、Kabanagu + 諭吉佳作/men「すなばピクニック」MVを作品アーカイブで紹介する。 バグった猫に注目。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: Music video。"
+    },
+    {
+      "id": "ueaEM5-INdY",
+      "title": "Little Tooth “Tightrope” Music Video",
+      "videoUrl": "https://www.youtube.com/watch?v=ueaEM5-INdY",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "3DCG",
+        "Motion graphics",
+        "Music video"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、Little Tooth “Tightrope” Music Videoを作品アーカイブで紹介する。 ロックバンドHelsinki Lambda Clubのフロントマン橋本薫による\r\nソロプロジェクト\"Little Tooth\"のミュージックビデオ。\r\n\r\nダイバーの3Dオブジェクトを中心にコラージュやモーションで\r\n展開していく全編アニメーション作品。\r\n\r\n歌詞からインスパイアし、\r\n・自分(もしくは相手)の内面、インナースペースに飛び込み、探索する\r\n・ダンスナンバー ×「恋愛のやけっぱち感」=とにかくダンス\r\nをテーマに、キュートでエネルギーのあるビデオを目指しています。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 3DCG、Motion graphics、Music video。"
+    },
+    {
+      "id": "7RXf7jrOFPc",
+      "title": "daisy*「HAKONIWA」",
+      "videoUrl": "https://www.youtube.com/watch?v=7RXf7jrOFPc",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "3DCG",
+        "Art work",
+        "Experimental film",
+        "Installation",
+        "Interactive",
+        "Original"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、daisy*「HAKONIWA」を作品アーカイブで紹介する。 The viewer him/herself enters this virtual world where they can explore and play. Hakoniwa, a pun\r\ncombining the words for “box” and “garden”, is indeed the perfect environment for the playful creativity\r\nthat the piece inspires.\r\n\r\nAfter your face is 3D scanned, you fall through the sky as a character of the world where you quickly\r\nadopt the funny exercises of the other citizens such as dancing around and occasionally dropping your\r\nface on the ground. Simple controls allow for interaction with other characters and their environment as\r\nthe cycle of life creation and destruction keep the world in a state of constant change. \r\n\r\n顔を3D スキャンすることにより自身がアバターとなり、その場で仮想空間に入り込むことができる。\r\nクラシックなゲームコントローラを使って自分を観察したりいたずらすることにより、鑑賞者は現実\r\n世界とは違う体験をする。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 3DCG、Art work、Experimental film、Installation、Interactive、Original。"
+    },
+    {
+      "id": "483466054",
+      "title": "SIGMA I series promotion movie",
+      "videoUrl": "https://vimeo.com/483466054",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022 / 映像作家100人 2023",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "3DCG",
+        "CM",
+        "Web",
+        "Web CM",
+        "2023選出"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、SIGMA I series promotion movieを作品アーカイブで紹介する。 SIGMAの新しいミラーレス用のレンズシリーズ「I series」デビューに際して、告知用プロモーション映像を制作。\r\n高い品質こそが成し得る、単なる道具を超えた美しさや質感から生まれるその佇まいは、手に取って扱う楽しさ、所有する喜びを与えてくれる。そういった新しいレンズシリーズのプロモーションとして、レンズ自体が持つビルドクオリティの高さや細部の質感、そして操作時の心地良い感触を、映像を見た人に最大限に感じとってもらえるような演出を目指した。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 3DCG、CM、Web、Web CM。\n加えて「映像作家100人 2023」にも選出されている。"
+    },
+    {
+      "id": "IfMhjlc-IVk",
+      "title": "GSHOCK GST-B400 Featuring Rui Hachimura",
+      "videoUrl": "https://www.youtube.com/watch?v=IfMhjlc-IVk",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "2D animation",
+        "Advertisement",
+        "Motion graphics",
+        "Web CM"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、GSHOCK GST-B400 Featuring Rui Hachimuraを作品アーカイブで紹介する。 CASIO GSHOCK GST-B400のプロモーションムービー\r\nカリカチュアアーティスト田村大氏によるイラストをアニメーションとモーショングラフィックスで表現。\r\nドリブルからゴールへ向かう八村選手の躍動感あふれる瞬間を切り取り、一連の映像として落とし込んだ。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、Advertisement、Motion graphics、Web CM。"
+    },
+    {
+      "id": "8U-gCTEYxCA",
+      "title": "isshin REEL 2022",
+      "videoUrl": "https://www.youtube.com/watch?v=8U-gCTEYxCA",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "2D animation",
+        "Motion graphics",
+        "Showreel"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、isshin REEL 2022を作品アーカイブで紹介する。 2019〜2021年に制作した自主制作・商業制作作品をまとめたリール。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、Motion graphics、Showreel。"
+    },
+    {
+      "id": "CpjcbY3i7Fk",
+      "title": "petit animation”The Meaning Of Love”(2021)",
+      "videoUrl": "https://www.youtube.com/watch?v=CpjcbY3i7Fk",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "2D animation",
+        "Animation",
+        "Art work",
+        "Music video",
+        "Short film"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、petit animation”The Meaning Of Love”(2021)を作品アーカイブで紹介する。 シンガーソングライターRIQUOのアルバム”TWIN PIANOS”から\r\n楽曲”The Meaning Of Love”に合わせた短いアニメーション。\r\n\r\n水中に響き伝わる音のなかで、愛の意味を歌うシンガー。\r\n\r\n「出会った頃から何回目の春が過ぎたかしら？\r\nそして私たちだけが知っていること\r\n\r\nそして今、私はあなたのそばにいる\r\n歌っている時に感じるあの感じこそ\r\nわかるの　この愛は真実」\r\n（詩から抜粋）\r\n\r\nジャズのように楽曲の中でインプロビゼーションをするように、意味よりも感覚を大事にイマジネーションを拡げて描いた映像詩です。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、Animation、Art work、Music video、Short film。"
+    },
+    {
+      "id": "639034386",
+      "title": "GOOD DESIGN SHOW 2021",
+      "videoUrl": "https://vimeo.com/639034386",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "2D animation",
+        "AD",
+        "Animation",
+        "Motion graphics",
+        "Opening movie",
+        "Promotion",
+        "PV",
+        "Signage",
+        "Web",
+        "Web CM",
+        "Web movie"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、GOOD DESIGN SHOW 2021を作品アーカイブで紹介する。 2021年度に選ばれた1600点を超えるグッドデザインについて語り合う「GOOD DESIGN SHOW 2021」のコンセプトムービー、渋谷駅ビッグサイネージプレミアムと梅田メトロビジョンでのサイネージ映像制作をSONICJAM.Studioが担当しました。\r\nコンセプトムービーではグッドデザイン賞の祝福感や、デザインによって異なる考え方・視点を吹き出しのモーションで表現し、多様性のある沢山の参加者がやり取りしあって賑わうイメージでストーリーを組み立てました。\r\nサイネージ映像では通行者の目を引くよう常に動きのあるモーション付けをし、どのシーンから見ても「グッドデザイン賞」を訴求できるシームレスな設計をしました。2021年10月18日から掲出のティザー映像では賑やかなタイポグラフィと画面切り替えで今年度の受賞作品発表への期待感を煽り、10月20日のグッドデザイン賞発表に合わせて切り替わった本編映像では1600点以上の受賞作品を整然としっかり見せつつ、要所にタイポグラフィモーションを入れることで通行者の意識を引くような映像にしました。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、AD、Animation、Motion graphics、Opening movie、Promotion、PV、Signage、Web、Web CM、Web movie。"
+    },
+    {
+      "id": "662541028",
+      "title": "SHOWREEL2021",
+      "videoUrl": "https://vimeo.com/662541028",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "2D animation",
+        "3DCG",
+        "AD",
+        "Advertisement",
+        "Animation",
+        "CM",
+        "Motion graphics",
+        "Music video",
+        "Showreel"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、SHOWREEL2021を作品アーカイブで紹介する。 平井秀次のショーリール。どの瞬間を切り取っても絵になるような絵作り、2D, 3Dを行き交うグラフィカルな演出が特徴的。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、3DCG、AD、Advertisement、Animation、CM、Motion graphics、Music video、Showreel。"
+    },
+    {
+      "id": "w6eWno3iAjk",
+      "title": "花譜『それを世界と言うんだね』Official Music Video",
+      "videoUrl": "https://www.youtube.com/watch?v=w6eWno3iAjk",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "2D animation",
+        "Art work",
+        "Music video",
+        "PV"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、花譜『それを世界と言うんだね』Official Music Videoを作品アーカイブで紹介する。 歌詞の世界観を体現するように、主人公花譜が次々の姿を変え、時代を飛んで小説を書く楽しさを改めて見出すというストーリー。\r\n夢のシーンでは線をメインとして、陰影はあまり使わない、手書き感の強い絵なのに対し、現実のシーンでは実写の空の映像が合成されていたり、線は逆に制限され、建物など写実的に描いている。\r\nこれによって、シーケンスごとの雰囲気に対比を効かせると同時に、物語的なテーマを表現のテーマと一致させた。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、Art work、Music video、PV。"
+    },
+    {
+      "id": "q66WJaikhlo",
+      "title": "ブーブーはいくよ　#06〜10",
+      "videoUrl": "https://www.youtube.com/watch?v=q66WJaikhlo",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "Animation",
+        "Paper craft",
+        "Short film",
+        "Stopmotion",
+        "TV"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、ブーブーはいくよ　#06〜10を作品アーカイブで紹介する。 赤ちゃん向けTV番組「シナぷしゅ」のコーナー、「ブーブーはいくよ」。\r\nワンワン運転手さんは今日も出発進行！切り絵とコマ撮りの手法を用いた短編アニメーションシリーズ。#06〜#10 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: Animation、Paper craft、Short film、Stopmotion、TV。"
+    },
+    {
+      "id": "538690962",
+      "title": "Nipponpaint Automotive “LOOP”",
+      "videoUrl": "https://vimeo.com/538690962",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "2D animation",
+        "Animation",
+        "VP"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、Nipponpaint Automotive “LOOP”を作品アーカイブで紹介する。 日本ペイントオートモーティブ・コーティングスは「未来の色」を開発する部門。\r\nこれからを生きる人に未来の色を届ける、きっとそういう想いが込められているのだと思います。\r\nでは、「未来の色」って何か？\r\n昨今の肌や目で感じ取れるほどの環境の変化。\r\n見せたかった未来の色はこんな色だったのだろうか。\r\n未来の色は、未来に残したい色じゃないか？\r\nそんなことを提案し、作りました。\r\n\r\nNippon Paint Automotive Coatings is a division that develops the colors of the future.\r\nSo what is the color of the future? \r\nThese days, the environment has changed so much that we can feel it with our skin and eyes. \r\nWould the colors of the future that we wanted to show you have been such colors? \r\nThe colors of the future we should aim for are the colors we want to leave behind in the future. 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、Animation、VP。"
+    },
+    {
+      "id": "695549616",
+      "title": "NANAME REEL 2022",
+      "videoUrl": "https://vimeo.com/695549616",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "Showreel"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、NANAME REEL 2022を作品アーカイブで紹介する。 NANAME INC. SHOWREEL 2021-2022 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: Showreel。"
+    },
+    {
+      "id": "683133059",
+      "title": "digital_sticker_ikebukuro",
+      "videoUrl": "https://vimeo.com/683133059",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "2D animation",
+        "AR",
+        "Motion graphics",
+        "Motion logo",
+        "Original"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、digital_sticker_ikebukuroを作品アーカイブで紹介する。 池袋の街を撮影、3Dトラッキングし、モーショングラフィックをステッカーのように貼っていった映像です。\r\n池袋の地名の由来を元にモーショングラフィックを作成、合成しました。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、AR、Motion graphics、Motion logo、Original。"
+    },
+    {
+      "id": "PP8a9D_5eFA",
+      "title": "THE SIXTH LIE – Everything Lost",
+      "videoUrl": "https://www.youtube.com/watch?v=PP8a9D_5eFA",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "3DCG",
+        "Music video"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、THE SIXTH LIE – Everything Lostを作品アーカイブで紹介する。 ディレクター涌井がドラマーとして所属するバンド「THE SIXTH LIE」の\r\n活動がコロナ禍で困難になり、自分が今できることを模索していく中で\r\nBlenderによる3DCG・VFXを学び始め、試行錯誤をくり返しながら１年半の制作期間を経てたった一人で制作したミュージックビデオです。\r\n\r\n人物はグリーンバックにより撮影しており、それ以外は全て3DCGで制作しています。\r\n誰もいなくなって荒廃した世界を舞台に、崩壊していくビルの屋上での演奏シーンやメンバーが奈落に落ちていくシーンなどを簡易なグリーンバック撮影のみで実現した本作はVFX JAPAN AWARD2022にて優秀賞を受賞するなど、3DCG・VFX界隈にて大きな注目を集めました。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 3DCG、Music video。"
+    },
+    {
+      "id": "FwrL2tFt7nw",
+      "title": "ゲーカーナトゥミ「君は死んでない」",
+      "videoUrl": "https://www.youtube.com/watch?v=FwrL2tFt7nw",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "Animation"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、ゲーカーナトゥミ「君は死んでない」を作品アーカイブで紹介する。 ハムスターを飼いたい。しかし彼らはいつか死んでしまう。その悲しみや苦しみに、私は耐えられるだろうか。いや耐えられないだろう。\r\n\r\n「ならばいっそのこと、既に死んでいるものを飼ってみてはどうか。」\r\n\r\nそう考えた少女は、身の回りにある様々な命なき物体へ命を宿していく。\r\n\r\nでは、すでに死んでいる彼らが再び死を迎えるのはいつだろう。この作品は「死」が再び死ぬ瞬間を描いたアニメーションである。\r\n\r\n単純化されたファンシーなキャラクターと、対照的に鮮明な実写映像を組み合わせることで、可愛らしさとグロテスクを共存させ、互いの魅力をより引き立てるよう制作している。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: Animation。"
+    },
+    {
+      "id": "661835461",
+      "title": "SHOW REEL 2022",
+      "videoUrl": "https://vimeo.com/661835461",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "2D animation",
+        "3DCG",
+        "Advertisement",
+        "Event",
+        "Motion graphics",
+        "Original",
+        "Showreel",
+        "劇場映画"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、SHOW REEL 2022を作品アーカイブで紹介する。 クライアントワーク、個人制作などをまとめた最新のショーリールです。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、3DCG、Advertisement、Event、Motion graphics、Original、Showreel、劇場映画。"
+    },
+    {
+      "id": "580725557",
+      "title": "輪郭 -Contour-",
+      "videoUrl": "https://vimeo.com/580725557",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "3DCG",
+        "Art work",
+        "Short film"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、輪郭 -Contour-を作品アーカイブで紹介する。 作品について\r\n薄暗い荒野、疲れた体を引きずるように同じ場所を歩き続ける男。残像のように複製される男の分身が宙を浮遊し、巨大な集塊となり男の頭上を覆う。地上では、男の歩みを邪魔するかのように触手がまとわりつく。やがて男は地面に倒れ込み、精神世界へ沈んでいくー。\r\n\r\n常に情報に晒され、複雑な人間関係と共に生きる現代人。自己認識による自身の輪郭・境界線は揺らぎ、変異し、溶けていく。その繰り返しを生きる人間を、異質な鮮やかさで描いた映像作品。\r\n\r\nBest of Stash、Telly Award金賞を受賞した北畠遼・佐々木拓磨ユニットが演出・制作。最新の撮影技術ボリュメトリクスを採用し、ロンドンのディメンション・スタジオで撮影、音楽はマックス・クーパーが手掛けた。\r\n\r\nMax Cooper\r\n過去10年間で、マックス・クーパーのようにエレクトロニック・ミュージック、ビジュアルアート、テクノロジー、科学の関係を問い直し、発展させたアーティストがどれほどいただろうか。クーパーは、バービカン・センター、ザハ・ハディド・アーキテクツやドルビー・アトモスなど、多分野にわたるアーティストや機関とのコラボレーションを通じて、没入型インスタレーションや、心理音響、ビジュアルアート、エレクトロニック・ミュージックの制作をミックス・メディア的なアプローチを用いて活動している。\r\nMax Cooper▶ maxcooper.net/\r\n\r\nDimension Studio\r\nディメンション・スタジオは、次世代のバーチャル・プロダクション、デジタル・ヒューマン、XRコンテンツを制作するための、革新的なボリュメトリックおよびリアルタイムの制作を提供しているロンドンのスタジオ。イギリス・アメリカを拠点とする制作スタジオと、世界中で稼働するモバイル環境で、未来のバーチャル・エンターテイメントの実現に取り組んでいる。\r\nDimension Studio▶ dimensionstudio.co/ 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 3DCG、Art work、Short film。"
+    },
+    {
+      "id": "671528509",
+      "title": "CONTINUITY",
+      "videoUrl": "https://vimeo.com/671528509",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "Art work",
+        "Installation"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、CONTINUITYを作品アーカイブで紹介する。 焚き火のような作品を作りたかった。\r\n焚き火を囲んでいるときに、言葉や視線を交わさなくても生まれる静かな場が好きだった。\r\n焚き火には感情移入するべき主体も、キャッチするべき情報もない。\r\nそれなのに、ずっと眺めていられる理由を、”連続性”にあると仮定してみた。\r\nこの作品は、不均一で、非同期な映像がいくつか提示され、一つの場をつくっている。\r\nいずれの映像も、継ぎ目を感じさせない映像に仕立てた。それでも映像それぞれは、単なるループかもしれない。\r\nけれど、それらを複数並べて、一つの空間に並置することで焚き火にも似た、連続性が生まれるのではないかと考えた。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: Art work、Installation。"
+    },
+    {
+      "id": "GHQIAi3t6a0",
+      "title": "白南風",
+      "videoUrl": "https://www.youtube.com/watch?v=GHQIAi3t6a0",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "2D animation",
+        "3DCG",
+        "Animation",
+        "Motion graphics",
+        "Original"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、白南風を作品アーカイブで紹介する。 自主制作映像作品。\r\n2021年の梅雨入りと梅雨明けまでをイメージした曲と映像。\r\nめまぐるしい変化と暗いとも明るいとも言えないノスタルジックさを表現した。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、3DCG、Animation、Motion graphics、Original。"
+    },
+    {
+      "id": "3nwknXSrIbA",
+      "title": "MONDO GROSSO / B.S.M.F [Vocal: どんぐりず]",
+      "videoUrl": "https://www.youtube.com/watch?v=3nwknXSrIbA",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "3DCG",
+        "Music video",
+        "XR"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、MONDO GROSSO / B.S.M.F [Vocal: どんぐりず]を作品アーカイブで紹介する。 シュルレアリスムの世界で発見されたのは、どんぐりず、大沢進一、そしてミラーボール。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 3DCG、Music video、XR。"
+    },
+    {
+      "id": "704047024",
+      "title": "ReoNaスペシャルライブ「EX-“LIVE”CHRONICLE」",
+      "videoUrl": "https://vimeo.com/704047024",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "3DCG",
+        "VR",
+        "XR"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、ReoNaスペシャルライブ「EX-“LIVE”CHRONICLE」を作品アーカイブで紹介する。 本ライブの収録にはカヤックがオリジナル開発したバーチャルカメラシステム「ジャンヌダルク」を採用し、モーションキャプチャースタジオとバーチャル空間を連携いたしました。「ジャンヌダルク」は、 バーチャル空間上にカメラマンとして現実のカメラのように撮影ができるだけでなく、いくつものシステムを搭載したバーチャルドローンカメラによりバーチャル空間でしかできない撮影を実現しています。さらに、モーションキャプチャーでカメラ座標を取得することでリアルカメラをバーチャル空間内とリンクすることが可能です。リアルとアバターのReoNaが切り替わることで、『ソードアート・オンライン -エクスクロニクル- Online Edition』の空間をひとつなぎにし、現実と仮想空間をいったりきたりする新しいライブ演出を実現いたしました。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 3DCG、VR、XR。"
+    },
+    {
+      "id": "566764820",
+      "title": "Marina Nakagawa Reel 2021",
+      "videoUrl": "https://vimeo.com/566764820",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "2D animation",
+        "3DCG",
+        "Animation",
+        "Motion graphics"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、Marina Nakagawa Reel 2021を作品アーカイブで紹介する。 2021年中旬までの仕事や個人制作を含めたショーリールです。\r\n\r\n00:00 - Motion Reel Intro - Design & Animation\r\n00:05 - A pinch of love - Direction & Design & Animation\r\n00:08 - Mass Effect stickers - Design & Animation\r\n00:12 - State festival project - Design & Animation\r\n00:16 - This world with you - Direction & Design & Animation\r\n00:20 - Wow wheat beer - Design & Animation\r\n00:24 - Sakura 005 web promotion - Design & Animation\r\n00:31 - Cyberpunk 2077 sticker - Design & Animation\r\n00:33 - School of motion C4D Ascent final project - Design & Animation\r\n00:37 - Thiscover Weezer/Pinkerton - Design & Animation\r\n00:42 - Kaci Brookz - Contagious (Official Music Video) - Design & Animation\r\n00:46 - Wow wheat beer - Design & Animation\r\n00:48 - Hisae/ヒサ絵 - It's OK To Forget/忘れてもいいよ(Official Music Video) - Design & Animation\r\n00:51 - Mahina - Suisei no oppo ni tsukamatte (Official Music Video)(Official Music Video) - Design & Animation 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、3DCG、Animation、Motion graphics。"
+    },
+    {
+      "id": "5KsXVs8Vg7U",
+      "title": "角巻わため Everlasting Soul MV",
+      "videoUrl": "https://www.youtube.com/watch?v=5KsXVs8Vg7U",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "3DCG",
+        "Music video"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、角巻わため Everlasting Soul MVを作品アーカイブで紹介する。 Unity,Maya,UE4など様々なツールを駆使して制作しています。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 3DCG、Music video。"
+    },
+    {
+      "id": "696403114",
+      "title": "Amazon Holidays – Playful Conveyor Belt",
+      "videoUrl": "https://vimeo.com/696403114",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "3DCG",
+        "Advertisement",
+        "Animation",
+        "CM",
+        "Motion graphics",
+        "TV-CM"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、Amazon Holidays – Playful Conveyor Beltを作品アーカイブで紹介する。 アマゾンの世界について共有できることを非常にうれしく思います。シリーズ最初の1つであり、素晴らしいコラボレーションです。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 3DCG、Advertisement、Animation、CM、Motion graphics、TV-CM。"
+    },
+    {
+      "id": "KpEHo9j2LNg",
+      "title": "eBASEBALLパワフルプロ野球2022 オープニングムービー",
+      "videoUrl": "https://www.youtube.com/watch?v=KpEHo9j2LNg",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "3DCG",
+        "Animation",
+        "Opening movie"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、eBASEBALLパワフルプロ野球2022 オープニングムービーを作品アーカイブで紹介する。 前３作のオープニングムービーとはがらりと方向性を変え、熱い青春ムービーに仕上がりました。誰しもが限られた時間の中で必死に生きている。パワプロ君、仲間、ライバル、応援してくれる人々、そんな人々をアオハルエピソードを満載にマネージャー目線で描きました。託された想いを、また次に託す。夢の跡をいつか超えてはじまる僕らの未来。目指せ！甲子園。細かい伏線回収にも拘ったストーリーを是非見てください。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 3DCG、Animation、Opening movie。"
+    },
+    {
+      "id": "vj7Gmv7FC-0",
+      "title": "V.W.P：変身 (The Metamorphosis) MV",
+      "videoUrl": "https://www.youtube.com/watch?v=vj7Gmv7FC-0",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "3DCG",
+        "Music video"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、V.W.P：変身 (The Metamorphosis) MVを作品アーカイブで紹介する。 V.W.P：変身 (The Metamorphosis) MV 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 3DCG、Music video。"
+    },
+    {
+      "id": "Er8gqBIJJiw",
+      "title": "未来の科学者たちへ #16「エネルギー変換」",
+      "videoUrl": "https://www.youtube.com/watch?v=Er8gqBIJJiw",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "Web movie"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、未来の科学者たちへ #16「エネルギー変換」を作品アーカイブで紹介する。 日本の公的研究機関である、物質・材料研究機構（NIMS）のPRのため、NIMSの広報サイト「材料のチカラ」およびNIMSのYouTubeオフィシャルチャンネル内で公開されている科学映像の新作。科学の基本的な考え方のひとつ「エネルギー変換」をテーマに、熱・電気・運動などのエネルギーが相互に変換されるようすを、シンプルで明快な映像で表現した。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: Web movie。"
+    },
+    {
+      "id": "699321535",
+      "title": "sony japan cup 2021 featuring fortnite『yama_live_show』 カーテンコール",
+      "videoUrl": "https://vimeo.com/699321535",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "3DCG",
+        "Animation",
+        "Live action"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、sony japan cup 2021 featuring fortnite『yama_live_show』 カーテンコールを作品アーカイブで紹介する。 舞台とはかけ離れた簡素な場所で形を成して盛り上がっていく様を表現。\r\nUnreal Engineを用いて制作。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 3DCG、Animation、Live action。"
+    },
+    {
+      "id": "682730128",
+      "title": "STAY ALERT",
+      "videoUrl": "https://vimeo.com/682730128",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "3DCG",
+        "Animation",
+        "Original",
+        "Short film"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、STAY ALERTを作品アーカイブで紹介する。 2021年、COVID-19のデルタ株が出始めた時期に、世の中の警戒感の緩みに対する注意喚起をコンセプトに制作しました。\r\n制作は撮影からすべての工程を自宅からリモートで行なっています。\r\n医療従事者の方への応援を込めて、ブルーが目に止まりやすいようにデザインしています。\r\nキャラクターや浮かぶ雲などのオブジェクトは3DCGで制作し、それ以外は自宅のダイニングテーブルで撮影しました。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 3DCG、Animation、Original、Short film。"
+    },
+    {
+      "id": "UzlDLNMirhE",
+      "title": "キタンクラブ15周年記念映像「カプセルトイの歴史（日本語吹き替え版）」全３篇",
+      "videoUrl": "https://www.youtube.com/watch?v=UzlDLNMirhE",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "Animation",
+        "Web movie"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、キタンクラブ15周年記念映像「カプセルトイの歴史（日本語吹き替え版）」全３篇を作品アーカイブで紹介する。 キタンクラブ創立15周年記念映像作品。カプセルトイの歴史をすべて嘘で描いたフェイクドキュメンタリー。全３編。\r\n架空の国の番組の、すべて嘘の内容のドキュメンタリーにSNSで大きな話題となった。\r\n\r\n第2部：近代篇　https://www.youtube.com/watch?v=7iyPhcs9REg\r\n第3部：未来篇　https://www.youtube.com/watch?v=V8ckIfMr97s 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: Animation、Web movie。"
+    },
+    {
+      "id": "-OdsFe8yOs8",
+      "title": "KIRINJI – 再会",
+      "videoUrl": "https://www.youtube.com/watch?v=-OdsFe8yOs8",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "3DCG",
+        "Music video"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、KIRINJI – 再会を作品アーカイブで紹介する。 閉鎖的な部屋の中、一縷の望みをかけるように一条の線が歌詞を紡いでいく作品。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 3DCG、Music video。"
+    },
+    {
+      "id": "dovY4OgXeBw",
+      "title": "観覧車/The Ferris Wheel",
+      "videoUrl": "https://www.youtube.com/watch?v=dovY4OgXeBw",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "Animation",
+        "Paper craft",
+        "Short film",
+        "Stopmotion"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、観覧車/The Ferris Wheelを作品アーカイブで紹介する。 踏みしめる地の下には水がたゆたい、植物や木々は水を吸い上げて成長する。そしてさらに深い所では観覧車が回る。押し流されたモノたちは底に横たわるため、ゆっくりと落ちてゆく。一羽の鳥がそれを見つめながら、観覧車の周りをゆらゆらと泳いでいる。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: Animation、Paper craft、Short film、Stopmotion。"
+    },
+    {
+      "id": "700652038",
+      "title": "ASO CALDERA HIKE – HIKING SEASONS",
+      "videoUrl": "https://vimeo.com/700652038",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "3DCG",
+        "Art work",
+        "Event",
+        "Installation",
+        "Motion graphics",
+        "Projection mapping"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、ASO CALDERA HIKE – HIKING SEASONSを作品アーカイブで紹介する。 ASO CALDERA HIKE\r\nJR熊本駅前に、熊本の大自然である「阿蘇カルデラ」をテーマにした、最大直径約24m、最大高さ約2.4mの巨大空間「ASO CALDERA HIKE（アソ カルデラ ハイク）」を公開しました。\r\n\r\n「もし熊本の大自然が、街のど真ん中にやってきたら。」  ASO CALDERA HIKEは、熊本の大自然の象徴である阿蘇を体験できるコンテンツです。阿蘇のカルデラを取り囲む外輪山をモチーフにした最大直径約24mとなる巨大なオブジェをアミュひろばに設置。円環状に張り巡らされた幕の中に身を投じ、歩き回ったり、腰かけてゆったり過ごすことができます。\r\n夜には駅ビル上層階に設置された約4万ルーメンの高輝度プロジェクターによるショー/幕間の 演出も行われます。 PARTYは企画と総合演出を担当しました。\r\n\r\n \r\n\r\n期間：2021年12月3日（金）〜2022年1月10日（月・祝）\r\n場所：アミュひろば（熊本駅白川口駅前広場）\r\n\r\nショー演出：HIKING SEASONS\r\nテーマは、阿蘇の四季。\r\n阿蘇のカルデラをモチーフにした巨大オブジェクトの中を歩きながら、阿蘇の雄大な景色の移り変わりを楽しむ没入型アート体験です。雪と氷に閉ざされた1月から、野焼き、新緑、ミヤマキリシマ、草と青空、夕日に染まるすすきへと続き、満天の星々が煌めく12月の風景に。四季の移り変わりに応じて姿を変える阿蘇の雄大な景色を約600㎡の広大なプロジェクション映像で演出します。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 3DCG、Art work、Event、Installation、Motion graphics、Projection mapping。"
+    },
+    {
+      "id": "700699352",
+      "title": "ＮＨＫみんなのうた「ふつうとは」アニメーション",
+      "videoUrl": "https://vimeo.com/700699352",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "3DCG",
+        "Animation",
+        "Art work",
+        "Motion graphics",
+        "Music video",
+        "TV"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、ＮＨＫみんなのうた「ふつうとは」アニメーションを作品アーカイブで紹介する。 曲を聴いてまず思ったのが、メロディーに浮遊感を感じたので、フワフワとした物が風に流されたりしながら自由に浮いている映像で、そこに歌詞に登場する「僕」を抽象的に描き、メロディーに合わせて心地よく動くアニメーションを心掛けました。まさにどんぴしゃな感じです。そして、ふつうにたのしい、かわいい、すき、むちゅうなときって自然と笑顔になっちゃいますよね。そんな想いでこの映像を作りました。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 3DCG、Animation、Art work、Motion graphics、Music video、TV。"
+    },
+    {
+      "id": "699367426",
+      "title": "MARVEL GO COLLECTION wave.1",
+      "videoUrl": "https://vimeo.com/699367426",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "CM"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、MARVEL GO COLLECTION wave.1を作品アーカイブで紹介する。 マーベルキャラクターをイメージした、ダイキャストカーがディズニーから登場。アイアンマン、キャプテン・アメリカ、ブラックパンサーなどの人気アベンジャーズヒーローをはじめ、悪役のサノス、スパイダーマン：マキシマム・ヴェノムや、ランチャー台もあわせて発売。海外展開商品の為のCM映像を作成いたしました。ダイキャストは現在日本でも展開される事となり、shop Disney店などでも購入可能。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: CM。"
+    },
+    {
+      "id": "ANMPpFE24oM",
+      "title": "Element Gals",
+      "videoUrl": "https://www.youtube.com/watch?v=ANMPpFE24oM",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "2D animation",
+        "3DCG",
+        "Clay animation",
+        "Promotion",
+        "PV"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、Element Galsを作品アーカイブで紹介する。 This is a CG test reel for short animated series under planning and development.\r\nUses a variety of animation techniques, including 3DCG animation, 2D animation, and V R animation software.\r\nIt is new Magical Girls by the use of dance and musical communication to relax, purify and resolve the enemy, rather than exterminating them through physical combat. 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、3DCG、Clay animation、Promotion、PV。"
+    },
+    {
+      "id": "514214406",
+      "title": "B.D.W. Showreel  “ACID”",
+      "videoUrl": "https://vimeo.com/514214406",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "Showreel"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、B.D.W. Showreel  “ACID”を作品アーカイブで紹介する。 Check out of the latest work by B.D.W. (BUDDHA Inc.) 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: Showreel。"
+    },
+    {
+      "id": "DyEVmTGwCqo",
+      "title": "しなぷしゅ「すくすく」",
+      "videoUrl": "https://www.youtube.com/watch?v=DyEVmTGwCqo",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "2D animation",
+        "Animation",
+        "Art work"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、しなぷしゅ「すくすく」を作品アーカイブで紹介する。 TV東京系の赤ちゃん知育番組「しなぷしゅ」から、子供がすくすく育っていく様をRPGの成長の様に捉えた曲を作りたいのでそのアニメーションを作ってくれ、とのオファーをいただいて製作しました。楽曲を聴かせていただいた時、抽象的な絵本のような世界観で製作したいと提案し、現在の形になりました。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、Animation、Art work。"
+    },
+    {
+      "id": "JodRejOI2Rw",
+      "title": "Number of layers 840",
+      "videoUrl": "https://www.youtube.com/watch?v=JodRejOI2Rw",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "Animation",
+        "Art work"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、Number of layers 840を作品アーカイブで紹介する。 AC部作品の根源的なテーマである「違和感」を軸に製作されたアニメーション作品。\r\n2022年、クリエイションギャラリー G8で開催された「異和感ナイズ展」にて初公開された。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: Animation、Art work。"
+    },
+    {
+      "id": "15Hsw9QSeoc",
+      "title": "日向坂46「僕なんか」MV",
+      "videoUrl": "https://www.youtube.com/watch?v=15Hsw9QSeoc",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "3DCG",
+        "Live action"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、日向坂46「僕なんか」MVを作品アーカイブで紹介する。 Director :安藤隼人 (P.I.C.S. management)\r\nProducer :小浜元 (P.I.C.S.)\r\nProduction Manager :櫻木流佳 (P.I.C.S.)\r\nCinematographer :吉田明義\r\nLighting Director :横堀和宏\r\nArt :吉嶺直樹 (SUI)\r\nSteadicam Operator :新島克則 (SOG)\r\nKey Grip :山内智史 (NKL)\r\nChoreographer :CRE8BOY\r\nExecutive VFX Supervisor :格内俊輔\r\nVFX Supervisor :桑原雅志 (Visualman Tokyo)\r\nVFX (Studio & Wireframe Animation) :福田泰崇 (FUKUPOLY. Inc / dep Management) 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 3DCG、Live action。"
+    },
+    {
+      "id": "z42mcZDooZk",
+      "title": "DAIV × UNDEFINED『DIVE』 (Original Movie)",
+      "videoUrl": "https://www.youtube.com/watch?v=z42mcZDooZk",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "3DCG",
+        "CM",
+        "Original",
+        "Promotion",
+        "PV"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、DAIV × UNDEFINED『DIVE』 (Original Movie)を作品アーカイブで紹介する。 マウスコンピューター様より発売されているクリエイター向けPC「DAIV」シリーズのプロモーションムービーとして制作いたしました。\r\n荒廃した都市に住むCGクリエイターの主人公。\r\n現実に嫌気がさした彼はVRヘッドセットを身に着け、\r\n自らが作り出した煌びやかなCGの世界へとバーチャルダイブを試みるのであった…。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 3DCG、CM、Original、Promotion、PV。"
+    },
+    {
+      "id": "701153597",
+      "title": "GIANT 3D CAT 新宿東口の猫 (all version 2021)",
+      "videoUrl": "https://vimeo.com/701153597",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "3DCG",
+        "R&amp;D",
+        "Signage",
+        "Social project"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、GIANT 3D CAT 新宿東口の猫 (all version 2021)を作品アーカイブで紹介する。 新宿駅東口の大型湾曲スクリーンに登場した「3D巨大猫」。ランドマークキャラクターとして大きな猫がビルに住んでいるかのように設計され、都市に棲息する架空のキャラクターは、日本的な独特のユーモアとして海外メディアでも取り上げられた。DOOH（デジタル屋外広告）の表現に大きな進化をもたらした作品。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 3DCG、R&amp;D、Signage、Social project。"
+    },
+    {
+      "id": "Q7vLVjRfbqk",
+      "title": "SHIBUYA PIXEL ART 2020 / TRY! PIXEL ART CONTEST",
+      "videoUrl": "https://www.youtube.com/watch?v=Q7vLVjRfbqk",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "2D animation"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、SHIBUYA PIXEL ART 2020 / TRY! PIXEL ART CONTESTを作品アーカイブで紹介する。 渋谷を舞台に毎年開催される「ピクセルアート」に特化した世界最大級のコンテストのイベントティザー映像。\r\nコンテストの投稿場所となるSNSのタイムラインから渋谷のドット世界へ飛び込む様子を表現している。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation。"
+    },
+    {
+      "id": "dWHvrCHtgFI",
+      "title": "THE ORAL CIGARETTES「MACHINEGUN」Music Video",
+      "videoUrl": "https://www.youtube.com/watch?v=dWHvrCHtgFI",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "Music video"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、THE ORAL CIGARETTES「MACHINEGUN」Music Videoを作品アーカイブで紹介する。 - 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: Music video。"
+    },
+    {
+      "id": "hzPTZUAiRa4",
+      "title": "服部グラフィクス低解像度GIFシリーズ2022（前半）",
+      "videoUrl": "https://www.youtube.com/watch?v=hzPTZUAiRa4",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "2D animation",
+        "Animation",
+        "Art work",
+        "Experimental film",
+        "Original",
+        "Showreel"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、服部グラフィクス低解像度GIFシリーズ2022（前半）を作品アーカイブで紹介する。 2021年終盤から2021年前半にかけて公表した低解像度GIF作品の中から特徴的な13作品を紹介するダイジェスト映像。 ＜以下、作品を登場順に紹介＞\r\n「The Footman」…こちらを見つめる足の裏\r\n「CROW」…カラスの概念のようなもの\r\n「TAXI」…タクシーが止まらない\r\n「チャーハン」…命の限りチャーハンを炒める男\r\n「牛乳を飲む」…元気よく牛乳を飲む\r\n「うさぎ」…元気よく人参を食べる\r\n「DENGEKI」…電気人間\r\n「ワニに人気の寿司店」…ワニが列をつくる寿司屋\r\n「否定と肯定」…否定と肯定\r\n「泥棒」…古風な泥棒に起きた出来事\r\n「お菓子を投げつけてくるパンダ」…悪夢\r\n「Icarus」…溶けた翼\r\n「GIF of People」…人類の目覚め 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、Animation、Art work、Experimental film、Original、Showreel。"
+    },
+    {
+      "id": "MJyGc_-dfxQ",
+      "title": "高野交差点",
+      "videoUrl": "https://www.youtube.com/watch?v=MJyGc_-dfxQ",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "2D animation",
+        "Animation",
+        "Short film"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、高野交差点を作品アーカイブで紹介する。 ある街、ある時、見知らぬ三人の人生が一瞬だけ交差する。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、Animation、Short film。"
+    },
+    {
+      "id": "bUyOujXrvWc",
+      "title": "AKB48  – 元カレです",
+      "videoUrl": "https://www.youtube.com/watch?v=bUyOujXrvWc",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "Music video"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、AKB48  – 元カレですを作品アーカイブで紹介する。 「根も葉もRumor」で女子高生たちがダンスの日本大会で優勝して、次は日本代表として世界大会に出演するというコンセプトから今作をイメージしました。\r\n今回のMVの話をいただいて、何か新しいプロダクトを取り入れたいと思い、MV中に登場する巨大なモノリスの造形物以外は、今回のMVのために新規開発をしました。バッテリー型のワイヤレスムービングライトを20基、LEDポールを40本、そして間奏で出てくるWAVING LED RIBBON（光るLEDのリボン）だったりです。\r\n舞台セットは動かないもので、“演者の後ろにあるもの”という概念を壊したいなって思っていて。アーティストと空間が一体化するというテーマを今回やってみよう！と。リボンパフォーマーがもう顔の傍まで来ていたり、ムービングライトを無線化することで、ダンスフロア内にも配置が可能になり、メンバーと一体化した光線が一緒に踊ったり、LEDポールがどんどん形を変えながら、メンバーの右腕と左腕の手振りを模して一緒にダンスする等、アーティストを主軸におきながらも空間をずっと拡張し続けるMVです。\r\n自分はこれまで、ライブパフォーマンスの演出ばかりやってきたものですから、AKB48の皆さんが劇場公演のような生の現場を大切にしている、という共通点があって、今回のMVは1つのショーをずっと観てるというイメージで制作しています。\r\nパフォーマンスをずっと見る心地良さ、何度見てもいろんな発見があると思うので、何度も見てほしいなと思う作品です。ここまで情熱を注ぎ込むことはしばらく無いと思います（笑）。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: Music video。"
+    },
+    {
+      "id": "Uywq8FzxWiU",
+      "title": "femme fatale「だいしきゅーだいしゅき」Music Video",
+      "videoUrl": "https://www.youtube.com/watch?v=Uywq8FzxWiU",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "2D animation",
+        "3DCG",
+        "Animation",
+        "Music video"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、femme fatale「だいしきゅーだいしゅき」Music Videoを作品アーカイブで紹介する。 とにかく曲がめちゃくちゃ好み！聞いた瞬間から脳内でカラフルなキャンディがぐるぐる回り出しました。\r\n\r\nだいしきゅーという事なので、疾走感があってわちゃわちゃしててとにかく可愛い映像にしたくて、衣装もたくさん用意してもらったり、バイクや小道具やなんやかんや盛りだくさんで撮影しました。\r\n\r\n寝る時に見る夢、というテーマで、大至急起きなきゃいけないのに夢の世界から起きられなくて大暴走！みたいな感じ。あと、この夢はかなのちゃんの夢なのかさきなちゃんが見てる夢なのか、二人の夢の覇権争い、どっちの夢なの！？みたいなイメージのストーリーで企画しました。（最終的には覇権争い要素は無くなって、もうちょっと夢の世界、可愛い空間、みたいなイメージに落とし込みましたが・・・。）\r\n\r\n曲を聞いてると二人がスポーツをしているイメージが湧いてきて、野球のユニフォームをギャル風に着こなしてる絵が思い浮かんでこれは絶対可愛いなと思ってやらせてもらいました。（あややのトロピカ〜ル恋して〜るのイメージですｗ）\r\n\r\nバイクも無理を言って撮らせてもらいました。疾走感といえばバイク。\r\n\r\nアニメーションも豪華で、ど頭のOPのアニメーションはmisaさんに、女の子の見てる夢の中という内容でお願いしました。めちゃくちゃ可愛くて最高です。\r\n１サビのアニメーションは、悪夢を吹き飛ばすというシーンなのですが、こちらはらっパルさんが作ってくれました。らっパルさんはずっと大好きでいつかお仕事できたらなぁ・・・なんて憧れてましたが、今回念願かなって嬉しかったです。\r\n野球のシーンのど派手エフェクトアニメは、もうエフェクトアニメといえばの信頼の畳谷哲也くんです！ 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、3DCG、Animation、Music video。"
+    },
+    {
+      "id": "NQF8RUG-bxA",
+      "title": "OPEN HUB for Smart World",
+      "videoUrl": "https://www.youtube.com/watch?v=NQF8RUG-bxA",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "2D animation",
+        "Installation",
+        "Interactive",
+        "Motion graphics"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、OPEN HUB for Smart Worldを作品アーカイブで紹介する。 【OPEN HUB Monoliths】\r\n来場者を共創する仲間として認証し、迎え入れるエントランス。\r\nエントランス空間を囲むように立ち並ぶ7台の等身大ディスプレイは、入館手続きシステムと連携し、ゲストのイニシャルや職業などから生成されたパーソナルなグラフィック(OPEN HUB Personal Logo)が没入感のある演出で投影され OPEN HUBメンバーの一員として迎え入れます。\r\n生成された「OPEN HUB Personal Logo」は、「OPEN HUB」でのオンライン/オフラインのアクティビティによって変化する、リアルとバーチャルを横断するコミュニケーションのシンボルとなります。\r\n\r\n【OPEN HUB Visualizer】\r\nSmart Worldをデータビジュアライゼーションで体験できる巨大なディスプレイ。\r\n共創する企業間で保有するデータを「 Smart Data Platform」を活用して収集・蓄積・分析し、約 3m×10mの巨大なLEDディスプレイでビジュアライズします。データに基づいたダイナミックなインスタレーションの体験を通じ、新たな価値創造を促します。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、Installation、Interactive、Motion graphics。"
+    },
+    {
+      "id": "6-Fn7dA2NAM",
+      "title": "KIBO宇宙放送局",
+      "videoUrl": "https://www.youtube.com/watch?v=6-Fn7dA2NAM",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "AR",
+        "Broadcast",
+        "Interactive"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、KIBO宇宙放送局を作品アーカイブで紹介する。 宇宙をあらゆる人々に開放する、宇宙ライブエンターテインメントプロジェクト。\r\n今まで宇宙飛行士しか活躍できなかった宇宙という舞台を、ネットとデザインの力であらゆる人々に開放したい。そんな想いから、国際宇宙ステーションの「きぼう」日本実験棟に、宇宙と地上を双方向につなげるライブ番組スタジオを開設しました。青い地球を眺めながら、世界中の人々が自由に表現し、KIBOを語り合う。そんな全く新しいボーダレスなエンターテイメントを、アーティストや企業とともに共創していきます。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: AR、Broadcast、Interactive。"
+    },
+    {
+      "id": "0komaDvGA-Q",
+      "title": "Xperia PRO-I Product Animation",
+      "videoUrl": "https://www.youtube.com/watch?v=0komaDvGA-Q",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "3DCG",
+        "Advertisement",
+        "Opening movie",
+        "Web CM",
+        "Web movie"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、Xperia PRO-I Product Animationを作品アーカイブで紹介する。 映像、スチルとプロフェッショナルに応え\"カメラ機能を追求した\"\r\nXperia PRO-I のデザインムービーの映像制作を担当しました。\r\n\r\nXperia PRO シリーズのミニマルで黒基調の世界観は踏襲しながら、新機種に搭載された最高のカメラを通してXperiaがスマートフォンを新たなレベルに引き上げる、という強い姿勢を演出しました。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 3DCG、Advertisement、Opening movie、Web CM、Web movie。"
+    },
+    {
+      "id": "BxcxDqz2S0I",
+      "title": "A_o – BLUE SOULS",
+      "videoUrl": "https://www.youtube.com/watch?v=BxcxDqz2S0I",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "Music video"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、A_o – BLUE SOULSを作品アーカイブで紹介する。 大塚製薬ポカリスエット 2021年CM「でも君が見えた」主題歌 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: Music video。"
+    },
+    {
+      "id": "670055012",
+      "title": "SPACE SHOWER MUSIC AWARDS 2022",
+      "videoUrl": "https://vimeo.com/670055012",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "2D animation",
+        "3DCG",
+        "Animation",
+        "Art work",
+        "Broadcast",
+        "Event",
+        "Motion graphics"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、SPACE SHOWER MUSIC AWARDS 2022を作品アーカイブで紹介する。 「SPACE SHOWER MUSIC AWARDS 2019」アートディレクション・デザインとムービー制作を担当しました。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、3DCG、Animation、Art work、Broadcast、Event、Motion graphics。"
+    },
+    {
+      "id": "442253732",
+      "title": "NISSAN PAVILION Yokohama",
+      "videoUrl": "https://vimeo.com/442253732",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "Installation",
+        "Interactive"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、NISSAN PAVILION Yokohamaを作品アーカイブで紹介する。 日産自動車が誇る技術や未来へのビジョンを体験できる、体験型エンターテインメント施設「ニッサン パビリオン」が期間限定で横浜みなとみらいにオープン。コンセプトは、「人間の可能性を拡張する」。日産の技術が叶える近未来を形にした体験コンテンツの中で、WOWは「THE CITY」エリアの演出・制作を担当。「クルマと人・社会が繋がることで活性化する街」をモチーフにしたインスタレーションを体験することができる。THE CITYでは、日産の描く2つのビジョンを空間内に可視化した。\r\n\r\nROOM1\r\nスモークの焚かれた空間に、195個のレーザーモジュールとそれらを動かすためのモーターを配置。個々のレーザーは個別に制御され、さまざまなアニメーションを展開する一方、体験者がエリア内に侵入すると、それを検知して回避行動をとるインタラクティブな空間となっている。日産が目指す交通事故の無い社会を実現するために、キーとなる「センシング技術」を抽象的に表現した。\r\n\r\nROOM2\r\n「街」を抽象化した半透明な約150本の高さ違いの柱と、「クルマ」を表すモックが乗った3本の柱が配置され、全ての柱は自発光している。クルマのモックに手をかざすと始まる「CHARGE」「SHARE」「SUPPLY」を表した光のアニメーションは、日産が目指す、エネルギーや情報の共有によって活性化する街というビジョンを表現している。さらに、モックの乗った３本の柱に同時に手をかざすことで、特別演出として光鮮やかなアニメーションが発動。クルマと人・社会が繋がることで街全体が活性化していくかのような演出を施した。\r\n\r\nどちらの空間とも、抽象的ながらも日産の思い描く未来へのビジョンを感じられる体験空間を目指し演出した。\r\n\r\nニッサン パビリオン\r\n期間：2020年8月1日（土）〜10月23日（金）\r\n住所：神奈川県横浜市西区みなとみらい6-2-1\r\nNISSAN PAVILION Yokohama▶https://www.nissan.co.jp/BRAND/PAVILION/\r\nFor more detail▶https://www.w0w.co.jp/works/nissan_pavilion 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: Installation、Interactive。"
+    },
+    {
+      "id": "R0sHb1a79yo",
+      "title": "[PYLONORG]  ∈Y∋ × COSMICLAB",
+      "videoUrl": "https://www.youtube.com/watch?v=R0sHb1a79yo",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "3DCG",
+        "AR",
+        "Audio visual performance",
+        "Event",
+        "Experimental film",
+        "Generative Art",
+        "Interactive",
+        "Original",
+        "Performance",
+        "Real-time Graphics",
+        "Showreel",
+        "XR"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、[PYLONORG]  ∈Y∋ × COSMICLABを作品アーカイブで紹介する。 VJとして可視と不可視が交差する空間表現を探求し続けてきた COSMIC LAB によるXR オーディオ・ヴィジュアル・ショウケース。\r\nCOSMIC LABが開発を加速させたXR（エクスパンデッド・リアリティー） Live System を駆使して、大阪・味園ユニバースで拡張される現実空間からライブストリーミングを行った。\r\n\r\nエクスペリメンタルに表現を究め続ける∈Y∋による、リスト装着型とコーン形状の2種の特殊デバイスと接続された身体で奏でる発光サウンドパフォーマンスを、COSMIC LABがXR視覚空間へと増幅させた。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 3DCG、AR、Audio visual performance、Event、Experimental film、Generative Art、Interactive、Original、Performance、Real-time Graphics、Showreel、XR。"
+    },
+    {
+      "id": "697988120",
+      "title": "クローズアップ現代",
+      "videoUrl": "https://vimeo.com/697988120",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "3DCG",
+        "Broadcast",
+        "Title movie",
+        "TV package design"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、クローズアップ現代を作品アーカイブで紹介する。 ＮＨＫの報道番組、クローズアップ現代の番組リニューアルにおいて、デザインコンセプトおよびキービジュアル、ロゴ、タイトルＣＧ、テレビグラフィックなどをトータルに担当。午後7時半の放送時間帯の変更に伴い、より多くの視聴者へ向けたより力強さや華やかさをのあるデザインを心掛け、目まぐるしい時代の流れや分断が進む現代を万華鏡のコンセプトを用いて表現。\r\n【制作風景の番組出演】\r\nhttps://youtu.be/ooiiOI5NDOw 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 3DCG、Broadcast、Title movie、TV package design。"
+    },
+    {
+      "id": "2POGrSKZbvM",
+      "title": "Animation Showreel 2010-2021 / 軌跡_HaruSHAO",
+      "videoUrl": "https://www.youtube.com/watch?v=2POGrSKZbvM",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "2D animation",
+        "Animation",
+        "Art work",
+        "CM",
+        "Music video",
+        "Promotion",
+        "PV",
+        "Web CM"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、Animation Showreel 2010-2021 / 軌跡_HaruSHAOを作品アーカイブで紹介する。 アートスタイル、画材の美しい質感、2Dアニメーションならではの演出を考慮して創作している。\r\n作風や作業量によって、作品ごとに制作フローをアレンジしている。絵画的なスタイルを実現できるよう、集団作業を取り入れても独特な質感を失わないように心掛けている。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、Animation、Art work、CM、Music video、Promotion、PV、Web CM。"
+    },
+    {
+      "id": "vHm0RWaf0FE",
+      "title": "まふまふ『栞』ＭＶ",
+      "videoUrl": "https://www.youtube.com/watch?v=vHm0RWaf0FE",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022 / 映像作家100人 2023",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "2D animation",
+        "Animation",
+        "Music video",
+        "2023選出"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、まふまふ『栞』ＭＶを作品アーカイブで紹介する。 アーティスト・まふまふの『栞』ミュージックビデオ。映画「君が落とした青空」の主題歌。\r\n過去と現在が交差したストーリーを、色彩豊かな映像で表現した作品。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、Animation、Music video。\n加えて「映像作家100人 2023」にも選出されている。"
+    },
+    {
+      "id": "kY8fpqf_OGU",
+      "title": "花譜「イマジナリーフレンド」",
+      "videoUrl": "https://www.youtube.com/watch?v=kY8fpqf_OGU",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "Music video"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、花譜「イマジナリーフレンド」を作品アーカイブで紹介する。 virtual singerの花譜がリアルのアーティスト&コンポーザーを中心としたコラボレーション企画「組曲」を始動し、第二弾コラボ企画として展開した大森靖子さん楽曲提供による「イマジナリーフレンド」です。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: Music video。"
+    },
+    {
+      "id": "433100961",
+      "title": "mimoid inc. Reel 2020",
+      "videoUrl": "https://vimeo.com/433100961",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "2D animation",
+        "3DCG",
+        "Animation",
+        "CM",
+        "Motion graphics",
+        "Motion logo",
+        "Music video",
+        "Promotion",
+        "Showreel",
+        "Station ID",
+        "Web CM"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、mimoid inc. Reel 2020を作品アーカイブで紹介する。 Reelの制作方法を時間方向のグリッドシステムとして設計。全尺の映像素材から都度切り出すのではなく、短いシーケンスをあらかじめ切り出し、パズルとして並べ替えるという方法で編集するアプローチを選択した。制作プロセスそのものを規定することで、最終アウトプットに個別の作業者とは無関係なトーンを付与する事を目的としており、分業や共同作業のマジックを重畳した。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、3DCG、Animation、CM、Motion graphics、Motion logo、Music video、Promotion、Showreel、Station ID、Web CM。"
+    },
+    {
+      "id": "704998562",
+      "title": "モスバーガーWebCM　トム・ブラウン『超合体漫才』篇",
+      "videoUrl": "https://vimeo.com/704998562",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "2D animation",
+        "CM",
+        "Comedy",
+        "Music video",
+        "Promotion",
+        "Web",
+        "Web CM"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、モスバーガーWebCM　トム・ブラウン『超合体漫才』篇を作品アーカイブで紹介する。 作品に関する説明： モスバーガーの期間限定商品 とり竜田バーガーのWebCM。商品を漫才風に紹介する『通常漫才篇』を元に音MAD風に仕上げた。「スクショポイントを詰め込む」を制作テーマとし、映像内にとにかく小ネタを散りばめた。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、CM、Comedy、Music video、Promotion、Web、Web CM。"
+    },
+    {
+      "id": "OKEIHfFeTWQ",
+      "title": "dj newtown – 2005",
+      "videoUrl": "https://www.youtube.com/watch?v=OKEIHfFeTWQ",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "3DCG",
+        "Music video"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、dj newtown – 2005を作品アーカイブで紹介する。 dj newtownの初期作品をストリーミングサービスで改めてリリースするに際し制作。若さとは何かということをコンセプトに、それを「客観的な指標を置き去りにした価値観を過剰なまでに追い求める事ができる状態」と仮定した。演出上の一例として、快楽を与えるとされる音同期などの手法を過剰に詰め込むことで過負荷状態を作り出している。引用やサンプリングへのポジティブな諦念を表現するためにUnityのアセットストアで入手した物のみで構成した。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 3DCG、Music video。"
+    },
+    {
+      "id": "7bn5yVeRfVk",
+      "title": "擬態するメタ コンセプトティザー『企劇』",
+      "videoUrl": "https://www.youtube.com/watch?v=7bn5yVeRfVk",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "2D animation",
+        "3DCG"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、擬態するメタ コンセプトティザー『企劇』を作品アーカイブで紹介する。 アニメ作家/イラストレーターのしまぐち ニケと映像作家のBiviによる映像制作ユニット「擬態するメタ」初の完全オリジナルムービー。\r\n実写×3DCG×アニメーションで渋谷の街をジャックする。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、3DCG。"
+    },
+    {
+      "id": "683169824",
+      "title": "mooba studio reel 2022",
+      "videoUrl": "https://vimeo.com/683169824",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "2D animation",
+        "3DCG",
+        "Animation"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、mooba studio reel 2022を作品アーカイブで紹介する。 Reel 2022 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、3DCG、Animation。"
+    },
+    {
+      "id": "Sf_HK41ND30",
+      "title": "はてなしはてな",
+      "videoUrl": "https://www.youtube.com/watch?v=Sf_HK41ND30",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "2D animation",
+        "Music video",
+        "Paper craft",
+        "TV"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、はてなしはてなを作品アーカイブで紹介する。 赤ちゃん向け番組『シナぷしゅ』（テレビ東京）９月の歌のアニメーションを担当しました。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、Music video、Paper craft、TV。"
+    },
+    {
+      "id": "IeFowPi5fJg",
+      "title": "Yuma Saito Reel -2022",
+      "videoUrl": "https://www.youtube.com/watch?v=IeFowPi5fJg",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "2D animation",
+        "3DCG",
+        "Music video"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、Yuma Saito Reel -2022を作品アーカイブで紹介する。 近年の制作映像デモリールです。\r\n\r\n-------------------------------------------------------------\r\nDECO*27 - ジレンマ feat. 初音ミク\r\nhttps://www.youtube.com/watch?v=E_PfhNftyh4\r\n\r\nDECO*27×堀江晶太(kemu) - セカイ feat. 初音ミク\r\nhttps://www.youtube.com/watch?v=9vyIPWBeRes\r\n© SEGA / © Colorful Palette Inc. / © Crypton Future Media, INC. www.piapro.net All rights reserved.\r\n\r\nDECO*27 - ヴァンパイア feat. 初音ミク (TeddyLoid Remix)\r\nhttps://www.youtube.com/watch?v=M_24AlRm1cs\r\n\r\nRAINBOW／角巻わため【original】\r\nhttps://www.youtube.com/watch?v=RMZNjFkJK7E\r\n\r\n駆けろ / 星街すいせい(official)\r\nhttps://www.youtube.com/watch?v=IqT6cHCT1TE\r\n\r\nピノキオピー - アンテナ feat. 初音ミク / Antenna\r\nhttps://www.youtube.com/watch?v=bwMGqyTmoro\r\n\r\nピノキオピー - 人間なんか大嫌い+ feat. 初音ミク / I Just Hate People+\r\nhttps://www.youtube.com/watch?v=cm2Xz8WKf-4\r\n\r\nINNOSENT in FORMAL「my peaches feat.PES」Music Video\r\nhttps://www.youtube.com/watch?v=wRh9HHJpuqM\r\n\r\nINNOSENT in FORMAL「愛じゃ崇ワナ feat.チプルソ」Music Video\r\nhttps://www.youtube.com/watch?v=ZEllQnHIy_I\r\n\r\n【sajou no hana】「メモセピア」（Music Video）\r\nhttps://www.youtube.com/watch?v=uEp2OvxjWP4\r\n\r\n【sajou no hana】「Parole」（Music Video）\r\nhttps://www.youtube.com/watch?v=tkh6nnlf9bs\r\n\r\nエルマ (Album Trailer)\r\nhttps://www.youtube.com/watch?v=I0KPgxLcGnk\r\n\r\nだから僕は音楽を辞めた (Album Trailer)\r\nhttps://www.youtube.com/watch?v=JFFedRQpqg8\r\n\r\n上坂すみれ「ドロップス」Visual Movie（short ver.）\r\nhttps://www.youtube.com/watch?v=96ojlNxr1Co\r\n\r\nCIVILIAN『ぜんぶあんたのせい』\r\nhttps://www.youtube.com/watch?v=WzhI65Ubq48\r\n\r\nNeru - 祈っているだけ (Ju"
+    },
+    {
+      "id": "Odv-zbpy-Y8",
+      "title": "yama『Oz.』MV",
+      "videoUrl": "https://www.youtube.com/watch?v=Odv-zbpy-Y8",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "2D animation",
+        "Animation",
+        "Music video"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、yama『Oz.』MVを作品アーカイブで紹介する。 TVアニメ「王様ランキング」第1クールED曲「Oz.」\r\n「ひとりぼっちを経験した2人がそれぞれの孤独に向き合い、出会う」をコンセプトにアニメーションを制作。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、Animation、Music video。"
+    },
+    {
+      "id": "LyTaD9pbI7M",
+      "title": "理芽「NEUROMANCE」",
+      "videoUrl": "https://www.youtube.com/watch?v=LyTaD9pbI7M",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "2D animation",
+        "3DCG",
+        "Music video",
+        "Original"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、理芽「NEUROMANCE」を作品アーカイブで紹介する。 インターネットという神・スマホという天使に支配された不気味な社会 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、3DCG、Music video、Original。\n加えて「映像作家100人 2022」にも選出されている。"
+    },
+    {
+      "id": "701287573",
+      "title": "Lipogram Animation Works 2020-2021",
+      "videoUrl": "https://vimeo.com/701287573",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "2D animation",
+        "Animation",
+        "Art work",
+        "Experimental film",
+        "Motion graphics",
+        "Original"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、Lipogram Animation Works 2020-2021を作品アーカイブで紹介する。 リポグラムに所属するデザイナーがインスタグラムで公開しているアニメーションをまとめたオムニバスムービー。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、Animation、Art work、Experimental film、Motion graphics、Original。"
+    },
+    {
+      "id": "Z7oS2IjkJEI",
+      "title": "マジック：ザ・ギャザリング 神河　アニメーショントレーラー",
+      "videoUrl": "https://www.youtube.com/watch?v=Z7oS2IjkJEI",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "PV"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、マジック：ザ・ギャザリング 神河　アニメーショントレーラーを作品アーカイブで紹介する。 マジック：ザ・ギャザリング 神河　アニメーショントレーラー の企画 / ディレクション / プロデュースを担当しました。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: PV。"
+    },
+    {
+      "id": "90Q6g57jnuU",
+      "title": "『子猫の配達員うーにゃん 』主題歌アニメーションPV",
+      "videoUrl": "https://www.youtube.com/watch?v=90Q6g57jnuU",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "2D animation",
+        "3DCG",
+        "Animation",
+        "Short film"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、『子猫の配達員うーにゃん 』主題歌アニメーションPVを作品アーカイブで紹介する。 スタジオななほしオリジナルアニメーション３作目の主題歌アニメーションPVです。\r\n2020年コロナ禍で、見る人が元気が出たりホッとするような作品を作ろうと、無邪気な子猫の配達員『うーにゃん』のイラストや漫画をTwitterで描き始めました。\r\nイメージが固まったところで短編アニメのコンテを制作。作品が出来上がる過程も楽しんで頂けるようにワンカットずつ発表し、完成したカットを繋げたものに主題歌をつけPVとして公開しました。\r\nこのPVを元にクラウドファンディングで支援者を募り、現在6分程の本編を制作しております。\r\n“大ごとではないけれど、その人にとっては大事な役目”を学んでゆくうーにゃんの姿に力を注ぎ、大人でも子供でも楽しめるアニメを目指しております。\r\n\r\n＜あらすじ＞\r\n子猫の『うーにゃん』 は、はじめての配達員のお仕事に大張り切り！\r\nしかし、ピザをぐちゃぐちゃにしてしまったり、ドーナツをつまみ食いしようとしたり、 なかなかうまくいきません・・・\r\n自由奔放で無邪気なうーにゃんも不安になってきます。\r\nお届け先の街の住民達は、うーにゃんが無事にたどり着けるか気になり、 ついつい手助けをして、うーにゃんの成長を見守ります。\r\n本作は \"小さな子と見守る大人たちの交流\" を描いたハートウォーミングなお話です。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、3DCG、Animation、Short film。"
+    },
+    {
+      "id": "639447319",
+      "title": "報道ステーション オープニング映像",
+      "videoUrl": "https://vimeo.com/639447319",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "Motion graphics",
+        "TV"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、報道ステーション オープニング映像を作品アーカイブで紹介する。 デジタルで制作したグラフィクを印刷し、1コマずつ撮影・映像化したコマ撮りアニメーション。\r\nシルクスクリーン印刷機リソグラフと独特の風合いを持った6種類の紙を使用。\r\nリソグラフで印刷すると印刷物にムラやズレが発生する。これらが映像の中で独自の風合い、質感を生み出した。\r\n結果としてデジタルで作ったデータと印刷したデータのビジュアルは大きく変化した。\r\n\r\nこの現象は「情報」に重ね合わせることができる。\r\n１つの事実に対して、切り取る角度、伝え方など様々なアウトプットによって同じ内容でも印象にムラやズレが発生する。加えて情報を受信する側の感情、文化、スタンスというフィルターを通すと最終的に全く違う解釈が生まれる。\r\n\r\nこれらはネガティブなことではなく、新たなビジュアル・解釈を生み出すポジティブな要素だと考える。\r\n白か黒ではない曖昧さがこれからの時代に求められる多様性ではないだろうか。\r\n本映像は、そのような思想を映像表現に落とし込み、アフターコロナの新時代にマッチした映像作品として仕上げた。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: Motion graphics、TV。"
+    },
+    {
+      "id": "EmQCUiM5mOw",
+      "title": "無限階段からの脱出",
+      "videoUrl": "https://www.youtube.com/watch?v=EmQCUiM5mOw",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "2D animation",
+        "3DCG",
+        "PV",
+        "Web CM"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、無限階段からの脱出を作品アーカイブで紹介する。 チルすることの大切さを訴求するために制作されました。\r\n忙しない現代社会を無限階段で表現し、リラクゼーションドリンクCHILL OUTを飲むことで、その無限階段から抜け出すというストーリー。\r\n全編フルCGで制作され、ディストピア的な世界観を表現しています。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、3DCG、PV、Web CM。"
+    },
+    {
+      "id": "ZjPQVunWh6s",
+      "title": "D.A.N. – Anthem",
+      "videoUrl": "https://www.youtube.com/watch?v=ZjPQVunWh6s",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "Music video"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、D.A.N. – Anthemを作品アーカイブで紹介する。 人間の将来の姿がモノリスだったらと仮定してストーリーを作りました． 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: Music video。"
+    },
+    {
+      "id": "4BfxkjBUkdg",
+      "title": "edhiii boi – Forever Friend -Music Video-",
+      "videoUrl": "https://www.youtube.com/watch?v=4BfxkjBUkdg",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "Music video"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、edhiii boi – Forever Friend -Music Video-を作品アーカイブで紹介する。 2021年SKY-HIに送ったデモ一曲で心を撃ち抜き、14歳にしてアーティスト契約を掴み取った中学生ラッパーedhiii boiの3rd Digital Single。\r\n中学生活最後のリリースとなる今作は、ギターのフレーズが印象的に響くロック感溢れるトラックに合わせ、仲間とのかけがえの無い友情を等身大のリリックで描き上げたエモーショナルな卒業ソング！！ 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: Music video。"
+    },
+    {
+      "id": "_H6zuJAtQqI",
+      "title": "Goodbye, All of Evangelion ／さようなら全てのエヴァンゲリオン　 宇多田ヒカル「ONE LAST KISS」",
+      "videoUrl": "https://www.youtube.com/watch?v=_H6zuJAtQqI",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "3DCG",
+        "Animation",
+        "Music video"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、Goodbye, All of Evangelion ／さようなら全てのエヴァンゲリオン　 宇多田ヒカル「ONE LAST KISS」を作品アーカイブで紹介する。 エヴァンゲリオンが出てこないエヴァンゲリオンのファンアート 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 3DCG、Animation、Music video。"
+    },
+    {
+      "id": "Ajr18Yw5xdY",
+      "title": "ONE OK ROCK「Renegades」MV",
+      "videoUrl": "https://www.youtube.com/watch?v=Ajr18Yw5xdY",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2022",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2022選出",
+        "3DCG",
+        "Music video"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2022」の選出作品として、ONE OK ROCK「Renegades」MVを作品アーカイブで紹介する。 2021年4月16日にリリースした、ONE OK ROCK「Renegades」のMV演出を担当。\r\nRENEGADESの個性 (LGBT、ファッション、ART、 個性的なキャラクター) ×ONE OK ROCKの重厚でスケール感ある演奏シーンをVFXによるシンプルであるが壮大な世界観で表現している。 「映像作家100人 2022」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 3DCG、Music video。"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "WaLQMwpaRHI",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.5,
+      "evidence": "掲載者メモ: 水面反射っぽいエフェクト"
+    },
+    {
+      "id": "P6ZLs39MBlk",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [
+        "comical"
+      ],
+      "confidence": 0.9,
+      "evidence": "掲載者コメント: おもしろ映像量産しとる"
+    },
+    {
+      "id": "hHhzZzXIeOI",
+      "genres": [
+        "film"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Short film、Experimental film"
+    },
+    {
+      "id": "783562288",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "vfx-3dcg",
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Motion graphics、Projection mapping、Installation、Event"
+    },
+    {
+      "id": "GmetlootbhE",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video、Short film"
+    },
+    {
+      "id": "9tcWWQiV4Bg",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Event、Title movie（公式トレーラー映像）"
+    },
+    {
+      "id": "giJKMtRnD20",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Short film（CHAINSAW MAN #9 Ending）"
+    },
+    {
+      "id": "827675053",
+      "genres": [
+        "opening"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Opening movie（EDアニメーション／Opening movieタグ）"
+    },
+    {
+      "id": "Ep0YHnNRAds",
+      "genres": [
+        "web-cm"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Promotion、Web CM、Web movie（アサヒスーパードライ「ビア語り　父とビール」）"
+    },
+    {
+      "id": "3sSQt6N4WgY",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Music video"
+    },
+    {
+      "id": "JKque0N2bww",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Music video（パックマンMV）"
+    },
+    {
+      "id": "774363499",
+      "genres": [
+        "branded-movie",
+        "web-cm"
+      ],
+      "products": [
+        "fashion"
+      ],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Brand movie、Web CM（PLEATS PLEASE ISSEY MIYAKE）"
+    },
+    {
+      "id": "mzRzwSSRRjo",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、R&D（『ピギーワン SUPER SPARK』1st Trailer）"
+    },
+    {
+      "id": "665641207",
+      "genres": [
+        "film"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Short film（山火事 / a forest fire）"
+    },
+    {
+      "id": "suguLfCgn88",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Animation、Short film（SHOWA124 予告編）"
+    },
+    {
+      "id": "656729574",
+      "genres": [
+        "branded-movie"
+      ],
+      "products": [
+        "fashion"
+      ],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Fashion film、Web（BOTTEGA VENETA – Issued by Bottega）"
+    },
+    {
+      "id": "S4QdVgId5J0",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "camera-work"
+      ],
+      "tones": [],
+      "confidence": 0.8,
+      "evidence": "掲載カテゴリ: Music video。ワンカットロングショットやカメラ移動による演出（ワンカット、カメラワーク、ポスプロでの時間操作）。"
+    },
+    {
+      "id": "VxUL2E8jpTY",
+      "genres": [
+        "web-cm"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg",
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Animation、Web CM（キャラクターアニメーション、製品紹介動画）。"
+    },
+    {
+      "id": "mHuGTWkdQiM",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg",
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Animation、Music video。Unreal Engine 5で制作。"
+    },
+    {
+      "id": "1LPKTkxLAKc",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg",
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、3DCG、Music video。"
+    },
+    {
+      "id": "f8si675mZP4",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "camera-work"
+      ],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "掲載カテゴリ: Music video。GoproMAXのみで撮影。"
+    },
+    {
+      "id": "H8brapawOXM",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Audio visual performance、Installation、Projection mapping（プロジェクションやインスタレーション作品）。"
+    },
+    {
+      "id": "pKF_p_IIujI",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video。"
+    },
+    {
+      "id": "ueaEM5-INdY",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg",
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Motion graphics、Music video（全編アニメーション、3Dオブジェクト中心）。"
+    },
+    {
+      "id": "7RXf7jrOFPc",
+      "genres": [
+        "film"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "掲載カテゴリ: 3DCG、Art work、Experimental film、Installation（Experimental film、3DCG使用、インタラクティブ）。"
+    },
+    {
+      "id": "483466054",
+      "genres": [
+        "web-cm"
+      ],
+      "products": [
+        "electronics"
+      ],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "掲載カテゴリ: 3DCG、CM、Web、Web CM。SIGMAのレンズシリーズのプロモーション映像（製品プロモーション）。"
+    },
+    {
+      "id": "IfMhjlc-IVk",
+      "genres": [
+        "web-cm"
+      ],
+      "products": [
+        "electronics"
+      ],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "掲載カテゴリ: 2D animation、Advertisement、Motion graphics、Web CM。CASIO GSHOCK GST-B400のプロモーションムービー。"
+    },
+    {
+      "id": "8U-gCTEYxCA",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Motion graphics、Showreel（リール作品）。"
+    },
+    {
+      "id": "CpjcbY3i7Fk",
+      "genres": [
+        "mv",
+        "film"
+      ],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Music video、Short film（短編アニメーション／Music video）。"
+    },
+    {
+      "id": "639034386",
+      "genres": [
+        "opening",
+        "web-cm"
+      ],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "掲載カテゴリ: 2D animation、AD、Animation、Motion graphics、Opening movie、Promotion、Web CM（コンセプトムービー／開幕映像、サイネージ）。"
+    },
+    {
+      "id": "662541028",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "vfx-3dcg",
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、3DCG、CM、Motion graphics、Showreel（ショーリール、2D/3Dを行き交う演出）。"
+    },
+    {
+      "id": "w6eWno3iAjk",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Art work、Music video、PV（2DアニメーションのMusic video）。"
+    },
+    {
+      "id": "q66WJaikhlo",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "stop-motion"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ: Stopmotion。説明: 「切り絵とコマ撮りの手法」を用いた短編アニメーションシリーズ。"
+    },
+    {
+      "id": "538690962",
+      "genres": [
+        "corporate"
+      ],
+      "products": [
+        "automotive"
+      ],
+      "directions": [
+        "illustration"
+      ],
+      "tones": [],
+      "confidence": 0.8,
+      "evidence": "タイトル/説明: Nipponpaint Automotive・日本ペイントオートモーティブ。タグ: 2D animation、VP。"
+    },
+    {
+      "id": "695549616",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "タグ: Showreel（ショーリール）のみ。"
+    },
+    {
+      "id": "683133059",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ: Motion graphics、AR。説明: モーショングラフィックをステッカーのように貼って合成した映像。"
+    },
+    {
+      "id": "PP8a9D_5eFA",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "タグ: Music video、3DCG。説明: 人物はグリーンバックで、その他は全て3DCGで制作。"
+    },
+    {
+      "id": "FwrL2tFt7nw",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "illustration",
+        "live-action"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ: Animation。説明: 単純化されたキャラクター（アニメ）と鮮明な実写映像を組み合わせている。"
+    },
+    {
+      "id": "661835461",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics",
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ: 2D animation、3DCG、Motion graphics。説明: ショーリールに多数の2D/3D/モーショングラフィック作品を収録。"
+    },
+    {
+      "id": "580725557",
+      "genres": [
+        "film"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ: 3DCG、Short film。説明: 作品は短編（Short film）かつ3DCG制作。"
+    },
+    {
+      "id": "671528509",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "タグ: Art work、Installation（インスタレーション）のみ。"
+    },
+    {
+      "id": "GHQIAi3t6a0",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics",
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ: 2D animation、3DCG、Motion graphics。説明: 2D/3Dとモーショングラフィックを用いた自主制作。"
+    },
+    {
+      "id": "3nwknXSrIbA",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ: Music video、3DCG。"
+    },
+    {
+      "id": "704047024",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "vfx-3dcg",
+        "virtual-production"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ: 3DCG、VR、XR。説明: バーチャルカメラシステムとモーションキャプチャーで現実と仮想空間を連携して撮影。"
+    },
+    {
+      "id": "566764820",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics",
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ: 2D animation、3DCG、Motion graphics（ショーリール）。"
+    },
+    {
+      "id": "5KsXVs8Vg7U",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "タグ: Music video、3DCG。"
+    },
+    {
+      "id": "696403114",
+      "genres": [
+        "tv-cm"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg",
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "タグ: TV-CM、CM、Advertisement、3DCG、Motion graphics。"
+    },
+    {
+      "id": "KpEHo9j2LNg",
+      "genres": [
+        "opening"
+      ],
+      "products": [
+        "gaming"
+      ],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "タイトル: eBASEBALLパワフルプロ野球2022（ゲーム）。タグ: Opening movie、3DCG、Animation。"
+    },
+    {
+      "id": "vj7Gmv7FC-0",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ: 「3DCG」「Music video」"
+    },
+    {
+      "id": "Er8gqBIJJiw",
+      "genres": [
+        "web-cm"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ/説明: 「Web movie」「NIMSのPR」（掲載カテゴリ: Web movie）"
+    },
+    {
+      "id": "699321535",
+      "genres": [],
+      "products": [
+        "gaming"
+      ],
+      "directions": [
+        "vfx-3dcg",
+        "live-action",
+        "illustration"
+      ],
+      "tones": [],
+      "confidence": 0.8,
+      "evidence": "タイトル/説明: タイトルに「fortnite」、説明に「Unreal Engine」、タグ: 「3DCG」「Animation」「Live action」"
+    },
+    {
+      "id": "682730128",
+      "genres": [
+        "film"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg",
+        "live-action"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ/説明: 「3DCG」「Short film」、説明に「3DCGで制作」「自宅のダイニングテーブルで撮影」"
+    },
+    {
+      "id": "UzlDLNMirhE",
+      "genres": [
+        "web-cm"
+      ],
+      "products": [],
+      "directions": [
+        "illustration"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ/説明: 「Animation」「Web movie」「15周年記念映像」"
+    },
+    {
+      "id": "-OdsFe8yOs8",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ: 「3DCG」「Music video」"
+    },
+    {
+      "id": "dovY4OgXeBw",
+      "genres": [
+        "film"
+      ],
+      "products": [],
+      "directions": [
+        "stop-motion",
+        "illustration"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ/説明: 「Stopmotion」「Short film」「Animation」「Paper craft」"
+    },
+    {
+      "id": "700652038",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ/説明: 「Motion graphics」「Projection mapping」「Event」「Installation」"
+    },
+    {
+      "id": "700699352",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg",
+        "motion-graphics",
+        "illustration"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ/説明: 「3DCG」「Animation」「Motion graphics」「Music video」「TV」"
+    },
+    {
+      "id": "699367426",
+      "genres": [
+        "tv-cm"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ/説明: 表記: 「CM」、説明に「CM映像を作成」"
+    },
+    {
+      "id": "ANMPpFE24oM",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "vfx-3dcg",
+        "illustration",
+        "stop-motion"
+      ],
+      "tones": [],
+      "confidence": 0.8,
+      "evidence": "タグ/説明: 「2D animation」「3DCG」「Clay animation」「Promotion」「PV」"
+    },
+    {
+      "id": "514214406",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.7,
+      "evidence": "タグ: 「Showreel」"
+    },
+    {
+      "id": "DyEVmTGwCqo",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "illustration"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ/説明: 「2D animation」「Animation」「TV東京系の番組」"
+    },
+    {
+      "id": "JodRejOI2Rw",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "illustration"
+      ],
+      "tones": [],
+      "confidence": 0.8,
+      "evidence": "タグ: 「Animation」「Art work」"
+    },
+    {
+      "id": "15Hsw9QSeoc",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg",
+        "live-action"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ/説明: 「3DCG」「Live action」「Music video」"
+    },
+    {
+      "id": "z42mcZDooZk",
+      "genres": [
+        "tv-cm"
+      ],
+      "products": [
+        "electronics"
+      ],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "説明: 「クリエイター向けPC『DAIV』シリーズのプロモーションムービー」、タグ: 「3DCG」「CM」「Promotion」"
+    },
+    {
+      "id": "701153597",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.8,
+      "evidence": "タグに「3DCG」「Signage」、説明に「3D巨大猫」「DOOH（デジタル屋外広告）」と記載。"
+    },
+    {
+      "id": "Q7vLVjRfbqk",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "illustration"
+      ],
+      "tones": [],
+      "confidence": 0.7,
+      "evidence": "タグに「2D animation」、説明に「イベントティザー映像」と記載。"
+    },
+    {
+      "id": "dWHvrCHtgFI",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグに「Music video」と明記。"
+    },
+    {
+      "id": "hzPTZUAiRa4",
+      "genres": [
+        "film"
+      ],
+      "products": [],
+      "directions": [
+        "illustration"
+      ],
+      "tones": [],
+      "confidence": 0.7,
+      "evidence": "タグに「2D animation」「Experimental film」「Animation」が記載。"
+    },
+    {
+      "id": "MJyGc_-dfxQ",
+      "genres": [
+        "film"
+      ],
+      "products": [],
+      "directions": [
+        "illustration"
+      ],
+      "tones": [],
+      "confidence": 0.8,
+      "evidence": "タグに「2D animation」「Short film」と記載。"
+    },
+    {
+      "id": "bUyOujXrvWc",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグに「Music video」と明記。"
+    },
+    {
+      "id": "Uywq8FzxWiU",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg",
+        "illustration"
+      ],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "タグに「2D animation」「3DCG」「Music video」と記載。"
+    },
+    {
+      "id": "NQF8RUG-bxA",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.7,
+      "evidence": "タグに「Motion graphics」「Installation」「Interactive」と記載。"
+    },
+    {
+      "id": "6-Fn7dA2NAM",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.2,
+      "evidence": "タグに「AR」「Broadcast」「Interactive」とあるが、分類語に直接対応する項目は明示されていない。"
+    },
+    {
+      "id": "0komaDvGA-Q",
+      "genres": [
+        "web-cm"
+      ],
+      "products": [
+        "electronics"
+      ],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに「Xperia PRO-I」、タグに「3DCG」「Advertisement」「Web CM」と記載。"
+    },
+    {
+      "id": "BxcxDqz2S0I",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグに「Music video」と明記。"
+    },
+    {
+      "id": "670055012",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "vfx-3dcg",
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.75,
+      "evidence": "タグに「3DCG」「Motion graphics」「Broadcast」「Event」と記載。"
+    },
+    {
+      "id": "442253732",
+      "genres": [],
+      "products": [
+        "automotive"
+      ],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.8,
+      "evidence": "タイトルに「NISSAN」、タグに「Installation」「Interactive」と記載。"
+    },
+    {
+      "id": "R0sHb1a79yo",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.8,
+      "evidence": "タグに「3DCG」「XR」「Real-time Graphics」「Generative Art」と記載。"
+    },
+    {
+      "id": "697988120",
+      "genres": [
+        "opening"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "タグに「Title movie」「TV package design」「3DCG」「Broadcast」と記載。"
+    },
+    {
+      "id": "2POGrSKZbvM",
+      "genres": [
+        "web-cm"
+      ],
+      "products": [],
+      "directions": [
+        "illustration"
+      ],
+      "tones": [],
+      "confidence": 0.75,
+      "evidence": "タグに「2D animation」「Animation」「Web CM」「CM」と記載。"
+    },
+    {
+      "id": "vHm0RWaf0FE",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "illustration"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Music video（まふまふ『栞』ＭＶ）"
+    },
+    {
+      "id": "kY8fpqf_OGU",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.8,
+      "evidence": "掲載カテゴリ: Music video（花譜「イマジナリーフレンド」）"
+    },
+    {
+      "id": "433100961",
+      "genres": [
+        "web-cm",
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "illustration",
+        "vfx-3dcg",
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "掲載カテゴリ: 2D animation、3DCG、Animation、CM、Motion graphics、Music video、Web CM（mimoid inc. Reel 2020）"
+    },
+    {
+      "id": "704998562",
+      "genres": [
+        "web-cm"
+      ],
+      "products": [
+        "food"
+      ],
+      "directions": [
+        "illustration"
+      ],
+      "tones": [
+        "comical"
+      ],
+      "confidence": 0.9,
+      "evidence": "モスバーガーの期間限定商品 とり竜田バーガーのWebCM、掲載カテゴリ: CM、Web CM、Comedy（トム・ブラウン『超合体漫才』篇）"
+    },
+    {
+      "id": "OKEIHfFeTWQ",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Music video（dj newtown – 2005）"
+    },
+    {
+      "id": "7bn5yVeRfVk",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "live-action",
+        "vfx-3dcg",
+        "illustration"
+      ],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "実写×3DCG×アニメーションで渋谷の街をジャックする（擬態するメタ コンセプトティザー『企劇』）"
+    },
+    {
+      "id": "683169824",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "illustration",
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.8,
+      "evidence": "掲載カテゴリ: 2D animation、3DCG、Animation（mooba studio reel 2022）"
+    },
+    {
+      "id": "Sf_HK41ND30",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "illustration"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "赤ちゃん向け番組『シナぷしゅ』（テレビ東京）９月の歌のアニメーション、掲載カテゴリ: 2D animation、Music video、TV（はてなしはてな）"
+    },
+    {
+      "id": "IeFowPi5fJg",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "illustration",
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.8,
+      "evidence": "近年の制作映像デモリール、掲載カテゴリに Music video、2D animation、3DCG（Yuma Saito Reel -2022）"
+    },
+    {
+      "id": "Odv-zbpy-Y8",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "illustration"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Music video（yama『Oz.』MV）"
+    },
+    {
+      "id": "LyTaD9pbI7M",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "illustration",
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、3DCG、Music video（理芽「NEUROMANCE」）"
+    },
+    {
+      "id": "701287573",
+      "genres": [
+        "film"
+      ],
+      "products": [],
+      "directions": [
+        "illustration",
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Experimental film、Motion graphics（Lipogram Animation Works 2020-2021）"
+    },
+    {
+      "id": "Z7oS2IjkJEI",
+      "genres": [],
+      "products": [
+        "gaming"
+      ],
+      "directions": [
+        "illustration"
+      ],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "マジック：ザ・ギャザリング 神河　アニメーショントレーラー（掲載カテゴリ: PV）"
+    },
+    {
+      "id": "90Q6g57jnuU",
+      "genres": [
+        "mv",
+        "film"
+      ],
+      "products": [],
+      "directions": [
+        "illustration",
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.8,
+      "evidence": "主題歌アニメーションPV、掲載カテゴリ: 2D animation、3DCG、Short film（『子猫の配達員うーにゃん』主題歌アニメーションPV）"
+    },
+    {
+      "id": "639447319",
+      "genres": [
+        "opening"
+      ],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "報道ステーション オープニング映像、掲載カテゴリ: Motion graphics、TV"
+    },
+    {
+      "id": "EmQCUiM5mOw",
+      "genres": [
+        "web-cm"
+      ],
+      "products": [
+        "food"
+      ],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "チルアウトのプロモーション、全編フルCGで制作、掲載カテゴリ: 2D animation、3DCG、Web CM（無限階段からの脱出）"
+    },
+    {
+      "id": "ZjPQVunWh6s",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video（「映像作家100人 2022」の掲載作品として公式アーカイブに選出、Music video表記）"
+    },
+    {
+      "id": "4BfxkjBUkdg",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [
+        "emotional"
+      ],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video / 記述に「エモーショナルな卒業ソング」などの表現あり"
+    },
+    {
+      "id": "_H6zuJAtQqI",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Animation、Music video（タグに3DCG、Animation、Music video）"
+    },
+    {
+      "id": "Ajr18Yw5xdY",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Music video / 記述に「VFXによる…世界観で表現」と明記"
+    }
+  ],
+  "accepted": [
+    {
+      "id": "P6ZLs39MBlk",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [
+        "comical"
+      ],
+      "confidence": 0.9,
+      "evidence": "掲載者コメント: おもしろ映像量産しとる"
+    },
+    {
+      "id": "hHhzZzXIeOI",
+      "genres": [
+        "film"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Short film、Experimental film"
+    },
+    {
+      "id": "783562288",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "vfx-3dcg",
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Motion graphics、Projection mapping、Installation、Event"
+    },
+    {
+      "id": "GmetlootbhE",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video、Short film"
+    },
+    {
+      "id": "827675053",
+      "genres": [
+        "opening"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Opening movie（EDアニメーション／Opening movieタグ）"
+    },
+    {
+      "id": "Ep0YHnNRAds",
+      "genres": [
+        "web-cm"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Promotion、Web CM、Web movie（アサヒスーパードライ「ビア語り　父とビール」）"
+    },
+    {
+      "id": "3sSQt6N4WgY",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Music video"
+    },
+    {
+      "id": "JKque0N2bww",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Music video（パックマンMV）"
+    },
+    {
+      "id": "774363499",
+      "genres": [
+        "branded-movie",
+        "web-cm"
+      ],
+      "products": [
+        "fashion"
+      ],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Brand movie、Web CM（PLEATS PLEASE ISSEY MIYAKE）"
+    },
+    {
+      "id": "665641207",
+      "genres": [
+        "film"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Short film（山火事 / a forest fire）"
+    },
+    {
+      "id": "suguLfCgn88",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Animation、Short film（SHOWA124 予告編）"
+    },
+    {
+      "id": "656729574",
+      "genres": [
+        "branded-movie"
+      ],
+      "products": [
+        "fashion"
+      ],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Fashion film、Web（BOTTEGA VENETA – Issued by Bottega）"
+    },
+    {
+      "id": "VxUL2E8jpTY",
+      "genres": [
+        "web-cm"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg",
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Animation、Web CM（キャラクターアニメーション、製品紹介動画）。"
+    },
+    {
+      "id": "mHuGTWkdQiM",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg",
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Animation、Music video。Unreal Engine 5で制作。"
+    },
+    {
+      "id": "1LPKTkxLAKc",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg",
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、3DCG、Music video。"
+    },
+    {
+      "id": "f8si675mZP4",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "camera-work"
+      ],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "掲載カテゴリ: Music video。GoproMAXのみで撮影。"
+    },
+    {
+      "id": "pKF_p_IIujI",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video。"
+    },
+    {
+      "id": "ueaEM5-INdY",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg",
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Motion graphics、Music video（全編アニメーション、3Dオブジェクト中心）。"
+    },
+    {
+      "id": "7RXf7jrOFPc",
+      "genres": [
+        "film"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "掲載カテゴリ: 3DCG、Art work、Experimental film、Installation（Experimental film、3DCG使用、インタラクティブ）。"
+    },
+    {
+      "id": "483466054",
+      "genres": [
+        "web-cm"
+      ],
+      "products": [
+        "electronics"
+      ],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "掲載カテゴリ: 3DCG、CM、Web、Web CM。SIGMAのレンズシリーズのプロモーション映像（製品プロモーション）。"
+    },
+    {
+      "id": "IfMhjlc-IVk",
+      "genres": [
+        "web-cm"
+      ],
+      "products": [
+        "electronics"
+      ],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "掲載カテゴリ: 2D animation、Advertisement、Motion graphics、Web CM。CASIO GSHOCK GST-B400のプロモーションムービー。"
+    },
+    {
+      "id": "8U-gCTEYxCA",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Motion graphics、Showreel（リール作品）。"
+    },
+    {
+      "id": "CpjcbY3i7Fk",
+      "genres": [
+        "mv",
+        "film"
+      ],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Music video、Short film（短編アニメーション／Music video）。"
+    },
+    {
+      "id": "639034386",
+      "genres": [
+        "opening",
+        "web-cm"
+      ],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "掲載カテゴリ: 2D animation、AD、Animation、Motion graphics、Opening movie、Promotion、Web CM（コンセプトムービー／開幕映像、サイネージ）。"
+    },
+    {
+      "id": "662541028",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "vfx-3dcg",
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、3DCG、CM、Motion graphics、Showreel（ショーリール、2D/3Dを行き交う演出）。"
+    },
+    {
+      "id": "w6eWno3iAjk",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Art work、Music video、PV（2DアニメーションのMusic video）。"
+    },
+    {
+      "id": "q66WJaikhlo",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "stop-motion"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ: Stopmotion。説明: 「切り絵とコマ撮りの手法」を用いた短編アニメーションシリーズ。"
+    },
+    {
+      "id": "683133059",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ: Motion graphics、AR。説明: モーショングラフィックをステッカーのように貼って合成した映像。"
+    },
+    {
+      "id": "PP8a9D_5eFA",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "タグ: Music video、3DCG。説明: 人物はグリーンバックで、その他は全て3DCGで制作。"
+    },
+    {
+      "id": "FwrL2tFt7nw",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "illustration",
+        "live-action"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ: Animation。説明: 単純化されたキャラクター（アニメ）と鮮明な実写映像を組み合わせている。"
+    },
+    {
+      "id": "661835461",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics",
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ: 2D animation、3DCG、Motion graphics。説明: ショーリールに多数の2D/3D/モーショングラフィック作品を収録。"
+    },
+    {
+      "id": "580725557",
+      "genres": [
+        "film"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ: 3DCG、Short film。説明: 作品は短編（Short film）かつ3DCG制作。"
+    },
+    {
+      "id": "GHQIAi3t6a0",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics",
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ: 2D animation、3DCG、Motion graphics。説明: 2D/3Dとモーショングラフィックを用いた自主制作。"
+    },
+    {
+      "id": "3nwknXSrIbA",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ: Music video、3DCG。"
+    },
+    {
+      "id": "704047024",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "vfx-3dcg",
+        "virtual-production"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ: 3DCG、VR、XR。説明: バーチャルカメラシステムとモーションキャプチャーで現実と仮想空間を連携して撮影。"
+    },
+    {
+      "id": "566764820",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics",
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ: 2D animation、3DCG、Motion graphics（ショーリール）。"
+    },
+    {
+      "id": "5KsXVs8Vg7U",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "タグ: Music video、3DCG。"
+    },
+    {
+      "id": "696403114",
+      "genres": [
+        "tv-cm"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg",
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "タグ: TV-CM、CM、Advertisement、3DCG、Motion graphics。"
+    },
+    {
+      "id": "KpEHo9j2LNg",
+      "genres": [
+        "opening"
+      ],
+      "products": [
+        "gaming"
+      ],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "タイトル: eBASEBALLパワフルプロ野球2022（ゲーム）。タグ: Opening movie、3DCG、Animation。"
+    },
+    {
+      "id": "vj7Gmv7FC-0",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ: 「3DCG」「Music video」"
+    },
+    {
+      "id": "Er8gqBIJJiw",
+      "genres": [
+        "web-cm"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ/説明: 「Web movie」「NIMSのPR」（掲載カテゴリ: Web movie）"
+    },
+    {
+      "id": "682730128",
+      "genres": [
+        "film"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg",
+        "live-action"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ/説明: 「3DCG」「Short film」、説明に「3DCGで制作」「自宅のダイニングテーブルで撮影」"
+    },
+    {
+      "id": "UzlDLNMirhE",
+      "genres": [
+        "web-cm"
+      ],
+      "products": [],
+      "directions": [
+        "illustration"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ/説明: 「Animation」「Web movie」「15周年記念映像」"
+    },
+    {
+      "id": "-OdsFe8yOs8",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ: 「3DCG」「Music video」"
+    },
+    {
+      "id": "dovY4OgXeBw",
+      "genres": [
+        "film"
+      ],
+      "products": [],
+      "directions": [
+        "stop-motion",
+        "illustration"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ/説明: 「Stopmotion」「Short film」「Animation」「Paper craft」"
+    },
+    {
+      "id": "700652038",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ/説明: 「Motion graphics」「Projection mapping」「Event」「Installation」"
+    },
+    {
+      "id": "700699352",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg",
+        "motion-graphics",
+        "illustration"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ/説明: 「3DCG」「Animation」「Motion graphics」「Music video」「TV」"
+    },
+    {
+      "id": "699367426",
+      "genres": [
+        "tv-cm"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ/説明: 表記: 「CM」、説明に「CM映像を作成」"
+    },
+    {
+      "id": "DyEVmTGwCqo",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "illustration"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ/説明: 「2D animation」「Animation」「TV東京系の番組」"
+    },
+    {
+      "id": "15Hsw9QSeoc",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg",
+        "live-action"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグ/説明: 「3DCG」「Live action」「Music video」"
+    },
+    {
+      "id": "z42mcZDooZk",
+      "genres": [
+        "tv-cm"
+      ],
+      "products": [
+        "electronics"
+      ],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "説明: 「クリエイター向けPC『DAIV』シリーズのプロモーションムービー」、タグ: 「3DCG」「CM」「Promotion」"
+    },
+    {
+      "id": "dWHvrCHtgFI",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグに「Music video」と明記。"
+    },
+    {
+      "id": "bUyOujXrvWc",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグに「Music video」と明記。"
+    },
+    {
+      "id": "Uywq8FzxWiU",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg",
+        "illustration"
+      ],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "タグに「2D animation」「3DCG」「Music video」と記載。"
+    },
+    {
+      "id": "0komaDvGA-Q",
+      "genres": [
+        "web-cm"
+      ],
+      "products": [
+        "electronics"
+      ],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに「Xperia PRO-I」、タグに「3DCG」「Advertisement」「Web CM」と記載。"
+    },
+    {
+      "id": "BxcxDqz2S0I",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タグに「Music video」と明記。"
+    },
+    {
+      "id": "697988120",
+      "genres": [
+        "opening"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "タグに「Title movie」「TV package design」「3DCG」「Broadcast」と記載。"
+    },
+    {
+      "id": "vHm0RWaf0FE",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "illustration"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Music video（まふまふ『栞』ＭＶ）"
+    },
+    {
+      "id": "433100961",
+      "genres": [
+        "web-cm",
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "illustration",
+        "vfx-3dcg",
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "掲載カテゴリ: 2D animation、3DCG、Animation、CM、Motion graphics、Music video、Web CM（mimoid inc. Reel 2020）"
+    },
+    {
+      "id": "704998562",
+      "genres": [
+        "web-cm"
+      ],
+      "products": [
+        "food"
+      ],
+      "directions": [
+        "illustration"
+      ],
+      "tones": [
+        "comical"
+      ],
+      "confidence": 0.9,
+      "evidence": "モスバーガーの期間限定商品 とり竜田バーガーのWebCM、掲載カテゴリ: CM、Web CM、Comedy（トム・ブラウン『超合体漫才』篇）"
+    },
+    {
+      "id": "OKEIHfFeTWQ",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Music video（dj newtown – 2005）"
+    },
+    {
+      "id": "7bn5yVeRfVk",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "live-action",
+        "vfx-3dcg",
+        "illustration"
+      ],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "実写×3DCG×アニメーションで渋谷の街をジャックする（擬態するメタ コンセプトティザー『企劇』）"
+    },
+    {
+      "id": "Sf_HK41ND30",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "illustration"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "赤ちゃん向け番組『シナぷしゅ』（テレビ東京）９月の歌のアニメーション、掲載カテゴリ: 2D animation、Music video、TV（はてなしはてな）"
+    },
+    {
+      "id": "Odv-zbpy-Y8",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "illustration"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Music video（yama『Oz.』MV）"
+    },
+    {
+      "id": "LyTaD9pbI7M",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "illustration",
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、3DCG、Music video（理芽「NEUROMANCE」）"
+    },
+    {
+      "id": "701287573",
+      "genres": [
+        "film"
+      ],
+      "products": [],
+      "directions": [
+        "illustration",
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Experimental film、Motion graphics（Lipogram Animation Works 2020-2021）"
+    },
+    {
+      "id": "Z7oS2IjkJEI",
+      "genres": [],
+      "products": [
+        "gaming"
+      ],
+      "directions": [
+        "illustration"
+      ],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "マジック：ザ・ギャザリング 神河　アニメーショントレーラー（掲載カテゴリ: PV）"
+    },
+    {
+      "id": "639447319",
+      "genres": [
+        "opening"
+      ],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "報道ステーション オープニング映像、掲載カテゴリ: Motion graphics、TV"
+    },
+    {
+      "id": "EmQCUiM5mOw",
+      "genres": [
+        "web-cm"
+      ],
+      "products": [
+        "food"
+      ],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "チルアウトのプロモーション、全編フルCGで制作、掲載カテゴリ: 2D animation、3DCG、Web CM（無限階段からの脱出）"
+    },
+    {
+      "id": "ZjPQVunWh6s",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video（「映像作家100人 2022」の掲載作品として公式アーカイブに選出、Music video表記）"
+    },
+    {
+      "id": "4BfxkjBUkdg",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [
+        "emotional"
+      ],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video / 記述に「エモーショナルな卒業ソング」などの表現あり"
+    },
+    {
+      "id": "_H6zuJAtQqI",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Animation、Music video（タグに3DCG、Animation、Music video）"
+    },
+    {
+      "id": "Ajr18Yw5xdY",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Music video / 記述に「VFXによる…世界観で表現」と明記"
+    }
+  ]
+}

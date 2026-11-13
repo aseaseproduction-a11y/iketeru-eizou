@@ -1,0 +1,8 @@
+# 1. プロジェクトフォルダへ移動
+cd D:\bitbucket\iketeru-eizou
+
+# 2. ビルド（dist/public に本番用ファイルが生成されます）
+npm run build
+
+# 3. Vercel本番環境（https://iketeru-eizou.vercel.app）へデプロイ
+npx vercel --prod --yes

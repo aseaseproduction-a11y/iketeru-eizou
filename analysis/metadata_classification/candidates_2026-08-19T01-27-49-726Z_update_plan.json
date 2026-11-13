@@ -1,0 +1,337 @@
+{
+  "generatedAt": "2026-08-19T01:29:59.475Z",
+  "candidatePath": "analysis/metadata_classification/candidates_2026-08-19T01-27-49-726Z.json",
+  "updates": [
+    {
+      "id": "v_iEWL4AseA",
+      "title": "Indie Sakuga MAD",
+      "confidence": 0.85,
+      "evidence": "タイトル／掲載者コメント: 'Indie Sakuga MAD#indie_anime'（MAD表記）"
+    },
+    {
+      "id": "0d3rehA2qUo",
+      "title": "DAZBEE (ダズビー) | ‘Angel’s Fake’ M/V",
+      "confidence": 0.9,
+      "evidence": "タイトル: 'M/V'／掲載者メモ: 'Cuteなコラージュ'（M/V表記）"
+    },
+    {
+      "id": "0du6zS13gyI",
+      "title": "【MAD/AMV】Midnight Dance 真夜中に踊る",
+      "confidence": 0.9,
+      "evidence": "タイトル: 'MAD/AMV'／掲載者メモ: 'かなり好き。かなり見返してる。'（MAD/AMV表記）"
+    },
+    {
+      "id": "uzEuUl5VVaM",
+      "title": "【静止画MAD】ブルーロック-EPISODE 凪-【爆音の鳴る場所で】",
+      "confidence": 0.85,
+      "evidence": "タイトル: '静止画MAD'／掲載者メモ: '構成'（静止画MAD表記）"
+    },
+    {
+      "id": "M0Oud1_4sl0",
+      "title": "【original】まんなかちてん【姫森ルーナ/ホロライブ】",
+      "confidence": 0.9,
+      "evidence": "タイトル: '【original】まんなかちてん'／掲載者メモ: '3D綺麗'（3D表現の明示）"
+    },
+    {
+      "id": "1DhBsShUeEo",
+      "title": "【内田真礼】透明な合図（Lyric Video）【4th ALBUM「TOKYO-BYAKUYA」】",
+      "confidence": 0.9,
+      "evidence": "タイトル: '透明な合図（Lyric Video）'（Lyric Video表記）／掲載者メモ: '長回し'（映像手法の言及）"
+    },
+    {
+      "id": "A0X0Q-u7Iy4",
+      "title": "Sick - Bocchi the rock! [AMV/Edit]",
+      "confidence": 0.9,
+      "evidence": "タイトル: 'AMV/Edit'／掲載者メモ: '久々にAMVフォルダに動画が入った'（AMV表記）"
+    },
+    {
+      "id": "2e_Zo9Jaw2M",
+      "title": "TVアニメ『SHY』OPムービー｜OP主題歌「Shiny Girl」MindaRyn",
+      "confidence": 0.95,
+      "evidence": "タイトル: 'TVアニメ『SHY』OPムービー'（OPムービー表記）／掲載者メモ: 'アニメとMGの融合'（モーショングラフィックスの明示）"
+    },
+    {
+      "id": "P8kxkQPryLg",
+      "title": "【MV】Get It Back / The Cat’s Whiskers",
+      "confidence": 0.9,
+      "evidence": "タイトル: '【MV】Get It Back'（MV表記）／掲載者メモ: 'リリックデザイン。手描きエフェクト。ライトリーク。'（リリック／エフェクト＝MG的要素）"
+    },
+    {
+      "id": "ZnbqrDfd8NI",
+      "title": "One Piece【ワンピース】Wano FINALE Sakuga MAD",
+      "confidence": 0.85,
+      "evidence": "タイトル: 'Wano FINALE Sakuga MAD'（Sakuga／MAD表記）／掲載者メモ: 'うますぎ'"
+    },
+    {
+      "id": "E8nKUVNlc3A",
+      "title": "Seven layers",
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: 'おもしろモーショングラフィックス'（モーショングラフィックスの明示）"
+    },
+    {
+      "id": "_M0iW0Fa75Y",
+      "title": "幽谷きらら「パラサイトブルー」MV",
+      "confidence": 0.95,
+      "evidence": "タイトルに「MV」と明記（幽谷きらら「パラサイトブルー」MV）"
+    },
+    {
+      "id": "DOPsCO91jcU",
+      "title": "【僕のヒーローアカデミア】ー未成年の主張ー【ジャンプアニメイズム】",
+      "confidence": 0.9,
+      "evidence": "掲載者メモに「デク vs A組のカメラワーク」と明記（カメラワークに関する言及あり）"
+    },
+    {
+      "id": "_QgmUmLt130",
+      "title": "ダーリン / 須田景凪(covered by 佃煮のりお)",
+      "confidence": 0.85,
+      "evidence": "掲載者メモに「グラフィック」と記載（グラフィック表現＝モーショングラフィックスに該当する記述あり）"
+    },
+    {
+      "id": "dgX0mWZqQRw",
+      "title": "Neko Hacker - Endless Error Loop feat. ななひら (Music Video)",
+      "confidence": 0.95,
+      "evidence": "タイトルに“(Music Video)”と明記（Music Videoであることが明示されている）"
+    },
+    {
+      "id": "5yb2N3pnztU",
+      "title": "TVアニメ『呪術廻戦』第2期「渋谷事変」ノンクレジットOPムービー／OPテーマ：King Gnu「SPECIALZ」｜毎週木曜夜11時56分～MBS/TBS系列全国28局にて放送中!!",
+      "confidence": 0.95,
+      "evidence": "タイトルに「ノンクレジットOPムービー」と明記（オープニング映像であることが明示されている）"
+    },
+    {
+      "id": "DlKgwDA6bQE",
+      "title": "【MAD/AMV】Fall Out Boy - Immortals (From \"Big Hero 6\") -Frieren :Beyond Journey's End--葬送のフリーレン-",
+      "confidence": 0.9,
+      "evidence": "タイトル／掲載者メモに「MAD/AMV」と明記"
+    },
+    {
+      "id": "7BWicdZJyKc",
+      "title": "JUMP MV /『BLEACH』×『Velonica』| Aqua Timez",
+      "confidence": 0.9,
+      "evidence": "タイトルに「JUMP MV」と明記"
+    },
+    {
+      "id": "kmRmQnq0tmE",
+      "title": "【ぬらりひょんの孫】（cv:福山潤）15周年記念PV～夜ver.～【週刊少年ジャンプ】",
+      "confidence": 0.9,
+      "evidence": "タイトルに「15周年記念PV～夜ver.～」と明記"
+    },
+    {
+      "id": "RwSMBjTa5Dw",
+      "title": "消えない feat.春茶 / MIMiNARI：Music Video",
+      "confidence": 0.95,
+      "evidence": "タイトルに「Music Video」と明記"
+    },
+    {
+      "id": "A0tKGpKOU4Y",
+      "title": "TVアニメ「僕の心のヤバイやつ」第２期ノンクレジットOP映像｜あたらよ「「僕は...」」",
+      "confidence": 0.95,
+      "evidence": "タイトルに「ノンクレジットOP映像」「TVアニメ」と明記"
+    },
+    {
+      "id": "LS0lcPpgUIc",
+      "title": "『ナミナガレ』 - UROMT",
+      "confidence": 0.9,
+      "evidence": "掲載者メモに「ガンギマリMV」と明記／タイトルに楽曲名あり"
+    },
+    {
+      "id": "CZUvvaw3Kj8",
+      "title": "【Official】Music Video 「Λlteration」小仏 凪(CV:佐倉 薫)＆月鈴 白奈(CV:高野 麻里佳)＆御形 アリシアナ(CV:福原 綾香)＆桔梗 小夜曲(CV:原田 彩楓)",
+      "confidence": 0.95,
+      "evidence": "タイトルに「Official Music Video」と明記"
+    },
+    {
+      "id": "YduqRimENIg",
+      "title": "【静止画MAD】世界の終わりに柴犬と",
+      "confidence": 0.9,
+      "evidence": "タイトルに「静止画MAD」と明記"
+    },
+    {
+      "id": "Tj27f-n7nZA",
+      "title": "【二次創作MV/r-906】あなたしか見えないの",
+      "confidence": 0.9,
+      "evidence": "タイトルに「二次創作MV」"
+    },
+    {
+      "id": "aYl6nM_MoVw",
+      "title": "sweet",
+      "confidence": 0.9,
+      "evidence": "掲載者メモに「Sonny BoyのAMV」"
+    },
+    {
+      "id": "9a1PbhL85WI",
+      "title": "Best of 2023 Anime 作画 Sakuga MAD",
+      "confidence": 0.85,
+      "evidence": "タイトルに「Sakuga MAD」"
+    },
+    {
+      "id": "Bt9JqcPcNEc",
+      "title": "クジラ夜の街「インカーネーション」Lyric Video",
+      "confidence": 0.9,
+      "evidence": "タイトルに「Lyric Video」、掲載者メモに「あしらい」"
+    },
+    {
+      "id": "M7dH4veT_Rc",
+      "title": "【静止画MAD】カグラバチ×VIVID VICE 【MMV】",
+      "confidence": 0.9,
+      "evidence": "タイトルに「静止画MAD」"
+    },
+    {
+      "id": "Ns4_PSRWDJc",
+      "title": "【YARIS DIRECTORSCUT】#053 r-906 , フロクロ , もう石田「moment」",
+      "confidence": 0.85,
+      "evidence": "タイトル/チャンネルに「YARIS」「TOYOTA DIRECTORSCUT」"
+    },
+    {
+      "id": "q3Jr18BGJNQ",
+      "title": "JUMP MV /『青の祓魔師』×『Eye's Sentry』| UVERworld",
+      "confidence": 0.9,
+      "evidence": "タイトルに「JUMP MV」"
+    },
+    {
+      "id": "nPJhLiqv8Jc",
+      "title": "TVアニメ『この素晴らしい世界に祝福を！３』ノンクレジットオープニング映像【このすば】",
+      "confidence": 0.95,
+      "evidence": "タイトルに「ノンクレジットオープニング映像」"
+    },
+    {
+      "id": "As28u4ORKLI",
+      "title": "[文字PV]ビビビビ/フロクロ",
+      "confidence": 0.85,
+      "evidence": "タイトルに「[文字PV]」、掲載者メモに「0:03のターミナル画面」"
+    },
+    {
+      "id": "kCpYr8niinI",
+      "title": "Motion class",
+      "confidence": 0.85,
+      "evidence": "掲載者メモに「0:24の2Dが3Dに変わるところ」"
+    },
+    {
+      "id": "aU_zMvaX05Q",
+      "title": "Elvis Costello & The Attractions - Accidents Will Happen",
+      "confidence": 0.9,
+      "evidence": "タイトルが楽曲名・アーティスト表記、チャンネル: ElvisCostelloVEVO（音楽映像）"
+    },
+    {
+      "id": "munNqjxUfNk",
+      "title": "harha - film (MusicVideo)【シャルロット(原神)  同人イメージソング/Charlotte(Genshin Impact) Fan Song】",
+      "confidence": 0.9,
+      "evidence": "タイトルに「MusicVideo」と明記（同人イメージソング）"
+    },
+    {
+      "id": "4Z_-Re8YQJY",
+      "title": "【公式】スマートEX「あれも！これも！」WEBCM　会員登録篇",
+      "confidence": 0.95,
+      "evidence": "タイトルに「WEBCM」と明記"
+    },
+    {
+      "id": "qbnagyF4dMQ",
+      "title": "☪️ 【 オリジナルMV 】メルト 歌ってみた by 天月",
+      "confidence": 0.95,
+      "evidence": "タイトルに「オリジナルMV」と明記"
+    },
+    {
+      "id": "Ihi4txH7WxM",
+      "title": "【僕のヒーローアカデミア】お茶子＆トガちゃんPV ― だから私は ―【最新39巻発売記念】",
+      "confidence": 0.9,
+      "evidence": "タイトルに「PV」と明記、発売記念の告知あり"
+    },
+    {
+      "id": "TG2IgWOjtwU",
+      "title": "Myuk - ひとりじゃないよ (Music Video)",
+      "confidence": 0.95,
+      "evidence": "タイトルに「Music Video」と明記"
+    },
+    {
+      "id": "n1mN9Y5ywOw",
+      "title": "和光ホームズ株式会社 TVCM（15秒編）",
+      "confidence": 0.98,
+      "evidence": "タイトルに「TVCM（15秒編）」と明記"
+    },
+    {
+      "id": "bG0cGW35-TI",
+      "title": "TVアニメ『戦隊大失格』ノンクレジットOPムービー｜TBS系全国28局ネットにて毎週日曜午後4時30分から放送中／ディズニープラスにて毎週日曜17:00より配信中",
+      "confidence": 0.99,
+      "evidence": "タイトルに「ノンクレジットOPムービー」（オープニング映像）"
+    },
+    {
+      "id": "XTLESsNVoRg",
+      "title": "JUMP MV /『アンデッドアンラック』×『ラブコール』| シユイ",
+      "confidence": 0.9,
+      "evidence": "タイトルに『JUMP MV』と明記（MV＝ミュージックビデオ）。"
+    },
+    {
+      "id": "txrgNDIK2pM",
+      "title": "JUMP MV /『僕のヒーローアカデミア』×『THE DAY』| ポルノグラフィティ",
+      "confidence": 0.9,
+      "evidence": "タイトルに『JUMP MV』と明記（MV＝ミュージックビデオ）。"
+    },
+    {
+      "id": "y0LVCGkjhmw",
+      "title": "【MV】VVS / ChroNoiR",
+      "confidence": 0.9,
+      "evidence": "タイトルに『【MV】』と明記（Music Video）。"
+    },
+    {
+      "id": "eMgHOf0rpBQ",
+      "title": "TVアニメ『ゆるキャン△ SEASON３』オープニング映像│04.04 ONAIR",
+      "confidence": 0.9,
+      "evidence": "タイトルに『TVアニメ』『オープニング映像』『アニメ』と明記（アニメのオープニング映像のためOpeningかつイラスト系）。"
+    },
+    {
+      "id": "Z4qBZeOoQlE",
+      "title": "2D Motion Design Showreel | 2D Motion Graphics | Animation",
+      "confidence": 0.9,
+      "evidence": "タイトルに『2D Motion Design』『2D Motion Graphics』『Animation』と明記（モーショングラフィックス／アニメーション）。"
+    },
+    {
+      "id": "Xcg_v204Lo0",
+      "title": "『 Temaca 🦑 2023 Q1~2 PV Showreel & Making Film 』",
+      "confidence": 0.9,
+      "evidence": "タイトルに『PV Showreel & Making Film』と明記（メイキング映像＝making）。"
+    },
+    {
+      "id": "IvlRxk5FRqc",
+      "title": "【ブルアカ】「0068 オペラより愛をこめて！」イベントPV",
+      "confidence": 0.9,
+      "evidence": "タイトルに『ブルアカ』『イベントPV』と明記（ブルーアーカイブ＝ゲーム、イベントPVのため商材はgamingと判断）。"
+    },
+    {
+      "id": "gz--GkzpAf8",
+      "title": "『SPY×FAMILY』Season 2 オープニング主題歌Ado「クラクラ」アニメ映像(ノンクレジット) ／2023.10.07 23:00～ON AIR",
+      "confidence": 0.9,
+      "evidence": "タイトルに『オープニング主題歌』『アニメ映像(ノンクレジット)』と明記（アニメのオープニング映像）。"
+    },
+    {
+      "id": "xG2eFaT4SI8",
+      "title": "[MMV] Frieren: Beyond Journey's End x Vaundy",
+      "confidence": 0.9,
+      "evidence": "タイトルに『[MMV]』と明記（MMV＝ミュージックビデオ系の表記）。"
+    },
+    {
+      "id": "7synqOiMORc",
+      "title": "PEOPLE 1 “鈴々” （Official Video）",
+      "confidence": 0.9,
+      "evidence": "タイトルに『Official Video』と明記（公式ミュージックビデオ＝MV）。"
+    },
+    {
+      "id": "ayL4pzictu8",
+      "title": "livetune adding 中島 愛「Transfer」Music Video",
+      "confidence": 0.9,
+      "evidence": "タイトルに『Music Video』と明記（ミュージックビデオ）。"
+    },
+    {
+      "id": "96DBF2TzZ4c",
+      "title": "Miiro 「괴물이 피는 숲」 feat. 도비비 (Dovlvl) OFFICIAL MV",
+      "confidence": 0.85,
+      "evidence": "タイトルに『OFFICIAL MV』、掲載者コメント『作画で殴るMV』"
+    },
+    {
+      "id": "v4eyVyfzrKQ",
+      "title": "森ビル ブランドムービー｜DESIGNING TOKYO",
+      "confidence": 0.9,
+      "evidence": "タイトルに『ブランドムービー』、チャンネル名『森ビル株式会社』、掲載者コメント『3Dピクセルソート』"
+    }
+  ],
+  "held": []
+}

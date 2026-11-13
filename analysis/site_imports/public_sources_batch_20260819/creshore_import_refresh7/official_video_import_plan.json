@@ -1,0 +1,281 @@
+{
+  "generatedAt": "2026-08-20T01:06:09.328Z",
+  "source": "指定サイト公式掲載動画",
+  "counts": {
+    "verifiedCandidates": 8
+  },
+  "imports": [
+    {
+      "id": "dD4O1f5-CKU",
+      "platform": "youtube",
+      "title": "【コカ･コーラ】 一緒だともっとおいしい「お花見」篇 Coca-Cola",
+      "thumbnail": "https://i.ytimg.com/vi/dD4O1f5-CKU/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=dD4O1f5-CKU",
+      "embedUrl": "https://www.youtube.com/embed/dD4O1f5-CKU",
+      "source": "creshore",
+      "sourceLabel": "Creshore公開投稿",
+      "channelTitle": "コカ・コーラ",
+      "allTags": [
+        "Creshore公開投稿",
+        "公式制作実績",
+        "YouTube"
+      ],
+      "productions": [],
+      "curationNote": {
+        "purpose": "映像表現のリファレンス収集",
+        "background": "Creshore公開投稿の公式掲載ページに掲載。 公式掲載タイトル: undefined",
+        "evaluation": "公式掲載作品として確認された映像。",
+        "sourceUrls": [
+          "https://creshore.jp/api/v1/top"
+        ]
+      },
+      "awards": [],
+      "addedDate": "2026-08-19",
+      "verification": {
+        "method": "public_oembed_and_source_title_video_id_canonical_url_verified",
+        "retrievedTitle": "【コカ･コーラ】 一緒だともっとおいしい「お花見」篇 Coca-Cola",
+        "sourceUrls": [
+          "https://creshore.jp/api/v1/top"
+        ]
+      }
+    },
+    {
+      "id": "1175847608",
+      "platform": "vimeo",
+      "title": "SABERA",
+      "thumbnail": "https://i.vimeocdn.com/video/2136776374-8b4dc3ca5b2af9c89f478f30f30932e74184badb0ea8e3e14bdf5338b01c088b-d_295x166?region=us",
+      "videoUrl": "https://vimeo.com/1175847608",
+      "embedUrl": "https://player.vimeo.com/video/1175847608",
+      "source": "creshore",
+      "sourceLabel": "Creshore公開投稿",
+      "channelTitle": "IN FOCUS",
+      "allTags": [
+        "Creshore公開投稿",
+        "公式制作実績",
+        "Vimeo"
+      ],
+      "productions": [],
+      "curationNote": {
+        "purpose": "映像表現のリファレンス収集",
+        "background": "Creshore公開投稿の公式掲載ページに掲載。 公式掲載タイトル: undefined",
+        "evaluation": "公式掲載作品として確認された映像。",
+        "sourceUrls": [
+          "https://creshore.jp/api/v1/top?refresh=3"
+        ]
+      },
+      "awards": [],
+      "addedDate": "2026-08-19",
+      "verification": {
+        "method": "public_oembed_and_source_title_video_id_canonical_url_verified",
+        "retrievedTitle": "SABERA",
+        "sourceUrls": [
+          "https://creshore.jp/api/v1/top?refresh=3"
+        ]
+      }
+    },
+    {
+      "id": "U0Klb45BNlQ",
+      "platform": "youtube",
+      "title": "Mom Don't wipe floor",
+      "thumbnail": "https://i.ytimg.com/vi/U0Klb45BNlQ/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=U0Klb45BNlQ",
+      "embedUrl": "https://www.youtube.com/embed/U0Klb45BNlQ",
+      "source": "creshore",
+      "sourceLabel": "Creshore公開投稿",
+      "channelTitle": "HirakataHiroaki",
+      "allTags": [
+        "Creshore公開投稿",
+        "公式制作実績",
+        "YouTube"
+      ],
+      "productions": [],
+      "curationNote": {
+        "purpose": "映像表現のリファレンス収集",
+        "background": "Creshore公開投稿の公式掲載ページに掲載。 公式掲載タイトル: undefined",
+        "evaluation": "公式掲載作品として確認された映像。",
+        "sourceUrls": [
+          "https://creshore.jp/api/v1/top?refresh=4"
+        ]
+      },
+      "awards": [],
+      "addedDate": "2026-08-19",
+      "verification": {
+        "method": "public_oembed_and_source_title_video_id_canonical_url_verified",
+        "retrievedTitle": "Mom Don't wipe floor",
+        "sourceUrls": [
+          "https://creshore.jp/api/v1/top?refresh=4"
+        ]
+      }
+    },
+    {
+      "id": "9k1rL4MEzKc",
+      "platform": "youtube",
+      "title": "日清シスコ ごろグラCM「ごろグラ買ってもいい？ 篇」30秒 / 初音ミク",
+      "thumbnail": "https://i.ytimg.com/vi/9k1rL4MEzKc/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=9k1rL4MEzKc",
+      "embedUrl": "https://www.youtube.com/embed/9k1rL4MEzKc",
+      "source": "creshore",
+      "sourceLabel": "Creshore公開投稿",
+      "channelTitle": "日清食品グループ公式チャンネル",
+      "allTags": [
+        "Creshore公開投稿",
+        "公式制作実績",
+        "YouTube"
+      ],
+      "productions": [],
+      "curationNote": {
+        "purpose": "映像表現のリファレンス収集",
+        "background": "Creshore公開投稿の公式掲載ページに掲載。 公式掲載タイトル: undefined",
+        "evaluation": "公式掲載作品として確認された映像。",
+        "sourceUrls": [
+          "https://creshore.jp/api/v1/top?refresh=5"
+        ]
+      },
+      "awards": [],
+      "addedDate": "2026-08-19",
+      "verification": {
+        "method": "public_oembed_and_source_title_video_id_canonical_url_verified",
+        "retrievedTitle": "日清シスコ ごろグラCM「ごろグラ買ってもいい？ 篇」30秒 / 初音ミク",
+        "sourceUrls": [
+          "https://creshore.jp/api/v1/top?refresh=5"
+        ]
+      }
+    },
+    {
+      "id": "RpUCeU3OLWk",
+      "platform": "youtube",
+      "title": "ARSOA New SKIN CARE 2026",
+      "thumbnail": "https://i.ytimg.com/vi/RpUCeU3OLWk/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=RpUCeU3OLWk",
+      "embedUrl": "https://www.youtube.com/embed/RpUCeU3OLWk",
+      "source": "creshore",
+      "sourceLabel": "Creshore公開投稿",
+      "channelTitle": "ARSOA アルソア",
+      "allTags": [
+        "Creshore公開投稿",
+        "公式制作実績",
+        "YouTube"
+      ],
+      "productions": [],
+      "curationNote": {
+        "purpose": "映像表現のリファレンス収集",
+        "background": "Creshore公開投稿の公式掲載ページに掲載。 公式掲載タイトル: undefined",
+        "evaluation": "公式掲載作品として確認された映像。",
+        "sourceUrls": [
+          "https://creshore.jp/api/v1/top?refresh=5"
+        ]
+      },
+      "awards": [],
+      "addedDate": "2026-08-19",
+      "verification": {
+        "method": "public_oembed_and_source_title_video_id_canonical_url_verified",
+        "retrievedTitle": "ARSOA New SKIN CARE 2026",
+        "sourceUrls": [
+          "https://creshore.jp/api/v1/top?refresh=5"
+        ]
+      }
+    },
+    {
+      "id": "CoKrnvc6AyE",
+      "platform": "youtube",
+      "title": "【公開記念ミニ特番 Part1 撮影秘話編】映画『宝島』9月19日（金）公開",
+      "thumbnail": "https://i.ytimg.com/vi/CoKrnvc6AyE/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=CoKrnvc6AyE",
+      "embedUrl": "https://www.youtube.com/embed/CoKrnvc6AyE",
+      "source": "creshore",
+      "sourceLabel": "Creshore公開投稿",
+      "channelTitle": "ソニー・ピクチャーズ 映画",
+      "allTags": [
+        "Creshore公開投稿",
+        "公式制作実績",
+        "YouTube"
+      ],
+      "productions": [],
+      "curationNote": {
+        "purpose": "映像表現のリファレンス収集",
+        "background": "Creshore公開投稿の公式掲載ページに掲載。 公式掲載タイトル: undefined",
+        "evaluation": "公式掲載作品として確認された映像。",
+        "sourceUrls": [
+          "https://creshore.jp/api/v1/top?refresh=5"
+        ]
+      },
+      "awards": [],
+      "addedDate": "2026-08-19",
+      "verification": {
+        "method": "public_oembed_and_source_title_video_id_canonical_url_verified",
+        "retrievedTitle": "【公開記念ミニ特番 Part1 撮影秘話編】映画『宝島』9月19日（金）公開",
+        "sourceUrls": [
+          "https://creshore.jp/api/v1/top?refresh=5"
+        ]
+      }
+    },
+    {
+      "id": "U3SjKBsVtj0",
+      "platform": "youtube",
+      "title": "【味の素】AminoScience VISION OF AMINOSCIENTIST #2",
+      "thumbnail": "https://i.ytimg.com/vi/U3SjKBsVtj0/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=U3SjKBsVtj0",
+      "embedUrl": "https://www.youtube.com/embed/U3SjKBsVtj0",
+      "source": "creshore",
+      "sourceLabel": "Creshore公開投稿",
+      "channelTitle": "HO",
+      "allTags": [
+        "Creshore公開投稿",
+        "公式制作実績",
+        "YouTube"
+      ],
+      "productions": [],
+      "curationNote": {
+        "purpose": "映像表現のリファレンス収集",
+        "background": "Creshore公開投稿の公式掲載ページに掲載。 公式掲載タイトル: undefined",
+        "evaluation": "公式掲載作品として確認された映像。",
+        "sourceUrls": [
+          "https://creshore.jp/api/v1/top?refresh=5"
+        ]
+      },
+      "awards": [],
+      "addedDate": "2026-08-19",
+      "verification": {
+        "method": "public_oembed_and_source_title_video_id_canonical_url_verified",
+        "retrievedTitle": "【味の素】AminoScience VISION OF AMINOSCIENTIST #2",
+        "sourceUrls": [
+          "https://creshore.jp/api/v1/top?refresh=5"
+        ]
+      }
+    },
+    {
+      "id": "Xtj3Jq5mJpU",
+      "platform": "youtube",
+      "title": "MOTION GRAPHICS - \"TSUKURU is TANOSII\"",
+      "thumbnail": "https://i.ytimg.com/vi/Xtj3Jq5mJpU/hqdefault.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=Xtj3Jq5mJpU",
+      "embedUrl": "https://www.youtube.com/embed/Xtj3Jq5mJpU",
+      "source": "creshore",
+      "sourceLabel": "Creshore公開投稿",
+      "channelTitle": "ong_",
+      "allTags": [
+        "Creshore公開投稿",
+        "公式制作実績",
+        "YouTube"
+      ],
+      "productions": [],
+      "curationNote": {
+        "purpose": "映像表現のリファレンス収集",
+        "background": "Creshore公開投稿の公式掲載ページに掲載。 公式掲載タイトル: undefined",
+        "evaluation": "公式掲載作品として確認された映像。",
+        "sourceUrls": [
+          "https://creshore.jp/api/v1/top?refresh=7"
+        ]
+      },
+      "awards": [],
+      "addedDate": "2026-08-19",
+      "verification": {
+        "method": "public_oembed_and_source_title_video_id_canonical_url_verified",
+        "retrievedTitle": "MOTION GRAPHICS - \"TSUKURU is TANOSII\"",
+        "sourceUrls": [
+          "https://creshore.jp/api/v1/top?refresh=7"
+        ]
+      }
+    }
+  ]
+}

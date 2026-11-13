@@ -1,0 +1,133 @@
+{
+  "generatedAt": "2026-08-19T01:32:20.245Z",
+  "model": "gpt-5-mini",
+  "taxonomy": {
+    "genres": [
+      "tv-cm",
+      "web-cm",
+      "branded-movie",
+      "youtube-sns",
+      "mv",
+      "corporate",
+      "film",
+      "opening",
+      "making",
+      "documentary"
+    ],
+    "products": [
+      "beauty",
+      "fashion",
+      "food",
+      "daily",
+      "automotive",
+      "gaming",
+      "it",
+      "travel",
+      "medical",
+      "real-estate",
+      "transport",
+      "entertainment",
+      "electronics",
+      "sports"
+    ],
+    "directions": [
+      "live-action",
+      "vfx-3dcg",
+      "motion-graphics",
+      "generative-ai",
+      "camera-work",
+      "motion-control",
+      "stop-motion",
+      "virtual-production",
+      "illustration"
+    ],
+    "tones": [
+      "stylish",
+      "comical",
+      "emotional",
+      "luxury"
+    ]
+  },
+  "inputCount": 2,
+  "candidateCount": 2,
+  "acceptedCount": 1,
+  "inputs": [
+    {
+      "id": "tp8duBX4iE4",
+      "title": "【ぬらりひょんの孫】（cv:福山潤）15周年記念PV～昼ver.～【週刊少年ジャンプ】",
+      "videoUrl": "https://youtu.be/tp8duBX4iE4",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "ジャンプチャンネル",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗【ぬらりひょんの孫】（cv:福山潤）15周年記念PV～昼ver.～【週刊少年ジャンプ】久々にちょっと栄養素を得た 掲載者コメントに基づく注目点: 💗【ぬらりひょんの孫】（cv:福山潤）15周年記念PV～昼ver.～【週刊少年ジャンプ】久々にちょっと栄養素を得た"
+    },
+    {
+      "id": "NHsAyZhNdBQ",
+      "title": "JUMP MV /『呪術廻戦』×『VIVID VICE』| Who-ya Extended",
+      "videoUrl": "https://youtu.be/NHsAyZhNdBQ",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "ジャンプチャンネル",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: のえしまさんのWorksの中では一番味が濃かった。日車のセリフを持ってきたり駅の案内表示を使ったり頭が柔らかい。 掲載者コメントに基づく注目点: のえしまさんのWorksの中では一番味が濃かった。日車のセリフを持ってきたり駅の案内表示を使ったり頭が柔らかい。"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "tp8duBX4iE4",
+      "genres": [
+        "branded-movie"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.6,
+      "evidence": "タイトルに「15周年記念PV」、掲載チャンネルが「ジャンプチャンネル」"
+    },
+    {
+      "id": "NHsAyZhNdBQ",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに「JUMP MV」「VIVID VICE / Who-ya Extended（楽曲名/アーティスト名）」"
+    }
+  ],
+  "accepted": [
+    {
+      "id": "NHsAyZhNdBQ",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに「JUMP MV」「VIVID VICE / Who-ya Extended（楽曲名/アーティスト名）」"
+    }
+  ]
+}

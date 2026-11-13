@@ -1,0 +1,59 @@
+{
+  "kind": "youtube#videoListResponse",
+  "etag": "LcrKWFvHXQaPXsbICiVTC4ZBeuY",
+  "items": [
+    {
+      "kind": "youtube#video",
+      "etag": "0pv2-AYxupFI3aTejvPnKNSkdIs",
+      "id": "4vUti3hmpAs",
+      "snippet": {
+        "publishedAt": "2025-11-06T09:00:12Z",
+        "channelId": "UC2QDgMJWRQHEJYyVX3Rt08w",
+        "title": "「comic POOL」創刊10周年記念PV",
+        "description": "走り続けて、10周年。\n\nいつも温かい応援ありがとうございます。\n「comic POOL」は創刊10周年を迎えました。\n\nさあ、ギュンギュンしようぜ。\n\nWEBマンガ誌「comicPOOL」毎月第1・第3金曜日更新！ \nhttps://comic.pixiv.net/magazines/113\n――――――――――――――――――――――――――――\n\nナレーション： #上田麗奈\n\n――――――――――――――――――――――――――――\n一迅社公式HP：https://www.ichijinsha.co.jp/\n一迅社宣伝X：https://twitter.com/ichijinsha_info\n「comicPOOL」X：https://x.com/comic_pool\n「comicPOOL」TikTok：https://www.tiktok.com/@comic_pool\n――――――――――――――――――――――――――――\n (C)一迅社\n\n#一迅社 #comicPOOL",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/4vUti3hmpAs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/4vUti3hmpAs/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/4vUti3hmpAs/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/4vUti3hmpAs/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/4vUti3hmpAs/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "ichijinshaPV",
+        "tags": [
+          "一迅社"
+        ],
+        "categoryId": "24",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "ja",
+        "localized": {
+          "title": "「comic POOL」創刊10周年記念PV",
+          "description": "走り続けて、10周年。\n\nいつも温かい応援ありがとうございます。\n「comic POOL」は創刊10周年を迎えました。\n\nさあ、ギュンギュンしようぜ。\n\nWEBマンガ誌「comicPOOL」毎月第1・第3金曜日更新！ \nhttps://comic.pixiv.net/magazines/113\n――――――――――――――――――――――――――――\n\nナレーション： #上田麗奈\n\n――――――――――――――――――――――――――――\n一迅社公式HP：https://www.ichijinsha.co.jp/\n一迅社宣伝X：https://twitter.com/ichijinsha_info\n「comicPOOL」X：https://x.com/comic_pool\n「comicPOOL」TikTok：https://www.tiktok.com/@comic_pool\n――――――――――――――――――――――――――――\n (C)一迅社\n\n#一迅社 #comicPOOL"
+        }
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 1,
+    "resultsPerPage": 1
+  }
+}

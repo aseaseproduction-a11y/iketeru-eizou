@@ -1,0 +1,23 @@
+{
+  "mode": "dry-run",
+  "completedAt": "2026-08-20T01:00:05.758Z",
+  "counts": {
+    "planned": 3,
+    "insertable": 1,
+    "inserted": 0,
+    "skipped": 2
+  },
+  "inserted": [],
+  "skipped": [
+    {
+      "id": "dD4O1f5-CKU",
+      "title": "【コカ･コーラ】 一緒だともっとおいしい「お花見」篇 Coca-Cola",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1175847608",
+      "title": "SABERA",
+      "reason": "duplicate_id"
+    }
+  ]
+}

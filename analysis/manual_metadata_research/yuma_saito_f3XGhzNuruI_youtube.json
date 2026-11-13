@@ -1,0 +1,77 @@
+{
+  "kind": "youtube#videoListResponse",
+  "etag": "2_Iatt44zz_pMC87Kzp91GEUUnU",
+  "items": [
+    {
+      "kind": "youtube#video",
+      "etag": "r0z3CXEn53TfZuXPA-t538HEwtw",
+      "id": "f3XGhzNuruI",
+      "snippet": {
+        "publishedAt": "2025-10-15T13:00:52Z",
+        "channelId": "UCuOEXRuzAn0agTbuY1lxRRg",
+        "title": "刻刻",
+        "description": "映像上映イベント「FRENZ 2025」2日目深夜の部出展\nhttps://frenz.jp/2025/\n\n--------------------------------------------------\nDirector / Photography : サイトウユウマ / Yuma Saito\nhttps://twitter.com/yumasaito\n\nMusic : Phasma\nhttps://www.youtube.com/@phasma_ \nhttps://twitter.com/Phasma\nhttps://www.instagram.com/phasmagram\n\nCast : ゆゆ\nhttps://twitter.com/Yuyuxcos",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/f3XGhzNuruI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/f3XGhzNuruI/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/f3XGhzNuruI/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/f3XGhzNuruI/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/f3XGhzNuruI/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Yuma Saito",
+        "tags": [
+          "Yuma Saito",
+          "サイトウユウマ",
+          "YumaSaito",
+          "Phasma",
+          "ファスマ",
+          "ゆゆ",
+          "FRENZ",
+          "FRENZ2025",
+          "フレンズ",
+          "刻刻",
+          "刻々",
+          "コクコク",
+          "kokukoku",
+          "小春六花",
+          "カゼヒキ",
+          "マクネナナ",
+          "弦巻マキ",
+          "初音ミク"
+        ],
+        "categoryId": "10",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "ja",
+        "localized": {
+          "title": "刻刻",
+          "description": "映像上映イベント「FRENZ 2025」2日目深夜の部出展\nhttps://frenz.jp/2025/\n\n--------------------------------------------------\nDirector / Photography : サイトウユウマ / Yuma Saito\nhttps://twitter.com/yumasaito\n\nMusic : Phasma\nhttps://www.youtube.com/@phasma_ \nhttps://twitter.com/Phasma\nhttps://www.instagram.com/phasmagram\n\nCast : ゆゆ\nhttps://twitter.com/Yuyuxcos"
+        },
+        "defaultAudioLanguage": "ja"
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 1,
+    "resultsPerPage": 1
+  }
+}

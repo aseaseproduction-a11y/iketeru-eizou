@@ -1,0 +1,337 @@
+{
+  "generatedAt": "2026-08-19T02:17:45.491Z",
+  "candidatePath": "analysis/metadata_classification/candidates_2026-08-19T02-14-49-751Z.json",
+  "updates": [
+    {
+      "id": "3ckTWBf53NI",
+      "title": "ABC-MART GRAND STAGE 2021 キャンペーンムービー SALE",
+      "confidence": 0.9,
+      "evidence": "タグ／掲載カテゴリに「Live action」「Promotion」「PV」と明記されています。タイトルにABC-MARTのキャンペーンムービーとあるが、商材カテゴリの明記はありません。"
+    },
+    {
+      "id": "Xdlil7m-EfE",
+      "title": "Awich – Poison feat. NENE (Prod. Chaki Zulu)",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ／タグに「Music video」と明記されています。"
+    },
+    {
+      "id": "xqBUTHdZa-Q",
+      "title": "でんぱ組.inc「もしもし、インターネット」Music Video",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ／タグに「Music video」と明記されています。"
+    },
+    {
+      "id": "y4FYCJRjHBg",
+      "title": "藤井 風(Fujii Kaze) – “もうええわ”(Mo-Eh-Wa) Official Video",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ／タグに「Music video」と明記されています。"
+    },
+    {
+      "id": "322911483",
+      "title": "CROSSHELMET",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Motion graphics"
+    },
+    {
+      "id": "REtXIeSsGys",
+      "title": "宇多田ヒカル / “Time” Official Audio",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Art work、Motion graphics"
+    },
+    {
+      "id": "ayZw1d2O6Rc",
+      "title": "星野源 – 私 [Official Video]",
+      "confidence": 0.95,
+      "evidence": "掲載カテゴリ: Music video"
+    },
+    {
+      "id": "Gig-HluSJg8",
+      "title": "永遠",
+      "confidence": 0.85,
+      "evidence": "掲載カテゴリ: 2D animation、Comedy"
+    },
+    {
+      "id": "WH0HZLmmzhk",
+      "title": "大阪の神のモーニングルーティンを見るのです。【Morning Routine】",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Live action、Promotion"
+    },
+    {
+      "id": "326512213",
+      "title": "Station ID「Shapeshifter」",
+      "confidence": 0.85,
+      "evidence": "掲載カテゴリ: 2D animation、Motion graphics、Station ID"
+    },
+    {
+      "id": "hXaxEBab1bs",
+      "title": "【VR】Kizuna AI – melty world ~Halloween Edition~【Special Music Video】",
+      "confidence": 0.85,
+      "evidence": "掲載カテゴリ: 3DCG、Animation、VR、Concert movie、Music video"
+    },
+    {
+      "id": "387254020",
+      "title": "『Gummies』MTV ULTRA HITS",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Animation、Art work、Broadcast、TV"
+    },
+    {
+      "id": "tvXzKyd75io",
+      "title": "ムード・ホール｜Mood Hall",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Animation、Experimental film、Short film"
+    },
+    {
+      "id": "410484945",
+      "title": "ウッピ〜 ドドンカ ワッチャコ プー",
+      "confidence": 0.9,
+      "evidence": "入力:「Music video」"
+    },
+    {
+      "id": "jKyDCrDo580",
+      "title": "Mr.Children「Your Song（Original Story）」MV",
+      "confidence": 0.9,
+      "evidence": "入力:「Music video」"
+    },
+    {
+      "id": "m34DPnRUfMU",
+      "title": "Mrs. GREEN APPLE【青と夏】",
+      "confidence": 0.9,
+      "evidence": "入力:「Music video、Short film」"
+    },
+    {
+      "id": "589PBqaVhTQ",
+      "title": "HIFANA – TEJIME",
+      "confidence": 0.9,
+      "evidence": "入力:「フルCGアニメーション」「Music video」「奇妙でユーモラスなキャラクター」"
+    },
+    {
+      "id": "MrOVx-BUx9M",
+      "title": "きゃりーぱみゅぱみゅ「かまいたち」",
+      "confidence": 0.9,
+      "evidence": "入力:「Music video」「昔話の紙芝居のようなファンタスティックな世界観」"
+    },
+    {
+      "id": "388669348",
+      "title": "Shiseido WASO – instagram CG movie reel",
+      "confidence": 0.9,
+      "evidence": "入力:「SHISEIDOのコスメライン\"WASO\"のinstagramのために制作」「3DCG」「Motion graphics」"
+    },
+    {
+      "id": "3murQvxtiUw",
+      "title": "木を見て、森を見て、",
+      "confidence": 0.85,
+      "evidence": "入力:「3DCG、Motion graphics」「Installation、Interactive」"
+    },
+    {
+      "id": "355039138",
+      "title": "The Very Special Day",
+      "confidence": 0.9,
+      "evidence": "入力:「Short film」「全編ストップモーション」"
+    },
+    {
+      "id": "fwZ5YT9hnSM",
+      "title": "Body Obsession",
+      "confidence": 0.9,
+      "evidence": "入力:「Music video」「2D animation」"
+    },
+    {
+      "id": "dvYcv3NUNRI",
+      "title": "OJISAN",
+      "confidence": 0.9,
+      "evidence": "入力:「短編SF映画」「VFXを織り交ぜた」「Comedy」"
+    },
+    {
+      "id": "kC-cKoOL8Ig",
+      "title": "EIKO+ERIKO 「glitter」",
+      "confidence": 0.9,
+      "evidence": "入力:「3DCG」「Music video」"
+    },
+    {
+      "id": "FQ_LhCPs2rY",
+      "title": "原田知世「コトバドリ」",
+      "confidence": 0.9,
+      "evidence": "入力:「2D animation、3DCG」「Music video」"
+    },
+    {
+      "id": "409837791",
+      "title": "『プロメア』Avant Title",
+      "confidence": 0.9,
+      "evidence": "入力:「Opening movie」「劇場映画」「モーショングラフィックスを使い表現」"
+    },
+    {
+      "id": "NYIeq1uI5L0",
+      "title": "おどるモワイくん 第26話 「メリーカタルシス 編」",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、TV。説明に「オープニングの30秒」と明記。"
+    },
+    {
+      "id": "O94iCq3fqxQ",
+      "title": "GEZAN / 赤曜日(Official Music Video)",
+      "confidence": 0.95,
+      "evidence": "掲載カテゴリ: 3DCG、Animation、Music video（Official Music Videoと明記）。"
+    },
+    {
+      "id": "wg4xkbcKiKQ",
+      "title": "ON CO.LTD. – DO MORE,NEW THEORY. (Official Branding Movie)",
+      "confidence": 0.9,
+      "evidence": "タイトルに『Official Branding Movie』。掲載カテゴリ: 2D animation、3DCG、Animation、Motion graphics、Web、Web CM。"
+    },
+    {
+      "id": "51_lchSJhO4",
+      "title": "サウスポー",
+      "confidence": 0.95,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Music video（ショートMVと明記）。"
+    },
+    {
+      "id": "6ZIaQTUjbrk",
+      "title": "XPERIA XA2 Plus",
+      "confidence": 0.9,
+      "evidence": "説明に「XPERIA XA2 Plusのプロモーション映像」と明記。掲載カテゴリに3DCG、Promotion、PV。"
+    },
+    {
+      "id": "301798904",
+      "title": "J’adore | DIOR",
+      "confidence": 0.9,
+      "evidence": "J’adore（DIOR）キャンペーンのArtist Film。掲載カテゴリ: 3DCG、AD、Advertisement、CM。"
+    },
+    {
+      "id": "291654791",
+      "title": "SHIBUYA STREAM",
+      "confidence": 0.85,
+      "evidence": "渋谷ストリームの環境演出プロジェクト。掲載カテゴリ: 3DCG、Motion graphics、Signage。"
+    },
+    {
+      "id": "409676856",
+      "title": "Synthetic Landscapes",
+      "confidence": 0.9,
+      "evidence": "都市回遊型XR企画。掲載カテゴリ: 3DCG、Art work、Event、Interactive、Motion graphics。"
+    },
+    {
+      "id": "dGi6D9Ip6_A",
+      "title": "見えるか？",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Animation、Art work、Music video（説明にMVの文言）。"
+    },
+    {
+      "id": "361748680",
+      "title": "パソコン音楽クラブ − reiji no machi",
+      "confidence": 0.95,
+      "evidence": "掲載カテゴリ: Music video（ミュージックビデオと明記）。"
+    },
+    {
+      "id": "rIkjVV29GtM",
+      "title": "クリープハイプ – 愛す",
+      "confidence": 0.95,
+      "evidence": "掲載カテゴリ: Music video（MVと明記）。"
+    },
+    {
+      "id": "9UtIBowlTdo",
+      "title": "鳥取県産米新品種「星空舞」CM",
+      "confidence": 0.95,
+      "evidence": "「鳥取県産米『星空舞』のテレビCM」と明記。掲載カテゴリ: 2D animation、Animation、Stopmotion、TV-CM、Web CM。"
+    },
+    {
+      "id": "365487165",
+      "title": "Fontworks Brand Movie",
+      "confidence": 0.9,
+      "evidence": "タイトルにBrand Movie。掲載カテゴリ: 2D animation、Motion graphics、Promotion、PV、Web movie。"
+    },
+    {
+      "id": "NRA0BoFIdYM",
+      "title": "mixi OFFICE ENTRANCE LED SIGNAGE",
+      "confidence": 0.85,
+      "evidence": "mixiオフィスのLEDサイネージ用CG制作。掲載カテゴリ: 3DCG、Signage。"
+    },
+    {
+      "id": "410544357",
+      "title": "SPACE SHOWER TV -BESTHIT PLAYLIST-",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Animation、Station ID、Title movie"
+    },
+    {
+      "id": "1KNUq4NauCU",
+      "title": "不思議の国",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Music video"
+    },
+    {
+      "id": "L78qG0RqCwE",
+      "title": "SHOWREEL 2017-2019",
+      "confidence": 0.85,
+      "evidence": "掲載カテゴリにTV-CM、Music video、TV drama opening title、劇場映画、2D/3DCG、Live action、Motion graphics等を記載"
+    },
+    {
+      "id": "Dtrx_eov524",
+      "title": "Maison book girl「悲しみの子供たち」",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Music video（手描きアニメーションで表現）"
+    },
+    {
+      "id": "Hs9F7cvk0kU",
+      "title": "Bubble People – Infinite Functions (official video)",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Music video"
+    },
+    {
+      "id": "Wkp8VPyzjB8",
+      "title": "Butterfly : Dignics",
+      "confidence": 0.9,
+      "evidence": "卓球ブランドButterflyのブランドムービー／掲載カテゴリ: Advertisement、CM、Web CM、Live action、3DCG、Motion graphics"
+    },
+    {
+      "id": "kOsni-Q4cFI",
+      "title": "風船とロケット",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation（オリジナル短編、1〜2分）"
+    },
+    {
+      "id": "TRlxTwj5uLc",
+      "title": "新章アイマリンプロジェクト第1弾「Stand up! Blaze up!」MUSIC VIDEO",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Motion graphics／実写演者の演技をモーションキャプチャーし、実写背景と合成と記載"
+    },
+    {
+      "id": "6zR9GEzChs8",
+      "title": "映画｢ルパン三世 THE FIRST｣オープニング",
+      "confidence": 0.95,
+      "evidence": "掲載カテゴリ: 3DCG、Opening movie、劇場映画（映画『ルパン三世 THE FIRST』本編オープニング）"
+    },
+    {
+      "id": "256915452",
+      "title": "EXPERIENCE A NEW ENERGY",
+      "confidence": 0.9,
+      "evidence": "SHISEIDOとコラボした新スキンケアシリーズの世界観表現／掲載カテゴリ: Animation、Promotion、Installation"
+    },
+    {
+      "id": "3YSWXyxYN2g",
+      "title": "NEW YOKU",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video／コマ撮りアニメーション、線画アニメーション、立体模型を使用と記載"
+    },
+    {
+      "id": "-TBB-K6Sk0U",
+      "title": "水曜日のカンパネラ『見ざる聞かざる言わざる』MV",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Music video"
+    },
+    {
+      "id": "271397966",
+      "title": "AKIRAM EN / Mekano 1974-92",
+      "confidence": 0.85,
+      "evidence": "掲載カテゴリ: 3DCG、Animation、Music video、PV、Web CM（UE4で制作）"
+    },
+    {
+      "id": "281412231",
+      "title": "TEIJIN “FUTURE NAVIGATION”",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Animation、CM、Motion graphics。本文に「TVCM」と明記。"
+    },
+    {
+      "id": "261257626",
+      "title": "董事長樂團-九天玄女 Official Music Video",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Music video（Music videoと明記）。"
+    }
+  ],
+  "held": []
+}

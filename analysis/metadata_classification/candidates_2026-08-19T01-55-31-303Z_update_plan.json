@@ -1,0 +1,481 @@
+{
+  "generatedAt": "2026-08-19T01:58:16.692Z",
+  "candidatePath": "analysis/metadata_classification/candidates_2026-08-19T01-55-31-303Z.json",
+  "updates": [
+    {
+      "id": "fR0tqhqM7Yg",
+      "title": "TVアニメ『呪術廻戦』第2期「渋谷事変」ノンクレジットEDムービー／EDテーマ：羊文学「more than words」｜毎週木曜夜11時56分～MBS/TBS系列全国28局にて放送中!!",
+      "confidence": 0.9,
+      "evidence": "タイトルに「ノンクレジットEDムービー」と明記（TVアニメのエンディング映像）"
+    },
+    {
+      "id": "rvoz4VqnjrI",
+      "title": ".new - 自主制作 - 「BIOSIGNATURE」モーショングラフィックス",
+      "confidence": 0.9,
+      "evidence": "タイトル/掲載者メモに「モーショングラフィックス」と明記"
+    },
+    {
+      "id": "LXVKBPWkEK0",
+      "title": "【Original MV】感情/ V.W.P #14【拡声曲】",
+      "confidence": 0.9,
+      "evidence": "タイトルに「Original MV」と明記"
+    },
+    {
+      "id": "vvJGsfkIXY0",
+      "title": "多次元制御機構よだか - 夜間飛行 Music Video",
+      "confidence": 0.9,
+      "evidence": "タイトルに「Music Video」と明記"
+    },
+    {
+      "id": "X8xLl_802UU",
+      "title": "[MMV] Gojo vs Sukuna | Jujutsu Kaisen x coldrain",
+      "confidence": 0.85,
+      "evidence": "タイトルに「[MMV]」と表記（MV系の表記あり）"
+    },
+    {
+      "id": "o4U24bkGB0s",
+      "title": "TVアニメ『ゾン100～ゾンビになるまでにしたい100のこと～』ノンクレジットOP②　│KANA-BOON「ソングオブザデッド」",
+      "confidence": 0.9,
+      "evidence": "タイトルに「ノンクレジットOP」と明記（TVアニメのオープニング映像）"
+    },
+    {
+      "id": "vvJGsfkIXY0",
+      "title": "多次元制御機構よだか - 夜間飛行 Music Video",
+      "confidence": 0.9,
+      "evidence": "タイトルに「Music Video」と明記（同一IDがリストに重複）"
+    },
+    {
+      "id": "MQ5QrHlv5Pg",
+      "title": "TVアニメ『BLEACH 千年血戦篇』#11〜#24 LOOKBACK／２０２３年７月8日テレビ東京系列ほかにて第2クール放送中",
+      "confidence": 0.85,
+      "evidence": "掲載者メモに「最初のMG」と記載（MG=モーショングラフィックスの表記あり）"
+    },
+    {
+      "id": "G4ivCSTVbTo",
+      "title": "【AMV/MAD】肆ノ島來世【天国の改札】",
+      "confidence": 0.85,
+      "evidence": "タイトルに【AMV/MAD】（AMVは音楽映像）。掲載者コメント: グラフィックかっけえ"
+    },
+    {
+      "id": "wE8YH5EhSYQ",
+      "title": "【YARIS DIRECTORSCUT】#054 Shuji Hirai「Sea Distortion」",
+      "confidence": 0.9,
+      "evidence": "タイトル/チャンネルに YARIS / TOYOTA（自動車）"
+    },
+    {
+      "id": "fR0tqhqM7Yg",
+      "title": "TVアニメ『呪術廻戦』第2期「渋谷事変」ノンクレジットEDムービー／EDテーマ：羊文学「more than words」｜毎週木曜夜11時56分～MBS/TBS系列全国28局にて放送中!!",
+      "confidence": 0.85,
+      "evidence": "タイトルに「ノンクレジットEDムービー」。掲載者コメント: 街の映し方がキレイ。カメラやりたくなった。"
+    },
+    {
+      "id": "p2augTPjtYM",
+      "title": "【Official Music Video】トゲナシトゲアリ「傷つき傷つけ痛くて辛い」 - アニメ「ガールズバンドクライ」",
+      "confidence": 0.9,
+      "evidence": "タイトルに「Official Music Video」および作品がアニメ（掲載者コメント: デザイン）"
+    },
+    {
+      "id": "HW-MMu4GLWk",
+      "title": "bloom／ネクライトーキー",
+      "confidence": 0.9,
+      "evidence": "タグ: 2D animation、3DCG、Music video（NetflixアニメのMV）"
+    },
+    {
+      "id": "sXC9jbnG248",
+      "title": "REEL2024",
+      "confidence": 0.9,
+      "evidence": "タグ: TV-CM、Web CM、Brand movie、2D animation、3DCG、Motion graphics（掲載カテゴリ）"
+    },
+    {
+      "id": "w7HRowQMyLA",
+      "title": "パソコン音楽クラブ − Day After Day feat. Mei Takahashi（LAUSBUB）",
+      "confidence": 0.9,
+      "evidence": "タグ: Live action、Music video（掲載作品説明: Live action、Movie、Music video）"
+    },
+    {
+      "id": "JHG8CGNgsNs",
+      "title": "HOLOSTARS English -ARMIS-『BLOODHOUNDS』",
+      "confidence": 0.9,
+      "evidence": "タグ: 2D animation、Animation、Music video、Stopmotion（掲載カテゴリ）"
+    },
+    {
+      "id": "843800780",
+      "title": "me ISSEY MIYAKE “REmeTEX”",
+      "confidence": 0.9,
+      "evidence": "作品タイトル/説明に「me ISSEY MIYAKE」、タグ: Brand movie、2D animation（ブランド作品）"
+    },
+    {
+      "id": "936903617",
+      "title": "お笑い4コマパーティーロロロロ  OP",
+      "confidence": 0.9,
+      "evidence": "タグ: Opening movie、2D animation、3DCG、TV（オープニング映像）"
+    },
+    {
+      "id": "911140368",
+      "title": "TOKYO SKYTREE TOWN Christmas Event 2023",
+      "confidence": 0.9,
+      "evidence": "タグ: 3DCG、Motion graphics、Projection mapping、Event（クリスマスイベント演出）"
+    },
+    {
+      "id": "843793356",
+      "title": "サマージャンボ宝くじ　TVCM",
+      "confidence": 0.9,
+      "evidence": "タイトル/タグ: サマージャンボ宝くじ　TVCM、タグに TV-CM、3DCG（TVCM）"
+    },
+    {
+      "id": "O9ctjHKD5rs",
+      "title": "-真天地開闢集団- ジグザグ – Dazzling Secret",
+      "confidence": 0.9,
+      "evidence": "タグ: 3DCG、Music video（掲載カテゴリ）"
+    },
+    {
+      "id": "N4aiNmJpbgI",
+      "title": "花譜×#KTちゃん ギミギミ逃避行feat. #KTちゃん",
+      "confidence": 0.9,
+      "evidence": "タグ: 3DCG、Music video（掲載カテゴリ）"
+    },
+    {
+      "id": "2INYgH-Gcjk",
+      "title": "ゼロトーキング / はるまきごはん feat.初音ミク MV",
+      "confidence": 0.9,
+      "evidence": "タグおよび記載：掲載カテゴリに「Music video」「2D animation」が明記されている。"
+    },
+    {
+      "id": "YGNFbTh_3CU",
+      "title": "w__k",
+      "confidence": 0.9,
+      "evidence": "タグおよび記載：掲載カテゴリに「Music video」「Stopmotion」「Paper craft」「2D animation」が明記されている。"
+    },
+    {
+      "id": "831351906",
+      "title": "SIGMA ART LINE Concept Movie",
+      "confidence": 0.9,
+      "evidence": "記載：SIGMAのArtラインのコンセプトムービーであること、掲載カテゴリに「3DCG」と明記され、レンズ（ブランド）について言及がある。"
+    },
+    {
+      "id": "936975333",
+      "title": "歌舞伎町ブループロジェクト　東急歌舞伎町タワー",
+      "confidence": 0.9,
+      "evidence": "記載：東急歌舞伎町タワーオープンのためのDOOH作品である旨の記述、および掲載カテゴリに「3DCG」「Advertisement」。"
+    },
+    {
+      "id": "914679546",
+      "title": "RAGE RUN",
+      "confidence": 0.9,
+      "evidence": "記載：掲載カテゴリに「2D animation」、さらに本文で「Kaiber AIを使用」と明記、テーマが「怒りのループ」と感情表現が明示されている。"
+    },
+    {
+      "id": "lhd67CnArlI",
+      "title": "そして白に還る",
+      "confidence": 0.9,
+      "evidence": "記載：バーチャルシンガーのミュージックビデオである旨と掲載カテゴリに「3DCG」「Music video」が明記されている。"
+    },
+    {
+      "id": "oDlb2I-OqIc",
+      "title": "「StepByStep !」",
+      "confidence": 0.9,
+      "evidence": "タグおよび記載：掲載カテゴリに「2D animation」「Animation」「縦型コントドラマ」と明記されている。"
+    },
+    {
+      "id": "rLoZkEOgGA4",
+      "title": "BEHERIT – KLONNS",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリに「3DCG」「Music video」と明記されている。"
+    },
+    {
+      "id": "aD3kU_KNkqM",
+      "title": "Life-forms of colors",
+      "confidence": 0.9,
+      "evidence": "記載およびタグ：掲載カテゴリに「3DCG」「Generative Art」「Coding」と明記され、プログラム言語で生成した旨が記載されている。"
+    },
+    {
+      "id": "KvzLslGoILM",
+      "title": "INTO ANIMATION 8 / OPアニメーション",
+      "confidence": 0.9,
+      "evidence": "記載およびタグ：INTO ANIMATION 8 の「OPアニメーション」、掲載カテゴリに「Opening movie」「2D animation」と明記されている。"
+    },
+    {
+      "id": "olWq4GUMYaw",
+      "title": "Aiobahn feat. 牧野由依 – non-reflection (Official Music Video)",
+      "confidence": 0.9,
+      "evidence": "記載およびタグ：掲載カテゴリに「Music video」「2D animation」、本文で「哀愁の漂うメロディ」等の情感が明記されている。"
+    },
+    {
+      "id": "7pmd0kt3FOs",
+      "title": "『葬送のフリーレン』ノンクレジットED",
+      "confidence": 0.9,
+      "evidence": "記載およびタグ：TVアニメの「エンディング」である旨の記述と掲載カテゴリに「2D animation」「TV」が明記されている。"
+    },
+    {
+      "id": "linIKi5fpIU",
+      "title": "キタニタツヤ　「旅にでも出よっか」　official audio",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリに「Music video」と明記されている。"
+    },
+    {
+      "id": "iR53RjgiEiE",
+      "title": "aryy – summertime feat Nobuki (Music Video)",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリに「Music video」と明記されている。"
+    },
+    {
+      "id": "UpLIEplQEW4",
+      "title": "ギフにテッド",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリに「2D animation」「Music video」と明記されている。"
+    },
+    {
+      "id": "2OSKGWnDhEc",
+      "title": "SAKANAMON MV/ すっぽんぽん",
+      "confidence": 0.9,
+      "evidence": "記載：手法として「ストップモーション」と明記、掲載カテゴリに「Music video」「Stopmotion」が含まれる。"
+    },
+    {
+      "id": "8Mpx15271oQ",
+      "title": "IMMERSIVE GATE(TOKYO LIGHTS 2023)",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Motion graphics、Installation（LED表示・3D CGI表現）"
+    },
+    {
+      "id": "CFjI21M9wZs",
+      "title": "アニメ「怪獣８号」OP映像",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Animation、Opening movie（アニメ「怪獣８号」OP映像）"
+    },
+    {
+      "id": "D7XANR5cacE",
+      "title": "Gawr Gura「Tokyo Wabi-Sabi Lullaby」",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Music video（Gawr Gura MV）"
+    },
+    {
+      "id": "tSv3pEYGjo4",
+      "title": "My Hair is Bad 自由とヒステリー",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video（My Hair is Bad）"
+    },
+    {
+      "id": "Q78rcBeeFL4",
+      "title": "adidas × ABC-MART | “CLIMA COOL” WEB CM",
+      "confidence": 0.95,
+      "evidence": "タイトルにWEB CM、掲載カテゴリ: 3DCG、CM、Motion graphics（adidas × ABC-MART）"
+    },
+    {
+      "id": "891760423",
+      "title": "Netflix シリーズ｢サンクチュアリ -聖域-｣オープニング(タイトルバック)",
+      "confidence": 0.95,
+      "evidence": "掲載カテゴリ: 3DCG、Live action、Opening movie（Netflix シリーズ オープニング）"
+    },
+    {
+      "id": "930191754",
+      "title": "LIKI inc. Reel 2023~24",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリにTV-CM、Web movie、Brand movie、2D animation、3DCG、Motion graphics（LIKI inc. Reel）"
+    },
+    {
+      "id": "pyzOh_4gIwQ",
+      "title": "Cotillion feat.可不 – (Prod.エイハブ )",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Music video（Cotillion MV）"
+    },
+    {
+      "id": "o4AxMk3SGUY",
+      "title": "Ayase feat. 初音ミク 「HERO」",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Music video（Ayase feat. 初音ミク「HERO」MV）"
+    },
+    {
+      "id": "zbiKq1ZtfuM",
+      "title": "「雀魂」5周年記念ムービー『かわらないもの』",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Brand movie、Web CM、CM（雀魂 5周年記念ムービー）"
+    },
+    {
+      "id": "Se2gk5gG9yo",
+      "title": "ピーナッツくん – Gordon Kill the Thomas",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、3DCG（ピーナッツくん）"
+    },
+    {
+      "id": "BHGdv1L07EQ",
+      "title": "映画『数分間のエールを』",
+      "confidence": 0.95,
+      "evidence": "掲載カテゴリ: 3DCG、Movie、劇場映画（映画『数分間のエールを』）"
+    },
+    {
+      "id": "OY_lcrsvanw",
+      "title": "SO-SO – Higher（Official Music Video）",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、3DCG、Music video、Motion graphics（SO-SO – Higher MV）"
+    },
+    {
+      "id": "937033322",
+      "title": "「OFT」 REedit オリーブ （found footage）",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、3DCG、Animation、Art work、Installation、Web（作品アーカイブ記載）"
+    },
+    {
+      "id": "n2RPdBo0I_Y",
+      "title": "来世 ユニニーンの首筋後ろのホクロになりたい",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Short film。説明に「笑い話のようなストーリーで重い感情を表す」と明記"
+    },
+    {
+      "id": "kzCQc0C2biA",
+      "title": "昭和124年 第0話",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Animation。本文に「短編映像」「blenderを使って制作」と記載"
+    },
+    {
+      "id": "iaKsqpttDqw",
+      "title": "「遊園 me feat. ヤママチミキ(GANG PARADE)」Music Video",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Animation、Motion graphics。説明に「イラストが線を強調した2D色の強い画風」と明記"
+    },
+    {
+      "id": "5meCSctOIs8",
+      "title": "Shiseido Quality Principle",
+      "confidence": 0.9,
+      "evidence": "タイトル/本文に「Shiseido」「資生堂品質方針」「Concept Movie」。掲載カテゴリ: 3DCG、Concept Movie、Motion graphics"
+    },
+    {
+      "id": "936559027",
+      "title": "CyberAgent Game Conference 2024 Opening Sequence",
+      "confidence": 0.9,
+      "evidence": "タイトルに「Game Conference 2024 Opening Sequence」。掲載カテゴリ: Event、Motion graphics、Opening movie、Title movie"
+    },
+    {
+      "id": "m4_vTkhmdOM",
+      "title": "サカナ島胃袋三腸目",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Art work、Short film（東京藝術大学大学院の短編アニメーションと明記）"
+    },
+    {
+      "id": "1_iaVUcjyP0",
+      "title": "にしな – bugs【Official Video】",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video（Official Video と明記）"
+    },
+    {
+      "id": "yctuNuqUqBc",
+      "title": "SIRUP – Thinkin about us",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video（作品アーカイブ記載）"
+    },
+    {
+      "id": "A05WJlQJZQo",
+      "title": "moil",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Animation、Music video、Original（タグに3DCGとMusic video）"
+    },
+    {
+      "id": "r6kj6mSJgR8",
+      "title": "tofubeats – 恋とミサイル feat. UG Noodle",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Music video、Promotion、PV（タグに2D animation, Music video）"
+    },
+    {
+      "id": "Tfya0vd1EvY",
+      "title": "ムード・ホール -side B-｜Mood Hall [side B]",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Animation、Art work、Experimental film、Short film（説明に『33分33秒の映像作品』と明記）"
+    },
+    {
+      "id": "_ESKiygZh9Y",
+      "title": "imase – でもね、たまには",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video（作品アーカイブ記載）"
+    },
+    {
+      "id": "oAaP0qvsUg8",
+      "title": "SAKANAMON – 裏鬼門の羊",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video（作品アーカイブ記載）"
+    },
+    {
+      "id": "wg7xHn_RulI",
+      "title": "観測：中村佳穂",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、3DCG、Animation、Art work、Documentary、Motion graphics（タグにDocumentaryと明記）"
+    },
+    {
+      "id": "iqujT39APiA",
+      "title": "ZONe × UNDEFINED 「ぞん子3Dモデルオープンソースプロジェクト」",
+      "confidence": 0.85,
+      "evidence": "本文: 「3DCGのシネマライクな世界観」「コミカルなストーリー」「カッコイイ、だけどユーモア」「SNSでのショート動画の流行」を記載"
+    },
+    {
+      "id": "687793891",
+      "title": "MASH Beauty Lab_Celvoke 2022S/S_New brightness with emotion",
+      "confidence": 0.9,
+      "evidence": "タグ/本文: 「Brand movie」「Web movie」「Motion graphics」「beauty brand Celvoke」「emotional visual」"
+    },
+    {
+      "id": "Zxq5Yavpqik",
+      "title": "cubesato – ONGAKU #1",
+      "confidence": 0.9,
+      "evidence": "本文/タグ: 「YouTubeプロジェクトのためのループ映像」「2D animation」「Motion graphics」"
+    },
+    {
+      "id": "729145479",
+      "title": "Ummet Ozcan / Oblivion",
+      "confidence": 0.9,
+      "evidence": "タグ/本文: 「Music video」「3DCG」「Motion graphics」「MVを制作」"
+    },
+    {
+      "id": "786632106",
+      "title": "BCLカンパニー 企業理念MOVIE",
+      "confidence": 0.9,
+      "evidence": "本文/タグ: 「BCLカンパニー」「多様なコスメティックブランド」「Brand movie」「Web」「2D animation」"
+    },
+    {
+      "id": "uLyrQCxqvq8",
+      "title": "Kabanagu – 想像上のスピード (Amazon Original)",
+      "confidence": 0.9,
+      "evidence": "タグ/本文: 「Music video」「Stopmotion」「MV（Amazon Originalプロジェクト）」"
+    },
+    {
+      "id": "we01HohgQFg",
+      "title": "ラランド “祝電Vol.2” Opening Movie",
+      "confidence": 0.9,
+      "evidence": "タグ/本文: 「Opening movie」「3DCG」「単独公演のオープニング映像」"
+    },
+    {
+      "id": "783131091",
+      "title": "NHK みんなのうた｢たのしいね｣",
+      "confidence": 0.85,
+      "evidence": "タグ/本文: 「NHK みんなのうた」「Animation」「Music video」「TV」「Motion logo」"
+    },
+    {
+      "id": "807427543",
+      "title": "四角が行く",
+      "confidence": 0.85,
+      "evidence": "本文/タグ: 「CGやコマ撮りでしかできないアニメーションを現実世界で行うインスタレーション」「Installation」"
+    },
+    {
+      "id": "KkmLabKk6qE",
+      "title": "ニンジンは待ってくれない / Carrots Don’t Wait 【予告映像】",
+      "confidence": 0.9,
+      "evidence": "タグ: 劇場映画 ／ 説明: アナログ技法による短編アニメーション（掲載カテゴリに「劇場映画」）"
+    },
+    {
+      "id": "rMbB9Oca8To",
+      "title": "回転ずしくん アニメ2期OP 回転てんてれれ",
+      "confidence": 0.9,
+      "evidence": "タイトル: アニメ2期OP ／ タグ: Music video, Opening movie, 2D animation"
+    },
+    {
+      "id": "4dsGr27Sceg",
+      "title": "「呪術廻戦」渋谷13面連動デジタルサイネージ レポートムービー",
+      "confidence": 0.88,
+      "evidence": "説明: 呪術廻戦コミックス刊行にあわせたプロモーション映像 ／ タグ: 3DCG, Motion graphics, Promotion, Signage"
+    },
+    {
+      "id": "807559272",
+      "title": "第10回 日経「星新一賞」OP",
+      "confidence": 0.9,
+      "evidence": "タイトル/説明: 第10回 日経「星新一賞」OP ／ 説明に「オープニング映像」記載"
+    }
+  ],
+  "held": []
+}

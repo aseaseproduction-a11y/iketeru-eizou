@@ -1,0 +1,28 @@
+{
+  "mode": "dry-run",
+  "completedAt": "2026-08-20T01:01:54.722Z",
+  "counts": {
+    "planned": 7,
+    "insertable": 4,
+    "inserted": 0,
+    "skipped": 3
+  },
+  "inserted": [],
+  "skipped": [
+    {
+      "id": "dD4O1f5-CKU",
+      "title": "【コカ･コーラ】 一緒だともっとおいしい「お花見」篇 Coca-Cola",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1175847608",
+      "title": "SABERA",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "U0Klb45BNlQ",
+      "title": "Mom Don't wipe floor",
+      "reason": "duplicate_id"
+    }
+  ]
+}

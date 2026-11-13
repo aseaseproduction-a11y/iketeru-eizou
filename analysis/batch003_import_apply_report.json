@@ -1,0 +1,41 @@
+{
+  "inputPath": "/home/ubuntu/video_analysis_batch_003_retry.json",
+  "apply": true,
+  "processed": 94,
+  "updatedVideoViewed": 3,
+  "updatedMetadataOnly": 91,
+  "idRecoveredFromInput": 94,
+  "skipped": [
+    {
+      "reason": "analysis_failed",
+      "input": "/a/288.json",
+      "error": "dailyFreeCreditLimitReached"
+    },
+    {
+      "reason": "analysis_failed",
+      "input": "/a/293.json",
+      "error": "dailyFreeCreditLimitReached"
+    },
+    {
+      "reason": "analysis_failed",
+      "input": "/a/296.json",
+      "error": "dailyFreeCreditLimitReached"
+    },
+    {
+      "reason": "analysis_failed",
+      "input": "/a/297.json",
+      "error": "dailyFreeCreditLimitReached"
+    },
+    {
+      "reason": "analysis_failed",
+      "input": "/a/298.json",
+      "error": "dailyFreeCreditLimitReached"
+    },
+    {
+      "reason": "analysis_failed",
+      "input": "/a/299.json",
+      "error": "dailyFreeCreditLimitReached"
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,15 @@
+HTTP/2 200 
+server: nginx
+date: Tue, 18 Aug 2026 06:55:37 GMT
+content-type: application/json; charset=UTF-8
+set-cookie: swpm_session=4dc25b7bf62a66cf3a70ee187997f839; path=/
+x-robots-tag: noindex
+x-content-type-options: nosniff
+access-control-expose-headers: X-WP-Total, X-WP-TotalPages, Link
+access-control-allow-headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type
+x-wp-total: 191
+x-wp-totalpages: 2
+link: <https://eizo100.jp/wp-json/wp/v2/video?categories%5B0%5D=1045&per_page=100&page=2>; rel="next"
+allow: GET
+vary: Origin
+

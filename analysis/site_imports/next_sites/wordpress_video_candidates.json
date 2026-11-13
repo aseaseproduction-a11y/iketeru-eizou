@@ -1,0 +1,2786 @@
+{
+  "generatedAt": "2026-08-19T06:23:05.286Z",
+  "results": [
+    {
+      "source": "pics",
+      "audits": [],
+      "rows": []
+    },
+    {
+      "source": "naname",
+      "audits": [
+        {
+          "type": "nav_menu_item",
+          "status": "unavailable"
+        },
+        {
+          "type": "wp_block",
+          "status": "ok",
+          "count": 0
+        },
+        {
+          "type": "wp_template",
+          "status": "unavailable"
+        },
+        {
+          "type": "wp_template_part",
+          "status": "unavailable"
+        },
+        {
+          "type": "wp_global_styles",
+          "status": "unavailable"
+        },
+        {
+          "type": "wp_navigation",
+          "status": "ok",
+          "count": 0
+        },
+        {
+          "type": "wp_font_family",
+          "status": "unavailable"
+        },
+        {
+          "type": "wp_font_face",
+          "status": "unavailable"
+        },
+        {
+          "type": "works",
+          "status": "ok",
+          "count": 100
+        },
+        {
+          "type": "members",
+          "status": "ok",
+          "count": 12
+        }
+      ],
+      "rows": []
+    },
+    {
+      "source": "liki",
+      "audits": [],
+      "rows": []
+    },
+    {
+      "source": "wachajack",
+      "audits": [
+        {
+          "type": "nav_menu_item",
+          "status": "unavailable"
+        },
+        {
+          "type": "wp_block",
+          "status": "ok",
+          "count": 0
+        },
+        {
+          "type": "wp_template",
+          "status": "unavailable"
+        },
+        {
+          "type": "wp_template_part",
+          "status": "unavailable"
+        },
+        {
+          "type": "wp_global_styles",
+          "status": "unavailable"
+        },
+        {
+          "type": "wp_navigation",
+          "status": "ok",
+          "count": 0
+        },
+        {
+          "type": "wp_font_family",
+          "status": "unavailable"
+        },
+        {
+          "type": "wp_font_face",
+          "status": "unavailable"
+        },
+        {
+          "type": "artists",
+          "status": "ok",
+          "count": 26
+        }
+      ],
+      "rows": []
+    },
+    {
+      "source": "flapper3",
+      "audits": [
+        {
+          "type": "wp_block",
+          "status": "ok",
+          "count": 0
+        },
+        {
+          "type": "wp_template",
+          "status": "unavailable"
+        },
+        {
+          "type": "works",
+          "status": "ok",
+          "count": 100
+        },
+        {
+          "type": "member",
+          "status": "ok",
+          "count": 27
+        },
+        {
+          "type": "news",
+          "status": "ok",
+          "count": 15
+        },
+        {
+          "type": "log",
+          "status": "ok",
+          "count": 11
+        }
+      ],
+      "rows": []
+    },
+    {
+      "source": "tyo",
+      "audits": [
+        {
+          "type": "nav_menu_item",
+          "status": "unavailable"
+        },
+        {
+          "type": "wp_block",
+          "status": "ok",
+          "count": 0
+        },
+        {
+          "type": "wp_template",
+          "status": "unavailable"
+        },
+        {
+          "type": "wp_template_part",
+          "status": "unavailable"
+        },
+        {
+          "type": "wp_global_styles",
+          "status": "unavailable"
+        },
+        {
+          "type": "wp_navigation",
+          "status": "ok",
+          "count": 0
+        },
+        {
+          "type": "wp_font_family",
+          "status": "unavailable"
+        },
+        {
+          "type": "wp_font_face",
+          "status": "unavailable"
+        },
+        {
+          "type": "topics",
+          "status": "ok",
+          "count": 100
+        },
+        {
+          "type": "topics_en",
+          "status": "ok",
+          "count": 34
+        },
+        {
+          "type": "cases",
+          "status": "ok",
+          "count": 23
+        },
+        {
+          "type": "cases_en",
+          "status": "ok",
+          "count": 12
+        },
+        {
+          "type": "pdf",
+          "status": "ok",
+          "count": 2
+        },
+        {
+          "type": "interview",
+          "status": "ok",
+          "count": 7
+        }
+      ],
+      "rows": [
+        {
+          "id": "nUPbuNN3Hmg",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=nUPbuNN3Hmg",
+          "title": "リスボン国際広告祭2026で入賞",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20260710-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "dXqgTG6Jzp4",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=dXqgTG6Jzp4",
+          "title": "Another Side of JapanがUS International Awards 2026で金賞受賞",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20260706-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "0eM8v5LY96g",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=0eM8v5LY96g",
+          "title": "Another Side of JapanがUS International Awards 2026で金賞受賞",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20260706-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "FJ3qzNZhl1w",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=FJ3qzNZhl1w",
+          "title": "Another Side of JapanがUS International Awards 2026で金賞受賞",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20260706-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "g0rEy_i6_nY",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=g0rEy_i6_nY",
+          "title": "Another Side of JapanがUS International Awards 2026で金賞受賞",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20260706-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "jXol8vcOwyk",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=jXol8vcOwyk",
+          "title": "Another Side of JapanがUS International Awards 2026で金賞受賞",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20260706-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "RP9DdSZK6_I",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=RP9DdSZK6_I",
+          "title": "SSFF ＆ ASIA 2026の2つの部門で入選",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20260619-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "nUPbuNN3Hmg",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=nUPbuNN3Hmg",
+          "title": "TYO学生ムービーアワード受賞作品とTOKYO STORIESがSSFF &amp; ASIA 2026で上映",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20260424-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "mYKXa2o2ugM",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=mYKXa2o2ugM",
+          "title": "Another Side of Japanが第8回 日本国際観光映像祭で優秀賞受賞",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20260330-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "gxykt-olgGg",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=gxykt-olgGg",
+          "title": "TYOのAIショートフィルムプロジェクト「TOKYO STORIES」作品がWAIFF 2026 KYOTOで受賞・入賞!",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20260313-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "17SHAqZCaOM",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=17SHAqZCaOM",
+          "title": "TYOのAIショートフィルムプロジェクト「TOKYO STORIES」作品がWAIFF 2026 KYOTOで受賞・入賞!",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20260313-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "nUPbuNN3Hmg",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=nUPbuNN3Hmg",
+          "title": "TYO、“東京”をテーマにAIで映像表現の可能性を探るショートフィルムプロジェクト「TOKYO STORIES」を公開",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20260302-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "mYKXa2o2ugM",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=mYKXa2o2ugM",
+          "title": "Another Side of JapanがCJPF AWARD 2026でグランプリと準グランプリをダブル受賞！",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20260220-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "NO-bHNiDaK8",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=NO-bHNiDaK8",
+          "title": "TYOプロデュース、新XR音楽没入体験「XR Magic Orchestra」が渋谷区共催のテックxアートイベント “DIG SHIBUYA 2026”に参加",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20260205-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "3MN0VeTw36g",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=3MN0VeTw36g",
+          "title": "JAC AWARD 2025で当社社員がグランプリ2名受賞・各部門で入賞！",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20251212-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "u0ThZW2O8jc",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=u0ThZW2O8jc",
+          "title": "JAC AWARD 2025で当社社員がグランプリ2名受賞・各部門で入賞！",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20251212-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "CHo9ZMLzblk",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=CHo9ZMLzblk",
+          "title": "メディア総合イベント「Inter BEE 2025」に出展・登壇",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20251107-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "1127191196",
+          "platform": "vimeo",
+          "videoUrl": "https://vimeo.com/1127191196",
+          "title": "動画生成AI技術を活用した「NFFT」、10回目のAI Fashion Movie展開催！",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20251027-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "1127191196",
+          "platform": "vimeo",
+          "videoUrl": "https://vimeo.com/1127191196",
+          "title": "動画生成AI技術を活用した「NFFT」、10回目のAI Fashion Movie展開催！",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20251027-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "v141D3uJr_M",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=v141D3uJr_M",
+          "title": "2025年度グッドデザイン賞を受賞！",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20251017-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "xRU1XXHIpIc",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=xRU1XXHIpIc",
+          "title": "シクロペフェスティバル(CICLOPE Festival 2025)でシルバー受賞！",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20251010-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "RP9DdSZK6_I",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=RP9DdSZK6_I",
+          "title": "WHOAREYOU 佐々木実花がshots Awards Asia Pacific 2025でショートリスト入賞",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20250929-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "jXol8vcOwyk",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=jXol8vcOwyk",
+          "title": "Another Side of Japan × せとうちパレットプロジェクト、コラボレーション映像「岡山・倉敷篇」を公開",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20250924-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "jXol8vcOwyk",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=jXol8vcOwyk",
+          "title": "Another Side of Japan、ソニーマーケティングと連携し映像制作をアップデート",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20250924-2/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "HmCYEcI240E",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=HmCYEcI240E",
+          "title": "当社取締役岸本高由がYouTubeチャンネル「新規事業・人」に出演しました",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20250826-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "PoyKI6SYaLQ",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=PoyKI6SYaLQ",
+          "title": "WHOAREYOU 佐々木実花のインタビュー動画がGerety Awardsサイトにて公開されました",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20250818-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "RP9DdSZK6_I",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=RP9DdSZK6_I",
+          "title": "WHOAREYOU 佐々木実花のインタビュー動画がGerety Awardsサイトにて公開されました",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20250818-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "mYKXa2o2ugM",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=mYKXa2o2ugM",
+          "title": "Another Side of Japan × 沿線まるごとホテル、初のコラボレーション映像を公開",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20250717-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "RP9DdSZK6_I",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=RP9DdSZK6_I",
+          "title": "WHOAREYOU 佐々木実花監督作品がYoung Director Award 2025でショートリスト選出",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20250623-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "dnCDa1spOG0",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=dnCDa1spOG0",
+          "title": "WHOAREYOU西遼太郎監督作『逆さまの天才』がSSFF ＆ ASIA 2025で優秀賞/東京都知事賞受賞！来年のアカデミー賞ノミネート候補となる",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20250612-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "Ee-VZPXS31o",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=Ee-VZPXS31o",
+          "title": "BRANDED SHORTS 2025で入賞！",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20250605-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "RP9DdSZK6_I",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=RP9DdSZK6_I",
+          "title": "WHOAREYOU 佐々木実花のインタビュー記事がshots magazineに掲載されました",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20250508-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "cSHluvSoWQY",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=cSHluvSoWQY",
+          "title": "第12回 Brain Online Video Award(BOVA)オンライン動画部門で金賞受賞！",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20250507-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "RP9DdSZK6_I",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=RP9DdSZK6_I",
+          "title": "WHOAREYOU 佐々木実花がADFEST「Fabulous Five」で最優秀賞受賞！",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20250324-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "Qwo0X6_fT9Q",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=Qwo0X6_fT9Q",
+          "title": "第7回 日本国際観光映像祭で最優秀賞受賞",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20250321-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "3bby-KBokQQ",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=3bby-KBokQQ",
+          "title": "第7回 日本国際観光映像祭で最優秀賞受賞",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20250321-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "dnCDa1spOG0",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=dnCDa1spOG0",
+          "title": "WHOAREYOU西遼太郎監督作品がつくばショートムービーコンペティション2025でグランプリ受賞！",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20250319-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "Qwo0X6_fT9Q",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=Qwo0X6_fT9Q",
+          "title": "第7回 日本国際観光映像祭 日本部門で入賞",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20250304-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "3bby-KBokQQ",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=3bby-KBokQQ",
+          "title": "第7回 日本国際観光映像祭 日本部門で入賞",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/topics/20250304-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "nUPbuNN3Hmg",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=nUPbuNN3Hmg",
+          "title": "Awarded at the 2026 Lisbon International Advertising Festival",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/en/topics/20260710-1_en/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "dXqgTG6Jzp4",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=dXqgTG6Jzp4",
+          "title": "“Another Side of Japan” Wins Gold at the “US International Awards 2026”",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/en/topics/20260706-1_en/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "0eM8v5LY96g",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=0eM8v5LY96g",
+          "title": "“Another Side of Japan” Wins Gold at the “US International Awards 2026”",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/en/topics/20260706-1_en/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "FJ3qzNZhl1w",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=FJ3qzNZhl1w",
+          "title": "“Another Side of Japan” Wins Gold at the “US International Awards 2026”",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/en/topics/20260706-1_en/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "g0rEy_i6_nY",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=g0rEy_i6_nY",
+          "title": "“Another Side of Japan” Wins Gold at the “US International Awards 2026”",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/en/topics/20260706-1_en/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "jXol8vcOwyk",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=jXol8vcOwyk",
+          "title": "“Another Side of Japan” Wins Gold at the “US International Awards 2026”",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/en/topics/20260706-1_en/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "mYKXa2o2ugM",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=mYKXa2o2ugM",
+          "title": "“Another Side of Japan” Wins Excellence Award at the 8th Japan International Tourism Film Festival",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/en/topics/20260330-1en/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "gxykt-olgGg",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=gxykt-olgGg",
+          "title": "Films from TYO’s AI short film project “TOKYO STORIES” have won awards and honors at WAIFF 2026 KYOTO!",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/en/topics/20260313-1en/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "17SHAqZCaOM",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=17SHAqZCaOM",
+          "title": "Films from TYO’s AI short film project “TOKYO STORIES” have won awards and honors at WAIFF 2026 KYOTO!",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/en/topics/20260313-1en/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "nUPbuNN3Hmg",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=nUPbuNN3Hmg",
+          "title": "TYO releases “TOKYO STORIES,” a short film project exploring the possibilities of visual expression through AI, themed around “Tokyo.”",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/en/topics/20260302-en/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "mYKXa2o2ugM",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=mYKXa2o2ugM",
+          "title": "Another Side of Japan wins both the Grand Prix and Runner-up Prize at the CJPF AWARD 2026!",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/en/topics/20260220-en/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "xRU1XXHIpIc",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=xRU1XXHIpIc",
+          "title": "TYO wins Silver at CICLOPE Festival 2025",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/en/topics/20251010-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "RP9DdSZK6_I",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=RP9DdSZK6_I",
+          "title": "TYO’s director Mika Sasaki named to the Shortlist at shots Awards Asia Pacific 2025!",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/en/topics/20250929-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "PoyKI6SYaLQ",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=PoyKI6SYaLQ",
+          "title": "TYO’s Mika Sasaki Featured in Gerety Talks Interview on the Gerety Awards Website",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/en/topics/20250818-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "RP9DdSZK6_I",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=RP9DdSZK6_I",
+          "title": "TYO’s Mika Sasaki Featured in Gerety Talks Interview on the Gerety Awards Website",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/en/topics/20250818-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "RP9DdSZK6_I",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=RP9DdSZK6_I",
+          "title": "“IM PERFECTION” directed by TYO’s Mika Sasaki named Shortlist at the Young Director Award 2025",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/en/topics/20250623-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "dnCDa1spOG0",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=dnCDa1spOG0",
+          "title": "\"UPSIDE - DOWN GENIUS,\" directed by TYO's Ryotaro Nishi, wins the Japan Best Short Award / Governor of Tokyo Award at SSFF &amp; ASIA 2025!",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/en/topics/20250612-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "RP9DdSZK6_I",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=RP9DdSZK6_I",
+          "title": "TYO's Mika Sasaki Featured in shots magazine",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/en/topics/20250508-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "RP9DdSZK6_I",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=RP9DdSZK6_I",
+          "title": "TYO's Mika Sasaki Wins Top Award at ADFEST \"Fabulous Five",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/en/topics/20250324-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "Qwo0X6_fT9Q",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=Qwo0X6_fT9Q",
+          "title": "Japan World's Tourism Film Festival 2025: Grand Prize in Japan Category",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/en/topics/20250321-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "3bby-KBokQQ",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=3bby-KBokQQ",
+          "title": "Japan World's Tourism Film Festival 2025: Grand Prize in Japan Category",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/en/topics/20250321-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "Dsh_qh0Bw9Y",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=Dsh_qh0Bw9Y",
+          "title": "SNSもスマホも持たない。それでも仕事が集まってくる。TYOプロデューサー・木下健太郎の流儀",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20260624-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "gsT6eKsnT0M",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=gsT6eKsnT0M",
+          "title": "演出も、撮影も、編集も。『THE FIRST TAKE』『ひみつのPRIME』を手がけるTYOプロデューサー・木下健太郎の知られざる仕事術",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20260617-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "v141D3uJr_M",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=v141D3uJr_M",
+          "title": "演出も、撮影も、編集も。『THE FIRST TAKE』『ひみつのPRIME』を手がけるTYOプロデューサー・木下健太郎の知られざる仕事術",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20260617-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "jjOgFesCL6k",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=jjOgFesCL6k",
+          "title": "演出も、撮影も、編集も。『THE FIRST TAKE』『ひみつのPRIME』を手がけるTYOプロデューサー・木下健太郎の知られざる仕事術",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20260617-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "h6ghYD-iNJ0",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=h6ghYD-iNJ0",
+          "title": "演出も、撮影も、編集も。『THE FIRST TAKE』『ひみつのPRIME』を手がけるTYOプロデューサー・木下健太郎の知られざる仕事術",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20260617-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "UY2umUiFpIE",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=UY2umUiFpIE",
+          "title": "若き映像作家・西遼太郎の軌跡──学生作品からアカデミー賞ノミネート候補に至るまで",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20260518-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "dnCDa1spOG0",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=dnCDa1spOG0",
+          "title": "若き映像作家・西遼太郎の軌跡──学生作品からアカデミー賞ノミネート候補に至るまで",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20260518-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "mYKXa2o2ugM",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=mYKXa2o2ugM",
+          "title": "Another Side of Japanがクールジャパン・プラットフォームアワードでW受賞、その信念と展望",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20260319-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "nK1iNol6lxM",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=nK1iNol6lxM",
+          "title": "「知らないことを知りたい」「人と違うことを追求」「常にスタートラインに立つ」。TYO drive チーフプロデューサー・馬詰正、その哲学",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20260129-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "ld42aqiIEhE",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=ld42aqiIEhE",
+          "title": "ステートメントムービーとは？経営課題を解決する新しい映像コミュニケーションの形",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20260127-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "a6pBBlTYwHk",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=a6pBBlTYwHk",
+          "title": "進化が加速するAI、XR──最先端から、映像と広告表現の新境地へ。TYO drive チーフプロデューサー・馬詰正の挑戦",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20260116-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "xDDaImoYWxQ",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=xDDaImoYWxQ",
+          "title": "進化が加速するAI、XR──最先端から、映像と広告表現の新境地へ。TYO drive チーフプロデューサー・馬詰正の挑戦",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20260116-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "qeddzEzDnic",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=qeddzEzDnic",
+          "title": "進化が加速するAI、XR──最先端から、映像と広告表現の新境地へ。TYO drive チーフプロデューサー・馬詰正の挑戦",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20260116-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "djgOsGXe71w",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=djgOsGXe71w",
+          "title": "進化が加速するAI、XR──最先端から、映像と広告表現の新境地へ。TYO drive チーフプロデューサー・馬詰正の挑戦",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20260116-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "OxiIeLq-Pd0",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=OxiIeLq-Pd0",
+          "title": "進化が加速するAI、XR──最先端から、映像と広告表現の新境地へ。TYO drive チーフプロデューサー・馬詰正の挑戦",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20260116-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "CHo9ZMLzblk",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=CHo9ZMLzblk",
+          "title": "進化が加速するAI、XR──最先端から、映像と広告表現の新境地へ。TYO drive チーフプロデューサー・馬詰正の挑戦",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20260116-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "xRU1XXHIpIc",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=xRU1XXHIpIc",
+          "title": "TYO制作・ILLITのブランドムービーがクラフト表現で高評価 ── 国内外の権威あるアワードが認めた、K-POPのグローバル発信を支える映像クリエイティブ",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20251210-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "axQmWplSlXw",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=axQmWplSlXw",
+          "title": "TYO制作・ILLITのブランドムービーがクラフト表現で高評価 ── 国内外の権威あるアワードが認めた、K-POPのグローバル発信を支える映像クリエイティブ",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20251210-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "1s4QXTNUTSM",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=1s4QXTNUTSM",
+          "title": "世界で評価されるTYOの若き才能 ── Fabulous Fiveをはじめとするディレクター陣の挑戦と飛躍",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20251117-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "dnCDa1spOG0",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=dnCDa1spOG0",
+          "title": "世界で評価されるTYOの若き才能 ── Fabulous Fiveをはじめとするディレクター陣の挑戦と飛躍",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20251117-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "zOHHw4R-XUw",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=zOHHw4R-XUw",
+          "title": "世界で評価されるTYOの若き才能 ── Fabulous Fiveをはじめとするディレクター陣の挑戦と飛躍",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20251117-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "uCDUpZV3f8A",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=uCDUpZV3f8A",
+          "title": "世界で評価されるTYOの若き才能 ── Fabulous Fiveをはじめとするディレクター陣の挑戦と飛躍",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20251117-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "V6XHz7tqGVM",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=V6XHz7tqGVM",
+          "title": "世界で評価されるTYOの若き才能 ── Fabulous Fiveをはじめとするディレクター陣の挑戦と飛躍",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20251117-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "jewBvPC3F5E",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=jewBvPC3F5E",
+          "title": "八村塁選手の新たな挑戦「日本のバスケを強くしたい」 “BLACK SAMURAI 2025 THE CAMP”のクリエイティブサポート",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20251009-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "cST4RO2sKsc",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=cST4RO2sKsc",
+          "title": "震災から始まった、いわきFCとの10年の軌跡。TYOプロデューサー面川正雄が語る、心を動かす映像制作への情熱",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20251007-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "ld42aqiIEhE",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=ld42aqiIEhE",
+          "title": "震災から始まった、いわきFCとの10年の軌跡。TYOプロデューサー面川正雄が語る、心を動かす映像制作への情熱",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20251007-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "r6EpktKvUg4",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=r6EpktKvUg4",
+          "title": "震災から始まった、いわきFCとの10年の軌跡。TYOプロデューサー面川正雄が語る、心を動かす映像制作への情熱",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20251007-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "4OOi66HEXH0",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=4OOi66HEXH0",
+          "title": "震災から始まった、いわきFCとの10年の軌跡。TYOプロデューサー面川正雄が語る、心を動かす映像制作への情熱",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20251007-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "CHo9ZMLzblk",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=CHo9ZMLzblk",
+          "title": "【大阪・関西万博での実績】開会式オープニング映像制作、イベント出演",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20250701-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "a6pBBlTYwHk",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=a6pBBlTYwHk",
+          "title": "生成AI技術を活用した広告の新たな価値創出を目指すTYOの取り組み",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20250410-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "7qwWLB9MmXk",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=7qwWLB9MmXk",
+          "title": "生成AI技術を活用した広告の新たな価値創出を目指すTYOの取り組み",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20250410-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "v141D3uJr_M",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=v141D3uJr_M",
+          "title": "タクシーの移動時間を豊かに。「ひみつのPRIME」で監督・編集を務めるMONSTER木下健太郎が参加したインタビュー記事のご紹介",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20250321-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "JaX4wgENDZ8",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=JaX4wgENDZ8",
+          "title": "タクシーの移動時間を豊かに。「ひみつのPRIME」で監督・編集を務めるMONSTER木下健太郎が参加したインタビュー記事のご紹介",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20250321-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "xiAlurHHCDk",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=xiAlurHHCDk",
+          "title": "タクシーの移動時間を豊かに。「ひみつのPRIME」で監督・編集を務めるMONSTER木下健太郎が参加したインタビュー記事のご紹介",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20250321-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "pFLI0WbyutI",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=pFLI0WbyutI",
+          "title": "タクシーの移動時間を豊かに。「ひみつのPRIME」で監督・編集を務めるMONSTER木下健太郎が参加したインタビュー記事のご紹介",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20250321-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "tRtrwlOa7Ug",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=tRtrwlOa7Ug",
+          "title": "TYO、世界の潜在観光客向けの新たな映像コンテンツシリーズ「Another Side of Japan」を発表。「ツーリズムEXPOジャパン2024」で語ったメンバーの思い",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20241018-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "938459742",
+          "platform": "vimeo",
+          "videoUrl": "https://vimeo.com/938459742",
+          "title": "引退した競走馬に豊かな余生を──元JRA調教師 角居勝彦さんら創業者の思いをステートメントムービーに。石川県能登半島・珠洲市「みんなの馬」ブランディングプロジェクト",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20240822-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "5y1VTGkO1YI",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=5y1VTGkO1YI",
+          "title": "海外リモート撮影・動画制作の実績紹介",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20220722-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "Onq26qDSEY8",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=Onq26qDSEY8",
+          "title": "海外リモート撮影・動画制作の実績紹介",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20220722-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "b2Br8byaAfo",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=b2Br8byaAfo",
+          "title": "海外リモート撮影・動画制作の実績紹介",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/cases/20220722-1/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "mYKXa2o2ugM",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=mYKXa2o2ugM",
+          "title": "“Another Side of Japan” Wins Two Awards at the Cool Japan Platform Awards: Its Philosophy and Vision",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/en/cases/20260319-1en/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "ld42aqiIEhE",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=ld42aqiIEhE",
+          "title": "What is a Statement Movie? A New Form of Visual Communication to Solve Management Challenges",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/en/cases/what-is-a-statement-movie-a-new-form-of-visual-communication-to-solve-management-challenges/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "xRU1XXHIpIc",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=xRU1XXHIpIc",
+          "title": "TYO Production's Brand Movie for ILLIT Earns High Praise for Craftsmanship ── Visual Creativity Supporting K-POP's Global Outreach Recognized by Prestigious Domestic and International Awards",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/en/cases/tyo-productions-brand-movie-for-illit-earns-high-praise-for-craftsmanship-%e2%94%80%e2%94%80-visual-creativity-supporting-k-pops-global-outreach-recognized-by-prestigious-domestic-and-internationa/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "axQmWplSlXw",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=axQmWplSlXw",
+          "title": "TYO Production's Brand Movie for ILLIT Earns High Praise for Craftsmanship ── Visual Creativity Supporting K-POP's Global Outreach Recognized by Prestigious Domestic and International Awards",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/en/cases/tyo-productions-brand-movie-for-illit-earns-high-praise-for-craftsmanship-%e2%94%80%e2%94%80-visual-creativity-supporting-k-pops-global-outreach-recognized-by-prestigious-domestic-and-internationa/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "1s4QXTNUTSM",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=1s4QXTNUTSM",
+          "title": "TYO's young talents recognized worldwide ── The Challenges and Leaps Forward of Our Directors, Including the Fabulous Five",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/en/cases/tyos-young-talents-recognized-worldwide-%e2%94%80%e2%94%80-the-challenges-and-leaps-forward-of-our-directors-including-the-fabulous-five/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "dnCDa1spOG0",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=dnCDa1spOG0",
+          "title": "TYO's young talents recognized worldwide ── The Challenges and Leaps Forward of Our Directors, Including the Fabulous Five",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/en/cases/tyos-young-talents-recognized-worldwide-%e2%94%80%e2%94%80-the-challenges-and-leaps-forward-of-our-directors-including-the-fabulous-five/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "zOHHw4R-XUw",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=zOHHw4R-XUw",
+          "title": "TYO's young talents recognized worldwide ── The Challenges and Leaps Forward of Our Directors, Including the Fabulous Five",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/en/cases/tyos-young-talents-recognized-worldwide-%e2%94%80%e2%94%80-the-challenges-and-leaps-forward-of-our-directors-including-the-fabulous-five/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "uCDUpZV3f8A",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=uCDUpZV3f8A",
+          "title": "TYO's young talents recognized worldwide ── The Challenges and Leaps Forward of Our Directors, Including the Fabulous Five",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/en/cases/tyos-young-talents-recognized-worldwide-%e2%94%80%e2%94%80-the-challenges-and-leaps-forward-of-our-directors-including-the-fabulous-five/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "V6XHz7tqGVM",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=V6XHz7tqGVM",
+          "title": "TYO's young talents recognized worldwide ── The Challenges and Leaps Forward of Our Directors, Including the Fabulous Five",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/en/cases/tyos-young-talents-recognized-worldwide-%e2%94%80%e2%94%80-the-challenges-and-leaps-forward-of-our-directors-including-the-fabulous-five/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "jewBvPC3F5E",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=jewBvPC3F5E",
+          "title": "Rui Hachimura's New Challenge: “I Want to Make Japanese Basketball Stronger” Creative Support for “BLACK SAMURAI 2025 THE CAMP”",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/en/cases/rui-hachimuras-new-challenge-i-want-to-make-japanese-basketball-stronger-creative-support-for-black-samurai-2025-the-camp/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "CHo9ZMLzblk",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=CHo9ZMLzblk",
+          "title": "【Achievements at the Osaka-Kansai Expo】Opening Ceremony Video ProductionEvent Performance",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/en/cases/%e3%80%90achievements-at-the-osaka-kansai-expo%e3%80%91opening-ceremony-video-productionevent-performance/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "a6pBBlTYwHk",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=a6pBBlTYwHk",
+          "title": "TYO's Initiatives Aiming to Create New Value in Advertising Using Generative AI Technology",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/en/cases/tyos-initiatives-aiming-to-create-new-value-in-advertising-using-generative-ai-technology/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "7qwWLB9MmXk",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=7qwWLB9MmXk",
+          "title": "TYO's Initiatives Aiming to Create New Value in Advertising Using Generative AI Technology",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/en/cases/tyos-initiatives-aiming-to-create-new-value-in-advertising-using-generative-ai-technology/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "tRtrwlOa7Ug",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=tRtrwlOa7Ug",
+          "title": "TYO announces new video content series “Another Side of Japan” for potential tourists worldwide. Members share their thoughts at Tourism EXPO Japan 2024.",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/en/cases/tyo-announces-new-video-content-series-another-side-of-japan-for-potential-tourists-worldwide-members-share-their-thoughts-at-tourism-expo-japan-2024/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "5y1VTGkO1YI",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=5y1VTGkO1YI",
+          "title": "Overseas Remote Shooting and Video Production Achievements",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/en/cases/20220722-2/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "Onq26qDSEY8",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=Onq26qDSEY8",
+          "title": "Overseas Remote Shooting and Video Production Achievements",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/en/cases/20220722-2/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        },
+        {
+          "id": "MCuqPk_cbec",
+          "platform": "youtube",
+          "videoUrl": "https://www.youtube.com/watch?v=MCuqPk_cbec",
+          "title": "Overseas Remote Shooting and Video Production Achievements",
+          "source": "tyo",
+          "sourceLabel": "TYO 公式制作実績",
+          "sourceUrl": "https://tyo.co.jp/en/cases/20220722-2/",
+          "productionName": "TYO",
+          "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+        }
+      ]
+    },
+    {
+      "source": "geekpictures",
+      "audits": [],
+      "rows": []
+    }
+  ],
+  "rows": [
+    {
+      "id": "nUPbuNN3Hmg",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=nUPbuNN3Hmg",
+      "title": "リスボン国際広告祭2026で入賞",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/topics/20260710-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "dXqgTG6Jzp4",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=dXqgTG6Jzp4",
+      "title": "Another Side of JapanがUS International Awards 2026で金賞受賞",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/topics/20260706-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "0eM8v5LY96g",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=0eM8v5LY96g",
+      "title": "Another Side of JapanがUS International Awards 2026で金賞受賞",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/topics/20260706-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "FJ3qzNZhl1w",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=FJ3qzNZhl1w",
+      "title": "Another Side of JapanがUS International Awards 2026で金賞受賞",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/topics/20260706-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "g0rEy_i6_nY",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=g0rEy_i6_nY",
+      "title": "Another Side of JapanがUS International Awards 2026で金賞受賞",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/topics/20260706-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "jXol8vcOwyk",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=jXol8vcOwyk",
+      "title": "Another Side of JapanがUS International Awards 2026で金賞受賞",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/topics/20260706-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "RP9DdSZK6_I",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=RP9DdSZK6_I",
+      "title": "SSFF ＆ ASIA 2026の2つの部門で入選",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/topics/20260619-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "nUPbuNN3Hmg",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=nUPbuNN3Hmg",
+      "title": "TYO学生ムービーアワード受賞作品とTOKYO STORIESがSSFF &amp; ASIA 2026で上映",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/topics/20260424-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "mYKXa2o2ugM",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=mYKXa2o2ugM",
+      "title": "Another Side of Japanが第8回 日本国際観光映像祭で優秀賞受賞",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/topics/20260330-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "gxykt-olgGg",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=gxykt-olgGg",
+      "title": "TYOのAIショートフィルムプロジェクト「TOKYO STORIES」作品がWAIFF 2026 KYOTOで受賞・入賞!",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/topics/20260313-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "17SHAqZCaOM",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=17SHAqZCaOM",
+      "title": "TYOのAIショートフィルムプロジェクト「TOKYO STORIES」作品がWAIFF 2026 KYOTOで受賞・入賞!",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/topics/20260313-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "nUPbuNN3Hmg",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=nUPbuNN3Hmg",
+      "title": "TYO、“東京”をテーマにAIで映像表現の可能性を探るショートフィルムプロジェクト「TOKYO STORIES」を公開",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/topics/20260302-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "mYKXa2o2ugM",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=mYKXa2o2ugM",
+      "title": "Another Side of JapanがCJPF AWARD 2026でグランプリと準グランプリをダブル受賞！",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/topics/20260220-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "NO-bHNiDaK8",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=NO-bHNiDaK8",
+      "title": "TYOプロデュース、新XR音楽没入体験「XR Magic Orchestra」が渋谷区共催のテックxアートイベント “DIG SHIBUYA 2026”に参加",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/topics/20260205-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "3MN0VeTw36g",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=3MN0VeTw36g",
+      "title": "JAC AWARD 2025で当社社員がグランプリ2名受賞・各部門で入賞！",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/topics/20251212-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "u0ThZW2O8jc",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=u0ThZW2O8jc",
+      "title": "JAC AWARD 2025で当社社員がグランプリ2名受賞・各部門で入賞！",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/topics/20251212-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "CHo9ZMLzblk",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=CHo9ZMLzblk",
+      "title": "メディア総合イベント「Inter BEE 2025」に出展・登壇",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/topics/20251107-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "1127191196",
+      "platform": "vimeo",
+      "videoUrl": "https://vimeo.com/1127191196",
+      "title": "動画生成AI技術を活用した「NFFT」、10回目のAI Fashion Movie展開催！",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/topics/20251027-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "v141D3uJr_M",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=v141D3uJr_M",
+      "title": "2025年度グッドデザイン賞を受賞！",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/topics/20251017-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "xRU1XXHIpIc",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=xRU1XXHIpIc",
+      "title": "シクロペフェスティバル(CICLOPE Festival 2025)でシルバー受賞！",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/topics/20251010-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "RP9DdSZK6_I",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=RP9DdSZK6_I",
+      "title": "WHOAREYOU 佐々木実花がshots Awards Asia Pacific 2025でショートリスト入賞",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/topics/20250929-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "jXol8vcOwyk",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=jXol8vcOwyk",
+      "title": "Another Side of Japan × せとうちパレットプロジェクト、コラボレーション映像「岡山・倉敷篇」を公開",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/topics/20250924-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "jXol8vcOwyk",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=jXol8vcOwyk",
+      "title": "Another Side of Japan、ソニーマーケティングと連携し映像制作をアップデート",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/topics/20250924-2/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "HmCYEcI240E",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=HmCYEcI240E",
+      "title": "当社取締役岸本高由がYouTubeチャンネル「新規事業・人」に出演しました",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/topics/20250826-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "PoyKI6SYaLQ",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=PoyKI6SYaLQ",
+      "title": "WHOAREYOU 佐々木実花のインタビュー動画がGerety Awardsサイトにて公開されました",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/topics/20250818-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "RP9DdSZK6_I",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=RP9DdSZK6_I",
+      "title": "WHOAREYOU 佐々木実花のインタビュー動画がGerety Awardsサイトにて公開されました",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/topics/20250818-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "mYKXa2o2ugM",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=mYKXa2o2ugM",
+      "title": "Another Side of Japan × 沿線まるごとホテル、初のコラボレーション映像を公開",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/topics/20250717-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "RP9DdSZK6_I",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=RP9DdSZK6_I",
+      "title": "WHOAREYOU 佐々木実花監督作品がYoung Director Award 2025でショートリスト選出",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/topics/20250623-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "dnCDa1spOG0",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=dnCDa1spOG0",
+      "title": "WHOAREYOU西遼太郎監督作『逆さまの天才』がSSFF ＆ ASIA 2025で優秀賞/東京都知事賞受賞！来年のアカデミー賞ノミネート候補となる",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/topics/20250612-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "Ee-VZPXS31o",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=Ee-VZPXS31o",
+      "title": "BRANDED SHORTS 2025で入賞！",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/topics/20250605-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "RP9DdSZK6_I",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=RP9DdSZK6_I",
+      "title": "WHOAREYOU 佐々木実花のインタビュー記事がshots magazineに掲載されました",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/topics/20250508-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "cSHluvSoWQY",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=cSHluvSoWQY",
+      "title": "第12回 Brain Online Video Award(BOVA)オンライン動画部門で金賞受賞！",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/topics/20250507-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "RP9DdSZK6_I",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=RP9DdSZK6_I",
+      "title": "WHOAREYOU 佐々木実花がADFEST「Fabulous Five」で最優秀賞受賞！",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/topics/20250324-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "Qwo0X6_fT9Q",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=Qwo0X6_fT9Q",
+      "title": "第7回 日本国際観光映像祭で最優秀賞受賞",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/topics/20250321-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "3bby-KBokQQ",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=3bby-KBokQQ",
+      "title": "第7回 日本国際観光映像祭で最優秀賞受賞",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/topics/20250321-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "dnCDa1spOG0",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=dnCDa1spOG0",
+      "title": "WHOAREYOU西遼太郎監督作品がつくばショートムービーコンペティション2025でグランプリ受賞！",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/topics/20250319-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "Qwo0X6_fT9Q",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=Qwo0X6_fT9Q",
+      "title": "第7回 日本国際観光映像祭 日本部門で入賞",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/topics/20250304-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "3bby-KBokQQ",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=3bby-KBokQQ",
+      "title": "第7回 日本国際観光映像祭 日本部門で入賞",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/topics/20250304-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "nUPbuNN3Hmg",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=nUPbuNN3Hmg",
+      "title": "Awarded at the 2026 Lisbon International Advertising Festival",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/en/topics/20260710-1_en/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "dXqgTG6Jzp4",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=dXqgTG6Jzp4",
+      "title": "“Another Side of Japan” Wins Gold at the “US International Awards 2026”",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/en/topics/20260706-1_en/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "0eM8v5LY96g",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=0eM8v5LY96g",
+      "title": "“Another Side of Japan” Wins Gold at the “US International Awards 2026”",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/en/topics/20260706-1_en/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "FJ3qzNZhl1w",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=FJ3qzNZhl1w",
+      "title": "“Another Side of Japan” Wins Gold at the “US International Awards 2026”",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/en/topics/20260706-1_en/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "g0rEy_i6_nY",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=g0rEy_i6_nY",
+      "title": "“Another Side of Japan” Wins Gold at the “US International Awards 2026”",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/en/topics/20260706-1_en/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "jXol8vcOwyk",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=jXol8vcOwyk",
+      "title": "“Another Side of Japan” Wins Gold at the “US International Awards 2026”",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/en/topics/20260706-1_en/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "mYKXa2o2ugM",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=mYKXa2o2ugM",
+      "title": "“Another Side of Japan” Wins Excellence Award at the 8th Japan International Tourism Film Festival",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/en/topics/20260330-1en/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "gxykt-olgGg",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=gxykt-olgGg",
+      "title": "Films from TYO’s AI short film project “TOKYO STORIES” have won awards and honors at WAIFF 2026 KYOTO!",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/en/topics/20260313-1en/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "17SHAqZCaOM",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=17SHAqZCaOM",
+      "title": "Films from TYO’s AI short film project “TOKYO STORIES” have won awards and honors at WAIFF 2026 KYOTO!",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/en/topics/20260313-1en/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "nUPbuNN3Hmg",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=nUPbuNN3Hmg",
+      "title": "TYO releases “TOKYO STORIES,” a short film project exploring the possibilities of visual expression through AI, themed around “Tokyo.”",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/en/topics/20260302-en/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "mYKXa2o2ugM",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=mYKXa2o2ugM",
+      "title": "Another Side of Japan wins both the Grand Prix and Runner-up Prize at the CJPF AWARD 2026!",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/en/topics/20260220-en/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "xRU1XXHIpIc",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=xRU1XXHIpIc",
+      "title": "TYO wins Silver at CICLOPE Festival 2025",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/en/topics/20251010-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "RP9DdSZK6_I",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=RP9DdSZK6_I",
+      "title": "TYO’s director Mika Sasaki named to the Shortlist at shots Awards Asia Pacific 2025!",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/en/topics/20250929-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "PoyKI6SYaLQ",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=PoyKI6SYaLQ",
+      "title": "TYO’s Mika Sasaki Featured in Gerety Talks Interview on the Gerety Awards Website",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/en/topics/20250818-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "RP9DdSZK6_I",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=RP9DdSZK6_I",
+      "title": "TYO’s Mika Sasaki Featured in Gerety Talks Interview on the Gerety Awards Website",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/en/topics/20250818-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "RP9DdSZK6_I",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=RP9DdSZK6_I",
+      "title": "“IM PERFECTION” directed by TYO’s Mika Sasaki named Shortlist at the Young Director Award 2025",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/en/topics/20250623-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "dnCDa1spOG0",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=dnCDa1spOG0",
+      "title": "\"UPSIDE - DOWN GENIUS,\" directed by TYO's Ryotaro Nishi, wins the Japan Best Short Award / Governor of Tokyo Award at SSFF &amp; ASIA 2025!",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/en/topics/20250612-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "RP9DdSZK6_I",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=RP9DdSZK6_I",
+      "title": "TYO's Mika Sasaki Featured in shots magazine",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/en/topics/20250508-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "RP9DdSZK6_I",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=RP9DdSZK6_I",
+      "title": "TYO's Mika Sasaki Wins Top Award at ADFEST \"Fabulous Five",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/en/topics/20250324-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "Qwo0X6_fT9Q",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=Qwo0X6_fT9Q",
+      "title": "Japan World's Tourism Film Festival 2025: Grand Prize in Japan Category",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/en/topics/20250321-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "3bby-KBokQQ",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=3bby-KBokQQ",
+      "title": "Japan World's Tourism Film Festival 2025: Grand Prize in Japan Category",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/en/topics/20250321-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "Dsh_qh0Bw9Y",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=Dsh_qh0Bw9Y",
+      "title": "SNSもスマホも持たない。それでも仕事が集まってくる。TYOプロデューサー・木下健太郎の流儀",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20260624-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "gsT6eKsnT0M",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=gsT6eKsnT0M",
+      "title": "演出も、撮影も、編集も。『THE FIRST TAKE』『ひみつのPRIME』を手がけるTYOプロデューサー・木下健太郎の知られざる仕事術",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20260617-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "v141D3uJr_M",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=v141D3uJr_M",
+      "title": "演出も、撮影も、編集も。『THE FIRST TAKE』『ひみつのPRIME』を手がけるTYOプロデューサー・木下健太郎の知られざる仕事術",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20260617-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "jjOgFesCL6k",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=jjOgFesCL6k",
+      "title": "演出も、撮影も、編集も。『THE FIRST TAKE』『ひみつのPRIME』を手がけるTYOプロデューサー・木下健太郎の知られざる仕事術",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20260617-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "h6ghYD-iNJ0",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=h6ghYD-iNJ0",
+      "title": "演出も、撮影も、編集も。『THE FIRST TAKE』『ひみつのPRIME』を手がけるTYOプロデューサー・木下健太郎の知られざる仕事術",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20260617-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "UY2umUiFpIE",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=UY2umUiFpIE",
+      "title": "若き映像作家・西遼太郎の軌跡──学生作品からアカデミー賞ノミネート候補に至るまで",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20260518-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "dnCDa1spOG0",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=dnCDa1spOG0",
+      "title": "若き映像作家・西遼太郎の軌跡──学生作品からアカデミー賞ノミネート候補に至るまで",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20260518-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "mYKXa2o2ugM",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=mYKXa2o2ugM",
+      "title": "Another Side of Japanがクールジャパン・プラットフォームアワードでW受賞、その信念と展望",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20260319-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "nK1iNol6lxM",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=nK1iNol6lxM",
+      "title": "「知らないことを知りたい」「人と違うことを追求」「常にスタートラインに立つ」。TYO drive チーフプロデューサー・馬詰正、その哲学",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20260129-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "ld42aqiIEhE",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=ld42aqiIEhE",
+      "title": "ステートメントムービーとは？経営課題を解決する新しい映像コミュニケーションの形",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20260127-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "a6pBBlTYwHk",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=a6pBBlTYwHk",
+      "title": "進化が加速するAI、XR──最先端から、映像と広告表現の新境地へ。TYO drive チーフプロデューサー・馬詰正の挑戦",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20260116-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "xDDaImoYWxQ",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=xDDaImoYWxQ",
+      "title": "進化が加速するAI、XR──最先端から、映像と広告表現の新境地へ。TYO drive チーフプロデューサー・馬詰正の挑戦",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20260116-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "qeddzEzDnic",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=qeddzEzDnic",
+      "title": "進化が加速するAI、XR──最先端から、映像と広告表現の新境地へ。TYO drive チーフプロデューサー・馬詰正の挑戦",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20260116-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "djgOsGXe71w",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=djgOsGXe71w",
+      "title": "進化が加速するAI、XR──最先端から、映像と広告表現の新境地へ。TYO drive チーフプロデューサー・馬詰正の挑戦",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20260116-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "OxiIeLq-Pd0",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=OxiIeLq-Pd0",
+      "title": "進化が加速するAI、XR──最先端から、映像と広告表現の新境地へ。TYO drive チーフプロデューサー・馬詰正の挑戦",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20260116-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "CHo9ZMLzblk",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=CHo9ZMLzblk",
+      "title": "進化が加速するAI、XR──最先端から、映像と広告表現の新境地へ。TYO drive チーフプロデューサー・馬詰正の挑戦",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20260116-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "xRU1XXHIpIc",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=xRU1XXHIpIc",
+      "title": "TYO制作・ILLITのブランドムービーがクラフト表現で高評価 ── 国内外の権威あるアワードが認めた、K-POPのグローバル発信を支える映像クリエイティブ",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20251210-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "axQmWplSlXw",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=axQmWplSlXw",
+      "title": "TYO制作・ILLITのブランドムービーがクラフト表現で高評価 ── 国内外の権威あるアワードが認めた、K-POPのグローバル発信を支える映像クリエイティブ",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20251210-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "1s4QXTNUTSM",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=1s4QXTNUTSM",
+      "title": "世界で評価されるTYOの若き才能 ── Fabulous Fiveをはじめとするディレクター陣の挑戦と飛躍",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20251117-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "dnCDa1spOG0",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=dnCDa1spOG0",
+      "title": "世界で評価されるTYOの若き才能 ── Fabulous Fiveをはじめとするディレクター陣の挑戦と飛躍",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20251117-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "zOHHw4R-XUw",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=zOHHw4R-XUw",
+      "title": "世界で評価されるTYOの若き才能 ── Fabulous Fiveをはじめとするディレクター陣の挑戦と飛躍",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20251117-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "uCDUpZV3f8A",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=uCDUpZV3f8A",
+      "title": "世界で評価されるTYOの若き才能 ── Fabulous Fiveをはじめとするディレクター陣の挑戦と飛躍",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20251117-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "V6XHz7tqGVM",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=V6XHz7tqGVM",
+      "title": "世界で評価されるTYOの若き才能 ── Fabulous Fiveをはじめとするディレクター陣の挑戦と飛躍",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20251117-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "jewBvPC3F5E",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=jewBvPC3F5E",
+      "title": "八村塁選手の新たな挑戦「日本のバスケを強くしたい」 “BLACK SAMURAI 2025 THE CAMP”のクリエイティブサポート",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20251009-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "cST4RO2sKsc",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=cST4RO2sKsc",
+      "title": "震災から始まった、いわきFCとの10年の軌跡。TYOプロデューサー面川正雄が語る、心を動かす映像制作への情熱",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20251007-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "ld42aqiIEhE",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=ld42aqiIEhE",
+      "title": "震災から始まった、いわきFCとの10年の軌跡。TYOプロデューサー面川正雄が語る、心を動かす映像制作への情熱",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20251007-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "r6EpktKvUg4",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=r6EpktKvUg4",
+      "title": "震災から始まった、いわきFCとの10年の軌跡。TYOプロデューサー面川正雄が語る、心を動かす映像制作への情熱",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20251007-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "4OOi66HEXH0",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=4OOi66HEXH0",
+      "title": "震災から始まった、いわきFCとの10年の軌跡。TYOプロデューサー面川正雄が語る、心を動かす映像制作への情熱",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20251007-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "CHo9ZMLzblk",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=CHo9ZMLzblk",
+      "title": "【大阪・関西万博での実績】開会式オープニング映像制作、イベント出演",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20250701-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "a6pBBlTYwHk",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=a6pBBlTYwHk",
+      "title": "生成AI技術を活用した広告の新たな価値創出を目指すTYOの取り組み",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20250410-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "7qwWLB9MmXk",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=7qwWLB9MmXk",
+      "title": "生成AI技術を活用した広告の新たな価値創出を目指すTYOの取り組み",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20250410-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "v141D3uJr_M",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=v141D3uJr_M",
+      "title": "タクシーの移動時間を豊かに。「ひみつのPRIME」で監督・編集を務めるMONSTER木下健太郎が参加したインタビュー記事のご紹介",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20250321-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "JaX4wgENDZ8",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=JaX4wgENDZ8",
+      "title": "タクシーの移動時間を豊かに。「ひみつのPRIME」で監督・編集を務めるMONSTER木下健太郎が参加したインタビュー記事のご紹介",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20250321-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "xiAlurHHCDk",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=xiAlurHHCDk",
+      "title": "タクシーの移動時間を豊かに。「ひみつのPRIME」で監督・編集を務めるMONSTER木下健太郎が参加したインタビュー記事のご紹介",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20250321-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "pFLI0WbyutI",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=pFLI0WbyutI",
+      "title": "タクシーの移動時間を豊かに。「ひみつのPRIME」で監督・編集を務めるMONSTER木下健太郎が参加したインタビュー記事のご紹介",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20250321-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "tRtrwlOa7Ug",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=tRtrwlOa7Ug",
+      "title": "TYO、世界の潜在観光客向けの新たな映像コンテンツシリーズ「Another Side of Japan」を発表。「ツーリズムEXPOジャパン2024」で語ったメンバーの思い",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20241018-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "938459742",
+      "platform": "vimeo",
+      "videoUrl": "https://vimeo.com/938459742",
+      "title": "引退した競走馬に豊かな余生を──元JRA調教師 角居勝彦さんら創業者の思いをステートメントムービーに。石川県能登半島・珠洲市「みんなの馬」ブランディングプロジェクト",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20240822-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "5y1VTGkO1YI",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=5y1VTGkO1YI",
+      "title": "海外リモート撮影・動画制作の実績紹介",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20220722-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "Onq26qDSEY8",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=Onq26qDSEY8",
+      "title": "海外リモート撮影・動画制作の実績紹介",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20220722-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "b2Br8byaAfo",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=b2Br8byaAfo",
+      "title": "海外リモート撮影・動画制作の実績紹介",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/cases/20220722-1/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "mYKXa2o2ugM",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=mYKXa2o2ugM",
+      "title": "“Another Side of Japan” Wins Two Awards at the Cool Japan Platform Awards: Its Philosophy and Vision",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/en/cases/20260319-1en/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "ld42aqiIEhE",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=ld42aqiIEhE",
+      "title": "What is a Statement Movie? A New Form of Visual Communication to Solve Management Challenges",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/en/cases/what-is-a-statement-movie-a-new-form-of-visual-communication-to-solve-management-challenges/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "xRU1XXHIpIc",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=xRU1XXHIpIc",
+      "title": "TYO Production's Brand Movie for ILLIT Earns High Praise for Craftsmanship ── Visual Creativity Supporting K-POP's Global Outreach Recognized by Prestigious Domestic and International Awards",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/en/cases/tyo-productions-brand-movie-for-illit-earns-high-praise-for-craftsmanship-%e2%94%80%e2%94%80-visual-creativity-supporting-k-pops-global-outreach-recognized-by-prestigious-domestic-and-internationa/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "axQmWplSlXw",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=axQmWplSlXw",
+      "title": "TYO Production's Brand Movie for ILLIT Earns High Praise for Craftsmanship ── Visual Creativity Supporting K-POP's Global Outreach Recognized by Prestigious Domestic and International Awards",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/en/cases/tyo-productions-brand-movie-for-illit-earns-high-praise-for-craftsmanship-%e2%94%80%e2%94%80-visual-creativity-supporting-k-pops-global-outreach-recognized-by-prestigious-domestic-and-internationa/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "1s4QXTNUTSM",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=1s4QXTNUTSM",
+      "title": "TYO's young talents recognized worldwide ── The Challenges and Leaps Forward of Our Directors, Including the Fabulous Five",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/en/cases/tyos-young-talents-recognized-worldwide-%e2%94%80%e2%94%80-the-challenges-and-leaps-forward-of-our-directors-including-the-fabulous-five/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "dnCDa1spOG0",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=dnCDa1spOG0",
+      "title": "TYO's young talents recognized worldwide ── The Challenges and Leaps Forward of Our Directors, Including the Fabulous Five",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/en/cases/tyos-young-talents-recognized-worldwide-%e2%94%80%e2%94%80-the-challenges-and-leaps-forward-of-our-directors-including-the-fabulous-five/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "zOHHw4R-XUw",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=zOHHw4R-XUw",
+      "title": "TYO's young talents recognized worldwide ── The Challenges and Leaps Forward of Our Directors, Including the Fabulous Five",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/en/cases/tyos-young-talents-recognized-worldwide-%e2%94%80%e2%94%80-the-challenges-and-leaps-forward-of-our-directors-including-the-fabulous-five/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "uCDUpZV3f8A",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=uCDUpZV3f8A",
+      "title": "TYO's young talents recognized worldwide ── The Challenges and Leaps Forward of Our Directors, Including the Fabulous Five",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/en/cases/tyos-young-talents-recognized-worldwide-%e2%94%80%e2%94%80-the-challenges-and-leaps-forward-of-our-directors-including-the-fabulous-five/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "V6XHz7tqGVM",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=V6XHz7tqGVM",
+      "title": "TYO's young talents recognized worldwide ── The Challenges and Leaps Forward of Our Directors, Including the Fabulous Five",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/en/cases/tyos-young-talents-recognized-worldwide-%e2%94%80%e2%94%80-the-challenges-and-leaps-forward-of-our-directors-including-the-fabulous-five/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "jewBvPC3F5E",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=jewBvPC3F5E",
+      "title": "Rui Hachimura's New Challenge: “I Want to Make Japanese Basketball Stronger” Creative Support for “BLACK SAMURAI 2025 THE CAMP”",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/en/cases/rui-hachimuras-new-challenge-i-want-to-make-japanese-basketball-stronger-creative-support-for-black-samurai-2025-the-camp/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "CHo9ZMLzblk",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=CHo9ZMLzblk",
+      "title": "【Achievements at the Osaka-Kansai Expo】Opening Ceremony Video ProductionEvent Performance",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/en/cases/%e3%80%90achievements-at-the-osaka-kansai-expo%e3%80%91opening-ceremony-video-productionevent-performance/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "a6pBBlTYwHk",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=a6pBBlTYwHk",
+      "title": "TYO's Initiatives Aiming to Create New Value in Advertising Using Generative AI Technology",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/en/cases/tyos-initiatives-aiming-to-create-new-value-in-advertising-using-generative-ai-technology/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "7qwWLB9MmXk",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=7qwWLB9MmXk",
+      "title": "TYO's Initiatives Aiming to Create New Value in Advertising Using Generative AI Technology",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/en/cases/tyos-initiatives-aiming-to-create-new-value-in-advertising-using-generative-ai-technology/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "tRtrwlOa7Ug",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=tRtrwlOa7Ug",
+      "title": "TYO announces new video content series “Another Side of Japan” for potential tourists worldwide. Members share their thoughts at Tourism EXPO Japan 2024.",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/en/cases/tyo-announces-new-video-content-series-another-side-of-japan-for-potential-tourists-worldwide-members-share-their-thoughts-at-tourism-expo-japan-2024/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "5y1VTGkO1YI",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=5y1VTGkO1YI",
+      "title": "Overseas Remote Shooting and Video Production Achievements",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/en/cases/20220722-2/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "Onq26qDSEY8",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=Onq26qDSEY8",
+      "title": "Overseas Remote Shooting and Video Production Achievements",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/en/cases/20220722-2/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    },
+    {
+      "id": "MCuqPk_cbec",
+      "platform": "youtube",
+      "videoUrl": "https://www.youtube.com/watch?v=MCuqPk_cbec",
+      "title": "Overseas Remote Shooting and Video Production Achievements",
+      "source": "tyo",
+      "sourceLabel": "TYO 公式制作実績",
+      "sourceUrl": "https://tyo.co.jp/en/cases/20220722-2/",
+      "productionName": "TYO",
+      "sourceContext": "TYO 公式制作実績の公開WordPress APIに作品と動画URLを明示"
+    }
+  ]
+}

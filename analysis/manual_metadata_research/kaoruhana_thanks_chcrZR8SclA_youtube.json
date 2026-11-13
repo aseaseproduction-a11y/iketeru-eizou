@@ -1,0 +1,65 @@
+{
+  "kind": "youtube#videoListResponse",
+  "etag": "dqOuM1r9nXMkrujYfevUdnniafM",
+  "items": [
+    {
+      "kind": "youtube#video",
+      "etag": "qD9xzsND-TPopzETAaJNgHbYnQg",
+      "id": "chcrZR8SclA",
+      "snippet": {
+        "publishedAt": "2025-10-08T22:30:18Z",
+        "channelId": "UCmH9SgzzvDlxG6mpcYg2jJw",
+        "title": "cv.中山祥徳/井上ほの花『薫る花は凛と咲く』アニメ大好評御礼PV「ありがとう」",
+        "description": "『薫る花は凛と咲く』からみなさまへ。\n手にとって読んでいただいたことに、感謝を込めて。\n最新20巻の発売を記念した特別映像を公開します。\n\n紬凛太郎 cv.中山祥徳\n和栗薫子 cv.井上ほの花\n\n『薫る花は凛と咲く』ありがとう 特設サイトはこちら\nhttps://sp.shonenmagazine.com/kaoruhana_47newspaper2025/\n\nコミックス発売中！\nhttps://amzn.to/3IH2WRC\n\n冒頭話マガポケで無料公開中！\nhttps://pocket.shonenmagazine.com/title/01524/episode/329599\n\n最新情報は\nhttps://x.com/kaoruhana_mp\n\n———外部リンク———\nマガジン公式ＨＰ\nhttp://www.shonenmagazine.com/\nマガジンポケット\nhttps://pocket.shonenmagazine.com/\n別冊少年マガジン公式Twitter\nhttps://twitter.com/betsumaganews\n週刊少年マガジン公式Twitter\nhttps://twitter.com/shonenmagazine1\nマガポケ公式Twitter\nhttps://twitter.com/magapoke\nインスタグラム\nhttps://www.instagram.com/shonenmagazine.kousiki/",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/chcrZR8SclA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/chcrZR8SclA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/chcrZR8SclA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/chcrZR8SclA/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/chcrZR8SclA/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "マガジンチャンネル",
+        "tags": [
+          "UCmH9SgzzvDlxG6mpcYg2jJw",
+          "講談社",
+          "週刊少年マガジン",
+          "別冊少年マガジン",
+          "漫画",
+          "マンガ"
+        ],
+        "categoryId": "1",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "ja",
+        "localized": {
+          "title": "cv.中山祥徳/井上ほの花『薫る花は凛と咲く』アニメ大好評御礼PV「ありがとう」",
+          "description": "『薫る花は凛と咲く』からみなさまへ。\n手にとって読んでいただいたことに、感謝を込めて。\n最新20巻の発売を記念した特別映像を公開します。\n\n紬凛太郎 cv.中山祥徳\n和栗薫子 cv.井上ほの花\n\n『薫る花は凛と咲く』ありがとう 特設サイトはこちら\nhttps://sp.shonenmagazine.com/kaoruhana_47newspaper2025/\n\nコミックス発売中！\nhttps://amzn.to/3IH2WRC\n\n冒頭話マガポケで無料公開中！\nhttps://pocket.shonenmagazine.com/title/01524/episode/329599\n\n最新情報は\nhttps://x.com/kaoruhana_mp\n\n———外部リンク———\nマガジン公式ＨＰ\nhttp://www.shonenmagazine.com/\nマガジンポケット\nhttps://pocket.shonenmagazine.com/\n別冊少年マガジン公式Twitter\nhttps://twitter.com/betsumaganews\n週刊少年マガジン公式Twitter\nhttps://twitter.com/shonenmagazine1\nマガポケ公式Twitter\nhttps://twitter.com/magapoke\nインスタグラム\nhttps://www.instagram.com/shonenmagazine.kousiki/"
+        },
+        "defaultAudioLanguage": "ja"
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 1,
+    "resultsPerPage": 1
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "index": 1086,
+  "total": 1782,
+  "target": {
+    "id": "eCwLrf8SAcE",
+    "platform": "youtube",
+    "title": "第6回CRカップ オープニング映像 feat. 天月",
+    "videoUrl": "https://www.youtube.com/watch?v=eCwLrf8SAcE",
+    "channelTitle": "Nate / ねいと",
+    "source": "notion",
+    "sourceLabel": "Notion事例集",
+    "existingMetadata": {
+      "genres": "[{\"name\":\"YouTube / SNS / 縦型動画\",\"slug\":\"youtube-sns\"},{\"name\":\"オープニング映像\",\"slug\":\"opening\"}]",
+      "products": "[{\"name\":\"ゲーム / アプリ / 玩具\",\"slug\":\"gaming\"},{\"name\":\"娯楽 / アミューズメント\",\"slug\":\"entertainment\"}]",
+      "directions": "[{\"name\":\"モーショングラフィックス\",\"slug\":\"motion-graphics\"}]",
+      "tones": "[{\"name\":\"スタイリッシュ / クール\",\"slug\":\"stylish\"},{\"name\":\"エネルギッシュ / スポーティ\",\"slug\":\"energetic\"}]",
+      "allTags": "[\"YouTube / SNS / 縦型動画\",\"オープニング映像\",\"ゲーム / アプリ / 玩具\",\"娯楽 / アミューズメント\",\"モーショングラフィックス\",\"スタイリッシュ / クール\",\"エネルギッシュ / スポーティ\",\"OPED\",\"2D\",\"アニメーション\",\"Nate\"]",
+      "purposes": "[\"OPED\"]",
+      "expressions": "[\"2D\",\"アニメーション\"]",
+      "toneEmotions": "[]",
+      "toneVisuals": "[]",
+      "toneTechniques": "[]",
+      "productions": "[\"Nate\"]"
+    }
+  }
+}

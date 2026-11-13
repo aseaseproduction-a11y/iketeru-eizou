@@ -1,0 +1,53 @@
+{
+  "mode": "dry-run",
+  "completedAt": "2026-08-19T09:37:33.006Z",
+  "counts": {
+    "planned": 73,
+    "insertable": 65,
+    "inserted": 0,
+    "skipped": 8
+  },
+  "inserted": [],
+  "skipped": [
+    {
+      "id": "wSqORcAwi54",
+      "title": "STARBUCKS Autumn is Coming - STARBUCKS Autumn 2021",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "VPB_J6Egi28",
+      "title": "『チェンソーマン』9 巻発売記念スペシャルPV",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "fX9NK-_YqlI",
+      "title": "『ONE PIECE』103巻発売記念ムービー「ついにギア５」",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "CvKzGGZhouI",
+      "title": "【公式】『カグラバチ』7巻発売記念PV｜“全話、斬新。”【週刊少年ジャンプ】",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "azRlNFUs440",
+      "title": "英雄譚 -『僕のヒーローアカデミア』連載完結記念動画",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "3HjS-zK8v-U",
+      "title": "『チェンソーマン』ジャンプフェスタ2022 スペシャルPV解禁",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "-OdsFe8yOs8",
+      "title": "KIRINJI - 再会 Meeting Again",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "237533255",
+      "title": "Frasco - Viewtiful",
+      "reason": "duplicate_normalized_title"
+    }
+  ]
+}

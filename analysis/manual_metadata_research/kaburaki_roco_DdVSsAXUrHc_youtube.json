@@ -1,0 +1,63 @@
+{
+  "kind": "youtube#videoListResponse",
+  "etag": "VPaPGBYp-PNz9e9sL80CEk3nJ9M",
+  "items": [
+    {
+      "kind": "youtube#video",
+      "etag": "6YxCQQhL9HfQ_fJWJ2VyL7zTE_o",
+      "id": "DdVSsAXUrHc",
+      "snippet": {
+        "publishedAt": "2025-06-05T13:00:06Z",
+        "channelId": "UClrQ7xhRBxS_v_-WuudGKmA",
+        "title": "【歌ってみた】セツナトリップ【鏑木ろこ】",
+        "description": "生き急げ 全開少女\n\n▼song\nhttps://www.nicovideo.jp/watch/sm17720979\n\n▼inst\n安芸章太郎\n\n▼mix\n快晴P\n\n▼illust\nハンテン\n\n▼movie\nHAR\n\n\n※未成年者の視聴者の方々は、下記リンク先の注意事項もご覧ください。\nhttps://www.anycolor.co.jp/notice-for-minors",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/DdVSsAXUrHc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/DdVSsAXUrHc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/DdVSsAXUrHc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/DdVSsAXUrHc/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/DdVSsAXUrHc/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "鏑木ろこ / Kaburaki Roco【にじさんじ】",
+        "tags": [
+          "うたってみた",
+          "鏑木ろこ",
+          "にじさんじ",
+          "セツナトリッップ",
+          "ボカロ"
+        ],
+        "categoryId": "10",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "ja",
+        "localized": {
+          "title": "【歌ってみた】セツナトリップ【鏑木ろこ】",
+          "description": "生き急げ 全開少女\n\n▼song\nhttps://www.nicovideo.jp/watch/sm17720979\n\n▼inst\n安芸章太郎\n\n▼mix\n快晴P\n\n▼illust\nハンテン\n\n▼movie\nHAR\n\n\n※未成年者の視聴者の方々は、下記リンク先の注意事項もご覧ください。\nhttps://www.anycolor.co.jp/notice-for-minors"
+        }
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 1,
+    "resultsPerPage": 1
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "kind": "youtube#videoListResponse",
+  "etag": "ftDRuAY2o_JYEn0hr_vw9ATH_nA",
+  "items": [
+    {
+      "kind": "youtube#video",
+      "etag": "1Xz8Czowwc_h5_t18we2Ej270vU",
+      "id": "5MYRd4zYezM",
+      "snippet": {
+        "publishedAt": "2025-05-20T12:00:15Z",
+        "channelId": "UCdFdBrjDrHGlDg-O67PbQYw",
+        "title": "【MMGC2025 Day1昼】副热带的夏天没有风【安達としまむら】",
+        "description": "Mirai Mad Team主催の静止画MADイベント「MMGC2025」のDay1です!\n\nMMGC2024 公式サイト\n中国语:http://mirai-mad.com\n日本语:https://mirai-mad.com/jp/welcome\nEnglish:https://mirai-mad.com/en/welcome\n\n【作品紹介】\n作品名：副热带的夏天没有风\n作者名：概念机Physicore\n\nMirai MAD Team\nTwitter：https://twitter.com/Mirai_MAD_Team\nyoutube：https://www.youtube.com/channel/UCdFdBrjDrHGlDg-O67PbQYw\nniconico：https://www.nicovideo.jp/user/96755145\u200b\nbilibili：https://space.bilibili.com/523239",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/5MYRd4zYezM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/5MYRd4zYezM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/5MYRd4zYezM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/5MYRd4zYezM/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/5MYRd4zYezM/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Mirai MAD Team",
+        "tags": [
+          "MAD",
+          "静止画MAD",
+          "MMGC2025"
+        ],
+        "categoryId": "1",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "zh",
+        "localized": {
+          "title": "【MMGC2025 Day1昼】副热带的夏天没有风【安達としまむら】",
+          "description": "Mirai Mad Team主催の静止画MADイベント「MMGC2025」のDay1です!\n\nMMGC2024 公式サイト\n中国语:http://mirai-mad.com\n日本语:https://mirai-mad.com/jp/welcome\nEnglish:https://mirai-mad.com/en/welcome\n\n【作品紹介】\n作品名：副热带的夏天没有风\n作者名：概念机Physicore\n\nMirai MAD Team\nTwitter：https://twitter.com/Mirai_MAD_Team\nyoutube：https://www.youtube.com/channel/UCdFdBrjDrHGlDg-O67PbQYw\nniconico：https://www.nicovideo.jp/user/96755145\u200b\nbilibili：https://space.bilibili.com/523239"
+        },
+        "defaultAudioLanguage": "zh-Hans"
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 1,
+    "resultsPerPage": 1
+  }
+}

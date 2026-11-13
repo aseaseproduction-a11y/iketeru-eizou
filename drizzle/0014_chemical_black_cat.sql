@@ -1,0 +1,1 @@
+ALTER TABLE `aiMetadataCompletionJobs` ADD `backupScheduleCronTaskUid` varchar(65);

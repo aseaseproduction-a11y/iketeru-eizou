@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "purpose": { "type": "string" },
+    "background": { "type": "string" },
+    "evaluation": { "type": "string" },
+    "evidence": { "type": "string" },
+    "confidence": { "type": "string", "enum": ["official", "none"] }
+  },
+  "required": ["purpose", "background", "evaluation", "evidence", "confidence"],
+  "additionalProperties": false
+}

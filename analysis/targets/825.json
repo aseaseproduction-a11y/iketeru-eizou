@@ -1,0 +1,26 @@
+{
+  "index": 825,
+  "total": 1782,
+  "target": {
+    "id": "Y0bGvWxjY4s",
+    "platform": "youtube",
+    "title": "BMW Films - The Greatest Branded Content Campaign Of All Time",
+    "videoUrl": "https://www.youtube.com/watch?v=Y0bGvWxjY4s",
+    "channelTitle": "",
+    "source": "youtube_search",
+    "sourceLabel": "YouTube検索（自動キーワード）",
+    "existingMetadata": {
+      "genres": "[{\"name\":\"ブランデッドムービー\",\"slug\":\"branded-movie\"}]",
+      "products": "[{\"name\":\"自動車 / バイク\",\"slug\":\"automotive\"},{\"name\":\"IT / 通信 / ネットサービス\",\"slug\":\"it\"}]",
+      "directions": "[]",
+      "tones": "[]",
+      "allTags": "[]",
+      "purposes": "[]",
+      "expressions": "[]",
+      "toneEmotions": "[]",
+      "toneVisuals": "[]",
+      "toneTechniques": "[]",
+      "productions": "[]"
+    }
+  }
+}

@@ -1,0 +1,299 @@
+{
+  "generatedAt": "2026-08-19T04:44:46.798Z",
+  "source": "YouTube Works Awards Japan 2026 official case-study PDF",
+  "totalCandidates": 217,
+  "matchedVideos": 217,
+  "heldVideos": 0,
+  "tripleMatch": "video ID + normalized canonical video URL + normalized title",
+  "groups": [
+    {
+      "group": 1,
+      "sourcePage": 16,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-01.json",
+      "videoCount": 6
+    },
+    {
+      "group": 2,
+      "sourcePage": 19,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-02.json",
+      "videoCount": 8
+    },
+    {
+      "group": 3,
+      "sourcePage": 22,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-03.json",
+      "videoCount": 5
+    },
+    {
+      "group": 4,
+      "sourcePage": 25,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-04.json",
+      "videoCount": 1
+    },
+    {
+      "group": 5,
+      "sourcePage": 28,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-05.json",
+      "videoCount": 1
+    },
+    {
+      "group": 6,
+      "sourcePage": 33,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-06.json",
+      "videoCount": 5
+    },
+    {
+      "group": 7,
+      "sourcePage": 36,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-07.json",
+      "videoCount": 1
+    },
+    {
+      "group": 8,
+      "sourcePage": 39,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-08.json",
+      "videoCount": 2
+    },
+    {
+      "group": 9,
+      "sourcePage": 42,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-09.json",
+      "videoCount": 3
+    },
+    {
+      "group": 10,
+      "sourcePage": 45,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-10.json",
+      "videoCount": 3
+    },
+    {
+      "group": 11,
+      "sourcePage": 48,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-11.json",
+      "videoCount": 2
+    },
+    {
+      "group": 12,
+      "sourcePage": 51,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-12.json",
+      "videoCount": 3
+    },
+    {
+      "group": 13,
+      "sourcePage": 54,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-13.json",
+      "videoCount": 1
+    },
+    {
+      "group": 14,
+      "sourcePage": 59,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-14.json",
+      "videoCount": 8
+    },
+    {
+      "group": 15,
+      "sourcePage": 62,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-15.json",
+      "videoCount": 1
+    },
+    {
+      "group": 16,
+      "sourcePage": 65,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-16.json",
+      "videoCount": 6
+    },
+    {
+      "group": 17,
+      "sourcePage": 68,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-17.json",
+      "videoCount": 4
+    },
+    {
+      "group": 18,
+      "sourcePage": 71,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-18.json",
+      "videoCount": 1
+    },
+    {
+      "group": 19,
+      "sourcePage": 74,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-19.json",
+      "videoCount": 7
+    },
+    {
+      "group": 20,
+      "sourcePage": 77,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-20.json",
+      "videoCount": 1
+    },
+    {
+      "group": 21,
+      "sourcePage": 80,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-21.json",
+      "videoCount": 4
+    },
+    {
+      "group": 22,
+      "sourcePage": 85,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-22.json",
+      "videoCount": 6
+    },
+    {
+      "group": 23,
+      "sourcePage": 88,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-23.json",
+      "videoCount": 22
+    },
+    {
+      "group": 24,
+      "sourcePage": 89,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-24.json",
+      "videoCount": 16
+    },
+    {
+      "group": 25,
+      "sourcePage": 92,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-25.json",
+      "videoCount": 6
+    },
+    {
+      "group": 26,
+      "sourcePage": 98,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-26.json",
+      "videoCount": 6
+    },
+    {
+      "group": 27,
+      "sourcePage": 103,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-27.json",
+      "videoCount": 7
+    },
+    {
+      "group": 28,
+      "sourcePage": 106,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-28.json",
+      "videoCount": 8
+    },
+    {
+      "group": 29,
+      "sourcePage": 109,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-29.json",
+      "videoCount": 3
+    },
+    {
+      "group": 30,
+      "sourcePage": 112,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-30.json",
+      "videoCount": 2
+    },
+    {
+      "group": 31,
+      "sourcePage": 120,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-31.json",
+      "videoCount": 1
+    },
+    {
+      "group": 32,
+      "sourcePage": 123,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-32.json",
+      "videoCount": 3
+    },
+    {
+      "group": 33,
+      "sourcePage": 126,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-33.json",
+      "videoCount": 3
+    },
+    {
+      "group": 34,
+      "sourcePage": 129,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-34.json",
+      "videoCount": 21
+    },
+    {
+      "group": 35,
+      "sourcePage": 132,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-35.json",
+      "videoCount": 1
+    },
+    {
+      "group": 36,
+      "sourcePage": 135,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-36.json",
+      "videoCount": 2
+    },
+    {
+      "group": 37,
+      "sourcePage": 138,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-37.json",
+      "videoCount": 8
+    },
+    {
+      "group": 38,
+      "sourcePage": 143,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-38.json",
+      "videoCount": 1
+    },
+    {
+      "group": 39,
+      "sourcePage": 146,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-39.json",
+      "videoCount": 1
+    },
+    {
+      "group": 40,
+      "sourcePage": 149,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-40.json",
+      "videoCount": 3
+    },
+    {
+      "group": 41,
+      "sourcePage": 152,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-41.json",
+      "videoCount": 1
+    },
+    {
+      "group": 42,
+      "sourcePage": 155,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-42.json",
+      "videoCount": 1
+    },
+    {
+      "group": 43,
+      "sourcePage": 158,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-43.json",
+      "videoCount": 3
+    },
+    {
+      "group": 44,
+      "sourcePage": 167,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-44.json",
+      "videoCount": 1
+    },
+    {
+      "group": 45,
+      "sourcePage": 170,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-45.json",
+      "videoCount": 5
+    },
+    {
+      "group": 46,
+      "sourcePage": 173,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-46.json",
+      "videoCount": 3
+    },
+    {
+      "group": 47,
+      "sourcePage": 176,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-47.json",
+      "videoCount": 9
+    },
+    {
+      "group": 48,
+      "sourcePage": 179,
+      "path": "/home/ubuntu/iketeru-eizou/analysis/youtube_works_curation_inputs/group-48.json",
+      "videoCount": 1
+    }
+  ],
+  "holds": []
+}

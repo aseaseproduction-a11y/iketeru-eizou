@@ -1,0 +1,61 @@
+{
+  "kind": "youtube#videoListResponse",
+  "etag": "hPahOX71rpUabfuUE0grfE0Foug",
+  "items": [
+    {
+      "kind": "youtube#video",
+      "etag": "vaRzejaoVTYh6N2CrpJXJRyMvKg",
+      "id": "hgYhws0AHcg",
+      "snippet": {
+        "publishedAt": "2024-11-30T19:15:06Z",
+        "channelId": "UC3_471gFY-nl4Fi0MX8eoIQ",
+        "title": "Juice WRLD - Empty Out Your Pockets (Official Fortnite Video)",
+        "description": "Juice WRLD’s “The Party Never Ends” is out now! https://juicewrld.lnk.to/ThePartyNeverEnds\n \nSubscribe to the official Juice WRLD channel for new music, updates and behind the scenes footage click here: http://bit.ly/Sub-to-JuiceWrld\n \nThe Party has started 🎉 \nhttps://www.thepartyneverends.com \n \nCheck out more Juice WRLD here:\nMerch - https://999club.com/\nSoundcloud - https://soundcloud.com/uiceheidd\nTwitter - https://twitter.com/JuiceWorlddd\nInsta - https://www.instagram.com/juicewrld999/\n \nCreated by Epic Games in partnership with Wizz, animation directors CRCR, and with consultation from Interscope Records and Grade A Production\n \n#JuiceWRLD #EmptyOutYourPockets #ThePartyNeverEnds #Fortnite #999",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/hgYhws0AHcg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/hgYhws0AHcg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/hgYhws0AHcg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/hgYhws0AHcg/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/hgYhws0AHcg/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "JuiceWRLDVEVO",
+        "tags": [
+          "Juice WRLD",
+          "Grade Productions/Interscope Records",
+          "Hip Hop"
+        ],
+        "categoryId": "10",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "en",
+        "localized": {
+          "title": "Juice WRLD - Empty Out Your Pockets (Official Fortnite Video)",
+          "description": "Juice WRLD’s “The Party Never Ends” is out now! https://juicewrld.lnk.to/ThePartyNeverEnds\n \nSubscribe to the official Juice WRLD channel for new music, updates and behind the scenes footage click here: http://bit.ly/Sub-to-JuiceWrld\n \nThe Party has started 🎉 \nhttps://www.thepartyneverends.com \n \nCheck out more Juice WRLD here:\nMerch - https://999club.com/\nSoundcloud - https://soundcloud.com/uiceheidd\nTwitter - https://twitter.com/JuiceWorlddd\nInsta - https://www.instagram.com/juicewrld999/\n \nCreated by Epic Games in partnership with Wizz, animation directors CRCR, and with consultation from Interscope Records and Grade A Production\n \n#JuiceWRLD #EmptyOutYourPockets #ThePartyNeverEnds #Fortnite #999"
+        }
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 1,
+    "resultsPerPage": 1
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "kind": "youtube#videoListResponse",
+  "etag": "EKRD8EW-mCrbgOXHpVQZQ8vurXk",
+  "items": [
+    {
+      "kind": "youtube#video",
+      "etag": "E05SCJgwdRFpcBS2alcMAvj-140",
+      "id": "3-b-pV7DoDk",
+      "snippet": {
+        "publishedAt": "2025-07-25T01:00:04Z",
+        "channelId": "UCH96RFboDpUKaeIO_dMTAKA",
+        "title": "【公式PV】ムービーナーズ『ホイホ・ホイホイホ』1巻発売記念PV",
+        "description": "頭をよくぶつける…それだけの人生とはおさらば!\n\n頭を強打する事によって超能力に目覚めた少女昆布川こだま。\nこの力で全てを!いや、学園生活を変える!\nでも、失敗だらけの人生を変えられるはずが、\n超能力でもなかなか上手くいかない…。\n\nどこか奇妙で、どこか可愛くて、滅茶苦茶笑える\n日常学園ギャグ漫画の超新星が登場。\n\n\n\n●一話試し読みはこちらから▼\nhttps://m-nerds.com/hoihohoihoiho_ep1\n\n●書店情報はこちらから▼\nhttps://amumo.jp/publishing/hoiho.html\n\n●kindleはこちらから▼\nhttps://amzn.to/3H0WKD7\n\n●ムービーナーズHPはこちらから▼\nhttps://m-nerds.com/\n\n\n昆布川こだま（CV:土屋李央）\n\n映像・編集：大鳥\n音響：HALF H･P STUDIO\n\n\n#漫画 #manga #土屋李央",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/3-b-pV7DoDk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/3-b-pV7DoDk/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/3-b-pV7DoDk/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/3-b-pV7DoDk/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/3-b-pV7DoDk/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "ムービーナーズチャンネル",
+        "categoryId": "1",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "ja",
+        "localized": {
+          "title": "【公式PV】ムービーナーズ『ホイホ・ホイホイホ』1巻発売記念PV",
+          "description": "頭をよくぶつける…それだけの人生とはおさらば!\n\n頭を強打する事によって超能力に目覚めた少女昆布川こだま。\nこの力で全てを!いや、学園生活を変える!\nでも、失敗だらけの人生を変えられるはずが、\n超能力でもなかなか上手くいかない…。\n\nどこか奇妙で、どこか可愛くて、滅茶苦茶笑える\n日常学園ギャグ漫画の超新星が登場。\n\n\n\n●一話試し読みはこちらから▼\nhttps://m-nerds.com/hoihohoihoiho_ep1\n\n●書店情報はこちらから▼\nhttps://amumo.jp/publishing/hoiho.html\n\n●kindleはこちらから▼\nhttps://amzn.to/3H0WKD7\n\n●ムービーナーズHPはこちらから▼\nhttps://m-nerds.com/\n\n\n昆布川こだま（CV:土屋李央）\n\n映像・編集：大鳥\n音響：HALF H･P STUDIO\n\n\n#漫画 #manga #土屋李央"
+        }
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 1,
+    "resultsPerPage": 1
+  }
+}

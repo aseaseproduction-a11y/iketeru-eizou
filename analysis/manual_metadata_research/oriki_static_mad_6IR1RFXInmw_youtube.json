@@ -1,0 +1,64 @@
+{
+  "kind": "youtube#videoListResponse",
+  "etag": "SwQGubpbQ6iTnD8D4bJM00DNGMo",
+  "items": [
+    {
+      "kind": "youtube#video",
+      "etag": "b2Dr1HteEdDBKZnxHZ5Wy-e09hE",
+      "id": "6IR1RFXInmw",
+      "snippet": {
+        "publishedAt": "2025-11-01T07:31:48Z",
+        "channelId": "UCykoKhM6qjLj59ByeVw8m5w",
+        "title": "【静止画MAD】フードコートで、また明日【分かってないよ】",
+        "description": "Music：分かってないよ——WurtS\nSource：フードコートで、また明日",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/6IR1RFXInmw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/6IR1RFXInmw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/6IR1RFXInmw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/6IR1RFXInmw/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/6IR1RFXInmw/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "折木Lz",
+        "tags": [
+          "AMV",
+          "MMV",
+          "分かってないよ",
+          "フードコートでまた明日",
+          "明天美食广场见",
+          "see you tomorrow at the food court"
+        ],
+        "categoryId": "1",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "ja",
+        "localized": {
+          "title": "【静止画MAD】フードコートで、また明日【分かってないよ】",
+          "description": "Music：分かってないよ——WurtS\nSource：フードコートで、また明日"
+        }
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 1,
+    "resultsPerPage": 1
+  }
+}

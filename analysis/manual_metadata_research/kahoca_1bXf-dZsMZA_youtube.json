@@ -1,0 +1,63 @@
+{
+  "kind": "youtube#videoListResponse",
+  "etag": "s24Bifl1eBTZQMCvWcxcBTKkD7c",
+  "items": [
+    {
+      "kind": "youtube#video",
+      "etag": "20nGYelAYCN4jVJJ7OHn7tdekY0",
+      "id": "1bXf-dZsMZA",
+      "snippet": {
+        "publishedAt": "2025-10-22T12:00:07Z",
+        "channelId": "UC90WXRQaPjml9WRIxVi_74g",
+        "title": "【歌ってみた】セツナトリップ covered by kahoca",
+        "description": "Original\n作詞/作曲：Last Note.\n   • 【GUMI】セツナトリップ【オリジナル】\nhhttps://www.nicovideo.jp/watch/sm17720979\n\nCover\nVocal: kahoca https://x.com/kahoca_23\nMIX: 梓川 https://x.com/Azsa_397\nIllustration: に° https://x.com/210_nido\nCreative Production : かこねこ/KITTENED\nMovie Direction : みかんばこ(かこねこ/KITTENED)\nCreative Manager : じぇいく(かこねこ/KITTENED)",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/1bXf-dZsMZA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/1bXf-dZsMZA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/1bXf-dZsMZA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/1bXf-dZsMZA/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/1bXf-dZsMZA/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "kahoca",
+        "tags": [
+          "kahoca",
+          "歌ってみた",
+          "セツナトリップ",
+          "Last Note."
+        ],
+        "categoryId": "10",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "ja",
+        "localized": {
+          "title": "【歌ってみた】セツナトリップ covered by kahoca",
+          "description": "Original\n作詞/作曲：Last Note.\n   • 【GUMI】セツナトリップ【オリジナル】\nhhttps://www.nicovideo.jp/watch/sm17720979\n\nCover\nVocal: kahoca https://x.com/kahoca_23\nMIX: 梓川 https://x.com/Azsa_397\nIllustration: に° https://x.com/210_nido\nCreative Production : かこねこ/KITTENED\nMovie Direction : みかんばこ(かこねこ/KITTENED)\nCreative Manager : じぇいく(かこねこ/KITTENED)"
+        },
+        "defaultAudioLanguage": "ja"
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 1,
+    "resultsPerPage": 1
+  }
+}

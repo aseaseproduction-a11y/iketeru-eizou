@@ -1,0 +1,3659 @@
+{
+  "generatedAt": "2026-08-19T01:37:47.220Z",
+  "model": "gpt-5-mini",
+  "taxonomy": {
+    "genres": [
+      "tv-cm",
+      "web-cm",
+      "branded-movie",
+      "youtube-sns",
+      "mv",
+      "corporate",
+      "film",
+      "opening",
+      "making",
+      "documentary"
+    ],
+    "products": [
+      "beauty",
+      "fashion",
+      "food",
+      "daily",
+      "automotive",
+      "gaming",
+      "it",
+      "travel",
+      "medical",
+      "real-estate",
+      "transport",
+      "entertainment",
+      "electronics",
+      "sports"
+    ],
+    "directions": [
+      "live-action",
+      "vfx-3dcg",
+      "motion-graphics",
+      "generative-ai",
+      "camera-work",
+      "motion-control",
+      "stop-motion",
+      "virtual-production",
+      "illustration"
+    ],
+    "tones": [
+      "stylish",
+      "comical",
+      "emotional",
+      "luxury"
+    ]
+  },
+  "inputCount": 100,
+  "candidateCount": 100,
+  "acceptedCount": 49,
+  "inputs": [
+    {
+      "id": "xNKB471ABGA",
+      "title": "【静止画MAD】Fight Song（僕のヒーローアカデミア）",
+      "videoUrl": "https://youtu.be/xNKB471ABGA",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "KS00",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: コマ落ちさせないキャラモーション、迫力ある 掲載者コメントに基づく注目点: コマ落ちさせないキャラモーション、迫力ある"
+    },
+    {
+      "id": "XPZ572li808",
+      "title": "『午前4時に海で会いましょう』",
+      "videoUrl": "https://youtu.be/XPZ572li808",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Toroch",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 超キレイ 掲載者コメントに基づく注目点: 超キレイ"
+    },
+    {
+      "id": "tsaWeJpnn6c",
+      "title": "Mileage - One Piece [AMV/Edit]",
+      "videoUrl": "https://youtu.be/tsaWeJpnn6c",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "K6sra",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗Mileage - One Piece [AMV/Edit]面白い 掲載者コメントに基づく注目点: 💗Mileage - One Piece [AMV/Edit]面白い"
+    },
+    {
+      "id": "nmUoEnsyLLY",
+      "title": "WORTH IT w/ @kytnkun",
+      "videoUrl": "https://youtu.be/nmUoEnsyLLY",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "kyomi",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗WORTH IT w/ @kytnkunmodulationの正しい使い方 掲載者コメントに基づく注目点: 💗WORTH IT w/ @kytnkunmodulationの正しい使い方"
+    },
+    {
+      "id": "Xfotcux_lqU",
+      "title": "『 大王饶命』 シーズン2 OP/オープニングテーマ/【大王饶命第二季】动画OP/片头曲《对对对》",
+      "videoUrl": "https://youtu.be/Xfotcux_lqU",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "大火鸟制造BIGFIREBIRD BUILD",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: タイトルドーン 掲載者コメントに基づく注目点: タイトルドーン"
+    },
+    {
+      "id": "hD5xyPHmlig",
+      "title": "EYES",
+      "videoUrl": "https://youtu.be/hD5xyPHmlig",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "uo",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 質感。グラフィック。 掲載者コメントに基づく注目点: 質感。グラフィック。"
+    },
+    {
+      "id": "nXygqp0q6W4",
+      "title": "Walking Dream / 上原歩夢(CV.大西亜玖璃) Lyric Video",
+      "videoUrl": "https://youtu.be/nXygqp0q6W4",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "(Love Live! series)ラブライブ！シリーズ公式チャンネル",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗Walking Dream / 上原歩夢(CV.大西亜玖璃) Lyric Video画面変えずにヌルっと2番に入っていくところ 掲載者コメントに基づく注目点: 💗Walking Dream / 上原歩夢(CV.大西亜玖璃) Lyric Video画面変えずにヌルっと2番に入っていくところ"
+    },
+    {
+      "id": "vG3NRNL77mI",
+      "title": "결정 | Motion Design Personal Project",
+      "videoUrl": "https://youtu.be/vG3NRNL77mI",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Rafi Rizky",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗결정 | Motion Design Personal Project剣 掲載者コメントに基づく注目点: 💗결정 | Motion Design Personal Project剣"
+    },
+    {
+      "id": "MycXq63nJws",
+      "title": "魔法ぽい / ぼっちぼろまる (Music Video)",
+      "videoUrl": "https://youtu.be/MycXq63nJws",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "ぼっちぼろまる",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 全然鉄オタじゃないけど鉄道関連のデザインは好き 掲載者コメントに基づく注目点: 全然鉄オタじゃないけど鉄道関連のデザインは好き"
+    },
+    {
+      "id": "hePVKvmN84g",
+      "title": "アニマル - DECO*27 / covered by 西園チグサ",
+      "videoUrl": "https://youtu.be/hePVKvmN84g",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "西園チグサ / Nishizono Chigusa",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗アニマル - DECO*27 / covered by 西園チグサtemaca氏〜2 掲載者コメントに基づく注目点: 💗アニマル - DECO*27 / covered by 西園チグサtemaca氏〜2"
+    },
+    {
+      "id": "SXpUvhnT0ao",
+      "title": "Julius Rodriguez - BLUE GIANT “MOMENTUM” music video",
+      "videoUrl": "https://youtu.be/SXpUvhnT0ao",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "UNIVERSAL MUSIC JAPAN",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗Julius Rodriguez - BLUE GIANT “MOMENTUM” music videoカッコいい 掲載者コメントに基づく注目点: 💗Julius Rodriguez - BLUE GIANT “MOMENTUM” music videoカッコいい"
+    },
+    {
+      "id": "pmtvYAKO6oc",
+      "title": "Backstage feat. 水槽【MV】",
+      "videoUrl": "https://youtu.be/pmtvYAKO6oc",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "lapix",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 動きもデザインもちょっと他と違う感じ。かなり好き。 掲載者コメントに基づく注目点: 動きもデザインもちょっと他と違う感じ。かなり好き。"
+    },
+    {
+      "id": "7zVdGqjoVnA",
+      "title": "モニターグラフィックス || Futuristic Control Room",
+      "videoUrl": "https://youtu.be/7zVdGqjoVnA",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "柯ノ月 enotsuki",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗モニターグラフィックス || Futuristic Control Roomパーツが細かくて偉い。あとモニターグラフィックスで音ハメするの珍しくて良かった。 掲載者コメントに基づく注目点: 💗モニターグラフィックス || Futuristic Control Roomパーツが細かくて偉い。あとモニターグラフィックスで音ハメするの珍しくて良かった。"
+    },
+    {
+      "id": "gkfSedEWjRQ",
+      "title": "ダンダダン",
+      "videoUrl": "https://youtu.be/gkfSedEWjRQ",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "寿司太郎",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗ダンダダンすごいスピード感 掲載者コメントに基づく注目点: 💗ダンダダンすごいスピード感"
+    },
+    {
+      "id": "gbcdU2zsm8s",
+      "title": "Open Up!! / 書店太郎 feat.巡音ルカ",
+      "videoUrl": "https://youtu.be/gbcdU2zsm8s",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Blatantly Emotional Records",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗Open Up!! / 書店太郎 feat.巡音ルカグリッチのパキパキ感が良い 掲載者コメントに基づく注目点: 💗Open Up!! / 書店太郎 feat.巡音ルカグリッチのパキパキ感が良い"
+    },
+    {
+      "id": "budO9Qg1s6U",
+      "title": "【歌ってみた】ねっちゅうしょー - 名前は未だ無いです。 covered by 存流",
+      "videoUrl": "https://youtu.be/budO9Qg1s6U",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "存流 -ᴀʀᴜ-",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 歌詞テキストリファレンス 掲載者コメントに基づく注目点: 歌詞テキストリファレンス"
+    },
+    {
+      "id": "Jd_hXfUxmL4",
+      "title": "ゆめのなか",
+      "videoUrl": "https://youtu.be/Jd_hXfUxmL4",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Cube",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗ゆめのなかSuper noisy. 掲載者コメントに基づく注目点: 💗ゆめのなかSuper noisy."
+    },
+    {
+      "id": "_O0h2WqEFjo",
+      "title": "あなたにはなれない - 可不･結月ゆかり",
+      "videoUrl": "https://youtu.be/_O0h2WqEFjo",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "椎乃味醂",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗あなたにはなれない／可不･結月ゆかり斜めにブラインドかけたノイズ、表裏一体ぶりに見たな～って 掲載者コメントに基づく注目点: 💗あなたにはなれない／可不･結月ゆかり斜めにブラインドかけたノイズ、表裏一体ぶりに見たな～って"
+    },
+    {
+      "id": "LxZiWwrbz-U",
+      "title": "【BOFXVII】玉響サーチライト【BGA】",
+      "videoUrl": "https://youtu.be/LxZiWwrbz-U",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "otoshi.b",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗 【BOFXVII】玉響サーチライト【BGA】 ポップリファレンス 掲載者コメントに基づく注目点: 💗 【BOFXVII】玉響サーチライト【BGA】 ポップリファレンス"
+    },
+    {
+      "id": "KFV_8DgE72o",
+      "title": "サーバント✖️サービス op",
+      "videoUrl": "https://youtu.be/KFV_8DgE72o",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "TIME GOOD",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗サーバント✖️サービス opクレジットの出し方 掲載者コメントに基づく注目点: 💗サーバント✖️サービス opクレジットの出し方"
+    },
+    {
+      "id": "K4NNmAQY0_g",
+      "title": "Yushi - レイニーエスケープ feat.9Lana",
+      "videoUrl": "https://youtu.be/K4NNmAQY0_g",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Yushi",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗 Yushi - レイニーエスケープ (Rainy Escape) feat.9Lana 最初の2秒 掲載者コメントに基づく注目点: 💗 Yushi - レイニーエスケープ (Rainy Escape) feat.9Lana 最初の2秒"
+    },
+    {
+      "id": "FPv4-aa9eOo",
+      "title": "【MAD/AMV】はじまり、そしてつながる一射 -ツルネ-【ラックライフ / ℃ 】",
+      "videoUrl": "https://youtu.be/FPv4-aa9eOo",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Re:No",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 良いアニメMAD作る人見つけた。嬉しい。 掲載者コメントに基づく注目点: 良いアニメMAD作る人見つけた。嬉しい。"
+    },
+    {
+      "id": "Vh3Oz9RGog0",
+      "title": "【OS-3合作】懐色、虚色",
+      "videoUrl": "https://youtu.be/Vh3Oz9RGog0",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "OS-N",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 1サビの静止画MADっぽいとこ 掲載者コメントに基づく注目点: 1サビの静止画MADっぽいとこ"
+    },
+    {
+      "id": "nschFfLFCdo",
+      "title": "윤하(YOUNHA) - 사건의 지평선ㅣ 키네틱 타이포그래피 FMV",
+      "videoUrl": "https://youtu.be/nschFfLFCdo",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Starcover",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗윤하(YOUNHA) - 사건의 지평선ㅣ 키네틱 타이포그래피 FMV2:35～すき 掲載者コメントに基づく注目点: 💗윤하(YOUNHA) - 사건의 지평선ㅣ 키네틱 타이포그래피 FMV2:35～すき"
+    },
+    {
+      "id": "F67rDMT63yg",
+      "title": "【MMGC2023 Day10】由比ヶ浜結衣【First Love】【俺ガイル】",
+      "videoUrl": "https://youtu.be/F67rDMT63yg",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Mirai MAD Team",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 1:00のオレンジ 掲載者コメントに基づく注目点: 1:00のオレンジ"
+    },
+    {
+      "id": "UMYlSnLlCE0",
+      "title": "【349】[feat. はしメロ, maeshima soshi] けーたいみしてよ / MAISONdes",
+      "videoUrl": "https://youtu.be/UMYlSnLlCE0",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "MAISONdes -メゾン・デ-",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗 【349】[feat. はしメロ, maeshima soshi] けーたいみしてよ / MAISONdes デザイン 掲載者コメントに基づく注目点: 💗 【349】[feat. はしメロ, maeshima soshi] けーたいみしてよ / MAISONdes デザイン"
+    },
+    {
+      "id": "kZG9fhrd0mA",
+      "title": "à sa guise",
+      "videoUrl": "https://youtu.be/kZG9fhrd0mA",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "cuens",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 最近みたMGでかなり上位存在 掲載者コメントに基づく注目点: 最近みたMGでかなり上位存在"
+    },
+    {
+      "id": "Q_ROGVLc4TA",
+      "title": "\"Comma\" motion graphics",
+      "videoUrl": "https://youtu.be/Q_ROGVLc4TA",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "seven",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗“Comma” motion graphics五線譜が3Dの下の辺になるところ 掲載者コメントに基づく注目点: 💗“Comma” motion graphics五線譜が3Dの下の辺になるところ"
+    },
+    {
+      "id": "AqH4BXHxH80",
+      "title": "【アニメ化決定】『夜桜さんちの大作戦』―狂気の夢の中へ―【最新17巻発売記念PV】",
+      "videoUrl": "https://youtu.be/AqH4BXHxH80",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "ジャンプチャンネル",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: ノリノリですね 掲載者コメントに基づく注目点: ノリノリですね"
+    },
+    {
+      "id": "Q78ov_cmvQc",
+      "title": "金魚掬い / 来世は鯨になりたい feat.鳴花ヒメ",
+      "videoUrl": "https://youtu.be/Q78ov_cmvQc",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "来世は鯨になりたい",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗金魚掬い / 来世は鯨になりたい feat.鳴花ヒメデザイン 掲載者コメントに基づく注目点: 💗金魚掬い / 来世は鯨になりたい feat.鳴花ヒメデザイン"
+    },
+    {
+      "id": "Jq4JFF7zaiY",
+      "title": "【静止画MAD】世界は変わりつづけるー東京喰種ー",
+      "videoUrl": "https://youtu.be/Jq4JFF7zaiY",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "ふーがまん",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: テキストのチョイス。1:24の青のパーティクル。2:48のトランジション。 掲載者コメントに基づく注目点: テキストのチョイス。1:24の青のパーティクル。2:48のトランジション。"
+    },
+    {
+      "id": "FxyC6ev6-4U",
+      "title": "Raon 라온 | ‘NEON’ M/V",
+      "videoUrl": "https://youtu.be/FxyC6ev6-4U",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Raon",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗Raon 라온 | ‘NEON’ M/V細かいSFチックなグラフィック 掲載者コメントに基づく注目点: 💗Raon 라온 | ‘NEON’ M/V細かいSFチックなグラフィック"
+    },
+    {
+      "id": "i4YYgcUigbc",
+      "title": "【Official】Music Video 「Everything For A Reason」 | イロドリミドリ",
+      "videoUrl": "https://youtu.be/i4YYgcUigbc",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "イロドリミドリ",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗【Official】Music Video 「Everything For A Reason」 | イロドリミドリ最初の3秒が良い 掲載者コメントに基づく注目点: 💗【Official】Music Video 「Everything For A Reason」 | イロドリミドリ最初の3秒が良い"
+    },
+    {
+      "id": "es_JMVQQMKc",
+      "title": "AKE・OME 〜HAPPY NEW YEAR 2022〜",
+      "videoUrl": "https://youtu.be/es_JMVQQMKc",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Koichi Yoshimura",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗AKE・OME 〜HAPPY NEW YEAR 2022〜いっしんさんみを感じる 掲載者コメントに基づく注目点: 💗AKE・OME 〜HAPPY NEW YEAR 2022〜いっしんさんみを感じる"
+    },
+    {
+      "id": "1hY4QoZRX7E",
+      "title": "SAKAMOTO DAYS×WurtS「BORDER」コラボPV【公式】",
+      "videoUrl": "https://youtu.be/1hY4QoZRX7E",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "ジャンプチャンネル",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 目 掲載者コメントに基づく注目点: 目"
+    },
+    {
+      "id": "Z7bw5wBafu8",
+      "title": "JUMP MV /『銀魂』×『サムライハート(Some Like It Hot!!)』| SPYAIR",
+      "videoUrl": "https://youtu.be/Z7bw5wBafu8",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "ジャンプチャンネル",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 色 掲載者コメントに基づく注目点: 色"
+    },
+    {
+      "id": "4LCKL_-AqEQ",
+      "title": "【2023春M3】M∞ving 02【XFD】",
+      "videoUrl": "https://youtu.be/4LCKL_-AqEQ",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Zarusoba DesignWorks",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: Cube氏のとこカッコよすぎ 掲載者コメントに基づく注目点: Cube氏のとこカッコよすぎ"
+    },
+    {
+      "id": "VS9LAp4tj64",
+      "title": "小林私「可塑」Music Video",
+      "videoUrl": "https://youtu.be/VS9LAp4tj64",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "小林私 OFFICIAL CHANNEL ",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗 小林私「可塑」Music Video タイポグラフィ 掲載者コメントに基づく注目点: 💗 小林私「可塑」Music Video タイポグラフィ"
+    },
+    {
+      "id": "nsw-ddleSII",
+      "title": "JUMP MV /『NARUTO -ナルト-』×『遥か彼方』| ASIAN KUNG-FU GENERATION",
+      "videoUrl": "https://youtu.be/nsw-ddleSII",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "ジャンプチャンネル",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗JUMP MV /『NARUTO -ナルト-』×『遥か彼方』| ASIAN KUNG-FU GENERATIONアクションすげ～ 掲載者コメントに基づく注目点: 💗JUMP MV /『NARUTO -ナルト-』×『遥か彼方』| ASIAN KUNG-FU GENERATIONアクションすげ～"
+    },
+    {
+      "id": "ADWxnd1WBrk",
+      "title": "【静止画MAD】Ryokō keikaku【旅行計画】",
+      "videoUrl": "https://youtu.be/ADWxnd1WBrk",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Vermii",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗【静止画MAD】Ryokō keikaku【旅行計画】0:30の振り向きモーション0:39の涙が落ちる演出 掲載者コメントに基づく注目点: 💗【静止画MAD】Ryokō keikaku【旅行計画】0:30の振り向きモーション0:39の涙が落ちる演出"
+    },
+    {
+      "id": "oDQeKEaDUOA",
+      "title": "烏合 (Music Video)",
+      "videoUrl": "https://youtu.be/oDQeKEaDUOA",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "OSTER projectテスロ&ロゼット",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗 烏合 (Music Video) 絶対に退屈させないという意志を感じる 掲載者コメントに基づく注目点: 💗 烏合 (Music Video) 絶対に退屈させないという意志を感じる"
+    },
+    {
+      "id": "ycZ-QNHuUe0",
+      "title": "【MMGC2023 Day3】愛してるゲームを終わらせたい「想让我爱你游戏快点结束」",
+      "videoUrl": "https://youtu.be/ycZ-QNHuUe0",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Mirai MAD Team",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 最初の方のMGチックな感じ 掲載者コメントに基づく注目点: 最初の方のMGチックな感じ"
+    },
+    {
+      "id": "tjWCAln3TjI",
+      "title": "【アニメ化決定】『夜桜さんちの大作戦』―その愛は、家族の為に―【最新18巻発売記念PV】",
+      "videoUrl": "https://youtu.be/tjWCAln3TjI",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "ジャンプチャンネル",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗 【アニメ化決定】『夜桜さんちの大作戦』―その愛は、家族の為に―【最新18巻発売記念PV】 だからそのガガガガガってやつどうやってんだよwww 掲載者コメントに基づく注目点: 💗 【アニメ化決定】『夜桜さんちの大作戦』―その愛は、家族の為に―【最新18巻発売記念PV】 だからそのガガガガガってやつどうやってんだよwww"
+    },
+    {
+      "id": "iSIsPluigG4",
+      "title": "Entrust via 39 feat.初音ミク - ikomai",
+      "videoUrl": "https://youtu.be/iSIsPluigG4",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "ikomai",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗 Entrust via 39 feat.初音ミク - ikomai 0:49のコンテナの配色 掲載者コメントに基づく注目点: 💗 Entrust via 39 feat.初音ミク - ikomai 0:49のコンテナの配色"
+    },
+    {
+      "id": "XIAxoSXggBc",
+      "title": "ブルーロック - No pain, No game",
+      "videoUrl": "https://youtu.be/XIAxoSXggBc",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "ぞわ",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: すげえカッコいい 掲載者コメントに基づく注目点: すげえカッコいい"
+    },
+    {
+      "id": "-RQTxqPc5T0",
+      "title": "Kvi Baba / TOMBI (Animation Music Video) ※TV アニメ『TRIGUN STAMPEDE』OP 主題歌",
+      "videoUrl": "https://youtu.be/-RQTxqPc5T0",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Kvi Baba",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗Kvi Baba / TOMBI (Animation Music Video) ※TV アニメ『TRIGUN STAMPEDE』OP 主題歌やっぱコラージュすこだ 掲載者コメントに基づく注目点: 💗Kvi Baba / TOMBI (Animation Music Video) ※TV アニメ『TRIGUN STAMPEDE』OP 主題歌やっぱコラージュすこだ"
+    },
+    {
+      "id": "0IixpTbyhVw",
+      "title": "【MMGC2023 Day11】あさひなぐ【Youthful Days】",
+      "videoUrl": "https://youtu.be/0IixpTbyhVw",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Mirai MAD Team",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 熱い 掲載者コメントに基づく注目点: 熱い"
+    },
+    {
+      "id": "97MDkmxkgKE",
+      "title": "Sonnyshine ◇ kii-chan【Original Song Teaser】#BriskoBDAY2023",
+      "videoUrl": "https://youtu.be/97MDkmxkgKE",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "kii chan 🔗🤲",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: インク 掲載者コメントに基づく注目点: インク"
+    },
+    {
+      "id": "_ZJ8MrEXIio",
+      "title": "【holo*27 MV】さくらみこ x 兎田ぺこら - モッシュレース【ホロライブ x DECO*27】",
+      "videoUrl": "https://youtu.be/_ZJ8MrEXIio",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Miko Ch. さくらみこ",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 2:47草 掲載者コメントに基づく注目点: 2:47草"
+    },
+    {
+      "id": "ggNbitpGesE",
+      "title": "✦.* ヴァンパイア(Kawaii Future Bassアレンジ)┊天宮こころ 〖 歌ってみた 〗",
+      "videoUrl": "https://youtu.be/ggNbitpGesE",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "天宮 こころ / Amamya Ch.",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗✦.* ヴァンパイア(Kawaii Future Bassアレンジ)┊天宮こころ 〖 歌ってみた 〗かわE 掲載者コメントに基づく注目点: 💗✦.* ヴァンパイア(Kawaii Future Bassアレンジ)┊天宮こころ 〖 歌ってみた 〗かわE"
+    },
+    {
+      "id": "EP-tCqkDNy0",
+      "title": "【音楽的同位体】不器用なラフ絵の具 / ヒマヲタベル feat.可不(KAFU)",
+      "videoUrl": "https://youtu.be/EP-tCqkDNy0",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "音楽的同位体 可不・星界・裏命・狐子・羽累 Musical Isotope",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗【音楽的同位体】不器用なラフ絵の具 / ヒマヲタベル feat.可不(KAFU)透明感がある 掲載者コメントに基づく注目点: 💗【音楽的同位体】不器用なラフ絵の具 / ヒマヲタベル feat.可不(KAFU)透明感がある"
+    },
+    {
+      "id": "p2EkMZrBLr0",
+      "title": "rock",
+      "videoUrl": "https://youtu.be/p2EkMZrBLr0",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "classickboyz",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗rockサムネがよかった 掲載者コメントに基づく注目点: 💗rockサムネがよかった"
+    },
+    {
+      "id": "1ky5AUu6v18",
+      "title": "6秒企画ロゴモーション/  Maeyama.  #モーションハッカソン #6秒企画",
+      "videoUrl": "https://youtu.be/1ky5AUu6v18",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "maeyama",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗6秒企画ロゴモーション/ Maeyama. #モーションハッカソン #6秒企画UIはやはり良い 掲載者コメントに基づく注目点: 💗6秒企画ロゴモーション/ Maeyama. #モーションハッカソン #6秒企画UIはやはり良い"
+    },
+    {
+      "id": "TCknEoeAJqg",
+      "title": "Liella!「Jump Into the New World」リリックビデオ",
+      "videoUrl": "https://youtu.be/TCknEoeAJqg",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "(Love Live! series)ラブライブ！シリーズ公式チャンネル",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: Cube氏のデザインマジで好き 掲載者コメントに基づく注目点: Cube氏のデザインマジで好き"
+    },
+    {
+      "id": "0cWTmV3WmVk",
+      "title": "JUMP MV /『NARUTO -ナルト-』×『シルエット』| KANA-BOON",
+      "videoUrl": "https://youtu.be/0cWTmV3WmVk",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "ジャンプチャンネル",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗 JUMP MV /『NARUTO -ナルト-』×『シルエット』| KANA-BOON コマ落ちさせてないのに破綻しないキャラモーションの精密さ。カットの刻み方。構成。神。 掲載者コメントに基づく注目点: 💗 JUMP MV /『NARUTO -ナルト-』×『シルエット』| KANA-BOON コマ落ちさせてないのに破綻しないキャラモーションの精密さ。カットの刻み方。構成。神。"
+    },
+    {
+      "id": "r9ZZ-XXirpo",
+      "title": "MOTION REEL 2023",
+      "videoUrl": "https://youtu.be/r9ZZ-XXirpo",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Canchón",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗MOTION REEL 20232Dも3Dも洗練された印象を受けました。つよいね 掲載者コメントに基づく注目点: 💗MOTION REEL 20232Dも3Dも洗練された印象を受けました。つよいね"
+    },
+    {
+      "id": "FT8EuVjd5v0",
+      "title": "【オリジナルMV】「ロケットサイダー / ナユタン星人」歌ってみた【神楽めあ】",
+      "videoUrl": "https://youtu.be/FT8EuVjd5v0",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "神楽めあ / KaguraMea",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 黒れもんさんのMV、毎回創意工夫が見られて良い 掲載者コメントに基づく注目点: 黒れもんさんのMV、毎回創意工夫が見られて良い"
+    },
+    {
+      "id": "YM5dVtSgwdA",
+      "title": "Star Magnolia [AMV] [Flip Flappers AMV]",
+      "videoUrl": "https://youtu.be/YM5dVtSgwdA",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "kyoshia",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗Star Magnolia [AMV] [Flip Flappers AMV]落書きみたいなやつすごい好き 掲載者コメントに基づく注目点: 💗Star Magnolia [AMV] [Flip Flappers AMV]落書きみたいなやつすごい好き"
+    },
+    {
+      "id": "LP4ki4lw-ak",
+      "title": "『RE:BEL ROBOTICA レベルロボチカ』コンセプトムービー",
+      "videoUrl": "https://youtu.be/LP4ki4lw-ak",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "RE:BEL ROBOTICA レベルロボチカ",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗『RE:BEL ROBOTICA レベルロボチカ』コンセプトムービー0:27～の辺りのグラフィックが好みだった 掲載者コメントに基づく注目点: 💗『RE:BEL ROBOTICA レベルロボチカ』コンセプトムービー0:27～の辺りのグラフィックが好みだった"
+    },
+    {
+      "id": "SyCdJmlc6Jc",
+      "title": "[Jujutsu Kaisen AMV] - Black Path /ASSAULT",
+      "videoUrl": "https://youtu.be/SyCdJmlc6Jc",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "LucioleAMV",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: かっこいい 掲載者コメントに基づく注目点: かっこいい"
+    },
+    {
+      "id": "mT_Uqrfm_pE",
+      "title": "ASH ISLAND - 24 키네틱 타이포그래피",
+      "videoUrl": "https://youtu.be/mT_Uqrfm_pE",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Gphic_X",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗ASH ISLAND - 24 키네틱 타이포그래피0:29の人だけ伸びて消えるの良い。Scale wipeじゃなくてシェイプだともっと良いかも。0:34も良い。 掲載者コメントに基づく注目点: 💗ASH ISLAND - 24 키네틱 타이포그래피0:29の人だけ伸びて消えるの良い。Scale wipeじゃなくてシェイプだともっと良いかも。0:34も良い。"
+    },
+    {
+      "id": "U_Nq0HeJDNY",
+      "title": "【Official Music Video】トゲナシトゲアリ「理想的パラドクスとは」 - アニメ「ガールズバンドクライ」",
+      "videoUrl": "https://youtu.be/U_Nq0HeJDNY",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "ガールズバンドクライ",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗 【Official Music Video】トゲナシトゲアリ「理想的パラドクスとは」 - アニメ「ガールズバンドクライ」 テレビ越しに見てるみたいな質感。どうやってるんだろう。 掲載者コメントに基づく注目点: 💗 【Official Music Video】トゲナシトゲアリ「理想的パラドクスとは」 - アニメ「ガールズバンドクライ」 テレビ越しに見てるみたいな質感。どうやってるんだろう。"
+    },
+    {
+      "id": "SWxyTdh7mxg",
+      "title": "》Never knew I'd be the one《 -「Love is War AMV」",
+      "videoUrl": "https://youtu.be/SWxyTdh7mxg",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "kyomi",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 動き 掲載者コメントに基づく注目点: 動き"
+    },
+    {
+      "id": "foZT3HbNC2U",
+      "title": "【wowaka記念コラボ】日常と地球の額縁【PVコラボ11名】",
+      "videoUrl": "https://youtu.be/foZT3HbNC2U",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "三重水素",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 0:26～がめちゃくちゃ好き 掲載者コメントに基づく注目点: 0:26～がめちゃくちゃ好き"
+    },
+    {
+      "id": "EFWtkIzsBVw",
+      "title": "[MMV] CHAINSAW MAN Part 2 x TERRASPEX",
+      "videoUrl": "https://youtu.be/EFWtkIzsBVw",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "NinjaristicNinja",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 動かし方がどんどん上手くなるなぁ 掲載者コメントに基づく注目点: 動かし方がどんどん上手くなるなぁ"
+    },
+    {
+      "id": "GfsAGREha6o",
+      "title": "Deja Vu",
+      "videoUrl": "https://youtu.be/GfsAGREha6o",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Donya",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗 Deja Vu 長尺AMVから得られる栄養素 掲載者コメントに基づく注目点: 💗 Deja Vu 長尺AMVから得られる栄養素"
+    },
+    {
+      "id": "zY_ZF1UfSCk",
+      "title": "【Original MV】定命/ V.W.P #9【系譜曲】",
+      "videoUrl": "https://youtu.be/zY_ZF1UfSCk",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "V.W.P -Virtual Witch Phenomenon-",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗 【Original MV】定命/ V.W.P #9【系譜曲】 かっこいい 掲載者コメントに基づく注目点: 💗 【Original MV】定命/ V.W.P #9【系譜曲】 かっこいい"
+    },
+    {
+      "id": "XZk_URrYRno",
+      "title": "【610】[feat. むﾄ, Sohbana] トラエノヒメ / MAISONdes",
+      "videoUrl": "https://youtu.be/XZk_URrYRno",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "MAISONdes -メゾン・デ-",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗【610】[feat. むﾄ, Sohbana] トラエノヒメ / MAISONdesグラフィック 掲載者コメントに基づく注目点: 💗【610】[feat. むﾄ, Sohbana] トラエノヒメ / MAISONdesグラフィック"
+    },
+    {
+      "id": "06gfnT0mOSk",
+      "title": "【MMGC2023 Day11】魔法少女まどか☆マギカ【廻天輪廻】",
+      "videoUrl": "https://youtu.be/06gfnT0mOSk",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Mirai MAD Team",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: MG 構成 掲載者コメントに基づく注目点: MG 構成"
+    },
+    {
+      "id": "JHYBqNwFRn8",
+      "title": "JUMP MV /『ハイキュー!!』×『FLY HIGH!!』| BURNOUT SYNDROMES",
+      "videoUrl": "https://youtu.be/JHYBqNwFRn8",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "ジャンプチャンネル",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 線がビリビリして見えるのどうやってるんだろう。エコーを結構使ってる。 掲載者コメントに基づく注目点: 線がビリビリして見えるのどうやってるんだろう。エコーを結構使ってる。"
+    },
+    {
+      "id": "e3KY33XkgGI",
+      "title": "G4L　Cover. LOLUET",
+      "videoUrl": "https://youtu.be/e3KY33XkgGI",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "LOLUET",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗 G4L　Cover. LOLUET 最初の1秒 掲載者コメントに基づく注目点: 💗 G4L　Cover. LOLUET 最初の1秒"
+    },
+    {
+      "id": "ARfwJLhJ6y4",
+      "title": "感覚ピエロ『ハルカミライ last page.』 OFFICIAL LYRIC VIDEO（TVアニメ「ブラッククローバー」最終回）",
+      "videoUrl": "https://youtu.be/ARfwJLhJ6y4",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "JIJI INC.",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 質感 掲載者コメントに基づく注目点: 質感"
+    },
+    {
+      "id": "GyGAAcOLROo",
+      "title": "necchi「アリス」Music Video",
+      "videoUrl": "https://youtu.be/GyGAAcOLROo",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "necchi",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 絵に馴染んでる歌詞テキスト 掲載者コメントに基づく注目点: 絵に馴染んでる歌詞テキスト"
+    },
+    {
+      "id": "dnB7y7picdk",
+      "title": "【MMGC2023 Day11】ブルーアーカイブ【GAME START】",
+      "videoUrl": "https://youtu.be/dnB7y7picdk",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Mirai MAD Team",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 泣ける 掲載者コメントに基づく注目点: 泣ける"
+    },
+    {
+      "id": "ATdmU0ODt8E",
+      "title": "【Original Song】きっとビタミン / 音門るき × 堀江晶太【MV】",
+      "videoUrl": "https://youtu.be/ATdmU0ODt8E",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Ruki Otokado 音門るき [VEE]",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗【Original Song】きっとビタミン / 音門るき × 堀江晶太【MV】たまにはポップなMVも 掲載者コメントに基づく注目点: 💗【Original Song】きっとビタミン / 音門るき × 堀江晶太【MV】たまにはポップなMVも"
+    },
+    {
+      "id": "5lygiL4Y3kU",
+      "title": "【loundraw × BUMP OF CHICKEN】『天体観測』／TOHO animation ミュージックフィルムズ",
+      "videoUrl": "https://youtu.be/5lygiL4Y3kU",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "TOHO animation チャンネル",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗【loundraw × BUMP OF CHICKEN】『天体観測』／TOHO animation ミュージックフィルムズ誰もが知る曲で新しいストーリー構築できるの凄すぎる 掲載者コメントに基づく注目点: 💗【loundraw × BUMP OF CHICKEN】『天体観測』／TOHO animation ミュージックフィルムズ誰もが知る曲で新しいストーリー構築できるの凄すぎる"
+    },
+    {
+      "id": "AUz4G05pU3I",
+      "title": "Rhuzerv - original MV",
+      "videoUrl": "https://youtu.be/AUz4G05pU3I",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Yazhirushi",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗Rhuzerv - ORIGINAL MV質感。部分的にノイズみたいに色ズレさせるのどうやるんだろう。 掲載者コメントに基づく注目点: 💗Rhuzerv - ORIGINAL MV質感。部分的にノイズみたいに色ズレさせるのどうやるんだろう。"
+    },
+    {
+      "id": "2yfGvy8iOcg",
+      "title": "[MAD] 偏執型恋愛空想症 [ラブスコア]",
+      "videoUrl": "https://youtu.be/2yfGvy8iOcg",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "FaustK",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗 [MAD] 偏執型恋愛空想症 [ラブスコア] うまい 掲載者コメントに基づく注目点: 💗 [MAD] 偏執型恋愛空想症 [ラブスコア] うまい"
+    },
+    {
+      "id": "FjzsS1DLiaQ",
+      "title": "【静止画MAD】紅炎【あしたのジョー】",
+      "videoUrl": "https://youtu.be/FjzsS1DLiaQ",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "mota0827",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗 【静止画MAD】紅炎【あしたのジョー】 BAD入ってるときに見たからかすごい染みた 掲載者コメントに基づく注目点: 💗 【静止画MAD】紅炎【あしたのジョー】 BAD入ってるときに見たからかすごい染みた"
+    },
+    {
+      "id": "LPY7Pe4Q2Sw",
+      "title": "モーニング娘。'23 × スペースシャワーTV コラボステーションID「Running through the future.」",
+      "videoUrl": "https://youtu.be/LPY7Pe4Q2Sw",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "モーニング娘。",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: ガラス表現ってやっぱ綺麗よね 掲載者コメントに基づく注目点: ガラス表現ってやっぱ綺麗よね"
+    },
+    {
+      "id": "zVCp7NySPnI",
+      "title": "【MAD】 たまこまーけっと～みどりラブストーリー～",
+      "videoUrl": "https://youtu.be/zVCp7NySPnI",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "SuperILLHYHL",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗 【MAD】 たまこまーけっと～みどりラブストーリー～ seguimiさんの存在を認識するのが遅すぎた……。残り香を追っている。 掲載者コメントに基づく注目点: 💗 【MAD】 たまこまーけっと～みどりラブストーリー～ seguimiさんの存在を認識するのが遅すぎた……。残り香を追っている。"
+    },
+    {
+      "id": "09po2qrWPhk",
+      "title": "2022 sakuga 備忘録",
+      "videoUrl": "https://youtu.be/09po2qrWPhk",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "kasu",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗2022 sakuga 備忘録複合MAD的なシーン選びが良い 掲載者コメントに基づく注目点: 💗2022 sakuga 備忘録複合MAD的なシーン選びが良い"
+    },
+    {
+      "id": "pgbSqhzeofs",
+      "title": "【静止画MAD】程遠い君の星まで / 0話革命",
+      "videoUrl": "https://youtu.be/pgbSqhzeofs",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "ぶるーべ",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 神 泣く 掲載者コメントに基づく注目点: 神 泣く"
+    },
+    {
+      "id": "DqgK4llE1cw",
+      "title": "Fire Again ft. Ashnikko // Official Music Video // VALORANT Champions 2022",
+      "videoUrl": "https://youtu.be/DqgK4llE1cw",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "VALORANT",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗Fire Again ft. Ashnikko // Official Music Video // VALORANT Champions 2022エッジランナーズ以来サイバーパンクな世界観にハマってる。ピクセルソートみたいに分割するところ好き。 掲載者コメントに基づく注目点: 💗Fire Again ft. Ashnikko // Official Music Video // VALORANT Champions 2022エッジランナーズ以来サイバーパンクな世界観にハマってる。ピクセルソートみたいに分割するところ好き。"
+    },
+    {
+      "id": "-14cSTrv6gQ",
+      "title": "Laur vs i7to - 朧月【MV】",
+      "videoUrl": "https://youtu.be/-14cSTrv6gQ",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Laur",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 3D 掲載者コメントに基づく注目点: 3D"
+    },
+    {
+      "id": "T5sgWWtI57k",
+      "title": "BURNOUT SYNDROMES × FLOW『I Don't Wanna Die in the Paradise』Music Video",
+      "videoUrl": "https://youtu.be/T5sgWWtI57k",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "BURNOUT SYNDROMES Official YouTube Channel",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: チカチカするテキスト 掲載者コメントに基づく注目点: チカチカするテキスト"
+    },
+    {
+      "id": "EqogKMxhpT4",
+      "title": "IA / 日本橋高架下R計画 (じん) 【MUSIC VIDEO】",
+      "videoUrl": "https://youtu.be/EqogKMxhpT4",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "IA PROJECT",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: すこ（10年前！？） 掲載者コメントに基づく注目点: すこ（10年前！？）"
+    },
+    {
+      "id": "gzeSaTYgWLQ",
+      "title": "【MMGC2023 Day1】塩対応の佐藤さんが俺にだけ甘い 「青澀戀曲α.」",
+      "videoUrl": "https://youtu.be/gzeSaTYgWLQ",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Mirai MAD Team",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: トランジション グラフィック 掲載者コメントに基づく注目点: トランジション グラフィック"
+    },
+    {
+      "id": "HT6sVOnSr0A",
+      "title": "MY FAULT",
+      "videoUrl": "https://youtu.be/HT6sVOnSr0A",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "kyomi",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 水色とピンク 掲載者コメントに基づく注目点: 水色とピンク"
+    },
+    {
+      "id": "L02aPFAhTCk",
+      "title": "「Fate/Grand Order」Memorial Movie 2023",
+      "videoUrl": "https://youtu.be/L02aPFAhTCk",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "【公式】Fate/Grand Order チャンネル",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: これ中国のアニメのOP描いてた人？（金リンゴのやつ）どのカットもsugoi 掲載者コメントに基づく注目点: これ中国のアニメのOP描いてた人？（金リンゴのやつ）どのカットもsugoi"
+    },
+    {
+      "id": "dOxds5ReGd0",
+      "title": "キスしちゃだめっ！／めいちゃん",
+      "videoUrl": "https://youtu.be/dOxds5ReGd0",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Meychan",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗 Music Video キスしちゃだめっ！／めいちゃん 作字のデザイン 掲載者コメントに基づく注目点: 💗 Music Video キスしちゃだめっ！／めいちゃん 作字のデザイン"
+    },
+    {
+      "id": "W64Zxx8FNXQ",
+      "title": "Paranoia Agent",
+      "videoUrl": "https://youtu.be/W64Zxx8FNXQ",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Miru Edits",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 色々試してる感じがいい 掲載者コメントに基づく注目点: 色々試してる感じがいい"
+    },
+    {
+      "id": "xGP87awGE48",
+      "title": "TVアニメ『怪異と乙女と神隠し』ティザーPV：Mysterious Disappearances Teaser PV",
+      "videoUrl": "https://youtu.be/xGP87awGE48",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "KADOKAWAanime",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗TVアニメ『怪異と乙女と神隠し』ティザーPV：Mysterious Disappearances Teaser PVキャラが動くところをコマ落ちさせないのが良い 掲載者コメントに基づく注目点: 💗TVアニメ『怪異と乙女と神隠し』ティザーPV：Mysterious Disappearances Teaser PVキャラが動くところをコマ落ちさせないのが良い"
+    },
+    {
+      "id": "JcEC9NCkt0U",
+      "title": "Moodmaker",
+      "videoUrl": "https://youtu.be/JcEC9NCkt0U",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "따깡",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗Moodmaker道路が回転して斜めの赤になるところが良い 掲載者コメントに基づく注目点: 💗Moodmaker道路が回転して斜めの赤になるところが良い"
+    },
+    {
+      "id": "DeVklrnWyqQ",
+      "title": "【MV】Time Filament / Risa Yuzuki",
+      "videoUrl": "https://youtu.be/DeVklrnWyqQ",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Risa Yuzuki",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗Time Filament - tokiwa feat. Risa Yuzuki【オリジナル曲】綺麗 掲載者コメントに基づく注目点: 💗Time Filament - tokiwa feat. Risa Yuzuki【オリジナル曲】綺麗"
+    },
+    {
+      "id": "q_zvdh1etZo",
+      "title": "First pageㅣMotion graphic",
+      "videoUrl": "https://youtu.be/q_zvdh1etZo",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Starcover",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: グレーのパート良いな～と思って見てたらいきなりいっしんさん始まってワロタ 掲載者コメントに基づく注目点: グレーのパート良いな～と思って見てたらいきなりいっしんさん始まってワロタ"
+    },
+    {
+      "id": "icrQJbLSyLI",
+      "title": "【MMGC2023 Day1】球詠「最後の夏まで」",
+      "videoUrl": "https://youtu.be/icrQJbLSyLI",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Mirai MAD Team",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 熱い 掲載者コメントに基づく注目点: 熱い"
+    },
+    {
+      "id": "_CepR88c3AM",
+      "title": "【NARUTO -ナルト- 】火の意志PV【アニメ20周年記念】/ NARUTO The Will of Fire",
+      "videoUrl": "https://youtu.be/_CepR88c3AM",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "ジャンプチャンネル",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗【NARUTO -ナルト- 】火の意志PV【アニメ20周年記念】/ NARUTO The Will of Fire最初のキャラ変えながら顔の向き合わせるやつやりて～ 掲載者コメントに基づく注目点: 💗【NARUTO -ナルト- 】火の意志PV【アニメ20周年記念】/ NARUTO The Will of Fire最初のキャラ変えながら顔の向き合わせるやつやりて～"
+    },
+    {
+      "id": "4-4dnkAjMGQ",
+      "title": "Len - 焔は嗤う feat.Such (Music Video)",
+      "videoUrl": "https://youtu.be/4-4dnkAjMGQ",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Len —",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗Len - 焔は嗤う feat.Such (Music Video)リリックモーションのバリエーションが豊富 掲載者コメントに基づく注目点: 💗Len - 焔は嗤う feat.Such (Music Video)リリックモーションのバリエーションが豊富"
+    },
+    {
+      "id": "_gY-lYbhFE4",
+      "title": "別れ花 / すりぃ (Thank you and goodbye.)",
+      "videoUrl": "https://youtu.be/_gY-lYbhFE4",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "すりぃ",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: かわいい。coalowl氏すこ。 掲載者コメントに基づく注目点: かわいい。coalowl氏すこ。"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "xNKB471ABGA",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "illustration"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: コマ落ちさせないキャラモーション、迫力ある 掲載者コメントに基づく注目点: コマ落ちさせないキャラモーション、迫力ある"
+    },
+    {
+      "id": "XPZ572li808",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 超キレイ 掲載者コメントに基づく注目点: 超キレイ"
+    },
+    {
+      "id": "tsaWeJpnn6c",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗Mileage - One Piece [AMV/Edit]面白い 掲載者コメントに基づく注目点: 💗Mileage - One Piece [AMV/Edit]面白い"
+    },
+    {
+      "id": "nmUoEnsyLLY",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗WORTH IT w/ @kytnkunmodulationの正しい使い方 掲載者コメントに基づく注目点: 💗WORTH IT w/ @kytnkunmodulationの正しい使い方"
+    },
+    {
+      "id": "Xfotcux_lqU",
+      "genres": [
+        "opening"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: タイトルドーン 掲載者コメントに基づく注目点: タイトルドーン"
+    },
+    {
+      "id": "hD5xyPHmlig",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 質感。グラフィック。 掲載者コメントに基づく注目点: 質感。グラフィック。"
+    },
+    {
+      "id": "nXygqp0q6W4",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗Walking Dream / 上原歩夢(CV.大西亜玖璃) Lyric Video画面変えずにヌルっと2番に入っていくところ 掲載者コメントに基づく注目点: 💗Walking Dream / 上原歩夢(CV.大西亜玖璃) Lyric Video画面変えずにヌルっと2番に入っていくところ"
+    },
+    {
+      "id": "vG3NRNL77mI",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗결정 | Motion Design Personal Project剣 掲載者コメントに基づく注目点: 💗결정 | Motion Design Personal Project剣"
+    },
+    {
+      "id": "MycXq63nJws",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 全然鉄オタじゃないけど鉄道関連のデザインは好き 掲載者コメントに基づく注目点: 全然鉄オタじゃないけど鉄道関連のデザインは好き"
+    },
+    {
+      "id": "hePVKvmN84g",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗アニマル - DECO*27 / covered by 西園チグサtemaca氏〜2 掲載者コメントに基づく注目点: 💗アニマル - DECO*27 / covered by 西園チグサtemaca氏〜2"
+    },
+    {
+      "id": "SXpUvhnT0ao",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [
+        "stylish"
+      ],
+      "confidence": 0.85,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗Julius Rodriguez - BLUE GIANT “MOMENTUM” music videoカッコいい 掲載者コメントに基づく注目点: 💗Julius Rodriguez - BLUE GIANT “MOMENTUM” music videoカッコいい"
+    },
+    {
+      "id": "pmtvYAKO6oc",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 動きもデザインもちょっと他と違う感じ。かなり好き。 掲載者コメントに基づく注目点: 動きもデザインもちょっと他と違う感じ。かなり好き。"
+    },
+    {
+      "id": "7zVdGqjoVnA",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗モニターグラフィックス || Futuristic Control Roomパーツが細かくて偉い。あとモニターグラフィックスで音ハメするの珍しくて良かった。 掲載者コメントに基づく注目点: 💗モニターグラフィックス || Futuristic Control Roomパーツが細かくて偉い。あとモニターグラフィックスで音ハメするの珍しくて良かった。"
+    },
+    {
+      "id": "gkfSedEWjRQ",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗ダンダダンすごいスピード感 掲載者コメントに基づく注目点: 💗ダンダダンすごいスピード感"
+    },
+    {
+      "id": "gbcdU2zsm8s",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗Open Up!! / 書店太郎 feat.巡音ルカグリッチのパキパキ感が良い 掲載者コメントに基づく注目点: 💗Open Up!! / 書店太郎 feat.巡音ルカグリッチのパキパキ感が良い"
+    },
+    {
+      "id": "budO9Qg1s6U",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 歌詞テキストリファレンス 掲載者コメントに基づく注目点: 歌詞テキストリファレンス"
+    },
+    {
+      "id": "Jd_hXfUxmL4",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "掲載者メモ: 💗ゆめのなかSuper noisy."
+    },
+    {
+      "id": "_O0h2WqEFjo",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "掲載者メモ: 💗あなたにはなれない／可不･結月ゆかり斜めにブラインドかけたノイズ、表裏一体ぶりに見たな～って"
+    },
+    {
+      "id": "LxZiWwrbz-U",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "掲載者メモ: 💗 【BOFXVII】玉響サーチライト【BGA】 ポップリファレンス"
+    },
+    {
+      "id": "KFV_8DgE72o",
+      "genres": [
+        "opening"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: 💗サーバント✖️サービス opクレジットの出し方"
+    },
+    {
+      "id": "K4NNmAQY0_g",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "掲載者メモ: 💗 Yushi - レイニーエスケープ (Rainy Escape) feat.9Lana 最初の2秒"
+    },
+    {
+      "id": "FPv4-aa9eOo",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "掲載者メモ: 良いアニメMAD作る人見つけた。嬉しい。"
+    },
+    {
+      "id": "Vh3Oz9RGog0",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "掲載者メモ: 1サビの静止画MADっぽいとこ"
+    },
+    {
+      "id": "nschFfLFCdo",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "掲載者メモ: 💗윤하(YOUNHA) - 사건의 지평선ㅣ 키네틱 타이포그래피 FMV2:35～すき"
+    },
+    {
+      "id": "F67rDMT63yg",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "掲載者メモ: 1:00のオレンジ"
+    },
+    {
+      "id": "UMYlSnLlCE0",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "掲載者メモ: 💗 【349】[feat. はしメロ, maeshima soshi] けーたいみしてよ / MAISONdes デザイン"
+    },
+    {
+      "id": "kZG9fhrd0mA",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "掲載者メモ: 最近みたMGでかなり上位存在"
+    },
+    {
+      "id": "Q_ROGVLc4TA",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "掲載者メモ: 💗“Comma” motion graphics五線譜が3Dの下の辺になるところ"
+    },
+    {
+      "id": "AqH4BXHxH80",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "掲載者メモ: ノリノリですね"
+    },
+    {
+      "id": "Q78ov_cmvQc",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "掲載者メモ: 💗金魚掬い / 来世は鯨になりたい feat.鳴花ヒメデザイン"
+    },
+    {
+      "id": "Jq4JFF7zaiY",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "掲載者メモ: テキストのチョイス。1:24の青のパーティクル。2:48のトランジション。"
+    },
+    {
+      "id": "FxyC6ev6-4U",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: 💗Raon 라온 | ‘NEON’ M/V細かいSFチックなグラフィック"
+    },
+    {
+      "id": "i4YYgcUigbc",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに『Music Video』／掲載者コメント: 最初の3秒が良い"
+    },
+    {
+      "id": "es_JMVQQMKc",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "掲載者コメント: AKE・OME 〜HAPPY NEW YEAR 2022〜いっしんさんみを感じる"
+    },
+    {
+      "id": "1hY4QoZRX7E",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに『コラボPV』／掲載者コメント: 目"
+    },
+    {
+      "id": "Z7bw5wBafu8",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに『JUMP MV』／掲載者コメント: 色"
+    },
+    {
+      "id": "4LCKL_-AqEQ",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [
+        "stylish"
+      ],
+      "confidence": 0.7,
+      "evidence": "掲載者コメント: Cube氏のとこカッコよすぎ"
+    },
+    {
+      "id": "VS9LAp4tj64",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.8,
+      "evidence": "タイトルに『Music Video』／掲載者コメント: タイポグラフィ"
+    },
+    {
+      "id": "nsw-ddleSII",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに『JUMP MV』／掲載者コメント: アクションすげ～"
+    },
+    {
+      "id": "ADWxnd1WBrk",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [
+        "emotional"
+      ],
+      "confidence": 0.7,
+      "evidence": "タイトルに『静止画MAD』／掲載者コメント: 0:30の振り向きモーション0:39の涙が落ちる演出"
+    },
+    {
+      "id": "oDQeKEaDUOA",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに『Music Video』／掲載者コメント: 絶対に退屈させないという意志を感じる"
+    },
+    {
+      "id": "ycZ-QNHuUe0",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.8,
+      "evidence": "掲載者コメント: 最初の方のMGチックな感じ"
+    },
+    {
+      "id": "tjWCAln3TjI",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "タイトル/掲載者コメント: 【アニメ化決定】...最新18巻発売記念PV（PV表記はあるがジャンル判別は明示されていない）"
+    },
+    {
+      "id": "iSIsPluigG4",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "掲載者コメント: 0:49のコンテナの配色"
+    },
+    {
+      "id": "XIAxoSXggBc",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [
+        "stylish"
+      ],
+      "confidence": 0.7,
+      "evidence": "掲載者コメント: すげえカッコいい"
+    },
+    {
+      "id": "-RQTxqPc5T0",
+      "genres": [
+        "mv",
+        "opening"
+      ],
+      "products": [],
+      "directions": [
+        "illustration"
+      ],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "タイトルに『Animation Music Video』／タイトルに『OP 主題歌』／掲載者コメント: やっぱコラージュすこだ"
+    },
+    {
+      "id": "0IixpTbyhVw",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [
+        "emotional"
+      ],
+      "confidence": 0.7,
+      "evidence": "掲載者コメント: 熱い"
+    },
+    {
+      "id": "97MDkmxkgKE",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "掲載者コメント: インク"
+    },
+    {
+      "id": "_ZJ8MrEXIio",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "タイトルに「MV」を明記"
+    },
+    {
+      "id": "ggNbitpGesE",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに『歌ってみた』はあるが、MV/リリック等の明示はない"
+    },
+    {
+      "id": "EP-tCqkDNy0",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルは楽曲名表記だが、MV等の明示がない"
+    },
+    {
+      "id": "p2EkMZrBLr0",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルは単語のみでジャンル/演出/商材の明示なし"
+    },
+    {
+      "id": "1ky5AUu6v18",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "タイトルに「ロゴモーション」と明記"
+    },
+    {
+      "id": "TCknEoeAJqg",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "タイトルに「リリックビデオ」と明記"
+    },
+    {
+      "id": "0cWTmV3WmVk",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.98,
+      "evidence": "タイトルに「MV」と明記"
+    },
+    {
+      "id": "r9ZZ-XXirpo",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics",
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに「MOTION REEL」、掲載者メモに「2Dも3Dも」と記載あり"
+    },
+    {
+      "id": "FT8EuVjd5v0",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "タイトルに「オリジナルMV」と明記"
+    },
+    {
+      "id": "YM5dVtSgwdA",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "タイトルに「AMV」と明記"
+    },
+    {
+      "id": "LP4ki4lw-ak",
+      "genres": [
+        "branded-movie"
+      ],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "タイトルに「コンセプトムービー」、掲載者メモに「グラフィック」がある"
+    },
+    {
+      "id": "SyCdJmlc6Jc",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "タイトルに「AMV」と明記"
+    },
+    {
+      "id": "mT_Uqrfm_pE",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "タイトルに「キネティック タイポグラフィ（kinetic typography）」と明記"
+    },
+    {
+      "id": "U_Nq0HeJDNY",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.98,
+      "evidence": "タイトルに「Official Music Video」と明記"
+    },
+    {
+      "id": "SWxyTdh7mxg",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "タイトルに「AMV」と明記"
+    },
+    {
+      "id": "foZT3HbNC2U",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに「PVコラボ」と明記"
+    },
+    {
+      "id": "EFWtkIzsBVw",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.8,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 動かし方がどんどん上手くなるなぁ 掲載者コメントに基づく注目点: 動かし方がどんどん上手くなるなぁ"
+    },
+    {
+      "id": "GfsAGREha6o",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.8,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗 Deja Vu 長尺AMVから得られる栄養素 掲載者コメントに基づく注目点: 💗 Deja Vu 長尺AMVから得られる栄養素"
+    },
+    {
+      "id": "zY_ZF1UfSCk",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗 【Original MV】定命/ V.W.P #9【系譜曲】 かっこいい 掲載者コメントに基づく注目点: 💗 【Original MV】定命/ V.W.P #9【系譜曲】 かっこいい"
+    },
+    {
+      "id": "XZk_URrYRno",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.6,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗【610】[feat. むﾄ, Sohbana] トラエノヒメ / MAISONdesグラフィック 掲載者コメントに基づく注目点: 💗【610】[feat. むﾄ, Sohbana] トラエノヒメ / MAISONdesグラフィック"
+    },
+    {
+      "id": "06gfnT0mOSk",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.7,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: MG 構成 掲載者コメントに基づく注目点: MG 構成"
+    },
+    {
+      "id": "JHYBqNwFRn8",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 線がビリビリして見えるのどうやってるんだろう。エコーを結構使ってる。 掲載者コメントに基づく注目点: 線がビリビリして見えるのどうやってるんだろう。エコーを結構使ってる。"
+    },
+    {
+      "id": "e3KY33XkgGI",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗 G4L　Cover. LOLUET 最初の1秒 掲載者コメントに基づく注目点: 💗 G4L　Cover. LOLUET 最初の1秒"
+    },
+    {
+      "id": "ARfwJLhJ6y4",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 質感 掲載者コメントに基づく注目点: 質感"
+    },
+    {
+      "id": "GyGAAcOLROo",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 絵に馴染んでる歌詞テキスト 掲載者コメントに基づく注目点: 絵に馴染んでる歌詞テキスト"
+    },
+    {
+      "id": "dnB7y7picdk",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [
+        "emotional"
+      ],
+      "confidence": 0.7,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 泣ける 掲載者コメントに基づく注目点: 泣ける"
+    },
+    {
+      "id": "ATdmU0ODt8E",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗【Original Song】きっとビタミン / 音門るき × 堀江晶太【MV】たまにはポップなMVも 掲載者コメントに基づく注目点: 💗【Original Song】きっとビタミン / 音門るき × 堀江晶太【MV】たまにはポップなMVも"
+    },
+    {
+      "id": "5lygiL4Y3kU",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗【loundraw × BUMP OF CHICKEN】『天体観測』／TOHO animation ミュージックフィルムズ誰もが知る曲で新しいストーリー構築できるの凄すぎる 掲載者コメントに基づく注目点: 💗【loundraw × BUMP OF CHICKEN】『天体観測』／TOHO animation ミュージックフィルムズ誰もが知る曲で新しいストーリー構築できるの凄すぎる"
+    },
+    {
+      "id": "AUz4G05pU3I",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗Rhuzerv - ORIGINAL MV質感。部分的にノイズみたいに色ズレさせるのどうやるんだろう。 掲載者コメントに基づく注目点: 💗Rhuzerv - ORIGINAL MV質感。部分的にノイズみたいに色ズレさせるのどうやるんだろう。"
+    },
+    {
+      "id": "2yfGvy8iOcg",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.8,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗 [MAD] 偏執型恋愛空想症 [ラブスコア] うまい 掲載者コメントに基づく注目点: 💗 [MAD] 偏執型恋愛空想症 [ラブスコア] うまい"
+    },
+    {
+      "id": "FjzsS1DLiaQ",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.8,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗 【静止画MAD】紅炎【あしたのジョー】 BAD入ってるときに見たからかすごい染みた 掲載者コメントに基づく注目点: 💗 【静止画MAD】紅炎【あしたのジョー】 BAD入ってるときに見たからすごい染みた"
+    },
+    {
+      "id": "LPY7Pe4Q2Sw",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: ガラス表現ってやっぱ綺麗よね 掲載者コメントに基づく注目点: ガラス表現ってやっぱ綺麗よね"
+    },
+    {
+      "id": "zVCp7NySPnI",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "掲載者メモ: 💗 【MAD】 たまこまーけっと～みどりラブストーリー～ seguimiさんの存在を認識するのが遅すぎた……。残り香を追っている。"
+    },
+    {
+      "id": "09po2qrWPhk",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "掲載者メモ: 💗2022 sakuga 備忘録複合MAD的なシーン選びが良い"
+    },
+    {
+      "id": "pgbSqhzeofs",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "掲載者メモ: 神 泣く"
+    },
+    {
+      "id": "DqgK4llE1cw",
+      "genres": [
+        "mv"
+      ],
+      "products": [
+        "gaming"
+      ],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: 💗Fire Again ft. Ashnikko // Official Music Video // VALORANT Champions 2022エッジランナーズ以来サイバーパンクな世界観にハマってる。ピクセルソートみたいに分割するところ好き。"
+    },
+    {
+      "id": "-14cSTrv6gQ",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: 3D"
+    },
+    {
+      "id": "T5sgWWtI57k",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: チカチカするテキスト"
+    },
+    {
+      "id": "EqogKMxhpT4",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: すこ（10年前！？）"
+    },
+    {
+      "id": "gzeSaTYgWLQ",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "掲載者メモ: トランジション グラフィック"
+    },
+    {
+      "id": "HT6sVOnSr0A",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "掲載者メモ: 水色とピンク"
+    },
+    {
+      "id": "L02aPFAhTCk",
+      "genres": [
+        "branded-movie"
+      ],
+      "products": [
+        "gaming"
+      ],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: これ中国のアニメのOP描いてた人？（金リンゴのやつ）どのカットもsugoi"
+    },
+    {
+      "id": "dOxds5ReGd0",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: 💗 Music Video キスしちゃだめっ！／めいちゃん 作字のデザイン"
+    },
+    {
+      "id": "W64Zxx8FNXQ",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "掲載者メモ: 色々試してる感じがいい"
+    },
+    {
+      "id": "xGP87awGE48",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "掲載者メモ: 💗TVアニメ『怪異と乙女と神隠し』ティザーPV：Mysterious Disappearances Teaser PVキャラが動くところをコマ落ちさせないのが良い"
+    },
+    {
+      "id": "JcEC9NCkt0U",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "掲載者メモ: 💗Moodmaker道路が回転して斜めの赤になるところが良い"
+    },
+    {
+      "id": "DeVklrnWyqQ",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: 💗Time Filament - tokiwa feat. Risa Yuzuki【オリジナル曲】綺麗"
+    },
+    {
+      "id": "q_zvdh1etZo",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: グレーのパート良いな～と思って見てたらいきなりいっしんさん始まってワロタ"
+    },
+    {
+      "id": "icrQJbLSyLI",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [
+        "emotional"
+      ],
+      "confidence": 0.8,
+      "evidence": "掲載者メモ: 熱い"
+    },
+    {
+      "id": "_CepR88c3AM",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.25,
+      "evidence": "掲載者メモ: 💗【NARUTO -ナルト- 】火の意志PV…最初のキャラ変えながら顔の向き合わせるやつやりて～"
+    },
+    {
+      "id": "4-4dnkAjMGQ",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: リリックモーションのバリエーションが豊富／タイトルにMusic Video表記あり"
+    },
+    {
+      "id": "_gY-lYbhFE4",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.2,
+      "evidence": "掲載者メモ: かわいい。coalowl氏すこ。"
+    }
+  ],
+  "accepted": [
+    {
+      "id": "xNKB471ABGA",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "illustration"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: コマ落ちさせないキャラモーション、迫力ある 掲載者コメントに基づく注目点: コマ落ちさせないキャラモーション、迫力ある"
+    },
+    {
+      "id": "tsaWeJpnn6c",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗Mileage - One Piece [AMV/Edit]面白い 掲載者コメントに基づく注目点: 💗Mileage - One Piece [AMV/Edit]面白い"
+    },
+    {
+      "id": "Xfotcux_lqU",
+      "genres": [
+        "opening"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: タイトルドーン 掲載者コメントに基づく注目点: タイトルドーン"
+    },
+    {
+      "id": "nXygqp0q6W4",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗Walking Dream / 上原歩夢(CV.大西亜玖璃) Lyric Video画面変えずにヌルっと2番に入っていくところ 掲載者コメントに基づく注目点: 💗Walking Dream / 上原歩夢(CV.大西亜玖璃) Lyric Video画面変えずにヌルっと2番に入っていくところ"
+    },
+    {
+      "id": "vG3NRNL77mI",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗결정 | Motion Design Personal Project剣 掲載者コメントに基づく注目点: 💗결정 | Motion Design Personal Project剣"
+    },
+    {
+      "id": "MycXq63nJws",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 全然鉄オタじゃないけど鉄道関連のデザインは好き 掲載者コメントに基づく注目点: 全然鉄オタじゃないけど鉄道関連のデザインは好き"
+    },
+    {
+      "id": "SXpUvhnT0ao",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [
+        "stylish"
+      ],
+      "confidence": 0.85,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗Julius Rodriguez - BLUE GIANT “MOMENTUM” music videoカッコいい 掲載者コメントに基づく注目点: 💗Julius Rodriguez - BLUE GIANT “MOMENTUM” music videoカッコいい"
+    },
+    {
+      "id": "pmtvYAKO6oc",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 動きもデザインもちょっと他と違う感じ。かなり好き。 掲載者コメントに基づく注目点: 動きもデザインもちょっと他と違う感じ。かなり好き。"
+    },
+    {
+      "id": "7zVdGqjoVnA",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗モニターグラフィックス || Futuristic Control Roomパーツが細かくて偉い。あとモニターグラフィックスで音ハメするの珍しくて良かった。 掲載者コメントに基づく注目点: 💗モニターグラフィックス || Futuristic Control Roomパーツが細かくて偉い。あとモニターグラフィックスで音ハメするの珍しくて良かった。"
+    },
+    {
+      "id": "KFV_8DgE72o",
+      "genres": [
+        "opening"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: 💗サーバント✖️サービス opクレジットの出し方"
+    },
+    {
+      "id": "kZG9fhrd0mA",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "掲載者メモ: 最近みたMGでかなり上位存在"
+    },
+    {
+      "id": "Q_ROGVLc4TA",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "掲載者メモ: 💗“Comma” motion graphics五線譜が3Dの下の辺になるところ"
+    },
+    {
+      "id": "FxyC6ev6-4U",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: 💗Raon 라온 | ‘NEON’ M/V細かいSFチックなグラフィック"
+    },
+    {
+      "id": "i4YYgcUigbc",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに『Music Video』／掲載者コメント: 最初の3秒が良い"
+    },
+    {
+      "id": "1hY4QoZRX7E",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに『コラボPV』／掲載者コメント: 目"
+    },
+    {
+      "id": "Z7bw5wBafu8",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに『JUMP MV』／掲載者コメント: 色"
+    },
+    {
+      "id": "nsw-ddleSII",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに『JUMP MV』／掲載者コメント: アクションすげ～"
+    },
+    {
+      "id": "oDQeKEaDUOA",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに『Music Video』／掲載者コメント: 絶対に退屈させないという意志を感じる"
+    },
+    {
+      "id": "-RQTxqPc5T0",
+      "genres": [
+        "mv",
+        "opening"
+      ],
+      "products": [],
+      "directions": [
+        "illustration"
+      ],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "タイトルに『Animation Music Video』／タイトルに『OP 主題歌』／掲載者コメント: やっぱコラージュすこだ"
+    },
+    {
+      "id": "_ZJ8MrEXIio",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "タイトルに「MV」を明記"
+    },
+    {
+      "id": "1ky5AUu6v18",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "タイトルに「ロゴモーション」と明記"
+    },
+    {
+      "id": "TCknEoeAJqg",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "タイトルに「リリックビデオ」と明記"
+    },
+    {
+      "id": "0cWTmV3WmVk",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.98,
+      "evidence": "タイトルに「MV」と明記"
+    },
+    {
+      "id": "r9ZZ-XXirpo",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics",
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに「MOTION REEL」、掲載者メモに「2Dも3Dも」と記載あり"
+    },
+    {
+      "id": "FT8EuVjd5v0",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "タイトルに「オリジナルMV」と明記"
+    },
+    {
+      "id": "YM5dVtSgwdA",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "タイトルに「AMV」と明記"
+    },
+    {
+      "id": "LP4ki4lw-ak",
+      "genres": [
+        "branded-movie"
+      ],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "タイトルに「コンセプトムービー」、掲載者メモに「グラフィック」がある"
+    },
+    {
+      "id": "SyCdJmlc6Jc",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "タイトルに「AMV」と明記"
+    },
+    {
+      "id": "mT_Uqrfm_pE",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "タイトルに「キネティック タイポグラフィ（kinetic typography）」と明記"
+    },
+    {
+      "id": "U_Nq0HeJDNY",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.98,
+      "evidence": "タイトルに「Official Music Video」と明記"
+    },
+    {
+      "id": "SWxyTdh7mxg",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "タイトルに「AMV」と明記"
+    },
+    {
+      "id": "foZT3HbNC2U",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに「PVコラボ」と明記"
+    },
+    {
+      "id": "zY_ZF1UfSCk",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗 【Original MV】定命/ V.W.P #9【系譜曲】 かっこいい 掲載者コメントに基づく注目点: 💗 【Original MV】定命/ V.W.P #9【系譜曲】 かっこいい"
+    },
+    {
+      "id": "JHYBqNwFRn8",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 線がビリビリして見えるのどうやってるんだろう。エコーを結構使ってる。 掲載者コメントに基づく注目点: 線がビリビリして見えるのどうやってるんだろう。エコーを結構使ってる。"
+    },
+    {
+      "id": "ARfwJLhJ6y4",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 質感 掲載者コメントに基づく注目点: 質感"
+    },
+    {
+      "id": "GyGAAcOLROo",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 絵に馴染んでる歌詞テキスト 掲載者コメントに基づく注目点: 絵に馴染んでる歌詞テキスト"
+    },
+    {
+      "id": "ATdmU0ODt8E",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗【Original Song】きっとビタミン / 音門るき × 堀江晶太【MV】たまにはポップなMVも 掲載者コメントに基づく注目点: 💗【Original Song】きっとビタミン / 音門るき × 堀江晶太【MV】たまにはポップなMVも"
+    },
+    {
+      "id": "5lygiL4Y3kU",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗【loundraw × BUMP OF CHICKEN】『天体観測』／TOHO animation ミュージックフィルムズ誰もが知る曲で新しいストーリー構築できるの凄すぎる 掲載者コメントに基づく注目点: 💗【loundraw × BUMP OF CHICKEN】『天体観測』／TOHO animation ミュージックフィルムズ誰もが知る曲で新しいストーリー構築できるの凄すぎる"
+    },
+    {
+      "id": "AUz4G05pU3I",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗Rhuzerv - ORIGINAL MV質感。部分的にノイズみたいに色ズレさせるのどうやるんだろう。 掲載者コメントに基づく注目点: 💗Rhuzerv - ORIGINAL MV質感。部分的にノイズみたいに色ズレさせるのどうやるんだろう。"
+    },
+    {
+      "id": "DqgK4llE1cw",
+      "genres": [
+        "mv"
+      ],
+      "products": [
+        "gaming"
+      ],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: 💗Fire Again ft. Ashnikko // Official Music Video // VALORANT Champions 2022エッジランナーズ以来サイバーパンクな世界観にハマってる。ピクセルソートみたいに分割するところ好き。"
+    },
+    {
+      "id": "-14cSTrv6gQ",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: 3D"
+    },
+    {
+      "id": "T5sgWWtI57k",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: チカチカするテキスト"
+    },
+    {
+      "id": "EqogKMxhpT4",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: すこ（10年前！？）"
+    },
+    {
+      "id": "gzeSaTYgWLQ",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "掲載者メモ: トランジション グラフィック"
+    },
+    {
+      "id": "L02aPFAhTCk",
+      "genres": [
+        "branded-movie"
+      ],
+      "products": [
+        "gaming"
+      ],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: これ中国のアニメのOP描いてた人？（金リンゴのやつ）どのカットもsugoi"
+    },
+    {
+      "id": "dOxds5ReGd0",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: 💗 Music Video キスしちゃだめっ！／めいちゃん 作字のデザイン"
+    },
+    {
+      "id": "DeVklrnWyqQ",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: 💗Time Filament - tokiwa feat. Risa Yuzuki【オリジナル曲】綺麗"
+    },
+    {
+      "id": "q_zvdh1etZo",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: グレーのパート良いな～と思って見てたらいきなりいっしんさん始まってワロタ"
+    },
+    {
+      "id": "4-4dnkAjMGQ",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: リリックモーションのバリエーションが豊富／タイトルにMusic Video表記あり"
+    }
+  ]
+}

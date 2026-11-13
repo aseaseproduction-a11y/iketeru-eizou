@@ -1,0 +1,55 @@
+{
+  "mode": "apply",
+  "completedAt": "2026-08-19T07:05:40.831Z",
+  "counts": {
+    "planned": 7,
+    "insertable": 7,
+    "inserted": 7,
+    "skipped": 0
+  },
+  "inserted": [
+    {
+      "id": "1086992497",
+      "title": "ALLd. 公式掲載映像 / Vimeo 1086992497",
+      "source": "alld",
+      "videoUrl": "https://vimeo.com/1086992497"
+    },
+    {
+      "id": "1127041639",
+      "title": "ALLd. 公式掲載映像 / Vimeo 1127041639",
+      "source": "alld",
+      "videoUrl": "https://vimeo.com/1127041639"
+    },
+    {
+      "id": "1059446980",
+      "title": "ALLd. 公式掲載映像 / Vimeo 1059446980",
+      "source": "alld",
+      "videoUrl": "https://vimeo.com/1059446980"
+    },
+    {
+      "id": "1059430588",
+      "title": "ALLd. 公式掲載映像 / Vimeo 1059430588",
+      "source": "alld",
+      "videoUrl": "https://vimeo.com/1059430588"
+    },
+    {
+      "id": "1059442962",
+      "title": "ALLd. 公式掲載映像 / Vimeo 1059442962",
+      "source": "alld",
+      "videoUrl": "https://vimeo.com/1059442962"
+    },
+    {
+      "id": "1059595106",
+      "title": "ALLd. 公式掲載映像 / Vimeo 1059595106",
+      "source": "alld",
+      "videoUrl": "https://vimeo.com/1059595106"
+    },
+    {
+      "id": "1061161784",
+      "title": "ALLd. 公式掲載映像 / Vimeo 1061161784",
+      "source": "alld",
+      "videoUrl": "https://vimeo.com/1061161784"
+    }
+  ],
+  "skipped": []
+}

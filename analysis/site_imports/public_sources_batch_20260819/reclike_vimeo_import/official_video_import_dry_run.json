@@ -1,0 +1,208 @@
+{
+  "mode": "dry-run",
+  "completedAt": "2026-08-20T00:17:19.483Z",
+  "counts": {
+    "planned": 580,
+    "insertable": 541,
+    "inserted": 0,
+    "skipped": 39
+  },
+  "inserted": [],
+  "skipped": [
+    {
+      "id": "REtXIeSsGys",
+      "title": "宇多田ヒカル 『Time』Official Audio(Short Version)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "365487165",
+      "title": "Fontworks Brand Movie",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "237533255",
+      "title": "Frasco - Viewtiful",
+      "reason": "duplicate_normalized_title"
+    },
+    {
+      "id": "6D4REZZtOOk",
+      "title": "METAFIVE  -  Luv U Tokio -Video Edit-",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "326512213",
+      "title": "Station ID「Shapeshifter」",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "117133569",
+      "title": "iKON : FINAL MEMBERS (BIG BANG JAPAN DOME TOUR 2014)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "292348600",
+      "title": "WHO?",
+      "reason": "duplicate_normalized_title"
+    },
+    {
+      "id": "292275289",
+      "title": "DAY TO DAY",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "279712953",
+      "title": "tio “SUN” official music video",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "243634645",
+      "title": "MTV ULTRAHITS",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "Ig9j5GaIVXo",
+      "title": "ハンサムケンヤ「決心速度」MV",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "swq--rdN-2k",
+      "title": "【NARUTO -ナルト- 】暁PV【アニメ20周年記念】",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "Yvh0-lpa6GE",
+      "title": "【公式】『HUNTER×HUNTER』37巻発売記念スペシャルPV",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "4dsGr27Sceg",
+      "title": "【公式】「呪術廻戦」渋谷13面連動デジタルサイネージ レポートムービー【20巻発売記念スペシャルPV／週刊少年ジャンプ】",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "3HjS-zK8v-U",
+      "title": "『チェンソーマン』ジャンプフェスタ2022 スペシャルPV解禁",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "fX9NK-_YqlI",
+      "title": "『ONE PIECE』103巻発売記念ムービー「ついにギア５」",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "3Y1EdJA-fGw",
+      "title": "HUNTER×HUNTER37巻PV【Teaser】",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "JTQ_cw7-1-g",
+      "title": "『呪術廻戦』劇場版公開／18巻発売記念スペシャルPV",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "VPB_J6Egi28",
+      "title": "『チェンソーマン』9 巻発売記念スペシャルPV",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "XxOPsfG7-7E",
+      "title": "【チェンソーマン】TASAKIコラボスペシャルPV",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "XFwB2IWtDkc",
+      "title": "Serph - sparkle",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "218597363",
+      "title": "MAKIN' MOVES",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "uq3J8C51bAY",
+      "title": "Dos Monos - in 20XX",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "63vqob-MljQ",
+      "title": "Kylie Minogue - Come Into My World (Official Video) [Full HD Remastered]",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "AXGF37ZOAEE",
+      "title": "パソコン音楽クラブ  −  reiji no machi",
+      "reason": "duplicate_normalized_title"
+    },
+    {
+      "id": "329037793",
+      "title": "Filler ID SPACE SHOWER MAN　　  Legacy for the future",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "283930742",
+      "title": "New Chitose 2018 Idents",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "JRxDysnjlzs",
+      "title": "Visible Cloaks, Yoshio Ojima & Satsuki Shibano - Stratum",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "7u0akP3FM0M",
+      "title": "APOGEE『Sleepless』（Official Music Video）",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "132051052",
+      "title": "group_inou / EYE　",
+      "reason": "duplicate_normalized_title"
+    },
+    {
+      "id": "328599590",
+      "title": "MAKIN' MOVES 2",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "247918533",
+      "title": "MTV VMAJ 2017",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "zRFAcuAlft0",
+      "title": "Qiezi Mabo loves PUNPEE - Qiezi Mabo Forever (Fried Chicken Mix)",
+      "reason": "duplicate_normalized_title"
+    },
+    {
+      "id": "361473037",
+      "title": "MAKE IT FUNKY NOW",
+      "reason": "duplicate_normalized_title"
+    },
+    {
+      "id": "410926630",
+      "title": "Studio-Kleiner-STORYTEL-OpenYourEars",
+      "reason": "duplicate_normalized_title"
+    },
+    {
+      "id": "972417672",
+      "title": "Windfall",
+      "reason": "duplicate_normalized_title"
+    },
+    {
+      "id": "695626316",
+      "title": "Milling Stop-Motion",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "539055827",
+      "title": "shun yamaguchi reel 2021",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "417940115",
+      "title": "LIKI inc. REEL 2019~20",
+      "reason": "duplicate_id"
+    }
+  ]
+}

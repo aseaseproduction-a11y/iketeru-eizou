@@ -1,0 +1,26 @@
+{
+  "index": 799,
+  "total": 1782,
+  "target": {
+    "id": "QjIlr34cXCM",
+    "platform": "youtube",
+    "title": "My 2026 Cinematography Reel",
+    "videoUrl": "https://www.youtube.com/watch?v=QjIlr34cXCM",
+    "channelTitle": "",
+    "source": "youtube_search",
+    "sourceLabel": "YouTube検索（自動キーワード）",
+    "existingMetadata": {
+      "genres": "[{\"name\":\"YouTube / SNS / 縦型動画\",\"slug\":\"youtube-sns\"},{\"name\":\"MV\",\"slug\":\"mv\"},{\"name\":\"映画 / ドラマ / ショートフィルム\",\"slug\":\"film\"}]",
+      "products": "[{\"name\":\"IT / 通信 / ネットサービス\",\"slug\":\"it\"}]",
+      "directions": "[]",
+      "tones": "[]",
+      "allTags": "[]",
+      "purposes": "[]",
+      "expressions": "[]",
+      "toneEmotions": "[]",
+      "toneVisuals": "[]",
+      "toneTechniques": "[]",
+      "productions": "[]"
+    }
+  }
+}

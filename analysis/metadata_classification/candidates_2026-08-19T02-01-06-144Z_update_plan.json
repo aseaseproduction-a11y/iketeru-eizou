@@ -1,0 +1,493 @@
+{
+  "generatedAt": "2026-08-19T02:03:58.248Z",
+  "candidatePath": "analysis/metadata_classification/candidates_2026-08-19T02-01-06-144Z.json",
+  "updates": [
+    {
+      "id": "-RxE_7uSDVg",
+      "title": "【自主制作アニメMV】魔法のない世界で生きるということ",
+      "confidence": 0.95,
+      "evidence": "タイトルに「自主制作アニメMV」、タグに「Music video」「2D animation」「Short film」、YouTube投稿日時の記載。"
+    },
+    {
+      "id": "EvJd10R6jNs",
+      "title": "予告編「ミニミニポッケの大きな庭で」",
+      "confidence": 0.85,
+      "evidence": "タグに「Music video」「Short film」「2D animation」「Comedy」「Experimental film」、タイトルに「予告編」。"
+    },
+    {
+      "id": "bc59wdtveCg",
+      "title": "ゆず 「ALWAYS」 Music Video",
+      "confidence": 0.95,
+      "evidence": "タイトルに「Music Video」、タグに「Pixel Art」。"
+    },
+    {
+      "id": "jsfW7koyn4c",
+      "title": "KOHH – No Makeup (Official Music Video)",
+      "confidence": 0.95,
+      "evidence": "タイトルに「Official Music Video」、解説に楽曲・MVを示す記載（Music video）。"
+    },
+    {
+      "id": "765557374",
+      "title": "CROSSTECH",
+      "confidence": 0.9,
+      "evidence": "タグに「Motion graphics」「Web movie」、説明に「コンセプトムービー」「ブロックチェーンプロジェクト（WEB3.0）」と明記。"
+    },
+    {
+      "id": "tyL-zN-wI5Q",
+      "title": "[ヒプノシスマイク] Bad Ass Temple – でらすげぇ宴 MV",
+      "confidence": 0.95,
+      "evidence": "タイトルに「MV」、タグに「Music video」「2D animation」。"
+    },
+    {
+      "id": "jGnqkRmLqtU",
+      "title": "Cosmic Flower",
+      "confidence": 0.9,
+      "evidence": "タグに「3DCG」「Generative Art」、解説にHoudiniでモデリング、Redshiftでレンダリングと明記。"
+    },
+    {
+      "id": "9timZ-LASLQ",
+      "title": "第三の心臓 / はるまきごはん feat.初音ミク MV",
+      "confidence": 0.95,
+      "evidence": "タイトルに「MV」、タグに「Music video」「2D animation」。"
+    },
+    {
+      "id": "OutokArcWSc",
+      "title": "OBSCURE MEALS",
+      "confidence": 0.85,
+      "evidence": "タグに「Short film」「2D animation」「Original」。作品はショートフィルムとして選出。"
+    },
+    {
+      "id": "WV83E4WHjIM",
+      "title": "Final Deathtination",
+      "confidence": 0.85,
+      "evidence": "タグに「3DCG」「Animation」「Short film」。作品説明に短編のあらすじあり。"
+    },
+    {
+      "id": "wJEMzndjqdw",
+      "title": "Into the Flow",
+      "confidence": 0.9,
+      "evidence": "タグに「3DCG」「Generative Art」「Installation」「Interactive」。制作にTouchDesignerやKinect使用の記載。"
+    },
+    {
+      "id": "RYEKsPWk4zI",
+      "title": "Chilli Beans. – L.I.B",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video。"
+    },
+    {
+      "id": "9YMMwvw3jKk",
+      "title": "Leon Fanourakis, SANTAWORLDVIEW & Xansei – ブチ上げ戦隊 feat. LEX",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video。"
+    },
+    {
+      "id": "778470625",
+      "title": "SHOWREEL 2022 | Kaito Note",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、3DCG、Motion graphics、Showreel。"
+    },
+    {
+      "id": "m3DZxcrb5i8",
+      "title": "12s Showreel PracticeMovie COUNT-204",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、3DCG、Motion graphics、Motion logo、Original、Showreel。"
+    },
+    {
+      "id": "812203754",
+      "title": "HATCHED",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Original、Short film。"
+    },
+    {
+      "id": "728712718",
+      "title": "Butterfly Effect",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、3DCG、Animation、Music video。"
+    },
+    {
+      "id": "wNvoJlJamgk",
+      "title": "DUSTCELL – 漂泊者",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、3DCG、Animation、Music video。"
+    },
+    {
+      "id": "785646120",
+      "title": "UNIQLO Masterpiece 22AW social asset",
+      "confidence": 0.85,
+      "evidence": "掲載カテゴリ: 3DCG、Advertisement。タイトル/説明にUNIQLOの表記あり（UNIQLO Masterpiece 22AW）。"
+    },
+    {
+      "id": "gB4Fw_CNulA",
+      "title": "梅田サイファー – かまへん",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video。"
+    },
+    {
+      "id": "aIZHouWcqas",
+      "title": "夢応の鯉魚 | Muō no Rigyo (A Carp That Appeared in My Dream) – Trailer",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Animation、Experimental film、Original、Short film。"
+    },
+    {
+      "id": "814331964",
+      "title": "Senpookyaku Hoshiko Reel 2023",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、3DCG、Animation、Experimental film、Motion graphics、Showreel、Web。"
+    },
+    {
+      "id": "756276184",
+      "title": "PLEATS PLEASE / ISSEY MIYAKE /  “TRY ANGLE”",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Advertisement、Brand movie、Fashion film。"
+    },
+    {
+      "id": "ncBMmzYynjc",
+      "title": "未来の科学者たちへ #17「キュリーエンジン」",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Short film。説明に「NIMSのYouTubeオフィシャルチャンネル内で公開」と明記。"
+    },
+    {
+      "id": "775615428",
+      "title": "無印良品のスキンケア「おしみなく、自然。」篇",
+      "confidence": 0.95,
+      "evidence": "掲載カテゴリ: Advertisement、CM、TV-CM。タイトル/説明に「スキンケア」と明記。"
+    },
+    {
+      "id": "lWuDDX9NZNE",
+      "title": "KAIKO 2022 SHOW IN BACKROOMS",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Fashion film、Promotion。"
+    },
+    {
+      "id": "aocBSAzwhII",
+      "title": "2022 VCT Stage2 – Challengers JAPAN Playoff Finals Main Title",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、3DCG、Live opening animation、Motion graphics、Opening movie、Title movie。"
+    },
+    {
+      "id": "zMlRJnW4VIo",
+      "title": "drive(Music Video)",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、3DCG、Music video、PV（タグにMusic video / 3DCGと明記）"
+    },
+    {
+      "id": "H8iX5eJKqy4",
+      "title": "CG WORLD STATION ID",
+      "confidence": 0.85,
+      "evidence": "掲載カテゴリ: 3DCG、Motion graphics、Opening movie、Short film（タグにOpening movie / Short film / 3DCG / Motion graphicsと明記）"
+    },
+    {
+      "id": "V-uTOWL8X0w",
+      "title": "Anonymouz「River」MV",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video（タグにMusic videoと明記）"
+    },
+    {
+      "id": "pklmKBi_qJk",
+      "title": "Uru「脱・借りてきた猫症候群」MV",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video（タグにMusic videoと明記）"
+    },
+    {
+      "id": "X6A-TgDhFOg",
+      "title": "幾田りらーサークル",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Music video（タグにMusic videoと明記）"
+    },
+    {
+      "id": "gTqwVF_yR5I",
+      "title": "キツネの嫁入り「dodone」MV",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Animation、Music video（タグに3DCG / Music videoと明記）"
+    },
+    {
+      "id": "HKiTKAWNvYk",
+      "title": "水曜日のカンパネラ『バッキンガム』",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video（タグにMusic videoと明記）"
+    },
+    {
+      "id": "qH0F_p3pvgs",
+      "title": "SunSet Swish | ENCOUNT",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Music video／説明に「コミカル且つシュールに描きました」と明記"
+    },
+    {
+      "id": "sk1Z-Hqwwog",
+      "title": "Ado 「私は最強(ウタfrom ONE PIECE FILM RED)」",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Music video（タグにMusic videoと明記）"
+    },
+    {
+      "id": "815582701",
+      "title": "THE NORTH FACE × Hender Scheme – Short product video for Instagram (compilation)",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Brand movie、Fashion film、Live action（タグにBrand movie / Fashion film / Live actionと明記）"
+    },
+    {
+      "id": "ZTID0RX5Z18",
+      "title": "えんそくだったひ_予告",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、3DCG、Experimental film、Short film、劇場映画（タグに3DCG / Short film / 劇場映画と明記）"
+    },
+    {
+      "id": "krxfD81pIGc",
+      "title": "シナぷしゅ　「おふろはいってるのだあれ」　#01〜05",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Animation、Stopmotion、TV／説明に「切り絵とコマ撮りの手法で制作」と明記（Stopmotionタグ）"
+    },
+    {
+      "id": "MNphkAHrjqE",
+      "title": "『人魚と浴槽』MV",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Music video（タグにMusic videoと明記）"
+    },
+    {
+      "id": "815306117",
+      "title": "3D OOH for NBA Japan Games 2022",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Advertisement、Motion graphics／タイトルと説明に「NBA Japan Games 2022」と明記（スポーツ関連広告）"
+    },
+    {
+      "id": "7xKdRezA0vQ",
+      "title": "苺りなはむ「存分」",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、3DCG、Music video（タグにMusic video / 3DCGと明記）"
+    },
+    {
+      "id": "qbkNcI_tR8g",
+      "title": "上海惑星 – アマイワナ",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Music video。"
+    },
+    {
+      "id": "ZoqcC5WG9EY",
+      "title": "木村カエラ – ZIG ZAG feat. BIM Music Video",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Art work、Music video、Web CM。"
+    },
+    {
+      "id": "il2UKpshkN4",
+      "title": "Tele | 鯨の子 – Music Video",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video。"
+    },
+    {
+      "id": "eH8uTdU3710",
+      "title": "橙一点",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation。架空の大正時代を舞台にしたMV。"
+    },
+    {
+      "id": "785226636",
+      "title": "リクルート「出会いってすごくないですか。」",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Brand movie、CM、Motion graphics、Web CM。"
+    },
+    {
+      "id": "PT9NBnGpUAQ",
+      "title": "“PONROGO” BRAND MOVIE",
+      "confidence": 0.9,
+      "evidence": "タイトルにBRAND MOVIE。掲載カテゴリ: 3DCG、PV。"
+    },
+    {
+      "id": "397970548",
+      "title": "The Statue Experiment – Cloth Sim Collection –",
+      "confidence": 0.9,
+      "evidence": "HoudiniでのR＆D中心の作品。掲載カテゴリ: 3DCG、Motion graphics、Short film。"
+    },
+    {
+      "id": "N2UNXRsw5Eg",
+      "title": "NGT48「渡り鳥たちに空は見えない」MV〜Dance ver.〜",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video。NGT48のミュージックビデオ（Dance ver.）。"
+    },
+    {
+      "id": "613277583",
+      "title": "ジョルダン「乗換案内」アプリ PR映像",
+      "confidence": 0.9,
+      "evidence": "タイトル: 乗換案内アプリ PR映像。掲載カテゴリ: 3DCG、CM、Live action、Promotion、Web CM。"
+    },
+    {
+      "id": "682833198",
+      "title": "VOGUE JAPAN/GQ JAPAN × MARK&LONA “Time Traveler”",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Brand movie、Fashion film。2D animation、3DCG、Motion graphics。"
+    },
+    {
+      "id": "Z8E6an5X_Y8",
+      "title": "TVアニメ「ポプテピピック TVアニメーション作品第二シリーズ」第8話 エンディング映像",
+      "confidence": 0.9,
+      "evidence": "第8話 エンディング映像。掲載カテゴリ: Motion graphics、TV。"
+    },
+    {
+      "id": "785-DwJHst8",
+      "title": "「Dear ～私の大切なあなたへ～ 」",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Brand movie／ウイルソンカスタムオーダーラケットの贈呈／エモーショナルなストーリー／CG制作"
+    },
+    {
+      "id": "jDhxCfpJEI8",
+      "title": "ウォルピスカーター『オーバーシーズ•ハイウェイ』",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Animation、Music video／手描きアニメーションを3DCG空間に配置して撮影"
+    },
+    {
+      "id": "7G0ovtPqHnI",
+      "title": "YOASOBI「海のまにまに」Official Music Video",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Music video、Short film／センチメンタルな小説を原作"
+    },
+    {
+      "id": "695626316",
+      "title": "Vice TV Ident – Milling Stop-Motion",
+      "confidence": 0.9,
+      "evidence": "コマ撮りアニメーション（フライス盤とCADを用いた切削過程を撮影）／掲載カテゴリ: Animation"
+    },
+    {
+      "id": "uDGfdFPbG00",
+      "title": "Beyond | Shibuya Crossing Takeover",
+      "confidence": 0.85,
+      "evidence": "掲載カテゴリ: Installation、Web、Web CM、Web movie／Jordan Brand のブリーフ"
+    },
+    {
+      "id": "796208479",
+      "title": "FREECODE_",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Motion graphics、Music video／タグ: 3DCG、Motion graphics"
+    },
+    {
+      "id": "XWxvfvisBFE",
+      "title": "KEITA MARUYAMA × PITTA MASK | Rakuten Fashion Week TOKYO 2021 S/S",
+      "confidence": 0.85,
+      "evidence": "掲載カテゴリ: 3DCG、Fashion film／KEITA MARUYAMA × PITTA MASK（Rakuten Fashion Week）"
+    },
+    {
+      "id": "QUORfpQZyXw",
+      "title": "境界の泉",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Performance、VR、XR／VRChatを用いたパフォーマンス"
+    },
+    {
+      "id": "8-YGxENU8Ug",
+      "title": "偽り　MV",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、3DCG、Music video／タグ: 2D animation、3DCG"
+    },
+    {
+      "id": "GKxYq9-fhW0",
+      "title": "yonawo – tokyo feat. 鈴木真海子, Skaai",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video／タグ: Music video"
+    },
+    {
+      "id": "tosi1bkvYik",
+      "title": "iri 「friends」",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video"
+    },
+    {
+      "id": "qaJUdvtozUM",
+      "title": "SAMSUNG  MV-OVER THE HORIZON / YAEJI",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Music video、Stopmotion／SAMSUNG GALAXY S23 の着信音MV"
+    },
+    {
+      "id": "WLlU2vfGnbE",
+      "title": "明透「ライトイヤーズ 」MusicVideo",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Animation、Music video／3DCGでシティポップの質感を表現"
+    },
+    {
+      "id": "7TXPlw_9PMk",
+      "title": "tamanaramen – ゆりかご",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video、Original"
+    },
+    {
+      "id": "635092262",
+      "title": "NISHINA《夜になって》",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video、Performance"
+    },
+    {
+      "id": "b3ZxHdFDeG8",
+      "title": "ululis  /  WebCM",
+      "confidence": 0.85,
+      "evidence": "掲載カテゴリ: 2D animation、CM、Web CM"
+    },
+    {
+      "id": "F3cXxqgbx9Y",
+      "title": "ヨルシカ「春ひさぎ」",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video"
+    },
+    {
+      "id": "817500811",
+      "title": "Shiseido Code of Conduct and Ethics",
+      "confidence": 0.9,
+      "evidence": "資生堂の社内イベント用ムービー／掲載カテゴリ: 3DCG、Motion graphics"
+    },
+    {
+      "id": "G0kbIkE7grM",
+      "title": "Short Film “A PERFECT DRUG” For London Fashion Week 21SS / John Lawrence Sullivan",
+      "confidence": 0.9,
+      "evidence": "Short film／For London Fashion Week／John Lawrence Sullivan（ファッション関連）"
+    },
+    {
+      "id": "CcE9tP4Hu-k",
+      "title": "Guchon – Pistachio Party Theme [Official Video]",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Music video、PV"
+    },
+    {
+      "id": "d4-DYL0vsuA",
+      "title": "青年CHICKEN",
+      "confidence": 0.95,
+      "evidence": "全編フル3DCGのミュージックビデオ／掲載カテゴリ: 3DCG、Music video"
+    },
+    {
+      "id": "ensRx7gerr8",
+      "title": "ぜったくん「レンタカー」Lyric Video (©UNIVERSAL MUSIC LLC, 2022)",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Animation、Music video（Lyric Video）"
+    },
+    {
+      "id": "DpefYPLH67A",
+      "title": "ストップモーション時代劇『HIDARI』パイロットフィルム",
+      "confidence": 0.9,
+      "evidence": "ストップモーション時代劇パイロット／掲載カテゴリ: Stopmotion、劇場映画"
+    },
+    {
+      "id": "x60xR0TEQ88",
+      "title": "Uru “紙一重” MV",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video（TVアニメEDテーマ）"
+    },
+    {
+      "id": "814133084",
+      "title": "LIKI inc. Reel 2022~23",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: TV-CM、Web CM、3DCG、Motion graphics"
+    },
+    {
+      "id": "769875945",
+      "title": "Blue Marble – Brand concept movie",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Brand movie、3DCG、Motion graphics、Stopmotion"
+    },
+    {
+      "id": "KqW6uxfAAN4",
+      "title": "BAUKHA – Sleep",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video、3DCG、Generative Art"
+    },
+    {
+      "id": "f-olbLYOBYg",
+      "title": "オーギュメンテッドおじいちゃん",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video、3DCG、PV"
+    }
+  ],
+  "held": []
+}

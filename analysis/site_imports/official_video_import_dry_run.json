@@ -1,0 +1,513 @@
+{
+  "mode": "dry-run",
+  "completedAt": "2026-08-19T05:51:59.950Z",
+  "counts": {
+    "planned": 100,
+    "insertable": 0,
+    "inserted": 0,
+    "skipped": 100
+  },
+  "inserted": [],
+  "skipped": [
+    {
+      "id": "z4r3l2aAdrg",
+      "title": "BrokenDaybreak / 七篠さよ -Music Video -",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "F50bCrlTbIs",
+      "title": "「がんばれ！くろーむ」 MV - Google Chrome",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "BerwUFzdj4U",
+      "title": "【Animation MV】flower rhapsody / さくらみこ (official)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "GTwK3D_QWMQ",
+      "title": "【MV】†ハロウィンマジック†にかかっちゃいな！【ゼンゼロ | ZZZ】",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "4PP3v4onGXs",
+      "title": "【MV】EMOSEARCH ／ 霧島ハル【ハルルナ】",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "EHYX4mtY5so",
+      "title": "【MV】にじさんじ – ヨナガオルケスタ",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "FGtHTgj0HWQ",
+      "title": "【MV】ホロウ / シユイ (Prod by 須田景凪)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "wphwtON0O1g",
+      "title": "【Official】Music Video 「Here the Our MIRAI!」イロドリミドリ",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "l7Lq9OzVsMo",
+      "title": "【Official】Music Video 「Rhythmic Ride」明坂 芹菜(CV:新田 恵海)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "bxVTrX8TjrU",
+      "title": "【original anime MV】コンプレックス♡プリンセス【hololive/宝鐘マリン】",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "DLkNQgh4Ons",
+      "title": "【学マス】篠澤 広 誕生日記念Single「メクルメ」- Game Sizeリリックビデオ CD予約受付中！【アイドルマスター】",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "tXXI5xRqD_I",
+      "title": "Bad girl / IMI【Official MV】",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "iPUCM-QEaZ8",
+      "title": "Beyond the way  - Giga (Cover) / VESPERBELL × KMNZ LITA",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "lB3mij3gmVo",
+      "title": "DUSTCELL - 表情差分 / Different Expression",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "ncwz-m09sm0",
+      "title": "Empty old City - Astronomy",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "5Duje_sZko8",
+      "title": "Imagine Dragons - Take Me To The Beach (feat. Ado) (Official Lyric Video)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "U-FuKvu5RV0",
+      "title": "Imy - Dreamscape (feat. 藍月なくる) Music Video",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "rSDxc4zp7W4",
+      "title": "Imy - 宝石を宿す (feat. 秋奈) Music Video",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "ScRGVhBBqM8",
+      "title": "JUMP MV /『呪術廻戦』×『SPECIALZ』| King Gnu ―災の目―",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "I0jHbsidh1g",
+      "title": "lazy cat  – Eve MV",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "0fhRwHwNCX8",
+      "title": "META FICTION (Prod. by ☆Taku Takahashi (m-flo)) / KMNZ [Official Music Video]",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "Ju9OLNOBxeg",
+      "title": "Myuk - Black Sheep (Music Video)【Prod by Guiano】",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "L2rDaGCCXSE",
+      "title": "NEW DAYS (Prod. by ミツキヨ) / KMNZ [Official Music Video]",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "6o-eJBG9G0c",
+      "title": "Ready Steady／フレン・E・ルスタリオ×ジョー・力一×魔使マオ cover",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "RFYP-tY6xOg",
+      "title": "TVアニメ「らんま1/2」 ノンクレジットオープニング｜ano「許婚っきゅん」 ／ \"Ranma1/2\" Opening Movie",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "n9xeDxXE4Jc",
+      "title": "Utsu-P - フューエル / FUEL feat. 初音ミク",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "Jj1_mfUzjOs",
+      "title": "YOASOBI「UNDEAD」 Official Music Video／『〈物語〉シリーズ オフ&モンスターシーズン』主題歌",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "3TUhE6RLwzE",
+      "title": "ゴー！ビッパ団／星川サラ×加賀美ハヤト×アンジュ・カトリーナ(cover)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "3qCVLERRWNo",
+      "title": "にっこり^^調査隊のテーマ／星川サラ×不破湊(cover)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "zyktN7x_DSQ",
+      "title": "【ゼンゼロ】パリピ雅",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "-8Er6Uw3Xs0",
+      "title": "ライトEP「Fearless」 | ゼンレスゾーンゼロ",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "9lxqrgViCXk",
+      "title": "ヰ世界情緒 #52「アンビバレント」【Official Music Video】",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "eEiMPYiNZAo",
+      "title": "花譜 # 145「アポカリプスより」【オリジナルMV】",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "hDvbfsbxdfg",
+      "title": "虚構性プロローグ / Feryquitous feat.棗いつき",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "fGjwu1MkaLw",
+      "title": "空知らぬ雨「ひとりあそび」/ SORASHIRA - Monologue【Official Music Video】",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "MXWTuX-QC00",
+      "title": "初星学園 「White Night! White Wish!」Official Music Video (HATSUBOSHI GAKUEN - White Night! White Wish!)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "drPEdug9fZk",
+      "title": "明透 - Aster / ASU - Aster",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "TpldddQUJiY",
+      "title": "明透 - HEAVEN IS GONE / ASU - HEAVEN IS GONE",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "ZJwo4lw4TUI",
+      "title": "「君のいる町」オープニングテーマ　みみめめMIMI「センチメンタルラブ」",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "t5jPgM_VKZo",
+      "title": "みみめめMIMI「Mr. Darling」MV",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "6z7AW-TJ7GA",
+      "title": "「なるほど使える、経営にビジネス・カード」（経費管理篇）",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "UOnnmfdvRmk",
+      "title": "「なるほど使える、経営にビジネス・カード」（資金繰り篇）",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "EiR_7n7bmjI",
+      "title": "「なるほど使える、経営にビジネス・カード」（キャッシュフロー篇）",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "_U1xSsG9RoI",
+      "title": "「なるほど使える、経営にビジネス・カード」（確定申告篇）",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "12jPI4V5dJ0",
+      "title": "「なるほど使える、経営にビジネス・カード」（決算篇）",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "t7gsfn3rGGU",
+      "title": "「ポイントフリーダム®」～紹介編～（30秒)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "Ov6dy_TxlFI",
+      "title": "「ビジネス・カードはあなたを応援します」（起業以来のパートナー篇）",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "R_03wZK7LZ0",
+      "title": "「ビジネス・カードはあなたを応援します」（名前を刻んだカードと篇）",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "D6flbP5cO_4",
+      "title": "【＋ID(プラスID）】プラスでイイこと。＋ID",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "0ci4J1GpRDw",
+      "title": "月極駐車場管理システムCarParking One【公式プロモーション動画】",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "cZe2sVQugbk",
+      "title": "倉木麻衣 「Love, Day After Tomorrow feat.15directors」 Music Clip",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "eHY0J2k2dTw",
+      "title": "堅あげ応援部10周年",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "zPDMm7XUpkI",
+      "title": "日本大学理工学部建築学科ブランドムービー “建築はつづく。未来がはじまる。”ver.2",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "UL3vG3oOfm0",
+      "title": "【企業CM】Kiru実験 「ブレードダイシング」編",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "-nr56fLZ11o",
+      "title": "【企業CM】Kezuru実験「グラインディング」編",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "XEe7s-i1Wto",
+      "title": "【企業CM】Migaku実験「ポリッシング」編",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "Xrbb1-3Mqsk",
+      "title": "【企業CM】Kiru実験「レーザーダイシング」編",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "UMN-d1LEBsg",
+      "title": "【企業CM】ディスコの社内制度 『個人Will』編",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "hgKmpBPmBZ8",
+      "title": "【企業CM】ディスコの社内制度『PIM』編",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "HZt8IW349QE",
+      "title": "【企業CM】ディスコの社内制度『アプリケーション大学』編",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "EXwYBh_kxuw",
+      "title": "ENEOS X PRIME & ENEOS Super GT",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "YWO1cM_7nbA",
+      "title": "姿勢が見える、だから変わる。足元からあなたを支える次世代スマートソール ardi（アルディ）",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "2ghUgt3Gtag",
+      "title": "国内シェアNo.1のクラウドセキュリティ「HENNGE One」",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "Jf9F5VBqA2A",
+      "title": "AKIHABARA E-GST 2019 official trailer",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "162638115",
+      "title": "NO SALT RESTAURANT",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "NCDuEAhGhQc",
+      "title": "#01 アイデンティティーの広がる社会 OUR FUTURE LIFE WITH CYBERNETIC AVATARS",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "sR0FRMZBJYM",
+      "title": "#02 仕事が「必要なこと」から「遊び」になる社会 OUR FUTURE LIFE WITH CYBERNETIC AVATARS",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "B6LfKILPLjY",
+      "title": "#03 パンデミックでも繋がり合える社会 OUR FUTURE LIFE WITH CYBERNETIC AVATARS",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "FjzucBjtizQ",
+      "title": "#04 2050年のパーソナルモビリティー OUR FUTURE LIFE WITH CYBERNETIC AVATARS",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "f6alUgGjMao",
+      "title": "JVC EXOFIELD Theater System - Product Introduction",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "49963573",
+      "title": "OGASAWARA experience in TOKYO",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "84SWZ_mGmRs",
+      "title": "コーポレートブランド「KURATECA」コンセプトムービー",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "58-kBdaXKxY",
+      "title": "KUUMA STYRO promotion movie",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "dhLlzFO-fng",
+      "title": "80秒で分かる、京セラのアメーバ経営",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "Zbh2twswOS4",
+      "title": "80秒で分かる、京セラのファインセラミックス",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "gpBFiG_hSFs",
+      "title": "京セラソーラー｜80秒で分かる太陽光発電システム",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "W73yqEnXBmA",
+      "title": "保育・お子様向け食育ムービーのご紹介　フル",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "CMCp8TQa59U",
+      "title": "TraISARE",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "A8rwaT_O8Ro",
+      "title": "Salfin Concept Movie",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "201800425",
+      "title": "Air Cheesecake",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "znJ07FkXqBQ",
+      "title": "アイソカル　高カロリーのやわらかいごはん",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "lQTDsow8ufw",
+      "title": "toreluna_30秒",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "65M2WTh0BBw",
+      "title": "【モータースポーツ】 ＃プロ目線_対談編　NISMOロニー選手×横浜F・マリノス松原選手",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "_cGjASNEfrQ",
+      "title": "BUTTER BY Z −フェアレディZでバターはできるのか？− / Can we make butter with the Fairlady Z?",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "h3RVeVOkR-I",
+      "title": "ペイロールのビジョン　～労働力人口不足に応えるHR BPaaS～",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "PRHExtNB2cA",
+      "title": "ペットショップCOO＆RIKU「無料配送」クーアンドリクは店舗移動無料　クーリク",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "bWdZOwFI6Qg",
+      "title": "Introducing Sony Android TV with Google Assistant",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "oW7iOZzyatA",
+      "title": "日本の製造業GDPで2位の化学産業を、スペシャリティケミカルのマーケットプレイス創出で支える「Sotas」（ICC KYOTO 2025）",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "J_cq-kleKY8",
+      "title": "Schecon | スケコン -「空き時間確認」編",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "sJ3XhDB0nL8",
+      "title": "Schecon | スケコン -「予定調整」編",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "v0G0kCmjWuE",
+      "title": "TYPICA Club | TYPICA",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "lR2gNpgl-G8",
+      "title": "CUBERU",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "lP6Jin5kQSM",
+      "title": "【ベリーベスト法律事務所】採用コンセプトムービー",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "FYVO-fXHi98",
+      "title": "MotionBoard re:Act コンセプトmovie",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "JokUSZnJBQU",
+      "title": "TRICERA proto",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "O1DQObWYYLQ",
+      "title": "Arts Council Tokyo Promotional Animation",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "MGwURX7-Sas",
+      "title": "「あはれ！名作くん」主題歌 全曲まとめ【公式】",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "SEUYpaVpF7g",
+      "title": "大正製薬 リポビタンD 「banvox」篇 CM （30秒）2017.12 banvox 三浦知良",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "dcxhZTb_6zs",
+      "title": "『機動戦士Gundam GQuuuuuuX（ジークアクス）』ノンクレジットオープニング映像│米津玄師「Plazma」",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "iGClOo-v87Y",
+      "title": "「詩のプラネタリウム」ティザー",
+      "reason": "duplicate_id"
+    }
+  ]
+}

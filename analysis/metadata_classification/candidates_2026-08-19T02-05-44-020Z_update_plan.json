@@ -1,0 +1,445 @@
+{
+  "generatedAt": "2026-08-19T02:08:18.284Z",
+  "candidatePath": "analysis/metadata_classification/candidates_2026-08-19T02-05-44-020Z.json",
+  "updates": [
+    {
+      "id": "P6ZLs39MBlk",
+      "title": "永遠の銀 / 大神ミオ Cover.",
+      "confidence": 0.9,
+      "evidence": "掲載者コメント: おもしろ映像量産しとる"
+    },
+    {
+      "id": "hHhzZzXIeOI",
+      "title": "オリジナル作品「ETERNITY」",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Short film、Experimental film"
+    },
+    {
+      "id": "783562288",
+      "title": "WOW25 “Viewpoints” from Unlearning the Visuals",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Motion graphics、Projection mapping、Installation、Event"
+    },
+    {
+      "id": "GmetlootbhE",
+      "title": "パソコン音楽クラブ – SIGN feat. 藤井隆",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video、Short film"
+    },
+    {
+      "id": "827675053",
+      "title": "アニメ「電器少女」EDアニメーション",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Opening movie（EDアニメーション／Opening movieタグ）"
+    },
+    {
+      "id": "Ep0YHnNRAds",
+      "title": "アサヒスーパードライ「ビア語り　父とビール」",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Promotion、Web CM、Web movie（アサヒスーパードライ「ビア語り　父とビール」）"
+    },
+    {
+      "id": "3sSQt6N4WgY",
+      "title": "立川翼 梅ふわり",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Music video"
+    },
+    {
+      "id": "JKque0N2bww",
+      "title": "パックマンMV『We are PAC-MAN!』",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Music video（パックマンMV）"
+    },
+    {
+      "id": "774363499",
+      "title": "PLEATS PLEASE ISSEY MIYAKE “ENCHANT and ONE STEP” 2022 HOLIDAYMOVIE",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Brand movie、Web CM（PLEATS PLEASE ISSEY MIYAKE）"
+    },
+    {
+      "id": "665641207",
+      "title": "山火事 / a forest fire",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Short film（山火事 / a forest fire）"
+    },
+    {
+      "id": "suguLfCgn88",
+      "title": "昭和一二四年 SHOWA124 予告編",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Animation、Short film（SHOWA124 予告編）"
+    },
+    {
+      "id": "656729574",
+      "title": "BOTTEGA VENETA – Issued by Bottega / ISSUE 03",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Fashion film、Web（BOTTEGA VENETA – Issued by Bottega）"
+    },
+    {
+      "id": "VxUL2E8jpTY",
+      "title": "CHILLOUT製品紹介動画",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Animation、Web CM（キャラクターアニメーション、製品紹介動画）。"
+    },
+    {
+      "id": "mHuGTWkdQiM",
+      "title": "GEZAN with Million Wish Collective 「We Were The World」（Official Music Video)",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Animation、Music video。Unreal Engine 5で制作。"
+    },
+    {
+      "id": "1LPKTkxLAKc",
+      "title": "Casper Caan “Last Chance” MV",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、3DCG、Music video。"
+    },
+    {
+      "id": "f8si675mZP4",
+      "title": "HIYADAM – Dishhh! (feat. MonyHorse)【Official Video】",
+      "confidence": 0.85,
+      "evidence": "掲載カテゴリ: Music video。GoproMAXのみで撮影。"
+    },
+    {
+      "id": "pKF_p_IIujI",
+      "title": "Kabanagu + 諭吉佳作/men「すなばピクニック」MV",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video。"
+    },
+    {
+      "id": "ueaEM5-INdY",
+      "title": "Little Tooth “Tightrope” Music Video",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Motion graphics、Music video（全編アニメーション、3Dオブジェクト中心）。"
+    },
+    {
+      "id": "7RXf7jrOFPc",
+      "title": "daisy*「HAKONIWA」",
+      "confidence": 0.85,
+      "evidence": "掲載カテゴリ: 3DCG、Art work、Experimental film、Installation（Experimental film、3DCG使用、インタラクティブ）。"
+    },
+    {
+      "id": "483466054",
+      "title": "SIGMA I series promotion movie",
+      "confidence": 0.95,
+      "evidence": "掲載カテゴリ: 3DCG、CM、Web、Web CM。SIGMAのレンズシリーズのプロモーション映像（製品プロモーション）。"
+    },
+    {
+      "id": "IfMhjlc-IVk",
+      "title": "GSHOCK GST-B400 Featuring Rui Hachimura",
+      "confidence": 0.95,
+      "evidence": "掲載カテゴリ: 2D animation、Advertisement、Motion graphics、Web CM。CASIO GSHOCK GST-B400のプロモーションムービー。"
+    },
+    {
+      "id": "8U-gCTEYxCA",
+      "title": "isshin REEL 2022",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Motion graphics、Showreel（リール作品）。"
+    },
+    {
+      "id": "CpjcbY3i7Fk",
+      "title": "petit animation”The Meaning Of Love”(2021)",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Music video、Short film（短編アニメーション／Music video）。"
+    },
+    {
+      "id": "639034386",
+      "title": "GOOD DESIGN SHOW 2021",
+      "confidence": 0.95,
+      "evidence": "掲載カテゴリ: 2D animation、AD、Animation、Motion graphics、Opening movie、Promotion、Web CM（コンセプトムービー／開幕映像、サイネージ）。"
+    },
+    {
+      "id": "662541028",
+      "title": "SHOWREEL2021",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、3DCG、CM、Motion graphics、Showreel（ショーリール、2D/3Dを行き交う演出）。"
+    },
+    {
+      "id": "w6eWno3iAjk",
+      "title": "花譜『それを世界と言うんだね』Official Music Video",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Art work、Music video、PV（2DアニメーションのMusic video）。"
+    },
+    {
+      "id": "q66WJaikhlo",
+      "title": "ブーブーはいくよ　#06〜10",
+      "confidence": 0.9,
+      "evidence": "タグ: Stopmotion。説明: 「切り絵とコマ撮りの手法」を用いた短編アニメーションシリーズ。"
+    },
+    {
+      "id": "683133059",
+      "title": "digital_sticker_ikebukuro",
+      "confidence": 0.9,
+      "evidence": "タグ: Motion graphics、AR。説明: モーショングラフィックをステッカーのように貼って合成した映像。"
+    },
+    {
+      "id": "PP8a9D_5eFA",
+      "title": "THE SIXTH LIE – Everything Lost",
+      "confidence": 0.95,
+      "evidence": "タグ: Music video、3DCG。説明: 人物はグリーンバックで、その他は全て3DCGで制作。"
+    },
+    {
+      "id": "FwrL2tFt7nw",
+      "title": "ゲーカーナトゥミ「君は死んでない」",
+      "confidence": 0.9,
+      "evidence": "タグ: Animation。説明: 単純化されたキャラクター（アニメ）と鮮明な実写映像を組み合わせている。"
+    },
+    {
+      "id": "661835461",
+      "title": "SHOW REEL 2022",
+      "confidence": 0.9,
+      "evidence": "タグ: 2D animation、3DCG、Motion graphics。説明: ショーリールに多数の2D/3D/モーショングラフィック作品を収録。"
+    },
+    {
+      "id": "580725557",
+      "title": "輪郭 -Contour-",
+      "confidence": 0.9,
+      "evidence": "タグ: 3DCG、Short film。説明: 作品は短編（Short film）かつ3DCG制作。"
+    },
+    {
+      "id": "GHQIAi3t6a0",
+      "title": "白南風",
+      "confidence": 0.9,
+      "evidence": "タグ: 2D animation、3DCG、Motion graphics。説明: 2D/3Dとモーショングラフィックを用いた自主制作。"
+    },
+    {
+      "id": "3nwknXSrIbA",
+      "title": "MONDO GROSSO / B.S.M.F [Vocal: どんぐりず]",
+      "confidence": 0.9,
+      "evidence": "タグ: Music video、3DCG。"
+    },
+    {
+      "id": "704047024",
+      "title": "ReoNaスペシャルライブ「EX-“LIVE”CHRONICLE」",
+      "confidence": 0.9,
+      "evidence": "タグ: 3DCG、VR、XR。説明: バーチャルカメラシステムとモーションキャプチャーで現実と仮想空間を連携して撮影。"
+    },
+    {
+      "id": "566764820",
+      "title": "Marina Nakagawa Reel 2021",
+      "confidence": 0.9,
+      "evidence": "タグ: 2D animation、3DCG、Motion graphics（ショーリール）。"
+    },
+    {
+      "id": "5KsXVs8Vg7U",
+      "title": "角巻わため Everlasting Soul MV",
+      "confidence": 0.95,
+      "evidence": "タグ: Music video、3DCG。"
+    },
+    {
+      "id": "696403114",
+      "title": "Amazon Holidays – Playful Conveyor Belt",
+      "confidence": 0.95,
+      "evidence": "タグ: TV-CM、CM、Advertisement、3DCG、Motion graphics。"
+    },
+    {
+      "id": "KpEHo9j2LNg",
+      "title": "eBASEBALLパワフルプロ野球2022 オープニングムービー",
+      "confidence": 0.95,
+      "evidence": "タイトル: eBASEBALLパワフルプロ野球2022（ゲーム）。タグ: Opening movie、3DCG、Animation。"
+    },
+    {
+      "id": "vj7Gmv7FC-0",
+      "title": "V.W.P：変身 (The Metamorphosis) MV",
+      "confidence": 0.9,
+      "evidence": "タグ: 「3DCG」「Music video」"
+    },
+    {
+      "id": "Er8gqBIJJiw",
+      "title": "未来の科学者たちへ #16「エネルギー変換」",
+      "confidence": 0.9,
+      "evidence": "タグ/説明: 「Web movie」「NIMSのPR」（掲載カテゴリ: Web movie）"
+    },
+    {
+      "id": "682730128",
+      "title": "STAY ALERT",
+      "confidence": 0.9,
+      "evidence": "タグ/説明: 「3DCG」「Short film」、説明に「3DCGで制作」「自宅のダイニングテーブルで撮影」"
+    },
+    {
+      "id": "UzlDLNMirhE",
+      "title": "キタンクラブ15周年記念映像「カプセルトイの歴史（日本語吹き替え版）」全３篇",
+      "confidence": 0.9,
+      "evidence": "タグ/説明: 「Animation」「Web movie」「15周年記念映像」"
+    },
+    {
+      "id": "-OdsFe8yOs8",
+      "title": "KIRINJI – 再会",
+      "confidence": 0.9,
+      "evidence": "タグ: 「3DCG」「Music video」"
+    },
+    {
+      "id": "dovY4OgXeBw",
+      "title": "観覧車/The Ferris Wheel",
+      "confidence": 0.9,
+      "evidence": "タグ/説明: 「Stopmotion」「Short film」「Animation」「Paper craft」"
+    },
+    {
+      "id": "700652038",
+      "title": "ASO CALDERA HIKE – HIKING SEASONS",
+      "confidence": 0.9,
+      "evidence": "タグ/説明: 「Motion graphics」「Projection mapping」「Event」「Installation」"
+    },
+    {
+      "id": "700699352",
+      "title": "ＮＨＫみんなのうた「ふつうとは」アニメーション",
+      "confidence": 0.9,
+      "evidence": "タグ/説明: 「3DCG」「Animation」「Motion graphics」「Music video」「TV」"
+    },
+    {
+      "id": "699367426",
+      "title": "MARVEL GO COLLECTION wave.1",
+      "confidence": 0.9,
+      "evidence": "タグ/説明: 表記: 「CM」、説明に「CM映像を作成」"
+    },
+    {
+      "id": "DyEVmTGwCqo",
+      "title": "しなぷしゅ「すくすく」",
+      "confidence": 0.9,
+      "evidence": "タグ/説明: 「2D animation」「Animation」「TV東京系の番組」"
+    },
+    {
+      "id": "15Hsw9QSeoc",
+      "title": "日向坂46「僕なんか」MV",
+      "confidence": 0.9,
+      "evidence": "タグ/説明: 「3DCG」「Live action」「Music video」"
+    },
+    {
+      "id": "z42mcZDooZk",
+      "title": "DAIV × UNDEFINED『DIVE』 (Original Movie)",
+      "confidence": 0.9,
+      "evidence": "説明: 「クリエイター向けPC『DAIV』シリーズのプロモーションムービー」、タグ: 「3DCG」「CM」「Promotion」"
+    },
+    {
+      "id": "dWHvrCHtgFI",
+      "title": "THE ORAL CIGARETTES「MACHINEGUN」Music Video",
+      "confidence": 0.9,
+      "evidence": "タグに「Music video」と明記。"
+    },
+    {
+      "id": "bUyOujXrvWc",
+      "title": "AKB48  – 元カレです",
+      "confidence": 0.9,
+      "evidence": "タグに「Music video」と明記。"
+    },
+    {
+      "id": "Uywq8FzxWiU",
+      "title": "femme fatale「だいしきゅーだいしゅき」Music Video",
+      "confidence": 0.85,
+      "evidence": "タグに「2D animation」「3DCG」「Music video」と記載。"
+    },
+    {
+      "id": "0komaDvGA-Q",
+      "title": "Xperia PRO-I Product Animation",
+      "confidence": 0.9,
+      "evidence": "タイトルに「Xperia PRO-I」、タグに「3DCG」「Advertisement」「Web CM」と記載。"
+    },
+    {
+      "id": "BxcxDqz2S0I",
+      "title": "A_o – BLUE SOULS",
+      "confidence": 0.9,
+      "evidence": "タグに「Music video」と明記。"
+    },
+    {
+      "id": "697988120",
+      "title": "クローズアップ現代",
+      "confidence": 0.85,
+      "evidence": "タグに「Title movie」「TV package design」「3DCG」「Broadcast」と記載。"
+    },
+    {
+      "id": "vHm0RWaf0FE",
+      "title": "まふまふ『栞』ＭＶ",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Music video（まふまふ『栞』ＭＶ）"
+    },
+    {
+      "id": "433100961",
+      "title": "mimoid inc. Reel 2020",
+      "confidence": 0.85,
+      "evidence": "掲載カテゴリ: 2D animation、3DCG、Animation、CM、Motion graphics、Music video、Web CM（mimoid inc. Reel 2020）"
+    },
+    {
+      "id": "704998562",
+      "title": "モスバーガーWebCM　トム・ブラウン『超合体漫才』篇",
+      "confidence": 0.9,
+      "evidence": "モスバーガーの期間限定商品 とり竜田バーガーのWebCM、掲載カテゴリ: CM、Web CM、Comedy（トム・ブラウン『超合体漫才』篇）"
+    },
+    {
+      "id": "OKEIHfFeTWQ",
+      "title": "dj newtown – 2005",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Music video（dj newtown – 2005）"
+    },
+    {
+      "id": "7bn5yVeRfVk",
+      "title": "擬態するメタ コンセプトティザー『企劇』",
+      "confidence": 0.85,
+      "evidence": "実写×3DCG×アニメーションで渋谷の街をジャックする（擬態するメタ コンセプトティザー『企劇』）"
+    },
+    {
+      "id": "Sf_HK41ND30",
+      "title": "はてなしはてな",
+      "confidence": 0.9,
+      "evidence": "赤ちゃん向け番組『シナぷしゅ』（テレビ東京）９月の歌のアニメーション、掲載カテゴリ: 2D animation、Music video、TV（はてなしはてな）"
+    },
+    {
+      "id": "Odv-zbpy-Y8",
+      "title": "yama『Oz.』MV",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Music video（yama『Oz.』MV）"
+    },
+    {
+      "id": "LyTaD9pbI7M",
+      "title": "理芽「NEUROMANCE」",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、3DCG、Music video（理芽「NEUROMANCE」）"
+    },
+    {
+      "id": "701287573",
+      "title": "Lipogram Animation Works 2020-2021",
+      "confidence": 0.85,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Experimental film、Motion graphics（Lipogram Animation Works 2020-2021）"
+    },
+    {
+      "id": "Z7oS2IjkJEI",
+      "title": "マジック：ザ・ギャザリング 神河　アニメーショントレーラー",
+      "confidence": 0.85,
+      "evidence": "マジック：ザ・ギャザリング 神河　アニメーショントレーラー（掲載カテゴリ: PV）"
+    },
+    {
+      "id": "639447319",
+      "title": "報道ステーション オープニング映像",
+      "confidence": 0.9,
+      "evidence": "報道ステーション オープニング映像、掲載カテゴリ: Motion graphics、TV"
+    },
+    {
+      "id": "EmQCUiM5mOw",
+      "title": "無限階段からの脱出",
+      "confidence": 0.9,
+      "evidence": "チルアウトのプロモーション、全編フルCGで制作、掲載カテゴリ: 2D animation、3DCG、Web CM（無限階段からの脱出）"
+    },
+    {
+      "id": "ZjPQVunWh6s",
+      "title": "D.A.N. – Anthem",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video（「映像作家100人 2022」の掲載作品として公式アーカイブに選出、Music video表記）"
+    },
+    {
+      "id": "4BfxkjBUkdg",
+      "title": "edhiii boi – Forever Friend -Music Video-",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video / 記述に「エモーショナルな卒業ソング」などの表現あり"
+    },
+    {
+      "id": "_H6zuJAtQqI",
+      "title": "Goodbye, All of Evangelion ／さようなら全てのエヴァンゲリオン　 宇多田ヒカル「ONE LAST KISS」",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Animation、Music video（タグに3DCG、Animation、Music video）"
+    },
+    {
+      "id": "Ajr18Yw5xdY",
+      "title": "ONE OK ROCK「Renegades」MV",
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Music video / 記述に「VFXによる…世界観で表現」と明記"
+    }
+  ],
+  "held": []
+}

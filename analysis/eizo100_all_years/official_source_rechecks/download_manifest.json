@@ -1,0 +1,106 @@
+{
+  "downloaded": [
+    {
+      "group": 1,
+      "source": "https://private-us-east-1.manuscdn.com/sessionFile/uLaZYciCKHSJSfE2VMQYbx/sandbox/znIx7VFAyt1tApCwWNeDoW_1787042583196_na1fn_L2hvbWUvdWJ1bnR1L2Vpem8xMDAtcmVzdWx0LWdyb3VwLTAx.json?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvdUxhWlljaUNLSFNKU2ZFMlZNUVlieC9zYW5kYm94L3puSXg3VkZBeXQxdEFwQ3dXTmVEb1dfMTc4NzA0MjU4MzE5Nl9uYTFmbl9MMmh2YldVdmRXSjFiblIxTDJWcGVtOHhNREF0Y21WemRXeDBMV2R5YjNWd0xUQXguanNvbiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc4OTQzMDQwMH19fV19&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEYCIQCVhFYu9t1sz5ftSWkgbAG6yMefBUm9Efz~kzq316busQIhALq0hG-~ZwrKlFZyNRqu1JnBg4W8H1AvYLQ~XpJWAN1X",
+      "target": "/home/ubuntu/iketeru-eizou/analysis/eizo100_all_years/official_source_rechecks/group-01.json"
+    },
+    {
+      "group": 2,
+      "source": "https://private-us-east-1.manuscdn.com/sessionFile/yYh5kxGm9QYrJtxYDHKl00/sandbox/1Zx0n3FlEwIP4gmfBMoQHl_1787042387144_na1fn_L2hvbWUvdWJ1bnR1L2Vpem8xMDAtYWxsLXllYXJzLWhvbGQtZ3JvdXBzL2dyb3VwLTAyLXJlc3VsdA.json?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUveVloNWt4R205UVlySnR4WURIS2wwMC9zYW5kYm94LzFaeDBuM0ZsRXdJUDRnbWZCTW9RSGxfMTc4NzA0MjM4NzE0NF9uYTFmbl9MMmh2YldVdmRXSjFiblIxTDJWcGVtOHhNREF0WVd4c0xYbGxZWEp6TFdodmJHUXRaM0p2ZFhCekwyZHliM1Z3TFRBeUxYSmxjM1ZzZEEuanNvbiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc4OTQzMDQwMH19fV19&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEQCIGmQ-tI99YdBeqGSlP-5~7ma~gicalBnuweC7MOAcOXyAiA~MobRwd537T2910Krt6FX6kN6iaHIqHR6DVaK0g4khw__",
+      "target": "/home/ubuntu/iketeru-eizou/analysis/eizo100_all_years/official_source_rechecks/group-02.json"
+    },
+    {
+      "group": 3,
+      "source": "https://private-us-east-1.manuscdn.com/sessionFile/tRmunC7na1xdTGkq61tBua/sandbox/05DigGOvvEHQIoquiefNdg_1787042468208_na1fn_L2hvbWUvdWJ1bnR1L2dyb3VwLTAzLXZlcmlmaWVkLXJlc3VsdHM.json?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvdFJtdW5DN25hMXhkVEdrcTYxdEJ1YS9zYW5kYm94LzA1RGlnR092dkVIUUlvcXVpZWZOZGdfMTc4NzA0MjQ2ODIwOF9uYTFmbl9MMmh2YldVdmRXSjFiblIxTDJkeWIzVndMVEF6TFhabGNtbG1hV1ZrTFhKbGMzVnNkSE0uanNvbiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc4OTQzMDQwMH19fV19&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEUCIQChMkAIEWLxhpFj4XsvAsKNeus2h9KAeNTWvNdAAhX9ZgIgIxbZp8x6G1mg2-IuKUA6RCHlAizPi044hFSm5MxTplo_",
+      "target": "/home/ubuntu/iketeru-eizou/analysis/eizo100_all_years/official_source_rechecks/group-03.json"
+    },
+    {
+      "group": 4,
+      "source": "https://private-us-east-1.manuscdn.com/sessionFile/uakfLACcoTHnMk22UiZ4Dx/sandbox/NnhJlC1grCuzbCsuwIXI4E_1787042907900_na1fn_L2hvbWUvdWJ1bnR1L2dyb3VwLTA0LXZlcmlmaWVk.json?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvdWFrZkxBQ2NvVEhuTWsyMlVpWjREeC9zYW5kYm94L05uaEpsQzFnckN1emJDc3V3SVhJNEVfMTc4NzA0MjkwNzkwMF9uYTFmbl9MMmh2YldVdmRXSjFiblIxTDJkeWIzVndMVEEwTFhabGNtbG1hV1ZrLmpzb24iLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODk0MzA0MDB9fX1dfQ__&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEQCIDGE6qbK3u-WUHKhLze4QdvZzRbZPUGGa7CsHA12d66SAiAX98RrJLKJtvAEf2rXaOkF3F1eC17iqZmOCFLRbxeQ1A__",
+      "target": "/home/ubuntu/iketeru-eizou/analysis/eizo100_all_years/official_source_rechecks/group-04.json"
+    },
+    {
+      "group": 6,
+      "source": "https://private-us-east-1.manuscdn.com/sessionFile/m1WfA8vZmtE4OJMzpiPlwr/sandbox/jr51ULaKmKyXCSXCkMje5S_1787042445617_na1fn_L2hvbWUvdWJ1bnR1L2dyb3VwLTA2LXZlcmlmaWVkLXJlc3VsdHM.json?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvbTFXZkE4dlptdEU0T0pNenBpUGx3ci9zYW5kYm94L2pyNTFVTGFLbUt5WENTWENrTWplNVNfMTc4NzA0MjQ0NTYxN19uYTFmbl9MMmh2YldVdmRXSjFiblIxTDJkeWIzVndMVEEyTFhabGNtbG1hV1ZrTFhKbGMzVnNkSE0uanNvbiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc4OTQzMDQwMH19fV19&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEUCIHMuueiB5OmCCeePPBWS~2ZURZNvvpO4~sj9yeZzc8xtAiEAhbYRRpZcLCnHezRcR2lrNwtUMm1UyP9LolZQ8qXaatU_",
+      "target": "/home/ubuntu/iketeru-eizou/analysis/eizo100_all_years/official_source_rechecks/group-06.json"
+    },
+    {
+      "group": 7,
+      "source": "https://private-us-east-1.manuscdn.com/sessionFile/Us00umcOyxeFczHX6mGZ4m/sandbox/W0xf6dIsfnLcFzgjTdJHph_1787042634980_na1fn_L2hvbWUvdWJ1bnR1L2dyb3VwLTA3LXZlcmlmaWVk.json?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvVXMwMHVtY095eGVGY3pIWDZtR1o0bS9zYW5kYm94L1cweGY2ZElzZm5MY0Z6Z2pUZEpIcGhfMTc4NzA0MjYzNDk4MF9uYTFmbl9MMmh2YldVdmRXSjFiblIxTDJkeWIzVndMVEEzTFhabGNtbG1hV1ZrLmpzb24iLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODk0MzA0MDB9fX1dfQ__&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEQCIAHqHohhs0XVVpnG7yHEGDgdiNwt3H43DiqyjYOmGSUYAiB5FRqKrLDJv7WxWiOfa-qtyOdXNphf9~Uvxj7iHfnyNg__",
+      "target": "/home/ubuntu/iketeru-eizou/analysis/eizo100_all_years/official_source_rechecks/group-07.json"
+    },
+    {
+      "group": 8,
+      "source": "https://private-us-east-1.manuscdn.com/sessionFile/hMSzTWd5ug18gYEJa2lYmD/sandbox/L1ZcUvV9ZzKkSBZd7Yufk7_1787042479894_na1fn_L2hvbWUvdWJ1bnR1L2dyb3VwLTA4LXJlc3VsdA.json?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvaE1TelRXZDV1ZzE4Z1lFSmEybFltRC9zYW5kYm94L0wxWmNVdlY5WnpLa1NCWmQ3WXVmazdfMTc4NzA0MjQ3OTg5NF9uYTFmbl9MMmh2YldVdmRXSjFiblIxTDJkeWIzVndMVEE0TFhKbGMzVnNkQS5qc29uIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg5NDMwNDAwfX19XX0_&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEYCIQCrYmRJ5S18K1KVu6jc4bTMp5oDeRzn3f-lhCPntYmbsQIhAMqx-LzyNTqPWDLTlnw86nqWUTBj3YFcSvnEJFjovj6K",
+      "target": "/home/ubuntu/iketeru-eizou/analysis/eizo100_all_years/official_source_rechecks/group-08.json"
+    },
+    {
+      "group": 9,
+      "source": "https://private-us-east-1.manuscdn.com/sessionFile/FqB1xRjY1ObX3jYO0I4EjM/sandbox/EpOEaaTD03JM4owuaeXrjQ_1787042586518_na1fn_L2hvbWUvdWJ1bnR1L2Vpem8xMDAtZ3JvdXAtMDktcmVzdWx0.json?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvRnFCMXhSalkxT2JYM2pZTzBJNEVqTS9zYW5kYm94L0VwT0VhYVREMDNKTTRvd3VhZVhyalFfMTc4NzA0MjU4NjUxOF9uYTFmbl9MMmh2YldVdmRXSjFiblIxTDJWcGVtOHhNREF0WjNKdmRYQXRNRGt0Y21WemRXeDAuanNvbiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc4OTQzMDQwMH19fV19&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEUCIAuSlJ6-yntsONqWRxZFoZZels5RJBIqeNg4el2~Mn3yAiEApe8IGkSmPXCRFOfvlzZcw6bRk1959o6qnI1S28sD1Ok_",
+      "target": "/home/ubuntu/iketeru-eizou/analysis/eizo100_all_years/official_source_rechecks/group-09.json"
+    },
+    {
+      "group": 10,
+      "source": "https://private-us-east-1.manuscdn.com/sessionFile/3UpIxplUKu9uBul8cV8aeQ/sandbox/8fef2NFx9ne0ZPhsBTFSNp_1787042441234_na1fn_L2hvbWUvdWJ1bnR1L3Jlc3VsdF9ncm91cF8xMA.json?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvM1VwSXhwbFVLdTl1QnVsOGNWOGFlUS9zYW5kYm94LzhmZWYyTkZ4OW5lMFpQaHNCVEZTTnBfMTc4NzA0MjQ0MTIzNF9uYTFmbl9MMmh2YldVdmRXSjFiblIxTDNKbGMzVnNkRjluY205MWNGOHhNQS5qc29uIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg5NDMwNDAwfX19XX0_&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEYCIQCxWOVd5xxIwvs5QhCcBurSCp9jyQH4cz-KI6KboHs0qwIhANO-9XU5VhXDwOMkqVjwVQH3bh2rzTRqnE8PxIiGbtHK",
+      "target": "/home/ubuntu/iketeru-eizou/analysis/eizo100_all_years/official_source_rechecks/group-10.json"
+    },
+    {
+      "group": 11,
+      "source": "https://private-us-east-1.manuscdn.com/sessionFile/xwun0vtJpDaSsUsT1JBjw0/sandbox/TLU8lf9NZXWEdhKm2qdx2H_1787042423757_na1fn_L2hvbWUvdWJ1bnR1L3Jlc3VsdF9ncm91cDEx.json?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUveHd1bjB2dEpwRGFTc1VzVDFKQmp3MC9zYW5kYm94L1RMVThsZjlOWlhXRWRoS20ycWR4MkhfMTc4NzA0MjQyMzc1N19uYTFmbl9MMmh2YldVdmRXSjFiblIxTDNKbGMzVnNkRjluY205MWNERXguanNvbiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc4OTQzMDQwMH19fV19&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEUCIQDs~5xWU~oVEfZnoz61zcF80pYRh8ZN0wvyqlz2k7lpLwIgRaiImOW61RX4cu3Jyy2ShZ1uPgKDo9SycgbS5gco-fs_",
+      "target": "/home/ubuntu/iketeru-eizou/analysis/eizo100_all_years/official_source_rechecks/group-11.json"
+    },
+    {
+      "group": 12,
+      "source": "https://private-us-east-1.manuscdn.com/sessionFile/dZuHgZWz3D2O6oeSciQDT0/sandbox/7GNf2lqSMXrSUGvnK65uD6_1787042358430_na1fn_L2hvbWUvdWJ1bnR1L2dyb3VwLTEyLXZlcmlmaWVk.json?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvZFp1SGdaV3ozRDJPNm9lU2NpUURUMC9zYW5kYm94LzdHTmYybHFTTVhyU1VHdm5LNjV1RDZfMTc4NzA0MjM1ODQzMF9uYTFmbl9MMmh2YldVdmRXSjFiblIxTDJkeWIzVndMVEV5TFhabGNtbG1hV1ZrLmpzb24iLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODk0MzA0MDB9fX1dfQ__&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEUCIDZhGdqvFUCzizMJwUYRBcSU1nShH-NTOHBlwVTaM9x4AiEA5LgKg~0ucrZm~HMLB7LIfmHGAgzkCrijyqXDHc1Tk~c_",
+      "target": "/home/ubuntu/iketeru-eizou/analysis/eizo100_all_years/official_source_rechecks/group-12.json"
+    },
+    {
+      "group": 13,
+      "source": "https://private-us-east-1.manuscdn.com/sessionFile/QwzfFepRnFqCUXx4rJ2oCA/sandbox/LxDNAKOyDvKneI5TSsOfpm_1787042443969_na1fn_L2hvbWUvdWJ1bnR1L2dyb3VwLTEzLXJlc3VsdA.json?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvUXd6ZkZlcFJuRnFDVVh4NHJKMm9DQS9zYW5kYm94L0x4RE5BS095RHZLbmVJNVRTc09mcG1fMTc4NzA0MjQ0Mzk2OV9uYTFmbl9MMmh2YldVdmRXSjFiblIxTDJkeWIzVndMVEV6TFhKbGMzVnNkQS5qc29uIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg5NDMwNDAwfX19XX0_&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEYCIQDxis-wo4y185XPKRGXCHAmZc7h2TfQIe8p2Xboi28fpQIhAObev1vXVEnWsTnNlkj9Q5y0C4rYX-ZZWSRiioTvyxYx",
+      "target": "/home/ubuntu/iketeru-eizou/analysis/eizo100_all_years/official_source_rechecks/group-13.json"
+    },
+    {
+      "group": 14,
+      "source": "https://private-us-east-1.manuscdn.com/sessionFile/FC49xlzWZAoA96jCOl7wcN/sandbox/t5TwjqAfdz3R0g0xRw85SG_1787042388256_na1fn_L2hvbWUvdWJ1bnR1L2dyb3VwMTRfdmVyaWZpZWRfcmVzdWx0cw.json?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvRkM0OXhseldaQW9BOTZqQ09sN3djTi9zYW5kYm94L3Q1VHdqcUFmZHozUjBnMHhSdzg1U0dfMTc4NzA0MjM4ODI1Nl9uYTFmbl9MMmh2YldVdmRXSjFiblIxTDJkeWIzVndNVFJmZG1WeWFXWnBaV1JmY21WemRXeDBjdy5qc29uIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg5NDMwNDAwfX19XX0_&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEYCIQCh-~6A4xp~nBSoQhfIfcvQHzs0SXHH~CGdZkN3lndSGQIhAOG6-qPVuIYjwOIcEdbpWzaS7wAcuX4ZoHzPVWE6hvvg",
+      "target": "/home/ubuntu/iketeru-eizou/analysis/eizo100_all_years/official_source_rechecks/group-14.json"
+    },
+    {
+      "group": 15,
+      "source": "https://private-us-east-1.manuscdn.com/sessionFile/e8gs7lh2Ore7C0uwJ4ShR6/sandbox/ugRXxFJa1EChm20XsmWE07_1787042712547_na1fn_L2hvbWUvdWJ1bnR1L3Jlc3VsdF9ncm91cF8xNQ.json?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvZThnczdsaDJPcmU3QzB1d0o0U2hSNi9zYW5kYm94L3VnUlh4RkphMUVDaG0yMFhzbVdFMDdfMTc4NzA0MjcxMjU0N19uYTFmbl9MMmh2YldVdmRXSjFiblIxTDNKbGMzVnNkRjluY205MWNGOHhOUS5qc29uIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg5NDMwNDAwfX19XX0_&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEUCIDOt~s-DDrpG6FI8uGsUdiynYJxoVc5W1AmTV3g4XlttAiEAs3L368wpxoGepEr0ZtOEQ-13HWV0s8ESTfOsMk-QVWY_",
+      "target": "/home/ubuntu/iketeru-eizou/analysis/eizo100_all_years/official_source_rechecks/group-15.json"
+    },
+    {
+      "group": 16,
+      "source": "https://private-us-east-1.manuscdn.com/sessionFile/KQop7Bi9KH3jtiAxyNTtBP/sandbox/wejhINtFMWyET5bRhrL96Z_1787042572150_na1fn_L2hvbWUvdWJ1bnR1L2dyb3VwLTE2LXJlc3VsdA.json?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvS1FvcDdCaTlLSDNqdGlBeHlOVHRCUC9zYW5kYm94L3dlamhJTnRGTVd5RVQ1YlJockw5NlpfMTc4NzA0MjU3MjE1MF9uYTFmbl9MMmh2YldVdmRXSjFiblIxTDJkeWIzVndMVEUyTFhKbGMzVnNkQS5qc29uIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg5NDMwNDAwfX19XX0_&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEQCIFeO0HbXmjdEVHw1sa~lqgYIShg69kmU4o9qys74Sti9AiBxsIYBJskxYGzPeOqTGbB6p7Vz3h8nP0-wmLphf-cP7Q__",
+      "target": "/home/ubuntu/iketeru-eizou/analysis/eizo100_all_years/official_source_rechecks/group-16.json"
+    },
+    {
+      "group": 17,
+      "source": "https://private-us-east-1.manuscdn.com/sessionFile/f4kFUTLuoBYVH3aczcGf5l/sandbox/yz2DPnpkLYVvwSfeYwMrcD_1787042503010_na1fn_L2hvbWUvdWJ1bnR1L2dyb3VwMTdfcmV2ZXJpZmllZA.json?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvZjRrRlVUTHVvQllWSDNhY3pjR2Y1bC9zYW5kYm94L3l6MkRQbnBrTFlWdndTZmVZd01yY0RfMTc4NzA0MjUwMzAxMF9uYTFmbl9MMmh2YldVdmRXSjFiblIxTDJkeWIzVndNVGRmY21WMlpYSnBabWxsWkEuanNvbiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc4OTQzMDQwMH19fV19&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEQCIDhPyGvW3D2Vwr78Rp-r2BbJpZM-aPkRf1CoDZxqp5yBAiAMnSjqWoa1zNIxWpvh1vsfgIvXuGFkgJvIfpsknaQyvg__",
+      "target": "/home/ubuntu/iketeru-eizou/analysis/eizo100_all_years/official_source_rechecks/group-17.json"
+    },
+    {
+      "group": 18,
+      "source": "https://private-us-east-1.manuscdn.com/sessionFile/qI2sb6Vk2PxfHaJrQ17PcT/sandbox/hhsChKh3DqYO6YrKZfTJYl_1787042408674_na1fn_L2hvbWUvdWJ1bnR1L2dyb3VwLTE4LXJlc3VsdA.json?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvcUkyc2I2VmsyUHhmSGFKclExN1BjVC9zYW5kYm94L2hoc0NoS2gzRHFZTzZZcktaZlRKWWxfMTc4NzA0MjQwODY3NF9uYTFmbl9MMmh2YldVdmRXSjFiblIxTDJkeWIzVndMVEU0TFhKbGMzVnNkQS5qc29uIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg5NDMwNDAwfX19XX0_&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEQCICQ5Hc0x4zELF4UAz7lVCpeOzL0RYNvUXxIFoekAMdKAAiAVxODBkRR24QT~MO2VdEASagb6VTwI8iZNvdZc3uvY~Q__",
+      "target": "/home/ubuntu/iketeru-eizou/analysis/eizo100_all_years/official_source_rechecks/group-18.json"
+    },
+    {
+      "group": 19,
+      "source": "https://private-us-east-1.manuscdn.com/sessionFile/TEDpoPQk4INpDej9pA3AEf/sandbox/JGTkJYqhwIrEzTDzA202Vs_1787042585822_na1fn_L2hvbWUvdWJ1bnR1L2dyb3VwMTlfcmVzdWx0.json?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvVEVEcG9QUWs0SU5wRGVqOXBBM0FFZi9zYW5kYm94L0pHVGtKWXFod0lyRXpURHpBMjAyVnNfMTc4NzA0MjU4NTgyMl9uYTFmbl9MMmh2YldVdmRXSjFiblIxTDJkeWIzVndNVGxmY21WemRXeDAuanNvbiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc4OTQzMDQwMH19fV19&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEUCIBneo2N~N83v-74IbcCFnEHT1JrJkWT~osXlI-usLzciAiEAz33VCkGXSmMiWXObDRGlGabNM-adJpcV9EeMmV0T7wA_",
+      "target": "/home/ubuntu/iketeru-eizou/analysis/eizo100_all_years/official_source_rechecks/group-19.json"
+    },
+    {
+      "group": 20,
+      "source": "https://private-us-east-1.manuscdn.com/sessionFile/UJ67V47MLDTRKJBpDYrbPT/sandbox/Nl37QO38QIgA3guPnk3yUt_1787042337853_na1fn_L2hvbWUvdWJ1bnR1L2Vpem8xMDAtYWxsLXllYXJzLWhvbGQtZ3JvdXBzL2dyb3VwLTIwLXJlc3VsdA.json?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvVUo2N1Y0N01MRFRSS0pCcERZcmJQVC9zYW5kYm94L05sMzdRTzM4UUlnQTNndVBuazN5VXRfMTc4NzA0MjMzNzg1M19uYTFmbl9MMmh2YldVdmRXSjFiblIxTDJWcGVtOHhNREF0WVd4c0xYbGxZWEp6TFdodmJHUXRaM0p2ZFhCekwyZHliM1Z3TFRJd0xYSmxjM1ZzZEEuanNvbiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc4OTQzMDQwMH19fV19&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEQCIEv4WqYk493N9Z~dzwlLaFntewhV2BUvrn-GMIRs93ayAiBhKd1~Oq8gGde9C5JVHG5z2o5DUAuls~Kpm-~a07FTdA__",
+      "target": "/home/ubuntu/iketeru-eizou/analysis/eizo100_all_years/official_source_rechecks/group-20.json"
+    }
+  ],
+  "unavailable": [
+    {
+      "group": 5,
+      "source": "/home/ubuntu/group-05.json",
+      "error": "result file is not available in this sandbox"
+    }
+  ]
+}

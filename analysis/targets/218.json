@@ -1,0 +1,26 @@
+{
+  "index": 218,
+  "total": 1782,
+  "target": {
+    "id": "BHhdVMF-gPw",
+    "platform": "youtube",
+    "title": "創味食品ブランドCM（生成AIでTVCMを制作）",
+    "videoUrl": "https://www.youtube.com/watch?v=BHhdVMF-gPw",
+    "channelTitle": "創味食品",
+    "source": "youtube",
+    "sourceLabel": "YouTube",
+    "existingMetadata": {
+      "genres": "[{\"name\":\"TV CM\",\"slug\":\"tv-cm\"}]",
+      "products": "[{\"name\":\"食品 / 飲料 / 飲食\",\"slug\":\"food\"},{\"name\":\"IT / 通信 / ネットサービス\",\"slug\":\"it\"}]",
+      "directions": "[{\"name\":\"生成AI\",\"slug\":\"generative-ai\"}]",
+      "tones": "[]",
+      "allTags": "[\"TV CM\",\"食品 / 飲料 / 飲食\",\"IT / 通信 / ネットサービス\",\"生成AI\"]",
+      "purposes": "[]",
+      "expressions": "[]",
+      "toneEmotions": "[]",
+      "toneVisuals": "[]",
+      "toneTechniques": "[]",
+      "productions": "[]"
+    }
+  }
+}

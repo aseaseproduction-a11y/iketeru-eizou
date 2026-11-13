@@ -1,0 +1,333 @@
+{
+  "mode": "dry-run",
+  "completedAt": "2026-08-19T06:23:46.386Z",
+  "counts": {
+    "planned": 114,
+    "insertable": 50,
+    "inserted": 0,
+    "skipped": 64
+  },
+  "inserted": [],
+  "skipped": [
+    {
+      "id": "CmWsrT-4Qys",
+      "title": "TVCM | au「有村架純のつながる放送局」篇",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "AJU0NYgS_aA",
+      "title": "グリーンラベル GREEN JUKEBOX 光篇 60秒",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "EMH4UE5TYsc",
+      "title": "映画『わたしの知らない子どもたち』【10月16日公開】本予告映像",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "V2-uBNWpHck",
+      "title": "映画『わたしの知らない子どもたち』【10月16日公開】トロント国際映画祭正式出品決定",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "5i6sslqgeio",
+      "title": "桑田佳祐 – 人誑し / ひとたらし [Official Music Video]",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "924892954",
+      "title": "ADK Recruit movie",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "807801469",
+      "title": "ISSEY MIYAKE / IM MEN “FLAT MEN”",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1105685464",
+      "title": "Morning is born",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "998498858",
+      "title": "SHIBUYA DOGENZAKA FLAG Sigange - 02 / Matsumoto Kiyoshi",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "998498092",
+      "title": "SHIBUYA DOGENZAKA FLAG Sigange - 02 / Matsumoto Kiyoshi",
+      "reason": "duplicate_normalized_title"
+    },
+    {
+      "id": "1023890656",
+      "title": "UNIQLO KOREA OOH",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "cSlQeSLY3mI",
+      "title": "【公式】『ポケポケ』拡張パック「メガライジング」",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "Kn6nOB9v99c",
+      "title": "【公式】『ポケポケ』テーマ拡張パック「紅蓮ブレイズ」",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "Pt9UMSpF7xE",
+      "title": "【公式】『ポケポケ』拡張パック「夢幻パレード」",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "M6cLI1P0dig",
+      "title": "【公式】『ポケポケ』テーマ拡張パック「パルデアワンダー」",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "xw5u-NoA3Ec",
+      "title": "【公式】『ポケポケ』テーマ拡張パック「シャイニングメガ」",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "ThOnVeyMptk",
+      "title": "【公式】『ポケポケ』拡張パック「波動ビート」",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "3wamzMsRZig",
+      "title": "【公式】『ポケポケ』テーマ拡張パック「進撃パラドックス」",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "hJYEKDTmQ9Y",
+      "title": "【公式】『ポケポケ』テーマ拡張パック「ミラクルデイズ」",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "YZjCu6_qWh8",
+      "title": "SiM “XR LiVE” Official Teaser (JAPANESE Ver.)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "769341658",
+      "title": "SiM XR LiVE MAKING",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1179831238",
+      "title": "NANAME REEL 2026",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "wMJwED0CEWk",
+      "title": "NIKKA FRONTIER 「缶ハイボール解禁」篇 数量限定 15秒",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "JodF9Ls9ydA",
+      "title": "出すべきは、やる気じゃない。蒸気だ。「ズボラーの新常識、なんでもスチーム篇」ハンディスチーマー SC 1 Multi - WEBCM",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "oXRPnu9nBpc",
+      "title": "Panasonic Technics Turntable History Movie #1~#5",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "g6y9YM0xIv8",
+      "title": "2026年レグザ新商品CM「色を吹き込む人」篇 -30seconds  version -",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "Q4C1O2A-Cqg",
+      "title": "ULTIMA BRAND MOVIE",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "zdBVmv97-sI",
+      "title": "エビアン200祭 「ずっと、若々しく、わくわく」",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "QcDn6TATqOw",
+      "title": "サントリー緑茶 伊右衛門 特茶『特茶研究所　テクテク歩く』篇 15秒 ​本木雅弘 上白石萌音 サントリーCM",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "6S4IXJ5QTpY",
+      "title": "「高額下取りがおトク」篇～ジャパネット「夏のエアコン祭り」～ 相葉雅紀さん＆川島明さん出演！",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "rNPXKST8SOE",
+      "title": "「その化学は、すべてに愛をつなぐ」篇　ナミックス株式会社 | ブランドムービー",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "w5gSwiwY6qY",
+      "title": "ニッカウヰスキー株式会社 竹鶴",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "46ALh2ge328",
+      "title": "【滴るレンズ】アクアロックス ワンデー UVシン 向き合うもの篇｜30秒",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "KA2KEzbXQlQ",
+      "title": "花王 メリット Osolo 「あなたと私に」篇　Full Version 動画広告 長谷川潤",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "Ka5zebfsYZo",
+      "title": "関孫六 炎星 コンセプトムービー｜SEKIMAGOROKU Ensei Consept Movie",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "M7pWj2hq_f8",
+      "title": "株式会社ハーレージャパン Phantom ポリプロピレンウェア 機能検証動画",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "JnVF8_BCuQ8",
+      "title": "ひょっとして、くもん生？得意編（30秒）",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "7_BJIwZ4XxI",
+      "title": "大日本除虫菊 流通説明会用ムービー",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "XyF4kITJh_I",
+      "title": "「第一でナイト　P免」篇30秒",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "c_9UTrrqcLI",
+      "title": "[MV] TAK - 'Lucky Doki' feat. xei",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "mxYqXOL5uLk",
+      "title": "TVアニメ『TRIGUN STAMPEDE』ノンクレジットOP映像",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "yS-fsWrARw8",
+      "title": "初星学園 「ふわふわ」Official Music Video (HATSUBOSHI GAKUEN - Fuwafuwa)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "JGAaNRSW_HU",
+      "title": "【バーサス｜13面ラスボス頂上決戦】渋谷13面ジャック特別PV / VERSUS Shibuya 13 screen hijack report movie",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "staQ0DR6oaY",
+      "title": "神聖かまってちゃん「死にたいひまわり」Music Video",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1202137666",
+      "title": "LOEWE - 180 anniversary - asset 1",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1202141408",
+      "title": "LOEWE - 180 anniversary - asset 3",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1202138009",
+      "title": "LOEWE - 180 anniversary - asset 2",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1202141785",
+      "title": "LOEWE - 180 anniversary - asset 4",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1202148916",
+      "title": "LOEWE - 180 anniversary - asset 5",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1202149282",
+      "title": "LOEWE - 180 anniversary - asset 7",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1202149562",
+      "title": "LOEWE - 180 anniversary - asset 8",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "829768147",
+      "title": "Peloton. Anyone. Anywhere. 90sec Anthem",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "864291204",
+      "title": "Peloton - Global Campaign Film - Fall/Autumn 2023 (feat. Tunde)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1198718318",
+      "title": "Airalo - final film - (for website)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1202090291",
+      "title": "Airalo - BTS",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1203810104",
+      "title": "05. Motion - Mexico",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1203810101",
+      "title": "06. Motion - New York",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1203810103",
+      "title": "07. Motion - Rome",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1203810102",
+      "title": "08. Motion - Tokyo",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1066877315",
+      "title": "Google Search - Cowboy Boots",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1066876883",
+      "title": "Google Search - Find that Thing - England Shirt",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "738720703",
+      "title": "Google — Find Your Thing — Loop (Case Study)",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1102448321",
+      "title": "Canva - H1 - UK Brand Campaign - Social Ads",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "cSHluvSoWQY",
+      "title": "立命館大学「アートやデザインは無関係だと思っている若者を振り向かせる動画」第12回BOVAゴールド",
+      "reason": "duplicate_id"
+    }
+  ]
+}

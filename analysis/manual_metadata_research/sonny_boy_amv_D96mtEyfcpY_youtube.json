@@ -1,0 +1,57 @@
+{
+  "kind": "youtube#videoListResponse",
+  "etag": "pdTyailDMNy1KmeD-MSiMQwSVq0",
+  "items": [
+    {
+      "kind": "youtube#video",
+      "etag": "1EonT0MgHUzNxjCV_1f-V0XMLoQ",
+      "id": "D96mtEyfcpY",
+      "snippet": {
+        "publishedAt": "2025-10-14T18:10:51Z",
+        "channelId": "UCxwl4zHWt9YzqVhRi-YB80w",
+        "title": "[Sonny Boy AMV] rhapsody",
+        "description": "❝if there were a place that shone brighter than the place you're at, would you wanna go to it or would you stay where you are and just keep staring at it ?❞\n\n\nMade for Ethereal IC: RUNWAY.\n\nAfter so many years of editing, it's probably the first time that I edited exclusively for myself — no collab, no MEP, no commission —  and I've gotta say, it feels intimidating. I wanted to pay tribute to an anime that I'm very attached to while pouring out the things that I like, even for a short amount of time. The more I learn about Sonny Boy, the more I come to appreciate it — and considering how multi-layered the writing is, I wanted to give my own interpretation of the show, and especially the relationship between the two main characters, within the vastness of its worldbuilding.\n\nShoutout to my teammate @Damis_AMV  for sitting on call with me the whole time. Check out his video here ! https://www.youtube.com/watch?v=x5jybNmIcdM\n\nAnd shoutout to my friends who show enthusiasm whenever I yap about AMVs even though they have no clue wtf I'm talking about. You guys are the best.\n\nThank you for reading this far, and I hope that it will provide you as much comfort as it did for me.\n\nMusic: Radiohead - Weird Fishes/Arpeggi\nSource: Sonny Boy + Various\nDL : https://shorturl.at/l1Utn",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/D96mtEyfcpY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/D96mtEyfcpY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/D96mtEyfcpY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/D96mtEyfcpY/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/D96mtEyfcpY/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "phin",
+        "categoryId": "22",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "en",
+        "localized": {
+          "title": "[Sonny Boy AMV] rhapsody",
+          "description": "❝if there were a place that shone brighter than the place you're at, would you wanna go to it or would you stay where you are and just keep staring at it ?❞\n\n\nMade for Ethereal IC: RUNWAY.\n\nAfter so many years of editing, it's probably the first time that I edited exclusively for myself — no collab, no MEP, no commission —  and I've gotta say, it feels intimidating. I wanted to pay tribute to an anime that I'm very attached to while pouring out the things that I like, even for a short amount of time. The more I learn about Sonny Boy, the more I come to appreciate it — and considering how multi-layered the writing is, I wanted to give my own interpretation of the show, and especially the relationship between the two main characters, within the vastness of its worldbuilding.\n\nShoutout to my teammate @Damis_AMV  for sitting on call with me the whole time. Check out his video here ! https://www.youtube.com/watch?v=x5jybNmIcdM\n\nAnd shoutout to my friends who show enthusiasm whenever I yap about AMVs even though they have no clue wtf I'm talking about. You guys are the best.\n\nThank you for reading this far, and I hope that it will provide you as much comfort as it did for me.\n\nMusic: Radiohead - Weird Fishes/Arpeggi\nSource: Sonny Boy + Various\nDL : https://shorturl.at/l1Utn"
+        },
+        "defaultAudioLanguage": "en"
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 1,
+    "resultsPerPage": 1
+  }
+}

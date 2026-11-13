@@ -1,0 +1,51 @@
+{
+  "kind": "youtube#videoListResponse",
+  "etag": "V4PyRksXHaaWfHxK-Ge54rs7hJc",
+  "items": [
+    {
+      "kind": "youtube#video",
+      "etag": "WwsFJZLZZKSZSGxyG7Yn3xwc5is",
+      "id": "EbAicRagrD0",
+      "snippet": {
+        "publishedAt": "2025-09-15T12:16:17Z",
+        "channelId": "UC0kPs9m7tg94D9SyvpW_YbQ",
+        "title": "【MAD】BELIEVE【ピンポン】",
+        "description": "またどこかで",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/EbAicRagrD0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/EbAicRagrD0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/EbAicRagrD0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/EbAicRagrD0/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          }
+        },
+        "channelTitle": "柳",
+        "categoryId": "1",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "ja",
+        "localized": {
+          "title": "【MAD】BELIEVE【ピンポン】",
+          "description": "またどこかで"
+        }
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 1,
+    "resultsPerPage": 1
+  }
+}

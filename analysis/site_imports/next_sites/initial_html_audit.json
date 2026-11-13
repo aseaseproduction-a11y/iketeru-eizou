@@ -1,0 +1,427 @@
+{
+  "generatedAt": "2026-08-19T06:10:11.645Z",
+  "siteCount": 22,
+  "results": [
+    {
+      "site": "oddfellows",
+      "requestedUrl": "https://oddfellows.tv/",
+      "finalUrl": "https://oddfellows.tv/",
+      "status": 403,
+      "htmlLength": 75193,
+      "videoUrls": [],
+      "workPages": [],
+      "cmsHints": [],
+      "title": "403 - Forbidden"
+    },
+    {
+      "site": "pics",
+      "requestedUrl": "https://www.pics.tokyo/",
+      "finalUrl": "https://www.pics.tokyo/",
+      "status": 200,
+      "htmlLength": 44585,
+      "videoUrls": [],
+      "workPages": [
+        "https://www.pics.tokyo/works/"
+      ],
+      "cmsHints": [
+        "https://www.pics.tokyo/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.pics.tokyo%2F",
+        "https://www.pics.tokyo/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.pics.tokyo%2F&#038;format=xml"
+      ],
+      "title": "P.I.C.S.｜株式会社ピクス"
+    },
+    {
+      "site": "naname",
+      "requestedUrl": "https://nanameinc.jp/",
+      "finalUrl": "https://nanameinc.jp/",
+      "status": 200,
+      "htmlLength": 19581,
+      "videoUrls": [],
+      "workPages": [
+        "https://nanameinc.jp/works/"
+      ],
+      "cmsHints": [
+        "https://nanameinc.jp/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fnanameinc.jp%2F",
+        "https://nanameinc.jp/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fnanameinc.jp%2F&#038;format=xml"
+      ],
+      "title": "株式会社ナナメ - CREATIVE MOVIE MAKER"
+    },
+    {
+      "site": "edp",
+      "requestedUrl": "https://www.edp.jp/",
+      "finalUrl": "https://www.edp.jp/",
+      "status": 200,
+      "htmlLength": 108381,
+      "videoUrls": [],
+      "workPages": [
+        "https://www.edp.jp/works/",
+        "https://www.edp.jp/works/pokemon-ierukana-bw/",
+        "https://www.edp.jp/works/asahi-dry-zero/",
+        "https://www.edp.jp/works/uniqlo-korea-ooh/",
+        "https://www.edp.jp/works/morning-is-born/",
+        "https://www.edp.jp/works/adk-recruit-movie/",
+        "https://www.edp.jp/works/jujutsu-kaisen-vol-28-teaser-movie/",
+        "https://www.edp.jp/works/shibuya-dogenzaka-flag-sigange-02/",
+        "https://www.edp.jp/works/issey-miyake-im-men-flat/"
+      ],
+      "cmsHints": [
+        "https://player.vimeo.com/api/player.js"
+      ],
+      "title": "EDP graphic works"
+    },
+    {
+      "site": "liki",
+      "requestedUrl": "https://www.likiinc.com/",
+      "finalUrl": "https://www.likiinc.com/",
+      "status": 200,
+      "htmlLength": 17927,
+      "videoUrls": [],
+      "workPages": [
+        "https://www.likiinc.com/works/"
+      ],
+      "cmsHints": [
+        "https://www.likiinc.com/wp-json/"
+      ],
+      "title": "LIKI Inc."
+    },
+    {
+      "site": "takerushima",
+      "requestedUrl": "https://takerushima.com/",
+      "finalUrl": "https://takerushima.com/",
+      "status": 200,
+      "htmlLength": 20593,
+      "videoUrls": [],
+      "workPages": [
+        "https://takerushima.com/works",
+        "https://eizo100.jp/archives/member/takerushima/"
+      ],
+      "cmsHints": [],
+      "title": "Takeru Shima"
+    },
+    {
+      "site": "shujihirai",
+      "requestedUrl": "https://shujihirai.com/",
+      "finalUrl": "https://shujihirai.com/",
+      "status": 200,
+      "htmlLength": 7802,
+      "videoUrls": [],
+      "workPages": [],
+      "cmsHints": [],
+      "title": "SHUJI HIRAI"
+    },
+    {
+      "site": "rainy_melody_notion",
+      "requestedUrl": "https://rainy-melody-094.notion.site/15421c8856f046b182fa9cc6f17f16ca?v=4f2dea56fff143f5a6235147173c779f",
+      "finalUrl": "https://rainy-melody-094.notion.site/15421c8856f046b182fa9cc6f17f16ca?v=4f2dea56fff143f5a6235147173c779f",
+      "status": 200,
+      "htmlLength": 19444,
+      "videoUrls": [],
+      "workPages": [],
+      "cmsHints": [],
+      "title": "Notion"
+    },
+    {
+      "site": "sgasakura",
+      "requestedUrl": "https://www.sgasakura.com/",
+      "finalUrl": "https://www.sgasakura.com/",
+      "status": 200,
+      "htmlLength": 113715,
+      "videoUrls": [],
+      "workPages": [
+        "https://www.sgasakura.com/works?format=rss"
+      ],
+      "cmsHints": [
+        "https://www.sgasakura.com/works?format=rss"
+      ],
+      "title": "Suguru Asakura"
+    },
+    {
+      "site": "maxilla",
+      "requestedUrl": "https://maxilla.jp/",
+      "finalUrl": "https://maxilla.jp/",
+      "status": 200,
+      "htmlLength": 210961,
+      "videoUrls": [],
+      "workPages": [
+        "https://maxilla.jp/works"
+      ],
+      "cmsHints": [
+        "https://maps.googleapis.com/maps/api/js?key=AIzaSyAnIw91x50fM8B8tU9UXOdf3Oo6Do20_m8&amp;callback=loadMap"
+      ],
+      "title": "maxilla"
+    },
+    {
+      "site": "wachajack",
+      "requestedUrl": "https://wachajack.com/",
+      "finalUrl": "https://wachajack.com/",
+      "status": 200,
+      "htmlLength": 86081,
+      "videoUrls": [],
+      "workPages": [
+        "https://wachajack.com/works"
+      ],
+      "cmsHints": [
+        "https://wachajack.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwachajack.com%2F",
+        "https://wachajack.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwachajack.com%2F&#038;format=xml",
+        "https://wachajack.com/wp-json/",
+        "https://wachajack.com/wp-json/wp/v2/pages/79"
+      ],
+      "title": "WACHAJACK(ワチャジャック)"
+    },
+    {
+      "site": "signif",
+      "requestedUrl": "https://signif.jp/",
+      "finalUrl": "https://signif.jp/",
+      "status": 200,
+      "htmlLength": 47359,
+      "videoUrls": [],
+      "workPages": [
+        "https://signif.jp/work/crmc/",
+        "https://signif.jp/work/doridori-lucky-doki/",
+        "https://signif.jp/work/cokegate/",
+        "https://signif.jp/work/trigun-stampede-opening/",
+        "https://signif.jp/work/fuwfuwa/",
+        "https://signif.jp/work/shiseido/",
+        "https://signif.jp/work/fourwings/",
+        "https://signif.jp/work/versus_shibuya13/",
+        "https://signif.jp/work/centralfes_2025/",
+        "https://signif.jp/work/sk_himawari/"
+      ],
+      "cmsHints": [
+        "https://player.vimeo.com/api/player.js"
+      ],
+      "title": "SIGNIF"
+    },
+    {
+      "site": "flapper3",
+      "requestedUrl": "https://www.flapper3.co.jp/",
+      "finalUrl": "https://www.flapper3.co.jp/",
+      "status": 200,
+      "htmlLength": 59139,
+      "videoUrls": [],
+      "workPages": [
+        "https://www.flapper3.co.jp/works/",
+        "https://www.flapper3.co.jp/works/259/",
+        "https://www.flapper3.co.jp/works/?type=live",
+        "https://www.flapper3.co.jp/works/?type=stage-movie",
+        "https://www.flapper3.co.jp/works/238/",
+        "https://www.flapper3.co.jp/works/?type=movie",
+        "https://www.flapper3.co.jp/works/?type=pv",
+        "https://www.flapper3.co.jp/works/227/",
+        "https://www.flapper3.co.jp/works/?type=experience-design",
+        "https://www.flapper3.co.jp/works/235/",
+        "https://www.flapper3.co.jp/works/?type=tech",
+        "https://www.flapper3.co.jp/works/183/",
+        "https://www.flapper3.co.jp/works/?type=xr",
+        "https://www.flapper3.co.jp/works/?type=shoot",
+        "https://www.flapper3.co.jp/works/157/"
+      ],
+      "cmsHints": [
+        "https://www.flapper3.co.jp/wp-json/",
+        "https://www.flapper3.co.jp/wp-json/wp/v2/pages/92",
+        "https://www.flapper3.co.jp/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.flapper3.co.jp%2F",
+        "https://www.flapper3.co.jp/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.flapper3.co.jp%2F&#038;format=xml",
+        "https://maps.googleapis.com/maps/api/js?key=AIzaSyD5NK7wiIPYd2jNDZY4lmBsBvMN1YpaQyo&libraries=marker&loading=async"
+      ],
+      "title": "flapper3 Inc."
+    },
+    {
+      "site": "taiyokikaku",
+      "requestedUrl": "https://www.taiyokikaku.com/",
+      "finalUrl": "https://www.taiyokikaku.com/",
+      "status": 200,
+      "htmlLength": 15954,
+      "videoUrls": [],
+      "workPages": [
+        "https://www.taiyokikaku.com/works/",
+        "https://www.taiyokikaku.com/works/#/all",
+        "https://www.taiyokikaku.com/works/#/cm",
+        "https://www.taiyokikaku.com/works/#/mv",
+        "https://www.taiyokikaku.com/works/#/web",
+        "https://www.taiyokikaku.com/works/#/cg",
+        "https://www.taiyokikaku.com/works/#/other"
+      ],
+      "cmsHints": [],
+      "title": "太陽企画 - TAIYO KIKAKU Co., Ltd./ CMをはじめとする総合映像制作会社"
+    },
+    {
+      "site": "pyramidfilm",
+      "requestedUrl": "https://www.pyramidfilm.co.jp/",
+      "finalUrl": "https://www.pyramidfilm.co.jp/",
+      "status": 200,
+      "htmlLength": 17709,
+      "videoUrls": [],
+      "workPages": [
+        "https://www.pyramidfilm.co.jp/works/",
+        "https://www.pyramidfilm.co.jp/works/webmovie/works_2337.php",
+        "https://www.pyramidfilm.co.jp/works/webmovie/works_2161.php",
+        "https://www.pyramidfilm.co.jp/works/tvcm/works_2406.php",
+        "https://www.pyramidfilm.co.jp/works/tvcm/works_2385.php",
+        "https://www.pyramidfilm.co.jp/works/webmovie/works_2396.php",
+        "https://www.pyramidfilm.co.jp/works/webmovie/works_2388.php",
+        "https://www.pyramidfilm.co.jp/works/tvcm/works_2380.php",
+        "https://www.pyramidfilm.co.jp/works/tvcm/works_2361.php",
+        "https://www.pyramidfilm.co.jp/works/tvcm/works_2319.php",
+        "https://www.pyramidfilm.co.jp/works/tvcm/works_2318.php",
+        "https://www.pyramidfilm.co.jp/works/tvcm/works_2286.php",
+        "https://www.pyramidfilm.co.jp/works/webmovie/works_2316.php",
+        "https://www.pyramidfilm.co.jp/works/web/works_2281.php",
+        "https://www.pyramidfilm.co.jp/works/webmovie/works_2269.php",
+        "https://www.pyramidfilm.co.jp/works/webmovie/works_2328.php",
+        "https://www.pyramidfilm.co.jp/works/tvcm/works_2302.php",
+        "https://www.pyramidfilm.co.jp/works/event/works_2262.php",
+        "https://www.pyramidfilm.co.jp/works/tvcm/works_2253.php"
+      ],
+      "cmsHints": [],
+      "title": "PYRAMID FILM INC."
+    },
+    {
+      "site": "babel_pro",
+      "requestedUrl": "https://babel-pro.com/",
+      "finalUrl": "https://babel-pro.com/",
+      "status": 200,
+      "htmlLength": 51190,
+      "videoUrls": [],
+      "workPages": [
+        "https://babel-pro.com/works/",
+        "https://babel-pro.com/works_category/film/"
+      ],
+      "cmsHints": [
+        "https://player.vimeo.com/api/player.js"
+      ],
+      "title": "BABEL LABEL"
+    },
+    {
+      "site": "ukmva",
+      "requestedUrl": "https://www.ukmva.com/",
+      "finalUrl": "https://www.ukmva.com/",
+      "status": 200,
+      "htmlLength": 9577,
+      "videoUrls": [],
+      "workPages": [],
+      "cmsHints": [
+        "https://player.vimeo.com/api/player.js"
+      ],
+      "title": "home - ukmva 2026"
+    },
+    {
+      "site": "aoi_pro",
+      "requestedUrl": "https://www.aoi-pro.com/jp/",
+      "finalUrl": "https://www.aoi-pro.com/jp/",
+      "status": 200,
+      "htmlLength": 36363,
+      "videoUrls": [],
+      "workPages": [
+        "https://www.aoi-pro.com/jp/work/",
+        "https://www.aoi-pro.com/jp/work/20260723/73200/",
+        "https://www.aoi-pro.com/jp/work/20260512/70514/",
+        "https://www.aoi-pro.com/jp/work/20260804/73641/",
+        "https://www.aoi-pro.com/jp/work/20260723/73209/",
+        "https://www.aoi-pro.com/jp/work/?awarded=1"
+      ],
+      "cmsHints": [
+        "https://www.aoi-pro.com/jp/sitemap/"
+      ],
+      "title": "AOI Pro. Inc."
+    },
+    {
+      "site": "tyo",
+      "requestedUrl": "https://tyo.co.jp/",
+      "finalUrl": "https://tyo.co.jp/",
+      "status": 200,
+      "htmlLength": 56294,
+      "videoUrls": [],
+      "workPages": [
+        "https://tyo.co.jp/work/",
+        "https://tyo.co.jp/cases/"
+      ],
+      "cmsHints": [
+        "https://maps.googleapis.com/maps/api/js?key=AIzaSyDfcNcN_reZbTMkl5nFc1lH4Pcmd7PpqDc",
+        "https://tyo.co.jp/wp-json/",
+        "https://tyo.co.jp/wp-json/wp/v2/pages/247",
+        "https://tyo.co.jp/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftyo.co.jp%2F",
+        "https://tyo.co.jp/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftyo.co.jp%2F&#038;format=xml"
+      ],
+      "title": "TYO - We drive emotions."
+    },
+    {
+      "site": "geekpictures",
+      "requestedUrl": "https://geekpictures.co.jp/jp/",
+      "finalUrl": "https://geekpictures.co.jp/jp/",
+      "status": 200,
+      "htmlLength": 96341,
+      "videoUrls": [],
+      "workPages": [
+        "https://geekpictures.co.jp/jp/works/",
+        "https://geekpictures.co.jp/jp/works/kodansha-light-hole/",
+        "https://geekpictures.co.jp/jp/works/mega-big%e3%80%8c12%e5%84%84%e3%81%ae%e6%a1%88%e5%86%85%e4%ba%ba%e5%84%84%e5%b1%b1%e3%83%bb%e5%84%84%e5%b1%b1%e3%81%ae%e6%af%8e%e6%97%a5%e3%80%8d%e7%af%87/",
+        "https://geekpictures.co.jp/jp/works/quicksnap/",
+        "https://geekpictures.co.jp/jp/works/suntory-craft-boss/",
+        "https://geekpictures.co.jp/jp/works/townwork/",
+        "https://geekpictures.co.jp/jp/works/suica/",
+        "https://geekpictures.co.jp/jp/works/teki/",
+        "https://geekpictures.co.jp/jp/works/fries-beat/",
+        "https://geekpictures.co.jp/jp/works/fruits-zipper_kawaii-the-magic/",
+        "https://geekpictures.co.jp/jp/works/editions-arts-design-2025-at-dubai/",
+        "https://geekpictures.co.jp/jp/works/google-gemini/",
+        "https://geekpictures.co.jp/jp/works/yuzuru-hanyu-realive/",
+        "https://geekpictures.co.jp/jp/works/naomi-watanabe-kv/",
+        "https://geekpictures.co.jp/jp/works/playstation_30th-anniversary/",
+        "https://geekpictures.co.jp/jp/works/luluttolilly/",
+        "https://geekpictures.co.jp/jp/works/%e6%98%a0%e7%94%bb%e3%80%8e%e3%83%97%e3%82%b7%e3%83%a5%e3%83%91-%e5%90%9b%e8%87%a8%e3%80%8f/",
+        "https://geekpictures.co.jp/jp/works/bow-and-arrow/",
+        "https://geekpictures.co.jp/jp/works/kddi/",
+        "https://geekpictures.co.jp/jp/works/marriage-for-all-japan/",
+        "https://geekpictures.co.jp/jp/works/cd-energy/"
+      ],
+      "cmsHints": [
+        "https://geekpictures.co.jp/jp/wp-json/"
+      ],
+      "title": "GEEK PICTURES（ギークピクチュアズ） | TVCM・映画・ミュージックビデオなどあらゆる映像コンテンツの企画・制作をはじめ、イベント・キャンペーン・デジタルコンテンツなど、すべてのプロジェクトをワンストップでプロデュースしています。"
+    },
+    {
+      "site": "stinkstudios",
+      "requestedUrl": "https://www.stinkstudios.com/",
+      "finalUrl": "https://www.stinkstudios.com/",
+      "status": 200,
+      "htmlLength": 304131,
+      "videoUrls": [],
+      "workPages": [
+        "https://www.stinkstudios.com/work",
+        "https://www.stinkstudios.com/work?tags=advertising",
+        "https://www.stinkstudios.com/work?tags=digital",
+        "https://www.stinkstudios.com/work?tags=branding",
+        "https://www.stinkstudios.com/work/airalo-brand-campaign",
+        "https://www.stinkstudios.com/work/loewe-180-anniversary",
+        "https://www.stinkstudios.com/work/canva-H1-brand-campaigns",
+        "https://www.stinkstudios.com/work/Peloton-anyone-anywhere",
+        "https://www.stinkstudios.com/work/find-that-thing"
+      ],
+      "cmsHints": [],
+      "title": "Stink Studios | Stink Studios"
+    },
+    {
+      "site": "d_walker",
+      "requestedUrl": "https://www.d-walker.com/",
+      "finalUrl": "https://www.d-walker.com/",
+      "status": 200,
+      "htmlLength": 10219,
+      "videoUrls": [],
+      "workPages": [
+        "https://www.d-walker.com/categories/film/",
+        "https://www.d-walker.com/works/3425/",
+        "https://www.d-walker.com/works/3432/",
+        "https://www.d-walker.com/works/3408/",
+        "https://www.d-walker.com/works/3375/",
+        "https://www.d-walker.com/works/3344/",
+        "https://www.d-walker.com/works/3319/",
+        "https://www.d-walker.com/works/3281/",
+        "https://www.d-walker.com/works/3189/",
+        "https://www.d-walker.com/works/3134/"
+      ],
+      "cmsHints": [
+        "https://player.vimeo.com/api/player.js"
+      ],
+      "title": "D.Walker"
+    }
+  ]
+}

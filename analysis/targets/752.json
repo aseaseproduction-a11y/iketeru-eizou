@@ -1,0 +1,26 @@
+{
+  "index": 752,
+  "total": 1782,
+  "target": {
+    "id": "37tJ-AWEW5U",
+    "platform": "youtube",
+    "title": "2026年ジョーシンCM「わたしとジョーシン_お店編」",
+    "videoUrl": "https://www.youtube.com/watch?v=37tJ-AWEW5U",
+    "channelTitle": "",
+    "source": "youtube_search",
+    "sourceLabel": "YouTube検索（自動キーワード）",
+    "existingMetadata": {
+      "genres": "[{\"name\":\"TV CM\",\"slug\":\"tv-cm\"}]",
+      "products": "[{\"name\":\"精密機器 / 家具 / 電化製品\",\"slug\":\"electronics\"}]",
+      "directions": "[{\"name\":\"実写\",\"slug\":\"live-action\"}]",
+      "tones": "[{\"name\":\"ナチュラル / 温かみ\",\"slug\":\"natural\"}]",
+      "allTags": "[\"TV CM\",\"精密機器 / 家具 / 電化製品\",\"実写\",\"ナチュラル / 温かみ\"]",
+      "purposes": "[]",
+      "expressions": "[]",
+      "toneEmotions": "[]",
+      "toneVisuals": "[]",
+      "toneTechniques": "[]",
+      "productions": "[]"
+    }
+  }
+}

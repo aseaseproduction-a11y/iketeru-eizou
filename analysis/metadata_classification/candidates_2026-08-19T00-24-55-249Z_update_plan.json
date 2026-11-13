@@ -1,0 +1,253 @@
+{
+  "generatedAt": "2026-08-19T00:27:52.480Z",
+  "candidatePath": "analysis/metadata_classification/candidates_2026-08-19T00-24-55-249Z.json",
+  "updates": [
+    {
+      "id": "n26f4jf4pIA",
+      "title": "FouRTe Project 2nd single「エジソンのカステラ」Music Video #fourte",
+      "confidence": 0.9,
+      "evidence": "タイトルに「Music Video」表記／allTagsにYouTube"
+    },
+    {
+      "id": "09PfPoj8LAk",
+      "title": "【MV】朔雀 | SAK - サイレント・プリズム (Prod. Pa's Lam System)",
+      "confidence": 0.9,
+      "evidence": "タイトルに「【MV】」表記／allTagsにYouTube"
+    },
+    {
+      "id": "QRw8r-fk6FI",
+      "title": "明証 / 名取さな (lyric video)",
+      "confidence": 0.9,
+      "evidence": "タイトルに「lyric video」表記／allTagsにYouTube"
+    },
+    {
+      "id": "h1lLMPiE8Qw",
+      "title": "JELEE 『JOURNEE』Music Video",
+      "confidence": 0.9,
+      "evidence": "タイトルに「Music Video」表記／allTagsにYouTube"
+    },
+    {
+      "id": "R39EPTV_Uis",
+      "title": "映画『Dear Stranger／ディア・ストレンジャー』特報",
+      "confidence": 0.9,
+      "evidence": "タイトルに「映画」「特報」表記／allTagsにYouTube"
+    },
+    {
+      "id": "kz95LpDRTfk",
+      "title": "【MV】log you ｢あんぐりーガール｣",
+      "confidence": 0.9,
+      "evidence": "タイトルに「【MV】」表記／allTagsにYouTube"
+    },
+    {
+      "id": "tcC9g9dlv58",
+      "title": "TVアニメ『Fate/strange Fake』ノンクレジットオープニングアニメーション｜「PROVANT」SawanoHiroyuki[nZk]:Jean-Ken Johnny & TAKUMA",
+      "confidence": 0.9,
+      "evidence": "タイトルに「ノンクレジットオープニングアニメーション」表記／allTagsにYouTube"
+    },
+    {
+      "id": "B6W3pvmWmX0",
+      "title": "TOMOO - LUCKY【OFFICIAL MUSIC VIDEO】",
+      "confidence": 0.9,
+      "evidence": "タイトルに「OFFICIAL MUSIC VIDEO」表記／allTagsにYouTube"
+    },
+    {
+      "id": "U2NczGYJS-Y",
+      "title": "Mashumairesh!! -「ハーモニック・モーメント」M/V【SHOW BY ROCK!!】",
+      "confidence": 0.9,
+      "evidence": "タイトルに「M/V」表記／allTagsにYouTube"
+    },
+    {
+      "id": "M-IayQIR0XA",
+      "title": "Nanatsukaze - Connect the World [Flipbook music video]",
+      "confidence": 0.9,
+      "evidence": "タイトルに「Flipbook music video」表記／allTagsにYouTube"
+    },
+    {
+      "id": "e34mb0rRYy4",
+      "title": "JUMP MV /『カグラバチ』×『Ratpark』| PEOPLE 1 feat. 菅原圭",
+      "confidence": 0.9,
+      "evidence": "タイトルに「JUMP MV」。掲載者メモ: JUMP MV /『カグラバチ』×『Ratpark』| PEOPLE 1 feat. 菅原圭、AKIRAバイクの煙ヤバい。"
+    },
+    {
+      "id": "jUHTh8Fqwi0",
+      "title": "【少女革命計画】鈍色幻灯 / 心世紀 × 罪十罰",
+      "confidence": 0.85,
+      "evidence": "掲載者メモに「リッチすぎMV。すんごい額の金が動いてそう。」（明示的にMVかつ“リッチ”の記述）。"
+    },
+    {
+      "id": "uLw5pvUoTdY",
+      "title": "雨色 / redraw : OFFICIAL ANIMATED MV",
+      "confidence": 0.9,
+      "evidence": "タイトルに「OFFICIAL ANIMATED MV」。掲載者メモ: 物語性タグ。海に飛び込むとこの作画の浮遊感好き（アニメーション／物語性の言及）。"
+    },
+    {
+      "id": "8dky0A7Gx1c",
+      "title": "『サイレント・ウィッチ 沈黙の魔女の隠しごと』ノンクレジットオープニング｜羊文学『Feel』｜2025年7月4日より毎週金曜24時00分～好評放送・配信中‼",
+      "confidence": 0.9,
+      "evidence": "タイトルに「ノンクレジットオープニング」。掲載者メモ: 撮影キレイすぎる（撮影に関する明示的言及）。"
+    },
+    {
+      "id": "ZUQIf_OUZ-Y",
+      "title": "G over/噂乃平成ガール(Official Music Video)",
+      "confidence": 0.9,
+      "evidence": "タイトルに「Official Music Video」。掲載者メモ: 流石に最高アニメーション（アニメーションの明示）。"
+    },
+    {
+      "id": "pycXoX93lHk",
+      "title": "Dios - B.U.G. (Official Music Video / Lyric Video) テレ東系ドラマ 「#レプリカ 元妻の復讐」EDテーマ",
+      "confidence": 0.85,
+      "evidence": "タイトルに「Official Music Video / Lyric Video」。掲載者メモ: 洗練されたバキバキ感（ビジュアルの“洗練”＝スタイリッシュの言及）。"
+    },
+    {
+      "id": "DAiq_4YWXow",
+      "title": "『国宝』本予告【6月6日(金)公開】｜主題歌「Luminance」原摩利彦 feat. 井口 理",
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: 『国宝』本予告【6月6日(金)公開】｜東宝MOVIEチャンネル（本予告・映画チャンネルの記述）。"
+    },
+    {
+      "id": "UfTpKaKXbG4",
+      "title": "Underdog - Eve Music Video",
+      "confidence": 0.9,
+      "evidence": "タイトル『Underdog - Eve Music Video』と掲載者メモ『最高アクション作画MV』"
+    },
+    {
+      "id": "VMkIQ3gD494",
+      "title": "花譜 #152 「ひとえに壊れて」【オリジナルMV】",
+      "confidence": 0.9,
+      "evidence": "タイトルに『オリジナルMV』と明記、掲載者メモは抽象表現の言及のみ"
+    },
+    {
+      "id": "nvQN56D8RYo",
+      "title": "すないぱー。 / 『ユイカ』【MV】",
+      "confidence": 0.9,
+      "evidence": "タイトルに『【MV】』、掲載者メモで『絵が良すぎるな。配色、画面構成。』と明記"
+    },
+    {
+      "id": "bVrPoCfMZCE",
+      "title": "羊文学 – Feel (Official Music Video) [TVアニメ『サイレント・ウィッチ 沈黙の魔女の隠しごと』オープニング主題歌]",
+      "confidence": 0.9,
+      "evidence": "タイトルに『Official Music Video』および『TVアニメ…オープニング主題歌』と明記"
+    },
+    {
+      "id": "MdTAJ1J2LeM",
+      "title": "DAZBEE (ダズビー) | ‘bamu’ M/V",
+      "confidence": 0.85,
+      "evidence": "タイトルに『M/V』、掲載者メモに『グラフィック』の記載あり"
+    },
+    {
+      "id": "Dt4p1GsAd48",
+      "title": "Lyric Video #6 IDOLiSH7『UNFOLDiNG HARMONY』",
+      "confidence": 0.9,
+      "evidence": "タイトルに『Lyric Video』と明記、掲載者メモにリッチさの言及あり"
+    },
+    {
+      "id": "BGqzr9pia0w",
+      "title": "DAZBEE (ダズビー) | ‘シンパシー (Sympathy)’ M/V",
+      "confidence": 0.85,
+      "evidence": "タイトルに『M/V』、掲載者メモに『白グラフィック』『スタイリッシュな線』と明記"
+    },
+    {
+      "id": "3h8iVVPlc9A",
+      "title": "ビネットネット |  #原因は自分にある。[GNJB]",
+      "confidence": 0.9,
+      "evidence": "掲載者メモに『リリックモーション』と明記（歌詞を用いた映像表現）"
+    },
+    {
+      "id": "7kPyHJ2SA9g",
+      "title": "【Official Music Video】夜隠染 / MyGO!!!!!【オリジナル楽曲】",
+      "confidence": 0.9,
+      "evidence": "タイトルに『Official Music Video』と明記、掲載者メモで構図・トランジションを指摘"
+    },
+    {
+      "id": "AX_kHky4Bmc",
+      "title": "時速36km / Happy【MusicVideo】",
+      "confidence": 0.85,
+      "evidence": "タイトルにMusicVideo（MusicVideo表記）、掲載者メモ: 音の取り方"
+    },
+    {
+      "id": "ItRQlqj4sys",
+      "title": "【オリジナルMV】「UNDEAD／YOASOBI」歌ってみた【神楽めあ】",
+      "confidence": 0.9,
+      "evidence": "タイトルにオリジナルMV／掲載者メモ: これぐらい3D使えるといろんな画面展開できて楽しそう"
+    },
+    {
+      "id": "lvj0XiX2Fis",
+      "title": "JUMP MV /『あかね噺』×『切望』| SUPER BEAVER",
+      "confidence": 0.9,
+      "evidence": "タイトルにMV／掲載者メモ: 空間モーション"
+    },
+    {
+      "id": "Jz2SeJDfml8",
+      "title": "【MV】Lollipop / miComet",
+      "confidence": 0.9,
+      "evidence": "タイトルにMV／掲載者メモ: おもろい"
+    },
+    {
+      "id": "jYbdF9iQGsE",
+      "title": "【コミック百合姫】創刊20周年記念レーベルムービー「20年の、ありがとう。」",
+      "confidence": 0.85,
+      "evidence": "タイトル: 創刊20周年記念レーベルムービー（レーベルムービー表記）、掲載者メモ: グラフィックごとコンポ"
+    },
+    {
+      "id": "OlV4KqT-MK0",
+      "title": "水中スピカ「MATHRHYTHM」Official Music Video",
+      "confidence": 0.9,
+      "evidence": "タイトルにOfficial Music Video表記、YouTubeタグ"
+    },
+    {
+      "id": "8kKhhqoWaaQ",
+      "title": "【MV】傷明 / BLACK FLAP",
+      "confidence": 0.9,
+      "evidence": "タイトルにMV表記、掲載者メモ: 3Dすげ〜、YouTubeタグ"
+    },
+    {
+      "id": "8IXrYCNVtEI",
+      "title": "浮生一戏-WOLO | Animated Short Film | MV",
+      "confidence": 0.9,
+      "evidence": "タイトルにAnimated Short Film / MV、掲載者メモ: 最高アニメーション、YouTubeタグ"
+    },
+    {
+      "id": "ra2kodvOXoM",
+      "title": "[MV] TAK - ‘逆さ月 (Reverse Moon)’ feat. asmi",
+      "confidence": 0.9,
+      "evidence": "タイトルにMV表記、掲載者メモ: キレイなコンポ、トランジション、YouTubeタグ"
+    },
+    {
+      "id": "pjGmDIrNgHw",
+      "title": "TVアニメ『千歳くんはラムネ瓶のなか』ノンクレジットオープニング映像｜「ライアー」Kucci",
+      "confidence": 0.9,
+      "evidence": "ノンクレジットオープニング映像、コンテが良い、YouTubeタグ"
+    },
+    {
+      "id": "3cgaI_skzMU",
+      "title": "「五等分の未来」Music Video（歌：中野家の五つ子）",
+      "confidence": 0.9,
+      "evidence": "タイトルにMusic Video表記、掲載者メモ: キレイ、YouTubeタグ"
+    },
+    {
+      "id": "U08ISFkQtqo",
+      "title": "~Get Set, Go!~  Event PV 「블루 아카이브CN」",
+      "confidence": 0.9,
+      "evidence": "タイトルに「Event PV」、作品名に「블루 아카이브CN」（ゲーム名）"
+    },
+    {
+      "id": "cjjoQoNVOLM",
+      "title": "【Lyric Video】Without you / ChroNoiR #shorts",
+      "confidence": 0.95,
+      "evidence": "タイトルに「Lyric Video」と「#shorts」"
+    },
+    {
+      "id": "zCnDD2cVgDQ",
+      "title": "My Buddy | VERSEⁿ【OFFICIAL VIDEO】",
+      "confidence": 0.95,
+      "evidence": "タイトルに「OFFICIAL VIDEO」"
+    },
+    {
+      "id": "QkFBKNG-Frw",
+      "title": "『きみの色』劇中歌「水金地火木土天アーメン」描き下ろしSPダンスPV【8月30日(金)公開】 #shorts",
+      "confidence": 0.95,
+      "evidence": "タイトルに「劇中歌」「ダンスPV」「#shorts」"
+    }
+  ],
+  "held": []
+}

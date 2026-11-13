@@ -1,0 +1,77 @@
+{
+  "kind": "youtube#videoListResponse",
+  "etag": "OtWhEPkdy5bo0pmb9Pz5n5OQKU8",
+  "items": [
+    {
+      "kind": "youtube#video",
+      "etag": "cPTO5rXvsO_H5PmG628pTUlF7x8",
+      "id": "-YiVSav-PZw",
+      "snippet": {
+        "publishedAt": "2025-05-11T15:00:01Z",
+        "channelId": "UCuRBQ04irv4Hir_UMSbo-8w",
+        "title": "【COSMOS】田村隆平が描く、鮮烈SFヒューマンドラマ!!【★55万部突破！記念PV★】",
+        "description": "宇宙人専門の保険会社「COSMOS」とは―――！？\n「マンガ大賞2025」第8位を始め話題のマンガ賞にランクイン連発の…\n『べるぜバブ』の田村隆平が描くSFヒューマンドラマ『COSMOS』公式PV！\n\nナレーションは、あのトミー・リー・ジョーンズの声優でもおなじみの #菅生隆之 氏！\n人の嘘が見抜ける高校生・水森楓が、謎の女子校生・穂村と出会い「COSMOS』に関わっていく様を描いた\n臨場感あふれるPVをご覧ください。\n\n©田村隆平／小学館\n\n■『COSMOS』コミックス発売中！\n全巻情報はこちらから▼\nhttps://www.shogakukan.co.jp/books/volume/52437\n\n■試し読みはこちらから▼\nまんがサイト「サンデーうぇぶり」\nhttps://www.sunday-webry.com/episode/4856001361087694972\n\n■各種リンク\n・連載誌「サンデーGX」公式サイト\nhttps://sundaygx.com/\n\n・サンデーGX公式X\nhttps://twitter.com/sundaygx\n\n・田村隆平氏 Xアカウント\nhttps://twitter.com/cosmos_tamura\n\n#COSMOS #田村隆平 #サンデーGX",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/-YiVSav-PZw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/-YiVSav-PZw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/-YiVSav-PZw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/-YiVSav-PZw/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/-YiVSav-PZw/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "SundayGXch",
+        "tags": [
+          "UCuRBQ04irv4Hir_UMSbo-8w",
+          "サンデーGX",
+          "COSMOS",
+          "コスモス",
+          "マンガ",
+          "漫画",
+          "manga",
+          "PV",
+          "コミック",
+          "単行本",
+          "最新巻",
+          "SF",
+          "田村隆平",
+          "べるぜバブ",
+          "菅生隆之",
+          "声優",
+          "宇宙人",
+          "小学館"
+        ],
+        "categoryId": "24",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "ja",
+        "localized": {
+          "title": "【COSMOS】田村隆平が描く、鮮烈SFヒューマンドラマ!!【★55万部突破！記念PV★】",
+          "description": "宇宙人専門の保険会社「COSMOS」とは―――！？\n「マンガ大賞2025」第8位を始め話題のマンガ賞にランクイン連発の…\n『べるぜバブ』の田村隆平が描くSFヒューマンドラマ『COSMOS』公式PV！\n\nナレーションは、あのトミー・リー・ジョーンズの声優でもおなじみの #菅生隆之 氏！\n人の嘘が見抜ける高校生・水森楓が、謎の女子校生・穂村と出会い「COSMOS』に関わっていく様を描いた\n臨場感あふれるPVをご覧ください。\n\n©田村隆平／小学館\n\n■『COSMOS』コミックス発売中！\n全巻情報はこちらから▼\nhttps://www.shogakukan.co.jp/books/volume/52437\n\n■試し読みはこちらから▼\nまんがサイト「サンデーうぇぶり」\nhttps://www.sunday-webry.com/episode/4856001361087694972\n\n■各種リンク\n・連載誌「サンデーGX」公式サイト\nhttps://sundaygx.com/\n\n・サンデーGX公式X\nhttps://twitter.com/sundaygx\n\n・田村隆平氏 Xアカウント\nhttps://twitter.com/cosmos_tamura\n\n#COSMOS #田村隆平 #サンデーGX"
+        },
+        "defaultAudioLanguage": "ja"
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 1,
+    "resultsPerPage": 1
+  }
+}

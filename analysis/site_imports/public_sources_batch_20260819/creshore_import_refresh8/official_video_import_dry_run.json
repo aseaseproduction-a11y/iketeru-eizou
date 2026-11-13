@@ -1,0 +1,53 @@
+{
+  "mode": "dry-run",
+  "completedAt": "2026-08-20T01:08:03.290Z",
+  "counts": {
+    "planned": 9,
+    "insertable": 1,
+    "inserted": 0,
+    "skipped": 8
+  },
+  "inserted": [],
+  "skipped": [
+    {
+      "id": "dD4O1f5-CKU",
+      "title": "【コカ･コーラ】 一緒だともっとおいしい「お花見」篇 Coca-Cola",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1175847608",
+      "title": "SABERA",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "U0Klb45BNlQ",
+      "title": "Mom Don't wipe floor",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "9k1rL4MEzKc",
+      "title": "日清シスコ ごろグラCM「ごろグラ買ってもいい？ 篇」30秒 / 初音ミク",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "RpUCeU3OLWk",
+      "title": "ARSOA New SKIN CARE 2026",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "CoKrnvc6AyE",
+      "title": "【公開記念ミニ特番 Part1 撮影秘話編】映画『宝島』9月19日（金）公開",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "U3SjKBsVtj0",
+      "title": "【味の素】AminoScience VISION OF AMINOSCIENTIST #2",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "Xtj3Jq5mJpU",
+      "title": "MOTION GRAPHICS - \"TSUKURU is TANOSII\"",
+      "reason": "duplicate_id"
+    }
+  ]
+}

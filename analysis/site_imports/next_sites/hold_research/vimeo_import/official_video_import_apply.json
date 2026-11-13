@@ -1,0 +1,19 @@
+{
+  "mode": "apply",
+  "completedAt": "2026-08-19T06:45:28.479Z",
+  "counts": {
+    "planned": 1,
+    "insertable": 1,
+    "inserted": 1,
+    "skipped": 0
+  },
+  "inserted": [
+    {
+      "id": "982944535",
+      "title": "CRMC",
+      "source": "signif",
+      "videoUrl": "https://vimeo.com/982944535"
+    }
+  ],
+  "skipped": []
+}

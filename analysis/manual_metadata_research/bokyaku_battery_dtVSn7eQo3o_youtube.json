@@ -1,0 +1,79 @@
+{
+  "kind": "youtube#videoListResponse",
+  "etag": "6gFf2Qu-MhzTwvK8HW8qRT7yrT4",
+  "items": [
+    {
+      "kind": "youtube#video",
+      "etag": "DLscVrA-39fretar820dys_MDsk",
+      "id": "dtVSn7eQo3o",
+      "snippet": {
+        "publishedAt": "2025-07-31T15:01:11Z",
+        "channelId": "UCf11M1M1HcVZkxY20gdIrYQ",
+        "title": "今年も球児たちの夏が始まる。【今年も熱い夏が来た！「忘却バッテリー」＆野球漫画キャンペーン！開幕！】",
+        "description": "野球漫画キャンペーンの開催を記念し、忘却バッテリーのPVを公開！\n\n『忘却バッテリー』の試し読みはこちらから▼\nhttps://zebrack-comic.shueisha.co.jp/title/3421\n\n今年も熱い夏が来た！「忘却バッテリー」＆野球漫画キャンペーン！開催中！\n開催期間：2025年8月1日～2025年8月13日\nhttps://zebrack-comic.shueisha.co.jp/list?type=title_list&id=12262\n（対象作品）\n・青空エール　\n・忘却バッテリー　\n・群青にサイレン　\n・クーロンズ・ボール・パレード　\n・OVER TIME　\n・サンキューピッチ　\n・ROOKIES　\n・ONEOUTS　\n・プレイボール　\n・キャプテン　\n・キャプテン２　\n・BUNGOーブンゴー　\n・4軍くん（仮）\n・ドラフトキング\n・GRAND SLAM　\n\nNA：石井瑞樹\n\n©みかわ絵子／集英社\n\n#忘却バッテリー　#高校野球",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/dtVSn7eQo3o/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/dtVSn7eQo3o/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/dtVSn7eQo3o/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/dtVSn7eQo3o/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          }
+        },
+        "channelTitle": "集英社マンガ公式",
+        "tags": [
+          "集英社",
+          "s-manga.net",
+          "週刊少年ジャンプ",
+          "ジャンプSQ.",
+          "最強ジャンプ",
+          "Vジャンプ",
+          "マーガレット",
+          "りぼん",
+          "ココハナ",
+          "クッキー",
+          "officeYOU",
+          "別冊マーガレット",
+          "ザ マーガレット",
+          "ヤングジャンプ",
+          "ウルトラジャンプ",
+          "グランドジャンプ",
+          "ジャンプ",
+          "少年ジャンプ",
+          "マンガ",
+          "漫画",
+          "まんが",
+          "アニメ",
+          "試し読み",
+          "manga",
+          "comics"
+        ],
+        "categoryId": "24",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "ja",
+        "localized": {
+          "title": "今年も球児たちの夏が始まる。【今年も熱い夏が来た！「忘却バッテリー」＆野球漫画キャンペーン！開幕！】",
+          "description": "野球漫画キャンペーンの開催を記念し、忘却バッテリーのPVを公開！\n\n『忘却バッテリー』の試し読みはこちらから▼\nhttps://zebrack-comic.shueisha.co.jp/title/3421\n\n今年も熱い夏が来た！「忘却バッテリー」＆野球漫画キャンペーン！開催中！\n開催期間：2025年8月1日～2025年8月13日\nhttps://zebrack-comic.shueisha.co.jp/list?type=title_list&id=12262\n（対象作品）\n・青空エール　\n・忘却バッテリー　\n・群青にサイレン　\n・クーロンズ・ボール・パレード　\n・OVER TIME　\n・サンキューピッチ　\n・ROOKIES　\n・ONEOUTS　\n・プレイボール　\n・キャプテン　\n・キャプテン２　\n・BUNGOーブンゴー　\n・4軍くん（仮）\n・ドラフトキング\n・GRAND SLAM　\n\nNA：石井瑞樹\n\n©みかわ絵子／集英社\n\n#忘却バッテリー　#高校野球"
+        },
+        "defaultAudioLanguage": "ja"
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 1,
+    "resultsPerPage": 1
+  }
+}

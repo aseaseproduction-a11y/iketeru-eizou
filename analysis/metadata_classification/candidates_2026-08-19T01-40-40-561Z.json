@@ -1,0 +1,4021 @@
+{
+  "generatedAt": "2026-08-19T01:42:33.675Z",
+  "model": "gpt-5-mini",
+  "taxonomy": {
+    "genres": [
+      "tv-cm",
+      "web-cm",
+      "branded-movie",
+      "youtube-sns",
+      "mv",
+      "corporate",
+      "film",
+      "opening",
+      "making",
+      "documentary"
+    ],
+    "products": [
+      "beauty",
+      "fashion",
+      "food",
+      "daily",
+      "automotive",
+      "gaming",
+      "it",
+      "travel",
+      "medical",
+      "real-estate",
+      "transport",
+      "entertainment",
+      "electronics",
+      "sports"
+    ],
+    "directions": [
+      "live-action",
+      "vfx-3dcg",
+      "motion-graphics",
+      "generative-ai",
+      "camera-work",
+      "motion-control",
+      "stop-motion",
+      "virtual-production",
+      "illustration"
+    ],
+    "tones": [
+      "stylish",
+      "comical",
+      "emotional",
+      "luxury"
+    ]
+  },
+  "inputCount": 100,
+  "candidateCount": 100,
+  "acceptedCount": 65,
+  "inputs": [
+    {
+      "id": "W5AA6QZzfDk",
+      "title": "【MMGC2023 Day7】ブルージャイアント「海中の氷塊」",
+      "videoUrl": "https://youtu.be/W5AA6QZzfDk",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Mirai MAD Team",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: タイトル、雨のカット 掲載者コメントに基づく注目点: タイトル、雨のカット"
+    },
+    {
+      "id": "G4L7QbdgFLQ",
+      "title": "【オリジナルMV】「君と夏フェス／SHISHAMO」【神楽めあ/しぐれうい】",
+      "videoUrl": "https://youtu.be/G4L7QbdgFLQ",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "神楽めあ / KaguraMea",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗 【オリジナルMV】「君と夏フェス／SHISHAMO」【神楽めあ/しぐれうい】 ポップリファレンス。トーン、ぽよぽよした動き、枠。 掲載者コメントに基づく注目点: 💗 【オリジナルMV】「君と夏フェス／SHISHAMO」【神楽めあ/しぐれうい】 ポップリファレンス。トーン、ぽよぽよした動き、枠。"
+    },
+    {
+      "id": "dt8RXLdWiBw",
+      "title": "ブリキノダンス Cover / めいちゃん",
+      "videoUrl": "https://youtu.be/dt8RXLdWiBw",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Meychan",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗ブリキノダンス Cover / めいちゃん最近MVもよく観るようになった 掲載者コメントに基づく注目点: 💗ブリキノダンス Cover / めいちゃん最近MVもよく観るようになった"
+    },
+    {
+      "id": "Qeagip5qsoE",
+      "title": "Deku vs Lady Nagant | MHA x Out of Control",
+      "videoUrl": "https://youtu.be/Qeagip5qsoE",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "NinjaristicNinja",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗Deku vs Lady Nagant | MHA x Out of Controlカメラワークすごい 掲載者コメントに基づく注目点: 💗Deku vs Lady Nagant | MHA x Out of Controlカメラワークすごい"
+    },
+    {
+      "id": "bA7ty873TsM",
+      "title": "》Suicide Tuesday《 -「A Silent Voice AMV」",
+      "videoUrl": "https://youtu.be/bA7ty873TsM",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "kyomi",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗》Suicide Tuesday《 -「A Silent Voice AMV」ジャングルジムとか飛び降り寸前のドアの影とかが先に出てくるとこ 掲載者コメントに基づく注目点: 💗》Suicide Tuesday《 -「A Silent Voice AMV」ジャングルジムとか飛び降り寸前のドアの影とかが先に出てくるとこ"
+    },
+    {
+      "id": "n5MZnhCVuF4",
+      "title": "イロドリミドリ 舞ヶ原高校軽音部 『Agitation！』MV",
+      "videoUrl": "https://youtu.be/n5MZnhCVuF4",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "イロドリミドリ",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗イロドリミドリ 舞ヶ原高校軽音部 『Agitation！』MVエフェクトにハーフトーン乗せるのいいなと思った 掲載者コメントに基づく注目点: 💗イロドリミドリ 舞ヶ原高校軽音部 『Agitation！』MVエフェクトにハーフトーン乗せるのいいなと思った"
+    },
+    {
+      "id": "gcgKUcJKxIs",
+      "title": "TVアニメ『呪術廻戦』第2期「懐玉・玉折」ノンクレジットOPムービー／OPテーマ：キタニタツヤ「青のすみか」｜毎週木曜夜11時56分～MBS/TBS系列全国28局にて放送中!!",
+      "videoUrl": "https://youtu.be/gcgKUcJKxIs",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "TOHO animation チャンネル",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗 TVアニメ『呪術廻戦』第2期「懐玉・玉折」ノンクレジットOPムービー／OPテーマ：キタニタツヤ「青のすみか」｜毎週木曜夜11時56分～MBS/TBS系列全国28局にて放送中!! 語るまでもなくレジェンド行きです 掲載者コメントに基づく注目点: 💗 TVアニメ『呪術廻戦』第2期「懐玉・玉折」ノンクレジットOPムービー／OPテーマ：キタニタツヤ「青のすみか」｜毎週木曜夜11時56分～MBS/TBS系列全国28局にて放送中!! 語るまでもなくレジェンド行きです"
+    },
+    {
+      "id": "PoMvGlPeuBo",
+      "title": "【MMGC2023 Day4】ATRI -My Dear Moments-「心」",
+      "videoUrl": "https://youtu.be/PoMvGlPeuBo",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Mirai MAD Team",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 0:59の画面枠がグワッってなるところ 掲載者コメントに基づく注目点: 0:59の画面枠がグワッってなるところ"
+    },
+    {
+      "id": "pbv7r94dT_M",
+      "title": "カナダ人がG4L / Giga 歌ってみた　covered by 赤黒月 Akakurotsuki【オリジナルMV】",
+      "videoUrl": "https://youtu.be/pbv7r94dT_M",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "赤黒月Akakurotsuki【カナダ人歌い手🇨🇦】",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗 カナダ人がG4L / Giga 歌ってみた　covered by 赤黒月 Akakurotsuki【オリジナルMV】 ガラス表現かっけえ 掲載者コメントに基づく注目点: 💗 カナダ人がG4L / Giga 歌ってみた　covered by 赤黒月 Akakurotsuki【オリジナルMV】 ガラス表現かっけえ"
+    },
+    {
+      "id": "wTpyHjRaO6c",
+      "title": "【モーショングラフィックス】ColorCoordination | motiongraphics",
+      "videoUrl": "https://youtu.be/wTpyHjRaO6c",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "しんさく",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗【モーショングラフィックス】ColorCoordination | motiongraphics冒頭とラストが良かった 掲載者コメントに基づく注目点: 💗【モーショングラフィックス】ColorCoordination | motiongraphics冒頭とラストが良かった"
+    },
+    {
+      "id": "H4Xv6XvAvpc",
+      "title": "ふたつめの心臓 /深水さや【2nd Original Song】",
+      "videoUrl": "https://youtu.be/H4Xv6XvAvpc",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "深水さや-Misui Saya-",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗 ふたつめの心臓 /深水さや【2nd Original Song】 俺も久しぶりに鉄骨使いたくなってきた。Aメロのデザイン好き。 掲載者コメントに基づく注目点: 💗 ふたつめの心臓 /深水さや【2nd Original Song】 俺も久しぶりに鉄骨使いたくなってきた。Aメロのデザイン好き。"
+    },
+    {
+      "id": "PAeTpB5a8EI",
+      "title": "『地獄楽』最終13巻発売記念公式PV",
+      "videoUrl": "https://youtu.be/PAeTpB5a8EI",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "ジャンプチャンネル",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗『地獄楽』最終13巻発売記念公式PV牛丼さん研究 掲載者コメントに基づく注目点: 💗『地獄楽』最終13巻発売記念公式PV牛丼さん研究"
+    },
+    {
+      "id": "y9yVYPz1EjI",
+      "title": "幻影",
+      "videoUrl": "https://youtu.be/y9yVYPz1EjI",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Mirin",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗【自主制作】幻影色と質感がいい 掲載者コメントに基づく注目点: 💗【自主制作】幻影色と質感がいい"
+    },
+    {
+      "id": "jGTuoqN2xmQ",
+      "title": "【怪獣警報】第３部隊の前に『怪獣８号』現る≪公式ＰＶ-４式≫",
+      "videoUrl": "https://youtu.be/jGTuoqN2xmQ",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "ジャンプチャンネル",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗【怪獣警報】第３部隊の前に『怪獣８号』現る≪公式ＰＶ-４式≫牛丼さん研究 掲載者コメントに基づく注目点: 💗【怪獣警報】第３部隊の前に『怪獣８号』現る≪公式ＰＶ-４式≫牛丼さん研究"
+    },
+    {
+      "id": "mxyeZyVma_s",
+      "title": "【MAD】Only the strong survive 【ようこそ実力至上主義の教室へ】",
+      "videoUrl": "https://youtu.be/mxyeZyVma_s",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Kazu",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: グラフィック良 掲載者コメントに基づく注目点: グラフィック良"
+    },
+    {
+      "id": "Lf31jINfG4o",
+      "title": "\"6秒企画\"　モーションハッカソン",
+      "videoUrl": "https://youtu.be/Lf31jINfG4o",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Matsu",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗“6秒企画”　モーションハッカソン0:04辺りの立方体がくるくるしてるところがよかった 掲載者コメントに基づく注目点: 💗“6秒企画”　モーションハッカソン0:04辺りの立方体がくるくるしてるところがよかった"
+    },
+    {
+      "id": "km0-E99w8f0",
+      "title": "アニメ『ウマ娘 プリティーダービー ROAD TO THE TOP』主題歌「Glorious Moment！」ノンテロップ映像",
+      "videoUrl": "https://youtu.be/km0-E99w8f0",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "ぱかチューブっ!【ウマ娘公式】",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: サビが3D背景Onlyカットって珍しい気が。阿部望みたいな枚数急に増やすとこ。レジェンド行き。 掲載者コメントに基づく注目点: サビが3D背景Onlyカットって珍しい気が。阿部望みたいな枚数急に増やすとこ。レジェンド行き。"
+    },
+    {
+      "id": "8lN4BOgo1_E",
+      "title": "【公式PV】「少年ジャンプ＋」連載争奪ランキング1位獲得作品！『幼稚園WARS』コミックス3巻発売記念PV【NA：浪川大輔】",
+      "videoUrl": "https://youtu.be/8lN4BOgo1_E",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "ジャンプチャンネル",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: キャラモーション最強はたてまつ氏（この人何者……？） 掲載者コメントに基づく注目点: キャラモーション最強はたてまつ氏（この人何者……？）"
+    },
+    {
+      "id": "3JduZWx6PTI",
+      "title": "ASOBINOTES PV",
+      "videoUrl": "https://youtu.be/3JduZWx6PTI",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "電音部チャンネル",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗 ASOBINOTES PV 配色好き 掲載者コメントに基づく注目点: 💗 ASOBINOTES PV 配色好き"
+    },
+    {
+      "id": "wdIPqaoy2Dk",
+      "title": "ユトレヒト - 泣き虫シュレディンガー（Music Video）",
+      "videoUrl": "https://youtu.be/wdIPqaoy2Dk",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "ユトレヒト‐Utrecht‐",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗 ユトレヒト - 泣き虫シュレディンガー（Music Video） グリッチにトーン使うの卑怯 掲載者コメントに基づく注目点: 💗 ユトレヒト - 泣き虫シュレディンガー（Music Video） グリッチにトーン使うの卑怯"
+    },
+    {
+      "id": "8DZY3sJ7ECc",
+      "title": "》Airport《 -「Wonder Egg Priority AMV」",
+      "videoUrl": "https://youtu.be/8DZY3sJ7ECc",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "kyomi",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 炎 掲載者コメントに基づく注目点: 炎"
+    },
+    {
+      "id": "z_rpYAddekM",
+      "title": "ZETA MEETS JCB | モーショングラフィックス",
+      "videoUrl": "https://youtu.be/z_rpYAddekM",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Nate / ねいと",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: デザイン（これ前も保存した気がする） 掲載者コメントに基づく注目点: デザイン（これ前も保存した気がする）"
+    },
+    {
+      "id": "5l9JixNT1c0",
+      "title": "ブレイドスマッシュ　OP",
+      "videoUrl": "https://youtu.be/5l9JixNT1c0",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "レントゲン",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗ブレイドスマッシュ　OP作画の暴力。「それしかない」のとこの体翻して攻撃するとこ良すぎ。 掲載者コメントに基づく注目点: 💗ブレイドスマッシュ　OP作画の暴力。「それしかない」のとこの体翻して攻撃するとこ良すぎ。"
+    },
+    {
+      "id": "-SjRMUZRw7M",
+      "title": "confusion",
+      "videoUrl": "https://youtu.be/-SjRMUZRw7M",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "cuens",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: パーツは小さいのにトランジションは大胆なのがギャップ萌え 掲載者コメントに基づく注目点: パーツは小さいのにトランジションは大胆なのがギャップ萌え"
+    },
+    {
+      "id": "k4ptLgPAPr8",
+      "title": "【21人 映像合作】シックス・フィート・アンダー / Aqu3ra feat.Flower  (第六回連投合作)",
+      "videoUrl": "https://youtu.be/k4ptLgPAPr8",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "PVSF",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: ワイヤーフレームかっけ～ 掲載者コメントに基づく注目点: ワイヤーフレームかっけ～"
+    },
+    {
+      "id": "FU6roy2JBns",
+      "title": "isshin REEL 2023",
+      "videoUrl": "https://youtu.be/FU6roy2JBns",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "isshin",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 神 掲載者コメントに基づく注目点: 神"
+    },
+    {
+      "id": "bIKGCKX-Xmw",
+      "title": "blue",
+      "videoUrl": "https://youtu.be/bIKGCKX-Xmw",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "classickboyz",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗blueオレンジと水色っていいよね 掲載者コメントに基づく注目点: 💗blueオレンジと水色っていいよね"
+    },
+    {
+      "id": "-IPI7Su-v-c",
+      "title": "【漫画】『もののがたり』15巻発売記念スペシャルPV【TVアニメ好評放送中／ウルトラジャンプ】",
+      "videoUrl": "https://youtu.be/-IPI7Su-v-c",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "ヤンジャン漫画TV【集英社ヤングジャンプ公式】",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗【漫画】『もののがたり』15巻発売記念スペシャルPV【TVアニメ好評放送中／ウルトラジャンプ】バカ動く 掲載者コメントに基づく注目点: 💗【漫画】『もののがたり』15巻発売記念スペシャルPV【TVアニメ好評放送中／ウルトラジャンプ】バカ動く"
+    },
+    {
+      "id": "EVZKRaD_zlc",
+      "title": "【超学生】ヒト (Lyric Video)",
+      "videoUrl": "https://youtu.be/EVZKRaD_zlc",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Chogakusei Official",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗【超学生】ヒト (Lyric Video)カクカクした作字、グラフィックのかっこよさ、ティザ合成 掲載者コメントに基づく注目点: 💗【超学生】ヒト (Lyric Video)カクカクした作字、グラフィックのかっこよさ、ティザ合成"
+    },
+    {
+      "id": "J2_XzPnGQ00",
+      "title": "スカパー！プロ野球2023「オープン戦徹底中継」篇 30秒",
+      "videoUrl": "https://youtu.be/J2_XzPnGQ00",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "スカパー! 野球",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗スカパー！プロ野球2023「オープン戦徹底中継」篇 30秒コラージュ 掲載者コメントに基づく注目点: 💗スカパー！プロ野球2023「オープン戦徹底中継」篇 30秒コラージュ"
+    },
+    {
+      "id": "use-LY-bWrQ",
+      "title": "iolli  -  Exit   ( Music Video )",
+      "videoUrl": "https://youtu.be/use-LY-bWrQ",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "iolli",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 綺麗 掲載者コメントに基づく注目点: 綺麗"
+    },
+    {
+      "id": "ckHK-3Ei8y8",
+      "title": "【超人同士による異能力バトル】『超人X』 (石田スイ 最新作)",
+      "videoUrl": "https://youtu.be/ckHK-3Ei8y8",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "ヤンジャン漫画TV【集英社ヤングジャンプ公式】",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 遊んでる感じ 掲載者コメントに基づく注目点: 遊んでる感じ"
+    },
+    {
+      "id": "HbjBInnbWgc",
+      "title": "CM動画（15秒ver.）",
+      "videoUrl": "https://youtu.be/HbjBInnbWgc",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "森ノ宮医療大学",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗CM動画（15秒ver.）「それって才能」のテキストMG 掲載者コメントに基づく注目点: 💗CM動画（15秒ver.）「それって才能」のテキストMG"
+    },
+    {
+      "id": "NZaTctXb-nY",
+      "title": "【MV】パーペキヒーロー【天月/まふまふ/un:c/Gero/少年T/そらる/超学生/となりの坂田。/luz】",
+      "videoUrl": "https://youtu.be/NZaTctXb-nY",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "天月-あまつき-YouTube Official Channel",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗【MV】パーペキヒーロー【天月/まふまふ/un:c/Gero/少年T/そらる/超学生/となりの坂田。/luz】色味 掲載者コメントに基づく注目点: 💗【MV】パーペキヒーロー【天月/まふまふ/un:c/Gero/少年T/そらる/超学生/となりの坂田。/luz】色味"
+    },
+    {
+      "id": "uO3uxTzpv7o",
+      "title": "Finally「走れ」Official Lyric Video",
+      "videoUrl": "https://youtu.be/uO3uxTzpv7o",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Finally Official",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗Finally「走れ」Official Lyric Video文字組みのアイデアが豊富 掲載者コメントに基づく注目点: 💗Finally「走れ」Official Lyric Video文字組みのアイデアが豊富"
+    },
+    {
+      "id": "3Rr01DQA3_c",
+      "title": "[My Hero Academia AMV] - Walking Disaster",
+      "videoUrl": "https://youtu.be/3Rr01DQA3_c",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "LucioleAMV",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗[My Hero Academia AMV] - Walking Disasterこの人のAMVかっこよくて好き 掲載者コメントに基づく注目点: 💗[My Hero Academia AMV] - Walking Disasterこの人のAMVかっこよくて好き"
+    },
+    {
+      "id": "1hKt4Vu78LM",
+      "title": "『Fate/Samurai Remnant』オープニングアニメーション",
+      "videoUrl": "https://youtu.be/1hKt4Vu78LM",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "コーエーテクモChannel",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: MojoⅡかけたみたいな色味 掲載者コメントに基づく注目点: MojoⅡかけたみたいな色味"
+    },
+    {
+      "id": "5A_eJyCLP7s",
+      "title": "wowaka - アンノウン・マザーグース feat. 初音ミク【限界合作11】",
+      "videoUrl": "https://youtu.be/5A_eJyCLP7s",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "巳波みなと / Minato Minami",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 一番最初がよかった 掲載者コメントに基づく注目点: 一番最初がよかった"
+    },
+    {
+      "id": "EJh5qTYYvis",
+      "title": "【第200回限界映像大会】ioio",
+      "videoUrl": "https://youtu.be/EJh5qTYYvis",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Zacbaran",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: z軸上に同じテキストをいっぱい並べるの意外と見やすい 掲載者コメントに基づく注目点: z軸上に同じテキストをいっぱい並べるの意外と見やすい"
+    },
+    {
+      "id": "o8Ds-GS6Er0",
+      "title": "NO VEIL TO HIDE (VOL. 4)",
+      "videoUrl": "https://youtu.be/o8Ds-GS6Er0",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "aerchi",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗NO VEIL TO HIDE (VOL. 4)ほんとすき 掲載者コメントに基づく注目点: 💗NO VEIL TO HIDE (VOL. 4)ほんとすき"
+    },
+    {
+      "id": "GpNgomv9_mY",
+      "title": "RAD DOGS（covered by 棗いつき×藍月なくる×nayuta）",
+      "videoUrl": "https://youtu.be/GpNgomv9_mY",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Itsuki Natsume / 棗いつき",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗 RAD DOGS（covered by 棗いつき×藍月なくる×nayuta） デザインのかっこよさを維持しながらゴリゴリ動くのすごい 掲載者コメントに基づく注目点: 💗 RAD DOGS（covered by 棗いつき×藍月なくる×nayuta） デザインのかっこよさを維持しながらゴリゴリ動くのすごい"
+    },
+    {
+      "id": "cEoNkk6Zruc",
+      "title": "【MotionGraphics】ohayo",
+      "videoUrl": "https://youtu.be/cEoNkk6Zruc",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "カネコアオイ | Aoi Kaneko",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗【MotionGraphics】ohayo質感 掲載者コメントに基づく注目点: 💗【MotionGraphics】ohayo質感"
+    },
+    {
+      "id": "CdoPneh0ifY",
+      "title": "BRAHMAN feat. ILL-BOSSTINO (THA BLUE HERB)「CLUSTER BLASTER 」MV",
+      "videoUrl": "https://youtu.be/CdoPneh0ifY",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "BRAHMAN",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗BRAHMAN feat. ILL-BOSSTINO (THA BLUE HERB)「CLUSTER BLASTER 」MVコラージュ 掲載者コメントに基づく注目点: 💗BRAHMAN feat. ILL-BOSSTINO (THA BLUE HERB)「CLUSTER BLASTER 」MVコラージュ"
+    },
+    {
+      "id": "0QxzxmcWGpE",
+      "title": "Playback “COWBOY BEBOP” with Tank!",
+      "videoUrl": "https://youtu.be/0QxzxmcWGpE",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "サンライズ  SUNRISE Official ",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 最高です 掲載者コメントに基づく注目点: 最高です"
+    },
+    {
+      "id": "TcMFQbTyYhA",
+      "title": "【*Luna/4人合作MAD】夏晴/あの夏のいつかは",
+      "videoUrl": "https://youtu.be/TcMFQbTyYhA",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "奈无ナイウ",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗【*Luna/4人合作MAD】夏晴/あの夏のいつかは明日ちゃんパートのグラフィカルな感じめちゃすこ 掲載者コメントに基づく注目点: 💗【*Luna/4人合作MAD】夏晴/あの夏のいつかは明日ちゃんパートのグラフィカルな感じめちゃすこ"
+    },
+    {
+      "id": "TZ9LxWh8eug",
+      "title": "비 오는 날 듣기 좋은 노래 모션그래픽 M/V (unofficial)",
+      "videoUrl": "https://youtu.be/TZ9LxWh8eug",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "seven",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗비 오는 날 듣기 좋은 노래 모션그래픽 M/V (unofficial)こんな感じのフラットなルックにそろそろ挑戦したい 掲載者コメントに基づく注目点: 💗비 오는 날 듣기 좋은 노래 모션그래픽 M/V (unofficial)こんな感じのフラットなルックにそろそろ挑戦したい"
+    },
+    {
+      "id": "XKqC2bvkrxo",
+      "title": "pH-1 - You Don't Know My Name (Prod. Mokyo) / 키네틱 타이포그래피 합작",
+      "videoUrl": "https://youtu.be/XKqC2bvkrxo",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Forin",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗pH-1 - You Don’t Know My Name (Prod. Mokyo) / 키네틱 타이포그래피 합작強すぎん？韓国勢強いわ。強い。0:45 このパートが一番よかった。目で追うオブジェクトをわかりやすく示してくれるの視聴者に優しい。2:09 二番目によかった。これも目で追える。 掲載者コメントに基づく注目点: 💗pH-1 - You Don’t Know My Name (Prod. Mokyo) / 키네틱 타이포그래피 합작強すぎん？韓国勢強いわ。強い。0:45 このパートが一番よかった。目で追うオブジェクトをわかりやすく示してくれるの視聴者に優しい。2:09 二番目によかった。これも目で追える。"
+    },
+    {
+      "id": "a6nCoJpeUhk",
+      "title": "Udemy(ユーデミー)　学びたいと教えたいをつなぐ篇30秒",
+      "videoUrl": "https://youtu.be/a6nCoJpeUhk",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Udemy Japan",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗Udemy(ユーデミー)　学びたいと教えたいをつなぐ篇30秒その人間がヴォッって出てくるやつどうやってるの 掲載者コメントに基づく注目点: 💗Udemy(ユーデミー)　学びたいと教えたいをつなぐ篇30秒その人間がヴォッって出てくるやつどうやってるの"
+    },
+    {
+      "id": "QLKFbQyy1uw",
+      "title": "【MotionGraphics】Moment",
+      "videoUrl": "https://youtu.be/QLKFbQyy1uw",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "カネコアオイ | Aoi Kaneko",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗【MotionGraphics】Moment奥にぐわーって進むところとリンゴが砕けるところ 掲載者コメントに基づく注目点: 💗【MotionGraphics】Moment奥にぐわーって進むところとリンゴが砕けるところ"
+    },
+    {
+      "id": "aZdS_XVlL2k",
+      "title": "【静止画MAD】噺家に限り無し【あかね噺】",
+      "videoUrl": "https://youtu.be/aZdS_XVlL2k",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "ブラマン",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 真っ直ぐな感じ。納得感のある演出。 掲載者コメントに基づく注目点: 真っ直ぐな感じ。納得感のある演出。"
+    },
+    {
+      "id": "c4qhd5wnA80",
+      "title": "【AMV/MAD】生徒会にも穴はある！【スペシャル】",
+      "videoUrl": "https://youtu.be/c4qhd5wnA80",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Nanatsuki",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 穴はある！って下ネタだと思ってたけどなんかエモいタイトルのような気がしてきた 掲載者コメントに基づく注目点: 穴はある！って下ネタだと思ってたけどなんかエモいタイトルのような気がしてきた"
+    },
+    {
+      "id": "hVEgCye7idk",
+      "title": "自主製作「ReBorn;」",
+      "videoUrl": "https://youtu.be/hVEgCye7idk",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "みずみ",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗自主製作「ReBorn;」かっけ～ 掲載者コメントに基づく注目点: 💗自主製作「ReBorn;」かっけ～"
+    },
+    {
+      "id": "kdeX-vflZ18",
+      "title": "【第二回みいあ主催のPV大会】韻波句徒",
+      "videoUrl": "https://youtu.be/kdeX-vflZ18",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "H2O",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗 【第二回みいあ主催のPV大会】韻波句徒 デザインかなり好みな感じ 掲載者コメントに基づく注目点: 💗 【第二回みいあ主催のPV大会】韻波句徒 デザインかなり好みな感じ"
+    },
+    {
+      "id": "QFGu1j6tHkM",
+      "title": "“A motion” 모션그래픽 motion graphics",
+      "videoUrl": "https://youtu.be/QFGu1j6tHkM",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "seven",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗“A motion” 모션그래픽 motion graphics色、デザイン、質感、動き、何もかもが良い 掲載者コメントに基づく注目点: 💗“A motion” 모션그래픽 motion graphics色、デザイン、質感、動き、何もかもが良い"
+    },
+    {
+      "id": "c1alHyIvZFo",
+      "title": "Echoes of the Past",
+      "videoUrl": "https://youtu.be/c1alHyIvZFo",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "kyomi",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗Echoes of the Past [Bloom Into You AMV]アイデアが豊富 掲載者コメントに基づく注目点: 💗Echoes of the Past [Bloom Into You AMV]アイデアが豊富"
+    },
+    {
+      "id": "RtJX-_GxlyE",
+      "title": "【静止画MAD】可愛いだけじゃない式守さん［一生分のラブレター］",
+      "videoUrl": "https://youtu.be/RtJX-_GxlyE",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "映像のポン酢",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗【静止画MAD】可愛いだけじゃない式守さん［一生分のラブレター］1:06の雨のカット 掲載者コメントに基づく注目点: 💗【静止画MAD】可愛いだけじゃない式守さん［一生分のラブレター］1:06の雨のカット"
+    },
+    {
+      "id": "h3k2-CL7ZHI",
+      "title": "REEL 2023 || Motion Graphics",
+      "videoUrl": "https://youtu.be/h3k2-CL7ZHI",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "柯ノ月 enotsuki",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 動きの気持ちよさ 掲載者コメントに基づく注目点: 動きの気持ちよさ"
+    },
+    {
+      "id": "3T0wEUW1THE",
+      "title": "God knows... / 博衣こより (Cover) 【歌ってみた】",
+      "videoUrl": "https://youtu.be/3T0wEUW1THE",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Koyori ch. 博衣こより - holoX -",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: イントロ 掲載者コメントに基づく注目点: イントロ"
+    },
+    {
+      "id": "3qfwc1AAgVA",
+      "title": "【MAD/AMV】ボクたちの価値【メイドインアビス】",
+      "videoUrl": "https://youtu.be/3qfwc1AAgVA",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Re:No",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: メイドインアビスの正統派MADを待ってたんだよ！！ 掲載者コメントに基づく注目点: メイドインアビスの正統派MADを待ってたんだよ！！"
+    },
+    {
+      "id": "IXzd0GKLuQQ",
+      "title": "Commission Reposting#1 : Fine-Tonic Dream ft. Raena",
+      "videoUrl": "https://youtu.be/IXzd0GKLuQQ",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "trikstr.",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗Commission Reposting#1 : Fine-Tonic Dream ft. Raena0:00 家に乗ってる線0:49 バラバラの文字が集まってくるところ 掲載者コメントに基づく注目点: 💗Commission Reposting#1 : Fine-Tonic Dream ft. Raena0:00 家に乗ってる線0:49 バラバラの文字が集まってくるところ"
+    },
+    {
+      "id": "kp1t5szLfNY",
+      "title": "セブンティーン / YOASOBI（covered by 棗いつき）",
+      "videoUrl": "https://youtu.be/kp1t5szLfNY",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "Itsuki Natsume / 棗いつき",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: 💗 セブンティーン / YOASOBI（covered by 棗いつき） 1:53の「お前3Dモデルやったんかーい」ってなるとこちょっと面白い。 掲載者コメントに基づく注目点: 💗 セブンティーン / YOASOBI（covered by 棗いつき） 1:53の「お前3Dモデルやったんかーい」ってなるとこちょっと面白い。"
+    },
+    {
+      "id": "EpgXfR38EmM",
+      "title": "XD MULTIPLY YOU by DENTSU | SXSW 2018",
+      "videoUrl": "https://youtu.be/EpgXfR38EmM",
+      "source": "alincolony",
+      "sourceLabel": "ALINCOLONY よかった映像",
+      "channelTitle": "DCRX SXSW",
+      "allTags": [
+        "ALINCOLONY",
+        "よかった映像まとめ",
+        "YouTube"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載された作品。掲載者メモ: かっけ～ 掲載者コメントに基づく注目点: かっけ～"
+    },
+    {
+      "id": "eKY_U4QUe98",
+      "title": "16秒で地上に帰ってくる浦島太郎",
+      "videoUrl": "https://www.youtube.com/watch?v=eKY_U4QUe98",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2025",
+      "channelTitle": "服部グラフィクス Hattori-Graphics",
+      "allTags": [
+        "映像作家100人",
+        "2025選出",
+        "Animation",
+        "Pixel Art"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2025」の選出作品として、16秒で地上に帰ってくる浦島太郎を作品アーカイブで紹介する。 低解像度ドット絵アニメーションの技法と日本民話の周知性を利用して情報量を極限まで圧縮することに挑戦した「タイパ昔話シリーズ」の第2弾として制作、第1弾「20秒で終わる桃太郎」に続き開始から16秒で終了する浦島太郎のパロディ動画です。\r\n民謡「浦島太郎」を原型を感じる限界まで崩した曲を制作しBGMとしました。 「映像作家100人 2025」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: Animation、Pixel Art。"
+    },
+    {
+      "id": "dghrfS1c03g",
+      "title": "福島県石川町CM「ともに、走り続ける」",
+      "videoUrl": "https://www.youtube.com/watch?v=dghrfS1c03g",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2025",
+      "channelTitle": "稲葉まり Mari Inaba",
+      "allTags": [
+        "映像作家100人",
+        "2025選出",
+        "2D animation"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2025」の選出作品として、福島県石川町CM「ともに、走り続ける」を作品アーカイブで紹介する。 福島県石川町の復興CM。若いアスリートを応援するメッセージで、箱根駅伝期間に放送された。切り絵の素材をデジタルモーションで動かしている。 「映像作家100人 2025」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation。"
+    },
+    {
+      "id": "WpJ6Zrz2nmg",
+      "title": "入江陽 – 鉄のハート（Official Video）",
+      "videoUrl": "https://www.youtube.com/watch?v=WpJ6Zrz2nmg",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2025",
+      "channelTitle": "ともまつ　りか Rika Tomomatsu",
+      "allTags": [
+        "映像作家100人",
+        "2025選出",
+        "Music video"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2025」の選出作品として、入江陽 – 鉄のハート（Official Video）を作品アーカイブで紹介する。 シンガーソングライター入江陽の楽曲「鉄のハート」のミュージックビデオ。\r\n普段、がんばったり、程よくがんばってなかったりする主人公が、のんびり過ごす休日をかわいく撮りました。 「映像作家100人 2025」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: Music video。"
+    },
+    {
+      "id": "TQnasEMsaJM",
+      "title": "City Cyndrome – Harajukuboy",
+      "videoUrl": "https://www.youtube.com/watch?v=TQnasEMsaJM",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2025",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2025選出",
+        "2D animation",
+        "Music video"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2025」の選出作品として、City Cyndrome – Harajukuboyを作品アーカイブで紹介する。 日本の原宿の街にはKawaiiが溢れ、雑多でありつつも純粋で剥き出しな若さがある。MV制作のために何度か原宿の街を歩きましたが、この街の”恋”とは一体どんなヴィジュアルなのだろうと考えました。\r\nCity Cndromeさんの楽曲を聞いて、タフな女性とHarajuku Boyの視点の交差、すれ違い、そして傲慢なほど”わたし自身”の視点を持ってアニメーションを描きたいと思いました。技法としては、エアスプレーと水彩を使って作画をすることからスタートしました。\r\n\r\n\r\nThe streets of Harajuku in Japan are overflowing with “Kawaii”, a chaotic yet pure and unadulterated youthfulness, and as I walked the streets of Harajuku several times for making \r\nthis music video, I wondered what the \"love\" in this “Harajuku” would look like visually.\r\nListening to City Cydrome's music, I wanted to animate the intersection of the perspectives of a tough woman and a Harajuku boy, their differences, and my own arrogantly \"personal\" point of view. I started by drawing on paper using airspray and watercolor. 「映像作家100人 2025」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、Music video。"
+    },
+    {
+      "id": "927104512",
+      "title": "オリックス・バファローズ 2024 勝利ムービー",
+      "videoUrl": "https://vimeo.com/927104512",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2025",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2025選出",
+        "2D animation",
+        "3DCG",
+        "Event",
+        "Live opening animation",
+        "Motion graphics",
+        "Motion logo",
+        "Music video",
+        "Opening movie",
+        "Signage"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2025」の選出作品として、オリックス・バファローズ 2024 勝利ムービーを作品アーカイブで紹介する。 オリックス・バファローズの2024シーズン勝利ムービーです。\r\n公式キャラクターをたくさん登場させ、勝利の喜びをポップな世界観で表現しました。 「映像作家100人 2025」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、3DCG、Event、Live opening animation、Motion graphics、Motion logo、Music video、Opening movie、Signage。"
+    },
+    {
+      "id": "eR_KaFYN8Qo",
+      "title": "Kairi 乖離",
+      "videoUrl": "https://www.youtube.com/watch?v=eR_KaFYN8Qo",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2024",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2024選出",
+        "3DCG",
+        "Animation",
+        "Music video",
+        "Original"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2024」の選出作品として、Kairi 乖離を作品アーカイブで紹介する。 This is Music Video. 「映像作家100人 2024」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 3DCG、Animation、Music video、Original。"
+    },
+    {
+      "id": "vuDWFLIMLc0",
+      "title": "ＮＨＫみんなのうた「ようかんマーチ」",
+      "videoUrl": "https://www.youtube.com/watch?v=vuDWFLIMLc0",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2025",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2025選出",
+        "2D animation",
+        "Music video"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2025」の選出作品として、ＮＨＫみんなのうた「ようかんマーチ」を作品アーカイブで紹介する。 映えるお菓子たちに押され、地味なお菓子というイメージのある「ようかん」をテーマにした楽曲です。\r\n楽しくかわいく、ときに哀愁を感じるように、ようかんたちを描きました。 「映像作家100人 2025」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、Music video。"
+    },
+    {
+      "id": "730754155",
+      "title": "ゾンビハンターEX",
+      "videoUrl": "https://vimeo.com/730754155",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2025",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2025選出",
+        "2D animation"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2025」の選出作品として、ゾンビハンターEXを作品アーカイブで紹介する。 オリジナルアニメーション「ゾンビハンターEX」です。\r\n\r\nゾンビハンターviviの物語、お楽しみに。 「映像作家100人 2025」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation。"
+    },
+    {
+      "id": "831105343",
+      "title": "PLEATS PLEASE / ISSEY MIYAKE / MONTHLY COLORS",
+      "videoUrl": "https://vimeo.com/831105343",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2024",
+      "channelTitle": "くろやなぎてっぺい TEPPEI KUROYANAGI",
+      "allTags": [
+        "映像作家100人",
+        "2024選出",
+        "3DCG",
+        "Brand movie",
+        "Concept Movie"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2024」の選出作品として、PLEATS PLEASE / ISSEY MIYAKE / MONTHLY COLORSを作品アーカイブで紹介する。 PLEATS PLEASEが今まで歩んできた３０年、そしてこれから歩んでいく道のり。その中で生まれる新たなハーモニーを、この映像から感じ取ってもらえると幸いです。 「映像作家100人 2024」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 3DCG、Brand movie、Concept Movie。"
+    },
+    {
+      "id": "omG6ILn6bvQ",
+      "title": "10-FEET – helm’N bass",
+      "videoUrl": "https://www.youtube.com/watch?v=omG6ILn6bvQ",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2025",
+      "channelTitle": "中村都麦 Tsumugi",
+      "allTags": [
+        "映像作家100人",
+        "2025選出",
+        "3DCG",
+        "Animation",
+        "Music video",
+        "Original"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2025」の選出作品として、10-FEET – helm’N bassを作品アーカイブで紹介する。 10-FEETのアサヒスーパードライ × 3x3.EXE PREMIER 応援ソング「helm'N bass」のMV。\r\nポストアポカリプス的な世界観での救世主(メシア)伝説を描く神話的ストーリーのMV。\r\nリアル寄りのライティングに加えてスタイライズされた記号的なエフェクトを入れ込み、ゲームのようなワクワクする映像を創り出した。人型キャラクターのアニメーションはモーションキャプチャースーツを使用し、Tsumugi自身が演じている。 「映像作家100人 2025」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 3DCG、Animation、Music video、Original。"
+    },
+    {
+      "id": "YHg4_ckg1yo",
+      "title": "ゲシュタルト乙女「仕事」Music Video",
+      "videoUrl": "https://www.youtube.com/watch?v=YHg4_ckg1yo",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2025",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2025選出",
+        "Music video"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2025」の選出作品として、ゲシュタルト乙女「仕事」Music Videoを作品アーカイブで紹介する。 今回のMVは、メンバーの方から曲にこめた気持ちを着せていただくところから制作が始まりました。\r\n台湾と日本で遠隔での制作でしたが、楽曲のコンセプトをあますことなく映像に落とし込むことができたと思っています 「映像作家100人 2025」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: Music video。"
+    },
+    {
+      "id": "m5j4wbyYQMk",
+      "title": "【赤ちゃんが喜ぶ歌】愛の宇宙船（うた：mekakushe）【赤ちゃんが泣き止む・喜ぶ動画】",
+      "videoUrl": "https://www.youtube.com/watch?v=m5j4wbyYQMk",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2025",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2025選出",
+        "3DCG",
+        "Animation",
+        "Music video"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2025」の選出作品として、【赤ちゃんが喜ぶ歌】愛の宇宙船（うた：mekakushe）【赤ちゃんが泣き止む・喜ぶ動画】を作品アーカイブで紹介する。 楽曲の世界観を表現しました。 「映像作家100人 2025」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 3DCG、Animation、Music video。"
+    },
+    {
+      "id": "eWXdu23GAtY",
+      "title": "OGRE YOU ASSHOLE – 君よりも君らしい",
+      "videoUrl": "https://www.youtube.com/watch?v=eWXdu23GAtY",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2025",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2025選出",
+        "2D animation",
+        "Animation",
+        "Music video",
+        "Pixel Art"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2025」の選出作品として、OGRE YOU ASSHOLE – 君よりも君らしいを作品アーカイブで紹介する。 OGRE YOU ASSHOLE「君よりも君らしい」のMusic Video。タイトルの通り、この曲が自分自身と、自分によく似た他者(おそらく他人の空似でなく、ロボット、AI、クローン等のテクノロジーによって生み出された存在)についてを歌った内容だったため、何か２つのルックが行ったり来たりするような映像になったら面白いんじゃないかと考えたのがアイデアの原点。紙にペンで作画した手描きのシーンと、解像度が下がってピクセル化されたシーンを象徴的に扱いながら、その２つの質感がどんどんと混ざり合って最後は粒子になっていくような道筋を辿っていく。\r\n基本は全て紙にペンで描いていくシンプルな手描きのアニメーション。カートゥーン的でない実写的な動きの質感を出すために最初に3DCGでアニメーションを作って、それを手描きでロトスコープしていくシーンが多かった。 「映像作家100人 2025」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、Animation、Music video、Pixel Art。"
+    },
+    {
+      "id": "ttCsZrdhfeY",
+      "title": "GLAY『BRIGHTEN UP』Music Video",
+      "videoUrl": "https://www.youtube.com/watch?v=ttCsZrdhfeY",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2025",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2025選出",
+        "2D animation",
+        "3DCG",
+        "Music video"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2025」の選出作品として、GLAY『BRIGHTEN UP』Music Videoを作品アーカイブで紹介する。 尾田栄一郎先生による30周年のキービジュアルをMUSIC VIDEOとして3Dアニメーション化！\r\n『BRIGHTEN UP』の歌詞はこれまでGLAYというバンドが30年歩んできた想いやこれからの未来を記しており、\r\n今作の世界観は2025年の現代から未来を描いている。 「映像作家100人 2025」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、3DCG、Music video。"
+    },
+    {
+      "id": "enrliFE-xXc",
+      "title": "『BLUE PROTOCOL（ブループロトコル）』 Side Story Ep1 [エーリンゼとティリス]",
+      "videoUrl": "https://www.youtube.com/watch?v=enrliFE-xXc",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2025",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2025選出",
+        "3DCG",
+        "Animation"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2025」の選出作品として、『BLUE PROTOCOL（ブループロトコル）』 Side Story Ep1 [エーリンゼとティリス]を作品アーカイブで紹介する。 【あらすじ】\r\nフェステらと別れ、過去のレグナスの地を行くエーリンゼとティリス。\r\n野営をすることになった二人に怪しい影が忍び寄る…\r\n\r\n【監督コメント】\r\n初めて3Dアニメーションの映像作品に挑戦させて頂きました！\r\n3D素材のディレクションはどれも新鮮で楽しかったです。 「映像作家100人 2025」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 3DCG、Animation。"
+    },
+    {
+      "id": "e8cU7rcN7kk",
+      "title": "【少女革命計画】DIGGER / 罪十罰",
+      "videoUrl": "https://www.youtube.com/watch?v=e8cU7rcN7kk",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2025 / ALINCOLONY よかった映像",
+      "channelTitle": "矢印 Yazhirushi",
+      "allTags": [
+        "映像作家100人",
+        "2025選出",
+        "2D animation",
+        "3DCG",
+        "Motion graphics",
+        "Movie",
+        "Music video",
+        "ALINCOLONY",
+        "よかった映像まとめ"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2025」の選出作品として、【少女革命計画】DIGGER / 罪十罰を作品アーカイブで紹介する。 この作品は、音楽と視覚が高度に融合した映像表現が特徴です。タイポグラフィのセンスが際立ち、音楽と完全にシンクロするリリックモーションが視覚的・聴覚的没入感を生み出しています。ダイナミックなカメラワークが映像に立体感と動きを加え、細部にまでこだわったコンポジットが作品全体の質感と統一感を向上させています。膨大な工数をかけた精密な調整によって完成度がさらに高まり、音楽との一体感が際立つ仕上がりとなっています。このような統合的な表現で観る人に圧倒的な快感を与えるように仕上げました。 「映像作家100人 2025」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、3DCG、Motion graphics、Movie、Music video。"
+    },
+    {
+      "id": "1077259041",
+      "title": "東洋紡 ウェブサイト ファーストビュームービー 2025",
+      "videoUrl": "https://vimeo.com/1077259041",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2025",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2025選出",
+        "2D animation",
+        "Motion graphics"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2025」の選出作品として、東洋紡 ウェブサイト ファーストビュームービー 2025を作品アーカイブで紹介する。 東洋紡 TOYOBOのオフィシャルサイトのファーストビュー動画のリニューアル版。前年のスタイルを踏襲しながらも、飽きさせないよう展開しながら、人々の生活で製品が使われている様子を描いている。 「映像作家100人 2025」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、Motion graphics。"
+    },
+    {
+      "id": "oA0CpI0vCK4",
+      "title": "「MV」mumei",
+      "videoUrl": "https://www.youtube.com/watch?v=oA0CpI0vCK4",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2025",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2025選出",
+        "Music video"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2025」の選出作品として、「MV」mumeiを作品アーカイブで紹介する。 Streaming:\r\nhttps://cover.lnk.to/mumei \r\n\r\nVocalist - ‪@NanashiMumei‬ \r\n  / nanashimumei_en  \r\n\r\nComposition・Lyrics・Mix/Master - TKN \r\n  / tkn_tokkun  \r\nhttps://www.youtube.com/@TKNMusic/fea... 「映像作家100人 2025」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: Music video。"
+    },
+    {
+      "id": "oHH9rMGlLl8",
+      "title": "日本遺産「女性とともに今に息づく女人高野」 PR映像",
+      "videoUrl": "https://www.youtube.com/watch?v=oHH9rMGlLl8",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2024",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2024選出",
+        "2D animation",
+        "Animation",
+        "Promotion",
+        "PV"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2024」の選出作品として、日本遺産「女性とともに今に息づく女人高野」 PR映像を作品アーカイブで紹介する。 日本遺産「女性とともに今に息づく女人高野～時を超え、時に合わせて見守り続ける癒しの聖地～」のストーリーを紹介したPR動画です。\r\n3人の大学生のアニメーション部分を担当しました。\r\n実写で撮影された人物を1コマずつ描き起こす、ロトスコープの手法で制作しました。 「映像作家100人 2024」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、Animation、Promotion、PV。"
+    },
+    {
+      "id": "YBELyKlJ4AU",
+      "title": "layer:02",
+      "videoUrl": "https://www.youtube.com/watch?v=YBELyKlJ4AU",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2025",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2025選出",
+        "3DCG",
+        "Animation"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2025」の選出作品として、layer:02を作品アーカイブで紹介する。 ストーリーは進んでいき、今回は水の惑星へ向かいます。\r\n「チキュウ」で一体何が起きているのか？\r\nlayer:03へ続きます。 「映像作家100人 2025」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 3DCG、Animation。"
+    },
+    {
+      "id": "1076319399",
+      "title": "Neltz Studio Animation",
+      "videoUrl": "https://vimeo.com/1076319399",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2025",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2025選出",
+        "3DCG",
+        "Animation",
+        "Concept Movie"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2025」の選出作品として、Neltz Studio Animationを作品アーカイブで紹介する。 チューイングガムから着想を得た３人のキャラクターを用いた、自社のWEBサイト用のアニメーションを制作しました。 「映像作家100人 2025」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 3DCG、Animation、Concept Movie。"
+    },
+    {
+      "id": "JEoeDuj28Xc",
+      "title": "うちのニャオハはなつかない",
+      "videoUrl": "https://www.youtube.com/watch?v=JEoeDuj28Xc",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2024",
+      "channelTitle": "新海岳人 Taketo Shinkai",
+      "allTags": [
+        "映像作家100人",
+        "2024選出",
+        "2D animation",
+        "Animation",
+        "Music video"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2024」の選出作品として、うちのニャオハはなつかないを作品アーカイブで紹介する。 ポケモンのキッズ用YouTubeチャンネル「ポケモンKids TV」の公式動画。2024年2月末に公開された、完成ほやほやのアニメMVです。\r\n\r\n気まぐれな性格のポケモン「ニャオハ」。ニャオハの飼い主の女の子と、なかなかなついてくれないニャオハの、愛らしい日常を描いたストーリーです。\r\n猫をモチーフとしたポケモンのニャオハが、飼い主を信頼しながらもなつかない様子は、まさに猫そのもの。猫好きにもきっと刺さる動画になったと思います。\r\n\r\n監督・作詞にEテレでの監督経験の長い新海岳人、アニメーションに「シナぷしゅ」などで活躍する作家のいもむしさん、歌唱にチル系のミュージシャンkiki vivi lilyさんを起用。\r\n専門性の高いスタッフの配置も、作品のかわいさの強度を上げています。 「映像作家100人 2024」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、Animation、Music video。"
+    },
+    {
+      "id": "1075594060",
+      "title": "Have a good feeling",
+      "videoUrl": "https://vimeo.com/1075594060",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2025",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2025選出",
+        "2D animation",
+        "Animation",
+        "Motion graphics",
+        "Original"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2025」の選出作品として、Have a good feelingを作品アーカイブで紹介する。 仕事や生活をしていく中で、感情を整理することの重要性に気づき、その気持ちを映像化しました。\r\n「何かやりたいけど、何から進めたらいいかわからない」「わからないことが、わからない」そういった自分の思いに自身で悩まされることが多かったのですが、自分と向き合い、感情を整理することでスッと身体が軽くなった経験があります。「あたまの中を整えて、人生を楽しく生きよう」というメッセージを込めて制作しました。 「映像作家100人 2025」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、Animation、Motion graphics、Original。"
+    },
+    {
+      "id": "vvmT8RHpDrY",
+      "title": "Mind Replacer – HOSHIMIYA TOTO+TEMPLIME",
+      "videoUrl": "https://www.youtube.com/watch?v=vvmT8RHpDrY",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2024 / 映像作家100人 2025",
+      "channelTitle": "大谷たらふ Tarafu Otani",
+      "allTags": [
+        "映像作家100人",
+        "2024選出",
+        "2D animation",
+        "Animation",
+        "Music video",
+        "2025選出"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2024」の選出作品として、Mind Replacer – HOSHIMIYA TOTO+TEMPLIMEを作品アーカイブで紹介する。 HOSHIMIYA TOTO+TEMPLIMEによる楽曲Mind Replacerのアニメーションミュージックビデオ。\r\n空間を自由に行き来して遊ぶSOZENの音響を、ミジンコ(点)とアーテイストのアバター(平面)をその音像に合わせて結合／分解させるイメージで視覚化。アーティストの持つVRシンガーというアイデンティティー、肉体を持たない存在をテーマに精神性や空間表現など実験的なことをPOPに昇華することを意識して制作した。 「映像作家100人 2024」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、Animation、Music video。\n加えて「映像作家100人 2025」にも選出されている。"
+    },
+    {
+      "id": "3TP0kTnkzvA",
+      "title": "POLAの肌分析ブランドムービー",
+      "videoUrl": "https://www.youtube.com/watch?v=3TP0kTnkzvA",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2025",
+      "channelTitle": "石黒翔 Shoh Ishiguro",
+      "allTags": [
+        "映像作家100人",
+        "2025選出",
+        "2D animation",
+        "Brand movie"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2025」の選出作品として、POLAの肌分析ブランドムービーを作品アーカイブで紹介する。 肌分析が持つサイエンス感や知性を感じさせながらも、肌への愛おしさを感じられるようなブランドムービーを目指しました。\r\n顕微鏡の中を覗き込むと、音楽に合わせて増殖したり鼓動を打つように動く幾何学パターンを、モーショングラフィックスで表現しています。 「映像作家100人 2025」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、Brand movie。"
+    },
+    {
+      "id": "Ep2IbO1Ze2o",
+      "title": "Royal Blue – 映像演出",
+      "videoUrl": "https://www.youtube.com/watch?v=Ep2IbO1Ze2o",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2025",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2025選出",
+        "Coding",
+        "Experience",
+        "Motion graphics",
+        "Music Visualization"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2025」の選出作品として、Royal Blue – 映像演出を作品アーカイブで紹介する。 バンド MARQUEE BEACH CLUB のライブ「Royal Blue」にて、70分の全編に渡って映像演出をしました。\r\n\r\n音楽と対等な存在としての「ビジュアルミュージック」をテーマに、C++で自作したソフトウェアを用いて、音楽を聴きながらPC上で映像を「演奏」するように制作していきました。\r\nこれをDTMに対してDTV（デスクトップビジュアル）と呼んでいます。\r\n平面構成的なグラフィックを軸に、音楽ライブにおける新しい視覚体験を探究しました。 「映像作家100人 2025」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: Coding、Experience、Motion graphics、Music Visualization。"
+    },
+    {
+      "id": "1075187628",
+      "title": "EXPO WORLDs：世界と世界が、つくる世界。",
+      "videoUrl": "https://vimeo.com/1075187628",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2025",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2025選出",
+        "2D animation",
+        "3DCG",
+        "Animation",
+        "Art work",
+        "Audio visual performance",
+        "Concept Movie",
+        "Documentary",
+        "Event",
+        "Experience",
+        "Motion graphics",
+        "Movie",
+        "Music video",
+        "Promotion"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2025」の選出作品として、EXPO WORLDs：世界と世界が、つくる世界。を作品アーカイブで紹介する。 「EXPO WORLDs – 大阪・関西万博 OPEN DESIGN PROJECT」のコンセプトムービーを制作しました。いくつもの「世界」が響き合いながら、新たな未来を共創していく――EXPO WORLDsは、大阪・関西万博の会場全体に”いのち”の彩りとにぎわいを吹き込み、ひらかれた参加のデザインを目指すオープンデザインプロジェクトです。私たちは、このプロジェクトの思想やビジョンを可視化するため、ビジュアルとサウンドによる世界観を構築し、ムービーとして表現しました。人・自然・テクノロジーが出会い、重なり、響き合う。そんな共創の風景を、ぜひご覧ください。 「映像作家100人 2025」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、3DCG、Animation、Art work、Audio visual performance、Concept Movie、Documentary、Event、Experience、Motion graphics、Movie、Music video、Promotion。"
+    },
+    {
+      "id": "8QJ8KNdhkiA",
+      "title": "TO BE HERO X OP SawanoHiroyuki[nZk]:Rei「INERTIA」",
+      "videoUrl": "https://www.youtube.com/watch?v=8QJ8KNdhkiA",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2025",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2025選出",
+        "2D animation",
+        "Animation",
+        "Opening movie",
+        "Short film"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2025」の選出作品として、TO BE HERO X OP SawanoHiroyuki[nZk]:Rei「INERTIA」を作品アーカイブで紹介する。 Animation：Masanobu Hiraoka(mimoid)\r\nAssistant：\r\nSota Fukushima (mimoid)\r\nZhang Shuyun (mimoid) 「映像作家100人 2025」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、Animation、Opening movie、Short film。"
+    },
+    {
+      "id": "30G-t00MiWU",
+      "title": "にゃんテレ天気よほー！",
+      "videoUrl": "https://www.youtube.com/watch?v=30G-t00MiWU",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2025",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2025選出",
+        "2D animation",
+        "Animation",
+        "Installation",
+        "Original"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2025」の選出作品として、にゃんテレ天気よほー！を作品アーカイブで紹介する。 きょうの天気をおしらせします\r\n\r\n**********************\r\n株式会社リクルートホールディングスが運営するアートセンター「BUG」にて開催されたグループ展「キャラクター・マトリクス」(2024)に出展した映像作品です。\r\n\r\n本作は「テレビ」をテーマにしたアニメーションで、架空のテレビ局「ホシニャン放送局」が放送する3つの番組──「にゃんテレ天気よほー！」「にゃんテレニュース」「エンジェル・テレビ・ショッピング」──を制作しました。\r\n\r\nホシニャンは、猫型の被り物をかぶり、髪型は流れ星のようなツインテールをしたキャラクターです。登場キャラクターたちはすべて手癖で自由に描いており、特にこだわりはありませんが、みな気ままで、おおらかな性格をしています。\r\n\r\nまた、幼少期に夢中になっていたゲーム「どーもくんの不思議てれび」の記憶が強く残っており、その“可愛くて少し理不尽な世界観”や、“気軽に遊べる楽しさ”が、本作にも影響を与えています。 「映像作家100人 2025」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、Animation、Installation、Original。"
+    },
+    {
+      "id": "bjfOQgzNlAY",
+      "title": "スカート – 私が夢からさめたら",
+      "videoUrl": "https://www.youtube.com/watch?v=bjfOQgzNlAY",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2025",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2025選出",
+        "2D animation",
+        "Music video"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2025」の選出作品として、スカート – 私が夢からさめたらを作品アーカイブで紹介する。 キャラクターと物語を設定した上で、各カットを3D背景と2D作画を組み合わせる実験として制作しました。 「映像作家100人 2025」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、Music video。"
+    },
+    {
+      "id": "WEkK5V_bap4",
+      "title": "isshin REEL 2024",
+      "videoUrl": "https://www.youtube.com/watch?v=WEkK5V_bap4",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2025 / ALINCOLONY よかった映像",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2025選出",
+        "2D animation",
+        "AD",
+        "Art work",
+        "Motion graphics",
+        "Showreel",
+        "ALINCOLONY",
+        "よかった映像まとめ"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2025」の選出作品として、isshin REEL 2024を作品アーカイブで紹介する。 2021〜2024年前半に制作した自主制作・商業制作作品をまとめたリール。 「映像作家100人 2025」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、AD、Art work、Motion graphics、Showreel。"
+    },
+    {
+      "id": "Ggx00zVpO0k",
+      "title": "菅原圭 – 熱帯夜",
+      "videoUrl": "https://www.youtube.com/watch?v=Ggx00zVpO0k",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2024",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2024選出",
+        "2D animation",
+        "Music video"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2024」の選出作品として、菅原圭 – 熱帯夜を作品アーカイブで紹介する。 菅原圭が作詞作曲歌唱する楽曲「熱帯夜」のミュージックビデオ。 「映像作家100人 2024」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、Music video。"
+    },
+    {
+      "id": "MpcG7q0bU9I",
+      "title": "あなたと最後／めいちゃん",
+      "videoUrl": "https://www.youtube.com/watch?v=MpcG7q0bU9I",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2025",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2025選出",
+        "2D animation",
+        "Animation",
+        "Music video"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2025」の選出作品として、あなたと最後／めいちゃんを作品アーカイブで紹介する。 男は狼、女は猟師。\r\n心に穴が空いたまま生きていた女が\r\n最初で最後に愛された物語。\r\n自分の容姿に自信があり中身に自信がない女の\r\n歪な自尊心は攻撃性になって現れる。\r\n試し行動を繰り返す女と、\r\n素顔(≒本性・本質)を見られるところまで\r\n踏み入られることに耐えられない孤独と自由を愛する男。\r\n現代的に言えば、愛着スタイルでいうところの\r\n不安型の女と回避型の男の\r\nなんて特別なことはない、よくある恋愛の一部始終。\r\n女のデザインはチョーカーありきで作られている。\r\n自分のアイデンティティになる、\r\n重要なものを差し出してしまう、重い依存。\r\n最後に女の手元に戻り、再び付けることで、\r\nその姿の完成度で、本来の女の姿を再認識させる。\r\n最後に流れる赤い涙は男に注がれた愛かもしれないけど、\r\n忘れてはいけないのは、女は決して愛される前の姿に戻ったのではない。\r\n少し零れたかもしれないけど、確実に体の中に残っている。\r\nこれが最後の恋と決め、”あたしはあたしになる”覚悟を決めた、\r\n女の最後の姿は、痛くも美しい完成品なのだから。 「映像作家100人 2025」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、Animation、Music video。"
+    },
+    {
+      "id": "X657E3UTLAo",
+      "title": "Netflixシリーズ｢阿修羅のごとく｣オープニング映像",
+      "videoUrl": "https://www.youtube.com/watch?v=X657E3UTLAo",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2025",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2025選出",
+        "Opening movie",
+        "Title movie",
+        "TV drama opening title"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2025」の選出作品として、Netflixシリーズ｢阿修羅のごとく｣オープニング映像を作品アーカイブで紹介する。 脚本家・向田邦子の最高傑作として名高い｢阿修羅のごとく｣が是枝裕和監督によって映像化。\r\n毒もありつつ華もありつつ、どんどんと引き込まれていく本編の独特な空気感を意識しました。 「映像作家100人 2025」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: Opening movie、Title movie、TV drama opening title。"
+    },
+    {
+      "id": "EeSKlyhYp9w",
+      "title": "tuki.「星街の駅で｣MV",
+      "videoUrl": "https://www.youtube.com/watch?v=EeSKlyhYp9w",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2025",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2025選出",
+        "Animation",
+        "Music video"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2025」の選出作品として、tuki.「星街の駅で｣MVを作品アーカイブで紹介する。 tuki.｢星街の駅で｣のミュージックビデオ\r\n\r\nとある街の冴えない発明家が大切な人を想い、守り抜く物語。\r\n\r\n若手クリエイターと共に手書き感あるラフなタッチで作り上げた作品 「映像作家100人 2025」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: Animation、Music video。"
+    },
+    {
+      "id": "MsVZUGHRL6k",
+      "title": "Jarimouse – Mr. Paper Drip（Official Music Video）",
+      "videoUrl": "https://www.youtube.com/watch?v=MsVZUGHRL6k",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2024",
+      "channelTitle": "テラサカルナ Luna Terasaka",
+      "allTags": [
+        "映像作家100人",
+        "2024選出",
+        "3DCG",
+        "Music video"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2024」の選出作品として、Jarimouse – Mr. Paper Drip（Official Music Video）を作品アーカイブで紹介する。 ペーパードリップで淹れたコーヒーのように、苦みを含みつつも洒落た楽曲の世界観を、遊び心たっぷりに仕上げたミュージックビデオ。\r\nニューヨークのマンハッタン・ソーホー地区をイメージした舞台は、すべてUnreal Engine 5で制作した。\r\nリリックの英語部分は街の看板やディスプレイなどで登場させ、また主人公の歩くテンポは楽曲のリズムにぴったりと合わせており、観ているだけで心地いいと思えるような表現を追求した。\r\nまた、映像内で登場するUFOや天気についての伏線も散りばめられており、くり返し観れば観るほど新しい発見ができるよう細部にまでこだわっている。\r\nただ歩くだけの単調な映像では終わらせない、視聴者までもを世界に引き込んで何度でも楽しめるようなあたらしい形のミュージックビデオを、ぜひ4K画質でご覧ください。 「映像作家100人 2024」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 3DCG、Music video。"
+    },
+    {
+      "id": "gcxPGPIcEnA",
+      "title": "キャットロケット",
+      "videoUrl": "https://www.youtube.com/watch?v=gcxPGPIcEnA",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2025",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2025選出",
+        "2D animation",
+        "Animation",
+        "Music video",
+        "TV",
+        "TVアニメ ending"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2025」の選出作品として、キャットロケットを作品アーカイブで紹介する。 テレビ東京「シナぷしゅ」2025年3月のつきうた、『キャットロケット』のアニメーションを制作しました。 「映像作家100人 2025」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、Animation、Music video、TV、TVアニメ ending。"
+    },
+    {
+      "id": "XEKPn3WbksE",
+      "title": "櫻坂46「Cool」MV – Animation Part",
+      "videoUrl": "https://www.youtube.com/watch?v=XEKPn3WbksE",
+      "source": "eizo100",
+      "sourceLabel": "映像作家100人 2024",
+      "channelTitle": "未取得",
+      "allTags": [
+        "映像作家100人",
+        "2024選出",
+        "2D animation",
+        "Live action",
+        "Music video"
+      ],
+      "missing": [
+        "genres",
+        "products",
+        "directions",
+        "tones"
+      ],
+      "evidence": "「映像作家100人 2024」の選出作品として、櫻坂46「Cool」MV – Animation Partを作品アーカイブで紹介する。 Director :小山巧 (THREE CHORDS inc.)\r\nAssistant Director :樋澤与至也\r\nChoreographer :TAKAHIRO\r\nCinematographer :渡邉龍平 (momo inc.)\r\nSteadicam Operator :木村太郎\r\nLighting Director :ヒガシックス\r\nProduction Designer :橋本直征 (MagentawalL design inc.)\r\nColorist :マックス ゴロミドフ (TREE Digital Studio)\r\nAnimation :若林萌 (P.I.C.S. management)\r\nOn-line Editor :泉陽子\r\nProduction : P.I.C.S. 「映像作家100人 2024」の掲載作品として公式アーカイブに選出されている。掲載カテゴリ: 2D animation、Live action、Music video。"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "W5AA6QZzfDk",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.5,
+      "evidence": "映像表現のリファレンス収集 ALINCOLONY「よかった映像まとめ」に掲載。掲載者メモ: タイトル、雨のカット"
+    },
+    {
+      "id": "G4L7QbdgFLQ",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: 💗 【オリジナルMV】「君と夏フェス／SHISHAMO」【神楽めあ/しぐれうい】 ポップリファレンス。トーン、ぽよぽよした動き、枠。"
+    },
+    {
+      "id": "dt8RXLdWiBw",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.8,
+      "evidence": "掲載者メモ: 💗ブリキノダンス Cover / めいちゃん最近MVもよく観るようになった"
+    },
+    {
+      "id": "Qeagip5qsoE",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "camera-work"
+      ],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "掲載者メモ: 💗Deku vs Lady Nagant | MHA x Out of Controlカメラワークすごい"
+    },
+    {
+      "id": "bA7ty873TsM",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: 💗》Suicide Tuesday《 -「A Silent Voice AMV」ジャングルジムとか飛び降り寸前のドアの影とかが先に出てくるとこ"
+    },
+    {
+      "id": "n5MZnhCVuF4",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: 💗イロドリミドリ 舞ヶ原高校軽音部 『Agitation！』MVエフェクトにハーフトーン乗せるのいいなと思った"
+    },
+    {
+      "id": "gcgKUcJKxIs",
+      "genres": [
+        "opening"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "掲載者メモ: 💗 TVアニメ『呪術廻戦』第2期「懐玉・玉折」ノンクレジットOPムービー／OPテーマ：キタニタツヤ「青のすみか」"
+    },
+    {
+      "id": "PoMvGlPeuBo",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.5,
+      "evidence": "掲載者メモ: 0:59の画面枠がグワッってなるところ"
+    },
+    {
+      "id": "pbv7r94dT_M",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: 💗 カナダ人がG4L / Giga 歌ってみた　covered by 赤黒月 Akakurotsuki【オリジナルMV】 ガラス表現かっけえ"
+    },
+    {
+      "id": "wTpyHjRaO6c",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "掲載者メモ: 💗【モーショングラフィックス】ColorCoordination | motiongraphics冒頭とラストが良かった"
+    },
+    {
+      "id": "H4Xv6XvAvpc",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.4,
+      "evidence": "掲載者メモ: 💗 ふたつめの心臓 /深水さや【2nd Original Song】 俺も久しぶりに鉄骨使いたくなってきた。Aメロのデザイン好き。"
+    },
+    {
+      "id": "PAeTpB5a8EI",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.6,
+      "evidence": "掲載者メモ: 💗『地獄楽』最終13巻発売記念公式PV牛丼さん研究"
+    },
+    {
+      "id": "y9yVYPz1EjI",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.5,
+      "evidence": "掲載者メモ: 💗【自主制作】幻影色と質感がいい"
+    },
+    {
+      "id": "jGTuoqN2xmQ",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.6,
+      "evidence": "掲載者メモ: 💗【怪獣警報】第３部隊の前に『怪獣８号』現る≪公式ＰＶ-４式≫牛丼さん研究"
+    },
+    {
+      "id": "mxyeZyVma_s",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.4,
+      "evidence": "掲載者メモ: グラフィック良"
+    },
+    {
+      "id": "Lf31jINfG4o",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "掲載者メモ: 💗“6秒企画”　モーションハッカソン0:04辺りの立方体がくるくるしてるところがよかった"
+    },
+    {
+      "id": "km0-E99w8f0",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに『主題歌』『ノンテロップ映像』（Music Video的コンテンツ）。掲載者メモ: 「サビが3D背景Onlyカット」と明記（3D使用の記述）。"
+    },
+    {
+      "id": "8lN4BOgo1_E",
+      "genres": [
+        "web-cm"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "タイトルに『公式PV』『コミックス3巻発売記念PV』と明記（プロモーション映像）。掲載者メモ: 『キャラモーション最強』の言及あり（演出傾向の注記だが明確な演出カテゴリ指定は無し）。"
+    },
+    {
+      "id": "3JduZWx6PTI",
+      "genres": [
+        "web-cm"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.8,
+      "evidence": "タイトルに『PV』と明記（プロモーション映像）。掲載者メモ: 『配色好き』とあるがトーン指定は無し。"
+    },
+    {
+      "id": "wdIPqaoy2Dk",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "タイトルに『Music Video』と明記。掲載者メモにグリッチ表現に関する言及あり（演出の詳細だがトーンカテゴリとは一致せず）。"
+    },
+    {
+      "id": "8DZY3sJ7ECc",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "タイトルに『AMV』（Music Videoの形式）と明記。掲載者メモ: 『炎』など視覚モチーフの記述。"
+    },
+    {
+      "id": "z_rpYAddekM",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに『モーショングラフィックス』と明記（制作手法カテゴリ）。掲載者メモ: デザインに関する言及あり。"
+    },
+    {
+      "id": "5l9JixNT1c0",
+      "genres": [
+        "opening"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに『OP』と明記（オープニング映像）。掲載者メモに作画に関する具体的記述あり。"
+    },
+    {
+      "id": "-SjRMUZRw7M",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.3,
+      "evidence": "タイトルのみ（'confusion'）でジャンル・商材・演出・トーンを示す記述は無し。掲載者メモはトランジションに関する感想のみ。"
+    },
+    {
+      "id": "k4ptLgPAPr8",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "タイトルに楽曲名・アーティスト表記および『映像合作』の記載（音楽系の映像であることが明示）。掲載者メモ: ワイヤーフレーム等の表現言及あり。"
+    },
+    {
+      "id": "FU6roy2JBns",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.25,
+      "evidence": "タイトルに『REEL 2023』のみ（ショーリールを示唆するがタクソノミーのいずれかに明示的該当は無し）。掲載者メモ: 短評『神』のみ。"
+    },
+    {
+      "id": "bIKGCKX-Xmw",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.25,
+      "evidence": "タイトル『blue』のみでジャンル・商材・演出・トーンの明示なし。掲載者メモは配色に関する感想のみ。"
+    },
+    {
+      "id": "-IPI7Su-v-c",
+      "genres": [
+        "web-cm"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに『発売記念スペシャルPV』『TVアニメ好評放送中』と明記（プロモーション映像）。掲載者メモ: 『バカ動く』等作画への評価あり。"
+    },
+    {
+      "id": "EVZKRaD_zlc",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "タイトルに『Lyric Video』と明記（歌詞付き音楽映像）。掲載者メモ: 作字やグラフィック表現への言及あり。"
+    },
+    {
+      "id": "J2_XzPnGQ00",
+      "genres": [
+        "tv-cm"
+      ],
+      "products": [
+        "sports"
+      ],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに『スカパー！プロ野球2023「オープン戦徹底中継」篇 30秒』と明記（テレビCMの長さと内容を明示）。掲載者メモ: 『コラージュ』という編集手法の言及あり。商材として『プロ野球』＝スポーツが明示されている。"
+    },
+    {
+      "id": "use-LY-bWrQ",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "タイトルに『Music Video』と明記（音楽映像）。掲載者メモ: 単語『綺麗』のみ。"
+    },
+    {
+      "id": "ckHK-3Ei8y8",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.3,
+      "evidence": "タイトルは作品紹介（『超人X』）だが、PV/CM/MV等の形式指定は無い。掲載者メモ: 『遊んでる感じ』の感想のみ。}]}"
+    },
+    {
+      "id": "HbjBInnbWgc",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.8,
+      "evidence": "タイトル／掲載者メモ: 「CM動画（15秒ver.）」「テキストMG」"
+    },
+    {
+      "id": "NZaTctXb-nY",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトル／掲載者メモ: タイトルに「【MV】」と記載／掲載者メモに色味の言及"
+    },
+    {
+      "id": "uO3uxTzpv7o",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトル／掲載者メモ: タイトルに「Official Lyric Video」／掲載者メモに「文字組みのアイデアが豊富」"
+    },
+    {
+      "id": "3Rr01DQA3_c",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトル／掲載者メモ: タイトルに「AMV（My Hero Academia AMV）」／掲載者メモに『この人のAMVかっこよくて好き』"
+    },
+    {
+      "id": "1hKt4Vu78LM",
+      "genres": [
+        "opening"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトル／掲載者メモ: タイトルに「オープニングアニメーション」／掲載者メモに色味の言及"
+    },
+    {
+      "id": "5A_eJyCLP7s",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "掲載者メモのみ: 「一番最初がよかった」。ジャンル・演出・商材・トーンの明記なし"
+    },
+    {
+      "id": "EJh5qTYYvis",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "掲載者メモのみ: 「z軸上に同じテキストをいっぱい並べるの意外と見やすい」。ジャンル等の明記なし"
+    },
+    {
+      "id": "o8Ds-GS6Er0",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "掲載者メモのみ: 「ほんとすき」。ジャンル・演出・商材・トーンの明記なし"
+    },
+    {
+      "id": "GpNgomv9_mY",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "掲載者メモのみ: 「デザインのかっこよさを維持しながらゴリゴリ動くのすごい」。明示的な分類語なし"
+    },
+    {
+      "id": "cEoNkk6Zruc",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトル／掲載者メモ: タイトルに「【MotionGraphics】」／掲載者メモに「質感」"
+    },
+    {
+      "id": "CdoPneh0ifY",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトル／掲載者メモ: タイトルに「MV（CLUSTER BLASTER ）」／掲載者メモに「コラージュ」"
+    },
+    {
+      "id": "0QxzxmcWGpE",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "掲載者メモのみ: 「最高です」。ジャンル・演出・商材・トーンの明記なし"
+    },
+    {
+      "id": "TcMFQbTyYhA",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "タイトル／掲載者メモ: タイトルに「合作MAD」／掲載者メモにグラフィカル表現の好意的言及があるが明示的な分類語なし"
+    },
+    {
+      "id": "TZ9LxWh8eug",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトル／掲載者メモ: タイトルに「モーショングラフィック M/V (unofficial)」／掲載者メモにフラットなルックへの言及"
+    },
+    {
+      "id": "XKqC2bvkrxo",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトル／掲載者メモ: タイトルに「키네틱 타이포그래피（キネティックタイポグラフィ）」／掲載者メモに視線を追わせる表現の言及"
+    },
+    {
+      "id": "a6nCoJpeUhk",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "タイトル／掲載者メモ: タイトルに「Udemy(ユーデミー)　学びたいと教えたいをつなぐ篇30秒」。広告であることは示されるがテレビ/ウェブ等の分類や他のカテゴリ明記なし"
+    },
+    {
+      "id": "QLKFbQyy1uw",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトル／掲載者メモに「MotionGraphics」と明記"
+    },
+    {
+      "id": "aZdS_XVlL2k",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "illustration"
+      ],
+      "tones": [],
+      "confidence": 0.8,
+      "evidence": "タイトルに「静止画MAD」と明記"
+    },
+    {
+      "id": "c4qhd5wnA80",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに「AMV/MAD」と明記"
+    },
+    {
+      "id": "hVEgCye7idk",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "タイトルに「自主製作」とあるのみでジャンル・演出・トーンの明示なし"
+    },
+    {
+      "id": "kdeX-vflZ18",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.8,
+      "evidence": "タイトルに「PV大会」と明記"
+    },
+    {
+      "id": "QFGu1j6tHkM",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトル／掲載者メモに「motion graphics」と明記"
+    },
+    {
+      "id": "c1alHyIvZFo",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載者メモに「AMV」表記（Bloom Into You AMV）"
+    },
+    {
+      "id": "RtJX-_GxlyE",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "illustration"
+      ],
+      "tones": [],
+      "confidence": 0.8,
+      "evidence": "タイトルに「静止画MAD」と明記"
+    },
+    {
+      "id": "h3k2-CL7ZHI",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに「Motion Graphics」と明記"
+    },
+    {
+      "id": "3T0wEUW1THE",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに「歌ってみた／Cover」と明記"
+    },
+    {
+      "id": "3qfwc1AAgVA",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに「MAD/AMV」と明記"
+    },
+    {
+      "id": "IXzd0GKLuQQ",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.75,
+      "evidence": "掲載者メモに「バラバラの文字が集まってくるところ」と記載（モーショングラフィック的表現）"
+    },
+    {
+      "id": "kp1t5szLfNY",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.75,
+      "evidence": "タイトルにカバー曲表記／掲載者メモに「3Dモデル」の言及あり"
+    },
+    {
+      "id": "EpgXfR38EmM",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "タイトルに「by DENTSU | SXSW」とあるのみでジャンル・演出・トーンの明示なし"
+    },
+    {
+      "id": "eKY_U4QUe98",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "掲載カテゴリに「Animation、Pixel Art」とあるが、タクソノミー内に一致する明示的項目はなし"
+    },
+    {
+      "id": "dghrfS1c03g",
+      "genres": [
+        "tv-cm"
+      ],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに「CM」と明記、説明に「切り絵の素材をデジタルモーションで動かしている」と記載"
+    },
+    {
+      "id": "WpJ6Zrz2nmg",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "camera-work"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video。作品説明に「のんびり過ごす休日をかわいく撮りました。」"
+    },
+    {
+      "id": "TQnasEMsaJM",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "掲載カテゴリ: 2D animation、Music video。原宿を歩き作画（エアスプレーと水彩）で制作したと記載。"
+    },
+    {
+      "id": "927104512",
+      "genres": [
+        "mv",
+        "opening"
+      ],
+      "products": [],
+      "directions": [
+        "motion-graphics",
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.88,
+      "evidence": "掲載カテゴリ: 2D animation、3DCG、Live opening animation、Motion graphics、Opening movie、Signage、Music video。公式説明に「Opening movie」と明記。"
+    },
+    {
+      "id": "eR_KaFYN8Qo",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Animation、Music video。"
+    },
+    {
+      "id": "vuDWFLIMLc0",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [
+        "emotional"
+      ],
+      "confidence": 0.8,
+      "evidence": "掲載カテゴリ: 2D animation、Music video。説明に「楽しくかわいく、ときに哀愁を感じるように」と記載。"
+    },
+    {
+      "id": "730754155",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.8,
+      "evidence": "掲載カテゴリ: 2D animation。説明で「オリジナルアニメーション」と明記されているが、指定タクソノミーに該当するジャンル/演出/トーンの明記はない。"
+    },
+    {
+      "id": "831105343",
+      "genres": [
+        "branded-movie"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Brand movie、Concept Movie。タイトルにブランド名（ISSEY MIYAKE）と明記。"
+    },
+    {
+      "id": "omG6ILn6bvQ",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.86,
+      "evidence": "掲載カテゴリ: 3DCG、Animation、Music video。説明にアサヒスーパードライ×3x3.EXEの応援ソングと記載。"
+    },
+    {
+      "id": "YHg4_ckg1yo",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video。タイトルに Music Video と明記。"
+    },
+    {
+      "id": "m5j4wbyYQMk",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.88,
+      "evidence": "掲載カテゴリ: 3DCG、Animation、Music video。タイトルに「赤ちゃんが喜ぶ歌」と明記。"
+    },
+    {
+      "id": "eWXdu23GAtY",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Music video、Pixel Art。Music video の明記と作画手法の説明あり。"
+    },
+    {
+      "id": "ttCsZrdhfeY",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、3DCG、Music video。説明に3Dアニメーション化と明記。"
+    },
+    {
+      "id": "enrliFE-xXc",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Animation。作品説明に「3Dアニメーション」に挑戦と明記。"
+    },
+    {
+      "id": "e8cU7rcN7kk",
+      "genres": [
+        "mv",
+        "film"
+      ],
+      "products": [],
+      "directions": [
+        "motion-graphics",
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、3DCG、Motion graphics、Movie、Music video。説明でモーショングラフィックスや詳細なコンポジット調整を強調。"
+    },
+    {
+      "id": "1077259041",
+      "genres": [
+        "web-cm"
+      ],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.8,
+      "evidence": "タイトル/説明に「ウェブサイト ファーストビュームービー」。掲載カテゴリ: 2D animation、Motion graphics。"
+    },
+    {
+      "id": "oA0CpI0vCK4",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video。タイトルに MV と明記。"
+    },
+    {
+      "id": "oHH9rMGlLl8",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "タイトルにPR映像、掲載カテゴリにPromotion／PVとあるが、タクソノミーの該当語は明示されていない。掲載カテゴリ: 2D animation、Animation、Promotion、PV。"
+    },
+    {
+      "id": "YBELyKlJ4AU",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリに3DCGと明記。掲載カテゴリ: 3DCG、Animation。"
+    },
+    {
+      "id": "1076319399",
+      "genres": [
+        "corporate"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "自社のWEBサイト用のアニメーションであることと掲載カテゴリに3DCGが明記。自社のWEBサイト用のアニメーション／掲載カテゴリ: 3DCG、Animation、Concept Movie。"
+    },
+    {
+      "id": "JEoeDuj28Xc",
+      "genres": [
+        "mv",
+        "youtube-sns"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "ポケモンKids TVの公式動画で、掲載カテゴリにMusic videoと明記。ポケモンのキッズ用YouTubeチャンネルの公式動画／掲載カテゴリ: 2D animation、Animation、Music video。"
+    },
+    {
+      "id": "1075594060",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリにMotion graphicsと明記。掲載カテゴリ: 2D animation、Animation、Motion graphics、Original。"
+    },
+    {
+      "id": "vvmT8RHpDrY",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリにMusic videoと明記。掲載カテゴリ: 2D animation、Animation、Music video。"
+    },
+    {
+      "id": "3TP0kTnkzvA",
+      "genres": [
+        "branded-movie"
+      ],
+      "products": [
+        "beauty"
+      ],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "タイトル・説明に「POLAの肌分析ブランドムービー」と明記、モーショングラフィックス表現とある。掲載カテゴリ: 2D animation、Brand movie。"
+    },
+    {
+      "id": "Ep2IbO1Ze2o",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリや説明にMotion graphics／映像演出と明記。掲載カテゴリ: Coding、Experience、Motion graphics、Music Visualization。"
+    },
+    {
+      "id": "1075187628",
+      "genres": [
+        "documentary"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg",
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリにDocumentary、3DCG、Motion graphics等が明記。掲載カテゴリ: 2D animation、3DCG、Animation、Documentary、Motion graphics、Concept Movie等。"
+    },
+    {
+      "id": "8QJ8KNdhkiA",
+      "genres": [
+        "opening"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "掲載カテゴリにOpening movieと明記。掲載カテゴリ: 2D animation、Animation、Opening movie、Short film。"
+    },
+    {
+      "id": "30G-t00MiWU",
+      "genres": [],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0,
+      "evidence": "展示出展（Installation）やオリジナル作品との記述はあるが、タクソノミーの該当ジャンル語は明記されていない。掲載カテゴリ: 2D animation、Animation、Installation、Original。"
+    },
+    {
+      "id": "bjfOQgzNlAY",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリにMusic videoと明記。掲載カテゴリ: 2D animation、Music video。"
+    },
+    {
+      "id": "WEkK5V_bap4",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "掲載カテゴリにMotion graphics／Showreelと明記。掲載カテゴリ: 2D animation、AD、Motion graphics、Showreel等。"
+    },
+    {
+      "id": "Ggx00zVpO0k",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリにMusic videoと明記。掲載カテゴリ: 2D animation、Music video。"
+    },
+    {
+      "id": "MpcG7q0bU9I",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリにMusic videoと明記。掲載カテゴリ: 2D animation、Animation、Music video。"
+    },
+    {
+      "id": "X657E3UTLAo",
+      "genres": [
+        "opening"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "掲載カテゴリにOpening movie／TV drama opening titleと明記。掲載カテゴリ: Opening movie、Title movie、TV drama opening title。"
+    },
+    {
+      "id": "EeSKlyhYp9w",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "illustration"
+      ],
+      "tones": [
+        "emotional"
+      ],
+      "confidence": 0.8,
+      "evidence": "掲載カテゴリ: Animation、Music video。説明: 「とある街の冴えない発明家が大切な人を想い、守り抜く物語」「手書き感あるラフなタッチで作り上げた作品」"
+    },
+    {
+      "id": "MsVZUGHRL6k",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Music video。本文: 「すべてUnreal Engine 5で制作」"
+    },
+    {
+      "id": "gcxPGPIcEnA",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "illustration"
+      ],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Music video、TV、TVアニメ ending。タグ: 2D animation、Animation、Music video"
+    },
+    {
+      "id": "XEKPn3WbksE",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "illustration",
+        "live-action"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Live action、Music video。タグ: 2D animation、Live action、Music video"
+    }
+  ],
+  "accepted": [
+    {
+      "id": "G4L7QbdgFLQ",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: 💗 【オリジナルMV】「君と夏フェス／SHISHAMO」【神楽めあ/しぐれうい】 ポップリファレンス。トーン、ぽよぽよした動き、枠。"
+    },
+    {
+      "id": "Qeagip5qsoE",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "camera-work"
+      ],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "掲載者メモ: 💗Deku vs Lady Nagant | MHA x Out of Controlカメラワークすごい"
+    },
+    {
+      "id": "bA7ty873TsM",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: 💗》Suicide Tuesday《 -「A Silent Voice AMV」ジャングルジムとか飛び降り寸前のドアの影とかが先に出てくるとこ"
+    },
+    {
+      "id": "n5MZnhCVuF4",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: 💗イロドリミドリ 舞ヶ原高校軽音部 『Agitation！』MVエフェクトにハーフトーン乗せるのいいなと思った"
+    },
+    {
+      "id": "gcgKUcJKxIs",
+      "genres": [
+        "opening"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "掲載者メモ: 💗 TVアニメ『呪術廻戦』第2期「懐玉・玉折」ノンクレジットOPムービー／OPテーマ：キタニタツヤ「青のすみか」"
+    },
+    {
+      "id": "pbv7r94dT_M",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載者メモ: 💗 カナダ人がG4L / Giga 歌ってみた　covered by 赤黒月 Akakurotsuki【オリジナルMV】 ガラス表現かっけえ"
+    },
+    {
+      "id": "wTpyHjRaO6c",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "掲載者メモ: 💗【モーショングラフィックス】ColorCoordination | motiongraphics冒頭とラストが良かった"
+    },
+    {
+      "id": "Lf31jINfG4o",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "掲載者メモ: 💗“6秒企画”　モーションハッカソン0:04辺りの立方体がくるくるしてるところがよかった"
+    },
+    {
+      "id": "km0-E99w8f0",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに『主題歌』『ノンテロップ映像』（Music Video的コンテンツ）。掲載者メモ: 「サビが3D背景Onlyカット」と明記（3D使用の記述）。"
+    },
+    {
+      "id": "8lN4BOgo1_E",
+      "genres": [
+        "web-cm"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "タイトルに『公式PV』『コミックス3巻発売記念PV』と明記（プロモーション映像）。掲載者メモ: 『キャラモーション最強』の言及あり（演出傾向の注記だが明確な演出カテゴリ指定は無し）。"
+    },
+    {
+      "id": "wdIPqaoy2Dk",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "タイトルに『Music Video』と明記。掲載者メモにグリッチ表現に関する言及あり（演出の詳細だがトーンカテゴリとは一致せず）。"
+    },
+    {
+      "id": "8DZY3sJ7ECc",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "タイトルに『AMV』（Music Videoの形式）と明記。掲載者メモ: 『炎』など視覚モチーフの記述。"
+    },
+    {
+      "id": "z_rpYAddekM",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに『モーショングラフィックス』と明記（制作手法カテゴリ）。掲載者メモ: デザインに関する言及あり。"
+    },
+    {
+      "id": "5l9JixNT1c0",
+      "genres": [
+        "opening"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに『OP』と明記（オープニング映像）。掲載者メモに作画に関する具体的記述あり。"
+    },
+    {
+      "id": "k4ptLgPAPr8",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "タイトルに楽曲名・アーティスト表記および『映像合作』の記載（音楽系の映像であることが明示）。掲載者メモ: ワイヤーフレーム等の表現言及あり。"
+    },
+    {
+      "id": "-IPI7Su-v-c",
+      "genres": [
+        "web-cm"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに『発売記念スペシャルPV』『TVアニメ好評放送中』と明記（プロモーション映像）。掲載者メモ: 『バカ動く』等作画への評価あり。"
+    },
+    {
+      "id": "EVZKRaD_zlc",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "タイトルに『Lyric Video』と明記（歌詞付き音楽映像）。掲載者メモ: 作字やグラフィック表現への言及あり。"
+    },
+    {
+      "id": "J2_XzPnGQ00",
+      "genres": [
+        "tv-cm"
+      ],
+      "products": [
+        "sports"
+      ],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに『スカパー！プロ野球2023「オープン戦徹底中継」篇 30秒』と明記（テレビCMの長さと内容を明示）。掲載者メモ: 『コラージュ』という編集手法の言及あり。商材として『プロ野球』＝スポーツが明示されている。"
+    },
+    {
+      "id": "use-LY-bWrQ",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "タイトルに『Music Video』と明記（音楽映像）。掲載者メモ: 単語『綺麗』のみ。"
+    },
+    {
+      "id": "NZaTctXb-nY",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトル／掲載者メモ: タイトルに「【MV】」と記載／掲載者メモに色味の言及"
+    },
+    {
+      "id": "uO3uxTzpv7o",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトル／掲載者メモ: タイトルに「Official Lyric Video」／掲載者メモに「文字組みのアイデアが豊富」"
+    },
+    {
+      "id": "3Rr01DQA3_c",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトル／掲載者メモ: タイトルに「AMV（My Hero Academia AMV）」／掲載者メモに『この人のAMVかっこよくて好き』"
+    },
+    {
+      "id": "1hKt4Vu78LM",
+      "genres": [
+        "opening"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトル／掲載者メモ: タイトルに「オープニングアニメーション」／掲載者メモに色味の言及"
+    },
+    {
+      "id": "cEoNkk6Zruc",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトル／掲載者メモ: タイトルに「【MotionGraphics】」／掲載者メモに「質感」"
+    },
+    {
+      "id": "CdoPneh0ifY",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトル／掲載者メモ: タイトルに「MV（CLUSTER BLASTER ）」／掲載者メモに「コラージュ」"
+    },
+    {
+      "id": "TZ9LxWh8eug",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトル／掲載者メモ: タイトルに「モーショングラフィック M/V (unofficial)」／掲載者メモにフラットなルックへの言及"
+    },
+    {
+      "id": "XKqC2bvkrxo",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトル／掲載者メモ: タイトルに「키네틱 타이포그래피（キネティックタイポグラフィ）」／掲載者メモに視線を追わせる表現の言及"
+    },
+    {
+      "id": "QLKFbQyy1uw",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトル／掲載者メモに「MotionGraphics」と明記"
+    },
+    {
+      "id": "c4qhd5wnA80",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに「AMV/MAD」と明記"
+    },
+    {
+      "id": "QFGu1j6tHkM",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトル／掲載者メモに「motion graphics」と明記"
+    },
+    {
+      "id": "c1alHyIvZFo",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載者メモに「AMV」表記（Bloom Into You AMV）"
+    },
+    {
+      "id": "h3k2-CL7ZHI",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに「Motion Graphics」と明記"
+    },
+    {
+      "id": "3T0wEUW1THE",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに「歌ってみた／Cover」と明記"
+    },
+    {
+      "id": "3qfwc1AAgVA",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに「MAD/AMV」と明記"
+    },
+    {
+      "id": "dghrfS1c03g",
+      "genres": [
+        "tv-cm"
+      ],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "タイトルに「CM」と明記、説明に「切り絵の素材をデジタルモーションで動かしている」と記載"
+    },
+    {
+      "id": "WpJ6Zrz2nmg",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "camera-work"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video。作品説明に「のんびり過ごす休日をかわいく撮りました。」"
+    },
+    {
+      "id": "TQnasEMsaJM",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "掲載カテゴリ: 2D animation、Music video。原宿を歩き作画（エアスプレーと水彩）で制作したと記載。"
+    },
+    {
+      "id": "927104512",
+      "genres": [
+        "mv",
+        "opening"
+      ],
+      "products": [],
+      "directions": [
+        "motion-graphics",
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.88,
+      "evidence": "掲載カテゴリ: 2D animation、3DCG、Live opening animation、Motion graphics、Opening movie、Signage、Music video。公式説明に「Opening movie」と明記。"
+    },
+    {
+      "id": "eR_KaFYN8Qo",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Animation、Music video。"
+    },
+    {
+      "id": "831105343",
+      "genres": [
+        "branded-movie"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Brand movie、Concept Movie。タイトルにブランド名（ISSEY MIYAKE）と明記。"
+    },
+    {
+      "id": "omG6ILn6bvQ",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.86,
+      "evidence": "掲載カテゴリ: 3DCG、Animation、Music video。説明にアサヒスーパードライ×3x3.EXEの応援ソングと記載。"
+    },
+    {
+      "id": "YHg4_ckg1yo",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video。タイトルに Music Video と明記。"
+    },
+    {
+      "id": "m5j4wbyYQMk",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.88,
+      "evidence": "掲載カテゴリ: 3DCG、Animation、Music video。タイトルに「赤ちゃんが喜ぶ歌」と明記。"
+    },
+    {
+      "id": "eWXdu23GAtY",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Music video、Pixel Art。Music video の明記と作画手法の説明あり。"
+    },
+    {
+      "id": "ttCsZrdhfeY",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、3DCG、Music video。説明に3Dアニメーション化と明記。"
+    },
+    {
+      "id": "enrliFE-xXc",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Animation。作品説明に「3Dアニメーション」に挑戦と明記。"
+    },
+    {
+      "id": "e8cU7rcN7kk",
+      "genres": [
+        "mv",
+        "film"
+      ],
+      "products": [],
+      "directions": [
+        "motion-graphics",
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、3DCG、Motion graphics、Movie、Music video。説明でモーショングラフィックスや詳細なコンポジット調整を強調。"
+    },
+    {
+      "id": "oA0CpI0vCK4",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: Music video。タイトルに MV と明記。"
+    },
+    {
+      "id": "YBELyKlJ4AU",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリに3DCGと明記。掲載カテゴリ: 3DCG、Animation。"
+    },
+    {
+      "id": "1076319399",
+      "genres": [
+        "corporate"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "自社のWEBサイト用のアニメーションであることと掲載カテゴリに3DCGが明記。自社のWEBサイト用のアニメーション／掲載カテゴリ: 3DCG、Animation、Concept Movie。"
+    },
+    {
+      "id": "JEoeDuj28Xc",
+      "genres": [
+        "mv",
+        "youtube-sns"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "ポケモンKids TVの公式動画で、掲載カテゴリにMusic videoと明記。ポケモンのキッズ用YouTubeチャンネルの公式動画／掲載カテゴリ: 2D animation、Animation、Music video。"
+    },
+    {
+      "id": "1075594060",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリにMotion graphicsと明記。掲載カテゴリ: 2D animation、Animation、Motion graphics、Original。"
+    },
+    {
+      "id": "vvmT8RHpDrY",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリにMusic videoと明記。掲載カテゴリ: 2D animation、Animation、Music video。"
+    },
+    {
+      "id": "3TP0kTnkzvA",
+      "genres": [
+        "branded-movie"
+      ],
+      "products": [
+        "beauty"
+      ],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "タイトル・説明に「POLAの肌分析ブランドムービー」と明記、モーショングラフィックス表現とある。掲載カテゴリ: 2D animation、Brand movie。"
+    },
+    {
+      "id": "Ep2IbO1Ze2o",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリや説明にMotion graphics／映像演出と明記。掲載カテゴリ: Coding、Experience、Motion graphics、Music Visualization。"
+    },
+    {
+      "id": "1075187628",
+      "genres": [
+        "documentary"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg",
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリにDocumentary、3DCG、Motion graphics等が明記。掲載カテゴリ: 2D animation、3DCG、Animation、Documentary、Motion graphics、Concept Movie等。"
+    },
+    {
+      "id": "8QJ8KNdhkiA",
+      "genres": [
+        "opening"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "掲載カテゴリにOpening movieと明記。掲載カテゴリ: 2D animation、Animation、Opening movie、Short film。"
+    },
+    {
+      "id": "bjfOQgzNlAY",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリにMusic videoと明記。掲載カテゴリ: 2D animation、Music video。"
+    },
+    {
+      "id": "WEkK5V_bap4",
+      "genres": [],
+      "products": [],
+      "directions": [
+        "motion-graphics"
+      ],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "掲載カテゴリにMotion graphics／Showreelと明記。掲載カテゴリ: 2D animation、AD、Motion graphics、Showreel等。"
+    },
+    {
+      "id": "Ggx00zVpO0k",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリにMusic videoと明記。掲載カテゴリ: 2D animation、Music video。"
+    },
+    {
+      "id": "MpcG7q0bU9I",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリにMusic videoと明記。掲載カテゴリ: 2D animation、Animation、Music video。"
+    },
+    {
+      "id": "X657E3UTLAo",
+      "genres": [
+        "opening"
+      ],
+      "products": [],
+      "directions": [],
+      "tones": [],
+      "confidence": 0.95,
+      "evidence": "掲載カテゴリにOpening movie／TV drama opening titleと明記。掲載カテゴリ: Opening movie、Title movie、TV drama opening title。"
+    },
+    {
+      "id": "MsVZUGHRL6k",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "vfx-3dcg"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 3DCG、Music video。本文: 「すべてUnreal Engine 5で制作」"
+    },
+    {
+      "id": "gcxPGPIcEnA",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "illustration"
+      ],
+      "tones": [],
+      "confidence": 0.85,
+      "evidence": "掲載カテゴリ: 2D animation、Animation、Music video、TV、TVアニメ ending。タグ: 2D animation、Animation、Music video"
+    },
+    {
+      "id": "XEKPn3WbksE",
+      "genres": [
+        "mv"
+      ],
+      "products": [],
+      "directions": [
+        "illustration",
+        "live-action"
+      ],
+      "tones": [],
+      "confidence": 0.9,
+      "evidence": "掲載カテゴリ: 2D animation、Live action、Music video。タグ: 2D animation、Live action、Music video"
+    }
+  ]
+}

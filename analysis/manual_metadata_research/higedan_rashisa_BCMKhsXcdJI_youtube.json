@@ -1,0 +1,66 @@
+{
+  "kind": "youtube#videoListResponse",
+  "etag": "ReUztRpLPOSNrTNCroGU0YUBwlI",
+  "items": [
+    {
+      "kind": "youtube#video",
+      "etag": "4rOas5HqAXxMkVuXTSDARk041Ec",
+      "id": "BCMKhsXcdJI",
+      "snippet": {
+        "publishedAt": "2025-08-09T11:59:51Z",
+        "channelId": "UC9M4B-fqveLyWPGNdSkam7g",
+        "title": "Official髭男dism - らしさ [Official Audio]",
+        "description": "9/19(金) 公開 \n劇場アニメ『ひゃくえむ。』主題歌\n\n[Video Credit]\nIllustrator : Uoto\nArt director : Shinya Hanafusa (TI_ALT)\nDesigner : Tasuku Matsuo (TI_ALT) \nMotion Designer : Kaito Mizuno\n\n■STREAMING & DL\nhttps://hgdn.lnk.to/rashisa\n\n■特設サイト\nhttps://rashisa.ponycanyon.co.jp\n\n■劇場アニメ『ひゃくえむ。』公式HP\nhttps://hyakuemu-anime.com/\n\nFOLLOW \"HIGEDAN\"\nWebsite: http://higedan.com/\nInstagram: https://instagram.com/officialhigedandism\nTwitter: https://twitter.com/officialhige\nLINE: https://line.me/ti/p/%40higedan\nTikTok: https://www.tiktok.com/@official_hige_dandism\nFacebook: https://www.facebook.com/officialhigedandism",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/BCMKhsXcdJI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/BCMKhsXcdJI/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/BCMKhsXcdJI/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/BCMKhsXcdJI/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/BCMKhsXcdJI/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Official髭男dism",
+        "tags": [
+          "ひゃくえむ",
+          "100M",
+          "魚豊",
+          "チ。",
+          "100METERS",
+          "髭男",
+          "ヒゲダン"
+        ],
+        "categoryId": "10",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "ja",
+        "localized": {
+          "title": "Official髭男dism - らしさ [Official Audio]",
+          "description": "9/19(金) 公開 \n劇場アニメ『ひゃくえむ。』主題歌\n\n[Video Credit]\nIllustrator : Uoto\nArt director : Shinya Hanafusa (TI_ALT)\nDesigner : Tasuku Matsuo (TI_ALT) \nMotion Designer : Kaito Mizuno\n\n■STREAMING & DL\nhttps://hgdn.lnk.to/rashisa\n\n■特設サイト\nhttps://rashisa.ponycanyon.co.jp\n\n■劇場アニメ『ひゃくえむ。』公式HP\nhttps://hyakuemu-anime.com/\n\nFOLLOW \"HIGEDAN\"\nWebsite: http://higedan.com/\nInstagram: https://instagram.com/officialhigedandism\nTwitter: https://twitter.com/officialhige\nLINE: https://line.me/ti/p/%40higedan\nTikTok: https://www.tiktok.com/@official_hige_dandism\nFacebook: https://www.facebook.com/officialhigedandism"
+        },
+        "defaultAudioLanguage": "ja"
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 1,
+    "resultsPerPage": 1
+  }
+}

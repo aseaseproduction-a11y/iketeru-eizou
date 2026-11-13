@@ -1,0 +1,56 @@
+{
+  "kind": "youtube#videoListResponse",
+  "etag": "Gajc_R90UD5QLYSsLNH4la77qF4",
+  "items": [
+    {
+      "kind": "youtube#video",
+      "etag": "mDVzLtDm7ZBe3PG8Y_bxfai7Mfo",
+      "id": "fcfz3SqSAUM",
+      "snippet": {
+        "publishedAt": "2025-10-19T11:57:25Z",
+        "channelId": "UCbUqJLackHWawKL0grThscQ",
+        "title": "ひかりのこだま",
+        "description": "FRENZ2025で公開した自主制作アニメーションです\n\nMovie : mknb\n\nCharacter Modeling : 塩のめ\nhttps://x.com/shionome33\n\nSound : wagataki\nhttps://x.com/wagataki_v",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/fcfz3SqSAUM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/fcfz3SqSAUM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/fcfz3SqSAUM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/fcfz3SqSAUM/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/fcfz3SqSAUM/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "sadfkmvc",
+        "categoryId": "22",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "ja",
+        "localized": {
+          "title": "ひかりのこだま",
+          "description": "FRENZ2025で公開した自主制作アニメーションです\n\nMovie : mknb\n\nCharacter Modeling : 塩のめ\nhttps://x.com/shionome33\n\nSound : wagataki\nhttps://x.com/wagataki_v"
+        }
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 1,
+    "resultsPerPage": 1
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "mode": "apply",
+  "completedAt": "2026-08-20T01:02:08.834Z",
+  "counts": {
+    "planned": 7,
+    "insertable": 4,
+    "inserted": 4,
+    "skipped": 3
+  },
+  "inserted": [
+    {
+      "id": "9k1rL4MEzKc",
+      "title": "日清シスコ ごろグラCM「ごろグラ買ってもいい？ 篇」30秒 / 初音ミク",
+      "source": "creshore",
+      "videoUrl": "https://www.youtube.com/watch?v=9k1rL4MEzKc"
+    },
+    {
+      "id": "RpUCeU3OLWk",
+      "title": "ARSOA New SKIN CARE 2026",
+      "source": "creshore",
+      "videoUrl": "https://www.youtube.com/watch?v=RpUCeU3OLWk"
+    },
+    {
+      "id": "CoKrnvc6AyE",
+      "title": "【公開記念ミニ特番 Part1 撮影秘話編】映画『宝島』9月19日（金）公開",
+      "source": "creshore",
+      "videoUrl": "https://www.youtube.com/watch?v=CoKrnvc6AyE"
+    },
+    {
+      "id": "U3SjKBsVtj0",
+      "title": "【味の素】AminoScience VISION OF AMINOSCIENTIST #2",
+      "source": "creshore",
+      "videoUrl": "https://www.youtube.com/watch?v=U3SjKBsVtj0"
+    }
+  ],
+  "skipped": [
+    {
+      "id": "dD4O1f5-CKU",
+      "title": "【コカ･コーラ】 一緒だともっとおいしい「お花見」篇 Coca-Cola",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "1175847608",
+      "title": "SABERA",
+      "reason": "duplicate_id"
+    },
+    {
+      "id": "U0Klb45BNlQ",
+      "title": "Mom Don't wipe floor",
+      "reason": "duplicate_id"
+    }
+  ]
+}

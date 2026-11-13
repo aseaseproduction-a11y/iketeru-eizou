@@ -1,0 +1,56 @@
+{
+  "kind": "youtube#videoListResponse",
+  "etag": "P5HWPjv7SID_unKTcwpyg3A1uRg",
+  "items": [
+    {
+      "kind": "youtube#video",
+      "etag": "w4k8F5LmZtHeCJdi52S3eFs3szY",
+      "id": "11vAh33_2eI",
+      "snippet": {
+        "publishedAt": "2025-08-03T07:15:58Z",
+        "channelId": "UCXBgKqFxSjKADEuMLkc1Bpg",
+        "title": "「Fate/Grand Order」10th Anniversary Movie",
+        "description": "それは最後の決戦の前のひととき―――\n\n【テーマソング】\n「すばらしいせかい」 \n神山羊×YOSUKE from SPYAIR\n2025.8.4 Release\n配信予約URL https://smar.lnk.to/0804paps\n配信URL https://smar.lnk.to/kBX2I5\n\n作詞・作曲・編曲：神山 羊（Sony Music Associated Records）\n楽曲協力：原田 絵美\n\n【アニメーション制作】\n監督・プロデューサー：中山 竜\n絵コンテ・演出補佐：ウーカタ\n作画監督：柿沼 蒼生\n　　　　　ウーカタ\n　　　　　ちゃい\n　　　　　首藤 寛陽\n　　　　　ペンアレ\n　　　　　りあ\n　　　　　まいのレ\n作画監督補佐：木田 侑汰郎\n原画：ウーカタ\n　　　ペンアレ\n　　　まいのレ\n　　　ちゃい\n　　　さだもも\n　　　神多 洋\n　　　小山 清太\n　　　りあ\n　　　中山 竜\n　　　田仲 マイケル\n第二原画：もる\n　　　　　李 沐洋\n　　　　　首藤 寛陽\n　　　　　柿沼 蒼生\n　　　　　小山 清太\n　　　　　スミン\n　　　　　りあ\n　　　　　楮畑 百香\n　　　　　NongDarn\n　　　　　中野 來叶\n　　　　　幸田 真奈\n　　　　　芝田 洸太郎\n　　　　　町田 吟醸\n　　　　　清水 聖美\n　　　　　杨 帆\n　　　　　米井 巧\n　　　　　ろびんそんしいたけ\n　　　　　大串 新\n　　　　　水野 さつき\n　　　　　マサオ\n　　　　　平松 義貴\n　　　　　吉田 絵未里\n　　　　　sAngo\n \n　　　　　スタジオエイトカラーズ\n　　　　　加治屋 颯\n　　　　　山地 梨穂\n　　　　　池上 樹\n　　　　　奥村 彩恵\n　　　　　中嶋 和奏\n\n作画指導：田仲 マイケル\n動画検査：小林 京介\n動画：Fincrossed Studio\n　　　スタジオ・エル\n　　　株式会社AXsiZ\n色指定：神多 洋\n　　　　もる\n　　　　山崎 大輝\n　　　　ウーカタ\n仕上：スタジオ・エル\n仕上検査：田中 文子\n　　　　　𠮷里 修耶\n　　　　　倉田 咲\n制作進行補佐：Maaya Tamako\n美術監督/カラースクリプト：伊藤 拓海\nカラースクリプト協力：高柳 周作\n美術：伊藤 拓海\n　　　水谷 りお\n　　　東 大地\n　　　新井 佳奈\n　　　後藤 俊彦(Yostar Pictures)\n　　　高薄 亜実\n　　　YUKIMON\n3D美術：村田 裕斗\n撮影監督/編集：高柳 周作\n撮影：高柳 周作\n　　　本䑓 貴宏\n　　　石坂 一樹\n　　　伊藤 遼\n　　　涌元 トモタカ\n　　　藏本 輝\n \n　　　EOTA撮影ユニット\n　　　木舩 颯人\n　　　小早川 侑\n　　　加藤 楓菜\n　　　三輪 あこ\n　　　佐藤 瑞希\n　　　池辺 凜\n　　　新堀 翔琉\n　　　宮下 光里\n \n　　　Jiva Animation\n　　　Aswin Nur Cahya\n　　　Reefa\n　　　Yoko\n　　　Richo Aldhiana\n　　　Ilham\n　　　Ridwan S. Maulana\n \nポストプロダクション：杉原 聖\n　　　　　　　　　　　橋本 光平\n　　　　　　　　　　　二川 裕\n　　　　　　　　　　　大野 真由子\n\n制作デスク：小山 清太\n制作進行：さだもも\n\nアニメーションプロダクション：Andraft Inc.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/11vAh33_2eI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/11vAh33_2eI/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/11vAh33_2eI/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/11vAh33_2eI/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/11vAh33_2eI/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "【公式】Fate/Grand Order チャンネル",
+        "categoryId": "20",
+        "liveBroadcastContent": "none",
+        "defaultLanguage": "ja",
+        "localized": {
+          "title": "「Fate/Grand Order」10th Anniversary Movie",
+          "description": "それは最後の決戦の前のひととき―――\n\n【テーマソング】\n「すばらしいせかい」 \n神山羊×YOSUKE from SPYAIR\n2025.8.4 Release\n配信予約URL https://smar.lnk.to/0804paps\n配信URL https://smar.lnk.to/kBX2I5\n\n作詞・作曲・編曲：神山 羊（Sony Music Associated Records）\n楽曲協力：原田 絵美\n\n【アニメーション制作】\n監督・プロデューサー：中山 竜\n絵コンテ・演出補佐：ウーカタ\n作画監督：柿沼 蒼生\n　　　　　ウーカタ\n　　　　　ちゃい\n　　　　　首藤 寛陽\n　　　　　ペンアレ\n　　　　　りあ\n　　　　　まいのレ\n作画監督補佐：木田 侑汰郎\n原画：ウーカタ\n　　　ペンアレ\n　　　まいのレ\n　　　ちゃい\n　　　さだもも\n　　　神多 洋\n　　　小山 清太\n　　　りあ\n　　　中山 竜\n　　　田仲 マイケル\n第二原画：もる\n　　　　　李 沐洋\n　　　　　首藤 寛陽\n　　　　　柿沼 蒼生\n　　　　　小山 清太\n　　　　　スミン\n　　　　　りあ\n　　　　　楮畑 百香\n　　　　　NongDarn\n　　　　　中野 來叶\n　　　　　幸田 真奈\n　　　　　芝田 洸太郎\n　　　　　町田 吟醸\n　　　　　清水 聖美\n　　　　　杨 帆\n　　　　　米井 巧\n　　　　　ろびんそんしいたけ\n　　　　　大串 新\n　　　　　水野 さつき\n　　　　　マサオ\n　　　　　平松 義貴\n　　　　　吉田 絵未里\n　　　　　sAngo\n \n　　　　　スタジオエイトカラーズ\n　　　　　加治屋 颯\n　　　　　山地 梨穂\n　　　　　池上 樹\n　　　　　奥村 彩恵\n　　　　　中嶋 和奏\n\n作画指導：田仲 マイケル\n動画検査：小林 京介\n動画：Fincrossed Studio\n　　　スタジオ・エル\n　　　株式会社AXsiZ\n色指定：神多 洋\n　　　　もる\n　　　　山崎 大輝\n　　　　ウーカタ\n仕上：スタジオ・エル\n仕上検査：田中 文子\n　　　　　𠮷里 修耶\n　　　　　倉田 咲\n制作進行補佐：Maaya Tamako\n美術監督/カラースクリプト：伊藤 拓海\nカラースクリプト協力：高柳 周作\n美術：伊藤 拓海\n　　　水谷 りお\n　　　東 大地\n　　　新井 佳奈\n　　　後藤 俊彦(Yostar Pictures)\n　　　高薄 亜実\n　　　YUKIMON\n3D美術：村田 裕斗\n撮影監督/編集：高柳 周作\n撮影：高柳 周作\n　　　本䑓 貴宏\n　　　石坂 一樹\n　　　伊藤 遼\n　　　涌元 トモタカ\n　　　藏本 輝\n \n　　　EOTA撮影ユニット\n　　　木舩 颯人\n　　　小早川 侑\n　　　加藤 楓菜\n　　　三輪 あこ\n　　　佐藤 瑞希\n　　　池辺 凜\n　　　新堀 翔琉\n　　　宮下 光里\n \n　　　Jiva Animation\n　　　Aswin Nur Cahya\n　　　Reefa\n　　　Yoko\n　　　Richo Aldhiana\n　　　Ilham\n　　　Ridwan S. Maulana\n \nポストプロダクション：杉原 聖\n　　　　　　　　　　　橋本 光平\n　　　　　　　　　　　二川 裕\n　　　　　　　　　　　大野 真由子\n\n制作デスク：小山 清太\n制作進行：さだもも\n\nアニメーションプロダクション：Andraft Inc."
+        }
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 1,
+    "resultsPerPage": 1
+  }
+}
