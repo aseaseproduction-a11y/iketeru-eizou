@@ -51,8 +51,9 @@ const curationNoteSchema = z.object({
   purpose: z.string().trim().max(20_000).default(""),
   background: z.string().trim().max(20_000).default(""),
   evaluation: z.string().trim().max(20_000).default(""),
+  clientPitch: z.string().trim().max(20_000).optional().default(""),
   sourceUrls: z.array(z.string().url()).default([]),
-}).default({ purpose: "", background: "", evaluation: "", sourceUrls: [] });
+}).default({ purpose: "", background: "", evaluation: "", clientPitch: "", sourceUrls: [] });
 const favoriteProfileIdSchema = z.string().uuid();
 const favoriteProfileNameSchema = z.string().trim().min(1, "利用者名を入力してください").max(80, "利用者名は80文字以内にしてください");
 

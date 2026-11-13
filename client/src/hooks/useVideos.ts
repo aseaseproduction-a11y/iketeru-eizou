@@ -266,6 +266,7 @@ export function getVideoSearchText(video: Video): string {
     video.curationNote?.purpose || "",
     video.curationNote?.background || "",
     video.curationNote?.evaluation || "",
+    video.curationNote?.clientPitch || "",
   ]
     .join(" ")
     .toLowerCase();

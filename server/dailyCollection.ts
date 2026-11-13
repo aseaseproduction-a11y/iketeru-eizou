@@ -29,6 +29,7 @@ function parseDailyCollectionCurationNote(value: string | null) {
       purpose: typeof note.purpose === "string" ? note.purpose : "",
       background: typeof note.background === "string" ? note.background : "",
       evaluation: typeof note.evaluation === "string" ? note.evaluation : "",
+      ...(typeof note.clientPitch === "string" && note.clientPitch ? { clientPitch: note.clientPitch } : {}),
       sourceUrls: Array.isArray(note.sourceUrls)
         ? note.sourceUrls.filter((url): url is string => typeof url === "string" && /^https?:\/\//.test(url))
         : [],

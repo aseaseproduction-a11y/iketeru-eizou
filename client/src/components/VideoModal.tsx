@@ -43,6 +43,7 @@ type VideoEditDraft = {
   curationPurpose: string;
   curationBackground: string;
   curationEvaluation: string;
+  curationClientPitch: string;
   curationSources: string;
 };
 
@@ -72,6 +73,7 @@ function draftFromVideo(video: Video): VideoEditDraft {
     curationPurpose: video.curationNote?.purpose || "",
     curationBackground: video.curationNote?.background || "",
     curationEvaluation: video.curationNote?.evaluation || "",
+    curationClientPitch: video.curationNote?.clientPitch || "",
     curationSources: toText(video.curationNote?.sourceUrls || []),
   };
 }
@@ -149,6 +151,7 @@ export default function VideoModal({
 }: VideoModalProps) {
   const [isEditing, setIsEditing] = useState(false);
   const [copiedUrl, setCopiedUrl] = useState(false);
+  const [copiedClientPitch, setCopiedClientPitch] = useState(false);
   const [editDraft, setEditDraft] = useState<VideoEditDraft>(() => draftFromVideo(video));
   const utils = trpc.useUtils();
   const updateVideo = trpc.videos.update.useMutation();
@@ -170,6 +173,19 @@ export default function VideoModal({
     }
   };
 
+  const copyClientPitch = async () => {
+    const pitch = video.curationNote?.clientPitch?.trim();
+    if (!pitch) return;
+    try {
+      await navigator.clipboard.writeText(pitch);
+      setCopiedClientPitch(true);
+      toast.success("クライアント説明用フレーズをコピーしました。");
+      window.setTimeout(() => setCopiedClientPitch(false), 1800);
+    } catch {
+      toast.error("コピーできませんでした。ブラウザの権限をご確認ください。");
+    }
+  };
+
   const saveEdit = async () => {
     const title = editDraft.title.trim();
     if (!title) {
@@ -180,6 +196,14 @@ export default function VideoModal({
       const productionCredits = normalizeProductionCredits([], editDraft.productionCreditText.split(/\n+/));
       const productions = getProductionNames(productionCredits);
       const productionRoles = getProductionRoles(productionCredits);
+      const nextClientPitch = editDraft.curationClientPitch.trim();
+      const nextCurationNote = {
+        purpose: editDraft.curationPurpose,
+        background: editDraft.curationBackground,
+        evaluation: editDraft.curationEvaluation,
+        ...(nextClientPitch ? { clientPitch: nextClientPitch } : (video.curationNote?.clientPitch ? { clientPitch: "" } : {})),
+        sourceUrls: parseList(editDraft.curationSources),
+      };
       await updateVideo.mutateAsync({
         id: video.id,
         platform: video.platform,
@@ -208,12 +232,7 @@ export default function VideoModal({
         aiDirectionRating: editDraft.aiDirectionRating,
         aiTechniqueRating: editDraft.aiTechniqueRating,
         aiAnalysis: editDraft.aiAnalysis,
-        curationNote: {
-          purpose: editDraft.curationPurpose,
-          background: editDraft.curationBackground,
-          evaluation: editDraft.curationEvaluation,
-          sourceUrls: parseList(editDraft.curationSources),
-        },
+        curationNote: nextCurationNote,
         addedDate: video.addedDate,
       });
       const updatedVideo: Video = {
@@ -236,12 +255,7 @@ export default function VideoModal({
         aiDirectionRating: editDraft.aiDirectionRating,
         aiTechniqueRating: editDraft.aiTechniqueRating,
         aiAnalysis: editDraft.aiAnalysis,
-        curationNote: {
-          purpose: editDraft.curationPurpose,
-          background: editDraft.curationBackground,
-          evaluation: editDraft.curationEvaluation,
-          sourceUrls: parseList(editDraft.curationSources),
-        },
+        curationNote: nextCurationNote,
       };
       await utils.videos.list.invalidate();
       onVideoUpdated?.(updatedVideo);
@@ -585,6 +599,9 @@ export default function VideoModal({
                     <label className="mt-3 block text-xs text-muted-foreground">評価・受賞理由
                       <textarea value={editDraft.curationEvaluation} onChange={(event) => setEditDraft((current) => ({ ...current, curationEvaluation: event.target.value }))} rows={4} placeholder="どのような評価を受けたか、見るべき表現は何か" className="mt-1.5 w-full resize-y rounded-lg border border-white/10 bg-black/20 px-3 py-2 text-xs leading-relaxed text-foreground outline-none focus:ring-1 focus:ring-cinematic-red/40" />
                     </label>
+                    <label className="mt-3 block text-xs text-muted-foreground">クライアント説明用 企画意図3行まとめ
+                      <textarea value={editDraft.curationClientPitch} onChange={(event) => setEditDraft((current) => ({ ...current, curationClientPitch: event.target.value }))} rows={3} placeholder="なぜこのカット割／配色／音設計にするのかをクライアントへそのまま共有できる3行説明" className="mt-1.5 w-full resize-y rounded-lg border border-white/10 bg-black/20 px-3 py-2 text-xs leading-relaxed text-foreground outline-none focus:ring-1 focus:ring-cinematic-red/40" />
+                    </label>
                     <label className="mt-3 block text-xs text-muted-foreground">公式出典URL
                       <textarea value={editDraft.curationSources} onChange={(event) => setEditDraft((current) => ({ ...current, curationSources: event.target.value }))} rows={2} placeholder="複数URLはカンマまたは改行で区切る" className="mt-1.5 w-full resize-y rounded-lg border border-white/10 bg-black/20 px-3 py-2 text-xs leading-relaxed text-foreground outline-none focus:ring-1 focus:ring-cinematic-red/40" />
                     </label>
@@ -699,10 +716,26 @@ export default function VideoModal({
                 </div>
               ) : null}
 
-              {(video.curationNote?.purpose || video.curationNote?.background || video.curationNote?.evaluation || video.curationNote?.sourceUrls.length) ? (
+              {(video.curationNote?.purpose || video.curationNote?.background || video.curationNote?.evaluation || video.curationNote?.clientPitch || video.curationNote?.sourceUrls.length) ? (
                 <div className="mb-5 rounded-lg border border-emerald-400/20 bg-emerald-400/[0.035] px-3.5 py-3">
                   <span className="mb-2.5 block text-xs font-semibold tracking-[0.12em] text-emerald-200">CURATION NOTE</span>
                   <div className="space-y-3 text-xs leading-relaxed">
+                    {video.curationNote?.clientPitch ? (
+                      <div className="rounded-md border border-amber-400/25 bg-amber-400/[0.06] px-3 py-2.5">
+                        <div className="flex items-center justify-between gap-2">
+                          <span className="block text-[10px] font-semibold tracking-wider text-amber-200">クライアント説明用・企画意図3行まとめ</span>
+                          <button
+                            type="button"
+                            onClick={copyClientPitch}
+                            className="inline-flex items-center gap-1 rounded border border-amber-300/30 bg-amber-400/10 px-2 py-0.5 text-[10px] font-medium text-amber-100 transition-colors hover:bg-amber-400/20"
+                          >
+                            {copiedClientPitch ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
+                            <span>{copiedClientPitch ? "コピー済み" : "説明文をコピー"}</span>
+                          </button>
+                        </div>
+                        <p className="mt-1.5 whitespace-pre-wrap text-foreground/90">{video.curationNote.clientPitch}</p>
+                      </div>
+                    ) : null}
                     {video.curationNote?.purpose ? <div><span className="block text-[10px] font-semibold text-emerald-300/75">制作目的</span><p className="mt-0.5 whitespace-pre-wrap text-foreground/80">{video.curationNote.purpose}</p></div> : null}
                     {video.curationNote?.background ? <div><span className="block text-[10px] font-semibold text-emerald-300/75">制作背景</span><p className="mt-0.5 whitespace-pre-wrap text-foreground/80">{video.curationNote.background}</p></div> : null}
                     {video.curationNote?.evaluation ? <div><span className="block text-[10px] font-semibold text-emerald-300/75">評価・受賞理由</span><p className="mt-0.5 whitespace-pre-wrap text-foreground/80">{video.curationNote.evaluation}</p></div> : null}

@@ -197,4 +197,25 @@ describe("VideoModal interactions", () => {
     expect(screen.getByText("映像と音楽の一体感が評価された")).toBeTruthy();
     expect(screen.getByRole("link", { name: /公式出典 1/ }).getAttribute("href")).toBe("https://example.com/case-study");
   });
+
+  it("クライアント説明用3行まとめを入力・保存・表示できる", async () => {
+    updateMutation.mutateAsync.mockResolvedValue({ success: true });
+    const pitchText = "1行目：冒頭1秒で視線を止める設計。\n2行目：補色対比で商品を印象付ける。\n3行目：ビート同期の編集で記憶に残す。";
+    const { rerender } = render(<VideoModal video={video} onClose={vi.fn()} />);
+
+    fireEvent.click(screen.getByTitle("追加情報を編集"));
+    fireEvent.change(screen.getByLabelText("クライアント説明用 企画意図3行まとめ"), { target: { value: pitchText } });
+    fireEvent.click(screen.getByRole("button", { name: "変更を保存" }));
+
+    await waitFor(() => expect(updateMutation.mutateAsync).toHaveBeenCalledWith(expect.objectContaining({
+      id: video.id,
+      curationNote: expect.objectContaining({
+        clientPitch: pitchText,
+      }),
+    })));
+
+    rerender(<VideoModal video={{ ...video, curationNote: { purpose: "", background: "", evaluation: "", clientPitch: pitchText, sourceUrls: [] } }} onClose={vi.fn()} />);
+    expect(screen.getByText("クライアント説明用・企画意図3行まとめ")).toBeTruthy();
+    expect(screen.getByRole("button", { name: /説明文をコピー/ })).toBeTruthy();
+  });
 });

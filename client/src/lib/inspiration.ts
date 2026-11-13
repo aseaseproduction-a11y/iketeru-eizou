@@ -41,6 +41,7 @@ export function getInspirationSearchText(video: Video): string {
     video.curationNote?.purpose ?? "",
     video.curationNote?.background ?? "",
     video.curationNote?.evaluation ?? "",
+    video.curationNote?.clientPitch ?? "",
   ].join(" "));
 }
 

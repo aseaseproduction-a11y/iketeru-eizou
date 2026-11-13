@@ -391,6 +391,24 @@ const SYNONYM_MAP: Record<string, string[]> = {
   "美しい": ["美しい", "エモーショナル", "綺麗", "幻想的", "シネマティック", "絶景", "美麗"],
   "狂気": ["狂気", "ホラー", "不気味", "恐怖", "怪作", "カルト", "暴走"],
   "笑い": ["笑い", "笑顔", "コミカル", "ユーモア", "爆笑", "微笑み", "スマイル"],
+  "マッチカット": ["マッチカット", "match cut", "グラフィックマッチ", "形状一致"],
+  "ストップモーション": ["ストップモーション", "コマ撮り", "stop motion", "クレイアニメ", "人形アニメ"],
+  "メタモルフォーゼ": ["メタモルフォーゼ", "モーフ", "モーフィング", "変身", "形態変化"],
+  "ワンカット": ["ワンカット", "長回し", "one take", "シームレス"],
+  "音ハメ": ["音ハメ", "ビートシンク", "リズム編集", "ビートに合わせ", "シンクロ"],
+  "キネティックタイポグラフィ": ["キネティックタイポグラフィ", "タイポグラフィ", "モーショングラフィックス"],
+  "トラッキング": ["トラッキング", "カメラトラック", "追従", "tracking"],
+  "ドリー": ["ドリー", "プッシュイン", "トラックイン", "ドリーアウト", "dolly"],
+  "手持ち": ["手持ち", "ハンディ", "ハンディカメラ", "handheld"],
+  "フォーカス送り": ["フォーカス送り", "ラックフォーカス", "ピント移動", "ピント送り"],
+  "画面分割": ["画面分割", "スプリットスクリーン", "マルチ画面", "split screen"],
+  "vfx": ["vfx", "コンポジット", "合成", "cg合成", "視覚効果"],
+  "グリッチ": ["グリッチ", "データモッシュ", "デジタルノイズ", "走査線", "glitch"],
+  "ロトスコープ": ["ロトスコープ", "rotoscope", "トレース"],
+  "タイムラプス": ["タイムラプス", "ハイパーラプス", "timelapse"],
+  "ジャンプカット": ["ジャンプカット", "カット割り", "jump cut"],
+  "ズーム": ["ズーム", "ズームイン", "ズームアウト", "zoom"],
+  "スピードランプ": ["スピードランプ", "緩急", "speed ramp", "スローモーション"],
 };
 
 /**
@@ -412,7 +430,8 @@ export function getSynonymsForWord(word: string): string[] {
   const normalized = word.trim().toLowerCase();
   const set = new Set<string>([normalized]);
   for (const [key, syns] of Object.entries(SYNONYM_MAP)) {
-    if (normalized.includes(key) || key.includes(normalized)) {
+    const keyLower = key.toLowerCase();
+    if (normalized.includes(keyLower) || keyLower.includes(normalized)) {
       syns.forEach((s) => set.add(s.toLowerCase()));
     }
   }
@@ -535,6 +554,20 @@ const CATEGORY_DEFINITIONS = [
     ]
   },
   {
+    id: "technique",
+    name: "演出技法・編集",
+    icon: "🎬",
+    seedWords: [
+      "マッチカット", "ジャンプカット", "ワンカット", "スピードランプ", "音ハメ",
+      "ストップモーション", "メタモルフォーゼ", "ロトスコープ", "カットアウト", "セルルック",
+      "キネティックタイポグラフィ", "モーショングラフィックス", "コラージュ", "3DCG", "VFX",
+      "コンポジット", "画面分割", "トラッキング", "ドリー", "手持ち", "ズーム",
+      "ローアングル", "俯瞰", "クローズアップ", "フォーカス送り", "被写界深度",
+      "スローモーション", "タイムラプス", "グリッチ", "色収差", "ワイプ",
+      "プロジェクション", "手描き", "ミニチュア", "シルエット", "逆光", "ストロボ"
+    ]
+  },
+  {
     id: "visual",
     name: "演出・カメラ・VFX",
     icon: "🎥",
@@ -604,9 +637,10 @@ export function getSceneKeywordCategories(
       // Skip words already selected
       if (normalizedSelected.has(lower)) continue;
 
+      const terms = getSynonymsForWord(word);
       let matchCount = 0;
       for (let i = 0; i < sceneTexts.length; i++) {
-        if (sceneTexts[i].includes(lower)) {
+        if (terms.some((term) => sceneTexts[i].includes(term))) {
           matchCount++;
         }
       }

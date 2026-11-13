@@ -561,7 +561,7 @@ export default function Home() {
                         自然言語シーン・タイムスタンプ検索
                       </h3>
                       <p className="text-xs sm:text-sm text-white/60 mt-0.5">
-                        「夕日が海に沈む美しい映像」「夜の都会を走る車」など、見たい情景やアクションを自然言語で瞬時に検索できます。
+                        「夕日が海に沈む美しい映像」「マッチカット ダンス」など、情景・アクション・演出技法で瞬時に絞り込めます。
                       </p>
                     </div>
 
@@ -582,7 +582,7 @@ export default function Home() {
                         type="text"
                         value={sceneQuery}
                         onChange={(e) => setSceneQuery(e.target.value)}
-                        placeholder="何が起きているシーンを探しますか？（複数単語で絞り込み可: 夕日 海、夜 ダンス、車 雨）"
+                        placeholder="情景や演出技法でシーンを検索（複数語AND可: マッチカット ダンス、夕日 ドローン、ワンカット）"
                         className="w-full bg-transparent text-sm sm:text-base py-3.5 px-3.5 outline-none text-white placeholder:text-white/30"
                       />
                       {sceneQuery && (

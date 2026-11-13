@@ -21,6 +21,7 @@ export interface CurationNote {
   purpose: string;
   background: string;
   evaluation: string;
+  clientPitch?: string;
   sourceUrls: string[];
 }
 
