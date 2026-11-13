@@ -15,6 +15,7 @@ import { getProductionNames, getProductionRoles, normalizeProductionCredits, pro
 import MetadataValuePicker from "@/components/MetadataValuePicker";
 import { collectMetadataValueSuggestions, resolveSuggestedTagItems, type MetadataValueSuggestions } from "@/lib/metadataValueSuggestions";
 import { detectVideoUrl } from "@/lib/videoUrlDetection";
+import { extractClientPitch, upsertClientPitchInAnalysis } from "@/lib/curationNote";
 import AiAnalysisReport from "@/components/AiAnalysisReport";
 
 export type VideoModalFilter = {
@@ -73,7 +74,7 @@ function draftFromVideo(video: Video): VideoEditDraft {
     curationPurpose: video.curationNote?.purpose || "",
     curationBackground: video.curationNote?.background || "",
     curationEvaluation: video.curationNote?.evaluation || "",
-    curationClientPitch: video.curationNote?.clientPitch || "",
+    curationClientPitch: extractClientPitch(video),
     curationSources: toText(video.curationNote?.sourceUrls || []),
   };
 }
@@ -173,8 +174,10 @@ export default function VideoModal({
     }
   };
 
+  const resolvedClientPitch = extractClientPitch(video);
+
   const copyClientPitch = async () => {
-    const pitch = video.curationNote?.clientPitch?.trim();
+    const pitch = resolvedClientPitch;
     if (!pitch) return;
     try {
       await navigator.clipboard.writeText(pitch);
@@ -197,6 +200,9 @@ export default function VideoModal({
       const productions = getProductionNames(productionCredits);
       const productionRoles = getProductionRoles(productionCredits);
       const nextClientPitch = editDraft.curationClientPitch.trim();
+      const nextAiAnalysis = nextClientPitch !== resolvedClientPitch
+        ? upsertClientPitchInAnalysis(editDraft.aiAnalysis, nextClientPitch)
+        : editDraft.aiAnalysis;
       const nextCurationNote = {
         purpose: editDraft.curationPurpose,
         background: editDraft.curationBackground,
@@ -231,7 +237,7 @@ export default function VideoModal({
         aiOverallRating: editDraft.aiOverallRating,
         aiDirectionRating: editDraft.aiDirectionRating,
         aiTechniqueRating: editDraft.aiTechniqueRating,
-        aiAnalysis: editDraft.aiAnalysis,
+        aiAnalysis: nextAiAnalysis,
         curationNote: nextCurationNote,
         addedDate: video.addedDate,
       });
@@ -254,7 +260,7 @@ export default function VideoModal({
         aiOverallRating: editDraft.aiOverallRating,
         aiDirectionRating: editDraft.aiDirectionRating,
         aiTechniqueRating: editDraft.aiTechniqueRating,
-        aiAnalysis: editDraft.aiAnalysis,
+        aiAnalysis: nextAiAnalysis,
         curationNote: nextCurationNote,
       };
       await utils.videos.list.invalidate();
@@ -716,11 +722,11 @@ export default function VideoModal({
                 </div>
               ) : null}
 
-              {(video.curationNote?.purpose || video.curationNote?.background || video.curationNote?.evaluation || video.curationNote?.clientPitch || video.curationNote?.sourceUrls.length) ? (
+              {(video.curationNote?.purpose || video.curationNote?.background || video.curationNote?.evaluation || resolvedClientPitch || video.curationNote?.sourceUrls.length) ? (
                 <div className="mb-5 rounded-lg border border-emerald-400/20 bg-emerald-400/[0.035] px-3.5 py-3">
                   <span className="mb-2.5 block text-xs font-semibold tracking-[0.12em] text-emerald-200">CURATION NOTE</span>
                   <div className="space-y-3 text-xs leading-relaxed">
-                    {video.curationNote?.clientPitch ? (
+                    {resolvedClientPitch ? (
                       <div className="rounded-md border border-amber-400/25 bg-amber-400/[0.06] px-3 py-2.5">
                         <div className="flex items-center justify-between gap-2">
                           <span className="block text-[10px] font-semibold tracking-wider text-amber-200">クライアント説明用・企画意図3行まとめ</span>
@@ -733,7 +739,7 @@ export default function VideoModal({
                             <span>{copiedClientPitch ? "コピー済み" : "説明文をコピー"}</span>
                           </button>
                         </div>
-                        <p className="mt-1.5 whitespace-pre-wrap text-foreground/90">{video.curationNote.clientPitch}</p>
+                        <p className="mt-1.5 whitespace-pre-wrap text-foreground/90">{resolvedClientPitch}</p>
                       </div>
                     ) : null}
                     {video.curationNote?.purpose ? <div><span className="block text-[10px] font-semibold text-emerald-300/75">制作目的</span><p className="mt-0.5 whitespace-pre-wrap text-foreground/80">{video.curationNote.purpose}</p></div> : null}
