@@ -23,7 +23,11 @@ interface SceneCardProps {
 export default function SceneCard({ scene, index, matchedTerms = [], score, videoTotalDuration, onClick }: SceneCardProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [isPlayingPreview, setIsPlayingPreview] = useState(false);
+  const [isIframePlaying, setIsIframePlaying] = useState(false);
+  const [isIframeBlocked, setIsIframeBlocked] = useState(false);
+  const [fallbackFrameIdx, setFallbackFrameIdx] = useState(0);
   const hoverTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const iframeRef = useRef<HTMLIFrameElement | null>(null);
 
   // Calculate timeline position (Twelve Labs timeline bar)
   // Default total duration to 240s if not known, or endSeconds + 30s
@@ -36,7 +40,7 @@ export default function SceneCard({ scene, index, matchedTerms = [], score, vide
     ? Math.min(Math.round(65 + Math.min(score, 7) * 4.8), 98)
     : null;
 
-  // Trigger preview after 300ms hover to prevent accidental flashing while scrolling
+  // Trigger preview after 350ms hover to prevent accidental flashing while scrolling
   useEffect(() => {
     if (isHovered) {
       hoverTimeoutRef.current = setTimeout(() => {
@@ -45,16 +49,111 @@ export default function SceneCard({ scene, index, matchedTerms = [], score, vide
     } else {
       if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
       setIsPlayingPreview(false);
+      setIsIframePlaying(false);
+      setIsIframeBlocked(false);
+      setFallbackFrameIdx(0);
     }
     return () => {
       if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
     };
   }, [isHovered]);
 
-  // Construct looping YouTube embed URL for the specific time range
+  // Listen to YouTube IFrame API postMessage events so we only reveal the iframe
+  // once playback actually enters PLAYING (state === 1), preventing any YouTube
+  // "Sign in to confirm you're not a bot" / embed-restriction overlay from showing.
+  useEffect(() => {
+    if (!isPlayingPreview || isIframeBlocked || scene.platform !== "youtube") return;
+
+    // If YouTube does not reach PLAYING within 4.5s (e.g. bot-check screen), stop mounting the blocked iframe
+    // and continue clean storyboard frame previewing instead.
+    const blockTimer = setTimeout(() => {
+      setIsIframePlaying((playing) => {
+        if (!playing) setIsIframeBlocked(true);
+        return playing;
+      });
+    }, 4500);
+
+    const handleMessage = (event: MessageEvent) => {
+      if (!iframeRef.current || event.source !== iframeRef.current.contentWindow) return;
+      if (typeof event.data !== "string") return;
+      try {
+        const data = JSON.parse(event.data);
+        if (data.event === "onReady" || data.event === "initialDelivery") {
+          iframeRef.current.contentWindow?.postMessage(
+            JSON.stringify({ event: "command", func: "mute", args: [] }),
+            "*"
+          );
+          iframeRef.current.contentWindow?.postMessage(
+            JSON.stringify({ event: "command", func: "playVideo", args: [] }),
+            "*"
+          );
+        }
+        const playerState =
+          data.event === "onStateChange"
+            ? data.info
+            : data.event === "infoDelivery" && data.info && typeof data.info.playerState === "number"
+              ? data.info.playerState
+              : undefined;
+        if (playerState === 1) {
+          setIsIframePlaying(true);
+        } else if (data.event === "onError") {
+          setIsIframePlaying(false);
+          setIsIframeBlocked(true);
+        }
+      } catch {
+        // ignore non-JSON messages
+      }
+    };
+
+    window.addEventListener("message", handleMessage);
+    return () => {
+      clearTimeout(blockTimer);
+      window.removeEventListener("message", handleMessage);
+    };
+  }, [isPlayingPreview, isIframeBlocked, scene.platform]);
+
+  // Multi-frame storyboard fallback cycle while iframe is loading or if YouTube blocks autoplay
+  useEffect(() => {
+    if (!isPlayingPreview || isIframePlaying || scene.platform !== "youtube") return;
+    const interval = setInterval(() => {
+      setFallbackFrameIdx((prev) => (prev + 1) % 4);
+    }, 650);
+    return () => clearInterval(interval);
+  }, [isPlayingPreview, isIframePlaying, scene.platform]);
+
+  const handleIframeLoad = () => {
+    if (!iframeRef.current?.contentWindow) return;
+    iframeRef.current.contentWindow.postMessage(
+      JSON.stringify({ event: "listening", id: scene.id, channel: "widget" }),
+      "*"
+    );
+    iframeRef.current.contentWindow.postMessage(
+      JSON.stringify({ event: "command", func: "mute", args: [] }),
+      "*"
+    );
+    iframeRef.current.contentWindow.postMessage(
+      JSON.stringify({ event: "command", func: "playVideo", args: [] }),
+      "*"
+    );
+  };
+
+  // Construct looping YouTube embed URL using youtube.com (with cookies & origin) instead of youtube-nocookie.com
+  const origin = typeof window !== "undefined" ? window.location.origin : "";
   const youtubeEmbedUrl = scene.platform === "youtube"
-    ? `https://www.youtube-nocookie.com/embed/${scene.videoId}?start=${scene.startSeconds}&end=${scene.endSeconds}&autoplay=1&mute=1&controls=0&loop=1&playlist=${scene.videoId}&modestbranding=1&playsinline=1&rel=0`
+    ? `https://www.youtube.com/embed/${scene.videoId}?enablejsapi=1&origin=${origin}&start=${scene.startSeconds}&end=${scene.endSeconds}&autoplay=1&mute=1&controls=0&loop=1&playlist=${scene.videoId}&modestbranding=1&playsinline=1&rel=0`
     : "";
+
+  const fallbackThumbnails = scene.platform === "youtube" && scene.videoId
+    ? [
+        scene.thumbnailUrl || `https://img.youtube.com/vi/${scene.videoId}/hqdefault.jpg`,
+        `https://img.youtube.com/vi/${scene.videoId}/hq1.jpg`,
+        `https://img.youtube.com/vi/${scene.videoId}/hq2.jpg`,
+        `https://img.youtube.com/vi/${scene.videoId}/hq3.jpg`,
+      ]
+    : [scene.thumbnailUrl];
+  const activeThumbnailUrl = isPlayingPreview && !isIframePlaying
+    ? fallbackThumbnails[fallbackFrameIdx % fallbackThumbnails.length]
+    : scene.thumbnailUrl;
 
   return (
     <motion.div
@@ -68,23 +167,35 @@ export default function SceneCard({ scene, index, matchedTerms = [], score, vide
     >
       {/* Thumbnail & Video Preview Area */}
       <div className="relative aspect-video w-full overflow-hidden bg-black">
-        {/* Static Thumbnail */}
+        {/* Static / Storyboard Cycling Thumbnail */}
         <img
-          src={scene.thumbnailUrl}
+          src={activeThumbnailUrl}
           alt={scene.videoTitle}
           loading="lazy"
+          onError={(e) => {
+            if (scene.thumbnailUrl && e.currentTarget.src !== scene.thumbnailUrl) {
+              e.currentTarget.src = scene.thumbnailUrl;
+            }
+          }}
           className={`w-full h-full object-cover transition-transform duration-500 ${
             isHovered ? "scale-105" : "scale-100"
-          } ${isPlayingPreview ? "opacity-0" : "opacity-100"}`}
+          } ${isPlayingPreview && isIframePlaying ? "opacity-0" : "opacity-100"}`}
         />
 
-        {/* Hover Video Preview (YouTube Iframe) */}
-        {isPlayingPreview && scene.platform === "youtube" && (
-          <div className="absolute inset-0 w-full h-full pointer-events-none bg-black">
+        {/* Hover Video Preview (YouTube Iframe — revealed only once PLAYING state is confirmed) */}
+        {isPlayingPreview && !isIframeBlocked && scene.platform === "youtube" && (
+          <div
+            className={`absolute inset-0 w-full h-full pointer-events-none bg-black transition-opacity duration-300 ${
+              isIframePlaying ? "opacity-100" : "opacity-0"
+            }`}
+          >
             <iframe
+              ref={iframeRef}
               src={youtubeEmbedUrl}
               title={`Preview ${scene.timeRange}`}
-              allow="autoplay; encrypted-media"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              onLoad={handleIframeLoad}
               className="w-full h-full object-cover border-0 scale-[1.02]"
             />
           </div>
