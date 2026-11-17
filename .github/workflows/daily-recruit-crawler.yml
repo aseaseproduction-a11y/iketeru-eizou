@@ -1,0 +1,30 @@
+name: Daily Corporate & Recruit Video Crawler
+
+on:
+  schedule:
+    # 毎日 日本時間 04:00 (UTC 19:00) に無料枠で実行
+    - cron: '0 19 * * *'
+  workflow_dispatch:
+
+jobs:
+  crawl-recruit-videos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright
+          npx playwright install chromium
+
+      - name: Run Recruit & Corporate Video Crawler
+        env:
+          GAS_WEBHOOK_URL: ${{ secrets.GAS_WEBHOOK_URL }}
+        run: node scripts/crawl_recruit_sites_playwright.mjs
