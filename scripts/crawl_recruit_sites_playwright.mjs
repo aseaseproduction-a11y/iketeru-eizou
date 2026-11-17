@@ -6,7 +6,9 @@
  *   GAS_WEBHOOK_URL="https://script.google.com/macros/s/.../exec" node scripts/crawl_recruit_sites_playwright.mjs
  */
 
-import { chromium } from 'playwright';
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+const { chromium } = require(process.env.PLAYWRIGHT_PATH || 'playwright');
 
 const TARGET_SITES = [
   { name: 'MUUUUU.ORG 採用系', url: 'https://muuuuu.org/category/tag/recruit', maxSubPages: 8 },

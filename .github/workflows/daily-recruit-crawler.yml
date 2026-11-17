@@ -17,14 +17,16 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
-      - name: Install Playwright
+      - name: Install Playwright (isolated from repo package.json)
         run: |
-          npm install --no-save playwright
-          npx playwright install chromium
+          mkdir -p /tmp/pw-runner
+          npm --prefix /tmp/pw-runner install --no-save playwright
+          /tmp/pw-runner/node_modules/.bin/playwright install chromium --with-deps
 
       - name: Run Recruit & Corporate Video Crawler
         env:
+          PLAYWRIGHT_PATH: /tmp/pw-runner/node_modules/playwright
           GAS_WEBHOOK_URL: ${{ secrets.GAS_WEBHOOK_URL }}
         run: node scripts/crawl_recruit_sites_playwright.mjs
