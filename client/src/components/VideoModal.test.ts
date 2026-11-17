@@ -14,7 +14,7 @@ describe("VideoModal embed handling", () => {
 
     expect(source).toContain("navigator.clipboard.writeText(video.videoUrl)");
     expect(source).toContain("trpc.videos.update.useMutation()");
-    expect(source).toContain("onFilter?.({ key: group.key, value })");
+    expect(source).toContain('onFilter?.({ key: "production", value: credit.name })');
     expect(source).toContain("onFilter?.({ key: tag.type, value: tag.slug })");
   });
 

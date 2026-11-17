@@ -40,9 +40,9 @@ const video: Video = {
   toneTechniques: ["テロップ"],
   productions: ["key MOVIE"],
   privateRating: "A",
-  aiOverallRating: "",
-  aiDirectionRating: "",
-  aiTechniqueRating: "",
+  aiOverallRating: "A",
+  aiDirectionRating: "A-",
+  aiTechniqueRating: "A+",
   aiAnalysis: "",
   embedStatus: "unknown",
   embedCheckedAt: "",
@@ -70,8 +70,12 @@ describe("VideoModal interactions", () => {
     fireEvent.click(screen.getByTitle("Web CMで絞り込む"));
     expect(onFilter).toHaveBeenCalledWith({ key: "genre", value: "web-cm" });
 
-    fireEvent.click(screen.getByTitle("プロモーションで絞り込む"));
-    expect(onFilter).toHaveBeenCalledWith({ key: "purpose", value: "プロモーション" });
+    fireEvent.click(screen.getByTitle("AI評価（総合） A で絞り込む"));
+    expect(onFilter).toHaveBeenCalledWith({ key: "aiOverallRating", value: "A" });
+
+    for (const removedLabel of ["用途", "表現", "トンマナ（感情）", "トンマナ（ビジュアル）", "トンマナ（技術）"]) {
+      expect(screen.queryByText(removedLabel)).toBeNull();
+    }
   });
 
   it("編集モードで変更を保存すると更新APIを呼び出し、モーダルの動画を更新する", async () => {

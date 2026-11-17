@@ -93,18 +93,28 @@ describe("Sidebar 未入力フィルター", () => {
     expect(callbacks.onGenreChange).toHaveBeenCalledWith(null);
   });
 
-  it("UI操作で検索・既存カテゴリ・用途の未入力を併用し、クリアで一覧に復帰する", () => {
+  it("UI操作で検索・既存カテゴリ・AI評価の未入力を併用し、クリアで一覧に復帰する", () => {
     render(<FilterHarness />);
 
     fireEvent.change(screen.getByLabelText("検索"), { target: { value: "空欄" } });
     fireEvent.click(screen.getByText("映画 / ドラマ / ショートフィルム"));
-    fireEvent.click(screen.getByText("用途"));
+    fireEvent.click(screen.getByText("AI評価（総合）"));
     fireEvent.click(screen.getAllByText("未入力")[4]);
     expect(screen.getByLabelText("絞り込み結果").textContent).toBe("empty-film");
 
     fireEvent.click(screen.getByText("フィルターをクリア"));
     expect((screen.getByLabelText("検索") as HTMLInputElement).value).toBe("");
     expect(screen.getByLabelText("絞り込み結果").textContent).toBe("empty-film,filled-film,no-genre");
+  });
+
+  it("整理・統合対象の冗長なフィルターグループ（用途・表現・トンマナ3種・私的評価）は表示しない", () => {
+    renderSidebar();
+    for (const label of ["用途", "表現", "トンマナ（感情）", "トンマナ（ビジュアル）", "トンマナ（技術）", "私的評価"]) {
+      expect(screen.queryByText(label)).toBeNull();
+    }
+    for (const label of ["AI評価（総合）", "AI評価（ディレクション）", "AI評価（技術）"]) {
+      expect(screen.getByText(label)).toBeTruthy();
+    }
   });
 
   it("映像作家100人の出典を選択すると、選出作品だけへ絞り込む", () => {

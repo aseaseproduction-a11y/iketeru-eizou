@@ -10,7 +10,6 @@ import type { TagItem, Video, VideoSource } from "@/lib/types";
 import { SOURCE_LABELS, SOURCE_COLORS } from "@/lib/types";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
-import { EXPRESSION_OPTIONS, PURPOSE_OPTIONS, restrictToAllowedOptions } from "@shared/metadataOptions";
 import { getProductionNames, getProductionRoles, normalizeProductionCredits, productionCreditsToEditableText } from "@shared/productionCredits";
 import MetadataValuePicker from "@/components/MetadataValuePicker";
 import { collectMetadataValueSuggestions, resolveSuggestedTagItems, type MetadataValueSuggestions } from "@/lib/metadataValueSuggestions";
@@ -302,13 +301,6 @@ export default function VideoModal({
     ...video.tones.map((t) => ({ ...t, type: "tone" as const })),
   ];
   const productionCredits = normalizeProductionCredits(video.productionCredits, video.productions);
-  const detailGroups = [
-    { label: "用途", key: "purpose" as const, values: video.purposes },
-    { label: "表現", key: "expression" as const, values: video.expressions },
-    { label: "トンマナ（感情）", key: "toneEmotion" as const, values: video.toneEmotions },
-    { label: "トンマナ（ビジュアル）", key: "toneVisual" as const, values: video.toneVisuals },
-    { label: "トンマナ（技術）", key: "toneTechnique" as const, values: video.toneTechniques },
-  ].filter((group) => group.values.length > 0);
   const aiRatings = [
     { label: "AI評価（総合）", key: "aiOverallRating" as const, value: video.aiOverallRating },
     { label: "AI評価（ディレクション）", key: "aiDirectionRating" as const, value: video.aiDirectionRating },
@@ -321,18 +313,6 @@ export default function VideoModal({
     if (onSaveNote) onSaveNote(video.id, noteText);
     setShowNoteEditor(false);
   };
-
-  const setDraftList = (key: keyof Pick<VideoEditDraft, "tags" | "genres" | "products" | "directions" | "tones" | "purposes" | "expressions" | "toneEmotions" | "toneVisuals" | "toneTechniques">, value: string) => {
-    const parsed = parseList(value);
-    const normalized = key === "purposes" ? restrictToAllowedOptions(parsed, PURPOSE_OPTIONS) : key === "expressions" ? restrictToAllowedOptions(parsed, EXPRESSION_OPTIONS) : parsed;
-    setEditDraft((current) => ({ ...current, [key]: normalized }));
-  };
-
-  const editableFields: Array<{ key: keyof Pick<VideoEditDraft, "toneEmotions" | "toneVisuals" | "toneTechniques">; label: string; placeholder: string }> = [
-    { key: "toneEmotions", label: "トンマナ（感情）", placeholder: "例：信頼感, 期待感" },
-    { key: "toneVisuals", label: "トンマナ（ビジュアル）", placeholder: "例：クリーン, ミニマル" },
-    { key: "toneTechniques", label: "トンマナ（技術）", placeholder: "例：テロップ, Bロール" },
-  ];
 
   return (
     <AnimatePresence>
@@ -556,20 +536,8 @@ export default function VideoModal({
                     <MetadataValuePicker label="追加タグ" values={editDraft.tags} suggestions={availableMetadataSuggestions.tags} onChange={(values) => setEditDraft((current) => ({ ...current, tags: values }))} placeholder="例：シネマティック" />
                     <MetadataValuePicker label="ジャンル" values={editDraft.genres} suggestions={availableMetadataSuggestions.genres.map((item) => item.name)} onChange={(values) => setEditDraft((current) => ({ ...current, genres: values }))} placeholder="例：ショートフィルム" />
                     <MetadataValuePicker label="商材" values={editDraft.products} suggestions={availableMetadataSuggestions.products.map((item) => item.name)} onChange={(values) => setEditDraft((current) => ({ ...current, products: values }))} placeholder="例：教育 / 出版" />
-                    <MetadataValuePicker label="演出" values={editDraft.directions} suggestions={availableMetadataSuggestions.directions.map((item) => item.name)} onChange={(values) => setEditDraft((current) => ({ ...current, directions: values }))} placeholder="例：長回し" />
-                    <MetadataValuePicker label="トーン" values={editDraft.tones} suggestions={availableMetadataSuggestions.tones.map((item) => item.name)} onChange={(values) => setEditDraft((current) => ({ ...current, tones: values }))} placeholder="例：ノスタルジック" />
-                    <MetadataValuePicker label="用途" values={editDraft.purposes} suggestions={PURPOSE_OPTIONS} onChange={(values) => setEditDraft((current) => ({ ...current, purposes: values }))} placeholder="" allowCustom={false} />
-                    <MetadataValuePicker label="表現" values={editDraft.expressions} suggestions={EXPRESSION_OPTIONS} onChange={(values) => setEditDraft((current) => ({ ...current, expressions: values }))} placeholder="" allowCustom={false} />
-                    {editableFields.map((field) => (
-                      <label key={field.key} className="text-xs text-muted-foreground">{field.label}
-                        <textarea value={toText(editDraft[field.key])} onChange={(event) => setDraftList(field.key, event.target.value)} placeholder={field.placeholder} rows={2} className="mt-1.5 w-full resize-y rounded-lg border border-white/10 bg-black/20 px-3 py-2 text-xs text-foreground outline-none placeholder:text-muted-foreground/45 focus:ring-1 focus:ring-cinematic-red/40" />
-                      </label>
-                    ))}
-                    <label className="text-xs text-muted-foreground">私的評価
-                      <select value={editDraft.privateRating} onChange={(event) => setEditDraft((current) => ({ ...current, privateRating: event.target.value }))} className="mt-1.5 w-full rounded-lg border border-white/10 bg-black/20 px-3 py-2 text-xs text-foreground outline-none focus:ring-1 focus:ring-cinematic-red/40">
-                        <option value="">未評価</option><option value="S">S</option><option value="A">A</option><option value="B">B</option><option value="C">C</option>
-                      </select>
-                    </label>
+                    <MetadataValuePicker label="演出" values={editDraft.directions} suggestions={availableMetadataSuggestions.directions.map((item) => item.name)} onChange={(values) => setEditDraft((current) => ({ ...current, directions: values }))} placeholder="例：ワンカット / 長回し" />
+                    <MetadataValuePicker label="トーン" values={editDraft.tones} suggestions={availableMetadataSuggestions.tones.map((item) => item.name)} onChange={(values) => setEditDraft((current) => ({ ...current, tones: values }))} placeholder="例：レトロ / ノスタルジック / 昭和・平成" />
                   </div>
                   <label className="mt-3 block text-xs text-muted-foreground">制作クレジット
                     <span className="mt-1 block text-[10px] text-muted-foreground/70">1行ずつ「役割：人物・会社名」で入力します。役割が不明な場合は名前だけを入力できます。</span>
@@ -647,29 +615,12 @@ export default function VideoModal({
                 </div>
               )}
 
-              {(detailGroups.length > 0 || productionCredits.length > 0 || video.privateRating || aiRatings.length > 0 || video.aiAnalysis) && (
+              {(productionCredits.length > 0 || aiRatings.length > 0 || video.aiAnalysis) && (
                 <div className="mb-5 rounded-lg border border-white/[0.08] bg-white/[0.025] px-3.5 py-3">
                   <div className="mb-2.5 flex items-center justify-between gap-3">
-                    <span className="text-xs font-semibold text-foreground/85">追加情報</span>
-                    {video.privateRating && (
-                      <button onClick={() => onFilter?.({ key: "privateRating", value: video.privateRating })} title={`評価 ${video.privateRating} で絞り込む`} className="rounded bg-amber-400/15 px-2 py-0.5 text-[11px] font-bold text-amber-300 transition-colors hover:bg-amber-400/25">
-                        私的評価 {video.privateRating}
-                      </button>
-                    )}
+                    <span className="text-xs font-semibold text-foreground/85">制作クレジット・AI評価</span>
                   </div>
                   <dl className="space-y-2.5">
-                    {detailGroups.map((group) => (
-                      <div key={group.label} className="grid grid-cols-[110px_minmax(0,1fr)] gap-2 text-xs">
-                        <dt className="text-muted-foreground">{group.label}</dt>
-                        <dd className="flex flex-wrap gap-1.5">
-                          {group.values.map((value) => (
-                            <button key={value} onClick={() => onFilter?.({ key: group.key, value })} title={`${value}で絞り込む`} className="rounded bg-white/[0.06] px-1.5 py-0.5 text-foreground/80 transition-colors hover:bg-white/[0.12] hover:text-foreground">
-                              {value}
-                            </button>
-                          ))}
-                        </dd>
-                      </div>
-                    ))}
                     {productionCredits.length > 0 && (
                       <div className="grid grid-cols-[110px_minmax(0,1fr)] gap-2 text-xs">
                         <dt className="text-muted-foreground">制作</dt>

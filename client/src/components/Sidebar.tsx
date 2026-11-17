@@ -127,12 +127,6 @@ export default function Sidebar({
   };
 
   const metadataGroups = [
-    { slug: "purpose", label: "用途", items: metadataFilterOptions.purpose, value: filters.purpose, onChange: onPurposeChange },
-    { slug: "expression", label: "表現", items: metadataFilterOptions.expression, value: filters.expression, onChange: onExpressionChange },
-    { slug: "toneEmotion", label: "トンマナ（感情）", items: metadataFilterOptions.toneEmotion, value: filters.toneEmotion, onChange: onToneEmotionChange },
-    { slug: "toneVisual", label: "トンマナ（ビジュアル）", items: metadataFilterOptions.toneVisual, value: filters.toneVisual, onChange: onToneVisualChange },
-    { slug: "toneTechnique", label: "トンマナ（技術）", items: metadataFilterOptions.toneTechnique, value: filters.toneTechnique, onChange: onToneTechniqueChange },
-    { slug: "privateRating", label: "私的評価", items: metadataFilterOptions.privateRating, value: filters.privateRating, onChange: onPrivateRatingChange },
     { slug: "aiOverallRating", label: "AI評価（総合）", items: metadataFilterOptions.aiOverallRating, value: filters.aiOverallRating, onChange: onAiOverallRatingChange },
     { slug: "aiDirectionRating", label: "AI評価（ディレクション）", items: metadataFilterOptions.aiDirectionRating, value: filters.aiDirectionRating, onChange: onAiDirectionRatingChange },
     { slug: "aiTechniqueRating", label: "AI評価（技術）", items: metadataFilterOptions.aiTechniqueRating, value: filters.aiTechniqueRating, onChange: onAiTechniqueRatingChange },
@@ -330,7 +324,7 @@ export default function Sidebar({
         </div>
         {metadataGroups.length > 0 && (
           <div className="mt-2 border-t border-white/[0.06] pt-2">
-            <p className="px-2 py-2 text-[10px] font-bold uppercase tracking-widest text-muted-foreground/70">追加情報から探す</p>
+            <p className="px-2 py-2 text-[10px] font-bold uppercase tracking-widest text-muted-foreground/70">AI評価から探す</p>
             {metadataGroups.map((group) => (
               <div key={group.slug}>
                 <button

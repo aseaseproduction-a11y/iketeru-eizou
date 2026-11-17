@@ -8,7 +8,6 @@ import { X, Shuffle, ChevronRight, ChevronLeft, Bookmark, BookmarkCheck, StickyN
 import { DIRECTION_CATEGORIES, GENRE_CATEGORIES, PRODUCT_CATEGORIES, TONE_CATEGORIES, type Video } from "@/lib/types";
 import { getThemeCandidatesForCategorySelections, pickRandomInspirationVideo, type InspirationThemeSelectorKey } from "@/lib/inspiration";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { PURPOSE_OPTIONS, EXPRESSION_OPTIONS } from "@shared/metadataOptions";
 import { PRODUCTION_ROLE_OPTIONS } from "@shared/productionCredits";
 import { collectMetadataValueSuggestions } from "@/lib/metadataValueSuggestions";
 import VideoModal from "./VideoModal";
@@ -34,8 +33,6 @@ const RECENT_RANDOM_HISTORY_LIMIT = 12;
 const THEME_SELECTORS: Array<{ key: ThemeSelectorKey; label: string; options: ReadonlyArray<{ name: string }> | readonly string[] }> = [
   { key: "genre", label: "ジャンル", options: GENRE_CATEGORIES },
   { key: "product", label: "商材", options: PRODUCT_CATEGORIES },
-  { key: "purpose", label: "用途", options: PURPOSE_OPTIONS },
-  { key: "expression", label: "表現", options: EXPRESSION_OPTIONS },
   { key: "direction", label: "演出", options: DIRECTION_CATEGORIES },
   { key: "tone", label: "トーン", options: TONE_CATEGORIES },
 ];
