@@ -5,6 +5,8 @@ import type { ProductionCredit } from "@shared/productionCredits";
  * Design: Cinematic Noir — dark base, cinematic red accent, immersive experience
  */
 
+import { DIRECTION_OPTIONS, TONE_OPTIONS } from "@shared/metadataOptions";
+
 export interface TagItem {
   name: string;
   slug: string;
@@ -172,24 +174,9 @@ export const PRODUCT_CATEGORIES: CategoryItem[] = [
   { name: "スポーツ / 健康 / フィットネス", slug: "sports" },
 ];
 
-export const DIRECTION_CATEGORIES: CategoryItem[] = [
-  { name: "実写", slug: "live-action" },
-  { name: "合成 / VFX / 3DCG", slug: "vfx-3dcg" },
-  { name: "モーショングラフィックス", slug: "motion-graphics" },
-  { name: "生成AI", slug: "generative-ai" },
-  { name: "カメラワーク / ドローン・空撮", slug: "camera-work" },
-  { name: "モーションコントロールカメラ", slug: "motion-control" },
-  { name: "ストップモーション / タイムラプス", slug: "stop-motion" },
-  { name: "ボリュメトリック / バーチャルプロダクション", slug: "virtual-production" },
-  { name: "イラスト / アニメーション", slug: "illustration" },
-];
+export const DIRECTION_CATEGORIES: CategoryItem[] = DIRECTION_OPTIONS.map((item) => ({ ...item }));
 
-export const TONE_CATEGORIES: CategoryItem[] = [
-  { name: "スタイリッシュ / クール", slug: "stylish" },
-  { name: "コミカル / ユーモラス / カオス", slug: "comical" },
-  { name: "エモーショナル / 感動的", slug: "emotional" },
-  { name: "洗練 / ラグジュアリー", slug: "luxury" },
-];
+export const TONE_CATEGORIES: CategoryItem[] = TONE_OPTIONS.map((item) => ({ ...item }));
 
 export const ALL_CATEGORY_GROUPS: CategoryGroup[] = [
   { label: "ジャンルから探す", slug: "genre", items: GENRE_CATEGORIES },

@@ -47,4 +47,19 @@ describe("登録時の根拠付き自動分類", () => {
     const result = await classifyVideoMetadata(input);
     expect(result).toMatchObject({ status: "failed", updates: {}, reason: "network unavailable" });
   });
+
+  it("拡張された演出・トーンスラッグも安全に補完対象へマッピングできる", () => {
+    const emptyDirectionsInput: AutoClassificationInput = { ...input, directions: [], tones: [] };
+    const updates = selectSafeMetadataUpdates(emptyDirectionsInput, {
+      genres: [], products: [], directions: ["one-take", "choreography"], tones: ["retro", "energetic"], purposes: [], expressions: [], confidence: 0.92, evidence: "ワンカット撮影のダンスMVでレトロかつ爽快な演出が明記されている",
+    });
+    expect(updates.directions).toEqual([
+      { name: "ワンカット / 長回し", slug: "one-take" },
+      { name: "ダンス / コレオグラフィ", slug: "choreography" },
+    ]);
+    expect(updates.tones).toEqual([
+      { name: "レトロ / ノスタルジック / 昭和・平成", slug: "retro" },
+      { name: "ポップ / エネルギッシュ / 爽快", slug: "energetic" },
+    ]);
+  });
 });

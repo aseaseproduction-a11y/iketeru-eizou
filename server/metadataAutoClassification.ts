@@ -1,11 +1,18 @@
 import { ENV } from "./_core/env";
-import { EXPRESSION_OPTIONS, PURPOSE_OPTIONS, restrictToAllowedOptions } from "@shared/metadataOptions";
+import {
+  DIRECTION_OPTIONS,
+  EXPRESSION_OPTIONS,
+  PURPOSE_OPTIONS,
+  TONE_OPTIONS,
+  restrictToAllowedOptions,
+  toCategoryNameMap,
+} from "@shared/metadataOptions";
 
 export const METADATA_TAXONOMY = {
   genres: ["tv-cm", "web-cm", "branded-movie", "youtube-sns", "mv", "corporate", "film", "opening", "making", "documentary"],
   products: ["beauty", "fashion", "food", "daily", "automotive", "gaming", "it", "travel", "medical", "real-estate", "transport", "entertainment", "electronics", "sports"],
-  directions: ["live-action", "vfx-3dcg", "motion-graphics", "generative-ai", "camera-work", "motion-control", "stop-motion", "virtual-production", "illustration"],
-  tones: ["stylish", "comical", "emotional", "luxury"],
+  directions: DIRECTION_OPTIONS.map((item) => item.slug),
+  tones: TONE_OPTIONS.map((item) => item.slug),
 } as const;
 
 export type MetadataField = keyof typeof METADATA_TAXONOMY;
@@ -38,8 +45,8 @@ export type AutoClassificationResult = {
 const names: Record<MetadataField, Record<string, string>> = {
   genres: { "tv-cm": "TV CM", "web-cm": "Web CM", "branded-movie": "ブランデッドムービー", "youtube-sns": "YouTube / SNS / 縦型動画", mv: "MV", corporate: "企業 / 商品VP / コンテスト作品", film: "映画 / ドラマ / ショートフィルム", opening: "オープニング映像", making: "メイキング / Behind The Scenes", documentary: "ドキュメンタリー" },
   products: { beauty: "美容 / 化粧品", fashion: "ファッション / アパレル", food: "食品 / 飲料 / 飲食", daily: "日用品 / 防犯 / 警備", automotive: "自動車 / バイク", gaming: "ゲーム / アプリ / 玩具", it: "IT / 通信 / ネットサービス", travel: "旅行 / 宿泊", medical: "医療 / 医薬", "real-estate": "住宅 / 不動産 / 建設", transport: "交通 / 物流 / 産業素材", entertainment: "娯楽 / アミューズメント", electronics: "精密機器 / 家具 / 電化製品", sports: "スポーツ / 健康 / フィットネス" },
-  directions: { "live-action": "実写", "vfx-3dcg": "合成 / VFX / 3DCG", "motion-graphics": "モーショングラフィックス", "generative-ai": "生成AI", "camera-work": "カメラワーク / ドローン・空撮", "motion-control": "モーションコントロールカメラ", "stop-motion": "ストップモーション / タイムラプス", "virtual-production": "ボリュメトリック / バーチャルプロダクション", illustration: "イラスト / アニメーション" },
-  tones: { stylish: "スタイリッシュ / クール", comical: "コミカル / ユーモラス / カオス", emotional: "エモーショナル / 感動的", luxury: "洗練 / ラグジュアリー" },
+  directions: toCategoryNameMap(DIRECTION_OPTIONS),
+  tones: toCategoryNameMap(TONE_OPTIONS),
 };
 
 const categorySchema = (values: readonly string[]) => ({ type: "array", items: { type: "string", enum: values } });
