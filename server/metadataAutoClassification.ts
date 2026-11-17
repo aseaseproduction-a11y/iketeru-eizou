@@ -2,6 +2,8 @@ import { ENV } from "./_core/env";
 import {
   DIRECTION_OPTIONS,
   EXPRESSION_OPTIONS,
+  GENRE_OPTIONS,
+  PRODUCT_OPTIONS,
   PURPOSE_OPTIONS,
   TONE_OPTIONS,
   restrictToAllowedOptions,
@@ -9,8 +11,8 @@ import {
 } from "@shared/metadataOptions";
 
 export const METADATA_TAXONOMY = {
-  genres: ["tv-cm", "web-cm", "branded-movie", "youtube-sns", "mv", "corporate", "film", "opening", "making", "documentary"],
-  products: ["beauty", "fashion", "food", "daily", "automotive", "gaming", "it", "travel", "medical", "real-estate", "transport", "entertainment", "electronics", "sports"],
+  genres: GENRE_OPTIONS.map((item) => item.slug),
+  products: PRODUCT_OPTIONS.map((item) => item.slug),
   directions: DIRECTION_OPTIONS.map((item) => item.slug),
   tones: TONE_OPTIONS.map((item) => item.slug),
 } as const;
@@ -43,8 +45,8 @@ export type AutoClassificationResult = {
 };
 
 const names: Record<MetadataField, Record<string, string>> = {
-  genres: { "tv-cm": "TV CM", "web-cm": "Web CM", "branded-movie": "ブランデッドムービー", "youtube-sns": "YouTube / SNS / 縦型動画", mv: "MV", corporate: "企業 / 商品VP / コンテスト作品", film: "映画 / ドラマ / ショートフィルム", opening: "オープニング映像", making: "メイキング / Behind The Scenes", documentary: "ドキュメンタリー" },
-  products: { beauty: "美容 / 化粧品", fashion: "ファッション / アパレル", food: "食品 / 飲料 / 飲食", daily: "日用品 / 防犯 / 警備", automotive: "自動車 / バイク", gaming: "ゲーム / アプリ / 玩具", it: "IT / 通信 / ネットサービス", travel: "旅行 / 宿泊", medical: "医療 / 医薬", "real-estate": "住宅 / 不動産 / 建設", transport: "交通 / 物流 / 産業素材", entertainment: "娯楽 / アミューズメント", electronics: "精密機器 / 家具 / 電化製品", sports: "スポーツ / 健康 / フィットネス" },
+  genres: toCategoryNameMap(GENRE_OPTIONS),
+  products: toCategoryNameMap(PRODUCT_OPTIONS),
   directions: toCategoryNameMap(DIRECTION_OPTIONS),
   tones: toCategoryNameMap(TONE_OPTIONS),
 };

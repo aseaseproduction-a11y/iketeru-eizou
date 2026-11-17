@@ -5,7 +5,7 @@ import type { ProductionCredit } from "@shared/productionCredits";
  * Design: Cinematic Noir — dark base, cinematic red accent, immersive experience
  */
 
-import { DIRECTION_OPTIONS, TONE_OPTIONS } from "@shared/metadataOptions";
+import { DIRECTION_OPTIONS, GENRE_OPTIONS, PRODUCT_OPTIONS, TONE_OPTIONS } from "@shared/metadataOptions";
 
 export interface TagItem {
   name: string;
@@ -144,35 +144,9 @@ export interface FilterState {
 }
 
 // Category definitions
-export const GENRE_CATEGORIES: CategoryItem[] = [
-  { name: "TV CM", slug: "tv-cm" },
-  { name: "Web CM", slug: "web-cm" },
-  { name: "ブランデッドムービー", slug: "branded-movie" },
-  { name: "YouTube / SNS / 縦型動画", slug: "youtube-sns" },
-  { name: "MV", slug: "mv" },
-  { name: "企業 / 商品VP / コンテスト作品", slug: "corporate" },
-  { name: "映画 / ドラマ / ショートフィルム", slug: "film" },
-  { name: "オープニング映像", slug: "opening" },
-  { name: "メイキング / Behind The Scenes", slug: "making" },
-  { name: "ドキュメンタリー", slug: "documentary" },
-];
+export const GENRE_CATEGORIES: CategoryItem[] = GENRE_OPTIONS.map((item) => ({ ...item }));
 
-export const PRODUCT_CATEGORIES: CategoryItem[] = [
-  { name: "美容 / 化粧品", slug: "beauty" },
-  { name: "ファッション / アパレル", slug: "fashion" },
-  { name: "食品 / 飲料 / 飲食", slug: "food" },
-  { name: "日用品 / 防犯 / 警備", slug: "daily" },
-  { name: "自動車 / バイク", slug: "automotive" },
-  { name: "ゲーム / アプリ / 玩具", slug: "gaming" },
-  { name: "IT / 通信 / ネットサービス", slug: "it" },
-  { name: "旅行 / 宿泊", slug: "travel" },
-  { name: "医療 / 医薬", slug: "medical" },
-  { name: "住宅 / 不動産 / 建設", slug: "real-estate" },
-  { name: "交通 / 物流 / 産業素材", slug: "transport" },
-  { name: "娯楽 / アミューズメント", slug: "entertainment" },
-  { name: "精密機器 / 家具 / 電化製品", slug: "electronics" },
-  { name: "スポーツ / 健康 / フィットネス", slug: "sports" },
-];
+export const PRODUCT_CATEGORIES: CategoryItem[] = PRODUCT_OPTIONS.map((item) => ({ ...item }));
 
 export const DIRECTION_CATEGORIES: CategoryItem[] = DIRECTION_OPTIONS.map((item) => ({ ...item }));
 

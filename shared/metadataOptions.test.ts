@@ -14,4 +14,9 @@ describe("用途・表現の選択肢制約", () => {
     expect(restrictToAllowedOptions(["商品ブランディング", "夏季キャンペーン", "物語体験の提供"], PURPOSE_OPTIONS)).toEqual(["ブランディングムービー", "プロモーション"]);
     expect(restrictToAllowedOptions(["実写+2Dアニメーション", "実写コンポジット", "MV文法"], EXPRESSION_OPTIONS)).toEqual(["実写+アニメーション", "実写"]);
   });
+
+  it("拡張された用途・表現の新しい選択肢を保持する", () => {
+    expect(restrictToAllowedOptions(["採用・リクルーティング", "ハウツー・解説", "イベント・空間演出"], PURPOSE_OPTIONS)).toEqual(["採用・リクルーティング", "ハウツー・解説", "イベント・空間演出"]);
+    expect(restrictToAllowedOptions(["コマ撮り・ストップモーション", "タイポグラフィ・グラフィック"], EXPRESSION_OPTIONS)).toEqual(["コマ撮り・ストップモーション", "タイポグラフィ・グラフィック"]);
+  });
 });

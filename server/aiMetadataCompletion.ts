@@ -1,7 +1,15 @@
 import type { Request, Response } from "express";
 import { eq } from "drizzle-orm";
 import { aiMetadataCompletionJobs, aiMetadataCompletionRuns, videos } from "../drizzle/schema";
-import { DIRECTION_OPTIONS, TONE_OPTIONS, toCategoryNameMap } from "@shared/metadataOptions";
+import {
+  DIRECTION_OPTIONS,
+  EXPRESSION_OPTIONS,
+  GENRE_OPTIONS,
+  PRODUCT_OPTIONS,
+  PURPOSE_OPTIONS,
+  TONE_OPTIONS,
+  toCategoryNameMap,
+} from "@shared/metadataOptions";
 import { getDb } from "./db";
 import { sdk } from "./_core/sdk";
 
@@ -17,13 +25,13 @@ type ArrayField = typeof ARRAY_FIELDS[number];
 type Row = typeof videos.$inferSelect;
 
 const tagNames: Record<string, Record<string, string>> = {
-  genres: { "tv-cm": "TV CM", "web-cm": "Web CM", "branded-movie": "ブランデッドムービー", "youtube-sns": "YouTube / SNS / 縦型動画", mv: "MV", corporate: "企業 / 商品VP / コンテスト作品", film: "映画 / ドラマ / ショートフィルム", opening: "オープニング映像", making: "メイキング / Behind The Scenes", documentary: "ドキュメンタリー" },
-  products: { beauty: "美容 / 化粧品", fashion: "ファッション / アパレル", food: "食品 / 飲料 / 飲食", daily: "日用品 / 防犯 / 警備", automotive: "自動車 / バイク", gaming: "ゲーム / アプリ / 玩具", it: "IT / 通信 / ネットサービス", travel: "旅行 / 宿泊", medical: "医療 / 医薬", "real-estate": "住宅 / 不動産 / 建設", transport: "交通 / 物流 / 産業素材", entertainment: "娯楽 / アミューズメント", electronics: "精密機器 / 家具 / 電化製品", sports: "スポーツ / 健康 / フィットネス" },
+  genres: toCategoryNameMap(GENRE_OPTIONS),
+  products: toCategoryNameMap(PRODUCT_OPTIONS),
   directions: toCategoryNameMap(DIRECTION_OPTIONS),
   tones: toCategoryNameMap(TONE_OPTIONS),
 };
-const purposeOptions = new Set(["MV", "ブランディングムービー", "プロモーション", "事業・サービス紹介", "OPED", "インタビュー", "ティザー", "アート", "企画系", "その他"]);
-const expressionOptions = new Set(["2D", "3D", "アニメーション", "実写", "イラスト", "実写+アニメーション", "生成AI"]);
+const purposeOptions = new Set<string>(PURPOSE_OPTIONS);
+const expressionOptions = new Set<string>(EXPRESSION_OPTIONS);
 const directCueRules: Record<string, Record<string, string[]>> = {
   genres: { "tv-cm": ["tvcm", "tvspot"], "web-cm": ["webcm"], "branded-movie": ["brandedmovie", "ブランドムービー"], "youtube-sns": ["youtube", "sns", "shorts"], mv: ["mv", "musicvideo", "ミュージックビデオ"], corporate: ["企業vp", "companyprofile", "corporatevideo"], film: ["shortfilm", "shortmovie", "短編映画"], opening: ["opening", "オープニング"], making: ["making", "メイキング", "behindthescenes"], documentary: ["documentary", "ドキュメンタリー"] },
   products: { food: ["食品", "飲料", "beverage", "chocolate", "チョコ", "cider", "サイダー"], entertainment: ["netflix", "entertainmentservice", "映像配信"] },
