@@ -626,9 +626,52 @@ async function getUserByOpenId(openId) {
 async function getAllVideoListItems() {
   const db = await getDb();
   if (!db) return [];
-  const rows = await db.select().from(videos).orderBy(desc(videos.createdAt));
+  const rows = await db.select({
+    id: videos.id,
+    platform: videos.platform,
+    title: videos.title,
+    thumbnail: videos.thumbnail,
+    videoUrl: videos.videoUrl,
+    embedUrl: videos.embedUrl,
+    source: videos.source,
+    sourceLabel: videos.sourceLabel,
+    channelId: videos.channelId,
+    channelTitle: videos.channelTitle,
+    genres: videos.genres,
+    products: videos.products,
+    directions: videos.directions,
+    tones: videos.tones,
+    allTags: videos.allTags,
+    purposes: videos.purposes,
+    expressions: videos.expressions,
+    toneEmotions: videos.toneEmotions,
+    toneVisuals: videos.toneVisuals,
+    toneTechniques: videos.toneTechniques,
+    productions: videos.productions,
+    productionCredits: videos.productionCredits,
+    awards: videos.awards,
+    curationNote: videos.curationNote,
+    privateRating: videos.privateRating,
+    aiOverallRating: videos.aiOverallRating,
+    aiDirectionRating: videos.aiDirectionRating,
+    aiTechniqueRating: videos.aiTechniqueRating,
+    aiOverallScore: videos.aiOverallScore,
+    aiDirectionScore: videos.aiDirectionScore,
+    aiTechniqueScore: videos.aiTechniqueScore,
+    embedStatus: videos.embedStatus,
+    embedReason: videos.embedReason,
+    embedCheckedAt: videos.embedCheckedAt,
+    addedDate: videos.addedDate,
+    createdAt: videos.createdAt,
+    updatedAt: videos.updatedAt
+  }).from(videos).orderBy(desc(videos.createdAt));
   return rows.map((row) => {
-    const video = parseVideoRow(row);
+    const video = parseVideoRow({
+      ...row,
+      aiAnalysis: null,
+      aiScoreBreakdown: null,
+      metadataClassificationAudit: null
+    });
     return {
       ...video,
       aiAnalysis: "",
@@ -2343,6 +2386,12 @@ app.post("/api/scheduled/daily-video-collection", receiveDailyCollection);
 app.post("/api/scheduled/ai-metadata-completion", runAiMetadataCompletion);
 app.use(
   "/api/trpc",
+  (req, res, next) => {
+    if (req.method === "GET" && (req.path.includes("videos.list") || req.path.includes("videos.count"))) {
+      res.setHeader("Cache-Control", "public, s-maxage=60, stale-while-revalidate=300");
+    }
+    next();
+  },
   createExpressMiddleware({
     router: appRouter,
     createContext

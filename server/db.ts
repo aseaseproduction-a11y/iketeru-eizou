@@ -129,13 +129,59 @@ export async function getAllVideos() {
   return rows.map(parseVideoRow);
 }
 
-/** 一覧表示用。重量の大きい分析本文・分類監査は詳細表示時にのみ取得する。 */
+/** 一覧表示用。重量の大きい分析本文・分類監査・スコア内訳はSQLレベルで除外し、詳細表示時にのみ取得する。 */
 export async function getAllVideoListItems() {
   const db = await getDb();
   if (!db) return [];
-  const rows = await db.select().from(videos).orderBy(desc(videos.createdAt));
+  const rows = await db
+    .select({
+      id: videos.id,
+      platform: videos.platform,
+      title: videos.title,
+      thumbnail: videos.thumbnail,
+      videoUrl: videos.videoUrl,
+      embedUrl: videos.embedUrl,
+      source: videos.source,
+      sourceLabel: videos.sourceLabel,
+      channelId: videos.channelId,
+      channelTitle: videos.channelTitle,
+      genres: videos.genres,
+      products: videos.products,
+      directions: videos.directions,
+      tones: videos.tones,
+      allTags: videos.allTags,
+      purposes: videos.purposes,
+      expressions: videos.expressions,
+      toneEmotions: videos.toneEmotions,
+      toneVisuals: videos.toneVisuals,
+      toneTechniques: videos.toneTechniques,
+      productions: videos.productions,
+      productionCredits: videos.productionCredits,
+      awards: videos.awards,
+      curationNote: videos.curationNote,
+      privateRating: videos.privateRating,
+      aiOverallRating: videos.aiOverallRating,
+      aiDirectionRating: videos.aiDirectionRating,
+      aiTechniqueRating: videos.aiTechniqueRating,
+      aiOverallScore: videos.aiOverallScore,
+      aiDirectionScore: videos.aiDirectionScore,
+      aiTechniqueScore: videos.aiTechniqueScore,
+      embedStatus: videos.embedStatus,
+      embedReason: videos.embedReason,
+      embedCheckedAt: videos.embedCheckedAt,
+      addedDate: videos.addedDate,
+      createdAt: videos.createdAt,
+      updatedAt: videos.updatedAt,
+    })
+    .from(videos)
+    .orderBy(desc(videos.createdAt));
   return rows.map((row) => {
-    const video = parseVideoRow(row);
+    const video = parseVideoRow({
+      ...row,
+      aiAnalysis: null,
+      aiScoreBreakdown: null,
+      metadataClassificationAudit: null,
+    });
     return {
       ...video,
       aiAnalysis: "",

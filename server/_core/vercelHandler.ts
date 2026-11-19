@@ -37,6 +37,12 @@ app.post("/api/scheduled/ai-metadata-completion", runAiMetadataCompletion);
 
 app.use(
   "/api/trpc",
+  (req, res, next) => {
+    if (req.method === "GET" && (req.path.includes("videos.list") || req.path.includes("videos.count"))) {
+      res.setHeader("Cache-Control", "public, s-maxage=60, stale-while-revalidate=300");
+    }
+    next();
+  },
   createExpressMiddleware({
     router: appRouter,
     createContext,
