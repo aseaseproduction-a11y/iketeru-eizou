@@ -17,6 +17,7 @@ import type { Video, FilterState, SortType } from "@/lib/types";
 import { trpc } from "@/lib/trpc";
 import { getProductionRoles } from "@shared/productionCredits";
 import { CREATOR_INDEX_OVERRIDES } from "@shared/creatorIndexOverrides";
+import { getEffectiveScore100 } from "@shared/ratingScale";
 
 const ITEMS_PER_PAGE = 30;
 export const MISSING_FILTER_VALUE = "__missing__";
@@ -429,11 +430,32 @@ export function useVideos(favorites: string[] = []) {
         (a, b) =>
           new Date(b.addedDate).getTime() - new Date(a.addedDate).getTime()
       );
-    } else {
+    } else if (filters.sort === "oldest") {
       result.sort(
         (a, b) =>
           new Date(a.addedDate).getTime() - new Date(b.addedDate).getTime()
       );
+    } else if (filters.sort === "aiOverallScoreDesc") {
+      result.sort((a, b) => {
+        const diff =
+          getEffectiveScore100(b.aiOverallScore, b.aiOverallRating) -
+          getEffectiveScore100(a.aiOverallScore, a.aiOverallRating);
+        return diff !== 0 ? diff : new Date(b.addedDate).getTime() - new Date(a.addedDate).getTime();
+      });
+    } else if (filters.sort === "aiDirectionScoreDesc") {
+      result.sort((a, b) => {
+        const diff =
+          getEffectiveScore100(b.aiDirectionScore, b.aiDirectionRating) -
+          getEffectiveScore100(a.aiDirectionScore, a.aiDirectionRating);
+        return diff !== 0 ? diff : new Date(b.addedDate).getTime() - new Date(a.addedDate).getTime();
+      });
+    } else if (filters.sort === "aiTechniqueScoreDesc") {
+      result.sort((a, b) => {
+        const diff =
+          getEffectiveScore100(b.aiTechniqueScore, b.aiTechniqueRating) -
+          getEffectiveScore100(a.aiTechniqueScore, a.aiTechniqueRating);
+        return diff !== 0 ? diff : new Date(b.addedDate).getTime() - new Date(a.addedDate).getTime();
+      });
     }
 
     return result;

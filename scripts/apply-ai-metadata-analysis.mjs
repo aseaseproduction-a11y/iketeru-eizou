@@ -34,7 +34,8 @@ for (const result of results) {
 }
 
 const db = await mysql.createConnection(process.env.DATABASE_URL);
-const [rows] = parsed.length ? await db.query("SELECT id, title, videoUrl, CAST(genres AS CHAR) AS genres, CAST(products AS CHAR) AS products, CAST(directions AS CHAR) AS directions, CAST(tones AS CHAR) AS tones, CAST(purposes AS CHAR) AS purposes, CAST(expressions AS CHAR) AS expressions, privateRating, aiOverallRating, aiDirectionRating, aiTechniqueRating, aiAnalysis, CAST(curationNote AS CHAR) AS curationNote, CAST(metadataClassificationAudit AS CHAR) AS metadataClassificationAudit FROM videos WHERE id IN (?)", [parsed.map((item) => item.original.id)]) : [[]];
+const [rows] = parsed.length ? await db.query("SELECT id, title, videoUrl, CAST(genres AS CHAR) AS genres, CAST(products AS CHAR) AS products, CAST(directions AS CHAR) AS directions, CAST(tones AS CHAR) AS tones, CAST(purposes AS CHAR) AS purposes, CAST(expressions AS CHAR) AS expressions, privateRating, aiOverallRating, aiDirectionRating, aiTechniqueRating, aiOverallScore, aiDirectionScore, aiTechniqueScore, CAST(aiScoreBreakdown AS CHAR) AS aiScoreBreakdown, aiAnalysis, CAST(curationNote AS CHAR) AS curationNote, CAST(metadataClassificationAudit AS CHAR) AS metadataClassificationAudit FROM videos WHERE id IN (?)", [parsed.map((item) => item.original.id)]) : [[]];
+const clamp100 = (v) => (v === null || v === undefined || v === "" || !Number.isFinite(Number(v)) ? null : Math.max(0, Math.min(100, Math.round(Number(v)))));
 const currentById = new Map(rows.map((row) => [row.id, row]));
 const updates = [];
 for (const { original, candidate } of parsed) {
@@ -54,6 +55,10 @@ for (const { original, candidate } of parsed) {
     aiOverallRating: !current.aiOverallRating && use("aiOverallRating") ? candidate.aiOverallRating : current.aiOverallRating || "",
     aiDirectionRating: !current.aiDirectionRating && use("aiDirectionRating") ? candidate.aiDirectionRating : current.aiDirectionRating || "",
     aiTechniqueRating: !current.aiTechniqueRating && use("aiTechniqueRating") ? candidate.aiTechniqueRating : current.aiTechniqueRating || "",
+    aiOverallScore: current.aiOverallScore ?? clamp100(candidate.aiOverallScore),
+    aiDirectionScore: current.aiDirectionScore ?? clamp100(candidate.aiDirectionScore),
+    aiTechniqueScore: current.aiTechniqueScore ?? clamp100(candidate.aiTechniqueScore),
+    aiScoreBreakdown: current.aiScoreBreakdown ? parseJson(current.aiScoreBreakdown, null) : (candidate.aiScoreBreakdown ?? null),
     aiAnalysis: !current.aiAnalysis && use("aiAnalysis") ? candidate.aiAnalysis : current.aiAnalysis || "",
   };
   const appliedMissing = Object.entries(next).filter(([field, value]) => original.missing.includes(field) && (Array.isArray(value) ? value.length > 0 : Boolean(value))).map(([field]) => field);
@@ -69,9 +74,14 @@ try {
   if (apply) {
     for (let offset = 0; offset < updates.length; offset += 100) {
       const chunk = updates.slice(offset, offset + 100);
-      const fields = ["genres", "products", "directions", "tones", "purposes", "expressions", "privateRating", "aiOverallRating", "aiDirectionRating", "aiTechniqueRating", "aiAnalysis", "metadataClassificationAudit"];
+      const fields = ["genres", "products", "directions", "tones", "purposes", "expressions", "privateRating", "aiOverallRating", "aiDirectionRating", "aiTechniqueRating", "aiOverallScore", "aiDirectionScore", "aiTechniqueScore", "aiScoreBreakdown", "aiAnalysis", "metadataClassificationAudit"];
       const cases = fields.map((field) => `${field} = CASE id ${chunk.map(() => "WHEN ? THEN ?").join(" ")} ELSE ${field} END`).join(", ");
-      const values = fields.flatMap((field) => chunk.flatMap((item) => [item.id, typeof item[field] === "string" ? item[field] : JSON.stringify(item[field])]));
+      const values = fields.flatMap((field) => chunk.flatMap((item) => {
+        const val = item[field];
+        if (val === null || val === undefined) return [item.id, null];
+        if (typeof val === "number" || typeof val === "string") return [item.id, val];
+        return [item.id, JSON.stringify(val)];
+      }));
       const ids = chunk.map((item) => item.id);
       const [result] = await db.execute(`UPDATE videos SET ${cases} WHERE id IN (${ids.map(() => "?").join(",")})`, [...values, ...ids]);
       if (result.affectedRows) applied.push(...ids);

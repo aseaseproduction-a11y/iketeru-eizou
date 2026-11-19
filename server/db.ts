@@ -1,6 +1,7 @@
 import { asc, desc, eq, sql } from "drizzle-orm";
 import { and } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
+import mysql from "mysql2/promise";
 import {
   favoriteProfiles,
   InsertUser,
@@ -15,12 +16,29 @@ import { cleanFavoriteDisplayName, normalizeFavoriteCreatorName, normalizeFavori
 import { getProductionNames, getProductionRoles, normalizeProductionCredits, type ProductionCredit } from "@shared/productionCredits";
 
 let _db: ReturnType<typeof drizzle> | null = null;
+let _pool: mysql.Pool | null = null;
+
+function createMysqlPool(databaseUrl: string): mysql.Pool {
+  const needsTls =
+    /tidbcloud\.com|psdb\.cloud|aivencloud\.com/i.test(databaseUrl) ||
+    process.env.MYSQL_SSL === "true" ||
+    /[?&]ssl=/i.test(databaseUrl);
+  return mysql.createPool({
+    uri: databaseUrl,
+    waitForConnections: true,
+    connectionLimit: Number(process.env.MYSQL_POOL_LIMIT ?? 5),
+    queueLimit: 0,
+    enableKeepAlive: true,
+    ...(needsTls ? { ssl: { minVersion: "TLSv1.2", rejectUnauthorized: true } } : {}),
+  });
+}
 
 // Lazily create the drizzle instance so local tooling can run without a DB.
 export async function getDb() {
   if (!_db && process.env.DATABASE_URL) {
     try {
-      _db = drizzle(process.env.DATABASE_URL);
+      _pool = createMysqlPool(process.env.DATABASE_URL);
+      _db = drizzle(_pool);
     } catch (error) {
       console.warn("[Database] Failed to connect:", error);
       _db = null;
@@ -121,6 +139,7 @@ export async function getAllVideoListItems() {
     return {
       ...video,
       aiAnalysis: "",
+      aiScoreBreakdown: undefined,
       metadataClassificationAudit: undefined,
     };
   });
@@ -374,6 +393,10 @@ export function parseVideoRow(row: typeof videos.$inferSelect) {
     aiOverallRating: row.aiOverallRating ?? "",
     aiDirectionRating: row.aiDirectionRating ?? "",
     aiTechniqueRating: row.aiTechniqueRating ?? "",
+    aiOverallScore: row.aiOverallScore ?? null,
+    aiDirectionScore: row.aiDirectionScore ?? null,
+    aiTechniqueScore: row.aiTechniqueScore ?? null,
+    aiScoreBreakdown: safeParseJson(row.aiScoreBreakdown, undefined),
     aiAnalysis: row.aiAnalysis ?? "",
     embedStatus: row.embedStatus ?? "unknown",
     embedReason: row.embedReason ?? "",

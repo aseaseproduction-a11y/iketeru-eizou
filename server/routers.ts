@@ -27,6 +27,7 @@ import { classifyVideoMetadata } from "./metadataAutoClassification";
 import { normalizeFavoriteProfileName } from "@shared/favoriteProfiles";
 import { EXPRESSION_OPTIONS, PURPOSE_OPTIONS, restrictToAllowedOptions } from "@shared/metadataOptions";
 import { getProductionNames, getProductionRoles, normalizeProductionCredits, type ProductionCredit } from "@shared/productionCredits";
+import { resolveRatingPair } from "@shared/ratingScale";
 import { TRPCError } from "@trpc/server";
 import { z } from "zod";
 
@@ -85,6 +86,10 @@ const videoWriteSchema = z.object({
   aiOverallRating: z.string().trim().max(16).default(""),
   aiDirectionRating: z.string().trim().max(16).default(""),
   aiTechniqueRating: z.string().trim().max(16).default(""),
+  aiOverallScore: z.number().int().min(0).max(100).nullable().optional(),
+  aiDirectionScore: z.number().int().min(0).max(100).nullable().optional(),
+  aiTechniqueScore: z.number().int().min(0).max(100).nullable().optional(),
+  aiScoreBreakdown: z.record(z.string(), z.unknown()).nullable().optional(),
   aiAnalysis: z.string().trim().max(1_000_000).default(""),
   addedDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
 });
@@ -171,9 +176,13 @@ function toVideoRecord(input: VideoWriteInput) {
     awards: JSON.stringify(input.awards),
     curationNote: JSON.stringify(input.curationNote),
     privateRating: input.privateRating || null,
-    aiOverallRating: input.aiOverallRating || null,
-    aiDirectionRating: input.aiDirectionRating || null,
-    aiTechniqueRating: input.aiTechniqueRating || null,
+    aiOverallRating: resolveRatingPair({ rating: input.aiOverallRating, score: input.aiOverallScore, preserveExistingRating: true }).rating || null,
+    aiDirectionRating: resolveRatingPair({ rating: input.aiDirectionRating, score: input.aiDirectionScore, preserveExistingRating: true }).rating || null,
+    aiTechniqueRating: resolveRatingPair({ rating: input.aiTechniqueRating, score: input.aiTechniqueScore, preserveExistingRating: true }).rating || null,
+    aiOverallScore: input.aiOverallScore ?? null,
+    aiDirectionScore: input.aiDirectionScore ?? null,
+    aiTechniqueScore: input.aiTechniqueScore ?? null,
+    aiScoreBreakdown: input.aiScoreBreakdown ? JSON.stringify(input.aiScoreBreakdown) : null,
     aiAnalysis: input.aiAnalysis || null,
     addedDate: input.addedDate,
   };

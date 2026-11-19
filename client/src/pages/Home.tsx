@@ -926,11 +926,14 @@ export default function Home() {
               <div className="flex items-center gap-2 flex-shrink-0">
                 <select
                   value={filters.sort}
-                  onChange={(e) => setSort(e.target.value as "newest" | "oldest")}
+                  onChange={(e) => setSort(e.target.value as import("@/lib/types").SortType)}
                   className="text-xs bg-surface-1 border border-white/10 rounded-md px-2.5 py-1.5 text-foreground outline-none focus:ring-1 focus:ring-cinematic-red/40"
                 >
                   <option value="newest">新しい順</option>
                   <option value="oldest">古い順</option>
+                  <option value="aiOverallScoreDesc">AI総合 高い順</option>
+                  <option value="aiDirectionScoreDesc">AI演出 高い順</option>
+                  <option value="aiTechniqueScoreDesc">AI技術 高い順</option>
                 </select>
               </div>
             </div>

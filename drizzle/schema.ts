@@ -61,6 +61,10 @@ export const videos = mysqlTable("videos", {
   aiOverallRating: varchar("aiOverallRating", { length: 16 }), // Notion AI評価（総合）
   aiDirectionRating: varchar("aiDirectionRating", { length: 16 }), // Notion AI評価（ディレクション）
   aiTechniqueRating: varchar("aiTechniqueRating", { length: 16 }), // Notion AI評価（技術）
+  aiOverallScore: int("aiOverallScore"), // AI評価100点満点（総合: 0-100）
+  aiDirectionScore: int("aiDirectionScore"), // AI評価100点満点（ディレクション: 0-100）
+  aiTechniqueScore: int("aiTechniqueScore"), // AI評価100点満点（技術: 0-100）
+  aiScoreBreakdown: mediumtext("aiScoreBreakdown"), // JSON: 5観点x20点ルーブリック内訳
   aiAnalysis: mediumtext("aiAnalysis"), // Notion AI分析結果
   embedStatus: varchar("embedStatus", { length: 16 }).notNull().default("unknown"), // unknown | available | restricted
   embedReason: varchar("embedReason", { length: 128 }), // unavailable_private_or_deleted | unavailable_access_restricted | unavailable_embed_restricted | unavailable_page_unavailable

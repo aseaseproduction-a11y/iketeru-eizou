@@ -11,6 +11,7 @@ import { SOURCE_LABELS, SOURCE_COLORS } from "@/lib/types";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { getProductionNames, getProductionRoles, normalizeProductionCredits, productionCreditsToEditableText } from "@shared/productionCredits";
+import { clampScore100, scoreToRating } from "@shared/ratingScale";
 import MetadataValuePicker from "@/components/MetadataValuePicker";
 import { collectMetadataValueSuggestions, resolveSuggestedTagItems, type MetadataValueSuggestions } from "@/lib/metadataValueSuggestions";
 import { detectVideoUrl } from "@/lib/videoUrlDetection";
@@ -39,6 +40,9 @@ type VideoEditDraft = {
   aiOverallRating: string;
   aiDirectionRating: string;
   aiTechniqueRating: string;
+  aiOverallScore: string;
+  aiDirectionScore: string;
+  aiTechniqueScore: string;
   aiAnalysis: string;
   curationPurpose: string;
   curationBackground: string;
@@ -69,6 +73,9 @@ function draftFromVideo(video: Video): VideoEditDraft {
     aiOverallRating: video.aiOverallRating || "",
     aiDirectionRating: video.aiDirectionRating || "",
     aiTechniqueRating: video.aiTechniqueRating || "",
+    aiOverallScore: typeof video.aiOverallScore === "number" ? String(video.aiOverallScore) : "",
+    aiDirectionScore: typeof video.aiDirectionScore === "number" ? String(video.aiDirectionScore) : "",
+    aiTechniqueScore: typeof video.aiTechniqueScore === "number" ? String(video.aiTechniqueScore) : "",
     aiAnalysis: video.aiAnalysis || "",
     curationPurpose: video.curationNote?.purpose || "",
     curationBackground: video.curationNote?.background || "",
@@ -236,6 +243,9 @@ export default function VideoModal({
         aiOverallRating: editDraft.aiOverallRating,
         aiDirectionRating: editDraft.aiDirectionRating,
         aiTechniqueRating: editDraft.aiTechniqueRating,
+        aiOverallScore: clampScore100(editDraft.aiOverallScore),
+        aiDirectionScore: clampScore100(editDraft.aiDirectionScore),
+        aiTechniqueScore: clampScore100(editDraft.aiTechniqueScore),
         aiAnalysis: nextAiAnalysis,
         curationNote: nextCurationNote,
         addedDate: video.addedDate,
@@ -259,6 +269,9 @@ export default function VideoModal({
         aiOverallRating: editDraft.aiOverallRating,
         aiDirectionRating: editDraft.aiDirectionRating,
         aiTechniqueRating: editDraft.aiTechniqueRating,
+        aiOverallScore: clampScore100(editDraft.aiOverallScore),
+        aiDirectionScore: clampScore100(editDraft.aiDirectionScore),
+        aiTechniqueScore: clampScore100(editDraft.aiTechniqueScore),
         aiAnalysis: nextAiAnalysis,
         curationNote: nextCurationNote,
       };
@@ -302,9 +315,9 @@ export default function VideoModal({
   ];
   const productionCredits = normalizeProductionCredits(video.productionCredits, video.productions);
   const aiRatings = [
-    { label: "AI評価（総合）", key: "aiOverallRating" as const, value: video.aiOverallRating },
-    { label: "AI評価（ディレクション）", key: "aiDirectionRating" as const, value: video.aiDirectionRating },
-    { label: "AI評価（技術）", key: "aiTechniqueRating" as const, value: video.aiTechniqueRating },
+    { label: "AI評価（総合）", key: "aiOverallRating" as const, value: video.aiOverallRating, score: video.aiOverallScore },
+    { label: "AI評価（ディレクション）", key: "aiDirectionRating" as const, value: video.aiDirectionRating, score: video.aiDirectionScore },
+    { label: "AI評価（技術）", key: "aiTechniqueRating" as const, value: video.aiTechniqueRating, score: video.aiTechniqueScore },
   ].filter((rating) => Boolean(rating.value));
 
   const embedSrc = getEmbedSrc(video, initialStartTime);
@@ -370,6 +383,9 @@ export default function VideoModal({
                       {rating.key === "aiOverallRating" ? "AI総合" : rating.key === "aiDirectionRating" ? "AI演出" : "AI技術"}
                     </span>
                     <span className="font-bold">{rating.value}</span>
+                    {typeof rating.score === "number" && (
+                      <span className="font-mono text-[9px] opacity-80">{rating.score}pt</span>
+                    )}
                   </span>
                 ))}
               </div>
@@ -547,13 +563,34 @@ export default function VideoModal({
                     <span className="mb-2 block text-xs font-semibold text-foreground/85">Notion AI評価・分析</span>
                     <div className="grid gap-3 sm:grid-cols-3">
                       {([
-                        ["aiOverallRating", "AI評価（総合）"],
-                        ["aiDirectionRating", "AI評価（ディレクション）"],
-                        ["aiTechniqueRating", "AI評価（技術）"],
-                      ] as const).map(([key, label]) => (
-                        <label key={key} className="text-xs text-muted-foreground">{label}
-                          <input value={editDraft[key]} onChange={(event) => setEditDraft((current) => ({ ...current, [key]: event.target.value }))} placeholder="例：A-" className="mt-1.5 w-full rounded-lg border border-white/10 bg-black/20 px-3 py-2 text-xs text-foreground outline-none focus:ring-1 focus:ring-cinematic-red/40" />
-                        </label>
+                        ["aiOverallRating", "aiOverallScore", "AI評価（総合）"],
+                        ["aiDirectionRating", "aiDirectionScore", "AI評価（ディレクション）"],
+                        ["aiTechniqueRating", "aiTechniqueScore", "AI評価（技術）"],
+                      ] as const).map(([ratingKey, scoreKey, label]) => (
+                        <div key={ratingKey} className="space-y-1.5">
+                          <label className="block text-xs text-muted-foreground">{label}
+                            <input value={editDraft[ratingKey]} onChange={(event) => setEditDraft((current) => ({ ...current, [ratingKey]: event.target.value }))} placeholder="例：A-" className="mt-1.5 w-full rounded-lg border border-white/10 bg-black/20 px-3 py-2 text-xs text-foreground outline-none focus:ring-1 focus:ring-cinematic-red/40" />
+                          </label>
+                          <label className="block text-[11px] text-muted-foreground/80">100点スコア (0-100)
+                            <input
+                              type="number"
+                              min={0}
+                              max={100}
+                              value={editDraft[scoreKey]}
+                              onChange={(event) => {
+                                const raw = event.target.value;
+                                const parsed = clampScore100(raw);
+                                setEditDraft((current) => ({
+                                  ...current,
+                                  [scoreKey]: raw,
+                                  ...(parsed !== null && !current[ratingKey] ? { [ratingKey]: scoreToRating(parsed) } : {}),
+                                }));
+                              }}
+                              placeholder="例：84"
+                              className="mt-1 w-full rounded-lg border border-white/10 bg-black/20 px-3 py-1.5 text-xs font-mono text-foreground outline-none focus:ring-1 focus:ring-cinematic-red/40"
+                            />
+                          </label>
+                        </div>
                       ))}
                     </div>
                     <label className="mt-3 block text-xs text-muted-foreground">AI分析結果

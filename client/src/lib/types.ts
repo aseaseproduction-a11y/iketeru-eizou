@@ -1,4 +1,5 @@
 import type { ProductionCredit } from "@shared/productionCredits";
+import type { AiScoreBreakdown } from "@shared/ratingScale";
 
 /**
  * Video data types and category definitions for イケてる映像コレクション
@@ -90,6 +91,10 @@ export interface Video {
   aiOverallRating: string;
   aiDirectionRating: string;
   aiTechniqueRating: string;
+  aiOverallScore?: number | null;
+  aiDirectionScore?: number | null;
+  aiTechniqueScore?: number | null;
+  aiScoreBreakdown?: AiScoreBreakdown | null;
   aiAnalysis: string;
   embedStatus: "unknown" | "available" | "restricted";
   embedReason?: string;
@@ -115,7 +120,7 @@ export interface CategoryItem {
 }
 
 export type FilterType = "genre" | "product" | "direction" | "tone" | "duration";
-export type SortType = "newest" | "oldest";
+export type SortType = "newest" | "oldest" | "aiOverallScoreDesc" | "aiDirectionScoreDesc" | "aiTechniqueScoreDesc";
 
 export interface FilterState {
   search: string;

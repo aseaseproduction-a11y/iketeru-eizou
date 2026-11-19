@@ -112,9 +112,9 @@ export default function VideoCard({ video, index, isFavorite = false, hasNote = 
     ...video.tones.map((tag, index) => ({ key: `tone-${tag.name}-${index}`, name: tag.name })),
   ];
   const aiRatings = [
-    { shortLabel: "総", fullLabel: "総合", value: video.aiOverallRating },
-    { shortLabel: "演", fullLabel: "ディレクション", value: video.aiDirectionRating },
-    { shortLabel: "技", fullLabel: "技術", value: video.aiTechniqueRating },
+    { shortLabel: "総", fullLabel: "総合", value: video.aiOverallRating, score: video.aiOverallScore },
+    { shortLabel: "演", fullLabel: "ディレクション", value: video.aiDirectionRating, score: video.aiDirectionScore },
+    { shortLabel: "技", fullLabel: "技術", value: video.aiTechniqueRating, score: video.aiTechniqueScore },
   ].filter((rating) => Boolean(rating.value));
   const embedRecheckDue = isEmbedStatusRecheckDue(video.embedStatus, video.embedCheckedAt);
   const embedRecheckAt = formatEmbedRecheckAt(video.embedCheckedAt);
@@ -275,11 +275,14 @@ export default function VideoCard({ video, index, isFavorite = false, hasNote = 
             {aiRatings.map((rating) => (
               <span
                 key={rating.shortLabel}
-                title={`AI評価（${rating.fullLabel}）：${rating.value}`}
+                title={`AI評価（${rating.fullLabel}）：${rating.value}${typeof rating.score === "number" ? `（${rating.score}点）` : ""}`}
                 className="inline-flex items-center gap-1 rounded-sm border border-sky-400/20 bg-sky-400/[0.07] px-1.5 py-0.5 text-[9px] font-semibold text-sky-300"
               >
                 <span className="text-sky-300/65">AI {rating.shortLabel}</span>
                 <span className="text-sky-100">{rating.value}</span>
+                {typeof rating.score === "number" && (
+                  <span className="text-sky-300/80 font-mono text-[8.5px]">{rating.score}</span>
+                )}
               </span>
             ))}
           </div>
