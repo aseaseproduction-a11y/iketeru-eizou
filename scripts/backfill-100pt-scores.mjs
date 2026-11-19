@@ -67,43 +67,57 @@ let updated = 0;
 let scanned = 0;
 try {
   const [rows] = await db.query(
-    `SELECT id, aiOverallRating, aiDirectionRating, aiTechniqueRating,
-            aiOverallScore, aiDirectionScore, aiTechniqueScore
-     FROM videos
-     WHERE (aiOverallRating IS NOT NULL AND aiOverallRating != '' AND aiOverallScore IS NULL)
-        OR (aiDirectionRating IS NOT NULL AND aiDirectionRating != '' AND aiDirectionScore IS NULL)
-        OR (aiTechniqueRating IS NOT NULL AND aiTechniqueRating != '' AND aiTechniqueScore IS NULL)
-     LIMIT ?`,
-    [limit],
+    jsonlPath
+      ? `SELECT id, aiOverallRating, aiDirectionRating, aiTechniqueRating,
+                aiOverallScore, aiDirectionScore, aiTechniqueScore
+         FROM videos
+         WHERE id IN (?)`
+      : `SELECT id, aiOverallRating, aiDirectionRating, aiTechniqueRating,
+                aiOverallScore, aiDirectionScore, aiTechniqueScore
+         FROM videos
+         WHERE (aiOverallRating IS NOT NULL AND aiOverallRating != '' AND aiOverallScore IS NULL)
+            OR (aiDirectionRating IS NOT NULL AND aiDirectionRating != '' AND aiDirectionScore IS NULL)
+            OR (aiTechniqueRating IS NOT NULL AND aiTechniqueRating != '' AND aiTechniqueScore IS NULL)
+         LIMIT ?`,
+    jsonlPath ? [Array.from(rubricById.keys()).slice(0, limit)] : [limit],
   );
   scanned = rows.length;
   const plan = [];
   for (const row of rows) {
     const ext = rubricById.get(String(row.id));
-    const overall = row.aiOverallScore ?? clampToBand(ext?.aiOverallScore, row.aiOverallRating);
-    const direction = row.aiDirectionScore ?? clampToBand(ext?.aiDirectionScore, row.aiDirectionRating);
-    const technique = row.aiTechniqueScore ?? clampToBand(ext?.aiTechniqueScore, row.aiTechniqueRating);
+    const overall = ext ? clampToBand(ext.aiOverallScore, row.aiOverallRating) : (row.aiOverallScore ?? clampToBand(null, row.aiOverallRating));
+    const direction = ext ? clampToBand(ext.aiDirectionScore, row.aiDirectionRating) : (row.aiDirectionScore ?? clampToBand(null, row.aiDirectionRating));
+    const technique = ext ? clampToBand(ext.aiTechniqueScore, row.aiTechniqueRating) : (row.aiTechniqueScore ?? clampToBand(null, row.aiTechniqueRating));
     const breakdown = ext?.aiScoreBreakdown ?? {
       source: "backfill_from_analysis",
       version: "1.0",
       rationale: "既存S+〜D-ランク据え置きレンジ中央値による初期バックフィル",
     };
     if (overall !== null || direction !== null || technique !== null) {
-      plan.push({ id: row.id, overall, direction, technique, breakdown: JSON.stringify(breakdown) });
+      plan.push({ id: row.id, overall, direction, technique, breakdown: JSON.stringify(breakdown), overwrite: Boolean(ext) });
     }
   }
 
   if (apply) {
     for (const item of plan) {
-      await db.execute(
-        `UPDATE videos
-         SET aiOverallScore = COALESCE(aiOverallScore, ?),
-             aiDirectionScore = COALESCE(aiDirectionScore, ?),
-             aiTechniqueScore = COALESCE(aiTechniqueScore, ?),
-             aiScoreBreakdown = COALESCE(aiScoreBreakdown, ?)
-         WHERE id = ?`,
-        [item.overall, item.direction, item.technique, item.breakdown, item.id],
-      );
+      if (item.overwrite) {
+        await db.execute(
+          `UPDATE videos
+           SET aiOverallScore = ?, aiDirectionScore = ?, aiTechniqueScore = ?, aiScoreBreakdown = ?
+           WHERE id = ?`,
+          [item.overall, item.direction, item.technique, item.breakdown, item.id],
+        );
+      } else {
+        await db.execute(
+          `UPDATE videos
+           SET aiOverallScore = COALESCE(aiOverallScore, ?),
+               aiDirectionScore = COALESCE(aiDirectionScore, ?),
+               aiTechniqueScore = COALESCE(aiTechniqueScore, ?),
+               aiScoreBreakdown = COALESCE(aiScoreBreakdown, ?)
+           WHERE id = ?`,
+          [item.overall, item.direction, item.technique, item.breakdown, item.id],
+        );
+      }
       updated += 1;
     }
   }
