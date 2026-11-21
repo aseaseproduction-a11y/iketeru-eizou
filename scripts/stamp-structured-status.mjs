@@ -53,16 +53,23 @@ for (const r of allRows) {
     }
   }
 
-  // 2. visualVerificationStatus: log_verified from verify_visual_logs.py always wins & never downgrades
-  if (logVerifiedIds.has(id)) {
+  // 2. visualVerificationStatus:
+  //    Priority 1: visual_redo_queue (0-image caught by log check) ALWAYS invalidates — even for rubric_unclamped & visualChecked=true!
+  //    Priority 2: log_verified from latest worker transcript in verify_visual_logs.py
+  let mustNullScores = false;
+  if (invalidatedIds.has(id)) {
+    bd.visualVerificationStatus = "invalidated_no_visual";
+    bd.invalidatedNoVisual = true;
+    bd.visualChecked = false;
+    mustNullScores = true;
+  } else if (logVerifiedIds.has(id)) {
     bd.visualVerificationStatus = "log_verified";
+    delete bd.invalidatedNoVisual;
   } else if (bd.visualVerificationStatus !== "log_verified") {
     if (isLatestReanalysis && bd.visualChecked === true) {
       if (!bd.visualVerificationStatus) bd.visualVerificationStatus = "unverified_pending";
     } else if (INITIAL_MIGRATION || !bd.visualVerificationStatus) {
-      if (invalidatedIds.has(id)) {
-        bd.visualVerificationStatus = "invalidated_no_visual";
-      } else if (unverifiableIds.has(id)) {
+      if (unverifiableIds.has(id)) {
         bd.visualVerificationStatus = "unverifiable_no_log";
       } else if (ALIGN_UNAUDITED) {
         bd.visualVerificationStatus = "not_audited";
@@ -71,8 +78,15 @@ for (const r of allRows) {
   }
 
   const after = JSON.stringify(bd);
-  if (after !== before) {
-    await conn.query("UPDATE videos SET aiScoreBreakdown = ? WHERE id = ?", [after, id]);
+  if (after !== before || mustNullScores) {
+    if (mustNullScores) {
+      await conn.query(
+        "UPDATE videos SET aiOverallScore = NULL, aiDirectionScore = NULL, aiTechniqueScore = NULL, aiScoreBreakdown = ? WHERE id = ?",
+        [after, id]
+      );
+    } else {
+      await conn.query("UPDATE videos SET aiScoreBreakdown = ? WHERE id = ?", [after, id]);
+    }
     updated++;
   }
 }

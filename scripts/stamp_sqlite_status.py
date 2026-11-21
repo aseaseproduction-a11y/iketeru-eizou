@@ -40,23 +40,34 @@ for vid, raw_bd in rows:
             bd["analysisStatus"] = "full_analysis"
             bd["isProvisional"] = False
 
-    if vid in log_verified_ids:
+    must_null_scores = False
+    if vid in invalidated_ids:
+        bd["visualVerificationStatus"] = "invalidated_no_visual"
+        bd["invalidatedNoVisual"] = True
+        bd["visualChecked"] = False
+        must_null_scores = True
+    elif vid in log_verified_ids:
         bd["visualVerificationStatus"] = "log_verified"
+        bd.pop("invalidatedNoVisual", None)
     elif bd.get("visualVerificationStatus") != "log_verified":
         if is_latest_reanalysis and bd.get("visualChecked") is True:
             if not bd.get("visualVerificationStatus"):
                 bd["visualVerificationStatus"] = "unverified_pending"
         elif INITIAL_MIGRATION or not bd.get("visualVerificationStatus"):
-            if vid in invalidated_ids:
-                bd["visualVerificationStatus"] = "invalidated_no_visual"
-            elif vid in unverifiable_ids:
+            if vid in unverifiable_ids:
                 bd["visualVerificationStatus"] = "unverifiable_no_log"
             elif ALIGN_UNAUDITED:
                 bd["visualVerificationStatus"] = "not_audited"
 
     after = json.dumps(bd, ensure_ascii=False)
-    if after != before:
-        con.execute("UPDATE videos SET score_breakdown_json = ? WHERE id = ?", (after, vid))
+    if after != before or must_null_scores:
+        if must_null_scores:
+            con.execute(
+                "UPDATE videos SET overall_score_100 = NULL, direction_score_100 = NULL, technique_score_100 = NULL, score_breakdown_json = ? WHERE id = ?",
+                (after, vid),
+            )
+        else:
+            con.execute("UPDATE videos SET score_breakdown_json = ? WHERE id = ?", (after, vid))
         updated += 1
 
 con.commit()

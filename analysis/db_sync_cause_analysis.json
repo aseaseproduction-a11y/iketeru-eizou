@@ -891,5 +891,141 @@
         "audit_progress_ratings": "A/A/A-"
       }
     ]
+  },
+  "verified_root_cause_correction": {
+    "retracted_claim": "前回の『2026-04頃にSQLite側で別の一次評価が入った』という推測は、1003005012（TiDB作成2026-11-19）等の実データと矛盾するため撤回。",
+    "confirmed_root_cause": "1) goal_visual_audit_workflow.py が読み込み元をローカルSQLite、書き込み先をTiDB Cloudという別々のDBにしていた。2) 両DBでは既に別の分析本文・別ランク（特にVimeo暫定評価）が入っており、SQLiteから読んだ本文・ランクを前提に生成した監査結果と『## 11.』が、TiDB側の別本文へ追記された。"
+  },
+  "body_and_ch11_divergence": {
+    "common_videos_checked": 5587,
+    "a_body_comparison": {
+      "identical_base_body": 5050,
+      "different_base_body_total": 537,
+      "breakdown": {
+        "different_document_major_head_diff": 467,
+        "one_side_empty": 69,
+        "same_head_minor_diff": 1
+      }
+    },
+    "b_ch11_appended_to_different_tidb_body": {
+      "tidb_videos_with_ch11_total": 1575,
+      "ch11_on_any_different_base_body": 537,
+      "ch11_on_major_different_or_empty_base_body": 536,
+      "samples": [
+        {
+          "id": "1003005012",
+          "tidb_rating": "A",
+          "sqlite_rating": "B+",
+          "tidb_createdAt": "2026-11-19",
+          "tidb_analysis_status": "provisional",
+          "diff_kind": "major",
+          "tidb_base_head": "## 0. 映像概要・前提情報・総合結論 - **対象作品**: anicecompnay X SUNJUNJIE – Shinjuku Cross Vision 3DOOH（Vimeo / 尺: 1",
+          "sqlite_base_head": "## 0. 分析サマリー（公式公開メタデータ・クレジット完全精査） - **対象作品**: anicecompnay X SUNJUNJIE - Shinjuku Cross Vision 3DOOH"
+        },
+        {
+          "id": "100398359",
+          "tidb_rating": "A",
+          "sqlite_rating": "B+",
+          "tidb_createdAt": "2026-11-19",
+          "tidb_analysis_status": "provisional",
+          "diff_kind": "major",
+          "tidb_base_head": "## 0. 映像概要・前提情報・総合結論 本作はSPACE SHOWER TVが2014年に制作した15秒のステーションID「Flash Face」である。尺15.06秒、解像度640x360、フレー",
+          "sqlite_base_head": "## 0. 分析サマリー（公式公開メタデータ・クレジット完全精査） - **対象作品**: Flash Face (SPACE SHOWER TV STATION ID 2014)（vimeo / 公"
+        },
+        {
+          "id": "100398412",
+          "tidb_rating": "A",
+          "sqlite_rating": "B+",
+          "tidb_createdAt": "2026-11-19",
+          "tidb_analysis_status": "provisional",
+          "diff_kind": "major",
+          "tidb_base_head": "## 0. 映像概要・前提情報・総合結論 本作はSPACE SHOWER TVが2014年に展開した15秒のステーションID作品「Clash Dance」である。尺15.06秒、解像度640x360、",
+          "sqlite_base_head": "## 0. 分析サマリー（公式公開メタデータ・クレジット完全精査） - **対象作品**: Clash Dance (SPACE SHOWER TV STATION ID 2014)（vimeo / "
+        },
+        {
+          "id": "1018553776",
+          "tidb_rating": "B+",
+          "sqlite_rating": "B",
+          "tidb_createdAt": "2026-11-19",
+          "tidb_analysis_status": "provisional",
+          "diff_kind": "major",
+          "tidb_base_head": "## 0. 映像概要・前提情報・総合結論 本作はBリーグ・千葉ジェッツの2024-2025シーズン開幕および新本拠地（LaLa arena TOKYO-BAY）始動を告知する約28秒のシーズンテイザー",
+          "sqlite_base_head": "## 0. 分析サマリー（公式公開メタデータ・クレジット完全精査） - **対象作品**: CHIBAJETS 2024-2025 Season Teaser（vimeo / 公開元: 4-3-3 i"
+        },
+        {
+          "id": "1023678841",
+          "tidb_rating": "A",
+          "sqlite_rating": "A-",
+          "tidb_createdAt": "2026-11-19",
+          "tidb_analysis_status": "provisional",
+          "diff_kind": "major",
+          "tidb_base_head": "## 0. 映像概要・前提情報・総合結論 本映像は小野薬品工業（Ono Pharma）による60秒（60.01秒、640x360確認版、30fps、平均音圧-19.4dB）のコーポレート・ブランデッド",
+          "sqlite_base_head": "## 0. 分析サマリー（公式公開メタデータ・クレジット完全精査） - **対象作品**: BREAKE THROUGH / Japanese ver.（vimeo / 公開元: Kaito Mizu"
+        },
+        {
+          "id": "1023733257",
+          "tidb_rating": "A",
+          "sqlite_rating": "B+",
+          "tidb_createdAt": "2026-11-19",
+          "tidb_analysis_status": "provisional",
+          "diff_kind": "major",
+          "tidb_base_head": "## 0. 映像概要・前提情報・総合結論 本映像は日本のモーションデザイナー・ビジュアルアーティストであるYusuke Murakamiによる64.41秒（640x360確認版、25fps、平均音圧-",
+          "sqlite_base_head": "## 0. 分析サマリー（公式公開メタデータ・クレジット完全精査） - **対象作品**: Yusuke Murakami: Motion Reel（vimeo / 公開元: Yusuke Murak"
+        },
+        {
+          "id": "1023890656",
+          "tidb_rating": "A+",
+          "sqlite_rating": "B",
+          "tidb_createdAt": "2026-11-19",
+          "tidb_analysis_status": "provisional",
+          "diff_kind": "major",
+          "tidb_base_head": "## 0. 映像概要・前提情報・総合結論 本作はUNIQLO KOREAの大型店舗オープン（2024年9月13日・蚕室ロッテワールドモール）を告知する30秒のOOHデジタルサイネージ映像「UNIQLO",
+          "sqlite_base_head": "## 0. 分析サマリー（公式公開メタデータ・クレジット完全精査） - **対象作品**: UNIQLO KOREA OOH（vimeo / 公開元: EDP graphic works Co.,Lt"
+        },
+        {
+          "id": "103212033",
+          "tidb_rating": "A-",
+          "sqlite_rating": "B+",
+          "tidb_createdAt": "2026-11-19",
+          "tidb_analysis_status": "provisional",
+          "diff_kind": "major",
+          "tidb_base_head": "## 0. 映像概要・前提情報・総合結論 本映像は日本のクリエイティブ集団・1→10（ワントゥーテン）が制作した、大手広告会社ADK（アサツー ディ・ケイ）の新CI導入告知ムービー「ADK New C",
+          "sqlite_base_head": "## 0. 分析サマリー（公式公開メタデータ・クレジット完全精査） - **対象作品**: ADK New CI Movie 2014（vimeo / 公開元: 1→10 / 尺: 30秒） - **"
+        },
+        {
+          "id": "1032202784",
+          "tidb_rating": "A+",
+          "sqlite_rating": "A-",
+          "tidb_createdAt": "2026-11-19",
+          "tidb_analysis_status": "provisional",
+          "diff_kind": "major",
+          "tidb_base_head": "## 0. 映像概要・前提情報・総合結論 本動画「Node Fest 2024」は、オーストラリア・メルボルンで開催されたモーショングラフィックスの祭典「Node Fest 2024」（主催：Yes ",
+          "sqlite_base_head": "## 0. 分析サマリー（公式公開メタデータ・クレジット完全精査） - **対象作品**: Node Fest 2024（vimeo / 公開元: Never Sit Still / 尺: 109秒）"
+        },
+        {
+          "id": "1035101875",
+          "tidb_rating": "A-",
+          "sqlite_rating": "B",
+          "tidb_createdAt": "2026-11-19",
+          "tidb_analysis_status": "provisional",
+          "diff_kind": "major",
+          "tidb_base_head": "## 0. 映像概要・前提情報・総合結論 本動画「CHIBA JETS After Movie」は、プロバスケットボールチーム千葉ジェッツの新本拠地LaLa arena TOKYO-BAYにおける20",
+          "sqlite_base_head": "## 0. 分析サマリー（公式公開メタデータ・クレジット完全精査） - **対象作品**: CHIBA JETS After Movie（vimeo / 公開元: 4-3-3 inc. / 尺: 75"
+        }
+      ]
+    },
+    "audited_rating_mismatch_verification": {
+      "audited_videos_with_tidb_vs_sqlite_rating_diff": 489,
+      "audit_progress_matched_sqlite_rating": 423
+    },
+    "c_workflow_single_db_fix_proposal": {
+      "root_cause_confirmed": "goal_visual_audit_workflow.py read target video ratings and ai_analysis excerpts from local SQLite (iketeru_knowledge.db), while Phase 4 (backfill-100pt-scores.mjs / apply-audit-patches.mjs) wrote scores and '## 11.' patches to TiDB Cloud. Because SQLite and TiDB already held different ratings and different aiAnalysis documents on hundreds of Vimeo/provisional records, Ch.11 patches generated against SQLite's text were appended onto TiDB's different document.",
+      "proposed_architecture_fix": [
+        "1. Unify read & write on TiDB Cloud as the single canonical DB inside goal_visual_audit_workflow.py (replace Phase 1 SQLite SELECT with a Node/Python query reading id, ratings, aiAnalysis directly from TiDB Cloud).",
+        "2. Have Phase 4 write scores, ratings, and '## 11.' patches ONLY to TiDB Cloud first.",
+        "3. Update local SQLite strictly as a one-way mirror AFTER TiDB commit succeeds (copying the exact TiDB row that was just written, never reading SQLite as input for auditing).",
+        "4. Before running any new audit wave, add a pre-flight hash check verifying the target video's aiAnalysis hash matches between read time and patch time (abort patch if mismatched)."
+      ]
+    }
   }
 }

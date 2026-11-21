@@ -1,4 +1,5 @@
 {
+  "matching_policy": "latest_transcript_paired_with_latest_progress_record_per_video",
   "worker_transcripts_found": 608,
   "progress_jsonl_unique_videos": 1786,
   "matched_in_worker_transcripts": 607,

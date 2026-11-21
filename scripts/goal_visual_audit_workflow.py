@@ -472,9 +472,15 @@ else:
     _run_node_retry(["node", "scripts/repair-metadata-from-analysis.mjs", "--apply"], "TiDB metadata repair")
 
     # Immediately cross-check worker transcripts before Antigravity prunes old logs, then promote unverified_pending -> log_verified
-    _run_node_retry([sys.executable, "scripts/verify_visual_logs.py"], "Worker transcript log verification")
-    _run_node_retry(["node", "scripts/stamp-structured-status.mjs"], "TiDB structured status promotion")
-    _run_node_retry([sys.executable, "scripts/stamp_sqlite_status.py"], "SQLite structured status promotion")
+    # Fail the wave loudly if any of these 3 post-wave steps fails.
+    for cmd_args, label in (
+        ([sys.executable, "scripts/verify_visual_logs.py"], "Worker transcript log verification"),
+        (["node", "scripts/stamp-structured-status.mjs"], "TiDB structured status promotion"),
+        ([sys.executable, "scripts/stamp_sqlite_status.py"], "SQLite structured status promotion"),
+    ):
+        step_proc = _run_node_retry(cmd_args, label)
+        if step_proc.returncode != 0:
+            raise RuntimeError(f"Post-wave step failed [{label}] (exit {step_proc.returncode}): {step_proc.stderr}")
 
     shutil.rmtree(WORK_TMP, ignore_errors=True)
 
