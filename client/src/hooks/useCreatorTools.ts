@@ -3,6 +3,7 @@
  * お気に入りは共有端末でも利用者名で分離してDBへ保存し、メモは既存の端末ローカル保存を維持する。
  */
 import { useState, useCallback, useEffect, useMemo } from "react";
+import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
 
 const FAVORITES_KEY = "iketeru_favorites";
@@ -132,6 +133,10 @@ export function useCreatorTools() {
   }, [activeProfile, activeProfileId, canEditFavorites, legacyMigrationPending, migrateLegacyFavorites, migrateLegacyMutation.isPending]);
 
   const toggleFavorite = useCallback((id: string) => {
+    if (!canEditFavorites) {
+      toast.info("お気に入りの編集には管理者または @atsu-maru.co.jp アカウントでのログインが必要です。");
+      return;
+    }
     if (!activeProfileId || toggleVideoMutation.isPending) return;
     const current = profileItemsQuery.data;
     const isCurrentFavorite = current?.videoIds.includes(id) ?? false;
@@ -142,7 +147,7 @@ export function useCreatorTools() {
     toggleVideoMutation.mutate({ profileId: activeProfileId, videoId: id }, {
       onError: () => { void utils.favorites.items.invalidate({ profileId: activeProfileId }); },
     });
-  }, [activeProfileId, profileItemsQuery.data, toggleVideoMutation, utils.favorites.items]);
+  }, [activeProfileId, canEditFavorites, profileItemsQuery.data, toggleVideoMutation, utils.favorites.items]);
 
   const isFavorite = useCallback(
     (id: string) => favorites.includes(id),
@@ -150,6 +155,10 @@ export function useCreatorTools() {
   );
 
   const toggleCreatorFavorite = useCallback((name: string) => {
+    if (!canEditFavorites) {
+      toast.info("お気に入りの編集には管理者または @atsu-maru.co.jp アカウントでのログインが必要です。");
+      return;
+    }
     if (!activeProfileId || toggleCreatorMutation.isPending) return;
     const current = profileItemsQuery.data;
     const isCurrentFavorite = current?.creatorNames.includes(name) ?? false;
@@ -187,6 +196,7 @@ export function useCreatorTools() {
   const noteCount = useMemo(() => Object.keys(notes).length, [notes]);
 
   return {
+    canEditFavorites,
     favorites,
     toggleFavorite,
     isFavorite,

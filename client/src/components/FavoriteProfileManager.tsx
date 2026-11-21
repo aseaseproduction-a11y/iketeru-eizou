@@ -27,6 +27,7 @@ interface FavoriteProfileManagerProps {
   onDeleteProfile: (profileId: string) => Promise<void>;
   legacyMigrationPending: boolean;
   onMigrateLegacyFavorites: () => Promise<void>;
+  canEdit?: boolean;
 }
 
 export default function FavoriteProfileManager({
@@ -40,6 +41,7 @@ export default function FavoriteProfileManager({
   onDeleteProfile,
   legacyMigrationPending,
   onMigrateLegacyFavorites,
+  canEdit = false,
 }: FavoriteProfileManagerProps) {
   const [newName, setNewName] = useState("");
   const [editingName, setEditingName] = useState("");
@@ -138,6 +140,11 @@ export default function FavoriteProfileManager({
           )}
         </div>
 
+        {!canEdit ? (
+          <div className="rounded-lg border border-amber-400/25 bg-amber-400/10 p-3 text-xs leading-relaxed text-amber-100">
+            お気に入りの作成・変更・保存には管理者または <code className="font-mono">@atsu-maru.co.jp</code> アカウントでのログインが必要です。
+          </div>
+        ) : (
         <div className="border-t border-white/10 pt-4">
           <label htmlFor="favorite-profile-new-name" className="mb-1.5 block text-xs font-medium text-foreground">新しい利用者名</label>
           <div className="flex gap-2">
@@ -160,8 +167,9 @@ export default function FavoriteProfileManager({
             </button>
           </div>
         </div>
+        )}
 
-        {activeProfile && (
+        {canEdit && activeProfile && (
           <div className="space-y-3 rounded-lg border border-white/10 bg-white/[0.025] p-3">
             {isEditing ? (
               <>
@@ -199,7 +207,7 @@ export default function FavoriteProfileManager({
           </div>
         )}
 
-        {legacyMigrationPending && activeProfile && (
+        {canEdit && legacyMigrationPending && activeProfile && (
           <div className="rounded-lg border border-amber-400/20 bg-amber-400/10 p-3 text-xs leading-relaxed text-amber-100">
             この端末にある既存のお気に入りをまだ引き継いでいません。
             <button type="button" disabled={isWorking} onClick={() => void onMigrateLegacyFavorites()} className="mt-2 block font-bold text-amber-300 hover:text-amber-200">「{activeProfile.displayName}」に引き継ぐ</button>

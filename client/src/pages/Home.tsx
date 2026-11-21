@@ -59,6 +59,7 @@ export default function Home() {
   let { user, loading, error, isAuthenticated, logout } = useAuth();
 
   const {
+    canEditFavorites,
     favorites,
     toggleFavorite,
     isFavorite,
@@ -1067,7 +1068,7 @@ export default function Home() {
             setSelectedSceneStartTime(undefined);
           }}
           isFavorite={isFavorite(modalVideo.id)}
-          onToggleFavorite={toggleFavorite}
+          onToggleFavorite={canEditFavorites ? toggleFavorite : undefined}
           favoriteProfileName={activeProfile?.displayName}
           onChooseFavoriteProfile={() => setShowFavoriteProfiles(true)}
           note={getNote(modalVideo.id)}
@@ -1108,6 +1109,7 @@ export default function Home() {
         onDeleteProfile={deleteProfile}
         legacyMigrationPending={legacyMigrationPending}
         onMigrateLegacyFavorites={migrateLegacyFavorites}
+        canEdit={canEditFavorites}
       />
 
       {/* Scroll to top button */}

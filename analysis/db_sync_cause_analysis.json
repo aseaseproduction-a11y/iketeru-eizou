@@ -313,5 +313,583 @@
     "youtube|tyo": 2,
     "youtube|トレンド: YouTube (公式MV)": 2,
     "youtube|youtube_search": 2
+  },
+  "sync_status": "PAUSED_AWAITING_USER_APPROVAL",
+  "root_cause_and_proposals": {
+    "D_tidb_higher_provisional_vimeo_or_yt": {
+      "why_it_differs": "初期のVimeoメタデータ収集・一次評価バッチ（eizo100 / reclike_motiongraphics_2d/3d 等）がTiDBへ高めの暫定ランクを書き込み、その後2026-04頃のローカルSQLite側で別の一次評価（低めの暫定ランク）またはManus移行時の旧評価が同期されずに残ったため。どちらも未視聴のまま付いた暫定値。",
+      "responsible_scripts_or_events": [
+        "Manus移行時の初期Vimeoバッチ投入（TiDB側 createdAt/updatedAt に記録）",
+        "backfill-100pt-scores.mjs（TiDB側の旧暫定ランク帯に点数をクランプしたため高め維持）",
+        "iketeru_studio/indexer.py の sync_database が全件上書きではなく差分更新だったためSQLite側が旧値のまま残留"
+      ],
+      "proposed_source_of_truth": "NEITHER_KEEP_PROVISIONAL（どちらも確定値にしない）",
+      "proposed_sync_action": "未視聴の暫定評価なのでTiDBの高めランクでSQLiteを上書きしない。両DBとも analysisStatus='provisional' を維持し、ローカルMP4キャッシュ462本から順に静止画確認再分析して確定値で上書きする。"
+    },
+    "A_tidb_empty_sqlite_has_rating_provisional": {
+      "why_it_differs": "Vimeo未視聴動画249件について、TiDB側では初期登録時にランク未設定（空）のまま置かれた一方、ローカルSQLite側では過去のローカル簡易一次評価バッチが暫定ランクを書き込んだがTiDBへ書き戻されなかったため。",
+      "responsible_scripts_or_events": [
+        "初期Vimeoインポート（TiDB側は aiOverallRating='' で登録）",
+        "過去のローカルSQLite簡易一次評価スクリプト（TiDB未反映）"
+      ],
+      "proposed_source_of_truth": "TiDB（未採点＝空）を正とする",
+      "proposed_sync_action": "未視聴のままローカルで付いた暫定ランクを本番TiDBへ昇格させない。SQLite側も暫定扱い（再分析待ち）のまま維持し、静止画確認後に両DBへ同時に確定ランクを書く。"
+    },
+    "C_tidb_has_rating_sqlite_empty": {
+      "why_it_differs": "主に vimeo|eizo100（59件）について、TiDB側で後から評価（またはManus/GAS更新）が追加されたが、SQLite側の sync_database が再実行されず空のまま残ったため。",
+      "responsible_scripts_or_events": [
+        "TiDB側への後追い評価更新（eizo100 / manual / notion）",
+        "SQLite sync_database 未実行"
+      ],
+      "proposed_source_of_truth": "非暫定はTiDBを正／暫定は再分析待ち",
+      "proposed_sync_action": "analysisStatus='full_analysis' のレコードのみTiDBからSQLiteへ同期。provisional のレコードは再分析完了まで保留。"
+    },
+    "J_overall_same_only_direction_or_technique_diff": {
+      "why_it_differs": "総合ランクは一致しているが、演出・技術ランクの1段階差（主にVimeo暫定評価）がTiDB側更新後にSQLiteへ未同期のため。",
+      "responsible_scripts_or_events": [
+        "TiDB側の評価微修正またはbackfill後の未同期"
+      ],
+      "proposed_source_of_truth": "非暫定はTiDBを正／暫定は再分析待ち",
+      "proposed_sync_action": "full_analysis 分のみTiDB基準でSQLiteへ同期。provisional 分は再分析で確定。"
+    },
+    "G_sqlite_higher_provisional": {
+      "why_it_differs": "Vimeo未視聴の暫定評価32件で、SQLite側の旧一次評価がTiDBより高いまま残存したため。",
+      "responsible_scripts_or_events": [
+        "過去のローカル一次評価とTiDB側暫定評価の世代差"
+      ],
+      "proposed_source_of_truth": "NEITHER_KEEP_PROVISIONAL（どちらも確定値にしない）",
+      "proposed_sync_action": "両DBとも暫定維持し、静止画確認による再分析後に確定値で揃える。"
+    },
+    "E_tidb_higher_audited_wave_not_synced_to_sqlite": {
+      "why_it_differs": "goal_visual_audit_workflow.py で監査済み（full_audit_progress.jsonl あり）の notion 由来動画13件について、過去Waveでは TiDB の旧ランク帯にクランプした backfill-100pt-scores.mjs の結果がTiDBに入り、SQLite側には別の旧ランクが残ったため。",
+      "responsible_scripts_or_events": [
+        "goal_visual_audit_workflow.py（旧仕様: SQLiteのランク列を更新せず点数のみ書いていた時期）",
+        "backfill-100pt-scores.mjs（TiDBの旧ランクをそのまま保持）"
+      ],
+      "proposed_source_of_truth": "13件を個別確認の上、最新の静止画確認結果（rubric）を正とする",
+      "proposed_sync_action": "13件のみ少数なので個別確認し、確定したランクをTiDB・SQLite双方へ反映する。"
+    },
+    "H_sqlite_higher_audited": {
+      "why_it_differs": "上記Eと同じ旧Wave仕様により、notion由来2件のみSQLite側が高くTiDB側が低い状態で食い違った。",
+      "responsible_scripts_or_events": [
+        "goal_visual_audit_workflow.py（旧仕様）とTiDB旧ランクの不一致"
+      ],
+      "proposed_source_of_truth": "2件を個別確認の上、最新の静止画確認結果を正とする",
+      "proposed_sync_action": "Eの13件と合わせて計15件を個別確認し、両DBを一致させる。"
+    },
+    "only_in_tidb_66": {
+      "why_it_differs": "2026-11にスプレッドシート（upsert-new-videos.mjs で39件）および新規収集（27件）でTiDBへ追加されたが、SQLiteへの同期が未実施のため。",
+      "responsible_scripts_or_events": [
+        "scripts/upsert-new-videos.mjs（2026-11-21 実行）",
+        "新規収集バッチ（2026-11）"
+      ],
+      "proposed_source_of_truth": "TiDBを正とする",
+      "proposed_sync_action": "承認後、不足66件をTiDBからSQLiteへ追加（これによりSQLiteのunverifiable_no_log 38件・invalidated 1件の差も解消）。"
+    },
+    "only_in_sqlite_48": {
+      "why_it_differs": "過去に本番TiDBから削除・重複統合された48件が、差分追記型のSQLiteからパージされずに残留したため。",
+      "responsible_scripts_or_events": [
+        "本番TiDBでの手動削除・重複整理",
+        "SQLite sync_database が削除同期（パージ）を行わない仕様"
+      ],
+      "proposed_source_of_truth": "TiDBを正とする",
+      "proposed_sync_action": "承認後、本番に存在しない48件をSQLiteから削除する。"
+    }
+  },
+  "samples_with_update_history": {
+    "D_tidb_higher_provisional_vimeo_or_yt": [
+      {
+        "id": "1003005012",
+        "platform": "vimeo",
+        "source": "eizo100",
+        "tidb_history": {
+          "ratings": "A/A/A+",
+          "score100": 82,
+          "createdAt": "2026-11-19T05:52:50.000Z",
+          "updatedAt": "2026-11-21T06:50:54.000Z",
+          "addedDate": "2025-04-13",
+          "breakdown_source": "rubric",
+          "analysisStatus": "provisional",
+          "visualVerificationStatus": "unverifiable_no_log",
+          "analysis_head": "## 0. 映像概要・前提情報・総合結論 - **対象作品**: anicecompnay X SUNJUNJIE – Shinjuku Cross Vision 3DOOH（Vimeo / 尺: 15.62秒 / 640×360 / 30"
+        },
+        "sqlite_history": {
+          "ratings": "B+/B+/B+",
+          "score100": 75,
+          "updated_at_utc": "2026-11-19T08:42:14+00:00",
+          "analysis_head": "## 0. 分析サマリー（公式公開メタデータ・クレジット完全精査） - **対象作品**: anicecompnay X SUNJUNJIE - Shinjuku Cross Vision 3DOOH Preview（vimeo / 公開元"
+        },
+        "in_full_audit_progress": true,
+        "audit_progress_ratings": "B+/B+/B+"
+      },
+      {
+        "id": "100398359",
+        "platform": "vimeo",
+        "source": "reclike_goodlook",
+        "tidb_history": {
+          "ratings": "A/A/A",
+          "score100": 82,
+          "createdAt": "2026-11-19T05:52:44.000Z",
+          "updatedAt": "2026-11-21T06:50:54.000Z",
+          "addedDate": "2026-08-19",
+          "breakdown_source": "rubric",
+          "analysisStatus": "provisional",
+          "visualVerificationStatus": "unverifiable_no_log",
+          "analysis_head": "## 0. 映像概要・前提情報・総合結論 本作はSPACE SHOWER TVが2014年に制作した15秒のステーションID「Flash Face」である。尺15.06秒、解像度640x360、フレームレート29.97fps、平均音圧-19"
+        },
+        "sqlite_history": {
+          "ratings": "B+/B+/B+",
+          "score100": 75,
+          "updated_at_utc": "2026-11-19T08:41:48+00:00",
+          "analysis_head": "## 0. 分析サマリー（公式公開メタデータ・クレジット完全精査） - **対象作品**: Flash Face (SPACE SHOWER TV STATION ID 2014)（vimeo / 公開元: SPACE SHOWER TV "
+        },
+        "in_full_audit_progress": true,
+        "audit_progress_ratings": "B+/B+/B+"
+      },
+      {
+        "id": "100398412",
+        "platform": "vimeo",
+        "source": "reclike_goodlook",
+        "tidb_history": {
+          "ratings": "A/A+/A",
+          "score100": 82,
+          "createdAt": "2026-11-19T05:52:44.000Z",
+          "updatedAt": "2026-11-21T06:50:54.000Z",
+          "addedDate": "2026-08-19",
+          "breakdown_source": "rubric",
+          "analysisStatus": "provisional",
+          "visualVerificationStatus": "unverifiable_no_log",
+          "analysis_head": "## 0. 映像概要・前提情報・総合結論 本作はSPACE SHOWER TVが2014年に展開した15秒のステーションID作品「Clash Dance」である。尺15.06秒、解像度640x360、フレームレート29.97fps、平均音圧"
+        },
+        "sqlite_history": {
+          "ratings": "B+/B+/B+",
+          "score100": 76,
+          "updated_at_utc": "2026-11-19T08:41:49+00:00",
+          "analysis_head": "## 0. 分析サマリー（公式公開メタデータ・クレジット完全精査） - **対象作品**: Clash Dance (SPACE SHOWER TV STATION ID 2014)（vimeo / 公開元: SPACE SHOWER TV"
+        },
+        "in_full_audit_progress": true,
+        "audit_progress_ratings": "B+/B+/B+"
+      }
+    ],
+    "A_tidb_empty_sqlite_has_rating_provisional": [
+      {
+        "id": "10070449",
+        "platform": "vimeo",
+        "source": "vimeo",
+        "tidb_history": {
+          "ratings": "None/None/None",
+          "score100": null,
+          "createdAt": "2026-11-19T05:52:58.000Z",
+          "updatedAt": "2026-11-21T07:21:31.000Z",
+          "addedDate": "2026-07-31",
+          "breakdown_source": null,
+          "analysisStatus": "provisional",
+          "visualVerificationStatus": "not_audited",
+          "analysis_head": "## 0. 分析サマリー（公式公開メタデータ・クレジット完全精査） - **対象作品**: Kraddy - Android Porn (Mochipet Godzillaporn Remix) - Music Video（vimeo / "
+        },
+        "sqlite_history": {
+          "ratings": "B+/B+/B+",
+          "score100": null,
+          "updated_at_utc": "2026-11-19T08:42:39+00:00",
+          "analysis_head": "## 0. 分析サマリー（公式公開メタデータ・クレジット完全精査） - **対象作品**: Kraddy - Android Porn (Mochipet Godzillaporn Remix) - Music Video（vimeo / "
+        },
+        "in_full_audit_progress": false,
+        "audit_progress_ratings": null
+      },
+      {
+        "id": "1041875369",
+        "platform": "vimeo",
+        "source": "eizo100",
+        "tidb_history": {
+          "ratings": "None/None/None",
+          "score100": null,
+          "createdAt": "2026-11-19T05:52:50.000Z",
+          "updatedAt": "2026-11-21T07:21:31.000Z",
+          "addedDate": "2025-03-24",
+          "breakdown_source": null,
+          "analysisStatus": "provisional",
+          "visualVerificationStatus": "not_audited",
+          "analysis_head": "## 0. 分析サマリー（公式公開メタデータ・クレジット完全精査） - **対象作品**: 星宮とと+ SOZEN OTSUBO - Hi-fi (Official Music Video)（vimeo / 公開元: 田村育歩 / TAMU"
+        },
+        "sqlite_history": {
+          "ratings": "B+/B+/B+",
+          "score100": null,
+          "updated_at_utc": "2026-11-19T08:42:14+00:00",
+          "analysis_head": "## 0. 分析サマリー（公式公開メタデータ・クレジット完全精査） - **対象作品**: 星宮とと+ SOZEN OTSUBO - Hi-fi (Official Music Video)（vimeo / 公開元: 田村育歩 / TAMU"
+        },
+        "in_full_audit_progress": false,
+        "audit_progress_ratings": null
+      },
+      {
+        "id": "1041925523",
+        "platform": "vimeo",
+        "source": "サイト: 映像作家100人",
+        "tidb_history": {
+          "ratings": "None/None/None",
+          "score100": null,
+          "createdAt": "2026-11-19T05:52:40.000Z",
+          "updatedAt": "2026-11-21T07:21:31.000Z",
+          "addedDate": "2026-11-13",
+          "breakdown_source": null,
+          "analysisStatus": "provisional",
+          "visualVerificationStatus": "not_audited",
+          "analysis_head": "## 0. 分析サマリー（公式公開メタデータ・クレジット完全精査） - **対象作品**: REEL 2025（vimeo / 公開元: EDP graphic works Co.,Ltd. / 尺: 58秒） - **観察範囲（厳密明記）"
+        },
+        "sqlite_history": {
+          "ratings": "B/B/B",
+          "score100": null,
+          "updated_at_utc": "2026-11-19T08:41:33+00:00",
+          "analysis_head": "## 0. 分析サマリー（公式公開メタデータ・クレジット完全精査） - **対象作品**: REEL 2025（vimeo / 公開元: EDP graphic works Co.,Ltd. / 尺: 58秒） - **観察範囲（厳密明記）"
+        },
+        "in_full_audit_progress": false,
+        "audit_progress_ratings": null
+      }
+    ],
+    "E_tidb_higher_audited_wave_not_synced_to_sqlite": [
+      {
+        "id": "1040247605",
+        "platform": "vimeo",
+        "source": "notion",
+        "tidb_history": {
+          "ratings": "A/A/A",
+          "score100": 82,
+          "createdAt": "2026-11-19T05:52:57.000Z",
+          "updatedAt": "2026-11-21T07:11:26.000Z",
+          "addedDate": "2025-04-10",
+          "breakdown_source": "rubric",
+          "analysisStatus": "full_analysis",
+          "visualVerificationStatus": "unverifiable_no_log",
+          "analysis_head": "## 0. 映像概要・前提情報・総合結論 本動画「NIKE PROMINA / ABC mart」は、ABC-MART限定展開のウォーキングシューズ「NIKE PROMINA（ナイキ プロミナ）」のプロモーションを目的とした30.04秒（2"
+        },
+        "sqlite_history": {
+          "ratings": "B+/B/B+",
+          "score100": 73,
+          "updated_at_utc": "2026-11-19T05:03:01+00:00",
+          "analysis_head": "■■■ 超厳格メンタリング・レポート ■■■ 作品名: NIKE PROMINA ⧸ ABC mart 1. 作品の基礎分析 (Foundation Analysis) • 判定ジャンル: プロダクト広告 (スニーカー) • 判定スタイル:"
+        },
+        "in_full_audit_progress": true,
+        "audit_progress_ratings": "B+/B/B+"
+      },
+      {
+        "id": "1082037544",
+        "platform": "vimeo",
+        "source": "notion",
+        "tidb_history": {
+          "ratings": "A+/A+/A",
+          "score100": 86,
+          "createdAt": "2026-11-19T05:52:55.000Z",
+          "updatedAt": "2026-11-21T07:11:26.000Z",
+          "addedDate": "2026-02-01",
+          "breakdown_source": "rubric",
+          "analysisStatus": "full_analysis",
+          "visualVerificationStatus": "unverifiable_no_log",
+          "analysis_head": "## 0. 映像概要・前提情報・総合結論 本作品は株式会社テレビ東京が提供する経済ニュース・ビジネス動画配信サービス「テレ東BIZ」のCMシリーズ（全11篇・各15秒構成）を連続収録したキャンペーンリールである。制作広告会社は日本経済広告社"
+        },
+        "sqlite_history": {
+          "ratings": "B+/A-/A-",
+          "score100": 77,
+          "updated_at_utc": "2026-11-19T04:59:39+00:00",
+          "analysis_head": "# テレ東BIZ広告映像：審査員長による技術的解剖と資産化プラン  ## 1. Notionデータベース登録用データ (Database Entry)  *   作品タイトル: テレ東BIZの広告映像 *   制作規模(AI判定): 大規模"
+        },
+        "in_full_audit_progress": true,
+        "audit_progress_ratings": "B+/A-/A-"
+      },
+      {
+        "id": "117133569",
+        "platform": "vimeo",
+        "source": "notion",
+        "tidb_history": {
+          "ratings": "A-/A-/A-",
+          "score100": 78,
+          "createdAt": "2026-11-19T05:52:57.000Z",
+          "updatedAt": "2026-11-21T07:11:26.000Z",
+          "addedDate": "2025-04-19",
+          "breakdown_source": "rubric",
+          "analysisStatus": "full_analysis",
+          "visualVerificationStatus": "unverifiable_no_log",
+          "analysis_head": "## 0. 映像概要・前提情報・総合結論 本映像は、Bright Young Thingsが制作を手掛けた「BIG BANG JAPAN DOME TOUR 2014」のオープニング映像における、iKON最終メンバー発表アニメーション（全編"
+        },
+        "sqlite_history": {
+          "ratings": "B/B-/A-",
+          "score100": 70,
+          "updated_at_utc": "2026-11-19T05:03:03+00:00",
+          "analysis_head": "■■■ 超厳格メンタリング・レポート ■■■ 作品名: iKON : FINAL MEMBERS (BIG BANG JAPAN DOME TOUR 2014) 1. 作品の基礎分析 (Foundation Analysis) • 判定ジャ"
+        },
+        "in_full_audit_progress": true,
+        "audit_progress_ratings": "B/B-/A-"
+      }
+    ],
+    "J_overall_same_only_direction_or_technique_diff": [
+      {
+        "id": "1044346460",
+        "platform": "vimeo",
+        "source": "notion",
+        "tidb_history": {
+          "ratings": "A-/A-/A-",
+          "score100": 79,
+          "createdAt": "2026-11-19T05:52:57.000Z",
+          "updatedAt": "2026-11-21T07:11:26.000Z",
+          "addedDate": "2025-04-09",
+          "breakdown_source": "rubric",
+          "analysisStatus": "full_analysis",
+          "visualVerificationStatus": "unverifiable_no_log",
+          "analysis_head": "## 0. 映像概要・前提情報・総合結論 本動画「カネボウ化粧品　TWANY　」は、カネボウ化粧品のスキンケアブランド「TWANY（トワニー）」の薬用美白美容液「ブライトニングαセラムN（医薬部外品）」の誕生を訴求する15.02秒（29.9"
+        },
+        "sqlite_history": {
+          "ratings": "A-/B+/A",
+          "score100": 79,
+          "updated_at_utc": "2026-11-19T05:02:58+00:00",
+          "analysis_head": "# カネボウ化粧品 TWANY CM 技術解析および厳格メンタリング  ## 【Step 1】解析対象    動画タイトル/URL: https://vimeo.com/1044346460?&login=true#=    制作規模 (A"
+        },
+        "in_full_audit_progress": true,
+        "audit_progress_ratings": "A-/B+/A"
+      },
+      {
+        "id": "1048512036",
+        "platform": "vimeo",
+        "source": "vook",
+        "tidb_history": {
+          "ratings": "A/A+/A",
+          "score100": 84,
+          "createdAt": "2026-11-19T05:52:59.000Z",
+          "updatedAt": "2026-11-21T06:50:54.000Z",
+          "addedDate": "2025-04-09",
+          "breakdown_source": "rubric",
+          "analysisStatus": "provisional",
+          "visualVerificationStatus": "unverifiable_no_log",
+          "analysis_head": "## 0. 映像概要・前提情報・総合結論 本作は中国EC大手JD.com（京東）のプレミアム家具キュレーション企画「京東緑翡翠家具榜（JINGDONG Jadeite Furniture Guide）」のプロモーション映像である。尺は38."
+        },
+        "sqlite_history": {
+          "ratings": "A/A/A+",
+          "score100": 84,
+          "updated_at_utc": "2026-11-19T05:02:55+00:00",
+          "analysis_head": ""
+        },
+        "in_full_audit_progress": true,
+        "audit_progress_ratings": "A/A/A+"
+      },
+      {
+        "id": "1056287464",
+        "platform": "vimeo",
+        "source": "notion",
+        "tidb_history": {
+          "ratings": "B/B+/B-",
+          "score100": 68,
+          "createdAt": "2026-11-19T05:52:57.000Z",
+          "updatedAt": "2026-11-21T07:11:26.000Z",
+          "addedDate": "2025-04-10",
+          "breakdown_source": "rubric",
+          "analysisStatus": "full_analysis",
+          "visualVerificationStatus": "unverifiable_no_log",
+          "analysis_head": "## 0. 映像概要・前提情報・総合結論 本作はtakashi ohashiによる実験的・詩的アニメーション作品「詩のプラネタリウム」（作中副題「望遠鏡の詩」）である。尺は74.0秒、確認用シート上の解像度は360x360の1:1正方形フォ"
+        },
+        "sqlite_history": {
+          "ratings": "B/C+/B-",
+          "score100": 68,
+          "updated_at_utc": "2026-11-19T05:03:02+00:00",
+          "analysis_head": "■■■ 超厳格メンタリング・レポート ■■■ 作品名: 詩のプラネタリウム 制作規模: 小規模(低予算・インディー) 1. 作品の基礎分析 (Foundation Analysis) • 判定ジャンル: リリックビデオ / アートフィルム "
+        },
+        "in_full_audit_progress": true,
+        "audit_progress_ratings": "B/C+/B-"
+      }
+    ],
+    "H_sqlite_higher_audited": [
+      {
+        "id": "1049880661",
+        "platform": "vimeo",
+        "source": "notion",
+        "tidb_history": {
+          "ratings": "B+/B+/B",
+          "score100": 77,
+          "createdAt": "2026-11-19T05:52:57.000Z",
+          "updatedAt": "2026-11-21T07:11:26.000Z",
+          "addedDate": "2025-04-18",
+          "breakdown_source": "rubric",
+          "analysisStatus": "full_analysis",
+          "visualVerificationStatus": "unverifiable_no_log",
+          "analysis_head": "## 0. 映像概要・前提情報・総合結論 本映像は「三井不動産株式会社 採用コンセプトムービー」（132.65秒・29.97fps・解析参照プロキシ640x360・平均音圧-22.3dB）である。クレジット上のクライアントは三井不動産株式会"
+        },
+        "sqlite_history": {
+          "ratings": "A/A-/S-",
+          "score100": 84,
+          "updated_at_utc": "2026-11-19T05:02:56+00:00",
+          "analysis_head": "■■■ 超厳格メンタリング・レポート ■■■ 作品名: 三井不動産株式会社 採用コンセプトムービー 制作規模: 大規模(潤沢な予算) 1. 作品の基礎分析 (Foundation Analysis) • 判定ジャンル: 採用ブランディングム"
+        },
+        "in_full_audit_progress": true,
+        "audit_progress_ratings": "A/A-/S-"
+      },
+      {
+        "id": "notion-a71d75e74c14001080addb42",
+        "platform": "external",
+        "source": "notion",
+        "tidb_history": {
+          "ratings": "B+/B+/B+",
+          "score100": 77,
+          "createdAt": "2026-11-19T05:52:54.000Z",
+          "updatedAt": "2026-11-21T07:11:43.000Z",
+          "addedDate": "2025-04-06",
+          "breakdown_source": "rubric",
+          "analysisStatus": "full_analysis",
+          "visualVerificationStatus": "unverifiable_no_log",
+          "analysis_head": "## 0. 映像概要・前提情報・総合結論 本作は、大東建託パートナーズ株式会社が展開する30.03秒の企業ブランディング・テレビCM「そばに寄り添う」編である。仕様は1920x1080（フルHD）・23.976fps・平均音圧-17.1dB"
+        },
+        "sqlite_history": {
+          "ratings": "A-/A/A-",
+          "score100": 81,
+          "updated_at_utc": "2026-11-19T04:58:59+00:00",
+          "analysis_head": "# 映像作品 技術解析および厳格メンタリングレポート  ## 【Step 1】解析対象  *   動画タイトル/URL: 大東建託パートナーズ TVCM「そばに寄り添う」編 (分析対象URL: https://www.kentaku-par"
+        },
+        "in_full_audit_progress": true,
+        "audit_progress_ratings": "A-/A/A-"
+      }
+    ],
+    "G_sqlite_higher_provisional": [
+      {
+        "id": "1093860815",
+        "platform": "vimeo",
+        "source": "vimeo",
+        "tidb_history": {
+          "ratings": "B/B/B",
+          "score100": 72,
+          "createdAt": "2026-11-19T05:52:58.000Z",
+          "updatedAt": "2026-11-21T06:50:55.000Z",
+          "addedDate": "2026-07-31",
+          "breakdown_source": "rubric",
+          "analysisStatus": "provisional",
+          "visualVerificationStatus": "unverifiable_no_log",
+          "analysis_head": "## 0. 映像概要・前提情報・総合結論 本作はアーティスト兼クリエイターの太田名人（Nahito Ohta）が手掛けた、アブストラクト・エレクトロニカ／IDM楽曲「Atom Of Window」のオフィシャルMVである。尺は222.25秒"
+        },
+        "sqlite_history": {
+          "ratings": "A-/A-/A-",
+          "score100": 78,
+          "updated_at_utc": "2026-11-19T08:42:42+00:00",
+          "analysis_head": "## 0. 分析サマリー（公式公開メタデータ・クレジット完全精査） - **対象作品**: Nahito Ohta – Atom Of Window (Official MV) Abstract Electronica / IDM / Gl"
+        },
+        "in_full_audit_progress": true,
+        "audit_progress_ratings": "A-/A-/A-"
+      },
+      {
+        "id": "110813987",
+        "platform": "vimeo",
+        "source": "reclike_motiongraphics_3d",
+        "tidb_history": {
+          "ratings": "B+/B+/A-",
+          "score100": 77,
+          "createdAt": "2026-11-19T05:52:43.000Z",
+          "updatedAt": "2026-11-21T06:50:55.000Z",
+          "addedDate": "2026-08-19",
+          "breakdown_source": "rubric",
+          "analysisStatus": "provisional",
+          "visualVerificationStatus": "unverifiable_no_log",
+          "analysis_head": "## 0. 映像概要・前提情報・総合結論 モーションデザイナーDanny Kimによる20秒のセルフ・イントロダクション映像「HELLO! MY NAME IS」（16:9 / 640x360 / 29.97fps / 実測平均音圧-14."
+        },
+        "sqlite_history": {
+          "ratings": "A-/A-/A-",
+          "score100": 79,
+          "updated_at_utc": "2026-11-19T08:41:40+00:00",
+          "analysis_head": "## 0. 分析サマリー（公式公開メタデータ・クレジット完全精査） - **対象作品**: HELLO! MY NAME IS（vimeo / 公開元: Danny Kim / 尺: 20秒） - **観察範囲（厳密明記）**: 公開公式メ"
+        },
+        "in_full_audit_progress": true,
+        "audit_progress_ratings": "A-/A-/A-"
+      },
+      {
+        "id": "1136317610",
+        "platform": "vimeo",
+        "source": "vimeo",
+        "tidb_history": {
+          "ratings": "B-/B-/C+",
+          "score100": 67,
+          "createdAt": "2026-11-19T05:52:58.000Z",
+          "updatedAt": "2026-11-21T06:50:56.000Z",
+          "addedDate": "2026-07-31",
+          "breakdown_source": "rubric",
+          "analysisStatus": "provisional",
+          "visualVerificationStatus": "unverifiable_no_log",
+          "analysis_head": "## 0. 映像概要・前提情報・総合結論 本映像は、クリエイター「Kiyoubimbou」が楽曲制作・作詞・キャラクターデザイン・イラスト・映像編集のすべてを単独で手がけたボカロオリジナル曲MVの33.07秒ダイジェストである。解析解像度6"
+        },
+        "sqlite_history": {
+          "ratings": "B/B/B",
+          "score100": 68,
+          "updated_at_utc": "2026-11-19T08:42:40+00:00",
+          "analysis_head": "## 0. 分析サマリー（公式公開メタデータ・クレジット完全精査） - **対象作品**: MV制作例01(作詞作曲/動画編集/イラスト)（vimeo / 公開元: Kiyoubimbou / 尺: 33秒） - **観察範囲（厳密明記）*"
+        },
+        "in_full_audit_progress": true,
+        "audit_progress_ratings": "B/B/B"
+      }
+    ],
+    "C_tidb_has_rating_sqlite_empty": [
+      {
+        "id": "1155448984",
+        "platform": "vimeo",
+        "source": "vimeo",
+        "tidb_history": {
+          "ratings": "B+/B+/B",
+          "score100": 74,
+          "createdAt": "2026-11-19T05:52:58.000Z",
+          "updatedAt": "2026-11-21T07:11:26.000Z",
+          "addedDate": "2026-07-31",
+          "breakdown_source": "rubric",
+          "analysisStatus": "full_analysis",
+          "visualVerificationStatus": "unverifiable_no_log",
+          "analysis_head": "## 0. 分析サマリー - **作品概要**: 「我們要結婚了（私たち結婚します）」のタイトルで始まる、約69秒の繁体字圏ウェディング／恋愛映像MV。公園や室内でのカジュアルな日常パートから、ドローン空撮による海上チャペルの俯瞰カットを境"
+        },
+        "sqlite_history": {
+          "ratings": "//",
+          "score100": null,
+          "updated_at_utc": "2026-11-19T05:03:12+00:00",
+          "analysis_head": ""
+        },
+        "in_full_audit_progress": true,
+        "audit_progress_ratings": "B+/B+/B"
+      },
+      {
+        "id": "234972894",
+        "platform": "vimeo",
+        "source": "eizo100",
+        "tidb_history": {
+          "ratings": "A-/A-/B",
+          "score100": 79,
+          "createdAt": "2026-11-19T05:52:52.000Z",
+          "updatedAt": "2026-11-21T07:11:27.000Z",
+          "addedDate": "2017-09-22",
+          "breakdown_source": "rubric",
+          "analysisStatus": "full_analysis",
+          "visualVerificationStatus": "unverifiable_no_log",
+          "analysis_head": "## 0. 分析サマリー - **作品概要**: 擬人化されたゴキブリが奇妙かつ滑らかな動きで踊る、15秒（24fps）の2Dシュールアニメーション。 - **最大の特徴**: 約5秒刻みの全3カットという極限まで削ぎ落とした構成の中で、「"
+        },
+        "sqlite_history": {
+          "ratings": "//",
+          "score100": null,
+          "updated_at_utc": "2026-11-19T05:03:26+00:00",
+          "analysis_head": ""
+        },
+        "in_full_audit_progress": true,
+        "audit_progress_ratings": "A-/A-/B"
+      },
+      {
+        "id": "237447327",
+        "platform": "vimeo",
+        "source": "eizo100",
+        "tidb_history": {
+          "ratings": "A/A/A-",
+          "score100": 84,
+          "createdAt": "2026-11-19T05:52:52.000Z",
+          "updatedAt": "2026-11-21T07:11:27.000Z",
+          "addedDate": "2017-10-10",
+          "breakdown_source": "rubric",
+          "analysisStatus": "full_analysis",
+          "visualVerificationStatus": "unverifiable_no_log",
+          "analysis_head": "## 0. 分析サマリー 資生堂「SHISEIDO GINZA TOKYO」のリキッドファンデーション『Synchro Skin Glow』をテーマにした約39.4秒（24fps）のペーパークラフト・アニメーションWeb CM。実写モデルを"
+        },
+        "sqlite_history": {
+          "ratings": "//",
+          "score100": null,
+          "updated_at_utc": "2026-11-19T05:03:26+00:00",
+          "analysis_head": ""
+        },
+        "in_full_audit_progress": true,
+        "audit_progress_ratings": "A/A/A-"
+      }
+    ]
   }
 }

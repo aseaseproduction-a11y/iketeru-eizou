@@ -471,6 +471,11 @@ else:
     _run_node_retry(["node", "scripts/apply-audit-patches.mjs", "--apply"], "TiDB aiAnalysis patch")
     _run_node_retry(["node", "scripts/repair-metadata-from-analysis.mjs", "--apply"], "TiDB metadata repair")
 
+    # Immediately cross-check worker transcripts before Antigravity prunes old logs, then promote unverified_pending -> log_verified
+    _run_node_retry([sys.executable, "scripts/verify_visual_logs.py"], "Worker transcript log verification")
+    _run_node_retry(["node", "scripts/stamp-structured-status.mjs"], "TiDB structured status promotion")
+    _run_node_retry([sys.executable, "scripts/stamp_sqlite_status.py"], "SQLite structured status promotion")
+
     shutil.rmtree(WORK_TMP, ignore_errors=True)
 
     verdicts = {}
