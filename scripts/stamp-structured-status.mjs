@@ -24,8 +24,11 @@ const conn = await mysql.createConnection({
   ssl: { minVersion: "TLSv1.2", rejectUnauthorized: true },
 });
 
-const [allRows] = await conn.query("SELECT id, aiScoreBreakdown FROM videos");
+const [allRows] = await conn.query(
+  "SELECT id, aiOverallRating, aiDirectionRating, aiTechniqueRating, aiAnalysis, aiScoreBreakdown FROM videos"
+);
 
+const ch11Regex = /(?:\r?\n)*## 11\.[\s\S]*$/;
 let updated = 0;
 let preservedReanalyzed = 0;
 
@@ -53,15 +56,13 @@ for (const r of allRows) {
     }
   }
 
-  // 2. visualVerificationStatus:
-  //    Priority 1: visual_redo_queue (0-image caught by log check) ALWAYS invalidates — even for rubric_unclamped & visualChecked=true!
-  //    Priority 2: log_verified from latest worker transcript in verify_visual_logs.py
-  let mustNullScores = false;
-  if (invalidatedIds.has(id)) {
+  // 2. visualVerificationStatus & complete invalidation:
+  //    Condition: in visual_redo_queue OR already marked visualVerificationStatus === "invalidated_no_visual"
+  const isInvalidated = invalidatedIds.has(id) || bd.visualVerificationStatus === "invalidated_no_visual";
+  if (isInvalidated) {
     bd.visualVerificationStatus = "invalidated_no_visual";
     bd.invalidatedNoVisual = true;
     bd.visualChecked = false;
-    mustNullScores = true;
   } else if (logVerifiedIds.has(id)) {
     bd.visualVerificationStatus = "log_verified";
     delete bd.invalidatedNoVisual;
@@ -78,15 +79,29 @@ for (const r of allRows) {
   }
 
   const after = JSON.stringify(bd);
-  if (after !== before || mustNullScores) {
-    if (mustNullScores) {
-      await conn.query(
-        "UPDATE videos SET aiOverallScore = NULL, aiDirectionScore = NULL, aiTechniqueScore = NULL, aiScoreBreakdown = ? WHERE id = ?",
-        [after, id]
-      );
-    } else {
-      await conn.query("UPDATE videos SET aiScoreBreakdown = ? WHERE id = ?", [after, id]);
-    }
+  if (isInvalidated) {
+    // Revert ratings to pre-audit values if rubric_unclamped changed them, null 3 scores, and strip ## 11.
+    const nextO = bd.previousOverallRating || r.aiOverallRating;
+    const nextD = bd.previousDirectionRating || r.aiDirectionRating;
+    const nextT = bd.previousTechniqueRating || r.aiTechniqueRating;
+    const curAna = r.aiAnalysis || "";
+    const nextAna = ch11Regex.test(curAna) ? curAna.replace(ch11Regex, "").trimEnd() : curAna;
+    await conn.query(
+      `UPDATE videos
+          SET aiOverallRating = ?,
+              aiDirectionRating = ?,
+              aiTechniqueRating = ?,
+              aiOverallScore = NULL,
+              aiDirectionScore = NULL,
+              aiTechniqueScore = NULL,
+              aiAnalysis = ?,
+              aiScoreBreakdown = ?
+        WHERE id = ?`,
+      [nextO, nextD, nextT, nextAna, after, id]
+    );
+    updated++;
+  } else if (after !== before) {
+    await conn.query("UPDATE videos SET aiScoreBreakdown = ? WHERE id = ?", [after, id]);
     updated++;
   }
 }

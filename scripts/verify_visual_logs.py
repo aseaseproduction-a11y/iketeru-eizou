@@ -25,8 +25,9 @@ with open(PROGRESS_JSONL, "r", encoding="utf-8") as f:
         if vid:
             recs[vid] = obj
 
-# Scan all worker transcripts and track EACH run individually with its timestamp (NO max() across old runs!)
+# Scan all worker transcripts and index BOTH by conversation_id AND latest per video_id
 worker_txs = 0
+run_by_conv_id: dict[str, dict] = {}
 latest_run_by_vid: dict[str, dict] = {}
 
 for p in BRAIN_ROOT.glob("*/.system_generated/logs/transcript.jsonl"):
@@ -37,6 +38,7 @@ for p in BRAIN_ROOT.glob("*/.system_generated/logs/transcript.jsonl"):
     if "audit_findings" not in txt:
         continue
     worker_txs += 1
+    conv_id = str(p.parent.parent.parent.name)
     vid = None
     img_calls = 0
     img_loaded = 0
@@ -75,30 +77,50 @@ for p in BRAIN_ROOT.glob("*/.system_generated/logs/transcript.jsonl"):
                         m_dir = audit_dir_re.search(path_str)
                         if m_dir:
                             vid = m_dir.group(1)
-    if not vid:
-        continue
     mtime = os.path.getmtime(p)
-    sort_key = (run_ts, mtime)
-    prev = latest_run_by_vid.get(vid)
-    if prev is None or sort_key > prev["sort_key"]:
-        latest_run_by_vid[vid] = {
-            "sort_key": sort_key,
-            "run_ts": run_ts,
-            "transcript": str(p.parent.parent.parent.name),
-            "img_calls": img_calls,
-            "img_loaded": img_loaded,
-        }
+    run_obj = {
+        "sort_key": (run_ts, mtime),
+        "run_ts": run_ts,
+        "transcript": conv_id,
+        "vid": vid,
+        "img_calls": img_calls,
+        "img_loaded": img_loaded,
+    }
+    run_by_conv_id[conv_id] = run_obj
+    if vid:
+        prev = latest_run_by_vid.get(vid)
+        if prev is None or run_obj["sort_key"] > prev["sort_key"]:
+            latest_run_by_vid[vid] = run_obj
 
-matched = [v for v in latest_run_by_vid if v in recs]
+# Pair each latest progress record STRICTLY by worker_conversation_id / audit_started_at when present (NO fallback to older logs!)
+matched = []
+no_tx_on_disk = []
 true_with_img = []
 true_no_img = []
 false_with_img = []
 false_no_img = []
 
-for v in matched:
-    run = latest_run_by_vid[v]
+for v, rec in recs.items():
+    req_conv = str(rec.get("worker_conversation_id") or "").strip()
+    req_started = str(rec.get("audit_started_at") or "").strip()
+    run = None
+    if req_conv:
+        # Strict conversation_id match: if missing on disk, DO NOT substitute older logs -> unverifiable
+        run = run_by_conv_id.get(req_conv)
+    elif req_started:
+        cand = latest_run_by_vid.get(v)
+        if cand and cand["run_ts"] >= req_started:
+            run = cand
+    else:
+        # Legacy record without worker_conversation_id/audit_started_at
+        run = latest_run_by_vid.get(v)
+
+    if run is None:
+        no_tx_on_disk.append(v)
+        continue
+    matched.append(v)
     has_img = run["img_calls"] > 0 and run["img_loaded"] > 0
-    self_vc = recs[v].get("visual_checked") is True
+    self_vc = rec.get("visual_checked") is True
     if self_vc and has_img:
         true_with_img.append(v)
     elif self_vc and not has_img:
@@ -108,7 +130,6 @@ for v in matched:
     else:
         false_no_img.append(v)
 
-no_tx_on_disk = [v for v in recs if v not in latest_run_by_vid]
 no_tx_self_false = [v for v in no_tx_on_disk if recs[v].get("visual_checked") is not True]
 no_tx_self_true = [v for v in no_tx_on_disk if recs[v].get("visual_checked") is True]
 

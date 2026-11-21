@@ -1,4 +1,5 @@
 import json
+import re
 import sqlite3
 import sys
 from pathlib import Path
@@ -8,6 +9,10 @@ SQLITE_DB = Path(r"E:\iketeru-creative-studio\data\iketeru_knowledge.db")
 INITIAL_MIGRATION = "--initial-migration" in sys.argv
 ALIGN_UNAUDITED = "--align-unaudited" in sys.argv
 
+RATING_ORDER = ["S+", "S", "S-", "A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-"]
+rank_int = lambda g: (len(RATING_ORDER) - RATING_ORDER.index(g)) if g in RATING_ORDER else 0
+ch11_re = re.compile(r"(?:\r?\n)*## 11\.[\s\S]*$")
+
 prov_ids = {str(x["id"]) for x in json.loads((REPO / "analysis" / "provisional_unwatched_list.json").read_text(encoding="utf-8"))["items"]}
 log_rep = json.loads((REPO / "analysis" / "visual_log_verification.json").read_text(encoding="utf-8"))
 log_verified_ids = {str(x) for x in log_rep["log_verified_ids"]}
@@ -15,10 +20,10 @@ unverifiable_ids = {str(x) for x in log_rep["unverifiable_no_log_self_true_ids"]
 invalidated_ids = {str(x["video_id"]) for x in json.loads((REPO / "analysis" / "visual_redo_queue.json").read_text(encoding="utf-8"))}
 
 con = sqlite3.connect(str(SQLITE_DB))
-rows = con.execute("SELECT id, score_breakdown_json FROM videos").fetchall()
+rows = con.execute("SELECT id, overall_rating, direction_rating, technique_rating, ai_analysis, score_breakdown_json FROM videos").fetchall()
 updated = 0
 
-for vid, raw_bd in rows:
+for vid, cur_o, cur_d, cur_t, cur_ana, raw_bd in rows:
     vid = str(vid)
     try:
         bd = json.loads(raw_bd) if raw_bd else {}
@@ -40,12 +45,11 @@ for vid, raw_bd in rows:
             bd["analysisStatus"] = "full_analysis"
             bd["isProvisional"] = False
 
-    must_null_scores = False
-    if vid in invalidated_ids:
+    is_invalidated = (vid in invalidated_ids) or (bd.get("visualVerificationStatus") == "invalidated_no_visual")
+    if is_invalidated:
         bd["visualVerificationStatus"] = "invalidated_no_visual"
         bd["invalidatedNoVisual"] = True
         bd["visualChecked"] = False
-        must_null_scores = True
     elif vid in log_verified_ids:
         bd["visualVerificationStatus"] = "log_verified"
         bd.pop("invalidatedNoVisual", None)
@@ -60,14 +64,21 @@ for vid, raw_bd in rows:
                 bd["visualVerificationStatus"] = "not_audited"
 
     after = json.dumps(bd, ensure_ascii=False)
-    if after != before or must_null_scores:
-        if must_null_scores:
-            con.execute(
-                "UPDATE videos SET overall_score_100 = NULL, direction_score_100 = NULL, technique_score_100 = NULL, score_breakdown_json = ? WHERE id = ?",
-                (after, vid),
-            )
-        else:
-            con.execute("UPDATE videos SET score_breakdown_json = ? WHERE id = ?", (after, vid))
+    if is_invalidated:
+        next_o = bd.get("previousOverallRating") or cur_o or ""
+        next_d = bd.get("previousDirectionRating") or cur_d or ""
+        next_t = bd.get("previousTechniqueRating") or cur_t or ""
+        next_ana = ch11_re.sub("", cur_ana or "").rstrip()
+        con.execute(
+            "UPDATE videos SET overall_rating=?, direction_rating=?, technique_rating=?, "
+            "overall_score=?, direction_score=?, technique_score=?, "
+            "overall_score_100=NULL, direction_score_100=NULL, technique_score_100=NULL, "
+            "ai_analysis=?, score_breakdown_json=? WHERE id=?",
+            (next_o, next_d, next_t, rank_int(next_o), rank_int(next_d), rank_int(next_t), next_ana, after, vid),
+        )
+        updated += 1
+    elif after != before:
+        con.execute("UPDATE videos SET score_breakdown_json = ? WHERE id = ?", (after, vid))
         updated += 1
 
 con.commit()

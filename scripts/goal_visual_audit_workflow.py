@@ -10,6 +10,7 @@ For each batch of videos:
      scores & breakdowns live to TiDB Cloud.
 """
 import concurrent.futures
+from datetime import datetime, timezone
 import json
 import os
 import pathlib
@@ -304,11 +305,32 @@ else:
 """
             for attempt in range(2):
                 try:
-                    return await agent(
+                    audit_started_at = datetime.now(timezone.utc).isoformat()
+                    out = await agent(
                         prompt,
                         schema=AUDIT_SCHEMA,
                         role=f"Audit {vid} ({o_r})" + (" [retry]" if attempt else ""),
                     )
+                    if isinstance(out, dict):
+                        worker_conv_id = str(out.get("_conversation_id") or out.get("conversation_id") or "")
+                        if not worker_conv_id:
+                            try:
+                                brain_root = pathlib.Path(r"C:\Users\t1257\.gemini\antigravity\brain")
+                                best_mtime = 0.0
+                                start_epoch = datetime.fromisoformat(audit_started_at).timestamp() - 5.0
+                                for p_tx in brain_root.glob("*/.system_generated/logs/transcript.jsonl"):
+                                    mt = p_tx.stat().st_mtime
+                                    if mt < start_epoch or mt <= best_mtime:
+                                        continue
+                                    head = p_tx.read_text(encoding="utf-8", errors="ignore")[:2500]
+                                    if vid in head and "audit_findings" in head:
+                                        best_mtime = mt
+                                        worker_conv_id = p_tx.parent.parent.parent.name
+                            except Exception:
+                                pass
+                        out["_audit_started_at"] = audit_started_at
+                        out["_worker_conversation_id"] = worker_conv_id
+                    return out
                 except Exception as exc:
                     msg = str(exc)
                     if "429" in msg or "RESOURCE_EXHAUSTED" in msg:
@@ -346,6 +368,8 @@ else:
                 change_reason = f"ルーブリック合計変更（{item['overall_rating']} -> {new_o_grade}: {res['rationale'][:120]}）"
             is_needs_full = (res.get("analysis_verdict") == "needs_full_analysis")
             is_provisional = (not bool(res.get("visual_checked"))) or is_needs_full
+            audit_started_at = str(res.get("_audit_started_at") or "")
+            worker_conv_id = str(res.get("_worker_conversation_id") or "")
             breakdown = {
                 "source": "rubric_unclamped",
                 "version": "2.0",
@@ -354,10 +378,14 @@ else:
                 "isProvisional": is_provisional,
                 "visualVerificationStatus": "unverified_pending" if res.get("visual_checked") else "invalidated_no_visual",
                 "visualChecked": bool(res.get("visual_checked")),
+                "auditStartedAt": audit_started_at,
+                "workerConversationId": worker_conv_id,
                 "inspectionMethod": "contact_sheet_static_frames",
                 "analysisVerdict": res.get("analysis_verdict"),
                 "auditFindings": res.get("audit_findings", ""),
                 "previousOverallRating": item["overall_rating"],
+                "previousDirectionRating": item["direction_rating"],
+                "previousTechniqueRating": item["technique_rating"],
                 "newOverallRating": new_o_grade,
                 "gradeChangeReason": change_reason,
                 "realCuts": m.get("real_cuts") if m.get("status") == "ok" else None,
@@ -379,6 +407,8 @@ else:
             prog_obj = {
                 "video_id": vid,
                 "title": item["title"],
+                "audit_started_at": audit_started_at,
+                "worker_conversation_id": worker_conv_id,
                 "previous_ratings": f"{item['overall_rating']}/{item['direction_rating']}/{item['technique_rating']}",
                 "ratings": f"{new_o_grade}/{new_d_grade}/{new_t_grade}",
                 "scores100": f"{overall_score}/{dir_score}/{tech_score}",
@@ -468,19 +498,21 @@ else:
     if proc.returncode != 0:
         raise RuntimeError(f"TiDB backfill failed: {proc.stderr}")
 
-    _run_node_retry(["node", "scripts/apply-audit-patches.mjs", "--apply"], "TiDB aiAnalysis patch")
-    _run_node_retry(["node", "scripts/repair-metadata-from-analysis.mjs", "--apply"], "TiDB metadata repair")
-
-    # Immediately cross-check worker transcripts before Antigravity prunes old logs, then promote unverified_pending -> log_verified
-    # Fail the wave loudly if any of these 3 post-wave steps fails.
+    # 1) Cross-check worker transcripts FIRST before applying any Ch.11 patches, and fail loudly on any error.
     for cmd_args, label in (
         ([sys.executable, "scripts/verify_visual_logs.py"], "Worker transcript log verification"),
-        (["node", "scripts/stamp-structured-status.mjs"], "TiDB structured status promotion"),
-        ([sys.executable, "scripts/stamp_sqlite_status.py"], "SQLite structured status promotion"),
+        (["node", "scripts/stamp-structured-status.mjs"], "TiDB structured status & invalidation"),
+        ([sys.executable, "scripts/stamp_sqlite_status.py"], "SQLite structured status & invalidation"),
     ):
         step_proc = _run_node_retry(cmd_args, label)
         if step_proc.returncode != 0:
             raise RuntimeError(f"Post-wave step failed [{label}] (exit {step_proc.returncode}): {step_proc.stderr}")
+
+    # 2) Only after log verification & invalidation, patch aiAnalysis and repair metadata
+    patch_proc = _run_node_retry(["node", "scripts/apply-audit-patches.mjs", "--apply"], "TiDB aiAnalysis patch")
+    if patch_proc.returncode != 0:
+        raise RuntimeError(f"TiDB aiAnalysis patch failed: {patch_proc.stderr}")
+    _run_node_retry(["node", "scripts/repair-metadata-from-analysis.mjs", "--apply"], "TiDB metadata repair")
 
     shutil.rmtree(WORK_TMP, ignore_errors=True)
 

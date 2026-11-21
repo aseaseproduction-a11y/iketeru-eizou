@@ -317,7 +317,7 @@
   "sync_status": "PAUSED_AWAITING_USER_APPROVAL",
   "root_cause_and_proposals": {
     "D_tidb_higher_provisional_vimeo_or_yt": {
-      "why_it_differs": "初期のVimeoメタデータ収集・一次評価バッチ（eizo100 / reclike_motiongraphics_2d/3d 等）がTiDBへ高めの暫定ランクを書き込み、その後2026-04頃のローカルSQLite側で別の一次評価（低めの暫定ランク）またはManus移行時の旧評価が同期されずに残ったため。どちらも未視聴のまま付いた暫定値。",
+      "why_it_differs": "TiDB側には実動画の尺・解像度・音圧を含む詳細分析と高めランクが入っている一方、SQLite側には古い公開メタデータのみの一次分析（低めランク）が残っており、goal_visual_audit_workflow.py がSQLiteから読み込んでTiDBへ書き込んだため両DBのランクと本文が食い違った。",
       "responsible_scripts_or_events": [
         "Manus移行時の初期Vimeoバッチ投入（TiDB側 createdAt/updatedAt に記録）",
         "backfill-100pt-scores.mjs（TiDB側の旧暫定ランク帯に点数をクランプしたため高め維持）",
