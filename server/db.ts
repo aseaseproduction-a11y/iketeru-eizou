@@ -172,18 +172,21 @@ export async function getAllVideoListItems() {
       addedDate: videos.addedDate,
       createdAt: videos.createdAt,
       updatedAt: videos.updatedAt,
+      isProvisional: sql<number>`CASE WHEN ${videos.aiAnalysis} LIKE '%一次評価%' OR ${videos.aiAnalysis} LIKE '%暫定評価%' OR ${videos.aiAnalysis} LIKE '%未視聴%' OR ${videos.aiAnalysis} LIKE '%簡易分析済(要完全版)%' OR ${videos.aiScoreBreakdown} LIKE '%"needs_full_analysis"%' THEN 1 ELSE 0 END`,
     })
     .from(videos)
     .orderBy(desc(videos.createdAt));
   return rows.map((row) => {
+    const { isProvisional, ...rest } = row;
     const video = parseVideoRow({
-      ...row,
+      ...rest,
       aiAnalysis: null,
       aiScoreBreakdown: null,
       metadataClassificationAudit: null,
     });
     return {
       ...video,
+      isProvisional: Boolean(isProvisional),
       aiAnalysis: "",
       aiScoreBreakdown: undefined,
       metadataClassificationAudit: undefined,
@@ -444,11 +447,24 @@ export function parseVideoRow(row: typeof videos.$inferSelect) {
     aiTechniqueScore: row.aiTechniqueScore ?? null,
     aiScoreBreakdown: safeParseJson(row.aiScoreBreakdown, undefined),
     aiAnalysis: row.aiAnalysis ?? "",
+    isProvisional: isProvisionalAnalysis(row.aiAnalysis, row.aiScoreBreakdown),
     embedStatus: row.embedStatus ?? "unknown",
     embedReason: row.embedReason ?? "",
     embedCheckedAt: row.embedCheckedAt?.toISOString() ?? "",
     addedDate: row.addedDate ?? "",
   };
+}
+
+function isProvisionalAnalysis(aiAnalysis: string | null | undefined, aiScoreBreakdown: string | null | undefined): boolean {
+  const ana = aiAnalysis ?? "";
+  const bd = aiScoreBreakdown ?? "";
+  return (
+    ana.includes("一次評価") ||
+    ana.includes("暫定評価") ||
+    ana.includes("未視聴") ||
+    ana.includes("簡易分析済(要完全版)") ||
+    bd.includes('"needs_full_analysis"')
+  );
 }
 
 function safeParseJson<T>(str: string | null | undefined, fallback: T): T {

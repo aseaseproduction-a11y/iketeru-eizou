@@ -41,9 +41,38 @@ const BANDS = {
 
 function clampToBand(score, grade) {
   const band = BANDS[String(grade || "").trim()];
-  if (!band) return null;
+  if (!band) {
+    return typeof score === "number" && Number.isFinite(score) ? Math.max(0, Math.min(100, Math.round(score))) : null;
+  }
   if (typeof score !== "number" || !Number.isFinite(score)) return band.mid;
   return Math.max(band.min, Math.min(band.max, Math.round(score)));
+}
+
+function reconcileRubricObj(rubricObj, targetSum) {
+  if (!rubricObj || typeof rubricObj !== "object" || typeof targetSum !== "number") return rubricObj;
+  const keys = Object.keys(rubricObj);
+  if (keys.length === 0) return rubricObj;
+  const out = {};
+  for (const k of keys) out[k] = Math.max(0, Math.min(20, Math.round(Number(rubricObj[k]) || 0)));
+  let diff = targetSum - Object.values(out).reduce((a, b) => a + b, 0);
+  let guard = 0;
+  while (diff !== 0 && guard < 200) {
+    guard++;
+    const step = diff > 0 ? 1 : -1;
+    const order = [...keys].sort((a, b) => (step > 0 ? out[a] - out[b] : out[b] - out[a]));
+    let moved = false;
+    for (const k of order) {
+      const nv = out[k] + step;
+      if (nv >= 0 && nv <= 20) {
+        out[k] = nv;
+        diff -= step;
+        moved = true;
+        if (diff === 0) break;
+      }
+    }
+    if (!moved) break;
+  }
+  return out;
 }
 
 const rubricById = new Map();
@@ -85,22 +114,59 @@ try {
   const plan = [];
   for (const row of rows) {
     const ext = rubricById.get(String(row.id));
+    const isUnclamped = ext?.aiScoreBreakdown?.source === "rubric_unclamped";
+    if (isUnclamped) {
+      const overall = typeof ext.aiOverallScore === "number" ? Math.max(0, Math.min(100, Math.round(ext.aiOverallScore))) : null;
+      const direction = typeof ext.aiDirectionScore === "number" ? Math.max(0, Math.min(100, Math.round(ext.aiDirectionScore))) : null;
+      const technique = typeof ext.aiTechniqueScore === "number" ? Math.max(0, Math.min(100, Math.round(ext.aiTechniqueScore))) : null;
+      const overallRating = ext.aiOverallRating || ext.aiScoreBreakdown.newOverallRating || row.aiOverallRating;
+      const directionRating = ext.aiDirectionRating || row.aiDirectionRating;
+      const techniqueRating = ext.aiTechniqueRating || row.aiTechniqueRating;
+      plan.push({
+        id: row.id,
+        unclamped: true,
+        overallRating,
+        directionRating,
+        techniqueRating,
+        overall,
+        direction,
+        technique,
+        breakdown: JSON.stringify(ext.aiScoreBreakdown),
+        overwrite: true,
+      });
+      continue;
+    }
+
     const overall = ext ? clampToBand(ext.aiOverallScore, row.aiOverallRating) : (row.aiOverallScore ?? clampToBand(null, row.aiOverallRating));
     const direction = ext ? clampToBand(ext.aiDirectionScore, row.aiDirectionRating) : (row.aiDirectionScore ?? clampToBand(null, row.aiDirectionRating));
     const technique = ext ? clampToBand(ext.aiTechniqueScore, row.aiTechniqueRating) : (row.aiTechniqueScore ?? clampToBand(null, row.aiTechniqueRating));
-    const breakdown = ext?.aiScoreBreakdown ?? {
-      source: "backfill_from_analysis",
-      version: "1.0",
-      rationale: "既存S+〜D-ランク据え置きレンジ中央値による初期バックフィル",
-    };
+    const breakdown = ext?.aiScoreBreakdown
+      ? {
+          ...ext.aiScoreBreakdown,
+          ...(ext.aiScoreBreakdown.direction ? { direction: reconcileRubricObj(ext.aiScoreBreakdown.direction, direction) } : {}),
+          ...(ext.aiScoreBreakdown.technique ? { technique: reconcileRubricObj(ext.aiScoreBreakdown.technique, technique) } : {}),
+        }
+      : {
+          source: "backfill_from_analysis",
+          version: "1.0",
+          rationale: "既存S+〜D-ランク据え置きレンジ中央値による初期バックフィル",
+        };
     if (overall !== null || direction !== null || technique !== null) {
-      plan.push({ id: row.id, overall, direction, technique, breakdown: JSON.stringify(breakdown), overwrite: Boolean(ext) });
+      plan.push({ id: row.id, unclamped: false, overall, direction, technique, breakdown: JSON.stringify(breakdown), overwrite: Boolean(ext) });
     }
   }
 
   if (apply) {
     for (const item of plan) {
-      if (item.overwrite) {
+      if (item.unclamped) {
+        await db.execute(
+          `UPDATE videos
+           SET aiOverallRating = ?, aiDirectionRating = ?, aiTechniqueRating = ?,
+               aiOverallScore = ?, aiDirectionScore = ?, aiTechniqueScore = ?, aiScoreBreakdown = ?
+           WHERE id = ?`,
+          [item.overallRating, item.directionRating, item.techniqueRating, item.overall, item.direction, item.technique, item.breakdown, item.id],
+        );
+      } else if (item.overwrite) {
         await db.execute(
           `UPDATE videos
            SET aiOverallScore = ?, aiDirectionScore = ?, aiTechniqueScore = ?, aiScoreBreakdown = ?

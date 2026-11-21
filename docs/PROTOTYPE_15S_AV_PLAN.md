@@ -1,55 +1,95 @@
-# 15秒 音楽×映像同時生成プロトタイプ計画書（計画のみ）
-& 動き・音響の定量抽出アーキテクチャ提案
+# 15秒 音楽×映像 同時自動生成 試作計画（改訂版 v2）
 
-最終目標（参考資料DB・評価基準の明確化・クラフトレシピ精度向上・AE/Blender手動調整可能な自動生成・`sc-av-studio`との音楽×映像同時生成）に基づく設計計画書。
-
----
-
-## Part 1. 静止画の限界を超える「動き・音響データ抽出」の提案
-
-静止画コンタクトシート1〜2枚（16〜32コマ）だけでは、**イージング・カットのタイミング・カメラワーク速度・音ハメ精度**は検証できない。ローカル動画（`D:\マイドライブ\iketeru_videos` 等）に対して以下の4層定量データを抽出し、Craft Recipe v2 の精度を底上げする。
-
-| 層 | 抽出ツール / 手法 | 取得できる定量データ | クラフトレシピ / AE・Blenderへの活用 |
-|---|---|---|---|
-| **1. カット境界** | `ffmpeg scdet` + `PySceneDetect (ContentDetector)` | フレーム単位の正確なカット点（`cut_frames[]`）、ショット尺分布（最小・中央値・最大・CPM） | AEコンポジションのカットマーカー、シーン尺テンプレートの厳密再現 |
-| **2. 動き・イージング・カメラワーク** | OpenCV `cv2.calcOpticalFlowFarneback`（フレーム間オプティカルフロー、4fps〜12fpsサンプリング） | ①平均移動ベクトル `(dx, dy)`（パン/チルト方向）<br>②放射状発散度（ズームイン/アウト判定）<br>③モーションエネルギー時系列 `motion_curve[]`<br>④加速度変化からイージング種別推定（`ease-out` / `expo-in-out` / `linear` / `hold`） | AEの `KeyframeEase` / `Graph Editor` 速度カーブ値（influence %）の実測ベース設定 |
-| **3. 音響ビート・音ハメ同期** | `librosa`（`beat_track`, `onset_strength`, `rms`, `spectral_centroid`）＋ `ffmpeg ebur128` | BPM、ビート時刻 `beats[]`、アタック（オンセット）時刻 `onsets[]`、音量エンベロープ、**カット点とビートの同期率（±50ms以内の一致率 %）** | 「何拍目でカットを割るか」「ドロップの何フレーム前にトランジションを入れるか」を定量レシピ化 |
-| **4. トランジション局所確認** | カット点前後 ±0.5秒（12〜24フレーム）のストリップ画像または軽量アニメーションWebP | スウィッシュパン・フラッシュ・ズームブラー・マッチカット等の実際の繋ぎ挙動 | `transition_bridge` の推測依存（`inferred`）を実測（`observed`）へ置換 |
-
-### 優先順位の転換
-- 1,750本の再採点よりも先に、既存 `phase4_v2_recut_queue.json`（上位クラフトレシピ432本）のうちローカル動画が手元にある作品から上記4層抽出を適用し、**「AE/Blenderで再現できる実測レシピ」の精度を上げる**ことを最優先とする。
+> **目的**: `sc-av-studio`（SuperCollider音楽生成＋既存60fps同期基盤）と `iketeru-eizou` の分析知見を接続し、**15秒の作品を1本、Blender で手動編集可能な `.blend` プロジェクトとして自動生成する**最小試作（MVP）の計画書です。
+> **ステータス**: 計画のみ（ユーザー承認後に実装着手）
 
 ---
 
-## Part 2. 15秒 音楽×映像 同時生成プロトタイプ計画（計画のみ・未実行）
+## 1. 改訂ポイント（外部レビュー第2回反映）
 
-### 目的
-`iketeru-eizou` のクラフトレシピv2（実測カット・イージング・色彩設計）と、`sc-av-studio`（SuperCollider / 音楽生成）を**共通のタイムラインJSON（Master Beat & Cut Sheet）**で結合し、**「音楽と映像がフレーム単位で同期し、かつAEまたはBlenderで全要素を手動調整できる15秒作品」**を1本試作する。
+1. **既存同期基盤の流用・時刻データ一本化**:
+   - `E:\sc-av-studio\blender\sync_scene_template.py` と `public/audio/events.json`（60fps）をそのまま土台にする。
+   - 新しい `master_timeline.json` は**作らない**。音楽側が生成する `events.json` 1本を唯一の時刻・イベント定義ソース（Single Source of Truth）とする。
+2. **動き解析スコープの縮小（過大設計の排除）**:
+   - オプティカルフローによるイージング推定は**試作範囲から除外**する。
+   - 映像リズム検証は **①カット点検出（`ffmpeg scdet`）** と **②カット点とビートの一致率計測（`events.json` との誤差±2フレーム以内率）** の2項目のみに絞る。
+3. **第1弾ターゲットを Blender に統一**:
+   - After Effects（.jsx）連携は第2弾以降とし、第1弾は既存テンプレートのある **Blender（`.blend` 生成）** に集中する。
 
-### 共通タイムライン仕様（Master Beat & Cut Sheet）
-- **尺**: 15.0秒（30fps = 450フレーム）
-- **テンポ**: 例 BPM 120（1拍 = 0.5秒 = 15フレーム、全30拍 / 7.5小節）
-- **構成（Craft Recipe v2 の15秒Web CM / モーションティザー型）**:
-  - **00:00–00:03（Hook / 0〜90f / 6拍）**: 視覚フック＋イントロリズム（高コントラスト背景・タイポ登場）
-  - **00:03–00:09（Build / 90〜270f / 12拍）**: ビート同期の4〜6カット展開（2〜3拍刻みの高速切替＋`ease-out` スケール/カメラ移動）
-  - **00:09–00:12（Drop / Climax / 270〜360f / 6拍）**: 音楽ドロップに完全同期した画面反転・3Dカメラ急加速・アクセントカラー解放
-  - **00:12–00:15（Resolve / Logo / 360〜450f / 6拍）**: 余韻＋編集可能テキストロゴ着地＋フェードアウト
+---
 
-### パイプライン設計（4ステップ）
-1. **Step A：リファレンス選定＆設計図（Master JSON）生成**
-   - `iketeru-eizou` の高評価クラフトレシピv2から15秒モーション/3DCGの型を1本抽出し、カット時刻・カラーパレット（3〜4色）・イージング種別・カメラ動きを `master_timeline.json` に定義する。
-2. **Step B：音楽・SE ステム分離生成（`sc-av-studio` / SuperCollider）**
-   - `master_timeline.json` の BPM・拍構成・ドロップ時刻（09.0s）を SuperCollider スクリプトへ入力し、**BGMステム（`bgm_drums.wav`, `bgm_bass.wav`, `bgm_synth.wav`）とトランジションSE（`se_whoosh.wav`, `se_impact.wav`）を完全分離して書き出し**（`iketeru-production-standards` 準拠）。
-   - 同時に実際のビート・オンセット・RMSカーブを `audio_sync.json` として出力する。
-3. **Step C：編集可能プロジェクト自動生成（AE `.jsx` または Blender `.py`）**
-   - **案1（After Effects `.jsx` — モーショングラフィックス＆キネティックタイポ向け）**:
-     - `iketeru-production-standards` のフォルダ構造（`00_プロジェクト`〜`05_書き出し`）およびAE内ビン構成（`00_MASTER`, `01_SCENES`, `02_PRECOMPS`, `03_AUDIO`, `04_ASSETS`）を自動構築。
-     - 全テロップを編集可能な `TextLayer`、図形を `ShapeLayer`、カメラを `CameraLayer`＋`Null` 制御で生成し、`audio_sync.json` のビート時刻に合わせて `KeyframeEase` を自動打鍵。BGM/SEステムを別トラックへ配置。
-   - **案2（Blender `.py` — 3DCGモーション・プロダクト演出向け）**:
-     - プロシージャルジオメトリ／シェーダー・3点照明・ベジェイージング付きカメラリグを `.blend` として生成し、VSE（Video Sequence Editor）または出力コンプ用にビート同期マーカーと分離WAVを配置。
-4. **Step D：プレビュー書き出し＆人間による手動仕上げ検証**
-   - 自動生成プロジェクトから15秒プレビューMP4をレンダリングし、**「AE/Blenderで開いたときに1クリックでテキスト・色・イージング・音量を自由に手動調整できるか」**を検証する。
+## 2. アーキテクチャ（`events.json` 1本同期）
 
-### 試作着手前にユーザー様へ確認したい点
-- 最初の15秒プロトタイプは **After Effects（2D/2.5Dモーショングラフィックス＆タイポ）** と **Blender（3DCG空間＆カメラワーク）** のどちらを第1弾にしますか？
-- 題材（例：架空のブランド/プロダクトの15秒ティザー、またはご自身のポートフォリオ用15秒ロゴモーション等）の希望はありますか？
+```mermaid
+flowchart LR
+  A["1. SuperCollider (sc-av-studio)\n15秒楽曲 WAV 生成 (120-128 BPM)"] --> B["2. analyze-audio.py (既存)\npublic/audio/events.json (60fps)\nmeta / events(kick,snare) / frames(low,mid,high)"]
+  C["3. iketeru-eizou クラフト知見\n(参照レシピ・配色・構成ルール)"] --> D["4. Blender自動構築スクリプト\nsync_scene_template.py 拡張\n(60fps / 900f)"]
+  B --> D
+  D --> E["5. 出力物\n- prototype_15s.blend (編集可能)\n- VSEにWAV配置済み\n- プレビューMP4書き出し"]
+  E --> F["6. 自動計測チェック\nffmpeg scdet カット点検出\nvs events.json ビート一致率(%)"]
+```
+
+### 使用する `events.json` の既存構造（`E:\sc-av-studio\blender\sync_scene_template.py` 準拠）
+- `meta.fps`: `60`
+- `meta.totalFrames`: `900`（15秒 × 60fps）
+- `events[]`: `{ "type": "kick" | "snare", "frame": int, "velocity": float }`
+- `frames[]`: `{ "frame": int, "low": float, "mid": float, "high": float }`
+
+---
+
+## 3. 15秒（900フレーム @ 60fps）構成案
+
+| セクション | 時間 | フレーム | 音楽展開 (`events.json`) | Blenderシーン表現（すべて手動編集可能オブジェクト） |
+|---|---|---|---|---|
+| **Hook** | 0.0s – 3.0s | `1 – 180` | イントロ・キック立ち上がり | タイトルテキスト（Font Object）＋メインシェイプ出現（`kick`イベントでスケールキーフレーム） |
+| **Build** | 3.0s – 7.5s | `181 – 450` | キック＋スネア加速 | カメラワーク切替（複数Camera＋Markerバインド）＋`low/mid/high`連動ジオメトリ＆ライト強度 |
+| **Drop / Climax** | 7.5s – 12.5s | `451 – 750` | 最大エネルギー・ビート刻み | 高密度カット切替（`kick`/`snare`フレームにカメラ切替Marker配置）＋カラーマテリアル切替 |
+| **Outro / Tagline** | 12.5s – 15.0s | `751 – 900` | 余韻・フェードアウト | タグラインテキスト表示＋カメラ静止＋VSEオーディオフェードアウト |
+
+---
+
+## 4. Blender プロジェクト編集性設計（手動調整の保証）
+
+`sync_scene_template.py` を拡張し、生成される `.blend` ファイルを以下のコレクション・構造で整理する：
+
+- **`01_Cameras`**: カットごとのカメラ（`Cam_01_Hook` 等）をタイムラインマーカーでバインド（タイミング変更＝マーカーをドラッグするだけ）
+- **`02_Typography`**: メッシュ化していない **Blender標準 Font Object**（`Text_Title`, `Text_Tagline`）として配置（Tabキーで文字列を直接編集可能）
+- **`03_Hero_Geometry`**: 編集可能なモディファイア・マテリアル付きオブジェクト（色変更＝Principled BSDF の Base Color / Emission Color を変えるだけ）
+- **`04_Lighting`**: キーライト・リムライト・背景ワールドカラー
+- **Video Sequencer (VSE)**: 生成した15秒 WAV を Sound Strip としてフレーム1に配置（音量変更＝VSEストリップの Volume スライダーで直接調整可能）
+
+---
+
+## 5. 動き・リズム検証（試作スコープ限定）
+
+試作フェーズでは以下2点のみを自動計測する（オプティカルフローによるイージング推定は行わない）：
+
+1. **カット点検出（`ffmpeg scdet`）**:
+   - 書き出した15秒プレビューMP4に対し `ffmpeg -vf scdet=threshold=10` で実測カット時刻（フレーム）を抽出する。
+2. **カットとビートの一致率計測**:
+   - `scdet` で検出された各カットフレームと、`events.json` の `events[]`（`kick`/`snare`）フレームの最小距離を計算する。
+   - 誤差 `±2フレーム（±33ms）` 以内に収まったカットの割合（%）を算出し、ログ出力する。
+
+---
+
+## 6. 実装ステップ（承認後に着手）
+
+1. **Step 1**: `sc-av-studio` で 15秒（900f @ 60fps）の楽曲 WAV と `public/audio/events.json` を1セット生成する。
+2. **Step 2**: `E:\sc-av-studio\blender\sync_scene_template.py` をベースに、4セクション構成・編集可能テキスト・カメラマーカー・VSE音声配置を備えた `prototype_15s_generator.py` を作成する。
+3. **Step 3**: Blender CLI（`blender --background --python ...`）で `prototype_15s.blend` とプレビュー MP4 を書き出す。
+4. **Step 4**: `ffmpeg scdet` でカット点と `events.json` のビート一致率（%）を計測する。
+5. **Step 5**: ユーザーが実物（MP4 + `.blend`）を確認し、下記チェックリストで合否を判定する。
+
+---
+
+## 7. 成功の判定基準（チェックリスト）
+
+試作の完了は、以下のチェック項目を**ユーザー自身の手で確認**できた時点とする：
+
+- [ ] **試聴・評価**: 書き出された15秒プレビューMP4をユーザーが視聴し、音楽と映像の同期感・クオリティを評価できる
+- [ ] **Blender起動**: 生成された `prototype_15s.blend` をユーザーの Blender でエラーなく開ける
+- [ ] **テキスト変更**: `02_Typography` のテキストオブジェクトの文字を Blender 上で書き換えられる
+- [ ] **色変更**: マテリアル（Base Color / Emission）またはワールド背景色を Blender 上で変更できる
+- [ ] **タイミング変更**: カメラ切替マーカーまたはキーフレームをタイムライン上で移動し、カット・動きのタイミングを変更できる
+- [ ] **音量変更**: Video Sequencer（VSE）上の音声ストリップの音量を変更し、音付きで再書き出しできる
+- [ ] **自動計測**: `ffmpeg scdet` によるカット検出と `events.json` とのビート一致率（%）が算出されている

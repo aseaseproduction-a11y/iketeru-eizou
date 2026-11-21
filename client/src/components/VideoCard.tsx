@@ -202,6 +202,14 @@ export default function VideoCard({ video, index, isFavorite = false, hasNote = 
                 受賞作{video.awards.length > 1 ? ` ${video.awards.length}` : ""}
               </div>
             ) : null}
+            {video.isProvisional && (
+              <span
+                title="未視聴・メタデータ基準の暫定評価です（映像確認による再分析待ち）"
+                className="rounded-sm bg-amber-500/90 px-1.5 py-0.5 text-[9px] font-bold text-black backdrop-blur-sm shrink-0"
+              >
+                暫定
+              </span>
+            )}
             {isFavorite && (
               <div className="w-5 h-5 rounded-full bg-amber-400/90 flex items-center justify-center backdrop-blur-sm shrink-0">
                 <Bookmark className="w-2.5 h-2.5 text-white" fill="white" />

@@ -96,6 +96,7 @@ export interface Video {
   aiTechniqueScore?: number | null;
   aiScoreBreakdown?: AiScoreBreakdown | null;
   aiAnalysis: string;
+  isProvisional?: boolean;
   embedStatus: "unknown" | "available" | "restricted";
   embedReason?: string;
   embedCheckedAt: string;

@@ -1,0 +1,15 @@
+{
+  "worker_transcripts_found": 608,
+  "progress_jsonl_unique_videos": 1786,
+  "matched_in_worker_transcripts": 607,
+  "self_true_and_log_verified_img_gt_0": 518,
+  "self_true_but_log_img_eq_0": 0,
+  "self_false_and_log_img_eq_0": 89,
+  "self_false_but_log_img_gt_0": 0,
+  "no_transcript_on_disk_total": 1179,
+  "no_transcript_on_disk_self_true": 1095,
+  "no_transcript_on_disk_self_false": 84,
+  "redo_queue_total_after_log_check": 173,
+  "added_from_log_check": 0,
+  "self_true_but_log_img_eq_0_ids": []
+}

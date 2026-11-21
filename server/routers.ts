@@ -211,7 +211,7 @@ export const appRouter = router({
         return getFavoriteProfileItems(input.profileId);
       }),
 
-    createProfile: publicProcedure
+    createProfile: writeProtectedProcedure
       .input(z.object({ displayName: favoriteProfileNameSchema }))
       .mutation(async ({ input }) => {
         const normalizedName = normalizeFavoriteProfileName(input.displayName);
@@ -222,7 +222,7 @@ export const appRouter = router({
         return profile;
       }),
 
-    renameProfile: publicProcedure
+    renameProfile: writeProtectedProcedure
       .input(z.object({ profileId: favoriteProfileIdSchema, displayName: favoriteProfileNameSchema }))
       .mutation(async ({ input }) => {
         const profile = await getFavoriteProfileById(input.profileId);
@@ -235,14 +235,14 @@ export const appRouter = router({
         return renamed;
       }),
 
-    deleteProfile: publicProcedure
+    deleteProfile: writeProtectedProcedure
       .input(z.object({ profileId: favoriteProfileIdSchema }))
       .mutation(async ({ input }) => {
         await deleteFavoriteProfile(input.profileId);
         return { success: true } as const;
       }),
 
-    toggleVideo: publicProcedure
+    toggleVideo: writeProtectedProcedure
       .input(z.object({ profileId: favoriteProfileIdSchema, videoId: z.string().trim().min(1).max(64) }))
       .mutation(async ({ input }) => {
         const profile = await getFavoriteProfileById(input.profileId);
@@ -250,7 +250,7 @@ export const appRouter = router({
         return toggleFavoriteProfileVideo(input.profileId, input.videoId);
       }),
 
-    toggleCreator: publicProcedure
+    toggleCreator: writeProtectedProcedure
       .input(z.object({ profileId: favoriteProfileIdSchema, creatorName: z.string().trim().min(1).max(160) }))
       .mutation(async ({ input }) => {
         const profile = await getFavoriteProfileById(input.profileId);
@@ -258,7 +258,7 @@ export const appRouter = router({
         return toggleFavoriteProfileCreator(input.profileId, input.creatorName);
       }),
 
-    migrateLegacy: publicProcedure
+    migrateLegacy: writeProtectedProcedure
       .input(z.object({
         profileId: favoriteProfileIdSchema,
         videoIds: z.array(z.string().trim().min(1).max(64)).max(5_000),
@@ -283,7 +283,7 @@ export const appRouter = router({
       return await getVideoCount();
     }),
 
-    previewExternalMedia: publicProcedure
+    previewExternalMedia: writeProtectedProcedure
       .input(z.object({
         platform: z.enum(["x", "tiktok", "instagram", "vimeo"]),
         url: z.string().url(),
@@ -317,7 +317,7 @@ export const appRouter = router({
         return enriched ?? updated;
       }),
 
-    recordEmbedStatus: publicProcedure
+    recordEmbedStatus: writeProtectedProcedure
       .input(z.object({ id: z.string().trim().min(1).max(64), status: z.enum(["available", "restricted"]) }))
       .mutation(async ({ input }) => updateEmbedStatus(input.id, input.status)),
 

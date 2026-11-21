@@ -363,6 +363,9 @@ else:
             }
             rubric_obj = {
                 "id": vid,
+                "aiOverallRating": new_o_grade,
+                "aiDirectionRating": new_d_grade,
+                "aiTechniqueRating": new_t_grade,
                 "aiOverallScore": overall_score,
                 "aiDirectionScore": dir_score,
                 "aiTechniqueScore": tech_score,
@@ -371,21 +374,36 @@ else:
             prog_obj = {
                 "video_id": vid,
                 "title": item["title"],
-                "ratings": f"{item['overall_rating']}/{item['direction_rating']}/{item['technique_rating']}",
+                "previous_ratings": f"{item['overall_rating']}/{item['direction_rating']}/{item['technique_rating']}",
+                "ratings": f"{new_o_grade}/{new_d_grade}/{new_t_grade}",
                 "scores100": f"{overall_score}/{dir_score}/{tech_score}",
                 "media_status": m.get("status"),
                 "visual_checked": bool(res.get("visual_checked")),
                 "analysis_verdict": res.get("analysis_verdict"),
                 "audit_findings": res.get("audit_findings", ""),
-                "rating_mismatch_note": res.get("rating_mismatch_note", ""),
+                "grade_change_reason": change_reason,
                 "real_cuts": m.get("real_cuts"),
                 "rationale": res["rationale"],
             }
             c_prog.append(json.dumps(prog_obj, ensure_ascii=False))
             c_rub.append(json.dumps(rubric_obj, ensure_ascii=False))
-            if res.get("analysis_verdict") != "accurate" or res.get("rating_mismatch_note"):
+            if res.get("analysis_verdict") != "accurate" or grade_changed:
                 c_corr.append(json.dumps(prog_obj, ensure_ascii=False))
-            c_sql.append((overall_score, dir_score, tech_score, json.dumps(breakdown, ensure_ascii=False), vid))
+            rating_order = ["S+", "S", "S-", "A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-"]
+            rank_int = lambda g: (len(rating_order) - rating_order.index(g)) if g in rating_order else 0
+            c_sql.append((
+                new_o_grade,
+                new_d_grade,
+                new_t_grade,
+                rank_int(new_o_grade),
+                rank_int(new_d_grade),
+                rank_int(new_t_grade),
+                overall_score,
+                dir_score,
+                tech_score,
+                json.dumps(breakdown, ensure_ascii=False),
+                vid,
+            ))
 
         with PROGRESS_JSONL.open("a", encoding="utf-8") as f:
             f.write("\n".join(c_prog) + "\n")
@@ -397,7 +415,7 @@ else:
         conn_c = sqlite3.connect(str(SQLITE_DB), timeout=30.0)
         conn_c.execute("PRAGMA busy_timeout=30000")
         conn_c.executemany(
-            "UPDATE videos SET overall_score_100=?, direction_score_100=?, technique_score_100=?, score_breakdown_json=? WHERE id=?",
+            "UPDATE videos SET overall_rating=?, direction_rating=?, technique_rating=?, overall_score=?, direction_score=?, technique_score=?, overall_score_100=?, direction_score_100=?, technique_score_100=?, score_breakdown_json=? WHERE id=?",
             c_sql,
         )
         conn_c.commit()

@@ -1,0 +1,573 @@
+{
+  "generatedAt": "2026-11-21T15:39:48.227Z",
+  "note": "DB実分布（A/A-/B+中心）準拠・C以下5本以上・企業/縦型動画を含む較正用30本（暫定評価・再生不可を除外）",
+  "totalCount": 30,
+  "dbDistributionNonProvisional": [
+    {
+      "rating": "A",
+      "cnt": 1346
+    },
+    {
+      "rating": "A-",
+      "cnt": 1022
+    },
+    {
+      "rating": "A+",
+      "cnt": 605
+    },
+    {
+      "rating": "B+",
+      "cnt": 470
+    },
+    {
+      "rating": "B",
+      "cnt": 234
+    },
+    {
+      "rating": "S",
+      "cnt": 176
+    },
+    {
+      "rating": "S-",
+      "cnt": 163
+    },
+    {
+      "rating": "B-",
+      "cnt": 131
+    },
+    {
+      "rating": "(none)",
+      "cnt": 103
+    },
+    {
+      "rating": "C+",
+      "cnt": 78
+    },
+    {
+      "rating": "C",
+      "cnt": 18
+    },
+    {
+      "rating": "S+",
+      "cnt": 5
+    },
+    {
+      "rating": "C-",
+      "cnt": 5
+    },
+    {
+      "rating": "D-",
+      "cnt": 1
+    },
+    {
+      "rating": "D",
+      "cnt": 1
+    },
+    {
+      "rating": "D+",
+      "cnt": 1
+    }
+  ],
+  "selectedTierCounts": {
+    "S-": 1,
+    "S+": 1,
+    "S": 1,
+    "A+": 3,
+    "A": 6,
+    "A-": 5,
+    "B+": 4,
+    "B-": 3,
+    "B": 1,
+    "C+": 2,
+    "C": 1,
+    "C-": 1,
+    "D+": 1
+  },
+  "verticalCount": 11,
+  "corporateCount": 6,
+  "items": [
+    {
+      "id": "3d_kACCKFRc",
+      "platform": "youtube",
+      "title": "前ノハナシ (来都来了) - 重音テト, 初音ミク",
+      "videoUrl": "https://youtu.be/3d_kACCKFRc",
+      "tierGroup": "S帯 (S+/S/S-)",
+      "currentAiOverallRating": "S-",
+      "currentAiOverallScore": 91,
+      "currentAiDirectionRating": "S-",
+      "currentAiTechniqueRating": "A+",
+      "specialCategories": [
+        "縦型/ショート"
+      ],
+      "selectionRationale": "上位アンカー（国際賞・最高峰基準の確認用）",
+      "humanRating": null,
+      "humanNotes": ""
+    },
+    {
+      "id": "_2quiyHfJQw",
+      "platform": "youtube",
+      "title": "MONDO GROSSO / ラビリンス",
+      "videoUrl": "https://www.youtube.com/watch?v=_2quiyHfJQw",
+      "tierGroup": "S帯 (S+/S/S-)",
+      "currentAiOverallRating": "S+",
+      "currentAiOverallScore": 100,
+      "currentAiDirectionRating": "S+",
+      "currentAiTechniqueRating": "S",
+      "specialCategories": [],
+      "selectionRationale": "上位アンカー（国際賞・最高峰基準の確認用）",
+      "humanRating": null,
+      "humanNotes": ""
+    },
+    {
+      "id": "_GlLp6hyM2E",
+      "platform": "youtube",
+      "title": "TVアニメ『天幕のジャードゥーガル』ノンクレジットオープニング映像｜SEKAI NO OWARI「Stella」",
+      "videoUrl": "https://youtu.be/_GlLp6hyM2E",
+      "tierGroup": "S帯 (S+/S/S-)",
+      "currentAiOverallRating": "S",
+      "currentAiOverallScore": 96,
+      "currentAiDirectionRating": "S",
+      "currentAiTechniqueRating": "S",
+      "specialCategories": [],
+      "selectionRationale": "上位アンカー（国際賞・最高峰基準の確認用）",
+      "humanRating": null,
+      "humanNotes": ""
+    },
+    {
+      "id": "-NFhRWhkp7I",
+      "platform": "youtube",
+      "title": "Mrs. GREEN APPLE「ライラック」MV - TVアニメ『忘却バッテリー』Ver. -",
+      "videoUrl": "https://youtu.be/-NFhRWhkp7I",
+      "tierGroup": "A+",
+      "currentAiOverallRating": "A+",
+      "currentAiOverallScore": 87,
+      "currentAiDirectionRating": "A+",
+      "currentAiTechniqueRating": "A",
+      "specialCategories": [
+        "縦型/ショート"
+      ],
+      "selectionRationale": "準最高峰帯（S帯との境界線を見極める）",
+      "humanRating": null,
+      "humanNotes": ""
+    },
+    {
+      "id": "_K3SD33qAZM",
+      "platform": "youtube",
+      "title": "SUSHI HIGH",
+      "videoUrl": "https://www.youtube.com/watch?v=_K3SD33qAZM",
+      "tierGroup": "A+",
+      "currentAiOverallRating": "A+",
+      "currentAiOverallScore": 88,
+      "currentAiDirectionRating": "A+",
+      "currentAiTechniqueRating": "A",
+      "specialCategories": [
+        "企業/採用"
+      ],
+      "selectionRationale": "準最高峰帯（S帯との境界線を見極める）",
+      "humanRating": null,
+      "humanNotes": ""
+    },
+    {
+      "id": "_n5ZDERgrdc",
+      "platform": "youtube",
+      "title": "TV CM  自動車 / バイク   RENAULT - ARGENTINA - PUBLICIS CONSEIL",
+      "videoUrl": "https://www.youtube.com/watch?v=_n5ZDERgrdc",
+      "tierGroup": "A+",
+      "currentAiOverallRating": "A+",
+      "currentAiOverallScore": 87,
+      "currentAiDirectionRating": "A+",
+      "currentAiTechniqueRating": "A",
+      "specialCategories": [],
+      "selectionRationale": "準最高峰帯（S帯との境界線を見極める）",
+      "humanRating": null,
+      "humanNotes": ""
+    },
+    {
+      "id": "_2JRv0n6w4g",
+      "platform": "youtube",
+      "title": "いきものがかり | BAKU",
+      "videoUrl": "https://www.youtube.com/watch?v=_2JRv0n6w4g",
+      "tierGroup": "A",
+      "currentAiOverallRating": "A",
+      "currentAiOverallScore": 83,
+      "currentAiDirectionRating": "A",
+      "currentAiTechniqueRating": "A-",
+      "specialCategories": [
+        "縦型/ショート"
+      ],
+      "selectionRationale": "DB最頻帯（中核ボリュームゾーンの基準校正）",
+      "humanRating": null,
+      "humanNotes": ""
+    },
+    {
+      "id": "_FDmM_V2qUg",
+      "platform": "youtube",
+      "title": "【隈研吾×高橋一生】　二ホンの未来Report Talk　ザ・パークハウス 武蔵小杉タワーズ",
+      "videoUrl": "https://www.youtube.com/watch?v=_FDmM_V2qUg",
+      "tierGroup": "A",
+      "currentAiOverallRating": "A",
+      "currentAiOverallScore": 83,
+      "currentAiDirectionRating": "A",
+      "currentAiTechniqueRating": "A-",
+      "specialCategories": [
+        "企業/採用"
+      ],
+      "selectionRationale": "DB最頻帯（中核ボリュームゾーンの基準校正）",
+      "humanRating": null,
+      "humanNotes": ""
+    },
+    {
+      "id": "_3Hp53uVsPg",
+      "platform": "youtube",
+      "title": "東急電鉄CM「安心乗車篇」30秒ver - YouTube",
+      "videoUrl": "https://www.youtube.com/watch?v=_3Hp53uVsPg",
+      "tierGroup": "A",
+      "currentAiOverallRating": "A",
+      "currentAiOverallScore": 83,
+      "currentAiDirectionRating": "A",
+      "currentAiTechniqueRating": "A",
+      "specialCategories": [],
+      "selectionRationale": "DB最頻帯（中核ボリュームゾーンの基準校正）",
+      "humanRating": null,
+      "humanNotes": ""
+    },
+    {
+      "id": "_5XZMPbbJIk",
+      "platform": "youtube",
+      "title": "讐復を能える。",
+      "videoUrl": "https://www.youtube.com/watch?v=_5XZMPbbJIk",
+      "tierGroup": "A",
+      "currentAiOverallRating": "A",
+      "currentAiOverallScore": 83,
+      "currentAiDirectionRating": "A",
+      "currentAiTechniqueRating": "A-",
+      "specialCategories": [
+        "縦型/ショート"
+      ],
+      "selectionRationale": "DB最頻帯（中核ボリュームゾーンの基準校正）",
+      "humanRating": null,
+      "humanNotes": ""
+    },
+    {
+      "id": "_8ZyMJOVLTM",
+      "platform": "youtube",
+      "title": "Giga & TeddyLoid - ヴィオレッタ feat. 超学生 (Official Video)",
+      "videoUrl": "https://youtu.be/_8ZyMJOVLTM",
+      "tierGroup": "A",
+      "currentAiOverallRating": "A",
+      "currentAiOverallScore": 83,
+      "currentAiDirectionRating": "A-",
+      "currentAiTechniqueRating": "A",
+      "specialCategories": [],
+      "selectionRationale": "DB最頻帯（中核ボリュームゾーンの基準校正）",
+      "humanRating": null,
+      "humanNotes": ""
+    },
+    {
+      "id": "_BDDreV_EOc",
+      "platform": "youtube",
+      "title": "【チェンソーマン】【予言のナユタ】【ファイアパンチ】TASAKI70周年コラボスペシャルPV",
+      "videoUrl": "https://youtu.be/_BDDreV_EOc",
+      "tierGroup": "A",
+      "currentAiOverallRating": "A",
+      "currentAiOverallScore": 83,
+      "currentAiDirectionRating": "A",
+      "currentAiTechniqueRating": "A-",
+      "specialCategories": [],
+      "selectionRationale": "DB最頻帯（中核ボリュームゾーンの基準校正）",
+      "humanRating": null,
+      "humanNotes": ""
+    },
+    {
+      "id": "_O0h2WqEFjo",
+      "platform": "youtube",
+      "title": "あなたにはなれない - 可不･結月ゆかり",
+      "videoUrl": "https://youtu.be/_O0h2WqEFjo",
+      "tierGroup": "A-",
+      "currentAiOverallRating": "A-",
+      "currentAiOverallScore": 79,
+      "currentAiDirectionRating": "A",
+      "currentAiTechniqueRating": "B+",
+      "specialCategories": [
+        "縦型/ショート"
+      ],
+      "selectionRationale": "DB第2頻帯（AとB+の中間・実務良作の境界）",
+      "humanRating": null,
+      "humanNotes": ""
+    },
+    {
+      "id": "_jWNIcbt-ac",
+      "platform": "youtube",
+      "title": "LIPPS BOY - ブランドムービー「TOKYO STREET STYLING.」編（30秒Ver.）",
+      "videoUrl": "https://www.youtube.com/watch?v=_jWNIcbt-ac",
+      "tierGroup": "A-",
+      "currentAiOverallRating": "A-",
+      "currentAiOverallScore": 79,
+      "currentAiDirectionRating": "A-",
+      "currentAiTechniqueRating": "A-",
+      "specialCategories": [
+        "企業/採用"
+      ],
+      "selectionRationale": "DB第2頻帯（AとB+の中間・実務良作の境界）",
+      "humanRating": null,
+      "humanNotes": ""
+    },
+    {
+      "id": "_2dl3blJgy8",
+      "platform": "youtube",
+      "title": "TVアニメ「多聞くん今どっち！？」ノンクレジットエンディング映像｜F/ACE「花と夢」",
+      "videoUrl": "https://youtu.be/_2dl3blJgy8",
+      "tierGroup": "A-",
+      "currentAiOverallRating": "A-",
+      "currentAiOverallScore": 79,
+      "currentAiDirectionRating": "A-",
+      "currentAiTechniqueRating": "A-",
+      "specialCategories": [],
+      "selectionRationale": "DB第2頻帯（AとB+の中間・実務良作の境界）",
+      "humanRating": null,
+      "humanNotes": ""
+    },
+    {
+      "id": "_7VNKU010JI",
+      "platform": "youtube",
+      "title": "ロッテ プレミアムガーナ TVCM「劇的一粒」篇 15秒(5品) 木村拓哉",
+      "videoUrl": "https://www.youtube.com/watch?v=_7VNKU010JI",
+      "tierGroup": "A-",
+      "currentAiOverallRating": "A-",
+      "currentAiOverallScore": 79,
+      "currentAiDirectionRating": "A-",
+      "currentAiTechniqueRating": "B+",
+      "specialCategories": [],
+      "selectionRationale": "DB第2頻帯（AとB+の中間・実務良作の境界）",
+      "humanRating": null,
+      "humanNotes": ""
+    },
+    {
+      "id": "_ajTr-yoQFo",
+      "platform": "youtube",
+      "title": "生前転生 - 可不",
+      "videoUrl": "https://www.youtube.com/watch?v=_ajTr-yoQFo",
+      "tierGroup": "A-",
+      "currentAiOverallRating": "A-",
+      "currentAiOverallScore": 79,
+      "currentAiDirectionRating": "A",
+      "currentAiTechniqueRating": "B+",
+      "specialCategories": [],
+      "selectionRationale": "DB第2頻帯（AとB+の中間・実務良作の境界）",
+      "humanRating": null,
+      "humanNotes": ""
+    },
+    {
+      "id": "-nr56fLZ11o",
+      "platform": "youtube",
+      "title": "【企業CM】Kezuru実験「グラインディング」編",
+      "videoUrl": "https://www.youtube.com/watch?v=-nr56fLZ11o",
+      "tierGroup": "B+",
+      "currentAiOverallRating": "B+",
+      "currentAiOverallScore": 75,
+      "currentAiDirectionRating": "A-",
+      "currentAiTechniqueRating": "B+",
+      "specialCategories": [
+        "企業/採用"
+      ],
+      "selectionRationale": "DB第3頻帯（標準以上〜良作の下限を確認）",
+      "humanRating": null,
+      "humanNotes": ""
+    },
+    {
+      "id": "__sbOxfr6Nc",
+      "platform": "youtube",
+      "title": "『ブランデッド』予告編",
+      "videoUrl": "https://www.youtube.com/watch?v=__sbOxfr6Nc",
+      "tierGroup": "B+",
+      "currentAiOverallRating": "B+",
+      "currentAiOverallScore": 75,
+      "currentAiDirectionRating": "A-",
+      "currentAiTechniqueRating": "B+",
+      "specialCategories": [],
+      "selectionRationale": "DB第3頻帯（標準以上〜良作の下限を確認）",
+      "humanRating": null,
+      "humanNotes": ""
+    },
+    {
+      "id": "_2lHuvAwhwk",
+      "platform": "youtube",
+      "title": "R BANDIT X MR RIGHT (BURUKLYN BOYZ) - RICH (Official Music Video)",
+      "videoUrl": "https://www.youtube.com/watch?v=_2lHuvAwhwk",
+      "tierGroup": "B+",
+      "currentAiOverallRating": "B+",
+      "currentAiOverallScore": 75,
+      "currentAiDirectionRating": "B+",
+      "currentAiTechniqueRating": "A-",
+      "specialCategories": [],
+      "selectionRationale": "DB第3頻帯（標準以上〜良作の下限を確認）",
+      "humanRating": null,
+      "humanNotes": ""
+    },
+    {
+      "id": "_7lQGv4ZmBo",
+      "platform": "youtube",
+      "title": "あの、安藤なつ – ブックオフ | 最新CM 2025",
+      "videoUrl": "https://www.youtube.com/watch?v=_7lQGv4ZmBo",
+      "tierGroup": "B+",
+      "currentAiOverallRating": "B+",
+      "currentAiOverallScore": 75,
+      "currentAiDirectionRating": "B+",
+      "currentAiTechniqueRating": "B",
+      "specialCategories": [],
+      "selectionRationale": "DB第3頻帯（標準以上〜良作の下限を確認）",
+      "humanRating": null,
+      "humanNotes": ""
+    },
+    {
+      "id": "_PO5O3QAaVM",
+      "platform": "youtube",
+      "title": "企業のエイプリルフール動画に変化　実写に見えるAI動画や半年かけた実写作品も（2026年04月02日）",
+      "videoUrl": "https://www.youtube.com/watch?v=_PO5O3QAaVM",
+      "tierGroup": "B / B-",
+      "currentAiOverallRating": "B-",
+      "currentAiOverallScore": 65,
+      "currentAiDirectionRating": "B-",
+      "currentAiTechniqueRating": "C+",
+      "specialCategories": [
+        "縦型/ショート",
+        "企業/採用"
+      ],
+      "selectionRationale": "平均〜やや課題あり帯（標準水準の底を確認）",
+      "humanRating": null,
+      "humanNotes": ""
+    },
+    {
+      "id": "_9cGKFO4mm8",
+      "platform": "youtube",
+      "title": "乃木坂46 山下美月、チョコラタイムで心も体もキレイに！？　“弟役”細田佳央太とユニークなやり取りも　『チョコラBB』新CM",
+      "videoUrl": "https://www.youtube.com/watch?v=_9cGKFO4mm8",
+      "tierGroup": "B / B-",
+      "currentAiOverallRating": "B",
+      "currentAiOverallScore": 70,
+      "currentAiDirectionRating": "B",
+      "currentAiTechniqueRating": "B+",
+      "specialCategories": [],
+      "selectionRationale": "平均〜やや課題あり帯（標準水準の底を確認）",
+      "humanRating": null,
+      "humanNotes": ""
+    },
+    {
+      "id": "_8S5nlXiBwo",
+      "platform": "youtube",
+      "title": "広告動画やPR動画を「Veo3」で簡単に作成する方法を徹底解説！",
+      "videoUrl": "https://www.youtube.com/watch?v=_8S5nlXiBwo",
+      "tierGroup": "B / B-",
+      "currentAiOverallRating": "B-",
+      "currentAiOverallScore": 65,
+      "currentAiDirectionRating": "B-",
+      "currentAiTechniqueRating": "C+",
+      "specialCategories": [
+        "縦型/ショート"
+      ],
+      "selectionRationale": "平均〜やや課題あり帯（標準水準の底を確認）",
+      "humanRating": null,
+      "humanNotes": ""
+    },
+    {
+      "id": "_Ppg6wQ5uXg",
+      "platform": "youtube",
+      "title": "ニンゲンたちが上から無限にくるくるくる#ゲーム #メタファー #アトラス #アニメ",
+      "videoUrl": "https://www.youtube.com/watch?v=_Ppg6wQ5uXg",
+      "tierGroup": "B / B-",
+      "currentAiOverallRating": "B-",
+      "currentAiOverallScore": 65,
+      "currentAiDirectionRating": "B",
+      "currentAiTechniqueRating": "B-",
+      "specialCategories": [
+        "縦型/ショート"
+      ],
+      "selectionRationale": "平均〜やや課題あり帯（標準水準の底を確認）",
+      "humanRating": null,
+      "humanNotes": ""
+    },
+    {
+      "id": "0oioI53EGU0",
+      "platform": "youtube",
+      "title": "Ascent Business Consulting株式会社の事業・サービスをご紹介します",
+      "videoUrl": "https://www.youtube.com/watch?v=0oioI53EGU0",
+      "tierGroup": "C以下 (C+/C/C-/D+)",
+      "currentAiOverallRating": "C+",
+      "currentAiOverallScore": 60,
+      "currentAiDirectionRating": "C+",
+      "currentAiTechniqueRating": "C+",
+      "specialCategories": [
+        "企業/採用"
+      ],
+      "selectionRationale": "下位アンカー（課題あり・改善対象の下限基準を明確化）",
+      "humanRating": null,
+      "humanNotes": ""
+    },
+    {
+      "id": "_q9xyoz4j0k",
+      "platform": "youtube",
+      "title": "Event Invitation Video | Event Intro Video | Exhibition Promotional Video",
+      "videoUrl": "https://www.youtube.com/watch?v=_q9xyoz4j0k",
+      "tierGroup": "C以下 (C+/C/C-/D+)",
+      "currentAiOverallRating": "C+",
+      "currentAiOverallScore": 60,
+      "currentAiDirectionRating": "C+",
+      "currentAiTechniqueRating": "C+",
+      "specialCategories": [],
+      "selectionRationale": "下位アンカー（課題あり・改善対象の下限基準を明確化）",
+      "humanRating": null,
+      "humanNotes": ""
+    },
+    {
+      "id": "-h0IqDYl9Zo",
+      "platform": "youtube",
+      "title": "私だけスルーするサイコ",
+      "videoUrl": "https://www.youtube.com/watch?v=-h0IqDYl9Zo",
+      "tierGroup": "C以下 (C+/C/C-/D+)",
+      "currentAiOverallRating": "C",
+      "currentAiOverallScore": 53,
+      "currentAiDirectionRating": "C-",
+      "currentAiTechniqueRating": "C-",
+      "specialCategories": [
+        "縦型/ショート"
+      ],
+      "selectionRationale": "下位アンカー（課題あり・改善対象の下限基準を明確化）",
+      "humanRating": null,
+      "humanNotes": ""
+    },
+    {
+      "id": "53i4Yuw2ld8",
+      "platform": "youtube",
+      "title": "Japanese band Mrs. Green Apple -- premiere of &#39;Spider-Man: Brand New Day&#39;",
+      "videoUrl": "https://www.youtube.com/watch?v=53i4Yuw2ld8",
+      "tierGroup": "C以下 (C+/C/C-/D+)",
+      "currentAiOverallRating": "C-",
+      "currentAiOverallScore": 47,
+      "currentAiDirectionRating": "D+",
+      "currentAiTechniqueRating": "D",
+      "specialCategories": [
+        "縦型/ショート"
+      ],
+      "selectionRationale": "下位アンカー（課題あり・改善対象の下限基準を明確化）",
+      "humanRating": null,
+      "humanNotes": ""
+    },
+    {
+      "id": "efxhgspLRIQ",
+      "platform": "youtube",
+      "title": "見るだけならタダと言い続けて早数年",
+      "videoUrl": "https://youtu.be/efxhgspLRIQ",
+      "tierGroup": "C以下 (C+/C/C-/D+)",
+      "currentAiOverallRating": "D+",
+      "currentAiOverallScore": 40,
+      "currentAiDirectionRating": "D+",
+      "currentAiTechniqueRating": "D",
+      "specialCategories": [
+        "縦型/ショート"
+      ],
+      "selectionRationale": "下位アンカー（課題あり・改善対象の下限基準を明確化）",
+      "humanRating": null,
+      "humanNotes": ""
+    }
+  ]
+}
