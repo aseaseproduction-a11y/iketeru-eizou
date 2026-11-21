@@ -18,7 +18,7 @@ let invalidatedOnDb = 0;
 let ch11RemovedCount = 0;
 let scoresNulledCount = 0;
 
-const ch11Regex = /(?:\r?\n)*## 11\.[\s\S]*$/;
+const ch11Regex = /(?:\r?\n)*## 11\. 実映像ビジュアル監査・実測補正[\s\S]*?(?=\r?\n## |\s*$)/;
 
 for (let i = 0; i < redoIds.length; i += 100) {
   const slice = redoIds.slice(i, i + 100);

@@ -11,7 +11,7 @@ ALIGN_UNAUDITED = "--align-unaudited" in sys.argv
 
 RATING_ORDER = ["S+", "S", "S-", "A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-"]
 rank_int = lambda g: (len(RATING_ORDER) - RATING_ORDER.index(g)) if g in RATING_ORDER else 0
-ch11_re = re.compile(r"(?:\r?\n)*## 11\.[\s\S]*$")
+ch11_re = re.compile(r"(?:\r?\n)*## 11\. 実映像ビジュアル監査・実測補正[\s\S]*?(?=\r?\n## |\Z)")
 
 prov_ids = {str(x["id"]) for x in json.loads((REPO / "analysis" / "provisional_unwatched_list.json").read_text(encoding="utf-8"))["items"]}
 log_rep = json.loads((REPO / "analysis" / "visual_log_verification.json").read_text(encoding="utf-8"))

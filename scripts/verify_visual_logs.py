@@ -12,6 +12,7 @@ img_ext_re = re.compile(r"\.(?:jpg|jpeg|png|webp)$", re.IGNORECASE)
 audit_dir_re = re.compile(r"_audit_tmp[\\/]+([^\\/]+)[\\/]+[^\\/]+\.(?:jpg|jpeg|png|webp)$", re.IGNORECASE)
 vid_prompt_re1 = re.compile(r"動画ID:\s*([A-Za-z0-9_-]+)")
 vid_prompt_re2 = re.compile(r"video_id[\":\s]+([A-Za-z0-9_-]+)")
+token_re = re.compile(r"AuditRunToken:\s*([a-f0-9]{12})")
 
 # Load full_audit_progress.jsonl — keep LATEST progress record per video_id
 recs: dict[str, dict] = {}
@@ -40,6 +41,7 @@ for p in BRAIN_ROOT.glob("*/.system_generated/logs/transcript.jsonl"):
     worker_txs += 1
     conv_id = str(p.parent.parent.parent.name)
     vid = None
+    audit_run_token = ""
     img_calls = 0
     img_loaded = 0
     run_ts = ""
@@ -51,11 +53,16 @@ for p in BRAIN_ROOT.glob("*/.system_generated/logs/transcript.jsonl"):
         ts = str(step.get("created_at") or "")
         if ts and ts > run_ts:
             run_ts = ts
-        if step.get("type") == "USER_INPUT" and not vid:
+        if step.get("type") == "USER_INPUT":
             content = str(step.get("content", ""))
-            m = vid_prompt_re1.search(content) or vid_prompt_re2.search(content)
-            if m:
-                vid = m.group(1)
+            if not vid:
+                m = vid_prompt_re1.search(content) or vid_prompt_re2.search(content)
+                if m:
+                    vid = m.group(1)
+            if not audit_run_token:
+                mt = token_re.search(content)
+                if mt:
+                    audit_run_token = mt.group(1)
         if step.get("media"):
             for med in step["media"]:
                 if str(med.get("mime_type", "")).startswith("image/"):
@@ -83,6 +90,7 @@ for p in BRAIN_ROOT.glob("*/.system_generated/logs/transcript.jsonl"):
         "run_ts": run_ts,
         "transcript": conv_id,
         "vid": vid,
+        "audit_run_token": audit_run_token,
         "img_calls": img_calls,
         "img_loaded": img_loaded,
     }
@@ -92,7 +100,7 @@ for p in BRAIN_ROOT.glob("*/.system_generated/logs/transcript.jsonl"):
         if prev is None or run_obj["sort_key"] > prev["sort_key"]:
             latest_run_by_vid[vid] = run_obj
 
-# Pair each latest progress record STRICTLY by worker_conversation_id / audit_started_at when present (NO fallback to older logs!)
+# Pair each latest progress record STRICTLY by worker_conversation_id + video_id match (+ audit_run_token if present)
 matched = []
 no_tx_on_disk = []
 true_with_img = []
@@ -102,18 +110,23 @@ false_no_img = []
 
 for v, rec in recs.items():
     req_conv = str(rec.get("worker_conversation_id") or "").strip()
+    req_token = str(rec.get("audit_run_token") or "").strip()
     req_started = str(rec.get("audit_started_at") or "").strip()
     run = None
     if req_conv:
-        # Strict conversation_id match: if missing on disk, DO NOT substitute older logs -> unverifiable
-        run = run_by_conv_id.get(req_conv)
+        cand = run_by_conv_id.get(req_conv)
+        # Verify BOTH video_id match and (if recorded) audit_run_token match!
+        if cand and cand.get("vid") == v and (not req_token or cand.get("audit_run_token") == req_token):
+            run = cand
     elif req_started:
         cand = latest_run_by_vid.get(v)
-        if cand and cand["run_ts"] >= req_started:
+        if cand and cand.get("vid") == v and cand["run_ts"] >= req_started:
             run = cand
     else:
         # Legacy record without worker_conversation_id/audit_started_at
-        run = latest_run_by_vid.get(v)
+        cand = latest_run_by_vid.get(v)
+        if cand and cand.get("vid") == v:
+            run = cand
 
     if run is None:
         no_tx_on_disk.append(v)

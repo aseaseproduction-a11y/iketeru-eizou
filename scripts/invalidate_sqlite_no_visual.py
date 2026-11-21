@@ -13,7 +13,7 @@ bd = json.dumps({
     "status": "invalidated_no_visual_redo_required",
     "note": "静止画未確認（0枚）のためスコアおよび第11章を無効化しました。再実施が必要です。",
 }, ensure_ascii=False)
-ch11_re = re.compile(r"(?:\r?\n)*## 11\.[\s\S]*$")
+ch11_re = re.compile(r"(?:\r?\n)*## 11\. 実映像ビジュアル監査・実測補正[\s\S]*?(?=\r?\n## |\Z)")
 updated = 0
 for vid in ids:
     row = con.execute("SELECT ai_analysis FROM videos WHERE id = ?", (vid,)).fetchone()

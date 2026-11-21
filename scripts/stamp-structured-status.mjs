@@ -28,7 +28,7 @@ const [allRows] = await conn.query(
   "SELECT id, aiOverallRating, aiDirectionRating, aiTechniqueRating, aiAnalysis, aiScoreBreakdown FROM videos"
 );
 
-const ch11Regex = /(?:\r?\n)*## 11\.[\s\S]*$/;
+const ch11Regex = /(?:\r?\n)*## 11\. 実映像ビジュアル監査・実測補正[\s\S]*?(?=\r?\n## |\s*$)/;
 let updated = 0;
 let preservedReanalyzed = 0;
 

@@ -11,6 +11,7 @@ For each batch of videos:
 """
 import concurrent.futures
 from datetime import datetime, timezone
+import hashlib
 import json
 import os
 import pathlib
@@ -20,6 +21,7 @@ import sqlite3
 import subprocess
 import sys
 import time
+import uuid
 
 sys.path.insert(0, r"E:\iketeru-creative-studio")
 sys.path.insert(0, r"E:\iketeru-eizou\scripts")
@@ -174,32 +176,53 @@ def load_done_ids() -> set[str]:
     return done
 
 
+AUDIT_CH11_RE = re.compile(r"(?:\r?\n)*## 11\. 実映像ビジュアル監査・実測補正[\s\S]*?(?=\r?\n## |\Z)")
+
+
+def strip_audit_ch11(text: str) -> str:
+    return AUDIT_CH11_RE.sub("", str(text or "")).strip()
+
+
+def sha256_text(text: str) -> str:
+    return hashlib.sha256(str(text or "").encode("utf-8")).hexdigest()
+
+
+def _build_node_env() -> dict:
+    env = dict(os.environ)
+    env["PATH"] = r"C:\Program Files\nodejs;" + env.get("PATH", "")
+    env_file = REPO_ROOT / ".env"
+    if env_file.exists():
+        for line in env_file.read_text(encoding="utf-8-sig").splitlines():
+            if line.strip().startswith("DATABASE_URL="):
+                env["DATABASE_URL"] = line.strip().split("=", 1)[1].strip()
+    return env
+
+
 wave_size = int(args.get("wave_size", 12))
 chunk_size = int(args.get("chunk_size", 6))
 ratings_filter = args.get("ratings")  # optional list like ["S+", "S"]
+single_video_id = str(args.get("video_id") or "").strip()
 
-phase("1. Select next un-audited videos")
+phase("1. Select next un-audited videos directly from TiDB Cloud (single source of truth)")
 done_ids = load_done_ids()
-conn = sqlite3.connect(str(SQLITE_DB), timeout=30.0)
-conn.row_factory = sqlite3.Row
-if ratings_filter:
-    ph = ",".join("?" for _ in ratings_filter)
-    sql = f"""
-    SELECT id, platform, title, video_url, overall_rating, direction_rating, technique_rating, ai_analysis
-    FROM videos
-    WHERE overall_rating IN ({ph})
-    ORDER BY overall_score DESC, direction_score DESC, technique_score DESC, id ASC
-    """
-    all_rows = conn.execute(sql, list(ratings_filter)).fetchall()
-else:
-    all_rows = conn.execute(
-        """
-        SELECT id, platform, title, video_url, overall_rating, direction_rating, technique_rating, ai_analysis
-        FROM videos
-        ORDER BY overall_score DESC, direction_score DESC, technique_score DESC, id ASC
-        """
-    ).fetchall()
-conn.close()
+fetch_cmd = ["node", "scripts/fetch-audit-targets-tidb.mjs"]
+if single_video_id:
+    fetch_cmd.append(f"--video-id={single_video_id}")
+elif ratings_filter:
+    fetch_cmd.append("--ratings=" + ",".join(ratings_filter))
+fetch_proc = subprocess.run(
+    fetch_cmd,
+    cwd=str(REPO_ROOT),
+    env=_build_node_env(),
+    capture_output=True,
+    text=True,
+    encoding="utf-8",
+    errors="replace",
+    timeout=120.0,
+)
+if fetch_proc.returncode != 0:
+    raise RuntimeError(f"TiDB target fetch failed: {fetch_proc.stderr}")
+all_rows = json.loads(fetch_proc.stdout)
 
 local_cache_only = bool(args.get("local_cache_only", False))
 cached_ids = set()
@@ -208,11 +231,17 @@ if local_cache_only:
     if cdir.exists():
         cached_ids = {p.stem for p in cdir.iterdir() if p.is_file() and p.suffix.lower() in (".mp4", ".mov", ".mkv", ".webm", ".m4v")}
 
-targets = [
-    dict(r) for r in all_rows
-    if str(r["id"]) not in done_ids and (not local_cache_only or str(r["id"]) in cached_ids)
-][:wave_size]
-log(f"Already visually audited: {len(done_ids)} | Selected this wave: {len(targets)}")
+if single_video_id:
+    targets = [dict(r) for r in all_rows][:1]
+else:
+    targets = [
+        dict(r) for r in all_rows
+        if str(r["id"]) not in done_ids and (not local_cache_only or str(r["id"]) in cached_ids)
+    ][:wave_size]
+
+for t in targets:
+    t["base_analysis_sha256"] = sha256_text(strip_audit_ch11(t.get("ai_analysis") or ""))
+log(f"Loaded from TiDB Cloud | Already visually audited: {len(done_ids)} | Selected this wave: {len(targets)}")
 
 if not targets:
     log("No remaining targets for this filter!")
@@ -278,10 +307,12 @@ else:
                 "まず以下の静止画コンタクトシート画像を必ず `read_file` で確認してください:\n"
                 + "\n".join(f"- {s}" for s in sheets)
             )
+            audit_run_token = uuid.uuid4().hex[:12]
             prompt = f"""あなたは映像ディレクター兼品質監査官です。
 対象動画の静止画コンタクトシート・実測データ・既存AI分析を突き合わせ、**現行ランクに縛られず客観的プロ基準（Cannes Lions Film Craft / D&AD Pencil / ACC基準）で独立採点**し、最後に必ず `finish` ツールでJSON結果を返してください。
 
 【対象動画】
+- AuditRunToken: {audit_run_token}
 - video_id: {vid}
 - タイトル: {item['title']}
 - URL: {item['video_url']}
@@ -316,18 +347,18 @@ else:
                         if not worker_conv_id:
                             try:
                                 brain_root = pathlib.Path(r"C:\Users\t1257\.gemini\antigravity\brain")
-                                best_mtime = 0.0
                                 start_epoch = datetime.fromisoformat(audit_started_at).timestamp() - 5.0
+                                token_marker = f"AuditRunToken: {audit_run_token}"
                                 for p_tx in brain_root.glob("*/.system_generated/logs/transcript.jsonl"):
-                                    mt = p_tx.stat().st_mtime
-                                    if mt < start_epoch or mt <= best_mtime:
+                                    if p_tx.stat().st_mtime < start_epoch:
                                         continue
-                                    head = p_tx.read_text(encoding="utf-8", errors="ignore")[:2500]
-                                    if vid in head and "audit_findings" in head:
-                                        best_mtime = mt
+                                    head = p_tx.read_text(encoding="utf-8", errors="ignore")[:4000]
+                                    if token_marker in head:
                                         worker_conv_id = p_tx.parent.parent.parent.name
+                                        break
                             except Exception:
                                 pass
+                        out["_audit_run_token"] = audit_run_token
                         out["_audit_started_at"] = audit_started_at
                         out["_worker_conversation_id"] = worker_conv_id
                     return out
@@ -368,8 +399,10 @@ else:
                 change_reason = f"ルーブリック合計変更（{item['overall_rating']} -> {new_o_grade}: {res['rationale'][:120]}）"
             is_needs_full = (res.get("analysis_verdict") == "needs_full_analysis")
             is_provisional = (not bool(res.get("visual_checked"))) or is_needs_full
+            audit_run_token = str(res.get("_audit_run_token") or "")
             audit_started_at = str(res.get("_audit_started_at") or "")
             worker_conv_id = str(res.get("_worker_conversation_id") or "")
+            base_hash = str(item.get("base_analysis_sha256") or "")
             breakdown = {
                 "source": "rubric_unclamped",
                 "version": "2.0",
@@ -378,8 +411,10 @@ else:
                 "isProvisional": is_provisional,
                 "visualVerificationStatus": "unverified_pending" if res.get("visual_checked") else "invalidated_no_visual",
                 "visualChecked": bool(res.get("visual_checked")),
+                "auditRunToken": audit_run_token,
                 "auditStartedAt": audit_started_at,
                 "workerConversationId": worker_conv_id,
+                "baseAnalysisSha256": base_hash,
                 "inspectionMethod": "contact_sheet_static_frames",
                 "analysisVerdict": res.get("analysis_verdict"),
                 "auditFindings": res.get("audit_findings", ""),
@@ -407,8 +442,10 @@ else:
             prog_obj = {
                 "video_id": vid,
                 "title": item["title"],
+                "audit_run_token": audit_run_token,
                 "audit_started_at": audit_started_at,
                 "worker_conversation_id": worker_conv_id,
+                "base_analysis_sha256": base_hash,
                 "previous_ratings": f"{item['overall_rating']}/{item['direction_rating']}/{item['technique_rating']}",
                 "ratings": f"{new_o_grade}/{new_d_grade}/{new_t_grade}",
                 "scores100": f"{overall_score}/{dir_score}/{tech_score}",
@@ -457,20 +494,17 @@ else:
         conn_c.close()
         log(f"Checkpointed chunk {start + 1}..{start + len(chunk)} / {len(targets)} (total audited: {len(done_ids) + len(all_results)})")
 
-    phase("4. Sync wave to TiDB Cloud, patch aiAnalysis, and clean temp sheets")
+    phase("4. Sync wave to TiDB Cloud, verify worker logs, patch current-wave aiAnalysis, and clean temp sheets")
     batch_rubric_file = WORK_TMP / "_batch_rubric.jsonl"
-    # Collect just this wave's rubric records from RUBRIC_JSONL tail
+    batch_progress_file = WORK_TMP / "_batch_progress.jsonl"
     wave_ids = {str(t["id"]) for t in targets}
     wave_rub_lines = [l for l in RUBRIC_JSONL.read_text(encoding="utf-8").splitlines() if l.strip() and json.loads(l).get("id") in wave_ids]
+    wave_prog_lines = [l for l in PROGRESS_JSONL.read_text(encoding="utf-8").splitlines() if l.strip() and json.loads(l).get("video_id") in wave_ids]
     batch_rubric_file.write_text("\n".join(wave_rub_lines) + "\n", encoding="utf-8")
+    batch_progress_file.write_text("\n".join(wave_prog_lines) + "\n", encoding="utf-8")
 
     # Push to TiDB Cloud
-    env_file = REPO_ROOT / ".env"
-    env = dict(os.environ)
-    env["PATH"] = r"C:\Program Files\nodejs;" + env.get("PATH", "")
-    for line in env_file.read_text(encoding="utf-8-sig").splitlines():
-        if line.strip().startswith("DATABASE_URL="):
-            env["DATABASE_URL"] = line.strip().split("=", 1)[1].strip()
+    env = _build_node_env()
     def _run_node_retry(cmd_args, label, attempts=3):
         last_proc = None
         for att in range(1, attempts + 1):
@@ -508,8 +542,11 @@ else:
         if step_proc.returncode != 0:
             raise RuntimeError(f"Post-wave step failed [{label}] (exit {step_proc.returncode}): {step_proc.stderr}")
 
-    # 2) Only after log verification & invalidation, patch aiAnalysis and repair metadata
-    patch_proc = _run_node_retry(["node", "scripts/apply-audit-patches.mjs", "--apply"], "TiDB aiAnalysis patch")
+    # 2) Only after log verification & invalidation, patch CURRENT WAVE aiAnalysis (log_verified + hash-verified only)
+    patch_proc = _run_node_retry(
+        ["node", "scripts/apply-audit-patches.mjs", f"--from-jsonl={batch_progress_file}", "--apply"],
+        "TiDB current-wave aiAnalysis patch",
+    )
     if patch_proc.returncode != 0:
         raise RuntimeError(f"TiDB aiAnalysis patch failed: {patch_proc.stderr}")
     _run_node_retry(["node", "scripts/repair-metadata-from-analysis.mjs", "--apply"], "TiDB metadata repair")
