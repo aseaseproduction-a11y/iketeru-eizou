@@ -710,7 +710,7 @@ export default function VideoModal({
                 </div>
               ) : null}
 
-              {(video.curationNote?.purpose || video.curationNote?.background || video.curationNote?.evaluation || resolvedClientPitch || video.curationNote?.sourceUrls.length) ? (
+              {(video.curationNote?.purpose || video.curationNote?.background || video.curationNote?.evaluation || resolvedClientPitch || (video.curationNote?.sourceUrls?.length ?? 0) > 0) ? (
                 <div className="mb-5 rounded-lg border border-emerald-400/20 bg-emerald-400/[0.035] px-3.5 py-3">
                   <span className="mb-2.5 block text-xs font-semibold tracking-[0.12em] text-emerald-200">CURATION NOTE</span>
                   <div className="space-y-3 text-xs leading-relaxed">
@@ -733,9 +733,9 @@ export default function VideoModal({
                     {video.curationNote?.purpose ? <div><span className="block text-[10px] font-semibold text-emerald-300/75">制作目的</span><p className="mt-0.5 whitespace-pre-wrap text-foreground/80">{video.curationNote.purpose}</p></div> : null}
                     {video.curationNote?.background ? <div><span className="block text-[10px] font-semibold text-emerald-300/75">制作背景</span><p className="mt-0.5 whitespace-pre-wrap text-foreground/80">{video.curationNote.background}</p></div> : null}
                     {video.curationNote?.evaluation ? <div><span className="block text-[10px] font-semibold text-emerald-300/75">評価・受賞理由</span><p className="mt-0.5 whitespace-pre-wrap text-foreground/80">{video.curationNote.evaluation}</p></div> : null}
-                    {video.curationNote?.sourceUrls.length ? (
+                    {(video.curationNote?.sourceUrls?.length ?? 0) > 0 ? (
                       <div className="flex flex-wrap gap-2 pt-1">
-                        {video.curationNote.sourceUrls.map((url, index) => (
+                        {(video.curationNote?.sourceUrls ?? []).map((url, index) => (
                           <a key={url} href={url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 rounded bg-emerald-400/10 px-2 py-1 text-[10px] text-emerald-200 transition-colors hover:bg-emerald-400/20">
                             公式出典 {index + 1}<ExternalLink className="h-3 w-3" />
                           </a>
