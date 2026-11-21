@@ -1,6 +1,6 @@
 {
   "matching_policy": "latest_transcript_paired_with_latest_progress_record_per_video",
-  "worker_transcripts_found": 609,
+  "worker_transcripts_found": 610,
   "progress_jsonl_unique_videos": 1786,
   "matched_in_worker_transcripts": 608,
   "self_true_and_log_verified_img_gt_0": 519,

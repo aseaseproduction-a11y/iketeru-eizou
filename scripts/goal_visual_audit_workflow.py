@@ -327,7 +327,7 @@ else:
 【採点ガイドライン（厳守）】
 - **ランク据え置き禁止（独立採点）**: 既存DBランクに引っ張られず、演出5観点（各0〜20点）・技術5観点（各0〜20点）を客観基準で採点すること。
 - **ランク変更時の理由必須**: 算出された新ランクが既存DBランクと異なる場合は、`grade_change_reason` に「どの観点で既存評価が過大/過小だったか」を具体的に必ず記載すること（同一ランクの場合は空文字可）。
-- **限界の明示**: 静止画コンタクトシートで確認できない動きの滑らかさ・音響ミックス等は推測で断定せず、確認できた範囲と未確認の限界を正直に記載すること。
+- **確認不能な観点で減点しない（重要）**: 静止画コンタクトシートでは確認できない観点（音響ミックス `soundAndMix` や 30fps/60fps モーションの滑らかさ等）を「確認できないから慎重に低めにする」という理由で減点してはならない。確認できない観点は既存のランク水準（または既存点数）を維持するか、確認できた観点の水準を基準に換算し、未確認である事実のみ `audit_findings` に記載すること。
 - 既存分析に事実誤認・尺ズレ・色彩/構図の誤描写・未分析がある場合は `analysis_verdict` を `minor_fix` / `major_fix` / `needs_full_analysis` にし、`audit_findings` へ具体的に記載すること。
 - **最重要**: 分析と採点が完了したらテキスト応答だけで終了せず、必ず `finish` ツールを呼び出してJSONオブジェクトを返却すること。
 
@@ -484,14 +484,8 @@ else:
         if c_corr:
             with CORRECTIONS_JSONL.open("a", encoding="utf-8") as f:
                 f.write("\n".join(c_corr) + "\n")
-        conn_c = sqlite3.connect(str(SQLITE_DB), timeout=30.0)
-        conn_c.execute("PRAGMA busy_timeout=30000")
-        conn_c.executemany(
-            "UPDATE videos SET overall_rating=?, direction_rating=?, technique_rating=?, overall_score=?, direction_score=?, technique_score=?, overall_score_100=?, direction_score_100=?, technique_score_100=?, score_breakdown_json=? WHERE id=?",
-            c_sql,
-        )
-        conn_c.commit()
-        conn_c.close()
+        # Note: Do NOT write to SQLite here before TiDB commit & log verification;
+        # SQLite is updated strictly as a one-way mirror at the end of Phase 4.
         log(f"Checkpointed chunk {start + 1}..{start + len(chunk)} / {len(targets)} (total audited: {len(done_ids) + len(all_results)})")
 
     phase("4. Sync wave to TiDB Cloud, verify worker logs, patch current-wave aiAnalysis, and clean temp sheets")
@@ -536,7 +530,6 @@ else:
     for cmd_args, label in (
         ([sys.executable, "scripts/verify_visual_logs.py"], "Worker transcript log verification"),
         (["node", "scripts/stamp-structured-status.mjs"], "TiDB structured status & invalidation"),
-        ([sys.executable, "scripts/stamp_sqlite_status.py"], "SQLite structured status & invalidation"),
     ):
         step_proc = _run_node_retry(cmd_args, label)
         if step_proc.returncode != 0:
@@ -550,6 +543,14 @@ else:
     if patch_proc.returncode != 0:
         raise RuntimeError(f"TiDB aiAnalysis patch failed: {patch_proc.stderr}")
     _run_node_retry(["node", "scripts/repair-metadata-from-analysis.mjs", "--apply"], "TiDB metadata repair")
+
+    # 3) One-way mirror: copy the finalized TiDB rows (ratings, scores, breakdown, AND aiAnalysis with ## 11.) into SQLite
+    mirror_proc = _run_node_retry(
+        [sys.executable, "scripts/mirror_wave_tidb_to_sqlite.py", "--ids=" + ",".join(sorted(wave_ids))],
+        "TiDB -> SQLite one-way wave mirror",
+    )
+    if mirror_proc.returncode != 0:
+        raise RuntimeError(f"TiDB -> SQLite mirror failed: {mirror_proc.stderr}")
 
     shutil.rmtree(WORK_TMP, ignore_errors=True)
 

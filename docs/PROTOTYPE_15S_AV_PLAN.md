@@ -10,10 +10,9 @@
 1. **既存同期基盤の流用・時刻データ一本化**:
    - `E:\sc-av-studio\blender\sync_scene_template.py` と `public/audio/events.json`（60fps）を土台にし、新しい `master_timeline.json` は作らない。
    - **セクション区切り時刻を計画書に直書きしない**: 音楽側（`sc-av-studio`）が `events.json` 内に `sections[]`（`intro` / `build` / `drop` / `outro` の `startFrame`・`endFrame`）を書き出し、Blender スクリプトはそれを動的に読み込む。
-2. **参考作品のステータスを事実通りに明記し、試作前の再監査を前提化（#6）**:
-   - 参考作品は **`Light Assembly`**（YouTube ID: `tvs9OLtw8Ao` / 総合 `S-`・演出 `A+`・技術 `S`）とする。
-   - 現在のステータスは **`analysisStatus: full_analysis`（非暫定）** だが、**`visualVerificationStatus: unverifiable_no_log`（過去ログ非残存のため確認不能）** である。
-   - したがって、**Step 0 として試作着手前に `tvs9OLtw8Ao` の静止画コンタクトシート再監査＋`verify_visual_logs.py` による `log_verified` 昇格を完了させる**ことを必須前提とする。
+2. **参考作品のステータスを事実通りに明記（Step 0 再監査完了・`log_verified` 昇格済み）**:
+   - 参考作品は **`Light Assembly`**（YouTube ID: `tvs9OLtw8Ao` / 総合 `S`・演出 `S-`・技術 `S-`［`93/92/92`］）とする。
+   - 現在のステータスは **`analysisStatus: full_analysis`（非暫定）** かつ **`visualVerificationStatus: log_verified`**（ワーカー会話ID `52963b4d-b321-4afe-ad26-26d19638485c` で静止画コンタクトシート32コマ確認・ログ照合完了済み）である。
 3. **実測値（`observed`）と推測値（`inferred`）の厳密な分離（#7）**:
    - パラメータ対応表の各行に元データの根拠（実測 `observed` / 推測 `inferred`）を明記する。
    - 推測値である **Cut #4 のイージング（`0/95->0/8`, `verified: false`）** および **全カットの `transition_bridge`（`source: inferred`）** はスクリプトへ自動焼き込みせず、**試作時にユーザーが Blender 上で手動調整する項目**として扱う。
@@ -62,8 +61,8 @@ flowchart LR
 
 ## 3. 参考作品とクラフトレシピ→Blenderパラメータ対応表（実測／推測を明記）
 
-- **参考作品**: **`Light Assembly`**（ID: `tvs9OLtw8Ao` / `https://www.youtube.com/watch?v=tvs9OLtw8Ao` / 総合 `S-`・演出 `A+`・技術 `S`）
-- **現在の検証状態**: `analysisStatus: full_analysis`（非暫定）／ **`visualVerificationStatus: unverifiable_no_log`**（→ **Step 0 で静止画再監査＋ログ照合により `log_verified` にしてから試作に着手する**）
+- **参考作品**: **`Light Assembly`**（ID: `tvs9OLtw8Ao` / `https://www.youtube.com/watch?v=tvs9OLtw8Ao` / 総合 `S`・演出 `S-`・技術 `S-`［`93/92/92`］）
+- **現在の検証状態**: `analysisStatus: full_analysis`（非暫定）／ **`visualVerificationStatus: log_verified`**（ワーカー会話ID `52963b4d-b321-4afe-ad26-26d19638485c` でログ照合済み）
 
 ### A. 自動スクリプトへ反映する項目（元データの根拠を明記）
 
@@ -121,7 +120,7 @@ flowchart LR
 ## 7. 成功の判定基準（チェックリスト）
 
 ### A. 事前条件・技術・編集性チェック
-- [ ] **Step 0 完了**: 参考作品 `tvs9OLtw8Ao` が `verify_visual_logs.py` で `log_verified` に昇格済みである
+- [x] **Step 0 完了**: 参考作品 `tvs9OLtw8Ao` が `verify_visual_logs.py` で `log_verified` に昇格済みである（`52963b4d-b321-4afe-ad26-26d19638485c`）
 - [ ] **Blender起動**: 生成された `prototype_15s.blend` をユーザーの Blender でエラーなく開ける
 - [ ] **テキスト変更**: `02_Typography` の Font Object（タイトル／`+0.5` UI）の文字を書き換えられる
 - [ ] **色変更**: `Mat_CAD_Blue` / `Mat_Diffraction_Orange` / World 背景色を Blender 上で変更できる

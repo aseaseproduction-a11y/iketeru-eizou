@@ -90,7 +90,9 @@ const db = await mysql.createConnection({
 
 let patched = 0;
 let skippedNotLogVerified = 0;
+let skippedMissingHash = 0;
 let skippedHashMismatch = 0;
+const missingHashIds = [];
 const hashMismatchIds = [];
 
 try {
@@ -107,15 +109,19 @@ try {
       continue;
     }
 
+    if (!r.base_analysis_sha256) {
+      skippedMissingHash++;
+      missingHashIds.push(vid);
+      continue;
+    }
+
     const currentFull = String(row.aiAnalysis || "");
     const baseWithoutAudit = stripAuditCh11(currentFull);
-    if (r.base_analysis_sha256) {
-      const currentHash = sha256Hex(baseWithoutAudit);
-      if (currentHash !== r.base_analysis_sha256) {
-        skippedHashMismatch++;
-        hashMismatchIds.push(vid);
-        continue;
-      }
+    const currentHash = sha256Hex(baseWithoutAudit);
+    if (currentHash !== r.base_analysis_sha256) {
+      skippedHashMismatch++;
+      hashMismatchIds.push(vid);
+      continue;
     }
 
     const section = buildAuditSection(r);
@@ -143,6 +149,8 @@ console.log(JSON.stringify({
   waveEligible: ids.length,
   patched,
   skippedNotLogVerified,
+  skippedMissingHash,
   skippedHashMismatch,
+  missingHashIds,
   hashMismatchIds,
 }));
