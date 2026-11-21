@@ -1,7 +1,7 @@
 import { COOKIE_NAME } from "@shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
-import { publicProcedure, router } from "./_core/trpc";
+import { publicProcedure, router, writeProtectedProcedure } from "./_core/trpc";
 import {
   createFavoriteProfile,
   createVideo,
@@ -290,7 +290,7 @@ export const appRouter = router({
       }))
       .mutation(async ({ input }) => fetchExternalMediaMetadata(input)),
 
-    create: publicProcedure
+    create: writeProtectedProcedure
       .input(videoWriteSchema.extend({ id: z.string().trim().min(1).max(64) }))
       .mutation(async ({ input }) => {
         const { id, ...values } = input;
@@ -307,7 +307,7 @@ export const appRouter = router({
         return enriched ?? created;
       }),
 
-    update: publicProcedure
+    update: writeProtectedProcedure
       .input(videoWriteSchema.extend({ id: z.string().trim().min(1).max(64) }))
       .mutation(async ({ input }) => {
         const { id, ...values } = input;
@@ -321,7 +321,7 @@ export const appRouter = router({
       .input(z.object({ id: z.string().trim().min(1).max(64), status: z.enum(["available", "restricted"]) }))
       .mutation(async ({ input }) => updateEmbedStatus(input.id, input.status)),
 
-    delete: publicProcedure
+    delete: writeProtectedProcedure
       .input(z.object({ id: z.string().trim().min(1).max(64) }))
       .mutation(async ({ input }) => {
         await deleteVideo(input.id);
