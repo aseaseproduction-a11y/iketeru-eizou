@@ -173,7 +173,7 @@ export async function getAllVideoListItems() {
       createdAt: videos.createdAt,
       updatedAt: videos.updatedAt,
       isProvisional: sql<number>`CASE WHEN ${videos.aiScoreBreakdown} LIKE '%"analysisStatus":"provisional"%' OR ${videos.aiScoreBreakdown} LIKE '%"isProvisional":true%' THEN 1 ELSE 0 END`,
-      visualVerificationStatus: sql<string>`CASE WHEN ${videos.aiScoreBreakdown} LIKE '%"visualVerificationStatus":"log_verified"%' THEN 'log_verified' WHEN ${videos.aiScoreBreakdown} LIKE '%"visualVerificationStatus":"unverifiable_no_log"%' THEN 'unverifiable_no_log' WHEN ${videos.aiScoreBreakdown} LIKE '%"visualVerificationStatus":"invalidated_no_visual"%' THEN 'invalidated_no_visual' ELSE 'not_audited' END`,
+      visualVerificationStatus: sql<string>`CASE WHEN ${videos.aiScoreBreakdown} LIKE '%"visualVerificationStatus":"log_verified"%' THEN 'log_verified' WHEN ${videos.aiScoreBreakdown} LIKE '%"visualVerificationStatus":"unverifiable_no_log"%' THEN 'unverifiable_no_log' WHEN ${videos.aiScoreBreakdown} LIKE '%"visualVerificationStatus":"unverified_pending"%' THEN 'unverified_pending' WHEN ${videos.aiScoreBreakdown} LIKE '%"visualVerificationStatus":"invalidated_no_visual"%' THEN 'invalidated_no_visual' ELSE 'not_audited' END`,
     })
     .from(videos)
     .orderBy(desc(videos.createdAt));
@@ -188,7 +188,7 @@ export async function getAllVideoListItems() {
     return {
       ...video,
       isProvisional: Boolean(isProvisional),
-      visualVerificationStatus: (visualVerificationStatus || "not_audited") as "log_verified" | "unverifiable_no_log" | "invalidated_no_visual" | "not_audited",
+      visualVerificationStatus: (visualVerificationStatus || "not_audited") as "log_verified" | "unverifiable_no_log" | "unverified_pending" | "invalidated_no_visual" | "not_audited",
       aiAnalysis: "",
       aiScoreBreakdown: undefined,
       metadataClassificationAudit: undefined,
@@ -466,10 +466,10 @@ function isProvisionalFromBreakdown(aiScoreBreakdown: string | null | undefined)
 
 function getVisualVerificationStatus(
   aiScoreBreakdown: string | null | undefined
-): "log_verified" | "unverifiable_no_log" | "invalidated_no_visual" | "not_audited" {
+): "log_verified" | "unverifiable_no_log" | "unverified_pending" | "invalidated_no_visual" | "not_audited" {
   const bd = safeParseJson<Record<string, unknown> | null>(aiScoreBreakdown, null);
   const v = bd?.visualVerificationStatus;
-  if (v === "log_verified" || v === "unverifiable_no_log" || v === "invalidated_no_visual") {
+  if (v === "log_verified" || v === "unverifiable_no_log" || v === "unverified_pending" || v === "invalidated_no_visual") {
     return v;
   }
   return "not_audited";

@@ -685,6 +685,11 @@ export default function VideoModal({
                           静止画確認済み（ログ照合済）
                         </div>
                       )}
+                      {video.visualVerificationStatus === "unverified_pending" && (
+                        <div className="mb-2 inline-flex items-center gap-1.5 rounded border border-sky-500/40 bg-sky-500/10 px-2 py-0.5 text-[11px] text-sky-300">
+                          静止画確認：ログ照合待ち（unverified_pending）
+                        </div>
+                      )}
                       {video.visualVerificationStatus === "unverifiable_no_log" && (
                         <div className="mb-2 inline-flex items-center gap-1.5 rounded border border-zinc-500/40 bg-zinc-500/15 px-2 py-0.5 text-[11px] text-zinc-300">
                           静止画確認：確認不能（過去ログなし・要再確認）

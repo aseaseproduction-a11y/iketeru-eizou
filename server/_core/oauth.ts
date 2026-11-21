@@ -2,7 +2,9 @@ import { COOKIE_NAME, ONE_YEAR_MS } from "@shared/const";
 import type { Express, Request, Response } from "express";
 import * as db from "../db";
 import { getSessionCookieOptions } from "./cookies";
+import { ENV } from "./env";
 import { sdk } from "./sdk";
+import { ALLOWED_EDITOR_EMAIL_DOMAIN } from "./trpc";
 
 function getQueryParam(req: Request, key: string): string | undefined {
   const value = req.query[key];
@@ -25,6 +27,17 @@ export function registerOAuthRoutes(app: Express) {
 
       if (!userInfo.openId) {
         res.status(400).json({ error: "openId missing from user info" });
+        return;
+      }
+
+      const email = (userInfo.email ?? "").trim().toLowerCase();
+      const isOwner = Boolean(ENV.ownerOpenId && userInfo.openId === ENV.ownerOpenId);
+      const isAllowedDomain =
+        email.length > ALLOWED_EDITOR_EMAIL_DOMAIN.length && email.endsWith(ALLOWED_EDITOR_EMAIL_DOMAIN);
+      if (!isOwner && !isAllowedDomain) {
+        res.status(403).json({
+          error: "ACCESS_DENIED: 管理者または @atsu-maru.co.jp アカウントのみログインできます。",
+        });
         return;
       }
 

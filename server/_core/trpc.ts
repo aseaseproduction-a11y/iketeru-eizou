@@ -11,7 +11,15 @@ const t = initTRPC.context<TrpcContext>().create({
 export const router = t.router;
 export const publicProcedure = t.procedure;
 
-export const ADMIN_WRITE_ERR_MSG = "ADMIN_KEY_REQUIRED: 管理者APIキーが必要です";
+export const ADMIN_WRITE_ERR_MSG = "ADMIN_KEY_REQUIRED: 管理者または @atsu-maru.co.jp アカウントでのログインが必要です";
+export const ALLOWED_EDITOR_EMAIL_DOMAIN = "@atsu-maru.co.jp";
+
+export function isAllowedEditorUser(user: TrpcContext["user"] | null | undefined): boolean {
+  if (!user) return false;
+  if (user.role === "admin") return true;
+  const email = (user.email ?? "").trim().toLowerCase();
+  return email.length > ALLOWED_EDITOR_EMAIL_DOMAIN.length && email.endsWith(ALLOWED_EDITOR_EMAIL_DOMAIN);
+}
 
 function extractAdminToken(req: TrpcContext["req"]): string {
   const headerKey = req.headers["x-admin-api-key"];
@@ -37,8 +45,8 @@ export const writeProtectedProcedure = t.procedure.use(
   t.middleware(async opts => {
     const { ctx, next } = opts;
 
-    // 1. Signed-in admin session is always allowed
-    if (ctx.user?.role === "admin") {
+    // 1. Signed-in admin or @atsu-maru.co.jp member session is allowed
+    if (isAllowedEditorUser(ctx.user)) {
       return next();
     }
 

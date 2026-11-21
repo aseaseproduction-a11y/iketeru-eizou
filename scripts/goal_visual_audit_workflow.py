@@ -344,13 +344,15 @@ else:
             change_reason = (res.get("grade_change_reason") or "").strip()
             if grade_changed and not change_reason:
                 change_reason = f"ルーブリック合計変更（{item['overall_rating']} -> {new_o_grade}: {res['rationale'][:120]}）"
+            is_needs_full = (res.get("analysis_verdict") == "needs_full_analysis")
+            is_provisional = (not bool(res.get("visual_checked"))) or is_needs_full
             breakdown = {
                 "source": "rubric_unclamped",
                 "version": "2.0",
                 "model": "antigravity-contact-sheet-audit",
-                "analysisStatus": "verified" if res.get("visual_checked") else "provisional",
-                "isProvisional": not bool(res.get("visual_checked")),
-                "visualVerificationStatus": "log_verified" if res.get("visual_checked") else "invalidated_no_visual",
+                "analysisStatus": "provisional" if is_provisional else "full_analysis",
+                "isProvisional": is_provisional,
+                "visualVerificationStatus": "unverified_pending" if res.get("visual_checked") else "invalidated_no_visual",
                 "visualChecked": bool(res.get("visual_checked")),
                 "inspectionMethod": "contact_sheet_static_frames",
                 "analysisVerdict": res.get("analysis_verdict"),

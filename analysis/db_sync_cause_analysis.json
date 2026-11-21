@@ -1,0 +1,317 @@
+{
+  "rating_mismatch_total": 759,
+  "categories": {
+    "D_tidb_higher_provisional_vimeo_or_yt": 355,
+    "A_tidb_empty_sqlite_has_rating_provisional": 249,
+    "C_tidb_has_rating_sqlite_empty": 66,
+    "J_overall_same_only_direction_or_technique_diff": 42,
+    "G_sqlite_higher_provisional": 32,
+    "E_tidb_higher_audited_wave_not_synced_to_sqlite": 13,
+    "H_sqlite_higher_audited": 2
+  },
+  "category_top_sources": {
+    "D_tidb_higher_provisional_vimeo_or_yt": {
+      "platform=vimeo|source=eizo100|bdSource=rubric": 110,
+      "platform=vimeo|source=reclike_motiongraphics_2d|bdSource=rubric": 98,
+      "platform=vimeo|source=reclike_motiongraphics_3d|bdSource=rubric": 37,
+      "platform=vimeo|source=vimeo|bdSource=rubric": 20,
+      "platform=vimeo|source=stinkstudios|bdSource=rubric": 15
+    },
+    "A_tidb_empty_sqlite_has_rating_provisional": {
+      "platform=vimeo|source=eizo100|bdSource=None": 66,
+      "platform=vimeo|source=vimeo|bdSource=None": 38,
+      "platform=vimeo|source=reclike_motiongraphics_2d|bdSource=None": 27,
+      "platform=vimeo|source=サイト: 映像作家100人|bdSource=None": 18,
+      "platform=vimeo|source=reclike_motiongraphics_3d|bdSource=None": 17
+    },
+    "E_tidb_higher_audited_wave_not_synced_to_sqlite": {
+      "platform=vimeo|source=notion|bdSource=rubric": 11,
+      "platform=external|source=notion|bdSource=rubric": 2
+    },
+    "J_overall_same_only_direction_or_technique_diff": {
+      "platform=vimeo|source=reclike_motiongraphics_2d|bdSource=rubric": 16,
+      "platform=vimeo|source=eizo100|bdSource=rubric": 9,
+      "platform=vimeo|source=notion|bdSource=rubric": 3,
+      "platform=vimeo|source=reclike_motiongraphics_3d|bdSource=rubric": 3,
+      "platform=vimeo|source=vook|bdSource=rubric": 2
+    },
+    "H_sqlite_higher_audited": {
+      "platform=vimeo|source=notion|bdSource=rubric": 1,
+      "platform=external|source=notion|bdSource=rubric": 1
+    },
+    "G_sqlite_higher_provisional": {
+      "platform=vimeo|source=reclike_motiongraphics_2d|bdSource=rubric": 7,
+      "platform=vimeo|source=eizo100|bdSource=rubric": 6,
+      "platform=vimeo|source=vimeo|bdSource=rubric": 5,
+      "platform=vimeo|source=reclike_goodlook|bdSource=rubric": 4,
+      "platform=vimeo|source=eizo100_2026|bdSource=rubric": 2
+    },
+    "C_tidb_has_rating_sqlite_empty": {
+      "platform=vimeo|source=eizo100|bdSource=rubric": 59,
+      "platform=vimeo|source=manual|bdSource=rubric": 2,
+      "platform=vimeo|source=notion|bdSource=rubric": 2,
+      "platform=vimeo|source=vimeo|bdSource=rubric": 1,
+      "platform=vimeo|source=reclike_motiongraphics_3d|bdSource=rubric": 1
+    }
+  },
+  "samples": {
+    "D_tidb_higher_provisional_vimeo_or_yt": [
+      {
+        "id": "1003005012",
+        "platform": "vimeo",
+        "source": "eizo100",
+        "tidb_o": "A",
+        "sqlite_o": "B+",
+        "tidb_updated": "2026-11-21",
+        "bdSource": "rubric",
+        "analysisStatus": "provisional",
+        "in_audit_progress": true
+      },
+      {
+        "id": "100398359",
+        "platform": "vimeo",
+        "source": "reclike_goodlook",
+        "tidb_o": "A",
+        "sqlite_o": "B+",
+        "tidb_updated": "2026-11-21",
+        "bdSource": "rubric",
+        "analysisStatus": "provisional",
+        "in_audit_progress": true
+      },
+      {
+        "id": "100398412",
+        "platform": "vimeo",
+        "source": "reclike_goodlook",
+        "tidb_o": "A",
+        "sqlite_o": "B+",
+        "tidb_updated": "2026-11-21",
+        "bdSource": "rubric",
+        "analysisStatus": "provisional",
+        "in_audit_progress": true
+      }
+    ],
+    "A_tidb_empty_sqlite_has_rating_provisional": [
+      {
+        "id": "10070449",
+        "platform": "vimeo",
+        "source": "vimeo",
+        "tidb_o": "",
+        "sqlite_o": "B+",
+        "tidb_updated": "2026-11-21",
+        "bdSource": null,
+        "analysisStatus": "provisional",
+        "in_audit_progress": false
+      },
+      {
+        "id": "1041875369",
+        "platform": "vimeo",
+        "source": "eizo100",
+        "tidb_o": "",
+        "sqlite_o": "B+",
+        "tidb_updated": "2026-11-21",
+        "bdSource": null,
+        "analysisStatus": "provisional",
+        "in_audit_progress": false
+      },
+      {
+        "id": "1041925523",
+        "platform": "vimeo",
+        "source": "サイト: 映像作家100人",
+        "tidb_o": "",
+        "sqlite_o": "B",
+        "tidb_updated": "2026-11-21",
+        "bdSource": null,
+        "analysisStatus": "provisional",
+        "in_audit_progress": false
+      }
+    ],
+    "E_tidb_higher_audited_wave_not_synced_to_sqlite": [
+      {
+        "id": "1040247605",
+        "platform": "vimeo",
+        "source": "notion",
+        "tidb_o": "A",
+        "sqlite_o": "B+",
+        "tidb_updated": "2026-11-21",
+        "bdSource": "rubric",
+        "analysisStatus": "verified",
+        "in_audit_progress": true
+      },
+      {
+        "id": "1082037544",
+        "platform": "vimeo",
+        "source": "notion",
+        "tidb_o": "A+",
+        "sqlite_o": "B+",
+        "tidb_updated": "2026-11-21",
+        "bdSource": "rubric",
+        "analysisStatus": "verified",
+        "in_audit_progress": true
+      },
+      {
+        "id": "117133569",
+        "platform": "vimeo",
+        "source": "notion",
+        "tidb_o": "A-",
+        "sqlite_o": "B",
+        "tidb_updated": "2026-11-21",
+        "bdSource": "rubric",
+        "analysisStatus": "verified",
+        "in_audit_progress": true
+      }
+    ],
+    "J_overall_same_only_direction_or_technique_diff": [
+      {
+        "id": "1044346460",
+        "platform": "vimeo",
+        "source": "notion",
+        "tidb_o": "A-",
+        "sqlite_o": "A-",
+        "tidb_updated": "2026-11-21",
+        "bdSource": "rubric",
+        "analysisStatus": "verified",
+        "in_audit_progress": true
+      },
+      {
+        "id": "1048512036",
+        "platform": "vimeo",
+        "source": "vook",
+        "tidb_o": "A",
+        "sqlite_o": "A",
+        "tidb_updated": "2026-11-21",
+        "bdSource": "rubric",
+        "analysisStatus": "provisional",
+        "in_audit_progress": true
+      },
+      {
+        "id": "1056287464",
+        "platform": "vimeo",
+        "source": "notion",
+        "tidb_o": "B",
+        "sqlite_o": "B",
+        "tidb_updated": "2026-11-21",
+        "bdSource": "rubric",
+        "analysisStatus": "verified",
+        "in_audit_progress": true
+      }
+    ],
+    "H_sqlite_higher_audited": [
+      {
+        "id": "1049880661",
+        "platform": "vimeo",
+        "source": "notion",
+        "tidb_o": "B+",
+        "sqlite_o": "A",
+        "tidb_updated": "2026-11-21",
+        "bdSource": "rubric",
+        "analysisStatus": "verified",
+        "in_audit_progress": true
+      },
+      {
+        "id": "notion-a71d75e74c14001080addb42",
+        "platform": "external",
+        "source": "notion",
+        "tidb_o": "B+",
+        "sqlite_o": "A-",
+        "tidb_updated": "2026-11-21",
+        "bdSource": "rubric",
+        "analysisStatus": "verified",
+        "in_audit_progress": true
+      }
+    ],
+    "G_sqlite_higher_provisional": [
+      {
+        "id": "1093860815",
+        "platform": "vimeo",
+        "source": "vimeo",
+        "tidb_o": "B",
+        "sqlite_o": "A-",
+        "tidb_updated": "2026-11-21",
+        "bdSource": "rubric",
+        "analysisStatus": "provisional",
+        "in_audit_progress": true
+      },
+      {
+        "id": "110813987",
+        "platform": "vimeo",
+        "source": "reclike_motiongraphics_3d",
+        "tidb_o": "B+",
+        "sqlite_o": "A-",
+        "tidb_updated": "2026-11-21",
+        "bdSource": "rubric",
+        "analysisStatus": "provisional",
+        "in_audit_progress": true
+      },
+      {
+        "id": "1136317610",
+        "platform": "vimeo",
+        "source": "vimeo",
+        "tidb_o": "B-",
+        "sqlite_o": "B",
+        "tidb_updated": "2026-11-21",
+        "bdSource": "rubric",
+        "analysisStatus": "provisional",
+        "in_audit_progress": true
+      }
+    ],
+    "C_tidb_has_rating_sqlite_empty": [
+      {
+        "id": "1155448984",
+        "platform": "vimeo",
+        "source": "vimeo",
+        "tidb_o": "B+",
+        "sqlite_o": "",
+        "tidb_updated": "2026-11-21",
+        "bdSource": "rubric",
+        "analysisStatus": "verified",
+        "in_audit_progress": true
+      },
+      {
+        "id": "234972894",
+        "platform": "vimeo",
+        "source": "eizo100",
+        "tidb_o": "A-",
+        "sqlite_o": "",
+        "tidb_updated": "2026-11-21",
+        "bdSource": "rubric",
+        "analysisStatus": "verified",
+        "in_audit_progress": true
+      },
+      {
+        "id": "237447327",
+        "platform": "vimeo",
+        "source": "eizo100",
+        "tidb_o": "A",
+        "sqlite_o": "",
+        "tidb_updated": "2026-11-21",
+        "bdSource": "rubric",
+        "analysisStatus": "verified",
+        "in_audit_progress": true
+      }
+    ]
+  },
+  "only_in_tidb_count": 66,
+  "only_in_tidb_by_source_month": {
+    "youtube|manual_sheet|2026-11": 38,
+    "youtube|サイト: 映像作家100人|2026-11": 9,
+    "youtube|トレンド: YouTube (公式MV)|2026-11": 7,
+    "vimeo|サイト: 映像作家100人|2026-11": 4,
+    "youtube|トレンド: YouTube (モーショングラフィックス)|2026-11": 3,
+    "vimeo|Playwright(Vimeo Staff Picks / Branded)|2026-11": 2,
+    "youtube|トレンド: YouTube (3DCG/Blender)|2026-11": 2,
+    "vimeo|manual_sheet|2026-11": 1
+  },
+  "only_in_sqlite_count": 48,
+  "only_in_sqlite_by_source": {
+    "youtube|youtube": 12,
+    "youtube|トレンド: YouTube (厳選急上昇)": 9,
+    "youtube|alincolony": 3,
+    "youtube|クリエイター: 島猛": 3,
+    "youtube|クリエイター: にへ": 3,
+    "youtube|manual": 2,
+    "youtube|notion": 2,
+    "youtube|tyo": 2,
+    "youtube|トレンド: YouTube (公式MV)": 2,
+    "youtube|youtube_search": 2
+  }
+}

@@ -1,6 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { appRouter } from "./routers";
 import { assertAllowedExternalMediaUrl } from "./externalMediaMetadata";
+import { isAllowedEditorUser } from "./_core/trpc";
 import type { TrpcContext } from "./_core/context";
 
 function makeCtx(headers: Record<string, string> = {}, role?: "admin" | "user"): TrpcContext {
@@ -77,5 +78,17 @@ describe("SSRF allowlist in assertAllowedExternalMediaUrl", () => {
     expect(assertAllowedExternalMediaUrl("vimeo", "https://vimeo.com/12345").hostname).toBe("vimeo.com");
     expect(assertAllowedExternalMediaUrl("x", "https://x.com/user/status/1").hostname).toBe("x.com");
     expect(assertAllowedExternalMediaUrl("tiktok", "https://www.tiktok.com/@a/video/1").hostname).toBe("www.tiktok.com");
+  });
+});
+
+describe("isAllowedEditorUser (admin + @atsu-maru.co.jp only)", () => {
+  it("allows admin and @atsu-maru.co.jp accounts, blocks external domains", () => {
+    expect(isAllowedEditorUser({ role: "admin", email: "owner@example.com" } as TrpcContext["user"])).toBe(true);
+    expect(isAllowedEditorUser({ role: "user", email: "member@atsu-maru.co.jp" } as TrpcContext["user"])).toBe(true);
+    expect(isAllowedEditorUser({ role: "user", email: "MEMBER@ATSU-MARU.CO.JP" } as TrpcContext["user"])).toBe(true);
+    expect(isAllowedEditorUser({ role: "user", email: "outsider@example.com" } as TrpcContext["user"])).toBe(false);
+    expect(isAllowedEditorUser({ role: "user", email: "fake@atsu-maru.co.jp.evil.com" } as TrpcContext["user"])).toBe(false);
+    expect(isAllowedEditorUser({ role: "user", email: "@atsu-maru.co.jp" } as TrpcContext["user"])).toBe(false);
+    expect(isAllowedEditorUser(null)).toBe(false);
   });
 });

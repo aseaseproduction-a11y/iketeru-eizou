@@ -34,12 +34,13 @@ for (let i = 0; i < targetIds.length; i += 200) {
     const id = String(r.id);
     let bd = {};
     try { bd = r.aiScoreBreakdown ? JSON.parse(r.aiScoreBreakdown) : {}; } catch {}
-    if (provIds.has(id)) {
+    const isNeedsFull = bd.analysisVerdict === "needs_full_analysis";
+    if (provIds.has(id) || isNeedsFull) {
       bd.analysisStatus = "provisional";
       bd.isProvisional = true;
       counts.provisional++;
-    } else if (!bd.analysisStatus) {
-      bd.analysisStatus = "verified";
+    } else {
+      bd.analysisStatus = "full_analysis";
       bd.isProvisional = false;
     }
     if (invalidatedIds.has(id)) {
@@ -57,14 +58,31 @@ for (let i = 0; i < targetIds.length; i += 200) {
   }
 }
 
+// Also migrate any remaining "analysisStatus":"verified" rows to "full_analysis"
+const [verRows] = await conn.query(
+  `SELECT id, aiScoreBreakdown FROM videos WHERE JSON_UNQUOTE(JSON_EXTRACT(aiScoreBreakdown, '$.analysisStatus')) = 'verified'`
+);
+let renamedVerifiedToFull = 0;
+for (const r of verRows) {
+  let bd = {};
+  try { bd = r.aiScoreBreakdown ? JSON.parse(r.aiScoreBreakdown) : {}; } catch {}
+  bd.analysisStatus = bd.analysisVerdict === "needs_full_analysis" ? "provisional" : "full_analysis";
+  bd.isProvisional = bd.analysisStatus === "provisional";
+  await conn.query("UPDATE videos SET aiScoreBreakdown = ? WHERE id = ?", [JSON.stringify(bd), r.id]);
+  renamedVerifiedToFull++;
+}
+
 const [verify] = await conn.query(`
   SELECT
     SUM(CASE WHEN JSON_UNQUOTE(JSON_EXTRACT(aiScoreBreakdown, '$.analysisStatus')) = 'provisional' THEN 1 ELSE 0 END) AS provisionalCount,
+    SUM(CASE WHEN JSON_UNQUOTE(JSON_EXTRACT(aiScoreBreakdown, '$.analysisStatus')) = 'full_analysis' THEN 1 ELSE 0 END) AS fullAnalysisCount,
+    SUM(CASE WHEN JSON_UNQUOTE(JSON_EXTRACT(aiScoreBreakdown, '$.analysisStatus')) = 'verified' THEN 1 ELSE 0 END) AS legacyVerifiedRemaining,
     SUM(CASE WHEN JSON_UNQUOTE(JSON_EXTRACT(aiScoreBreakdown, '$.visualVerificationStatus')) = 'log_verified' THEN 1 ELSE 0 END) AS logVerifiedCount,
     SUM(CASE WHEN JSON_UNQUOTE(JSON_EXTRACT(aiScoreBreakdown, '$.visualVerificationStatus')) = 'unverifiable_no_log' THEN 1 ELSE 0 END) AS unverifiableNoLogCount,
+    SUM(CASE WHEN JSON_UNQUOTE(JSON_EXTRACT(aiScoreBreakdown, '$.visualVerificationStatus')) = 'unverified_pending' THEN 1 ELSE 0 END) AS unverifiedPendingCount,
     SUM(CASE WHEN JSON_UNQUOTE(JSON_EXTRACT(aiScoreBreakdown, '$.visualVerificationStatus')) = 'invalidated_no_visual' THEN 1 ELSE 0 END) AS invalidatedNoVisualCount
   FROM videos
 `);
 
 await conn.end();
-console.log(JSON.stringify({ updated, counts, tidbVerify: verify[0] }, null, 2));
+console.log(JSON.stringify({ updated, renamedVerifiedToFull, counts, tidbVerify: verify[0] }, null, 2));

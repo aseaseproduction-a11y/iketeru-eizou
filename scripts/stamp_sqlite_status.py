@@ -38,8 +38,8 @@ for vid, ana, raw_bd in rows:
         bd["isProvisional"] = True
         counts["provisional"] += 1
         changed = True
-    elif bd.get("analysisStatus") != "verified":
-        bd["analysisStatus"] = "verified"
+    elif bd.get("analysisStatus") != "full_analysis":
+        bd["analysisStatus"] = "full_analysis"
         bd["isProvisional"] = False
         changed = True
 

@@ -12,15 +12,26 @@ const queryClient = new QueryClient();
 
 const ADMIN_KEY_STORAGE = "iketeru_admin_api_key";
 
+// Clean up any legacy persistent localStorage admin key (shared-device mitigation)
+if (typeof window !== "undefined") {
+  try {
+    window.localStorage.removeItem(ADMIN_KEY_STORAGE);
+  } catch {
+    // ignore storage errors
+  }
+}
+
 const handleAuthErrors = (error: unknown) => {
   if (!(error instanceof TRPCClientError)) return;
   if (typeof window === "undefined") return;
 
   if (error.message.includes("ADMIN_KEY_REQUIRED")) {
-    const entered = window.prompt("動画の追加・編集・削除には管理者APIキー（ADMIN_API_KEY）が必要です。キーを入力してください：");
+    const entered = window.prompt(
+      "編集・お気に入り保存には管理者または @atsu-maru.co.jp アカウントでのログイン、または管理者APIキー（タブを閉じると自動消去）が必要です。キーを入力してください："
+    );
     if (entered && entered.trim()) {
-      window.localStorage.setItem(ADMIN_KEY_STORAGE, entered.trim());
-      window.alert("管理者APIキーを保存しました。もう一度操作を実行してください。");
+      window.sessionStorage.setItem(ADMIN_KEY_STORAGE, entered.trim());
+      window.alert("管理者APIキーをこのタブのセッションに一時保存しました。もう一度操作を実行してください。");
     }
     return;
   }
@@ -53,7 +64,7 @@ const trpcClient = trpc.createClient({
       transformer: superjson,
       headers() {
         if (typeof window === "undefined") return {};
-        const key = window.localStorage.getItem(ADMIN_KEY_STORAGE);
+        const key = window.sessionStorage.getItem(ADMIN_KEY_STORAGE);
         return key ? { "x-admin-api-key": key } : {};
       },
       fetch(input, init) {

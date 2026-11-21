@@ -47,6 +47,21 @@ export function useCreatorTools() {
     loadFromStorage<string | null>(ACTIVE_PROFILE_KEY, null)
   );
   const utils = trpc.useUtils();
+  const meQuery = trpc.auth.me.useQuery(undefined, {
+    staleTime: 60_000,
+    refetchOnWindowFocus: false,
+  });
+  const canEditFavorites = useMemo(() => {
+    const user = meQuery.data;
+    if (user?.role === "admin") return true;
+    const email = (user?.email ?? "").trim().toLowerCase();
+    if (email.endsWith("@atsu-maru.co.jp")) return true;
+    try {
+      return Boolean(window.sessionStorage.getItem("iketeru_admin_api_key"));
+    } catch {
+      return false;
+    }
+  }, [meQuery.data]);
   const profilesQuery = trpc.favorites.profiles.useQuery(undefined, {
     staleTime: 60_000,
     refetchOnWindowFocus: false,
@@ -111,10 +126,10 @@ export function useCreatorTools() {
   }, [activeProfile, activeProfileId, profilesQuery.isLoading]);
 
   useEffect(() => {
-    if (activeProfileId && activeProfile && legacyMigrationPending && !migrateLegacyMutation.isPending) {
+    if (canEditFavorites && activeProfileId && activeProfile && legacyMigrationPending && !migrateLegacyMutation.isPending) {
       void migrateLegacyFavorites(activeProfileId);
     }
-  }, [activeProfile, activeProfileId, legacyMigrationPending, migrateLegacyFavorites, migrateLegacyMutation.isPending]);
+  }, [activeProfile, activeProfileId, canEditFavorites, legacyMigrationPending, migrateLegacyFavorites, migrateLegacyMutation.isPending]);
 
   const toggleFavorite = useCallback((id: string) => {
     if (!activeProfileId || toggleVideoMutation.isPending) return;
