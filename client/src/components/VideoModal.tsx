@@ -680,6 +680,21 @@ export default function VideoModal({
                           この動画は未視聴・メタデータ中心の一次/暫定評価です。映像確認による再分析が完了するまで、参照検索・生成素材の候補から除外されています。
                         </div>
                       )}
+                      {video.visualVerificationStatus === "log_verified" && (
+                        <div className="mb-2 inline-flex items-center gap-1.5 rounded border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 text-[11px] text-emerald-300">
+                          静止画確認済み（ログ照合済）
+                        </div>
+                      )}
+                      {video.visualVerificationStatus === "unverifiable_no_log" && (
+                        <div className="mb-2 inline-flex items-center gap-1.5 rounded border border-zinc-500/40 bg-zinc-500/15 px-2 py-0.5 text-[11px] text-zinc-300">
+                          静止画確認：確認不能（過去ログなし・要再確認）
+                        </div>
+                      )}
+                      {video.visualVerificationStatus === "invalidated_no_visual" && (
+                        <div className="mb-2 inline-flex items-center gap-1.5 rounded border border-red-500/40 bg-red-500/10 px-2 py-0.5 text-[11px] text-red-300">
+                          静止画未確認（0枚のため点数無効化・再実施待ち）
+                        </div>
+                      )}
                       {aiRatings.length > 0 && (
                         <div className="mb-3">
                           <span className="mb-1.5 block text-xs font-semibold text-foreground/85">

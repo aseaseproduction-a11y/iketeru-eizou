@@ -16,6 +16,11 @@ for (const line of progLines) {
   progMap.set(d.video_id, d);
 }
 const allIds = [...progMap.keys()];
+const logReportPath = path.join(REPO_ROOT, "analysis", "visual_log_verification.json");
+const logReport = fs.existsSync(logReportPath) ? JSON.parse(fs.readFileSync(logReportPath, "utf8")) : null;
+const logVerifiedSet = new Set((logReport?.log_verified_ids || []).map(String));
+const unverifiableSet = new Set((logReport?.unverifiable_no_log_self_true_ids || []).map(String));
+
 const validVisualIds = allIds.filter((id) => progMap.get(id)?.visual_checked === true);
 const invalidatedNoVisualIds = allIds.filter((id) => progMap.get(id)?.visual_checked !== true);
 const ids = validVisualIds;
@@ -121,7 +126,12 @@ for (const r of rows) {
   }
 }
 
-console.log(`Checked ${rows.length} / ${ids.length} contact-sheet-verified videos on TiDB Cloud (excluded invalidated 0-image redo queue: ${invalidatedNoVisualIds.length}):`);
+const logVerifiedInRows = rows.filter((r) => logVerifiedSet.has(String(r.id))).length;
+const unverifiableInRows = rows.filter((r) => unverifiableSet.has(String(r.id))).length;
+console.log(
+  `Checked ${rows.length} / ${ids.length} audited videos on TiDB Cloud ` +
+  `(log_verified: ${logVerifiedInRows}, unverifiable_no_log: ${unverifiableInRows}, excluded invalidated_no_visual: ${invalidatedNoVisualIds.length}):`
+);
 for (const [k, v] of Object.entries(issues)) {
   console.log(`  ${k}: ${v.length}`, v.length > 0 && v.length <= 20 ? JSON.stringify(v) : "");
 }

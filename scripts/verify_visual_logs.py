@@ -117,6 +117,9 @@ summary = {
     "redo_queue_total_after_log_check": len(existing_redo),
     "added_from_log_check": added_from_log,
     "self_true_but_log_img_eq_0_ids": true_no_img,
+    "log_verified_ids": sorted(true_with_img),
+    "unverifiable_no_log_self_true_ids": sorted(no_tx_self_true),
+    "unverifiable_no_log_self_false_ids": sorted(no_tx_self_false),
 }
 
 REPORT_JSON.write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")

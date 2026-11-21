@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T15:39:48.227Z",
+  "generatedAt": "2026-11-21T15:54:12.265Z",
   "note": "DB実分布（A/A-/B+中心）準拠・C以下5本以上・企業/縦型動画を含む較正用30本（暫定評価・再生不可を除外）",
   "totalCount": 30,
   "dbDistributionNonProvisional": [
@@ -80,11 +80,10 @@
     "B": 1,
     "C+": 2,
     "C": 1,
-    "C-": 1,
-    "D+": 1
+    "C-": 2
   },
-  "verticalCount": 11,
-  "corporateCount": 6,
+  "verticalCount": 5,
+  "corporateCount": 7,
   "items": [
     {
       "id": "3d_kACCKFRc",
@@ -420,20 +419,19 @@
       "humanNotes": ""
     },
     {
-      "id": "_PO5O3QAaVM",
+      "id": "2NOefVvwLIM",
       "platform": "youtube",
-      "title": "企業のエイプリルフール動画に変化　実写に見えるAI動画や半年かけた実写作品も（2026年04月02日）",
-      "videoUrl": "https://www.youtube.com/watch?v=_PO5O3QAaVM",
+      "title": "タスク整体院グループ　採用OP",
+      "videoUrl": "https://www.youtube.com/watch?v=2NOefVvwLIM",
       "tierGroup": "B / B-",
       "currentAiOverallRating": "B-",
       "currentAiOverallScore": 65,
       "currentAiDirectionRating": "B-",
       "currentAiTechniqueRating": "C+",
       "specialCategories": [
-        "縦型/ショート",
         "企業/採用"
       ],
-      "selectionRationale": "平均〜やや課題あり帯（標準水準の底を確認）",
+      "selectionRationale": "旧候補がテレビニュース報道だったため、実際の採用オープニング映像（企業動画）で演出・構成に課題があるB-作品へ差し替え",
       "humanRating": null,
       "humanNotes": ""
     },
@@ -453,36 +451,32 @@
       "humanNotes": ""
     },
     {
-      "id": "_8S5nlXiBwo",
+      "id": "2b41yoNZGhM",
       "platform": "youtube",
-      "title": "広告動画やPR動画を「Veo3」で簡単に作成する方法を徹底解説！",
-      "videoUrl": "https://www.youtube.com/watch?v=_8S5nlXiBwo",
+      "title": "Synthesizer V AI 夢ノ結唱 POPY×浜渦正志／停止線上の障壁（バリア）",
+      "videoUrl": "https://youtu.be/2b41yoNZGhM",
       "tierGroup": "B / B-",
       "currentAiOverallRating": "B-",
       "currentAiOverallScore": 65,
       "currentAiDirectionRating": "B-",
-      "currentAiTechniqueRating": "C+",
-      "specialCategories": [
-        "縦型/ショート"
-      ],
-      "selectionRationale": "平均〜やや課題あり帯（標準水準の底を確認）",
+      "currentAiTechniqueRating": "B",
+      "specialCategories": [],
+      "selectionRationale": "旧候補がAIツールのハウツー解説動画だったため、実際のMV作品（B-）へ差し替え",
       "humanRating": null,
       "humanNotes": ""
     },
     {
-      "id": "_Ppg6wQ5uXg",
-      "platform": "youtube",
-      "title": "ニンゲンたちが上から無限にくるくるくる#ゲーム #メタファー #アトラス #アニメ",
-      "videoUrl": "https://www.youtube.com/watch?v=_Ppg6wQ5uXg",
+      "id": "265532017",
+      "platform": "vimeo",
+      "title": "100 fragments",
+      "videoUrl": "https://vimeo.com/265532017",
       "tierGroup": "B / B-",
       "currentAiOverallRating": "B-",
-      "currentAiOverallScore": 65,
+      "currentAiOverallScore": 67,
       "currentAiDirectionRating": "B",
       "currentAiTechniqueRating": "B-",
-      "specialCategories": [
-        "縦型/ショート"
-      ],
-      "selectionRationale": "平均〜やや課題あり帯（標準水準の底を確認）",
+      "specialCategories": [],
+      "selectionRationale": "旧候補がゲーム切り抜き系ネタショートだったため、実験映像・モーショングラフィックス作品（Vimeo・B-）へ差し替え",
       "humanRating": null,
       "humanNotes": ""
     },
@@ -519,55 +513,107 @@
       "humanNotes": ""
     },
     {
-      "id": "-h0IqDYl9Zo",
+      "id": "Dhx2EIhYkc0",
       "platform": "youtube",
-      "title": "私だけスルーするサイコ",
-      "videoUrl": "https://www.youtube.com/watch?v=-h0IqDYl9Zo",
-      "tierGroup": "C以下 (C+/C/C-/D+)",
+      "title": "JUST A BOY - ASIRA | Japanese Rap Song | DrINsaNE | Official Music Video",
+      "videoUrl": "https://www.youtube.com/watch?v=Dhx2EIhYkc0",
+      "tierGroup": "C以下 (C+/C/C-)",
       "currentAiOverallRating": "C",
       "currentAiOverallScore": 53,
       "currentAiDirectionRating": "C-",
+      "currentAiTechniqueRating": "C",
+      "specialCategories": [],
+      "selectionRationale": "旧候補がネタ系ショートだったため、実際のOfficial Music Video作品で演出・技術に課題があるC帯作品へ差し替え",
+      "humanRating": null,
+      "humanNotes": ""
+    },
+    {
+      "id": "Z-nPJFF1PYY",
+      "platform": "youtube",
+      "title": "株式会社メドコム 採用ピッチ動画",
+      "videoUrl": "https://www.youtube.com/watch?v=Z-nPJFF1PYY",
+      "tierGroup": "C以下 (C+/C/C-)",
+      "currentAiOverallRating": "C-",
+      "currentAiOverallScore": 49,
+      "currentAiDirectionRating": "C",
       "currentAiTechniqueRating": "C-",
       "specialCategories": [
-        "縦型/ショート"
+        "企業/採用"
       ],
-      "selectionRationale": "下位アンカー（課題あり・改善対象の下限基準を明確化）",
+      "selectionRationale": "旧候補がイベント取材ニュース映像だったため、企業の採用ピッチ動画（C-）へ差し替え",
       "humanRating": null,
       "humanNotes": ""
     },
     {
-      "id": "53i4Yuw2ld8",
+      "id": "DMowlj44nZc",
       "platform": "youtube",
-      "title": "Japanese band Mrs. Green Apple -- premiere of &#39;Spider-Man: Brand New Day&#39;",
-      "videoUrl": "https://www.youtube.com/watch?v=53i4Yuw2ld8",
-      "tierGroup": "C以下 (C+/C/C-/D+)",
+      "title": "光れ日本！ﾌﾙﾐｭｰｼﾞｯｸﾋﾞﾃﾞｵ",
+      "videoUrl": "https://www.youtube.com/watch?v=DMowlj44nZc",
+      "tierGroup": "C以下 (C+/C/C-)",
       "currentAiOverallRating": "C-",
       "currentAiOverallScore": 47,
-      "currentAiDirectionRating": "D+",
-      "currentAiTechniqueRating": "D",
-      "specialCategories": [
-        "縦型/ショート"
-      ],
-      "selectionRationale": "下位アンカー（課題あり・改善対象の下限基準を明確化）",
+      "currentAiDirectionRating": "C-",
+      "currentAiTechniqueRating": "D+",
+      "specialCategories": [],
+      "selectionRationale": "旧候補（D+唯一の動画）がネタ系ショートだったため、実際のMV作品で表現・仕上げに明確な課題があるC-作品へ差し替え",
       "humanRating": null,
       "humanNotes": ""
+    }
+  ],
+  "replacementHistory": [
+    {
+      "oldId": "_PO5O3QAaVM",
+      "oldRating": "B-",
+      "oldTitle": "企業のエイプリルフール動画に変化　実写に見えるAI動画や半年かけた実写作品も（2026年04月02日）",
+      "newId": "2NOefVvwLIM",
+      "newRating": "B-",
+      "newTitle": "タスク整体院グループ　採用OP",
+      "reason": "旧候補がテレビニュース報道だったため、実際の採用オープニング映像（企業動画）で演出・構成に課題があるB-作品へ差し替え"
     },
     {
-      "id": "efxhgspLRIQ",
-      "platform": "youtube",
-      "title": "見るだけならタダと言い続けて早数年",
-      "videoUrl": "https://youtu.be/efxhgspLRIQ",
-      "tierGroup": "C以下 (C+/C/C-/D+)",
-      "currentAiOverallRating": "D+",
-      "currentAiOverallScore": 40,
-      "currentAiDirectionRating": "D+",
-      "currentAiTechniqueRating": "D",
-      "specialCategories": [
-        "縦型/ショート"
-      ],
-      "selectionRationale": "下位アンカー（課題あり・改善対象の下限基準を明確化）",
-      "humanRating": null,
-      "humanNotes": ""
+      "oldId": "_8S5nlXiBwo",
+      "oldRating": "B-",
+      "oldTitle": "広告動画やPR動画を「Veo3」で簡単に作成する方法を徹底解説！",
+      "newId": "2b41yoNZGhM",
+      "newRating": "B-",
+      "newTitle": "Synthesizer V AI 夢ノ結唱 POPY×浜渦正志／停止線上の障壁（バリア）",
+      "reason": "旧候補がAIツールのハウツー解説動画だったため、実際のMV作品（B-）へ差し替え"
+    },
+    {
+      "oldId": "_Ppg6wQ5uXg",
+      "oldRating": "B-",
+      "oldTitle": "ニンゲンたちが上から無限にくるくるくる#ゲーム #メタファー #アトラス #アニメ",
+      "newId": "265532017",
+      "newRating": "B-",
+      "newTitle": "100 fragments",
+      "reason": "旧候補がゲーム切り抜き系ネタショートだったため、実験映像・モーショングラフィックス作品（Vimeo・B-）へ差し替え"
+    },
+    {
+      "oldId": "-h0IqDYl9Zo",
+      "oldRating": "C",
+      "oldTitle": "私だけスルーするサイコ",
+      "newId": "Dhx2EIhYkc0",
+      "newRating": "C",
+      "newTitle": "JUST A BOY - ASIRA | Japanese Rap Song | DrINsaNE | Official Music Video",
+      "reason": "旧候補がネタ系ショートだったため、実際のOfficial Music Video作品で演出・技術に課題があるC帯作品へ差し替え"
+    },
+    {
+      "oldId": "53i4Yuw2ld8",
+      "oldRating": "C-",
+      "oldTitle": "Japanese band Mrs. Green Apple -- premiere of &#39;Spider-Man: Brand New Day&#39;",
+      "newId": "Z-nPJFF1PYY",
+      "newRating": "C-",
+      "newTitle": "株式会社メドコム 採用ピッチ動画",
+      "reason": "旧候補がイベント取材ニュース映像だったため、企業の採用ピッチ動画（C-）へ差し替え"
+    },
+    {
+      "oldId": "efxhgspLRIQ",
+      "oldRating": "D+",
+      "oldTitle": "見るだけならタダと言い続けて早数年",
+      "newId": "DMowlj44nZc",
+      "newRating": "C-",
+      "newTitle": "光れ日本！ﾌﾙﾐｭｰｼﾞｯｸﾋﾞﾃﾞｵ",
+      "reason": "旧候補（D+唯一の動画）がネタ系ショートだったため、実際のMV作品で表現・仕上げに明確な課題があるC-作品へ差し替え"
     }
   ]
 }

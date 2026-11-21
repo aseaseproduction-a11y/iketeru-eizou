@@ -172,12 +172,13 @@ export async function getAllVideoListItems() {
       addedDate: videos.addedDate,
       createdAt: videos.createdAt,
       updatedAt: videos.updatedAt,
-      isProvisional: sql<number>`CASE WHEN ${videos.aiAnalysis} LIKE '%一次評価%' OR ${videos.aiAnalysis} LIKE '%暫定評価%' OR ${videos.aiAnalysis} LIKE '%未視聴%' OR ${videos.aiAnalysis} LIKE '%簡易分析済(要完全版)%' OR ${videos.aiScoreBreakdown} LIKE '%"needs_full_analysis"%' THEN 1 ELSE 0 END`,
+      isProvisional: sql<number>`CASE WHEN ${videos.aiScoreBreakdown} LIKE '%"analysisStatus":"provisional"%' OR ${videos.aiScoreBreakdown} LIKE '%"isProvisional":true%' THEN 1 ELSE 0 END`,
+      visualVerificationStatus: sql<string>`CASE WHEN ${videos.aiScoreBreakdown} LIKE '%"visualVerificationStatus":"log_verified"%' THEN 'log_verified' WHEN ${videos.aiScoreBreakdown} LIKE '%"visualVerificationStatus":"unverifiable_no_log"%' THEN 'unverifiable_no_log' WHEN ${videos.aiScoreBreakdown} LIKE '%"visualVerificationStatus":"invalidated_no_visual"%' THEN 'invalidated_no_visual' ELSE 'not_audited' END`,
     })
     .from(videos)
     .orderBy(desc(videos.createdAt));
   return rows.map((row) => {
-    const { isProvisional, ...rest } = row;
+    const { isProvisional, visualVerificationStatus, ...rest } = row;
     const video = parseVideoRow({
       ...rest,
       aiAnalysis: null,
@@ -187,6 +188,7 @@ export async function getAllVideoListItems() {
     return {
       ...video,
       isProvisional: Boolean(isProvisional),
+      visualVerificationStatus: (visualVerificationStatus || "not_audited") as "log_verified" | "unverifiable_no_log" | "invalidated_no_visual" | "not_audited",
       aiAnalysis: "",
       aiScoreBreakdown: undefined,
       metadataClassificationAudit: undefined,
@@ -447,7 +449,8 @@ export function parseVideoRow(row: typeof videos.$inferSelect) {
     aiTechniqueScore: row.aiTechniqueScore ?? null,
     aiScoreBreakdown: safeParseJson(row.aiScoreBreakdown, undefined),
     aiAnalysis: row.aiAnalysis ?? "",
-    isProvisional: isProvisionalAnalysis(row.aiAnalysis, row.aiScoreBreakdown),
+    isProvisional: isProvisionalFromBreakdown(row.aiScoreBreakdown),
+    visualVerificationStatus: getVisualVerificationStatus(row.aiScoreBreakdown),
     embedStatus: row.embedStatus ?? "unknown",
     embedReason: row.embedReason ?? "",
     embedCheckedAt: row.embedCheckedAt?.toISOString() ?? "",
@@ -455,16 +458,21 @@ export function parseVideoRow(row: typeof videos.$inferSelect) {
   };
 }
 
-function isProvisionalAnalysis(aiAnalysis: string | null | undefined, aiScoreBreakdown: string | null | undefined): boolean {
-  const ana = aiAnalysis ?? "";
-  const bd = aiScoreBreakdown ?? "";
-  return (
-    ana.includes("一次評価") ||
-    ana.includes("暫定評価") ||
-    ana.includes("未視聴") ||
-    ana.includes("簡易分析済(要完全版)") ||
-    bd.includes('"needs_full_analysis"')
-  );
+function isProvisionalFromBreakdown(aiScoreBreakdown: string | null | undefined): boolean {
+  const bd = safeParseJson<Record<string, unknown> | null>(aiScoreBreakdown, null);
+  if (!bd) return false;
+  return bd.analysisStatus === "provisional" || bd.isProvisional === true;
+}
+
+function getVisualVerificationStatus(
+  aiScoreBreakdown: string | null | undefined
+): "log_verified" | "unverifiable_no_log" | "invalidated_no_visual" | "not_audited" {
+  const bd = safeParseJson<Record<string, unknown> | null>(aiScoreBreakdown, null);
+  const v = bd?.visualVerificationStatus;
+  if (v === "log_verified" || v === "unverifiable_no_log" || v === "invalidated_no_visual") {
+    return v;
+  }
+  return "not_audited";
 }
 
 function safeParseJson<T>(str: string | null | undefined, fallback: T): T {

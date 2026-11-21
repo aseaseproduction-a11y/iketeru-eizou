@@ -97,6 +97,7 @@ export interface Video {
   aiScoreBreakdown?: AiScoreBreakdown | null;
   aiAnalysis: string;
   isProvisional?: boolean;
+  visualVerificationStatus?: "log_verified" | "unverifiable_no_log" | "invalidated_no_visual" | "not_audited";
   embedStatus: "unknown" | "available" | "restricted";
   embedReason?: string;
   embedCheckedAt: string;
