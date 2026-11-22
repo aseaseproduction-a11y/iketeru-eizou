@@ -1,657 +1,518 @@
 {
-  "total_urls": 41,
-  "verified_text_match": 41,
-  "partial_match": 0,
-  "no_match": 0,
+  "verification_version": "v2_strict_body_proximity",
+  "max_proximity_chars": 500,
+  "total_urls": 39,
+  "verified_proximity_match": 39,
+  "too_far_apart": 0,
+  "missing_keyword_in_body": 0,
   "uncheckable_blocked": 0,
   "uncheckable_error": 0,
   "results": [
     {
       "id": "FNQ4vqB-waw",
       "awardName": "Cannes Lions",
+      "category": "Film Craft Gold Lion x2 (Production Design/Art Direction, Achievement in Production)",
       "url": "https://www.hakuhodo-global.com/news/hakuhodo-group-wins-9-lions-at-cannes-lions-2023-including-4-gold.html",
       "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "Train of Memories",
-        "Sotetsu"
-      ],
-      "award_matched": [
-        "Film Craft",
-        "Gold",
-        "Cannes Lions"
-      ],
+      "status": "verified_proximity_match",
+      "min_distance_chars": 38,
+      "matched_work": "Train of Memories",
+      "matched_tier": "Film Craft",
+      "context_snippet": "ronze Craft: Digital Craft: Form Craft: Film Craft: Post-Production Title: “A Train of Memories,” a movie commemorating the Sotetsu-Tokyu Link Line Advertiser",
       "note": ""
     },
     {
       "id": "5wEjV2ekSwE",
       "awardName": "Cannes Lions",
+      "category": "Film Craft Silver Lion (Visual Effects / Sound Design)",
       "url": "https://www.marklives.com/2014/06/cannes-lions-2014-final-awards-cannes-2014/",
       "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "Honda",
-        "Hands"
-      ],
-      "award_matched": [
-        "Silver",
-        "Film Craft",
-        "Cannes"
-      ],
+      "status": "verified_proximity_match",
+      "min_distance_chars": 12,
+      "matched_work": "Hands",
+      "matched_tier": "Silver",
+      "context_snippet": "T DAY SONY PLAYSTATION BBH NEW YORK USA Silver Lion HANDS HONDA HONDA BRAND FILM FACTORY London / WIEDEN+KENNEDY London UNITED KINGD",
       "note": ""
     },
     {
       "id": "vpyeQeTDGFA",
       "awardName": "D&AD Awards",
+      "category": "Graphite Pencil (Film Advertising Crafts - Animation)",
       "url": "https://pesfilm.com/pages/awards-honors",
       "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "Paper",
-        "Honda"
-      ],
-      "award_matched": [
-        "Graphite Pencil"
-      ],
+      "status": "verified_proximity_match",
+      "min_distance_chars": 30,
+      "matched_work": "Honda",
+      "matched_tier": "Graphite Pencil",
+      "context_snippet": "permanent collection 2016 D&AD Awards - Graphite Pencil - Animation - Honda “Paper” 2016 The One Show - Gold Pencil - Animation - Honda \"Paper\" 2016 A",
       "note": ""
     },
     {
       "id": "Z_lbVlhO9HE",
       "awardName": "D&AD Awards",
+      "category": "Black Pencil (Digital Marketing)",
       "url": "https://www.creativebloq.com/creative-inspiration/d-and-ad-announces-2025-winners-including-3-coveted-black-pencils",
       "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "Spreadbeats"
-      ],
-      "award_matched": [
-        "Black Pencil",
-        "Digital Marketing",
-        "D&AD"
-      ],
+      "status": "verified_proximity_match",
+      "min_distance_chars": 37,
+      "matched_work": "Spreadbeats",
+      "matched_tier": "Digital Marketing",
+      "context_snippet": "ncil was awarded to FCB New York in the Digital Marketing category for their Spreadbeats project, leveraging \"Innovation through nostalgic technologies\". D&A",
       "note": ""
     },
     {
       "id": "DwIur8FBRxw",
       "awardName": "YouTube Works Awards Japan",
+      "category": "Grand Prix / Creative Effectiveness",
       "url": "https://business.google.com/jp/think/search-and-video/youtubeworks-2024-1/",
       "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "ありがとう",
-        "漫画愛",
-        "ABJ"
-      ],
-      "award_matched": [
-        "グランプリ",
-        "YouTube Works"
-      ],
+      "status": "verified_proximity_match",
+      "min_distance_chars": 7,
+      "matched_work": "漫画愛",
+      "matched_tier": "グランプリ",
+      "context_snippet": "なく、​正規版の​読者に​「ありがとう」を —— ABJ『​ありがとう、​君の​漫画愛。​』：グランプリ、​Creative Effectiveness 部​門 YouTube Works Awards Japan 2024 のグランプリは、Creati",
       "note": ""
     },
     {
       "id": "iIL_CB_YjFk",
       "awardName": "Cannes Lions",
+      "category": "Film Craft Bronze Lion (Animation)",
       "url": "https://prtimes.jp/main/html/rd/p/000000332.000046517.html",
       "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "LIGHT HOLE"
-      ],
-      "award_matched": [
-        "カンヌ",
-        "Cannes",
-        "ブロンズ",
-        "Bronze",
-        "Gold"
-      ],
+      "status": "verified_proximity_match",
+      "min_distance_chars": 49,
+      "matched_work": "LIGHT HOLE",
+      "matched_tier": "ブロンズ",
+      "context_snippet": " Lions 2026」にて、当社が制作に携わった 講談社ブランデッドフィルム「LIGHT HOLE」が、Craft / Film Craft部門・Animationカテゴリーのブロンズを受賞 したことをお知らせいたします！ Cannes Lions（カンヌライオンズ国際クリエイティビティ・フェスティバル）は、1954年に創設された世界",
       "note": ""
     },
     {
       "id": "iIL_CB_YjFk",
       "awardName": "shots Awards Asia Pacific",
+      "category": "Gold (Animation - Stop-motion)",
       "url": "https://geekpictures.co.jp/en/topics/shots-awards-asia-pacific-2026/",
       "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "LIGHT HOLE"
-      ],
-      "award_matched": [
-        "shots",
-        "Gold"
-      ],
+      "status": "verified_proximity_match",
+      "min_distance_chars": 11,
+      "matched_work": "LIGHT HOLE",
+      "matched_tier": "Gold",
+      "context_snippet": "meticulous craftsmanship has now earned LIGHT HOLE Gold in the Animation (Stop-motion) category at shots Awards Asia Pacific 2026. ",
       "note": ""
     },
     {
       "id": "tdQCMuaJUQk",
       "awardName": "BOVA 宣伝会議",
+      "category": "グランプリ",
       "url": "https://awardg.sendenkaigi.com/bova/history/13th",
       "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "シール交換小学生",
-        "セコム"
-      ],
-      "award_matched": [
-        "グランプリ",
-        "BOVA"
-      ],
+      "status": "verified_proximity_match",
+      "min_distance_chars": 6,
+      "matched_work": "セコム",
+      "matched_tier": "グランプリ",
+      "context_snippet": "画像をクリックすると、動画が再生できます。（YouTubeサイトへ移動します） グランプリ セコム 若い人の心がセコムに惹きつけられる動画 シール交換小学生 大野すみれ（電通）、甲斐原天輝（太陽企画） 赤い四角にSECOMの５文字。このステッカーが貼ら",
       "note": ""
     },
     {
       "id": "JFDm4p8T6_4",
       "awardName": "BOVA 宣伝会議",
+      "category": "ゴールド",
       "url": "https://awardg.sendenkaigi.com/bova/history/12th",
       "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "立命館大学"
-      ],
-      "award_matched": [
-        "ゴールド",
-        "BOVA"
-      ],
+      "status": "verified_proximity_match",
+      "min_distance_chars": 5,
+      "matched_work": "立命館大学",
+      "matched_tier": "ゴールド",
+      "context_snippet": "画像をクリックすると、動画が再生できます。（YouTubeサイトへ移動します） ゴールド 立命館大学 アートやデザインは無関係だと思っている若者を振り向かせる動画 ダ・サポ療法 西遼太郎（TYO）、小松南・市原雅章（FIELD MANAGEMENT ",
       "note": ""
     },
     {
       "id": "wXD33Jx25oI",
       "awardName": "BOVA 宣伝会議",
+      "category": "ゴールド",
       "url": "https://awardg.sendenkaigi.com/bova/history/13th",
       "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "ギャンブル",
-        "エスケープ"
-      ],
-      "award_matched": [
-        "ゴールド",
-        "BOVA"
-      ],
+      "status": "verified_proximity_match",
+      "min_distance_chars": 5,
+      "matched_work": "ギャンブル",
+      "matched_tier": "ゴールド",
+      "context_snippet": "画像をクリックすると、動画が再生できます。（YouTubeサイトへ移動します） ゴールド ギャンブル依存症問題を考える会 ギャンブル依存症のイメージを変える動画 【実況】ギャンブルエスケープ 横井優樹（博報堂クリエイティブ・ヴォックス） ギャンブル依",
       "note": ""
     },
     {
       "id": "FSqTqdjf2YQ",
       "awardName": "BOVA 宣伝会議",
+      "category": "シルバー",
       "url": "https://awardg.sendenkaigi.com/bova/history/12th",
       "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "アロンアルフア",
-        "東亞合成"
-      ],
-      "award_matched": [
-        "シルバー",
-        "BOVA"
-      ],
+      "status": "verified_proximity_match",
+      "min_distance_chars": 5,
+      "matched_work": "東亞合成",
+      "matched_tier": "シルバー",
+      "context_snippet": "画像をクリックすると、動画が再生できます。（YouTubeサイトへ移動します） シルバー 東亞合成 「アロンアルフア」を使ってみたくなる動画 僕のおまもり 渡邉涼介（博報堂）、室田晋・酒井響和子（AOI Pro.） 父の死をきっかけに、ぶつかることか",
       "note": ""
     },
     {
       "id": "iXTuYbyH2Rc",
       "awardName": "BOVA 宣伝会議",
+      "category": "シルバー",
       "url": "https://awardg.sendenkaigi.com/bova/history/13th",
       "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "朝は絶対",
-        "オハヨー"
-      ],
-      "award_matched": [
-        "シルバー",
-        "BOVA"
-      ],
+      "status": "verified_proximity_match",
+      "min_distance_chars": 5,
+      "matched_work": "オハヨー",
+      "matched_tier": "シルバー",
+      "context_snippet": "画像をクリックすると、動画が再生できます。（YouTubeサイトへ移動します） シルバー オハヨー乳業 オハヨー牛乳シリーズを使って、日常にミルクを取り入れたくなる動画 朝は絶対 荒木竜郎（日本経済広告社）、二野俊太・渡辺大樹（Ray） 牛乳から離れ",
       "note": ""
     },
     {
       "id": "-J7Oi1-EfG8",
       "awardName": "BOVA 宣伝会議",
+      "category": "協賛企業賞",
       "url": "https://awardg.sendenkaigi.com/bova/history/13th",
       "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "UMAMI BOOST",
-        "味の素"
-      ],
-      "award_matched": [
-        "協賛企業賞",
-        "BOVA"
-      ],
+      "status": "verified_proximity_match",
+      "min_distance_chars": 6,
+      "matched_work": "味の素",
+      "matched_tier": "協賛企業賞",
+      "context_snippet": "画像をクリックすると、動画が再生できます。（YouTubeサイトへ移動します） 協賛企業賞 味の素 「味の素」を知らない若者が使ってみたくなる動画 UMAMI BOOST AJINOMOTO 齋藤力輝・平田花鈴・田中瑞穂（博報堂プロダクツ） 突如流行っ",
       "note": ""
     },
     {
       "id": "5URefVYaJrA",
       "awardName": "D&AD Awards",
+      "category": "Black Pencil (Music Videos)",
       "url": "https://www.creativebloq.com/creative-inspiration/d-and-ad-announces-2025-winners-including-3-coveted-black-pencils",
       "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "Tailor Swif",
-        "A$AP Rocky"
-      ],
-      "award_matched": [
-        "Black Pencil",
-        "D&AD"
-      ],
+      "status": "verified_proximity_match",
+      "min_distance_chars": 24,
+      "matched_work": "Tailor Swif",
+      "matched_tier": "Black Pencil",
+      "context_snippet": "narrative storytelling in A$AP Rocky's 'Tailor Swif'. The final Black Pencil was awarded to FCB New York in the Digital Marketing category for t",
       "note": ""
     },
     {
       "id": "tvTRZJ-4EyI",
       "awardName": "MTV Video Music Awards",
+      "category": "Video of the Year / Best Direction / Best Cinematography / Best Art Direction / Best Visual Effects",
       "url": "https://www.cbc.ca/news/entertainment/lamar-wins-six-mtv-vmas-1.4264675",
       "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "HUMBLE",
-        "Kendrick Lamar"
-      ],
-      "award_matched": [
-        "Video of the Year",
-        "VMA",
-        "MTV"
-      ],
+      "status": "verified_proximity_match",
+      "min_distance_chars": 11,
+      "matched_work": "HUMBLE",
+      "matched_tier": "Video of the Year",
+      "context_snippet": " Taylor Swift music video. Lamar&#x27;s Humble won video of the year, best hip-hop video, direction, cinematography, art direction ",
       "note": ""
     },
     {
       "id": "ebzEEEdjHj0",
       "awardName": "UK Music Video Awards",
+      "category": "Best Dance Video - UK / Best Production Design",
       "url": "https://www.promonews.tv/news/2017/10/26/uk-music-video-awards-2017-all-winners/50227",
       "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "Bonobo",
-        "No Reason"
-      ],
-      "award_matched": [
-        "Best Dance Video",
-        "Production Design",
-        "UK Music Video"
-      ],
+      "status": "verified_proximity_match",
+      "min_distance_chars": 22,
+      "matched_work": "Bonobo",
+      "matched_tier": "Best Dance Video",
+      "context_snippet": "rford / Kirdis Postelle for Warner Bros Best Dance Video - UK Bonobo - No Reason Director: Oscar Hudson Producer: Matt Posner Prod Co: Pulse F",
+      "note": ""
+    },
+    {
+      "id": "153159513",
+      "awardName": "UK Music Video Awards",
+      "category": "Best Dance Video - International",
+      "url": "https://www.ukmva.com/42-2016",
+      "http_status": 200,
+      "status": "verified_proximity_match",
+      "min_distance_chars": 33,
+      "matched_work": "Valentino Khan",
+      "matched_tier": "best dance video",
+      "context_snippet": " jonathan alric prod co: standard films best dance video - international valentino khan - deep down low director: ian pons jewell producer: satoshi takah",
       "note": ""
     },
     {
       "id": "5zj3aHgLFQE",
       "awardName": "文化庁メディア芸術祭",
+      "category": "第18回 アニメーション部門 審査委員会推薦作品",
       "url": "https://www.bunka.go.jp/j-mediaarts-festival/award/single/poker/index.html",
       "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "Poker",
-        "トクマルシューゴ"
-      ],
-      "award_matched": [
-        "審査委員会推薦作品",
-        "アニメーション部門"
-      ],
+      "status": "verified_proximity_match",
+      "min_distance_chars": 10,
+      "matched_work": "Poker",
+      "matched_tier": "審査委員会推薦作品",
+      "context_snippet": "RTS FESTIVAL ©MIRAI FILM 第18回 アニメーション部門 審査委員会推薦作品 Poker 短編アニメーション 水江 未来／中内 友紀恵 作品概要 本作は、2014年にデビュー10周年を迎えたトクマルシューゴのミュージックビデオであり、実験",
       "note": ""
     },
     {
       "id": "3JtO1WMYb58",
       "awardName": "文化庁メディア芸術祭",
+      "category": "第22回 エンターテインメント部門 審査委員会推薦作品",
       "url": "https://www.bunka.go.jp/j-mediaarts-festival/award/single/frasco-viewtiful/index.html",
       "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "Viewtiful",
-        "Frasco"
-      ],
-      "award_matched": [
-        "審査委員会推薦作品",
-        "エンターテインメント部門"
-      ],
+      "status": "verified_proximity_match",
+      "min_distance_chars": 10,
+      "matched_work": "Frasco",
+      "matched_tier": "審査委員会推薦作品",
+      "context_snippet": " PLAYRECORDS / Frasco 第22回 エンターテインメント部門 審査委員会推薦作品 Frasco “Viewtiful” ミュージックビデオ Frasco『Viewtiful』yorocine (代表:代田 栄介) ［日本］ 作品概要 Fras",
       "note": ""
     },
     {
       "id": "QmLBz4FuVDA",
       "awardName": "文化庁メディア芸術祭",
+      "category": "第22回 エンターテインメント部門 審査委員会推薦作品",
       "url": "https://www.bunka.go.jp/j-mediaarts-festival/award/single/innosent-in-formal-footloose/index.html",
       "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "Footloose",
-        "INNOSENT"
-      ],
-      "award_matched": [
-        "審査委員会推薦作品",
-        "エンターテインメント部門"
-      ],
+      "status": "verified_proximity_match",
+      "min_distance_chars": 10,
+      "matched_work": "INNOSENT",
+      "matched_tier": "審査委員会推薦作品",
+      "context_snippet": "8 No Big Deal Records 第22回 エンターテインメント部門 審査委員会推薦作品 INNOSENT in FORMAL “Footloose” ミュージックビデオ 山地 康太 ［日本］ 作品概要 4人組のロックバンドINNOSENTinFOR",
       "note": ""
     },
     {
-      "id": "_2JRv0n6w4g",
-      "awardName": "映像作家100人",
-      "url": "https://eizo100.jp/video/37980",
+      "id": "313084145",
+      "awardName": "SXSW Film Festival",
+      "category": "Special Jury Recognition for Animation",
+      "url": "https://www.thewrap.com/sxsw-film-festival-jury-special-awards-cancellation-coronavirus/",
       "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "BAKU",
-        "いきものがかり"
-      ],
-      "award_matched": [
-        "映像作家100人"
-      ],
+      "status": "verified_proximity_match",
+      "min_distance_chars": 40,
+      "matched_work": "Mitski",
+      "matched_tier": "Special Jury Recognition",
+      "context_snippet": "s new world that we find ourselves in.\" Special Jury Recognition for Animation: Mitski &#8211; &#8216;A Pearl' Director: Saad Moosajee, Art Camp \"The jury would",
       "note": ""
     },
     {
-      "id": "_ESKiygZh9Y",
-      "awardName": "映像作家100人",
-      "url": "https://eizo100.jp/video/58226",
+      "id": "49367868",
+      "awardName": "文化庁メディア芸術祭",
+      "category": "第16回 エンターテインメント部門 新人賞",
+      "url": "https://www.bunka.go.jp/j-mediaarts-festival/award/single/haisuinonasa/index.html",
       "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "imase",
-        "でもね"
-      ],
-      "award_matched": [
-        "映像作家100人"
-      ],
+      "status": "verified_proximity_match",
+      "min_distance_chars": 4,
+      "matched_work": "ハイスイノナサ",
+      "matched_tier": "新人賞",
+      "context_snippet": "STIVAL © ONISHI Keita 第16回 エンターテインメント部門 新人賞 ハイスイノナサ「地下鉄の動態」 ミュージックビデオ 大西 景太 作品概要 残響レコード所属ハイスイノナサの1stフルアルバム『動物の身体』からの1曲「地下鉄の動",
       "note": ""
     },
     {
-      "id": "Ula15c4UN4s",
-      "awardName": "映像作家100人",
-      "url": "https://eizo100.jp/video/6499",
+      "id": "246660563",
+      "awardName": "新千歳空港国際アニメーション映画祭",
+      "category": "観客賞 (Audience Award)",
+      "url": "https://archives.airport-anifes.jp/site2018/film/fes2018-imai_fly/",
       "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "A.G.I.T",
-        "Suchmos"
-      ],
-      "award_matched": [
-        "映像作家100人"
-      ],
+      "status": "verified_proximity_match",
+      "min_distance_chars": 25,
+      "matched_work": "橋本 麦",
+      "matched_tier": "Audience Award",
+      "context_snippet": "7 | 日本 (Japan) | 0:03:15 | AWARDS 観客賞 ( Audience Award ) PROFILE 橋本 麦 (HASHIMOTO Baku) 映像作家、ビジュアルアーティスト。TVCMからミュージックビデオ、Web、インタラクティブ作品など幅広く手掛け、さま",
       "note": ""
     },
     {
-      "id": "_5XZMPbbJIk",
-      "awardName": "映像作家100人",
-      "url": "https://eizo100.jp/video/86564",
+      "id": "134832670",
+      "awardName": "文化庁メディア芸術祭",
+      "category": "第20回 アニメーション部門 審査委員会推薦作品 (Jury Selection)",
+      "url": "https://www.bunka.go.jp/j-mediaarts-festival/en/award/single/loeil-du-cyclone/index-2.html",
       "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "讐復を能える"
-      ],
-      "award_matched": [
-        "映像作家100人"
-      ],
-      "note": ""
-    },
-    {
-      "id": "_H6zuJAtQqI",
-      "awardName": "映像作家100人",
-      "url": "https://eizo100.jp/video/49133",
-      "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "Evangelion",
-        "エヴァンゲリオン"
-      ],
-      "award_matched": [
-        "映像作家100人"
-      ],
+      "status": "verified_proximity_match",
+      "min_distance_chars": 22,
+      "matched_work": "HIRAOKA",
+      "matched_tier": "Animation Division",
+      "context_snippet": "ions © JAPAN MEDIA ARTS FESTIVAL © 2015 HIRAOKA Masanobu 20th Animation Division Jury Selections L'OEil du Cyclone Animated short film HIRAOKA",
       "note": ""
     },
     {
       "id": "vRBVWCs1KW4",
       "awardName": "Cannes Film Festival",
+      "category": "Short Film Palme d'Or",
       "url": "https://en.wikipedia.org/wiki/Blinkity_Blank",
       "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "Blinkity Blank"
-      ],
-      "award_matched": [
-        "Palme d'Or",
-        "Cannes"
-      ],
+      "status": "verified_proximity_match",
+      "min_distance_chars": 65,
+      "matched_work": "Blinkity Blank",
+      "matched_tier": "Palme d'Or",
+      "context_snippet": "n v t e Cannes Film Festival Short Film Palme d'Or 1950s ' t Schot is te boord! (1952) White Mane (1953) Blinkity Blank (1955) The Red Balloon (1956) A Brief History (1957) The Seine Me",
       "note": ""
     },
     {
       "id": "X0hyTmlsBUI",
       "awardName": "Academy Awards (Oscars)",
-      "url": "https://www.shortoftheweek.com/2024/12/17/oscars-short-film-shortlists-2025/",
+      "category": "97th Animated Short Film Shortlist",
+      "url": "https://prtimes.jp/main/html/rd/p/000002470.000000496.html",
       "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "Origami"
-      ],
-      "award_matched": [
-        "Shortlist",
-        "Oscars",
-        "Animated Short"
-      ],
+      "status": "verified_proximity_match",
+      "min_distance_chars": 22,
+      "matched_work": "Origami",
+      "matched_tier": "ショートリスト",
+      "context_snippet": "短編アニメーション4作品を含む88作品の中から15作品が短編アニメーション部門のショートリストに選出され、15作品の1つに『Origami』が選ばれました。 https://press.oscars.org/news/97th-oscarsr-shortlists-10-award-",
       "note": ""
     },
     {
       "id": "35i4zTky9pI",
       "awardName": "Academy Awards (Oscars)",
+      "category": "91st Animated Short Film Shortlist",
       "url": "https://www.oscars.org/oscars/91st-oscars-shortlists",
       "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "Lost &amp; Found"
-      ],
-      "award_matched": [
-        "Shortlist",
-        "Oscars",
-        "Animated Short"
-      ],
+      "status": "verified_proximity_match",
+      "min_distance_chars": 106,
+      "matched_work": "Lost & Found",
+      "matched_tier": "Shortlist",
+      "context_snippet": " Animation Branch vote to determine the shortlist and the nominees. “Age of Sail” “Animal Behaviour” “Bao” “Bilby” “Bird Karma” “Late Afternoon” “Lost & Found” “One Small Step” “Pépé le Morse” “Weekends” Download LIVE ACTION S",
       "note": ""
     },
     {
       "id": "vohpCZh-Qcw",
       "awardName": "Annecy International Animation Film Festival",
+      "category": "Official Short Films Competition Selection",
       "url": "https://unijapan.org/english/news/awards/festivals/annecy_international_animation_film_festival_2025.html",
       "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "Ordinary Life"
-      ],
-      "award_matched": [
-        "Annecy",
-        "Competition"
-      ],
+      "status": "verified_proximity_match",
+      "min_distance_chars": 178,
+      "matched_work": "Ordinary Life",
+      "matched_tier": "Competition",
+      "context_snippet": ".annecy.org/home 【Official Selection in Competition 2025】 Feature films \"The Last Blossom\" | dir. KINOSHITA Baku \"ChaO\" | dir. AOKI Yasuhiro Feature Films Contrechamp \"Jinsei\" | dir. SUZUKI Ryuya Official Short Films \"Ordinary Life\" | dir. MIZUSHIRI Yoriko \"Star Wars Visions\" | dir. OHIRA Shinya O",
       "note": ""
     },
     {
       "id": "jvKtHf7kDYs",
       "awardName": "東京国際映画祭",
+      "category": "アジアの未来 作品賞",
       "url": "https://2021.tiff-jp.net/award_winners_ja/",
       "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "世界、北半球",
-        "ホセイン"
-      ],
-      "award_matched": [
-        "アジアの未来",
-        "作品賞"
-      ],
-      "note": ""
-    },
-    {
-      "id": "_PTHdkmCLRs",
-      "awardName": "映像作家100人",
-      "url": "https://eizo100.jp/video/12085",
-      "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "よんぺーくん"
-      ],
-      "award_matched": [
-        "映像作家100人"
-      ],
-      "note": ""
-    },
-    {
-      "id": "g9dacS4c_D8",
-      "awardName": "映像作家100人",
-      "url": "https://eizo100.jp/video/124003",
-      "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "Builder"
-      ],
-      "award_matched": [
-        "映像作家100人"
-      ],
+      "status": "verified_proximity_match",
+      "min_distance_chars": 34,
+      "matched_work": "世界、北半球",
+      "matched_tier": "作品賞",
+      "context_snippet": "Matsui Daigo Asian Future アジアの未来 アジアの未来 作品賞 Asian Future Best Film Award 『世界、北半球』 \"World, Northern Hemisphere [Jahan, Nimkoreh-e Shomali]\" 監督：ホセイン・テヘラニ Ho",
       "note": ""
     },
     {
       "id": "UvGwIFVUK7M",
       "awardName": "Spikes Asia",
+      "category": "Film Craft Grand Prix",
       "url": "https://www.spikes.asia/news/spikes-asia-announces-its-2025-winners",
       "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "Jindal Steel",
-        "Steel of India"
-      ],
-      "award_matched": [
-        "Film Craft",
-        "Grand Prix",
-        "Spikes Asia"
-      ],
+      "status": "verified_proximity_match",
+      "min_distance_chars": 25,
+      "matched_work": "Jindal Steel",
+      "matched_tier": "Grand Prix",
+      "context_snippet": "ded: 4 Gold, 6 Silver, 9 Bronze and the Grand Prix that went to ‘Jindal Steel - The Steel Of India’, for Jindal Steel and Power, by Early Man Fil",
       "note": ""
     },
     {
       "id": "CWhNI_x9W6c",
       "awardName": "映文連アワード",
+      "category": "経済産業大臣賞",
       "url": "https://www.eibunren.or.jp/?p=7067",
       "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "MAZDA",
-        "RX-7"
-      ],
-      "award_matched": [
-        "経済産業大臣賞",
-        "映文連"
-      ],
+      "status": "verified_proximity_match",
+      "min_distance_chars": 9,
+      "matched_work": "MAZDA",
+      "matched_tier": "経済産業大臣賞",
+      "context_snippet": "タッフ株式会社/株式会社NHKエデュケーショナル クライアント：日本放送協会 ◆経済産業大臣賞 【MAZDAドキュメンタリー】RX-7と過ごした25年間、最後の3日間 〜クルマが残してくれたもの〜 （9分46秒） 製作：LUCK株式会社 クライアント：マツダ",
       "note": ""
     },
     {
       "id": "D_vdPkCz23g",
       "awardName": "Cannes Lions",
+      "category": "Sustainable Development Goals (SDG) Grand Prix / Titanium Grand Prix / Direct Grand Prix",
       "url": "https://www.canneslions.com/news/creativity-can-change-the-world",
       "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "Palau Pledge"
-      ],
-      "award_matched": [
-        "Sustainable Development Goals",
-        "Grand Prix",
-        "Cannes"
-      ],
+      "status": "verified_proximity_match",
+      "min_distance_chars": 144,
+      "matched_work": "Palau Legacy Project",
+      "matched_tier": "Grand Prix",
+      "context_snippet": " supports the advancement of the Goals. Grand Prix winners like the 2019 ‘The Lion’s Share’ for Mars by BBDO Australia, won the heart and minds of the Jury and the 2018 ‘Trash Isles’, Palau Legacy Project, by Host/Havas Sydney, Australia. Across the Lions, work th",
       "note": ""
     },
     {
       "id": "1S-KU2F7wc0",
       "awardName": "日本国際観光映像祭",
+      "category": "ジャパングランプリ / 部門別最優秀賞",
       "url": "https://prtimes.jp/main/html/rd/p/000000013.000081094.html",
       "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "南阿蘇",
-        "みなみあそ"
-      ],
-      "award_matched": [
-        "グランプリ",
-        "観光映像祭"
-      ],
+      "status": "verified_proximity_match",
+      "min_distance_chars": 31,
+      "matched_work": "南阿蘇",
+      "matched_tier": "最優秀賞",
+      "context_snippet": "がJWTFF 日本国際映像祭2025で最高賞のジャパングランプリを受賞！ 部門別最優秀賞とあわせW受賞の快挙、地元クリエイターが温泉地としての南阿蘇を描く「わく、みなみあそ」プロジェクトの第2弾。 一般社団法人みなみあそ観光局 2025年3月21日 22時16分 いいね！数を読み込み中です 授賞式の様",
       "note": ""
     },
     {
       "id": "8pOOxOo7YYo",
       "awardName": "日本国際観光映像祭",
+      "category": "グランプリ（日本部門）",
       "url": "https://www.town.horonobe.lg.jp/www4/section/sangyo/le009f000001xivg.html",
       "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "サロベツ",
-        "利尻"
-      ],
-      "award_matched": [
-        "グランプリ",
-        "観光映像祭"
-      ],
+      "status": "verified_proximity_match",
+      "min_distance_chars": 25,
+      "matched_work": "サロベツ",
+      "matched_tier": "グランプリ",
+      "context_snippet": "現在位置の階層 ホーム 役場担当部署一覧 産業建設課 幌延町の観光映像「サロベツ原野、最北の記憶」が、日本国際観光映像祭「グランプリ」を受賞(プレスリリース公開） 幌延町の観光映像「サロベツ原野、最北の記憶」が、日本国際観光映像祭「グランプリ」を受賞(プレスリリース公開） 北海道幌",
       "note": ""
     },
     {
       "id": "uCDUpZV3f8A",
       "awardName": "ADFEST",
+      "category": "Fabulous Four Commendation Certificate (New Director Lotus)",
       "url": "https://www.brandinginasia.com/adfest-fabulous-four/",
       "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "Brushing Up",
-        "Erika Konno"
-      ],
-      "award_matched": [
-        "Fabulous Four",
-        "ADFEST"
-      ],
+      "status": "verified_proximity_match",
+      "min_distance_chars": 46,
+      "matched_work": "Brushing Up",
+      "matched_tier": "Commendation",
+      "context_snippet": "r at TYO CampKAZ, won the Fabulous Four Commendation Certificate for her short film, ‘Brushing Up’, at ADFEST 2016. She says: “Winning the Commendation was a big help",
       "note": ""
     },
     {
       "id": "9NzQ3G6rY5M",
       "awardName": "日本国際観光映像祭",
+      "category": "日本部門 City Promotion 優秀賞",
       "url": "https://prtimes.jp/main/html/rd/p/000000007.000144033.html",
       "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "和水町",
-        "なごみを"
-      ],
-      "award_matched": [
-        "優秀賞",
-        "観光映像祭"
-      ],
+      "status": "verified_proximity_match",
+      "min_distance_chars": 44,
+      "matched_work": "和水町",
+      "matched_tier": "優秀賞",
+      "context_snippet": "映像作品『あなたに、なごみを。～熊本県和水町～』が「第7回 日本国際観光映像祭 日\u0000本部門 City Promotion」にて優秀賞を受賞 株式会社Grass Family. 2025年4月14日 09時00分 いいね！数を読み込み中です 地域振興や発信力強化に貢献する株式会社Gras",
       "note": ""
     },
     {
       "id": "p4eAR2Gw5RU",
       "awardName": "日本国際観光映像祭",
+      "category": "日本部門2025（入選）",
       "url": "https://jwtff.world/aiovg_videos/2025_japan_045",
       "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "旧奈良監獄",
-        "赤レンガ"
-      ],
-      "award_matched": [
-        "観光映像祭"
-      ],
+      "status": "verified_proximity_match",
+      "min_distance_chars": 39,
+      "matched_work": "赤レンガ",
+      "matched_tier": "入選",
+      "context_snippet": "旧奈良監獄～奈良赤レンガFESTIVAL2023～PV 2025 2/13 日本部門2025（入選） 2025-02-13 プロデューサー： 吉野泰司 監督： ぁぉと47 クライアント： J-heritage 撮影場所： 旧奈良監獄 映像の尺： 2分27",
       "note": ""
     },
     {
       "id": "V6XHz7tqGVM",
       "awardName": "ADFEST",
+      "category": "Fabulous Four Official Selection (New Director Lotus)",
       "url": "https://adfest.com/Home/News/detail.html?id=12075",
       "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "Beautiful Lie",
-        "Muranaka"
-      ],
-      "award_matched": [
-        "Fabulous Four",
-        "ADFEST"
-      ],
+      "status": "verified_proximity_match",
+      "min_distance_chars": 36,
+      "matched_work": "Muranaka",
+      "matched_tier": "Fabulous Four",
+      "context_snippet": ";BEAUTIFUL LIE&rsquo; Last year, Narumi Muranaka, attended ADFEST 2016 as a Fabulous Four New Director. Her short film, called ‘Beautiful Lie’, tells the st",
       "note": ""
     },
     {
       "id": "9waEFmHUNdk",
       "awardName": "日本国際観光映像祭",
+      "category": "観客賞",
       "url": "https://prtimes.jp/main/html/rd/p/000000187.000017308.html",
       "http_status": 200,
-      "status": "verified_text_match",
-      "work_matched": [
-        "BUNGO-ONO",
-        "豊後大野"
-      ],
-      "award_matched": [
-        "観客賞",
-        "観光映像祭"
-      ],
+      "status": "verified_proximity_match",
+      "min_distance_chars": 12,
+      "matched_work": "BUNGO-ONO",
+      "matched_tier": "観客賞",
+      "context_snippet": "した観光PR映像「Unveil the Hidden Gems in Oita BUNGO-ONO」が 観客賞 を 受賞 したことをお知らせいたします。 日本国際観光映像祭とは、地域の魅力を映像を通じて世界に発信し、観光振興に貢献することを目的とした国際的なアワー",
       "note": ""
     }
   ]

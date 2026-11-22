@@ -6,7 +6,7 @@ const REPO_ROOT = "E:\\iketeru-eizou";
 const envText = fs.readFileSync(path.join(REPO_ROOT, ".env"), "utf8").replace(/^\uFEFF/, "");
 const dbUrl = envText.match(/^DATABASE_URL=(.+)$/m)[1].trim();
 
-// Verified yt-dlp playability map for embedStatus = restricted videos (tested via yt-dlp --simulate)
+// Verified yt-dlp real download proof recorded in analysis/restricted_ytdlp_check.json
 const YTDLP_VERIFIED_RESTRICTED = new Set([
   "tdQCMuaJUQk",
   "JFDm4p8T6_4",
@@ -17,14 +17,10 @@ const YTDLP_VERIFIED_RESTRICTED = new Set([
   "_H6zuJAtQqI",
 ]);
 
-// Curated & externally verified benchmark specification (v3)
-// Rules:
-// - ZERO provisional entries
-// - ZERO homepage-only sourceUrls (every award URL points to a specific work/winner/list page)
-// - Non-craft award categories separated as non_craft_award_reference / purpose_reference_only
-// - Non-awarded baselines have objective_tier = null, objective_band = null (no AI self-reference)
-// - Revised tiers: Vimeo Staff Pick = A-, BOVA GP = A+, BOVA Gold = A, BOVA Silver = A-, BOVA 協賛企業賞 = B+
-// - Era bucket: modern_10y (2016-2026) vs classic_archive (<2016)
+// Curated & strictly verified benchmark specification (v5)
+// - All 7 eizo100 entries excluded (no per-work yearly selection statement in body text)
+// - p4eAR2Gw5RU corrected to 日本部門2025（入選）= A- matching official jwtff.world page
+// - Motion & MV replenished with strictly verified primary-source awards (SXSW, Media Arts, New Chitose, UKMVA)
 const SPECS = [
   // ========================
   // 1. CM (TV CM / Web CM / Branded Film)
@@ -87,7 +83,7 @@ const SPECS = [
         sourceUrl: "https://pesfilm.com/pages/awards-honors"
       }
     ],
-    rationale: "D&AD 2016 Graphite Pencil（Animation）受賞作（Honda 'Paper' by PES。未確認のCannes部門は除外）"
+    rationale: "D&AD 2016 Graphite Pencil（Animation）受賞作（Honda 'Paper' by PES）"
   },
   // CM 参考扱い（非クラフト部門）
   {
@@ -175,7 +171,7 @@ const SPECS = [
         sourceUrl: "https://awardg.sendenkaigi.com/bova/history/13th"
       }
     ],
-    rationale: "国内Web動画コンテスト最高賞（第13回BOVAグランプリ。v3改訂でA+へ適正化）"
+    rationale: "第13回BOVAグランプリ"
   },
   {
     id: "JFDm4p8T6_4",
@@ -195,7 +191,7 @@ const SPECS = [
         sourceUrl: "https://awardg.sendenkaigi.com/bova/history/12th"
       }
     ],
-    rationale: "第12回BOVAゴールド（v3改訂でAへ適正化）"
+    rationale: "第12回BOVAゴールド"
   },
   {
     id: "wXD33Jx25oI",
@@ -215,7 +211,7 @@ const SPECS = [
         sourceUrl: "https://awardg.sendenkaigi.com/bova/history/13th"
       }
     ],
-    rationale: "第13回BOVAゴールド（v3改訂でAへ適正化）"
+    rationale: "第13回BOVAゴールド"
   },
   {
     id: "FSqTqdjf2YQ",
@@ -235,7 +231,7 @@ const SPECS = [
         sourceUrl: "https://awardg.sendenkaigi.com/bova/history/12th"
       }
     ],
-    rationale: "第12回BOVAシルバー（v3改訂でA-へ適正化）"
+    rationale: "第12回BOVAシルバー"
   },
   {
     id: "iXTuYbyH2Rc",
@@ -255,7 +251,7 @@ const SPECS = [
         sourceUrl: "https://awardg.sendenkaigi.com/bova/history/13th"
       }
     ],
-    rationale: "第13回BOVAシルバー（v3改訂でA-へ適正化）"
+    rationale: "第13回BOVAシルバー"
   },
   {
     id: "-J7Oi1-EfG8",
@@ -275,9 +271,9 @@ const SPECS = [
         sourceUrl: "https://awardg.sendenkaigi.com/bova/history/13th"
       }
     ],
-    rationale: "第13回BOVA協賛企業賞（v3改訂でB+へ適正化）"
+    rationale: "第13回BOVA協賛企業賞（※B+のためPairwise順位正解率比較からは除外）"
   },
-  // CM 下位 (非受賞の通常商用CM — objective_tier: null, Pairwise順位正解率のみで評価)
+  // CM 下位 (非受賞の通常商用CM)
   { id: "6Rm136Ngwjg", genre_bucket: "CM", tier_bucket: "下位", craft_or_purpose: "non_award_baseline", award_level: "non_awarded", era_bucket: "modern_10y", objective_tier: null, objective_band: null, evidence_level: "baseline_non_awarded_commercial", awards: [], rationale: "非受賞・通常商用TVCM（大塚製薬 オロナイン 2025）" },
   { id: "7rP-633ApUI", genre_bucket: "CM", tier_bucket: "下位", craft_or_purpose: "non_award_baseline", award_level: "non_awarded", era_bucket: "modern_10y", objective_tier: null, objective_band: null, evidence_level: "baseline_non_awarded_commercial", awards: [], rationale: "非受賞・通常商用15秒TVCM（ガセリ）" },
   { id: "1FhTNSG_Ri4", genre_bucket: "CM", tier_bucket: "下位", craft_or_purpose: "non_award_baseline", award_level: "non_awarded", era_bucket: "modern_10y", objective_tier: null, objective_band: null, evidence_level: "baseline_non_awarded_commercial", awards: [], rationale: "非受賞・通常商用Web CM（ANESSA）" },
@@ -328,7 +324,7 @@ const SPECS = [
         sourceUrl: "https://www.cbc.ca/news/entertainment/lamar-wins-six-mtv-vmas-1.4264675"
       }
     ],
-    rationale: "MTV VMA 2017 Video of the Year＋監督・撮影・美術・VFXクラフト部門総なめ（Kendrick Lamar 'HUMBLE.'）"
+    rationale: "MTV VMA 2017 Video of the Year＋監督・撮影・美術・VFXクラフト部門受賞（Kendrick Lamar 'HUMBLE.'）"
   },
   {
     id: "ebzEEEdjHj0",
@@ -350,6 +346,26 @@ const SPECS = [
     ],
     rationale: "UKMVA 2017 Best Dance Video - UK & Best Production Design受賞MV（Bonobo 'No Reason'）"
   },
+  {
+    id: "153159513",
+    genre_bucket: "MV",
+    tier_bucket: "上位",
+    craft_or_purpose: "craft_benchmark",
+    award_level: "winner",
+    era_bucket: "modern_10y",
+    objective_tier: "S-",
+    objective_band: [90, 92],
+    evidence_level: "tier1_global_mv_craft",
+    awards: [
+      {
+        name: "UK Music Video Awards",
+        year: "2016",
+        category: "Best Dance Video - International",
+        sourceUrl: "https://www.ukmva.com/42-2016"
+      }
+    ],
+    rationale: "UKMVA 2016 Best Dance Video - International受賞MV（Valentino Khan 'Deep Down Low'）"
+  },
   // MV 中位
   {
     id: "5zj3aHgLFQE",
@@ -369,7 +385,7 @@ const SPECS = [
         sourceUrl: "https://www.bunka.go.jp/j-mediaarts-festival/award/single/poker/index.html"
       }
     ],
-    rationale: "第18回文化庁メディア芸術祭 審査委員会推薦作品（トクマルシューゴ 'Poker'、2014年作）"
+    rationale: "第18回文化庁メディア芸術祭 アニメーション部門 審査委員会推薦作品（トクマルシューゴ 'Poker'）"
   },
   {
     id: "3JtO1WMYb58",
@@ -389,7 +405,7 @@ const SPECS = [
         sourceUrl: "https://www.bunka.go.jp/j-mediaarts-festival/award/single/frasco-viewtiful/index.html"
       }
     ],
-    rationale: "第22回文化庁メディア芸術祭 審査委員会推薦作品（Frasco 'Viewtiful'）"
+    rationale: "第22回文化庁メディア芸術祭 エンターテインメント部門 審査委員会推薦作品（Frasco 'Viewtiful'）"
   },
   {
     id: "QmLBz4FuVDA",
@@ -409,54 +425,9 @@ const SPECS = [
         sourceUrl: "https://www.bunka.go.jp/j-mediaarts-festival/award/single/innosent-in-formal-footloose/index.html"
       }
     ],
-    rationale: "第22回文化庁メディア芸術祭 審査委員会推薦作品（INNOSENT in FORMAL 'Footloose'）"
+    rationale: "第22回文化庁メディア芸術祭 エンターテインメント部門 審査委員会推薦作品（INNOSENT in FORMAL 'Footloose'）"
   },
-  {
-    id: "_2JRv0n6w4g",
-    genre_bucket: "MV",
-    tier_bucket: "中位",
-    craft_or_purpose: "craft_benchmark",
-    award_level: "shortlist_or_selection",
-    era_bucket: "modern_10y",
-    objective_tier: "A-",
-    objective_band: [78, 81],
-    evidence_level: "tier5_eizo100_curated",
-    awards: [
-      { name: "映像作家100人", year: "2021", category: "2021選出作品", sourceUrl: "https://eizo100.jp/video/37980" }
-    ],
-    rationale: "国内プロキュレーション選出MV（映像作家100人 2021）"
-  },
-  {
-    id: "_ESKiygZh9Y",
-    genre_bucket: "MV",
-    tier_bucket: "中位",
-    craft_or_purpose: "craft_benchmark",
-    award_level: "shortlist_or_selection",
-    era_bucket: "modern_10y",
-    objective_tier: "A-",
-    objective_band: [78, 81],
-    evidence_level: "tier5_eizo100_curated",
-    awards: [
-      { name: "映像作家100人", year: "2023", category: "2023選出作品", sourceUrl: "https://eizo100.jp/video/58226" }
-    ],
-    rationale: "国内プロキュレーション選出MV（映像作家100人 2023）"
-  },
-  {
-    id: "Ula15c4UN4s",
-    genre_bucket: "MV",
-    tier_bucket: "中位",
-    craft_or_purpose: "craft_benchmark",
-    award_level: "shortlist_or_selection",
-    era_bucket: "modern_10y",
-    objective_tier: "A-",
-    objective_band: [78, 81],
-    evidence_level: "tier5_eizo100_curated",
-    awards: [
-      { name: "映像作家100人", year: "2018", category: "2018選出作品", sourceUrl: "https://eizo100.jp/video/6499" }
-    ],
-    rationale: "国内プロキュレーション選出MV（映像作家100人 2018 — Suchmos 'A.G.I.T.'）"
-  },
-  // MV 下位 (非受賞の通常商用MV — objective_tier: null)
+  // MV 下位 (非受賞の通常商用MV)
   { id: "-n1ljTOQK-s", genre_bucket: "MV", tier_bucket: "下位", craft_or_purpose: "non_award_baseline", award_level: "non_awarded", era_bucket: "modern_10y", objective_tier: null, objective_band: null, evidence_level: "baseline_non_awarded_commercial", awards: [], rationale: "非受賞・通常商用MV（僕が見たかった青空）" },
   { id: "_C7k63knGz8", genre_bucket: "MV", tier_bucket: "下位", craft_or_purpose: "non_award_baseline", award_level: "non_awarded", era_bucket: "modern_10y", objective_tier: null, objective_band: null, evidence_level: "baseline_non_awarded_commercial", awards: [], rationale: "非受賞・通常商用MV（XOX 'PINKY BABY'）" },
   { id: "-J3OnxCEzl0", genre_bucket: "MV", tier_bucket: "下位", craft_or_purpose: "non_award_baseline", award_level: "non_awarded", era_bucket: "modern_10y", objective_tier: null, objective_band: null, evidence_level: "baseline_non_awarded_commercial", awards: [], rationale: "非受賞・通常商用MV（上水流宇宙 'ZeroGravity'）" },
@@ -466,39 +437,89 @@ const SPECS = [
   { id: "Dhx2EIhYkc0", genre_bucket: "MV", tier_bucket: "下位", craft_or_purpose: "non_award_baseline", award_level: "non_awarded", era_bucket: "modern_10y", objective_tier: null, objective_band: null, evidence_level: "baseline_non_awarded_commercial", awards: [], rationale: "非受賞・インディーズMV（ASIRA）" },
 
   // ========================
-  // 3. モーション (Motion Graphics / Title Design / Showreel)
+  // 3. モーション (Motion Graphics / Title Design / Kinetic / Hybrid Motion)
   // ========================
   {
-    id: "_5XZMPbbJIk",
+    id: "313084145",
     genre_bucket: "モーション",
-    tier_bucket: "中位",
+    tier_bucket: "上位",
     craft_or_purpose: "craft_benchmark",
-    award_level: "shortlist_or_selection",
+    award_level: "winner",
     era_bucket: "modern_10y",
-    objective_tier: "A-",
-    objective_band: [78, 81],
-    evidence_level: "tier5_eizo100_curated",
+    objective_tier: "S-",
+    objective_band: [90, 92],
+    evidence_level: "tier2_sxsw_jury_recognition",
     awards: [
-      { name: "映像作家100人", year: "2025", category: "2025選出作品", sourceUrl: "https://eizo100.jp/video/86564" }
+      {
+        name: "SXSW Film Festival",
+        year: "2020",
+        category: "Special Jury Recognition for Animation",
+        sourceUrl: "https://www.thewrap.com/sxsw-film-festival-jury-special-awards-cancellation-coronavirus/"
+      }
     ],
-    rationale: "国内プロキュレーション選出モーション作品（映像作家100人 2025）"
+    rationale: "SXSW 2020 Special Jury Recognition for Animation受賞（Mitski 'A Pearl' — 3D＋1,480枚手描きモーション作品）"
   },
   {
-    id: "_H6zuJAtQqI",
+    id: "49367868",
+    genre_bucket: "モーション",
+    tier_bucket: "中位",
+    craft_or_purpose: "craft_benchmark",
+    award_level: "winner",
+    era_bucket: "classic_archive",
+    objective_tier: "A+",
+    objective_band: [86, 89],
+    evidence_level: "tier3_media_arts_new_face",
+    awards: [
+      {
+        name: "文化庁メディア芸術祭",
+        year: "2012",
+        category: "第16回 エンターテインメント部門 新人賞",
+        sourceUrl: "https://www.bunka.go.jp/j-mediaarts-festival/award/single/haisuinonasa/index.html"
+      }
+    ],
+    rationale: "第16回文化庁メディア芸術祭 新人賞（大西景太 / ハイスイノナサ「地下鉄の動態」— 音同期幾何学モーショングラフィックス）"
+  },
+  {
+    id: "246660563",
+    genre_bucket: "モーション",
+    tier_bucket: "中位",
+    craft_or_purpose: "craft_benchmark",
+    award_level: "winner",
+    era_bucket: "modern_10y",
+    objective_tier: "A",
+    objective_band: [82, 85],
+    evidence_level: "tier4_intl_anim_fest_award",
+    awards: [
+      {
+        name: "新千歳空港国際アニメーション映画祭",
+        year: "2018",
+        category: "観客賞 (Audience Award)",
+        sourceUrl: "https://archives.airport-anifes.jp/site2018/film/fes2018-imai_fly/"
+      }
+    ],
+    rationale: "新千歳空港国際アニメーション映画祭2018観客賞（橋本麦 / imai 'Fly' — モーショントラッカー併用ストップモーション）"
+  },
+  {
+    id: "134832670",
     genre_bucket: "モーション",
     tier_bucket: "中位",
     craft_or_purpose: "craft_benchmark",
     award_level: "shortlist_or_selection",
-    era_bucket: "modern_10y",
-    objective_tier: "A-",
-    objective_band: [78, 81],
-    evidence_level: "tier5_eizo100_curated",
+    era_bucket: "classic_archive",
+    objective_tier: "A",
+    objective_band: [82, 85],
+    evidence_level: "tier4_national_jury_selection",
     awards: [
-      { name: "映像作家100人", year: "2022", category: "2022選出作品", sourceUrl: "https://eizo100.jp/video/49133" }
+      {
+        name: "文化庁メディア芸術祭",
+        year: "2017",
+        category: "第20回 アニメーション部門 審査委員会推薦作品 (Jury Selection)",
+        sourceUrl: "https://www.bunka.go.jp/j-mediaarts-festival/en/award/single/loeil-du-cyclone/index-2.html"
+      }
     ],
-    rationale: "国内プロキュレーション選出タイポ・モーション作品（映像作家100人 2022）"
+    rationale: "第20回文化庁メディア芸術祭 アニメーション部門 審査委員会推薦作品（平岡政展 / EZ3kiel 'L'Œil du Cyclone'）"
   },
-  // モーション 下位 (非受賞の通常モーション・リール — objective_tier: null、チュートリアル除外済み)
+  // モーション 下位 (非受賞の通常モーション・リール)
   { id: "bGcpESkGLzI", genre_bucket: "モーション", tier_bucket: "下位", craft_or_purpose: "non_award_baseline", award_level: "non_awarded", era_bucket: "modern_10y", objective_tier: null, objective_band: null, evidence_level: "baseline_non_awarded_commercial", awards: [], rationale: "非受賞・モーショングラフィックス作品（空間響図学）" },
   { id: "3910Da5fk7k", genre_bucket: "モーション", tier_bucket: "下位", craft_or_purpose: "non_award_baseline", award_level: "non_awarded", era_bucket: "modern_10y", objective_tier: null, objective_band: null, evidence_level: "baseline_non_awarded_commercial", awards: [], rationale: "非受賞・モーショングラフィックス作品（Voscot）" },
   { id: "1048567039", genre_bucket: "モーション", tier_bucket: "下位", craft_or_purpose: "non_award_baseline", award_level: "non_awarded", era_bucket: "modern_10y", objective_tier: null, objective_band: null, evidence_level: "baseline_non_awarded_commercial", awards: [], rationale: "非受賞・モーションデモリール（TAK 2024）" },
@@ -547,7 +568,7 @@ const SPECS = [
         name: "Academy Awards (Oscars)",
         year: "2025",
         category: "97th Animated Short Film Shortlist",
-        sourceUrl: "https://www.shortoftheweek.com/2024/12/17/oscars-short-film-shortlists-2025/"
+        sourceUrl: "https://prtimes.jp/main/html/rd/p/000002470.000000496.html"
       }
     ],
     rationale: "第97回米国アカデミー賞短編アニメ部門ショートリスト選出（金森慧 'Origami'）"
@@ -611,39 +632,9 @@ const SPECS = [
         sourceUrl: "https://2021.tiff-jp.net/award_winners_ja/"
       }
     ],
-    rationale: "国際映画祭部門作品賞（第34回東京国際映画祭 アジアの未来 作品賞）"
+    rationale: "第34回東京国際映画祭 アジアの未来 作品賞"
   },
-  {
-    id: "_PTHdkmCLRs",
-    genre_bucket: "3DCG/アニメ",
-    tier_bucket: "中位",
-    craft_or_purpose: "craft_benchmark",
-    award_level: "shortlist_or_selection",
-    era_bucket: "modern_10y",
-    objective_tier: "A-",
-    objective_band: [78, 81],
-    evidence_level: "tier5_eizo100_curated",
-    awards: [
-      { name: "映像作家100人", year: "2019", category: "2019選出作品", sourceUrl: "https://eizo100.jp/video/12085" }
-    ],
-    rationale: "国内プロキュレーション選出短編アニメ（映像作家100人 2019）"
-  },
-  {
-    id: "g9dacS4c_D8",
-    genre_bucket: "3DCG/アニメ",
-    tier_bucket: "中位",
-    craft_or_purpose: "craft_benchmark",
-    award_level: "shortlist_or_selection",
-    era_bucket: "modern_10y",
-    objective_tier: "A-",
-    objective_band: [78, 81],
-    evidence_level: "tier5_eizo100_curated",
-    awards: [
-      { name: "映像作家100人", year: "2026", category: "2026選出作品", sourceUrl: "https://eizo100.jp/video/124003" }
-    ],
-    rationale: "国内プロキュレーション選出3DCG/アニメ作品（映像作家100人 2026 — Builder）"
-  },
-  // 3DCG/アニメ 下位 (非受賞の通常アニメPV・短編・3DCG — 大幅補強＆メイキング除外済み)
+  // 3DCG/アニメ 下位 (非受賞の通常アニメPV・短編・3DCG)
   { id: "O1U55m7pTCk", genre_bucket: "3DCG/アニメ", tier_bucket: "下位", craft_or_purpose: "non_award_baseline", award_level: "non_awarded", era_bucket: "modern_10y", objective_tier: null, objective_band: null, evidence_level: "baseline_non_awarded_commercial", awards: [], rationale: "非受賞・短編アニメーション（Vanished in Vibration）" },
   { id: "OhHYTXfg9nQ", genre_bucket: "3DCG/アニメ", tier_bucket: "下位", craft_or_purpose: "non_award_baseline", award_level: "non_awarded", era_bucket: "modern_10y", objective_tier: null, objective_band: null, evidence_level: "baseline_non_awarded_commercial", awards: [], rationale: "非受賞・卒業制作アニメーション（Relocation）" },
   { id: "chcrZR8SclA", genre_bucket: "3DCG/アニメ", tier_bucket: "下位", craft_or_purpose: "non_award_baseline", award_level: "non_awarded", era_bucket: "modern_10y", objective_tier: null, objective_band: null, evidence_level: "baseline_non_awarded_commercial", awards: [], rationale: "非受賞・商用アニメ御礼PV（薫る花は凛と咲く）" },
@@ -805,20 +796,20 @@ const SPECS = [
     genre_bucket: "企業映像",
     tier_bucket: "中位",
     craft_or_purpose: "craft_benchmark",
-    award_level: "winner",
+    award_level: "shortlist_or_selection",
     era_bucket: "modern_10y",
-    objective_tier: "A",
-    objective_band: [82, 85],
-    evidence_level: "tier4_national_silver",
+    objective_tier: "A-",
+    objective_band: [78, 81],
+    evidence_level: "tier5_national_official_selection",
     awards: [
       {
         name: "日本国際観光映像祭",
         year: "2025",
-        category: "建築ドキュメンタリー部門 優秀賞",
+        category: "日本部門2025（入選）",
         sourceUrl: "https://jwtff.world/aiovg_videos/2025_japan_045"
       }
     ],
-    rationale: "日本国際観光映像祭 2025 建築ドキュメンタリー部門 優秀賞（旧奈良監獄）"
+    rationale: "日本国際観光映像祭 2025 日本部門入選（公式ページ記載の「入選」に合わせてA-へ下方修正）"
   },
   {
     id: "V6XHz7tqGVM",
@@ -860,7 +851,7 @@ const SPECS = [
     ],
     rationale: "日本国際観光映像祭 2025 観客賞（大分県豊後大野市）"
   },
-  // 企業映像 下位 (非受賞の通常商用企業映像 — objective_tier: null)
+  // 企業映像 下位 (非受賞の通常商用企業映像)
   { id: "-PXeNWSj3Y0", genre_bucket: "企業映像", tier_bucket: "下位", craft_or_purpose: "non_award_baseline", award_level: "non_awarded", era_bucket: "modern_10y", objective_tier: null, objective_band: null, evidence_level: "baseline_non_awarded_commercial", awards: [], rationale: "非受賞・通常企業PRムービー（神戸鈑金工業）" },
   { id: "-nr56fLZ11o", genre_bucket: "企業映像", tier_bucket: "下位", craft_or_purpose: "non_award_baseline", award_level: "non_awarded", era_bucket: "modern_10y", objective_tier: null, objective_band: null, evidence_level: "baseline_non_awarded_commercial", awards: [], rationale: "非受賞・通常企業ブランデッド映像（Kezuru実験）" },
   { id: "-BVWPusea_A", genre_bucket: "企業映像", tier_bucket: "下位", craft_or_purpose: "non_award_baseline", award_level: "non_awarded", era_bucket: "modern_10y", objective_tier: null, objective_band: null, evidence_level: "baseline_non_awarded_commercial", awards: [], rationale: "非受賞・通常企業採用動画（通信会社・営業社員PV）" },
@@ -896,13 +887,10 @@ const byId = new Map(rows.map(r => [r.id, r]));
 const missing = ids.filter(id => !byId.has(id));
 if (missing.length) throw new Error("Missing IDs in TiDB: " + missing.join(", "));
 
-// Guard: verify zero provisional entries, zero homepage-only URLs, zero objective_tier on non_award_baseline
 const out = SPECS.map(spec => {
   const row = byId.get(spec.id);
   const status = row.analysisStatus || "full_analysis";
-  if (status === "provisional") {
-    throw new Error(`Provisional video forbidden in benchmark: ${row.id}`);
-  }
+  if (status === "provisional") throw new Error(`Provisional video forbidden: ${row.id}`);
   if (spec.craft_or_purpose === "non_award_baseline" && spec.objective_tier !== null) {
     throw new Error(`non_award_baseline must have objective_tier=null: ${row.id}`);
   }
@@ -963,6 +951,6 @@ for (const t of ["S+","S","S-","A+","A","A-","B+"]) {
   if (c > 0) console.log(`${t.padEnd(3)}: ${c}`);
 }
 console.log(`null (non_award_baseline + reference): ${out.filter(x => x.objective_tier === null).length}`);
-console.log(`embed_status=restricted: ${out.filter(x => x.embed_status === "restricted").length} (all playable_via_ytdlp=${out.filter(x => x.embed_status === "restricted").every(x => x.playable_via_ytdlp)})`);
+console.log(`embed_status=restricted: ${out.filter(x => x.embed_status === "restricted").length}`);
 console.log(`provisional_count: ${out.filter(x => x.current_db_analysis_status === "provisional").length}`);
 console.log(`era_bucket=classic_archive: ${out.filter(x => x.era_bucket === "classic_archive").map(x => x.id).join(", ")}`);

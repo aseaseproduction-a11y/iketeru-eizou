@@ -90,7 +90,7 @@
       92
     ],
     "evidence_level": "tier1_global_craft_silver",
-    "rationale": "D&AD 2016 Graphite Pencil（Animation）受賞作（Honda 'Paper' by PES。未確認のCannes部門は除外）"
+    "rationale": "D&AD 2016 Graphite Pencil（Animation）受賞作（Honda 'Paper' by PES）"
   },
   {
     "id": "Z_lbVlhO9HE",
@@ -214,7 +214,7 @@
       89
     ],
     "evidence_level": "tier3_national_contest_gp",
-    "rationale": "国内Web動画コンテスト最高賞（第13回BOVAグランプリ。v3改訂でA+へ適正化）"
+    "rationale": "第13回BOVAグランプリ"
   },
   {
     "id": "JFDm4p8T6_4",
@@ -245,7 +245,7 @@
       85
     ],
     "evidence_level": "tier4_national_contest_gold",
-    "rationale": "第12回BOVAゴールド（v3改訂でAへ適正化）"
+    "rationale": "第12回BOVAゴールド"
   },
   {
     "id": "wXD33Jx25oI",
@@ -276,7 +276,7 @@
       85
     ],
     "evidence_level": "tier4_national_contest_gold",
-    "rationale": "第13回BOVAゴールド（v3改訂でAへ適正化）"
+    "rationale": "第13回BOVAゴールド"
   },
   {
     "id": "FSqTqdjf2YQ",
@@ -307,7 +307,7 @@
       81
     ],
     "evidence_level": "tier5_national_contest_silver",
-    "rationale": "第12回BOVAシルバー（v3改訂でA-へ適正化）"
+    "rationale": "第12回BOVAシルバー"
   },
   {
     "id": "iXTuYbyH2Rc",
@@ -338,7 +338,7 @@
       81
     ],
     "evidence_level": "tier5_national_contest_silver",
-    "rationale": "第13回BOVAシルバー（v3改訂でA-へ適正化）"
+    "rationale": "第13回BOVAシルバー"
   },
   {
     "id": "-J7Oi1-EfG8",
@@ -369,7 +369,7 @@
       77
     ],
     "evidence_level": "tier6_contest_sponsor_award",
-    "rationale": "第13回BOVA協賛企業賞（v3改訂でB+へ適正化）"
+    "rationale": "第13回BOVA協賛企業賞（※B+のためPairwise順位正解率比較からは除外）"
   },
   {
     "id": "6Rm136Ngwjg",
@@ -599,7 +599,7 @@
       96
     ],
     "evidence_level": "tier1_global_mv_winner",
-    "rationale": "MTV VMA 2017 Video of the Year＋監督・撮影・美術・VFXクラフト部門総なめ（Kendrick Lamar 'HUMBLE.'）"
+    "rationale": "MTV VMA 2017 Video of the Year＋監督・撮影・美術・VFXクラフト部門受賞（Kendrick Lamar 'HUMBLE.'）"
   },
   {
     "id": "ebzEEEdjHj0",
@@ -633,6 +633,37 @@
     "rationale": "UKMVA 2017 Best Dance Video - UK & Best Production Design受賞MV（Bonobo 'No Reason'）"
   },
   {
+    "id": "153159513",
+    "title": "Valentino Khan - Deep Down Low (Official Video)",
+    "platform": "vimeo",
+    "videoUrl": "https://vimeo.com/153159513",
+    "embed_status": "unknown",
+    "playable_via_ytdlp": true,
+    "genre_bucket": "MV",
+    "tier_bucket": "上位",
+    "craft_or_purpose": "craft_benchmark",
+    "award_level": "winner",
+    "era_bucket": "modern_10y",
+    "current_db_rating": "S",
+    "current_db_score": 96,
+    "current_db_analysis_status": "full_analysis",
+    "awards": [
+      {
+        "name": "UK Music Video Awards",
+        "year": "2016",
+        "category": "Best Dance Video - International",
+        "sourceUrl": "https://www.ukmva.com/42-2016"
+      }
+    ],
+    "objective_tier": "S-",
+    "objective_band": [
+      90,
+      92
+    ],
+    "evidence_level": "tier1_global_mv_craft",
+    "rationale": "UKMVA 2016 Best Dance Video - International受賞MV（Valentino Khan 'Deep Down Low'）"
+  },
+  {
     "id": "5zj3aHgLFQE",
     "title": "Shugo Tokumaru (トクマルシューゴ) - Poker (Official Music Video)",
     "platform": "youtube",
@@ -661,7 +692,7 @@
       85
     ],
     "evidence_level": "tier4_national_jury_selection",
-    "rationale": "第18回文化庁メディア芸術祭 審査委員会推薦作品（トクマルシューゴ 'Poker'、2014年作）"
+    "rationale": "第18回文化庁メディア芸術祭 アニメーション部門 審査委員会推薦作品（トクマルシューゴ 'Poker'）"
   },
   {
     "id": "3JtO1WMYb58",
@@ -692,7 +723,7 @@
       85
     ],
     "evidence_level": "tier4_national_jury_selection",
-    "rationale": "第22回文化庁メディア芸術祭 審査委員会推薦作品（Frasco 'Viewtiful'）"
+    "rationale": "第22回文化庁メディア芸術祭 エンターテインメント部門 審査委員会推薦作品（Frasco 'Viewtiful'）"
   },
   {
     "id": "QmLBz4FuVDA",
@@ -723,100 +754,7 @@
       85
     ],
     "evidence_level": "tier4_national_jury_selection",
-    "rationale": "第22回文化庁メディア芸術祭 審査委員会推薦作品（INNOSENT in FORMAL 'Footloose'）"
-  },
-  {
-    "id": "_2JRv0n6w4g",
-    "title": "いきものがかり | BAKU",
-    "platform": "youtube",
-    "videoUrl": "https://www.youtube.com/watch?v=_2JRv0n6w4g",
-    "embed_status": "available",
-    "playable_via_ytdlp": true,
-    "genre_bucket": "MV",
-    "tier_bucket": "中位",
-    "craft_or_purpose": "craft_benchmark",
-    "award_level": "shortlist_or_selection",
-    "era_bucket": "modern_10y",
-    "current_db_rating": "A+",
-    "current_db_score": 89,
-    "current_db_analysis_status": "full_analysis",
-    "awards": [
-      {
-        "name": "映像作家100人",
-        "year": "2021",
-        "category": "2021選出作品",
-        "sourceUrl": "https://eizo100.jp/video/37980"
-      }
-    ],
-    "objective_tier": "A-",
-    "objective_band": [
-      78,
-      81
-    ],
-    "evidence_level": "tier5_eizo100_curated",
-    "rationale": "国内プロキュレーション選出MV（映像作家100人 2021）"
-  },
-  {
-    "id": "_ESKiygZh9Y",
-    "title": "imase – でもね、たまには",
-    "platform": "youtube",
-    "videoUrl": "https://www.youtube.com/watch?v=_ESKiygZh9Y",
-    "embed_status": "available",
-    "playable_via_ytdlp": true,
-    "genre_bucket": "MV",
-    "tier_bucket": "中位",
-    "craft_or_purpose": "craft_benchmark",
-    "award_level": "shortlist_or_selection",
-    "era_bucket": "modern_10y",
-    "current_db_rating": "A-",
-    "current_db_score": 79,
-    "current_db_analysis_status": "full_analysis",
-    "awards": [
-      {
-        "name": "映像作家100人",
-        "year": "2023",
-        "category": "2023選出作品",
-        "sourceUrl": "https://eizo100.jp/video/58226"
-      }
-    ],
-    "objective_tier": "A-",
-    "objective_band": [
-      78,
-      81
-    ],
-    "evidence_level": "tier5_eizo100_curated",
-    "rationale": "国内プロキュレーション選出MV（映像作家100人 2023）"
-  },
-  {
-    "id": "Ula15c4UN4s",
-    "title": "Suchmos – “A.G.I.T.”",
-    "platform": "youtube",
-    "videoUrl": "https://www.youtube.com/watch?v=Ula15c4UN4s",
-    "embed_status": "available",
-    "playable_via_ytdlp": true,
-    "genre_bucket": "MV",
-    "tier_bucket": "中位",
-    "craft_or_purpose": "craft_benchmark",
-    "award_level": "shortlist_or_selection",
-    "era_bucket": "modern_10y",
-    "current_db_rating": "A",
-    "current_db_score": 83,
-    "current_db_analysis_status": "full_analysis",
-    "awards": [
-      {
-        "name": "映像作家100人",
-        "year": "2018",
-        "category": "2018選出作品",
-        "sourceUrl": "https://eizo100.jp/video/6499"
-      }
-    ],
-    "objective_tier": "A-",
-    "objective_band": [
-      78,
-      81
-    ],
-    "evidence_level": "tier5_eizo100_curated",
-    "rationale": "国内プロキュレーション選出MV（映像作家100人 2018 — Suchmos 'A.G.I.T.'）"
+    "rationale": "第22回文化庁メディア芸術祭 エンターテインメント部門 審査委員会推薦作品（INNOSENT in FORMAL 'Footloose'）"
   },
   {
     "id": "-n1ljTOQK-s",
@@ -966,66 +904,128 @@
     "rationale": "非受賞・インディーズMV（ASIRA）"
   },
   {
-    "id": "_5XZMPbbJIk",
-    "title": "讐復を能える。",
-    "platform": "youtube",
-    "videoUrl": "https://www.youtube.com/watch?v=_5XZMPbbJIk",
-    "embed_status": "available",
+    "id": "313084145",
+    "title": "Mitski : A Pearl",
+    "platform": "vimeo",
+    "videoUrl": "https://vimeo.com/313084145",
+    "embed_status": "unknown",
     "playable_via_ytdlp": true,
     "genre_bucket": "モーション",
-    "tier_bucket": "中位",
+    "tier_bucket": "上位",
     "craft_or_purpose": "craft_benchmark",
-    "award_level": "shortlist_or_selection",
+    "award_level": "winner",
     "era_bucket": "modern_10y",
-    "current_db_rating": "A",
-    "current_db_score": 82,
+    "current_db_rating": "S",
+    "current_db_score": 96,
     "current_db_analysis_status": "full_analysis",
     "awards": [
       {
-        "name": "映像作家100人",
-        "year": "2025",
-        "category": "2025選出作品",
-        "sourceUrl": "https://eizo100.jp/video/86564"
+        "name": "SXSW Film Festival",
+        "year": "2020",
+        "category": "Special Jury Recognition for Animation",
+        "sourceUrl": "https://www.thewrap.com/sxsw-film-festival-jury-special-awards-cancellation-coronavirus/"
       }
     ],
-    "objective_tier": "A-",
+    "objective_tier": "S-",
     "objective_band": [
-      78,
-      81
+      90,
+      92
     ],
-    "evidence_level": "tier5_eizo100_curated",
-    "rationale": "国内プロキュレーション選出モーション作品（映像作家100人 2025）"
+    "evidence_level": "tier2_sxsw_jury_recognition",
+    "rationale": "SXSW 2020 Special Jury Recognition for Animation受賞（Mitski 'A Pearl' — 3D＋1,480枚手描きモーション作品）"
   },
   {
-    "id": "_H6zuJAtQqI",
-    "title": "Goodbye, All of Evangelion ／さようなら全てのエヴァンゲリオン　 宇多田ヒカル「ONE LAST KISS」",
-    "platform": "youtube",
-    "videoUrl": "https://www.youtube.com/watch?v=_H6zuJAtQqI",
-    "embed_status": "restricted",
+    "id": "49367868",
+    "title": "Dynamics of the Subway / Haisuinonasa  (Official Video)",
+    "platform": "vimeo",
+    "videoUrl": "https://vimeo.com/49367868",
+    "embed_status": "unknown",
+    "playable_via_ytdlp": true,
+    "genre_bucket": "モーション",
+    "tier_bucket": "中位",
+    "craft_or_purpose": "craft_benchmark",
+    "award_level": "winner",
+    "era_bucket": "classic_archive",
+    "current_db_rating": "S",
+    "current_db_score": 96,
+    "current_db_analysis_status": "full_analysis",
+    "awards": [
+      {
+        "name": "文化庁メディア芸術祭",
+        "year": "2012",
+        "category": "第16回 エンターテインメント部門 新人賞",
+        "sourceUrl": "https://www.bunka.go.jp/j-mediaarts-festival/award/single/haisuinonasa/index.html"
+      }
+    ],
+    "objective_tier": "A+",
+    "objective_band": [
+      86,
+      89
+    ],
+    "evidence_level": "tier3_media_arts_new_face",
+    "rationale": "第16回文化庁メディア芸術祭 新人賞（大西景太 / ハイスイノナサ「地下鉄の動態」— 音同期幾何学モーショングラフィックス）"
+  },
+  {
+    "id": "246660563",
+    "title": "Fly - imai ft. 79, Kaho Nakamura",
+    "platform": "vimeo",
+    "videoUrl": "https://vimeo.com/246660563",
+    "embed_status": "unknown",
+    "playable_via_ytdlp": true,
+    "genre_bucket": "モーション",
+    "tier_bucket": "中位",
+    "craft_or_purpose": "craft_benchmark",
+    "award_level": "winner",
+    "era_bucket": "modern_10y",
+    "current_db_rating": "S",
+    "current_db_score": 96,
+    "current_db_analysis_status": "full_analysis",
+    "awards": [
+      {
+        "name": "新千歳空港国際アニメーション映画祭",
+        "year": "2018",
+        "category": "観客賞 (Audience Award)",
+        "sourceUrl": "https://archives.airport-anifes.jp/site2018/film/fes2018-imai_fly/"
+      }
+    ],
+    "objective_tier": "A",
+    "objective_band": [
+      82,
+      85
+    ],
+    "evidence_level": "tier4_intl_anim_fest_award",
+    "rationale": "新千歳空港国際アニメーション映画祭2018観客賞（橋本麦 / imai 'Fly' — モーショントラッカー併用ストップモーション）"
+  },
+  {
+    "id": "134832670",
+    "title": "L'Œil du Cyclone",
+    "platform": "vimeo",
+    "videoUrl": "https://vimeo.com/134832670",
+    "embed_status": "unknown",
     "playable_via_ytdlp": true,
     "genre_bucket": "モーション",
     "tier_bucket": "中位",
     "craft_or_purpose": "craft_benchmark",
     "award_level": "shortlist_or_selection",
-    "era_bucket": "modern_10y",
-    "current_db_rating": "A-",
-    "current_db_score": 79,
+    "era_bucket": "classic_archive",
+    "current_db_rating": "S",
+    "current_db_score": 96,
     "current_db_analysis_status": "full_analysis",
     "awards": [
       {
-        "name": "映像作家100人",
-        "year": "2022",
-        "category": "2022選出作品",
-        "sourceUrl": "https://eizo100.jp/video/49133"
+        "name": "文化庁メディア芸術祭",
+        "year": "2017",
+        "category": "第20回 アニメーション部門 審査委員会推薦作品 (Jury Selection)",
+        "sourceUrl": "https://www.bunka.go.jp/j-mediaarts-festival/en/award/single/loeil-du-cyclone/index-2.html"
       }
     ],
-    "objective_tier": "A-",
+    "objective_tier": "A",
     "objective_band": [
-      78,
-      81
+      82,
+      85
     ],
-    "evidence_level": "tier5_eizo100_curated",
-    "rationale": "国内プロキュレーション選出タイポ・モーション作品（映像作家100人 2022）"
+    "evidence_level": "tier4_national_jury_selection",
+    "rationale": "第20回文化庁メディア芸術祭 アニメーション部門 審査委員会推薦作品（平岡政展 / EZ3kiel 'L'Œil du Cyclone'）"
   },
   {
     "id": "bGcpESkGLzI",
@@ -1267,7 +1267,7 @@
         "name": "Academy Awards (Oscars)",
         "year": "2025",
         "category": "97th Animated Short Film Shortlist",
-        "sourceUrl": "https://www.shortoftheweek.com/2024/12/17/oscars-short-film-shortlists-2025/"
+        "sourceUrl": "https://prtimes.jp/main/html/rd/p/000002470.000000496.html"
       }
     ],
     "objective_tier": "S-",
@@ -1369,69 +1369,7 @@
       89
     ],
     "evidence_level": "tier3_intl_festival_winner",
-    "rationale": "国際映画祭部門作品賞（第34回東京国際映画祭 アジアの未来 作品賞）"
-  },
-  {
-    "id": "_PTHdkmCLRs",
-    "title": "がんばれ!よんぺーくん",
-    "platform": "youtube",
-    "videoUrl": "https://www.youtube.com/watch?v=_PTHdkmCLRs",
-    "embed_status": "available",
-    "playable_via_ytdlp": true,
-    "genre_bucket": "3DCG/アニメ",
-    "tier_bucket": "中位",
-    "craft_or_purpose": "craft_benchmark",
-    "award_level": "shortlist_or_selection",
-    "era_bucket": "modern_10y",
-    "current_db_rating": "A",
-    "current_db_score": 83,
-    "current_db_analysis_status": "full_analysis",
-    "awards": [
-      {
-        "name": "映像作家100人",
-        "year": "2019",
-        "category": "2019選出作品",
-        "sourceUrl": "https://eizo100.jp/video/12085"
-      }
-    ],
-    "objective_tier": "A-",
-    "objective_band": [
-      78,
-      81
-    ],
-    "evidence_level": "tier5_eizo100_curated",
-    "rationale": "国内プロキュレーション選出短編アニメ（映像作家100人 2019）"
-  },
-  {
-    "id": "g9dacS4c_D8",
-    "title": "Builder",
-    "platform": "youtube",
-    "videoUrl": "https://www.youtube.com/watch?v=g9dacS4c_D8",
-    "embed_status": "available",
-    "playable_via_ytdlp": true,
-    "genre_bucket": "3DCG/アニメ",
-    "tier_bucket": "中位",
-    "craft_or_purpose": "craft_benchmark",
-    "award_level": "shortlist_or_selection",
-    "era_bucket": "modern_10y",
-    "current_db_rating": "A",
-    "current_db_score": 83,
-    "current_db_analysis_status": "full_analysis",
-    "awards": [
-      {
-        "name": "映像作家100人",
-        "year": "2026",
-        "category": "2026選出作品",
-        "sourceUrl": "https://eizo100.jp/video/124003"
-      }
-    ],
-    "objective_tier": "A-",
-    "objective_band": [
-      78,
-      81
-    ],
-    "evidence_level": "tier5_eizo100_curated",
-    "rationale": "国内プロキュレーション選出3DCG/アニメ作品（映像作家100人 2026 — Builder）"
+    "rationale": "第34回東京国際映画祭 アジアの未来 作品賞"
   },
   {
     "id": "O1U55m7pTCk",
@@ -1867,7 +1805,7 @@
     "genre_bucket": "企業映像",
     "tier_bucket": "中位",
     "craft_or_purpose": "craft_benchmark",
-    "award_level": "winner",
+    "award_level": "shortlist_or_selection",
     "era_bucket": "modern_10y",
     "current_db_rating": "A-",
     "current_db_score": 79,
@@ -1876,17 +1814,17 @@
       {
         "name": "日本国際観光映像祭",
         "year": "2025",
-        "category": "建築ドキュメンタリー部門 優秀賞",
+        "category": "日本部門2025（入選）",
         "sourceUrl": "https://jwtff.world/aiovg_videos/2025_japan_045"
       }
     ],
-    "objective_tier": "A",
+    "objective_tier": "A-",
     "objective_band": [
-      82,
-      85
+      78,
+      81
     ],
-    "evidence_level": "tier4_national_silver",
-    "rationale": "日本国際観光映像祭 2025 建築ドキュメンタリー部門 優秀賞（旧奈良監獄）"
+    "evidence_level": "tier5_national_official_selection",
+    "rationale": "日本国際観光映像祭 2025 日本部門入選（公式ページ記載の「入選」に合わせてA-へ下方修正）"
   },
   {
     "id": "V6XHz7tqGVM",
