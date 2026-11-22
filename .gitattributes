@@ -1,0 +1,7 @@
+# Pin LF line endings for reproducible SHA-256 freeze integrity across Windows/Linux/macOS
+analysis/*.json text eol=lf
+analysis/*.jsonl text eol=lf
+analysis/*.md text eol=lf
+docs/*.md text eol=lf
+scripts/*.mjs text eol=lf
+scripts/*.py text eol=lf

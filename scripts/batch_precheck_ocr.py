@@ -120,7 +120,7 @@ def main() -> int:
                     "award_badge_ocr_hit": None,
                     "checked_at": dt.datetime.now(dt.timezone.utc).isoformat(),
                 }
-        with log_path.open("a", encoding="utf-8") as f:
+        with log_path.open("a", encoding="utf-8", newline="\n") as f:
             f.write(json.dumps(rec, ensure_ascii=False) + "\n")
         status = "ERR" if rec.get("download_error") else ("EXCLUDED_HIT" if rec["award_badge_ocr_hit"] else "CLEAN")
         print(f"[{idx}/{len(candidates)}] {vid} ({c.get('genre')}/{c.get('stratum')}) -> {status}", flush=True)

@@ -139,11 +139,9 @@ def main():
                     f"frames={res.get('frames_checked')} hit={res.get('award_badge_ocr_hit')}",
                     flush=True,
                 )
-                # Persist immediately after every completed video
-                log_path.write_text(
-                    "\n".join(json.dumps(v, ensure_ascii=False) for v in existing.values()) + "\n",
-                    encoding="utf-8",
-                )
+                # Persist immediately after every completed video (LF line endings for cross-platform SHA-256 integrity)
+                with log_path.open("w", encoding="utf-8", newline="\n") as f:
+                    f.write("\n".join(json.dumps(v, ensure_ascii=False) for v in existing.values()) + "\n")
         finally:
             shutil.rmtree(tmp_dir, ignore_errors=True)
 

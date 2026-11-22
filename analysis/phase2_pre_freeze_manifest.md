@@ -146,10 +146,10 @@
 | `analysis/phase2_dev_additions_v1.json` | 34761 | `231e5ff2a136fc29455ea58f3e65510ac177b5951c73ed2a60b114b5665c760b` |
 | `analysis/phase2_candidates_verified.json` | 112052 | `fb3fc4e64531f3da081149beb4ad4cc4923abedca8d53eaeacfba61b9ab1c298` |
 | `analysis/phase2_source_verification_report.json` | 57828 | `e0ff6af85288cc070ec10cbfdf50e9727ad2e9700b79220c355e4aca2fa88b82` |
-| `analysis/phase2_ocr_precheck_log.jsonl` | 81132 | `aba29a70959774876aae612e236c682e862c4d6108a87843f47fac8bacf68b4a` |
+| `analysis/phase2_ocr_precheck_log.jsonl` | 80993 | `4988b96bd2102e237578567ec059a2d24546296eb2de00575cf2bc59781f01fc` |
 | `analysis/phase2_purpose_reference_moved.json` | 6039 | `e54bffb0942e133f66333065ef04b7ab9ad8dc6249f5d79a344fa64ba8dc035c` |
 | `analysis/cannes_corporate_categories_snapshot_2026-11-23.json` | 8138 | `bf02a86ea6aada6f794fe3d108c7a150ea5583937b851528a47b49059e9e350e` |
 | `scripts/validate-phase2-dataset.mjs` | 12595 | `abde4d77cdab4df577471a1c772240384e9c884d01fdb1860d4dc27be94a6936` |
 | `scripts/verify-phase2-sources.mjs` | 18075 | `732a1671cddb937657a062303e69940a9c81de86272d041a41798dea35e51c9d` |
 | `scripts/verify-phase2-sources.test.mjs` | 5242 | `13e118581354a109c6ea230b3936097231ab34a23eb7753cf81f23ae21b92625` |
-| `scripts/slow_retry_precheck_ocr.py` | 6251 | `64fcd39e6ce9e904be2b2df301744175a21bc0cf9bfe998b94073e573aa38dc7` |
+| `scripts/slow_retry_precheck_ocr.py` | 6299 | `7bc24ded5f20b3ef2e0946fe945699d9dd9f6ba25bd8f6ecdeccb485930e38d6` |

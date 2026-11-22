@@ -268,7 +268,7 @@ def main() -> int:
     if args.log_jsonl:
         log_path = Path(args.log_jsonl)
         log_path.parent.mkdir(parents=True, exist_ok=True)
-        with log_path.open("a", encoding="utf-8") as f:
+        with log_path.open("a", encoding="utf-8", newline="\n") as f:
             f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
     print(json.dumps(record, ensure_ascii=False, indent=2))
