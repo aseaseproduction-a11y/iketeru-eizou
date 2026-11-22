@@ -37,6 +37,7 @@
     "videoUrl": "https://www.youtube.com/watch?v=5wEjV2ekSwE",
     "embed_status": "available",
     "playable_via_ytdlp": true,
+    "award_badge_risk_note": "One Club による 'WINNER' 表記入り投稿であり、映像内に受賞表示が含まれる可能性があるため Holdout 実行時は post_check.award_badge_visible_in_video を必ず確認・記録する。",
     "genre_bucket": "CM",
     "tier_bucket": "上位",
     "craft_or_purpose": "craft_benchmark",
@@ -150,7 +151,8 @@
   },
   {
     "id": "iIL_CB_YjFk",
-    "title": "映画 / ドラマ / ショートフィルム  ボリュメトリック / バーチャルプロダクション   LIGHT HOLE",
+    "title": "講談社ブランデッドフィルム | LIGHT HOLE",
+    "title_previous_db": "映画 / ドラマ / ショートフィルム  ボリュメトリック / バーチャルプロダクション   LIGHT HOLE",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=iIL_CB_YjFk",
     "embed_status": "available",
