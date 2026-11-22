@@ -517,10 +517,13 @@ async function main() {
   await Promise.all(Array.from({ length: concurrency }, () => worker()));
   fs.rmSync(tmpDir, { recursive: true, force: true });
 
+  const expectedModel = args["expected-model"] || split.frozen_scoring_config?.model || "gemini-4-neon-high";
+
   const manifest = {
     run_id: runId,
     split: splitName,
     prompt_version: promptVersion,
+    expected_model: expectedModel,
     created_at: new Date().toISOString(),
     blind_id_map_path: blindMapPath,
     blind_id_map_sha256: blindMapSha256,

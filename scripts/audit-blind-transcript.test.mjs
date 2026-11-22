@@ -653,3 +653,64 @@ test("14. Frozen prompt renderer rejects path traversal and non-numeric metric i
     });
   });
 });
+
+test("15. Expected model pinning verifies every PLANNER_RESPONSE.model and rejects mismatches or missing model", () => {
+  const dir = makeTempDir();
+  try {
+    const file1 = `E:\\iketeru_blind_eval\\${RUN_ID}\\video\\${BLIND_A}\\${BLIND_A}.mp4`;
+    const spec = baseVideoSpec({ assignedFiles: [file1], slowmo: false });
+    const prompt = renderCalibrationPrompt(spec);
+    const fx = setupManifestFixture(dir, { assignedFiles: [file1] });
+
+    // (a) Matching model passes
+    const tOk = path.join(dir, "model_ok.jsonl");
+    writeJsonl(tOk, [
+      { step_index: 0, source: "SYSTEM", type: "SYSTEM_MESSAGE", status: "DONE", content: wrapSystemMessage(prompt) },
+      { step_index: 1, source: "MODEL", type: "PLANNER_RESPONSE", status: "DONE", model: "gemini-4-neon-high", tool_calls: [{ name: "read_file", args: { Path: JSON.stringify(file1) } }] },
+      { step_index: 2, source: "MODEL", type: "GENERIC", status: "DONE", media: [{ mime_type: "video/mp4", uri: "file:///m0.mp4" }] },
+      { step_index: 3, source: "MODEL", type: "PLANNER_RESPONSE", status: "DONE", model: "gemini-4-neon-high", tool_calls: [{ name: "send_message", args: { Recipient: JSON.stringify(PARENT_ID), Message: JSON.stringify("{}") } }] },
+    ]);
+    const okRes = auditTranscript({
+      transcriptPath: tOk,
+      videoId: VIDEO_A,
+      allowedFilesRaw: [file1],
+      parentId: PARENT_ID,
+      promptSpecObj: spec,
+      blindMapPath: fx.mapPath,
+      runManifestPath: fx.manifestPath,
+      expectedModel: "gemini-4-neon-high",
+      stagedFilePathResolver: fx.stagedFilePathResolver,
+      strict: true,
+    });
+    assert.equal(okRes.valid, true);
+    assert.equal(okRes.model_match, true);
+    assert.deepEqual(okRes.models_observed, ["gemini-4-neon-high"]);
+    assert.equal(okRes.model_violations.length, 0);
+
+    // (b) Mismatched model on second step MUST fail
+    const tBad = path.join(dir, "model_bad.jsonl");
+    writeJsonl(tBad, [
+      { step_index: 0, source: "SYSTEM", type: "SYSTEM_MESSAGE", status: "DONE", content: wrapSystemMessage(prompt) },
+      { step_index: 1, source: "MODEL", type: "PLANNER_RESPONSE", status: "DONE", model: "gemini-4-neon-high", tool_calls: [{ name: "read_file", args: { Path: JSON.stringify(file1) } }] },
+      { step_index: 2, source: "MODEL", type: "GENERIC", status: "DONE", media: [{ mime_type: "video/mp4", uri: "file:///m0.mp4" }] },
+      { step_index: 3, source: "MODEL", type: "PLANNER_RESPONSE", status: "DONE", model: "gemini-3-flash", tool_calls: [{ name: "send_message", args: { Recipient: JSON.stringify(PARENT_ID), Message: JSON.stringify("{}") } }] },
+    ]);
+    const badRes = auditTranscript({
+      transcriptPath: tBad,
+      videoId: VIDEO_A,
+      allowedFilesRaw: [file1],
+      parentId: PARENT_ID,
+      promptSpecObj: spec,
+      blindMapPath: fx.mapPath,
+      runManifestPath: fx.manifestPath,
+      expectedModel: "gemini-4-neon-high",
+      stagedFilePathResolver: fx.stagedFilePathResolver,
+      strict: true,
+    });
+    assert.equal(badRes.valid, false);
+    assert.equal(badRes.model_match, false);
+    assert.ok(badRes.model_violations.some(v => v.reason === "planner_model_mismatch" && v.actual_model === "gemini-3-flash"));
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});

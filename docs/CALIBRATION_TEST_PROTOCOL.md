@@ -68,7 +68,8 @@
        2. 指定された親エージェントの会話ID（`--parent-id`）へ結果を返す **`send_message`**
        これら以外のツール呼び出し（`run_command` / `search_web` / `list_dir` / 割り当て外ファイル・別動画フォルダ・自由ファイル名・元動画IDパス・`..` パスへの `read_file` / 親以外への `send_message` 等）が1回でもあれば**自動無効**とする。
      - **(d) 割り当てファイルごとの直後メディア確認**：`read_file` の各呼び出しの**直後のレスポンスステップ**に、ファイル種別に対応する実メディア（`.mp4` なら `video/mp4`、`.jpg` なら `image/jpeg`）が存在することを**割り当てた全ファイルそれぞれについて**確認する。
-     - **(e) 自動回帰テストの維持**：上記 (a)〜(d) を偽ログで検証する自動テスト（`scripts/audit-blind-transcript.test.mjs`）を `node --test` で常時パスさせる。
+     - **(e) モデル名一致監査（`--expected-model gemini-4-neon-high`）**：`transcript.jsonl` 内の**すべての `PLANNER_RESPONSE.model`** が固定モデル名 **`gemini-4-neon-high`**（Dev 有効174件の全件実績モデル）と完全一致することを確認する。1ステップでも別モデル・欠損があれば**自動無効**として再実行し、レポートにモデル一致率を明記する。
+     - **(f) 自動回帰テストの維持**：上記 (a)〜(e) を偽ログで検証する自動テスト（`scripts/audit-blind-transcript.test.mjs`）を `node --test` で常時パスさせる。
 4. **採点後の既知・表示チェック（感度分析・参考値の明記）**：
    - 点数確定後（同じ応答の末尾）に、採点者へ以下の3問を必ず回答させる：
      1. `knows_work`：この作品（ブランド・アーティスト・作品名）を知っていたか
@@ -90,9 +91,9 @@
    - **Holdout 凍結仕様（本凍結コミットで確定）**：
      - 採点プロンプト：`scripts/lib/calibration-prompt-template.mjs` の **`v1_baseline`（変更なし・そのまま凍結）**
      - 点数補正：**無補正（ゼロ補正）**（Dev の小標本に線形補正等を合わせ込む過学習を防ぐため、生点数をそのまま評価する）
-     - 使用モデル：サブエージェント既定モデル **`inherit`**（Dev `v1_baseline` と同一）
+     - 使用モデル：**`gemini-4-neon-high`**（モデル名で固定。Dev の有効174件すべてが `gemini-4-neon-high` であることを確認済。サブエージェント呼出は `Model="inherit"` とし、監査スクリプト `--strict --expected-model gemini-4-neon-high` で全 `PLANNER_RESPONSE.model` の一致を機械検証し、不一致時は無効化して再実行・レポートにモデル一致率を記載）
      - 2+1 アンサンブル条件：**`|s1 - s2| >= 5` 点以上** で3回目を実施し中央値（otherwise 平均）、Dev と同一固定
-     - 前処理・監査スクリプト：`scripts/prepare-blind-run.mjs`（`scdet=threshold=10`・1.0秒刻み・同点時最早期・メタデータ完全除去・SHA-256 マニフェスト）および `scripts/audit-blind-transcript.mjs --strict`
+     - 前処理・監査スクリプト：`scripts/prepare-calibration-run.mjs`（`scdet=threshold=10`・1.0秒刻み・同点時最早期・メタデータ完全除去・SHA-256 マニフェスト・`expected_model` 固定）および `scripts/audit-blind-transcript.mjs --strict --expected-model gemini-4-neon-high`
 2. **確認用（Holdout）の固定合格基準（結果を見て変更しない）**：
    - 主判定（**案B：基準セット v9**）の合否は **確認用セット（Holdout）の点推定値** で判定し、**ブートストラップ95%信頼区間（$B=2,000$回）を必ず併記**する。
    - **事前登録の感度分析（案C：BOVA 除外）**：同一の Holdout 1回実行データから、BOVA 3本（`JFDm4p8T6_4`, `wXD33Jx25oI`, `FSqTqdjf2YQ`）を除いた **案C（`bova_excluded_sensitivity`：Holdout 受賞作 10本 vs 非受賞作 20本）** の3指標および95%信頼区間も自動で併記する。
@@ -113,7 +114,7 @@
      - **ケースC（両方とも1つ以上の合格基準を未達）**：**両方式とも不採用（本番適用不可・設計見直し必要）** とする。確認用の数値差は診断参考値としてのみ報告する。
 4. **確認用（Holdout）の1回限り原則と完全凍結（Freeze Commit）**：
    - **確認用セットは両方式とも1回だけ実行する**。不合格だった場合、同じ確認用セットを使ってプロンプトを再調整・再判定してはならない。
-   - 確認用を実行する直前に、**採点プロンプト（`v1_baseline`・無補正）・ルーブリック（v9）・基準セット（v9）・分割表（`v4_preregistered_v9_freeze`）・使用モデル（`inherit`）・アンサンブル条件（2+1・`|s1 - s2| >= 5`）・`scdet`/スロー適用・監査・集計スクリプトをすべて git コミットして凍結**し、確認用レポートにその **凍結コミットハッシュ（SHA）** を明記する。
+   - 確認用を実行する直前に、**採点プロンプト（`v1_baseline`・無補正）・ルーブリック（v9）・基準セット（v9）・分割表（`v4_preregistered_v9_freeze`）・使用モデル（`gemini-4-neon-high` 固定）・アンサンブル条件（2+1・`|s1 - s2| >= 5`）・`scdet`/スロー適用・監査・集計スクリプトをすべて git コミットして凍結**し、確認用レポートにその **凍結コミットハッシュ（SHA）** を明記する。
 
 ---
 

@@ -344,6 +344,22 @@ function main() {
     const tiebreakersNeeded = aggregated.filter(r => r.ensemble_rule === "needs_3rd_tiebreaker").map(r => r.video_id);
     const tiebreakersCompleted = aggregated.filter(r => r.ensemble_rule === "median_of_3").map(r => r.video_id);
 
+    const expectedModel = split.frozen_scoring_config?.model || "gemini-4-neon-high";
+    const distinctModels = new Set();
+    let modelMatchedValidRuns = 0;
+    const modelMismatchedSubagents = [];
+    for (const r of validRuns) {
+      const obs = Array.isArray(r.models_observed) && r.models_observed.length > 0
+        ? r.models_observed
+        : (r.token_usage?.model ? [r.token_usage.model] : []);
+      for (const m of obs) distinctModels.add(m);
+      const isMatch = typeof r.model_match === "boolean"
+        ? r.model_match
+        : (obs.length > 0 && obs.every(m => m === expectedModel));
+      if (isMatch) modelMatchedValidRuns++;
+      else modelMismatchedSubagents.push({ subagent_id: r.subagent_id, video_id: r.video_id, models_observed: obs });
+    }
+
     outByMode[mode] = {
       valid_subagent_runs: validRuns.length,
       invalid_subagent_runs: invalidRuns.length,
@@ -352,6 +368,14 @@ function main() {
       tiebreakers_needed_videos: tiebreakersNeeded,
       tiebreakers_completed_count: tiebreakersCompleted.length,
       flagged_contamination_count: aggregated.length - unflagged.length,
+      model_verification: {
+        expected_model: expectedModel,
+        matched_valid_runs: modelMatchedValidRuns,
+        total_valid_runs: validRuns.length,
+        model_match_rate: validRuns.length ? round4(modelMatchedValidRuns / validRuns.length) : null,
+        distinct_models_observed: [...distinctModels],
+        mismatched_subagents: modelMismatchedSubagents,
+      },
       token_summary: {
         count: tokenVals.length,
         min_first_post_read_input_tokens: tokenVals[0] ?? null,

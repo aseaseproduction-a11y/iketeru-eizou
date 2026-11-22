@@ -201,6 +201,7 @@ export function auditTranscript({
   blindMapObj = null,
   runManifestPath = null,
   runManifestObj = null,
+  expectedModel = null,
   stagedFilePathResolver = null, // optional hook for unit tests using temp files
   strict = false,
 }) {
@@ -401,10 +402,14 @@ export function auditTranscript({
   const videoSpecificPatterns = buildVideoSpecificPatterns(meta, videoId, channelName);
 
   const steps = loadTranscriptSteps(transcriptPath);
+  const effectiveExpectedModel = expectedModel || manifest?.expected_model || null;
   const promptLeakViolations = [];
   const promptExactMatchViolations = [];
   const toolViolations = [];
   const mediaViolations = [];
+  const modelViolations = [];
+  const observedModels = new Set();
+  let plannerStepCount = 0;
   const readFilesCalled = new Set();
   const verifiedMediaByFile = {};
   let incomingPromptCount = 0;
@@ -424,7 +429,19 @@ export function auditTranscript({
     const step = steps[idx];
 
     if (step.type === "PLANNER_RESPONSE") {
-      if (step.model && !modelName) modelName = step.model;
+      plannerStepCount++;
+      if (step.model) {
+        if (!modelName) modelName = step.model;
+        observedModels.add(step.model);
+      }
+      if (effectiveExpectedModel && step.model !== effectiveExpectedModel) {
+        modelViolations.push({
+          step_index: step.step_index,
+          reason: step.model ? "planner_model_mismatch" : "planner_model_missing",
+          expected_model: effectiveExpectedModel,
+          actual_model: step.model ?? null,
+        });
+      }
       const inTok = typeof step.input_tokens === "number" ? step.input_tokens : 0;
       const cacheTok = typeof step.cache_read_tokens === "number" ? step.cache_read_tokens : 0;
       const effTok = inTok + cacheTok;
@@ -607,6 +624,15 @@ export function auditTranscript({
     });
   }
 
+  if (effectiveExpectedModel && plannerStepCount === 0) {
+    modelViolations.push({
+      step_index: null,
+      reason: "no_planner_response_steps",
+      expected_model: effectiveExpectedModel,
+      actual_model: null,
+    });
+  }
+
   const missingFileReads = allowedFiles.filter(f => !readFilesCalled.has(f));
   const missingMediaFiles = allowedFiles.filter(f => !verifiedMediaByFile[f]);
 
@@ -618,6 +644,7 @@ export function auditTranscript({
     promptLeakViolations.length === 0 &&
     toolViolations.length === 0 &&
     mediaViolations.length === 0 &&
+    modelViolations.length === 0 &&
     missingFileReads.length === 0 &&
     missingMediaFiles.length === 0 &&
     (!strict || sendMessageToParentCount >= 1);
@@ -628,6 +655,9 @@ export function auditTranscript({
     video_id: videoId,
     expected_blind_id: expectedBlindId,
     expected_run_id: expectedRunId,
+    expected_model: effectiveExpectedModel,
+    models_observed: [...observedModels],
+    model_match: effectiveExpectedModel ? (plannerStepCount > 0 && modelViolations.length === 0) : null,
     transcript_path: transcriptPath,
     prompt_exact_match_checked: expectedPrompt !== null,
     prompt_spec_error: promptSpecError,
@@ -656,6 +686,7 @@ export function auditTranscript({
     prompt_leak_violations: promptLeakViolations,
     tool_violations: toolViolations,
     media_violations: mediaViolations,
+    model_violations: modelViolations,
   };
 }
 
@@ -669,11 +700,12 @@ function main() {
   const promptSpecPath = args["prompt-spec"] || null;
   const blindMapPath = args["blind-map"] || null;
   const runManifestPath = args["run-manifest"] || null;
+  const expectedModel = args["expected-model"] || null;
   const strict = Boolean(args["strict"]);
 
   if (!transcriptPath || !videoId || !allowedFilesRaw) {
     console.error(
-      "Usage: node scripts/audit-blind-transcript.mjs --transcript <path> --video-id <id> --allowed-files <p1,p2> --parent-id <convId> --prompt-spec <spec.json> --blind-map <map.json> --run-manifest <manifest.json> [--channel-name <name>] [--strict]"
+      "Usage: node scripts/audit-blind-transcript.mjs --transcript <path> --video-id <id> --allowed-files <p1,p2> --parent-id <convId> --prompt-spec <spec.json> --blind-map <map.json> --run-manifest <manifest.json> [--expected-model <model>] [--channel-name <name>] [--strict]"
     );
     process.exit(2);
   }
@@ -687,6 +719,7 @@ function main() {
     promptSpecPath,
     blindMapPath,
     runManifestPath,
+    expectedModel,
     strict,
   });
 
