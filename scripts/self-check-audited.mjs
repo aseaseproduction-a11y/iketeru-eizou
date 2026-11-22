@@ -128,9 +128,15 @@ for (const r of rows) {
 
 const logVerifiedInRows = rows.filter((r) => logVerifiedSet.has(String(r.id))).length;
 const unverifiableInRows = rows.filter((r) => unverifiableSet.has(String(r.id))).length;
+const boundaryInRows = rows.filter((r) => {
+  try {
+    const bd = typeof r.aiScoreBreakdown === "string" ? JSON.parse(r.aiScoreBreakdown) : r.aiScoreBreakdown;
+    return bd?.gradeBoundary === true;
+  } catch { return false; }
+}).length;
 console.log(
   `Checked ${rows.length} / ${ids.length} audited videos on TiDB Cloud ` +
-  `(log_verified: ${logVerifiedInRows}, unverifiable_no_log: ${unverifiableInRows}, excluded invalidated_no_visual: ${invalidatedNoVisualIds.length}):`
+  `(log_verified: ${logVerifiedInRows}, unverifiable_no_log: ${unverifiableInRows}, gradeBoundary: ${boundaryInRows}, excluded invalidated_no_visual: ${invalidatedNoVisualIds.length}):`
 );
 for (const [k, v] of Object.entries(issues)) {
   console.log(`  ${k}: ${v.length}`, v.length > 0 && v.length <= 20 ? JSON.stringify(v) : "");

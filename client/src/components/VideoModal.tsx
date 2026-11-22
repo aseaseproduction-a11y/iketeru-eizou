@@ -700,6 +700,11 @@ export default function VideoModal({
                           静止画未確認（0枚のため点数無効化・再実施待ち）
                         </div>
                       )}
+                      {video.gradeBoundary && (
+                        <div className="mb-2 ml-1.5 inline-flex items-center gap-1.5 rounded border border-amber-400/40 bg-amber-400/10 px-2 py-0.5 text-[11px] text-amber-200">
+                          ランク境界（隣接ランクまで1点以内）
+                        </div>
+                      )}
                       {aiRatings.length > 0 && (
                         <div className="mb-3">
                           <span className="mb-1.5 block text-xs font-semibold text-foreground/85">

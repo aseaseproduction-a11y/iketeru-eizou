@@ -1,0 +1,1301 @@
+{
+  "note": "Read-only BLIND scoring reproducibility test (exact same 10 videos x 3 independent runs = 30 scorings). Zero writes to TiDB or SQLite.",
+  "comparison_anchored_vs_blind": {
+    "anchored_prior": {
+      "overall_mean_range": 3.9,
+      "overall_max_range": 10,
+      "overall_mean_pstdev": 1.7,
+      "direction_mean_range": 3.9,
+      "technique_mean_range": 4,
+      "videos_with_grade_variation": 7,
+      "runs_matching_db_grade_out_of_30": 14
+    },
+    "blind_current": {
+      "overall_mean_range": 3.6,
+      "overall_max_range": 5,
+      "overall_mean_pstdev": 1.61,
+      "direction_mean_range": 3.9,
+      "direction_max_range": 5,
+      "direction_mean_pstdev": 1.7,
+      "technique_mean_range": 3.6,
+      "technique_max_range": 6,
+      "technique_mean_pstdev": 1.59,
+      "videos_with_grade_variation": 8,
+      "runs_matching_db_grade_out_of_30": 9,
+      "log_verified_runs_out_of_30": 30,
+      "median_on_grade_boundary_videos": 4
+    }
+  },
+  "per_video": [
+    {
+      "video_id": "1119375393",
+      "title": "オープニング映像  モーショングラフィックス   OFFFMX 2025 Main Titles by XK Studio",
+      "db_overall_rating": "S",
+      "prior_anchored_overall": {
+        "scores": [
+          96,
+          89,
+          95
+        ],
+        "range_max_minus_min": 7,
+        "pstdev": 3.09,
+        "grades": [
+          "S",
+          "A+",
+          "S"
+        ],
+        "grade_changed_across_runs": true
+      },
+      "blind_overall": {
+        "scores": [
+          94,
+          94,
+          97
+        ],
+        "median": 94,
+        "median_grade": "S",
+        "median_grade_boundary": false,
+        "range_max_minus_min": 3,
+        "pstdev": 1.41,
+        "grades": [
+          "S",
+          "S",
+          "S+"
+        ],
+        "grade_changed_across_runs": true
+      },
+      "blind_direction": {
+        "scores": [
+          91,
+          90,
+          95
+        ],
+        "range_max_minus_min": 5,
+        "pstdev": 2.16
+      },
+      "blind_technique": {
+        "scores": [
+          93,
+          92,
+          94
+        ],
+        "range_max_minus_min": 2,
+        "pstdev": 0.82
+      },
+      "runs": [
+        {
+          "video_id": "1119375393",
+          "run_idx": 1,
+          "audit_run_token": "cf195ec37a1d",
+          "audit_started_at": "2026-11-22T01:44:36.035692+00:00",
+          "worker_conversation_id": "9a520f8e-42bf-4b2e-b1e9-ca6a3f67e05c",
+          "log_verification": {
+            "log_verified": true,
+            "vid_matched": true,
+            "token_matched": true,
+            "img_read_calls": 1,
+            "img_media_loaded": 1
+          },
+          "overall": 94,
+          "direction": 91,
+          "technique": 93,
+          "synergy": 2,
+          "overall_grade": "S",
+          "direction_grade": "S-",
+          "technique_grade": "S",
+          "grade_boundary": false,
+          "rationale_present": true
+        },
+        {
+          "video_id": "1119375393",
+          "run_idx": 2,
+          "audit_run_token": "9b2bf81ac3fb",
+          "audit_started_at": "2026-11-22T01:44:36.036748+00:00",
+          "worker_conversation_id": "eefbfe70-7e36-4b39-a37f-0a022835f8b5",
+          "log_verification": {
+            "log_verified": true,
+            "vid_matched": true,
+            "token_matched": true,
+            "img_read_calls": 1,
+            "img_media_loaded": 1
+          },
+          "overall": 94,
+          "direction": 90,
+          "technique": 92,
+          "synergy": 3,
+          "overall_grade": "S",
+          "direction_grade": "S-",
+          "technique_grade": "S-",
+          "grade_boundary": false,
+          "rationale_present": true
+        },
+        {
+          "video_id": "1119375393",
+          "run_idx": 3,
+          "audit_run_token": "0d75b4641585",
+          "audit_started_at": "2026-11-22T01:44:36.037683+00:00",
+          "worker_conversation_id": "c58434e5-7fee-4eb0-9e03-7e8c1ae1bf11",
+          "log_verification": {
+            "log_verified": true,
+            "vid_matched": true,
+            "token_matched": true,
+            "img_read_calls": 1,
+            "img_media_loaded": 1
+          },
+          "overall": 97,
+          "direction": 95,
+          "technique": 94,
+          "synergy": 2,
+          "overall_grade": "S+",
+          "direction_grade": "S",
+          "technique_grade": "S",
+          "grade_boundary": true,
+          "rationale_present": true
+        }
+      ]
+    },
+    {
+      "video_id": "265198751",
+      "title": "imai – Fly feat. 79, 中村佳穂",
+      "db_overall_rating": "S-",
+      "prior_anchored_overall": {
+        "scores": [
+          86,
+          88,
+          90
+        ],
+        "range_max_minus_min": 4,
+        "pstdev": 1.63,
+        "grades": [
+          "A+",
+          "A+",
+          "S-"
+        ],
+        "grade_changed_across_runs": true
+      },
+      "blind_overall": {
+        "scores": [
+          91,
+          86,
+          86
+        ],
+        "median": 86,
+        "median_grade": "A+",
+        "median_grade_boundary": true,
+        "range_max_minus_min": 5,
+        "pstdev": 2.36,
+        "grades": [
+          "S-",
+          "A+",
+          "A+"
+        ],
+        "grade_changed_across_runs": true
+      },
+      "blind_direction": {
+        "scores": [
+          91,
+          86,
+          86
+        ],
+        "range_max_minus_min": 5,
+        "pstdev": 2.36
+      },
+      "blind_technique": {
+        "scores": [
+          87,
+          82,
+          82
+        ],
+        "range_max_minus_min": 5,
+        "pstdev": 2.36
+      },
+      "runs": [
+        {
+          "video_id": "265198751",
+          "run_idx": 1,
+          "audit_run_token": "5b0523070bf7",
+          "audit_started_at": "2026-11-22T01:44:36.038010+00:00",
+          "worker_conversation_id": "34004c6d-7d7f-4028-a84e-1ce55d4eb585",
+          "log_verification": {
+            "log_verified": true,
+            "vid_matched": true,
+            "token_matched": true,
+            "img_read_calls": 2,
+            "img_media_loaded": 2
+          },
+          "overall": 91,
+          "direction": 91,
+          "technique": 87,
+          "synergy": 2,
+          "overall_grade": "S-",
+          "direction_grade": "S-",
+          "technique_grade": "A+",
+          "grade_boundary": false,
+          "rationale_present": true
+        },
+        {
+          "video_id": "265198751",
+          "run_idx": 2,
+          "audit_run_token": "9110d4bdecbd",
+          "audit_started_at": "2026-11-22T01:44:36.038294+00:00",
+          "worker_conversation_id": "6aef7c38-6e89-4c5e-90d9-3d9d4e1923b3",
+          "log_verification": {
+            "log_verified": true,
+            "vid_matched": true,
+            "token_matched": true,
+            "img_read_calls": 2,
+            "img_media_loaded": 2
+          },
+          "overall": 86,
+          "direction": 86,
+          "technique": 82,
+          "synergy": 2,
+          "overall_grade": "A+",
+          "direction_grade": "A+",
+          "technique_grade": "A",
+          "grade_boundary": true,
+          "rationale_present": true
+        },
+        {
+          "video_id": "265198751",
+          "run_idx": 3,
+          "audit_run_token": "5a74da0aec95",
+          "audit_started_at": "2026-11-22T01:44:36.038542+00:00",
+          "worker_conversation_id": "3de25cc9-cf11-4f23-ac0c-593bad1e3901",
+          "log_verification": {
+            "log_verified": true,
+            "vid_matched": true,
+            "token_matched": true,
+            "img_read_calls": 2,
+            "img_media_loaded": 2
+          },
+          "overall": 86,
+          "direction": 86,
+          "technique": 82,
+          "synergy": 2,
+          "overall_grade": "A+",
+          "direction_grade": "A+",
+          "technique_grade": "A",
+          "grade_boundary": true,
+          "rationale_present": true
+        }
+      ]
+    },
+    {
+      "video_id": "1046889896",
+      "title": "ブランデッドムービー  スポーツ / 健康 / フィットネス   Powell Lacrosse | Brand ID - Bemo Studio",
+      "db_overall_rating": "A+",
+      "prior_anchored_overall": {
+        "scores": [
+          86,
+          90,
+          85
+        ],
+        "range_max_minus_min": 5,
+        "pstdev": 2.16,
+        "grades": [
+          "A+",
+          "S-",
+          "A"
+        ],
+        "grade_changed_across_runs": true
+      },
+      "blind_overall": {
+        "scores": [
+          88,
+          89,
+          88
+        ],
+        "median": 88,
+        "median_grade": "A+",
+        "median_grade_boundary": false,
+        "range_max_minus_min": 1,
+        "pstdev": 0.47,
+        "grades": [
+          "A+",
+          "A+",
+          "A+"
+        ],
+        "grade_changed_across_runs": false
+      },
+      "blind_direction": {
+        "scores": [
+          86,
+          87,
+          87
+        ],
+        "range_max_minus_min": 1,
+        "pstdev": 0.47
+      },
+      "blind_technique": {
+        "scores": [
+          86,
+          87,
+          87
+        ],
+        "range_max_minus_min": 1,
+        "pstdev": 0.47
+      },
+      "runs": [
+        {
+          "video_id": "1046889896",
+          "run_idx": 1,
+          "audit_run_token": "56f51e28f099",
+          "audit_started_at": "2026-11-22T01:44:36.039474+00:00",
+          "worker_conversation_id": "a3951868-122f-40cf-8be6-3ead7bb82ea0",
+          "log_verification": {
+            "log_verified": true,
+            "vid_matched": true,
+            "token_matched": true,
+            "img_read_calls": 1,
+            "img_media_loaded": 1
+          },
+          "overall": 88,
+          "direction": 86,
+          "technique": 86,
+          "synergy": 2,
+          "overall_grade": "A+",
+          "direction_grade": "A+",
+          "technique_grade": "A+",
+          "grade_boundary": false,
+          "rationale_present": true
+        },
+        {
+          "video_id": "1046889896",
+          "run_idx": 2,
+          "audit_run_token": "09bfa34e809b",
+          "audit_started_at": "2026-11-22T01:44:36.040410+00:00",
+          "worker_conversation_id": "a15b7575-0ada-4d9c-a149-0f1cff65d1e3",
+          "log_verification": {
+            "log_verified": true,
+            "vid_matched": true,
+            "token_matched": true,
+            "img_read_calls": 1,
+            "img_media_loaded": 1
+          },
+          "overall": 89,
+          "direction": 87,
+          "technique": 87,
+          "synergy": 2,
+          "overall_grade": "A+",
+          "direction_grade": "A+",
+          "technique_grade": "A+",
+          "grade_boundary": true,
+          "rationale_present": true
+        },
+        {
+          "video_id": "1046889896",
+          "run_idx": 3,
+          "audit_run_token": "8f3eced6640c",
+          "audit_started_at": "2026-11-22T01:44:36.041405+00:00",
+          "worker_conversation_id": "d3775bd4-3db1-45c9-ad55-3d51d9502d93",
+          "log_verification": {
+            "log_verified": true,
+            "vid_matched": true,
+            "token_matched": true,
+            "img_read_calls": 1,
+            "img_media_loaded": 1
+          },
+          "overall": 88,
+          "direction": 87,
+          "technique": 87,
+          "synergy": 1,
+          "overall_grade": "A+",
+          "direction_grade": "A+",
+          "technique_grade": "A+",
+          "grade_boundary": false,
+          "rationale_present": true
+        }
+      ]
+    },
+    {
+      "video_id": "1040247605",
+      "title": "NIKE PROMINA / ABC mart",
+      "db_overall_rating": "A",
+      "prior_anchored_overall": {
+        "scores": [
+          85,
+          85,
+          85
+        ],
+        "range_max_minus_min": 0,
+        "pstdev": 0.0,
+        "grades": [
+          "A",
+          "A",
+          "A"
+        ],
+        "grade_changed_across_runs": false
+      },
+      "blind_overall": {
+        "scores": [
+          86,
+          90,
+          86
+        ],
+        "median": 86,
+        "median_grade": "A+",
+        "median_grade_boundary": true,
+        "range_max_minus_min": 4,
+        "pstdev": 1.89,
+        "grades": [
+          "A+",
+          "S-",
+          "A+"
+        ],
+        "grade_changed_across_runs": true
+      },
+      "blind_direction": {
+        "scores": [
+          84,
+          88,
+          84
+        ],
+        "range_max_minus_min": 4,
+        "pstdev": 1.89
+      },
+      "blind_technique": {
+        "scores": [
+          85,
+          88,
+          85
+        ],
+        "range_max_minus_min": 3,
+        "pstdev": 1.41
+      },
+      "runs": [
+        {
+          "video_id": "1040247605",
+          "run_idx": 1,
+          "audit_run_token": "f829b3bb88cf",
+          "audit_started_at": "2026-11-22T01:44:36.041793+00:00",
+          "worker_conversation_id": "e9f91d3c-d19c-463c-90ce-8a129382441b",
+          "log_verification": {
+            "log_verified": true,
+            "vid_matched": true,
+            "token_matched": true,
+            "img_read_calls": 1,
+            "img_media_loaded": 1
+          },
+          "overall": 86,
+          "direction": 84,
+          "technique": 85,
+          "synergy": 2,
+          "overall_grade": "A+",
+          "direction_grade": "A",
+          "technique_grade": "A",
+          "grade_boundary": true,
+          "rationale_present": true
+        },
+        {
+          "video_id": "1040247605",
+          "run_idx": 2,
+          "audit_run_token": "818aada11e71",
+          "audit_started_at": "2026-11-22T01:45:50.730263+00:00",
+          "worker_conversation_id": "ce91ac40-ab1c-4bb6-9c00-82f933aa0127",
+          "log_verification": {
+            "log_verified": true,
+            "vid_matched": true,
+            "token_matched": true,
+            "img_read_calls": 1,
+            "img_media_loaded": 1
+          },
+          "overall": 90,
+          "direction": 88,
+          "technique": 88,
+          "synergy": 2,
+          "overall_grade": "S-",
+          "direction_grade": "A+",
+          "technique_grade": "A+",
+          "grade_boundary": true,
+          "rationale_present": true
+        },
+        {
+          "video_id": "1040247605",
+          "run_idx": 3,
+          "audit_run_token": "a343c9c82505",
+          "audit_started_at": "2026-11-22T01:45:50.730488+00:00",
+          "worker_conversation_id": "cf171d0c-b92e-4eca-a896-9208e2dffef1",
+          "log_verification": {
+            "log_verified": true,
+            "vid_matched": true,
+            "token_matched": true,
+            "img_read_calls": 1,
+            "img_media_loaded": 1
+          },
+          "overall": 86,
+          "direction": 84,
+          "technique": 85,
+          "synergy": 2,
+          "overall_grade": "A+",
+          "direction_grade": "A",
+          "technique_grade": "A",
+          "grade_boundary": true,
+          "rationale_present": true
+        }
+      ]
+    },
+    {
+      "video_id": "1044346460",
+      "title": "カネボウ化粧品　TWANY",
+      "db_overall_rating": "A-",
+      "prior_anchored_overall": {
+        "scores": [
+          79,
+          76,
+          81
+        ],
+        "range_max_minus_min": 5,
+        "pstdev": 2.05,
+        "grades": [
+          "A-",
+          "B+",
+          "A-"
+        ],
+        "grade_changed_across_runs": true
+      },
+      "blind_overall": {
+        "scores": [
+          76,
+          75,
+          72
+        ],
+        "median": 75,
+        "median_grade": "B+",
+        "median_grade_boundary": false,
+        "range_max_minus_min": 4,
+        "pstdev": 1.7,
+        "grades": [
+          "B+",
+          "B+",
+          "B"
+        ],
+        "grade_changed_across_runs": true
+      },
+      "blind_direction": {
+        "scores": [
+          73,
+          74,
+          70
+        ],
+        "range_max_minus_min": 4,
+        "pstdev": 1.7
+      },
+      "blind_technique": {
+        "scores": [
+          78,
+          77,
+          74
+        ],
+        "range_max_minus_min": 4,
+        "pstdev": 1.7
+      },
+      "runs": [
+        {
+          "video_id": "1044346460",
+          "run_idx": 1,
+          "audit_run_token": "376979522610",
+          "audit_started_at": "2026-11-22T01:45:50.730681+00:00",
+          "worker_conversation_id": "41d7467f-e06a-4794-8421-e2d2aaeabd93",
+          "log_verification": {
+            "log_verified": true,
+            "vid_matched": true,
+            "token_matched": true,
+            "img_read_calls": 1,
+            "img_media_loaded": 1
+          },
+          "overall": 76,
+          "direction": 73,
+          "technique": 78,
+          "synergy": 1,
+          "overall_grade": "B+",
+          "direction_grade": "B+",
+          "technique_grade": "A-",
+          "grade_boundary": false,
+          "rationale_present": true
+        },
+        {
+          "video_id": "1044346460",
+          "run_idx": 2,
+          "audit_run_token": "2f5c3358c1de",
+          "audit_started_at": "2026-11-22T01:45:50.730900+00:00",
+          "worker_conversation_id": "93b59024-61ba-4f2e-8755-aa99c372b9a6",
+          "log_verification": {
+            "log_verified": true,
+            "vid_matched": true,
+            "token_matched": true,
+            "img_read_calls": 1,
+            "img_media_loaded": 1
+          },
+          "overall": 75,
+          "direction": 74,
+          "technique": 77,
+          "synergy": 0,
+          "overall_grade": "B+",
+          "direction_grade": "B+",
+          "technique_grade": "B+",
+          "grade_boundary": false,
+          "rationale_present": true
+        },
+        {
+          "video_id": "1044346460",
+          "run_idx": 3,
+          "audit_run_token": "a9c0caf49cd7",
+          "audit_started_at": "2026-11-22T01:45:50.731080+00:00",
+          "worker_conversation_id": "bc56f645-fdc0-46d6-b32a-23b585009c9b",
+          "log_verification": {
+            "log_verified": true,
+            "vid_matched": true,
+            "token_matched": true,
+            "img_read_calls": 1,
+            "img_media_loaded": 1
+          },
+          "overall": 72,
+          "direction": 70,
+          "technique": 74,
+          "synergy": 0,
+          "overall_grade": "B",
+          "direction_grade": "B",
+          "technique_grade": "B+",
+          "grade_boundary": true,
+          "rationale_present": true
+        }
+      ]
+    },
+    {
+      "video_id": "1049880661",
+      "title": "三井不動産株式会社 採用コンセプトムービー",
+      "db_overall_rating": "B+",
+      "prior_anchored_overall": {
+        "scores": [
+          71,
+          71,
+          66
+        ],
+        "range_max_minus_min": 5,
+        "pstdev": 2.36,
+        "grades": [
+          "B",
+          "B",
+          "B-"
+        ],
+        "grade_changed_across_runs": true
+      },
+      "blind_overall": {
+        "scores": [
+          63,
+          65,
+          68
+        ],
+        "median": 65,
+        "median_grade": "B-",
+        "median_grade_boundary": false,
+        "range_max_minus_min": 5,
+        "pstdev": 2.05,
+        "grades": [
+          "B-",
+          "B-",
+          "B"
+        ],
+        "grade_changed_across_runs": true
+      },
+      "blind_direction": {
+        "scores": [
+          63,
+          65,
+          68
+        ],
+        "range_max_minus_min": 5,
+        "pstdev": 2.05
+      },
+      "blind_technique": {
+        "scores": [
+          62,
+          65,
+          68
+        ],
+        "range_max_minus_min": 6,
+        "pstdev": 2.45
+      },
+      "runs": [
+        {
+          "video_id": "1049880661",
+          "run_idx": 1,
+          "audit_run_token": "30c7536f9a79",
+          "audit_started_at": "2026-11-22T01:45:50.731617+00:00",
+          "worker_conversation_id": "1afe01c1-3492-4b15-ad2e-39dd9706046b",
+          "log_verification": {
+            "log_verified": true,
+            "vid_matched": true,
+            "token_matched": true,
+            "img_read_calls": 2,
+            "img_media_loaded": 2
+          },
+          "overall": 63,
+          "direction": 63,
+          "technique": 62,
+          "synergy": 0,
+          "overall_grade": "B-",
+          "direction_grade": "B-",
+          "technique_grade": "C+",
+          "grade_boundary": true,
+          "rationale_present": true
+        },
+        {
+          "video_id": "1049880661",
+          "run_idx": 2,
+          "audit_run_token": "72f08d733ba5",
+          "audit_started_at": "2026-11-22T01:45:50.731913+00:00",
+          "worker_conversation_id": "4ec12efd-059c-4201-8ac2-94d9bc233c60",
+          "log_verification": {
+            "log_verified": true,
+            "vid_matched": true,
+            "token_matched": true,
+            "img_read_calls": 2,
+            "img_media_loaded": 2
+          },
+          "overall": 65,
+          "direction": 65,
+          "technique": 65,
+          "synergy": 0,
+          "overall_grade": "B-",
+          "direction_grade": "B-",
+          "technique_grade": "B-",
+          "grade_boundary": false,
+          "rationale_present": true
+        },
+        {
+          "video_id": "1049880661",
+          "run_idx": 3,
+          "audit_run_token": "34db64dbecc6",
+          "audit_started_at": "2026-11-22T01:45:50.732155+00:00",
+          "worker_conversation_id": "c153a58e-de9f-4be7-9e49-4ef92585dd56",
+          "log_verification": {
+            "log_verified": true,
+            "vid_matched": true,
+            "token_matched": true,
+            "img_read_calls": 2,
+            "img_media_loaded": 2
+          },
+          "overall": 68,
+          "direction": 68,
+          "technique": 68,
+          "synergy": 0,
+          "overall_grade": "B",
+          "direction_grade": "B",
+          "technique_grade": "B",
+          "grade_boundary": true,
+          "rationale_present": true
+        }
+      ]
+    },
+    {
+      "video_id": "1056287464",
+      "title": "詩のプラネタリウム",
+      "db_overall_rating": "B",
+      "prior_anchored_overall": {
+        "scores": [
+          72,
+          73,
+          70
+        ],
+        "range_max_minus_min": 3,
+        "pstdev": 1.25,
+        "grades": [
+          "B",
+          "B+",
+          "B"
+        ],
+        "grade_changed_across_runs": true
+      },
+      "blind_overall": {
+        "scores": [
+          70,
+          73,
+          70
+        ],
+        "median": 70,
+        "median_grade": "B",
+        "median_grade_boundary": false,
+        "range_max_minus_min": 3,
+        "pstdev": 1.41,
+        "grades": [
+          "B",
+          "B+",
+          "B"
+        ],
+        "grade_changed_across_runs": true
+      },
+      "blind_direction": {
+        "scores": [
+          72,
+          75,
+          71
+        ],
+        "range_max_minus_min": 4,
+        "pstdev": 1.7
+      },
+      "blind_technique": {
+        "scores": [
+          64,
+          69,
+          64
+        ],
+        "range_max_minus_min": 5,
+        "pstdev": 2.36
+      },
+      "runs": [
+        {
+          "video_id": "1056287464",
+          "run_idx": 1,
+          "audit_run_token": "85fb7a262393",
+          "audit_started_at": "2026-11-22T01:45:50.732489+00:00",
+          "worker_conversation_id": "acbe41a8-42fc-4bb5-a52f-11812b8ef5de",
+          "log_verification": {
+            "log_verified": true,
+            "vid_matched": true,
+            "token_matched": true,
+            "img_read_calls": 1,
+            "img_media_loaded": 1
+          },
+          "overall": 70,
+          "direction": 72,
+          "technique": 64,
+          "synergy": 2,
+          "overall_grade": "B",
+          "direction_grade": "B",
+          "technique_grade": "B-",
+          "grade_boundary": false,
+          "rationale_present": true
+        },
+        {
+          "video_id": "1056287464",
+          "run_idx": 2,
+          "audit_run_token": "9c51b6845fa9",
+          "audit_started_at": "2026-11-22T01:45:50.732857+00:00",
+          "worker_conversation_id": "c08afc6b-5288-4a4d-b450-bc8b8b3ab619",
+          "log_verification": {
+            "log_verified": true,
+            "vid_matched": true,
+            "token_matched": true,
+            "img_read_calls": 1,
+            "img_media_loaded": 1
+          },
+          "overall": 73,
+          "direction": 75,
+          "technique": 69,
+          "synergy": 1,
+          "overall_grade": "B+",
+          "direction_grade": "B+",
+          "technique_grade": "B",
+          "grade_boundary": true,
+          "rationale_present": true
+        },
+        {
+          "video_id": "1056287464",
+          "run_idx": 3,
+          "audit_run_token": "c5d51ce879bc",
+          "audit_started_at": "2026-11-22T01:47:00.740610+00:00",
+          "worker_conversation_id": "f6f71bc9-fef2-4383-ad1c-3b57d55eaa51",
+          "log_verification": {
+            "log_verified": true,
+            "vid_matched": true,
+            "token_matched": true,
+            "img_read_calls": 1,
+            "img_media_loaded": 1
+          },
+          "overall": 70,
+          "direction": 71,
+          "technique": 64,
+          "synergy": 2,
+          "overall_grade": "B",
+          "direction_grade": "B",
+          "technique_grade": "B-",
+          "grade_boundary": false,
+          "rationale_present": true
+        }
+      ]
+    },
+    {
+      "video_id": "265532017",
+      "title": "100 fragments",
+      "db_overall_rating": "B-",
+      "prior_anchored_overall": {
+        "scores": [
+          60,
+          60,
+          60
+        ],
+        "range_max_minus_min": 0,
+        "pstdev": 0.0,
+        "grades": [
+          "C+",
+          "C+",
+          "C+"
+        ],
+        "grade_changed_across_runs": false
+      },
+      "blind_overall": {
+        "scores": [
+          54,
+          51,
+          50
+        ],
+        "median": 51,
+        "median_grade": "C",
+        "median_grade_boundary": true,
+        "range_max_minus_min": 4,
+        "pstdev": 1.7,
+        "grades": [
+          "C",
+          "C",
+          "C-"
+        ],
+        "grade_changed_across_runs": true
+      },
+      "blind_direction": {
+        "scores": [
+          56,
+          53,
+          51
+        ],
+        "range_max_minus_min": 5,
+        "pstdev": 2.05
+      },
+      "blind_technique": {
+        "scores": [
+          52,
+          49,
+          48
+        ],
+        "range_max_minus_min": 4,
+        "pstdev": 1.7
+      },
+      "runs": [
+        {
+          "video_id": "265532017",
+          "run_idx": 1,
+          "audit_run_token": "424e63e6e841",
+          "audit_started_at": "2026-11-22T01:47:00.741108+00:00",
+          "worker_conversation_id": "d94cd65a-97b4-4bc9-8656-6e42cf5a3360",
+          "log_verification": {
+            "log_verified": true,
+            "vid_matched": true,
+            "token_matched": true,
+            "img_read_calls": 2,
+            "img_media_loaded": 2
+          },
+          "overall": 54,
+          "direction": 56,
+          "technique": 52,
+          "synergy": 0,
+          "overall_grade": "C",
+          "direction_grade": "C",
+          "technique_grade": "C",
+          "grade_boundary": false,
+          "rationale_present": true
+        },
+        {
+          "video_id": "265532017",
+          "run_idx": 2,
+          "audit_run_token": "71425387e39c",
+          "audit_started_at": "2026-11-22T01:47:00.741584+00:00",
+          "worker_conversation_id": "da127b09-cc0c-443d-b0d6-8e9e02e283fe",
+          "log_verification": {
+            "log_verified": true,
+            "vid_matched": true,
+            "token_matched": true,
+            "img_read_calls": 2,
+            "img_media_loaded": 2
+          },
+          "overall": 51,
+          "direction": 53,
+          "technique": 49,
+          "synergy": 0,
+          "overall_grade": "C",
+          "direction_grade": "C",
+          "technique_grade": "C-",
+          "grade_boundary": true,
+          "rationale_present": true
+        },
+        {
+          "video_id": "265532017",
+          "run_idx": 3,
+          "audit_run_token": "b3c7337db17c",
+          "audit_started_at": "2026-11-22T01:47:00.742019+00:00",
+          "worker_conversation_id": "e87be25d-f71f-43c0-8436-d7e2e068e8ab",
+          "log_verification": {
+            "log_verified": true,
+            "vid_matched": true,
+            "token_matched": true,
+            "img_read_calls": 2,
+            "img_media_loaded": 2
+          },
+          "overall": 50,
+          "direction": 51,
+          "technique": 48,
+          "synergy": 0,
+          "overall_grade": "C-",
+          "direction_grade": "C",
+          "technique_grade": "C-",
+          "grade_boundary": true,
+          "rationale_present": true
+        }
+      ]
+    },
+    {
+      "video_id": "152071305",
+      "title": "DJI OSMO 4K FOOTAGE",
+      "db_overall_rating": "C+",
+      "prior_anchored_overall": {
+        "scores": [
+          48,
+          38,
+          39
+        ],
+        "range_max_minus_min": 10,
+        "pstdev": 4.5,
+        "grades": [
+          "C-",
+          "D+",
+          "D+"
+        ],
+        "grade_changed_across_runs": true
+      },
+      "blind_overall": {
+        "scores": [
+          38,
+          38,
+          42
+        ],
+        "median": 38,
+        "median_grade": "D+",
+        "median_grade_boundary": false,
+        "range_max_minus_min": 4,
+        "pstdev": 1.89,
+        "grades": [
+          "D+",
+          "D+",
+          "D+"
+        ],
+        "grade_changed_across_runs": false
+      },
+      "blind_direction": {
+        "scores": [
+          41,
+          41,
+          44
+        ],
+        "range_max_minus_min": 3,
+        "pstdev": 1.41
+      },
+      "blind_technique": {
+        "scores": [
+          34,
+          35,
+          39
+        ],
+        "range_max_minus_min": 5,
+        "pstdev": 2.16
+      },
+      "runs": [
+        {
+          "video_id": "152071305",
+          "run_idx": 1,
+          "audit_run_token": "347fb3e12085",
+          "audit_started_at": "2026-11-22T01:47:00.742373+00:00",
+          "worker_conversation_id": "e40e97fb-2069-4115-8044-cedf47788fcc",
+          "log_verification": {
+            "log_verified": true,
+            "vid_matched": true,
+            "token_matched": true,
+            "img_read_calls": 1,
+            "img_media_loaded": 1
+          },
+          "overall": 38,
+          "direction": 41,
+          "technique": 34,
+          "synergy": 0,
+          "overall_grade": "D+",
+          "direction_grade": "D+",
+          "technique_grade": "D",
+          "grade_boundary": false,
+          "rationale_present": true
+        },
+        {
+          "video_id": "152071305",
+          "run_idx": 2,
+          "audit_run_token": "ef594edc240d",
+          "audit_started_at": "2026-11-22T01:47:00.742709+00:00",
+          "worker_conversation_id": "c53a8b9b-126d-42dc-9259-391a5bad2265",
+          "log_verification": {
+            "log_verified": true,
+            "vid_matched": true,
+            "token_matched": true,
+            "img_read_calls": 1,
+            "img_media_loaded": 1
+          },
+          "overall": 38,
+          "direction": 41,
+          "technique": 35,
+          "synergy": 0,
+          "overall_grade": "D+",
+          "direction_grade": "D+",
+          "technique_grade": "D+",
+          "grade_boundary": false,
+          "rationale_present": true
+        },
+        {
+          "video_id": "152071305",
+          "run_idx": 3,
+          "audit_run_token": "440889bbbd4e",
+          "audit_started_at": "2026-11-22T01:47:00.743042+00:00",
+          "worker_conversation_id": "4add53c8-12dc-4767-8a49-57f421c9eec4",
+          "log_verification": {
+            "log_verified": true,
+            "vid_matched": true,
+            "token_matched": true,
+            "img_read_calls": 1,
+            "img_media_loaded": 1
+          },
+          "overall": 42,
+          "direction": 44,
+          "technique": 39,
+          "synergy": 0,
+          "overall_grade": "D+",
+          "direction_grade": "D+",
+          "technique_grade": "D+",
+          "grade_boundary": false,
+          "rationale_present": true
+        }
+      ]
+    },
+    {
+      "video_id": "1082037544",
+      "title": "テレ東BIZ",
+      "db_overall_rating": "A+",
+      "prior_anchored_overall": {
+        "scores": [
+          86,
+          86,
+          86
+        ],
+        "range_max_minus_min": 0,
+        "pstdev": 0.0,
+        "grades": [
+          "A+",
+          "A+",
+          "A+"
+        ],
+        "grade_changed_across_runs": false
+      },
+      "blind_overall": {
+        "scores": [
+          84,
+          85,
+          87
+        ],
+        "median": 85,
+        "median_grade": "A",
+        "median_grade_boundary": true,
+        "range_max_minus_min": 3,
+        "pstdev": 1.25,
+        "grades": [
+          "A",
+          "A",
+          "A+"
+        ],
+        "grade_changed_across_runs": true
+      },
+      "blind_direction": {
+        "scores": [
+          83,
+          84,
+          86
+        ],
+        "range_max_minus_min": 3,
+        "pstdev": 1.25
+      },
+      "blind_technique": {
+        "scores": [
+          82,
+          82,
+          83
+        ],
+        "range_max_minus_min": 1,
+        "pstdev": 0.47
+      },
+      "runs": [
+        {
+          "video_id": "1082037544",
+          "run_idx": 1,
+          "audit_run_token": "c347c5f375bd",
+          "audit_started_at": "2026-11-22T01:47:00.743553+00:00",
+          "worker_conversation_id": "e17c9c22-6d2a-4111-8818-5e0f8d81420f",
+          "log_verification": {
+            "log_verified": true,
+            "vid_matched": true,
+            "token_matched": true,
+            "img_read_calls": 2,
+            "img_media_loaded": 2
+          },
+          "overall": 84,
+          "direction": 83,
+          "technique": 82,
+          "synergy": 1,
+          "overall_grade": "A",
+          "direction_grade": "A",
+          "technique_grade": "A",
+          "grade_boundary": false,
+          "rationale_present": true
+        },
+        {
+          "video_id": "1082037544",
+          "run_idx": 2,
+          "audit_run_token": "78cdaf76d0dc",
+          "audit_started_at": "2026-11-22T01:47:00.743954+00:00",
+          "worker_conversation_id": "515fb91a-a489-4677-a9e3-4e8fd9a9ccfc",
+          "log_verification": {
+            "log_verified": true,
+            "vid_matched": true,
+            "token_matched": true,
+            "img_read_calls": 2,
+            "img_media_loaded": 2
+          },
+          "overall": 85,
+          "direction": 84,
+          "technique": 82,
+          "synergy": 2,
+          "overall_grade": "A",
+          "direction_grade": "A",
+          "technique_grade": "A",
+          "grade_boundary": true,
+          "rationale_present": true
+        },
+        {
+          "video_id": "1082037544",
+          "run_idx": 3,
+          "audit_run_token": "663025f23e3c",
+          "audit_started_at": "2026-11-22T01:47:00.744244+00:00",
+          "worker_conversation_id": "b9f5ca02-eb14-453d-83e5-6e376bc8d588",
+          "log_verification": {
+            "log_verified": true,
+            "vid_matched": true,
+            "token_matched": true,
+            "img_read_calls": 2,
+            "img_media_loaded": 2
+          },
+          "overall": 87,
+          "direction": 86,
+          "technique": 83,
+          "synergy": 2,
+          "overall_grade": "A+",
+          "direction_grade": "A+",
+          "technique_grade": "A",
+          "grade_boundary": false,
+          "rationale_present": true
+        }
+      ]
+    }
+  ]
+}

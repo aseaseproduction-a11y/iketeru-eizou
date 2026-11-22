@@ -136,8 +136,25 @@ def reconcile_rubric_to_score(rubric: dict, target_score: int | None) -> dict:
     return out
 
 
+def is_near_grade_boundary(score: int) -> bool:
+    """True if score is within 1 point of an adjacent grade band (i.e. at lo or hi edge, excluding 0/100)."""
+    for _g, (lo, hi, _mid) in BANDS.items():
+        if lo <= score <= hi:
+            near_lower = (lo > 0) and (score - lo == 0)
+            near_upper = (hi < 100) and (hi - score == 0)
+            return near_lower or near_upper
+    return False
+
+
+def strip_rating_anchors(text: str) -> str:
+    """Remove existing rating/score lines so blind scoring is not anchored to prior DB grades."""
+    cleaned = strip_audit_ch11(text)
+    cleaned = re.sub(r"(?:総合|演出|ディレクション|技術|AI)(?:評価|ランク)\s*[:：=＝]\s*[SABCD][+-]?(?:\s*[（(]\d+点[）)])?", "[既存ランク非表示]", cleaned)
+    return cleaned
+
+
 def extract_excerpt(ai_analysis: str) -> str:
-    txt = str(ai_analysis or "").strip()
+    txt = strip_rating_anchors(ai_analysis)
     if not txt:
         return "(既存AI分析なし)"
     secs = re.split(r"(?=^## \d+\.)", txt, flags=re.MULTILINE)
@@ -309,14 +326,13 @@ else:
             )
             audit_run_token = uuid.uuid4().hex[:12]
             prompt = f"""あなたは映像ディレクター兼品質監査官です。
-対象動画の静止画コンタクトシート・実測データ・既存AI分析を突き合わせ、**現行ランクに縛られず客観的プロ基準（Cannes Lions Film Craft / D&AD Pencil / ACC基準）で独立採点**し、最後に必ず `finish` ツールでJSON結果を返してください。
+対象動画の静止画コンタクトシート・実測データ・既存AI分析（既存ランク非表示）を突き合わせ、**ブラインド独立採点として客観的プロ基準（Cannes Lions Film Craft / D&AD Pencil / ACC基準）で採点**し、最後に必ず `finish` ツールでJSON結果を返してください。
 
 【対象動画】
 - AuditRunToken: {audit_run_token}
 - video_id: {vid}
 - タイトル: {item['title']}
 - URL: {item['video_url']}
-- 参考（既存DBランク・変更可）: 総合={o_r} / 演出={d_r} / 技術={t_r}
 
 【計測データ（ffprobe + ffmpeg scdet実カット検出）】
 {media_summary}
@@ -325,13 +341,13 @@ else:
 {sheet_instr}
 
 【採点ガイドライン（厳守）】
-- **ランク据え置き禁止（独立採点）**: 既存DBランクに引っ張られず、演出5観点（各0〜20点）・技術5観点（各0〜20点）を客観基準で採点すること。
-- **ランク変更時の理由必須**: 算出された新ランクが既存DBランクと異なる場合は、`grade_change_reason` に「どの観点で既存評価が過大/過小だったか」を具体的に必ず記載すること（同一ランクの場合は空文字可）。
-- **確認不能な観点で減点しない（重要）**: 静止画コンタクトシートでは確認できない観点（音響ミックス `soundAndMix` や 30fps/60fps モーションの滑らかさ等）を「確認できないから慎重に低めにする」という理由で減点してはならない。確認できない観点は既存のランク水準（または既存点数）を維持するか、確認できた観点の水準を基準に換算し、未確認である事実のみ `audit_findings` に記載すること。
+- **ブラインド独立採点**: 演出5観点（各0〜20点）・技術5観点（各0〜20点）を客観プロ基準で独立採点すること。
+- **各観点の点数の根拠を必須記載**: `grade_change_reason` 欄には「各観点の点数の根拠（なぜこの水準・点数にしたか）」を具体的に必ず記載すること（空欄不可）。
+- **確認不能な観点で減点しない（重要）**: 静止画コンタクトシートでは確認できない観点（音響ミックス `soundAndMix` や 30fps/60fps モーションの滑らかさ等）を「確認できないから慎重に低めにする」という理由で減点してはならない。確認できた観点の水準を基準に換算し、未確認である事実のみ `audit_findings` に記載すること。
 - 既存分析に事実誤認・尺ズレ・色彩/構図の誤描写・未分析がある場合は `analysis_verdict` を `minor_fix` / `major_fix` / `needs_full_analysis` にし、`audit_findings` へ具体的に記載すること。
 - **最重要**: 分析と採点が完了したらテキスト応答だけで終了せず、必ず `finish` ツールを呼び出してJSONオブジェクトを返却すること。
 
-【既存AI分析抜粋】
+【既存AI分析抜粋（既存ランク非表示）】
 {excerpt}
 """
             for attempt in range(3):
@@ -340,18 +356,13 @@ else:
                     out = await agent(
                         prompt,
                         schema=AUDIT_SCHEMA,
-                        role=f"Audit {vid} ({o_r})" + (f" [retry {attempt}]" if attempt else ""),
+                        role=f"Audit {vid}" + (f" [retry {attempt}]" if attempt else ""),
                     )
                     if isinstance(out, dict):
-                        # Reject & retry if overall grade changed without an AI-authored grade_change_reason (no auto-fill!)
-                        d_tmp = sum(max(0, min(20, int(v))) for v in (out.get("direction") or {}).values())
-                        t_tmp = sum(max(0, min(20, int(v))) for v in (out.get("technique") or {}).values())
-                        adj_tmp = max(-5, min(5, int(out.get("synergyAdjustment") or 0)))
-                        o_tmp = max(0, min(100, round(d_tmp * 0.55 + t_tmp * 0.45) + adj_tmp))
-                        new_g_tmp = score_to_grade(o_tmp)
+                        # Reject & retry if scoring rationale (grade_change_reason) is empty (never auto-fill!)
                         reason_tmp = str(out.get("grade_change_reason") or "").strip()
-                        if new_g_tmp != item["overall_rating"] and not reason_tmp:
-                            log(f"Rejected {vid} (attempt {attempt + 1}/3): grade changed {item['overall_rating']} -> {new_g_tmp} with empty grade_change_reason; retrying.")
+                        if not reason_tmp:
+                            log(f"Rejected {vid} (attempt {attempt + 1}/3): empty scoring rationale (grade_change_reason); retrying.")
                             if attempt == 2:
                                 return None
                             continue
@@ -407,9 +418,10 @@ else:
             rec_tech = t_dict
             grade_changed = (new_o_grade != item["overall_rating"])
             change_reason = (res.get("grade_change_reason") or "").strip()
-            if grade_changed and not change_reason:
-                log(f"Skipping {vid} at persist: grade changed {item['overall_rating']} -> {new_o_grade} with empty grade_change_reason (never auto-filling).")
+            if not change_reason:
+                log(f"Skipping {vid} at persist: empty scoring rationale (grade_change_reason).")
                 continue
+            grade_boundary = is_near_grade_boundary(overall_score)
             is_needs_full = (res.get("analysis_verdict") == "needs_full_analysis")
             is_provisional = (not bool(res.get("visual_checked"))) or is_needs_full
             audit_run_token = str(res.get("_audit_run_token") or "")
@@ -418,7 +430,9 @@ else:
             base_hash = str(item.get("base_analysis_sha256") or "")
             breakdown = {
                 "source": "rubric_unclamped",
-                "version": "2.0",
+                "version": "2.1",
+                "blindScoring": True,
+                "gradeBoundary": grade_boundary,
                 "model": "antigravity-contact-sheet-audit",
                 "analysisStatus": "provisional" if is_provisional else "full_analysis",
                 "isProvisional": is_provisional,

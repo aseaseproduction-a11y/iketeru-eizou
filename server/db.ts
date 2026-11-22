@@ -173,12 +173,13 @@ export async function getAllVideoListItems() {
       createdAt: videos.createdAt,
       updatedAt: videos.updatedAt,
       isProvisional: sql<number>`CASE WHEN ${videos.aiScoreBreakdown} LIKE '%"analysisStatus":"provisional"%' OR ${videos.aiScoreBreakdown} LIKE '%"isProvisional":true%' THEN 1 ELSE 0 END`,
+      gradeBoundary: sql<number>`CASE WHEN ${videos.aiScoreBreakdown} LIKE '%"gradeBoundary":true%' THEN 1 ELSE 0 END`,
       visualVerificationStatus: sql<string>`CASE WHEN ${videos.aiScoreBreakdown} LIKE '%"visualVerificationStatus":"log_verified"%' THEN 'log_verified' WHEN ${videos.aiScoreBreakdown} LIKE '%"visualVerificationStatus":"unverifiable_no_log"%' THEN 'unverifiable_no_log' WHEN ${videos.aiScoreBreakdown} LIKE '%"visualVerificationStatus":"unverified_pending"%' THEN 'unverified_pending' WHEN ${videos.aiScoreBreakdown} LIKE '%"visualVerificationStatus":"invalidated_no_visual"%' THEN 'invalidated_no_visual' ELSE 'not_audited' END`,
     })
     .from(videos)
     .orderBy(desc(videos.createdAt));
   return rows.map((row) => {
-    const { isProvisional, visualVerificationStatus, ...rest } = row;
+    const { isProvisional, gradeBoundary, visualVerificationStatus, ...rest } = row;
     const video = parseVideoRow({
       ...rest,
       aiAnalysis: null,
@@ -188,6 +189,7 @@ export async function getAllVideoListItems() {
     return {
       ...video,
       isProvisional: Boolean(isProvisional),
+      gradeBoundary: Boolean(gradeBoundary),
       visualVerificationStatus: (visualVerificationStatus || "not_audited") as "log_verified" | "unverifiable_no_log" | "unverified_pending" | "invalidated_no_visual" | "not_audited",
       aiAnalysis: "",
       aiScoreBreakdown: undefined,
@@ -450,6 +452,7 @@ export function parseVideoRow(row: typeof videos.$inferSelect) {
     aiScoreBreakdown: safeParseJson(row.aiScoreBreakdown, undefined),
     aiAnalysis: row.aiAnalysis ?? "",
     isProvisional: isProvisionalFromBreakdown(row.aiScoreBreakdown),
+    gradeBoundary: isGradeBoundaryFromBreakdown(row.aiScoreBreakdown),
     visualVerificationStatus: getVisualVerificationStatus(row.aiScoreBreakdown),
     embedStatus: row.embedStatus ?? "unknown",
     embedReason: row.embedReason ?? "",
@@ -462,6 +465,11 @@ function isProvisionalFromBreakdown(aiScoreBreakdown: string | null | undefined)
   const bd = safeParseJson<Record<string, unknown> | null>(aiScoreBreakdown, null);
   if (!bd) return false;
   return bd.analysisStatus === "provisional" || bd.isProvisional === true;
+}
+
+function isGradeBoundaryFromBreakdown(aiScoreBreakdown: string | null | undefined): boolean {
+  const bd = safeParseJson<Record<string, unknown> | null>(aiScoreBreakdown, null);
+  return bd?.gradeBoundary === true;
 }
 
 function getVisualVerificationStatus(
