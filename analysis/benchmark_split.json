@@ -1,0 +1,179 @@
+{
+  "protocol_version": "v1_preregistered",
+  "created_at": "2026-11-22T08:55:39.673Z",
+  "seed": 20261122,
+  "fixed_pass_criteria_on_holdout": {
+    "spearman_rho_min": 0.85,
+    "band_distance_mae_max": 4,
+    "pairwise_accuracy_a_minus_plus_vs_non_award_min": 0.85,
+    "note": "固定基準（結果を見て変更しない）。合否判定はすべて未学習の確認用（holdout）のみで実施する。"
+  },
+  "counts": {
+    "dev_craft": 20,
+    "holdout_craft": 14,
+    "dev_non_award": 24,
+    "holdout_non_award": 20,
+    "reference_only": 5,
+    "total": 83
+  },
+  "dev_craft_ids": [
+    "5URefVYaJrA",
+    "UvGwIFVUK7M",
+    "FNQ4vqB-waw",
+    "35i4zTky9pI",
+    "ebzEEEdjHj0",
+    "vohpCZh-Qcw",
+    "313084145",
+    "CWhNI_x9W6c",
+    "1032202784",
+    "jvKtHf7kDYs",
+    "tdQCMuaJUQk",
+    "1S-KU2F7wc0",
+    "134832670",
+    "QmLBz4FuVDA",
+    "5zj3aHgLFQE",
+    "9NzQ3G6rY5M",
+    "uCDUpZV3f8A",
+    "p4eAR2Gw5RU",
+    "iXTuYbyH2Rc",
+    "-J7Oi1-EfG8"
+  ],
+  "holdout_craft_ids": [
+    "vRBVWCs1KW4",
+    "tvTRZJ-4EyI",
+    "153159513",
+    "vpyeQeTDGFA",
+    "X0hyTmlsBUI",
+    "5wEjV2ekSwE",
+    "iIL_CB_YjFk",
+    "49367868",
+    "8pOOxOo7YYo",
+    "JFDm4p8T6_4",
+    "3JtO1WMYb58",
+    "wXD33Jx25oI",
+    "FSqTqdjf2YQ",
+    "V6XHz7tqGVM"
+  ],
+  "dev_non_award_ids": [
+    "37tJ-AWEW5U",
+    "_7lQGv4ZmBo",
+    "7rP-633ApUI",
+    "6Rm136Ngwjg",
+    "-J3OnxCEzl0",
+    "Dhx2EIhYkc0",
+    "C0RD172wK6c",
+    "_C7k63knGz8",
+    "bGcpESkGLzI",
+    "1048567039",
+    "_q9xyoz4j0k",
+    "CmCxoqpSAk8",
+    "6vJ5VwO8hnI",
+    "T9DRgYuS1K0",
+    "5SW_6FQJuF0",
+    "8XpGThBki3Y",
+    "bSWo5hiLRSU",
+    "OhHYTXfg9nQ",
+    "90Q6g57jnuU",
+    "7jCvHsi6mLQ",
+    "0oioI53EGU0",
+    "-nr56fLZ11o",
+    "4PojHU4ckSk",
+    "-BVWPusea_A"
+  ],
+  "holdout_non_award_ids": [
+    "1FhTNSG_Ri4",
+    "AF-K7EV4BJw",
+    "A-9c7OdQMFc",
+    "2KS4Q6Bjgq8",
+    "7ErE0YPc_PY",
+    "_2lHuvAwhwk",
+    "-n1ljTOQK-s",
+    "eJpop_rbbRA",
+    "MBLq5K_WXi8",
+    "bJ4LFnk785g",
+    "3910Da5fk7k",
+    "chcrZR8SclA",
+    "KOh3qsUh_9E",
+    "GvkbAp9YZCo",
+    "O1U55m7pTCk",
+    "2NOefVvwLIM",
+    "hJqVpUoNVqE",
+    "-5fhRq5PV2o",
+    "Z-nPJFF1PYY",
+    "-PXeNWSj3Y0"
+  ],
+  "reference_only_ids": [
+    "Z_lbVlhO9HE",
+    "DwIur8FBRxw",
+    "246660563",
+    "D_vdPkCz23g",
+    "9waEFmHUNdk"
+  ],
+  "tier_distribution": {
+    "S+": {
+      "dev": 2,
+      "holdout": 1
+    },
+    "S": {
+      "dev": 1,
+      "holdout": 1
+    },
+    "S-": {
+      "dev": 5,
+      "holdout": 4
+    },
+    "A+": {
+      "dev": 4,
+      "holdout": 3
+    },
+    "A": {
+      "dev": 5,
+      "holdout": 3
+    },
+    "A-": {
+      "dev": 2,
+      "holdout": 2
+    },
+    "B+": {
+      "dev": 1,
+      "holdout": 0
+    }
+  },
+  "genre_distribution": {
+    "CM": {
+      "dev_craft": 4,
+      "holdout_craft": 6,
+      "dev_non_award": 4,
+      "holdout_non_award": 4,
+      "genre_report_status": "算出対象"
+    },
+    "MV": {
+      "dev_craft": 5,
+      "holdout_craft": 4,
+      "dev_non_award": 4,
+      "holdout_non_award": 3,
+      "genre_report_status": "算出対象"
+    },
+    "モーション": {
+      "dev_craft": 1,
+      "holdout_craft": 0,
+      "dev_non_award": 5,
+      "holdout_non_award": 4,
+      "genre_report_status": "未検証（基準作品1本のみのためジャンル別結果を出さない）"
+    },
+    "3DCG/アニメ": {
+      "dev_craft": 4,
+      "holdout_craft": 2,
+      "dev_non_award": 6,
+      "holdout_non_award": 4,
+      "genre_report_status": "算出対象"
+    },
+    "企業映像": {
+      "dev_craft": 6,
+      "holdout_craft": 2,
+      "dev_non_award": 5,
+      "holdout_non_award": 5,
+      "genre_report_status": "算出対象"
+    }
+  }
+}

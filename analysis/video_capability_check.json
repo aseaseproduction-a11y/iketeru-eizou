@@ -1,0 +1,75 @@
+{
+  "tested_at": "2026-11-22T17:57:00+09:00",
+  "conclusion": "Antigravityエージェント本体および独立サブエージェント（research）ともに、read_file ツールでローカルMP4ファイルを直接読み込み、映像の動き・カット展開および音声トラック（未字幕セリフ・BGM・SE）を外部APIキーなしで直接認識できることを実測確認。YouTube/Vimeo URLの直接読み込みは不可（ローカルMP4取得が必要）。",
+  "tests": [
+    {
+      "test": "local_mp4_15s_main_agent",
+      "video_id": "7rP-633ApUI",
+      "platform": "youtube",
+      "embed_status": "available",
+      "file_size_bytes": 1115865,
+      "duration_sec": 15,
+      "read_file_ok": true,
+      "video_frames_observed": true,
+      "audio_track_heard": true,
+      "evidence": "00:00-00:14 の1fps映像フレームおよび未字幕セリフ（「つい食べすぎちゃう時期だよね」「だったらヨーグルトで脂肪対策！」等）・SE・サウンドロゴを直接認識"
+    },
+    {
+      "test": "local_mp4_15s_subagent_research",
+      "video_id": "7rP-633ApUI",
+      "subagent_conversation_id": "64ebdcd5-86f2-4d1c-a99a-ac56880b34f5",
+      "read_file_ok": true,
+      "video_frames_observed": true,
+      "audio_track_heard": true,
+      "evidence": "独立サブエージェントが未字幕セリフ（「腸の話？ガセリ菌SP株が脂肪の吸収を抑えるんでしょ？」「はーい！」「ガセリ！」「雪印メグミルク」）とタイムスタンプ付きカット変化を正確に報告"
+    },
+    {
+      "test": "local_mp4_89s_restricted_via_ytdlp",
+      "video_id": "tdQCMuaJUQk",
+      "platform": "youtube",
+      "embed_status": "restricted",
+      "file_size_bytes": 3415068,
+      "duration_sec": 89,
+      "read_file_ok": true,
+      "video_frames_observed": true,
+      "audio_track_heard": true,
+      "evidence": "embedStatus=restricted の動画を yt-dlp -f 18 で取得し、00:00-01:28 全編の映像・セリフ・サスペンスBGM転換・SE（「シーッ」等）を直接認識"
+    },
+    {
+      "test": "local_mp4_193s_14_5mb_full_mv",
+      "video_id": "5URefVYaJrA",
+      "platform": "youtube",
+      "embed_status": "available",
+      "file_size_bytes": 15244435,
+      "duration_sec": 193,
+      "read_file_ok": true,
+      "video_frames_observed": true,
+      "audio_track_heard": true,
+      "evidence": "3分13秒・14.54MiB のフルMVを 00:00-03:13 全編（エンドクレジット含む）直接読み込み成功"
+    },
+    {
+      "test": "direct_youtube_url_read_file",
+      "supported": false,
+      "note": "read_file はローカル絶対パスのみ受け付けるため、YouTube/Vimeo URL を直接渡すことは不可。事前に yt-dlp またはローカルキャッシュ（D:\\マイドライブ\\iketeru_videos）から軽量MP4（360p/480p）を用意して渡す方式が必要。"
+    },
+    {
+      "test": "vimeo_7_benchmark_entries_availability",
+      "total_vimeo_in_benchmark": 7,
+      "available_via_local_cache_or_ytdlp": 6,
+      "unavailable_without_cookies": [
+        {
+          "id": "1048567039",
+          "title": "TAK – Motion Graphics Reel 2024",
+          "craft_or_purpose": "non_award_baseline",
+          "cached": false,
+          "ytdlp_error": "HTTP Error 401: Unauthorized (player.vimeo.com)"
+        }
+      ],
+      "available_ids": ["153159513", "313084145", "49367868", "246660563", "1032202784", "134832670"]
+    }
+  ],
+  "recommended_video_mode_architecture": {
+    "external_api_key_required": false,
+    "pipeline": "ローカルキャッシュ（D:\\マイドライブ\\iketeru_videos）または yt-dlp (-f 18 / <=480p mp4、15MB超の長尺はffmpegで360p軽量再エンコード) → 独立ブラインドワーカーが read_file で MP4 を直接視聴・採点（終了後一時MP4削除）"
+  }
+}

@@ -731,7 +731,7 @@ const SPECS = [
         sourceUrl: "https://www.canneslions.com/news/creativity-can-change-the-world"
       }
     ],
-    rationale: "【別枠・参考扱い】Cannes Lions 2018 SDG/Titanium/Direct GP（企画・社会派インパクト評価でありクラフト較正群から分離）"
+    rationale: "【別枠・参考扱い】Cannes Lions 2018 Grand Prix（企画・社会派インパクト評価でありクラフト較正群から分離。※出典記事にはGrand Prix受賞の記載はあるが具体部門名の明記なし）"
   },
   // 企業映像 中位
   {
