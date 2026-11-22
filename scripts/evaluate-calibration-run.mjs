@@ -205,13 +205,15 @@ function summarizeSubset(records, label) {
   }
 
   const sBandN = rankBandGroups["S帯(S+/S/S-)"].length;
-  const rangeRestrictionNote = label === "contamination_excluded"
+  const subsetNote = label === "contamination_excluded"
     ? `参考値（既知除外により上位帯が脱落し範囲が狭い：S帯残存 ${sBandN} 本 / 受賞作計 ${craft.length} 本）`
+    : label === "bova_excluded_sensitivity"
+    ? `事前登録感度分析（案C：BOVA除外・同一実行データより算出・受賞作 ${craft.length} 本 vs 非受賞作 ${nonAward.length} 本）`
     : null;
 
   return {
     subset: label,
-    ...(rangeRestrictionNote ? { note: rangeRestrictionNote } : {}),
+    ...(subsetNote ? { note: subsetNote } : {}),
     counts: {
       total: records.length,
       craft: craft.length,
@@ -253,6 +255,8 @@ function main() {
   const scoresPath = path.join(runDir, "raw_scores.jsonl");
   const bench = JSON.parse(fs.readFileSync(path.join(REPO_ROOT, "analysis", "golden_benchmark.json"), "utf8"));
   const benchById = new Map(bench.map(x => [x.id, x]));
+  const split = JSON.parse(fs.readFileSync(path.join(REPO_ROOT, "analysis", "benchmark_split.json"), "utf8"));
+  const bovaExcludedSet = new Set(split.bova_sensitivity_excluded_ids || []);
 
   const lines = fs.readFileSync(scoresPath, "utf8").split(/\r?\n/).filter(Boolean).map(l => JSON.parse(l));
 
@@ -298,10 +302,13 @@ function main() {
         Boolean(r.post_check?.award_badge_visible_in_video)
       );
 
+      const isBova = bovaExcludedSet.has(videoId) || (meta.awards || []).some(a => /BOVA/i.test(a.name || ""));
+
       aggregated.push({
         video_id: videoId,
         genre_bucket: meta.genre_bucket,
         craft_or_purpose: meta.craft_or_purpose,
+        is_bova: isBova,
         objective_tier: meta.objective_tier,
         objective_band: band,
         target_mid: targetMid,
@@ -333,6 +340,7 @@ function main() {
       .sort((a, b) => a - b);
 
     const unflagged = aggregated.filter(r => !r.flagged_contamination);
+    const bovaExcluded = aggregated.filter(r => !r.is_bova);
     const tiebreakersNeeded = aggregated.filter(r => r.ensemble_rule === "needs_3rd_tiebreaker").map(r => r.video_id);
     const tiebreakersCompleted = aggregated.filter(r => r.ensemble_rule === "median_of_3").map(r => r.video_id);
 
@@ -356,6 +364,7 @@ function main() {
         mean_first_post_read_effective_input_tokens: effTokenVals.length ? Math.round(effTokenVals.reduce((a, b) => a + b, 0) / effTokenVals.length) : null,
       },
       all_included: summarizeSubset(aggregated, "all_included"),
+      bova_excluded_sensitivity: summarizeSubset(bovaExcluded, "bova_excluded_sensitivity"),
       contamination_excluded: summarizeSubset(unflagged, "contamination_excluded"),
       per_video: aggregated,
     };
@@ -365,6 +374,7 @@ function main() {
   fs.writeFileSync(outPath, JSON.stringify({
     run_id: runId,
     evaluated_at: new Date().toISOString(),
+    protocol_version: split.protocol_version || null,
     ensemble_tiebreaker_rule: "|s1 - s2| >= 5 -> median of 3 (otherwise mean of 2)",
     modes: outByMode,
   }, null, 2) + "\n", "utf8");
@@ -379,6 +389,8 @@ function main() {
       tokens: outByMode[m].token_summary,
       all_included_craft: outByMode[m].all_included.craft_metrics,
       all_included_pairwise: outByMode[m].all_included.pairwise_metrics,
+      bova_excl_craft: outByMode[m].bova_excluded_sensitivity.craft_metrics,
+      bova_excl_pairwise: outByMode[m].bova_excluded_sensitivity.pairwise_metrics,
       contam_excl_craft: outByMode[m].contamination_excluded.craft_metrics,
       contam_excl_pairwise: outByMode[m].contamination_excluded.pairwise_metrics,
     }, null, 2));

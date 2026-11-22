@@ -1662,7 +1662,7 @@
     "objective_tier": null,
     "objective_band": null,
     "evidence_level": "purpose_corporate_communication_reference",
-    "rationale": "【参考枠へ移動（v8）】映文連アワード2025経済産業大臣賞は、公式5項目（企画力・構成/演出力・映像表現力・情報発信力・プロデュース力）とマニフェスト上、単なる映像美ではなく企業広報・産業貢献・目的伝達力を総合顕彰する賞であるため、評価基準v8ルール1.2に基づき国際目的系賞（Cannes SDG/Direct/Titanium・YouTube Works Creative Effectiveness等）と同一基準で参考枠へ移動。"
+    "rationale": "【参考枠へ移動（v8・v9一次情報精査済）】映文連アワード公式サイト（eibunren.or.jp/award2026/index.html、?p=7067）上「わが国唯一の産業・文化短編映像祭」としてコーポレート・コミュニケーション／ソーシャル・コミュニケーション／パーソナル・コミュニケーション等の目的別部門で構成され、一次・二次審査員はプロデューサー・ディレクター・広告関係者・映画監督・映像評論家等からなる。純粋な映像クラフト単体賞とは性格が異なるため、評価基準v9ルール1.2に基づき参考枠（purpose_reference_only）へ配置。"
   },
   {
     "id": "D_vdPkCz23g",
@@ -1700,8 +1700,8 @@
     "embed_status": "available",
     "playable_via_ytdlp": true,
     "genre_bucket": "企業映像",
-    "tier_bucket": "中位",
-    "craft_or_purpose": "craft_benchmark",
+    "tier_bucket": "参考枠",
+    "craft_or_purpose": "purpose_reference_only",
     "award_level": "winner",
     "era_bucket": "modern_10y",
     "current_db_rating": "A-",
@@ -1715,13 +1715,10 @@
         "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000013.000081094.html"
       }
     ],
-    "objective_tier": "A+",
-    "objective_band": [
-      86,
-      89
-    ],
-    "evidence_level": "tier3_national_gold",
-    "rationale": "日本国際観光映像祭 2025 ジャパングランプリ（南阿蘇温泉郷）"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "purpose_tourism_pr_reference",
+    "rationale": "【参考枠へ移動（v9・案B凍結）】日本国際観光映像祭 2025 ジャパングランプリ（南阿蘇温泉郷）。日本国際観光映像祭（JWTFF）公式応募要項（jwtff.world/regulation_2027_japan）上、観光誘客・地方観光・シティプロモーション・移住促進・観光商品・Vlog・SDGs in Tourism等の目的別部門で構成され、応募時に「作品の目的／目標」の提出を求め、審査員は映像・映画、観光、マーケティング、コミュニケーション、文化その他の関連分野の専門家で構成される（なお公式ページ上に明示的な採点基準一覧の記載はない）。観光PR・地域ブランディング等の目的達成要素を含むため、評価基準v9ルール1.2に基づき映文連アワードと同一基準で参考枠（purpose_reference_only）へ移動。"
   },
   {
     "id": "8pOOxOo7YYo",
@@ -1731,8 +1728,8 @@
     "embed_status": "available",
     "playable_via_ytdlp": true,
     "genre_bucket": "企業映像",
-    "tier_bucket": "中位",
-    "craft_or_purpose": "craft_benchmark",
+    "tier_bucket": "参考枠",
+    "craft_or_purpose": "purpose_reference_only",
     "award_level": "winner",
     "era_bucket": "modern_10y",
     "current_db_rating": "A",
@@ -1746,13 +1743,10 @@
         "sourceUrl": "https://www.town.horonobe.lg.jp/www4/section/sangyo/le009f000001xivg.html"
       }
     ],
-    "objective_tier": "A+",
-    "objective_band": [
-      86,
-      89
-    ],
-    "evidence_level": "tier3_national_gold",
-    "rationale": "日本国際観光映像祭 2026 日本部門グランプリ（利尻礼文サロベツ国立公園）"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "purpose_tourism_pr_reference",
+    "rationale": "【参考枠へ移動（v9・案B凍結）】日本国際観光映像祭 2026 日本部門グランプリ（利尻礼文サロベツ国立公園）。日本国際観光映像祭（JWTFF）公式応募要項（jwtff.world/regulation_2027_japan）上、観光誘客・地方観光・シティプロモーション・移住促進・観光商品・Vlog・SDGs in Tourism等の目的別部門で構成され、応募時に「作品の目的／目標」の提出を求め、審査員は映像・映画、観光、マーケティング、コミュニケーション、文化その他の関連分野の専門家で構成される（なお公式ページ上に明示的な採点基準一覧の記載はない）。観光PR・地域ブランディング等の目的達成要素を含むため、評価基準v9ルール1.2に基づき映文連アワードと同一基準で参考枠（purpose_reference_only）へ移動。"
   },
   {
     "id": "uCDUpZV3f8A",
@@ -1793,8 +1787,8 @@
     "embed_status": "available",
     "playable_via_ytdlp": true,
     "genre_bucket": "企業映像",
-    "tier_bucket": "中位",
-    "craft_or_purpose": "craft_benchmark",
+    "tier_bucket": "参考枠",
+    "craft_or_purpose": "purpose_reference_only",
     "award_level": "winner",
     "era_bucket": "modern_10y",
     "current_db_rating": "A",
@@ -1808,13 +1802,10 @@
         "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000007.000144033.html"
       }
     ],
-    "objective_tier": "A",
-    "objective_band": [
-      82,
-      85
-    ],
-    "evidence_level": "tier4_national_silver",
-    "rationale": "日本国際観光映像祭 2025 部門優秀賞（熊本県和水町）"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "purpose_tourism_pr_reference",
+    "rationale": "【参考枠へ移動（v9・案B凍結）】日本国際観光映像祭 2025 部門優秀賞（熊本県和水町）。日本国際観光映像祭（JWTFF）公式応募要項（jwtff.world/regulation_2027_japan）上、観光誘客・地方観光・シティプロモーション・移住促進・観光商品・Vlog・SDGs in Tourism等の目的別部門で構成され、応募時に「作品の目的／目標」の提出を求め、審査員は映像・映画、観光、マーケティング、コミュニケーション、文化その他の関連分野の専門家で構成される（なお公式ページ上に明示的な採点基準一覧の記載はない）。観光PR・地域ブランディング等の目的達成要素を含むため、評価基準v9ルール1.2に基づき映文連アワードと同一基準で参考枠（purpose_reference_only）へ移動。"
   },
   {
     "id": "p4eAR2Gw5RU",
@@ -1824,8 +1815,8 @@
     "embed_status": "available",
     "playable_via_ytdlp": true,
     "genre_bucket": "企業映像",
-    "tier_bucket": "中位",
-    "craft_or_purpose": "craft_benchmark",
+    "tier_bucket": "参考枠",
+    "craft_or_purpose": "purpose_reference_only",
     "award_level": "shortlist_or_selection",
     "era_bucket": "modern_10y",
     "current_db_rating": "A-",
@@ -1839,13 +1830,10 @@
         "sourceUrl": "https://jwtff.world/aiovg_videos/2025_japan_045"
       }
     ],
-    "objective_tier": "A-",
-    "objective_band": [
-      78,
-      81
-    ],
-    "evidence_level": "tier5_national_official_selection",
-    "rationale": "日本国際観光映像祭 2025 日本部門入選"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "purpose_tourism_pr_reference",
+    "rationale": "【参考枠へ移動（v9・案B凍結）】日本国際観光映像祭 2025 日本部門入選。日本国際観光映像祭（JWTFF）公式応募要項（jwtff.world/regulation_2027_japan）上、観光誘客・地方観光・シティプロモーション・移住促進・観光商品・Vlog・SDGs in Tourism等の目的別部門で構成され、応募時に「作品の目的／目標」の提出を求め、審査員は映像・映画、観光、マーケティング、コミュニケーション、文化その他の関連分野の専門家で構成される（なお公式ページ上に明示的な採点基準一覧の記載はない）。観光PR・地域ブランディング等の目的達成要素を含むため、評価基準v9ルール1.2に基づき映文連アワードと同一基準で参考枠（purpose_reference_only）へ移動。"
   },
   {
     "id": "V6XHz7tqGVM",

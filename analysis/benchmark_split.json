@@ -1,5 +1,5 @@
 {
-  "protocol_version": "v3_preregistered_v8_benchmark",
+  "protocol_version": "v4_preregistered_v9_freeze",
   "created_at": "2026-11-22T09:20:47.362Z",
   "seed": 20261122,
   "fixed_pass_criteria_on_holdout": {
@@ -11,12 +11,14 @@
     "note": "固定基準（結果を見て変更しない）。合否判定はすべて未学習の確認用（holdout）の点推定値のみで1回限り実施し、ブートストラップ95%信頼区間を併記する。"
   },
   "counts": {
-    "dev_craft": 17,
-    "holdout_craft": 14,
+    "dev_craft": 14,
+    "holdout_craft": 13,
+    "dev_craft_option_c_sensitivity": 11,
+    "holdout_craft_option_c_sensitivity": 10,
     "dev_non_award": 23,
     "holdout_non_award": 20,
-    "reference_only": 8,
-    "active_calibration_total": 74,
+    "reference_only": 12,
+    "active_calibration_total": 70,
     "excluded_from_both_modes": 1,
     "benchmark_total": 83
   },
@@ -38,13 +40,10 @@
     "313084145",
     "1032202784",
     "tdQCMuaJUQk",
-    "1S-KU2F7wc0",
     "134832670",
     "QmLBz4FuVDA",
     "5zj3aHgLFQE",
-    "9NzQ3G6rY5M",
     "uCDUpZV3f8A",
-    "p4eAR2Gw5RU",
     "iXTuYbyH2Rc",
     "-J7Oi1-EfG8"
   ],
@@ -57,7 +56,6 @@
     "5wEjV2ekSwE",
     "iIL_CB_YjFk",
     "49367868",
-    "8pOOxOo7YYo",
     "JFDm4p8T6_4",
     "3JtO1WMYb58",
     "wXD33Jx25oI",
@@ -119,49 +117,62 @@
     "9waEFmHUNdk",
     "vohpCZh-Qcw",
     "jvKtHf7kDYs",
-    "CWhNI_x9W6c"
+    "CWhNI_x9W6c",
+    "1S-KU2F7wc0",
+    "9NzQ3G6rY5M",
+    "p4eAR2Gw5RU",
+    "8pOOxOo7YYo"
   ],
   "tier_distribution": {
     "S+": {
       "dev": 2,
-      "holdout": 1
+      "holdout": 1,
+      "holdout_option_c": 1
     },
     "S": {
       "dev": 1,
-      "holdout": 1
+      "holdout": 1,
+      "holdout_option_c": 1
     },
     "S-": {
       "dev": 3,
-      "holdout": 4
+      "holdout": 4,
+      "holdout_option_c": 4
     },
     "A+": {
-      "dev": 3,
-      "holdout": 3
+      "dev": 2,
+      "holdout": 2,
+      "holdout_option_c": 2
     },
     "A": {
-      "dev": 5,
-      "holdout": 3
+      "dev": 4,
+      "holdout": 3,
+      "holdout_option_c": 1
     },
     "A-": {
-      "dev": 2,
-      "holdout": 2
+      "dev": 1,
+      "holdout": 2,
+      "holdout_option_c": 1
     },
     "B+": {
       "dev": 1,
-      "holdout": 0
+      "holdout": 0,
+      "holdout_option_c": 0
     }
   },
   "genre_distribution": {
     "CM": {
       "dev_craft": 4,
       "holdout_craft": 6,
+      "holdout_craft_option_c": 3,
       "dev_non_award": 4,
       "holdout_non_award": 4,
-      "genre_report_status": "算出対象"
+      "genre_report_status": "算出対象（案B確認用6本；案C感度分析では3本のため参考n<5）"
     },
     "MV": {
       "dev_craft": 5,
       "holdout_craft": 4,
+      "holdout_craft_option_c": 4,
       "dev_non_award": 4,
       "holdout_non_award": 3,
       "genre_report_status": "参考（n<5：確認用受賞作4本のため合否・結論には使用しない）"
@@ -169,6 +180,7 @@
     "モーション": {
       "dev_craft": 1,
       "holdout_craft": 0,
+      "holdout_craft_option_c": 0,
       "dev_non_award": 4,
       "holdout_non_award": 4,
       "genre_report_status": "未検証（基準作品1本・確認用0本のためジャンル別結果を出さない）"
@@ -176,19 +188,21 @@
     "3DCG/アニメ": {
       "dev_craft": 2,
       "holdout_craft": 2,
+      "holdout_craft_option_c": 2,
       "dev_non_award": 6,
       "holdout_non_award": 4,
       "genre_report_status": "参考（n<5：確認用受賞作2本のため合否・結論には使用しない）"
     },
     "企業映像": {
-      "dev_craft": 5,
-      "holdout_craft": 2,
+      "dev_craft": 2,
+      "holdout_craft": 1,
+      "holdout_craft_option_c": 1,
       "dev_non_award": 5,
       "holdout_non_award": 5,
-      "genre_report_status": "参考（n<5：確認用受賞作2本のため合否・結論には使用しない）"
+      "genre_report_status": "参考（n<5：確認用受賞作1本のため合否・結論には使用しない）"
     }
   },
-  "updated_at": "2026-11-22T12:56:21.565Z",
+  "updated_at": "2026-11-22T14:01:13.140Z",
   "ensemble_tiebreaker_rule": "|s1 - s2| >= 5 -> median of 3 (otherwise mean of 2); identical across Dev and Holdout",
   "revision_history": [
     {
@@ -220,6 +234,86 @@
         }
       ],
       "holdout_changes": "0件（全14本が受賞対象本編かつクラフト審査員賞であることを事前確認済み）"
+    },
+    {
+      "version": "v4_preregistered_v9_freeze",
+      "date": "2026-11-22T14:01:13.140Z",
+      "applied_before_holdout": true,
+      "rule_applied_uniformly_to_all_83": [
+        "ルール1.2（全賞一次情報点検・案B主判定凍結）：日本国際観光映像祭（JWTFF）の4本（Dev 3本・Holdout 1本）を映文連アワードと同一基準で参考枠（purpose_reference_only, objective_tier: null）へ移動",
+        "事前登録感度分析（案C：BOVA除外）：BOVA 6本（Dev 3本・Holdout 3本）を主判定では標本数・A帯確保のため維持し、同一Holdout実行からBOVA除外（Holdout 10本）を事前登録感度分析として併記",
+        "採点条件凍結：v1_baseline（無補正）・model=inherit・2+1（|s1 - s2| >= 5）を Holdout 向けに完全凍結"
+      ],
+      "moved_to_reference_only": [
+        {
+          "id": "1S-KU2F7wc0",
+          "from": "dev_craft_ids (A+)",
+          "to": "reference_only_ids (purpose_reference_only)",
+          "reason": "日本国際観光映像祭2025ジャパングランプリ（観光PR目的系賞・ルール1.2）"
+        },
+        {
+          "id": "9NzQ3G6rY5M",
+          "from": "dev_craft_ids (A)",
+          "to": "reference_only_ids (purpose_reference_only)",
+          "reason": "日本国際観光映像祭2025 City Promotion優秀賞（観光PR目的系賞・ルール1.2）"
+        },
+        {
+          "id": "p4eAR2Gw5RU",
+          "from": "dev_craft_ids (A-)",
+          "to": "reference_only_ids (purpose_reference_only)",
+          "reason": "日本国際観光映像祭2025日本部門入選（観光PR目的系賞・ルール1.2）"
+        },
+        {
+          "id": "8pOOxOo7YYo",
+          "from": "holdout_craft_ids (A+)",
+          "to": "reference_only_ids (purpose_reference_only)",
+          "reason": "日本国際観光映像祭2026日本部門グランプリ（観光PR目的系賞・ルール1.2、Holdout実行前の統一適用）"
+        }
+      ],
+      "holdout_changes": "1件（8pOOxOo7YYo を Holdout 実行前に参考枠へ移動：Holdout craft 14本 → 13本、非受賞20本は変更なし）"
     }
+  ],
+  "frozen_scoring_config": {
+    "prompt_template": "scripts/lib/calibration-prompt-template.mjs",
+    "prompt_version": "v1_baseline",
+    "score_adjustment": "none",
+    "model": "inherit",
+    "ensemble_tiebreaker_rule": "|s1 - s2| >= 5 -> median of 3 (otherwise mean of 2)",
+    "primary_analysis": "option_b_v9_jwtff_to_reference_bova_retained",
+    "preregistered_sensitivity_analysis": "option_c_bova_excluded_same_holdout_run",
+    "bova_retention_rationale": "ルール1.2（映像クラフト中心）の一貫性ではBOVA除外（案C）が上回るが、Holdoutの標本数（13本）およびA帯カバレッジ（7本）を確保するため主判定は案B（BOVA維持）とし、同一Holdout実行から案C（BOVA除外・Holdout 10本）を事前登録感度分析として併記する。"
+  },
+  "bova_sensitivity_excluded_ids": [
+    "tdQCMuaJUQk",
+    "iXTuYbyH2Rc",
+    "-J7Oi1-EfG8",
+    "JFDm4p8T6_4",
+    "wXD33Jx25oI",
+    "FSqTqdjf2YQ"
+  ],
+  "dev_option_c_craft_ids": [
+    "5URefVYaJrA",
+    "UvGwIFVUK7M",
+    "FNQ4vqB-waw",
+    "35i4zTky9pI",
+    "ebzEEEdjHj0",
+    "313084145",
+    "1032202784",
+    "134832670",
+    "QmLBz4FuVDA",
+    "5zj3aHgLFQE",
+    "uCDUpZV3f8A"
+  ],
+  "holdout_option_c_craft_ids": [
+    "vRBVWCs1KW4",
+    "tvTRZJ-4EyI",
+    "153159513",
+    "vpyeQeTDGFA",
+    "X0hyTmlsBUI",
+    "5wEjV2ekSwE",
+    "iIL_CB_YjFk",
+    "49367868",
+    "3JtO1WMYb58",
+    "V6XHz7tqGVM"
   ]
 }
