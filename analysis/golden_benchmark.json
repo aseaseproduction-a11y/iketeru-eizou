@@ -664,6 +664,68 @@
     "rationale": "UKMVA 2016 Best Dance Video - International受賞MV（Valentino Khan 'Deep Down Low'）"
   },
   {
+    "id": "313084145",
+    "title": "Mitski : A Pearl",
+    "platform": "vimeo",
+    "videoUrl": "https://vimeo.com/313084145",
+    "embed_status": "unknown",
+    "playable_via_ytdlp": true,
+    "genre_bucket": "MV",
+    "tier_bucket": "上位",
+    "craft_or_purpose": "craft_benchmark",
+    "award_level": "winner",
+    "era_bucket": "modern_10y",
+    "current_db_rating": "S",
+    "current_db_score": 96,
+    "current_db_analysis_status": "full_analysis",
+    "awards": [
+      {
+        "name": "SXSW Film Festival",
+        "year": "2020",
+        "category": "Special Jury Recognition for Animation",
+        "sourceUrl": "https://www.thewrap.com/sxsw-film-festival-jury-special-awards-cancellation-coronavirus/"
+      }
+    ],
+    "objective_tier": "S-",
+    "objective_band": [
+      90,
+      92
+    ],
+    "evidence_level": "tier2_sxsw_jury_recognition",
+    "rationale": "SXSW 2020 Special Jury Recognition for Animation受賞（Mitski 'A Pearl' — アニメーションMV）"
+  },
+  {
+    "id": "49367868",
+    "title": "Dynamics of the Subway / Haisuinonasa  (Official Video)",
+    "platform": "vimeo",
+    "videoUrl": "https://vimeo.com/49367868",
+    "embed_status": "unknown",
+    "playable_via_ytdlp": true,
+    "genre_bucket": "MV",
+    "tier_bucket": "中位",
+    "craft_or_purpose": "craft_benchmark",
+    "award_level": "winner",
+    "era_bucket": "classic_archive",
+    "current_db_rating": "S",
+    "current_db_score": 96,
+    "current_db_analysis_status": "full_analysis",
+    "awards": [
+      {
+        "name": "文化庁メディア芸術祭",
+        "year": "2012",
+        "category": "第16回 エンターテインメント部門 新人賞",
+        "sourceUrl": "https://www.bunka.go.jp/j-mediaarts-festival/award/single/haisuinonasa/index.html"
+      }
+    ],
+    "objective_tier": "A+",
+    "objective_band": [
+      86,
+      89
+    ],
+    "evidence_level": "tier3_media_arts_new_face",
+    "rationale": "第16回文化庁メディア芸術祭 新人賞（大西景太 / ハイスイノナサ「地下鉄の動態」MV）"
+  },
+  {
     "id": "5zj3aHgLFQE",
     "title": "Shugo Tokumaru (トクマルシューゴ) - Poker (Official Music Video)",
     "platform": "youtube",
@@ -755,6 +817,34 @@
     ],
     "evidence_level": "tier4_national_jury_selection",
     "rationale": "第22回文化庁メディア芸術祭 エンターテインメント部門 審査委員会推薦作品（INNOSENT in FORMAL 'Footloose'）"
+  },
+  {
+    "id": "246660563",
+    "title": "Fly - imai ft. 79, Kaho Nakamura",
+    "platform": "vimeo",
+    "videoUrl": "https://vimeo.com/246660563",
+    "embed_status": "unknown",
+    "playable_via_ytdlp": true,
+    "genre_bucket": "MV",
+    "tier_bucket": "参考枠",
+    "craft_or_purpose": "audience_award_reference",
+    "award_level": "winner",
+    "era_bucket": "modern_10y",
+    "current_db_rating": "S",
+    "current_db_score": 96,
+    "current_db_analysis_status": "full_analysis",
+    "awards": [
+      {
+        "name": "新千歳空港国際アニメーション映画祭",
+        "year": "2018",
+        "category": "観客賞 (Audience Award)",
+        "sourceUrl": "https://archives.airport-anifes.jp/site2018/film/fes2018-imai_fly/"
+      }
+    ],
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "audience_award_reference",
+    "rationale": "【参考扱い】新千歳空港国際アニメーション映画祭2018観客賞（一般観客投票賞のため審査員クラフト較正群から分離）"
   },
   {
     "id": "-n1ljTOQK-s",
@@ -904,11 +994,11 @@
     "rationale": "非受賞・インディーズMV（ASIRA）"
   },
   {
-    "id": "313084145",
-    "title": "Mitski : A Pearl",
+    "id": "1032202784",
+    "title": "Node Fest 2024",
     "platform": "vimeo",
-    "videoUrl": "https://vimeo.com/313084145",
-    "embed_status": "unknown",
+    "videoUrl": "https://vimeo.com/1032202784",
+    "embed_status": "available",
     "playable_via_ytdlp": true,
     "genre_bucket": "モーション",
     "tier_bucket": "上位",
@@ -920,112 +1010,19 @@
     "current_db_analysis_status": "full_analysis",
     "awards": [
       {
-        "name": "SXSW Film Festival",
-        "year": "2020",
-        "category": "Special Jury Recognition for Animation",
-        "sourceUrl": "https://www.thewrap.com/sxsw-film-festival-jury-special-awards-cancellation-coronavirus/"
+        "name": "The Motion Awards",
+        "year": "2025",
+        "category": "Events » Title Sequence Winner",
+        "sourceUrl": "https://2025.motionawards.com/winners2025/"
       }
     ],
-    "objective_tier": "S-",
+    "objective_tier": "S",
     "objective_band": [
-      90,
-      92
+      93,
+      96
     ],
-    "evidence_level": "tier2_sxsw_jury_recognition",
-    "rationale": "SXSW 2020 Special Jury Recognition for Animation受賞（Mitski 'A Pearl' — 3D＋1,480枚手描きモーション作品）"
-  },
-  {
-    "id": "49367868",
-    "title": "Dynamics of the Subway / Haisuinonasa  (Official Video)",
-    "platform": "vimeo",
-    "videoUrl": "https://vimeo.com/49367868",
-    "embed_status": "unknown",
-    "playable_via_ytdlp": true,
-    "genre_bucket": "モーション",
-    "tier_bucket": "中位",
-    "craft_or_purpose": "craft_benchmark",
-    "award_level": "winner",
-    "era_bucket": "classic_archive",
-    "current_db_rating": "S",
-    "current_db_score": 96,
-    "current_db_analysis_status": "full_analysis",
-    "awards": [
-      {
-        "name": "文化庁メディア芸術祭",
-        "year": "2012",
-        "category": "第16回 エンターテインメント部門 新人賞",
-        "sourceUrl": "https://www.bunka.go.jp/j-mediaarts-festival/award/single/haisuinonasa/index.html"
-      }
-    ],
-    "objective_tier": "A+",
-    "objective_band": [
-      86,
-      89
-    ],
-    "evidence_level": "tier3_media_arts_new_face",
-    "rationale": "第16回文化庁メディア芸術祭 新人賞（大西景太 / ハイスイノナサ「地下鉄の動態」— 音同期幾何学モーショングラフィックス）"
-  },
-  {
-    "id": "246660563",
-    "title": "Fly - imai ft. 79, Kaho Nakamura",
-    "platform": "vimeo",
-    "videoUrl": "https://vimeo.com/246660563",
-    "embed_status": "unknown",
-    "playable_via_ytdlp": true,
-    "genre_bucket": "モーション",
-    "tier_bucket": "中位",
-    "craft_or_purpose": "craft_benchmark",
-    "award_level": "winner",
-    "era_bucket": "modern_10y",
-    "current_db_rating": "S",
-    "current_db_score": 96,
-    "current_db_analysis_status": "full_analysis",
-    "awards": [
-      {
-        "name": "新千歳空港国際アニメーション映画祭",
-        "year": "2018",
-        "category": "観客賞 (Audience Award)",
-        "sourceUrl": "https://archives.airport-anifes.jp/site2018/film/fes2018-imai_fly/"
-      }
-    ],
-    "objective_tier": "A",
-    "objective_band": [
-      82,
-      85
-    ],
-    "evidence_level": "tier4_intl_anim_fest_award",
-    "rationale": "新千歳空港国際アニメーション映画祭2018観客賞（橋本麦 / imai 'Fly' — モーショントラッカー併用ストップモーション）"
-  },
-  {
-    "id": "134832670",
-    "title": "L'Œil du Cyclone",
-    "platform": "vimeo",
-    "videoUrl": "https://vimeo.com/134832670",
-    "embed_status": "unknown",
-    "playable_via_ytdlp": true,
-    "genre_bucket": "モーション",
-    "tier_bucket": "中位",
-    "craft_or_purpose": "craft_benchmark",
-    "award_level": "shortlist_or_selection",
-    "era_bucket": "classic_archive",
-    "current_db_rating": "S",
-    "current_db_score": 96,
-    "current_db_analysis_status": "full_analysis",
-    "awards": [
-      {
-        "name": "文化庁メディア芸術祭",
-        "year": "2017",
-        "category": "第20回 アニメーション部門 審査委員会推薦作品 (Jury Selection)",
-        "sourceUrl": "https://www.bunka.go.jp/j-mediaarts-festival/en/award/single/loeil-du-cyclone/index-2.html"
-      }
-    ],
-    "objective_tier": "A",
-    "objective_band": [
-      82,
-      85
-    ],
-    "evidence_level": "tier4_national_jury_selection",
-    "rationale": "第20回文化庁メディア芸術祭 アニメーション部門 審査委員会推薦作品（平岡政展 / EZ3kiel 'L'Œil du Cyclone'）"
+    "evidence_level": "tier1_motion_awards_winner",
+    "rationale": "The Motion Awards 2025 部門最優秀賞（Events » Title Sequence Winner — Node Fest 2024 Opening Titles by Never Sit Still）"
   },
   {
     "id": "bGcpESkGLzI",
@@ -1370,6 +1367,37 @@
     ],
     "evidence_level": "tier3_intl_festival_winner",
     "rationale": "第34回東京国際映画祭 アジアの未来 作品賞"
+  },
+  {
+    "id": "134832670",
+    "title": "L'Œil du Cyclone",
+    "platform": "vimeo",
+    "videoUrl": "https://vimeo.com/134832670",
+    "embed_status": "unknown",
+    "playable_via_ytdlp": true,
+    "genre_bucket": "3DCG/アニメ",
+    "tier_bucket": "中位",
+    "craft_or_purpose": "craft_benchmark",
+    "award_level": "shortlist_or_selection",
+    "era_bucket": "classic_archive",
+    "current_db_rating": "S",
+    "current_db_score": 96,
+    "current_db_analysis_status": "full_analysis",
+    "awards": [
+      {
+        "name": "文化庁メディア芸術祭",
+        "year": "2017",
+        "category": "第20回 アニメーション部門 審査委員会推薦作品 (Jury Selection)",
+        "sourceUrl": "https://www.bunka.go.jp/j-mediaarts-festival/en/award/single/loeil-du-cyclone/index-2.html"
+      }
+    ],
+    "objective_tier": "A",
+    "objective_band": [
+      82,
+      85
+    ],
+    "evidence_level": "tier4_national_jury_selection",
+    "rationale": "第20回文化庁メディア芸術祭 アニメーション部門 審査委員会推薦作品（平岡政展 'L'Œil du Cyclone' — 短編アニメーション）"
   },
   {
     "id": "O1U55m7pTCk",
@@ -1824,7 +1852,7 @@
       81
     ],
     "evidence_level": "tier5_national_official_selection",
-    "rationale": "日本国際観光映像祭 2025 日本部門入選（公式ページ記載の「入選」に合わせてA-へ下方修正）"
+    "rationale": "日本国際観光映像祭 2025 日本部門入選"
   },
   {
     "id": "V6XHz7tqGVM",
@@ -1865,8 +1893,8 @@
     "embed_status": "available",
     "playable_via_ytdlp": true,
     "genre_bucket": "企業映像",
-    "tier_bucket": "中位",
-    "craft_or_purpose": "craft_benchmark",
+    "tier_bucket": "参考枠",
+    "craft_or_purpose": "audience_award_reference",
     "award_level": "winner",
     "era_bucket": "modern_10y",
     "current_db_rating": "B+",
@@ -1880,13 +1908,10 @@
         "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000187.000017308.html"
       }
     ],
-    "objective_tier": "A-",
-    "objective_band": [
-      78,
-      81
-    ],
-    "evidence_level": "tier5_curated_or_merit",
-    "rationale": "日本国際観光映像祭 2025 観客賞（大分県豊後大野市）"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "audience_award_reference",
+    "rationale": "【参考扱い】日本国際観光映像祭 2025 観客賞（一般観客投票賞のため審査員クラフト較正群から分離）"
   },
   {
     "id": "-PXeNWSj3Y0",

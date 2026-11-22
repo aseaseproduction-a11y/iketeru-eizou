@@ -17,10 +17,11 @@ const YTDLP_VERIFIED_RESTRICTED = new Set([
   "_H6zuJAtQqI",
 ]);
 
-// Curated & strictly verified benchmark specification (v5)
-// - All 7 eizo100 entries excluded (no per-work yearly selection statement in body text)
-// - p4eAR2Gw5RU corrected to 日本部門2025（入選）= A- matching official jwtff.world page
-// - Motion & MV replenished with strictly verified primary-source awards (SXSW, Media Arts, New Chitose, UKMVA)
+// Curated & strictly verified benchmark specification (v6)
+// - Mitski 'A Pearl', imai 'Fly', Haisuinonasa 'Dynamics of the Subway' moved back to MV
+// - L'Œil du Cyclone moved to 3DCG/アニメ
+// - Audience awards (246660563, 9waEFmHUNdk) separated as audience_award_reference (objective_tier: null)
+// - Pure Motion / Title Design benchmark added: 1032202784 (Node Fest 2024 Opening Titles — The Motion Awards 2025 Winner)
 const SPECS = [
   // ========================
   // 1. CM (TV CM / Web CM / Branded Film)
@@ -366,7 +367,47 @@ const SPECS = [
     ],
     rationale: "UKMVA 2016 Best Dance Video - International受賞MV（Valentino Khan 'Deep Down Low'）"
   },
+  {
+    id: "313084145",
+    genre_bucket: "MV",
+    tier_bucket: "上位",
+    craft_or_purpose: "craft_benchmark",
+    award_level: "winner",
+    era_bucket: "modern_10y",
+    objective_tier: "S-",
+    objective_band: [90, 92],
+    evidence_level: "tier2_sxsw_jury_recognition",
+    awards: [
+      {
+        name: "SXSW Film Festival",
+        year: "2020",
+        category: "Special Jury Recognition for Animation",
+        sourceUrl: "https://www.thewrap.com/sxsw-film-festival-jury-special-awards-cancellation-coronavirus/"
+      }
+    ],
+    rationale: "SXSW 2020 Special Jury Recognition for Animation受賞（Mitski 'A Pearl' — アニメーションMV）"
+  },
   // MV 中位
+  {
+    id: "49367868",
+    genre_bucket: "MV",
+    tier_bucket: "中位",
+    craft_or_purpose: "craft_benchmark",
+    award_level: "winner",
+    era_bucket: "classic_archive",
+    objective_tier: "A+",
+    objective_band: [86, 89],
+    evidence_level: "tier3_media_arts_new_face",
+    awards: [
+      {
+        name: "文化庁メディア芸術祭",
+        year: "2012",
+        category: "第16回 エンターテインメント部門 新人賞",
+        sourceUrl: "https://www.bunka.go.jp/j-mediaarts-festival/award/single/haisuinonasa/index.html"
+      }
+    ],
+    rationale: "第16回文化庁メディア芸術祭 新人賞（大西景太 / ハイスイノナサ「地下鉄の動態」MV）"
+  },
   {
     id: "5zj3aHgLFQE",
     genre_bucket: "MV",
@@ -427,6 +468,27 @@ const SPECS = [
     ],
     rationale: "第22回文化庁メディア芸術祭 エンターテインメント部門 審査委員会推薦作品（INNOSENT in FORMAL 'Footloose'）"
   },
+  // MV 参考扱い（観客賞）
+  {
+    id: "246660563",
+    genre_bucket: "MV",
+    tier_bucket: "参考枠",
+    craft_or_purpose: "audience_award_reference",
+    award_level: "winner",
+    era_bucket: "modern_10y",
+    objective_tier: null,
+    objective_band: null,
+    evidence_level: "audience_award_reference",
+    awards: [
+      {
+        name: "新千歳空港国際アニメーション映画祭",
+        year: "2018",
+        category: "観客賞 (Audience Award)",
+        sourceUrl: "https://archives.airport-anifes.jp/site2018/film/fes2018-imai_fly/"
+      }
+    ],
+    rationale: "【参考扱い】新千歳空港国際アニメーション映画祭2018観客賞（一般観客投票賞のため審査員クラフト較正群から分離）"
+  },
   // MV 下位 (非受賞の通常商用MV)
   { id: "-n1ljTOQK-s", genre_bucket: "MV", tier_bucket: "下位", craft_or_purpose: "non_award_baseline", award_level: "non_awarded", era_bucket: "modern_10y", objective_tier: null, objective_band: null, evidence_level: "baseline_non_awarded_commercial", awards: [], rationale: "非受賞・通常商用MV（僕が見たかった青空）" },
   { id: "_C7k63knGz8", genre_bucket: "MV", tier_bucket: "下位", craft_or_purpose: "non_award_baseline", award_level: "non_awarded", era_bucket: "modern_10y", objective_tier: null, objective_band: null, evidence_level: "baseline_non_awarded_commercial", awards: [], rationale: "非受賞・通常商用MV（XOX 'PINKY BABY'）" },
@@ -437,87 +499,28 @@ const SPECS = [
   { id: "Dhx2EIhYkc0", genre_bucket: "MV", tier_bucket: "下位", craft_or_purpose: "non_award_baseline", award_level: "non_awarded", era_bucket: "modern_10y", objective_tier: null, objective_band: null, evidence_level: "baseline_non_awarded_commercial", awards: [], rationale: "非受賞・インディーズMV（ASIRA）" },
 
   // ========================
-  // 3. モーション (Motion Graphics / Title Design / Kinetic / Hybrid Motion)
+  // 3. モーション (純モーショングラフィックス / タイトルデザインのみ)
+  // ※現状、厳格出典で確認済みの基準作は1本のみのため、モーション単体のジャンル別較正は対象外
   // ========================
   {
-    id: "313084145",
+    id: "1032202784",
     genre_bucket: "モーション",
     tier_bucket: "上位",
     craft_or_purpose: "craft_benchmark",
     award_level: "winner",
     era_bucket: "modern_10y",
-    objective_tier: "S-",
-    objective_band: [90, 92],
-    evidence_level: "tier2_sxsw_jury_recognition",
+    objective_tier: "S",
+    objective_band: [93, 96],
+    evidence_level: "tier1_motion_awards_winner",
     awards: [
       {
-        name: "SXSW Film Festival",
-        year: "2020",
-        category: "Special Jury Recognition for Animation",
-        sourceUrl: "https://www.thewrap.com/sxsw-film-festival-jury-special-awards-cancellation-coronavirus/"
+        name: "The Motion Awards",
+        year: "2025",
+        category: "Events » Title Sequence Winner",
+        sourceUrl: "https://2025.motionawards.com/winners2025/"
       }
     ],
-    rationale: "SXSW 2020 Special Jury Recognition for Animation受賞（Mitski 'A Pearl' — 3D＋1,480枚手描きモーション作品）"
-  },
-  {
-    id: "49367868",
-    genre_bucket: "モーション",
-    tier_bucket: "中位",
-    craft_or_purpose: "craft_benchmark",
-    award_level: "winner",
-    era_bucket: "classic_archive",
-    objective_tier: "A+",
-    objective_band: [86, 89],
-    evidence_level: "tier3_media_arts_new_face",
-    awards: [
-      {
-        name: "文化庁メディア芸術祭",
-        year: "2012",
-        category: "第16回 エンターテインメント部門 新人賞",
-        sourceUrl: "https://www.bunka.go.jp/j-mediaarts-festival/award/single/haisuinonasa/index.html"
-      }
-    ],
-    rationale: "第16回文化庁メディア芸術祭 新人賞（大西景太 / ハイスイノナサ「地下鉄の動態」— 音同期幾何学モーショングラフィックス）"
-  },
-  {
-    id: "246660563",
-    genre_bucket: "モーション",
-    tier_bucket: "中位",
-    craft_or_purpose: "craft_benchmark",
-    award_level: "winner",
-    era_bucket: "modern_10y",
-    objective_tier: "A",
-    objective_band: [82, 85],
-    evidence_level: "tier4_intl_anim_fest_award",
-    awards: [
-      {
-        name: "新千歳空港国際アニメーション映画祭",
-        year: "2018",
-        category: "観客賞 (Audience Award)",
-        sourceUrl: "https://archives.airport-anifes.jp/site2018/film/fes2018-imai_fly/"
-      }
-    ],
-    rationale: "新千歳空港国際アニメーション映画祭2018観客賞（橋本麦 / imai 'Fly' — モーショントラッカー併用ストップモーション）"
-  },
-  {
-    id: "134832670",
-    genre_bucket: "モーション",
-    tier_bucket: "中位",
-    craft_or_purpose: "craft_benchmark",
-    award_level: "shortlist_or_selection",
-    era_bucket: "classic_archive",
-    objective_tier: "A",
-    objective_band: [82, 85],
-    evidence_level: "tier4_national_jury_selection",
-    awards: [
-      {
-        name: "文化庁メディア芸術祭",
-        year: "2017",
-        category: "第20回 アニメーション部門 審査委員会推薦作品 (Jury Selection)",
-        sourceUrl: "https://www.bunka.go.jp/j-mediaarts-festival/en/award/single/loeil-du-cyclone/index-2.html"
-      }
-    ],
-    rationale: "第20回文化庁メディア芸術祭 アニメーション部門 審査委員会推薦作品（平岡政展 / EZ3kiel 'L'Œil du Cyclone'）"
+    rationale: "The Motion Awards 2025 部門最優秀賞（Events » Title Sequence Winner — Node Fest 2024 Opening Titles by Never Sit Still）"
   },
   // モーション 下位 (非受賞の通常モーション・リール)
   { id: "bGcpESkGLzI", genre_bucket: "モーション", tier_bucket: "下位", craft_or_purpose: "non_award_baseline", award_level: "non_awarded", era_bucket: "modern_10y", objective_tier: null, objective_band: null, evidence_level: "baseline_non_awarded_commercial", awards: [], rationale: "非受賞・モーショングラフィックス作品（空間響図学）" },
@@ -633,6 +636,26 @@ const SPECS = [
       }
     ],
     rationale: "第34回東京国際映画祭 アジアの未来 作品賞"
+  },
+  {
+    id: "134832670",
+    genre_bucket: "3DCG/アニメ",
+    tier_bucket: "中位",
+    craft_or_purpose: "craft_benchmark",
+    award_level: "shortlist_or_selection",
+    era_bucket: "classic_archive",
+    objective_tier: "A",
+    objective_band: [82, 85],
+    evidence_level: "tier4_national_jury_selection",
+    awards: [
+      {
+        name: "文化庁メディア芸術祭",
+        year: "2017",
+        category: "第20回 アニメーション部門 審査委員会推薦作品 (Jury Selection)",
+        sourceUrl: "https://www.bunka.go.jp/j-mediaarts-festival/en/award/single/loeil-du-cyclone/index-2.html"
+      }
+    ],
+    rationale: "第20回文化庁メディア芸術祭 アニメーション部門 審査委員会推薦作品（平岡政展 'L'Œil du Cyclone' — 短編アニメーション）"
   },
   // 3DCG/アニメ 下位 (非受賞の通常アニメPV・短編・3DCG)
   { id: "O1U55m7pTCk", genre_bucket: "3DCG/アニメ", tier_bucket: "下位", craft_or_purpose: "non_award_baseline", award_level: "non_awarded", era_bucket: "modern_10y", objective_tier: null, objective_band: null, evidence_level: "baseline_non_awarded_commercial", awards: [], rationale: "非受賞・短編アニメーション（Vanished in Vibration）" },
@@ -809,7 +832,7 @@ const SPECS = [
         sourceUrl: "https://jwtff.world/aiovg_videos/2025_japan_045"
       }
     ],
-    rationale: "日本国際観光映像祭 2025 日本部門入選（公式ページ記載の「入選」に合わせてA-へ下方修正）"
+    rationale: "日本国際観光映像祭 2025 日本部門入選"
   },
   {
     id: "V6XHz7tqGVM",
@@ -831,16 +854,17 @@ const SPECS = [
     ],
     rationale: "ADFEST 2016 Fabulous Four公式選出（受賞の1ランク下 — Beautiful Lie）"
   },
+  // 企業映像 参考扱い（観客賞）
   {
     id: "9waEFmHUNdk",
     genre_bucket: "企業映像",
-    tier_bucket: "中位",
-    craft_or_purpose: "craft_benchmark",
+    tier_bucket: "参考枠",
+    craft_or_purpose: "audience_award_reference",
     award_level: "winner",
     era_bucket: "modern_10y",
-    objective_tier: "A-",
-    objective_band: [78, 81],
-    evidence_level: "tier5_curated_or_merit",
+    objective_tier: null,
+    objective_band: null,
+    evidence_level: "audience_award_reference",
     awards: [
       {
         name: "日本国際観光映像祭",
@@ -849,7 +873,7 @@ const SPECS = [
         sourceUrl: "https://prtimes.jp/main/html/rd/p/000000187.000017308.html"
       }
     ],
-    rationale: "日本国際観光映像祭 2025 観客賞（大分県豊後大野市）"
+    rationale: "【参考扱い】日本国際観光映像祭 2025 観客賞（一般観客投票賞のため審査員クラフト較正群から分離）"
   },
   // 企業映像 下位 (非受賞の通常商用企業映像)
   { id: "-PXeNWSj3Y0", genre_bucket: "企業映像", tier_bucket: "下位", craft_or_purpose: "non_award_baseline", award_level: "non_awarded", era_bucket: "modern_10y", objective_tier: null, objective_band: null, evidence_level: "baseline_non_awarded_commercial", awards: [], rationale: "非受賞・通常企業PRムービー（神戸鈑金工業）" },
@@ -891,8 +915,8 @@ const out = SPECS.map(spec => {
   const row = byId.get(spec.id);
   const status = row.analysisStatus || "full_analysis";
   if (status === "provisional") throw new Error(`Provisional video forbidden: ${row.id}`);
-  if (spec.craft_or_purpose === "non_award_baseline" && spec.objective_tier !== null) {
-    throw new Error(`non_award_baseline must have objective_tier=null: ${row.id}`);
+  if (spec.craft_or_purpose !== "craft_benchmark" && spec.objective_tier !== null) {
+    throw new Error(`Non-craft/baseline entry must have objective_tier=null: ${row.id}`);
   }
   for (const a of spec.awards) {
     if (!a.sourceUrl) throw new Error(`Missing sourceUrl on ${row.id}`);
@@ -942,7 +966,7 @@ for (const g of genres) {
   console.log(`${g.padEnd(10)} | 上位:${c[0]} | 中位:${c[1]} | 下位:${c[2]} | 参考枠:${c[3]} | 計:${tot}`);
 }
 console.log("\n=== By craft_or_purpose ===");
-for (const k of ["craft_benchmark", "non_craft_award_reference", "purpose_reference_only", "non_award_baseline"]) {
+for (const k of ["craft_benchmark", "non_craft_award_reference", "purpose_reference_only", "audience_award_reference", "non_award_baseline"]) {
   console.log(`${k}: ${out.filter(x => x.craft_or_purpose === k).length}`);
 }
 console.log("\n=== By objective_tier (craft_benchmark only) ===");

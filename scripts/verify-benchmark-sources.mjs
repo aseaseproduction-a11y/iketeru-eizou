@@ -2,22 +2,29 @@ import fs from "node:fs";
 
 const bench = JSON.parse(fs.readFileSync("E:/iketeru-eizou/analysis/golden_benchmark.json", "utf8"));
 
-// Strict v2 verification rules:
-// 1. Strip header, nav, footer, aside, script, style, svg before matching
-// 2. FORBID site-name keywords as award proof — MUST match specific award tier/prize/selection words
-// 3. Require proximity: work keyword AND specific tier keyword within MAX_PROXIMITY_CHARS in main body text
+// Strict v3 verification rules:
+// 1. Strip header/nav/footer/aside/script/style/svg before matching
+// 2. FORBID BOTH site-name keywords AND category/division names — ONLY pure award grade/rank/selection tokens allowed!
+// 3. Require proximity (<=500 chars) in main body text
+// 4. Table row (<tr>) isolation: if HTML has <table>, work & grade inside a table MUST match within the SAME <tr> (never cross-row!)
 const MAX_PROXIMITY_CHARS = 500;
 
-const FORBIDDEN_SITE_NAME_TOKENS = new Set([
+const FORBIDDEN_TOKENS = new Set([
+  // Site / award brand names
   "映像作家100人", "観光映像祭", "日本国際観光映像祭", "BOVA", "Cannes", "Cannes Lions",
-  "D&AD", "ADFEST", "YouTube Works", "映文連", "Vimeo", "UKMVA", "Oscars", "Annecy", "SXSW", "JWTFF"
+  "D&AD", "ADFEST", "YouTube Works", "映文連", "Vimeo", "UKMVA", "Oscars", "Annecy", "SXSW", "JWTFF",
+  "The Motion Awards", "Motion Awards",
+  // Category / division names (NOT pure award grades!)
+  "Film Craft", "Animation Division", "Animated Short", "Digital Marketing",
+  "Sustainable Development Goals", "アジアの未来", "アニメーション部門", "エンターテインメント部門",
+  "Competition", "Title Sequence", "Music Videos", "Short films", "NEW MOTION"
 ]);
 
 const RULES = {
-  "FNQ4vqB-waw": { work: ["Train of Memories", "Sotetsu"], tier: ["Gold", "Film Craft"] },
-  "5wEjV2ekSwE": { work: ["Hands", "Honda"], tier: ["Silver", "Film Craft"] },
-  "vpyeQeTDGFA": { work: ["Paper", "Honda"], tier: ["Graphite Pencil"] },
-  "Z_lbVlhO9HE": { work: ["Spreadbeats"], tier: ["Black Pencil", "Digital Marketing"] },
+  "FNQ4vqB-waw": { work: ["Train of Memories"], tier: ["Gold"] },
+  "5wEjV2ekSwE": { work: ["Hands"], tier: ["Silver"] },
+  "vpyeQeTDGFA": { work: ["Paper"], tier: ["Graphite Pencil"] },
+  "Z_lbVlhO9HE": { work: ["Spreadbeats"], tier: ["Black Pencil"] },
   "DwIur8FBRxw": { work: ["ありがとう", "漫画愛", "ABJ"], tier: ["グランプリ", "Grand Prix"] },
   "iIL_CB_YjFk": [
     { work: ["LIGHT HOLE"], tier: ["ブロンズ", "Bronze"] },
@@ -32,38 +39,39 @@ const RULES = {
   "5URefVYaJrA": { work: ["Tailor Swif", "A$AP Rocky"], tier: ["Black Pencil"] },
   "tvTRZJ-4EyI": { work: ["HUMBLE"], tier: ["Video of the Year", "Best Direction"] },
   "ebzEEEdjHj0": { work: ["No Reason", "Bonobo"], tier: ["Best Dance Video", "Best Production Design"] },
-  "153159513":   { work: ["Deep Down Low", "Valentino Khan"], tier: ["best dance video"] },
-  "5zj3aHgLFQE": { work: ["Poker", "トクマルシューゴ"], tier: ["審査委員会推薦作品", "アニメーション部門"] },
-  "3JtO1WMYb58": { work: ["Viewtiful", "Frasco"], tier: ["審査委員会推薦作品"] },
-  "QmLBz4FuVDA": { work: ["Footloose", "INNOSENT"], tier: ["審査委員会推薦作品"] },
+  "153159513":   { work: ["Deep Down Low", "Valentino Khan"], tier: ["Best Dance Video"] },
   "313084145":   { work: ["A Pearl", "Mitski"], tier: ["Special Jury Recognition"] },
   "49367868":    { work: ["地下鉄の動態", "ハイスイノナサ"], tier: ["新人賞"] },
+  "5zj3aHgLFQE": { work: ["Poker", "トクマルシューゴ"], tier: ["審査委員会推薦作品"] },
+  "3JtO1WMYb58": { work: ["Viewtiful", "Frasco"], tier: ["審査委員会推薦作品"] },
+  "QmLBz4FuVDA": { work: ["Footloose", "INNOSENT"], tier: ["審査委員会推薦作品"] },
   "246660563":   { work: ["橋本 麦", "HASHIMOTO Baku", "Fly"], tier: ["観客賞", "Audience Award"] },
-  "134832670":   { work: ["Cyclone", "HIRAOKA"], tier: ["Jury Selection", "Animation Division"] },
+  "1032202784":  { work: ["Node Fest Titles 2024", "Never Sit Still"], tier: ["Winner"] },
   "vRBVWCs1KW4": { work: ["Blinkity Blank"], tier: ["Palme d'Or"] },
   "X0hyTmlsBUI": { work: ["Origami", "金森慧"], tier: ["ショートリスト", "Shortlist"] },
-  "35i4zTky9pI": { work: ["Lost & Found"], tier: ["Shortlist", "Animated Short"] },
-  "vohpCZh-Qcw": { work: ["Ordinary Life"], tier: ["Competition", "Official Selection"] },
-  "jvKtHf7kDYs": { work: ["世界、北半球", "ホセイン"], tier: ["作品賞", "アジアの未来"] },
-  "UvGwIFVUK7M": { work: ["Jindal Steel", "Steel of India"], tier: ["Grand Prix", "Film Craft"] },
+  "35i4zTky9pI": { work: ["Lost & Found"], tier: ["Shortlist"] },
+  "vohpCZh-Qcw": { work: ["Ordinary Life"], tier: ["Official Selection"] },
+  "jvKtHf7kDYs": { work: ["世界、北半球", "ホセイン"], tier: ["作品賞"] },
+  "134832670":   { work: ["Cyclone", "HIRAOKA"], tier: ["Jury Selection"] },
+  "UvGwIFVUK7M": { work: ["Jindal Steel", "Steel of India"], tier: ["Grand Prix"] },
   "CWhNI_x9W6c": { work: ["RX-7", "MAZDA"], tier: ["経済産業大臣賞"] },
-  "D_vdPkCz23g": { work: ["Palau Legacy Project", "Palau Pledge"], tier: ["Grand Prix", "Sustainable Development Goals"] },
+  "D_vdPkCz23g": { work: ["Palau Legacy Project", "Palau Pledge"], tier: ["Grand Prix"] },
   "1S-KU2F7wc0": { work: ["南阿蘇", "みなみあそ"], tier: ["グランプリ", "最優秀賞"] },
   "8pOOxOo7YYo": { work: ["サロベツ", "利尻"], tier: ["グランプリ"] },
-  "uCDUpZV3f8A": { work: ["Brushing Up", "Erika Konno"], tier: ["Fabulous Four", "Commendation"] },
+  "uCDUpZV3f8A": { work: ["Brushing Up", "Erika Konno"], tier: ["Commendation"] },
   "9NzQ3G6rY5M": { work: ["和水町", "なごみを"], tier: ["優秀賞"] },
   "p4eAR2Gw5RU": { work: ["旧奈良監獄", "赤レンガ"], tier: ["入選"] },
   "V6XHz7tqGVM": { work: ["Beautiful Lie", "Muranaka"], tier: ["Fabulous Four"] },
   "9waEFmHUNdk": { work: ["BUNGO-ONO", "豊後大野"], tier: ["観客賞"] },
 };
 
-// Guard: ensure no rule uses a forbidden site-name token
+// Guard: ensure no rule uses a forbidden site-name or category-name token
 for (const [id, ruleOrArr] of Object.entries(RULES)) {
   const arr = Array.isArray(ruleOrArr) ? ruleOrArr : [ruleOrArr];
   for (const r of arr) {
     for (const tk of r.tier) {
-      if (FORBIDDEN_SITE_NAME_TOKENS.has(tk)) {
-        throw new Error(`Forbidden site-name token '${tk}' used in tier rule for ${id}`);
+      if (FORBIDDEN_TOKENS.has(tk)) {
+        throw new Error(`Forbidden site/category token '${tk}' used in tier rule for ${id}`);
       }
     }
   }
@@ -71,16 +79,27 @@ for (const [id, ruleOrArr] of Object.entries(RULES)) {
 
 const botRx = /Just a moment|cf-browser-verification|Attention Required! \| Cloudflare|Access Denied|Are you a robot|Verify you are human|Checking your browser/i;
 
-function extractMainBody(html) {
+function cleanText(rawHtml) {
+  return rawHtml
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&#8220;|&#8221;/g, '"')
+    .replace(/&#8217;|&#039;/g, "'")
+    .replace(/&nbsp;/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function extractMainHtml(html) {
   let s = html
     .replace(/<!--[\s\S]{0,400}?-->/g, " ")
     .replace(/<script[\s\S]*?<\/script>/gi, " ")
     .replace(/<style[\s\S]*?<\/style>/gi, " ")
     .replace(/<noscript[\s\S]*?<\/noscript>/gi, " ")
     .replace(/<svg[\s\S]*?<\/svg>/gi, " ");
-  // Prefer <main> first (excludes site-level header/footer/sidebar while keeping HTML5 card <header> inside <main>)
   const mainMatch = s.match(/<main[\s\S]*?<\/main>/i);
-  if (mainMatch && mainMatch[0].replace(/<[^>]+>/g, "").trim().length > 200) {
+  if (mainMatch && cleanText(mainMatch[0]).length > 200) {
     s = mainMatch[0]
       .replace(/<nav[\s\S]*?<\/nav>/gi, " ")
       .replace(/<footer[\s\S]*?<\/footer>/gi, " ")
@@ -92,15 +111,7 @@ function extractMainBody(html) {
       .replace(/<footer[\s\S]*?<\/footer>/gi, " ")
       .replace(/<aside[\s\S]*?<\/aside>/gi, " ");
   }
-  return s
-    .replace(/<[^>]+>/g, " ")
-    .replace(/&amp;/g, "&")
-    .replace(/&quot;/g, '"')
-    .replace(/&#8220;|&#8221;/g, '"')
-    .replace(/&#8217;|&#039;/g, "'")
-    .replace(/&nbsp;/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
+  return s;
 }
 
 function findAllPositions(haystackLower, needle) {
@@ -114,6 +125,30 @@ function findAllPositions(haystackLower, needle) {
   return pos;
 }
 
+function findBestPair(text, workKws, tierKws) {
+  const lower = text.toLowerCase();
+  const workHits = [];
+  for (const w of workKws) for (const p of findAllPositions(lower, w)) workHits.push({ kw: w, pos: p });
+  const tierHits = [];
+  for (const t of tierKws) for (const p of findAllPositions(lower, t)) tierHits.push({ kw: t, pos: p });
+  if (workHits.length === 0 || tierHits.length === 0) return null;
+  let best = { dist: Infinity, w: null, t: null };
+  for (const wh of workHits) {
+    for (const th of tierHits) {
+      const d = Math.abs(wh.pos - th.pos);
+      if (d < best.dist) best = { dist: d, w: wh, t: th };
+    }
+  }
+  const start = Math.max(0, Math.min(best.w.pos, best.t.pos) - 40);
+  const end = Math.min(text.length, Math.max(best.w.pos, best.t.pos) + 80);
+  return {
+    dist: best.dist,
+    matched_work: best.w.kw,
+    matched_tier: best.t.kw,
+    context_snippet: text.slice(start, end),
+  };
+}
+
 async function verifyOne(id, awardName, category, url, rule) {
   const rec = {
     id,
@@ -122,6 +157,8 @@ async function verifyOne(id, awardName, category, url, rule) {
     url,
     http_status: null,
     status: "failed",
+    match_scope: null,
+    table_rows_checked: 0,
     min_distance_chars: null,
     matched_work: null,
     matched_tier: null,
@@ -145,43 +182,54 @@ async function verifyOne(id, awardName, category, url, rule) {
       rec.note = `HTTP ${res.status} / bot block`;
       return rec;
     }
-    const body = extractMainBody(html);
-    const lower = body.toLowerCase();
 
-    const workHits = [];
-    for (const w of rule.work) {
-      for (const p of findAllPositions(lower, w)) workHits.push({ kw: w, pos: p });
-    }
-    const tierHits = [];
-    for (const t of rule.tier) {
-      for (const p of findAllPositions(lower, t)) tierHits.push({ kw: t, pos: p });
+    const mainHtml = extractMainHtml(html);
+
+    // 1. Check table rows (<tr>) strictly row-by-row
+    const trMatches = [...mainHtml.matchAll(/<tr[\s\S]*?<\/tr>/gi)];
+    rec.table_rows_checked = trMatches.length;
+    let bestRowMatch = null;
+    for (const m of trMatches) {
+      const rowText = cleanText(m[0]);
+      const pair = findBestPair(rowText, rule.work, rule.tier);
+      if (pair && (!bestRowMatch || pair.dist < bestRowMatch.dist)) {
+        bestRowMatch = pair;
+      }
     }
 
-    if (workHits.length === 0 || tierHits.length === 0) {
+    // 2. Strip <table>...</table> completely before checking non-table prose body
+    const proseHtml = mainHtml.replace(/<table[\s\S]*?<\/table>/gi, " ");
+    const proseText = cleanText(proseHtml);
+    const proseMatch = findBestPair(proseText, rule.work, rule.tier);
+
+    // Pick best valid match (prefer same-row table match if closer or only match)
+    let chosen = null;
+    let scope = null;
+    if (bestRowMatch && (!proseMatch || bestRowMatch.dist <= proseMatch.dist)) {
+      chosen = bestRowMatch;
+      scope = "table_row";
+    } else if (proseMatch) {
+      chosen = proseMatch;
+      scope = "prose_body";
+    }
+
+    if (!chosen) {
       rec.status = "missing_keyword_in_body";
-      rec.note = `workHits=${workHits.length}, tierHits=${tierHits.length}`;
+      rec.note = `No same-row table match (rows=${trMatches.length}) and no prose match`;
       return rec;
     }
 
-    let best = { dist: Infinity, w: null, t: null };
-    for (const wh of workHits) {
-      for (const th of tierHits) {
-        const d = Math.abs(wh.pos - th.pos);
-        if (d < best.dist) best = { dist: d, w: wh, t: th };
-      }
-    }
-    rec.min_distance_chars = best.dist;
-    rec.matched_work = best.w.kw;
-    rec.matched_tier = best.t.kw;
-    const start = Math.max(0, Math.min(best.w.pos, best.t.pos) - 40);
-    const end = Math.min(body.length, Math.max(best.w.pos, best.t.pos) + 80);
-    rec.context_snippet = body.slice(start, end);
+    rec.match_scope = scope;
+    rec.min_distance_chars = chosen.dist;
+    rec.matched_work = chosen.matched_work;
+    rec.matched_tier = chosen.matched_tier;
+    rec.context_snippet = chosen.context_snippet;
 
-    if (best.dist <= MAX_PROXIMITY_CHARS) {
+    if (chosen.dist <= MAX_PROXIMITY_CHARS) {
       rec.status = "verified_proximity_match";
     } else {
       rec.status = "too_far_apart";
-      rec.note = `min_distance_chars=${best.dist} > ${MAX_PROXIMITY_CHARS}`;
+      rec.note = `min_distance_chars=${chosen.dist} > ${MAX_PROXIMITY_CHARS}`;
     }
   } catch (e) {
     rec.status = "uncheckable_error";
@@ -200,12 +248,12 @@ for (const item of bench) {
     const rule = Array.isArray(rSpec) ? rSpec[i] : rSpec;
     const r = await verifyOne(item.id, a.name, a.category, a.sourceUrl, rule);
     results.push(r);
-    console.log(`${r.id.padEnd(13)} | ${String(r.http_status).padEnd(3)} | ${r.status.padEnd(24)} | dist=${String(r.min_distance_chars).padEnd(4)} | ${r.matched_work || "-"} <-> ${r.matched_tier || "-"}`);
+    console.log(`${r.id.padEnd(13)} | ${String(r.http_status).padEnd(3)} | ${r.status.padEnd(24)} | ${String(r.match_scope || "-").padEnd(10)} | rows=${String(r.table_rows_checked).padEnd(3)} | dist=${String(r.min_distance_chars).padEnd(4)} | ${r.matched_work || "-"} <-> ${r.matched_tier || "-"}`);
   }
 }
 
 const summary = {
-  verification_version: "v2_strict_body_proximity",
+  verification_version: "v3_strict_grade_only_tr_isolated",
   max_proximity_chars: MAX_PROXIMITY_CHARS,
   total_urls: results.length,
   verified_proximity_match: results.filter(r => r.status === "verified_proximity_match").length,

@@ -1,30 +1,39 @@
-# 客観的プロ評価基準・国際ベンチマーク設計書（v5）
+# 客観的プロ評価基準・国際ベンチマーク設計書（v6）
 
 外部の厳格な国際・国内専門審査機関および公式アワード受賞・ショートリスト実績に基づき、AIの自己参照バイアスや現行ランク据え置き（`clamp_band`）を排した**客観的な映像評価基準**を定義する。
 
 ---
 
-## 1. 厳格運用ルール（v5 改訂）
+## 1. 厳格運用ルール（v6 改訂）
 
-1. **出典URLの必須要件（個別ページ＋本文近接照合）**:
+1. **出典URLの必須要件（個別ページ＋本文近接照合 v3）**:
    - DB内のAI分析本文に書かれた賞名はそのまま信用しない。
-   - すべての受賞・選出記録に対し、**「その作品自体の受賞・選出・賞の格（グランプリ／金賞／優秀賞／入選／ショートリスト等）が明記されている個別ページ・公式受賞リスト等のURL（`sourceUrl`）」**を必須とする。
+   - すべての受賞・選出記録に対し、**「その作品自体の受賞・選出・賞の格（Gold／Silver／Winner／グランプリ／入選／ショートリスト等）が明記されている個別ページ・公式受賞リスト等のURL（`sourceUrl`）」**を必須とする。
    - 賞のトップページURLのみの記載は不可とする。
-   - 機械検証（`scripts/verify-benchmark-sources.mjs`）では、**ヘッダー・ナビ・フッター・サイドバーを除去した本文**に対して、**サイト名と同名の語を除外した賞の格キーワード**と**作品名キーワード**が**近接位置（500文字以内）**に共起することを必須条件とする。確認できない候補（例：作品ごとの年度選出記載がないポートフォリオ一覧ページ等）は `unverified` として基準セットから除外する。
-2. **映像・クラフト以外の部門は参考扱い（`non_craft_award_reference` / `purpose_reference_only`）**:
-   - Cannes Lions や D&AD などの国際主要賞であっても、**映像演出・技術を主評価軸としない部門**（`Digital Marketing`, `Direct`, `Media`, `PR`, `Creative Effectiveness`, `Sustainable Development Goals (SDG)`, `Grand Prix for Good`, `Titanium` 等）の受賞作は、クラフト基準群（`craft_benchmark`）から外し、**参考扱い**として分離する。
+   - 機械検証（`scripts/verify-benchmark-sources.mjs` v3）では、以下の4条件をすべて満たすことを必須とする：
+     1. **ヘッダー・ナビ・フッター・サイドバーを除去した本文**のみを対象とする。
+     2. **サイト名と同名の語**および**部門名のみの語（`Film Craft`, `Animation Division`, `Animated Short`, `Digital Marketing`, `Competition` 等）を禁止**し、**純粋な賞の格・選出語（`Gold`, `Silver`, `Winner`, `グランプリ`, `新人賞`, `審査委員会推薦作品`, `Official Selection`, `Shortlist`, `入選` 等）のみ**で照合する。
+     3. 作品名キーワードと賞の格キーワードが**500文字以内に近接共起**すること。
+     4. **HTML表（`<table>`）は行（`<tr>`）単位でのみ判定**し、異なる行をまたいだ誤一致を禁止する。
+   - 確認できない候補は `unverified` として基準セットから除外する。
+2. **映像・クラフト以外の部門および観客賞の参考扱い**:
+   - **非クラフト部門（`non_craft_award_reference` / `purpose_reference_only`）**: Cannes Lions や D&AD 等の国際主要賞であっても、映像演出・技術を主評価軸としない部門（`Digital Marketing`, `Direct`, `Media`, `PR`, `Creative Effectiveness`, `SDG`, `Grand Prix for Good`, `Titanium` 等）の受賞作はクラフト基準群から外し参考扱い（`objective_tier: null`）とする。
+   - **観客賞（`audience_award_reference`）**: 新千歳空港国際アニメーション映画祭 観客賞、日本国際観光映像祭 観客賞などの一般観客投票による賞は、専門審査員による技術・演出評価ではないため、`craft_benchmark` から外し**参考扱い（`objective_tier: null`）**とする（専門審査員による受賞・選出が併載されている場合のみ審査員賞の格を採用する）。
 3. **複数受賞の扱い（最高格採用ルール）**:
-   - 1作品が複数のクラフト関連賞を受賞している場合は、**最も高い格の賞（`max_tier`）**を採用して `objective_tier` を決定する。
+   - 1作品が複数の審査員クラフト賞を受賞している場合は、**最も高い格の賞（`max_tier`）**を採用して `objective_tier` を決定する。
 4. **年代の扱い（過去10年優先ルール）**:
    - 現代の映像技術・演出水準と整合させるため、**過去10年以内（2016年〜2026年）**の受賞・選出作を `era_bucket: "modern_10y"` として優先採用する。
    - 10年以上前の歴史的傑作・アーカイブ作は `era_bucket: "classic_archive"` と明記し、較正時は現代作のみ・全体双方で集計可能とする。
 5. **非受賞作品（`non_award_baseline`）の評価方法（循環比較の禁止）**:
-   - 非受賞の商用映像には **`objective_tier: null` / `objective_band: null`** を設定し、**現行DBのAIランクを正解ラベルとしてコピーしない**（AI自身との循環比較を防止）。
-   - **Spearman $\rho$ / Kendall's $\tau_b$ / MAE** は、外部受賞・選出が確認された **`craft_benchmark` 作品のみ**で算出する。
-   - **`non_award_baseline`** は、**順位の正解率（Pairwise Ranking Accuracy / ROC-AUC）**＝「（**`A-` 以上の受賞・選出作**のAI点数 ＞ 非受賞商用作品のAI点数）となる組み合わせの割合」のみで評価する（全体およびジャンル別）。※`B+` 相当の小規模協賛企業賞等はプロ商用作品より上とは限らないため比較対象から除外する。
+   - 非受賞の商用映像には **`objective_tier: null` / `objective_band: null`** を設定し、**現行DBのAIランクを正解ラベルとしてコピーしない**。
+   - **Spearman $\rho$ / Kendall's $\tau_b$ / MAE** は、外部審査員賞が確認された **`craft_benchmark` 作品のみ**で算出する。
+   - **`non_award_baseline`** は、**順位の正解率（Pairwise Ranking Accuracy / ROC-AUC）**＝「（**`A-` 以上の審査員受賞・選出作**のAI点数 ＞ 非受賞商用作品のAI点数）となる組み合わせの割合」のみで評価する（`B+` 相当の小規模協賛企業賞等はプロ商用作品より上とは限らないため除外）。
 6. **暫定評価・埋め込み制限の扱い**:
    - DB上で `analysisStatus = provisional` の作品は基準セットに含めない。
-   - YouTube の `embedStatus = restricted`（iframe埋め込み無効）作品は、`yt-dlp` による実ダウンロード可否を実測し（証跡：`analysis/restricted_ytdlp_check.json`）、`embed_status` と `playable_via_ytdlp` を明記する。
+   - YouTube の `embedStatus = restricted` 作品は `yt-dlp` 実ダウンロード可否を実測し（証跡：`analysis/restricted_ytdlp_check.json`）、`embed_status` と `playable_via_ytdlp` を明記する。
+7. **ジャンル定義の厳格化（モーションの現状扱い）**:
+   - MVや短編アニメーションをモーションへ混入させず、**モーションは純粋なモーショングラフィックス／タイトルデザイン作品のみ**とする。
+   - 現状、DB内で厳格出典検証を通過した純モーション／タイトルデザイン基準作は1本（`1032202784`：Node Fest 2024 Opening Titles — The Motion Awards 2025 Winner）のみであるため、**モーション単体のジャンル別較正は対象外（全体集計のみ算入）**として運用する。
 
 ---
 
@@ -43,24 +52,29 @@
 
 ---
 
-## 3. 賞の格 × 15段階ランク対応表（クラフト部門優先・ショートリスト含む）
+## 3. 賞の格 × 15段階ランク対応表（クラフト審査員賞優先・ショートリスト含む）
 
 ショートリスト／ファイナリスト／オフィシャルセレクション／審査委員会推薦作品／入選は、**同賞の受賞（Winner）の1ランク下**として配置する。
 
-| ランク | 100点帯 | ティア区分 | 広告・CM（クラフト優先） | MV | モーション | 3DCG / アニメ | 企業映像・メタランキング |
+> **格付け補足（v6追記）**:
+> - **SXSW Film Festival — Special Jury Recognition（MV / Animation）→ `S-`**：国際主要映画祭の専門審査員による特別賞であり、部門グランプリ（Grand Jury Winner=`S`）の1ランク下・国際銀賞／Oscarショートリスト／Annecyコンペ選出と同格に配置する。
+> - **新千歳空港国際アニメーション映画祭**：国際コンペ審査員グランプリ／部門審査員賞は審査員賞として評価対象（`A+`〜`A`）とするが、**観客賞（Audience Award）**は一般観客投票のため `audience_award_reference`（参考扱い、`objective_tier: null`）とする。
+
+| ランク | 100点帯 | ティア区分 | 広告・CM（クラフト優先） | MV | モーション（純モーション／タイトル） | 3DCG / アニメ | 企業映像・メタランキング |
 |---|---|---|---|---|---|---|---|
 | **`S+`** | 97–100 | **上位** | **Cannes Film Craft GP** / **D&AD Black Pencil (Film Craft)** / **One Show Best of Discipline (Craft)** / **ADC Black Cube** / **AICP Best in Show** / **Ciclope GP** / **Spikes Asia Film Craft GP** | **UKMVA Video of the Year** / **D&AD Black Pencil (MV)** | **SXSW Title Design Grand Jury** / **Motion Awards Grand Prize** | **Annecy Cristal（GP）** / **Cannes Short Film Palme d'Or** / **Prix Ars Electronica Golden Nica** / **SIGGRAPH CAF Best in Show** | **Cannes Corporate Grand Prix（White Dolphin）** / **WARC Creative 100 Top 10（クラフト併載）** |
-| **`S`** | 93–96 | **上位** | **Cannes Film Craft Gold** / **D&AD Yellow Pencil (Craft)** / **One Show Gold (Craft)** / **ADC Gold** / **AICP Winner** / **Ciclope Gold** / **British Arrows Gold** / **Clio Gold (Craft)** / **LIA Gold (Production)** / **ACC総務大臣賞・GP** | **MTV VMA Video of the Year＋クラフト複数冠** / **UKMVA Best Director・主要部門Winner** / **SPACE SHOWER VIDEO OF THE YEAR** | **SXSW Title Design Winner** / **Motion Awards Winner** / **Vimeo Staff Pick of the Year** | **Annecy Jury Award / Best Direction** / **文化庁メディア芸術祭 大賞** / **SIGGRAPH CAF Jury's Choice** / **Prix Ars Electronica Award of Distinction** | **Cannes Corporate Gold Dolphin** / **WARC Creative 100（クラフト系）** |
-| **`S-`** | 90–92 | **上位** | **Cannes Film Craft Silver** / **D&AD Graphite Pencil (Craft)** / **One Show Silver** / **ADC Silver** / **Ciclope Silver** / **British Arrows Silver** / **Clio Silver** / **LIA Silver** / **Spikes Asia / ADFEST Film Craft Gold** / **ACCゴールド** / **TCCグランプリ** / **ギャラクシー賞CM大賞** | **UKMVA クラフト・部門Winner** / **D&AD Graphite / Wood Pencil (MV)** / **MTV VMAJ 最優秀ビデオ賞** / **SPACE SHOWER BEST VIDEO** / **Berlin MVA Best Video** | **SXSW Special Jury Recognition (Animation/Title)** / **Motionographer Award Winner** / **SXSW Title Design Finalist** | **Academy Awards（Oscar）短編アニメ Shortlist** / **Annecy Official Competition Selection** / **文化庁メディア芸術祭 優秀賞** / **SIGGRAPH CAF Electronic Theater 入選** / **Prix Ars Electronica Honorary Mention** | **映文連アワード 経済産業大臣賞** / **Cannes Corporate Silver Dolphin** |
-| **`A+`** | 86–89 | **中位（上位寄）** | **Cannes Film Craft Bronze** / **D&AD Wood Pencil (Craft)** / **One Show Bronze** / **ADC Bronze** / **Ciclope Bronze** / **British Arrows Bronze** / **Clio Bronze** / **LIA Bronze** / **Spikes Asia / ADFEST Film Craft Silver** / **ACCシルバー** / **TCC賞** / **ギャラクシー賞CM優秀賞** / **BOVAグランプリ** | **MTV VMA / UKMVA Craft部門 Nominee（Shortlist）** / **MTV VMAJ 部門賞** / **Berlin MVA 部門Winner** / **Annecy Commissioned Selection（MV）** | **文化庁メディア芸術祭 新人賞（モーション系）** / **Vimeo Staff Pick Best of the Month** / **Motion Awards Shortlist** | **Annecy Commissioned / Graduation Selection** / **文化庁メディア芸術祭 新人賞** / **国際映画祭部門作品賞** | **日本国際観光映像祭 グランプリ** / **TOYOTA DIRECTORSCUT 最優秀賞** |
-| **`A`** | 82–85 | **中位** | **Cannes Film Craft Shortlist** / **D&AD Shortlist (Craft)** / **One Show Merit** / **Ciclope Finalist（Shortlist）** / **Spikes Asia / ADFEST Film Craft Bronze・Finalist** / **ACCブロンズ** / **ギャラクシー賞CM選奨** / **BOVAゴールド** | **SPACE SHOWER / VMAJ ノミネート** / **Berlin MVA Nominee** / **文化庁メディア芸術祭 審査委員会推薦作品（MV）** | **国際アニメ映画祭 部門賞・観客賞（新千歳等）** / **国内主要モーション賞入賞** | **文化庁メディア芸術祭 審査委員会推薦作品（アニメ）** / **国際アニメ映画祭ショートリスト** | **ADFEST Fabulous Four Commendation** / **映文連アワード 部門優秀賞** / **日本国際観光映像祭 優秀賞** |
-| **`A-`** | 78–81 | **中位（下位寄）** | **ACCファイナリスト** / **BOVAシルバー** | 国内インディーズMVアワード入選 | **Vimeo Staff Pick（通常選出・出典確認済）** / **文化庁メディア芸術祭 海外展開公式選出** | **国際アニメ映画祭 公式入選** / **学生CGコンテスト入選** | **ADFEST Fabulous Four Official Selection** / **日本国際観光映像祭 入選・観客賞** / **Cannes Corporate Finalist** |
+| **`S`** | 93–96 | **上位** | **Cannes Film Craft Gold** / **D&AD Yellow Pencil (Craft)** / **One Show Gold (Craft)** / **ADC Gold** / **AICP Winner** / **Ciclope Gold** / **British Arrows Gold** / **Clio Gold (Craft)** / **LIA Gold (Production)** / **ACC総務大臣賞・GP** | **MTV VMA Video of the Year＋クラフト複数冠** / **UKMVA Best Director・主要部門Winner** / **SXSW MV Grand Jury Winner** / **SPACE SHOWER VIDEO OF THE YEAR** | **SXSW Title Design Winner** / **The Motion Awards Category Winner** / **Vimeo Staff Pick of the Year** | **Annecy Jury Award / Best Direction** / **文化庁メディア芸術祭 大賞** / **SIGGRAPH CAF Jury's Choice** / **Prix Ars Electronica Award of Distinction** | **Cannes Corporate Gold Dolphin** / **WARC Creative 100（クラフト系）** |
+| **`S-`** | 90–92 | **上位** | **Cannes Film Craft Silver** / **D&AD Graphite Pencil (Craft)** / **One Show Silver** / **ADC Silver** / **Ciclope Silver** / **British Arrows Silver** / **Clio Silver** / **LIA Silver** / **Spikes Asia / ADFEST Film Craft Gold** / **ACCゴールド** / **TCCグランプリ** / **ギャラクシー賞CM大賞** | **UKMVA クラフト・部門Winner** / **SXSW Special Jury Recognition (MV/Animation)** / **D&AD Graphite・Wood Pencil (MV)** / **MTV VMAJ 最優秀ビデオ賞** / **SPACE SHOWER BEST VIDEO** / **Berlin MVA Best Video** | **SXSW Title Design Finalist** / **Motionographer Award Finalist** | **Academy Awards（Oscar）短編アニメ Shortlist** / **Annecy Official Competition Selection** / **SXSW Special Jury Recognition (Animation)** / **文化庁メディア芸術祭 優秀賞** / **SIGGRAPH CAF Electronic Theater 入選** / **Prix Ars Electronica Honorary Mention** | **映文連アワード 経済産業大臣賞** / **Cannes Corporate Silver Dolphin** |
+| **`A+`** | 86–89 | **中位（上位寄）** | **Cannes Film Craft Bronze** / **D&AD Wood Pencil (Craft)** / **One Show Bronze** / **ADC Bronze** / **Ciclope Bronze** / **British Arrows Bronze** / **Clio Bronze** / **LIA Bronze** / **Spikes Asia / ADFEST Film Craft Silver** / **ACCシルバー** / **TCC賞** / **ギャラクシー賞CM優秀賞** / **BOVAグランプリ** | **文化庁メディア芸術祭 新人賞（MV）** / **MTV VMA・UKMVA Nominee** / **MTV VMAJ 部門賞** / **Berlin MVA 部門Winner** / **Annecy Commissioned Selection（MV）** | **Vimeo Staff Pick Best of the Month** / **The Motion Awards Shortlist** / **Art of the Title 掲載作** | **Annecy Commissioned / Graduation Selection** / **文化庁メディア芸術祭 新人賞** / **国際映画祭部門作品賞（東京国際映画祭・新千歳グランプリ等）** | **日本国際観光映像祭 グランプリ** / **TOYOTA DIRECTORSCUT 最優秀賞** |
+| **`A`** | 82–85 | **中位** | **Cannes Film Craft Shortlist** / **D&AD Shortlist (Craft)** / **One Show Merit** / **Ciclope Finalist（Shortlist）** / **Spikes Asia / ADFEST Film Craft Bronze・Finalist** / **ACCブロンズ** / **ギャラクシー賞CM選奨** / **BOVAゴールド** | **SPACE SHOWER / VMAJ ノミネート** / **Berlin MVA Nominee** / **文化庁メディア芸術祭 審査委員会推薦作品（MV）** | **国内主要モーション審査員賞** | **文化庁メディア芸術祭 審査委員会推薦作品（アニメ）** / **国際アニメ映画祭 審査員部門賞・ショートリスト（新千歳審査員賞等）** | **ADFEST Fabulous Four Commendation** / **映文連アワード 部門優秀賞** / **日本国際観光映像祭 優秀賞** |
+| **`A-`** | 78–81 | **中位（下位寄）** | **ACCファイナリスト** / **BOVAシルバー** | 国内インディーズMV審査員入選 | **Vimeo Staff Pick（通常選出・出典確認済）** | **国際アニメ映画祭 公式入選** / **学生CGコンテスト入選** | **ADFEST Fabulous Four Official Selection** / **日本国際観光映像祭 入選** / **Cannes Corporate Finalist** |
 | **`B+`** | 73–77 | **中位下限** | **BOVA協賛企業賞・学生部門賞** | 国内インディーズ小規模賞入選 | 国内小規模企画入選 | 小規模コンテスト入選 | 地域・企業小規模コンテスト入選 |
-| **非受賞（`null`）** | — | **下位（ベースライン）** | 非受賞の通常商用TVCM / Web CM（※`objective_tier: null`、Pairwise順位正解率のみで評価） | 非受賞の通常商用MV | 非受賞の通常モーション・リール | 非受賞の通常3DCG・短編アニメ・アニメPV | 非受賞の通常企業VP・採用動画・自治体PR |
+| **参考枠（`null`）** | — | **較正対象外** | 非クラフト部門（Digital Marketing / Creative Effectiveness等） | **観客賞（新千歳観客賞等）** | 非審査キュレーション | **観客賞** | 社会派・パーパス部門（SDG等）、**観客賞（観光映像祭観客賞等）** |
+| **非受賞（`null`）** | — | **下位（ベースライン）** | 非受賞の通常商用TVCM / Web CM（※Pairwise順位正解率のみで評価） | 非受賞の通常商用MV | 非受賞の通常モーション・リール | 非受賞の通常3DCG・短編アニメ・アニメPV | 非受賞の通常企業VP・採用動画・自治体PR |
 
 ---
 
-## 4. キャリブレーション手順・統計的評価指標（v5 改訂）
+## 4. キャリブレーション手順・統計的評価指標（v6）
 
 1. **基準セットファイル**: `analysis/golden_benchmark.json`
 2. **ブラインド採点**: 既存DBランクおよび受賞名を完全に伏せた状態（`scripts/blind_redact.py` v4 + 2+1アンサンブル方式）でAI採点を実行する。
@@ -73,7 +87,7 @@
      - **ランク帯ごとの正解率**: `S+`〜`B+` の各ランク帯ごとに、完全一致率および ±1ランク以内一致率を併記する。
      - **年代別集計**: 現代作（`era_bucket: "modern_10y"`）単体と全体双方を出力する。
    - **指標B（`A-` 以上の `craft_benchmark` vs `non_award_baseline`）**:
-     - **Pairwise 順位正解率（ROC-AUC ＋ ブートストラップ95%信頼区間）**: **`A-` 以上の受賞・選出作**の点数が非受賞商用作品の点数を上回る組み合わせ割合（目標 $\ge 0.85$）を算出し、ブートストラップ法（$B=2,000$回）による **95%信頼区間** を併記する。`B+` の受賞作（協賛企業賞等）はプロ商用作品より上とは限らないため比較から除外する。
+     - **Pairwise 順位正解率（ROC-AUC ＋ ブートストラップ95%信頼区間）**: **`A-` 以上の審査員受賞・選出作**の点数が非受賞商用作品の点数を上回る組み合わせ割合（目標 $\ge 0.85$）を算出し、ブートストラップ法（$B=2,000$回）による **95%信頼区間** を併記する。`B+` の受賞作（協賛企業賞等）はプロ商用作品より上とは限らないため比較から除外する。
    - **ジャンル別集計と小標本の扱い**:
-     - 5ジャンル（CM / MV / モーション / 3DCG/アニメ / 企業映像）ごとの数値を出力するが、**評価対象本数が少ないジャンル（合計10本未満、または `craft_benchmark` / `non_award_baseline` のいずれかが5本未満のジャンル）は統計的検出力が不十分なため参考値（`sample_size_warning: true`）**として扱い、合否判定は全体指標を主基準とする。
-   - **参考出力**: `non_craft_award_reference` / `purpose_reference_only` は別枠でスコアと乖離のみ参考表示する。
+     - 5ジャンル（CM / MV / モーション / 3DCG/アニメ / 企業映像）のうち、**評価対象本数が少ないジャンル（合計10本未満、または `craft_benchmark` / `non_award_baseline` のいずれかが5本未満のジャンル）は統計的検出力が不十分なため参考値扱い（モーションは基準作1本のみのためジャンル別較正対象外）**とし、合否判定は全体指標を主基準とする。
+   - **参考出力**: `non_craft_award_reference` / `purpose_reference_only` / `audience_award_reference` は別枠でスコアと乖離のみ参考表示する。
