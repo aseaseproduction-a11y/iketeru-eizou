@@ -25,10 +25,12 @@ function makeValidHoldout(corporateTier2Count = 5) {
         published_year: 2024,
         stratum: "tier2_award",
         label_rule_id: t2Rule,
-        evidence_url: `https://awards.example.com/${idx}`,
+        evidence_url: `https://awards.example.com/winners/2024/entry-${idx}`,
         evidence_excerpt: "Shortlist Film Craft 2024",
         view_count_at_collection: 50000,
         collected_at: "2026-11-23T00:00:00Z",
+        verified_by_script: "scripts/verify-phase2-sources.mjs",
+        verified_at: "2026-11-23T01:00:00Z",
         award_badge_ocr_hit: false,
       });
     }
@@ -44,10 +46,12 @@ function makeValidHoldout(corporateTier2Count = 5) {
         stratum: "non_tier2_pro",
         label_rule_id: rule,
         production_credit_or_broadcast_verified: genre === "企業映像" ? true : undefined,
-        evidence_url: `https://official.example.com/${idx}`,
+        evidence_url: `https://official.example.com/watch?v=pro_${idx}`,
         evidence_excerpt: "Production: Example Studio Inc.",
         view_count_at_collection: 120000,
         collected_at: "2026-11-23T00:00:00Z",
+        verified_by_script: "scripts/verify-phase2-sources.mjs",
+        verified_at: "2026-11-23T01:00:00Z",
         award_badge_ocr_hit: false,
       });
     }
@@ -65,6 +69,8 @@ function makeValidHoldout(corporateTier2Count = 5) {
         evidence_excerpt: i === 0 ? "Made with Clipchamp" : "初めて作った練習動画",
         view_count_at_collection: 300,
         collected_at: "2026-11-23T00:00:00Z",
+        verified_by_script: "scripts/verify-phase2-sources.mjs",
+        verified_at: "2026-11-23T01:00:00Z",
         award_badge_ocr_hit: false,
       });
     }
@@ -111,5 +117,20 @@ describe("validatePhase2Dataset", () => {
     assert.ok(res.errors.some((e) => e.includes("production_credit_or_broadcast_verified")));
     assert.ok(res.errors.some((e) => e.includes("award_badge_ocr_hit")));
     assert.ok(res.errors.some((e) => e.includes("R-LOW-04-only")));
+  });
+
+  it("rejects bare homepage evidence_url, missing verified_by_script/verified_at, and >150-char Tier 2 excerpt", () => {
+    const entries = makeValidHoldout(5);
+    entries[0].evidence_url = "https://www.canneslions.com/";
+    entries[1].verified_by_script = "";
+    entries[1].verified_at = "";
+    entries[2].evidence_excerpt = "x".repeat(151);
+
+    const res = validatePhase2Dataset(entries, { mode: "holdout" });
+    assert.equal(res.valid, false);
+    assert.ok(res.errors.some((e) => e.includes("bare homepage")));
+    assert.ok(res.errors.some((e) => e.includes("verified_by_script")));
+    assert.ok(res.errors.some((e) => e.includes("verified_at")));
+    assert.ok(res.errors.some((e) => e.includes("<= 150 chars")));
   });
 });

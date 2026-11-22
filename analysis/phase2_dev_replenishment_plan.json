@@ -1,0 +1,212 @@
+{
+  "generated_at": "2026-11-22T18:03:13.480Z",
+  "sanity_checks": {
+    "verified_total": 118,
+    "bare_homepage_urls": 0,
+    "missing_verification_stamp": 0,
+    "tier2_excerpts_over_150": 0,
+    "phase1_overlaps": 0
+  },
+  "pool_by_stratum_and_genre": {
+    "tier2_award": {
+      "CM": {
+        "verified": 5,
+        "ocr_clean": 5,
+        "ocr_pending_youtube_rate_limit": 0
+      },
+      "MV": {
+        "verified": 6,
+        "ocr_clean": 6,
+        "ocr_pending_youtube_rate_limit": 0
+      },
+      "モーション": {
+        "verified": 12,
+        "ocr_clean": 12,
+        "ocr_pending_youtube_rate_limit": 0
+      },
+      "3DCG/アニメ": {
+        "verified": 6,
+        "ocr_clean": 6,
+        "ocr_pending_youtube_rate_limit": 0
+      },
+      "企業映像": {
+        "verified": 3,
+        "ocr_clean": 3,
+        "ocr_pending_youtube_rate_limit": 0
+      }
+    },
+    "non_tier2_pro": {
+      "CM": {
+        "verified": 10,
+        "ocr_clean": 10,
+        "ocr_pending_youtube_rate_limit": 0
+      },
+      "MV": {
+        "verified": 7,
+        "ocr_clean": 6,
+        "ocr_pending_youtube_rate_limit": 1
+      },
+      "モーション": {
+        "verified": 6,
+        "ocr_clean": 6,
+        "ocr_pending_youtube_rate_limit": 0
+      },
+      "3DCG/アニメ": {
+        "verified": 9,
+        "ocr_clean": 9,
+        "ocr_pending_youtube_rate_limit": 0
+      },
+      "企業映像": {
+        "verified": 8,
+        "ocr_clean": 6,
+        "ocr_pending_youtube_rate_limit": 2
+      }
+    },
+    "non_tier2_low": {
+      "CM": {
+        "verified": 10,
+        "ocr_clean": 9,
+        "ocr_pending_youtube_rate_limit": 1
+      },
+      "MV": {
+        "verified": 9,
+        "ocr_clean": 6,
+        "ocr_pending_youtube_rate_limit": 3
+      },
+      "モーション": {
+        "verified": 7,
+        "ocr_clean": 0,
+        "ocr_pending_youtube_rate_limit": 7
+      },
+      "3DCG/アニメ": {
+        "verified": 10,
+        "ocr_clean": 0,
+        "ocr_pending_youtube_rate_limit": 10
+      },
+      "企業映像": {
+        "verified": 10,
+        "ocr_clean": 0,
+        "ocr_pending_youtube_rate_limit": 10
+      }
+    }
+  },
+  "dev_r_pro_replenishment_plan": {
+    "step0_kept_total": 9,
+    "step0_kept_by_genre": {
+      "CM": 0,
+      "MV": 5,
+      "モーション": 1,
+      "3DCG/アニメ": 1,
+      "企業映像": 2
+    },
+    "target_min_per_genre": 3,
+    "holdout_reserved_per_genre": 5,
+    "by_genre": [
+      {
+        "genre": "CM",
+        "dev_after_step0": 0,
+        "verified_ocr_clean_pool": 10,
+        "reserved_for_new_holdout": 5,
+        "surplus_available_for_dev": 5,
+        "planned_dev_add_from_current_pool": 5,
+        "dev_total_after_add": 5,
+        "additional_collection_needed_for_min3": 0
+      },
+      {
+        "genre": "MV",
+        "dev_after_step0": 5,
+        "verified_ocr_clean_pool": 6,
+        "reserved_for_new_holdout": 5,
+        "surplus_available_for_dev": 1,
+        "planned_dev_add_from_current_pool": 0,
+        "dev_total_after_add": 5,
+        "additional_collection_needed_for_min3": 0
+      },
+      {
+        "genre": "モーション",
+        "dev_after_step0": 1,
+        "verified_ocr_clean_pool": 6,
+        "reserved_for_new_holdout": 5,
+        "surplus_available_for_dev": 1,
+        "planned_dev_add_from_current_pool": 1,
+        "dev_total_after_add": 2,
+        "additional_collection_needed_for_min3": 1
+      },
+      {
+        "genre": "3DCG/アニメ",
+        "dev_after_step0": 1,
+        "verified_ocr_clean_pool": 9,
+        "reserved_for_new_holdout": 5,
+        "surplus_available_for_dev": 4,
+        "planned_dev_add_from_current_pool": 2,
+        "dev_total_after_add": 3,
+        "additional_collection_needed_for_min3": 0
+      },
+      {
+        "genre": "企業映像",
+        "dev_after_step0": 2,
+        "verified_ocr_clean_pool": 6,
+        "reserved_for_new_holdout": 5,
+        "surplus_available_for_dev": 1,
+        "planned_dev_add_from_current_pool": 1,
+        "dev_total_after_add": 3,
+        "additional_collection_needed_for_min3": 0
+      }
+    ],
+    "collection_method": "Same strict R-PRO-* rules (verified live YouTube metadata verbatim credit/TVCM broadcast, zero Phase 1 overlap, disjoint from New Holdout, local RapidOCR v1.2.3 precheck required)."
+  },
+  "ocr_auto_excluded": [
+    {
+      "video_id": "y8oGkG0vuHw",
+      "stratum": "tier2_award",
+      "genre": "企業映像",
+      "hits": [
+        {
+          "timestamp_sec": 3,
+          "keyword_matched": "CANNES",
+          "matched_text": "CANNESCORPORATEMEDIA&TVAWARDS",
+          "confidence": 87.83
+        },
+        {
+          "timestamp_sec": 4,
+          "keyword_matched": "CANNES",
+          "matched_text": "CANNESCORPORATEMEDIA&TVAWARDS",
+          "confidence": 86.29
+        },
+        {
+          "timestamp_sec": 5,
+          "keyword_matched": "CANNES",
+          "matched_text": "CANNESCORPORATEMEDIA&TVAWARDS",
+          "confidence": 86.36
+        },
+        {
+          "timestamp_sec": 6,
+          "keyword_matched": "CANNES",
+          "matched_text": "CANNESCORPORATEMEDIA&TVAWARDS",
+          "confidence": 86.36
+        },
+        {
+          "timestamp_sec": 7,
+          "keyword_matched": "CANNES",
+          "matched_text": "CANNESCORPORATEMEDIA&TVAWARDS",
+          "confidence": 88.53
+        },
+        {
+          "timestamp_sec": 8,
+          "keyword_matched": "CANNES",
+          "matched_text": "CANNESCORPORATEMEDIA&TVAWARDS",
+          "confidence": 88.17
+        }
+      ]
+    }
+  ],
+  "ocr_download_errors_summary": {
+    "total": 37,
+    "by_stratum": {
+      "tier2_award": 0,
+      "non_tier2_pro": 3,
+      "non_tier2_low": 34
+    },
+    "cause": "YouTube unauthenticated bot-check rate limit ('Sign in to confirm you're not a bot') triggered after ~95 parallel yt-dlp downloads; not bypassed per policy."
+  }
+}

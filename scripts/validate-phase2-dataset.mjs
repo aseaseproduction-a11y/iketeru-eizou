@@ -97,6 +97,21 @@ export const R_LOW_KEYWORDS_RE = new RegExp(
   "i"
 );
 
+export function isBareHomepageUrl(rawUrl) {
+  try {
+    const u = new URL(rawUrl);
+    if (!["http:", "https:"].includes(u.protocol)) return true;
+    const cleanPath = u.pathname.replace(/\/+$/, "");
+    // Bare root path ("" or "/index.html" or "/en" or "/ja") with no query/hash -> homepage!
+    if ((!cleanPath || /^\/(?:index\.[a-z]+|en|ja|jp|home)$/i.test(cleanPath)) && !u.search && !u.hash) {
+      return true;
+    }
+    return false;
+  } catch {
+    return true;
+  }
+}
+
 export function validatePhase2Dataset(entries, options = {}) {
   const {
     mode = "holdout", // "holdout" | "dev_additions"
@@ -133,10 +148,24 @@ export function validatePhase2Dataset(entries, options = {}) {
       "evidence_url",
       "evidence_excerpt",
       "collected_at",
+      "verified_by_script",
+      "verified_at",
     ]) {
       if (e[req] === undefined || e[req] === null || e[req] === "") {
         errors.push(`${tag} missing required field: ${req}`);
       }
+    }
+
+    if (e.evidence_url && isBareHomepageUrl(e.evidence_url)) {
+      errors.push(`${tag} evidence_url must point to a specific award/entry/video page, not a bare homepage: ${e.evidence_url}`);
+    }
+
+    if (e.verified_at && Number.isNaN(Date.parse(e.verified_at))) {
+      errors.push(`${tag} verified_at must be a valid ISO-8601 timestamp`);
+    }
+
+    if (e.stratum === "tier2_award" && typeof e.evidence_excerpt === "string" && e.evidence_excerpt.length > 150) {
+      errors.push(`${tag} Tier 2 evidence_excerpt must be a verbatim snippet <= 150 chars (got ${e.evidence_excerpt.length})`);
     }
 
     if (typeof e.view_count_at_collection !== "number" || !Number.isFinite(e.view_count_at_collection) || e.view_count_at_collection < 0) {

@@ -1,0 +1,1184 @@
+{
+  "verified_at": "2026-11-22T18:01:56.079Z",
+  "total": 131,
+  "verified": 118,
+  "failed": 13,
+  "results": [
+    {
+      "video_id": "uH1PXkG8qD8",
+      "genre": "CM",
+      "stratum": "tier2_award",
+      "evidence_url": "https://www.canneslions.com/",
+      "status": "failed",
+      "reason": "bare_homepage_or_invalid_url: https://www.canneslions.com/"
+    },
+    {
+      "video_id": "QmDckNBoKsY",
+      "genre": "CM",
+      "stratum": "tier2_award",
+      "evidence_url": "https://creative.salon/cannes-lions-curated/cannes-lions-2024/film-craft-lions-cannes-2024",
+      "status": "verified",
+      "final_url": "https://creative.salon/cannes-lions-curated/cannes-lions-2024/film-craft-lions-cannes-2024",
+      "matched_work": "The Square Meter",
+      "matched_tier": "Grand Prix",
+      "min_distance_chars": 44,
+      "verbatim_excerpt": "The Film Craft Grand Prix went to HeimatTBWA\\ for its Hornback film 'The Square Meter'. The campaign focused on the theme \"Every square metre deserves"
+    },
+    {
+      "video_id": "IVDpqih2KbI",
+      "genre": "CM",
+      "stratum": "tier2_award",
+      "evidence_url": "https://thomasgrovecarter.com/pages/about",
+      "status": "verified",
+      "final_url": "https://thomasgrovecarter.com/pages/about",
+      "matched_work": "Periodsomnia",
+      "matched_tier": "Yellow Pencil",
+      "min_distance_chars": 1,
+      "verbatim_excerpt": "er Lion / Cannes Lions 2023 / Editing Bodyform - Periodsomnia Yellow Pencil / D&AD 2023 / Editing Bodyform - Periodsomnia"
+    },
+    {
+      "video_id": "ev83o3hVoso",
+      "genre": "CM",
+      "stratum": "tier2_award",
+      "evidence_url": "https://creative.salon/cannes-lions-curated/cannes-lions-2024/film-craft-lions-cannes-2024",
+      "status": "verified",
+      "final_url": "https://creative.salon/cannes-lions-curated/cannes-lions-2024/film-craft-lions-cannes-2024",
+      "matched_work": "'Respect'",
+      "matched_tier": "Bronze",
+      "min_distance_chars": 27,
+      "verbatim_excerpt": "AMV BBDO and LA-based Somesuch have won a Bronze Film Craft Lion for their 'Respect' campaign for the RSPCA. The film saw an array of animals sing alo"
+    },
+    {
+      "video_id": "0PWmNDBWNz0",
+      "genre": "CM",
+      "stratum": "tier2_award",
+      "evidence_url": "https://www.aoi-pro.com/jp/news/20241105/54908/",
+      "status": "verified",
+      "final_url": "https://www.aoi-pro.com/jp/news/20241105/54908/",
+      "matched_work": "光も影も",
+      "matched_tier": "スタッフ賞",
+      "min_distance_chars": 41,
+      "verbatim_excerpt": "<スタッフ賞 / ロケーション> フィルムクラフト部門(受賞者: 高橋亨) カロリーメイト 「光も影も」"
+    },
+    {
+      "video_id": "9HpLhxMFJR8",
+      "genre": "CM",
+      "stratum": "tier2_award",
+      "evidence_url": "https://www.canneslions.com/",
+      "status": "failed",
+      "reason": "bare_homepage_or_invalid_url: https://www.canneslions.com/"
+    },
+    {
+      "video_id": "jnzWdC90IbA",
+      "genre": "CM",
+      "stratum": "tier2_award",
+      "evidence_url": "https://www.aoi-pro.com/jp/news/20241105/54908/",
+      "status": "verified",
+      "final_url": "https://www.aoi-pro.com/jp/news/20241105/54908/",
+      "matched_work": "WILD MOMENT",
+      "matched_tier": "スタッフ賞",
+      "min_distance_chars": 70,
+      "verbatim_excerpt": "<スタッフ賞 / 撮影> フィルムクラフト部門(受賞者: Stefan von Borbely、竹内スグル) TOYOTA GAZOO RACING 「WILD MOMENT / GRヤリス WILD MOMENT / HILUX WILD MOMENT / GR010 WILD MOMENT /"
+    },
+    {
+      "video_id": "Z8hWLECF2kE",
+      "genre": "MV",
+      "stratum": "tier2_award",
+      "evidence_url": "https://awards.ukmva.com/years/2023",
+      "status": "verified",
+      "final_url": "https://awards.ukmva.com/years/2023",
+      "matched_work": "skiifall",
+      "matched_tier": "shortlist",
+      "min_distance_chars": 2,
+      "verbatim_excerpt": "petit production company: ocurens record co: arista shortlist: skiifall - 2 charming vfx artist: matt fuller at the mill director: rubberband. product"
+    },
+    {
+      "video_id": "JLQuHYNtQMI",
+      "genre": "MV",
+      "stratum": "tier2_award",
+      "evidence_url": "https://awards.ukmva.com/years/2024",
+      "status": "failed",
+      "reason": "work_and_tier_not_co_located_within_150chars (blocks=3704)"
+    },
+    {
+      "video_id": "sDMLGzeHH6E",
+      "genre": "MV",
+      "stratum": "tier2_award",
+      "evidence_url": "https://awards.ukmva.com/years/2023",
+      "status": "verified",
+      "final_url": "https://awards.ukmva.com/years/2023",
+      "matched_work": "audrey nuna",
+      "matched_tier": "winner",
+      "min_distance_chars": 2,
+      "verbatim_excerpt": "best visual effects in a video winner: audrey nuna - locket vfx artist: square director: valentin petit production company: ocurens record co: arista"
+    },
+    {
+      "video_id": "3DnDPArgl_I",
+      "genre": "MV",
+      "stratum": "tier2_award",
+      "evidence_url": "https://awards.ukmva.com/years/2024",
+      "status": "verified",
+      "final_url": "https://awards.ukmva.com/years/2024",
+      "matched_work": "mette – bet",
+      "matched_tier": "winner",
+      "min_distance_chars": 2,
+      "verbatim_excerpt": "best pop video international winner: mette – bet director: c prinz producers: joel spencer, eli raskin production co: smuggler, field trip media commi"
+    },
+    {
+      "video_id": "4HZiS4VtscU",
+      "genre": "MV",
+      "stratum": "tier2_award",
+      "evidence_url": "https://awards.ukmva.com/years/2024",
+      "status": "verified",
+      "final_url": "https://awards.ukmva.com/years/2024",
+      "matched_work": "hyukoh",
+      "matched_tier": "shortlist",
+      "min_distance_chars": 2,
+      "verbatim_excerpt": "ve team: sehoon jang, jnkyrd record co: bighit music shortlist: hyukoh, sunset rollercoaster – antenna director: rafhoo producer: euis production co:"
+    },
+    {
+      "video_id": "gi9OBRzbMNI",
+      "genre": "MV",
+      "stratum": "tier2_award",
+      "evidence_url": "https://awards.ukmva.com/years/2023",
+      "status": "verified",
+      "final_url": "https://awards.ukmva.com/years/2023",
+      "matched_work": "mama's eyes",
+      "matched_tier": "winner",
+      "min_distance_chars": 10,
+      "verbatim_excerpt": "video of the year winner: mette - mama's eyes director: camille summers-valli producer: daisy rylance production company: love song / division commiss"
+    },
+    {
+      "video_id": "nRtxogXp8sY",
+      "genre": "MV",
+      "stratum": "tier2_award",
+      "evidence_url": "https://awards.ukmva.com/years/2024",
+      "status": "verified",
+      "final_url": "https://awards.ukmva.com/years/2024",
+      "matched_work": "skipping like a stone",
+      "matched_tier": "winner",
+      "min_distance_chars": 34,
+      "verbatim_excerpt": "best dance / electronic video uk winner: the chemical brothers ft beck – skipping like a stone director: pensacola producer: callum harrison productio"
+    },
+    {
+      "video_id": "ZFVtLHLN8aU",
+      "genre": "モーション",
+      "stratum": "tier2_award",
+      "evidence_url": "https://motionawards.com/winners-2023.html",
+      "status": "verified",
+      "final_url": "https://motionawards.com/winners-2023.html",
+      "matched_work": "Strange New Worlds",
+      "matched_tier": "Winner",
+      "min_distance_chars": 21,
+      "verbatim_excerpt": "Star Trek: Strange New Worlds Season 1 Main Title Winner · Picturemill"
+    },
+    {
+      "video_id": "6jhuEo2Upqs",
+      "genre": "モーション",
+      "stratum": "tier2_award",
+      "evidence_url": "https://motionawards.com/winners-2023.html",
+      "status": "verified",
+      "final_url": "https://motionawards.com/winners-2023.html",
+      "matched_work": "Game Changers Championship",
+      "matched_tier": "Winner",
+      "min_distance_chars": 2,
+      "verbatim_excerpt": "VALORANT \"Game Changers Championship\" Winner · Scholar"
+    },
+    {
+      "video_id": "D2J8YDIHhtY",
+      "genre": "モーション",
+      "stratum": "tier2_award",
+      "evidence_url": "https://motionawards.com/winners-2023.html",
+      "status": "verified",
+      "final_url": "https://motionawards.com/winners-2023.html",
+      "matched_work": "Rick and Morty Season 6 Stunt",
+      "matched_tier": "Winner",
+      "min_distance_chars": 1,
+      "verbatim_excerpt": "Rick and Morty Season 6 Stunt Winner · Golden Wolf"
+    },
+    {
+      "video_id": "GJOn8nL2C8o",
+      "genre": "モーション",
+      "stratum": "tier2_award",
+      "evidence_url": "https://motionawards.com/winners-2024.html",
+      "status": "verified",
+      "final_url": "https://motionawards.com/winners-2024.html",
+      "matched_work": "Rugby World Cup France 2023",
+      "matched_tier": "Winner",
+      "min_distance_chars": 1,
+      "verbatim_excerpt": "Rugby World Cup France 2023 Winner · AE Live Ignite"
+    },
+    {
+      "video_id": "b1Izefj7Eag",
+      "genre": "モーション",
+      "stratum": "tier2_award",
+      "evidence_url": "https://motionawards.com/winners-2024.html",
+      "status": "verified",
+      "final_url": "https://motionawards.com/winners-2024.html",
+      "matched_work": "Murder in the Bell Tower",
+      "matched_tier": "Winner",
+      "min_distance_chars": 1,
+      "verbatim_excerpt": "Murder in the Bell Tower Winner · Mellow Studio"
+    },
+    {
+      "video_id": "-15nbjw0IHU",
+      "genre": "モーション",
+      "stratum": "tier2_award",
+      "evidence_url": "https://motionawards.com/winners-2024.html",
+      "status": "verified",
+      "final_url": "https://motionawards.com/winners-2024.html",
+      "matched_work": "Clash of Flavours",
+      "matched_tier": "Winner",
+      "min_distance_chars": 1,
+      "verbatim_excerpt": "OOHA – Clash of Flavours Winner · Golden Wolf"
+    },
+    {
+      "video_id": "OfCn09kBXXg",
+      "genre": "モーション",
+      "stratum": "tier2_award",
+      "evidence_url": "https://motionawards.com/winners-2023.html",
+      "status": "verified",
+      "final_url": "https://motionawards.com/winners-2023.html",
+      "matched_work": "Three Little Pigs",
+      "matched_tier": "Winner",
+      "min_distance_chars": 1,
+      "verbatim_excerpt": "Weetabix – Three Little Pigs Winner · Golden Wolf"
+    },
+    {
+      "video_id": "a1EwwLFNQI0",
+      "genre": "3DCG/アニメ",
+      "stratum": "tier2_award",
+      "evidence_url": "https://www.annecyfestival.com/en/archives/2024/the-festival/2024-awards",
+      "status": "verified",
+      "final_url": "https://www.annecyfestival.com/en/archives/2024/the-festival/2024-awards",
+      "matched_work": "Pictoplasma",
+      "matched_tier": "Cristal",
+      "min_distance_chars": 25,
+      "verbatim_excerpt": "Cristal for a Commissioned Film Pictoplasma \"Opener 2023\""
+    },
+    {
+      "video_id": "NmS3m0OG-Ug",
+      "genre": "モーション",
+      "stratum": "tier2_award",
+      "evidence_url": "https://www.televisionacademy.com/awards/nominees-winners/2022/outstanding-main-title-design",
+      "status": "verified",
+      "final_url": "https://www.televisionacademy.com/awards/nominees-winners/2022/outstanding-main-title-design",
+      "matched_work": "Severance",
+      "matched_tier": "Winner",
+      "min_distance_chars": 1,
+      "verbatim_excerpt": "Winner Severance"
+    },
+    {
+      "video_id": "1GgKXR_J-ww",
+      "genre": "モーション",
+      "stratum": "tier2_award",
+      "evidence_url": "https://www.televisionacademy.com/awards/nominees-winners/2022/outstanding-main-title-design",
+      "status": "verified",
+      "final_url": "https://www.televisionacademy.com/awards/nominees-winners/2022/outstanding-main-title-design",
+      "matched_work": "Pachinko",
+      "matched_tier": "Nominee",
+      "min_distance_chars": 1,
+      "verbatim_excerpt": "Nominee Pachinko"
+    },
+    {
+      "video_id": "8SWhBsbxmpk",
+      "genre": "モーション",
+      "stratum": "tier2_award",
+      "evidence_url": "https://www.televisionacademy.com/awards/nominees-winners/2023/outstanding-main-title-design",
+      "status": "verified",
+      "final_url": "https://www.televisionacademy.com/awards/nominees-winners/2023/outstanding-main-title-design",
+      "matched_work": "The Last Of Us",
+      "matched_tier": "Winner",
+      "min_distance_chars": 1,
+      "verbatim_excerpt": "Winner The Last Of Us"
+    },
+    {
+      "video_id": "AJlOS6ZeIcA",
+      "genre": "モーション",
+      "stratum": "tier2_award",
+      "evidence_url": "https://www.televisionacademy.com/awards/nominees-winners/2024/outstanding-main-title-design",
+      "status": "verified",
+      "final_url": "https://www.televisionacademy.com/awards/nominees-winners/2024/outstanding-main-title-design",
+      "matched_work": "Silo",
+      "matched_tier": "Nominee",
+      "min_distance_chars": 1,
+      "verbatim_excerpt": "Nominee Silo"
+    },
+    {
+      "video_id": "q8Ea2tysrrc",
+      "genre": "モーション",
+      "stratum": "tier2_award",
+      "evidence_url": "https://www.televisionacademy.com/awards/nominees-winners/2023/outstanding-main-title-design",
+      "status": "verified",
+      "final_url": "https://www.televisionacademy.com/awards/nominees-winners/2023/outstanding-main-title-design",
+      "matched_work": "The White Lotus",
+      "matched_tier": "Nominee",
+      "min_distance_chars": 1,
+      "verbatim_excerpt": "Nominee The White Lotus"
+    },
+    {
+      "video_id": "2P7E-K99cE0",
+      "genre": "3DCG/アニメ",
+      "stratum": "tier2_award",
+      "evidence_url": "https://www.annecyfestival.com/en/archives/2025/the-festival/2025-official-selection/2025-commissioned-films/desi-oon",
+      "status": "failed",
+      "reason": "work_and_tier_not_co_located_within_150chars (blocks=108)"
+    },
+    {
+      "video_id": "ke4kVFycpYY",
+      "genre": "3DCG/アニメ",
+      "stratum": "tier2_award",
+      "evidence_url": "https://www.annecyfestival.com/en/archives/2024/the-festival/2024-awards",
+      "status": "verified",
+      "final_url": "https://www.annecyfestival.com/en/archives/2024/the-festival/2024-awards",
+      "matched_work": "South African Apartheid",
+      "matched_tier": "Jury Award",
+      "min_distance_chars": 41,
+      "verbatim_excerpt": "Jury Award for a Commissioned Film TED-Ed \"How Did South African Apartheid Happen, and How Did It Finally End?\""
+    },
+    {
+      "video_id": "HoMeijpAI9E",
+      "genre": "3DCG/アニメ",
+      "stratum": "tier2_award",
+      "evidence_url": "https://www.annecyfestival.com/about/archives/2022/award-winners",
+      "status": "verified",
+      "final_url": "https://www.annecyfestival.com/about/archives/2022/award-winners",
+      "matched_work": "Aline",
+      "matched_tier": "Jury Award",
+      "min_distance_chars": 25,
+      "verbatim_excerpt": "Jury Award for a Commissioned Film Aline Film Index"
+    },
+    {
+      "video_id": "9acxn7qAST4",
+      "genre": "3DCG/アニメ",
+      "stratum": "tier2_award",
+      "evidence_url": "https://blog.siggraph.org/2023/08/take-in-the-show-stopping-animation-of-the-siggraph-2023-electronic-theater.html/",
+      "status": "verified",
+      "final_url": "https://blog.siggraph.org/2023/08/take-in-the-show-stopping-animation-of-the-siggraph-2023-electronic-theater.html/",
+      "matched_work": "Overwatch: Kiriko",
+      "matched_tier": "Jury’s Choice",
+      "min_distance_chars": 10,
+      "verbatim_excerpt": "Jury’s Choice [tie] — “Overwatch: Kiriko” Jeremiah Johnson and Dave Stephens, Blizzard Entertainment"
+    },
+    {
+      "video_id": "5XwXliCK19Y",
+      "genre": "3DCG/アニメ",
+      "stratum": "tier2_award",
+      "evidence_url": "https://www.annecyfestival.com/about/archives/2023/award-winners",
+      "status": "verified",
+      "final_url": "https://www.annecyfestival.com/about/archives/2023/award-winners",
+      "matched_work": "I'm Only Sleeping",
+      "matched_tier": "Jury Award",
+      "min_distance_chars": 38,
+      "verbatim_excerpt": "Jury Award for a Commissioned Film The Beatles \"I'm Only Sleeping\" Film Index"
+    },
+    {
+      "video_id": "G393z8s8nFY",
+      "genre": "3DCG/アニメ",
+      "stratum": "tier2_award",
+      "evidence_url": "https://www.annecyfestival.com/about/archives/2022/award-winners",
+      "status": "verified",
+      "final_url": "https://www.annecyfestival.com/about/archives/2022/award-winners",
+      "matched_work": "Save Ralph",
+      "matched_tier": "Cristal",
+      "min_distance_chars": 25,
+      "verbatim_excerpt": "Cristal for a Commissioned Film Save Ralph Film Index"
+    },
+    {
+      "video_id": "-BNMlu1P1Cc",
+      "genre": "企業映像",
+      "stratum": "tier2_award",
+      "evidence_url": "https://winners.cannescorporate.com/?year=2025",
+      "status": "verified",
+      "final_url": "https://winners.cannescorporate.com/?year=2025",
+      "matched_work": "The Broken Heart",
+      "matched_tier": "Grand Prix",
+      "min_distance_chars": 19,
+      "verbatim_excerpt": "Grand Prix Corporate Denmark The Broken Heart"
+    },
+    {
+      "video_id": "Rs_NWwtBoks",
+      "genre": "企業映像",
+      "stratum": "tier2_award",
+      "evidence_url": "https://www.dnv.com/news/2026/dnvs-film-the-great-transition-wins-3-dolphins-at-cannes-corporate-media-tv-awards/",
+      "status": "verified",
+      "final_url": "https://www.dnv.com/news/2026/dnvs-film-the-great-transition-wins-3-dolphins-at-cannes-corporate-media-tv-awards/",
+      "matched_work": "The Great Transition",
+      "matched_tier": "Dolphins",
+      "min_distance_chars": 8,
+      "verbatim_excerpt": "DNV's film The Great Transition wins 3 Dolphins at Cannes Corporate Media & TV Awards Representatives from DNV and Yune/Omnicom with the Gold Award (f"
+    },
+    {
+      "video_id": "O1qBDmkRYL4",
+      "genre": "企業映像",
+      "stratum": "tier2_award",
+      "evidence_url": "https://www.cannescorporate.com/en/winners2023.php",
+      "status": "verified",
+      "final_url": "https://www.cannescorporate.com/en/winners2023.php",
+      "matched_work": "Studying is what you make of it!",
+      "matched_tier": "Grand Prix",
+      "min_distance_chars": 26,
+      "verbatim_excerpt": "Grand Prix for Best Corporate Media Studying is what you make of it! CH"
+    },
+    {
+      "video_id": "y8oGkG0vuHw",
+      "genre": "企業映像",
+      "stratum": "tier2_award",
+      "evidence_url": "https://www.cannescorporate.com/",
+      "status": "failed",
+      "reason": "bare_homepage_or_invalid_url: https://www.cannescorporate.com/"
+    },
+    {
+      "video_id": "kDFt3nL9qqY",
+      "genre": "企業映像",
+      "stratum": "tier2_award",
+      "evidence_url": "https://www.youtube.com/watch?v=kDFt3nL9qqY",
+      "status": "failed",
+      "reason": "craft_category_not_found_on_page: [DIRECTORSCUT]"
+    },
+    {
+      "video_id": "dRID0fo-2FQ",
+      "genre": "企業映像",
+      "stratum": "tier2_award",
+      "evidence_url": "https://www.cannescorporate.com/",
+      "status": "failed",
+      "reason": "bare_homepage_or_invalid_url: https://www.cannescorporate.com/"
+    },
+    {
+      "video_id": "sjURCaINARk",
+      "genre": "CM",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=sjURCaINARk",
+      "status": "verified",
+      "verbatim_excerpt": "テレビCM「待たずに、幸せ！篇 」30秒"
+    },
+    {
+      "video_id": "t4nVyE0J9eo",
+      "genre": "CM",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=t4nVyE0J9eo",
+      "status": "verified",
+      "verbatim_excerpt": "【企業広告】TVCM 総合モビリティカンパニー 「みんなを喜ばせたい」篇 30秒"
+    },
+    {
+      "video_id": "5jEJg-Sxl9U",
+      "genre": "CM",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=5jEJg-Sxl9U",
+      "status": "verified",
+      "verbatim_excerpt": "【CIVIC】TVCM（WEB版）「風に、乗れ。」篇 30秒"
+    },
+    {
+      "video_id": "W796t4glQnU",
+      "genre": "CM",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=W796t4glQnU",
+      "status": "verified",
+      "verbatim_excerpt": "【エルグランド】TVCM 「ELGRAND IS BACK」篇 30秒"
+    },
+    {
+      "video_id": "xuMf1KZzMd8",
+      "genre": "CM",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=xuMf1KZzMd8",
+      "status": "verified",
+      "verbatim_excerpt": "イエローハット 2025年テレビCM 30秒"
+    },
+    {
+      "video_id": "GCdPC3gTBDs",
+      "genre": "CM",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=GCdPC3gTBDs",
+      "status": "verified",
+      "verbatim_excerpt": "Fate/Grand Order「第2部 終章」告知TVCM 30秒ver."
+    },
+    {
+      "video_id": "fBR8Wp2WF60",
+      "genre": "CM",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=fBR8Wp2WF60",
+      "status": "verified",
+      "verbatim_excerpt": "TVCM『僕は知っている』篇30秒（2026年）"
+    },
+    {
+      "video_id": "xZ5DIjJOsgg",
+      "genre": "CM",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=xZ5DIjJOsgg",
+      "status": "verified",
+      "verbatim_excerpt": "テレビCM「ありがとう だんだん篇」30秒"
+    },
+    {
+      "video_id": "u_lAdKpRp-8",
+      "genre": "CM",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=u_lAdKpRp-8",
+      "status": "verified",
+      "verbatim_excerpt": "日本メディアシステム TVCM｜「整ってますか」篇 30秒ver"
+    },
+    {
+      "video_id": "aMWeNABISlg",
+      "genre": "CM",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=aMWeNABISlg",
+      "status": "verified",
+      "verbatim_excerpt": "【パズドラTVCM】「冬の青春」篇30秒 ✯"
+    },
+    {
+      "video_id": "Xvx1GvsOMdI",
+      "genre": "MV",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=Xvx1GvsOMdI",
+      "status": "verified",
+      "verbatim_excerpt": "hannel：https://www.youtube.com/@KojiTamakiSonymusicOfficial 玉置浩二 Sony Music Official Site：https://www.sonymusic.co.jp/artist/KojiTamaki/ 玉置浩"
+    },
+    {
+      "video_id": "P7bVX6fJfCg",
+      "genre": "MV",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=P7bVX6fJfCg",
+      "status": "verified",
+      "verbatim_excerpt": "YEii 【収録内容】 ▼DISC 1（CD）＊全形態共通 1. P.S. 2. アイオライト（ブルボン アルフォートミニチョコレートCMソング） 3. 幾億光年（TBS系 火曜ドラマ『Eye Love You』主題歌） 4. 蕾（TVアニメ『僕のヒーローアカデミア』第7期エンデ"
+    },
+    {
+      "video_id": "VKuhDciY-ys",
+      "genre": "MV",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=VKuhDciY-ys",
+      "status": "verified",
+      "verbatim_excerpt": "PG 3rd Single \"VERSION OF ME\" 🎧 VERSION OF ME https://avex.lnk.to/VERSIONOFME α世代に大人気の小中学生14人のダンス＆ヴォーカルカンパニーPG、待望のサードシングル！ TikTokで毎日動画を投稿し、"
+    },
+    {
+      "video_id": "m0lJzV55jKg",
+      "genre": "MV",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=m0lJzV55jKg",
+      "status": "verified",
+      "verbatim_excerpt": "こちらからhttps://abema.tv/lp/bouquet-home ▼クレジット Lyrics & Music：Rose Blueming / Hiyori Nara / Saori Nagano / Fi'Ne Arrangement : Fi'Ne Mix Engin"
+    },
+    {
+      "video_id": "SZpiiixlHWY",
+      "genre": "MV",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=SZpiiixlHWY",
+      "status": "verified",
+      "verbatim_excerpt": "Tyla - IS IT (Official Music Video) \"IS IT\" available at: https://tyla.lnk.to/ISIT Follow Tyla: https://instagram.com/tyla https://www.tikto"
+    },
+    {
+      "video_id": "Wjew3Rc1PYI",
+      "genre": "MV",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=Wjew3Rc1PYI",
+      "status": "verified",
+      "verbatim_excerpt": "till on their way. Album/Song - Rathinamo Written, Composed and Produced by Saurav Srisan Female Vocals by Tanisha Gnanavel Male Vocals by S"
+    },
+    {
+      "video_id": "_-HkdD6LLGg",
+      "genre": "MV",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=_-HkdD6LLGg",
+      "status": "verified",
+      "verbatim_excerpt": "伍代夏子 歌手活動45周年シングル 2026年7月22日発売 「流転の花」 ミュージックビデオ 希望を持ち続け、 一歩踏み出すすべての人へ――伍代夏子が贈る応援演歌 季節が巡るたび、咲き誇る花のように、人もまた、何度でも自分を咲かせていく... 涙を恵みの雨に、悲しみを優しさに変"
+    },
+    {
+      "video_id": "1rSz3x1x0Ew",
+      "genre": "モーション",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=1rSz3x1x0Ew",
+      "status": "verified",
+      "verbatim_excerpt": "ックスでわかりやすく伝える。 Client: TRUSTART様 Genre: 事業紹介動画 / Motion Graphics Production: Unplug ▼ Works https://unplug-studio.jp/works ▼ Contact info@un"
+    },
+    {
+      "video_id": "YlINk0vjtLg",
+      "genre": "モーション",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=YlINk0vjtLg",
+      "status": "verified",
+      "verbatim_excerpt": "た告知動画。 Client: MCD3様 Genre: Designship2025告知動画 / Motion Graphics Production: Unplug ▼ Works https://unplug-studio.jp/works ▼ Contact info@un"
+    },
+    {
+      "video_id": "67UqYS-UsUI",
+      "genre": "モーション",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=67UqYS-UsUI",
+      "status": "verified",
+      "verbatim_excerpt": "伴走型BPO / 採用DXサービス ・形式:アニメーション動画(モーショングラフィックス) ・企画・シナリオ・デザイン・ディレクション・制作:ふじいもと / HITO-musubi ▍HITOCREW(ヒトクルー)について 「人が集まる、人来る、ヒトクルー」 人事と広報を丸っとア"
+    },
+    {
+      "video_id": "4CJEN2LNN-Q",
+      "genre": "モーション",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=4CJEN2LNN-Q",
+      "status": "failed",
+      "reason": "non_commercial_spec_or_student_work: 仮想クライアント"
+    },
+    {
+      "video_id": "EiaYW0tfHNY",
+      "genre": "モーション",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=EiaYW0tfHNY",
+      "status": "failed",
+      "reason": "non_commercial_spec_or_student_work: 自主制作作品"
+    },
+    {
+      "video_id": "i70ijS4y6js",
+      "genre": "モーション",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=i70ijS4y6js",
+      "status": "verified",
+      "verbatim_excerpt": "5年4月5日(土)・6日(日)にて 高知県立県民体育館・高知市中心市街地で開催された「高知アニクリ祭2025」 高知県初のアニメーション制作会社「スタジオエイトカラーズ」が制作し、 「高知アニクリ祭2025」の開会式で上映したオープニングムービーです！ 高知アニクリ祭は、高知アニ"
+    },
+    {
+      "video_id": "uTbgFqFA9GU",
+      "genre": "モーション",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=uTbgFqFA9GU",
+      "status": "verified",
+      "verbatim_excerpt": "Burnwe created a motion graphics product launch video for partner company, Coldtea - agentic IDE where coding agents build and visual QA age"
+    },
+    {
+      "video_id": "ymLvrZMk51c",
+      "genre": "モーション",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=ymLvrZMk51c",
+      "status": "failed",
+      "reason": "empty_evidence_excerpt"
+    },
+    {
+      "video_id": "qtZPdgesJVk",
+      "genre": "モーション",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=qtZPdgesJVk",
+      "status": "verified",
+      "verbatim_excerpt": "Showcasing a full-scale commercial video production and promotional campaign created for Rise Cola. From conceptualizing the trending \"Pop a"
+    },
+    {
+      "video_id": "kdh0ucpJEH8",
+      "genre": "3DCG/アニメ",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=kdh0ucpJEH8",
+      "status": "verified",
+      "verbatim_excerpt": "瑠璃と巡る本格サイエンスアドベンチャー、開幕！！ TVアニメ「瑠璃の宝石」2025年7月6日（日）21時30分より各局にて順次放送開始！ ◇放送情報 TOKYO MX 7月6日（日）より 毎週日曜21：30～ BS11 7月6日（日）より 毎週日曜22：30～ ABCテレビ 7月"
+    },
+    {
+      "video_id": "j5k7BgIqkI0",
+      "genre": "3DCG/アニメ",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=j5k7BgIqkI0",
+      "status": "verified",
+      "verbatim_excerpt": "『カラオケ行こ！』『夢中さ、きみに。』和山やま2作品TVアニメ化！！ 2025年7月24日（木）より放送開始！ ■ON AIR ＜放送＞ AT-X 7月24日(木)から 毎週木曜日 21時30分～ ※リピート放送：①毎週月曜 9時30分～ ②毎週水曜 15時30分～ ＴＯＫＹＯ"
+    },
+    {
+      "video_id": "gcZXJ8cxDpM",
+      "genre": "3DCG/アニメ",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=gcZXJ8cxDpM",
+      "status": "verified",
+      "verbatim_excerpt": "TVアニメ『ザ・ファブル』 2024年4月6日(土)24:55より、日本テレビ系にて 順次全国放送開始──!! さらに、ディズニープラスで全話見放題 世界独占も始まります──!! 「できるならこの一年── 誰も殺さず平和に暮らしたい──。」 寓話と呼ばれし最強の殺し屋、１年間の休"
+    },
+    {
+      "video_id": "cmNtgMq5khQ",
+      "genre": "3DCG/アニメ",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=cmNtgMq5khQ",
+      "status": "verified",
+      "verbatim_excerpt": "稔、丸木宣明 美術監督：篠原睦雄 色彩設計：竹田明代 撮影監督：髙尾一也 ３D監督：山本 倫 音響監督：鶴岡陽太 音楽：松田彬人 音楽制作：ランティス、ハートカンパニー 音楽協力：洗足学園音楽大学 演奏協力：プログレッシブ！ウインド・オーケストラ 吹奏楽監修：大和田雅洋 主題歌"
+    },
+    {
+      "video_id": "aE0Eb23d6Dk",
+      "genre": "3DCG/アニメ",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=aE0Eb23d6Dk",
+      "status": "verified",
+      "verbatim_excerpt": "『私たちの日常は、どこだって楽しい』 「好きな子がめがねを忘れた」「デキる猫は今日も憂鬱」のGoHandsが贈る新アニメプロジェクト！ 「もめんたりー・リリィ」2025年1月より放送予定！ GoHands New Animation Project 「MOMENTARY・LILY"
+    },
+    {
+      "video_id": "QqLA-04V_uw",
+      "genre": "3DCG/アニメ",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=QqLA-04V_uw",
+      "status": "verified",
+      "verbatim_excerpt": "TVアニメ『ワンダンス』 2025年10月より放送開始！ ＜テレビ＞ テレビ朝日系全国ネット 毎週水曜よる11時45分～ “IMAnimation W”枠 ほか ※一部地域を除く ＜配信＞ ディズニープラスで2025年 SVOD 独占配信 ＃ワンダンス ＃WANDANCE 劇中歌"
+    },
+    {
+      "video_id": "YT2Sh7sbZak",
+      "genre": "3DCG/アニメ",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=YT2Sh7sbZak",
+      "status": "verified",
+      "verbatim_excerpt": "デザイン：大河原将 キャスティング：池田舞 松本晏純 音響制作担当：今西栄介 プロデューサー：寺田悠輔 片山悠樹 武次茜 アニメーション制作：ロックンロール・マウンテン 製作：『ひゃくえむ。』製作委員会 配給：ポニーキャニオン／アスミック・エース ▶︎公式サイト：https://"
+    },
+    {
+      "video_id": "hQjGJJ23BCE",
+      "genre": "3DCG/アニメ",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=hQjGJJ23BCE",
+      "status": "verified",
+      "verbatim_excerpt": "henomenally popular manga is finally set to be released in 2025! Production will be headed by none other than Studio Bones. ■Original Work G"
+    },
+    {
+      "video_id": "75IOv2UhB8Q",
+      "genre": "3DCG/アニメ",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=75IOv2UhB8Q",
+      "status": "verified",
+      "verbatim_excerpt": "「別冊少年マガジン」にて大好評連載中の本格異世界婚姻譚！ 『姫騎士は蛮族の嫁』キャスト解禁PV公開！2025年秋放送開始！ ＜STAFF＞ 原作 コトバノリアキ（講談社「別冊少年マガジン」連載） アニメーション制作 寿門堂 製作 「姫騎士は蛮族の嫁」製作委員会 ＜CAST＞ セラ"
+    },
+    {
+      "video_id": "_sp_rADhJbI",
+      "genre": "企業映像",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=_sp_rADhJbI",
+      "status": "verified",
+      "verbatim_excerpt": "動画制作・映像制作会社をお探しなら『CINEMATO』まで。 https://cine-mato.com/ その他の動画制作実績はこちらから。 https://cine-mato.com/works/"
+    },
+    {
+      "video_id": "CrTB3pfzJM4",
+      "genre": "企業映像",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=CrTB3pfzJM4",
+      "status": "verified",
+      "verbatim_excerpt": "【制作事例】入退室管理システム「Akerun（アケルン）」 サービス紹介動画をCINEMATOが制作しました。 ──────────────────────────── ■ 作品概要 ──────────────────────────── 「ドアから始まるDX」をキーメッセージ"
+    },
+    {
+      "video_id": "sEYd0PBAuo0",
+      "genre": "企業映像",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=sEYd0PBAuo0",
+      "status": "verified",
+      "verbatim_excerpt": "タギ食品様の100年の歴史やこだわりの有機への取り組みやトレーサビリティシステムの紹介などこの1本でカタギ食品様がわかります！ 企画・構成/撮影/編集:AMR inc 企業紹介動画の作成はAMR incへご相談ください。 Webで活用できる動画をご提案いたします。 https:/"
+    },
+    {
+      "video_id": "MB5ZxJvIwUw",
+      "genre": "企業映像",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=MB5ZxJvIwUw",
+      "status": "verified",
+      "verbatim_excerpt": "circle inc. 制作実績 ___________________________________________________ 井原工業株式会社様 プロモーションムービー 愛媛県四国中央市にある井原工業株式会社様にて企業ブランシングムービーを制作させて頂きました。地元愛"
+    },
+    {
+      "video_id": "hhw2_xeX3Tk",
+      "genre": "企業映像",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=hhw2_xeX3Tk",
+      "status": "verified",
+      "verbatim_excerpt": "circle inc. 制作実績 ___________________________________________________ 株式会社ステップコミュニケーション様 プロモーションムービー 愛媛県八幡浜市にある株式会社ステップコミュニケーション様のプロモーションムー"
+    },
+    {
+      "video_id": "qPZWGWxWPYs",
+      "genre": "企業映像",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=qPZWGWxWPYs",
+      "status": "verified",
+      "verbatim_excerpt": "製作 2020年1月 #秋田 #企業PR動画 #採用動画 #映像制作会社 #動画制作会社 #リクルートムービー ＃インタビュー動画 #PR動画 #プロモーションビデオ ＃観光PR動画 ＃動画制作 #CM制作 ＃イメージビデオ #プリッツプロモーション"
+    },
+    {
+      "video_id": "FhhBAhJPUyE",
+      "genre": "企業映像",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=FhhBAhJPUyE",
+      "status": "verified",
+      "verbatim_excerpt": "内容等により価格は変動しますので、まずはお問い合わせください。 大阪市北区天神橋で、企業VP・ステージ記録映像を主に制作している映像作品制作会社です！ この動画についての参考お見積もりはコチラ http://hacer.jp/VP/002.pdf 全国出張可能です ☆☆☆☆☆☆☆"
+    },
+    {
+      "video_id": "OMFRjbG7aX8",
+      "genre": "企業映像",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=OMFRjbG7aX8",
+      "status": "verified",
+      "verbatim_excerpt": "入手・紹介 ・案件の実在性と情報の質に徹底的にこだわる独自ポジション ──────────────────────────── ■ CINEMATO（シネマト）について ──────────────────────────── BtoB企業のブランディング・マーケティングを \"映"
+    },
+    {
+      "video_id": "JBdhIf-49nc",
+      "genre": "CM",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=JBdhIf-49nc",
+      "status": "verified",
+      "verbatim_excerpt": "AviUtl初心者がAviUtlの練習のためにCMぽいのを作ってみました！ たまに、編集練習の動画をだしますｗ ------------------------------------------------------------------------------------"
+    },
+    {
+      "video_id": "4bFPZNmx18o",
+      "genre": "CM",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=4bFPZNmx18o",
+      "status": "verified",
+      "verbatim_excerpt": "AviUtl初心者がAviUtlの30秒CM(?)作ってみた"
+    },
+    {
+      "video_id": "Ne9QqlYJJ24",
+      "genre": "CM",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=Ne9QqlYJJ24",
+      "status": "verified",
+      "verbatim_excerpt": "『ふわふわ』という曲です。 Mac book の無料ソフト「Garage Band」を使って作りました。 (DTM初心者なので細かいところは大目に見てください) 〜息子たちへ、愛を込めて〜 ふわふわのそのほっぺに つめられたものはなに？ ゆめか？ きぼうか？ それとも しあわせか"
+    },
+    {
+      "video_id": "0Ee4dRb1laM",
+      "genre": "CM",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=0Ee4dRb1laM",
+      "status": "verified",
+      "verbatim_excerpt": "商品紹介動画(Vyond練習用③)"
+    },
+    {
+      "video_id": "94OoXKHO8mI",
+      "genre": "CM",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=94OoXKHO8mI",
+      "status": "verified",
+      "verbatim_excerpt": "Class Assignment - Graduate School Commercial"
+    },
+    {
+      "video_id": "zhRq3VuQZ_Q",
+      "genre": "CM",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=zhRq3VuQZ_Q",
+      "status": "verified",
+      "verbatim_excerpt": "We, the Business Geeks. We made an ad as our class assignment."
+    },
+    {
+      "video_id": "ao3X2s4IL0c",
+      "genre": "CM",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=ao3X2s4IL0c",
+      "status": "verified",
+      "verbatim_excerpt": "Class Assignment: Ad"
+    },
+    {
+      "video_id": "TYPrMMTbIE4",
+      "genre": "CM",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=TYPrMMTbIE4",
+      "status": "verified",
+      "verbatim_excerpt": "American Apparel Commercial (advertising class assignment)"
+    },
+    {
+      "video_id": "4iuLitLBhl8",
+      "genre": "CM",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=4iuLitLBhl8",
+      "status": "verified",
+      "verbatim_excerpt": "SHOE AD (Editing class assignment #5)"
+    },
+    {
+      "video_id": "NklWTK3Ue1Q",
+      "genre": "CM",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=NklWTK3Ue1Q",
+      "status": "verified",
+      "verbatim_excerpt": "Funny Pepsodent Ad | Class Assignment | MBA Life"
+    },
+    {
+      "video_id": "Z1gGDaQWwdg",
+      "genre": "MV",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=Z1gGDaQWwdg",
+      "status": "verified",
+      "verbatim_excerpt": "【MV風】初心者が一から制作！？"
+    },
+    {
+      "video_id": "Jyv8dO8XDEs",
+      "genre": "MV",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=Jyv8dO8XDEs",
+      "status": "verified",
+      "verbatim_excerpt": "【オリジナル曲・MV】宝物/かぐや将軍 #オリジナル曲 #mv #cubase #作曲初心者 #lyricvideo"
+    },
+    {
+      "video_id": "omQ99jeUujs",
+      "genre": "MV",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=omQ99jeUujs",
+      "status": "verified",
+      "verbatim_excerpt": "色々ド初心者が文化祭に向け作ったオリジナルMV"
+    },
+    {
+      "video_id": "aV9CPYsqz9k",
+      "genre": "MV",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=aV9CPYsqz9k",
+      "status": "verified",
+      "verbatim_excerpt": "【オリジナル MV】つくってみた｜水の星｜歌ってみた [何もかも超初心者]"
+    },
+    {
+      "video_id": "Z0lN-XgQzlI",
+      "genre": "MV",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=Z0lN-XgQzlI",
+      "status": "verified",
+      "verbatim_excerpt": "Premiere Pro 初心者がプチMV作ってみた。オリジナル曲「うそつき」"
+    },
+    {
+      "video_id": "tGc4U3XeE_4",
+      "genre": "MV",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=tGc4U3XeE_4",
+      "status": "verified",
+      "verbatim_excerpt": "絵も音楽も初心者の僕がオリジナルMVを作ってみた「Labor」"
+    },
+    {
+      "video_id": "q2412-rz1ts",
+      "genre": "MV",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=q2412-rz1ts",
+      "status": "verified",
+      "verbatim_excerpt": "TRYD（オリジナル漫画のMV風映像）無謀、ギター初心者が作詞作曲して絵を描いてMV風動画にしてみた！"
+    },
+    {
+      "video_id": "Y6EztTVFX5M",
+      "genre": "MV",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=Y6EztTVFX5M",
+      "status": "verified",
+      "verbatim_excerpt": "【AviUtl】インドア系ならトラックメイカー 【MV 初心者が作ってみた】"
+    },
+    {
+      "video_id": "1JCX12RX3Ic",
+      "genre": "MV",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=1JCX12RX3Ic",
+      "status": "verified",
+      "verbatim_excerpt": "暗闇の中 声を探す 「ワタシはまだ――」 ……接続、終了。 -------- #AI音楽 #SunoAI #CapCut #AI活用 #初心者"
+    },
+    {
+      "video_id": "qQXsOOxsWgw",
+      "genre": "モーション",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=qQXsOOxsWgw",
+      "status": "verified",
+      "verbatim_excerpt": "【aviutl】初心者が初めてのモーショングラフィックスを作ってみた。"
+    },
+    {
+      "video_id": "PupfzrYviGc",
+      "genre": "モーション",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=PupfzrYviGc",
+      "status": "verified",
+      "verbatim_excerpt": "【Capsule/Hello】超初心者のモーショングラフィックス練習【Aviutl】"
+    },
+    {
+      "video_id": "ZkQsrYzzG38",
+      "genre": "モーション",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=ZkQsrYzzG38",
+      "status": "verified",
+      "verbatim_excerpt": "初めて作った割にはうまく出来たかも！ 製作途中だよー ←ファイル紛失しましたテヘペロ モーショングラフィックス再生リスト https://www.youtube.com/playlist?list=PLfvO2rNwGUSiG7rApvRlREjsGPZRC__zY"
+    },
+    {
+      "video_id": "bHbDA2R5EQ8",
+      "genre": "モーション",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=bHbDA2R5EQ8",
+      "status": "verified",
+      "verbatim_excerpt": "【AviUtl】初心者がモーショングラフィックスに初挑戦した件www【NCS - High】"
+    },
+    {
+      "video_id": "oC1882y0IgA",
+      "genre": "モーション",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=oC1882y0IgA",
+      "status": "verified",
+      "verbatim_excerpt": "Learning After Effects – Day 1 My First Text Reveal Animation"
+    },
+    {
+      "video_id": "L1zAQoHoBUw",
+      "genre": "モーション",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=L1zAQoHoBUw",
+      "status": "verified",
+      "verbatim_excerpt": "My first motion graphics edit. Keywords : (After Effects beginner, My first After Effects animation, Learning After Effects, After Effects t"
+    },
+    {
+      "video_id": "dYqCocdxmZo",
+      "genre": "モーション",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=dYqCocdxmZo",
+      "status": "verified",
+      "verbatim_excerpt": "animating a random logo, I am just a beginner, still learning! #motiongraphics #iconanimation #morph #mograph"
+    },
+    {
+      "video_id": "ZY7IlAcqTDE",
+      "genre": "モーション",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=ZY7IlAcqTDE",
+      "status": "failed",
+      "reason": "empty_evidence_excerpt"
+    },
+    {
+      "video_id": "OK8GDW1Z7a8",
+      "genre": "モーション",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=OK8GDW1Z7a8",
+      "status": "failed",
+      "reason": "empty_evidence_excerpt"
+    },
+    {
+      "video_id": "IityDgK6x6w",
+      "genre": "モーション",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=IityDgK6x6w",
+      "status": "failed",
+      "reason": "empty_evidence_excerpt"
+    },
+    {
+      "video_id": "5AAcdVSxDdI",
+      "genre": "3DCG/アニメ",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=5AAcdVSxDdI",
+      "status": "verified",
+      "verbatim_excerpt": "My first animation made with Blender! Hope you like it !!"
+    },
+    {
+      "video_id": "jjXPrOUXmZg",
+      "genre": "3DCG/アニメ",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=jjXPrOUXmZg",
+      "status": "verified",
+      "verbatim_excerpt": "My First Animation in Blender [beginner journey]"
+    },
+    {
+      "video_id": "v-fCUQ1R51o",
+      "genre": "3DCG/アニメ",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=v-fCUQ1R51o",
+      "status": "verified",
+      "verbatim_excerpt": "ndane monday - Blender 3.2 (EEVEE) and grease pencil timelapse test animation"
+    },
+    {
+      "video_id": "KrCbjxKDY7Q",
+      "genre": "3DCG/アニメ",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=KrCbjxKDY7Q",
+      "status": "verified",
+      "verbatim_excerpt": "Transformers test animation (Blender 3.4)"
+    },
+    {
+      "video_id": "HaENcp4_4uY",
+      "genre": "3DCG/アニメ",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=HaENcp4_4uY",
+      "status": "verified",
+      "verbatim_excerpt": "[Blender] Toy Story Woody Test Animation"
+    },
+    {
+      "video_id": "n8wefcKLOnY",
+      "genre": "3DCG/アニメ",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=n8wefcKLOnY",
+      "status": "verified",
+      "verbatim_excerpt": "Blender Test Animation - Geoman"
+    },
+    {
+      "video_id": "7ZA_8FKwgLY",
+      "genre": "3DCG/アニメ",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=7ZA_8FKwgLY",
+      "status": "verified",
+      "verbatim_excerpt": "Kong Test Animation #2 (Blender)"
+    },
+    {
+      "video_id": "3_c0l_p9dd8",
+      "genre": "3DCG/アニメ",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=3_c0l_p9dd8",
+      "status": "verified",
+      "verbatim_excerpt": "This my very first animation on Blender and after done 8 hours of render I see so many flaws in the video, the next animation I'll try to im"
+    },
+    {
+      "video_id": "P6G_PwndJ6k",
+      "genre": "3DCG/アニメ",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=P6G_PwndJ6k",
+      "status": "verified",
+      "verbatim_excerpt": "制作アニメ 短編 「 ゆめ 」 Independent anime 初心者"
+    },
+    {
+      "video_id": "pcrNIQyvwnE",
+      "genre": "3DCG/アニメ",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=pcrNIQyvwnE",
+      "status": "verified",
+      "verbatim_excerpt": "自主制作アニメ 短編 Independent anime 初心者"
+    },
+    {
+      "video_id": "nzmA4Gj5SrQ",
+      "genre": "企業映像",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=nzmA4Gj5SrQ",
+      "status": "verified",
+      "verbatim_excerpt": "Website Webinar Recording (Intro): How to get a great website with top design and Google setup"
+    },
+    {
+      "video_id": "qDHqAFdcxgw",
+      "genre": "企業映像",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=qDHqAFdcxgw",
+      "status": "verified",
+      "verbatim_excerpt": "【Vyond】サービス紹介動画"
+    },
+    {
+      "video_id": "u0h78N8hb8Y",
+      "genre": "企業映像",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=u0h78N8hb8Y",
+      "status": "verified",
+      "verbatim_excerpt": "営業支援サービス会社様向け紹介動画【サンプル動画】VYONDビジネスアニメーション"
+    },
+    {
+      "video_id": "Z2eGGc9Z3CM",
+      "genre": "企業映像",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=Z2eGGc9Z3CM",
+      "status": "verified",
+      "verbatim_excerpt": "商品・サービス紹介 動画広告 30秒【サンプル動画】VYOND ビジネスアニメーション"
+    },
+    {
+      "video_id": "a_C24dNnDQE",
+      "genre": "企業映像",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=a_C24dNnDQE",
+      "status": "verified",
+      "verbatim_excerpt": "VYONDで作る商品・サービス紹介アニメ」のサンプル｜services introduction animation video."
+    },
+    {
+      "video_id": "CPeyrWJQi3U",
+      "genre": "企業映像",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=CPeyrWJQi3U",
+      "status": "verified",
+      "verbatim_excerpt": "事業内容紹介動画｜アニメーション｜VYOND"
+    },
+    {
+      "video_id": "Fc63x0Bf6NY",
+      "genre": "企業映像",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=Fc63x0Bf6NY",
+      "status": "verified",
+      "verbatim_excerpt": "why-you-must-have-a-website-for-your-business This video is created with Powtoon (https://www.powtoon.com/home/?)"
+    },
+    {
+      "video_id": "DVKMAFQBBGk",
+      "genre": "企業映像",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=DVKMAFQBBGk",
+      "status": "verified",
+      "verbatim_excerpt": "Announcement created with Powtoon"
+    },
+    {
+      "video_id": "E9TSM-uTs68",
+      "genre": "企業映像",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=E9TSM-uTs68",
+      "status": "verified",
+      "verbatim_excerpt": "New Liberty Studio Products & Services Intro Made with Clipchamp"
+    },
+    {
+      "video_id": "Whd6RIO7DRk",
+      "genre": "企業映像",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=Whd6RIO7DRk",
+      "status": "verified",
+      "verbatim_excerpt": "Wrights Intro Vid2023 Made with Clipchamp"
+    }
+  ]
+}
