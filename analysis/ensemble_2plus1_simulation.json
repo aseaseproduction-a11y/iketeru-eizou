@@ -1,0 +1,483 @@
+{
+  "dataset": "analysis/reproducibility_blind_10x3.json (10 videos x 3 blind runs)",
+  "single_run_vs_2plus1_ensemble": {
+    "single_run_mean_score_range": 3.6,
+    "single_run_max_score_range": 5,
+    "single_run_grade_stable_videos_out_of_10": 2,
+    "ensemble_2plus1_mean_score_range": 0.7,
+    "ensemble_2plus1_max_score_range": 2,
+    "ensemble_2plus1_grade_stable_videos_out_of_10": 8,
+    "third_run_trigger_rate": "14/30 (46.7%)",
+    "expected_avg_runs_per_video": 2.47
+  },
+  "inflation_bias_analysis": {
+    "consistently_lower_all_3_runs": 4,
+    "consistently_higher_all_3_runs": 1,
+    "median_lower_than_db": 6,
+    "median_equal_to_db": 3,
+    "median_higher_than_db": 1,
+    "mean_tier_delta_median_minus_db": -0.9
+  },
+  "per_video": [
+    {
+      "video_id": "1119375393",
+      "db_rating": "S",
+      "single_run_scores": [
+        94,
+        94,
+        97
+      ],
+      "single_run_grades": [
+        "S",
+        "S",
+        "S+"
+      ],
+      "single_run_range": 3,
+      "ensemble_2plus1_outcomes": [
+        {
+          "pair": "run1+run2",
+          "mode": "2_run_mean",
+          "final_overall": 94,
+          "final_grade": "S",
+          "grade_boundary": false
+        },
+        {
+          "pair": "run1+run3",
+          "mode": "3_run_median",
+          "final_overall": 94,
+          "final_grade": "S",
+          "grade_boundary": false
+        },
+        {
+          "pair": "run2+run3",
+          "mode": "3_run_median",
+          "final_overall": 94,
+          "final_grade": "S",
+          "grade_boundary": false
+        }
+      ],
+      "ensemble_score_range": 0,
+      "ensemble_grades": [
+        "S",
+        "S",
+        "S"
+      ],
+      "ensemble_grade_100pct_stable": true,
+      "tier_delta_median_vs_db": 0
+    },
+    {
+      "video_id": "265198751",
+      "db_rating": "S-",
+      "single_run_scores": [
+        91,
+        86,
+        86
+      ],
+      "single_run_grades": [
+        "S-",
+        "A+",
+        "A+"
+      ],
+      "single_run_range": 5,
+      "ensemble_2plus1_outcomes": [
+        {
+          "pair": "run1+run2",
+          "mode": "3_run_median",
+          "final_overall": 86,
+          "final_grade": "A+",
+          "grade_boundary": true
+        },
+        {
+          "pair": "run1+run3",
+          "mode": "3_run_median",
+          "final_overall": 86,
+          "final_grade": "A+",
+          "grade_boundary": true
+        },
+        {
+          "pair": "run2+run3",
+          "mode": "2_run_mean",
+          "final_overall": 86,
+          "final_grade": "A+",
+          "grade_boundary": true
+        }
+      ],
+      "ensemble_score_range": 0,
+      "ensemble_grades": [
+        "A+",
+        "A+",
+        "A+"
+      ],
+      "ensemble_grade_100pct_stable": true,
+      "tier_delta_median_vs_db": -1
+    },
+    {
+      "video_id": "1046889896",
+      "db_rating": "A+",
+      "single_run_scores": [
+        88,
+        89,
+        88
+      ],
+      "single_run_grades": [
+        "A+",
+        "A+",
+        "A+"
+      ],
+      "single_run_range": 1,
+      "ensemble_2plus1_outcomes": [
+        {
+          "pair": "run1+run2",
+          "mode": "2_run_mean",
+          "final_overall": 88,
+          "final_grade": "A+",
+          "grade_boundary": false
+        },
+        {
+          "pair": "run1+run3",
+          "mode": "2_run_mean",
+          "final_overall": 88,
+          "final_grade": "A+",
+          "grade_boundary": false
+        },
+        {
+          "pair": "run2+run3",
+          "mode": "2_run_mean",
+          "final_overall": 88,
+          "final_grade": "A+",
+          "grade_boundary": false
+        }
+      ],
+      "ensemble_score_range": 0,
+      "ensemble_grades": [
+        "A+",
+        "A+",
+        "A+"
+      ],
+      "ensemble_grade_100pct_stable": true,
+      "tier_delta_median_vs_db": 0
+    },
+    {
+      "video_id": "1040247605",
+      "db_rating": "A",
+      "single_run_scores": [
+        86,
+        90,
+        86
+      ],
+      "single_run_grades": [
+        "A+",
+        "S-",
+        "A+"
+      ],
+      "single_run_range": 4,
+      "ensemble_2plus1_outcomes": [
+        {
+          "pair": "run1+run2",
+          "mode": "3_run_median",
+          "final_overall": 86,
+          "final_grade": "A+",
+          "grade_boundary": true
+        },
+        {
+          "pair": "run1+run3",
+          "mode": "2_run_mean",
+          "final_overall": 86,
+          "final_grade": "A+",
+          "grade_boundary": true
+        },
+        {
+          "pair": "run2+run3",
+          "mode": "3_run_median",
+          "final_overall": 86,
+          "final_grade": "A+",
+          "grade_boundary": true
+        }
+      ],
+      "ensemble_score_range": 0,
+      "ensemble_grades": [
+        "A+",
+        "A+",
+        "A+"
+      ],
+      "ensemble_grade_100pct_stable": true,
+      "tier_delta_median_vs_db": 1
+    },
+    {
+      "video_id": "1044346460",
+      "db_rating": "A-",
+      "single_run_scores": [
+        76,
+        75,
+        72
+      ],
+      "single_run_grades": [
+        "B+",
+        "B+",
+        "B"
+      ],
+      "single_run_range": 4,
+      "ensemble_2plus1_outcomes": [
+        {
+          "pair": "run1+run2",
+          "mode": "2_run_mean",
+          "final_overall": 76,
+          "final_grade": "B+",
+          "grade_boundary": false
+        },
+        {
+          "pair": "run1+run3",
+          "mode": "3_run_median",
+          "final_overall": 75,
+          "final_grade": "B+",
+          "grade_boundary": false
+        },
+        {
+          "pair": "run2+run3",
+          "mode": "3_run_median",
+          "final_overall": 75,
+          "final_grade": "B+",
+          "grade_boundary": false
+        }
+      ],
+      "ensemble_score_range": 1,
+      "ensemble_grades": [
+        "B+",
+        "B+",
+        "B+"
+      ],
+      "ensemble_grade_100pct_stable": true,
+      "tier_delta_median_vs_db": -1
+    },
+    {
+      "video_id": "1049880661",
+      "db_rating": "B+",
+      "single_run_scores": [
+        63,
+        65,
+        68
+      ],
+      "single_run_grades": [
+        "B-",
+        "B-",
+        "B"
+      ],
+      "single_run_range": 5,
+      "ensemble_2plus1_outcomes": [
+        {
+          "pair": "run1+run2",
+          "mode": "2_run_mean",
+          "final_overall": 64,
+          "final_grade": "B-",
+          "grade_boundary": false
+        },
+        {
+          "pair": "run1+run3",
+          "mode": "3_run_median",
+          "final_overall": 65,
+          "final_grade": "B-",
+          "grade_boundary": false
+        },
+        {
+          "pair": "run2+run3",
+          "mode": "2_run_mean",
+          "final_overall": 66,
+          "final_grade": "B-",
+          "grade_boundary": false
+        }
+      ],
+      "ensemble_score_range": 2,
+      "ensemble_grades": [
+        "B-",
+        "B-",
+        "B-"
+      ],
+      "ensemble_grade_100pct_stable": true,
+      "tier_delta_median_vs_db": -2
+    },
+    {
+      "video_id": "1056287464",
+      "db_rating": "B",
+      "single_run_scores": [
+        70,
+        73,
+        70
+      ],
+      "single_run_grades": [
+        "B",
+        "B+",
+        "B"
+      ],
+      "single_run_range": 3,
+      "ensemble_2plus1_outcomes": [
+        {
+          "pair": "run1+run2",
+          "mode": "3_run_median",
+          "final_overall": 70,
+          "final_grade": "B",
+          "grade_boundary": false
+        },
+        {
+          "pair": "run1+run3",
+          "mode": "2_run_mean",
+          "final_overall": 70,
+          "final_grade": "B",
+          "grade_boundary": false
+        },
+        {
+          "pair": "run2+run3",
+          "mode": "3_run_median",
+          "final_overall": 70,
+          "final_grade": "B",
+          "grade_boundary": false
+        }
+      ],
+      "ensemble_score_range": 0,
+      "ensemble_grades": [
+        "B",
+        "B",
+        "B"
+      ],
+      "ensemble_grade_100pct_stable": true,
+      "tier_delta_median_vs_db": 0
+    },
+    {
+      "video_id": "265532017",
+      "db_rating": "B-",
+      "single_run_scores": [
+        54,
+        51,
+        50
+      ],
+      "single_run_grades": [
+        "C",
+        "C",
+        "C-"
+      ],
+      "single_run_range": 4,
+      "ensemble_2plus1_outcomes": [
+        {
+          "pair": "run1+run2",
+          "mode": "2_run_mean",
+          "final_overall": 52,
+          "final_grade": "C",
+          "grade_boundary": false
+        },
+        {
+          "pair": "run1+run3",
+          "mode": "3_run_median",
+          "final_overall": 51,
+          "final_grade": "C",
+          "grade_boundary": true
+        },
+        {
+          "pair": "run2+run3",
+          "mode": "2_run_mean",
+          "final_overall": 50,
+          "final_grade": "C-",
+          "grade_boundary": true
+        }
+      ],
+      "ensemble_score_range": 2,
+      "ensemble_grades": [
+        "C",
+        "C",
+        "C-"
+      ],
+      "ensemble_grade_100pct_stable": false,
+      "tier_delta_median_vs_db": -2
+    },
+    {
+      "video_id": "152071305",
+      "db_rating": "C+",
+      "single_run_scores": [
+        38,
+        38,
+        42
+      ],
+      "single_run_grades": [
+        "D+",
+        "D+",
+        "D+"
+      ],
+      "single_run_range": 4,
+      "ensemble_2plus1_outcomes": [
+        {
+          "pair": "run1+run2",
+          "mode": "2_run_mean",
+          "final_overall": 38,
+          "final_grade": "D+",
+          "grade_boundary": false
+        },
+        {
+          "pair": "run1+run3",
+          "mode": "3_run_median",
+          "final_overall": 38,
+          "final_grade": "D+",
+          "grade_boundary": false
+        },
+        {
+          "pair": "run2+run3",
+          "mode": "3_run_median",
+          "final_overall": 38,
+          "final_grade": "D+",
+          "grade_boundary": false
+        }
+      ],
+      "ensemble_score_range": 0,
+      "ensemble_grades": [
+        "D+",
+        "D+",
+        "D+"
+      ],
+      "ensemble_grade_100pct_stable": true,
+      "tier_delta_median_vs_db": -3
+    },
+    {
+      "video_id": "1082037544",
+      "db_rating": "A+",
+      "single_run_scores": [
+        84,
+        85,
+        87
+      ],
+      "single_run_grades": [
+        "A",
+        "A",
+        "A+"
+      ],
+      "single_run_range": 3,
+      "ensemble_2plus1_outcomes": [
+        {
+          "pair": "run1+run2",
+          "mode": "2_run_mean",
+          "final_overall": 84,
+          "final_grade": "A",
+          "grade_boundary": false
+        },
+        {
+          "pair": "run1+run3",
+          "mode": "2_run_mean",
+          "final_overall": 86,
+          "final_grade": "A+",
+          "grade_boundary": true
+        },
+        {
+          "pair": "run2+run3",
+          "mode": "2_run_mean",
+          "final_overall": 86,
+          "final_grade": "A+",
+          "grade_boundary": true
+        }
+      ],
+      "ensemble_score_range": 2,
+      "ensemble_grades": [
+        "A",
+        "A+",
+        "A+"
+      ],
+      "ensemble_grade_100pct_stable": false,
+      "tier_delta_median_vs_db": -1
+    }
+  ]
+}

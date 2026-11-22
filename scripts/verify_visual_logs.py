@@ -109,9 +109,40 @@ false_with_img = []
 false_no_img = []
 
 for v, rec in recs.items():
+    req_convs = [str(x).strip() for x in (rec.get("worker_conversation_ids") or []) if str(x).strip()]
+    req_tokens = [str(x).strip() for x in (rec.get("audit_run_tokens") or []) if str(x).strip()]
     req_conv = str(rec.get("worker_conversation_id") or "").strip()
     req_token = str(rec.get("audit_run_token") or "").strip()
     req_started = str(rec.get("audit_started_at") or "").strip()
+
+    if len(req_convs) >= 2:
+        # 2+1 ensemble: EVERY run in the ensemble must exist on disk, match video_id (+ token), and have read images!
+        ensemble_runs = []
+        missing_any = False
+        for idx_c, cid in enumerate(req_convs):
+            cand = run_by_conv_id.get(cid)
+            exp_tok = req_tokens[idx_c] if idx_c < len(req_tokens) else ""
+            if cand and cand.get("vid") == v and (not exp_tok or cand.get("audit_run_token") == exp_tok):
+                ensemble_runs.append(cand)
+            else:
+                missing_any = True
+                break
+        if missing_any or not ensemble_runs:
+            no_tx_on_disk.append(v)
+            continue
+        matched.append(v)
+        has_img = all(r["img_calls"] > 0 and r["img_loaded"] > 0 for r in ensemble_runs)
+        self_vc = rec.get("visual_checked") is True
+        if self_vc and has_img:
+            true_with_img.append(v)
+        elif self_vc and not has_img:
+            true_no_img.append(v)
+        elif (not self_vc) and has_img:
+            false_with_img.append(v)
+        else:
+            false_no_img.append(v)
+        continue
+
     run = None
     if req_conv:
         cand = run_by_conv_id.get(req_conv)

@@ -18,6 +18,7 @@ import pathlib
 import re
 import shutil
 import sqlite3
+import statistics
 import subprocess
 import sys
 import time
@@ -26,6 +27,7 @@ import uuid
 sys.path.insert(0, r"E:\iketeru-creative-studio")
 sys.path.insert(0, r"E:\iketeru-eizou\scripts")
 from audit_video_media import inspect_video
+from blind_redact import assert_no_rating_leak, redact_for_blind_scoring, strip_audit_ch11
 
 REPO_ROOT = pathlib.Path(r"E:\iketeru-eizou")
 SQLITE_DB = pathlib.Path(r"E:\iketeru-creative-studio\data\iketeru_knowledge.db")
@@ -146,36 +148,10 @@ def is_near_grade_boundary(score: int) -> bool:
     return False
 
 
-def strip_rating_anchors(text: str) -> str:
-    """Remove existing rating/score lines so blind scoring is not anchored to prior DB grades."""
-    cleaned = strip_audit_ch11(text)
-    cleaned = re.sub(r"(?:総合|演出|ディレクション|技術|AI)(?:評価|ランク)\s*[:：=＝]\s*[SABCD][+-]?(?:\s*[（(]\d+点[）)])?", "[既存ランク非表示]", cleaned)
-    return cleaned
-
-
-def extract_excerpt(ai_analysis: str) -> str:
-    txt = strip_rating_anchors(ai_analysis)
-    if not txt:
-        return "(既存AI分析なし)"
-    secs = re.split(r"(?=^## \d+\.)", txt, flags=re.MULTILINE)
-    picked = []
-    has_ch8_improve = False
-    for s in secs:
-        st = s.strip()
-        if re.match(r"^## [045]\.", st):
-            picked.append(st[:450])
-        elif re.match(r"^## 8\.", st):
-            head = st.splitlines()[0] if st else ""
-            if "データベース登録情報" not in head:
-                picked.append(st[:450])
-                has_ch8_improve = True
-    if not has_ch8_improve:
-        for s in secs:
-            st = s.strip()
-            if re.match(r"^## 7\.", st):
-                picked.append(st[:450])
-                break
-    return "\n\n".join(picked)[:1900] if picked else txt[:1800]
+def extract_excerpt(ai_analysis: str, video_id: str = "") -> str:
+    txt = redact_for_blind_scoring(ai_analysis, max_chars=2200)
+    assert_no_rating_leak(txt, video_id=video_id)
+    return txt
 
 
 def load_done_ids() -> set[str]:
@@ -315,7 +291,9 @@ else:
             o_r = item["overall_rating"] or "B"
             d_r = item["direction_rating"] or "B"
             t_r = item["technique_rating"] or "B"
-            excerpt = extract_excerpt(item.get("ai_analysis") or "")
+            excerpt = extract_excerpt(item.get("ai_analysis") or "", video_id=vid)
+            # Fail-closed pre-send assertion: abort if any rating/score text leaked into excerpt
+            assert_no_rating_leak(excerpt, video_id=vid)
             media_summary = json.dumps(
                 {k: m.get(k) for k in ("status", "duration_sec", "width", "height", "fps", "mean_volume_db", "max_volume_db", "real_cuts", "error")},
                 ensure_ascii=False,
@@ -324,8 +302,19 @@ else:
                 "まず以下の静止画コンタクトシート画像を必ず `read_file` で確認してください:\n"
                 + "\n".join(f"- {s}" for s in sheets)
             )
-            audit_run_token = uuid.uuid4().hex[:12]
-            prompt = f"""あなたは映像ディレクター兼品質監査官です。
+
+            def _calc_scores(res_obj):
+                d_d = {k: max(0, min(20, int(v))) for k, v in res_obj["direction"].items()}
+                t_d = {k: max(0, min(20, int(v))) for k, v in res_obj["technique"].items()}
+                ds = sum(d_d.values())
+                ts = sum(t_d.values())
+                adj = max(-5, min(5, int(res_obj["synergyAdjustment"])))
+                os_ = max(0, min(100, round(ds * 0.55 + ts * 0.45) + adj))
+                return os_, ds, ts, adj, d_d, t_d
+
+            async def _run_single_blind_pass(run_num: int):
+                audit_run_token = uuid.uuid4().hex[:12]
+                prompt = f"""あなたは映像ディレクター兼品質監査官です。
 対象動画の静止画コンタクトシート・実測データ・既存AI分析（既存ランク非表示）を突き合わせ、**ブラインド独立採点として客観的プロ基準（Cannes Lions Film Craft / D&AD Pencil / ACC基準）で採点**し、最後に必ず `finish` ツールでJSON結果を返してください。
 
 【対象動画】
@@ -350,48 +339,106 @@ else:
 【既存AI分析抜粋（既存ランク非表示）】
 {excerpt}
 """
-            for attempt in range(3):
-                try:
-                    audit_started_at = datetime.now(timezone.utc).isoformat()
-                    out = await agent(
-                        prompt,
-                        schema=AUDIT_SCHEMA,
-                        role=f"Audit {vid}" + (f" [retry {attempt}]" if attempt else ""),
-                    )
-                    if isinstance(out, dict):
-                        # Reject & retry if scoring rationale (grade_change_reason) is empty (never auto-fill!)
-                        reason_tmp = str(out.get("grade_change_reason") or "").strip()
-                        if not reason_tmp:
-                            log(f"Rejected {vid} (attempt {attempt + 1}/3): empty scoring rationale (grade_change_reason); retrying.")
-                            if attempt == 2:
-                                return None
-                            continue
-                        worker_conv_id = str(out.get("_conversation_id") or out.get("conversation_id") or "")
-                        if not worker_conv_id:
-                            try:
-                                brain_root = pathlib.Path(r"C:\Users\t1257\.gemini\antigravity\brain")
-                                start_epoch = datetime.fromisoformat(audit_started_at).timestamp() - 5.0
-                                token_marker = f"AuditRunToken: {audit_run_token}"
-                                for p_tx in brain_root.glob("*/.system_generated/logs/transcript.jsonl"):
-                                    if p_tx.stat().st_mtime < start_epoch:
-                                        continue
-                                    head = p_tx.read_text(encoding="utf-8", errors="ignore")[:4000]
-                                    if token_marker in head:
-                                        worker_conv_id = p_tx.parent.parent.parent.name
-                                        break
-                            except Exception:
-                                pass
-                        out["_audit_run_token"] = audit_run_token
-                        out["_audit_started_at"] = audit_started_at
-                        out["_worker_conversation_id"] = worker_conv_id
-                    return out
-                except Exception as exc:
-                    msg = str(exc)
-                    if "429" in msg or "RESOURCE_EXHAUSTED" in msg:
-                        raise
-                    log(f"Agent error on {vid} (attempt {attempt + 1}/3): {msg[:160]}")
-                    if attempt == 2:
-                        return None
+                for attempt in range(3):
+                    try:
+                        audit_started_at = datetime.now(timezone.utc).isoformat()
+                        out = await agent(
+                            prompt,
+                            schema=AUDIT_SCHEMA,
+                            role=f"Audit {vid} r{run_num}" + (f" [retry {attempt}]" if attempt else ""),
+                        )
+                        if isinstance(out, dict):
+                            reason_tmp = str(out.get("grade_change_reason") or "").strip()
+                            if not reason_tmp:
+                                log(f"Rejected {vid} r{run_num} (attempt {attempt + 1}/3): empty scoring rationale; retrying.")
+                                if attempt == 2:
+                                    return None
+                                continue
+                            worker_conv_id = str(out.get("_conversation_id") or out.get("conversation_id") or "")
+                            if not worker_conv_id:
+                                try:
+                                    brain_root = pathlib.Path(r"C:\Users\t1257\.gemini\antigravity\brain")
+                                    start_epoch = datetime.fromisoformat(audit_started_at).timestamp() - 5.0
+                                    token_marker = f"AuditRunToken: {audit_run_token}"
+                                    for p_tx in brain_root.glob("*/.system_generated/logs/transcript.jsonl"):
+                                        if p_tx.stat().st_mtime < start_epoch:
+                                            continue
+                                        head = p_tx.read_text(encoding="utf-8", errors="ignore")[:4000]
+                                        if token_marker in head:
+                                            worker_conv_id = p_tx.parent.parent.parent.name
+                                            break
+                                except Exception:
+                                    pass
+                            out["_audit_run_token"] = audit_run_token
+                            out["_audit_started_at"] = audit_started_at
+                            out["_worker_conversation_id"] = worker_conv_id
+                        return out
+                    except Exception as exc:
+                        msg = str(exc)
+                        if "429" in msg or "RESOURCE_EXHAUSTED" in msg:
+                            raise
+                        log(f"Agent error on {vid} r{run_num} (attempt {attempt + 1}/3): {msg[:160]}")
+                        if attempt == 2:
+                            return None
+
+            # 2+1 Adaptive Ensemble: run 2 independent blind passes; if any axis differs by >= 4 pts, run a 3rd pass and take median
+            r1 = await _run_single_blind_pass(1)
+            r2 = await _run_single_blind_pass(2)
+            if not isinstance(r1, dict) or not isinstance(r2, dict):
+                return None
+            o1, d1, t1, adj1, dd1, td1 = _calc_scores(r1)
+            o2, d2, t2, adj2, dd2, td2 = _calc_scores(r2)
+
+            if abs(o1 - o2) <= 3 and abs(d1 - d2) <= 3 and abs(t1 - t2) <= 3:
+                ensemble_mode = "2_run_mean"
+                runs_list = [r1, r2]
+                final_d = int(round((d1 + d2) / 2))
+                final_t = int(round((t1 + t2) / 2))
+                final_adj = int(round((adj1 + adj2) / 2))
+                final_o = max(0, min(100, round(final_d * 0.55 + final_t * 0.45) + final_adj))
+                avg_d_rub = {k: round((dd1[k] + dd2[k]) / 2) for k in dd1}
+                avg_t_rub = {k: round((td1[k] + td2[k]) / 2) for k in td1}
+                merged = dict(r1)
+                merged["direction"] = reconcile_rubric_to_score(avg_d_rub, final_d)
+                merged["technique"] = reconcile_rubric_to_score(avg_t_rub, final_t)
+                merged["synergyAdjustment"] = final_adj
+            else:
+                r3 = await _run_single_blind_pass(3)
+                if not isinstance(r3, dict):
+                    return None
+                ensemble_mode = "3_run_median"
+                runs_list = [r1, r2, r3]
+                o3, d3, t3, adj3, dd3, td3 = _calc_scores(r3)
+                final_d = int(round(statistics.median([d1, d2, d3])))
+                final_t = int(round(statistics.median([t1, t2, t3])))
+                final_adj = int(round(statistics.median([adj1, adj2, adj3])))
+                final_o = int(round(statistics.median([o1, o2, o3])))
+                # Pick the run closest to median overall for narrative fields, reconcile rubric to exact median sums
+                scored_runs = [(abs(o1 - final_o), r1, dd1, td1), (abs(o2 - final_o), r2, dd2, td2), (abs(o3 - final_o), r3, dd3, td3)]
+                scored_runs.sort(key=lambda x: x[0])
+                _, med_run, med_dd, med_td = scored_runs[0]
+                merged = dict(med_run)
+                merged["direction"] = reconcile_rubric_to_score(med_dd, final_d)
+                merged["technique"] = reconcile_rubric_to_score(med_td, final_t)
+                merged["synergyAdjustment"] = final_adj
+
+            merged["_ensemble_mode"] = ensemble_mode
+            merged["_ensemble_final_overall"] = final_o
+            merged["_ensemble_runs"] = [
+                {
+                    "run": idx + 1,
+                    "overall": _calc_scores(rr)[0],
+                    "direction": _calc_scores(rr)[1],
+                    "technique": _calc_scores(rr)[2],
+                    "worker_conversation_id": rr.get("_worker_conversation_id", ""),
+                    "audit_run_token": rr.get("_audit_run_token", ""),
+                }
+                for idx, rr in enumerate(runs_list)
+            ]
+            merged["_worker_conversation_ids"] = [rr.get("_worker_conversation_id", "") for rr in runs_list]
+            merged["_audit_run_tokens"] = [rr.get("_audit_run_token", "") for rr in runs_list]
+            merged["visual_checked"] = all(bool(rr.get("visual_checked")) for rr in runs_list)
+            return merged
 
         chunk_raw = await parallel(chunk, make_agent)
         chunk_out = [r for r in chunk_raw if isinstance(r, dict) and r.get("video_id")]
@@ -410,7 +457,7 @@ else:
             dir_score = sum(d_dict.values())
             tech_score = sum(t_dict.values())
             adj = max(-5, min(5, int(res["synergyAdjustment"])))
-            overall_score = max(0, min(100, round(dir_score * 0.55 + tech_score * 0.45) + adj))
+            overall_score = int(res.get("_ensemble_final_overall")) if res.get("_ensemble_final_overall") is not None else max(0, min(100, round(dir_score * 0.55 + tech_score * 0.45) + adj))
             new_o_grade = score_to_grade(overall_score)
             new_d_grade = score_to_grade(dir_score)
             new_t_grade = score_to_grade(tech_score)
@@ -427,11 +474,17 @@ else:
             audit_run_token = str(res.get("_audit_run_token") or "")
             audit_started_at = str(res.get("_audit_started_at") or "")
             worker_conv_id = str(res.get("_worker_conversation_id") or "")
+            worker_conv_ids = res.get("_worker_conversation_ids") or ([worker_conv_id] if worker_conv_id else [])
+            audit_run_tokens = res.get("_audit_run_tokens") or ([audit_run_token] if audit_run_token else [])
+            ensemble_mode = str(res.get("_ensemble_mode") or "single")
+            ensemble_runs = res.get("_ensemble_runs") or []
             base_hash = str(item.get("base_analysis_sha256") or "")
             breakdown = {
                 "source": "rubric_unclamped",
-                "version": "2.1",
+                "version": "2.2",
                 "blindScoring": True,
+                "ensembleMode": ensemble_mode,
+                "ensembleRuns": ensemble_runs,
                 "gradeBoundary": grade_boundary,
                 "model": "antigravity-contact-sheet-audit",
                 "analysisStatus": "provisional" if is_provisional else "full_analysis",
@@ -439,8 +492,10 @@ else:
                 "visualVerificationStatus": "unverified_pending" if res.get("visual_checked") else "invalidated_no_visual",
                 "visualChecked": bool(res.get("visual_checked")),
                 "auditRunToken": audit_run_token,
+                "auditRunTokens": audit_run_tokens,
                 "auditStartedAt": audit_started_at,
                 "workerConversationId": worker_conv_id,
+                "workerConversationIds": worker_conv_ids,
                 "baseAnalysisSha256": base_hash,
                 "inspectionMethod": "contact_sheet_static_frames",
                 "analysisVerdict": res.get("analysis_verdict"),
@@ -469,9 +524,13 @@ else:
             prog_obj = {
                 "video_id": vid,
                 "title": item["title"],
+                "ensemble_mode": ensemble_mode,
+                "grade_boundary": grade_boundary,
                 "audit_run_token": audit_run_token,
+                "audit_run_tokens": audit_run_tokens,
                 "audit_started_at": audit_started_at,
                 "worker_conversation_id": worker_conv_id,
+                "worker_conversation_ids": worker_conv_ids,
                 "base_analysis_sha256": base_hash,
                 "previous_ratings": f"{item['overall_rating']}/{item['direction_rating']}/{item['technique_rating']}",
                 "ratings": f"{new_o_grade}/{new_d_grade}/{new_t_grade}",

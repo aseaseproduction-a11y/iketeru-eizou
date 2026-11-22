@@ -19,6 +19,7 @@ import uuid
 sys.path.insert(0, r"E:\iketeru-creative-studio")
 sys.path.insert(0, r"E:\iketeru-eizou\scripts")
 from audit_video_media import inspect_video
+from blind_redact import assert_no_rating_leak, redact_for_blind_scoring
 
 REPO_ROOT = pathlib.Path(r"E:\iketeru-eizou")
 BRAIN_ROOT = pathlib.Path(r"C:\Users\t1257\.gemini\antigravity\brain")
@@ -168,7 +169,8 @@ async def score_one_blind(job):
     vid = str(item["id"])
     m = item["media"]
     sheets = m["sheets"]
-    excerpt = strip_rating_anchors(item.get("ai_analysis") or "")[:2200]
+    excerpt = redact_for_blind_scoring(item.get("ai_analysis") or "", max_chars=2200)
+    assert_no_rating_leak(excerpt, video_id=vid)
     media_summary = json.dumps(
         {k: m.get(k) for k in ("status", "duration_sec", "width", "height", "fps", "mean_volume_db", "max_volume_db", "real_cuts")},
         ensure_ascii=False,
