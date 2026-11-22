@@ -41,6 +41,17 @@ test("verifyTier2Entry rejects bare homepage URLs, self-reported sites, and forb
   );
   assert.equal(resForbid.status, "failed");
   assert.match(resForbid.reason, /forbidden_tier_token/);
+
+  const resCcPurpose = await verifyTier2Entry(
+    {
+      video_id: "test_cc_purpose",
+      evidence_url: "https://winners.cannescorporate.com/single-entry/6294?award_id=8&category_id=120",
+      verify_rule: { work: ["The Great Transition"], tier: ["Gold Award"], category: ["Corporate Social Responsibility"] },
+    },
+    cache
+  );
+  assert.equal(resCcPurpose.status, "failed");
+  assert.match(resCcPurpose.reason, /cannes_corporate_purpose_category_not_craft_rule_1_2/);
 });
 
 test("verifyMetadataEntry enforces verbatim substring, non-commercial guard, and frozen R-LOW regex", () => {

@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-11-22T18:25:54.150Z",
+  "generated_at": "2026-11-22T18:34:33.434Z",
   "sanity_checks": {
-    "verified_total": 118,
+    "verified_total": 115,
     "bare_homepage_urls": 0,
     "missing_verification_stamp": 0,
     "tier2_excerpts_over_150": 0,
     "phase1_overlaps": 0,
     "tier2_source_tiers": {
       "secondary": 2,
-      "primary_official": 30
+      "primary_official": 27
     }
   },
   "pending_after_youtube_cooldown": {
@@ -52,8 +52,8 @@
         "ocr_pending_youtube_rate_limit": 0
       },
       "企業映像": {
-        "verified": 4,
-        "ocr_clean": 4,
+        "verified": 1,
+        "ocr_clean": 1,
         "ocr_pending_youtube_rate_limit": 0
       }
     },

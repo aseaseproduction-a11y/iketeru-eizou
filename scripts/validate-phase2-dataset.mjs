@@ -117,6 +117,7 @@ export function validatePhase2Dataset(entries, options = {}) {
     mode = "holdout", // "holdout" | "dev_additions"
     phase1Ids = new Set(),
     otherSplitIds = new Set(),
+    corporateTier2Unverified = false,
   } = options;
 
   const errors = [];
@@ -248,8 +249,15 @@ export function validatePhase2Dataset(entries, options = {}) {
   if (mode === "holdout") {
     for (const g of VALID_GENRES) {
       const c = byGenreStratum[g];
-      const minT2 = g === "企業映像" ? 3 : 5;
-      if (c.tier2_award < minT2) errors.push(`Holdout quota: ${g} tier2_award=${c.tier2_award} < ${minT2}`);
+      if (g === "企業映像" && corporateTier2Unverified) {
+        if (c.tier2_award !== 0) {
+          errors.push(`Holdout quota (corporateTier2Unverified): 企業映像 tier2_award=${c.tier2_award} !== 0`);
+        }
+        warnings.push("企業映像 Tier 2 is marked unverified (genre-level result reference only; N_T2=20)");
+      } else {
+        const minT2 = g === "企業映像" ? 3 : 5;
+        if (c.tier2_award < minT2) errors.push(`Holdout quota: ${g} tier2_award=${c.tier2_award} < ${minT2}`);
+      }
       if (c.non_tier2_pro !== 5) errors.push(`Holdout quota: ${g} non_tier2_pro=${c.non_tier2_pro} !== 5`);
       if (c.non_tier2_low !== 5) errors.push(`Holdout quota: ${g} non_tier2_low=${c.non_tier2_low} !== 5`);
     }
@@ -310,7 +318,8 @@ if (import.meta.url === `file:///${process.argv[1]?.replace(/\\/g, "/")}`) {
   }
 
   const entries = JSON.parse(fs.readFileSync(filePath, "utf8"));
-  const result = validatePhase2Dataset(entries, { mode, phase1Ids, otherSplitIds });
+  const corporateTier2Unverified = args.includes("--corporate-tier2-unverified");
+  const result = validatePhase2Dataset(entries, { mode, phase1Ids, otherSplitIds, corporateTier2Unverified });
   console.log(JSON.stringify(result, null, 2));
   process.exit(result.valid ? 0 : 1);
 }

@@ -1,8 +1,8 @@
 {
-  "verified_at": "2026-11-22T18:21:55.076Z",
+  "verified_at": "2026-11-22T18:34:19.645Z",
   "total": 131,
-  "verified": 118,
-  "failed": 13,
+  "verified": 115,
+  "failed": 16,
   "results": [
     {
       "video_id": "uH1PXkG8qD8",
@@ -412,40 +412,30 @@
       "video_id": "-BNMlu1P1Cc",
       "genre": "企業映像",
       "stratum": "tier2_award",
-      "evidence_url": "https://winners.cannescorporate.com/single-entry/4212?award_id=2&category_id=137",
+      "evidence_url": "https://winners.cannescorporate.com/single-entry/4212?award_id=10&category_id=86",
       "status": "verified",
-      "final_url": "https://winners.cannescorporate.com/single-entry/4212?award_id=2&category_id=137",
+      "final_url": "https://winners.cannescorporate.com/single-entry/4212?award_id=10&category_id=86",
       "source_tier": "primary_official",
       "matched_work": "The Broken Heart",
-      "matched_tier": "Grand Prix",
-      "min_distance_chars": 47,
-      "verbatim_excerpt": "Grand Prix Corporate Denmark B.23 Branded Content Videos The Broken Heart"
+      "matched_tier": "Best Directing",
+      "min_distance_chars": 1,
+      "verbatim_excerpt": "D.48 Best Directing The Broken Heart"
     },
     {
       "video_id": "Rs_NWwtBoks",
       "genre": "企業映像",
       "stratum": "tier2_award",
       "evidence_url": "https://winners.cannescorporate.com/single-entry/6294?award_id=8&category_id=120",
-      "status": "verified",
-      "final_url": "https://winners.cannescorporate.com/single-entry/6294?award_id=8&category_id=120",
-      "source_tier": "primary_official",
-      "matched_work": "The Great Transition",
-      "matched_tier": "Gold Award",
-      "min_distance_chars": 49,
-      "verbatim_excerpt": "Gold Award Netherlands A.7 Corporate Social Responsibility The Great Transition"
+      "status": "failed",
+      "reason": "cannes_corporate_purpose_category_not_craft_rule_1_2: tier=[Gold Award]"
     },
     {
       "video_id": "O1qBDmkRYL4",
       "genre": "企業映像",
       "stratum": "tier2_award",
       "evidence_url": "https://www.cannescorporate.com/en/winners2023.php",
-      "status": "verified",
-      "final_url": "https://www.cannescorporate.com/en/winners2023.php",
-      "source_tier": "primary_official",
-      "matched_work": "Studying is what you make of it!",
-      "matched_tier": "Grand Prix",
-      "min_distance_chars": 26,
-      "verbatim_excerpt": "Grand Prix for Best Corporate Media Studying is what you make of it! CH"
+      "status": "failed",
+      "reason": "cannes_corporate_purpose_category_not_craft_rule_1_2: tier=[Grand Prix]"
     },
     {
       "video_id": "y8oGkG0vuHw",
@@ -468,13 +458,8 @@
       "genre": "企業映像",
       "stratum": "tier2_award",
       "evidence_url": "https://winners.cannescorporate.com/single-entry/4774?award_id=8&category_id=177",
-      "status": "verified",
-      "final_url": "https://winners.cannescorporate.com/single-entry/4774?award_id=8&category_id=177",
-      "source_tier": "primary_official",
-      "matched_work": "Falling for Autumn",
-      "matched_tier": "Gold Award",
-      "min_distance_chars": 60,
-      "verbatim_excerpt": "Gold Award Switzerland A.15.c Tourism Films: Destinations – Countries Falling for Autumn"
+      "status": "failed",
+      "reason": "cannes_corporate_purpose_category_not_craft_rule_1_2: tier=[Gold Award]"
     },
     {
       "video_id": "sjURCaINARk",

@@ -92,7 +92,7 @@ Phase 1 の確認用（Holdout：`run_20261122_232100`、受賞13本＋非受賞
 | `R-T2-02` | **MV** | UKMVA（Cinematography / Editing / VFX / Animation / Production Design 等のクラフト部門） / D&AD Music Videos / SXSW MV Jury / Berlin MVA / SPACE SHOWER MUSIC AWARDS / 文化庁メディア芸術祭（MV） |
 | `R-T2-03` | **モーション** | Emmy Awards（Outstanding Main Title Design：Winner=`S` / Nominee=`A+`、`PRO_BENCHMARK_RUBRIC.md` 第3節対応） / SXSW Title Design / D&AD（Film Design / Graphic Design / Typography / Animation） / ADC Annual Awards（Motion / Film Craft） / Art of the Title 掲載本編（`A+`） / Vimeo Staff Pick（公式バッジ確認済かつ単発ループでない完成本編） / The Motion Awards（審査員部門のみ；一般投票 The Pulse は除外） |
 | `R-T2-04` | **3DCG/アニメ** | Annecy Official Competition・Commissioned / SIGGRAPH Computer Animation Festival（Electronic Theater） / Prix Ars Electronica Computer Animation / 文化庁メディア芸術祭（アニメ） / 新千歳空港国際アニメーション映画祭（審査員賞のみ） |
-| `R-T2-05` | **企業映像** | Cannes Corporate Media & TV Awards（クラフト・プロダクション部門） / New York Festivals TV & Film Awards（Craft / Corporate 部門） / D&AD・Cannes Film Craft のブランドフィルム / TOYOTA DIRECTORSCUT / ADFEST Fabulous Four（※ローカル OCR でロゴなし確認済のみ） |
+| `R-T2-05` | **企業映像** | Cannes Corporate Media & TV Awards（**Category D: Production Arts & Craft の Black Dolphin 中核クラフト部門のみ**：Best Directing / Cinematography / Editing / Sound Design / Animation・VFX / Production Design / Drones / Original Music；目的・テーマ別 A/B/C 部門および総合賞 Grand Prix はルール1.2により参考枠 `purpose_reference_only`、`PRO_BENCHMARK_RUBRIC.md` 第2.4節参照） / New York Festivals TV & Film Awards（Craft 部門のみ） / D&AD・Cannes Film Craft のブランドフィルム / TOYOTA DIRECTORSCUT 最優秀賞 / ADFEST Fabulous Four（※ローカル OCR でロゴなし確認済のみ） |
 
 - **`Tier 2` からの明示的除外（固定）**：
   - 企画・課題解決重視賞（**BOVA** 等）、コミュニケーション目的総合賞（**映文連アワード**、**JWTFF** 等）、観客賞・一般投票賞、学生部門限定賞（Student Academy Awards・学生CGコンテスト等）。
@@ -173,11 +173,11 @@ Phase 1 全83本および Phase 2 Dev 追加分と一切重複しない、**完�
 | **MV** | 5 | 5 | 5 | 15 |
 | **モーション** | 5 | 5 | 5 | 15 |
 | **3DCG/アニメ** | 5 | 5 | 5 | 15 |
-| **企業映像** | 5（下限3※） | 5 | 5 | 15（下限13） |
-| **合計** | **$N_{\text{T2}} = 25$**（下限23） | **$N_{\text{PRO}} = 25$** | **$N_{\text{LOW}} = 25$** | **75**（下限73） |
+| **企業映像** | 5（下限3※／3本未満なら未検証扱い→0） | 5 | 5 | 15（下限10） |
+| **合計** | **$N_{\text{T2}} = 25$**（下限23／企業未検証時 **20**） | **$N_{\text{PRO}} = 25$** | **$N_{\text{LOW}} = 25$** | **75**（下限73／企業未検証時 **70**） |
 
-- **主判定の対象標本**：`Tier 2`（$N_{\text{T2}} \in \{23, 24, 25\}$）vs `プロ商業`（$N_{\text{PRO}} = 25$）。
-- ※企業映像のみ、ルール1.2・Phase 1/Dev 非重複・ローカル OCR ロゴなし・実取得可能のすべてを満たす一次出典母数が限られるため、3〜4本に留まる場合は企業映像ジャンル別のみ `参考（n<5）` と明記する。他の4ジャンル（CM・MV・モーション・3DCG/アニメ）は必ず各区分5本以上を確保する。
+- **主判定の対象標本**：`Tier 2`（$N_{\text{T2}} \in \{23, 24, 25\}$、企業映像のクラフト賞が3本未満の場合は **4ジャンル計 $N_{\text{T2}} = 20$**）vs `プロ商業`（$N_{\text{PRO}} = 25$；$N_{\text{T2}} = 20$ 時は4ジャンル一致の $N_{\text{PRO}} = 20$ も参考併記）。
+- ※企業映像のみ、ルール1.2（目的系部門除外・Category D クラフト部門限定）・Phase 1/Dev 非重複・ローカル OCR ロゴなし・実取得可能のすべてを満たす一次出典母数が限られるため、(a) 3〜4本に留まる場合は企業映像ジャンル別のみ `参考（n<5）` と明記、(b) **3本未満しか確保できない場合は Phase 1 のモーションと同様に「企業映像 Tier 2 は未検証（ジャンル別結果は参考値）」と明記し、企業映像 Tier 2 を主判定から外して 4ジャンル×5＝$N_{\text{T2}} = 20$ 本（低〜中露出枠は $\lceil 0.60 \times 20 \rceil = 12$本以上）で凍結**する。他の4ジャンル（CM・MV・モーション・3DCG/アニメ）は必ず各区分5本以上を確保する。
 
 ---
 
@@ -188,8 +188,8 @@ Phase 1 全83本および Phase 2 Dev 追加分と一切重複しない、**完�
 - ただし、**合否を判定する「主判定方式」は事前に「①静止画基本＋動画併用のハイブリッド方式」の1つに固定**する。
 - ②静止画単独・③動画単独の結果は **参考値（アブレーション・コスト比較）** として併記するのみであり、確認用の結果を見て主判定方式を差し替えることは厳格に禁止する。
 
-### 5.2 可変本数（$N_{\text{T2}} = 23\text{〜}25$）の合格本数換算式（事前固定）
-企業映像が下限適用となり本数 $N$ が変動した場合の解釈ブレを防ぐため、割合基準の必要達成本数・許容誤り上限本数を以下の式で事前に完全固定する：
+### 5.2 可変本数（$N_{\text{T2}} \in \{20, 23, 24, 25\}$）の合格本数換算式（事前固定）
+企業映像が下限適用または未検証扱い（$N_{\text{T2}} = 20$）となり本数 $N$ が変動した場合の解釈ブレを防ぐため、割合基準の必要達成本数・許容誤り上限本数を以下の式で事前に完全固定する：
 - **下限基準（$\ge p$）の必要達成本数**：$\text{必要本数} = \lceil p \times N \rceil$
 - **上限基準（$\le q$）の許容誤り上限本数**：$\text{許容上限本数} = \lfloor q \times N \rfloor$
 
@@ -198,10 +198,10 @@ Phase 1 全83本および Phase 2 Dev 追加分と一切重複しない、**完�
 
 | # | 指標（主判定対象：**`Tier 2` vs `プロ商業` のみ**） | 合格基準（固定案） | 本数別の exact 合格ライン（事前固定式） | 設計意図 |
 |---|---|---|---|---|
-| **P-1** | **ROC-AUC（Pairwise：`Tier 2` vs `プロ商業`）** | **$\ge 0.90$** | 連続値 $\ge 0.9000$ | 簡単な低品質を混ぜず、プロ商業の中から受賞水準を見抜く純粋な識別力。 |
-| **P-2** | **感度（`Tier 2` 再現率：`score >= T_award`）** | **$\ge 80.0\%$** | $\lceil 0.80 \times N_{\text{T2}} \rceil$<br>（25本→**20本以上** / 24本→**20本以上** / 23本→**19本以上**） | 受賞水準の秀作を見落とさない力（Phase 1 使用済み参考値：動画 85.2%・静止画 88.9%）。 |
-| **P-3** | **特異度（`プロ商業` 特異度：`score < T_award`）** | **$\ge 84.0\%$** | $\lceil 0.84 \times 25 \rceil =$ **21本以上**（誤陽性 4本以内） | 負例から低品質25本を外し純粋なプロ商業のみとした厳格条件でも、推奨精度を高水準に保つため 84% に設定（Phase 1 使用済み非受賞43本の実測は動画 39/43＝90.7%・静止画 37/43＝86.0%、うち `>=63` 商業帯約29本に対する実質特異度は静止画約79%・動画約86%であり、境界を動画精査するハイブリッド方式の合格ラインとして 84%［誤陽性4本以内］を採用）。 |
-| **P-4** | **重大誤り上限 A（`Tier 2` を低品質帯 `< T_low` に置く誤り）** | **$0.0\%$** | $\lfloor 0.00 \times N_{\text{T2}} \rfloor =$ **0本**（23〜25本共通） | 受賞水準を低品質帯に落とす致命的誤りを厳格禁止（Phase 1 参考値：両方式とも 0/27＝0.0%）。 |
+| **P-1** | **ROC-AUC（Pairwise：`Tier 2` vs `プロ商業`）** | **$\ge 0.90$** | 連続値 $\ge 0.9000$（※$N_{\text{T2}}=20$ 時は全プロ商業25本対比を主判定とし、4ジャンル一致20本対比も必ず併記） | 簡単な低品質を混ぜず、プロ商業の中から受賞水準を見抜く純粋な識別力。 |
+| **P-2** | **感度（`Tier 2` 再現率：`score >= T_award`）** | **$\ge 80.0\%$** | $\lceil 0.80 \times N_{\text{T2}} \rceil$<br>（25本→**20本以上** / 24本→**20本以上** / 23本→**19本以上** / 企業未検証20本→**16本以上**） | 受賞水準の秀作を見落とさない力（Phase 1 使用済み参考値：動画 85.2%・静止画 88.9%）。 |
+| **P-3** | **特異度（`プロ商業` 特異度：`score < T_award`）** | **$\ge 84.0\%$** | $\lceil 0.84 \times 25 \rceil =$ **21本以上**（誤陽性 4本以内；4ジャンル一致20本参考値は $\lceil 0.84 \times 20 \rceil =$ 17本以上） | 負例から低品質25本を外し純粋なプロ商業のみとした厳格条件でも、推奨精度を高水準に保つため 84% に設定（Phase 1 使用済み非受賞43本の実測は動画 39/43＝90.7%・静止画 37/43＝86.0%、うち `>=63` 商業帯約29本に対する実質特異度は静止画約79%・動画約86%であり、境界を動画精査するハイブリッド方式の合格ラインとして 84%［誤陽性4本以内］を採用）。 |
+| **P-4** | **重大誤り上限 A（`Tier 2` を低品質帯 `< T_low` に置く誤り）** | **$0.0\%$** | $\lfloor 0.00 \times N_{\text{T2}} \rfloor =$ **0本**（20〜25本共通） | 受賞水準を低品質帯に落とす致命的誤りを厳格禁止（Phase 1 参考値：両方式とも 0/27＝0.0%）。 |
 
 ### 5.4 補助判定（Secondary：`明らかな低品質` の下方分離）の合格基準（固定案）
 対象：**主判定方式（ハイブリッド方式）**。**透かし規則 `R-LOW-04` を「①含む全低品質（$N_{\text{LOW}}=25$）」と「②除く低品質（`R-LOW-01`〜`03` のみ、$N \ge 20$）」の両方で算出・報告**する。

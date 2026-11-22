@@ -1,0 +1,114 @@
+{
+  "generated_at": "2026-11-23T03:34:00+09:00",
+  "rule_basis": "Rule 1.2 (PRO_BENCHMARK_RUBRIC.md Section 2.4 & CALIBRATION_PHASE2_DESIGN.md R-T2-05)",
+  "official_categories_url": "https://www.cannescorporate.com/en/categories.php",
+  "policy": "Only Cannes Corporate Category D (Production Arts & Craft — Black Dolphin core craft categories: Best Directing, Cinematography, Editing, Sound Design, Animation/Graphics/VFX, Production Design, Drones, Original Music) qualify for Tier 2. Thematic purpose categories (A/B/C) and Grand Prix Corporate are moved to purpose_reference_only (objective_tier: null).",
+  "moved_to_purpose_reference_only": [
+    {
+      "video_id": "Rs_NWwtBoks",
+      "title": "The Great Transition, 2025-2050",
+      "genre": "企業映像",
+      "cannes_corporate_awards": [
+        "A.7 Corporate Social Responsibility (Gold Award, single-entry/6294?award_id=8&category_id=120)",
+        "A.8 Environmental Issues and Sustainability (Silver Award, single-entry/6294?award_id=9&category_id=115)",
+        "A.2.b Marketing Communication - B2C (Silver Award, single-entry/6294?award_id=9&category_id=121)"
+      ],
+      "category_d_craft_award": null,
+      "objective_tier": null,
+      "classification": "purpose_reference_only",
+      "reason": "Thematic/purpose categories only; no Category D Production Arts & Craft Black Dolphin award."
+    },
+    {
+      "video_id": "dRID0fo-2FQ",
+      "title": "Falling for Autumn | Switzerland Tourism",
+      "genre": "企業映像",
+      "cannes_corporate_awards": [
+        "A.15.c Tourism Films: Destinations - Countries (Gold Award, single-entry/4774?award_id=8&category_id=177)"
+      ],
+      "category_d_craft_award": null,
+      "objective_tier": null,
+      "classification": "purpose_reference_only",
+      "reason": "Tourism thematic category only (same nature as JWTFF); no Category D Production Arts & Craft Black Dolphin award."
+    },
+    {
+      "video_id": "O1qBDmkRYL4",
+      "title": "Studying means… (Studying is what you make of it!)",
+      "genre": "企業映像",
+      "cannes_corporate_awards": [
+        "A.1 Corporate Image / Grand Prix for Best Corporate Media (2023, single-entry/1471?award_id=8&category_id=50)"
+      ],
+      "category_d_craft_award": null,
+      "objective_tier": null,
+      "classification": "purpose_reference_only",
+      "reason": "Corporate Image thematic / Grand Prix overall only; no Category D Production Arts & Craft Black Dolphin award."
+    }
+  ],
+  "retained_via_separate_category_d_craft_award": [
+    {
+      "video_id": "-BNMlu1P1Cc",
+      "title": "The Broken Heart – Your Choices, Your Health, Your Future (Novo Nordisk)",
+      "genre": "企業映像",
+      "category_d_craft_award": "2025 D.48 Best Directing (Black Dolphin — Production Arts & Craft)",
+      "official_craft_url": "https://winners.cannescorporate.com/single-entry/4212?award_id=10&category_id=86",
+      "note": "Previously pointed to B.23 Branded Content / Grand Prix Corporate (award_id=2&category_id=137). Independently verified on winners.cannescorporate.com to have separately won Category D Black Dolphin Best Directing (award_id=10&category_id=86). Retained strictly on the basis of its Category D Craft award."
+    }
+  ],
+  "candidate_category_d_craft_pool_to_check_after_youtube_cooldown": [
+    {
+      "year": 2025,
+      "award": "D.49 Best Cinematography (Black Dolphin)",
+      "title": "BMW M3 CS Kampagne",
+      "client": "BMW AG",
+      "official_url": "https://winners.cannescorporate.com/single-entry/4946?award_id=11&category_id=158"
+    },
+    {
+      "year": 2026,
+      "award": "D.51 Best Cinematography (Black Dolphin)",
+      "title": "Wild ABHA",
+      "client": "Aramco",
+      "official_url": "https://winners.cannescorporate.com/single-entry/5685?award_id=11&category_id=158"
+    },
+    {
+      "year": 2026,
+      "award": "D.57 Best Production Design (Black Dolphin)",
+      "title": "Saudi Founding Day 2026",
+      "client": "Aramco",
+      "official_url": "https://winners.cannescorporate.com/single-entry/5682?award_id=17&category_id=166"
+    },
+    {
+      "year": 2024,
+      "award": "D.47 Best Sound Design (Black Dolphin)",
+      "title": "A matter of substance",
+      "client": "Michelin",
+      "official_url": "https://winners.cannescorporate.com/single-entry/3287?award_id=15&category_id=162"
+    },
+    {
+      "year": 2024,
+      "award": "D.48 Best Animation, Graphics and Visual Effects (Black Dolphin)",
+      "title": "Team Green",
+      "client": "Samsung / Bloomberg Media",
+      "official_url": "https://winners.cannescorporate.com/single-entry/3649?award_id=16&category_id=163"
+    },
+    {
+      "year": 2024,
+      "award": "D.42 Best Directing & D.43 Best Cinematography (Black Dolphin)",
+      "title": "THE BALLET LESSON",
+      "client": "SysDiagno Biotech",
+      "official_url": "https://winners.cannescorporate.com/single-entry/3118?award_id=10&category_id=86"
+    }
+  ],
+  "fallback_rule_if_fewer_than_3_craft_corporate_films_retrievable": {
+    "status": "corporate_tier2_unverified",
+    "holdout_tier2_n": 20,
+    "holdout_total_n": 70,
+    "genres_in_primary_tier2": ["CM (5)", "MV (5)", "モーション (5)", "3DCG/アニメ (5)"],
+    "corporate_genre_reporting": "未検証（ジャンル別結果は参考値）",
+    "pass_thresholds_for_n20": {
+      "P1_roc_auc": ">= 0.9000 (N_T2=20 vs N_PRO=25 primary; 4-genre matched N_T2=20 vs N_PRO=20 also reported)",
+      "P2_sensitivity": "ceil(0.80 * 20) = 16/20 (80.0%)",
+      "P3_specificity": "ceil(0.84 * 25) = 21/25 (84.0%; 4-genre matched ceil(0.84 * 20) = 17/20 also reported)",
+      "P4_major_error_a": "floor(0.00 * 20) = 0/20 (0.0%)",
+      "low_exposure_recent_min": "ceil(0.60 * 20) = 12/20 (60.0%)"
+    }
+  }
+}
