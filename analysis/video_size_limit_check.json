@@ -1,0 +1,29 @@
+{
+  "checked_at": "2026-11-22T09:33:46Z",
+  "purpose": "Empirical test of read_file on the single largest and longest video across all 82 fetchable benchmark videos (8pOOxOo7YYo) without recompression, to verify whether a 15MB re-encode rule is needed.",
+  "tested_video": {
+    "id": "8pOOxOo7YYo",
+    "split_role": "holdout_craft",
+    "source_method": "ytdlp_format_18_original",
+    "duration_sec": 755.763,
+    "file_size_bytes": 42094264,
+    "file_size_mib": 40.14,
+    "resolution": "640x360",
+    "staged_path": "E:\\iketeru_blind_eval\\_size_limit_test\\8pOOxOo7YYo.mp4"
+  },
+  "subagent_verification": {
+    "conversation_id": "1b7e8541-d6d5-4dea-a5b7-56bf3c65a7ee",
+    "subagent_type": "research",
+    "model": "gemini-4-neon-high",
+    "read_succeeded": true,
+    "error_message": null,
+    "transcript_media_mime_type": "video/mp4",
+    "step_3_input_tokens": 79678,
+    "opening_visual_verified": true,
+    "midpoint_visual_verified": true,
+    "ending_visual_verified": true,
+    "audio_verified_beginning_and_end": true,
+    "audit_blind_transcript_valid": true
+  },
+  "conclusion": "read_file ingested the largest & longest video in the entire 82-video benchmark (40.14 MiB / 755.8s) natively with zero error and full video+audio from 0:00 to 12:35 (~79.7k input tokens). Therefore, the pre-emptive 15MB recompression rule is REMOVED: all 82 benchmark videos will be passed at their original downloaded quality without recompression. Compression/splitting is reserved strictly as an exception ONLY if an unexpected runtime read_file size/token limit error occurs."
+}
