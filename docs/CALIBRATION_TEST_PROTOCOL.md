@@ -1,6 +1,6 @@
-# 較正テスト実施プロトコル（事前固定版・v5）
+# 較正テスト実施プロトコル（事前固定版・v6）
 
-本プロトコルは、較正テストの実行前にすべての条件・データ分割・隔離環境・実行ごとランダム不透明ID（`blind_id`）と固定パス文法・凍結ひな型による指示文完全一致監査・ファイル別メディア確認・解像度非対称の記録・`scdet`/スロー区間パラメータ・調整回数上限・方式採用ルール・合格基準を固定し、結果を見た後の基準変更（後出し調整）を禁止するために策定する。
+本プロトコルは、較正テストの実行前にすべての条件・データ分割・隔離環境・メタデータ削除・SHA-256 マニフェスト固定・実行ごとランダム不透明ID（`blind_id`）と固定パス文法・凍結ひな型による指示文完全一致監査・ファイル別メディア確認・解像度非対称の記録・`scdet`/スロー区間パラメータ・調整回数上限・方式採用ルール・合格基準を固定し、結果を見た後の基準変更（後出し調整）を禁止するために策定する。
 
 ---
 
@@ -32,8 +32,9 @@
        1. `max_cuts_per_10s >= 12`（超高速カット・平均0.83秒未満）：窓幅 `W = 5秒`・1.0秒刻みで全編から最大カット数の5秒区間（同点時は最も早い区間）を切り出し、**4倍スロー（`setpts=4.0*PTS`、出力20秒・実質約4fps、無音 `-an`）**を生成。
        2. `6 <= max_cuts_per_10s < 12`：窓幅 `W = 10秒`・1.0秒刻みで全編から最大カット数の10秒区間（同点時は最も早い区間）を切り出し、**2倍スロー（`setpts=2.0*PTS`、出力20秒・実質約2fps、無音 `-an`）**を生成。
        3. `max_cuts_per_10s < 6` かつジャンルが `モーション`：中央10秒区間（`start = max(0, floor((duration - 10) / 2))`, `end = min(duration, start + 10)`）を切り出し、**2倍スロー（`setpts=2.0*PTS`、出力20秒・実質約2fps、無音 `-an`）**を生成。
-     - **静止画方式との公平比較**：
-       - スロー区間が発動した同一動画・同一区間 `[start, end]` について、静止画方式でも**同じ密集区間を切り出した高密度4×4コンタクトシート（16フレーム追加）**を供給し、時間分解能の偏りを防ぐ。
+     - **静止画方式との公平比較（コンタクトシート生成仕様固定）**：
+       - 全編コンタクトシート（`.jpg` のみ、4×4グリッド＝16フレーム/枚、`1920×1080`＝1コマ `480×270`）は、動画尺に応じて機械的に枚数を決定する：`duration <= 120s` は1枚（16コマ）、`120s < duration <= 300s` は2枚（32コマ）、`duration > 300s` は3枚（48コマ）を `[0, duration]` から均等抽出し、`-map_metadata -1` でメタデータを除去して `<blind_id>_sheet_01.jpg` 等へ出力する。
+       - スロー区間が発動した同一動画・同一区間 `[start, end]` について、静止画方式でも**同じ密集区間を切り出した高密度4×4コンタクトシート（16フレーム追加・`<blind_id>_sheet_dense.jpg`）**を供給し、時間分解能の偏りを防ぐ。
      - **記録義務**：全動画について `scdet_threshold`, `max_cuts_per_10s`, `slowmo_applied`, `slowmo_factor` (`2x`/`4x`), `slowmo_window_sec` (`[start, end]`) をログに記録する。
 
 ---
@@ -49,18 +50,23 @@
      - `run_id`：`^run_\d{8}_\d{6}$`（例：`run_20261122_190000`）
      - 動画方式：`E:\iketeru_blind_eval\<run_id>\video\<blind_id>\<blind_id>.mp4`（スロー発動時は `<blind_id>_slow.mp4` を併置）
      - 静止画方式：`E:\iketeru_blind_eval\<run_id>\contact_sheet\<blind_id>\<blind_id>_sheet_01.jpg` 等（`\d{2}` 連番、高密度区間発動時は `<blind_id>_sheet_dense.jpg` を併置）
-   - `E:\iketeru_blind_eval\<run_id>\` 配下には上記採点対象ファイル以外を一切置かない（`blind_id_map.json` の隔離フォルダ内保存もコード上で禁止）。
+   - **付加情報（メタデータ）の完全削除**：YouTube の `.mp4` に含まれる `creation_time`・`encoder=Google` や Vimeo 保存分の `Lavf` 等が年代・配信サイトのヒントになることを防ぐため、配置する全 `.mp4` を `ffmpeg -map_metadata -1 -map_chapters -1 -fflags +bitexact -flags:v +bitexact -flags:a +bitexact -c copy`（スロー生成時も `-map_metadata -1 -map_chapters -1 -fflags +bitexact`）でメタデータ消去し、全 `.jpg` も `-map_metadata -1` で出力する。
+   - **採点開始前の SHA-256 マニフェスト固定（git コミット必須）**：採点を1本でも開始する前に、隔離フォルダ外の `analysis/runs/<run_id>/run_manifest.json` に以下を記録して git コミットする：
+     1. `blind_id_map.json` の SHA-256
+     2. 各 `video_id` の取得元ファイルの SHA-256（メタデータ削除前）
+     3. 配置した全ファイル（メタデータ削除後の `.mp4` / `.jpg`）の SHA-256
+   - `E:\iketeru_blind_eval\<run_id>\` 配下には上記採点対象ファイル以外を一切置かない（`blind_id_map.json` や `run_manifest.json` の隔離フォルダ内保存もコード上で禁止）。
    - 採点プロンプトには **元の動画ID・作品タイトル・チャンネル名・動画URL・既存DBランク・受賞歴・AI分析本文を一切渡さない**（渡すのは上記固定文法の隔離ファイルパスと共通の `ffmpeg scdet`/LUFS 実測数値のみ）。
-3. **採点後の会話ログ機械監査（対応表照合＋凍結ひな型完全一致＋ファイル別メディア検証・違反は即無効）**：
+3. **採点後の会話ログ機械監査（マニフェストSHA-256照合＋対応表照合＋凍結ひな型完全一致＋ファイル別メディア検証・違反は即無効）**：
    - 採点指示文は必ず **`scripts/lib/calibration-prompt-template.mjs` の凍結ひな型** から生成し、差し込める値は**「`run_id`・`blind_id` から機械的に決まる隔離ファイルパス」と「`ffmpeg scdet` / LUFS / スロー区間の数値のみ」**に厳格限定する（自由な `run_id`・自由なファイル名・元動画ID・`..`・自由文字列の差し込みを構造的に禁止）。
-   - 採点完了後、全サブエージェントの `transcript.jsonl`（`truncated_fields` がある場合は `transcript_full.jsonl`）に対して **`scripts/audit-blind-transcript.mjs --strict --parent-id <親会話ID> --prompt-spec <spec.json> --blind-map <blind_id_map.json>`** を実行し、以下をすべて機械検証する（`--strict` では `--parent-id`・`--prompt-spec`・`--blind-map` の3つを必須とし、いずれか省略時は自動で `valid: false`・終了コード1とする）：
-     - **(a) 対応表による `video_id` ↔ `blind_id` ↔ パス一致検証**：隔離フォルダ外の `blind_id_map.json` を用いて、監査対象の `video_id` に対応する一意の `blind_id` を照合し、指示仕様・フォルダ名・ファイル名接頭辞がすべてその `blind_id` と完全一致すること（別作品のフォルダや元の動画IDが混入した場合は即無効）。
+   - 採点完了後、全サブエージェントの `transcript.jsonl`（`truncated_fields` がある場合は `transcript_full.jsonl`）に対して **`scripts/audit-blind-transcript.mjs --strict --parent-id <親会話ID> --prompt-spec <spec.json> --blind-map <blind_id_map.json> --run-manifest <run_manifest.json>`** を実行し、以下をすべて機械検証する（`--strict` では `--parent-id`・`--prompt-spec`・`--blind-map`・`--run-manifest` の4つを必須とし、いずれか省略時は自動で `valid: false`・終了コード1とする）：
+     - **(a) マニフェスト SHA-256 照合＋対応表による `video_id` ↔ `blind_id` ↔ パス一致検証**：コミット済みの `run_manifest.json` と、ディスク上の `blind_id_map.json` および配置ファイル実物の SHA-256 を照合し、1バイトでも不一致があれば即無効とする。その上で、`video_id` に対応する一意の `blind_id` が指示仕様・フォルダ名・ファイル名接頭辞と完全一致することを確認する（対応表の入れ替え・別作品のフォルダ・元動画IDの混入はすべて即無効）。
      - **(b) 凍結ひな型との完全一致照合（根本対策）＋多層漏洩検査**：`USER_INPUT` / `SYSTEM_MESSAGE` から抽出した指示文が、`--prompt-spec` から再生成した凍結ひな型文字列と**1文字の差異もなく完全一致**すること。加えて多層防御として、元の動画ID・作品固有のタイトル・URL・賞名・部門名・チャンネル名および単独ランク表記・広範な賞キーワードの混入チェックも併用する。
      - **(c) 許可ツールの厳格ホワイトリスト**：サブエージェントのツール呼び出しは、以下の**2種類のみ**を許可する：
        1. 割り当てられた隔離フォルダ内の対象ファイルパスに対する **`read_file`**
        2. 指定された親エージェントの会話ID（`--parent-id`）へ結果を返す **`send_message`**
        これら以外のツール呼び出し（`run_command` / `search_web` / `list_dir` / 割り当て外ファイル・別動画フォルダ・自由ファイル名・元動画IDパス・`..` パスへの `read_file` / 親以外への `send_message` 等）が1回でもあれば**自動無効**とする。
-     - **(d) 割り当てファイルごとの直後メディア確認**：`read_file` の各呼び出しの**直後のレスポンスステップ**に、ファイル種別に対応する実メディア（`.mp4` なら `video/mp4`、`.jpg`/`.png` なら `image/*`）が存在することを**割り当てた全ファイルそれぞれについて**確認する。
+     - **(d) 割り当てファイルごとの直後メディア確認**：`read_file` の各呼び出しの**直後のレスポンスステップ**に、ファイル種別に対応する実メディア（`.mp4` なら `video/mp4`、`.jpg` なら `image/jpeg`）が存在することを**割り当てた全ファイルそれぞれについて**確認する。
      - **(e) 自動回帰テストの維持**：上記 (a)〜(d) を偽ログで検証する自動テスト（`scripts/audit-blind-transcript.test.mjs`）を `node --test` で常時パスさせる。
 4. **採点後の既知・表示チェック（感度分析）**：
    - 点数確定後（同じ応答の末尾）に、採点者へ以下の3問を必ず回答させる：

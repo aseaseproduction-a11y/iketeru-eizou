@@ -1,0 +1,24 @@
+{
+  "version": "v1_baseline",
+  "runId": "run_20261122_195500",
+  "blindId": "fc24d0e6dc02",
+  "mode": "video",
+  "assignedFiles": [
+    "E:\\iketeru_blind_eval\\run_20261122_195500\\video\\fc24d0e6dc02\\fc24d0e6dc02.mp4",
+    "E:\\iketeru_blind_eval\\run_20261122_195500\\video\\fc24d0e6dc02\\fc24d0e6dc02_slow.mp4"
+  ],
+  "metrics": {
+    "duration_sec": 61.4,
+    "scdet_threshold": 10,
+    "total_cuts": 43,
+    "avg_cut_interval_sec": 1.43,
+    "max_cuts_per_10s": 10,
+    "integrated_lufs": -23.5,
+    "slowmo_applied": true,
+    "slowmo_factor": "2x",
+    "slowmo_window_sec": [
+      0,
+      10
+    ]
+  }
+}

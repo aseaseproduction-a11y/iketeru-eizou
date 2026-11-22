@@ -1,10 +1,11 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
+import crypto from "node:crypto";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import { auditTranscript } from "./audit-blind-transcript.mjs";
+import { auditTranscript, sha256File } from "./audit-blind-transcript.mjs";
 import { generateBlindIdMap, saveBlindIdMap } from "./lib/blind-id-map.mjs";
 import { renderCalibrationPrompt } from "./lib/calibration-prompt-template.mjs";
 
@@ -64,13 +65,64 @@ function baseVideoSpec({ runId = RUN_ID, blindId = BLIND_A, assignedFiles, slowm
   };
 }
 
-test("1. Valid strict run (single video + opaque blind_id + exact frozen prompt + video/mp4 media + parent send_message)", () => {
+/**
+ * Helper to create real temp blind_id_map.json, staged dummy files (resolved via stagedFilePathResolver),
+ * and matching run_manifest.json with genuine SHA-256 hashes.
+ */
+function setupManifestFixture(dir, { videoId = VIDEO_A, blindId = BLIND_A, mode = "video", assignedFiles, mapObj = SAMPLE_BLIND_MAP }) {
+  const mapPath = path.join(dir, "blind_id_map.json");
+  fs.writeFileSync(mapPath, JSON.stringify(mapObj, null, 2) + "\n", "utf8");
+  const mapSha = sha256File(mapPath);
+
+  const diskFiles = new Map();
+  const stagedEntries = [];
+  for (let i = 0; i < assignedFiles.length; i++) {
+    const virtualPath = assignedFiles[i];
+    const realFile = path.join(dir, `staged_${i}_${path.win32.basename(virtualPath)}`);
+    fs.writeFileSync(realFile, `mock-binary-content-${videoId}-${blindId}-${i}`, "utf8");
+    diskFiles.set(virtualPath, realFile);
+    stagedEntries.push({
+      path: virtualPath,
+      sha256: sha256File(realFile),
+      size_bytes: fs.statSync(realFile).size,
+    });
+  }
+
+  const manifestObj = {
+    run_id: mapObj.run_id,
+    created_at: "2026-11-22T10:00:00.000Z",
+    blind_id_map_sha256: mapSha,
+    items: {
+      [videoId]: {
+        video_id: videoId,
+        blind_id: blindId,
+        source_sha256: crypto.createHash("sha256").update(`raw-source-${videoId}`).digest("hex"),
+        staged_files: {
+          [mode]: stagedEntries,
+        },
+      },
+    },
+  };
+  const manifestPath = path.join(dir, "run_manifest.json");
+  fs.writeFileSync(manifestPath, JSON.stringify(manifestObj, null, 2) + "\n", "utf8");
+
+  return {
+    mapPath,
+    manifestPath,
+    manifestObj,
+    diskFiles,
+    stagedFilePathResolver: p => diskFiles.get(p) || p,
+  };
+}
+
+test("1. Valid strict run (single video + opaque blind_id + exact frozen prompt + manifest SHA-256 + video/mp4 media)", () => {
   const dir = makeTempDir();
   try {
     const file1 = `E:\\iketeru_blind_eval\\${RUN_ID}\\video\\${BLIND_A}\\${BLIND_A}.mp4`;
     const spec = baseVideoSpec({ assignedFiles: [file1], slowmo: false });
     const prompt = renderCalibrationPrompt(spec);
     assert.ok(!prompt.includes(VIDEO_A), "original video ID must never appear in rendered prompt");
+    const fx = setupManifestFixture(dir, { assignedFiles: [file1] });
     const tPath = path.join(dir, "transcript.jsonl");
     writeJsonl(tPath, [
       { step_index: 0, source: "SYSTEM", type: "SYSTEM_MESSAGE", status: "DONE", content: wrapSystemMessage(prompt) },
@@ -85,26 +137,29 @@ test("1. Valid strict run (single video + opaque blind_id + exact frozen prompt 
       allowedFilesRaw: [file1],
       parentId: PARENT_ID,
       promptSpecObj: spec,
-      blindMapObj: SAMPLE_BLIND_MAP,
+      blindMapPath: fx.mapPath,
+      runManifestPath: fx.manifestPath,
+      stagedFilePathResolver: fx.stagedFilePathResolver,
       strict: true,
     });
     assert.equal(res.valid, true);
     assert.equal(res.expected_blind_id, BLIND_A);
-    assert.equal(res.prompt_exact_match_checked, true);
-    assert.equal(res.verified_media_by_file[file1.toLowerCase()], "video/mp4");
+    assert.equal(res.verified_manifest_hashes.blind_id_map_sha256_verified, true);
+    assert.ok(res.verified_manifest_hashes.staged_file_hashes_verified[file1.toLowerCase()]);
     assert.equal(res.token_usage.first_post_read_input_tokens, 18420);
   } finally {
     fs.rmSync(dir, { recursive: true, force: true });
   }
 });
 
-test("2. Valid strict multi-file run (main video + 2x slowmo, both paired with video/mp4 media)", () => {
+test("2. Valid strict multi-file run (main video + 2x slowmo, both paired with video/mp4 media and manifest hashes)", () => {
   const dir = makeTempDir();
   try {
     const file1 = `E:\\iketeru_blind_eval\\${RUN_ID}\\video\\${BLIND_A}\\${BLIND_A}.mp4`;
     const file2 = `E:\\iketeru_blind_eval\\${RUN_ID}\\video\\${BLIND_A}\\${BLIND_A}_slow.mp4`;
     const spec = baseVideoSpec({ assignedFiles: [file1, file2], slowmo: true });
     const prompt = renderCalibrationPrompt(spec);
+    const fx = setupManifestFixture(dir, { assignedFiles: [file1, file2] });
     const tPath = path.join(dir, "transcript.jsonl");
     writeJsonl(tPath, [
       { step_index: 0, source: "SYSTEM", type: "SYSTEM_MESSAGE", status: "DONE", content: wrapSystemMessage(prompt) },
@@ -131,7 +186,9 @@ test("2. Valid strict multi-file run (main video + 2x slowmo, both paired with v
       allowedFilesRaw: [file1, file2],
       parentId: PARENT_ID,
       promptSpecObj: spec,
-      blindMapObj: SAMPLE_BLIND_MAP,
+      blindMapPath: fx.mapPath,
+      runManifestPath: fx.manifestPath,
+      stagedFilePathResolver: fx.stagedFilePathResolver,
       strict: true,
     });
     assert.equal(res.valid, true);
@@ -148,6 +205,7 @@ test("3. Injecting rank string + unlisted award name ('This is an S+ work (Palme
   try {
     const file1 = `E:\\iketeru_blind_eval\\${RUN_ID}\\video\\${BLIND_A}\\${BLIND_A}.mp4`;
     const spec = baseVideoSpec({ assignedFiles: [file1], slowmo: false });
+    const fx = setupManifestFixture(dir, { assignedFiles: [file1] });
     const leakedPrompt = renderCalibrationPrompt(spec) + "\nThis is an S+ work (Palme d'Or)";
     const tPath = path.join(dir, "transcript.jsonl");
     writeJsonl(tPath, [
@@ -163,7 +221,9 @@ test("3. Injecting rank string + unlisted award name ('This is an S+ work (Palme
       allowedFilesRaw: [file1],
       parentId: PARENT_ID,
       promptSpecObj: spec,
-      blindMapObj: SAMPLE_BLIND_MAP,
+      blindMapPath: fx.mapPath,
+      runManifestPath: fx.manifestPath,
+      stagedFilePathResolver: fx.stagedFilePathResolver,
       strict: true,
     });
     assert.equal(resStrict.valid, false);
@@ -192,17 +252,16 @@ test("3. Injecting rank string + unlisted award name ('This is an S+ work (Palme
   }
 });
 
-test("4. Omitting --parent-id or --blind-map under --strict MUST fail (API + CLI exit code 1)", () => {
+test("4. Omitting --parent-id, --blind-map, or --run-manifest under --strict MUST fail (API + CLI exit code 1)", () => {
   const dir = makeTempDir();
   try {
     const file1 = `E:\\iketeru_blind_eval\\${RUN_ID}\\video\\${BLIND_A}\\${BLIND_A}.mp4`;
     const spec = baseVideoSpec({ assignedFiles: [file1], slowmo: false });
     const prompt = renderCalibrationPrompt(spec);
+    const fx = setupManifestFixture(dir, { assignedFiles: [file1] });
     const tPath = path.join(dir, "transcript.jsonl");
     const specPath = path.join(dir, "spec.json");
-    const mapPath = path.join(dir, "blind_id_map.json");
     fs.writeFileSync(specPath, JSON.stringify(spec), "utf8");
-    fs.writeFileSync(mapPath, JSON.stringify(SAMPLE_BLIND_MAP), "utf8");
     writeJsonl(tPath, [
       { step_index: 0, source: "SYSTEM", type: "SYSTEM_MESSAGE", status: "DONE", content: wrapSystemMessage(prompt) },
       { step_index: 1, source: "MODEL", type: "PLANNER_RESPONSE", status: "DONE", tool_calls: [{ name: "read_file", args: { Path: JSON.stringify(file1) } }] },
@@ -210,7 +269,6 @@ test("4. Omitting --parent-id or --blind-map under --strict MUST fail (API + CLI
       { step_index: 3, source: "MODEL", type: "PLANNER_RESPONSE", status: "DONE", tool_calls: [{ name: "send_message", args: { Recipient: JSON.stringify("someone-else"), Message: JSON.stringify("{}") } }] },
     ]);
 
-    // Missing --parent-id
     let threw = false;
     try {
       execFileSync(process.execPath, [
@@ -219,7 +277,8 @@ test("4. Omitting --parent-id or --blind-map under --strict MUST fail (API + CLI
         "--video-id", VIDEO_A,
         "--allowed-files", file1,
         "--prompt-spec", specPath,
-        "--blind-map", mapPath,
+        "--blind-map", fx.mapPath,
+        "--run-manifest", fx.manifestPath,
         "--strict",
       ], { encoding: "utf8" });
     } catch (err) {
@@ -231,29 +290,30 @@ test("4. Omitting --parent-id or --blind-map under --strict MUST fail (API + CLI
     }
     assert.equal(threw, true);
 
-    // Missing --blind-map
-    const resNoMap = auditTranscript({
+    const resNoManifest = auditTranscript({
       transcriptPath: tPath,
       videoId: VIDEO_A,
       allowedFilesRaw: [file1],
       parentId: PARENT_ID,
       promptSpecObj: spec,
+      blindMapPath: fx.mapPath,
       strict: true,
     });
-    assert.equal(resNoMap.valid, false);
-    assert.ok(resNoMap.config_violations.includes("strict_mode_requires_blind_map"));
+    assert.equal(resNoManifest.valid, false);
+    assert.ok(resNoManifest.config_violations.includes("strict_mode_requires_run_manifest"));
   } finally {
     fs.rmSync(dir, { recursive: true, force: true });
   }
 });
 
-test("5. Multi-file assignment where only 1 of 2 files has media (2nd file missing media or unread) MUST fail", () => {
+test("5. Multi-file assignment where only 1 of 2 files has media MUST fail", () => {
   const dir = makeTempDir();
   try {
     const file1 = `E:\\iketeru_blind_eval\\${RUN_ID}\\video\\${BLIND_A}\\${BLIND_A}.mp4`;
     const file2 = `E:\\iketeru_blind_eval\\${RUN_ID}\\video\\${BLIND_A}\\${BLIND_A}_slow.mp4`;
     const spec = baseVideoSpec({ assignedFiles: [file1, file2], slowmo: true });
     const prompt = renderCalibrationPrompt(spec);
+    const fx = setupManifestFixture(dir, { assignedFiles: [file1, file2] });
     const tPath = path.join(dir, "transcript.jsonl");
     writeJsonl(tPath, [
       { step_index: 0, source: "SYSTEM", type: "SYSTEM_MESSAGE", status: "DONE", content: wrapSystemMessage(prompt) },
@@ -278,7 +338,9 @@ test("5. Multi-file assignment where only 1 of 2 files has media (2nd file missi
       allowedFilesRaw: [file1, file2],
       parentId: PARENT_ID,
       promptSpecObj: spec,
-      blindMapObj: SAMPLE_BLIND_MAP,
+      blindMapPath: fx.mapPath,
+      runManifestPath: fx.manifestPath,
+      stagedFilePathResolver: fx.stagedFilePathResolver,
       strict: true,
     });
     assert.equal(res.valid, false);
@@ -289,7 +351,7 @@ test("5. Multi-file assignment where only 1 of 2 files has media (2nd file missi
   }
 });
 
-test("6. Contact-sheet multi-file run verifies image/* media per file", () => {
+test("6. Contact-sheet multi-file run verifies image/jpeg media per file and manifest hashes", () => {
   const dir = makeTempDir();
   try {
     const f1 = `E:\\iketeru_blind_eval\\${RUN_ID}\\contact_sheet\\${BLIND_A}\\${BLIND_A}_sheet_01.jpg`;
@@ -313,6 +375,7 @@ test("6. Contact-sheet multi-file run verifies image/* media per file", () => {
       },
     };
     const prompt = renderCalibrationPrompt(spec);
+    const fx = setupManifestFixture(dir, { mode: "contact_sheet", assignedFiles: [f1, f2] });
     const tOk = path.join(dir, "ok.jsonl");
     writeJsonl(tOk, [
       { step_index: 0, source: "SYSTEM", type: "SYSTEM_MESSAGE", status: "DONE", content: wrapSystemMessage(prompt) },
@@ -328,7 +391,9 @@ test("6. Contact-sheet multi-file run verifies image/* media per file", () => {
       allowedFilesRaw: [f1, f2],
       parentId: PARENT_ID,
       promptSpecObj: spec,
-      blindMapObj: SAMPLE_BLIND_MAP,
+      blindMapPath: fx.mapPath,
+      runManifestPath: fx.manifestPath,
+      stagedFilePathResolver: fx.stagedFilePathResolver,
       strict: true,
     });
     assert.equal(okRes.valid, true);
@@ -407,6 +472,7 @@ test("9. Different video's folder/file (auditing vRBVWCs1KW4 with tvTRZJ-4EyI's 
     const fileOfVideoB = `E:\\iketeru_blind_eval\\${RUN_ID}\\video\\${BLIND_B}\\${BLIND_B}.mp4`;
     const specForB = baseVideoSpec({ runId: RUN_ID, blindId: BLIND_B, assignedFiles: [fileOfVideoB] });
     const promptForB = renderCalibrationPrompt(specForB);
+    const fx = setupManifestFixture(dir, { videoId: VIDEO_A, blindId: BLIND_A, assignedFiles: [`E:\\iketeru_blind_eval\\${RUN_ID}\\video\\${BLIND_A}\\${BLIND_A}.mp4`] });
     const tPath = path.join(dir, "wrong_video.jsonl");
     writeJsonl(tPath, [
       { step_index: 0, source: "SYSTEM", type: "SYSTEM_MESSAGE", status: "DONE", content: wrapSystemMessage(promptForB) },
@@ -415,14 +481,15 @@ test("9. Different video's folder/file (auditing vRBVWCs1KW4 with tvTRZJ-4EyI's 
       { step_index: 3, source: "MODEL", type: "PLANNER_RESPONSE", status: "DONE", tool_calls: [{ name: "send_message", args: { Recipient: JSON.stringify(PARENT_ID), Message: JSON.stringify("{}") } }] },
     ]);
 
-    // Audit as VIDEO_A (vRBVWCs1KW4), while transcript/spec/files belong to VIDEO_B (tvTRZJ-4EyI)
     const res = auditTranscript({
       transcriptPath: tPath,
       videoId: VIDEO_A,
       allowedFilesRaw: [fileOfVideoB],
       parentId: PARENT_ID,
       promptSpecObj: specForB,
-      blindMapObj: SAMPLE_BLIND_MAP,
+      blindMapPath: fx.mapPath,
+      runManifestPath: fx.manifestPath,
+      stagedFilePathResolver: fx.stagedFilePathResolver,
       strict: true,
     });
     assert.equal(res.valid, false);
@@ -467,7 +534,89 @@ test("10. Original YouTube/Vimeo video ID used directly as folder/filename MUST 
   }
 });
 
-test("11. Blind ID map generator enforces 12-char opaque IDs, rejects saving inside E:\\iketeru_blind_eval\\, and auditor rejects map inside blind root", () => {
+test("11. Swapping 2 videos' blind_ids inside blind_id_map.json AFTER manifest lock MUST fail (blind_map_sha256_mismatch)", () => {
+  const dir = makeTempDir();
+  try {
+    const file1 = `E:\\iketeru_blind_eval\\${RUN_ID}\\video\\${BLIND_A}\\${BLIND_A}.mp4`;
+    const fx = setupManifestFixture(dir, { videoId: VIDEO_A, blindId: BLIND_A, assignedFiles: [file1] });
+
+    // Consistently swap VIDEO_A <-> VIDEO_B in blind_id_map.json on disk AFTER manifest was frozen
+    const swappedMap = {
+      ...SAMPLE_BLIND_MAP,
+      video_to_blind: { [VIDEO_A]: BLIND_B, [VIDEO_B]: BLIND_A },
+      blind_to_video: { [BLIND_B]: VIDEO_A, [BLIND_A]: VIDEO_B },
+    };
+    fs.writeFileSync(fx.mapPath, JSON.stringify(swappedMap, null, 2) + "\n", "utf8");
+
+    const fileB = `E:\\iketeru_blind_eval\\${RUN_ID}\\video\\${BLIND_B}\\${BLIND_B}.mp4`;
+    const specSwapped = baseVideoSpec({ runId: RUN_ID, blindId: BLIND_B, assignedFiles: [fileB] });
+    const prompt = renderCalibrationPrompt(specSwapped);
+    const tPath = path.join(dir, "swapped_map.jsonl");
+    writeJsonl(tPath, [
+      { step_index: 0, source: "SYSTEM", type: "SYSTEM_MESSAGE", status: "DONE", content: wrapSystemMessage(prompt) },
+      { step_index: 1, source: "MODEL", type: "PLANNER_RESPONSE", status: "DONE", tool_calls: [{ name: "read_file", args: { Path: JSON.stringify(fileB) } }] },
+      { step_index: 2, source: "MODEL", type: "GENERIC", status: "DONE", media: [{ mime_type: "video/mp4", uri: "file:///m0.mp4" }] },
+      { step_index: 3, source: "MODEL", type: "PLANNER_RESPONSE", status: "DONE", tool_calls: [{ name: "send_message", args: { Recipient: JSON.stringify(PARENT_ID), Message: JSON.stringify("{}") } }] },
+    ]);
+
+    const res = auditTranscript({
+      transcriptPath: tPath,
+      videoId: VIDEO_A,
+      allowedFilesRaw: [fileB],
+      parentId: PARENT_ID,
+      promptSpecObj: specSwapped,
+      blindMapPath: fx.mapPath,
+      runManifestPath: fx.manifestPath,
+      stagedFilePathResolver: fx.stagedFilePathResolver,
+      strict: true,
+    });
+    assert.equal(res.valid, false);
+    assert.ok(res.manifest_violations.some(v => v.startsWith("blind_map_sha256_mismatch:")));
+    assert.ok(res.manifest_violations.some(v => v.startsWith("manifest_blind_id_mismatch:")));
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test("12. Tampering with a staged .mp4 file on disk AFTER manifest lock MUST fail (staged_file_sha256_mismatch)", () => {
+  const dir = makeTempDir();
+  try {
+    const file1 = `E:\\iketeru_blind_eval\\${RUN_ID}\\video\\${BLIND_A}\\${BLIND_A}.mp4`;
+    const spec = baseVideoSpec({ assignedFiles: [file1], slowmo: false });
+    const prompt = renderCalibrationPrompt(spec);
+    const fx = setupManifestFixture(dir, { assignedFiles: [file1] });
+
+    // Tamper 1 byte in the staged file on disk (e.g. swapping mp4 content)
+    const realStagedFile = fx.diskFiles.get(file1);
+    fs.appendFileSync(realStagedFile, "X", "utf8");
+
+    const tPath = path.join(dir, "tampered_mp4.jsonl");
+    writeJsonl(tPath, [
+      { step_index: 0, source: "SYSTEM", type: "SYSTEM_MESSAGE", status: "DONE", content: wrapSystemMessage(prompt) },
+      { step_index: 1, source: "MODEL", type: "PLANNER_RESPONSE", status: "DONE", tool_calls: [{ name: "read_file", args: { Path: JSON.stringify(file1) } }] },
+      { step_index: 2, source: "MODEL", type: "GENERIC", status: "DONE", media: [{ mime_type: "video/mp4", uri: "file:///m0.mp4" }] },
+      { step_index: 3, source: "MODEL", type: "PLANNER_RESPONSE", status: "DONE", tool_calls: [{ name: "send_message", args: { Recipient: JSON.stringify(PARENT_ID), Message: JSON.stringify("{}") } }] },
+    ]);
+
+    const res = auditTranscript({
+      transcriptPath: tPath,
+      videoId: VIDEO_A,
+      allowedFilesRaw: [file1],
+      parentId: PARENT_ID,
+      promptSpecObj: spec,
+      blindMapPath: fx.mapPath,
+      runManifestPath: fx.manifestPath,
+      stagedFilePathResolver: fx.stagedFilePathResolver,
+      strict: true,
+    });
+    assert.equal(res.valid, false);
+    assert.ok(res.manifest_violations.some(v => v.startsWith("staged_file_sha256_mismatch:")));
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test("13. Blind ID map generator enforces 12-char opaque IDs and rejects saving inside E:\\iketeru_blind_eval\\", () => {
   const map = generateBlindIdMap(RUN_ID, [VIDEO_A, VIDEO_B, "1032202784"]);
   assert.equal(map.count, 3);
   for (const [vid, bid] of Object.entries(map.video_to_blind)) {
@@ -478,7 +627,7 @@ test("11. Blind ID map generator enforces 12-char opaque IDs, rejects saving ins
   assert.throws(() => saveBlindIdMap(`E:\\iketeru_blind_eval\\${RUN_ID}\\blind_id_map.json`, map), /Refusing to write blind_id_map/);
 });
 
-test("12. Frozen prompt renderer rejects path traversal and non-numeric metric injection", () => {
+test("14. Frozen prompt renderer rejects path traversal and non-numeric metric injection", () => {
   assert.throws(() => {
     renderCalibrationPrompt({
       version: "v1_baseline",
