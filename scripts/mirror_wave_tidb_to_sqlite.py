@@ -11,7 +11,12 @@ RATING_ORDER = ["S+", "S", "S-", "A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C
 rank_int = lambda g: (len(RATING_ORDER) - RATING_ORDER.index(g)) if g in RATING_ORDER else 0
 
 ids_arg = next((a.split("=", 1)[1] for a in sys.argv[1:] if a.startswith("--ids=")), "")
-ids = [x.strip() for x in ids_arg.split(",") if x.strip()]
+ids_file_arg = next((a.split("=", 1)[1] for a in sys.argv[1:] if a.startswith("--ids-file=")), "")
+if ids_file_arg:
+    raw_list = json.loads(Path(ids_file_arg).read_text(encoding="utf-8"))
+    ids = [str(x["id"] if isinstance(x, dict) else x).strip() for x in raw_list if x]
+else:
+    ids = [x.strip() for x in ids_arg.split(",") if x.strip()]
 if not ids:
     print(json.dumps({"ok": True, "mirrored": 0}))
     sys.exit(0)

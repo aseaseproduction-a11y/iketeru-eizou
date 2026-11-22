@@ -1,0 +1,881 @@
+{
+  "note": "Read-only scoring reproducibility test (10 videos x 3 independent runs = 30 scorings). Zero writes to TiDB or SQLite.",
+  "summary": {
+    "videos_tested": 10,
+    "runs_per_video": 3,
+    "overall_mean_range": 3.9,
+    "overall_max_range": 10,
+    "overall_mean_pstdev": 1.7,
+    "direction_mean_range": 3.9,
+    "direction_max_range": 10,
+    "direction_mean_pstdev": 1.69,
+    "technique_mean_range": 4,
+    "technique_max_range": 11,
+    "technique_mean_pstdev": 1.72,
+    "videos_where_overall_grade_varied_across_3_runs": 7,
+    "exceeds_plus_minus_2_points_threshold": true
+  },
+  "multi_run_proposal": "ばらつきが±2点（レンジ4点）を超えたため、本番再採点では『同一動画を独立2回採点し、差が3点以内なら平均値を採用・4点以上なら3回目を実行して中央値を採用する（2+1適応アンサンブル方式）』を推奨。",
+  "per_video": [
+    {
+      "video_id": "1119375393",
+      "title": "オープニング映像  モーショングラフィックス   OFFFMX 2025 Main Titles by XK Studio",
+      "db_overall_rating": "S",
+      "runs": [
+        {
+          "video_id": "1119375393",
+          "run_idx": 1,
+          "overall": 96,
+          "direction": 93,
+          "technique": 95,
+          "synergy": 2,
+          "overall_grade": "S",
+          "direction_grade": "S",
+          "technique_grade": "S",
+          "grade_change_reason_empty": false
+        },
+        {
+          "video_id": "1119375393",
+          "run_idx": 2,
+          "overall": 89,
+          "direction": 86,
+          "technique": 91,
+          "synergy": 1,
+          "overall_grade": "A+",
+          "direction_grade": "A+",
+          "technique_grade": "S-",
+          "grade_change_reason_empty": false
+        },
+        {
+          "video_id": "1119375393",
+          "run_idx": 3,
+          "overall": 95,
+          "direction": 92,
+          "technique": 95,
+          "synergy": 2,
+          "overall_grade": "S",
+          "direction_grade": "S-",
+          "technique_grade": "S",
+          "grade_change_reason_empty": false
+        }
+      ],
+      "overall": {
+        "scores": [
+          96,
+          89,
+          95
+        ],
+        "range_max_minus_min": 7,
+        "pstdev": 3.09,
+        "grades": [
+          "S",
+          "A+",
+          "S"
+        ],
+        "grade_changed_across_runs": true
+      },
+      "direction": {
+        "scores": [
+          93,
+          86,
+          92
+        ],
+        "range_max_minus_min": 7,
+        "pstdev": 3.09,
+        "grades": [
+          "S",
+          "A+",
+          "S-"
+        ]
+      },
+      "technique": {
+        "scores": [
+          95,
+          91,
+          95
+        ],
+        "range_max_minus_min": 4,
+        "pstdev": 1.89,
+        "grades": [
+          "S",
+          "S-",
+          "S"
+        ]
+      }
+    },
+    {
+      "video_id": "265198751",
+      "title": "imai – Fly feat. 79, 中村佳穂",
+      "db_overall_rating": "S-",
+      "runs": [
+        {
+          "video_id": "265198751",
+          "run_idx": 1,
+          "overall": 86,
+          "direction": 86,
+          "technique": 82,
+          "synergy": 2,
+          "overall_grade": "A+",
+          "direction_grade": "A+",
+          "technique_grade": "A",
+          "grade_change_reason_empty": false
+        },
+        {
+          "video_id": "265198751",
+          "run_idx": 2,
+          "overall": 88,
+          "direction": 89,
+          "technique": 83,
+          "synergy": 2,
+          "overall_grade": "A+",
+          "direction_grade": "A+",
+          "technique_grade": "A",
+          "grade_change_reason_empty": false
+        },
+        {
+          "video_id": "265198751",
+          "run_idx": 3,
+          "overall": 90,
+          "direction": 91,
+          "technique": 85,
+          "synergy": 2,
+          "overall_grade": "S-",
+          "direction_grade": "S-",
+          "technique_grade": "A",
+          "grade_change_reason_empty": false
+        }
+      ],
+      "overall": {
+        "scores": [
+          86,
+          88,
+          90
+        ],
+        "range_max_minus_min": 4,
+        "pstdev": 1.63,
+        "grades": [
+          "A+",
+          "A+",
+          "S-"
+        ],
+        "grade_changed_across_runs": true
+      },
+      "direction": {
+        "scores": [
+          86,
+          89,
+          91
+        ],
+        "range_max_minus_min": 5,
+        "pstdev": 2.05,
+        "grades": [
+          "A+",
+          "A+",
+          "S-"
+        ]
+      },
+      "technique": {
+        "scores": [
+          82,
+          83,
+          85
+        ],
+        "range_max_minus_min": 3,
+        "pstdev": 1.25,
+        "grades": [
+          "A",
+          "A",
+          "A"
+        ]
+      }
+    },
+    {
+      "video_id": "1046889896",
+      "title": "ブランデッドムービー  スポーツ / 健康 / フィットネス   Powell Lacrosse | Brand ID - Bemo Studio",
+      "db_overall_rating": "A+",
+      "runs": [
+        {
+          "video_id": "1046889896",
+          "run_idx": 1,
+          "overall": 86,
+          "direction": 87,
+          "technique": 85,
+          "synergy": 0,
+          "overall_grade": "A+",
+          "direction_grade": "A+",
+          "technique_grade": "A",
+          "grade_change_reason_empty": false
+        },
+        {
+          "video_id": "1046889896",
+          "run_idx": 2,
+          "overall": 90,
+          "direction": 88,
+          "technique": 89,
+          "synergy": 2,
+          "overall_grade": "S-",
+          "direction_grade": "A+",
+          "technique_grade": "A+",
+          "grade_change_reason_empty": false
+        },
+        {
+          "video_id": "1046889896",
+          "run_idx": 3,
+          "overall": 85,
+          "direction": 85,
+          "technique": 86,
+          "synergy": 0,
+          "overall_grade": "A",
+          "direction_grade": "A",
+          "technique_grade": "A+",
+          "grade_change_reason_empty": false
+        }
+      ],
+      "overall": {
+        "scores": [
+          86,
+          90,
+          85
+        ],
+        "range_max_minus_min": 5,
+        "pstdev": 2.16,
+        "grades": [
+          "A+",
+          "S-",
+          "A"
+        ],
+        "grade_changed_across_runs": true
+      },
+      "direction": {
+        "scores": [
+          87,
+          88,
+          85
+        ],
+        "range_max_minus_min": 3,
+        "pstdev": 1.25,
+        "grades": [
+          "A+",
+          "A+",
+          "A"
+        ]
+      },
+      "technique": {
+        "scores": [
+          85,
+          89,
+          86
+        ],
+        "range_max_minus_min": 4,
+        "pstdev": 1.7,
+        "grades": [
+          "A",
+          "A+",
+          "A+"
+        ]
+      }
+    },
+    {
+      "video_id": "1040247605",
+      "title": "NIKE PROMINA / ABC mart",
+      "db_overall_rating": "A",
+      "runs": [
+        {
+          "video_id": "1040247605",
+          "run_idx": 1,
+          "overall": 85,
+          "direction": 83,
+          "technique": 83,
+          "synergy": 2,
+          "overall_grade": "A",
+          "direction_grade": "A",
+          "technique_grade": "A",
+          "grade_change_reason_empty": false
+        },
+        {
+          "video_id": "1040247605",
+          "run_idx": 2,
+          "overall": 85,
+          "direction": 84,
+          "technique": 83,
+          "synergy": 1,
+          "overall_grade": "A",
+          "direction_grade": "A",
+          "technique_grade": "A",
+          "grade_change_reason_empty": false
+        },
+        {
+          "video_id": "1040247605",
+          "run_idx": 3,
+          "overall": 85,
+          "direction": 84,
+          "technique": 83,
+          "synergy": 1,
+          "overall_grade": "A",
+          "direction_grade": "A",
+          "technique_grade": "A",
+          "grade_change_reason_empty": false
+        }
+      ],
+      "overall": {
+        "scores": [
+          85,
+          85,
+          85
+        ],
+        "range_max_minus_min": 0,
+        "pstdev": 0.0,
+        "grades": [
+          "A",
+          "A",
+          "A"
+        ],
+        "grade_changed_across_runs": false
+      },
+      "direction": {
+        "scores": [
+          83,
+          84,
+          84
+        ],
+        "range_max_minus_min": 1,
+        "pstdev": 0.47,
+        "grades": [
+          "A",
+          "A",
+          "A"
+        ]
+      },
+      "technique": {
+        "scores": [
+          83,
+          83,
+          83
+        ],
+        "range_max_minus_min": 0,
+        "pstdev": 0.0,
+        "grades": [
+          "A",
+          "A",
+          "A"
+        ]
+      }
+    },
+    {
+      "video_id": "1044346460",
+      "title": "カネボウ化粧品　TWANY",
+      "db_overall_rating": "A-",
+      "runs": [
+        {
+          "video_id": "1044346460",
+          "run_idx": 1,
+          "overall": 79,
+          "direction": 77,
+          "technique": 82,
+          "synergy": 0,
+          "overall_grade": "A-",
+          "direction_grade": "B+",
+          "technique_grade": "A",
+          "grade_change_reason_empty": false
+        },
+        {
+          "video_id": "1044346460",
+          "run_idx": 2,
+          "overall": 76,
+          "direction": 75,
+          "technique": 78,
+          "synergy": 0,
+          "overall_grade": "B+",
+          "direction_grade": "B+",
+          "technique_grade": "A-",
+          "grade_change_reason_empty": false
+        },
+        {
+          "video_id": "1044346460",
+          "run_idx": 3,
+          "overall": 81,
+          "direction": 80,
+          "technique": 83,
+          "synergy": 0,
+          "overall_grade": "A-",
+          "direction_grade": "A-",
+          "technique_grade": "A",
+          "grade_change_reason_empty": false
+        }
+      ],
+      "overall": {
+        "scores": [
+          79,
+          76,
+          81
+        ],
+        "range_max_minus_min": 5,
+        "pstdev": 2.05,
+        "grades": [
+          "A-",
+          "B+",
+          "A-"
+        ],
+        "grade_changed_across_runs": true
+      },
+      "direction": {
+        "scores": [
+          77,
+          75,
+          80
+        ],
+        "range_max_minus_min": 5,
+        "pstdev": 2.05,
+        "grades": [
+          "B+",
+          "B+",
+          "A-"
+        ]
+      },
+      "technique": {
+        "scores": [
+          82,
+          78,
+          83
+        ],
+        "range_max_minus_min": 5,
+        "pstdev": 2.16,
+        "grades": [
+          "A",
+          "A-",
+          "A"
+        ]
+      }
+    },
+    {
+      "video_id": "1049880661",
+      "title": "三井不動産株式会社 採用コンセプトムービー",
+      "db_overall_rating": "B+",
+      "runs": [
+        {
+          "video_id": "1049880661",
+          "run_idx": 1,
+          "overall": 71,
+          "direction": 70,
+          "technique": 69,
+          "synergy": 1,
+          "overall_grade": "B",
+          "direction_grade": "B",
+          "technique_grade": "B",
+          "grade_change_reason_empty": false
+        },
+        {
+          "video_id": "1049880661",
+          "run_idx": 2,
+          "overall": 71,
+          "direction": 71,
+          "technique": 72,
+          "synergy": 0,
+          "overall_grade": "B",
+          "direction_grade": "B",
+          "technique_grade": "B",
+          "grade_change_reason_empty": false
+        },
+        {
+          "video_id": "1049880661",
+          "run_idx": 3,
+          "overall": 66,
+          "direction": 67,
+          "technique": 64,
+          "synergy": 0,
+          "overall_grade": "B-",
+          "direction_grade": "B-",
+          "technique_grade": "B-",
+          "grade_change_reason_empty": false
+        }
+      ],
+      "overall": {
+        "scores": [
+          71,
+          71,
+          66
+        ],
+        "range_max_minus_min": 5,
+        "pstdev": 2.36,
+        "grades": [
+          "B",
+          "B",
+          "B-"
+        ],
+        "grade_changed_across_runs": true
+      },
+      "direction": {
+        "scores": [
+          70,
+          71,
+          67
+        ],
+        "range_max_minus_min": 4,
+        "pstdev": 1.7,
+        "grades": [
+          "B",
+          "B",
+          "B-"
+        ]
+      },
+      "technique": {
+        "scores": [
+          69,
+          72,
+          64
+        ],
+        "range_max_minus_min": 8,
+        "pstdev": 3.3,
+        "grades": [
+          "B",
+          "B",
+          "B-"
+        ]
+      }
+    },
+    {
+      "video_id": "1056287464",
+      "title": "詩のプラネタリウム",
+      "db_overall_rating": "B",
+      "runs": [
+        {
+          "video_id": "1056287464",
+          "run_idx": 1,
+          "overall": 72,
+          "direction": 75,
+          "technique": 64,
+          "synergy": 2,
+          "overall_grade": "B",
+          "direction_grade": "B+",
+          "technique_grade": "B-",
+          "grade_change_reason_empty": false
+        },
+        {
+          "video_id": "1056287464",
+          "run_idx": 2,
+          "overall": 73,
+          "direction": 76,
+          "technique": 66,
+          "synergy": 1,
+          "overall_grade": "B+",
+          "direction_grade": "B+",
+          "technique_grade": "B-",
+          "grade_change_reason_empty": false
+        },
+        {
+          "video_id": "1056287464",
+          "run_idx": 3,
+          "overall": 70,
+          "direction": 74,
+          "technique": 65,
+          "synergy": 0,
+          "overall_grade": "B",
+          "direction_grade": "B+",
+          "technique_grade": "B-",
+          "grade_change_reason_empty": false
+        }
+      ],
+      "overall": {
+        "scores": [
+          72,
+          73,
+          70
+        ],
+        "range_max_minus_min": 3,
+        "pstdev": 1.25,
+        "grades": [
+          "B",
+          "B+",
+          "B"
+        ],
+        "grade_changed_across_runs": true
+      },
+      "direction": {
+        "scores": [
+          75,
+          76,
+          74
+        ],
+        "range_max_minus_min": 2,
+        "pstdev": 0.82,
+        "grades": [
+          "B+",
+          "B+",
+          "B+"
+        ]
+      },
+      "technique": {
+        "scores": [
+          64,
+          66,
+          65
+        ],
+        "range_max_minus_min": 2,
+        "pstdev": 0.82,
+        "grades": [
+          "B-",
+          "B-",
+          "B-"
+        ]
+      }
+    },
+    {
+      "video_id": "265532017",
+      "title": "100 fragments",
+      "db_overall_rating": "B-",
+      "runs": [
+        {
+          "video_id": "265532017",
+          "run_idx": 1,
+          "overall": 60,
+          "direction": 62,
+          "technique": 57,
+          "synergy": 0,
+          "overall_grade": "C+",
+          "direction_grade": "C+",
+          "technique_grade": "C+",
+          "grade_change_reason_empty": false
+        },
+        {
+          "video_id": "265532017",
+          "run_idx": 2,
+          "overall": 60,
+          "direction": 63,
+          "technique": 57,
+          "synergy": 0,
+          "overall_grade": "C+",
+          "direction_grade": "B-",
+          "technique_grade": "C+",
+          "grade_change_reason_empty": false
+        },
+        {
+          "video_id": "265532017",
+          "run_idx": 3,
+          "overall": 60,
+          "direction": 62,
+          "technique": 58,
+          "synergy": 0,
+          "overall_grade": "C+",
+          "direction_grade": "C+",
+          "technique_grade": "C+",
+          "grade_change_reason_empty": false
+        }
+      ],
+      "overall": {
+        "scores": [
+          60,
+          60,
+          60
+        ],
+        "range_max_minus_min": 0,
+        "pstdev": 0.0,
+        "grades": [
+          "C+",
+          "C+",
+          "C+"
+        ],
+        "grade_changed_across_runs": false
+      },
+      "direction": {
+        "scores": [
+          62,
+          63,
+          62
+        ],
+        "range_max_minus_min": 1,
+        "pstdev": 0.47,
+        "grades": [
+          "C+",
+          "B-",
+          "C+"
+        ]
+      },
+      "technique": {
+        "scores": [
+          57,
+          57,
+          58
+        ],
+        "range_max_minus_min": 1,
+        "pstdev": 0.47,
+        "grades": [
+          "C+",
+          "C+",
+          "C+"
+        ]
+      }
+    },
+    {
+      "video_id": "152071305",
+      "title": "DJI OSMO 4K FOOTAGE",
+      "db_overall_rating": "C+",
+      "runs": [
+        {
+          "video_id": "152071305",
+          "run_idx": 1,
+          "overall": 48,
+          "direction": 50,
+          "technique": 45,
+          "synergy": 0,
+          "overall_grade": "C-",
+          "direction_grade": "C-",
+          "technique_grade": "C-",
+          "grade_change_reason_empty": false
+        },
+        {
+          "video_id": "152071305",
+          "run_idx": 2,
+          "overall": 38,
+          "direction": 41,
+          "technique": 34,
+          "synergy": 0,
+          "overall_grade": "D+",
+          "direction_grade": "D+",
+          "technique_grade": "D",
+          "grade_change_reason_empty": false
+        },
+        {
+          "video_id": "152071305",
+          "run_idx": 3,
+          "overall": 39,
+          "direction": 40,
+          "technique": 37,
+          "synergy": 0,
+          "overall_grade": "D+",
+          "direction_grade": "D+",
+          "technique_grade": "D+",
+          "grade_change_reason_empty": false
+        }
+      ],
+      "overall": {
+        "scores": [
+          48,
+          38,
+          39
+        ],
+        "range_max_minus_min": 10,
+        "pstdev": 4.5,
+        "grades": [
+          "C-",
+          "D+",
+          "D+"
+        ],
+        "grade_changed_across_runs": true
+      },
+      "direction": {
+        "scores": [
+          50,
+          41,
+          40
+        ],
+        "range_max_minus_min": 10,
+        "pstdev": 4.5,
+        "grades": [
+          "C-",
+          "D+",
+          "D+"
+        ]
+      },
+      "technique": {
+        "scores": [
+          45,
+          34,
+          37
+        ],
+        "range_max_minus_min": 11,
+        "pstdev": 4.64,
+        "grades": [
+          "C-",
+          "D",
+          "D+"
+        ]
+      }
+    },
+    {
+      "video_id": "1082037544",
+      "title": "テレ東BIZ",
+      "db_overall_rating": "A+",
+      "runs": [
+        {
+          "video_id": "1082037544",
+          "run_idx": 1,
+          "overall": 86,
+          "direction": 86,
+          "technique": 84,
+          "synergy": 1,
+          "overall_grade": "A+",
+          "direction_grade": "A+",
+          "technique_grade": "A",
+          "grade_change_reason_empty": false
+        },
+        {
+          "video_id": "1082037544",
+          "run_idx": 2,
+          "overall": 86,
+          "direction": 85,
+          "technique": 82,
+          "synergy": 2,
+          "overall_grade": "A+",
+          "direction_grade": "A",
+          "technique_grade": "A",
+          "grade_change_reason_empty": false
+        },
+        {
+          "video_id": "1082037544",
+          "run_idx": 3,
+          "overall": 86,
+          "direction": 85,
+          "technique": 82,
+          "synergy": 2,
+          "overall_grade": "A+",
+          "direction_grade": "A",
+          "technique_grade": "A",
+          "grade_change_reason_empty": false
+        }
+      ],
+      "overall": {
+        "scores": [
+          86,
+          86,
+          86
+        ],
+        "range_max_minus_min": 0,
+        "pstdev": 0.0,
+        "grades": [
+          "A+",
+          "A+",
+          "A+"
+        ],
+        "grade_changed_across_runs": false
+      },
+      "direction": {
+        "scores": [
+          86,
+          85,
+          85
+        ],
+        "range_max_minus_min": 1,
+        "pstdev": 0.47,
+        "grades": [
+          "A+",
+          "A",
+          "A"
+        ]
+      },
+      "technique": {
+        "scores": [
+          84,
+          82,
+          82
+        ],
+        "range_max_minus_min": 2,
+        "pstdev": 0.94,
+        "grades": [
+          "A",
+          "A",
+          "A"
+        ]
+      }
+    }
+  ]
+}

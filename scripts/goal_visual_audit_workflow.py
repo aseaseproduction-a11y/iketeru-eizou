@@ -334,15 +334,27 @@ else:
 【既存AI分析抜粋】
 {excerpt}
 """
-            for attempt in range(2):
+            for attempt in range(3):
                 try:
                     audit_started_at = datetime.now(timezone.utc).isoformat()
                     out = await agent(
                         prompt,
                         schema=AUDIT_SCHEMA,
-                        role=f"Audit {vid} ({o_r})" + (" [retry]" if attempt else ""),
+                        role=f"Audit {vid} ({o_r})" + (f" [retry {attempt}]" if attempt else ""),
                     )
                     if isinstance(out, dict):
+                        # Reject & retry if overall grade changed without an AI-authored grade_change_reason (no auto-fill!)
+                        d_tmp = sum(max(0, min(20, int(v))) for v in (out.get("direction") or {}).values())
+                        t_tmp = sum(max(0, min(20, int(v))) for v in (out.get("technique") or {}).values())
+                        adj_tmp = max(-5, min(5, int(out.get("synergyAdjustment") or 0)))
+                        o_tmp = max(0, min(100, round(d_tmp * 0.55 + t_tmp * 0.45) + adj_tmp))
+                        new_g_tmp = score_to_grade(o_tmp)
+                        reason_tmp = str(out.get("grade_change_reason") or "").strip()
+                        if new_g_tmp != item["overall_rating"] and not reason_tmp:
+                            log(f"Rejected {vid} (attempt {attempt + 1}/3): grade changed {item['overall_rating']} -> {new_g_tmp} with empty grade_change_reason; retrying.")
+                            if attempt == 2:
+                                return None
+                            continue
                         worker_conv_id = str(out.get("_conversation_id") or out.get("conversation_id") or "")
                         if not worker_conv_id:
                             try:
@@ -366,8 +378,8 @@ else:
                     msg = str(exc)
                     if "429" in msg or "RESOURCE_EXHAUSTED" in msg:
                         raise
-                    log(f"Agent error on {vid} (attempt {attempt + 1}/2): {msg[:160]}")
-                    if attempt == 1:
+                    log(f"Agent error on {vid} (attempt {attempt + 1}/3): {msg[:160]}")
+                    if attempt == 2:
                         return None
 
         chunk_raw = await parallel(chunk, make_agent)
@@ -396,7 +408,8 @@ else:
             grade_changed = (new_o_grade != item["overall_rating"])
             change_reason = (res.get("grade_change_reason") or "").strip()
             if grade_changed and not change_reason:
-                change_reason = f"ルーブリック合計変更（{item['overall_rating']} -> {new_o_grade}: {res['rationale'][:120]}）"
+                log(f"Skipping {vid} at persist: grade changed {item['overall_rating']} -> {new_o_grade} with empty grade_change_reason (never auto-filling).")
+                continue
             is_needs_full = (res.get("analysis_verdict") == "needs_full_analysis")
             is_provisional = (not bool(res.get("visual_checked"))) or is_needs_full
             audit_run_token = str(res.get("_audit_run_token") or "")
