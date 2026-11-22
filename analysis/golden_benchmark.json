@@ -1,167 +1,16 @@
 [
   {
-    "id": "1154382470",
-    "title": "HYUNDAI - Night Fishing - INNOCEAN - Cannes Lions 2025 (Case Film from The Work - 1828637-29779264)",
-    "platform": "vimeo",
-    "videoUrl": "https://vimeo.com/1154382470",
-    "genre_bucket": "CM",
-    "tier_bucket": "上位",
-    "craft_or_purpose": "craft_benchmark",
-    "award_level": "winner",
-    "current_db_rating": "S-",
-    "current_db_score": null,
-    "current_db_analysis_status": "provisional",
-    "awards": [
-      {
-        "name": "Cannes Lions",
-        "year": "2025",
-        "category": "Entertainment Lions Grand Prix",
-        "sourceUrl": "https://www.canneslions.com/news/cannes-lions-announces-2025-winners-across-entertainment-and-craft-tracks"
-      },
-      {
-        "name": "Spikes Asia",
-        "year": "2025",
-        "category": "Film Grand Prix",
-        "sourceUrl": "https://www.spikes.asia/news/spikes-asia-announces-its-2025-winners"
-      }
-    ],
-    "objective_tier": "S+",
-    "objective_band": [
-      97,
-      100
-    ],
-    "evidence_level": "tier1_global_grand_prix",
-    "rationale": "世界最高峰アワード最高賞（Cannes Lions Grand Prix / Spikes Asia Film Grand Prix）"
-  },
-  {
-    "id": "Z_lbVlhO9HE",
-    "title": "Spreadbeats",
-    "platform": "youtube",
-    "videoUrl": "https://www.youtube.com/watch?v=Z_lbVlhO9HE",
-    "genre_bucket": "CM",
-    "tier_bucket": "上位",
-    "craft_or_purpose": "craft_benchmark",
-    "award_level": "winner",
-    "current_db_rating": "A+",
-    "current_db_score": 87,
-    "current_db_analysis_status": "full_analysis",
-    "awards": [
-      {
-        "name": "D&AD Awards",
-        "year": "2025",
-        "category": "Black Pencil",
-        "sourceUrl": "https://www.dandad.org/work/annual"
-      }
-    ],
-    "objective_tier": "S+",
-    "objective_band": [
-      97,
-      100
-    ],
-    "evidence_level": "tier1_global_grand_prix",
-    "rationale": "世界最高峰アワード最高賞（D&AD Black Pencil）"
-  },
-  {
-    "id": "5wEjV2ekSwE",
-    "title": "WINNER - 2014 BEST AUTO COMMERCIAL Honda &quot;Hands&quot;",
-    "platform": "youtube",
-    "videoUrl": "https://www.youtube.com/watch?v=5wEjV2ekSwE",
-    "genre_bucket": "CM",
-    "tier_bucket": "上位",
-    "craft_or_purpose": "craft_benchmark",
-    "award_level": "winner",
-    "current_db_rating": "S",
-    "current_db_score": 96,
-    "current_db_analysis_status": "full_analysis",
-    "awards": [
-      {
-        "name": "D&AD Awards",
-        "year": "2014",
-        "category": "Yellow Pencil (TV & Cinema Commercials / Animation)",
-        "sourceUrl": "https://www.dandad.org/awards/professional/2014/"
-      },
-      {
-        "name": "Cannes Lions",
-        "year": "2014",
-        "category": "Film Craft Silver Lion (Visual Effects / Sound Design)",
-        "sourceUrl": "https://www.canneslions.com/"
-      },
-      {
-        "name": "British Arrows",
-        "year": "2014",
-        "category": "Gold (Best Animation / Best Over 90s Cinema Commercial)",
-        "sourceUrl": "https://www.britisharrows.com/"
-      }
-    ],
-    "objective_tier": "S",
-    "objective_band": [
-      93,
-      96
-    ],
-    "evidence_level": "tier1_global_craft_gold",
-    "rationale": "国際クラフト賞金賞・Yellow Pencil受賞作（Honda 'Hands'）"
-  },
-  {
-    "id": "vpyeQeTDGFA",
-    "title": "Honda \"Paper\" by PES | Emmy Nominated Commercial",
-    "platform": "youtube",
-    "videoUrl": "https://www.youtube.com/watch?v=vpyeQeTDGFA",
-    "genre_bucket": "CM",
-    "tier_bucket": "上位",
-    "craft_or_purpose": "craft_benchmark",
-    "award_level": "winner",
-    "current_db_rating": "S",
-    "current_db_score": 96,
-    "current_db_analysis_status": "full_analysis",
-    "awards": [
-      {
-        "name": "Cannes Lions",
-        "year": "2016",
-        "category": "Design Gold Lion & Film Craft Silver Lion (Animation) / Bronze (Sound Design)",
-        "sourceUrl": "https://www.canneslions.com/"
-      },
-      {
-        "name": "The One Show",
-        "year": "2016",
-        "category": "Gold Pencil (Animation)",
-        "sourceUrl": "https://www.oneclub.org/awards/theoneshow/"
-      },
-      {
-        "name": "AICP Show",
-        "year": "2016",
-        "category": "Winner (Animation)",
-        "sourceUrl": "https://www.aicpshow.com/"
-      },
-      {
-        "name": "Clio Awards",
-        "year": "2016",
-        "category": "Gold (Film Technique - Animation)",
-        "sourceUrl": "https://clios.com/"
-      },
-      {
-        "name": "D&AD Awards",
-        "year": "2016",
-        "category": "Graphite Pencil (Film Advertising Crafts - Animation)",
-        "sourceUrl": "https://www.dandad.org/awards/professional/2016/"
-      }
-    ],
-    "objective_tier": "S",
-    "objective_band": [
-      93,
-      96
-    ],
-    "evidence_level": "tier1_global_craft_gold",
-    "rationale": "Cannes・One Show・AICP・Clio・D&ADの国際クラフト主要賞を総なめにしたストップモーションCM（Honda 'Paper' by PES）"
-  },
-  {
     "id": "FNQ4vqB-waw",
     "title": "Father and Daughter | Sotetsu Train Commercial | Translated",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=FNQ4vqB-waw",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "CM",
     "tier_bucket": "上位",
     "craft_or_purpose": "craft_benchmark",
     "award_level": "winner",
+    "era_bucket": "modern_10y",
     "current_db_rating": "S",
     "current_db_score": 95,
     "current_db_analysis_status": "full_analysis",
@@ -169,20 +18,8 @@
       {
         "name": "Cannes Lions",
         "year": "2023",
-        "category": "Film Craft Gold Lion (Production Design/Art Direction, Achievement in Production) & Bronze (VFX)",
-        "sourceUrl": "https://www.canneslions.com/"
-      },
-      {
-        "name": "Spikes Asia",
-        "year": "2024",
-        "category": "Film Craft Silver & Bronze",
-        "sourceUrl": "https://www.spikes.asia/"
-      },
-      {
-        "name": "ACC TOKYO CREATIVITY AWARDS",
-        "year": "2023",
-        "category": "Film Craft Gold",
-        "sourceUrl": "https://www.acc-awards.com/"
+        "category": "Film Craft Gold Lion x2 (Production Design/Art Direction, Achievement in Production)",
+        "sourceUrl": "https://www.hakuhodo-global.com/news/hakuhodo-group-wins-9-lions-at-cannes-lions-2023-including-4-gold.html"
       }
     ],
     "objective_tier": "S",
@@ -191,26 +28,29 @@
       96
     ],
     "evidence_level": "tier1_global_craft_gold",
-    "rationale": "Cannes Lions 2023 Film Craft Gold（美術・プロダクション達成）＆Spikes Asia・ACCクラフト受賞作（相鉄「父と娘の風景」）"
+    "rationale": "Cannes Lions 2023 Film Craft Gold 2冠（相鉄「父と娘の風景」／A Train of Memories）"
   },
   {
-    "id": "tdQCMuaJUQk",
-    "title": "グランプリ_セコム「シール交換小学生」",
+    "id": "5wEjV2ekSwE",
+    "title": "WINNER - 2014 BEST AUTO COMMERCIAL Honda &quot;Hands&quot;",
     "platform": "youtube",
-    "videoUrl": "https://www.youtube.com/watch?v=tdQCMuaJUQk",
+    "videoUrl": "https://www.youtube.com/watch?v=5wEjV2ekSwE",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "CM",
     "tier_bucket": "上位",
     "craft_or_purpose": "craft_benchmark",
     "award_level": "winner",
-    "current_db_rating": "A",
-    "current_db_score": 85,
+    "era_bucket": "classic_archive",
+    "current_db_rating": "S",
+    "current_db_score": 96,
     "current_db_analysis_status": "full_analysis",
     "awards": [
       {
-        "name": "BOVA 宣伝会議",
-        "year": "2026",
-        "category": "グランプリ",
-        "sourceUrl": "https://awardg.sendenkaigi.com/bova/history/13th"
+        "name": "Cannes Lions",
+        "year": "2014",
+        "category": "Film Craft Silver Lion (Visual Effects / Sound Design)",
+        "sourceUrl": "https://www.marklives.com/2014/06/cannes-lions-2014-final-awards-cannes-2014/"
       }
     ],
     "objective_tier": "S-",
@@ -218,18 +58,80 @@
       90,
       92
     ],
-    "evidence_level": "tier2_national_grand_prix",
-    "rationale": "国内主要アワード最高賞（BOVA 2026 グランプリ）"
+    "evidence_level": "tier1_global_craft_silver",
+    "rationale": "Cannes Lions 2014 Film Craft Silver（Honda 'Hands'、2014年作のため classic_archive 区分）"
+  },
+  {
+    "id": "vpyeQeTDGFA",
+    "title": "Honda \"Paper\" by PES | Emmy Nominated Commercial",
+    "platform": "youtube",
+    "videoUrl": "https://www.youtube.com/watch?v=vpyeQeTDGFA",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
+    "genre_bucket": "CM",
+    "tier_bucket": "上位",
+    "craft_or_purpose": "craft_benchmark",
+    "award_level": "winner",
+    "era_bucket": "modern_10y",
+    "current_db_rating": "S",
+    "current_db_score": 96,
+    "current_db_analysis_status": "full_analysis",
+    "awards": [
+      {
+        "name": "D&AD Awards",
+        "year": "2016",
+        "category": "Graphite Pencil (Film Advertising Crafts - Animation)",
+        "sourceUrl": "https://pesfilm.com/pages/awards-honors"
+      }
+    ],
+    "objective_tier": "S-",
+    "objective_band": [
+      90,
+      92
+    ],
+    "evidence_level": "tier1_global_craft_silver",
+    "rationale": "D&AD 2016 Graphite Pencil（Animation）受賞作（Honda 'Paper' by PES。未確認のCannes部門は除外）"
+  },
+  {
+    "id": "Z_lbVlhO9HE",
+    "title": "Spreadbeats",
+    "platform": "youtube",
+    "videoUrl": "https://www.youtube.com/watch?v=Z_lbVlhO9HE",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
+    "genre_bucket": "CM",
+    "tier_bucket": "参考枠",
+    "craft_or_purpose": "non_craft_award_reference",
+    "award_level": "winner",
+    "era_bucket": "modern_10y",
+    "current_db_rating": "A+",
+    "current_db_score": 87,
+    "current_db_analysis_status": "full_analysis",
+    "awards": [
+      {
+        "name": "D&AD Awards",
+        "year": "2025",
+        "category": "Black Pencil (Digital Marketing)",
+        "sourceUrl": "https://www.creativebloq.com/creative-inspiration/d-and-ad-announces-2025-winners-including-3-coveted-black-pencils"
+      }
+    ],
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "non_craft_category_reference",
+    "rationale": "【参考扱い】D&AD 2025 Black Pencil は Digital Marketing 部門（映像クラフト部門外のため較正群から分離）"
   },
   {
     "id": "DwIur8FBRxw",
     "title": "YOUTUBE WORKS AWARDS JAPAN 2024 | グランプリ & Creative Effectiveness 部門：ありがとう、君の漫画愛。（一般社団法人ABJ）",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=DwIur8FBRxw",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "CM",
-    "tier_bucket": "上位",
-    "craft_or_purpose": "craft_benchmark",
+    "tier_bucket": "参考枠",
+    "craft_or_purpose": "non_craft_award_reference",
     "award_level": "winner",
+    "era_bucket": "modern_10y",
     "current_db_rating": "A-",
     "current_db_score": 79,
     "current_db_analysis_status": "full_analysis",
@@ -241,23 +143,23 @@
         "sourceUrl": "https://business.google.com/jp/think/search-and-video/youtubeworks-2024-1/"
       }
     ],
-    "objective_tier": "S-",
-    "objective_band": [
-      90,
-      92
-    ],
-    "evidence_level": "tier2_national_grand_prix",
-    "rationale": "国内主要アワード最高賞（YouTube Works Awards Japan 2024 グランプリ）"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "non_craft_category_reference",
+    "rationale": "【参考扱い】Creative Effectiveness（成果・マーケティング効果評価）主体のためクラフト較正群から分離"
   },
   {
     "id": "iIL_CB_YjFk",
     "title": "映画 / ドラマ / ショートフィルム  ボリュメトリック / バーチャルプロダクション   LIGHT HOLE",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=iIL_CB_YjFk",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "CM",
     "tier_bucket": "中位",
     "craft_or_purpose": "craft_benchmark",
     "award_level": "winner",
+    "era_bucket": "modern_10y",
     "current_db_rating": "A+",
     "current_db_score": 88,
     "current_db_analysis_status": "full_analysis",
@@ -266,13 +168,13 @@
         "name": "Cannes Lions",
         "year": "2026",
         "category": "Film Craft Bronze Lion (Animation)",
-        "sourceUrl": "https://www.canneslions.com/"
+        "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000332.000046517.html"
       },
       {
         "name": "shots Awards Asia Pacific",
         "year": "2026",
         "category": "Gold (Animation - Stop-motion)",
-        "sourceUrl": "https://www.shotsawards.com/"
+        "sourceUrl": "https://geekpictures.co.jp/en/topics/shots-awards-asia-pacific-2026/"
       }
     ],
     "objective_tier": "A+",
@@ -281,17 +183,51 @@
       89
     ],
     "evidence_level": "tier2_global_craft_bronze",
-    "rationale": "Cannes Lions 2026 Film Craft Bronze（Animation）＆shots Awards APAC Gold受賞作（講談社 LIGHT HOLE）"
+    "rationale": "Cannes Lions 2026 Film Craft Bronze（Animation）＆shots Awards APAC 2026 Gold受賞作（講談社 LIGHT HOLE）"
+  },
+  {
+    "id": "tdQCMuaJUQk",
+    "title": "グランプリ_セコム「シール交換小学生」",
+    "platform": "youtube",
+    "videoUrl": "https://www.youtube.com/watch?v=tdQCMuaJUQk",
+    "embed_status": "restricted",
+    "playable_via_ytdlp": true,
+    "genre_bucket": "CM",
+    "tier_bucket": "中位",
+    "craft_or_purpose": "craft_benchmark",
+    "award_level": "winner",
+    "era_bucket": "modern_10y",
+    "current_db_rating": "A",
+    "current_db_score": 85,
+    "current_db_analysis_status": "full_analysis",
+    "awards": [
+      {
+        "name": "BOVA 宣伝会議",
+        "year": "2026",
+        "category": "グランプリ",
+        "sourceUrl": "https://awardg.sendenkaigi.com/bova/history/13th"
+      }
+    ],
+    "objective_tier": "A+",
+    "objective_band": [
+      86,
+      89
+    ],
+    "evidence_level": "tier3_national_contest_gp",
+    "rationale": "国内Web動画コンテスト最高賞（第13回BOVAグランプリ。v3改訂でA+へ適正化）"
   },
   {
     "id": "JFDm4p8T6_4",
     "title": "立命館大学「アートやデザインは無関係だと思っている若者を振り向かせる動画」第12回BOVAゴールド",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=JFDm4p8T6_4",
+    "embed_status": "restricted",
+    "playable_via_ytdlp": true,
     "genre_bucket": "CM",
     "tier_bucket": "中位",
     "craft_or_purpose": "craft_benchmark",
     "award_level": "winner",
+    "era_bucket": "modern_10y",
     "current_db_rating": "A",
     "current_db_score": 83,
     "current_db_analysis_status": "full_analysis",
@@ -303,23 +239,26 @@
         "sourceUrl": "https://awardg.sendenkaigi.com/bova/history/12th"
       }
     ],
-    "objective_tier": "A+",
+    "objective_tier": "A",
     "objective_band": [
-      86,
-      89
+      82,
+      85
     ],
-    "evidence_level": "tier3_national_gold",
-    "rationale": "国内主要アワード金賞（第12回BOVAゴールド）"
+    "evidence_level": "tier4_national_contest_gold",
+    "rationale": "第12回BOVAゴールド（v3改訂でAへ適正化）"
   },
   {
     "id": "wXD33Jx25oI",
     "title": "ゴールド_ギャンブル依存症問題を考える会「【実況】ギャンブル エスケープ」",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=wXD33Jx25oI",
+    "embed_status": "restricted",
+    "playable_via_ytdlp": true,
     "genre_bucket": "CM",
     "tier_bucket": "中位",
     "craft_or_purpose": "craft_benchmark",
     "award_level": "winner",
+    "era_bucket": "modern_10y",
     "current_db_rating": "A",
     "current_db_score": 83,
     "current_db_analysis_status": "full_analysis",
@@ -331,79 +270,26 @@
         "sourceUrl": "https://awardg.sendenkaigi.com/bova/history/13th"
       }
     ],
-    "objective_tier": "A+",
-    "objective_band": [
-      86,
-      89
-    ],
-    "evidence_level": "tier3_national_gold",
-    "rationale": "国内主要アワード金賞（第13回BOVAゴールド）"
-  },
-  {
-    "id": "dnCDa1spOG0",
-    "title": "【Trailer】\"UPSIDE - DOWN GENIUS\" by Ryotaro Nishi",
-    "platform": "youtube",
-    "videoUrl": "https://www.youtube.com/watch?v=dnCDa1spOG0",
-    "genre_bucket": "CM",
-    "tier_bucket": "中位",
-    "craft_or_purpose": "craft_benchmark",
-    "award_level": "shortlist_or_selection",
-    "current_db_rating": "A",
-    "current_db_score": 85,
-    "current_db_analysis_status": "full_analysis",
-    "awards": [
-      {
-        "name": "Ciclope Asia Pacific",
-        "year": "2024",
-        "category": "Finalist (Shortlist)",
-        "sourceUrl": "https://www.ciclopefestival.com/"
-      }
-    ],
     "objective_tier": "A",
     "objective_band": [
       82,
       85
     ],
-    "evidence_level": "tier4_global_shortlist",
-    "rationale": "国際クラフト専門賞ファイナリスト（Ciclope Asia Pacific 2024 Finalist＝受賞の1ランク下）"
-  },
-  {
-    "id": "3oVZsslXScc",
-    "title": "ベルセルクCM『黒い剣士の誕生』 ｜BERSERK \"The born of the dark knight\"",
-    "platform": "youtube",
-    "videoUrl": "https://youtu.be/3oVZsslXScc",
-    "genre_bucket": "CM",
-    "tier_bucket": "中位",
-    "craft_or_purpose": "craft_benchmark",
-    "award_level": "shortlist_or_selection",
-    "current_db_rating": "S-",
-    "current_db_score": 92,
-    "current_db_analysis_status": "full_analysis",
-    "awards": [
-      {
-        "name": "文化庁メディア芸術祭",
-        "year": "2017",
-        "category": "第20回 エンターテインメント部門 審査委員会推薦作品",
-        "sourceUrl": "https://archive.j-mediaarts.jp/"
-      }
-    ],
-    "objective_tier": "A",
-    "objective_band": [
-      82,
-      85
-    ],
-    "evidence_level": "tier4_national_jury_selection",
-    "rationale": "第20回文化庁メディア芸術祭 審査委員会推薦作品（受賞作の1ランク下・公式選出）"
+    "evidence_level": "tier4_national_contest_gold",
+    "rationale": "第13回BOVAゴールド（v3改訂でAへ適正化）"
   },
   {
     "id": "FSqTqdjf2YQ",
     "title": "東亞合成「「アロンアルフア」を使ってみたくなる動画」第12回BOVAシルバー",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=FSqTqdjf2YQ",
+    "embed_status": "restricted",
+    "playable_via_ytdlp": true,
     "genre_bucket": "CM",
     "tier_bucket": "中位",
     "craft_or_purpose": "craft_benchmark",
     "award_level": "winner",
+    "era_bucket": "modern_10y",
     "current_db_rating": "A",
     "current_db_score": 83,
     "current_db_analysis_status": "full_analysis",
@@ -415,23 +301,26 @@
         "sourceUrl": "https://awardg.sendenkaigi.com/bova/history/12th"
       }
     ],
-    "objective_tier": "A",
+    "objective_tier": "A-",
     "objective_band": [
-      82,
-      85
+      78,
+      81
     ],
-    "evidence_level": "tier4_national_silver",
-    "rationale": "国内主要アワード銀賞（第12回BOVAシルバー）"
+    "evidence_level": "tier5_national_contest_silver",
+    "rationale": "第12回BOVAシルバー（v3改訂でA-へ適正化）"
   },
   {
     "id": "iXTuYbyH2Rc",
     "title": "シルバー_オハヨー乳業「朝は絶対」",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=iXTuYbyH2Rc",
+    "embed_status": "restricted",
+    "playable_via_ytdlp": true,
     "genre_bucket": "CM",
     "tier_bucket": "中位",
     "craft_or_purpose": "craft_benchmark",
     "award_level": "winner",
+    "era_bucket": "modern_10y",
     "current_db_rating": "A",
     "current_db_score": 83,
     "current_db_analysis_status": "full_analysis",
@@ -443,23 +332,26 @@
         "sourceUrl": "https://awardg.sendenkaigi.com/bova/history/13th"
       }
     ],
-    "objective_tier": "A",
+    "objective_tier": "A-",
     "objective_band": [
-      82,
-      85
+      78,
+      81
     ],
-    "evidence_level": "tier4_national_silver",
-    "rationale": "国内主要アワード銀賞（第13回BOVAシルバー）"
+    "evidence_level": "tier5_national_contest_silver",
+    "rationale": "第13回BOVAシルバー（v3改訂でA-へ適正化）"
   },
   {
     "id": "-J7Oi1-EfG8",
     "title": "協賛企業賞_味の素「UMAMI BOOST AJINOMOTO」",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=-J7Oi1-EfG8",
+    "embed_status": "restricted",
+    "playable_via_ytdlp": true,
     "genre_bucket": "CM",
     "tier_bucket": "中位",
     "craft_or_purpose": "craft_benchmark",
     "award_level": "winner",
+    "era_bucket": "modern_10y",
     "current_db_rating": "A-",
     "current_db_score": 79,
     "current_db_analysis_status": "full_analysis",
@@ -471,191 +363,194 @@
         "sourceUrl": "https://awardg.sendenkaigi.com/bova/history/13th"
       }
     ],
-    "objective_tier": "A-",
-    "objective_band": [
-      78,
-      81
-    ],
-    "evidence_level": "tier5_curated_or_merit",
-    "rationale": "国内広告動画コンテスト協賛企業賞（第13回BOVA）"
-  },
-  {
-    "id": "-9ljRYIEWfU",
-    "title": "菅田将暉＆中村倫也がCM初共演　若手ビジネスマンの後輩・先輩に　アサヒビール「アサヒスーパードライ」新CMが公開",
-    "platform": "youtube",
-    "videoUrl": "https://www.youtube.com/watch?v=-9ljRYIEWfU",
-    "genre_bucket": "CM",
-    "tier_bucket": "下位",
-    "craft_or_purpose": "non_award_baseline",
-    "award_level": "non_awarded",
-    "current_db_rating": "B+",
-    "current_db_score": 75,
-    "current_db_analysis_status": "full_analysis",
-    "awards": [],
     "objective_tier": "B+",
     "objective_band": [
       73,
       77
     ],
-    "evidence_level": "baseline_commercial_high",
-    "rationale": "非受賞・高品質商用TVCM（アサヒスーパードライ新CM）"
+    "evidence_level": "tier6_contest_sponsor_award",
+    "rationale": "第13回BOVA協賛企業賞（v3改訂でB+へ適正化）"
+  },
+  {
+    "id": "6Rm136Ngwjg",
+    "title": "大塚製薬 – オロナイン | 最新TVCM 2025",
+    "platform": "youtube",
+    "videoUrl": "https://www.youtube.com/watch?v=6Rm136Ngwjg",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
+    "genre_bucket": "CM",
+    "tier_bucket": "下位",
+    "craft_or_purpose": "non_award_baseline",
+    "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
+    "current_db_rating": "B+",
+    "current_db_score": 75,
+    "current_db_analysis_status": "full_analysis",
+    "awards": [],
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・通常商用TVCM（大塚製薬 オロナイン 2025）"
+  },
+  {
+    "id": "7rP-633ApUI",
+    "title": "「ガセリ 食べ過ぎちゃう季節に」15秒",
+    "platform": "youtube",
+    "videoUrl": "https://www.youtube.com/watch?v=7rP-633ApUI",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
+    "genre_bucket": "CM",
+    "tier_bucket": "下位",
+    "craft_or_purpose": "non_award_baseline",
+    "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
+    "current_db_rating": "B+",
+    "current_db_score": 75,
+    "current_db_analysis_status": "full_analysis",
+    "awards": [],
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・通常商用15秒TVCM（ガセリ）"
   },
   {
     "id": "1FhTNSG_Ri4",
     "title": "ANESSA (santa)",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=1FhTNSG_Ri4",
+    "embed_status": "unknown",
+    "playable_via_ytdlp": true,
     "genre_bucket": "CM",
     "tier_bucket": "下位",
     "craft_or_purpose": "non_award_baseline",
     "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
     "current_db_rating": "B+",
     "current_db_score": 75,
     "current_db_analysis_status": "full_analysis",
     "awards": [],
-    "objective_tier": "B+",
-    "objective_band": [
-      73,
-      77
-    ],
-    "evidence_level": "baseline_commercial_high",
-    "rationale": "非受賞・高品質商用Web CM（ANESSA）"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・通常商用Web CM（ANESSA）"
+  },
+  {
+    "id": "37tJ-AWEW5U",
+    "title": "2026年ジョーシンCM「わたしとジョーシン_お店編」",
+    "platform": "youtube",
+    "videoUrl": "https://www.youtube.com/watch?v=37tJ-AWEW5U",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
+    "genre_bucket": "CM",
+    "tier_bucket": "下位",
+    "craft_or_purpose": "non_award_baseline",
+    "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
+    "current_db_rating": "B",
+    "current_db_score": 70,
+    "current_db_analysis_status": "full_analysis",
+    "awards": [],
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・通常商用TVCM（2026年ジョーシンCM）"
   },
   {
     "id": "2KS4Q6Bjgq8",
     "title": "AOKI / フレッシャーズ スーツ TV-CM",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=2KS4Q6Bjgq8",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "CM",
     "tier_bucket": "下位",
     "craft_or_purpose": "non_award_baseline",
     "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
     "current_db_rating": "B",
     "current_db_score": 70,
     "current_db_analysis_status": "full_analysis",
     "awards": [],
-    "objective_tier": "B",
-    "objective_band": [
-      68,
-      72
-    ],
-    "evidence_level": "baseline_commercial_standard",
-    "rationale": "非受賞・標準商用TVCM（AOKI フレッシャーズ）"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・通常商用TVCM（AOKI フレッシャーズ）"
   },
   {
     "id": "_7lQGv4ZmBo",
     "title": "あの、安藤なつ – ブックオフ | 最新CM 2025",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=_7lQGv4ZmBo",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "CM",
     "tier_bucket": "下位",
     "craft_or_purpose": "non_award_baseline",
     "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
     "current_db_rating": "B-",
     "current_db_score": 67,
     "current_db_analysis_status": "full_analysis",
     "awards": [],
-    "objective_tier": "B-",
-    "objective_band": [
-      63,
-      67
-    ],
-    "evidence_level": "baseline_commercial_basic",
-    "rationale": "非受賞・定型商用TVCM（ブックオフ最新CM 2025）"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・通常商用TVCM（ブックオフ 2025）"
   },
   {
-    "id": "6sB9ovZbSOQ",
-    "title": "中華まん 商品紹介【山崎製パン公式】",
+    "id": "AF-K7EV4BJw",
+    "title": "三菱UFJ銀行 カードローン「英語学習」篇【三菱UFJ銀行公式】",
     "platform": "youtube",
-    "videoUrl": "https://www.youtube.com/watch?v=6sB9ovZbSOQ",
+    "videoUrl": "https://youtu.be/AF-K7EV4BJw",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "CM",
     "tier_bucket": "下位",
     "craft_or_purpose": "non_award_baseline",
     "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
     "current_db_rating": "B-",
     "current_db_score": 65,
     "current_db_analysis_status": "full_analysis",
     "awards": [],
-    "objective_tier": "B-",
-    "objective_band": [
-      63,
-      67
-    ],
-    "evidence_level": "baseline_commercial_basic",
-    "rationale": "非受賞・定型商品紹介Web CM（山崎製パン 中華まん）"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・通常商用Web CM（三菱UFJ銀行公式）"
   },
   {
     "id": "A-9c7OdQMFc",
     "title": "夢・桃中軒牛右衛門の CM",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=A-9c7OdQMFc",
+    "embed_status": "unknown",
+    "playable_via_ytdlp": true,
     "genre_bucket": "CM",
     "tier_bucket": "下位",
     "craft_or_purpose": "non_award_baseline",
     "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
     "current_db_rating": "C+",
     "current_db_score": 60,
     "current_db_analysis_status": "full_analysis",
     "awards": [],
-    "objective_tier": "C+",
-    "objective_band": [
-      57,
-      62
-    ],
-    "evidence_level": "baseline_simple_commercial",
-    "rationale": "非受賞・簡易ローカルWeb CM（夢・桃中軒牛右衛門）"
-  },
-  {
-    "id": "_9cGKFO4mm8",
-    "title": "乃木坂46 山下美月、チョコラタイムで心も体もキレイに！？　“弟役”細田佳央太とユニークなやり取りも　『チョコラBB』新CM",
-    "platform": "youtube",
-    "videoUrl": "https://www.youtube.com/watch?v=_9cGKFO4mm8",
-    "genre_bucket": "CM",
-    "tier_bucket": "下位",
-    "craft_or_purpose": "non_award_baseline",
-    "award_level": "non_awarded",
-    "current_db_rating": "C",
-    "current_db_score": 55,
-    "current_db_analysis_status": "full_analysis",
-    "awards": [],
-    "objective_tier": "C",
-    "objective_band": [
-      51,
-      56
-    ],
-    "evidence_level": "baseline_amateur",
-    "rationale": "非受賞・タレント告知クリップ型CM記事動画（チョコラBB）"
-  },
-  {
-    "id": "jhAx4_YDLIE",
-    "title": "【懐かCM】シチズン「Junction～VEGA」’87 #懐かしいcm #懐かしのcm #昭和 #watch  #コメディ #comedy #時計",
-    "platform": "youtube",
-    "videoUrl": "https://www.youtube.com/watch?v=jhAx4_YDLIE",
-    "genre_bucket": "CM",
-    "tier_bucket": "下位",
-    "craft_or_purpose": "non_award_baseline",
-    "award_level": "non_awarded",
-    "current_db_rating": "C-",
-    "current_db_score": 47,
-    "current_db_analysis_status": "full_analysis",
-    "awards": [],
-    "objective_tier": "C-",
-    "objective_band": [
-      45,
-      50
-    ],
-    "evidence_level": "baseline_low_amateur",
-    "rationale": "非受賞・レトロ簡易CMアーカイブ低解像度動画"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・ローカル商用Web CM（夢・桃中軒牛右衛門）"
   },
   {
     "id": "5URefVYaJrA",
     "title": "MV  実写   A$AP Rocky - Tailor Swif (Official Video)",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=5URefVYaJrA",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "MV",
     "tier_bucket": "上位",
     "craft_or_purpose": "craft_benchmark",
     "award_level": "winner",
+    "era_bucket": "modern_10y",
     "current_db_rating": "S",
     "current_db_score": 96,
     "current_db_analysis_status": "full_analysis",
@@ -664,7 +559,7 @@
         "name": "D&AD Awards",
         "year": "2025",
         "category": "Black Pencil (Music Videos)",
-        "sourceUrl": "https://www.dandad.org/work/annual"
+        "sourceUrl": "https://www.creativebloq.com/creative-inspiration/d-and-ad-announces-2025-winners-including-3-coveted-black-pencils"
       }
     ],
     "objective_tier": "S+",
@@ -680,10 +575,13 @@
     "title": "Kendrick Lamar - HUMBLE.",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=tvTRZJ-4EyI",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "MV",
     "tier_bucket": "上位",
     "craft_or_purpose": "craft_benchmark",
     "award_level": "winner",
+    "era_bucket": "modern_10y",
     "current_db_rating": "S",
     "current_db_score": 95,
     "current_db_analysis_status": "full_analysis",
@@ -692,19 +590,7 @@
         "name": "MTV Video Music Awards",
         "year": "2017",
         "category": "Video of the Year / Best Direction / Best Cinematography / Best Art Direction / Best Visual Effects",
-        "sourceUrl": "https://www.mtv.com/vma"
-      },
-      {
-        "name": "UK Music Video Awards",
-        "year": "2017",
-        "category": "Best Urban Video - International",
-        "sourceUrl": "https://www.ukmva.com/"
-      },
-      {
-        "name": "D&AD Awards",
-        "year": "2018",
-        "category": "Graphite Pencil (Music Videos)",
-        "sourceUrl": "https://www.dandad.org/awards/professional/2018/"
+        "sourceUrl": "https://www.cbc.ca/news/entertainment/lamar-wins-six-mtv-vmas-1.4264675"
       }
     ],
     "objective_tier": "S",
@@ -713,17 +599,20 @@
       96
     ],
     "evidence_level": "tier1_global_mv_winner",
-    "rationale": "MTV VMA 2017主要クラフト部門独占＆UKMVA・D&AD受賞の歴史的MV（Kendrick Lamar 'HUMBLE.'）"
+    "rationale": "MTV VMA 2017 Video of the Year＋監督・撮影・美術・VFXクラフト部門総なめ（Kendrick Lamar 'HUMBLE.'）"
   },
   {
     "id": "ebzEEEdjHj0",
     "title": "Bonobo - No Reason (feat. Nick Murphy) (Official Video)",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=ebzEEEdjHj0",
+    "embed_status": "unknown",
+    "playable_via_ytdlp": true,
     "genre_bucket": "MV",
     "tier_bucket": "上位",
     "craft_or_purpose": "craft_benchmark",
     "award_level": "winner",
+    "era_bucket": "modern_10y",
     "current_db_rating": "S",
     "current_db_score": 96,
     "current_db_analysis_status": "full_analysis",
@@ -731,14 +620,8 @@
       {
         "name": "UK Music Video Awards",
         "year": "2017",
-        "category": "Best Director / Best Dance Video / Best Production Design",
-        "sourceUrl": "https://www.ukmva.com/"
-      },
-      {
-        "name": "D&AD Awards",
-        "year": "2017",
-        "category": "Wood Pencil (Production Design for Music Videos)",
-        "sourceUrl": "https://www.dandad.org/awards/professional/2017/"
+        "category": "Best Dance Video - UK / Best Production Design",
+        "sourceUrl": "https://www.promonews.tv/news/2017/10/26/uk-music-video-awards-2017-all-winners/50227"
       }
     ],
     "objective_tier": "S-",
@@ -747,51 +630,51 @@
       92
     ],
     "evidence_level": "tier1_global_mv_craft",
-    "rationale": "UKMVA 2017監督賞・美術賞ほか3冠＆D&AD Wood Pencil受賞MV（Bonobo 'No Reason'）"
+    "rationale": "UKMVA 2017 Best Dance Video - UK & Best Production Design受賞MV（Bonobo 'No Reason'）"
   },
   {
     "id": "5zj3aHgLFQE",
     "title": "Shugo Tokumaru (トクマルシューゴ) - Poker (Official Music Video)",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=5zj3aHgLFQE",
+    "embed_status": "unknown",
+    "playable_via_ytdlp": true,
     "genre_bucket": "MV",
     "tier_bucket": "中位",
     "craft_or_purpose": "craft_benchmark",
     "award_level": "shortlist_or_selection",
+    "era_bucket": "classic_archive",
     "current_db_rating": "S-",
     "current_db_score": 91,
     "current_db_analysis_status": "full_analysis",
     "awards": [
       {
-        "name": "Annecy International Animation Film Festival",
-        "year": "2015",
-        "category": "Official Selection (Commissioned Films)",
-        "sourceUrl": "https://www.annecyfestival.com/"
-      },
-      {
         "name": "文化庁メディア芸術祭",
         "year": "2014",
-        "category": "第18回 アニメーション部門 審査委員会推薦作品",
-        "sourceUrl": "https://archive.j-mediaarts.jp/"
+        "category": "第18回 エンターテインメント部門 審査委員会推薦作品",
+        "sourceUrl": "https://www.bunka.go.jp/j-mediaarts-festival/award/single/poker/index.html"
       }
     ],
-    "objective_tier": "A+",
+    "objective_tier": "A",
     "objective_band": [
-      86,
-      89
+      82,
+      85
     ],
-    "evidence_level": "tier3_global_festival_selection",
-    "rationale": "アヌシー国際アニメーション映画祭2015公式選出＆文化庁メディア芸術祭推薦作品（トクマルシューゴ 'Poker'）"
+    "evidence_level": "tier4_national_jury_selection",
+    "rationale": "第18回文化庁メディア芸術祭 審査委員会推薦作品（トクマルシューゴ 'Poker'、2014年作）"
   },
   {
     "id": "3JtO1WMYb58",
     "title": "Frasco / Viewtiful",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=3JtO1WMYb58",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "MV",
     "tier_bucket": "中位",
     "craft_or_purpose": "craft_benchmark",
     "award_level": "shortlist_or_selection",
+    "era_bucket": "modern_10y",
     "current_db_rating": "A",
     "current_db_score": 83,
     "current_db_analysis_status": "full_analysis",
@@ -800,7 +683,7 @@
         "name": "文化庁メディア芸術祭",
         "year": "2019",
         "category": "第22回 エンターテインメント部門 審査委員会推薦作品",
-        "sourceUrl": "https://archive.j-mediaarts.jp/"
+        "sourceUrl": "https://www.bunka.go.jp/j-mediaarts-festival/award/single/frasco-viewtiful/index.html"
       }
     ],
     "objective_tier": "A",
@@ -816,10 +699,13 @@
     "title": "INNOSENT in FORMAL「Footloose」Music Video",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=QmLBz4FuVDA",
+    "embed_status": "unknown",
+    "playable_via_ytdlp": true,
     "genre_bucket": "MV",
     "tier_bucket": "中位",
     "craft_or_purpose": "craft_benchmark",
     "award_level": "shortlist_or_selection",
+    "era_bucket": "modern_10y",
     "current_db_rating": "A-",
     "current_db_score": 79,
     "current_db_analysis_status": "full_analysis",
@@ -828,7 +714,7 @@
         "name": "文化庁メディア芸術祭",
         "year": "2019",
         "category": "第22回 エンターテインメント部門 審査委員会推薦作品",
-        "sourceUrl": "https://archive.j-mediaarts.jp/"
+        "sourceUrl": "https://www.bunka.go.jp/j-mediaarts-festival/award/single/innosent-in-formal-footloose/index.html"
       }
     ],
     "objective_tier": "A",
@@ -844,10 +730,13 @@
     "title": "いきものがかり | BAKU",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=_2JRv0n6w4g",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "MV",
     "tier_bucket": "中位",
     "craft_or_purpose": "craft_benchmark",
     "award_level": "shortlist_or_selection",
+    "era_bucket": "modern_10y",
     "current_db_rating": "A+",
     "current_db_score": 89,
     "current_db_analysis_status": "full_analysis",
@@ -856,7 +745,7 @@
         "name": "映像作家100人",
         "year": "2021",
         "category": "2021選出作品",
-        "sourceUrl": "https://eizo100.jp/"
+        "sourceUrl": "https://eizo100.jp/video/37980"
       }
     ],
     "objective_tier": "A-",
@@ -872,10 +761,13 @@
     "title": "imase – でもね、たまには",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=_ESKiygZh9Y",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "MV",
     "tier_bucket": "中位",
     "craft_or_purpose": "craft_benchmark",
     "award_level": "shortlist_or_selection",
+    "era_bucket": "modern_10y",
     "current_db_rating": "A-",
     "current_db_score": 79,
     "current_db_analysis_status": "full_analysis",
@@ -884,7 +776,7 @@
         "name": "映像作家100人",
         "year": "2023",
         "category": "2023選出作品",
-        "sourceUrl": "https://eizo100.jp/"
+        "sourceUrl": "https://eizo100.jp/video/58226"
       }
     ],
     "objective_tier": "A-",
@@ -900,10 +792,13 @@
     "title": "Suchmos – “A.G.I.T.”",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=Ula15c4UN4s",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "MV",
     "tier_bucket": "中位",
     "craft_or_purpose": "craft_benchmark",
     "award_level": "shortlist_or_selection",
+    "era_bucket": "modern_10y",
     "current_db_rating": "A",
     "current_db_score": 83,
     "current_db_analysis_status": "full_analysis",
@@ -928,178 +823,160 @@
     "title": "僕が見たかった青空 /「初めて好きになった人」Music Video（YouTube ver.）",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=-n1ljTOQK-s",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "MV",
     "tier_bucket": "下位",
     "craft_or_purpose": "non_award_baseline",
     "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
     "current_db_rating": "B+",
     "current_db_score": 75,
     "current_db_analysis_status": "full_analysis",
     "awards": [],
-    "objective_tier": "B+",
-    "objective_band": [
-      73,
-      77
-    ],
-    "evidence_level": "baseline_commercial_high",
-    "rationale": "非受賞・高品質商用アイドルMV（僕が見たかった青空）"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・通常商用MV（僕が見たかった青空）"
   },
   {
     "id": "_C7k63knGz8",
     "title": "XOX New Single『PINKY BABY』MUSIC VIDEO",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=_C7k63knGz8",
+    "embed_status": "unknown",
+    "playable_via_ytdlp": true,
     "genre_bucket": "MV",
     "tier_bucket": "下位",
     "craft_or_purpose": "non_award_baseline",
     "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
     "current_db_rating": "B+",
     "current_db_score": 75,
     "current_db_analysis_status": "full_analysis",
     "awards": [],
-    "objective_tier": "B+",
-    "objective_band": [
-      73,
-      77
-    ],
-    "evidence_level": "baseline_commercial_high",
-    "rationale": "非受賞・高品質商用MV（XOX 'PINKY BABY'）"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・通常商用MV（XOX 'PINKY BABY'）"
   },
   {
     "id": "-J3OnxCEzl0",
     "title": "【MV】ZeroGravity / 上水流宇宙 【オリジナル曲】#ヴイアラ",
     "platform": "youtube",
     "videoUrl": "https://youtu.be/-J3OnxCEzl0",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "MV",
     "tier_bucket": "下位",
     "craft_or_purpose": "non_award_baseline",
     "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
     "current_db_rating": "B",
     "current_db_score": 70,
     "current_db_analysis_status": "full_analysis",
     "awards": [],
-    "objective_tier": "B",
-    "objective_band": [
-      68,
-      72
-    ],
-    "evidence_level": "baseline_commercial_standard",
-    "rationale": "非受賞・標準商用MV（上水流宇宙 'ZeroGravity'）"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・通常商用MV（上水流宇宙 'ZeroGravity'）"
   },
   {
     "id": "_2lHuvAwhwk",
     "title": "R BANDIT X MR RIGHT (BURUKLYN BOYZ) - RICH (Official Music Video)",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=_2lHuvAwhwk",
+    "embed_status": "unknown",
+    "playable_via_ytdlp": true,
     "genre_bucket": "MV",
     "tier_bucket": "下位",
     "craft_or_purpose": "non_award_baseline",
     "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
     "current_db_rating": "B",
     "current_db_score": 70,
     "current_db_analysis_status": "full_analysis",
     "awards": [],
-    "objective_tier": "B",
-    "objective_band": [
-      68,
-      72
-    ],
-    "evidence_level": "baseline_commercial_standard",
-    "rationale": "非受賞・標準インディーズMV（R BANDIT X MR RIGHT）"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・インディーズMV（R BANDIT X MR RIGHT）"
   },
   {
     "id": "7ErE0YPc_PY",
     "title": "Lil Eazzyy - IM GOOD (OFFICIAL MUSIC VIDEO) DIR: @708visuals",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=7ErE0YPc_PY",
+    "embed_status": "unknown",
+    "playable_via_ytdlp": true,
     "genre_bucket": "MV",
     "tier_bucket": "下位",
     "craft_or_purpose": "non_award_baseline",
     "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
     "current_db_rating": "B-",
     "current_db_score": 65,
     "current_db_analysis_status": "full_analysis",
     "awards": [],
-    "objective_tier": "B-",
-    "objective_band": [
-      63,
-      67
-    ],
-    "evidence_level": "baseline_commercial_basic",
-    "rationale": "非受賞・定型低予算MV（Lil Eazzyy 'IM GOOD'）"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・通常ヒップホップMV（Lil Eazzyy 'IM GOOD'）"
   },
   {
     "id": "C0RD172wK6c",
     "title": "Marko Sosa - The Truth (Official Music Video) Dir@Bighomiereece #trending",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=C0RD172wK6c",
+    "embed_status": "unknown",
+    "playable_via_ytdlp": true,
     "genre_bucket": "MV",
     "tier_bucket": "下位",
     "craft_or_purpose": "non_award_baseline",
     "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
     "current_db_rating": "C+",
     "current_db_score": 60,
     "current_db_analysis_status": "full_analysis",
     "awards": [],
-    "objective_tier": "C+",
-    "objective_band": [
-      57,
-      62
-    ],
-    "evidence_level": "baseline_simple_commercial",
-    "rationale": "非受賞・簡易撮影MV（Marko Sosa 'The Truth'）"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・インディーズMV（Marko Sosa 'The Truth'）"
   },
   {
     "id": "Dhx2EIhYkc0",
     "title": "JUST A BOY - ASIRA | Japanese Rap Song | DrINsaNE | Official Music Video",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=Dhx2EIhYkc0",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "MV",
     "tier_bucket": "下位",
     "craft_or_purpose": "non_award_baseline",
     "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
     "current_db_rating": "C",
     "current_db_score": 53,
     "current_db_analysis_status": "full_analysis",
     "awards": [],
-    "objective_tier": "C",
-    "objective_band": [
-      51,
-      56
-    ],
-    "evidence_level": "baseline_amateur",
-    "rationale": "非受賞・ワンロケ簡易アマチュアMV（ASIRA）"
-  },
-  {
-    "id": "DMowlj44nZc",
-    "title": "光れ日本！ﾌﾙﾐｭｰｼﾞｯｸﾋﾞﾃﾞｵ",
-    "platform": "youtube",
-    "videoUrl": "https://www.youtube.com/watch?v=DMowlj44nZc",
-    "genre_bucket": "MV",
-    "tier_bucket": "下位",
-    "craft_or_purpose": "non_award_baseline",
-    "award_level": "non_awarded",
-    "current_db_rating": "C-",
-    "current_db_score": 47,
-    "current_db_analysis_status": "full_analysis",
-    "awards": [],
-    "objective_tier": "C-",
-    "objective_band": [
-      45,
-      50
-    ],
-    "evidence_level": "baseline_low_amateur",
-    "rationale": "非受賞・簡易静止画スライド寄りMV"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・インディーズMV（ASIRA）"
   },
   {
     "id": "1119375393",
     "title": "オープニング映像  モーショングラフィックス   OFFFMX 2025 Main Titles by XK Studio",
     "platform": "vimeo",
     "videoUrl": "https://vimeo.com/1119375393",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "モーション",
     "tier_bucket": "上位",
     "craft_or_purpose": "craft_benchmark",
     "award_level": "winner",
+    "era_bucket": "modern_10y",
     "current_db_rating": "S",
     "current_db_score": 96,
     "current_db_analysis_status": "full_analysis",
@@ -1108,7 +985,7 @@
         "name": "Stash Permanent Collection",
         "year": "2025",
         "category": "Permanent Collection Featured (OFFF MX 2025 Main Titles by XK Studio)",
-        "sourceUrl": "https://www.stashmedia.tv/"
+        "sourceUrl": "https://www.stashmedia.tv/tag/xk-studio/"
       }
     ],
     "objective_tier": "S-",
@@ -1124,10 +1001,13 @@
     "title": "STAIRS",
     "platform": "vimeo",
     "videoUrl": "https://vimeo.com/1225708698",
+    "embed_status": "unknown",
+    "playable_via_ytdlp": true,
     "genre_bucket": "モーション",
     "tier_bucket": "中位",
     "craft_or_purpose": "craft_benchmark",
-    "award_level": "winner",
+    "award_level": "shortlist_or_selection",
+    "era_bucket": "modern_10y",
     "current_db_rating": "A-",
     "current_db_score": 79,
     "current_db_analysis_status": "full_analysis",
@@ -1135,61 +1015,30 @@
       {
         "name": "Vimeo Staff Picks",
         "year": "2025",
-        "category": "Vimeo Staff Pick",
-        "sourceUrl": "https://vimeo.com/channels/staffpicks"
-      },
-      {
-        "name": "SXSW Film Festival",
-        "year": "2025",
-        "category": "Official Selection (Short Film)",
-        "sourceUrl": "https://www.sxsw.com/"
+        "category": "Vimeo Staff Pick (EFA x Vimeo Feature)",
+        "sourceUrl": "https://www.europeanfilmawards.eu/vimeo-movie/stairs/"
       }
     ],
-    "objective_tier": "A+",
+    "objective_tier": "A-",
     "objective_band": [
-      86,
-      89
+      78,
+      81
     ],
-    "evidence_level": "tier3_vimeo_staff_pick",
-    "rationale": "Vimeo Staff Pick公式選出＋Sundance/SXSW選出（STAIRS）"
-  },
-  {
-    "id": "1231004615",
-    "title": "Paradise Man (ii)",
-    "platform": "vimeo",
-    "videoUrl": "https://vimeo.com/1231004615",
-    "genre_bucket": "モーション",
-    "tier_bucket": "中位",
-    "craft_or_purpose": "craft_benchmark",
-    "award_level": "winner",
-    "current_db_rating": "A-",
-    "current_db_score": 79,
-    "current_db_analysis_status": "full_analysis",
-    "awards": [
-      {
-        "name": "Vimeo Staff Picks",
-        "year": "2025",
-        "category": "Vimeo Staff Pick",
-        "sourceUrl": "https://vimeo.com/channels/staffpicks"
-      }
-    ],
-    "objective_tier": "A+",
-    "objective_band": [
-      86,
-      89
-    ],
-    "evidence_level": "tier3_vimeo_staff_pick",
-    "rationale": "Vimeo Staff Pick公式選出（Paradise Man (ii) — 3D/GIF実験的モーション作品）"
+    "evidence_level": "tier5_vimeo_staff_pick",
+    "rationale": "Vimeo Staff Pick公式選出（STAIRS。v3改訂で通常Vimeo Staff PickはA-へ適正化）"
   },
   {
     "id": "_5XZMPbbJIk",
     "title": "讐復を能える。",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=_5XZMPbbJIk",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "モーション",
     "tier_bucket": "中位",
     "craft_or_purpose": "craft_benchmark",
     "award_level": "shortlist_or_selection",
+    "era_bucket": "modern_10y",
     "current_db_rating": "A",
     "current_db_score": 82,
     "current_db_analysis_status": "full_analysis",
@@ -1198,7 +1047,7 @@
         "name": "映像作家100人",
         "year": "2025",
         "category": "2025選出作品",
-        "sourceUrl": "https://eizo100.jp/"
+        "sourceUrl": "https://eizo100.jp/video/86564"
       }
     ],
     "objective_tier": "A-",
@@ -1214,10 +1063,13 @@
     "title": "Goodbye, All of Evangelion ／さようなら全てのエヴァンゲリオン　 宇多田ヒカル「ONE LAST KISS」",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=_H6zuJAtQqI",
+    "embed_status": "restricted",
+    "playable_via_ytdlp": true,
     "genre_bucket": "モーション",
     "tier_bucket": "中位",
     "craft_or_purpose": "craft_benchmark",
     "award_level": "shortlist_or_selection",
+    "era_bucket": "modern_10y",
     "current_db_rating": "A-",
     "current_db_score": 79,
     "current_db_analysis_status": "full_analysis",
@@ -1226,7 +1078,7 @@
         "name": "映像作家100人",
         "year": "2022",
         "category": "2022選出作品",
-        "sourceUrl": "https://eizo100.jp/"
+        "sourceUrl": "https://eizo100.jp/video/49133"
       }
     ],
     "objective_tier": "A-",
@@ -1238,210 +1090,206 @@
     "rationale": "国内プロキュレーション選出タイポ・モーション作品（映像作家100人 2022）"
   },
   {
-    "id": "6BnK1seS024",
-    "title": "モーショングラフィックス「Sprechchor」",
-    "platform": "youtube",
-    "videoUrl": "https://youtu.be/6BnK1seS024",
-    "genre_bucket": "モーション",
-    "tier_bucket": "中位",
-    "craft_or_purpose": "craft_benchmark",
-    "award_level": "shortlist_or_selection",
-    "current_db_rating": "A-",
-    "current_db_score": 79,
-    "current_db_analysis_status": "full_analysis",
-    "awards": [
-      {
-        "name": "映像作家100人",
-        "year": "2022",
-        "category": "掲載作品（Kaito Note「Sprechchor」）",
-        "sourceUrl": "https://eizo100.jp/"
-      }
-    ],
-    "objective_tier": "A-",
-    "objective_band": [
-      78,
-      81
-    ],
-    "evidence_level": "tier5_eizo100_curated",
-    "rationale": "国内プロキュレーション掲載タイポグラフィ・モーション作品（Sprechchor）"
-  },
-  {
     "id": "bGcpESkGLzI",
     "title": "モーショングラフィックス \"空間響図学\"",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=bGcpESkGLzI",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "モーション",
     "tier_bucket": "下位",
     "craft_or_purpose": "non_award_baseline",
     "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
     "current_db_rating": "B+",
     "current_db_score": 75,
     "current_db_analysis_status": "full_analysis",
     "awards": [],
-    "objective_tier": "B+",
-    "objective_band": [
-      73,
-      77
-    ],
-    "evidence_level": "baseline_commercial_high",
-    "rationale": "非受賞・高品質モーショングラフィックス（空間響図学）"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・モーショングラフィックス作品（空間響図学）"
   },
   {
     "id": "3910Da5fk7k",
     "title": "モーショングラフィックス \"Voscot\"",
     "platform": "youtube",
     "videoUrl": "https://youtu.be/3910Da5fk7k",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "モーション",
     "tier_bucket": "下位",
     "craft_or_purpose": "non_award_baseline",
     "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
     "current_db_rating": "B+",
     "current_db_score": 75,
     "current_db_analysis_status": "full_analysis",
     "awards": [],
-    "objective_tier": "B+",
-    "objective_band": [
-      73,
-      77
-    ],
-    "evidence_level": "baseline_commercial_high",
-    "rationale": "非受賞・高品質モーショングラフィックス（Voscot）"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・モーショングラフィックス作品（Voscot）"
   },
   {
     "id": "1048567039",
     "title": "TAK – Motion Graphics Reel 2024",
     "platform": "vimeo",
     "videoUrl": "https://vimeo.com/1048567039",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "モーション",
     "tier_bucket": "下位",
     "craft_or_purpose": "non_award_baseline",
     "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
     "current_db_rating": "B",
     "current_db_score": 70,
     "current_db_analysis_status": "full_analysis",
     "awards": [],
-    "objective_tier": "B",
-    "objective_band": [
-      68,
-      72
-    ],
-    "evidence_level": "baseline_commercial_standard",
-    "rationale": "非受賞・標準モーションデモリール（TAK 2024）"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・モーションデモリール（TAK 2024）"
+  },
+  {
+    "id": "6vJ5VwO8hnI",
+    "title": "VFX & Motion Graphics Showreel | hasenpanzer",
+    "platform": "youtube",
+    "videoUrl": "https://www.youtube.com/watch?v=6vJ5VwO8hnI",
+    "embed_status": "unknown",
+    "playable_via_ytdlp": true,
+    "genre_bucket": "モーション",
+    "tier_bucket": "下位",
+    "craft_or_purpose": "non_award_baseline",
+    "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
+    "current_db_rating": "B",
+    "current_db_score": 70,
+    "current_db_analysis_status": "full_analysis",
+    "awards": [],
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・VFX & モーションショーリール（hasenpanzer）"
   },
   {
     "id": "CmCxoqpSAk8",
     "title": "Nihe - New icon【Motion Graphics】",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=CmCxoqpSAk8",
+    "embed_status": "unknown",
+    "playable_via_ytdlp": true,
     "genre_bucket": "モーション",
     "tier_bucket": "下位",
     "craft_or_purpose": "non_award_baseline",
     "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
     "current_db_rating": "B",
     "current_db_score": 70,
     "current_db_analysis_status": "full_analysis",
     "awards": [],
-    "objective_tier": "B",
-    "objective_band": [
-      68,
-      72
-    ],
-    "evidence_level": "baseline_commercial_standard",
-    "rationale": "非受賞・標準モーショングラフィックス（Nihe - New icon）"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・モーショングラフィックス（Nihe - New icon）"
+  },
+  {
+    "id": "eJpop_rbbRA",
+    "title": "Nihe - HNY【Motion Graphics】",
+    "platform": "youtube",
+    "videoUrl": "https://www.youtube.com/watch?v=eJpop_rbbRA",
+    "embed_status": "unknown",
+    "playable_via_ytdlp": true,
+    "genre_bucket": "モーション",
+    "tier_bucket": "下位",
+    "craft_or_purpose": "non_award_baseline",
+    "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
+    "current_db_rating": "B-",
+    "current_db_score": 65,
+    "current_db_analysis_status": "full_analysis",
+    "awards": [],
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・モーショングラフィックス（Nihe - HNY）"
+  },
+  {
+    "id": "bJ4LFnk785g",
+    "title": "プライマルハーツ2　オープニングムービー",
+    "platform": "youtube",
+    "videoUrl": "https://www.youtube.com/watch?v=bJ4LFnk785g",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
+    "genre_bucket": "モーション",
+    "tier_bucket": "下位",
+    "craft_or_purpose": "non_award_baseline",
+    "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
+    "current_db_rating": "B-",
+    "current_db_score": 65,
+    "current_db_analysis_status": "full_analysis",
+    "awards": [],
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・商用ゲームオープニングムービー（プライマルハーツ2）"
   },
   {
     "id": "_q9xyoz4j0k",
     "title": "Event Invitation Video | Event Intro Video | Exhibition Promotional Video",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=_q9xyoz4j0k",
+    "embed_status": "unknown",
+    "playable_via_ytdlp": true,
     "genre_bucket": "モーション",
     "tier_bucket": "下位",
     "craft_or_purpose": "non_award_baseline",
     "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
     "current_db_rating": "C+",
     "current_db_score": 60,
     "current_db_analysis_status": "full_analysis",
     "awards": [],
-    "objective_tier": "C+",
-    "objective_band": [
-      57,
-      62
-    ],
-    "evidence_level": "baseline_simple_commercial",
-    "rationale": "非受賞・テンプレート型イベント告知イントロ"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・イベント告知イントロモーショングラフィックス"
   },
   {
-    "id": "45N5d4IbeKo",
-    "title": "REEL Argemiro Moreno - Motion graphics and VFX",
+    "id": "MBLq5K_WXi8",
+    "title": "モーショングラフィックス/3D Cinematic Text Animation",
     "platform": "youtube",
-    "videoUrl": "https://www.youtube.com/watch?v=45N5d4IbeKo",
+    "videoUrl": "https://www.youtube.com/watch?v=MBLq5K_WXi8",
+    "embed_status": "unknown",
+    "playable_via_ytdlp": true,
     "genre_bucket": "モーション",
     "tier_bucket": "下位",
     "craft_or_purpose": "non_award_baseline",
     "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
     "current_db_rating": "C+",
     "current_db_score": 60,
     "current_db_analysis_status": "full_analysis",
     "awards": [],
-    "objective_tier": "C+",
-    "objective_band": [
-      57,
-      62
-    ],
-    "evidence_level": "baseline_simple_commercial",
-    "rationale": "非受賞・簡易モーショングラフィックス＆VFXリール"
-  },
-  {
-    "id": "eS3sTLZhd94",
-    "title": "After Effects Tutorial: Eye Animation",
-    "platform": "youtube",
-    "videoUrl": "https://www.youtube.com/watch?v=eS3sTLZhd94",
-    "genre_bucket": "モーション",
-    "tier_bucket": "下位",
-    "craft_or_purpose": "non_award_baseline",
-    "award_level": "non_awarded",
-    "current_db_rating": "C",
-    "current_db_score": 53,
-    "current_db_analysis_status": "full_analysis",
-    "awards": [],
-    "objective_tier": "C",
-    "objective_band": [
-      51,
-      56
-    ],
-    "evidence_level": "baseline_amateur",
-    "rationale": "非受賞・基礎AEアニメチュートリアル"
-  },
-  {
-    "id": "253892735",
-    "title": "Advance Backwards (Loop)",
-    "platform": "vimeo",
-    "videoUrl": "https://vimeo.com/253892735",
-    "genre_bucket": "モーション",
-    "tier_bucket": "下位",
-    "craft_or_purpose": "non_award_baseline",
-    "award_level": "non_awarded",
-    "current_db_rating": "C-",
-    "current_db_score": null,
-    "current_db_analysis_status": "provisional",
-    "awards": [],
-    "objective_tier": "C-",
-    "objective_band": [
-      45,
-      50
-    ],
-    "evidence_level": "baseline_low_amateur",
-    "rationale": "非受賞・単一ループ基礎モーション試作（Advance Backwards）"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・3Dテキストモーショングラフィックス"
   },
   {
     "id": "vRBVWCs1KW4",
     "title": "Blinkity Blank",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=vRBVWCs1KW4",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "3DCG/アニメ",
     "tier_bucket": "上位",
     "craft_or_purpose": "craft_benchmark",
     "award_level": "winner",
+    "era_bucket": "classic_archive",
     "current_db_rating": "A",
     "current_db_score": 83,
     "current_db_analysis_status": "full_analysis",
@@ -1450,13 +1298,7 @@
         "name": "Cannes Film Festival",
         "year": "1955",
         "category": "Short Film Palme d'Or",
-        "sourceUrl": "https://www.festival-cannes.com/"
-      },
-      {
-        "name": "BAFTA Awards",
-        "year": "1956",
-        "category": "Best Animated Film",
-        "sourceUrl": "https://www.bafta.org/"
+        "sourceUrl": "https://en.wikipedia.org/wiki/Blinkity_Blank"
       }
     ],
     "objective_tier": "S+",
@@ -1465,17 +1307,20 @@
       100
     ],
     "evidence_level": "tier1_global_grand_prix",
-    "rationale": "カンヌ国際映画祭短編パルムドール＆BAFTA最優秀アニメ賞受賞の歴史的傑作（Norman McLaren 'Blinkity Blank'）"
+    "rationale": "カンヌ国際映画祭短編パルムドール受賞作（Norman McLaren 'Blinkity Blank'、1955年作のため classic_archive 区分）"
   },
   {
     "id": "X0hyTmlsBUI",
     "title": "Origami | OSCARS® Shortlisted Short Film by Kei Kanamori",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=X0hyTmlsBUI",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "3DCG/アニメ",
     "tier_bucket": "上位",
     "craft_or_purpose": "craft_benchmark",
     "award_level": "shortlist_or_selection",
+    "era_bucket": "modern_10y",
     "current_db_rating": "S",
     "current_db_score": 96,
     "current_db_analysis_status": "full_analysis",
@@ -1484,47 +1329,7 @@
         "name": "Academy Awards (Oscars)",
         "year": "2025",
         "category": "97th Animated Short Film Shortlist",
-        "sourceUrl": "https://www.oscars.org/"
-      },
-      {
-        "name": "Student Academy Awards",
-        "year": "2024",
-        "category": "51st Silver Medal (Animation)",
-        "sourceUrl": "https://www.oscars.org/saa"
-      }
-    ],
-    "objective_tier": "S-",
-    "objective_band": [
-      90,
-      92
-    ],
-    "evidence_level": "tier2_oscar_shortlist_and_student_win",
-    "rationale": "第97回米国アカデミー賞短編アニメ部門ショートリスト＆日本人初・学生アカデミー賞銀賞（金森慧 'Origami'）"
-  },
-  {
-    "id": "35i4zTky9pI",
-    "title": "Lost &amp; Found | Shortlisted for Academy Award for Best Animated Short Film",
-    "platform": "youtube",
-    "videoUrl": "https://www.youtube.com/watch?v=35i4zTky9pI",
-    "genre_bucket": "3DCG/アニメ",
-    "tier_bucket": "上位",
-    "craft_or_purpose": "craft_benchmark",
-    "award_level": "shortlist_or_selection",
-    "current_db_rating": "A+",
-    "current_db_score": null,
-    "current_db_analysis_status": "full_analysis",
-    "awards": [
-      {
-        "name": "Academy Awards (Oscars)",
-        "year": "2019",
-        "category": "91st Animated Short Film Shortlist",
-        "sourceUrl": "https://www.oscars.org/"
-      },
-      {
-        "name": "AACTA Awards",
-        "year": "2018",
-        "category": "Best Short Animation",
-        "sourceUrl": "https://www.aacta.org/"
+        "sourceUrl": "https://www.shortoftheweek.com/2024/12/17/oscars-short-film-shortlists-2025/"
       }
     ],
     "objective_tier": "S-",
@@ -1533,17 +1338,51 @@
       92
     ],
     "evidence_level": "tier2_oscar_shortlist",
-    "rationale": "第91回米国アカデミー賞短編アニメ部門ショートリスト＆AACTA最優秀短編アニメ賞（Lost & Found）"
+    "rationale": "第97回米国アカデミー賞短編アニメ部門ショートリスト選出（金森慧 'Origami'）"
+  },
+  {
+    "id": "35i4zTky9pI",
+    "title": "Lost &amp; Found | Shortlisted for Academy Award for Best Animated Short Film",
+    "platform": "youtube",
+    "videoUrl": "https://www.youtube.com/watch?v=35i4zTky9pI",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
+    "genre_bucket": "3DCG/アニメ",
+    "tier_bucket": "上位",
+    "craft_or_purpose": "craft_benchmark",
+    "award_level": "shortlist_or_selection",
+    "era_bucket": "modern_10y",
+    "current_db_rating": "A+",
+    "current_db_score": null,
+    "current_db_analysis_status": "full_analysis",
+    "awards": [
+      {
+        "name": "Academy Awards (Oscars)",
+        "year": "2019",
+        "category": "91st Animated Short Film Shortlist",
+        "sourceUrl": "https://www.oscars.org/oscars/91st-oscars-shortlists"
+      }
+    ],
+    "objective_tier": "S-",
+    "objective_band": [
+      90,
+      92
+    ],
+    "evidence_level": "tier2_oscar_shortlist",
+    "rationale": "第91回米国アカデミー賞短編アニメ部門ショートリスト選出（Lost & Found）"
   },
   {
     "id": "vohpCZh-Qcw",
     "title": "普通の生活 Ordinary Life  ／Trailer",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=vohpCZh-Qcw",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "3DCG/アニメ",
     "tier_bucket": "上位",
     "craft_or_purpose": "craft_benchmark",
     "award_level": "shortlist_or_selection",
+    "era_bucket": "modern_10y",
     "current_db_rating": "A",
     "current_db_score": 85,
     "current_db_analysis_status": "full_analysis",
@@ -1552,13 +1391,7 @@
         "name": "Annecy International Animation Film Festival",
         "year": "2025",
         "category": "Official Short Films Competition Selection",
-        "sourceUrl": "https://www.annecyfestival.com/"
-      },
-      {
-        "name": "Berlin International Film Festival",
-        "year": "2025",
-        "category": "Silver Bear Jury Prize (Short Film)",
-        "sourceUrl": "https://www.berlinale.de/"
+        "sourceUrl": "https://unijapan.org/english/news/awards/festivals/annecy_international_animation_film_festival_2025.html"
       }
     ],
     "objective_tier": "S-",
@@ -1567,45 +1400,20 @@
       92
     ],
     "evidence_level": "tier2_annecy_official_competition",
-    "rationale": "アヌシー2025公式短編コンペ選出＆ベルリン国際映画祭銀熊賞（普通の生活 Ordinary Life）"
-  },
-  {
-    "id": "1230811867",
-    "title": "Coeur Cerise",
-    "platform": "vimeo",
-    "videoUrl": "https://vimeo.com/1230811867",
-    "genre_bucket": "3DCG/アニメ",
-    "tier_bucket": "中位",
-    "craft_or_purpose": "craft_benchmark",
-    "award_level": "winner",
-    "current_db_rating": "A",
-    "current_db_score": null,
-    "current_db_analysis_status": "full_analysis",
-    "awards": [
-      {
-        "name": "Vimeo Staff Picks",
-        "year": "2025",
-        "category": "Vimeo Staff Pick",
-        "sourceUrl": "https://vimeo.com/channels/staffpicks"
-      }
-    ],
-    "objective_tier": "A+",
-    "objective_band": [
-      86,
-      89
-    ],
-    "evidence_level": "tier3_vimeo_staff_pick",
-    "rationale": "Vimeo Staff Pick公式選出のストップモーション短編（Coeur Cerise）"
+    "rationale": "アヌシー2025公式短編コンペ選出（水尻自子『普通の生活 Ordinary Life』）"
   },
   {
     "id": "jvKtHf7kDYs",
     "title": "【第34回東京国際映画祭】アジアの未来 作品賞：『世界、北半球』ホセイン・テヘラニ監督",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=jvKtHf7kDYs",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "3DCG/アニメ",
     "tier_bucket": "中位",
     "craft_or_purpose": "craft_benchmark",
     "award_level": "winner",
+    "era_bucket": "modern_10y",
     "current_db_rating": "A-",
     "current_db_score": 79,
     "current_db_analysis_status": "full_analysis",
@@ -1623,17 +1431,51 @@
       89
     ],
     "evidence_level": "tier3_intl_festival_winner",
-    "rationale": "国際映画祭部門作品賞（東京国際映画祭 アジアの未来 作品賞）"
+    "rationale": "国際映画祭部門作品賞（第34回東京国際映画祭 アジアの未来 作品賞）"
+  },
+  {
+    "id": "1230811867",
+    "title": "Coeur Cerise",
+    "platform": "vimeo",
+    "videoUrl": "https://vimeo.com/1230811867",
+    "embed_status": "unknown",
+    "playable_via_ytdlp": true,
+    "genre_bucket": "3DCG/アニメ",
+    "tier_bucket": "中位",
+    "craft_or_purpose": "craft_benchmark",
+    "award_level": "shortlist_or_selection",
+    "era_bucket": "modern_10y",
+    "current_db_rating": "A",
+    "current_db_score": null,
+    "current_db_analysis_status": "full_analysis",
+    "awards": [
+      {
+        "name": "Vimeo Staff Picks",
+        "year": "2025",
+        "category": "Vimeo Staff Pick",
+        "sourceUrl": "https://vimeo.com/1081499649"
+      }
+    ],
+    "objective_tier": "A-",
+    "objective_band": [
+      78,
+      81
+    ],
+    "evidence_level": "tier5_vimeo_staff_pick",
+    "rationale": "Vimeo Staff Pick公式選出のストップモーション短編（Coeur Cerise。v3改訂でA-へ適正化）"
   },
   {
     "id": "_PTHdkmCLRs",
     "title": "がんばれ!よんぺーくん",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=_PTHdkmCLRs",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "3DCG/アニメ",
     "tier_bucket": "中位",
     "craft_or_purpose": "craft_benchmark",
     "award_level": "shortlist_or_selection",
+    "era_bucket": "modern_10y",
     "current_db_rating": "A",
     "current_db_score": 83,
     "current_db_analysis_status": "full_analysis",
@@ -1658,10 +1500,13 @@
     "title": "Builder",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=g9dacS4c_D8",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "3DCG/アニメ",
     "tier_bucket": "中位",
     "craft_or_purpose": "craft_benchmark",
     "award_level": "shortlist_or_selection",
+    "era_bucket": "modern_10y",
     "current_db_rating": "A",
     "current_db_score": 83,
     "current_db_analysis_status": "full_analysis",
@@ -1682,140 +1527,227 @@
     "rationale": "国内プロキュレーション選出3DCG/アニメ作品（映像作家100人 2026 — Builder）"
   },
   {
-    "id": "77esOPFEsR8",
-    "title": "How I made this VFX Edit for Razer in Blender💚👀 #vfx #blender #creative #3d #animation #artist",
+    "id": "O1U55m7pTCk",
+    "title": "진동 속 사라진 사소한 것들 (Vanished in Vibration) | Animation Short Film 2026｜청강애니",
     "platform": "youtube",
-    "videoUrl": "https://www.youtube.com/watch?v=77esOPFEsR8",
+    "videoUrl": "https://www.youtube.com/watch?v=O1U55m7pTCk",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "3DCG/アニメ",
     "tier_bucket": "下位",
     "craft_or_purpose": "non_award_baseline",
     "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
     "current_db_rating": "B+",
     "current_db_score": 75,
     "current_db_analysis_status": "full_analysis",
     "awards": [],
-    "objective_tier": "B+",
-    "objective_band": [
-      73,
-      77
-    ],
-    "evidence_level": "baseline_commercial_high",
-    "rationale": "非受賞・高品質Blender VFXブレイクダウン（Razer Edit）"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・短編アニメーション（Vanished in Vibration）"
+  },
+  {
+    "id": "OhHYTXfg9nQ",
+    "title": "卒業制作アニメーション 「Relocation」 (Animation MV)",
+    "platform": "youtube",
+    "videoUrl": "https://youtu.be/OhHYTXfg9nQ",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
+    "genre_bucket": "3DCG/アニメ",
+    "tier_bucket": "下位",
+    "craft_or_purpose": "non_award_baseline",
+    "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
+    "current_db_rating": "B",
+    "current_db_score": 70,
+    "current_db_analysis_status": "full_analysis",
+    "awards": [],
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・卒業制作アニメーション（Relocation）"
+  },
+  {
+    "id": "chcrZR8SclA",
+    "title": "cv.中山祥徳/井上ほの花『薫る花は凛と咲く』アニメ大好評御礼PV「ありがとう」",
+    "platform": "youtube",
+    "videoUrl": "https://youtu.be/chcrZR8SclA",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
+    "genre_bucket": "3DCG/アニメ",
+    "tier_bucket": "下位",
+    "craft_or_purpose": "non_award_baseline",
+    "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
+    "current_db_rating": "B+",
+    "current_db_score": 75,
+    "current_db_analysis_status": "full_analysis",
+    "awards": [],
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・商用アニメ御礼PV（薫る花は凛と咲く）"
+  },
+  {
+    "id": "8XpGThBki3Y",
+    "title": "『この素晴らしい世界に祝福を！』アニメ10周年記念PV",
+    "platform": "youtube",
+    "videoUrl": "https://youtu.be/8XpGThBki3Y",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
+    "genre_bucket": "3DCG/アニメ",
+    "tier_bucket": "下位",
+    "craft_or_purpose": "non_award_baseline",
+    "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
+    "current_db_rating": "B",
+    "current_db_score": 70,
+    "current_db_analysis_status": "full_analysis",
+    "awards": [],
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・商用アニメ10周年記念PV（このすば）"
   },
   {
     "id": "90Q6g57jnuU",
     "title": "『子猫の配達員うーにゃん 』主題歌アニメーションPV",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=90Q6g57jnuU",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "3DCG/アニメ",
     "tier_bucket": "下位",
     "craft_or_purpose": "non_award_baseline",
     "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
     "current_db_rating": "B",
     "current_db_score": 70,
     "current_db_analysis_status": "full_analysis",
     "awards": [],
-    "objective_tier": "B",
-    "objective_band": [
-      68,
-      72
-    ],
-    "evidence_level": "baseline_commercial_standard",
-    "rationale": "非受賞・標準商用アニメPV（子猫の配達員うーにゃん）"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・商用アニメPV（子猫の配達員うーにゃん）"
+  },
+  {
+    "id": "KOh3qsUh_9E",
+    "title": "アニメーションMV合作　生命 / オヨイダキビス",
+    "platform": "youtube",
+    "videoUrl": "https://youtu.be/KOh3qsUh_9E",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
+    "genre_bucket": "3DCG/アニメ",
+    "tier_bucket": "下位",
+    "craft_or_purpose": "non_award_baseline",
+    "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
+    "current_db_rating": "B",
+    "current_db_score": 70,
+    "current_db_analysis_status": "full_analysis",
+    "awards": [],
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・アニメーションMV合作（生命）"
   },
   {
     "id": "bSWo5hiLRSU",
     "title": "[ GODZILLA BLENDER ANIMATION ]  Godzilla Minus Zero || Godzilla vs King Ghidorah",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=bSWo5hiLRSU",
+    "embed_status": "unknown",
+    "playable_via_ytdlp": true,
     "genre_bucket": "3DCG/アニメ",
     "tier_bucket": "下位",
     "craft_or_purpose": "non_award_baseline",
     "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
     "current_db_rating": "B",
     "current_db_score": 70,
     "current_db_analysis_status": "full_analysis",
     "awards": [],
-    "objective_tier": "B",
-    "objective_band": [
-      68,
-      72
-    ],
-    "evidence_level": "baseline_commercial_standard",
-    "rationale": "非受賞・標準自主制作Blender 3DCGアニメ"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・自主制作Blender 3DCGアニメ"
   },
   {
-    "id": "5-0M0ZjSjGY",
-    "title": "「うみとりくのからだのはなし」アニメーション",
+    "id": "GvkbAp9YZCo",
+    "title": "【自主制作アニメ】愛の形",
     "platform": "youtube",
-    "videoUrl": "https://www.youtube.com/watch?v=5-0M0ZjSjGY",
+    "videoUrl": "https://www.youtube.com/watch?v=GvkbAp9YZCo",
+    "embed_status": "unknown",
+    "playable_via_ytdlp": true,
     "genre_bucket": "3DCG/アニメ",
     "tier_bucket": "下位",
     "craft_or_purpose": "non_award_baseline",
     "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
     "current_db_rating": "B-",
     "current_db_score": 65,
     "current_db_analysis_status": "full_analysis",
     "awards": [],
-    "objective_tier": "B-",
-    "objective_band": [
-      63,
-      67
-    ],
-    "evidence_level": "baseline_commercial_basic",
-    "rationale": "非受賞・定型教育アニメーション（うみとりくのからだのはなし）"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・自主制作短編アニメ（愛の形）"
+  },
+  {
+    "id": "T9DRgYuS1K0",
+    "title": "[360° VR Animation Video!] ZOOJAZOO \"MY STOMACH\" by Giraffe Kids.",
+    "platform": "youtube",
+    "videoUrl": "https://www.youtube.com/watch?v=T9DRgYuS1K0",
+    "embed_status": "unknown",
+    "playable_via_ytdlp": true,
+    "genre_bucket": "3DCG/アニメ",
+    "tier_bucket": "下位",
+    "craft_or_purpose": "non_award_baseline",
+    "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
+    "current_db_rating": "B-",
+    "current_db_score": 65,
+    "current_db_analysis_status": "full_analysis",
+    "awards": [],
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・360度VRアニメーション（ZOOJAZOO）"
   },
   {
     "id": "5SW_6FQJuF0",
     "title": "Super Mario Bros 3D 360 VR - Merry Christmas and Happy New Year",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=5SW_6FQJuF0",
+    "embed_status": "unknown",
+    "playable_via_ytdlp": true,
     "genre_bucket": "3DCG/アニメ",
     "tier_bucket": "下位",
     "craft_or_purpose": "non_award_baseline",
     "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
     "current_db_rating": "C+",
     "current_db_score": 60,
     "current_db_analysis_status": "full_analysis",
     "awards": [],
-    "objective_tier": "C+",
-    "objective_band": [
-      57,
-      62
-    ],
-    "evidence_level": "baseline_simple_commercial",
-    "rationale": "非受賞・簡易3D 360 VRファンアニメ"
-  },
-  {
-    "id": "XYqHFXGwbRo",
-    "title": "オリ曲(フルVer.)のMVを30日間かけて創りたいと思います！　#shorts #イラストレーター",
-    "platform": "youtube",
-    "videoUrl": "https://www.youtube.com/watch?v=XYqHFXGwbRo",
-    "genre_bucket": "3DCG/アニメ",
-    "tier_bucket": "下位",
-    "craft_or_purpose": "non_award_baseline",
-    "award_level": "non_awarded",
-    "current_db_rating": "C",
-    "current_db_score": 53,
-    "current_db_analysis_status": "full_analysis",
-    "awards": [],
-    "objective_tier": "C",
-    "objective_band": [
-      51,
-      56
-    ],
-    "evidence_level": "baseline_amateur",
-    "rationale": "非受賞・簡易イラストアニメ制作進捗ショート"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・自主制作3D 360 VRアニメ"
   },
   {
     "id": "UvGwIFVUK7M",
     "title": "Jindal Steel | The Steel Of India | Brand Film",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=UvGwIFVUK7M",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "企業映像",
     "tier_bucket": "上位",
     "craft_or_purpose": "craft_benchmark",
     "award_level": "winner",
+    "era_bucket": "modern_10y",
     "current_db_rating": "A",
     "current_db_score": 83,
     "current_db_analysis_status": "full_analysis",
@@ -1840,10 +1772,13 @@
     "title": "【MAZDAドキュメンタリー】RX-7と過ごした25年間、最後の3日間　〜クルマが残してくれたもの〜",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=CWhNI_x9W6c",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "企業映像",
     "tier_bucket": "上位",
     "craft_or_purpose": "craft_benchmark",
     "award_level": "winner",
+    "era_bucket": "modern_10y",
     "current_db_rating": "A",
     "current_db_score": 83,
     "current_db_analysis_status": "full_analysis",
@@ -1868,10 +1803,13 @@
     "title": "旅行 / 宿泊  実写   Palau Legacy Project - Palau Pledge（パラオ誓約）｜Cannes Lions 2018",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=D_vdPkCz23g",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "企業映像",
-    "tier_bucket": "上位",
+    "tier_bucket": "参考枠",
     "craft_or_purpose": "purpose_reference_only",
     "award_level": "winner",
+    "era_bucket": "modern_10y",
     "current_db_rating": "A+",
     "current_db_score": 86,
     "current_db_analysis_status": "full_analysis",
@@ -1880,110 +1818,26 @@
         "name": "Cannes Lions",
         "year": "2018",
         "category": "Sustainable Development Goals (SDG) Grand Prix / Titanium Grand Prix / Direct Grand Prix",
-        "sourceUrl": "https://www.canneslions.com/"
+        "sourceUrl": "https://www.canneslions.com/news/creativity-can-change-the-world"
       }
     ],
-    "objective_tier": "S+",
-    "objective_band": [
-      97,
-      100
-    ],
+    "objective_tier": null,
+    "objective_band": null,
     "evidence_level": "purpose_social_impact_reference",
-    "rationale": "【別枠・参考扱い】Cannes Lions 2018 SDG/Titanium/Direct Grand Prix（企画・社会派インパクト評価であり、クラフト基準群からは分離）"
-  },
-  {
-    "id": "0eM8v5LY96g",
-    "title": "Kumano Brush |  Calligraphy, Painting, Makeup...A Brush Connecting People, Beauty, and Expression",
-    "platform": "youtube",
-    "videoUrl": "https://www.youtube.com/watch?v=0eM8v5LY96g",
-    "genre_bucket": "企業映像",
-    "tier_bucket": "中位",
-    "craft_or_purpose": "craft_benchmark",
-    "award_level": "winner",
-    "current_db_rating": "A",
-    "current_db_score": 83,
-    "current_db_analysis_status": "full_analysis",
-    "awards": [
-      {
-        "name": "Cannes Corporate Media & TV Awards",
-        "year": "2025",
-        "category": "Silver Dolphin (Tourism Films - Destinations - Regions)",
-        "sourceUrl": "https://www.cannescorporate.com/"
-      }
-    ],
-    "objective_tier": "A+",
-    "objective_band": [
-      86,
-      89
-    ],
-    "evidence_level": "tier3_global_corporate_silver",
-    "rationale": "Cannes Corporate Media & TV Awards 銀賞（Another Side of Japan — Kumano Brush）"
-  },
-  {
-    "id": "dXqgTG6Jzp4",
-    "title": "KAGAWA | Island Hopping in Setouchi – Beyond the Ferry, Discover Art and Untold Stories",
-    "platform": "youtube",
-    "videoUrl": "https://www.youtube.com/watch?v=dXqgTG6Jzp4",
-    "genre_bucket": "企業映像",
-    "tier_bucket": "中位",
-    "craft_or_purpose": "craft_benchmark",
-    "award_level": "winner",
-    "current_db_rating": "A+",
-    "current_db_score": 87,
-    "current_db_analysis_status": "full_analysis",
-    "awards": [
-      {
-        "name": "Cannes Corporate Media & TV Awards",
-        "year": "2025",
-        "category": "Silver Dolphin (Tourism Films - Destinations - Regions)",
-        "sourceUrl": "https://www.cannescorporate.com/"
-      }
-    ],
-    "objective_tier": "A+",
-    "objective_band": [
-      86,
-      89
-    ],
-    "evidence_level": "tier3_global_corporate_silver",
-    "rationale": "Cannes Corporate Media & TV Awards 銀賞（Another Side of Japan — KAGAWA）"
-  },
-  {
-    "id": "jXol8vcOwyk",
-    "title": "OKAYAMA | Kurashiki & Kojima - Bathed in Blue, Birthplace of Japanese Denim & Jeans Culture",
-    "platform": "youtube",
-    "videoUrl": "https://www.youtube.com/watch?v=jXol8vcOwyk",
-    "genre_bucket": "企業映像",
-    "tier_bucket": "中位",
-    "craft_or_purpose": "craft_benchmark",
-    "award_level": "winner",
-    "current_db_rating": "A+",
-    "current_db_score": 87,
-    "current_db_analysis_status": "full_analysis",
-    "awards": [
-      {
-        "name": "Cannes Corporate Media & TV Awards",
-        "year": "2025",
-        "category": "Silver Dolphin (Tourism Films - Destinations - Regions)",
-        "sourceUrl": "https://www.cannescorporate.com/"
-      }
-    ],
-    "objective_tier": "A+",
-    "objective_band": [
-      86,
-      89
-    ],
-    "evidence_level": "tier3_global_corporate_silver",
-    "rationale": "Cannes Corporate Media & TV Awards 銀賞（Another Side of Japan — OKAYAMA）"
+    "rationale": "【別枠・参考扱い】Cannes Lions 2018 SDG/Titanium/Direct GP（企画・社会派インパクト評価でありクラフト較正群から分離）"
   },
   {
     "id": "1S-KU2F7wc0",
     "title": "わく、みなみあそ issue2 熊本 南阿蘇温泉郷／From South of ASO",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=1S-KU2F7wc0",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "企業映像",
     "tier_bucket": "中位",
     "craft_or_purpose": "craft_benchmark",
     "award_level": "winner",
+    "era_bucket": "modern_10y",
     "current_db_rating": "A-",
     "current_db_score": 79,
     "current_db_analysis_status": "full_analysis",
@@ -2008,10 +1862,13 @@
     "title": "利尻礼文サロベツ国立公園 指定50周年記念動画～サロベツ原野、最北の記憶～",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=8pOOxOo7YYo",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "企業映像",
     "tier_bucket": "中位",
     "craft_or_purpose": "craft_benchmark",
     "award_level": "winner",
+    "era_bucket": "modern_10y",
     "current_db_rating": "A",
     "current_db_score": 83,
     "current_db_analysis_status": "full_analysis",
@@ -2036,10 +1893,13 @@
     "title": "Brushing Up／ADFEST2016_FABULOUS FOUR",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=uCDUpZV3f8A",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "企業映像",
     "tier_bucket": "中位",
     "craft_or_purpose": "craft_benchmark",
     "award_level": "winner",
+    "era_bucket": "modern_10y",
     "current_db_rating": "A",
     "current_db_score": 83,
     "current_db_analysis_status": "full_analysis",
@@ -2048,7 +1908,7 @@
         "name": "ADFEST",
         "year": "2016",
         "category": "Fabulous Four Commendation Certificate (New Director Lotus)",
-        "sourceUrl": "https://www.adfest.com/"
+        "sourceUrl": "https://www.brandinginasia.com/adfest-fabulous-four/"
       }
     ],
     "objective_tier": "A",
@@ -2064,10 +1924,13 @@
     "title": "あなたに、なごみを。～熊本県和水町～",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=9NzQ3G6rY5M",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "企業映像",
     "tier_bucket": "中位",
     "craft_or_purpose": "craft_benchmark",
     "award_level": "winner",
+    "era_bucket": "modern_10y",
     "current_db_rating": "A",
     "current_db_score": 83,
     "current_db_analysis_status": "full_analysis",
@@ -2076,7 +1939,7 @@
         "name": "日本国際観光映像祭",
         "year": "2025",
         "category": "日本部門 City Promotion 優秀賞",
-        "sourceUrl": "https://jwtff.world/"
+        "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000007.000144033.html"
       }
     ],
     "objective_tier": "A",
@@ -2088,14 +1951,48 @@
     "rationale": "日本国際観光映像祭 2025 部門優秀賞（熊本県和水町）"
   },
   {
+    "id": "p4eAR2Gw5RU",
+    "title": "旧奈良監獄～奈良赤レンガFESTIVAL2023～PV",
+    "platform": "youtube",
+    "videoUrl": "https://www.youtube.com/watch?v=p4eAR2Gw5RU",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
+    "genre_bucket": "企業映像",
+    "tier_bucket": "中位",
+    "craft_or_purpose": "craft_benchmark",
+    "award_level": "winner",
+    "era_bucket": "modern_10y",
+    "current_db_rating": "A-",
+    "current_db_score": 79,
+    "current_db_analysis_status": "full_analysis",
+    "awards": [
+      {
+        "name": "日本国際観光映像祭",
+        "year": "2025",
+        "category": "建築ドキュメンタリー部門 優秀賞",
+        "sourceUrl": "https://jwtff.world/aiovg_videos/2025_japan_045"
+      }
+    ],
+    "objective_tier": "A",
+    "objective_band": [
+      82,
+      85
+    ],
+    "evidence_level": "tier4_national_silver",
+    "rationale": "日本国際観光映像祭 2025 建築ドキュメンタリー部門 優秀賞（旧奈良監獄）"
+  },
+  {
     "id": "V6XHz7tqGVM",
     "title": "Beautiful Lie／ADFEST2016_FABULOUS FOUR",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=V6XHz7tqGVM",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "企業映像",
     "tier_bucket": "中位",
     "craft_or_purpose": "craft_benchmark",
     "award_level": "shortlist_or_selection",
+    "era_bucket": "modern_10y",
     "current_db_rating": "A",
     "current_db_score": 83,
     "current_db_analysis_status": "full_analysis",
@@ -2104,7 +2001,7 @@
         "name": "ADFEST",
         "year": "2016",
         "category": "Fabulous Four Official Selection (New Director Lotus)",
-        "sourceUrl": "https://www.adfest.com/"
+        "sourceUrl": "https://adfest.com/Home/News/detail.html?id=12075"
       }
     ],
     "objective_tier": "A-",
@@ -2120,10 +2017,13 @@
     "title": "Unveil the Hidden Gems in Oita BUNGO-ONO",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=9waEFmHUNdk",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "企業映像",
     "tier_bucket": "中位",
     "craft_or_purpose": "craft_benchmark",
     "award_level": "winner",
+    "era_bucket": "modern_10y",
     "current_db_rating": "B+",
     "current_db_score": 75,
     "current_db_analysis_status": "full_analysis",
@@ -2132,7 +2032,7 @@
         "name": "日本国際観光映像祭",
         "year": "2025",
         "category": "観客賞",
-        "sourceUrl": "https://jwtff.world/"
+        "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000187.000017308.html"
       }
     ],
     "objective_tier": "A-",
@@ -2148,251 +2048,209 @@
     "title": "神戸鈑金工業株式会社 - 企業PRムービー",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=-PXeNWSj3Y0",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "企業映像",
     "tier_bucket": "下位",
     "craft_or_purpose": "non_award_baseline",
     "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
     "current_db_rating": "B+",
     "current_db_score": 75,
     "current_db_analysis_status": "full_analysis",
     "awards": [],
-    "objective_tier": "B+",
-    "objective_band": [
-      73,
-      77
-    ],
-    "evidence_level": "baseline_commercial_high",
-    "rationale": "非受賞・高品質企業PRムービー（神戸鈑金工業）"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・通常企業PRムービー（神戸鈑金工業）"
   },
   {
     "id": "-nr56fLZ11o",
     "title": "【企業CM】Kezuru実験「グラインディング」編",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=-nr56fLZ11o",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "企業映像",
     "tier_bucket": "下位",
     "craft_or_purpose": "non_award_baseline",
     "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
     "current_db_rating": "B+",
     "current_db_score": 75,
     "current_db_analysis_status": "full_analysis",
     "awards": [],
-    "objective_tier": "B+",
-    "objective_band": [
-      73,
-      77
-    ],
-    "evidence_level": "baseline_commercial_high",
-    "rationale": "非受賞・高品質企業実験ブランデッド映像（Kezuru実験）"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・通常企業ブランデッド映像（Kezuru実験）"
   },
   {
     "id": "-BVWPusea_A",
     "title": "【採用動画】通信会社様：営業社員PV",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=-BVWPusea_A",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "企業映像",
     "tier_bucket": "下位",
     "craft_or_purpose": "non_award_baseline",
     "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
     "current_db_rating": "B",
     "current_db_score": 70,
     "current_db_analysis_status": "full_analysis",
     "awards": [],
-    "objective_tier": "B",
-    "objective_band": [
-      68,
-      72
-    ],
-    "evidence_level": "baseline_commercial_standard",
-    "rationale": "非受賞・標準企業採用動画（通信会社・営業社員PV）"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・通常企業採用動画（通信会社・営業社員PV）"
   },
   {
     "id": "-5fhRq5PV2o",
     "title": "自動貯金アプリ「finbee（フィンビー）」サービス紹介動画",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=-5fhRq5PV2o",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "企業映像",
     "tier_bucket": "下位",
     "craft_or_purpose": "non_award_baseline",
     "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
     "current_db_rating": "B",
     "current_db_score": 70,
     "current_db_analysis_status": "full_analysis",
     "awards": [],
-    "objective_tier": "B",
-    "objective_band": [
-      68,
-      72
-    ],
-    "evidence_level": "baseline_commercial_standard",
-    "rationale": "非受賞・標準サービス紹介動画（finbee）"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・通常サービス紹介動画（finbee）"
   },
   {
     "id": "4PojHU4ckSk",
     "title": "株式会社ティー・シー・ピー　OEM事業紹介",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=4PojHU4ckSk",
+    "embed_status": "unknown",
+    "playable_via_ytdlp": true,
     "genre_bucket": "企業映像",
     "tier_bucket": "下位",
     "craft_or_purpose": "non_award_baseline",
     "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
     "current_db_rating": "B-",
     "current_db_score": 65,
     "current_db_analysis_status": "full_analysis",
     "awards": [],
-    "objective_tier": "B-",
-    "objective_band": [
-      63,
-      67
-    ],
-    "evidence_level": "baseline_commercial_basic",
-    "rationale": "非受賞・定型企業OEM事業紹介動画（ティー・シー・ピー）"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・通常企業OEM事業紹介動画（ティー・シー・ピー）"
   },
   {
     "id": "2NOefVvwLIM",
     "title": "タスク整体院グループ　採用OP",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=2NOefVvwLIM",
+    "embed_status": "unknown",
+    "playable_via_ytdlp": true,
     "genre_bucket": "企業映像",
     "tier_bucket": "下位",
     "craft_or_purpose": "non_award_baseline",
     "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
     "current_db_rating": "B-",
     "current_db_score": 65,
     "current_db_analysis_status": "full_analysis",
     "awards": [],
-    "objective_tier": "B-",
-    "objective_band": [
-      63,
-      67
-    ],
-    "evidence_level": "baseline_commercial_basic",
-    "rationale": "非受賞・定型採用OP動画（タスク整体院グループ）"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・通常採用OP動画（タスク整体院グループ）"
   },
   {
     "id": "0oioI53EGU0",
     "title": "Ascent Business Consulting株式会社の事業・サービスをご紹介します",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=0oioI53EGU0",
+    "embed_status": "unknown",
+    "playable_via_ytdlp": true,
     "genre_bucket": "企業映像",
     "tier_bucket": "下位",
     "craft_or_purpose": "non_award_baseline",
     "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
     "current_db_rating": "C+",
     "current_db_score": 60,
     "current_db_analysis_status": "full_analysis",
     "awards": [],
-    "objective_tier": "C+",
-    "objective_band": [
-      57,
-      62
-    ],
-    "evidence_level": "baseline_simple_commercial",
-    "rationale": "非受賞・簡易企業サービス紹介動画（Ascent Business Consulting）"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・通常企業サービス紹介動画（Ascent Business Consulting）"
   },
   {
     "id": "7jCvHsi6mLQ",
     "title": "斉藤木工所 採用動画　齊藤文彦社長からのメッセージ",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=7jCvHsi6mLQ",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "企業映像",
     "tier_bucket": "下位",
     "craft_or_purpose": "non_award_baseline",
     "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
     "current_db_rating": "C+",
     "current_db_score": 60,
     "current_db_analysis_status": "full_analysis",
     "awards": [],
-    "objective_tier": "C+",
-    "objective_band": [
-      57,
-      62
-    ],
-    "evidence_level": "baseline_simple_commercial",
-    "rationale": "非受賞・簡易社長メッセージ採用動画（斉藤木工所）"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・通常社長メッセージ採用動画（斉藤木工所）"
   },
   {
     "id": "hJqVpUoNVqE",
     "title": "【社員密着】女性現場監督社員の1日～後編～",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=hJqVpUoNVqE",
+    "embed_status": "unknown",
+    "playable_via_ytdlp": true,
     "genre_bucket": "企業映像",
     "tier_bucket": "下位",
     "craft_or_purpose": "non_award_baseline",
     "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
     "current_db_rating": "C",
     "current_db_score": 53,
     "current_db_analysis_status": "full_analysis",
     "awards": [],
-    "objective_tier": "C",
-    "objective_band": [
-      51,
-      56
-    ],
-    "evidence_level": "baseline_amateur",
-    "rationale": "非受賞・簡易Vlog風社員密着動画"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・通常社員密着採用動画"
   },
   {
     "id": "Z-nPJFF1PYY",
     "title": "株式会社メドコム 採用ピッチ動画",
     "platform": "youtube",
     "videoUrl": "https://www.youtube.com/watch?v=Z-nPJFF1PYY",
+    "embed_status": "available",
+    "playable_via_ytdlp": true,
     "genre_bucket": "企業映像",
     "tier_bucket": "下位",
     "craft_or_purpose": "non_award_baseline",
     "award_level": "non_awarded",
+    "era_bucket": "modern_10y",
     "current_db_rating": "C-",
     "current_db_score": 49,
     "current_db_analysis_status": "full_analysis",
     "awards": [],
-    "objective_tier": "C-",
-    "objective_band": [
-      45,
-      50
-    ],
-    "evidence_level": "baseline_low_amateur",
-    "rationale": "非受賞・スライド読み上げ型採用ピッチ動画（メドコム）"
-  },
-  {
-    "id": "efxhgspLRIQ",
-    "title": "見るだけならタダと言い続けて早数年",
-    "platform": "youtube",
-    "videoUrl": "https://youtu.be/efxhgspLRIQ",
-    "genre_bucket": "CM",
-    "tier_bucket": "下位",
-    "craft_or_purpose": "non_award_baseline",
-    "award_level": "non_awarded",
-    "current_db_rating": "D+",
-    "current_db_score": 40,
-    "current_db_analysis_status": "full_analysis",
-    "awards": [],
-    "objective_tier": "D+",
-    "objective_band": [
-      30,
-      44
-    ],
-    "evidence_level": "baseline_minimal",
-    "rationale": "極下限アンカー（映像演出意図なし・簡易SNSクリップ）"
-  },
-  {
-    "id": "V_yyk2lQRFA",
-    "title": "猫ミームを踊るナナホシすず #vtuber",
-    "platform": "youtube",
-    "videoUrl": "https://www.youtube.com/watch?v=V_yyk2lQRFA",
-    "genre_bucket": "MV",
-    "tier_bucket": "下位",
-    "craft_or_purpose": "non_award_baseline",
-    "award_level": "non_awarded",
-    "current_db_rating": "D-",
-    "current_db_score": 10,
-    "current_db_analysis_status": "full_analysis",
-    "awards": [],
-    "objective_tier": "D-",
-    "objective_band": [
-      0,
-      19
-    ],
-    "evidence_level": "baseline_meme",
-    "rationale": "極下限アンカー（ミーム動画・演出/クラフト基準外）"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "baseline_non_awarded_commercial",
+    "rationale": "非受賞・採用ピッチ動画（メドコム）"
   }
 ]
