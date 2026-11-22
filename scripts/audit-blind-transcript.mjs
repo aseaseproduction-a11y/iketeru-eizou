@@ -416,6 +416,8 @@ export function auditTranscript({
   let totalInputTokens = 0;
   let totalOutputTokens = 0;
   let firstPostReadInputTokens = null;
+  let firstPostReadCacheReadTokens = null;
+  let firstPostReadEffectiveInputTokens = null;
   let seenAnyRead = false;
 
   for (let idx = 0; idx < steps.length; idx++) {
@@ -423,11 +425,16 @@ export function auditTranscript({
 
     if (step.type === "PLANNER_RESPONSE") {
       if (step.model && !modelName) modelName = step.model;
+      const inTok = typeof step.input_tokens === "number" ? step.input_tokens : 0;
+      const cacheTok = typeof step.cache_read_tokens === "number" ? step.cache_read_tokens : 0;
+      const effTok = inTok + cacheTok;
       if (typeof step.input_tokens === "number") {
-        totalInputTokens += step.input_tokens;
-        if (step.input_tokens > maxInputTokens) maxInputTokens = step.input_tokens;
+        totalInputTokens += inTok;
+        if (effTok > maxInputTokens) maxInputTokens = effTok;
         if (seenAnyRead && firstPostReadInputTokens === null) {
-          firstPostReadInputTokens = step.input_tokens;
+          firstPostReadInputTokens = inTok;
+          firstPostReadCacheReadTokens = cacheTok;
+          firstPostReadEffectiveInputTokens = effTok;
         }
       }
       if (typeof step.output_tokens === "number") {
@@ -636,6 +643,8 @@ export function auditTranscript({
     token_usage: {
       model: modelName,
       first_post_read_input_tokens: firstPostReadInputTokens,
+      first_post_read_cache_read_tokens: firstPostReadCacheReadTokens,
+      first_post_read_effective_input_tokens: firstPostReadEffectiveInputTokens,
       max_input_tokens: maxInputTokens,
       total_input_tokens: totalInputTokens,
       total_output_tokens: totalOutputTokens,

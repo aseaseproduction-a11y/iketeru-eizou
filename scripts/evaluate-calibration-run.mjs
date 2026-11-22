@@ -183,6 +183,26 @@ function summarizeSubset(records, label) {
     };
   }
 
+  const rankBandGroups = {
+    "S帯(S+/S/S-)": craft.filter(r => ["S+", "S", "S-"].includes(r.objective_tier)),
+    "A帯(A+/A/A-)": craft.filter(r => ["A+", "A", "A-"].includes(r.objective_tier)),
+    "B帯以下(B+以下)": craft.filter(r => !["S+", "S", "S-", "A+", "A", "A-"].includes(r.objective_tier)),
+  };
+  const byRankBand = {};
+  for (const [bLabel, items] of Object.entries(rankBandGroups)) {
+    const exact = items.filter(r => r.band_dist === 0).length;
+    const within5 = items.filter(r => r.band_dist <= 5).length;
+    byRankBand[bLabel] = {
+      n: items.length,
+      exact_band_hits: `${exact}/${items.length}`,
+      exact_band_hit_rate: items.length ? round4(exact / items.length) : null,
+      within_5pt_of_band_hits: `${within5}/${items.length}`,
+      within_5pt_of_band_rate: items.length ? round4(within5 / items.length) : null,
+      band_distance_mae: items.length ? round4(items.reduce((a, r) => a + r.band_dist, 0) / items.length) : null,
+      mean_signed_bias: items.length ? round4(items.reduce((a, r) => a + (r.ai_score - r.target_mid), 0) / items.length) : null,
+    };
+  }
+
   return {
     subset: label,
     counts: {
@@ -202,6 +222,7 @@ function summarizeSubset(records, label) {
       exact_band_hits: `${exactBandHits}/${craft.length}`,
       mean_signed_bias: craft.length ? round4(craft.reduce((a, r) => a + (r.ai_score - r.target_mid), 0) / craft.length) : null,
     },
+    by_rank_band: byRankBand,
     pairwise_metrics: {
       a_minus_plus_vs_non_award: pairwise,
       pairwise_95ci: pairwiseCi,
@@ -286,6 +307,9 @@ function main() {
         avg_first_post_read_input_tokens: Math.round(
           runs.reduce((a, r) => a + (r.token_usage?.first_post_read_input_tokens || 0), 0) / runs.length
         ),
+        avg_first_post_read_effective_input_tokens: Math.round(
+          runs.reduce((a, r) => a + (r.token_usage?.first_post_read_effective_input_tokens || r.token_usage?.first_post_read_input_tokens || 0), 0) / runs.length
+        ),
       });
     }
 
@@ -293,12 +317,22 @@ function main() {
       .map(r => r.token_usage?.first_post_read_input_tokens)
       .filter(v => typeof v === "number" && v > 0)
       .sort((a, b) => a - b);
+    const effTokenVals = validRuns
+      .map(r => r.token_usage?.first_post_read_effective_input_tokens ?? r.token_usage?.first_post_read_input_tokens)
+      .filter(v => typeof v === "number" && v > 0)
+      .sort((a, b) => a - b);
 
     const unflagged = aggregated.filter(r => !r.flagged_contamination);
+    const tiebreakersNeeded = aggregated.filter(r => r.ensemble_rule === "needs_3rd_tiebreaker").map(r => r.video_id);
+    const tiebreakersCompleted = aggregated.filter(r => r.ensemble_rule === "median_of_3").map(r => r.video_id);
+
     outByMode[mode] = {
       valid_subagent_runs: validRuns.length,
       invalid_subagent_runs: invalidRuns.length,
       unique_videos_scored: aggregated.length,
+      tiebreakers_needed_count: tiebreakersNeeded.length,
+      tiebreakers_needed_videos: tiebreakersNeeded,
+      tiebreakers_completed_count: tiebreakersCompleted.length,
       flagged_contamination_count: aggregated.length - unflagged.length,
       token_summary: {
         count: tokenVals.length,
@@ -306,6 +340,10 @@ function main() {
         median_first_post_read_input_tokens: tokenVals.length ? tokenVals[Math.floor(tokenVals.length / 2)] : null,
         max_first_post_read_input_tokens: tokenVals[tokenVals.length - 1] ?? null,
         mean_first_post_read_input_tokens: tokenVals.length ? Math.round(tokenVals.reduce((a, b) => a + b, 0) / tokenVals.length) : null,
+        min_first_post_read_effective_input_tokens: effTokenVals[0] ?? null,
+        median_first_post_read_effective_input_tokens: effTokenVals.length ? effTokenVals[Math.floor(effTokenVals.length / 2)] : null,
+        max_first_post_read_effective_input_tokens: effTokenVals[effTokenVals.length - 1] ?? null,
+        mean_first_post_read_effective_input_tokens: effTokenVals.length ? Math.round(effTokenVals.reduce((a, b) => a + b, 0) / effTokenVals.length) : null,
       },
       all_included: summarizeSubset(aggregated, "all_included"),
       contamination_excluded: summarizeSubset(unflagged, "contamination_excluded"),
