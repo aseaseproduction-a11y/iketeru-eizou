@@ -1,0 +1,384 @@
+{
+  "note": "Independent 2x(2+1) re-test using leak-free blind_redact.py (ZERO DB writes). Group A and Group B share zero runs.",
+  "summary": {
+    "videos_tested": 4,
+    "final_grade_matched_count": 4,
+    "max_final_overall_delta": 2,
+    "mean_final_overall_delta": 1.5,
+    "total_runs": 21,
+    "log_verified_runs": 21
+  },
+  "per_video": [
+    {
+      "video_id": "1119375393",
+      "title": "オープニング映像  モーショングラフィックス   OFFFMX 2025 Main Titles by XK Studio",
+      "db_overall_rating": "S",
+      "group_A": {
+        "video_id": "1119375393",
+        "group": "A",
+        "mode": "2_run_mean",
+        "final_overall": 95,
+        "final_direction": 93,
+        "final_technique": 94,
+        "final_grade": "S",
+        "grade_boundary": false,
+        "strict_verdict": "accurate",
+        "all_runs_log_verified": true,
+        "runs": [
+          {
+            "label": "A-r1",
+            "overall": 96,
+            "direction": 94,
+            "technique": 94,
+            "synergy": 2,
+            "verdict": "accurate",
+            "token": "d8fe1de9e576",
+            "conv_id": "9584f1ff-4176-4f24-ba1a-147800416ef1",
+            "log_verified": true
+          },
+          {
+            "label": "A-r2",
+            "overall": 94,
+            "direction": 92,
+            "technique": 93,
+            "synergy": 2,
+            "verdict": "accurate",
+            "token": "b82a875f2daf",
+            "conv_id": "8838fd63-799e-4a29-96f7-7976837b36d4",
+            "log_verified": true
+          }
+        ]
+      },
+      "group_B": {
+        "video_id": "1119375393",
+        "group": "B",
+        "mode": "2_run_mean",
+        "final_overall": 96,
+        "final_direction": 94,
+        "final_technique": 94,
+        "final_grade": "S",
+        "grade_boundary": true,
+        "strict_verdict": "accurate",
+        "all_runs_log_verified": true,
+        "runs": [
+          {
+            "label": "B-r1",
+            "overall": 97,
+            "direction": 95,
+            "technique": 94,
+            "synergy": 2,
+            "verdict": "accurate",
+            "token": "a102dcc1d988",
+            "conv_id": "d7706109-b054-4ca3-a4c7-2d59f5b8b8e8",
+            "log_verified": true
+          },
+          {
+            "label": "B-r2",
+            "overall": 95,
+            "direction": 93,
+            "technique": 93,
+            "synergy": 2,
+            "verdict": "accurate",
+            "token": "c421d0e15583",
+            "conv_id": "4f786450-fab8-4135-9844-d2a15c2a4e6e",
+            "log_verified": true
+          }
+        ]
+      },
+      "overall_delta_abs": 1,
+      "final_grade_matched": true
+    },
+    {
+      "video_id": "1046889896",
+      "title": "ブランデッドムービー  スポーツ / 健康 / フィットネス   Powell Lacrosse | Brand ID - Bemo Studio",
+      "db_overall_rating": "A+",
+      "group_A": {
+        "video_id": "1046889896",
+        "group": "A",
+        "mode": "3_run_median",
+        "final_overall": 86,
+        "final_direction": 84,
+        "final_technique": 85,
+        "final_grade": "A+",
+        "grade_boundary": true,
+        "strict_verdict": "minor_fix",
+        "all_runs_log_verified": true,
+        "runs": [
+          {
+            "label": "A-r1",
+            "overall": 86,
+            "direction": 84,
+            "technique": 85,
+            "synergy": 2,
+            "verdict": "accurate",
+            "token": "00979cc946b1",
+            "conv_id": "f827c01a-cd74-47b3-84bf-13dc3c29cd87",
+            "log_verified": true
+          },
+          {
+            "label": "A-r2",
+            "overall": 90,
+            "direction": 87,
+            "technique": 89,
+            "synergy": 2,
+            "verdict": "minor_fix",
+            "token": "f0161b62ea12",
+            "conv_id": "651c3ab7-0342-4abc-8bf6-f950cacb68b3",
+            "log_verified": true
+          },
+          {
+            "label": "A-r3",
+            "overall": 85,
+            "direction": 83,
+            "technique": 84,
+            "synergy": 2,
+            "verdict": "minor_fix",
+            "token": "f7898d9273d5",
+            "conv_id": "f4a35518-2294-4995-8696-c50d24a22ecb",
+            "log_verified": true
+          }
+        ]
+      },
+      "group_B": {
+        "video_id": "1046889896",
+        "group": "B",
+        "mode": "3_run_median",
+        "final_overall": 88,
+        "final_direction": 86,
+        "final_technique": 87,
+        "final_grade": "A+",
+        "grade_boundary": false,
+        "strict_verdict": "minor_fix",
+        "all_runs_log_verified": true,
+        "runs": [
+          {
+            "label": "B-r1",
+            "overall": 84,
+            "direction": 81,
+            "technique": 83,
+            "synergy": 2,
+            "verdict": "minor_fix",
+            "token": "f586e30e910d",
+            "conv_id": "949d4ae1-6ee8-4e73-87ca-74e5d48febf4",
+            "log_verified": true
+          },
+          {
+            "label": "B-r2",
+            "overall": 88,
+            "direction": 86,
+            "technique": 88,
+            "synergy": 1,
+            "verdict": "minor_fix",
+            "token": "9e2d970bb92c",
+            "conv_id": "053bdb0d-c29e-466a-9120-34e73b1ae0a8",
+            "log_verified": true
+          },
+          {
+            "label": "B-r3",
+            "overall": 88,
+            "direction": 86,
+            "technique": 87,
+            "synergy": 2,
+            "verdict": "accurate",
+            "token": "115bf4dd38b1",
+            "conv_id": "93585ee2-351a-466e-9ab3-83bef620d435",
+            "log_verified": true
+          }
+        ]
+      },
+      "overall_delta_abs": 2,
+      "final_grade_matched": true
+    },
+    {
+      "video_id": "1044346460",
+      "title": "カネボウ化粧品　TWANY",
+      "db_overall_rating": "A-",
+      "group_A": {
+        "video_id": "1044346460",
+        "group": "A",
+        "mode": "3_run_median",
+        "final_overall": 75,
+        "final_direction": 72,
+        "final_technique": 77,
+        "final_grade": "B+",
+        "grade_boundary": false,
+        "strict_verdict": "minor_fix",
+        "all_runs_log_verified": true,
+        "runs": [
+          {
+            "label": "A-r1",
+            "overall": 75,
+            "direction": 73,
+            "technique": 78,
+            "synergy": 0,
+            "verdict": "accurate",
+            "token": "f48ee30dd044",
+            "conv_id": "6bcca497-565f-4d5c-a39f-2507875ac689",
+            "log_verified": true
+          },
+          {
+            "label": "A-r2",
+            "overall": 72,
+            "direction": 70,
+            "technique": 73,
+            "synergy": 1,
+            "verdict": "minor_fix",
+            "token": "2b95e773c668",
+            "conv_id": "a451b7df-36ae-4f74-9d11-df6880431ef1",
+            "log_verified": true
+          },
+          {
+            "label": "A-r3",
+            "overall": 75,
+            "direction": 72,
+            "technique": 77,
+            "synergy": 1,
+            "verdict": "accurate",
+            "token": "3eb589c8537a",
+            "conv_id": "b3d45904-393a-4838-bff8-1621dfb30d6b",
+            "log_verified": true
+          }
+        ]
+      },
+      "group_B": {
+        "video_id": "1044346460",
+        "group": "B",
+        "mode": "2_run_mean",
+        "final_overall": 76,
+        "final_direction": 74,
+        "final_technique": 78,
+        "final_grade": "B+",
+        "grade_boundary": false,
+        "strict_verdict": "minor_fix",
+        "all_runs_log_verified": true,
+        "runs": [
+          {
+            "label": "B-r1",
+            "overall": 75,
+            "direction": 74,
+            "technique": 77,
+            "synergy": 0,
+            "verdict": "accurate",
+            "token": "a2a1bfaad326",
+            "conv_id": "4d97f5d7-104c-493f-9ca3-21eeed5de238",
+            "log_verified": true
+          },
+          {
+            "label": "B-r2",
+            "overall": 76,
+            "direction": 74,
+            "technique": 78,
+            "synergy": 0,
+            "verdict": "minor_fix",
+            "token": "2cfabeeec0f6",
+            "conv_id": "6bcec8eb-fcf4-4d87-85ea-4654d48281b2",
+            "log_verified": true
+          }
+        ]
+      },
+      "overall_delta_abs": 1,
+      "final_grade_matched": true
+    },
+    {
+      "video_id": "1056287464",
+      "title": "詩のプラネタリウム",
+      "db_overall_rating": "B",
+      "group_A": {
+        "video_id": "1056287464",
+        "group": "A",
+        "mode": "3_run_median",
+        "final_overall": 70,
+        "final_direction": 70,
+        "final_technique": 68,
+        "final_grade": "B",
+        "grade_boundary": false,
+        "strict_verdict": "accurate",
+        "all_runs_log_verified": true,
+        "runs": [
+          {
+            "label": "A-r1",
+            "overall": 70,
+            "direction": 70,
+            "technique": 68,
+            "synergy": 1,
+            "verdict": "accurate",
+            "token": "2d86cb300c9b",
+            "conv_id": "3b2ef223-f87a-41d3-b324-2e3635bc2f32",
+            "log_verified": true
+          },
+          {
+            "label": "A-r2",
+            "overall": 74,
+            "direction": 76,
+            "technique": 70,
+            "synergy": 1,
+            "verdict": "accurate",
+            "token": "b2e708c98a1b",
+            "conv_id": "c4a7b9a9-f1b1-4422-b6dd-915220f26abf",
+            "log_verified": true
+          },
+          {
+            "label": "A-r3",
+            "overall": 67,
+            "direction": 67,
+            "technique": 63,
+            "synergy": 2,
+            "verdict": "accurate",
+            "token": "2eb84cc66113",
+            "conv_id": "5d190bf4-ab07-43ca-b364-95784824e5d6",
+            "log_verified": true
+          }
+        ]
+      },
+      "group_B": {
+        "video_id": "1056287464",
+        "group": "B",
+        "mode": "3_run_median",
+        "final_overall": 68,
+        "final_direction": 70,
+        "final_technique": 64,
+        "final_grade": "B",
+        "grade_boundary": true,
+        "strict_verdict": "accurate",
+        "all_runs_log_verified": true,
+        "runs": [
+          {
+            "label": "B-r1",
+            "overall": 67,
+            "direction": 70,
+            "technique": 64,
+            "synergy": 0,
+            "verdict": "accurate",
+            "token": "b5c9ee1bcf42",
+            "conv_id": "83352443-9577-47c9-a44a-a35d4bb7dd44",
+            "log_verified": true
+          },
+          {
+            "label": "B-r2",
+            "overall": 73,
+            "direction": 73,
+            "technique": 70,
+            "synergy": 1,
+            "verdict": "accurate",
+            "token": "d40a59f0e6b8",
+            "conv_id": "8b0147c4-22d1-48f3-8ffe-d875aec2426e",
+            "log_verified": true
+          },
+          {
+            "label": "B-r3",
+            "overall": 65,
+            "direction": 66,
+            "technique": 61,
+            "synergy": 1,
+            "verdict": "accurate",
+            "token": "af10c56c66b5",
+            "conv_id": "e95171f5-d8b6-4775-9c5e-d58caa68202e",
+            "log_verified": true
+          }
+        ]
+      },
+      "overall_delta_abs": 2,
+      "final_grade_matched": true
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 {
   "dataset": "analysis/reproducibility_blind_10x3.json (10 videos x 3 blind runs)",
+  "provisional_caveat": "【暫定値】本試算は同じ3回分のデータからペア組み合わせを作っているため、3回目が必要な場合はどのペアでも同じ中央値になり安定性（8/10）が過大に出る。真の安定性は独立した2回の2+1方式実行（analysis/independent_2plus1_retest.json）で検証する。",
   "single_run_vs_2plus1_ensemble": {
     "single_run_mean_score_range": 3.6,
     "single_run_max_score_range": 5,

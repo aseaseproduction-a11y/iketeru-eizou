@@ -389,6 +389,19 @@ else:
             o1, d1, t1, adj1, dd1, td1 = _calc_scores(r1)
             o2, d2, t2, adj2, dd2, td2 = _calc_scores(r2)
 
+            VERDICT_SEVERITY = {"needs_full_analysis": 3, "major_fix": 2, "minor_fix": 1, "accurate": 0}
+
+            def _merge_verdict_and_findings(run_objs):
+                strictest = max(run_objs, key=lambda x: VERDICT_SEVERITY.get(str(x.get("analysis_verdict") or ""), 0))
+                strictest_verdict = strictest.get("analysis_verdict") or "accurate"
+                strict_findings = [
+                    str(x.get("audit_findings") or "").strip()
+                    for x in run_objs
+                    if x.get("analysis_verdict") == strictest_verdict and str(x.get("audit_findings") or "").strip()
+                ]
+                merged_findings = strict_findings[0] if strict_findings else str(strictest.get("audit_findings") or "")
+                return strictest_verdict, merged_findings
+
             if abs(o1 - o2) <= 3 and abs(d1 - d2) <= 3 and abs(t1 - t2) <= 3:
                 ensemble_mode = "2_run_mean"
                 runs_list = [r1, r2]
@@ -412,8 +425,8 @@ else:
                 final_d = int(round(statistics.median([d1, d2, d3])))
                 final_t = int(round(statistics.median([t1, t2, t3])))
                 final_adj = int(round(statistics.median([adj1, adj2, adj3])))
-                final_o = int(round(statistics.median([o1, o2, o3])))
-                # Pick the run closest to median overall for narrative fields, reconcile rubric to exact median sums
+                # Recalculate overall from median direction/technique/synergy so overall & breakdown always agree (#4)
+                final_o = max(0, min(100, round(final_d * 0.55 + final_t * 0.45) + final_adj))
                 scored_runs = [(abs(o1 - final_o), r1, dd1, td1), (abs(o2 - final_o), r2, dd2, td2), (abs(o3 - final_o), r3, dd3, td3)]
                 scored_runs.sort(key=lambda x: x[0])
                 _, med_run, med_dd, med_td = scored_runs[0]
@@ -421,6 +434,11 @@ else:
                 merged["direction"] = reconcile_rubric_to_score(med_dd, final_d)
                 merged["technique"] = reconcile_rubric_to_score(med_td, final_t)
                 merged["synergyAdjustment"] = final_adj
+
+            # Apply strict verdict precedence across all runs in the ensemble (#5)
+            strict_verdict, strict_findings = _merge_verdict_and_findings(runs_list)
+            merged["analysis_verdict"] = strict_verdict
+            merged["audit_findings"] = strict_findings
 
             merged["_ensemble_mode"] = ensemble_mode
             merged["_ensemble_final_overall"] = final_o
