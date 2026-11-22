@@ -70,7 +70,7 @@ export function classifySourceTier(url) {
 const INTERVENING_ENTRY_RX = /\b(?:Title|Advertiser|Agency|Client)\s*:|»/i;
 const BOT_RX = /Just a moment|cf-browser-verification|Attention Required! \| Cloudflare|Access Denied|Are you a robot|Verify you are human|Checking your browser/i;
 const NON_COMMERCIAL_SPEC_RX = /仮想クライアント|架空企業|架空設定|自主制作作品|学習課題|vookschoolの(?:学習|仮想)/i;
-export const CANNES_CORPORATE_CRAFT_AWARDS_RX = /\b(?:Best Directing|Best Cinematography|Best Editing|Best Sound Design|Best Animation,\s*Graphics and Visual Effects|Best Production Design|Best Use of Drones|Best Original Music(?:\/Score)?)\b/i;
+export const CANNES_CORPORATE_CRAFT_AWARDS_RX = /\b(?:Best Directing|Best Cinematography|Best Editing|Best Sound Design|Best Animation,\s*Graphics and Visual Effects|Best Production Design|Best Use of Drones|Best (?:Original )?Music(?:\/Score)?)\b/i;
 
 function cleanText(rawHtml) {
   return rawHtml

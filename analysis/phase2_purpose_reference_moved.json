@@ -100,13 +100,15 @@
   "fallback_rule_if_fewer_than_3_craft_corporate_films_retrievable": {
     "status": "corporate_tier2_unverified",
     "holdout_tier2_n": 20,
+    "holdout_primary_pro_n": 20,
+    "holdout_reference_all_pro_n": 25,
     "holdout_total_n": 70,
-    "genres_in_primary_tier2": ["CM (5)", "MV (5)", "モーション (5)", "3DCG/アニメ (5)"],
-    "corporate_genre_reporting": "未検証（ジャンル別結果は参考値）",
-    "pass_thresholds_for_n20": {
-      "P1_roc_auc": ">= 0.9000 (N_T2=20 vs N_PRO=25 primary; 4-genre matched N_T2=20 vs N_PRO=20 also reported)",
+    "genres_in_primary_comparison": ["CM (5)", "MV (5)", "モーション (5)", "3DCG/アニメ (5)"],
+    "corporate_genre_reporting": "未検証（ジャンル別結果は参考値；主判定P-1/P-3の負例からも企業映像5本を外した4ジャンル一致20本対比を主判定とし、25本対比は参考値併記）",
+    "pass_thresholds_for_n20_matched": {
+      "P1_roc_auc": ">= 0.9000 (4-genre matched N_T2=20 vs N_PRO=20 primary; all-25 pro comparison reported as reference)",
       "P2_sensitivity": "ceil(0.80 * 20) = 16/20 (80.0%)",
-      "P3_specificity": "ceil(0.84 * 25) = 21/25 (84.0%; 4-genre matched ceil(0.84 * 20) = 17/20 also reported)",
+      "P3_specificity": "ceil(0.84 * 20) = 17/20 (84.0%, max 3 false positives; all-25 pro ceil(0.84 * 25) = 21/25 reported as reference)",
       "P4_major_error_a": "floor(0.00 * 20) = 0/20 (0.0%)",
       "low_exposure_recent_min": "ceil(0.60 * 20) = 12/20 (60.0%)"
     }

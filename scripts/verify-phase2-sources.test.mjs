@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { verifyTier2Entry, verifyMetadataEntry, classifySourceTier } from "./verify-phase2-sources.mjs";
+import { verifyTier2Entry, verifyMetadataEntry, classifySourceTier, CANNES_CORPORATE_CRAFT_AWARDS_RX } from "./verify-phase2-sources.mjs";
 
 test("verifyTier2Entry rejects bare homepage URLs, self-reported sites, and forbidden tier tokens", async () => {
   const cache = new Map();
@@ -52,6 +52,13 @@ test("verifyTier2Entry rejects bare homepage URLs, self-reported sites, and forb
   );
   assert.equal(resCcPurpose.status, "failed");
   assert.match(resCcPurpose.reason, /cannes_corporate_purpose_category_not_craft_rule_1_2/);
+
+  // Name-based craft matching covers 2023-2026 ('Best Music') and 2027 ('Best Original Music/Score') while excluding Best Storytelling
+  assert.equal(CANNES_CORPORATE_CRAFT_AWARDS_RX.test("Best Music"), true);
+  assert.equal(CANNES_CORPORATE_CRAFT_AWARDS_RX.test("Best Original Music/Score"), true);
+  assert.equal(CANNES_CORPORATE_CRAFT_AWARDS_RX.test("Best Animation, Graphics and Visual Effects"), true);
+  assert.equal(CANNES_CORPORATE_CRAFT_AWARDS_RX.test("Best Storytelling"), false);
+  assert.equal(CANNES_CORPORATE_CRAFT_AWARDS_RX.test("Gold Award"), false);
 });
 
 test("verifyMetadataEntry enforces verbatim substring, non-commercial guard, and frozen R-LOW regex", () => {

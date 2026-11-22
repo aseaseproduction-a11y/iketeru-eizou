@@ -134,12 +134,18 @@ describe("validatePhase2Dataset", () => {
     assert.ok(res.errors.some((e) => e.includes("<= 150 chars")));
   });
 
-  it("accepts a 70-video Holdout (N_T2=20) when corporateTier2Unverified is enabled, and rejects self_reported Tier 2", () => {
+  it("accepts a 70-video Holdout (N_T2=20) when corporateTier2Unverified is enabled, uses 4-genre matched primary pro=20 (P-3=17), and rejects self_reported Tier 2", () => {
     const entries = makeValidHoldout(0);
     const res = validatePhase2Dataset(entries, { mode: "holdout", corporateTier2Unverified: true });
     assert.equal(res.valid, true, JSON.stringify(res.errors));
     assert.equal(res.stats.tier2_count, 20);
     assert.equal(res.stats.total, 70);
+    assert.equal(res.stats.primary_tier2_count, 20);
+    assert.equal(res.stats.primary_pro_count, 20);
+    assert.equal(res.stats.reference_all_pro_count, 25);
+    assert.equal(res.stats.primary_p2_min_hits, 16);
+    assert.equal(res.stats.primary_p3_min_correct, 17);
+    assert.equal(res.stats.primary_p4_max_errors, 0);
     assert.ok(res.warnings.some((w) => w.includes("N_T2=20")));
 
     entries[0].source_tier = "self_reported";

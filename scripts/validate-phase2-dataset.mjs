@@ -276,6 +276,13 @@ export function validatePhase2Dataset(entries, options = {}) {
     }
   }
 
+  const primaryProEntries = corporateTier2Unverified
+    ? pro.filter((e) => e.genre !== "企業映像")
+    : pro;
+  const primaryScope = corporateTier2Unverified
+    ? "4_genres_matched_excluding_corporate (Tier 2 vs R-PRO)"
+    : "5_genres_all (Tier 2 vs R-PRO)";
+
   return {
     valid: errors.length === 0,
     errors,
@@ -285,6 +292,13 @@ export function validatePhase2Dataset(entries, options = {}) {
       tier2_count: tier2.length,
       pro_count: pro.length,
       low_count: low.length,
+      primary_comparison_scope: primaryScope,
+      primary_tier2_count: tier2.length,
+      primary_pro_count: primaryProEntries.length,
+      reference_all_pro_count: pro.length,
+      primary_p2_min_hits: Math.ceil(0.8 * tier2.length),
+      primary_p3_min_correct: Math.ceil(0.84 * primaryProEntries.length),
+      primary_p4_max_errors: Math.floor(0.0 * tier2.length),
       by_genre_stratum: byGenreStratum,
       tier2_recent_low_exposure_count: lowExposureRecentTier2.length,
       tier2_mega_hit_count: megaHitTier2.length,
