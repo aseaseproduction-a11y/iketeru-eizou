@@ -32,6 +32,41 @@ const FORBIDDEN_TIER_TOKENS = new Set([
   "Title Sequence", "Music Videos", "Commissioned", "Corporate", "Short films"
 ]);
 
+const PRIMARY_OFFICIAL_HOSTS = [
+  "awards.ukmva.com",
+  "motionawards.com",
+  "www.annecyfestival.com",
+  "annecyfestival.com",
+  "blog.siggraph.org",
+  "www.televisionacademy.com",
+  "televisionacademy.com",
+  "winners.cannescorporate.com",
+  "www.cannescorporate.com",
+  "www.acc-awards.com",
+  "acc-awards.com",
+  "www.dandad.org",
+  "www.canneslions.com",
+  "www.lovethework.com",
+  "www.oneclub.org",
+  "www.britisharrows.com",
+  "www.ciclopefestival.com"
+];
+
+const SELF_REPORTED_HOSTS = [
+  "thomasgrovecarter.com"
+];
+
+export function classifySourceTier(url) {
+  try {
+    const host = new URL(url).hostname.toLowerCase();
+    if (SELF_REPORTED_HOSTS.includes(host)) return "self_reported";
+    if (PRIMARY_OFFICIAL_HOSTS.includes(host)) return "primary_official";
+    return "secondary";
+  } catch {
+    return "invalid";
+  }
+}
+
 const INTERVENING_ENTRY_RX = /\b(?:Title|Advertiser|Agency|Client)\s*:|»/i;
 const BOT_RX = /Just a moment|cf-browser-verification|Attention Required! \| Cloudflare|Access Denied|Are you a robot|Verify you are human|Checking your browser/i;
 const NON_COMMERCIAL_SPEC_RX = /仮想クライアント|架空企業|架空設定|自主制作作品|学習課題|vookschoolの(?:学習|仮想)/i;
@@ -107,6 +142,10 @@ function extractSemanticBlocks(proseHtml) {
   for (let i = 0; i < chunks.length - 2; i++) {
     const tri = `${chunks[i]} ${chunks[i + 1]} ${chunks[i + 2]}`;
     if (tri.length <= 320) blocks.push(tri);
+  }
+  for (let i = 0; i < chunks.length - 3; i++) {
+    const quad = `${chunks[i]} ${chunks[i + 1]} ${chunks[i + 2]} ${chunks[i + 3]}`;
+    if (quad.length <= 320) blocks.push(quad);
   }
   return blocks;
 }
@@ -188,6 +227,10 @@ export async function verifyTier2Entry(entry, htmlCache) {
   if (!url || isBareHomepageUrl(url)) {
     return { status: "failed", reason: `bare_homepage_or_invalid_url: ${url}` };
   }
+  const sourceTier = classifySourceTier(url);
+  if (sourceTier === "self_reported") {
+    return { status: "failed", reason: `self_reported_personal_source_rejected: ${url}` };
+  }
   if (!workKws.length || !tierKws.length) {
     return { status: "failed", reason: "missing_verify_rule_work_or_tier" };
   }
@@ -215,6 +258,37 @@ export async function verifyTier2Entry(entry, htmlCache) {
 
   if (fetched.status !== 200 || !fetched.html) {
     return { status: "failed", reason: `http_${fetched.status}_${fetched.error || "non200"}` };
+  }
+
+  // Official ACC JSONP support (acc-awards.com/festival/*fes_result/js/data/*.js)
+  if (/acc-awards\.com\/festival\/\d+fes_result\/js\/data\/[^/]+\.js$/i.test(url)) {
+    try {
+      const jsonStr = fetched.html.trim().replace(/^callback\s*\(/, "").replace(/\)\s*;?\s*$/, "");
+      const parsed = JSON.parse(jsonStr);
+      for (const tbl of parsed.tables || []) {
+        const label = String(tbl.label || "");
+        const matchedTier = tierKws.find((tk) => label.toLowerCase().includes(tk.toLowerCase()));
+        if (!matchedTier) continue;
+        for (const row of tbl.data || []) {
+          const rowText = `${label} | ${row["作品No"] || ""} | ${row["広告主"] || ""} ${row["商品名"] || ""}「${row["題名"] || ""}」`.replace(/\s+/g, " ").trim();
+          const matchedWork = workKws.find((wk) => rowText.toLowerCase().includes(wk.toLowerCase()));
+          if (matchedWork) {
+            return {
+              status: "verified",
+              final_url: fetched.finalUrl,
+              source_tier: sourceTier,
+              matched_work: matchedWork,
+              matched_tier: matchedTier,
+              min_distance_chars: 0,
+              verbatim_excerpt: rowText.slice(0, MAX_EXCERPT_CHARS).trim(),
+            };
+          }
+        }
+      }
+      return { status: "failed", reason: "acc_jsonp_work_and_tier_not_found" };
+    } catch (err) {
+      return { status: "failed", reason: `acc_jsonp_parse_error: ${err.message}` };
+    }
   }
 
   const mainHtml = extractMainHtml(fetched.html);
@@ -250,6 +324,7 @@ export async function verifyTier2Entry(entry, htmlCache) {
   return {
     status: "verified",
     final_url: fetched.finalUrl,
+    source_tier: sourceTier,
     matched_work: best.matched_work,
     matched_tier: best.matched_tier,
     min_distance_chars: best.dist,
@@ -328,6 +403,7 @@ if (import.meta.url === `file:///${process.argv[1]?.replace(/\\/g, "/")}`) {
       delete clean.verify_rule;
       clean.evidence_excerpt = res.verbatim_excerpt;
       if (res.final_url) clean.evidence_url = res.final_url;
+      if (res.source_tier) clean.source_tier = res.source_tier;
       clean.verified_by_script = "scripts/verify-phase2-sources.mjs";
       clean.verified_at = verifiedAt;
       verifiedEntries.push(clean);

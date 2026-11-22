@@ -1,8 +1,8 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { verifyTier2Entry, verifyMetadataEntry } from "./verify-phase2-sources.mjs";
+import { verifyTier2Entry, verifyMetadataEntry, classifySourceTier } from "./verify-phase2-sources.mjs";
 
-test("verifyTier2Entry rejects bare homepage URLs and forbidden tier tokens", async () => {
+test("verifyTier2Entry rejects bare homepage URLs, self-reported sites, and forbidden tier tokens", async () => {
   const cache = new Map();
   const resHome = await verifyTier2Entry(
     {
@@ -14,6 +14,22 @@ test("verifyTier2Entry rejects bare homepage URLs and forbidden tier tokens", as
   );
   assert.equal(resHome.status, "failed");
   assert.match(resHome.reason, /bare_homepage_or_invalid_url/);
+
+  const resSelf = await verifyTier2Entry(
+    {
+      video_id: "test_self",
+      evidence_url: "https://thomasgrovecarter.com/pages/about",
+      verify_rule: { work: ["Periodsomnia"], tier: ["Yellow Pencil"], category: ["Editing"] },
+    },
+    cache
+  );
+  assert.equal(resSelf.status, "failed");
+  assert.match(resSelf.reason, /self_reported_personal_source_rejected/);
+
+  assert.equal(classifySourceTier("https://www.acc-awards.com/festival/2024fes_result/js/data/film-craft.js"), "primary_official");
+  assert.equal(classifySourceTier("https://winners.cannescorporate.com/single-entry/6294?award_id=8&category_id=120"), "primary_official");
+  assert.equal(classifySourceTier("https://creative.salon/cannes-lions-curated/cannes-lions-2024/film-craft-lions-cannes-2024"), "secondary");
+  assert.equal(classifySourceTier("https://thomasgrovecarter.com/pages/about"), "self_reported");
 
   const resForbid = await verifyTier2Entry(
     {

@@ -17,29 +17,9 @@
     "evidence_excerpt": "The Film Craft Grand Prix went to HeimatTBWA\\ for its Hornback film 'The Square Meter'. The campaign focused on the theme \"Every square metre deserves",
     "view_count_at_collection": 23588,
     "collected_at": "2026-11-22T16:33:35.271Z",
+    "source_tier": "secondary",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
-  },
-  {
-    "video_id": "IVDpqih2KbI",
-    "url": "https://www.youtube.com/watch?v=IVDpqih2KbI",
-    "platform": "youtube",
-    "genre": "CM",
-    "title": "Bodyform | #periodsomnia",
-    "channel": "Bodyform UK",
-    "duration_sec": 130,
-    "published_year": 2022,
-    "award_year": 2023,
-    "stratum": "tier2_award",
-    "label_rule_id": "R-T2-01",
-    "matches_r_pro": false,
-    "matches_r_low": false,
-    "evidence_url": "https://thomasgrovecarter.com/pages/about",
-    "evidence_excerpt": "er Lion / Cannes Lions 2023 / Editing Bodyform - Periodsomnia Yellow Pencil / D&AD 2023 / Editing Bodyform - Periodsomnia",
-    "view_count_at_collection": 98251,
-    "collected_at": "2026-11-22T16:33:35.271Z",
-    "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "ev83o3hVoso",
@@ -59,8 +39,9 @@
     "evidence_excerpt": "AMV BBDO and LA-based Somesuch have won a Bronze Film Craft Lion for their 'Respect' campaign for the RSPCA. The film saw an array of animals sing alo",
     "view_count_at_collection": 1083,
     "collected_at": "2026-11-22T16:33:35.271Z",
+    "source_tier": "secondary",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "0PWmNDBWNz0",
@@ -76,12 +57,14 @@
     "label_rule_id": "R-T2-01",
     "matches_r_pro": false,
     "matches_r_low": false,
-    "evidence_url": "https://www.aoi-pro.com/jp/news/20241105/54908/",
-    "evidence_excerpt": "<スタッフ賞 / ロケーション> フィルムクラフト部門(受賞者: 高橋亨) カロリーメイト 「光も影も」",
+    "evidence_url": "https://www.acc-awards.com/festival/2024fes_result/js/data/film-craft.js",
+    "evidence_excerpt": "ACCシルバー | CF241084 | 大塚製薬 カロリーメイト「光も影も」",
     "view_count_at_collection": 10591,
     "collected_at": "2026-11-22T16:33:35.271Z",
+    "public_result_url": "https://www.acc-awards.com/festival/2024fes_result/film_craft.html",
+    "source_tier": "primary_official",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "jnzWdC90IbA",
@@ -97,12 +80,14 @@
     "label_rule_id": "R-T2-01",
     "matches_r_pro": false,
     "matches_r_low": false,
-    "evidence_url": "https://www.aoi-pro.com/jp/news/20241105/54908/",
-    "evidence_excerpt": "<スタッフ賞 / 撮影> フィルムクラフト部門(受賞者: Stefan von Borbely、竹内スグル) TOYOTA GAZOO RACING 「WILD MOMENT / GRヤリス WILD MOMENT / HILUX WILD MOMENT / GR010 WILD MOMENT /",
+    "evidence_url": "https://www.acc-awards.com/festival/2024fes_result/js/data/film-craft.js",
+    "evidence_excerpt": "ACCゴールド | CF241934 | TOYOTA自動車 GRブランド「WILDMOMENT 60秒／GRヤリス WILDMOMENT 30秒 ／HILUX WILDMOMENT 30秒／GR010 WILDMOMENT 30秒 ／GRスープラ WILDMOMENT 30秒 」",
     "view_count_at_collection": 404056,
     "collected_at": "2026-11-22T16:33:35.271Z",
+    "public_result_url": "https://www.acc-awards.com/festival/2024fes_result/film_craft.html",
+    "source_tier": "primary_official",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "Z8hWLECF2kE",
@@ -122,8 +107,9 @@
     "evidence_excerpt": "petit production company: ocurens record co: arista shortlist: skiifall - 2 charming vfx artist: matt fuller at the mill director: rubberband. product",
     "view_count_at_collection": 229628,
     "collected_at": "2026-11-22T16:33:35.271Z",
+    "source_tier": "primary_official",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "sDMLGzeHH6E",
@@ -143,8 +129,9 @@
     "evidence_excerpt": "best visual effects in a video winner: audrey nuna - locket vfx artist: square director: valentin petit production company: ocurens record co: arista",
     "view_count_at_collection": 812284,
     "collected_at": "2026-11-22T16:33:35.271Z",
+    "source_tier": "primary_official",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "3DnDPArgl_I",
@@ -164,8 +151,9 @@
     "evidence_excerpt": "best pop video international winner: mette – bet director: c prinz producers: joel spencer, eli raskin production co: smuggler, field trip media commi",
     "view_count_at_collection": 636817,
     "collected_at": "2026-11-22T16:33:35.271Z",
+    "source_tier": "primary_official",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "4HZiS4VtscU",
@@ -185,8 +173,9 @@
     "evidence_excerpt": "ve team: sehoon jang, jnkyrd record co: bighit music shortlist: hyukoh, sunset rollercoaster – antenna director: rafhoo producer: euis production co:",
     "view_count_at_collection": 1259269,
     "collected_at": "2026-11-22T16:33:35.271Z",
+    "source_tier": "primary_official",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "gi9OBRzbMNI",
@@ -206,8 +195,9 @@
     "evidence_excerpt": "video of the year winner: mette - mama's eyes director: camille summers-valli producer: daisy rylance production company: love song / division commiss",
     "view_count_at_collection": 1389256,
     "collected_at": "2026-11-22T16:33:35.271Z",
+    "source_tier": "primary_official",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "nRtxogXp8sY",
@@ -227,8 +217,9 @@
     "evidence_excerpt": "best dance / electronic video uk winner: the chemical brothers ft beck – skipping like a stone director: pensacola producer: callum harrison productio",
     "view_count_at_collection": 1446536,
     "collected_at": "2026-11-22T16:33:35.271Z",
+    "source_tier": "primary_official",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "ZFVtLHLN8aU",
@@ -248,8 +239,9 @@
     "evidence_excerpt": "Star Trek: Strange New Worlds Season 1 Main Title Winner · Picturemill",
     "view_count_at_collection": 62312,
     "collected_at": "2026-11-22T16:33:35.271Z",
+    "source_tier": "primary_official",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "6jhuEo2Upqs",
@@ -269,8 +261,9 @@
     "evidence_excerpt": "VALORANT \"Game Changers Championship\" Winner · Scholar",
     "view_count_at_collection": 173207,
     "collected_at": "2026-11-22T16:33:35.271Z",
+    "source_tier": "primary_official",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "D2J8YDIHhtY",
@@ -290,8 +283,9 @@
     "evidence_excerpt": "Rick and Morty Season 6 Stunt Winner · Golden Wolf",
     "view_count_at_collection": 1650,
     "collected_at": "2026-11-22T16:33:35.271Z",
+    "source_tier": "primary_official",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "GJOn8nL2C8o",
@@ -311,8 +305,9 @@
     "evidence_excerpt": "Rugby World Cup France 2023 Winner · AE Live Ignite",
     "view_count_at_collection": 208488,
     "collected_at": "2026-11-22T16:33:35.271Z",
+    "source_tier": "primary_official",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "b1Izefj7Eag",
@@ -332,8 +327,9 @@
     "evidence_excerpt": "Murder in the Bell Tower Winner · Mellow Studio",
     "view_count_at_collection": 11,
     "collected_at": "2026-11-22T16:33:35.271Z",
+    "source_tier": "primary_official",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "-15nbjw0IHU",
@@ -353,8 +349,9 @@
     "evidence_excerpt": "OOHA – Clash of Flavours Winner · Golden Wolf",
     "view_count_at_collection": 6091,
     "collected_at": "2026-11-22T16:33:35.271Z",
+    "source_tier": "primary_official",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "OfCn09kBXXg",
@@ -374,8 +371,9 @@
     "evidence_excerpt": "Weetabix – Three Little Pigs Winner · Golden Wolf",
     "view_count_at_collection": 9432,
     "collected_at": "2026-11-22T16:33:35.271Z",
+    "source_tier": "primary_official",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "a1EwwLFNQI0",
@@ -395,8 +393,9 @@
     "evidence_excerpt": "Cristal for a Commissioned Film Pictoplasma \"Opener 2023\"",
     "view_count_at_collection": 4647,
     "collected_at": "2026-11-22T16:33:35.271Z",
+    "source_tier": "primary_official",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "NmS3m0OG-Ug",
@@ -417,8 +416,9 @@
     "view_count_at_collection": 2852071,
     "collected_at": "2026-11-22T16:33:35.271Z",
     "art_of_the_title_url": "https://www.artofthetitle.com/title/severance/",
+    "source_tier": "primary_official",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "1GgKXR_J-ww",
@@ -439,8 +439,9 @@
     "view_count_at_collection": 2248089,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "art_of_the_title_url": "https://www.artofthetitle.com/title/pachinko/",
+    "source_tier": "primary_official",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "8SWhBsbxmpk",
@@ -461,8 +462,9 @@
     "view_count_at_collection": 3572535,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "art_of_the_title_url": "https://www.artofthetitle.com/title/the-last-of-us-2023/",
+    "source_tier": "primary_official",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "AJlOS6ZeIcA",
@@ -483,8 +485,9 @@
     "view_count_at_collection": 572284,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "art_of_the_title_url": "https://www.artofthetitle.com/title/silo/",
+    "source_tier": "primary_official",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "q8Ea2tysrrc",
@@ -505,8 +508,9 @@
     "view_count_at_collection": 3735200,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "art_of_the_title_url": "https://www.artofthetitle.com/title/the-white-lotus-season-2/",
+    "source_tier": "primary_official",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "ke4kVFycpYY",
@@ -526,8 +530,9 @@
     "evidence_excerpt": "Jury Award for a Commissioned Film TED-Ed \"How Did South African Apartheid Happen, and How Did It Finally End?\"",
     "view_count_at_collection": 1633840,
     "collected_at": "2026-11-22T16:33:35.272Z",
+    "source_tier": "primary_official",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "HoMeijpAI9E",
@@ -547,8 +552,9 @@
     "evidence_excerpt": "Jury Award for a Commissioned Film Aline Film Index",
     "view_count_at_collection": 285428,
     "collected_at": "2026-11-22T16:33:35.272Z",
+    "source_tier": "primary_official",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "9acxn7qAST4",
@@ -568,8 +574,9 @@
     "evidence_excerpt": "Jury’s Choice [tie] — “Overwatch: Kiriko” Jeremiah Johnson and Dave Stephens, Blizzard Entertainment",
     "view_count_at_collection": 12403108,
     "collected_at": "2026-11-22T16:33:35.272Z",
+    "source_tier": "primary_official",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "5XwXliCK19Y",
@@ -589,8 +596,9 @@
     "evidence_excerpt": "Jury Award for a Commissioned Film The Beatles \"I'm Only Sleeping\" Film Index",
     "view_count_at_collection": 11297071,
     "collected_at": "2026-11-22T16:33:35.272Z",
+    "source_tier": "primary_official",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "G393z8s8nFY",
@@ -610,8 +618,9 @@
     "evidence_excerpt": "Cristal for a Commissioned Film Save Ralph Film Index",
     "view_count_at_collection": 17848948,
     "collected_at": "2026-11-22T16:33:35.272Z",
+    "source_tier": "primary_official",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "-BNMlu1P1Cc",
@@ -627,12 +636,13 @@
     "label_rule_id": "R-T2-05",
     "matches_r_pro": false,
     "matches_r_low": false,
-    "evidence_url": "https://winners.cannescorporate.com/?year=2025",
-    "evidence_excerpt": "Grand Prix Corporate Denmark The Broken Heart",
+    "evidence_url": "https://winners.cannescorporate.com/single-entry/4212?award_id=2&category_id=137",
+    "evidence_excerpt": "Grand Prix Corporate Denmark B.23 Branded Content Videos The Broken Heart",
     "view_count_at_collection": 11080,
     "collected_at": "2026-11-22T16:33:35.272Z",
+    "source_tier": "primary_official",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "Rs_NWwtBoks",
@@ -648,12 +658,13 @@
     "label_rule_id": "R-T2-05",
     "matches_r_pro": false,
     "matches_r_low": false,
-    "evidence_url": "https://www.dnv.com/news/2026/dnvs-film-the-great-transition-wins-3-dolphins-at-cannes-corporate-media-tv-awards/",
-    "evidence_excerpt": "DNV's film The Great Transition wins 3 Dolphins at Cannes Corporate Media & TV Awards Representatives from DNV and Yune/Omnicom with the Gold Award (f",
+    "evidence_url": "https://winners.cannescorporate.com/single-entry/6294?award_id=8&category_id=120",
+    "evidence_excerpt": "Gold Award Netherlands A.7 Corporate Social Responsibility The Great Transition",
     "view_count_at_collection": 7571717,
     "collected_at": "2026-11-22T16:33:35.272Z",
+    "source_tier": "primary_official",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "O1qBDmkRYL4",
@@ -673,8 +684,31 @@
     "evidence_excerpt": "Grand Prix for Best Corporate Media Studying is what you make of it! CH",
     "view_count_at_collection": 2462,
     "collected_at": "2026-11-22T16:33:35.272Z",
+    "source_tier": "primary_official",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
+  },
+  {
+    "video_id": "dRID0fo-2FQ",
+    "url": "https://www.youtube.com/watch?v=dRID0fo-2FQ",
+    "platform": "youtube",
+    "genre": "企業映像",
+    "title": "Falling for Autumn | Switzerland Tourism",
+    "channel": "Switzerland",
+    "duration_sec": 112,
+    "published_year": 2024,
+    "award_year": 2024,
+    "stratum": "tier2_award",
+    "label_rule_id": "R-T2-05",
+    "matches_r_pro": false,
+    "matches_r_low": false,
+    "evidence_url": "https://winners.cannescorporate.com/single-entry/4774?award_id=8&category_id=177",
+    "evidence_excerpt": "Gold Award Switzerland A.15.c Tourism Films: Destinations – Countries Falling for Autumn",
+    "view_count_at_collection": 66063194,
+    "collected_at": "2026-11-22T16:33:35.272Z",
+    "source_tier": "primary_official",
+    "verified_by_script": "scripts/verify-phase2-sources.mjs",
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "sjURCaINARk",
@@ -696,7 +730,7 @@
     "view_count_at_collection": 29355,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "t4nVyE0J9eo",
@@ -718,7 +752,7 @@
     "view_count_at_collection": 13861913,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "5jEJg-Sxl9U",
@@ -740,7 +774,7 @@
     "view_count_at_collection": 1358924,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "W796t4glQnU",
@@ -762,7 +796,7 @@
     "view_count_at_collection": 266626,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "xuMf1KZzMd8",
@@ -784,7 +818,7 @@
     "view_count_at_collection": 110961,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "GCdPC3gTBDs",
@@ -806,7 +840,7 @@
     "view_count_at_collection": 11479425,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "fBR8Wp2WF60",
@@ -828,7 +862,7 @@
     "view_count_at_collection": 691522,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "xZ5DIjJOsgg",
@@ -850,7 +884,7 @@
     "view_count_at_collection": 3131676,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "u_lAdKpRp-8",
@@ -872,7 +906,7 @@
     "view_count_at_collection": 11344300,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "aMWeNABISlg",
@@ -894,7 +928,7 @@
     "view_count_at_collection": 3908,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "Xvx1GvsOMdI",
@@ -915,7 +949,7 @@
     "view_count_at_collection": 28465221,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "P7bVX6fJfCg",
@@ -936,7 +970,7 @@
     "view_count_at_collection": 133162607,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "VKuhDciY-ys",
@@ -957,7 +991,7 @@
     "view_count_at_collection": 5397681,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "m0lJzV55jKg",
@@ -978,7 +1012,7 @@
     "view_count_at_collection": 1167552,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "SZpiiixlHWY",
@@ -999,7 +1033,7 @@
     "view_count_at_collection": 60660893,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "Wjew3Rc1PYI",
@@ -1020,7 +1054,7 @@
     "view_count_at_collection": 11827923,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "_-HkdD6LLGg",
@@ -1041,7 +1075,7 @@
     "view_count_at_collection": 155941,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "1rSz3x1x0Ew",
@@ -1062,7 +1096,7 @@
     "view_count_at_collection": 499,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "YlINk0vjtLg",
@@ -1083,7 +1117,7 @@
     "view_count_at_collection": 292,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "67UqYS-UsUI",
@@ -1104,7 +1138,7 @@
     "view_count_at_collection": 73,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "i70ijS4y6js",
@@ -1125,7 +1159,7 @@
     "view_count_at_collection": 696,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "uTbgFqFA9GU",
@@ -1146,7 +1180,7 @@
     "view_count_at_collection": 4269,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "qtZPdgesJVk",
@@ -1167,7 +1201,7 @@
     "view_count_at_collection": 55,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "kdh0ucpJEH8",
@@ -1188,7 +1222,7 @@
     "view_count_at_collection": 209570,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "j5k7BgIqkI0",
@@ -1209,7 +1243,7 @@
     "view_count_at_collection": 380531,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "gcZXJ8cxDpM",
@@ -1230,7 +1264,7 @@
     "view_count_at_collection": 729173,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "cmNtgMq5khQ",
@@ -1251,7 +1285,7 @@
     "view_count_at_collection": 1123527,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "aE0Eb23d6Dk",
@@ -1272,7 +1306,7 @@
     "view_count_at_collection": 379310,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "QqLA-04V_uw",
@@ -1293,7 +1327,7 @@
     "view_count_at_collection": 785099,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "YT2Sh7sbZak",
@@ -1314,7 +1348,7 @@
     "view_count_at_collection": 3269890,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "hQjGJJ23BCE",
@@ -1335,7 +1369,7 @@
     "view_count_at_collection": 1006124,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "75IOv2UhB8Q",
@@ -1356,7 +1390,7 @@
     "view_count_at_collection": 13827,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "_sp_rADhJbI",
@@ -1378,7 +1412,7 @@
     "view_count_at_collection": 5489,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "CrTB3pfzJM4",
@@ -1400,7 +1434,7 @@
     "view_count_at_collection": 246,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "sEYd0PBAuo0",
@@ -1422,7 +1456,7 @@
     "view_count_at_collection": 317,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "MB5ZxJvIwUw",
@@ -1444,7 +1478,7 @@
     "view_count_at_collection": 342,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "hhw2_xeX3Tk",
@@ -1466,7 +1500,7 @@
     "view_count_at_collection": 216,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "qPZWGWxWPYs",
@@ -1488,7 +1522,7 @@
     "view_count_at_collection": 216,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "FhhBAhJPUyE",
@@ -1510,7 +1544,7 @@
     "view_count_at_collection": 92,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "OMFRjbG7aX8",
@@ -1532,7 +1566,7 @@
     "view_count_at_collection": 673,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "JBdhIf-49nc",
@@ -1553,7 +1587,7 @@
     "view_count_at_collection": 1262,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "4bFPZNmx18o",
@@ -1574,7 +1608,7 @@
     "view_count_at_collection": 233,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "Ne9QqlYJJ24",
@@ -1595,7 +1629,7 @@
     "view_count_at_collection": 67,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "0Ee4dRb1laM",
@@ -1616,7 +1650,7 @@
     "view_count_at_collection": 32,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "94OoXKHO8mI",
@@ -1637,7 +1671,7 @@
     "view_count_at_collection": 22,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "zhRq3VuQZ_Q",
@@ -1658,7 +1692,7 @@
     "view_count_at_collection": 8,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "ao3X2s4IL0c",
@@ -1679,7 +1713,7 @@
     "view_count_at_collection": 117,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "TYPrMMTbIE4",
@@ -1700,7 +1734,7 @@
     "view_count_at_collection": 1945,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "4iuLitLBhl8",
@@ -1721,7 +1755,7 @@
     "view_count_at_collection": 25,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "NklWTK3Ue1Q",
@@ -1742,7 +1776,7 @@
     "view_count_at_collection": 575,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "Z1gGDaQWwdg",
@@ -1763,7 +1797,7 @@
     "view_count_at_collection": 3345,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "Jyv8dO8XDEs",
@@ -1784,7 +1818,7 @@
     "view_count_at_collection": 256,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "omQ99jeUujs",
@@ -1805,7 +1839,7 @@
     "view_count_at_collection": 41,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "aV9CPYsqz9k",
@@ -1826,7 +1860,7 @@
     "view_count_at_collection": 112,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "Z0lN-XgQzlI",
@@ -1847,7 +1881,7 @@
     "view_count_at_collection": 178,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "tGc4U3XeE_4",
@@ -1868,7 +1902,7 @@
     "view_count_at_collection": 186,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "q2412-rz1ts",
@@ -1889,7 +1923,7 @@
     "view_count_at_collection": 102,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "Y6EztTVFX5M",
@@ -1910,7 +1944,7 @@
     "view_count_at_collection": 31157,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "1JCX12RX3Ic",
@@ -1931,7 +1965,7 @@
     "view_count_at_collection": 120,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "qQXsOOxsWgw",
@@ -1952,7 +1986,7 @@
     "view_count_at_collection": 647,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "PupfzrYviGc",
@@ -1973,7 +2007,7 @@
     "view_count_at_collection": 7510,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "ZkQsrYzzG38",
@@ -1994,7 +2028,7 @@
     "view_count_at_collection": 20337,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "bHbDA2R5EQ8",
@@ -2015,7 +2049,7 @@
     "view_count_at_collection": 801,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "oC1882y0IgA",
@@ -2036,7 +2070,7 @@
     "view_count_at_collection": 15,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "L1zAQoHoBUw",
@@ -2057,7 +2091,7 @@
     "view_count_at_collection": 95,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "dYqCocdxmZo",
@@ -2078,7 +2112,7 @@
     "view_count_at_collection": 21,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "5AAcdVSxDdI",
@@ -2099,7 +2133,7 @@
     "view_count_at_collection": 47,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "jjXPrOUXmZg",
@@ -2120,7 +2154,7 @@
     "view_count_at_collection": 36,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "v-fCUQ1R51o",
@@ -2141,7 +2175,7 @@
     "view_count_at_collection": 278,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "KrCbjxKDY7Q",
@@ -2162,7 +2196,7 @@
     "view_count_at_collection": 3505,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "HaENcp4_4uY",
@@ -2183,7 +2217,7 @@
     "view_count_at_collection": 15691,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "n8wefcKLOnY",
@@ -2204,7 +2238,7 @@
     "view_count_at_collection": 1827,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "7ZA_8FKwgLY",
@@ -2225,7 +2259,7 @@
     "view_count_at_collection": 52970,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "3_c0l_p9dd8",
@@ -2246,7 +2280,7 @@
     "view_count_at_collection": 1279,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "P6G_PwndJ6k",
@@ -2267,7 +2301,7 @@
     "view_count_at_collection": 51665,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "pcrNIQyvwnE",
@@ -2288,7 +2322,7 @@
     "view_count_at_collection": 24540,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "nzmA4Gj5SrQ",
@@ -2309,7 +2343,7 @@
     "view_count_at_collection": 29,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "qDHqAFdcxgw",
@@ -2330,7 +2364,7 @@
     "view_count_at_collection": 83,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "u0h78N8hb8Y",
@@ -2351,7 +2385,7 @@
     "view_count_at_collection": 57,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "Z2eGGc9Z3CM",
@@ -2372,7 +2406,7 @@
     "view_count_at_collection": 190,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "a_C24dNnDQE",
@@ -2393,7 +2427,7 @@
     "view_count_at_collection": 276,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "CPeyrWJQi3U",
@@ -2414,7 +2448,7 @@
     "view_count_at_collection": 344,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "Fc63x0Bf6NY",
@@ -2435,7 +2469,7 @@
     "view_count_at_collection": 46,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "DVKMAFQBBGk",
@@ -2456,7 +2490,7 @@
     "view_count_at_collection": 70,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "E9TSM-uTs68",
@@ -2477,7 +2511,7 @@
     "view_count_at_collection": 75,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   },
   {
     "video_id": "Whd6RIO7DRk",
@@ -2498,6 +2532,6 @@
     "view_count_at_collection": 56,
     "collected_at": "2026-11-22T16:33:35.272Z",
     "verified_by_script": "scripts/verify-phase2-sources.mjs",
-    "verified_at": "2026-11-22T18:01:56.079Z"
+    "verified_at": "2026-11-22T18:21:55.076Z"
   }
 ]

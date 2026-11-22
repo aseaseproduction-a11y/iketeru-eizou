@@ -1,17 +1,39 @@
 {
-  "generated_at": "2026-11-22T18:03:13.480Z",
+  "generated_at": "2026-11-22T18:25:54.150Z",
   "sanity_checks": {
     "verified_total": 118,
     "bare_homepage_urls": 0,
     "missing_verification_stamp": 0,
     "tier2_excerpts_over_150": 0,
-    "phase1_overlaps": 0
+    "phase1_overlaps": 0,
+    "tier2_source_tiers": {
+      "secondary": 2,
+      "primary_official": 30
+    }
+  },
+  "pending_after_youtube_cooldown": {
+    "cm_tier2_replacement_for_periodsomnia": {
+      "needed": 1,
+      "candidate_video_id": "8cnLzsAvVxU",
+      "candidate_title": "【企業広告】TVCM「MOVE」篇 30秒（本田技研工業公式）",
+      "official_award_source": "https://www.acc-awards.com/festival/2024fes_result/js/data/film-craft.js (CF241816 ACCゴールド)",
+      "status": "awaiting_youtube_cooldown_for_metadata_and_local_ocr"
+    },
+    "dev_motion_r_pro_addition": {
+      "needed": 1,
+      "candidate_video_id": "5NsgViu8V0g",
+      "candidate_title": "TANKA様 サービス紹介動画｜モーショングラフィックス｜Unplug",
+      "status": "awaiting_youtube_cooldown_for_metadata_and_local_ocr"
+    },
+    "r_low_local_ocr_pending_verified": 31,
+    "r_pro_local_ocr_pending_verified": 3,
+    "retry_script": "scripts/slow_retry_precheck_ocr.py (unauthenticated, 75-105s spacing, immediate abort on bot-check)"
   },
   "pool_by_stratum_and_genre": {
     "tier2_award": {
       "CM": {
-        "verified": 5,
-        "ocr_clean": 5,
+        "verified": 4,
+        "ocr_clean": 4,
         "ocr_pending_youtube_rate_limit": 0
       },
       "MV": {
@@ -30,8 +52,8 @@
         "ocr_pending_youtube_rate_limit": 0
       },
       "企業映像": {
-        "verified": 3,
-        "ocr_clean": 3,
+        "verified": 4,
+        "ocr_clean": 4,
         "ocr_pending_youtube_rate_limit": 0
       }
     },

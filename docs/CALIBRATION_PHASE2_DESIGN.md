@@ -90,7 +90,7 @@ Phase 1 の確認用（Holdout：`run_20261122_232100`、受賞13本＋非受賞
 |---|---|---|
 | `R-T2-01` | **CM** | Cannes Lions Film Craft / D&AD Film Craft / Ciclope / AICP / British Arrows / ACC TOKYO CREATIVITY AWARDS（フィルムクラフト部門） |
 | `R-T2-02` | **MV** | UKMVA（Cinematography / Editing / VFX / Animation / Production Design 等のクラフト部門） / D&AD Music Videos / SXSW MV Jury / Berlin MVA / SPACE SHOWER MUSIC AWARDS / 文化庁メディア芸術祭（MV） |
-| `R-T2-03` | **モーション** | SXSW Title Design / D&AD（Film Design / Graphic Design / Typography / Animation） / ADC Annual Awards（Motion / Film Craft） / Art of the Title 掲載本編 / Vimeo Staff Pick（公式バッジ確認済かつ単発ループでない完成本編） / The Motion Awards（審査員部門のみ；一般投票 The Pulse は除外） |
+| `R-T2-03` | **モーション** | Emmy Awards（Outstanding Main Title Design：Winner=`S` / Nominee=`A+`、`PRO_BENCHMARK_RUBRIC.md` 第3節対応） / SXSW Title Design / D&AD（Film Design / Graphic Design / Typography / Animation） / ADC Annual Awards（Motion / Film Craft） / Art of the Title 掲載本編（`A+`） / Vimeo Staff Pick（公式バッジ確認済かつ単発ループでない完成本編） / The Motion Awards（審査員部門のみ；一般投票 The Pulse は除外） |
 | `R-T2-04` | **3DCG/アニメ** | Annecy Official Competition・Commissioned / SIGGRAPH Computer Animation Festival（Electronic Theater） / Prix Ars Electronica Computer Animation / 文化庁メディア芸術祭（アニメ） / 新千歳空港国際アニメーション映画祭（審査員賞のみ） |
 | `R-T2-05` | **企業映像** | Cannes Corporate Media & TV Awards（クラフト・プロダクション部門） / New York Festivals TV & Film Awards（Craft / Corporate 部門） / D&AD・Cannes Film Craft のブランドフィルム / TOYOTA DIRECTORSCUT / ADFEST Fabulous Four（※ローカル OCR でロゴなし確認済のみ） |
 

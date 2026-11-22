@@ -167,6 +167,9 @@ export function validatePhase2Dataset(entries, options = {}) {
     if (e.stratum === "tier2_award" && typeof e.evidence_excerpt === "string" && e.evidence_excerpt.length > 150) {
       errors.push(`${tag} Tier 2 evidence_excerpt must be a verbatim snippet <= 150 chars (got ${e.evidence_excerpt.length})`);
     }
+    if (e.stratum === "tier2_award" && e.source_tier === "self_reported") {
+      errors.push(`${tag} Tier 2 self_reported personal source is forbidden`);
+    }
 
     if (typeof e.view_count_at_collection !== "number" || !Number.isFinite(e.view_count_at_collection) || e.view_count_at_collection < 0) {
       errors.push(`${tag} view_count_at_collection must be a non-negative finite number`);
