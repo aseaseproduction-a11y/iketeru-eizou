@@ -228,13 +228,13 @@ export function evaluatePhase2Scores(records, { tAward = 78.0, tLow = 63.0, boot
 }
 
 export function sweepDevThresholds(itemsWithBothModes, {
-  tAwardGrid = [75, 76, 77, 78, 79, 80, 81, 82],
-  tLowGrid = [60, 62, 63, 64, 65, 66],
+  tAwardGrid = [75, 76, 77, 78, 79, 80, 81, 82, 83, 84],
+  tLowGrid = [58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68],
 } = {}) {
   const results = [];
   for (const tAward of tAwardGrid) {
     for (const tLow of tLowGrid) {
-      if (tLow >= tAward - 5) continue;
+      if (tLow > tAward - 5) continue;
       const scored = itemsWithBothModes.map((it) => {
         const h = computeHybridScore(it, {
           videoScore: it.video_score,
@@ -262,7 +262,138 @@ export function sweepDevThresholds(itemsWithBothModes, {
   }
   results.sort((a, b) => {
     const rank = (d) => (d === "GO" ? 2 : d === "HOLD_LOW_REDESIGN" ? 1 : 0);
-    return rank(b.decision) - rank(a.decision) || (b.youden_j - a.youden_j) || (b.p1_auc - a.p1_auc);
+    return (
+      rank(b.decision) - rank(a.decision) ||
+      b.youden_j - a.youden_j ||
+      b.p1_auc - a.p1_auc ||
+      a.t_award - b.t_award ||
+      a.t_low - b.t_low
+    );
   });
   return results;
+}
+
+export function findContiguousRuns(values, step = 1) {
+  const uniq = [...new Set(values)].sort((a, b) => a - b);
+  if (!uniq.length) return [];
+  const runs = [[uniq[0]]];
+  for (let i = 1; i < uniq.length; i++) {
+    const prev = uniq[i - 1];
+    if (Math.abs((uniq[i] - prev) - step) < 1e-9) {
+      runs[runs.length - 1].push(uniq[i]);
+    } else {
+      runs.push([uniq[i]]);
+    }
+  }
+  return runs;
+}
+
+function inferGridStep(allValues, fallback = 1) {
+  const uniq = [...new Set(allValues)].sort((a, b) => a - b);
+  let minDiff = Infinity;
+  for (let i = 1; i < uniq.length; i++) {
+    const d = uniq[i] - uniq[i - 1];
+    if (d > 1e-9 && d < minDiff) minDiff = d;
+  }
+  return Number.isFinite(minDiff) ? minDiff : fallback;
+}
+
+function pickUpperMedianFromRuns(runs, rowsByVal) {
+  if (!runs.length) return { value: null, chosen_run: [] };
+  const ranked = runs.map((run) => {
+    let maxAuc = -Infinity;
+    for (const v of run) {
+      for (const r of rowsByVal.get(v) || []) {
+        if (typeof r.p1_auc === "number" && r.p1_auc > maxAuc) maxAuc = r.p1_auc;
+      }
+    }
+    return { run, len: run.length, maxAuc, start: run[0] };
+  });
+  ranked.sort((a, b) => b.len - a.len || b.maxAuc - a.maxAuc || b.start - a.start);
+  const bestRun = ranked[0].run;
+  // Exact center for odd length; higher of the two middle values for even length
+  const value = bestRun[Math.floor(bestRun.length / 2)];
+  return { value, chosen_run: bestRun };
+}
+
+/**
+ * Pre-registered deterministic threshold selector (CALIBRATION_PHASE2_DESIGN.md Section 5.6).
+ * Independent of input row order:
+ *  1. Filter GO rows and find max Youden's J.
+ *  2. Among GO rows with max Youden's J, pick T_award as upper-median of longest contiguous run.
+ *  3. At that T_award, pick T_low as upper-median of longest contiguous run among max-J GO rows.
+ *  4. Also returns full GO pass-range width for transparent reporting.
+ */
+export function selectFrozenThresholds(sweepResults, { stepTAward = null, stepTLow = null } = {}) {
+  const tAwardStep = stepTAward ?? inferGridStep(sweepResults.map((r) => r.t_award), 1);
+  const tLowStep = stepTLow ?? inferGridStep(sweepResults.map((r) => r.t_low), 1);
+
+  const goRows = sweepResults.filter((r) => r.decision === "GO");
+  const goTAwardRuns = findContiguousRuns(goRows.map((r) => r.t_award), tAwardStep);
+  const goTLowRuns = findContiguousRuns(goRows.map((r) => r.t_low), tLowStep);
+
+  const passRange = {
+    go_pair_count: goRows.length,
+    total_pair_count: sweepResults.length,
+    t_award_go_runs: goTAwardRuns,
+    t_award_go_min: goTAwardRuns.length ? goTAwardRuns[0][0] : null,
+    t_award_go_max: goTAwardRuns.length ? goTAwardRuns[goTAwardRuns.length - 1].slice(-1)[0] : null,
+    t_low_go_runs: goTLowRuns,
+    t_low_go_min: goTLowRuns.length ? goTLowRuns[0][0] : null,
+    t_low_go_max: goTLowRuns.length ? goTLowRuns[goTLowRuns.length - 1].slice(-1)[0] : null,
+  };
+
+  if (!goRows.length) {
+    return {
+      selected: null,
+      reason: "NO_GO_CANDIDATE",
+      max_youden_j: null,
+      tied_best_count: 0,
+      best_t_award_run: [],
+      best_t_low_run: [],
+      pass_range: passRange,
+    };
+  }
+
+  let maxJ = -Infinity;
+  for (const r of goRows) {
+    if (r.youden_j > maxJ) maxJ = r.youden_j;
+  }
+  const bestRows = goRows.filter((r) => Math.abs(r.youden_j - maxJ) < 1e-12);
+
+  const byTAward = new Map();
+  for (const r of bestRows) {
+    if (!byTAward.has(r.t_award)) byTAward.set(r.t_award, []);
+    byTAward.get(r.t_award).push(r);
+  }
+  const bestTAwardRuns = findContiguousRuns([...byTAward.keys()], tAwardStep);
+  const tAwardPick = pickUpperMedianFromRuns(bestTAwardRuns, byTAward);
+
+  const rowsAtTAward = byTAward.get(tAwardPick.value) || [];
+  const byTLow = new Map();
+  for (const r of rowsAtTAward) {
+    if (!byTLow.has(r.t_low)) byTLow.set(r.t_low, []);
+    byTLow.get(r.t_low).push(r);
+  }
+  const bestTLowRuns = findContiguousRuns([...byTLow.keys()], tLowStep);
+  const tLowPick = pickUpperMedianFromRuns(bestTLowRuns, byTLow);
+
+  const selected = rowsAtTAward.find((r) => r.t_low === tLowPick.value) || null;
+  const goTLowRunsAtSelected = findContiguousRuns(
+    goRows.filter((r) => r.t_award === tAwardPick.value).map((r) => r.t_low),
+    tLowStep
+  );
+
+  return {
+    selected,
+    reason: bestRows.length === 1 ? "UNIQUE_MAX_YOUDEN_J_GO" : "UPPER_MEDIAN_OF_LONGEST_CONTIGUOUS_MAX_YOUDEN_J_RUN",
+    max_youden_j: maxJ,
+    tied_best_count: bestRows.length,
+    best_t_award_run: tAwardPick.chosen_run,
+    best_t_low_run: tLowPick.chosen_run,
+    pass_range: {
+      ...passRange,
+      t_low_go_runs_at_selected_t_award: goTLowRunsAtSelected,
+    },
+  };
 }

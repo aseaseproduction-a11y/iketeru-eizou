@@ -1,6 +1,11 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { pairwiseAuc, mannWhitneyOneSidedP, evaluatePhase2Scores } from "./evaluate-phase2-calibration.mjs";
+import {
+  pairwiseAuc,
+  mannWhitneyOneSidedP,
+  evaluatePhase2Scores,
+  selectFrozenThresholds,
+} from "./evaluate-phase2-calibration.mjs";
 
 test("pairwiseAuc and mannWhitneyOneSidedP calculate exact metrics", () => {
   assert.equal(pairwiseAuc([90, 85], [70, 65]), 1.0);
@@ -32,4 +37,63 @@ test("evaluatePhase2Scores produces GO on clean separation and NO-GO when primar
   const resFail = evaluatePhase2Scores(records, { tAward: 78.0, tLow: 63.0, bootstrapB: 50 });
   assert.equal(resFail.primary.p4_pass, false);
   assert.equal(resFail.decision, "NO-GO");
+});
+
+test("selectFrozenThresholds picks upper-median of longest contiguous max-Youden-J GO run independent of input order", () => {
+  // Odd-length T_award run [78, 79, 80] -> median 79
+  // Even-length T_low run [60, 61, 62, 63] -> upper median 62 (higher of 61, 62)
+  const rows = [];
+  for (const tAward of [76, 77, 78, 79, 80, 81, 82]) {
+    for (const tLow of [59, 60, 61, 62, 63, 64]) {
+      const isGo = tAward >= 77 && tAward <= 81 && tLow >= 60 && tLow <= 63;
+      const isMaxJ = tAward >= 78 && tAward <= 80 && tLow >= 60 && tLow <= 63;
+      rows.push({
+        t_award: tAward,
+        t_low: tLow,
+        decision: isGo ? "GO" : "NO-GO",
+        p1_auc: 0.96,
+        youden_j: isMaxJ ? 0.85 : isGo ? 0.8 : 0.6,
+      });
+    }
+  }
+  const resForward = selectFrozenThresholds(rows);
+  const resReversed = selectFrozenThresholds([...rows].reverse());
+
+  assert.equal(resForward.selected.t_award, 79);
+  assert.equal(resForward.selected.t_low, 62);
+  assert.deepEqual(resForward.selected, resReversed.selected);
+  assert.deepEqual(resForward.best_t_award_run, [78, 79, 80]);
+  assert.deepEqual(resForward.best_t_low_run, [60, 61, 62, 63]);
+  assert.equal(resForward.pass_range.t_award_go_min, 77);
+  assert.equal(resForward.pass_range.t_award_go_max, 81);
+  assert.equal(resForward.pass_range.t_low_go_min, 60);
+  assert.equal(resForward.pass_range.t_low_go_max, 63);
+
+  // Even-length T_award run [78, 79, 80, 81] -> upper median 80 (higher of 79, 80)
+  // Odd-length T_low run [61, 62, 63] -> exact center 62
+  const evenRows = [];
+  for (const tAward of [78, 79, 80, 81]) {
+    for (const tLow of [61, 62, 63]) {
+      evenRows.push({ t_award: tAward, t_low: tLow, decision: "GO", p1_auc: 0.95, youden_j: 0.88 });
+    }
+  }
+  const resEven = selectFrozenThresholds(evenRows);
+  assert.equal(resEven.selected.t_award, 80);
+  assert.equal(resEven.selected.t_low, 62);
+
+  // Disjoint runs: picks longest contiguous run ([79, 80, 81] over [76])
+  const disjointRows = [
+    { t_award: 76, t_low: 62, decision: "GO", p1_auc: 0.95, youden_j: 0.9 },
+    { t_award: 79, t_low: 62, decision: "GO", p1_auc: 0.95, youden_j: 0.9 },
+    { t_award: 80, t_low: 62, decision: "GO", p1_auc: 0.95, youden_j: 0.9 },
+    { t_award: 81, t_low: 62, decision: "GO", p1_auc: 0.95, youden_j: 0.9 },
+  ];
+  const resDisjoint = selectFrozenThresholds(disjointRows);
+  assert.equal(resDisjoint.selected.t_award, 80);
+  assert.equal(resDisjoint.selected.t_low, 62);
+
+  // No GO candidate -> null
+  const resNone = selectFrozenThresholds([{ t_award: 78, t_low: 63, decision: "NO-GO", p1_auc: 0.8, youden_j: 0.5 }]);
+  assert.equal(resNone.selected, null);
+  assert.equal(resNone.reason, "NO_GO_CANDIDATE");
 });

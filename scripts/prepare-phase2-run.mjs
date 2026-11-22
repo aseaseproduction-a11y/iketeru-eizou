@@ -13,7 +13,8 @@
  *    E:\iketeru_blind_eval\.
  */
 
-import { execFile } from "node:child_process";
+import { execFile, execFileSync } from "node:child_process";
+import crypto from "node:crypto";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
@@ -47,7 +48,7 @@ export function isBotCheckError(text) {
   return BOT_CHECK_PATTERNS.some((rx) => rx.test(s));
 }
 
-export function validateSplitGuard({ splitName, confirmFrozenHoldout, frozenConfigPath }) {
+export function validateSplitGuard({ splitName, confirmFrozenHoldout, frozenConfigPath, repoRoot = REPO_ROOT }) {
   if (splitName !== "dev" && splitName !== "holdout") {
     throw new Error(`Invalid --split (expected dev or holdout): ${splitName}`);
   }
@@ -62,18 +63,79 @@ export function validateSplitGuard({ splitName, confirmFrozenHoldout, frozenConf
         "BLOCKED: --split holdout requires an existing --frozen-config <path> JSON file with frozen thresholds."
       );
     }
-    const cfg = JSON.parse(fs.readFileSync(frozenConfigPath, "utf8"));
+    const resolvedRepo = path.resolve(repoRoot);
+    const resolvedCfg = path.resolve(frozenConfigPath);
+    const relPath = path.relative(resolvedRepo, resolvedCfg);
+    if (!relPath || relPath.startsWith("..") || path.isAbsolute(relPath)) {
+      throw new Error(
+        `BLOCKED: --frozen-config must be a committed file inside git repository (${resolvedRepo}), got ${resolvedCfg}`
+      );
+    }
+    const relPosix = relPath.replace(/\\/g, "/");
+
+    let headBlob;
+    try {
+      headBlob = execFileSync("git", ["show", `HEAD:${relPosix}`], {
+        cwd: resolvedRepo,
+        stdio: ["ignore", "pipe", "pipe"],
+      });
+    } catch {
+      throw new Error(
+        `BLOCKED: --frozen-config (${relPosix}) is not committed in git HEAD. Commit it before running Holdout.`
+      );
+    }
+    const diskBuf = fs.readFileSync(resolvedCfg);
+    const headHash = crypto.createHash("sha256").update(headBlob).digest("hex");
+    const diskHash = crypto.createHash("sha256").update(diskBuf).digest("hex");
+    if (headHash !== diskHash) {
+      throw new Error(
+        `BLOCKED: --frozen-config (${relPosix}) working-tree bytes (${diskHash.slice(0, 12)}) differ from git HEAD (${headHash.slice(0, 12)}). Commit cleanly with LF line endings first.`
+      );
+    }
+
+    const cfg = JSON.parse(diskBuf.toString("utf8"));
     if (
       typeof cfg.t_award !== "number" ||
       typeof cfg.t_low !== "number" ||
-      !cfg.frozen_commit ||
+      typeof cfg.frozen_commit !== "string" ||
+      !/^[0-9a-f]{7,40}$/i.test(cfg.frozen_commit) ||
       !cfg.expected_model
     ) {
       throw new Error(
-        "BLOCKED: --frozen-config JSON must contain numeric t_award, t_low, non-empty frozen_commit, and expected_model."
+        "BLOCKED: --frozen-config JSON must contain numeric t_award, t_low, valid 7-40 hex frozen_commit, and expected_model."
       );
     }
-    return cfg;
+
+    let objType = "";
+    let resolvedCommit = "";
+    try {
+      objType = execFileSync("git", ["cat-file", "-t", cfg.frozen_commit], {
+        cwd: resolvedRepo,
+        encoding: "utf8",
+        stdio: ["ignore", "pipe", "pipe"],
+      }).trim();
+      resolvedCommit = execFileSync("git", ["rev-parse", "--verify", `${cfg.frozen_commit}^{commit}`], {
+        cwd: resolvedRepo,
+        encoding: "utf8",
+        stdio: ["ignore", "pipe", "pipe"],
+      }).trim();
+    } catch {
+      throw new Error(
+        `BLOCKED: frozen_commit (${cfg.frozen_commit}) does not exist in git repository (${resolvedRepo}).`
+      );
+    }
+    if (objType !== "commit" || !resolvedCommit) {
+      throw new Error(
+        `BLOCKED: frozen_commit (${cfg.frozen_commit}) is not a valid git commit (type=${objType}).`
+      );
+    }
+
+    return {
+      ...cfg,
+      _verified_rel_path: relPosix,
+      _verified_head_sha256: headHash,
+      _verified_frozen_commit_full: resolvedCommit,
+    };
   }
   return null;
 }
