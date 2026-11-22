@@ -1,0 +1,1197 @@
+{
+  "generated_at": "2026-11-22T23:12:05.860Z",
+  "note": "Phase 1 surviving Dev baseline ONLY (before adding the 31 new Phase 2 Dev videos). Holdout v1 was NOT accessed.",
+  "phase1_surviving_counts": {
+    "total": 28,
+    "tier2_award": 19,
+    "non_tier2_pro": 9,
+    "non_tier2_low": 0,
+    "by_genre": {
+      "CM": {
+        "tier2_award": 4,
+        "non_tier2_pro": 0
+      },
+      "MV": {
+        "tier2_award": 9,
+        "non_tier2_pro": 5
+      },
+      "モーション": {
+        "tier2_award": 1,
+        "non_tier2_pro": 1
+      },
+      "3DCG/アニメ": {
+        "tier2_award": 4,
+        "non_tier2_pro": 1
+      },
+      "企業映像": {
+        "tier2_award": 1,
+        "non_tier2_pro": 2
+      }
+    }
+  },
+  "excluded_phase1_tier2": [
+    {
+      "video_id": "tdQCMuaJUQk",
+      "title": "グランプリ_セコム「シール交換小学生」",
+      "reason": "BOVA_excluded_per_Phase2_Rule_1.2"
+    },
+    {
+      "video_id": "JFDm4p8T6_4",
+      "title": "立命館大学「アートやデザインは無関係だと思っている若者を振り向かせる動画」第12回BOVAゴールド",
+      "reason": "BOVA_excluded_per_Phase2_Rule_1.2"
+    },
+    {
+      "video_id": "wXD33Jx25oI",
+      "title": "ゴールド_ギャンブル依存症問題を考える会「【実況】ギャンブル エスケープ」",
+      "reason": "BOVA_excluded_per_Phase2_Rule_1.2"
+    },
+    {
+      "video_id": "FSqTqdjf2YQ",
+      "title": "東亞合成「「アロンアルフア」を使ってみたくなる動画」第12回BOVAシルバー",
+      "reason": "BOVA_excluded_per_Phase2_Rule_1.2"
+    },
+    {
+      "video_id": "iXTuYbyH2Rc",
+      "title": "シルバー_オハヨー乳業「朝は絶対」",
+      "reason": "BOVA_excluded_per_Phase2_Rule_1.2"
+    },
+    {
+      "video_id": "uCDUpZV3f8A",
+      "title": "Brushing Up／ADFEST2016_FABULOUS FOUR",
+      "reason": "award_badge_visible_or_ocr_hit"
+    },
+    {
+      "video_id": "V6XHz7tqGVM",
+      "title": "Beautiful Lie／ADFEST2016_FABULOUS FOUR",
+      "reason": "award_badge_visible_or_ocr_hit"
+    }
+  ],
+  "note_on_uCDUpZV3f8A": "uCDUpZV3f8A (ADFEST 2016 Fabulous Four Commendation Certificate) is flagged for user review: it is a New Director Lotus short film rather than a strict Category D corporate film craft winner.",
+  "default_threshold_78_63_comparison": {
+    "video_only": {
+      "thresholds": {
+        "t_award": 78,
+        "t_low": 63
+      },
+      "counts": {
+        "tier2": 19,
+        "primary_pro": 9,
+        "all_pro": 9,
+        "low_all": 0,
+        "low_excl_r_low_04": 0
+      },
+      "primary": {
+        "scope": "5_genres_all",
+        "p1_roc_auc": 0.9912,
+        "p1_ci95": {
+          "low": 0.9561,
+          "high": 1
+        },
+        "p1_pass": true,
+        "p2_sensitivity": 0.9474,
+        "p2_hits": 18,
+        "p2_min_required": 16,
+        "p2_pass": true,
+        "p3_specificity": 0.8889,
+        "p3_correct": 8,
+        "p3_min_required": 8,
+        "p3_pass": true,
+        "p4_major_error_a": 0,
+        "p4_max_allowed": 0,
+        "p4_pass": true,
+        "all_primary_pass": true
+      },
+      "secondary_all_low": null,
+      "secondary_excl_r_low_04": null,
+      "reference": {
+        "tier2_vs_all_non_tier2_auc": 0.9912,
+        "tier2_vs_all_pro_auc": 0.9912,
+        "cross_table": {
+          "tier2_award": {
+            "gte_t_award": 18,
+            "mid_t_low_to_t_award": 1,
+            "lt_t_low": 0,
+            "mean": 91.68
+          },
+          "non_tier2_pro": {
+            "gte_t_award": 1,
+            "mid_t_low_to_t_award": 7,
+            "lt_t_low": 1,
+            "mean": 69.28
+          },
+          "non_tier2_low": {
+            "gte_t_award": 0,
+            "mid_t_low_to_t_award": 0,
+            "lt_t_low": 0,
+            "mean": null
+          }
+        }
+      },
+      "decision": "GO"
+    },
+    "contact_sheet_only": {
+      "thresholds": {
+        "t_award": 78,
+        "t_low": 63
+      },
+      "counts": {
+        "tier2": 19,
+        "primary_pro": 9,
+        "all_pro": 9,
+        "low_all": 0,
+        "low_excl_r_low_04": 0
+      },
+      "primary": {
+        "scope": "5_genres_all",
+        "p1_roc_auc": 0.9883,
+        "p1_ci95": {
+          "low": 0.9474,
+          "high": 1
+        },
+        "p1_pass": true,
+        "p2_sensitivity": 0.9474,
+        "p2_hits": 18,
+        "p2_min_required": 16,
+        "p2_pass": true,
+        "p3_specificity": 0.7778,
+        "p3_correct": 7,
+        "p3_min_required": 8,
+        "p3_pass": false,
+        "p4_major_error_a": 0,
+        "p4_max_allowed": 0,
+        "p4_pass": true,
+        "all_primary_pass": false
+      },
+      "secondary_all_low": null,
+      "secondary_excl_r_low_04": null,
+      "reference": {
+        "tier2_vs_all_non_tier2_auc": 0.9883,
+        "tier2_vs_all_pro_auc": 0.9883,
+        "cross_table": {
+          "tier2_award": {
+            "gte_t_award": 18,
+            "mid_t_low_to_t_award": 1,
+            "lt_t_low": 0,
+            "mean": 88.18
+          },
+          "non_tier2_pro": {
+            "gte_t_award": 2,
+            "mid_t_low_to_t_award": 6,
+            "lt_t_low": 1,
+            "mean": 69.5
+          },
+          "non_tier2_low": {
+            "gte_t_award": 0,
+            "mid_t_low_to_t_award": 0,
+            "lt_t_low": 0,
+            "mean": null
+          }
+        }
+      },
+      "decision": "NO-GO"
+    },
+    "hybrid_h1_h2": {
+      "route_counts": {
+        "video_h1": 21,
+        "video_h2_escalated": 4,
+        "contact_sheet": 3
+      },
+      "video_call_rate": 0.8929,
+      "evaluation": {
+        "thresholds": {
+          "t_award": 78,
+          "t_low": 63
+        },
+        "counts": {
+          "tier2": 19,
+          "primary_pro": 9,
+          "all_pro": 9,
+          "low_all": 0,
+          "low_excl_r_low_04": 0
+        },
+        "primary": {
+          "scope": "5_genres_all",
+          "p1_roc_auc": 0.9912,
+          "p1_ci95": {
+            "low": 0.9561,
+            "high": 1
+          },
+          "p1_pass": true,
+          "p2_sensitivity": 0.9474,
+          "p2_hits": 18,
+          "p2_min_required": 16,
+          "p2_pass": true,
+          "p3_specificity": 0.8889,
+          "p3_correct": 8,
+          "p3_min_required": 8,
+          "p3_pass": true,
+          "p4_major_error_a": 0,
+          "p4_max_allowed": 0,
+          "p4_pass": true,
+          "all_primary_pass": true
+        },
+        "secondary_all_low": null,
+        "secondary_excl_r_low_04": null,
+        "reference": {
+          "tier2_vs_all_non_tier2_auc": 0.9912,
+          "tier2_vs_all_pro_auc": 0.9912,
+          "cross_table": {
+            "tier2_award": {
+              "gte_t_award": 18,
+              "mid_t_low_to_t_award": 1,
+              "lt_t_low": 0,
+              "mean": 91.16
+            },
+            "non_tier2_pro": {
+              "gte_t_award": 1,
+              "mid_t_low_to_t_award": 7,
+              "lt_t_low": 1,
+              "mean": 69.28
+            },
+            "non_tier2_low": {
+              "gte_t_award": 0,
+              "mid_t_low_to_t_award": 0,
+              "lt_t_low": 0,
+              "mean": null
+            }
+          }
+        },
+        "decision": "GO"
+      }
+    }
+  },
+  "dev_threshold_sweep_top10": [
+    {
+      "t_award": 82,
+      "t_low": 60,
+      "decision": "GO",
+      "p1_auc": 0.9912,
+      "p2_sens": 0.8947,
+      "p3_spec": 1,
+      "p4_err": 0,
+      "s1_err": null,
+      "video_rate": 0.8929,
+      "youden_j": 0.8947
+    },
+    {
+      "t_award": 82,
+      "t_low": 62,
+      "decision": "GO",
+      "p1_auc": 0.9912,
+      "p2_sens": 0.8947,
+      "p3_spec": 1,
+      "p4_err": 0,
+      "s1_err": null,
+      "video_rate": 0.8929,
+      "youden_j": 0.8947
+    },
+    {
+      "t_award": 82,
+      "t_low": 63,
+      "decision": "GO",
+      "p1_auc": 0.9912,
+      "p2_sens": 0.8947,
+      "p3_spec": 1,
+      "p4_err": 0,
+      "s1_err": null,
+      "video_rate": 0.9286,
+      "youden_j": 0.8947
+    },
+    {
+      "t_award": 82,
+      "t_low": 64,
+      "decision": "GO",
+      "p1_auc": 0.9912,
+      "p2_sens": 0.8947,
+      "p3_spec": 1,
+      "p4_err": 0,
+      "s1_err": null,
+      "video_rate": 0.9286,
+      "youden_j": 0.8947
+    },
+    {
+      "t_award": 82,
+      "t_low": 65,
+      "decision": "GO",
+      "p1_auc": 0.9912,
+      "p2_sens": 0.8947,
+      "p3_spec": 1,
+      "p4_err": 0,
+      "s1_err": null,
+      "video_rate": 0.9286,
+      "youden_j": 0.8947
+    },
+    {
+      "t_award": 77,
+      "t_low": 60,
+      "decision": "GO",
+      "p1_auc": 0.9912,
+      "p2_sens": 0.9474,
+      "p3_spec": 0.8889,
+      "p4_err": 0,
+      "s1_err": null,
+      "video_rate": 0.8571,
+      "youden_j": 0.8363
+    },
+    {
+      "t_award": 77,
+      "t_low": 62,
+      "decision": "GO",
+      "p1_auc": 0.9912,
+      "p2_sens": 0.9474,
+      "p3_spec": 0.8889,
+      "p4_err": 0,
+      "s1_err": null,
+      "video_rate": 0.8571,
+      "youden_j": 0.8363
+    },
+    {
+      "t_award": 77,
+      "t_low": 63,
+      "decision": "GO",
+      "p1_auc": 0.9912,
+      "p2_sens": 0.9474,
+      "p3_spec": 0.8889,
+      "p4_err": 0,
+      "s1_err": null,
+      "video_rate": 0.8929,
+      "youden_j": 0.8363
+    },
+    {
+      "t_award": 77,
+      "t_low": 64,
+      "decision": "GO",
+      "p1_auc": 0.9912,
+      "p2_sens": 0.9474,
+      "p3_spec": 0.8889,
+      "p4_err": 0,
+      "s1_err": null,
+      "video_rate": 0.8929,
+      "youden_j": 0.8363
+    },
+    {
+      "t_award": 77,
+      "t_low": 65,
+      "decision": "GO",
+      "p1_auc": 0.9912,
+      "p2_sens": 0.9474,
+      "p3_spec": 0.8889,
+      "p4_err": 0,
+      "s1_err": null,
+      "video_rate": 0.8929,
+      "youden_j": 0.8363
+    }
+  ],
+  "items": [
+    {
+      "video_id": "FNQ4vqB-waw",
+      "title": "Father and Daughter | Sotetsu Train Commercial | Translated",
+      "stratum": "tier2_award",
+      "genre": "CM",
+      "objective_tier": "S",
+      "awards_summary": "Cannes Lions 2023 (Film Craft Gold Lion x2 (Production Design/Art Direction, Achievement in Production))",
+      "run_id": "run_20261122_195500",
+      "duration_sec": 150.1,
+      "total_cuts": 0,
+      "avg_cut_interval_sec": 150.1,
+      "max_cuts_per_10s": 0,
+      "integrated_lufs": -14.2,
+      "video_score": 95,
+      "contact_sheet_score": 94,
+      "flagged_contamination_video": true,
+      "hybrid_default": {
+        "final_score": 95,
+        "final_mode": "video_h2_escalated",
+        "escalated": true,
+        "h1_triggers": [],
+        "h2_triggers": [
+          "H2-b:static_long_video(dur=150.1s,avgInt=150.1s,cuts=0)"
+        ],
+        "modes_executed": [
+          "contact_sheet",
+          "video"
+        ]
+      }
+    },
+    {
+      "video_id": "5wEjV2ekSwE",
+      "title": "WINNER - 2014 BEST AUTO COMMERCIAL Honda &quot;Hands&quot;",
+      "stratum": "tier2_award",
+      "genre": "CM",
+      "objective_tier": "S-",
+      "awards_summary": "Cannes Lions 2014 (Film Craft Silver Lion (Visual Effects / Sound Design))",
+      "run_id": "run_20261122_232100",
+      "duration_sec": 125.7,
+      "total_cuts": 1,
+      "avg_cut_interval_sec": 125.7,
+      "max_cuts_per_10s": 1,
+      "integrated_lufs": -20,
+      "video_score": 95,
+      "contact_sheet_score": 93,
+      "flagged_contamination_video": true,
+      "hybrid_default": {
+        "final_score": 95,
+        "final_mode": "video_h2_escalated",
+        "escalated": true,
+        "h1_triggers": [],
+        "h2_triggers": [
+          "H2-b:static_long_video(dur=125.7s,avgInt=125.7s,cuts=1)"
+        ],
+        "modes_executed": [
+          "contact_sheet",
+          "video"
+        ]
+      }
+    },
+    {
+      "video_id": "vpyeQeTDGFA",
+      "title": "Honda \"Paper\" by PES | Emmy Nominated Commercial",
+      "stratum": "tier2_award",
+      "genre": "CM",
+      "objective_tier": "S-",
+      "awards_summary": "D&AD Awards 2016 (Graphite Pencil (Film Advertising Crafts - Animation))",
+      "run_id": "run_20261122_232100",
+      "duration_sec": 121.3,
+      "total_cuts": 47,
+      "avg_cut_interval_sec": 2.58,
+      "max_cuts_per_10s": 21,
+      "integrated_lufs": -16.9,
+      "video_score": 96.5,
+      "contact_sheet_score": 93.5,
+      "flagged_contamination_video": true,
+      "hybrid_default": {
+        "final_score": 96.5,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-c:max_cuts_per_10s=21>=12"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      }
+    },
+    {
+      "video_id": "iIL_CB_YjFk",
+      "title": "講談社ブランデッドフィルム | LIGHT HOLE",
+      "stratum": "tier2_award",
+      "genre": "CM",
+      "objective_tier": "A+",
+      "awards_summary": "Cannes Lions 2026 (Film Craft Bronze Lion (Animation)); shots Awards Asia Pacific 2026 (Gold (Animation - Stop-motion))",
+      "run_id": "run_20261122_232100",
+      "duration_sec": 105.1,
+      "total_cuts": 101,
+      "avg_cut_interval_sec": 1.04,
+      "max_cuts_per_10s": 38,
+      "integrated_lufs": -15.7,
+      "video_score": 95,
+      "contact_sheet_score": 92,
+      "flagged_contamination_video": true,
+      "hybrid_default": {
+        "final_score": 95,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-c:max_cuts_per_10s=38>=12"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      }
+    },
+    {
+      "video_id": "5URefVYaJrA",
+      "title": "MV  実写   A$AP Rocky - Tailor Swif (Official Video)",
+      "stratum": "tier2_award",
+      "genre": "MV",
+      "objective_tier": "S+",
+      "awards_summary": "D&AD Awards 2025 (Black Pencil (Music Videos))",
+      "run_id": "run_20261122_195500",
+      "duration_sec": 194.2,
+      "total_cuts": 20,
+      "avg_cut_interval_sec": 9.71,
+      "max_cuts_per_10s": 6,
+      "integrated_lufs": -12.4,
+      "video_score": 94,
+      "contact_sheet_score": 93,
+      "flagged_contamination_video": true,
+      "hybrid_default": {
+        "final_score": 94,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-a:genre=MV"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      }
+    },
+    {
+      "video_id": "tvTRZJ-4EyI",
+      "title": "Kendrick Lamar - HUMBLE.",
+      "stratum": "tier2_award",
+      "genre": "MV",
+      "objective_tier": "S",
+      "awards_summary": "MTV Video Music Awards 2017 (Video of the Year / Best Direction / Best Cinematography / Best Art Direction / Best Visual Effects)",
+      "run_id": "run_20261122_232100",
+      "duration_sec": 183.6,
+      "total_cuts": 103,
+      "avg_cut_interval_sec": 1.78,
+      "max_cuts_per_10s": 16,
+      "integrated_lufs": -10.5,
+      "video_score": 96,
+      "contact_sheet_score": 94,
+      "flagged_contamination_video": true,
+      "hybrid_default": {
+        "final_score": 96,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-a:genre=MV",
+          "H1-c:max_cuts_per_10s=16>=12"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      }
+    },
+    {
+      "video_id": "ebzEEEdjHj0",
+      "title": "Bonobo - No Reason (feat. Nick Murphy) (Official Video)",
+      "stratum": "tier2_award",
+      "genre": "MV",
+      "objective_tier": "S-",
+      "awards_summary": "UK Music Video Awards 2017 (Best Dance Video - UK / Best Production Design)",
+      "run_id": "run_20261122_195500",
+      "duration_sec": 243.6,
+      "total_cuts": 3,
+      "avg_cut_interval_sec": 81.2,
+      "max_cuts_per_10s": 1,
+      "integrated_lufs": -12.4,
+      "video_score": 93,
+      "contact_sheet_score": 85,
+      "flagged_contamination_video": true,
+      "hybrid_default": {
+        "final_score": 93,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-a:genre=MV"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      }
+    },
+    {
+      "video_id": "153159513",
+      "title": "Valentino Khan - Deep Down Low (Official Video)",
+      "stratum": "tier2_award",
+      "genre": "MV",
+      "objective_tier": "S-",
+      "awards_summary": "UK Music Video Awards 2016 (Best Dance Video - International)",
+      "run_id": "run_20261122_232100",
+      "duration_sec": 184.7,
+      "total_cuts": 93,
+      "avg_cut_interval_sec": 1.99,
+      "max_cuts_per_10s": 18,
+      "integrated_lufs": -6.4,
+      "video_score": 91.5,
+      "contact_sheet_score": 85,
+      "flagged_contamination_video": true,
+      "hybrid_default": {
+        "final_score": 91.5,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-a:genre=MV",
+          "H1-c:max_cuts_per_10s=18>=12"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      }
+    },
+    {
+      "video_id": "313084145",
+      "title": "Mitski : A Pearl",
+      "stratum": "tier2_award",
+      "genre": "MV",
+      "objective_tier": "S-",
+      "awards_summary": "SXSW Film Festival 2020 (Special Jury Recognition for Animation)",
+      "run_id": "run_20261122_195500",
+      "duration_sec": 151.8,
+      "total_cuts": 25,
+      "avg_cut_interval_sec": 6.07,
+      "max_cuts_per_10s": 8,
+      "integrated_lufs": -7.8,
+      "video_score": 92.5,
+      "contact_sheet_score": 90.5,
+      "flagged_contamination_video": true,
+      "hybrid_default": {
+        "final_score": 92.5,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-a:genre=MV"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      }
+    },
+    {
+      "video_id": "49367868",
+      "title": "Dynamics of the Subway / Haisuinonasa  (Official Video)",
+      "stratum": "tier2_award",
+      "genre": "MV",
+      "objective_tier": "A+",
+      "awards_summary": "文化庁メディア芸術祭 2012 (第16回 エンターテインメント部門 新人賞)",
+      "run_id": "run_20261122_232100",
+      "duration_sec": 261.5,
+      "total_cuts": 36,
+      "avg_cut_interval_sec": 7.26,
+      "max_cuts_per_10s": 10,
+      "integrated_lufs": -10,
+      "video_score": 93.5,
+      "contact_sheet_score": 86,
+      "flagged_contamination_video": true,
+      "hybrid_default": {
+        "final_score": 93.5,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-a:genre=MV"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      }
+    },
+    {
+      "video_id": "5zj3aHgLFQE",
+      "title": "Shugo Tokumaru (トクマルシューゴ) - Poker (Official Music Video)",
+      "stratum": "tier2_award",
+      "genre": "MV",
+      "objective_tier": "A",
+      "awards_summary": "文化庁メディア芸術祭 2014 (第18回 アニメーション部門 審査委員会推薦作品)",
+      "run_id": "run_20261122_195500",
+      "duration_sec": 218,
+      "total_cuts": 21,
+      "avg_cut_interval_sec": 10.38,
+      "max_cuts_per_10s": 15,
+      "integrated_lufs": -10.7,
+      "video_score": 91,
+      "contact_sheet_score": 84.5,
+      "flagged_contamination_video": true,
+      "hybrid_default": {
+        "final_score": 91,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-a:genre=MV",
+          "H1-c:max_cuts_per_10s=15>=12"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      }
+    },
+    {
+      "video_id": "3JtO1WMYb58",
+      "title": "Frasco / Viewtiful",
+      "stratum": "tier2_award",
+      "genre": "MV",
+      "objective_tier": "A",
+      "awards_summary": "文化庁メディア芸術祭 2019 (第22回 エンターテインメント部門 審査委員会推薦作品)",
+      "run_id": "run_20261122_232100",
+      "duration_sec": 229.3,
+      "total_cuts": 49,
+      "avg_cut_interval_sec": 4.68,
+      "max_cuts_per_10s": 7,
+      "integrated_lufs": -8.9,
+      "video_score": 84,
+      "contact_sheet_score": 86,
+      "flagged_contamination_video": false,
+      "hybrid_default": {
+        "final_score": 84,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-a:genre=MV"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      }
+    },
+    {
+      "video_id": "QmLBz4FuVDA",
+      "title": "INNOSENT in FORMAL「Footloose」Music Video",
+      "stratum": "tier2_award",
+      "genre": "MV",
+      "objective_tier": "A",
+      "awards_summary": "文化庁メディア芸術祭 2019 (第22回 エンターテインメント部門 審査委員会推薦作品)",
+      "run_id": "run_20261122_195500",
+      "duration_sec": 216.3,
+      "total_cuts": 92,
+      "avg_cut_interval_sec": 2.35,
+      "max_cuts_per_10s": 14,
+      "integrated_lufs": -7.6,
+      "video_score": 76.5,
+      "contact_sheet_score": 73,
+      "flagged_contamination_video": false,
+      "hybrid_default": {
+        "final_score": 76.5,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-a:genre=MV",
+          "H1-c:max_cuts_per_10s=14>=12"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      }
+    },
+    {
+      "video_id": "-n1ljTOQK-s",
+      "title": "僕が見たかった青空 /「初めて好きになった人」Music Video（YouTube ver.）",
+      "stratum": "non_tier2_pro",
+      "genre": "MV",
+      "label_rule_id": "R-PRO-kept",
+      "run_id": "run_20261122_232100",
+      "duration_sec": 276.3,
+      "total_cuts": 62,
+      "avg_cut_interval_sec": 4.46,
+      "max_cuts_per_10s": 6,
+      "integrated_lufs": -6.5,
+      "video_score": 72.5,
+      "contact_sheet_score": 70,
+      "flagged_contamination_video": false,
+      "hybrid_default": {
+        "final_score": 72.5,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-a:genre=MV"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      }
+    },
+    {
+      "video_id": "_C7k63knGz8",
+      "title": "XOX New Single『PINKY BABY』MUSIC VIDEO",
+      "stratum": "non_tier2_pro",
+      "genre": "MV",
+      "label_rule_id": "R-PRO-kept",
+      "run_id": "run_20261122_195500",
+      "duration_sec": 182.2,
+      "total_cuts": 78,
+      "avg_cut_interval_sec": 2.34,
+      "max_cuts_per_10s": 10,
+      "integrated_lufs": -5.5,
+      "video_score": 72,
+      "contact_sheet_score": 66.5,
+      "flagged_contamination_video": false,
+      "hybrid_default": {
+        "final_score": 72,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-a:genre=MV"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      }
+    },
+    {
+      "video_id": "-J3OnxCEzl0",
+      "title": "【MV】ZeroGravity / 上水流宇宙 【オリジナル曲】#ヴイアラ",
+      "stratum": "non_tier2_pro",
+      "genre": "MV",
+      "label_rule_id": "R-PRO-kept",
+      "run_id": "run_20261122_195500",
+      "duration_sec": 199,
+      "total_cuts": 105,
+      "avg_cut_interval_sec": 1.9,
+      "max_cuts_per_10s": 12,
+      "integrated_lufs": -7.4,
+      "video_score": 76,
+      "contact_sheet_score": 80,
+      "flagged_contamination_video": false,
+      "hybrid_default": {
+        "final_score": 76,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-a:genre=MV",
+          "H1-c:max_cuts_per_10s=12>=12"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      }
+    },
+    {
+      "video_id": "_2lHuvAwhwk",
+      "title": "R BANDIT X MR RIGHT (BURUKLYN BOYZ) - RICH (Official Music Video)",
+      "stratum": "non_tier2_pro",
+      "genre": "MV",
+      "label_rule_id": "R-PRO-kept",
+      "run_id": "run_20261122_232100",
+      "duration_sec": 183.8,
+      "total_cuts": 145,
+      "avg_cut_interval_sec": 1.27,
+      "max_cuts_per_10s": 15,
+      "integrated_lufs": -10.9,
+      "video_score": 64.5,
+      "contact_sheet_score": 69,
+      "flagged_contamination_video": false,
+      "hybrid_default": {
+        "final_score": 64.5,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-a:genre=MV",
+          "H1-c:max_cuts_per_10s=15>=12"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      }
+    },
+    {
+      "video_id": "7ErE0YPc_PY",
+      "title": "Lil Eazzyy - IM GOOD (OFFICIAL MUSIC VIDEO) DIR: @708visuals",
+      "stratum": "non_tier2_pro",
+      "genre": "MV",
+      "label_rule_id": "R-PRO-kept",
+      "run_id": "run_20261122_232100",
+      "duration_sec": 282.7,
+      "total_cuts": 255,
+      "avg_cut_interval_sec": 1.11,
+      "max_cuts_per_10s": 22,
+      "integrated_lufs": -6.7,
+      "video_score": 54,
+      "contact_sheet_score": 57,
+      "flagged_contamination_video": false,
+      "hybrid_default": {
+        "final_score": 54,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-a:genre=MV",
+          "H1-c:max_cuts_per_10s=22>=12"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      }
+    },
+    {
+      "video_id": "1032202784",
+      "title": "Node Fest 2024",
+      "stratum": "tier2_award",
+      "genre": "モーション",
+      "objective_tier": "A+",
+      "awards_summary": "The Motion Awards 2025 (Events » Title Sequence Winner)",
+      "run_id": "run_20261122_195500",
+      "duration_sec": 110,
+      "total_cuts": 66,
+      "avg_cut_interval_sec": 1.67,
+      "max_cuts_per_10s": 27,
+      "integrated_lufs": -8.9,
+      "video_score": 92.5,
+      "contact_sheet_score": 88.5,
+      "flagged_contamination_video": true,
+      "hybrid_default": {
+        "final_score": 92.5,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-b:genre=モーション",
+          "H1-c:max_cuts_per_10s=27>=12"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      }
+    },
+    {
+      "video_id": "bJ4LFnk785g",
+      "title": "プライマルハーツ2　オープニングムービー",
+      "stratum": "non_tier2_pro",
+      "genre": "モーション",
+      "label_rule_id": "R-PRO-kept",
+      "run_id": "run_20261122_232100",
+      "duration_sec": 143.4,
+      "total_cuts": 30,
+      "avg_cut_interval_sec": 4.78,
+      "max_cuts_per_10s": 9,
+      "integrated_lufs": -8.9,
+      "video_score": 69.5,
+      "contact_sheet_score": 68.5,
+      "flagged_contamination_video": false,
+      "hybrid_default": {
+        "final_score": 69.5,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-b:genre=モーション"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      }
+    },
+    {
+      "video_id": "vRBVWCs1KW4",
+      "title": "Blinkity Blank",
+      "stratum": "tier2_award",
+      "genre": "3DCG/アニメ",
+      "objective_tier": "S+",
+      "awards_summary": "Cannes Film Festival 1955 (Short Film Palme d'Or)",
+      "run_id": "run_20261122_232100",
+      "duration_sec": 314.8,
+      "total_cuts": 32,
+      "avg_cut_interval_sec": 9.84,
+      "max_cuts_per_10s": 18,
+      "integrated_lufs": -34.4,
+      "video_score": 93.5,
+      "contact_sheet_score": 92.5,
+      "flagged_contamination_video": true,
+      "hybrid_default": {
+        "final_score": 93.5,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-c:max_cuts_per_10s=18>=12"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      }
+    },
+    {
+      "video_id": "X0hyTmlsBUI",
+      "title": "Origami | OSCARS® Shortlisted Short Film by Kei Kanamori",
+      "stratum": "tier2_award",
+      "genre": "3DCG/アニメ",
+      "objective_tier": "S-",
+      "awards_summary": "Academy Awards (Oscars) 2025 (97th Animated Short Film Shortlist)",
+      "run_id": "run_20261122_232100",
+      "duration_sec": 175.1,
+      "total_cuts": 10,
+      "avg_cut_interval_sec": 17.51,
+      "max_cuts_per_10s": 2,
+      "integrated_lufs": -14.8,
+      "video_score": 81.5,
+      "contact_sheet_score": 80.5,
+      "flagged_contamination_video": true,
+      "hybrid_default": {
+        "final_score": 81.5,
+        "final_mode": "video_h2_escalated",
+        "escalated": true,
+        "h1_triggers": [],
+        "h2_triggers": [
+          "H2-a:near_t_award(80.5 within 78+/-3)",
+          "H2-b:static_long_video(dur=175.1s,avgInt=17.5s,cuts=10)"
+        ],
+        "modes_executed": [
+          "contact_sheet",
+          "video"
+        ]
+      }
+    },
+    {
+      "video_id": "35i4zTky9pI",
+      "title": "Lost &amp; Found | Shortlisted for Academy Award for Best Animated Short Film",
+      "stratum": "tier2_award",
+      "genre": "3DCG/アニメ",
+      "objective_tier": "S-",
+      "awards_summary": "Academy Awards (Oscars) 2019 (91st Animated Short Film Shortlist)",
+      "run_id": "run_20261122_195500",
+      "duration_sec": 458.6,
+      "total_cuts": 63,
+      "avg_cut_interval_sec": 7.28,
+      "max_cuts_per_10s": 5,
+      "integrated_lufs": -19.1,
+      "video_score": 94,
+      "contact_sheet_score": 92,
+      "flagged_contamination_video": true,
+      "hybrid_default": {
+        "final_score": 92,
+        "final_mode": "contact_sheet",
+        "escalated": false,
+        "h1_triggers": [],
+        "h2_triggers": [],
+        "modes_executed": [
+          "contact_sheet"
+        ]
+      }
+    },
+    {
+      "video_id": "134832670",
+      "title": "L'Œil du Cyclone",
+      "stratum": "tier2_award",
+      "genre": "3DCG/アニメ",
+      "objective_tier": "A",
+      "awards_summary": "文化庁メディア芸術祭 2017 (第20回 アニメーション部門 審査委員会推薦作品 (Jury Selection))",
+      "run_id": "run_20261122_195500",
+      "duration_sec": 294.7,
+      "total_cuts": 21,
+      "avg_cut_interval_sec": 14.03,
+      "max_cuts_per_10s": 5,
+      "integrated_lufs": -9.2,
+      "video_score": 91,
+      "contact_sheet_score": 83,
+      "flagged_contamination_video": false,
+      "hybrid_default": {
+        "final_score": 83,
+        "final_mode": "contact_sheet",
+        "escalated": false,
+        "h1_triggers": [],
+        "h2_triggers": [],
+        "modes_executed": [
+          "contact_sheet"
+        ]
+      }
+    },
+    {
+      "video_id": "8XpGThBki3Y",
+      "title": "『この素晴らしい世界に祝福を！』アニメ10周年記念PV",
+      "stratum": "non_tier2_pro",
+      "genre": "3DCG/アニメ",
+      "label_rule_id": "R-PRO-kept",
+      "run_id": "run_20261122_195500",
+      "duration_sec": 324.4,
+      "total_cuts": 529,
+      "avg_cut_interval_sec": 0.61,
+      "max_cuts_per_10s": 72,
+      "integrated_lufs": -13.8,
+      "video_score": 81.5,
+      "contact_sheet_score": 79,
+      "flagged_contamination_video": false,
+      "hybrid_default": {
+        "final_score": 81.5,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-c:max_cuts_per_10s=72>=12"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      }
+    },
+    {
+      "video_id": "UvGwIFVUK7M",
+      "title": "Jindal Steel | The Steel Of India | Brand Film",
+      "stratum": "tier2_award",
+      "genre": "企業映像",
+      "objective_tier": "S+",
+      "awards_summary": "Spikes Asia 2025 (Film Craft Grand Prix)",
+      "run_id": "run_20261122_195500",
+      "duration_sec": 120,
+      "total_cuts": 99,
+      "avg_cut_interval_sec": 1.21,
+      "max_cuts_per_10s": 14,
+      "integrated_lufs": -12.4,
+      "video_score": 96,
+      "contact_sheet_score": 89.5,
+      "flagged_contamination_video": true,
+      "hybrid_default": {
+        "final_score": 96,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-c:max_cuts_per_10s=14>=12"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      }
+    },
+    {
+      "video_id": "-nr56fLZ11o",
+      "title": "【企業CM】Kezuru実験「グラインディング」編",
+      "stratum": "non_tier2_pro",
+      "genre": "企業映像",
+      "label_rule_id": "R-PRO-kept",
+      "run_id": "run_20261122_195500",
+      "duration_sec": 112.2,
+      "total_cuts": 29,
+      "avg_cut_interval_sec": 3.87,
+      "max_cuts_per_10s": 5,
+      "integrated_lufs": -14.1,
+      "video_score": 69.5,
+      "contact_sheet_score": 69.5,
+      "flagged_contamination_video": false,
+      "hybrid_default": {
+        "final_score": 69.5,
+        "final_mode": "contact_sheet",
+        "escalated": false,
+        "h1_triggers": [],
+        "h2_triggers": [],
+        "modes_executed": [
+          "contact_sheet"
+        ]
+      }
+    },
+    {
+      "video_id": "-BVWPusea_A",
+      "title": "【採用動画】通信会社様：営業社員PV",
+      "stratum": "non_tier2_pro",
+      "genre": "企業映像",
+      "label_rule_id": "R-PRO-kept",
+      "run_id": "run_20261122_195500",
+      "duration_sec": 85.9,
+      "total_cuts": 40,
+      "avg_cut_interval_sec": 2.15,
+      "max_cuts_per_10s": 8,
+      "integrated_lufs": -12.6,
+      "video_score": 64,
+      "contact_sheet_score": 66,
+      "flagged_contamination_video": false,
+      "hybrid_default": {
+        "final_score": 64,
+        "final_mode": "video_h2_escalated",
+        "escalated": true,
+        "h1_triggers": [],
+        "h2_triggers": [
+          "H2-a:near_t_low(66 within 63+/-3)"
+        ],
+        "modes_executed": [
+          "contact_sheet",
+          "video"
+        ]
+      }
+    }
+  ]
+}
