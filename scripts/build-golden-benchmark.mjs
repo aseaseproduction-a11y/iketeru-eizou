@@ -41,7 +41,7 @@ const SPECS = [
         name: "Cannes Lions",
         year: "2023",
         category: "Film Craft Gold Lion x2 (Production Design/Art Direction, Achievement in Production)",
-        sourceUrl: "https://www.hakuhodo-global.com/news/hakuhodo-group-wins-9-lions-at-cannes-lions-2023-including-4-gold.html"
+        sourceUrl: "https://cgworld.jp/flashnews/20234.html"
       }
     ],
     rationale: "Cannes Lions 2023 Film Craft Gold 2冠（相鉄「父と娘の風景」／A Train of Memories）"
@@ -505,13 +505,13 @@ const SPECS = [
   {
     id: "1032202784",
     genre_bucket: "モーション",
-    tier_bucket: "上位",
+    tier_bucket: "中位",
     craft_or_purpose: "craft_benchmark",
     award_level: "winner",
     era_bucket: "modern_10y",
-    objective_tier: "S",
-    objective_band: [93, 96],
-    evidence_level: "tier1_motion_awards_winner",
+    objective_tier: "A+",
+    objective_band: [86, 89],
+    evidence_level: "tier3_motion_awards_category_winner",
     awards: [
       {
         name: "The Motion Awards",
@@ -520,7 +520,7 @@ const SPECS = [
         sourceUrl: "https://2025.motionawards.com/winners2025/"
       }
     ],
-    rationale: "The Motion Awards 2025 部門最優秀賞（Events » Title Sequence Winner — Node Fest 2024 Opening Titles by Never Sit Still）"
+    rationale: "The Motion Awards 2025 部門賞受賞（Events » Title Sequence Winner — Node Fest 2024 Opening Titles。約40部門＋コミュニティ投票併用の専門賞規模を踏まえv7でA+へ適正化）"
   },
   // モーション 下位 (非受賞の通常モーション・リール)
   { id: "bGcpESkGLzI", genre_bucket: "モーション", tier_bucket: "下位", craft_or_purpose: "non_award_baseline", award_level: "non_awarded", era_bucket: "modern_10y", objective_tier: null, objective_band: null, evidence_level: "baseline_non_awarded_commercial", awards: [], rationale: "非受賞・モーショングラフィックス作品（空間響図学）" },
@@ -601,20 +601,20 @@ const SPECS = [
     genre_bucket: "3DCG/アニメ",
     tier_bucket: "上位",
     craft_or_purpose: "craft_benchmark",
-    award_level: "shortlist_or_selection",
+    award_level: "winner",
     era_bucket: "modern_10y",
     objective_tier: "S-",
     objective_band: [90, 92],
-    evidence_level: "tier2_annecy_official_competition",
+    evidence_level: "tier2_berlinale_silver_bear",
     awards: [
       {
-        name: "Annecy International Animation Film Festival",
+        name: "Berlin International Film Festival",
         year: "2025",
-        category: "Official Short Films Competition Selection",
-        sourceUrl: "https://unijapan.org/english/news/awards/festivals/annecy_international_animation_film_festival_2025.html"
+        category: "第75回 短編コンペティション部門 銀熊賞（審査員賞）",
+        sourceUrl: "https://www.joshibi.ac.jp/joshibi-news/news/3350"
       }
     ],
-    rationale: "アヌシー2025公式短編コンペ選出（水尻自子『普通の生活 Ordinary Life』）"
+    rationale: "第75回ベルリン国際映画祭 短編コンペティション部門 銀熊賞（審査員賞）（水尻自子『普通の生活 Ordinary Life』）"
   },
   // 3DCG/アニメ 中位
   {
@@ -789,7 +789,7 @@ const SPECS = [
         name: "ADFEST",
         year: "2016",
         category: "Fabulous Four Commendation Certificate (New Director Lotus)",
-        sourceUrl: "https://www.brandinginasia.com/adfest-fabulous-four/"
+        sourceUrl: "https://www.adfest.com/Home/News/detail.html?id=12068"
       }
     ],
     rationale: "ADFEST 2016 Fabulous Four Commendation Certificate受賞（Brushing Up）"
