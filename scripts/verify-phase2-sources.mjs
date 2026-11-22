@@ -72,6 +72,28 @@ const BOT_RX = /Just a moment|cf-browser-verification|Attention Required! \| Clo
 const NON_COMMERCIAL_SPEC_RX = /仮想クライアント|架空企業|架空設定|自主制作作品|学習課題|vookschoolの(?:学習|仮想)/i;
 export const CANNES_CORPORATE_CRAFT_AWARDS_RX = /\b(?:Best Directing|Best Cinematography|Best Editing|Best Sound Design|Best Animation,\s*Graphics and Visual Effects|Best Production Design|Best Use of Drones|Best (?:Original )?Music(?:\/Score)?)\b/i;
 
+export function parseAccRegisteredDurations(rawSecField) {
+  if (rawSecField === undefined || rawSecField === null) return [];
+  const nums = [...String(rawSecField).matchAll(/\d+/g)].map((m) => Number(m[0])).filter((n) => n > 0);
+  return [...new Set(nums)];
+}
+
+export function checkRegisteredDurationMatch(videoDurationSec, rawSecField, toleranceSec = 3) {
+  const registered = parseAccRegisteredDurations(rawSecField);
+  if (registered.length === 0) return { ok: true, registered };
+  if (typeof videoDurationSec !== "number" || !Number.isFinite(videoDurationSec) || videoDurationSec <= 0) {
+    return { ok: false, registered, reason: "missing_video_duration_sec" };
+  }
+  const matched = registered.some((d) => Math.abs(videoDurationSec - d) <= toleranceSec);
+  return matched
+    ? { ok: true, registered }
+    : {
+        ok: false,
+        registered,
+        reason: `acc_registered_duration_mismatch_rule_1_8: video=${videoDurationSec}s not in ACC registered=[${registered.join(",")}]s (tol=+-${toleranceSec}s)`,
+      };
+}
+
 function cleanText(rawHtml) {
   return rawHtml
     .replace(/<[^>]+>/g, " ")
@@ -271,8 +293,8 @@ export async function verifyTier2Entry(entry, htmlCache) {
     return { status: "failed", reason: `http_${fetched.status}_${fetched.error || "non200"}` };
   }
 
-  // Official ACC JSONP support (acc-awards.com/festival/*fes_result/js/data/*.js)
-  if (/acc-awards\.com\/festival\/\d+fes_result\/js\/data\/[^/]+\.js$/i.test(url)) {
+  // Official ACC JSONP/JSON support (acc-awards.com/festival/*fes_result/js/data/*.js or *.json)
+  if (/acc-awards\.com\/festival\/\d+fes_result\/js\/data\/[^/]+\.(?:js|json)$/i.test(url)) {
     try {
       const jsonStr = fetched.html.trim().replace(/^callback\s*\(/, "").replace(/\)\s*;?\s*$/, "");
       const parsed = JSON.parse(jsonStr);
@@ -284,12 +306,17 @@ export async function verifyTier2Entry(entry, htmlCache) {
           const rowText = `${label} | ${row["作品No"] || ""} | ${row["広告主"] || ""} ${row["商品名"] || ""}「${row["題名"] || ""}」`.replace(/\s+/g, " ").trim();
           const matchedWork = workKws.find((wk) => rowText.toLowerCase().includes(wk.toLowerCase()));
           if (matchedWork) {
+            const durCheck = checkRegisteredDurationMatch(entry.duration_sec, row["秒"]);
+            if (!durCheck.ok) {
+              return { status: "failed", reason: durCheck.reason };
+            }
             return {
               status: "verified",
               final_url: fetched.finalUrl,
               source_tier: sourceTier,
               matched_work: matchedWork,
               matched_tier: matchedTier,
+              registered_durations_sec: durCheck.registered,
               min_distance_chars: 0,
               verbatim_excerpt: rowText.slice(0, MAX_EXCERPT_CHARS).trim(),
             };

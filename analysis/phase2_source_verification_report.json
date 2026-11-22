@@ -1,8 +1,8 @@
 {
-  "verified_at": "2026-11-22T18:34:19.645Z",
-  "total": 131,
-  "verified": 115,
-  "failed": 16,
+  "verified_at": "2026-11-22T21:00:10.084Z",
+  "total": 139,
+  "verified": 121,
+  "failed": 18,
   "results": [
     {
       "video_id": "uH1PXkG8qD8",
@@ -56,6 +56,9 @@
       "source_tier": "primary_official",
       "matched_work": "光も影も",
       "matched_tier": "ACCシルバー",
+      "registered_durations_sec": [
+        120
+      ],
       "min_distance_chars": 0,
       "verbatim_excerpt": "ACCシルバー | CF241084 | 大塚製薬 カロリーメイト「光も影も」"
     },
@@ -71,14 +74,9 @@
       "video_id": "jnzWdC90IbA",
       "genre": "CM",
       "stratum": "tier2_award",
-      "evidence_url": "https://www.acc-awards.com/festival/2024fes_result/js/data/film-craft.js",
-      "status": "verified",
-      "final_url": "https://www.acc-awards.com/festival/2024fes_result/js/data/film-craft.js",
-      "source_tier": "primary_official",
-      "matched_work": "WILDMOMENT",
-      "matched_tier": "ACCゴールド",
-      "min_distance_chars": 0,
-      "verbatim_excerpt": "ACCゴールド | CF241934 | TOYOTA自動車 GRブランド「WILDMOMENT 60秒／GRヤリス WILDMOMENT 30秒 ／HILUX WILDMOMENT 30秒／GR010 WILDMOMENT 30秒 ／GRスープラ WILDMOMENT 30秒 」"
+      "evidence_url": "https://www.acc-awards.com/",
+      "status": "failed",
+      "reason": "bare_homepage_or_invalid_url: https://www.acc-awards.com/"
     },
     {
       "video_id": "Z8hWLECF2kE",
@@ -451,7 +449,7 @@
       "stratum": "tier2_award",
       "evidence_url": "https://www.youtube.com/watch?v=kDFt3nL9qqY",
       "status": "failed",
-      "reason": "craft_category_not_found_on_page: [DIRECTORSCUT]"
+      "reason": "work_and_tier_not_co_located_within_150chars (blocks=3)"
     },
     {
       "video_id": "dRID0fo-2FQ",
@@ -1196,6 +1194,101 @@
       "evidence_url": "https://www.youtube.com/watch?v=Whd6RIO7DRk",
       "status": "verified",
       "verbatim_excerpt": "Wrights Intro Vid2023 Made with Clipchamp"
+    },
+    {
+      "video_id": "8cnLzsAvVxU",
+      "genre": "CM",
+      "stratum": "tier2_award",
+      "evidence_url": "https://www.acc-awards.com/festival/2024fes_result/js/data/film-craft.js",
+      "status": "failed",
+      "reason": "acc_registered_duration_mismatch_rule_1_8: video=30s not in ACC registered=[60]s (tol=+-3s)"
+    },
+    {
+      "video_id": "LgvVJkTeWBw",
+      "genre": "企業映像",
+      "stratum": "tier2_award",
+      "evidence_url": "https://winners.cannescorporate.com/single-entry/3287?award_id=15&category_id=162",
+      "status": "verified",
+      "final_url": "https://winners.cannescorporate.com/single-entry/3287?award_id=15&category_id=162",
+      "source_tier": "primary_official",
+      "matched_work": "A matter of substance",
+      "matched_tier": "Best Sound Design",
+      "min_distance_chars": 1,
+      "verbatim_excerpt": "D.47 Best Sound Design A matter of substance"
+    },
+    {
+      "video_id": "LZ_ibd8XfJs",
+      "genre": "企業映像",
+      "stratum": "tier2_award",
+      "evidence_url": "https://winners.cannescorporate.com/single-entry/4020?award_id=12&category_id=159",
+      "status": "verified",
+      "final_url": "https://winners.cannescorporate.com/single-entry/4020?award_id=12&category_id=159",
+      "source_tier": "primary_official",
+      "matched_work": "What does a good life mean?",
+      "matched_tier": "Best Editing",
+      "min_distance_chars": 1,
+      "verbatim_excerpt": "D.50 Best Editing What does a good life mean?"
+    },
+    {
+      "video_id": "GiKYGCz9EBI",
+      "genre": "企業映像",
+      "stratum": "tier2_award",
+      "evidence_url": "https://winners.cannescorporate.com/single-entry/5682?award_id=17&category_id=166",
+      "status": "verified",
+      "final_url": "https://winners.cannescorporate.com/single-entry/5682?award_id=17&category_id=166",
+      "source_tier": "primary_official",
+      "matched_work": "Saudi Founding Day 2026",
+      "matched_tier": "Best Production Design",
+      "min_distance_chars": 1,
+      "verbatim_excerpt": "D.57 Best Production Design Saudi Founding Day 2026"
+    },
+    {
+      "video_id": "5NsgViu8V0g",
+      "genre": "モーション",
+      "stratum": "non_tier2_pro",
+      "evidence_url": "https://www.youtube.com/watch?v=5NsgViu8V0g",
+      "status": "verified",
+      "verbatim_excerpt": "Client: TANKA様 Genre: サービス紹介動画 / Motion Graphics Production: Unplug"
+    },
+    {
+      "video_id": "J4H5DFrB8cQ",
+      "genre": "モーション",
+      "stratum": "non_tier2_low",
+      "evidence_url": "https://www.youtube.com/watch?v=J4H5DFrB8cQ",
+      "status": "verified",
+      "verbatim_excerpt": "初めて作ったAviutl動画"
+    },
+    {
+      "video_id": "nDI4TfI41FU",
+      "genre": "CM",
+      "stratum": "tier2_award",
+      "evidence_url": "https://www.acc-awards.com/festival/2024fes_result/js/data/film-craft.js",
+      "status": "verified",
+      "final_url": "https://www.acc-awards.com/festival/2024fes_result/js/data/film-craft.js",
+      "source_tier": "primary_official",
+      "matched_work": "完璧じゃなくていい",
+      "matched_tier": "ACCブロンズ",
+      "registered_durations_sec": [
+        167
+      ],
+      "min_distance_chars": 0,
+      "verbatim_excerpt": "ACCブロンズ | CF241461 | ナイキジャパン Reimagine Victory Campaign「「完璧じゃなくていい。」」"
+    },
+    {
+      "video_id": "5G99rijm2AI",
+      "genre": "CM",
+      "stratum": "tier2_award",
+      "evidence_url": "https://www.acc-awards.com/festival/2025fes_result/js/data/film-craft.json",
+      "status": "verified",
+      "final_url": "https://www.acc-awards.com/festival/2025fes_result/js/data/film-craft.json",
+      "source_tier": "primary_official",
+      "matched_work": "大自然を味方に",
+      "matched_tier": "ACCゴールド",
+      "registered_durations_sec": [
+        60
+      ],
+      "min_distance_chars": 0,
+      "verbatim_excerpt": "ACCゴールド | CF250991 | サントリーホールディングス サントリー天然水「大自然を味方に」"
     }
   ]
 }

@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { verifyTier2Entry, verifyMetadataEntry, classifySourceTier, CANNES_CORPORATE_CRAFT_AWARDS_RX } from "./verify-phase2-sources.mjs";
+import { verifyTier2Entry, verifyMetadataEntry, classifySourceTier, CANNES_CORPORATE_CRAFT_AWARDS_RX, checkRegisteredDurationMatch } from "./verify-phase2-sources.mjs";
 
 test("verifyTier2Entry rejects bare homepage URLs, self-reported sites, and forbidden tier tokens", async () => {
   const cache = new Map();
@@ -59,6 +59,13 @@ test("verifyTier2Entry rejects bare homepage URLs, self-reported sites, and forb
   assert.equal(CANNES_CORPORATE_CRAFT_AWARDS_RX.test("Best Animation, Graphics and Visual Effects"), true);
   assert.equal(CANNES_CORPORATE_CRAFT_AWARDS_RX.test("Best Storytelling"), false);
   assert.equal(CANNES_CORPORATE_CRAFT_AWARDS_RX.test("Gold Award"), false);
+
+  // Rule 1.8 registered duration match (ACC official '秒' field)
+  assert.equal(checkRegisteredDurationMatch(30, "60").ok, false);
+  assert.match(checkRegisteredDurationMatch(30, "60").reason, /acc_registered_duration_mismatch_rule_1_8/);
+  assert.equal(checkRegisteredDurationMatch(120, "120").ok, true);
+  assert.equal(checkRegisteredDurationMatch(167, "167").ok, true);
+  assert.equal(checkRegisteredDurationMatch(60, "60／ 30").ok, true);
 });
 
 test("verifyMetadataEntry enforces verbatim substring, non-commercial guard, and frozen R-LOW regex", () => {

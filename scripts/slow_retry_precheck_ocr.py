@@ -22,7 +22,8 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
-from precheck_award_badge_ocr import check_video_ocr
+from rapidocr_onnxruntime import RapidOCR
+from precheck_award_badge_ocr import check_video_file
 
 
 BOT_CHECK_MARKERS = (
@@ -45,8 +46,10 @@ def main():
     ap.add_argument("--max-delay-sec", type=int, default=105)
     ap.add_argument("--max-videos", type=int, default=50)
     ap.add_argument("--stratum", default="", help="Optional filter e.g. non_tier2_low")
+    ap.add_argument("--skip-ids", default="", help="Comma-separated video IDs to skip")
     args = ap.parse_args()
 
+    skip_set = {x.strip() for x in args.skip_ids.split(",") if x.strip()}
     cands = json.loads(Path(args.candidates).read_text(encoding="utf-8"))
     log_path = Path(args.ocr_log)
     existing = {}
@@ -63,6 +66,8 @@ def main():
         if args.stratum and c.get("stratum") != args.stratum:
             continue
         vid = c["video_id"]
+        if vid in skip_set:
+            continue
         prev = existing.get(vid)
         already_ok = (
             prev is not None
@@ -73,9 +78,13 @@ def main():
         if not already_ok:
             queue.append(c)
 
+    # Prioritize tier2_award -> non_tier2_pro -> non_tier2_low
+    prio = {"tier2_award": 0, "non_tier2_pro": 1, "non_tier2_low": 2}
+    queue.sort(key=lambda x: (prio.get(x.get("stratum"), 9), x.get("genre", "")))
     queue = queue[: args.max_videos]
-    print(f"Pending OCR queue: {len(queue)} videos (delay {args.min_delay_sec}-{args.max_delay_sec}s, unauthenticated, abort-on-bot-check)")
+    print(f"Pending OCR queue: {len(queue)} videos (delay {args.min_delay_sec}-{args.max_delay_sec}s, unauthenticated, abort-on-bot-check)", flush=True)
 
+    ocr = RapidOCR()
     completed = 0
     aborted = False
     for idx, c in enumerate(queue):
@@ -100,7 +109,7 @@ def main():
             if proc.returncode != 0 or not os.path.exists(out_mp4):
                 err_msg = (proc.stderr or proc.stdout or f"returncode={proc.returncode}").strip()
                 if is_bot_check_error(err_msg):
-                    print(f"[{idx+1}/{len(queue)}] ABORT on {vid}: YouTube bot-check active. Stopping immediately.")
+                    print(f"[{idx+1}/{len(queue)}] ABORT on {vid}: YouTube bot-check active. Stopping immediately.", flush=True)
                     aborted = True
                     break
                 existing[vid] = {
@@ -115,9 +124,9 @@ def main():
                     "award_badge_ocr_hit": None,
                     "checked_at": datetime.now(timezone.utc).isoformat(),
                 }
-                print(f"[{idx+1}/{len(queue)}] DL_ERROR {vid}: {err_msg[:120]}")
+                print(f"[{idx+1}/{len(queue)}] DL_ERROR {vid}: {err_msg[:120]}", flush=True)
             else:
-                res = check_video_ocr(out_mp4, video_id=vid)
+                res = check_video_file(video_id=vid, video_path=Path(out_mp4), ocr=ocr, check_watermark=True)
                 res["input_path"] = "<temp_deleted>"
                 res["url"] = url
                 res["stratum"] = c.get("stratum")
@@ -127,7 +136,8 @@ def main():
                 completed += 1
                 print(
                     f"[{idx+1}/{len(queue)}] OK {vid} ({c.get('stratum')}/{c.get('genre')}): "
-                    f"frames={res.get('frames_checked')} hit={res.get('award_badge_ocr_hit')}"
+                    f"frames={res.get('frames_checked')} hit={res.get('award_badge_ocr_hit')}",
+                    flush=True,
                 )
                 # Persist immediately after every completed video
                 log_path.write_text(
@@ -139,10 +149,10 @@ def main():
 
         if idx + 1 < len(queue):
             delay = random.randint(args.min_delay_sec, args.max_delay_sec)
-            print(f"Sleeping {delay}s before next video...")
+            print(f"Sleeping {delay}s before next video...", flush=True)
             time.sleep(delay)
 
-    print(json.dumps({"completed": completed, "aborted_due_to_bot_check": aborted, "remaining": len(queue) - completed}))
+    print(json.dumps({"completed": completed, "aborted_due_to_bot_check": aborted, "remaining": len(queue) - completed}), flush=True)
 
 
 if __name__ == "__main__":
