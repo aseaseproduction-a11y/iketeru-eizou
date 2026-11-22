@@ -67,49 +67,82 @@ const referenceOnly = bench.filter(x =>
   x.craft_or_purpose !== "craft_benchmark" && x.craft_or_purpose !== "non_award_baseline"
 );
 
+// 4. Symmetrically exclude unfetchable videos from BOTH Contact-Sheet and Video modes
+//    (applied AFTER the seeded split so all fetchable videos retain their exact pre-registered assignments)
+const prefetchPath = path.join(REPO_ROOT, "analysis", "benchmark_prefetch_check.json");
+const excludedRecords = [];
+const excludedIdSet = new Set();
+if (fs.existsSync(prefetchPath)) {
+  const prefetch = JSON.parse(fs.readFileSync(prefetchPath, "utf8"));
+  for (const ex of (prefetch.excluded_from_both_modes || [])) {
+    excludedIdSet.add(ex.id);
+    excludedRecords.push(ex);
+  }
+}
+
+const activeDevCraft = devCraft.filter(x => !excludedIdSet.has(x.id));
+const activeHoldoutCraft = holdoutCraft.filter(x => !excludedIdSet.has(x.id));
+const activeDevNonAward = devNonAward.filter(x => !excludedIdSet.has(x.id));
+const activeHoldoutNonAward = holdoutNonAward.filter(x => !excludedIdSet.has(x.id));
+const activeReferenceOnly = referenceOnly.filter(x => !excludedIdSet.has(x.id));
+
 const splitDoc = {
-  protocol_version: "v1_preregistered",
+  protocol_version: "v2_preregistered",
   created_at: new Date().toISOString(),
   seed: SEED,
   fixed_pass_criteria_on_holdout: {
     spearman_rho_min: 0.85,
     band_distance_mae_max: 4.0,
     pairwise_accuracy_a_minus_plus_vs_non_award_min: 0.85,
-    note: "固定基準（結果を見て変更しない）。合否判定はすべて未学習の確認用（holdout）のみで実施する。"
+    judgment_basis: "point_estimate_on_holdout_with_bootstrap_95ci_reported",
+    holdout_max_runs: 1,
+    note: "固定基準（結果を見て変更しない）。合否判定はすべて未学習の確認用（holdout）の点推定値のみで1回限り実施し、ブートストラップ95%信頼区間を併記する。"
   },
   counts: {
-    dev_craft: devCraft.length,
-    holdout_craft: holdoutCraft.length,
-    dev_non_award: devNonAward.length,
-    holdout_non_award: holdoutNonAward.length,
-    reference_only: referenceOnly.length,
-    total: devCraft.length + holdoutCraft.length + devNonAward.length + holdoutNonAward.length + referenceOnly.length
+    dev_craft: activeDevCraft.length,
+    holdout_craft: activeHoldoutCraft.length,
+    dev_non_award: activeDevNonAward.length,
+    holdout_non_award: activeHoldoutNonAward.length,
+    reference_only: activeReferenceOnly.length,
+    active_total: activeDevCraft.length + activeHoldoutCraft.length + activeDevNonAward.length + activeHoldoutNonAward.length + activeReferenceOnly.length,
+    excluded_from_both_modes: excludedRecords.length,
+    benchmark_total: bench.length
   },
-  dev_craft_ids: devCraft.map(x => x.id),
-  holdout_craft_ids: holdoutCraft.map(x => x.id),
-  dev_non_award_ids: devNonAward.map(x => x.id),
-  holdout_non_award_ids: holdoutNonAward.map(x => x.id),
-  reference_only_ids: referenceOnly.map(x => x.id),
+  excluded_from_both_modes: excludedRecords,
+  dev_craft_ids: activeDevCraft.map(x => x.id),
+  holdout_craft_ids: activeHoldoutCraft.map(x => x.id),
+  dev_non_award_ids: activeDevNonAward.map(x => x.id),
+  holdout_non_award_ids: activeHoldoutNonAward.map(x => x.id),
+  reference_only_ids: activeReferenceOnly.map(x => x.id),
   tier_distribution: Object.fromEntries(
     tierOrder.map(t => [
       t,
       {
-        dev: devCraft.filter(x => x.objective_tier === t).length,
-        holdout: holdoutCraft.filter(x => x.objective_tier === t).length,
+        dev: activeDevCraft.filter(x => x.objective_tier === t).length,
+        holdout: activeHoldoutCraft.filter(x => x.objective_tier === t).length,
       }
     ])
   ),
   genre_distribution: Object.fromEntries(
-    genres.map(g => [
-      g,
-      {
-        dev_craft: devCraft.filter(x => x.genre_bucket === g).length,
-        holdout_craft: holdoutCraft.filter(x => x.genre_bucket === g).length,
-        dev_non_award: devNonAward.filter(x => x.genre_bucket === g).length,
-        holdout_non_award: holdoutNonAward.filter(x => x.genre_bucket === g).length,
-        genre_report_status: g === "モーション" ? "未検証（基準作品1本のみのためジャンル別結果を出さない）" : "算出対象"
+    genres.map(g => {
+      const hc = activeHoldoutCraft.filter(x => x.genre_bucket === g).length;
+      let status = "算出対象";
+      if (g === "モーション") {
+        status = "未検証（基準作品1本・確認用0本のためジャンル別結果を出さない）";
+      } else if (hc < 5) {
+        status = `参考（n<5：確認用受賞作${hc}本のため合否・結論には使用しない）`;
       }
-    ])
+      return [
+        g,
+        {
+          dev_craft: activeDevCraft.filter(x => x.genre_bucket === g).length,
+          holdout_craft: hc,
+          dev_non_award: activeDevNonAward.filter(x => x.genre_bucket === g).length,
+          holdout_non_award: activeHoldoutNonAward.filter(x => x.genre_bucket === g).length,
+          genre_report_status: status
+        }
+      ];
+    })
   )
 };
 

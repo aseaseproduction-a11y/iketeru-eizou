@@ -1,21 +1,34 @@
 {
-  "protocol_version": "v1_preregistered",
-  "created_at": "2026-11-22T08:55:39.673Z",
+  "protocol_version": "v2_preregistered",
+  "created_at": "2026-11-22T09:20:47.362Z",
   "seed": 20261122,
   "fixed_pass_criteria_on_holdout": {
     "spearman_rho_min": 0.85,
     "band_distance_mae_max": 4,
     "pairwise_accuracy_a_minus_plus_vs_non_award_min": 0.85,
-    "note": "固定基準（結果を見て変更しない）。合否判定はすべて未学習の確認用（holdout）のみで実施する。"
+    "judgment_basis": "point_estimate_on_holdout_with_bootstrap_95ci_reported",
+    "holdout_max_runs": 1,
+    "note": "固定基準（結果を見て変更しない）。合否判定はすべて未学習の確認用（holdout）の点推定値のみで1回限り実施し、ブートストラップ95%信頼区間を併記する。"
   },
   "counts": {
     "dev_craft": 20,
     "holdout_craft": 14,
-    "dev_non_award": 24,
+    "dev_non_award": 23,
     "holdout_non_award": 20,
     "reference_only": 5,
-    "total": 83
+    "active_total": 82,
+    "excluded_from_both_modes": 1,
+    "benchmark_total": 83
   },
+  "excluded_from_both_modes": [
+    {
+      "id": "1048567039",
+      "title": "TAK – Motion Graphics Reel 2024",
+      "split_role": "dev_non_award",
+      "genre_bucket": "モーション",
+      "reason": "ERROR: [vimeo] 1048567039: Unable to download webpage: HTTP Error 401: Unauthorized (caused by <HTTPError 401: Unauthorized>)"
+    }
+  ],
   "dev_craft_ids": [
     "5URefVYaJrA",
     "UvGwIFVUK7M",
@@ -64,7 +77,6 @@
     "C0RD172wK6c",
     "_C7k63knGz8",
     "bGcpESkGLzI",
-    "1048567039",
     "_q9xyoz4j0k",
     "CmCxoqpSAk8",
     "6vJ5VwO8hnI",
@@ -152,28 +164,28 @@
       "holdout_craft": 4,
       "dev_non_award": 4,
       "holdout_non_award": 3,
-      "genre_report_status": "算出対象"
+      "genre_report_status": "参考（n<5：確認用受賞作4本のため合否・結論には使用しない）"
     },
     "モーション": {
       "dev_craft": 1,
       "holdout_craft": 0,
-      "dev_non_award": 5,
+      "dev_non_award": 4,
       "holdout_non_award": 4,
-      "genre_report_status": "未検証（基準作品1本のみのためジャンル別結果を出さない）"
+      "genre_report_status": "未検証（基準作品1本・確認用0本のためジャンル別結果を出さない）"
     },
     "3DCG/アニメ": {
       "dev_craft": 4,
       "holdout_craft": 2,
       "dev_non_award": 6,
       "holdout_non_award": 4,
-      "genre_report_status": "算出対象"
+      "genre_report_status": "参考（n<5：確認用受賞作2本のため合否・結論には使用しない）"
     },
     "企業映像": {
       "dev_craft": 6,
       "holdout_craft": 2,
       "dev_non_award": 5,
       "holdout_non_award": 5,
-      "genre_report_status": "算出対象"
+      "genre_report_status": "参考（n<5：確認用受賞作2本のため合否・結論には使用しない）"
     }
   }
 }
