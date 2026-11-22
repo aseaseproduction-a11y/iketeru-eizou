@@ -1,0 +1,2318 @@
+{
+  "run_id": "run_20261122_232100",
+  "evaluated_at": "2026-11-22T14:58:30.639Z",
+  "protocol_version": "v4_preregistered_v9_freeze",
+  "ensemble_tiebreaker_rule": "|s1 - s2| >= 5 -> median of 3 (otherwise mean of 2)",
+  "modes": {
+    "video": {
+      "valid_subagent_runs": 69,
+      "invalid_subagent_runs": 0,
+      "unique_videos_scored": 33,
+      "tiebreakers_needed_count": 0,
+      "tiebreakers_needed_videos": [],
+      "tiebreakers_completed_count": 3,
+      "flagged_contamination_count": 9,
+      "model_verification": {
+        "expected_model": "gemini-4-neon-high",
+        "matched_valid_runs": 69,
+        "total_valid_runs": 69,
+        "model_match_rate": 1,
+        "distinct_models_observed": [
+          "gemini-4-neon-high"
+        ],
+        "mismatched_subagents": []
+      },
+      "token_summary": {
+        "count": 69,
+        "min_first_post_read_input_tokens": 2276,
+        "median_first_post_read_input_tokens": 18722,
+        "max_first_post_read_input_tokens": 45664,
+        "mean_first_post_read_input_tokens": 19200,
+        "min_first_post_read_effective_input_tokens": 9505,
+        "median_first_post_read_effective_input_tokens": 26456,
+        "max_first_post_read_effective_input_tokens": 53388,
+        "mean_first_post_read_effective_input_tokens": 26925
+      },
+      "all_included": {
+        "subset": "all_included",
+        "counts": {
+          "total": 33,
+          "craft": 13,
+          "craft_a_minus_plus": 13,
+          "non_award": 20,
+          "reference_only_scored": 0
+        },
+        "craft_metrics": {
+          "spearman_rho": 0.6278,
+          "spearman_rho_95ci": [
+            0.214,
+            0.8677
+          ],
+          "kendall_tau_b": 0.4655,
+          "kendall_tau_b_95ci": [
+            0.139,
+            0.757
+          ],
+          "band_distance_mae": 3.3077,
+          "band_distance_mae_95ci": [
+            1.8462,
+            4.7702
+          ],
+          "exact_band_hit_rate": 0.3077,
+          "exact_band_hits": "4/13",
+          "mean_signed_bias": 0.3077
+        },
+        "by_rank_band": {
+          "S帯(S+/S/S-)": {
+            "n": 6,
+            "exact_band_hits": "2/6",
+            "exact_band_hit_rate": 0.3333,
+            "within_5pt_of_band_hits": "5/6",
+            "within_5pt_of_band_rate": 0.8333,
+            "band_distance_mae": 3.25,
+            "mean_signed_bias": -0.5
+          },
+          "A帯(A+/A/A-)": {
+            "n": 7,
+            "exact_band_hits": "2/7",
+            "exact_band_hit_rate": 0.2857,
+            "within_5pt_of_band_hits": "5/7",
+            "within_5pt_of_band_rate": 0.7143,
+            "band_distance_mae": 3.3571,
+            "mean_signed_bias": 1
+          },
+          "B帯以下(B+以下)": {
+            "n": 0,
+            "exact_band_hits": "0/0",
+            "exact_band_hit_rate": null,
+            "within_5pt_of_band_hits": "0/0",
+            "within_5pt_of_band_rate": null,
+            "band_distance_mae": null,
+            "mean_signed_bias": null
+          }
+        },
+        "pairwise_metrics": {
+          "a_minus_plus_vs_non_award": 0.9635,
+          "pairwise_95ci": [
+            0.8981,
+            1
+          ],
+          "mean_craft_a_minus_plus": 88.1154,
+          "mean_non_award": 65.35
+        },
+        "by_genre": {
+          "CM": {
+            "status": "算出対象",
+            "craft_n": 6,
+            "non_award_n": 4,
+            "spearman_rho": 0.7613,
+            "band_distance_mae": 4,
+            "pairwise_a_minus_plus_vs_non_award": 0.9792
+          },
+          "MV": {
+            "status": "参考（n<5：受賞作4本のため合否・結論には使用しない）",
+            "craft_n": 4,
+            "non_award_n": 3,
+            "spearman_rho": 0.8,
+            "band_distance_mae": 1.125,
+            "pairwise_a_minus_plus_vs_non_award": 1
+          },
+          "モーション": {
+            "status": "未検証（基準作品1本のみのためジャンル別結果を出さない）",
+            "craft_n": 0,
+            "non_award_n": 4
+          },
+          "3DCG/アニメ": {
+            "status": "参考（n<5：受賞作2本のため合否・結論には使用しない）",
+            "craft_n": 2,
+            "non_award_n": 4,
+            "spearman_rho": 1,
+            "band_distance_mae": 6,
+            "pairwise_a_minus_plus_vs_non_award": 0.875
+          },
+          "企業映像": {
+            "status": "参考（n<5：受賞作1本のため合否・結論には使用しない）",
+            "craft_n": 1,
+            "non_award_n": 5,
+            "spearman_rho": null,
+            "band_distance_mae": 2.5,
+            "pairwise_a_minus_plus_vs_non_award": 1
+          }
+        }
+      },
+      "bova_excluded_sensitivity": {
+        "subset": "bova_excluded_sensitivity",
+        "note": "事前登録感度分析（案C：BOVA除外・同一実行データより算出・受賞作 10 本 vs 非受賞作 20 本）",
+        "counts": {
+          "total": 30,
+          "craft": 10,
+          "craft_a_minus_plus": 10,
+          "non_award": 20,
+          "reference_only_scored": 0
+        },
+        "craft_metrics": {
+          "spearman_rho": 0.4892,
+          "spearman_rho_95ci": [
+            -0.1585,
+            0.9022
+          ],
+          "kendall_tau_b": 0.3958,
+          "kendall_tau_b_95ci": [
+            -0.1372,
+            0.8314
+          ],
+          "band_distance_mae": 3.25,
+          "band_distance_mae_95ci": [
+            1.6488,
+            4.95
+          ],
+          "exact_band_hit_rate": 0.3,
+          "exact_band_hits": "3/10",
+          "mean_signed_bias": 0.7
+        },
+        "by_rank_band": {
+          "S帯(S+/S/S-)": {
+            "n": 6,
+            "exact_band_hits": "2/6",
+            "exact_band_hit_rate": 0.3333,
+            "within_5pt_of_band_hits": "5/6",
+            "within_5pt_of_band_rate": 0.8333,
+            "band_distance_mae": 3.25,
+            "mean_signed_bias": -0.5
+          },
+          "A帯(A+/A/A-)": {
+            "n": 4,
+            "exact_band_hits": "1/4",
+            "exact_band_hit_rate": 0.25,
+            "within_5pt_of_band_hits": "3/4",
+            "within_5pt_of_band_rate": 0.75,
+            "band_distance_mae": 3.25,
+            "mean_signed_bias": 2.5
+          },
+          "B帯以下(B+以下)": {
+            "n": 0,
+            "exact_band_hits": "0/0",
+            "exact_band_hit_rate": null,
+            "within_5pt_of_band_hits": "0/0",
+            "within_5pt_of_band_rate": null,
+            "band_distance_mae": null,
+            "mean_signed_bias": null
+          }
+        },
+        "pairwise_metrics": {
+          "a_minus_plus_vs_non_award": 0.9775,
+          "pairwise_95ci": [
+            0.92,
+            1
+          ],
+          "mean_craft_a_minus_plus": 90.2,
+          "mean_non_award": 65.35
+        },
+        "by_genre": {
+          "CM": {
+            "status": "参考（n<5：受賞作3本のため合否・結論には使用しない）",
+            "craft_n": 3,
+            "non_award_n": 4,
+            "spearman_rho": 0.5,
+            "band_distance_mae": 4.5,
+            "pairwise_a_minus_plus_vs_non_award": 1
+          },
+          "MV": {
+            "status": "参考（n<5：受賞作4本のため合否・結論には使用しない）",
+            "craft_n": 4,
+            "non_award_n": 3,
+            "spearman_rho": 0.8,
+            "band_distance_mae": 1.125,
+            "pairwise_a_minus_plus_vs_non_award": 1
+          },
+          "モーション": {
+            "status": "未検証（基準作品1本のみのためジャンル別結果を出さない）",
+            "craft_n": 0,
+            "non_award_n": 4
+          },
+          "3DCG/アニメ": {
+            "status": "参考（n<5：受賞作2本のため合否・結論には使用しない）",
+            "craft_n": 2,
+            "non_award_n": 4,
+            "spearman_rho": 1,
+            "band_distance_mae": 6,
+            "pairwise_a_minus_plus_vs_non_award": 0.875
+          },
+          "企業映像": {
+            "status": "参考（n<5：受賞作1本のため合否・結論には使用しない）",
+            "craft_n": 1,
+            "non_award_n": 5,
+            "spearman_rho": null,
+            "band_distance_mae": 2.5,
+            "pairwise_a_minus_plus_vs_non_award": 1
+          }
+        }
+      },
+      "contamination_excluded": {
+        "subset": "contamination_excluded",
+        "note": "参考値（既知除外により上位帯が脱落し範囲が狭い：S帯残存 0 本 / 受賞作計 4 本）",
+        "counts": {
+          "total": 24,
+          "craft": 4,
+          "craft_a_minus_plus": 4,
+          "non_award": 20,
+          "reference_only_scored": 0
+        },
+        "craft_metrics": {
+          "spearman_rho": -0.8165,
+          "spearman_rho_95ci": [
+            -1,
+            -0.8165
+          ],
+          "kendall_tau_b": -0.7746,
+          "kendall_tau_b_95ci": [
+            -1,
+            -0.7746
+          ],
+          "band_distance_mae": 2.625,
+          "band_distance_mae_95ci": [
+            0,
+            5.25
+          ],
+          "exact_band_hit_rate": 0.5,
+          "exact_band_hits": "2/4",
+          "mean_signed_bias": -0.625
+        },
+        "by_rank_band": {
+          "S帯(S+/S/S-)": {
+            "n": 0,
+            "exact_band_hits": "0/0",
+            "exact_band_hit_rate": null,
+            "within_5pt_of_band_hits": "0/0",
+            "within_5pt_of_band_rate": null,
+            "band_distance_mae": null,
+            "mean_signed_bias": null
+          },
+          "A帯(A+/A/A-)": {
+            "n": 4,
+            "exact_band_hits": "2/4",
+            "exact_band_hit_rate": 0.5,
+            "within_5pt_of_band_hits": "3/4",
+            "within_5pt_of_band_rate": 0.75,
+            "band_distance_mae": 2.625,
+            "mean_signed_bias": -0.625
+          },
+          "B帯以下(B+以下)": {
+            "n": 0,
+            "exact_band_hits": "0/0",
+            "exact_band_hit_rate": null,
+            "within_5pt_of_band_hits": "0/0",
+            "within_5pt_of_band_rate": null,
+            "band_distance_mae": null,
+            "mean_signed_bias": null
+          }
+        },
+        "pairwise_metrics": {
+          "a_minus_plus_vs_non_award": 0.925,
+          "pairwise_95ci": [
+            0.7875,
+            1
+          ],
+          "mean_craft_a_minus_plus": 81.875,
+          "mean_non_award": 65.35
+        },
+        "by_genre": {
+          "CM": {
+            "status": "参考（n<5：受賞作3本のため合否・結論には使用しない）",
+            "craft_n": 3,
+            "non_award_n": 4,
+            "spearman_rho": -0.866,
+            "band_distance_mae": 3.5,
+            "pairwise_a_minus_plus_vs_non_award": 0.9583
+          },
+          "MV": {
+            "status": "参考（n<5：受賞作1本のため合否・結論には使用しない）",
+            "craft_n": 1,
+            "non_award_n": 3,
+            "spearman_rho": null,
+            "band_distance_mae": 0,
+            "pairwise_a_minus_plus_vs_non_award": 1
+          },
+          "モーション": {
+            "status": "未検証（基準作品1本のみのためジャンル別結果を出さない）",
+            "craft_n": 0,
+            "non_award_n": 4
+          },
+          "3DCG/アニメ": {
+            "status": "参考（n<5：受賞作0本のため合否・結論には使用しない）",
+            "craft_n": 0,
+            "non_award_n": 4,
+            "spearman_rho": null,
+            "band_distance_mae": null,
+            "pairwise_a_minus_plus_vs_non_award": null
+          },
+          "企業映像": {
+            "status": "参考（n<5：受賞作0本のため合否・結論には使用しない）",
+            "craft_n": 0,
+            "non_award_n": 5,
+            "spearman_rho": null,
+            "band_distance_mae": null,
+            "pairwise_a_minus_plus_vs_non_award": null
+          }
+        }
+      },
+      "per_video": [
+        {
+          "video_id": "49367868",
+          "genre_bucket": "MV",
+          "craft_or_purpose": "craft_benchmark",
+          "is_bova": false,
+          "objective_tier": "A+",
+          "objective_band": [
+            86,
+            89
+          ],
+          "target_mid": 87.5,
+          "raw_scores": [
+            92,
+            95
+          ],
+          "ai_score": 93.5,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": 4.5,
+          "flagged_contamination": true,
+          "knows_work": true,
+          "knows_award_history": true,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 29444,
+          "avg_first_post_read_effective_input_tokens": 37301
+        },
+        {
+          "video_id": "153159513",
+          "genre_bucket": "MV",
+          "craft_or_purpose": "craft_benchmark",
+          "is_bova": false,
+          "objective_tier": "S-",
+          "objective_band": [
+            90,
+            92
+          ],
+          "target_mid": 91,
+          "raw_scores": [
+            90,
+            93
+          ],
+          "ai_score": 91.5,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": 0,
+          "flagged_contamination": true,
+          "knows_work": true,
+          "knows_award_history": true,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 21460,
+          "avg_first_post_read_effective_input_tokens": 29318
+        },
+        {
+          "video_id": "tvTRZJ-4EyI",
+          "genre_bucket": "MV",
+          "craft_or_purpose": "craft_benchmark",
+          "is_bova": false,
+          "objective_tier": "S",
+          "objective_band": [
+            93,
+            96
+          ],
+          "target_mid": 94.5,
+          "raw_scores": [
+            96,
+            96
+          ],
+          "ai_score": 96,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": 0,
+          "flagged_contamination": true,
+          "knows_work": true,
+          "knows_award_history": true,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 21337,
+          "avg_first_post_read_effective_input_tokens": 29179
+        },
+        {
+          "video_id": "vpyeQeTDGFA",
+          "genre_bucket": "CM",
+          "craft_or_purpose": "craft_benchmark",
+          "is_bova": false,
+          "objective_tier": "S-",
+          "objective_band": [
+            90,
+            92
+          ],
+          "target_mid": 91,
+          "raw_scores": [
+            97,
+            96
+          ],
+          "ai_score": 96.5,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": 4.5,
+          "flagged_contamination": true,
+          "knows_work": true,
+          "knows_award_history": true,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 14689,
+          "avg_first_post_read_effective_input_tokens": 22536
+        },
+        {
+          "video_id": "X0hyTmlsBUI",
+          "genre_bucket": "3DCG/アニメ",
+          "craft_or_purpose": "craft_benchmark",
+          "is_bova": false,
+          "objective_tier": "S-",
+          "objective_band": [
+            90,
+            92
+          ],
+          "target_mid": 91,
+          "raw_scores": [
+            81,
+            82
+          ],
+          "ai_score": 81.5,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": 8.5,
+          "flagged_contamination": true,
+          "knows_work": true,
+          "knows_award_history": true,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 18700,
+          "avg_first_post_read_effective_input_tokens": 26433
+        },
+        {
+          "video_id": "5wEjV2ekSwE",
+          "genre_bucket": "CM",
+          "craft_or_purpose": "craft_benchmark",
+          "is_bova": false,
+          "objective_tier": "S-",
+          "objective_band": [
+            90,
+            92
+          ],
+          "target_mid": 91,
+          "raw_scores": [
+            95,
+            95
+          ],
+          "ai_score": 95,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": 3,
+          "flagged_contamination": true,
+          "knows_work": true,
+          "knows_award_history": true,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 13597,
+          "avg_first_post_read_effective_input_tokens": 21325
+        },
+        {
+          "video_id": "vRBVWCs1KW4",
+          "genre_bucket": "3DCG/アニメ",
+          "craft_or_purpose": "craft_benchmark",
+          "is_bova": false,
+          "objective_tier": "S+",
+          "objective_band": [
+            97,
+            100
+          ],
+          "target_mid": 98.5,
+          "raw_scores": [
+            94,
+            93
+          ],
+          "ai_score": 93.5,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": 3.5,
+          "flagged_contamination": true,
+          "knows_work": true,
+          "knows_award_history": true,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 33048,
+          "avg_first_post_read_effective_input_tokens": 40903
+        },
+        {
+          "video_id": "iIL_CB_YjFk",
+          "genre_bucket": "CM",
+          "craft_or_purpose": "craft_benchmark",
+          "is_bova": false,
+          "objective_tier": "A+",
+          "objective_band": [
+            86,
+            89
+          ],
+          "target_mid": 87.5,
+          "raw_scores": [
+            96,
+            94
+          ],
+          "ai_score": 95,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": 6,
+          "flagged_contamination": true,
+          "knows_work": true,
+          "knows_award_history": true,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 13033,
+          "avg_first_post_read_effective_input_tokens": 20872
+        },
+        {
+          "video_id": "JFDm4p8T6_4",
+          "genre_bucket": "CM",
+          "craft_or_purpose": "craft_benchmark",
+          "is_bova": true,
+          "objective_tier": "A",
+          "objective_band": [
+            82,
+            85
+          ],
+          "target_mid": 83.5,
+          "raw_scores": [
+            84,
+            84
+          ],
+          "ai_score": 84,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": 0,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 15078,
+          "avg_first_post_read_effective_input_tokens": 22938
+        },
+        {
+          "video_id": "wXD33Jx25oI",
+          "genre_bucket": "CM",
+          "craft_or_purpose": "craft_benchmark",
+          "is_bova": true,
+          "objective_tier": "A",
+          "objective_band": [
+            82,
+            85
+          ],
+          "target_mid": 83.5,
+          "raw_scores": [
+            76,
+            74
+          ],
+          "ai_score": 75,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": 7,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 19275,
+          "avg_first_post_read_effective_input_tokens": 27015
+        },
+        {
+          "video_id": "3JtO1WMYb58",
+          "genre_bucket": "MV",
+          "craft_or_purpose": "craft_benchmark",
+          "is_bova": false,
+          "objective_tier": "A",
+          "objective_band": [
+            82,
+            85
+          ],
+          "target_mid": 83.5,
+          "raw_scores": [
+            89,
+            84,
+            82
+          ],
+          "ai_score": 84,
+          "ensemble_rule": "median_of_3",
+          "band_dist": 0,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 3,
+          "avg_first_post_read_input_tokens": 26090,
+          "avg_first_post_read_effective_input_tokens": 33934
+        },
+        {
+          "video_id": "V6XHz7tqGVM",
+          "genre_bucket": "企業映像",
+          "craft_or_purpose": "craft_benchmark",
+          "is_bova": false,
+          "objective_tier": "A-",
+          "objective_band": [
+            78,
+            81
+          ],
+          "target_mid": 79.5,
+          "raw_scores": [
+            76,
+            75
+          ],
+          "ai_score": 75.5,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": 2.5,
+          "flagged_contamination": true,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": true,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 42046,
+          "avg_first_post_read_effective_input_tokens": 49785
+        },
+        {
+          "video_id": "FSqTqdjf2YQ",
+          "genre_bucket": "CM",
+          "craft_or_purpose": "craft_benchmark",
+          "is_bova": true,
+          "objective_tier": "A-",
+          "objective_band": [
+            78,
+            81
+          ],
+          "target_mid": 79.5,
+          "raw_scores": [
+            84,
+            85
+          ],
+          "ai_score": 84.5,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": 3.5,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 20915,
+          "avg_first_post_read_effective_input_tokens": 28764
+        },
+        {
+          "video_id": "1FhTNSG_Ri4",
+          "genre_bucket": "CM",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            76,
+            74
+          ],
+          "ai_score": 75,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 2460,
+          "avg_first_post_read_effective_input_tokens": 10195
+        },
+        {
+          "video_id": "AF-K7EV4BJw",
+          "genre_bucket": "CM",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            62,
+            59
+          ],
+          "ai_score": 60.5,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 3292,
+          "avg_first_post_read_effective_input_tokens": 9628
+        },
+        {
+          "video_id": "A-9c7OdQMFc",
+          "genre_bucket": "CM",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            52,
+            51
+          ],
+          "ai_score": 51.5,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 9772,
+          "avg_first_post_read_effective_input_tokens": 17608
+        },
+        {
+          "video_id": "2KS4Q6Bjgq8",
+          "genre_bucket": "CM",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            64,
+            65
+          ],
+          "ai_score": 64.5,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 13741,
+          "avg_first_post_read_effective_input_tokens": 21589
+        },
+        {
+          "video_id": "_2lHuvAwhwk",
+          "genre_bucket": "MV",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            65,
+            64
+          ],
+          "ai_score": 64.5,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 21361,
+          "avg_first_post_read_effective_input_tokens": 29217
+        },
+        {
+          "video_id": "7ErE0YPc_PY",
+          "genre_bucket": "MV",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            53,
+            55
+          ],
+          "ai_score": 54,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 31729,
+          "avg_first_post_read_effective_input_tokens": 39582
+        },
+        {
+          "video_id": "eJpop_rbbRA",
+          "genre_bucket": "モーション",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            64,
+            66
+          ],
+          "ai_score": 65,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 3187,
+          "avg_first_post_read_effective_input_tokens": 9528
+        },
+        {
+          "video_id": "-n1ljTOQK-s",
+          "genre_bucket": "MV",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            71,
+            74
+          ],
+          "ai_score": 72.5,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 30994,
+          "avg_first_post_read_effective_input_tokens": 38837
+        },
+        {
+          "video_id": "MBLq5K_WXi8",
+          "genre_bucket": "モーション",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            52,
+            58,
+            51
+          ],
+          "ai_score": 52,
+          "ensemble_rule": "median_of_3",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 3,
+          "avg_first_post_read_input_tokens": 2288,
+          "avg_first_post_read_effective_input_tokens": 10114
+        },
+        {
+          "video_id": "bJ4LFnk785g",
+          "genre_bucket": "モーション",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            69,
+            70
+          ],
+          "ai_score": 69.5,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 17051,
+          "avg_first_post_read_effective_input_tokens": 24903
+        },
+        {
+          "video_id": "3910Da5fk7k",
+          "genre_bucket": "モーション",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            81,
+            79
+          ],
+          "ai_score": 80,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 3636,
+          "avg_first_post_read_effective_input_tokens": 11489
+        },
+        {
+          "video_id": "KOh3qsUh_9E",
+          "genre_bucket": "3DCG/アニメ",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            74,
+            77
+          ],
+          "ai_score": 75.5,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 27119,
+          "avg_first_post_read_effective_input_tokens": 34980
+        },
+        {
+          "video_id": "GvkbAp9YZCo",
+          "genre_bucket": "3DCG/アニメ",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            57,
+            57
+          ],
+          "ai_score": 57,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 19169,
+          "avg_first_post_read_effective_input_tokens": 26906
+        },
+        {
+          "video_id": "O1U55m7pTCk",
+          "genre_bucket": "3DCG/アニメ",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            72,
+            66,
+            76
+          ],
+          "ai_score": 72,
+          "ensemble_rule": "median_of_3",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 3,
+          "avg_first_post_read_input_tokens": 23442,
+          "avg_first_post_read_effective_input_tokens": 31176
+        },
+        {
+          "video_id": "chcrZR8SclA",
+          "genre_bucket": "3DCG/アニメ",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            85,
+            84
+          ],
+          "ai_score": 84.5,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 12232,
+          "avg_first_post_read_effective_input_tokens": 20077
+        },
+        {
+          "video_id": "2NOefVvwLIM",
+          "genre_bucket": "企業映像",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            64,
+            64
+          ],
+          "ai_score": 64,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 9835,
+          "avg_first_post_read_effective_input_tokens": 17684
+        },
+        {
+          "video_id": "-5fhRq5PV2o",
+          "genre_bucket": "企業映像",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            69,
+            69
+          ],
+          "ai_score": 69,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 14104,
+          "avg_first_post_read_effective_input_tokens": 21839
+        },
+        {
+          "video_id": "hJqVpUoNVqE",
+          "genre_bucket": "企業映像",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            53,
+            54
+          ],
+          "ai_score": 53.5,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 45641,
+          "avg_first_post_read_effective_input_tokens": 53370
+        },
+        {
+          "video_id": "Z-nPJFF1PYY",
+          "genre_bucket": "企業映像",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            51,
+            51
+          ],
+          "ai_score": 51,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 39597,
+          "avg_first_post_read_effective_input_tokens": 47335
+        },
+        {
+          "video_id": "-PXeNWSj3Y0",
+          "genre_bucket": "企業映像",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            70,
+            73
+          ],
+          "ai_score": 71.5,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 17119,
+          "avg_first_post_read_effective_input_tokens": 24960
+        }
+      ]
+    },
+    "contact_sheet": {
+      "valid_subagent_runs": 67,
+      "invalid_subagent_runs": 0,
+      "unique_videos_scored": 33,
+      "tiebreakers_needed_count": 0,
+      "tiebreakers_needed_videos": [],
+      "tiebreakers_completed_count": 1,
+      "flagged_contamination_count": 6,
+      "model_verification": {
+        "expected_model": "gemini-4-neon-high",
+        "matched_valid_runs": 67,
+        "total_valid_runs": 67,
+        "model_match_rate": 1,
+        "distinct_models_observed": [
+          "gemini-4-neon-high"
+        ],
+        "mismatched_subagents": []
+      },
+      "token_summary": {
+        "count": 67,
+        "min_first_post_read_input_tokens": 2611,
+        "median_first_post_read_input_tokens": 3893,
+        "max_first_post_read_input_tokens": 5268,
+        "mean_first_post_read_input_tokens": 3404,
+        "min_first_post_read_effective_input_tokens": 9150,
+        "median_first_post_read_effective_input_tokens": 11785,
+        "max_first_post_read_effective_input_tokens": 13261,
+        "mean_first_post_read_effective_input_tokens": 11189
+      },
+      "all_included": {
+        "subset": "all_included",
+        "counts": {
+          "total": 33,
+          "craft": 13,
+          "craft_a_minus_plus": 13,
+          "non_award": 20,
+          "reference_only_scored": 0
+        },
+        "craft_metrics": {
+          "spearman_rho": 0.6159,
+          "spearman_rho_95ci": [
+            0.1039,
+            0.8897
+          ],
+          "kendall_tau_b": 0.4796,
+          "kendall_tau_b_95ci": [
+            0.0764,
+            0.8005
+          ],
+          "band_distance_mae": 3,
+          "band_distance_mae_95ci": [
+            1.4615,
+            4.8462
+          ],
+          "exact_band_hit_rate": 0.3077,
+          "exact_band_hits": "4/13",
+          "mean_signed_bias": -1.4231
+        },
+        "by_rank_band": {
+          "S帯(S+/S/S-)": {
+            "n": 6,
+            "exact_band_hits": "1/6",
+            "exact_band_hit_rate": 0.1667,
+            "within_5pt_of_band_hits": "5/6",
+            "within_5pt_of_band_rate": 0.8333,
+            "band_distance_mae": 3.5833,
+            "mean_signed_bias": -3.0833
+          },
+          "A帯(A+/A/A-)": {
+            "n": 7,
+            "exact_band_hits": "3/7",
+            "exact_band_hit_rate": 0.4286,
+            "within_5pt_of_band_hits": "6/7",
+            "within_5pt_of_band_rate": 0.8571,
+            "band_distance_mae": 2.5,
+            "mean_signed_bias": 0
+          },
+          "B帯以下(B+以下)": {
+            "n": 0,
+            "exact_band_hits": "0/0",
+            "exact_band_hit_rate": null,
+            "within_5pt_of_band_hits": "0/0",
+            "within_5pt_of_band_rate": null,
+            "band_distance_mae": null,
+            "mean_signed_bias": null
+          }
+        },
+        "pairwise_metrics": {
+          "a_minus_plus_vs_non_award": 0.9654,
+          "pairwise_95ci": [
+            0.8962,
+            1
+          ],
+          "mean_craft_a_minus_plus": 86.3846,
+          "mean_non_award": 65.675
+        },
+        "by_genre": {
+          "CM": {
+            "status": "算出対象",
+            "craft_n": 6,
+            "non_award_n": 4,
+            "spearman_rho": 0.7945,
+            "band_distance_mae": 3.1667,
+            "pairwise_a_minus_plus_vs_non_award": 1
+          },
+          "MV": {
+            "status": "参考（n<5：受賞作4本のため合否・結論には使用しない）",
+            "craft_n": 4,
+            "non_award_n": 3,
+            "spearman_rho": 0.3162,
+            "band_distance_mae": 1.5,
+            "pairwise_a_minus_plus_vs_non_award": 1
+          },
+          "モーション": {
+            "status": "未検証（基準作品1本のみのためジャンル別結果を出さない）",
+            "craft_n": 0,
+            "non_award_n": 4
+          },
+          "3DCG/アニメ": {
+            "status": "参考（n<5：受賞作2本のため合否・結論には使用しない）",
+            "craft_n": 2,
+            "non_award_n": 4,
+            "spearman_rho": 1,
+            "band_distance_mae": 7,
+            "pairwise_a_minus_plus_vs_non_award": 0.875
+          },
+          "企業映像": {
+            "status": "参考（n<5：受賞作1本のため合否・結論には使用しない）",
+            "craft_n": 1,
+            "non_award_n": 5,
+            "spearman_rho": null,
+            "band_distance_mae": 0,
+            "pairwise_a_minus_plus_vs_non_award": 1
+          }
+        }
+      },
+      "bova_excluded_sensitivity": {
+        "subset": "bova_excluded_sensitivity",
+        "note": "事前登録感度分析（案C：BOVA除外・同一実行データより算出・受賞作 10 本 vs 非受賞作 20 本）",
+        "counts": {
+          "total": 30,
+          "craft": 10,
+          "craft_a_minus_plus": 10,
+          "non_award": 20,
+          "reference_only_scored": 0
+        },
+        "craft_metrics": {
+          "spearman_rho": 0.5946,
+          "spearman_rho_95ci": [
+            -0.0348,
+            0.9504
+          ],
+          "kendall_tau_b": 0.4647,
+          "kendall_tau_b_95ci": [
+            -0.0362,
+            0.8976
+          ],
+          "band_distance_mae": 2.55,
+          "band_distance_mae_95ci": [
+            0.95,
+            4.35
+          ],
+          "exact_band_hit_rate": 0.3,
+          "exact_band_hits": "3/10",
+          "mean_signed_bias": -1.4
+        },
+        "by_rank_band": {
+          "S帯(S+/S/S-)": {
+            "n": 6,
+            "exact_band_hits": "1/6",
+            "exact_band_hit_rate": 0.1667,
+            "within_5pt_of_band_hits": "5/6",
+            "within_5pt_of_band_rate": 0.8333,
+            "band_distance_mae": 3.5833,
+            "mean_signed_bias": -3.0833
+          },
+          "A帯(A+/A/A-)": {
+            "n": 4,
+            "exact_band_hits": "2/4",
+            "exact_band_hit_rate": 0.5,
+            "within_5pt_of_band_hits": "4/4",
+            "within_5pt_of_band_rate": 1,
+            "band_distance_mae": 1,
+            "mean_signed_bias": 1.125
+          },
+          "B帯以下(B+以下)": {
+            "n": 0,
+            "exact_band_hits": "0/0",
+            "exact_band_hit_rate": null,
+            "within_5pt_of_band_hits": "0/0",
+            "within_5pt_of_band_rate": null,
+            "band_distance_mae": null,
+            "mean_signed_bias": null
+          }
+        },
+        "pairwise_metrics": {
+          "a_minus_plus_vs_non_award": 0.98,
+          "pairwise_95ci": [
+            0.93,
+            1
+          ],
+          "mean_craft_a_minus_plus": 88.1,
+          "mean_non_award": 65.675
+        },
+        "by_genre": {
+          "CM": {
+            "status": "参考（n<5：受賞作3本のため合否・結論には使用しない）",
+            "craft_n": 3,
+            "non_award_n": 4,
+            "spearman_rho": 0.866,
+            "band_distance_mae": 1.8333,
+            "pairwise_a_minus_plus_vs_non_award": 1
+          },
+          "MV": {
+            "status": "参考（n<5：受賞作4本のため合否・結論には使用しない）",
+            "craft_n": 4,
+            "non_award_n": 3,
+            "spearman_rho": 0.3162,
+            "band_distance_mae": 1.5,
+            "pairwise_a_minus_plus_vs_non_award": 1
+          },
+          "モーション": {
+            "status": "未検証（基準作品1本のみのためジャンル別結果を出さない）",
+            "craft_n": 0,
+            "non_award_n": 4
+          },
+          "3DCG/アニメ": {
+            "status": "参考（n<5：受賞作2本のため合否・結論には使用しない）",
+            "craft_n": 2,
+            "non_award_n": 4,
+            "spearman_rho": 1,
+            "band_distance_mae": 7,
+            "pairwise_a_minus_plus_vs_non_award": 0.875
+          },
+          "企業映像": {
+            "status": "参考（n<5：受賞作1本のため合否・結論には使用しない）",
+            "craft_n": 1,
+            "non_award_n": 5,
+            "spearman_rho": null,
+            "band_distance_mae": 0,
+            "pairwise_a_minus_plus_vs_non_award": 1
+          }
+        }
+      },
+      "contamination_excluded": {
+        "subset": "contamination_excluded",
+        "note": "参考値（既知除外により上位帯が脱落し範囲が狭い：S帯残存 1 本 / 受賞作計 7 本）",
+        "counts": {
+          "total": 27,
+          "craft": 7,
+          "craft_a_minus_plus": 7,
+          "non_award": 20,
+          "reference_only_scored": 0
+        },
+        "craft_metrics": {
+          "spearman_rho": 0.1553,
+          "spearman_rho_95ci": [
+            -0.6757,
+            0.8868
+          ],
+          "kendall_tau_b": 0.1143,
+          "kendall_tau_b_95ci": [
+            -0.6325,
+            0.8077
+          ],
+          "band_distance_mae": 2.7857,
+          "band_distance_mae_95ci": [
+            0.5714,
+            5.0714
+          ],
+          "exact_band_hit_rate": 0.4286,
+          "exact_band_hits": "3/7",
+          "mean_signed_bias": -1.5
+        },
+        "by_rank_band": {
+          "S帯(S+/S/S-)": {
+            "n": 1,
+            "exact_band_hits": "0/1",
+            "exact_band_hit_rate": 0,
+            "within_5pt_of_band_hits": "1/1",
+            "within_5pt_of_band_rate": 1,
+            "band_distance_mae": 5,
+            "mean_signed_bias": -6
+          },
+          "A帯(A+/A/A-)": {
+            "n": 6,
+            "exact_band_hits": "3/6",
+            "exact_band_hit_rate": 0.5,
+            "within_5pt_of_band_hits": "5/6",
+            "within_5pt_of_band_rate": 0.8333,
+            "band_distance_mae": 2.4167,
+            "mean_signed_bias": -0.75
+          },
+          "B帯以下(B+以下)": {
+            "n": 0,
+            "exact_band_hits": "0/0",
+            "exact_band_hit_rate": null,
+            "within_5pt_of_band_hits": "0/0",
+            "within_5pt_of_band_rate": null,
+            "band_distance_mae": null,
+            "mean_signed_bias": null
+          }
+        },
+        "pairwise_metrics": {
+          "a_minus_plus_vs_non_award": 0.9429,
+          "pairwise_95ci": [
+            0.8429,
+            1
+          ],
+          "mean_craft_a_minus_plus": 82.5,
+          "mean_non_award": 65.675
+        },
+        "by_genre": {
+          "CM": {
+            "status": "参考（n<5：受賞作3本のため合否・結論には使用しない）",
+            "craft_n": 3,
+            "non_award_n": 4,
+            "spearman_rho": -0.866,
+            "band_distance_mae": 4.5,
+            "pairwise_a_minus_plus_vs_non_award": 1
+          },
+          "MV": {
+            "status": "参考（n<5：受賞作3本のため合否・結論には使用しない）",
+            "craft_n": 3,
+            "non_award_n": 3,
+            "spearman_rho": -0.866,
+            "band_distance_mae": 2,
+            "pairwise_a_minus_plus_vs_non_award": 1
+          },
+          "モーション": {
+            "status": "未検証（基準作品1本のみのためジャンル別結果を出さない）",
+            "craft_n": 0,
+            "non_award_n": 4
+          },
+          "3DCG/アニメ": {
+            "status": "参考（n<5：受賞作0本のため合否・結論には使用しない）",
+            "craft_n": 0,
+            "non_award_n": 4,
+            "spearman_rho": null,
+            "band_distance_mae": null,
+            "pairwise_a_minus_plus_vs_non_award": null
+          },
+          "企業映像": {
+            "status": "参考（n<5：受賞作1本のため合否・結論には使用しない）",
+            "craft_n": 1,
+            "non_award_n": 5,
+            "spearman_rho": null,
+            "band_distance_mae": 0,
+            "pairwise_a_minus_plus_vs_non_award": 1
+          }
+        }
+      },
+      "per_video": [
+        {
+          "video_id": "49367868",
+          "genre_bucket": "MV",
+          "craft_or_purpose": "craft_benchmark",
+          "is_bova": false,
+          "objective_tier": "A+",
+          "objective_band": [
+            86,
+            89
+          ],
+          "target_mid": 87.5,
+          "raw_scores": [
+            86,
+            86
+          ],
+          "ai_score": 86,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": 0,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 3905,
+          "avg_first_post_read_effective_input_tokens": 11833
+        },
+        {
+          "video_id": "153159513",
+          "genre_bucket": "MV",
+          "craft_or_purpose": "craft_benchmark",
+          "is_bova": false,
+          "objective_tier": "S-",
+          "objective_band": [
+            90,
+            92
+          ],
+          "target_mid": 91,
+          "raw_scores": [
+            84,
+            86
+          ],
+          "ai_score": 85,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": 5,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 4047,
+          "avg_first_post_read_effective_input_tokens": 11980
+        },
+        {
+          "video_id": "tvTRZJ-4EyI",
+          "genre_bucket": "MV",
+          "craft_or_purpose": "craft_benchmark",
+          "is_bova": false,
+          "objective_tier": "S",
+          "objective_band": [
+            93,
+            96
+          ],
+          "target_mid": 94.5,
+          "raw_scores": [
+            95,
+            93
+          ],
+          "ai_score": 94,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": 0,
+          "flagged_contamination": true,
+          "knows_work": true,
+          "knows_award_history": true,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 3938,
+          "avg_first_post_read_effective_input_tokens": 11852
+        },
+        {
+          "video_id": "vpyeQeTDGFA",
+          "genre_bucket": "CM",
+          "craft_or_purpose": "craft_benchmark",
+          "is_bova": false,
+          "objective_tier": "S-",
+          "objective_band": [
+            90,
+            92
+          ],
+          "target_mid": 91,
+          "raw_scores": [
+            93,
+            94
+          ],
+          "ai_score": 93.5,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": 1.5,
+          "flagged_contamination": true,
+          "knows_work": true,
+          "knows_award_history": true,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 3950,
+          "avg_first_post_read_effective_input_tokens": 11880
+        },
+        {
+          "video_id": "X0hyTmlsBUI",
+          "genre_bucket": "3DCG/アニメ",
+          "craft_or_purpose": "craft_benchmark",
+          "is_bova": false,
+          "objective_tier": "S-",
+          "objective_band": [
+            90,
+            92
+          ],
+          "target_mid": 91,
+          "raw_scores": [
+            82,
+            79
+          ],
+          "ai_score": 80.5,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": 9.5,
+          "flagged_contamination": true,
+          "knows_work": true,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 2757,
+          "avg_first_post_read_effective_input_tokens": 10552
+        },
+        {
+          "video_id": "5wEjV2ekSwE",
+          "genre_bucket": "CM",
+          "craft_or_purpose": "craft_benchmark",
+          "is_bova": false,
+          "objective_tier": "S-",
+          "objective_band": [
+            90,
+            92
+          ],
+          "target_mid": 91,
+          "raw_scores": [
+            93,
+            93
+          ],
+          "ai_score": 93,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": 1,
+          "flagged_contamination": true,
+          "knows_work": true,
+          "knows_award_history": true,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 2639,
+          "avg_first_post_read_effective_input_tokens": 10440
+        },
+        {
+          "video_id": "vRBVWCs1KW4",
+          "genre_bucket": "3DCG/アニメ",
+          "craft_or_purpose": "craft_benchmark",
+          "is_bova": false,
+          "objective_tier": "S+",
+          "objective_band": [
+            97,
+            100
+          ],
+          "target_mid": 98.5,
+          "raw_scores": [
+            91,
+            94
+          ],
+          "ai_score": 92.5,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": 4.5,
+          "flagged_contamination": true,
+          "knows_work": true,
+          "knows_award_history": true,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 5236,
+          "avg_first_post_read_effective_input_tokens": 13231
+        },
+        {
+          "video_id": "iIL_CB_YjFk",
+          "genre_bucket": "CM",
+          "craft_or_purpose": "craft_benchmark",
+          "is_bova": false,
+          "objective_tier": "A+",
+          "objective_band": [
+            86,
+            89
+          ],
+          "target_mid": 87.5,
+          "raw_scores": [
+            90,
+            94
+          ],
+          "ai_score": 92,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": 3,
+          "flagged_contamination": true,
+          "knows_work": true,
+          "knows_award_history": true,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 2687,
+          "avg_first_post_read_effective_input_tokens": 10531
+        },
+        {
+          "video_id": "JFDm4p8T6_4",
+          "genre_bucket": "CM",
+          "craft_or_purpose": "craft_benchmark",
+          "is_bova": true,
+          "objective_tier": "A",
+          "objective_band": [
+            82,
+            85
+          ],
+          "target_mid": 83.5,
+          "raw_scores": [
+            82,
+            83
+          ],
+          "ai_score": 82.5,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": 0,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 3916,
+          "avg_first_post_read_effective_input_tokens": 11853
+        },
+        {
+          "video_id": "wXD33Jx25oI",
+          "genre_bucket": "CM",
+          "craft_or_purpose": "craft_benchmark",
+          "is_bova": true,
+          "objective_tier": "A",
+          "objective_band": [
+            82,
+            85
+          ],
+          "target_mid": 83.5,
+          "raw_scores": [
+            73,
+            74
+          ],
+          "ai_score": 73.5,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": 8.5,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 2732,
+          "avg_first_post_read_effective_input_tokens": 10537
+        },
+        {
+          "video_id": "3JtO1WMYb58",
+          "genre_bucket": "MV",
+          "craft_or_purpose": "craft_benchmark",
+          "is_bova": false,
+          "objective_tier": "A",
+          "objective_band": [
+            82,
+            85
+          ],
+          "target_mid": 83.5,
+          "raw_scores": [
+            86,
+            86
+          ],
+          "ai_score": 86,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": 1,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 3895,
+          "avg_first_post_read_effective_input_tokens": 11806
+        },
+        {
+          "video_id": "V6XHz7tqGVM",
+          "genre_bucket": "企業映像",
+          "craft_or_purpose": "craft_benchmark",
+          "is_bova": false,
+          "objective_tier": "A-",
+          "objective_band": [
+            78,
+            81
+          ],
+          "target_mid": 79.5,
+          "raw_scores": [
+            78,
+            79
+          ],
+          "ai_score": 78.5,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": 0,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 3910,
+          "avg_first_post_read_effective_input_tokens": 11779
+        },
+        {
+          "video_id": "FSqTqdjf2YQ",
+          "genre_bucket": "CM",
+          "craft_or_purpose": "craft_benchmark",
+          "is_bova": true,
+          "objective_tier": "A-",
+          "objective_band": [
+            78,
+            81
+          ],
+          "target_mid": 79.5,
+          "raw_scores": [
+            85,
+            87
+          ],
+          "ai_score": 86,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": 5,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 3989,
+          "avg_first_post_read_effective_input_tokens": 11900
+        },
+        {
+          "video_id": "1FhTNSG_Ri4",
+          "genre_bucket": "CM",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            74,
+            70
+          ],
+          "ai_score": 72,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 2830,
+          "avg_first_post_read_effective_input_tokens": 9168
+        },
+        {
+          "video_id": "AF-K7EV4BJw",
+          "genre_bucket": "CM",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            63,
+            63
+          ],
+          "ai_score": 63,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 2835,
+          "avg_first_post_read_effective_input_tokens": 9169
+        },
+        {
+          "video_id": "A-9c7OdQMFc",
+          "genre_bucket": "CM",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            53,
+            54
+          ],
+          "ai_score": 53.5,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 2640,
+          "avg_first_post_read_effective_input_tokens": 10480
+        },
+        {
+          "video_id": "2KS4Q6Bjgq8",
+          "genre_bucket": "CM",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            64,
+            63
+          ],
+          "ai_score": 63.5,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 2729,
+          "avg_first_post_read_effective_input_tokens": 10580
+        },
+        {
+          "video_id": "_2lHuvAwhwk",
+          "genre_bucket": "MV",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            69,
+            69
+          ],
+          "ai_score": 69,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 4039,
+          "avg_first_post_read_effective_input_tokens": 11972
+        },
+        {
+          "video_id": "7ErE0YPc_PY",
+          "genre_bucket": "MV",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            57,
+            57
+          ],
+          "ai_score": 57,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 3918,
+          "avg_first_post_read_effective_input_tokens": 11845
+        },
+        {
+          "video_id": "eJpop_rbbRA",
+          "genre_bucket": "モーション",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            64,
+            66
+          ],
+          "ai_score": 65,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 2743,
+          "avg_first_post_read_effective_input_tokens": 10592
+        },
+        {
+          "video_id": "-n1ljTOQK-s",
+          "genre_bucket": "MV",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            70,
+            70
+          ],
+          "ai_score": 70,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 4019,
+          "avg_first_post_read_effective_input_tokens": 11936
+        },
+        {
+          "video_id": "MBLq5K_WXi8",
+          "genre_bucket": "モーション",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            54,
+            53
+          ],
+          "ai_score": 53.5,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 2698,
+          "avg_first_post_read_effective_input_tokens": 10533
+        },
+        {
+          "video_id": "bJ4LFnk785g",
+          "genre_bucket": "モーション",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            68,
+            69
+          ],
+          "ai_score": 68.5,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 3923,
+          "avg_first_post_read_effective_input_tokens": 11844
+        },
+        {
+          "video_id": "3910Da5fk7k",
+          "genre_bucket": "モーション",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            80,
+            80
+          ],
+          "ai_score": 80,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 2668,
+          "avg_first_post_read_effective_input_tokens": 10522
+        },
+        {
+          "video_id": "KOh3qsUh_9E",
+          "genre_bucket": "3DCG/アニメ",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            78,
+            74
+          ],
+          "ai_score": 76,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 4121,
+          "avg_first_post_read_effective_input_tokens": 12051
+        },
+        {
+          "video_id": "GvkbAp9YZCo",
+          "genre_bucket": "3DCG/アニメ",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            67,
+            66
+          ],
+          "ai_score": 66.5,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 2700,
+          "avg_first_post_read_effective_input_tokens": 10503
+        },
+        {
+          "video_id": "O1U55m7pTCk",
+          "genre_bucket": "3DCG/アニメ",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            75,
+            73
+          ],
+          "ai_score": 74,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 2635,
+          "avg_first_post_read_effective_input_tokens": 10440
+        },
+        {
+          "video_id": "chcrZR8SclA",
+          "genre_bucket": "3DCG/アニメ",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            87,
+            84
+          ],
+          "ai_score": 85.5,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 2657,
+          "avg_first_post_read_effective_input_tokens": 10500
+        },
+        {
+          "video_id": "2NOefVvwLIM",
+          "genre_bucket": "企業映像",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            66,
+            67
+          ],
+          "ai_score": 66.5,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 2690,
+          "avg_first_post_read_effective_input_tokens": 10545
+        },
+        {
+          "video_id": "-5fhRq5PV2o",
+          "genre_bucket": "企業映像",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            68,
+            69
+          ],
+          "ai_score": 68.5,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 2644,
+          "avg_first_post_read_effective_input_tokens": 10445
+        },
+        {
+          "video_id": "hJqVpUoNVqE",
+          "genre_bucket": "企業映像",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            51,
+            52
+          ],
+          "ai_score": 51.5,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 4033,
+          "avg_first_post_read_effective_input_tokens": 11897
+        },
+        {
+          "video_id": "Z-nPJFF1PYY",
+          "genre_bucket": "企業映像",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            47,
+            38,
+            41
+          ],
+          "ai_score": 41,
+          "ensemble_rule": "median_of_3",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 3,
+          "avg_first_post_read_input_tokens": 3986,
+          "avg_first_post_read_effective_input_tokens": 11858
+        },
+        {
+          "video_id": "-PXeNWSj3Y0",
+          "genre_bucket": "企業映像",
+          "craft_or_purpose": "non_award_baseline",
+          "is_bova": false,
+          "objective_tier": null,
+          "objective_band": null,
+          "target_mid": null,
+          "raw_scores": [
+            70,
+            68
+          ],
+          "ai_score": 69,
+          "ensemble_rule": "mean_of_2",
+          "band_dist": null,
+          "flagged_contamination": false,
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "run_count": 2,
+          "avg_first_post_read_input_tokens": 3944,
+          "avg_first_post_read_effective_input_tokens": 11855
+        }
+      ]
+    }
+  }
+}
