@@ -44,7 +44,7 @@ for r in rows:
     if "[既存評価非表示]メロ" in excerpt or "[既存評価非表示]サビ" in excerpt:
         melo_overredacted.append({"id": r["id"]})
 
-flagged_ids = ["_jWNIcbt-ac", "_ZBz2CPRyJA", "1ST54X7sotc", "92IAMsrCloQ", "4sr8LDdc-uA", "qROogTC60pI"]
+flagged_ids = ["_jWNIcbt-ac", "_ZBz2CPRyJA", "1ST54X7sotc", "92IAMsrCloQ", "4sr8LDdc-uA", "qROogTC60pI", "BHCOvooEdy8", "eFxxe7YIH-k", "UNEW2GulsrE", "XZOOP9QUvas"]
 flagged_check = {}
 for fid in flagged_ids:
     ex = redacted_map.get(fid, "")

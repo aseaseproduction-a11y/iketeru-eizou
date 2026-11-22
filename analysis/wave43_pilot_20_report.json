@@ -1,0 +1,852 @@
+{
+  "pilot_wave": 43,
+  "target_count": 20,
+  "audited_in_pilot_count": 19,
+  "log_verified_count": 19,
+  "two_run_mean_count": 10,
+  "three_run_median_count": 9,
+  "sqlite_body_hash_matched_count": 20,
+  "items": [
+    {
+      "video_id": "1003005012",
+      "group": "reaudit_537",
+      "title": "anicecompnay X SUNJUNJIE – Shinjuku Cross Vision 3DOOH",
+      "ensemble_mode": "2_run_mean",
+      "ensemble_runs": [
+        {
+          "run": 1,
+          "overall": 83,
+          "direction": 81,
+          "technique": 83,
+          "worker_conversation_id": "9becf1be-e14f-4b56-99d4-f408c7e8df8f",
+          "audit_run_token": "ade42dd6339a"
+        },
+        {
+          "run": 2,
+          "overall": 82,
+          "direction": 81,
+          "technique": 81,
+          "worker_conversation_id": "2c855d70-a5e1-4eb9-8ee6-e0c33d68171a",
+          "audit_run_token": "d9f2436b06af"
+        }
+      ],
+      "final_scores": "82/81/82",
+      "final_ratings": "A/A-/A",
+      "grade_boundary": true,
+      "analysis_status": "full_analysis",
+      "visual_verification_status": "log_verified",
+      "log_verified_in_report": true,
+      "worker_conversation_ids": [
+        "9becf1be-e14f-4b56-99d4-f408c7e8df8f",
+        "2c855d70-a5e1-4eb9-8ee6-e0c33d68171a"
+      ],
+      "ch11_appended": "## 11. 実映像ビジュアル監査・実測補正\n- **監査判定**: `minor_fix`（静止画コンタクトシート確認: ログ照合済）\n- **実映像カット実測値（ffmpeg scdet）**: 実カット数: 1カット / 実平均カット尺: 15.616秒 / 中央値: 15.616秒（3.84カット/分）\n- **100点ルーブリック確定スコア**: 総合/演出/技術 = `82/81/82`（ランク `A/A-/A`）\n- **監査・補正メモ**: 【確認できた範囲】コンタクトシート16コマと実測値（15.616秒・640×360・30fps・実カット数1のフィックス構成）を照合し、ピンク仮想枠＋白シャッター開放→水色クレーンゲーム筐体のポップアウト→ぬいぐるみ充填→青ファーモンスターの裸眼3D飛び出し＆正面ホールド→ぬいぐるみ群の一斉雪崩落下→筐体撤収→「anicecompany × SUNJUNJIE」ロゴボード表示→完全シームレスループ閉鎖の全構成・配色・質感・ライティング整合を確認した。既存分析の軽微な修正点として、(1)#05の「LED湾曲枠の外側（ビル下部の黒枠領域）まで」は物理LED外ではなく「LED内の仮想ピンク枠の外側（右下ピンク壁面〜LED下縁付近）まで」が正確、(2)#07の筐体撤収は単なる奥への収納ではなく手前傾き・回転を伴うダイナミックな退避モーションである点が補足対象。【未確認の限界】静止画のため30fps実再生時のイージング滑らかさ・物理シミュレーションの自然さ・音ハメ同期精度、および実測値nullの音響ミックス（音圧・SE質感）は直接未確認。\n- **ランク変更理由**: [Direction] hookAndStructure(16): 冒頭1秒のシャッター開放〜ポップアウトの視認性が高く15.6秒に6段階の起承転結と完全ループを収めた構成力は優秀だが、3DOOHの王道定型構造内。originality(15): 新宿×クレーンゲーム×ファーモンスターの文脈適合と配色は秀逸だが、「箱が開きキャラと大量オブジェクトが飛び出す」手法自体は既存3DOOH語法の洗練。rhythmAndSync(16): 16コマのイベント配置から1〜2秒毎の明快なテンポとホールド→雪崩の緩急設計が確認できる（実再生の音ハメは未確認のため減点せず水準換算）。worldAndSubject(17): パステルピンク×スカイシアンの高彩度美術と青モンスターの愛嬌ある造形が新宿の街並みに強烈に映える。intentAchievement(17): 街頭でのアイキャッチ、裸眼3D錯視、ブランド訴求、完全ループ運用の全要件を高水準で達成。[Technique] cinematographyAndArt(17): 新宿クロスビジョンL字湾曲の強制遠近パースと晴天日中光に馴染む環境ライティングの精度が高い。editingAndMotion(16): ワンショット内で筐体伸縮・回転撤収・キャラ飛び出し・多体雪崩を破綻なく展開（実フレーム滑らかさは未確認のため水準換算）。colorAndLook(17): 高彩度パステルを白飛びさせず屋外露出に調和させ、ファー毛並みやプラ質感も丁寧。soundAndMix(16): 静止画・音量nullで未確認のため減点せず、確認できた全体品質水準に準じて換算。polishAndFinish(17): 筐体細部（ロゴ帯・PRIZE OUT等）から完全ループ着地まで破綻のない商業仕上げ。[Synergy] +1: 新宿ランドマーク×クレーンゲーム×裸眼3Dの相乗効果による記憶定着力を加点。",
+      "tidb_analysis_sha256": "03879db19a3d2f255f7ef341941cc51d8b1fbde294a5386030cea3ae8d1f1987",
+      "sqlite_analysis_sha256": "03879db19a3d2f255f7ef341941cc51d8b1fbde294a5386030cea3ae8d1f1987",
+      "sqlite_exists": true,
+      "sqlite_body_hash_matched": true
+    },
+    {
+      "video_id": "100398359",
+      "group": "reaudit_537",
+      "title": "Flash Face (SPACE SHOWER TV STATION ID 2014)",
+      "ensemble_mode": "3_run_median",
+      "ensemble_runs": [
+        {
+          "run": 1,
+          "overall": 89,
+          "direction": 87,
+          "technique": 86,
+          "worker_conversation_id": "62181c38-ced6-4ced-80d6-01e5de6a1370",
+          "audit_run_token": "336b501a3fd0"
+        },
+        {
+          "run": 2,
+          "overall": 84,
+          "direction": 83,
+          "technique": 80,
+          "worker_conversation_id": "358e3618-d4b8-4f4f-a786-083aeb697d1b",
+          "audit_run_token": "e72998df4837"
+        },
+        {
+          "run": 3,
+          "overall": 85,
+          "direction": 85,
+          "technique": 81,
+          "worker_conversation_id": "d730787c-253d-47e8-ac80-56d8200aee4f",
+          "audit_run_token": "5086b1802c8e"
+        }
+      ],
+      "final_scores": "85/85/81",
+      "final_ratings": "A/A/A-",
+      "grade_boundary": true,
+      "analysis_status": "full_analysis",
+      "visual_verification_status": "log_verified",
+      "log_verified_in_report": true,
+      "worker_conversation_ids": [
+        "62181c38-ced6-4ced-80d6-01e5de6a1370",
+        "358e3618-d4b8-4f4f-a786-083aeb697d1b",
+        "d730787c-253d-47e8-ac80-56d8200aee4f"
+      ],
+      "ch11_appended": "## 11. 実映像ビジュアル監査・実測補正\n- **監査判定**: `minor_fix`（静止画コンタクトシート確認: ログ照合済）\n- **実映像カット実測値（ffmpeg scdet）**: 実カット数: 3カット / 実平均カット尺: 5.02秒 / 中央値: 0.868秒（11.95カット/分）\n- **100点ルーブリック確定スコア**: 総合/演出/技術 = `85/85/81`（ランク `A/A/A-`）\n- **監査・補正メモ**: 静止画コンタクトシート（4x4全16コマ）と実測値（15.061s / 640x360 / 29.97fps / cut_count=3, median_cut_sec=0.868）を照合した結果、基本尺・解像度・フレームレートおよび中盤〜終盤の展開（コンクリートブロック壁＋白シャツ固定構図、斜め硬質光、男女顔の二重露光融合、両手拭いモーション、ヤヌス的左右横顔分裂、左横顔への正円Sロゴ投影）は既存分析と一致した。一方、重大な見落とし・事実誤認として、コマ2に『白背景（両下隅に黒い斜め影）＋黒ノースリーブ衣装のロングヘア女性』の単独カットが明確に挿入されているにもかかわらず、既存分析はこれに一切触れず『同一の身体・衣服・背景を固定座標としたまま全編バストアップ単一構図』と断定している（実測cut_count=3とも整合する重要カットの欠落）。なお、静止画監査および音量実測値nullという制約上、実際の29.97fpsモーションの滑らかさ・各カットの正確なフレーム長、および楽曲（APOGEE）との音ハメ精度・音響ミックス品質は未確認である。\n- **ランク変更理由**: ブラインド独立採点（ACC上位〜国際賞入賞水準）。演出：hookAndStructure(17)は15秒内で単体提示→融合→手拭い→静止溜め→横顔分裂→Sロゴ着地の起承転結が極めて明快；originality(17)は固定枠内での男女顔面変容と背中合わせ二面横顔の造形が独創的；rhythmAndSync(16)は静止画の静→動→静→急動→静の緩急設計が高水準（音同期は未確認のため視覚水準換算）；worldAndSubject(17)は無機質ブロック壁・白シャツ・斜め影と男女造形がエッジィな世界観を確立；intentAchievement(18)は頭部の丸みとSロゴ正円を重ねるステーションIDとしての目的達成度が秀逸。技術：cinematographyAndArt(17)はブロック目地をグリッド化した厳格なフィックス構図と硬質ライティングが優秀；editingAndMotion(16)は女性単独インサートや多重ズレ・モーションブラーの制御が的確；colorAndLook(16)は低彩度シアン寄りグレーと白シャツ・深い影の洗練された階調；soundAndMix(16)は未確認のため減点せず他技術観点水準に換算；polishAndFinish(16)は15秒全体で破綻なく高い美意識を維持。ミニマルな光学技術とID企画の相乗効果が大きくsynergyAdjustment(+2)。",
+      "tidb_analysis_sha256": "10ac6c42c3eed870e6f46c604755aacfa3f20db3eb3f0fdaaac5056796684192",
+      "sqlite_analysis_sha256": "10ac6c42c3eed870e6f46c604755aacfa3f20db3eb3f0fdaaac5056796684192",
+      "sqlite_exists": true,
+      "sqlite_body_hash_matched": true
+    },
+    {
+      "video_id": "100398412",
+      "group": "reaudit_537",
+      "title": "Clash Dance (SPACE SHOWER TV STATION ID 2014)",
+      "ensemble_mode": "2_run_mean",
+      "ensemble_runs": [
+        {
+          "run": 1,
+          "overall": 85,
+          "direction": 85,
+          "technique": 81,
+          "worker_conversation_id": "5232140f-464c-439d-b3bc-20fb7de7d813",
+          "audit_run_token": "2392d4436ff8"
+        },
+        {
+          "run": 2,
+          "overall": 83,
+          "direction": 82,
+          "technique": 79,
+          "worker_conversation_id": "36384713-a2aa-4206-b6a4-1e0ac4891790",
+          "audit_run_token": "1ad1f6090689"
+        }
+      ],
+      "final_scores": "84/84/80",
+      "final_ratings": "A/A/A-",
+      "grade_boundary": false,
+      "analysis_status": "full_analysis",
+      "visual_verification_status": "log_verified",
+      "log_verified_in_report": true,
+      "worker_conversation_ids": [
+        "5232140f-464c-439d-b3bc-20fb7de7d813",
+        "36384713-a2aa-4206-b6a4-1e0ac4891790"
+      ],
+      "ch11_appended": "## 11. 実映像ビジュアル監査・実測補正\n- **監査判定**: `minor_fix`（静止画コンタクトシート確認: ログ照合済）\n- **実映像カット実測値（ffmpeg scdet）**: 実カット数: 1カット / 実平均カット尺: 15.061秒 / 中央値: 15.061秒（3.98カット/分）\n- **100点ルーブリック確定スコア**: 総合/演出/技術 = `84/84/80`（ランク `A/A/A-`）\n- **監査・補正メモ**: コンタクトシート16コマ（4x4）および計測データ（15.061秒・640x360・29.97fps・scdet実カット数1）と既存AI分析を照合した。完全フィックス構図・コンクリートブロック壁・冷たいスレートトーン・幾何学光面による空間分割と左右の動静対比・男女ポーズ置換・終盤の胸部Sロゴ投影という大枠と構成は実映像と高精度に一致している。一方、軽微な事実相違として(1)#01の女性衣装は「タンクトップ」ではなくグレー系長袖シャツ＋黒スカート＋タイツ（タンクトップは中盤Frame 10）、(2)#02の男性はFrame 2時点では黒ロングパンツでありショーツ姿になるのはFrame 3以降の身体スライス合成時、(3)#08のSロゴ投影時は「白シャツ」ではなく暗いグレー調に落ちた胸部へ白の角丸四角Sマークが投影されている点があり、また光面境界で上半身と下半身に別人物・別衣装を共存させるマスク合成の仕組みがやや曖昧なためminor_fixとした。なお、静止画および音量nullの計測データからは、音響ミックス・平均音圧(-18.7dBの真偽)・音楽とのフレーム同期・29.97fpsモーションの実際の滑らかさは確認不能である。\n- **ランク変更理由**: 【ブラインド独立採点・各観点の根拠】演出面：hookAndStructure(17)は冒頭0秒からの幾何学光面フックと15秒極短尺での起承転結・暗転溜め・ロゴ着地の構成密度を評価。originality(17)は光面境界を編集点・マスク境界として身体をスライスし男女を融合させるアイデアと黒フレーム枠活用の独自性を評価。rhythmAndSync(16)は音声同期は未確認だが、16コマ間の動静対比・暗転反転・タメと解放の視覚的リズム密度から換算。worldAndSubject(17)はコンクリート・漆黒・硬質白光・モノトーン衣装で音楽専門局のクールな人格を説明ゼロで体現。intentAchievement(18)はテロップに頼らず立ち上がった男性の胸部へSロゴを直接投影する鮮やかなブランド着地を高評価。技術面：cinematographyAndArt(16)は完全フィックスの厳密な構図設計と小規模セットでの質感・影制御を評価。editingAndMotion(17)は光面輪郭に沿った精密な身体スライス合成と男女マッチカットの完成度を評価（実フレーム滑らかさは未確認のため構図精度から換算）。colorAndLook(16)は青緑寄りの冷たいスレート調と締まった黒・鋭利な白光の一貫性を評価。soundAndMix(16)は静止画・音量nullのため確認不能だが減点せず確認済み技術水準から換算。polishAndFinish(16)はアーカイブ解像度(640x360)ながら影処理・光面エッジ・ロゴ視認性まで破綻のない放送ID品質を評価。synergyAdjustment(+2)は単一の光面ギミックが企画・美術・撮影・合成・ブランド着地まで一貫貫通している相乗効果を加点。",
+      "tidb_analysis_sha256": "b13f7cd9634c30edffcba662adadba45cfe111df7906c41eb2a0f10b4ea73935",
+      "sqlite_analysis_sha256": "b13f7cd9634c30edffcba662adadba45cfe111df7906c41eb2a0f10b4ea73935",
+      "sqlite_exists": true,
+      "sqlite_body_hash_matched": true
+    },
+    {
+      "video_id": "1018553776",
+      "group": "reaudit_537",
+      "title": "CHIBAJETS 2024-2025 Season Teaser",
+      "ensemble_mode": "3_run_median",
+      "ensemble_runs": [
+        {
+          "run": 1,
+          "overall": 81,
+          "direction": 78,
+          "technique": 80,
+          "worker_conversation_id": "45ad5b7d-416f-4b62-a734-d856b2092024",
+          "audit_run_token": "658a90d4e639"
+        },
+        {
+          "run": 2,
+          "overall": 77,
+          "direction": 75,
+          "technique": 77,
+          "worker_conversation_id": "62d22d1b-25a3-4840-a314-604228bf7e28",
+          "audit_run_token": "0c1f86f86386"
+        },
+        {
+          "run": 3,
+          "overall": 79,
+          "direction": 78,
+          "technique": 77,
+          "worker_conversation_id": "cd5291cb-3200-40dd-978d-b199389bcd0d",
+          "audit_run_token": "22faa4bd7fd7"
+        }
+      ],
+      "final_scores": "79/78/77",
+      "final_ratings": "A-/A-/B+",
+      "grade_boundary": false,
+      "analysis_status": "full_analysis",
+      "visual_verification_status": "log_verified",
+      "log_verified_in_report": true,
+      "worker_conversation_ids": [
+        "45ad5b7d-416f-4b62-a734-d856b2092024",
+        "62d22d1b-25a3-4840-a314-604228bf7e28",
+        "cd5291cb-3200-40dd-978d-b199389bcd0d"
+      ],
+      "ch11_appended": "## 11. 実映像ビジュアル監査・実測補正\n- **監査判定**: `accurate`（静止画コンタクトシート確認: ログ照合済）\n- **実映像カット実測値（ffmpeg scdet）**: 実カット数: 23カット / 実平均カット尺: 1.234秒 / 中央値: 0.792秒（48.64カット/分）\n- **100点ルーブリック確定スコア**: 総合/演出/技術 = `79/78/77`（ランク `A-/A-/B+`）\n- **監査・補正メモ**: コンタクトシート（16コマ）およびffprobe/scdet実測値（尺28.373秒・23.976fps・23カット・平均1.234秒・中央値0.792秒）と既存AI分析を照合した結果、前半約18秒のモノクロ練習場ドキュメント（床反射・バッシュ蹴り出し・疾走・振り返り・対人プレー・俯瞰・シュート構え・選手の笑顔・チーム円陣）から後半約10秒の夕暮れティール＆オレンジに染まったLaLa arena TOKYO-BAYのドローン空撮へのカラー転換、「始まる。ここから。」→建築線画アイコン付き「10.5 / 2024.10.5.SAT.OPENING GAME @LaLa ARENA TOKYO-BAY」→「CHIBAJETS」エンブレム着地という構成・色彩・タイポの記述は実映像と概ね完全に一致している。未確認の限界として、静止画16コマのサンプリング間隔（約1.77秒）上、既存分析にあるショットクロック12:34やグレー単色フラッシュ等の短尺インサート、モーションの滑らかさ、および音声・ミックス・音圧（計測データ上もmean/max_volume_dbがnull）は直接確認できていない。\n- **ランク変更理由**: ブラインド独立採点根拠：[演出] hookAndStructure(16):足元アップ導入からモノクロ練習→円陣→カラー新アリーナ空撮への起承転結が28秒で極めて明快。originality(13):モノクロ鍛錬→カラー新舞台の対比はスポーツティザーの王道構造で洗練されているが、Cannes/D&AD級の企画的発明性は控えめ。rhythmAndSync(16):実測23カット(中央値0.79秒)の軽快なモンタージュから後半の長回し空撮へ解放する緩急設計が優秀。worldAndSubject(16):過剰な煽りを排し、選手の緊張感・笑顔・結束と新アリーナの壮大さを品格高く両立。intentAchievement(17):最小限のコピーと日付・ロゴ設計で新アリーナ開幕への期待感を的確に醸成。[技術] cinematographyAndArt(15):浅い被写界深度やアングル変化、夕景空撮の構図は良好だが、練習場は既存環境光・背景器具を含むドキュメント寄りの画作り。editingAndMotion(15):緩急ある編集構造とクリーンなグラフィック設計が好水準（実モーション滑らかさは未確認のため減点せず構成基準で換算）。colorAndLook(16):締まったモノクロとマジックアワーのティール＆オレンジの対比が本作の核として強く機能。soundAndMix(15):静止画かつ音量実測nullのため未確認であり、減点せず確認済みの映像技術水準に準拠。polishAndFinish(16):タイポグラフィ・線画アイコン・余白設計の統一感が高く商業ティザーとして破綻のない仕上がり。synergyAdjustment(+1):色彩・空間の解放と引き算のコピーが噛み合いTier 2規模以上のブランド格調を生んでいる。",
+      "tidb_analysis_sha256": "551af735a2f7b80681a3ce5000793d0af370390acc296d95ef13c1884cddd23e",
+      "sqlite_analysis_sha256": "551af735a2f7b80681a3ce5000793d0af370390acc296d95ef13c1884cddd23e",
+      "sqlite_exists": true,
+      "sqlite_body_hash_matched": true
+    },
+    {
+      "video_id": "1023678841",
+      "group": "reaudit_537",
+      "title": "BREAKE THROUGH / Japanese ver.",
+      "ensemble_mode": "3_run_median",
+      "ensemble_runs": [
+        {
+          "run": 1,
+          "overall": 85,
+          "direction": 83,
+          "technique": 83,
+          "worker_conversation_id": "93e54029-783f-48cf-8bca-d0cb88996a33",
+          "audit_run_token": "a3d33b269f33"
+        },
+        {
+          "run": 2,
+          "overall": 81,
+          "direction": 79,
+          "technique": 82,
+          "worker_conversation_id": "0ab714d4-5be1-4c4e-a0ee-5bebc9ee258a",
+          "audit_run_token": "1f83691c05a1"
+        },
+        {
+          "run": 3,
+          "overall": 84,
+          "direction": 82,
+          "technique": 82,
+          "worker_conversation_id": "8bc0276e-5a5c-4ced-bbd6-eccce959276c",
+          "audit_run_token": "4b528a636a5b"
+        }
+      ],
+      "final_scores": "84/82/82",
+      "final_ratings": "A/A/A",
+      "grade_boundary": false,
+      "analysis_status": "full_analysis",
+      "visual_verification_status": "log_verified",
+      "log_verified_in_report": true,
+      "worker_conversation_ids": [
+        "93e54029-783f-48cf-8bca-d0cb88996a33",
+        "0ab714d4-5be1-4c4e-a0ee-5bebc9ee258a",
+        "8bc0276e-5a5c-4ced-bbd6-eccce959276c"
+      ],
+      "ch11_appended": "## 11. 実映像ビジュアル監査・実測補正\n- **監査判定**: `accurate`（静止画コンタクトシート確認: ログ照合済）\n- **実映像カット実測値（ffmpeg scdet）**: 実カット数: 3カット / 実平均カット尺: 20.004秒 / 中央値: 24秒（3カット/分）\n- **100点ルーブリック確定スコア**: 総合/演出/技術 = `84/82/82`（ランク `A/A/A`）\n- **監査・補正メモ**: 静止画コンタクトシート（sheet_01.jpg、4x4=16フレーム、約3.75秒間隔）と実測データ（60.011秒・640x360・30fps・実カット数3）を既存AI分析と照合し、全体構成・色彩転調・字幕内容・グラフィックモチーフの高い一致を確認した。具体的には、前半の白〜淡青グラデーション空間での青い円の鼓動・バブル拡散・放射状の花アイコンと統計字幕（「人の心臓は、1秒に1回、鼓動する。」〜「誰にも等しくある1秒」および右下の国連統計クレジット）、中盤(3,1〜3,4)の深いシアン〜ロイヤルブルーへの転調と抽象人物シルエット・光錐・多様な人々の放射状シルエット・カプセル、終盤(4,1〜4,4)の「1秒でも早く 1人でも多く」への回帰・光の軌跡・水平帯トランジション・白背景上の「BREAK THROUGH / ONOは挑戦で、未来を変える」着地まで矛盾なく確認できた。一方、未確認の限界として、(1)16フレームのコマ間にある「両手」「360,932 sec」「over 10 years」表記および最終「ono since 1717」ロゴはシート上に直接未出現、(2)静止画確認かつ実測音圧がnullのためBGM・ナレーション・音響ミックス・音ハメ同期の精度および30fps実モーションのイージング滑らかさは直接未確認である。\n- **ランク変更理由**: 【演出計82/100】hookAndStructure(17): 心拍の「1秒」から統計・病との闘い・創薬挑戦を経て冒頭の「1秒」へ回帰する三幕リング構造が極めて端正。originality(15): ミニマル幾何学による翻訳は洗練されているが、生理事実→社会課題→企業姿勢という構成自体は王道であり革新的飛躍には至らない。rhythmAndSync(16): 全編シームレス遷移と前半白→中盤青→終盤白の大胆な緩急設計が優秀（モーション実速度・音同期は未確認のため視覚展開水準から換算）。worldAndSubject(17): 医療系の重さを排した白×青の知的で誠実な世界観と、円・花・抽象人物のモチーフ統一感が高水準。intentAchievement(17): 小野薬品工業の創薬パーパスとスローガンを60秒で明晰かつ詩的に体現。【技術計82/100】cinematographyAndArt(17): 余白設計・幾何学アイコン・万華鏡シルエット・エンドカードまでアートディレクションの完成度が非常に高い。editingAndMotion(16): ハードカットに頼らず要素変形で物語を運ぶ構成力が高い（実30fpsの滑らかさは未確認のため構造水準から換算）。colorAndLook(17): 清潔な白×コバルトブルーから深いシアン×ロイヤルブルーへの転調とコーポレートカラー着地が機能的かつ美しい。soundAndMix(16): 静止画・実測nullのため未確認だが、減点せず確認済みビジュアル水準（16〜17点帯）から換算。polishAndFinish(16): 全体は極めて端正だが、中盤の白いシルエットや光線と黒系細字字幕が重なる箇所で可読性がわずかに低下するため16点。【相乗+2】コピーの「1秒」構造とミニマル幾何学ADの融合度が高く総合力を底上げ。",
+      "tidb_analysis_sha256": "c8f1a200f23721004819a5cd850b1dd9c998186130327677d4adc7ebbe4d7a3b",
+      "sqlite_analysis_sha256": "c8f1a200f23721004819a5cd850b1dd9c998186130327677d4adc7ebbe4d7a3b",
+      "sqlite_exists": true,
+      "sqlite_body_hash_matched": true
+    },
+    {
+      "video_id": "1023733257",
+      "group": "reaudit_537",
+      "title": "Yusuke Murakami: Motion Reel",
+      "ensemble_mode": "3_run_median",
+      "ensemble_runs": [
+        {
+          "run": 1,
+          "overall": 83,
+          "direction": 81,
+          "technique": 84,
+          "worker_conversation_id": "9c53a9a2-642e-4fbe-b90e-d6d29a25dd03",
+          "audit_run_token": "af89c532ccb0"
+        },
+        {
+          "run": 2,
+          "overall": 69,
+          "direction": 69,
+          "technique": 70,
+          "worker_conversation_id": "a6b97670-57e5-4741-8e0e-6c09c07320c6",
+          "audit_run_token": "f270b58328df"
+        },
+        {
+          "run": 3,
+          "overall": 87,
+          "direction": 84,
+          "technique": 86,
+          "worker_conversation_id": "c65a2a50-d1b7-4626-9e96-049406f2fa7e",
+          "audit_run_token": "eb916341e69b"
+        }
+      ],
+      "final_scores": "83/81/84",
+      "final_ratings": "A/A-/A",
+      "grade_boundary": false,
+      "analysis_status": "full_analysis",
+      "visual_verification_status": "log_verified",
+      "log_verified_in_report": true,
+      "worker_conversation_ids": [
+        "9c53a9a2-642e-4fbe-b90e-d6d29a25dd03",
+        "a6b97670-57e5-4741-8e0e-6c09c07320c6",
+        "c65a2a50-d1b7-4626-9e96-049406f2fa7e"
+      ],
+      "ch11_appended": "## 11. 実映像ビジュアル監査・実測補正\n- **監査判定**: `minor_fix`（静止画コンタクトシート確認: ログ照合済）\n- **実映像カット実測値（ffmpeg scdet）**: 実カット数: 95カット / 実平均カット尺: 0.678秒 / 中央値: 0.56秒（88.5カット/分）\n- **100点ルーブリック確定スコア**: 総合/演出/技術 = `83/81/84`（ランク `A/A-/A`）\n- **監査・補正メモ**: 静止画コンタクトシート（16フレーム）および実測データ（64.405秒・640x360・25fps・実カット95・平均0.678秒・88.5CPM）を既存分析と照合。尺・解像度・fps・全体の構成（冒頭パフォーマーシルエットとDIESEL赤霧空間、中盤の没入型キューブ空間・BMW発光キドニーグリルLEDトンネル、暗室反射ライト、後半のパーティクル/流体シェーダー・ロケット発射・極小YUSUKE MURAKAMIクレジット）は実映像と概ね一致。一方で既存分析では、前半の象徴的カットである「FC TOKYO / A NEW EMBLEM」の濃紺×赤モーショングラフィックスや、後半のスクランブル交差点俯瞰トラッキングへの言及が欠落しており、さらにベージュと蛍光ライムグリーンのソフトボディ3Dタイポグラフィ（12コマ目）を「製薬カプセル群」と誤認した可能性が高いためminor_fixと判定。なお静止画確認かつ実測音量値がnullのため、音響ミックス（soundAndMix）の質感および25fps実映像でのモーションの滑らかさ・音ハメ同期精度自体は未確認である。\n- **ランク変更理由**: ブラインド独立採点根拠：【演出】hookAndStructure(16): 冒頭のDIESEL赤空間から没入型LED空間、自動車トンネル、高密度3DCG、ロケット発射、極小クレジットへ至る64秒95カットの緩急とスケール拡張が巧み。originality(15): 実空間演出とジェネラティブCGを横断するレンジは際立つが、既存クライアント案件のショーリール編集体であるため単体作品の革新性としては15点。rhythmAndSync(16): 実測95カット・中央値0.56秒(88.5CPM)の高密度カット設計と明暗・色相転換リズムから高水準と評価（音同期未確認による減点なし）。worldAndSubject(17): 光・空間・人物シルエットの対比が一貫して洗練されており圧倒的な空間スケール感がある。intentAchievement(17): ハイエンド商業・空間演出・3DCGの対応力を1分強で証明するポートフォリオとして極めて高い訴求力。【技術】cinematographyAndArt(17): 没入空間やBMWトンネルのシンメトリー構図・床面反射・空間美術設計が高水準。editingAndMotion(17): 2Dエンブレム、ソフトボディ3Dタイポ、高密度メタリック剛体、流体シェーダーまで技術レンジと密度が国内トップ級（動画滑らかさ未確認による減点なし）。colorAndLook(17): 真紅・濃紺・ネオンブルー・紅蓮・漆黒モノクロ・蛍光ライムなど各カットの色設計が鮮烈で濁りがない。soundAndMix(16): 静止画および音量実測nullで未確認のため、確認できた演出・技術水準（16〜17点帯）へ換算し減点せず16点。polishAndFinish(17): シェーダー質感・実空間露出バランス・最終クレジットの余白設計まで商業ハイエンド基準の完成度。",
+      "tidb_analysis_sha256": "6c5f90f1d6cd1af99c4bb431c483ff660949a4f3370659a910064dd4bb7b8442",
+      "sqlite_analysis_sha256": "6c5f90f1d6cd1af99c4bb431c483ff660949a4f3370659a910064dd4bb7b8442",
+      "sqlite_exists": true,
+      "sqlite_body_hash_matched": true
+    },
+    {
+      "video_id": "1023890656",
+      "group": "reaudit_537",
+      "title": "UNIQLO KOREA OOH",
+      "ensemble_mode": "2_run_mean",
+      "ensemble_runs": [
+        {
+          "run": 1,
+          "overall": 91,
+          "direction": 88,
+          "technique": 92,
+          "worker_conversation_id": "e2bdd7dd-863b-4045-8ade-98113727eb2b",
+          "audit_run_token": "e304f06f1f3c"
+        },
+        {
+          "run": 2,
+          "overall": 92,
+          "direction": 90,
+          "technique": 90,
+          "worker_conversation_id": "ac66a0a4-0990-4c01-8b53-f00212535704",
+          "audit_run_token": "05aa2f28f370"
+        }
+      ],
+      "final_scores": "92/89/91",
+      "final_ratings": "S-/A+/S-",
+      "grade_boundary": true,
+      "analysis_status": "full_analysis",
+      "visual_verification_status": "log_verified",
+      "log_verified_in_report": true,
+      "worker_conversation_ids": [
+        "e2bdd7dd-863b-4045-8ade-98113727eb2b",
+        "ac66a0a4-0990-4c01-8b53-f00212535704"
+      ],
+      "ch11_appended": "## 11. 実映像ビジュアル監査・実測補正\n- **監査判定**: `accurate`（静止画コンタクトシート確認: ログ照合済）\n- **実映像カット実測値（ffmpeg scdet）**: 実カット数: 4カット / 実平均カット尺: 7.509秒 / 中央値: 7.448秒（7.99カット/分）\n- **100点ルーブリック確定スコア**: 総合/演出/技術 = `92/89/91`（ランク `S-/A+/S-`）\n- **監査・補正メモ**: 16コマの静止画コンタクトシートおよびffprobe実測値（30.037秒、640x360、29.97fps、実カット数4回）と既存AI分析を照合した結果、冒頭の畳みニット接写からAIRism/UTのグリッド展開、RE.UNIQLO・青い風船・サーモグラフィ・PEACE FOR ALL等を含む多列商品カタログ、赤白UNIQLOロゴの壁面化、左右分割構成、超巨大黒文字9.13から横貫赤文字OPENへのスケール転換、大小タイポの多重交差、純白ミニマルエンドカードまで構成・色彩・コピー描写は極めて正確であり、モジュラーグリッド主体の連続遷移ゆえハードカット検出が4回となる実測値とも整合する。なお、#05の靴下配色に軽微な描写差（コマ10では青緑と赤）がある点、および実測データでは音声値がnull（mean_volume_db/max_volume_dbともにnull）であるのに対し既存分析に「平均音圧-13.7dB」とある点は差異として記録する。静止画監査の限界として、29.97fps上のモーションの滑らかさ・イージング曲線・音ハメ同期および音響ミックス実態は未確認である。\n- **ランク変更理由**: 【演出】hookAndStructure(18): 畳みニットの静的な接写から一気に多列グリッドへ拡張し、ロゴ壁面→巨大9.13→OPEN→タイポ衝突→純白エンドカードへと緩急を設計した構成力が高水準。originality(16): モジュラーグリッド×キネティックタイポはスイス・タイポおよびユニクロ表現の王道であり完全な新発明ではないが、旗艦店オープンの「最大空間」を無限アーカイブとして視覚化したキレを評価。rhythmAndSync(17): 16コマの視覚密度とスケール転換から明確なビート設計が読み取れる（音ハメ実態は未確認のため減点せず構成水準で換算）。worldAndSubject(18): 多彩な商品群を白・赤・黒のブランド基調にノイズなく統合した世界観が盤石。intentAchievement(19): どの瞬間を見てもブランド・9.13オープン・圧倒的品揃えが瞬時に伝わるOOHとして理想的な目的達成度。【技術】cinematographyAndArt(19): 膨大な商品物撮りの統一ライティングとスイス・タイポ的グリッド設計・韓英タイポ組版の融合が国際賞級。editingAndMotion(18): 画面分割・スケール転換・縦横タイポ交差のレイアウト設計が極めて精緻（実フレームの滑らかさは未確認のため減点せず設計水準で換算）。colorAndLook(19): 純白ベースに赤黒のブランドカラーと多色商品を濁らせず両立させたルック設計が卓越。soundAndMix(17): 静止画および実測nullにより未確認のため減点せず、他技術観点の高水準とOOH媒体特性を踏まえて換算。polishAndFinish(19): 余白・整列・トリミング・エンドカードの緊張感まで細部の完成度に一切の破綻がない。",
+      "tidb_analysis_sha256": "3b39d749b61891599c3f9d7dd5c9ab1267658ba87e7b673152b027aebabdfd0c",
+      "sqlite_analysis_sha256": "3b39d749b61891599c3f9d7dd5c9ab1267658ba87e7b673152b027aebabdfd0c",
+      "sqlite_exists": true,
+      "sqlite_body_hash_matched": true
+    },
+    {
+      "video_id": "103212033",
+      "group": "reaudit_537",
+      "title": "ADK New CI Movie 2014",
+      "ensemble_mode": "3_run_median",
+      "ensemble_runs": [
+        {
+          "run": 1,
+          "overall": 74,
+          "direction": 73,
+          "technique": 72,
+          "worker_conversation_id": "9540aefb-daa0-4673-949b-aa8439ee724d",
+          "audit_run_token": "9f4d2b52076f"
+        },
+        {
+          "run": 2,
+          "overall": 84,
+          "direction": 83,
+          "technique": 84,
+          "worker_conversation_id": "7f8cda69-7cf3-4eb2-b18e-24ea9926b1b6",
+          "audit_run_token": "e25d991dc481"
+        },
+        {
+          "run": 3,
+          "overall": 81,
+          "direction": 80,
+          "technique": 80,
+          "worker_conversation_id": "14eb65d2-37fd-4212-a252-31390f827856",
+          "audit_run_token": "05a5c620b2ca"
+        }
+      ],
+      "final_scores": "81/80/80",
+      "final_ratings": "A-/A-/A-",
+      "grade_boundary": true,
+      "analysis_status": "full_analysis",
+      "visual_verification_status": "log_verified",
+      "log_verified_in_report": true,
+      "worker_conversation_ids": [
+        "9540aefb-daa0-4673-949b-aa8439ee724d",
+        "7f8cda69-7cf3-4eb2-b18e-24ea9926b1b6",
+        "14eb65d2-37fd-4212-a252-31390f827856"
+      ],
+      "ch11_appended": "## 11. 実映像ビジュアル監査・実測補正\n- **監査判定**: `minor_fix`（静止画コンタクトシート確認: ログ照合済）\n- **実映像カット実測値（ffmpeg scdet）**: 実カット数: 9カット / 実平均カット尺: 3.337秒 / 中央値: 1.401秒（17.98カット/分）\n- **100点ルーブリック確定スコア**: 総合/演出/技術 = `81/80/80`（ランク `A-/A-/A-`）\n- **監査・補正メモ**: 静止画コンタクトシート（16フレーム）およびffprobe/scdet実測値（30.037秒・640x360・29.97fps・実カット9回/中央値1.401秒）と既存分析を照合した。全体の構成・主要モチーフ（深紅の<群舞、Voice、日本の広告ビジネス史の英文テキスト壁と赤い<、ハートとVの市松模様、Visionの菱形アパーチャ、MoVe、最終ロゴADK<定着）および尺・解像度・fpsは概ね正確に一致している。一方、軽微な事実相違として、既存分析は「白・濃紺・深紅の厳格な3色限定」「完全フラット2D」と断定しているが、実際にはF4でくすみブルーグレーのシェブロン、F11で半透明ピンク／ライトグレーの多面体オーバーレイ、F13〜F14で半透明ピンクの残像・飛散表現が使用されており（#08の「ピンクの線画エコー」も実際は半透明塗りの残像）、F13の<が放射状に爆発飛散するカットの描写も抜けている。また、#01（Action）・#03（Value）・#06（左右対称の丸い瞳孔）の瞬間は16フレームのサンプリング間隔の合間に該当するため静止画からは直接確認できず、29.97fpsモーションのイージング滑らかさおよび音響（ffprobeの音圧実測値がnullのため既存分析の-13.3dBや音ハメ・ミックス品質）は静止画では未確認である。\n- **ランク変更理由**: 【ブラインド独立採点の各観点根拠】演出面：hookAndStructure(16)は単一シンボル「<」からキーワード連鎖・英文壁・放射バーストを経て「ADK<」定着へ至る30秒CI構成が明快で緩急も効いている一方、キーワード列挙型としては王道範囲のため16点。originality(16)は「<」を矢印・V・拡声ビーム・カーソル・ハート・ロゴ末尾へ多義的に転用する着想と広告代理店特有の社史英文の皮肉が秀逸だが、幾何学キネティックCIの定型内であり16点。rhythmAndSync(16)は実測9カット・中央値1.401秒と、余白静止（Voice/< /MoVe）と高密度グラフィックの対比リズムが的確（音ハメ実測不可のため視覚リズム水準で換算）。worldAndSubject(15)は端正なモダニズム企業ブランド世界を貫くが、抽象フラット2Dゆえの情緒的奥行きの上限を踏まえ15点。intentAchievement(17)は30秒で新シンボル「<」の意味と「ADK<」ロゴ記憶を極めて明瞭に刻印する目的達成度の高さから17点。技術面：cinematographyAndArt(16)は白のネガティブスペースと全面パターン/英文壁のスケール対比、市松・菱形グリッド設計が高水準。editingAndMotion(16)は放射状英文・ファセット遷移・放射バースト・残像ロックアップなどAEベクター演出の引き出しが豊富（実イージング未確認のため視覚設計水準で換算）。colorAndLook(16)は白・深紅・濃紺の明快な3色軸にブルーグレーや透過ピンクを的確に添えた高コントラスト設計。soundAndMix(16)は静止画・音量nullで未確認のため減点せず確認済み技術水準（16点）に換算。polishAndFinish(16)はタイポグラフィのカーニング・整列・ベクター精度が商業品質で安定。synergyAdjustment(+1)は単一記号コンセプトと全カットの造形・構成が強固に統合されている点を加点。",
+      "tidb_analysis_sha256": "7c3eda09815bec24ccf7104f4e3a0d6cfb12a54d7e85cdf1b487b9fc48970086",
+      "sqlite_analysis_sha256": "7c3eda09815bec24ccf7104f4e3a0d6cfb12a54d7e85cdf1b487b9fc48970086",
+      "sqlite_exists": true,
+      "sqlite_body_hash_matched": true
+    },
+    {
+      "video_id": "1032202784",
+      "group": "reaudit_537",
+      "title": "Node Fest 2024",
+      "ensemble_mode": "2_run_mean",
+      "ensemble_runs": [
+        {
+          "run": 1,
+          "overall": 96,
+          "direction": 94,
+          "technique": 94,
+          "worker_conversation_id": "86cb8bf8-4b86-47c3-8276-c649c05803b8",
+          "audit_run_token": "0c97e789aaf3"
+        },
+        {
+          "run": 2,
+          "overall": 96,
+          "direction": 94,
+          "technique": 94,
+          "worker_conversation_id": "2b263612-7766-4c23-ae5a-fb1e6d717834",
+          "audit_run_token": "b7efd917f240"
+        }
+      ],
+      "final_scores": "96/94/94",
+      "final_ratings": "S/S/S",
+      "grade_boundary": true,
+      "analysis_status": "full_analysis",
+      "visual_verification_status": "log_verified",
+      "log_verified_in_report": true,
+      "worker_conversation_ids": [
+        "86cb8bf8-4b86-47c3-8276-c649c05803b8",
+        "2b263612-7766-4c23-ae5a-fb1e6d717834"
+      ],
+      "ch11_appended": "## 11. 実映像ビジュアル監査・実測補正\n- **監査判定**: `accurate`（静止画コンタクトシート確認: ログ照合済）\n- **実映像カット実測値（ffmpeg scdet）**: 実カット数: 51カット / 実平均カット尺: 2.156秒 / 中央値: 0.36秒（27.83カット/分）\n- **100点ルーブリック確定スコア**: 総合/演出/技術 = `96/94/94`（ランク `S/S/S`）\n- **監査・補正メモ**: 静止画コンタクトシート全16コマ（4x4）およびffprobe/scdet実測値（109.973秒、640x360、25.0fps、51カット、平均2.156秒、中央値0.36秒、27.83カット/分）を既存AI分析と照合した結果、冒頭タイトル、9:45 AMチャット通知UI、頭蓋開放と虹色リング、六角形トンネル内の「WHAT IS NODE?」球体、「BRAIN CAM」小ウィンドウ、各登壇者の空間タイポ（SOPHIE TAYLOR、VINCENT SCHWENK、SIMON BRONSON、WEAVE等）、Never Sit Stillの布×リキッド表現、終盤の無数R&Dウィンドウ群集、エンドロゴまで描写・尺・色彩・構図に高い整合性を確認した。一方、静止画の限界として音響・ミックス（ffprobe音圧値もnull）、25fps実動画でのモーションイージングやジャズスコアとの音ハメ精度、および16コマ間の細かなトランジション挙動は未確認である。\n- **ランク変更理由**: 演出・技術ともに国際賞（D&AD / Cannes Lions Film Craft）上位水準と評価。hookAndStructure(19): 9:45のロゴ依頼チャットから脳内R&Dを経て原点へ帰還するメタ構成と実測中央値0.36秒/平均2.16秒の緩急が秀逸。originality(19): 制作者の狂気とR&D試行錯誤を登壇者クレジットへ昇華した独創的企画。rhythmAndSync(18): 実測カット構造の緩急設計が高水準（音ハメ実挙動は静止画未確認のため全体水準から換算）。worldAndSubject(19): 漆黒UI/タイポと極彩色3D脳内世界をBRAIN CAMで繋ぐ造形美。intentAchievement(19): モーション祭典OPとしての共感・高揚感を完璧に達成。cinematographyAndArt(19): クレジット毎に異なる空間法則とタイポ構図を高密度に成立。editingAndMotion(19): 51カットの高速モンタージュと多彩な表現群の統合力。colorAndLook(19): 漆黒×白の対比とイリデッセント/ガラス質感の卓越したルック設計。soundAndMix(18): 静止画・実測nullにより未確認のため減点せず全体クラフト水準から換算。polishAndFinish(19): UIグロー・反射屈折・流体エッジ・最終モザイク密度まで細部の仕上げが極めて高度。",
+      "tidb_analysis_sha256": "ac0fa0dc1e58b610f2712998e3d1ff811adea6ca4d46cd89a725532f0dd25e3d",
+      "sqlite_analysis_sha256": "ac0fa0dc1e58b610f2712998e3d1ff811adea6ca4d46cd89a725532f0dd25e3d",
+      "sqlite_exists": true,
+      "sqlite_body_hash_matched": true
+    },
+    {
+      "video_id": "1035101875",
+      "group": "reaudit_537",
+      "title": "CHIBA JETS After Movie",
+      "ensemble_mode": "3_run_median",
+      "ensemble_runs": [
+        {
+          "run": 1,
+          "overall": 78,
+          "direction": 76,
+          "technique": 76,
+          "worker_conversation_id": "b7345642-8983-4409-a1cf-414580bfb545",
+          "audit_run_token": "2a099dfacfe1"
+        },
+        {
+          "run": 2,
+          "overall": 73,
+          "direction": 72,
+          "technique": 73,
+          "worker_conversation_id": "ff516ee8-5f19-40d0-9c8f-4e48928bfd0e",
+          "audit_run_token": "23484d867e20"
+        },
+        {
+          "run": 3,
+          "overall": 77,
+          "direction": 76,
+          "technique": 77,
+          "worker_conversation_id": "f33aef0c-4cb8-443a-8d12-f4a51b1da900",
+          "audit_run_token": "da8d23808101"
+        }
+      ],
+      "final_scores": "77/76/76",
+      "final_ratings": "B+/B+/B+",
+      "grade_boundary": true,
+      "analysis_status": "full_analysis",
+      "visual_verification_status": "log_verified",
+      "log_verified_in_report": true,
+      "worker_conversation_ids": [
+        "b7345642-8983-4409-a1cf-414580bfb545",
+        "ff516ee8-5f19-40d0-9c8f-4e48928bfd0e",
+        "f33aef0c-4cb8-443a-8d12-f4a51b1da900"
+      ],
+      "ch11_appended": "## 11. 実映像ビジュアル監査・実測補正\n- **監査判定**: `minor_fix`（静止画コンタクトシート確認: ログ照合済）\n- **実映像カット実測値（ffmpeg scdet）**: 実カット数: 38カット / 実平均カット尺: 1.976秒 / 中央値: 1.21秒（30.36カット/分）\n- **100点ルーブリック確定スコア**: 総合/演出/技術 = `77/76/76`（ランク `B+/B+/B+`）\n- **監査・補正メモ**: 【確認できた範囲】コンタクトシート16コマと実測値（75.093秒、640x360、23.976fps、38カット・平均1.976秒・中央値1.21秒）を照合した結果、冒頭のLaLa arena空撮＋建築ワイヤーフレーム＋「10.5」タイトル、背番号200ジャンボくんのユニフォーム2人の暗い入場通路、赤いセンターハングビジョン、サンボマスターの逆光ライブ、客席シルエット越しの火柱演出、接戦スコア（73-72）から勝利スコア（91-84）とブースターの歓喜、赤背景のCHIBAJETSロゴ締めは実映像と一致することを確認。【既存分析の誤描写（minor_fix）】#08にて「アリーナ内部を望むシルエットカットへと繋ぎ、白い明朝系コピー『忘れられない1日を、またここで。』を配し」とあるが、実映像（Frame 15）ではコピーはグッズ売り場風の室内で赤いユニフォームを着た眼鏡の男性が笑顔で会話するカット上に重なっており、書体も明朝体ではなくゴシック（サンセリフ）体である。【未確認の限界】16コマの静止画抽出のため全38カット中の未抽出カット（親子の肩車や選手個別の接写等）、モーションの滑らかさ、および音響ミックス（実測のmean_volume_db/max_volume_dbもnullのため既存分析の-10.8dB表記を含め未検証）は直接確認できていない。\n- **ランク変更理由**: 【演出】hookAndStructure(16): 空撮＋ワイヤーフレーム導入から入場・ライブ・火柱・接戦・勝利・余韻へ結ぶ75秒の王道ストーリーアークが高完成度。originality(13): イベントアフタームービーの王道文法を洗練させた構成であり、表現の革新性自体は標準的。rhythmAndSync(15): 実測38カット（平均1.98秒・中央値1.21秒）の緩急と「GO」・ボール等のアクセント配置から設計意図が明確（音声未確認による減点はなし）。worldAndSubject(16): 観客の背中・シルエット越しにアリーナを捉えるPOV的アプローチで体験価値と一体感を強く体現。intentAchievement(16): 新アリーナ開幕戦の特別感と再来場喚起の訴求目的を的確に達成。【技術】cinematographyAndArt(16): 暗部を活かしたローキー撮影、手前シルエットによる奥行き設計、暗闇のボールなど現場記録を映画的に昇華。editingAndMotion(15): 冒頭ワイヤーフレーム合成と緩急あるカット割りが的確（動的滑らかさ未確認による減点はなし）。colorAndLook(16): チームレッドを軸にティール/ディープブルーの暗部と暖色フレア・炎を統一した完成度の高いシネマティックルック。soundAndMix(15): 静止画・音圧nullのため確認不能だが減点せず確認済み技術水準に準じて換算。polishAndFinish(15): 露出制御・合成・エンドカードまで商業プロモーションとして手堅い仕上がり。synergyAdjustment(+1): 観客目線の撮影と統一ルック、王道構成が噛み合い高い訴求力を発揮している点を微加点。",
+      "tidb_analysis_sha256": "52e1d177ed17354160edb848bcb06fea4b8f9aad5eb42a85096ea7ea38a482af",
+      "sqlite_analysis_sha256": "52e1d177ed17354160edb848bcb06fea4b8f9aad5eb42a85096ea7ea38a482af",
+      "sqlite_exists": true,
+      "sqlite_body_hash_matched": true
+    },
+    {
+      "video_id": "__sbOxfr6Nc",
+      "group": "normal_unaudited",
+      "title": "『ブランデッド』予告編",
+      "ensemble_mode": "3_run_median",
+      "ensemble_runs": [
+        {
+          "run": 1,
+          "overall": 79,
+          "direction": 79,
+          "technique": 74,
+          "worker_conversation_id": "c94a9a86-d8f5-44d9-969a-a2ac7dd3eac2",
+          "audit_run_token": "bccbefa0b412"
+        },
+        {
+          "run": 2,
+          "overall": 83,
+          "direction": 84,
+          "technique": 78,
+          "worker_conversation_id": "f458089c-8885-4700-a97b-b5ee6d006e8a",
+          "audit_run_token": "8ed3d75d7b69"
+        },
+        {
+          "run": 3,
+          "overall": 73,
+          "direction": 75,
+          "technique": 68,
+          "worker_conversation_id": "cfdeb788-b521-40d2-9ca1-0e9cb160acce",
+          "audit_run_token": "598f224c89f0"
+        }
+      ],
+      "final_scores": "79/79/74",
+      "final_ratings": "A-/A-/B+",
+      "grade_boundary": false,
+      "analysis_status": "full_analysis",
+      "visual_verification_status": "log_verified",
+      "log_verified_in_report": true,
+      "worker_conversation_ids": [
+        "c94a9a86-d8f5-44d9-969a-a2ac7dd3eac2",
+        "f458089c-8885-4700-a97b-b5ee6d006e8a",
+        "cfdeb788-b521-40d2-9ca1-0e9cb160acce"
+      ],
+      "ch11_appended": "## 11. 実映像ビジュアル監査・実測補正\n- **監査判定**: `minor_fix`（静止画コンタクトシート確認: ログ照合済）\n- **実映像カット実測値（ffmpeg scdet）**: 実カット数: 112カット / 実平均カット尺: 1.262秒 / 中央値: 0.701秒（47.54カット/分）\n- **100点ルーブリック確定スコア**: 総合/演出/技術 = `79/79/74`（ランク `A-/A-/B+`）\n- **監査・補正メモ**: 静止画コンタクトシート2枚（計32コマ）および実測値（141.363秒、640x360、29.97fps、112カット、平均1.262秒、中央値0.701秒、47.54 cuts/min）と既存分析を照合した。確認できた範囲では、冒頭のファストフードCM偽装（「新発売の超特大デラックスバーガー」「一口食べればあなたも虜に…」）から黒帯警告（「笑顔もウソ」）とグリッチ崩壊を経てシアン・ダークグリーン基調の監視社会・ブランドモンスター群へ反転する構成、モスクワ風高層ビルや「素」ロゴ会議室・幼児・暗い廊下・暴動・巨大怪物といった主要カットは既存分析と整合している。一方、軽微な誤描写として既存分析ではラストのタイトルロゴを「緑と金のマークを冠したBRANDED」と記述しているが、実映像（sheet_02最終コマ）は白背景に小文字の「branded」（白〜黄緑グラデーション＋濃緑/黒縁取り＋黄緑の渦巻きマーク）であり金要素は確認できない。また未確認の限界として、静止画のため音響ミックス（本計測ではmean/max_volume_dbともにnull）、29.97fpsのモーション滑らかさ・音ハメ精度、および32コマサンプリング外の細部カット（マッチの炎や一部パロディロゴ名等）は直接確認できていない。\n- **ランク変更理由**: 【演出】hookAndStructure(16): 冒頭の偽ファストフードCMからグリッチ崩壊でディストピアSFへ反転させるメタフックと、起承転結＋皮肉な白背景ロゴ落ちの構成が極めて巧みだが、予告編文法自体は王道のため16点。originality(16): 広告洗脳を視聴者に体験させる導入と、企業ブランドをグロテスクな寄生モンスターとして可視化する風刺性が高い独創性を示す。rhythmAndSync(15): 実測112カット・中央値0.70秒の加速型ペーシングと静動の緩急設計が的確（音ハメ実態は未確認のため他観点水準から換算）。worldAndSubject(16): モスクワ風重厚建築と企業ロゴ群・寄生怪物の対比、キャスト芝居の説得力が劇場映画水準で統一されている。intentAchievement(16): 説明過多を避けつつ映画の風刺テーマと謎を直感させ、本編鑑賞意欲を強く喚起している。【技術】cinematographyAndArt(15): 劇場映画らしいシネマスコープ構図と陰影ライティング・美術の重厚さは安定しているが、特筆すべき撮影賞級ではなく堅実な中規模SF水準。editingAndMotion(15): 緩急ある予告編編集とグリッチ演出は手際が良い一方、2012年製VFXの馴染みや日本版標準字幕の設計から15点（モーション滑らかさは未確認のため減点せず換算）。colorAndLook(15): 冒頭の極彩色CM・本編のシアン/ダークグリーン・ラストの純白ロゴの3段ルック対比が機能的だが、2010年代定型ルックの範囲内。soundAndMix(15): 静止画およびnull計測のため確認不能であり、減点せず確認できた技術水準（15点）で換算。polishAndFinish(14): 劇場予告編として破綻はないが、VFXコンポジットの軽微な浮きと日本版テロップのオーソドックスな仕上げを踏まえ14点。",
+      "tidb_analysis_sha256": "37bd53cfb9474b77cbcd248bf9d21a69337623f1b885e1b9379ec6a38231e296",
+      "sqlite_analysis_sha256": "37bd53cfb9474b77cbcd248bf9d21a69337623f1b885e1b9379ec6a38231e296",
+      "sqlite_exists": true,
+      "sqlite_body_hash_matched": true
+    },
+    {
+      "video_id": "_2dl3blJgy8",
+      "group": "normal_unaudited",
+      "title": "TVアニメ「多聞くん今どっち！？」ノンクレジットエンディング映像｜F/ACE「花と夢」",
+      "ensemble_mode": "2_run_mean",
+      "ensemble_runs": [
+        {
+          "run": 1,
+          "overall": 81,
+          "direction": 81,
+          "technique": 81,
+          "worker_conversation_id": "06959d82-ccac-4ea9-b01a-ee321bb2e650",
+          "audit_run_token": "1edd0f99459e"
+        },
+        {
+          "run": 2,
+          "overall": 81,
+          "direction": 78,
+          "technique": 80,
+          "worker_conversation_id": "c14a989c-02cf-47c9-964e-95ecdc2bc832",
+          "audit_run_token": "b99f10e2905c"
+        }
+      ],
+      "final_scores": "81/80/80",
+      "final_ratings": "A-/A-/A-",
+      "grade_boundary": true,
+      "analysis_status": "full_analysis",
+      "visual_verification_status": "log_verified",
+      "log_verified_in_report": true,
+      "worker_conversation_ids": [
+        "06959d82-ccac-4ea9-b01a-ee321bb2e650",
+        "c14a989c-02cf-47c9-964e-95ecdc2bc832"
+      ],
+      "ch11_appended": "## 11. 実映像ビジュアル監査・実測補正\n- **監査判定**: `minor_fix`（静止画コンタクトシート確認: ログ照合済）\n- **実映像カット実測値（ffmpeg scdet）**: 実カット数: 20カット / 実平均カット尺: 4.328秒 / 中央値: 3.003秒（13.86カット/分）\n- **100点ルーブリック確定スコア**: 総合/演出/技術 = `81/80/80`（ランク `A-/A-/A-`）\n- **監査・補正メモ**: コンタクトシート16コマ（sheet_01.jpg）と実測データ（86.564秒・20カット・平均4.33秒/カット）を既存分析と照合した。冒頭のシアン×マゼンタのビル街、「Which face does Tamon have now?」の分割グラフィック、5色（青・ピンク・緑・紫・黄）フレーム内の推し活日常と舞台裏（桜利の着替え確認）、5色縦割りスプリット、5人並び、街頭ビジョン前の通行人、照明バトン点灯、ペンライト客席中央で「多聞」うちわを抱くうたげと瞳に光が宿るアップまで大枠の構成・色彩は正確に一致。一方、軽微な誤りとして、ピンク枠のタオルを掲げるファンを既存分析は「4人」としているが、シート(2,3)では5色分の5人が確認できる。また限界として、16コマ等間隔サンプリングのため他4メンバーの舞台裏・オフの多聞・ステージ上の多聞のカットは未確認であり、静止画かつ実測音量値nullのため音響ミックス・音ハメ精度・モーションの滑らかさも未確認。\n- **ランク変更理由**: 演出5観点（計81/100）: hookAndStructure=16（冒頭グラフィック提示→5色並列対比→5分割スプリット→ライブ照明→客席カタルシスの起承転結が87秒で明快）、originality=15（推し活と舞台裏の並列対比は現代的で的確だが、額縁グラフィック＋客席オチ自体は王道手法の洗練型）、rhythmAndSync=16（実測20カット・平均4.33秒のバラード向け緩急設計が適切、音ハメ未確認分は減点せず水準換算）、worldAndSubject=17（パステル都市から5色世界・ライブ暗転光まで世界観が一貫しキャラの表情訴求も高い）、intentAchievement=17（アニメED兼劇中アイドルMVとしての共感・余韻設計が極めて的確）。技術5観点（計81/100）: cinematographyAndArt=16（各色フレームの構図変化・俯瞰手元・客席シンメトリーと柔らかな撮影処理が安定）、editingAndMotion=16（2Dタイポ・スタンプ配置変化や5分割編集のセンスが良好、モーション滑らかさ未確認分は水準換算）、colorAndLook=17（シアン×マゼンタ、透明感ある5色設計、暗部とペンライト発光の対比が本作最大の技術的強み）、soundAndMix=16（静止画・音量nullのため未確認だが、ガイドラインに従い確認済み映像水準に換算）、polishAndFinish=16（作画の安定感・推し活小物のディテール・光処理まで破綻が少なく商業品質が高い）。synergyAdjustment=0（演出・技術ともに高水準で均衡しているため加点減点なし）。",
+      "tidb_analysis_sha256": "7c48b76f52a9234d48032b5e892a02cb824684535ce99187f52091ae720e9cd0",
+      "sqlite_analysis_sha256": "7c48b76f52a9234d48032b5e892a02cb824684535ce99187f52091ae720e9cd0",
+      "sqlite_exists": true,
+      "sqlite_body_hash_matched": true
+    },
+    {
+      "video_id": "_2JRv0n6w4g",
+      "group": "normal_unaudited",
+      "title": "いきものがかり | BAKU",
+      "ensemble_mode": "2_run_mean",
+      "ensemble_runs": [
+        {
+          "run": 1,
+          "overall": 89,
+          "direction": 86,
+          "technique": 88,
+          "worker_conversation_id": "f335916a-61f9-44d4-a88a-b9ab8277e7aa",
+          "audit_run_token": "76fcd0fa5b5b"
+        },
+        {
+          "run": 2,
+          "overall": 89,
+          "direction": 87,
+          "technique": 88,
+          "worker_conversation_id": "274c64cc-5e8a-47c2-a0f0-f420de009d30",
+          "audit_run_token": "2b8baec09b11"
+        }
+      ],
+      "final_scores": "89/86/88",
+      "final_ratings": "A+/A+/A+",
+      "grade_boundary": true,
+      "analysis_status": "full_analysis",
+      "visual_verification_status": "log_verified",
+      "log_verified_in_report": true,
+      "worker_conversation_ids": [
+        "f335916a-61f9-44d4-a88a-b9ab8277e7aa",
+        "274c64cc-5e8a-47c2-a0f0-f420de009d30"
+      ],
+      "ch11_appended": "## 11. 実映像ビジュアル監査・実測補正\n- **監査判定**: `accurate`（静止画コンタクトシート確認: ログ照合済）\n- **実映像カット実測値（ffmpeg scdet）**: 実カット数: 205カット / 実平均カット尺: 1.177秒 / 中央値: 0.876秒（50.98カット/分）\n- **100点ルーブリック確定スコア**: 総合/演出/技術 = `89/86/88`（ランク `A+/A+/A+`）\n- **監査・補正メモ**: 【確認できた範囲】sheet_01/sheet_02（計32コマ）およびffprobe/scdet実測（241.255秒・23.976fps・205カット・平均1.177秒・中央値0.876秒・50.98 cuts/min）と既存分析を照合。①原色幾何学キューブ＋黒衣装の3人、②漆黒空間＋白塗りハット演奏隊（3体増殖含む）、③丸窓・床穴ギミック、④銀毛・小耳・白スウェットのバクキャラ（穴覗き・1人箱入れ替わり・漆黒3体演奏・エンドクレジット積み木遊び）、⑤終盤の純白ホリゾント解放と極細線BAKUロゴ、⑥主要クレジット（Director HARU、Cinematographer Hana Wano、Lighting Director Akihiro Someya、Production Designer Naomi Iwase等）すべて実映像と一致。細部ではKazuaki Sekiのクレジット表記が「Supervisor」である点のみ既存分析の制作クレジット欄（プロデューサー併記）と軽微な差異があるが総括内で補足済みのため全体判定はaccurate。【未確認の限界】静止画サンプリング32コマかつffprobe音量計測値nullのため、音響ミックス・音圧、楽曲ビートとのフレーム単位の音ハメ精度、回転ボックスやマッチカットのモーション滑らかさ、およびサンプリング外の一部タイムコード記述（00:02赤壁キーボード、00:52青ハンマー、02:10トロンボーンベルのマッチカット）は直接確認できていない。\n- **ランク変更理由**: 【演出】hookAndStructure(17): 紫丸窓の導入から原色ボックス→回転・1人用小箱→バク入替→純白ホリ解放→積み木クレジットまで241秒を飽きさせない空間設計とカタルシス。originality(16): 幾何学ボックスや白塗り隊は王道語法だが、黒×原色と白×漆黒の反転ルールに銀毛バク（ドッペルゲンガー）を融合した独自性が光る。rhythmAndSync(17): 実測205カット（中央値0.876秒・50.98 cuts/min）の高密度構成と丸窓ズーム・マルチボックス等の視覚リズムが秀逸（音ハメ実再生は未確認のため減点せず水準換算）。worldAndSubject(18): 黒衣装で引き締めたアーティストの親しみやすさと、愛嬌・シュールさを兼ね備えたバク造形が抜群のアイコン性を獲得。intentAchievement(18): アニメOP曲＆国民的ポップバンドMVとしての爽快感・記憶定着力を極限まで達成。【技術】cinematographyAndArt(18): Naomi Iwaseの明快な原色美術と、均一な高彩度照明・漆黒空間エッジライトの使い分けが卓越。editingAndMotion(17): 合成・画面分割・入れ替わりギミックと高速カット割りの構成力が高い（モーション滑らかさは未確認のため水準換算）。colorAndLook(18): 原色カラーブロッキングと肌トーンの両立、漆黒の締まり、純白ホリの抜けがグラフィック水準で統一。soundAndMix(17): 静止画・音量nullで未確認のため減点せず、確認済み映像クラフトの商業トッププロ水準（17-18点帯）に準拠換算。polishAndFinish(18): 合成エッジ処理、極細線BAKUロゴ、エンドクレジット組版まで細部の完成度が極めて高い。synergy(+2): 3つの視覚システムが終盤の白ホリ解放と積み木エンドへ収束する統合美を加点。",
+      "tidb_analysis_sha256": "f2f9c6b4f85bab3e96dcac6fe0dbecf7a475c5d6b9acbd298d2232514d1d37e1",
+      "sqlite_analysis_sha256": "f2f9c6b4f85bab3e96dcac6fe0dbecf7a475c5d6b9acbd298d2232514d1d37e1",
+      "sqlite_exists": true,
+      "sqlite_body_hash_matched": true
+    },
+    {
+      "video_id": "_2lHuvAwhwk",
+      "group": "normal_unaudited",
+      "title": "R BANDIT X MR RIGHT (BURUKLYN BOYZ) - RICH (Official Music Video)",
+      "ensemble_mode": "3_run_median",
+      "ensemble_runs": [
+        {
+          "run": 1,
+          "overall": 72,
+          "direction": 71,
+          "technique": 74,
+          "worker_conversation_id": "c1ad7d3a-8507-4e64-9753-f299e5243d42",
+          "audit_run_token": "3ea72ceccf34"
+        },
+        {
+          "run": 2,
+          "overall": 70,
+          "direction": 67,
+          "technique": 72,
+          "worker_conversation_id": "aa1f2132-94ba-4c19-b942-30f48dbb2b0a",
+          "audit_run_token": "762b8953a4d3"
+        },
+        {
+          "run": 3,
+          "overall": 70,
+          "direction": 68,
+          "technique": 73,
+          "worker_conversation_id": "3b91e584-7bdf-412a-a08c-ef9d67016796",
+          "audit_run_token": "ac28ab117c68"
+        }
+      ],
+      "final_scores": "70/68/73",
+      "final_ratings": "B/B/B+",
+      "grade_boundary": false,
+      "analysis_status": "full_analysis",
+      "visual_verification_status": "log_verified",
+      "log_verified_in_report": true,
+      "worker_conversation_ids": [
+        "c1ad7d3a-8507-4e64-9753-f299e5243d42",
+        "aa1f2132-94ba-4c19-b942-30f48dbb2b0a",
+        "3b91e584-7bdf-412a-a08c-ef9d67016796"
+      ],
+      "ch11_appended": "## 11. 実映像ビジュアル監査・実測補正\n- **監査判定**: `accurate`（静止画コンタクトシート確認: ログ照合済）\n- **実映像カット実測値（ffmpeg scdet）**: 実カット数: 143カット / 実平均カット尺: 1.286秒 / 中央値: 1.083秒（46.67カット/分）\n- **100点ルーブリック確定スコア**: 総合/演出/技術 = `70/68/73`（ランク `B/B/B+`）\n- **監査・補正メモ**: 静止画コンタクトシート2枚（計32フレーム）および実測データ（183.832秒、640x360、24fps、実カット数143、平均1.286秒/カット、46.67カット/分）を既存AI分析と照合した。確認できた範囲として、朝の逆光・霧の中でのティール寄りJeep Wrangler（ケニアナンバー「58」）および黒Mercedes G-Wagonの隊列・ルーフオープン撮影、バーバリーチェックと赤キャップ＋白タンクトップの衣装設計、GクラスLEDリングライトや「58」ナンバーのマクロ接写、3Dクロームタイトル、ブラー遷移、夜間における深紅・シアン・マゼンタRGBライティング下の赤フレームバギーとクルーのパフォーマンスという2世界対比構成は既存分析と極めて高精度に一致している。微細な表記差としてタイトルクレジットは「DIR BY ZETHY」ではなく「DIRECTED BY TN ZETHY」である。未確認の限界として、実際の音響ミックス・音圧（今回計測値もnull）・楽曲とのフレーム単位の音ハメ精度・24fpsモーションの滑らかさ、およびコンタクトシートに含まれない一部インサート（メルセデスホイール星・スニーカー等）や公開日メタデータは静止画からは直接確認できない。\n- **ランク変更理由**: 演出面は、冒頭のWranglerローアングルと3Dクロームタイトル降臨および昼夜対比の導入は良好だが3分間の物語的転換は王道枠内のためhookAndStructure=13、高級SUV＋ブランド衣装＋RGB照明は現代ドリルMVの定番文法に留まるためoriginality=11、実測46.67cuts/minとモーションブラー遷移・寄り引き緩急のテンポ設計からrhythmAndSync=14、昼の霧と夜のネオンによる二面世界観と被写体引力の強さからworldAndSubject=14、楽曲テーマ「RICH」とストリート感の高品位な視覚化という目的達成度の高さからintentAchievement=15とした。技術面は、逆光ヘイズ・車内/窓越し・手前ボケを活かした構図とライティング設計の商業上位水準を評価しcinematographyAndArt=15、ティール＆オレンジ寄りの昼ルックと締まった黒に鮮やかなRGBが映える夜ルックの統一感からcolorAndLook=15、高密度カット割りとスピード感あるブラー遷移の設計からeditingAndMotion=14、3Dロゴ質感や衣装・車両ディテールの破綻のなさからpolishAndFinish=14とし、静止画で未確認のsoundAndMixは減点せず技術水準に準じて14に換算。撮影・カラーの完成度が王道企画を一段引き上げているためsynergyAdjustment=+1とした。",
+      "tidb_analysis_sha256": "bf51ba3123699840788726e9305f807e025be2b02ff57076eb1527403657e0ba",
+      "sqlite_analysis_sha256": "bf51ba3123699840788726e9305f807e025be2b02ff57076eb1527403657e0ba",
+      "sqlite_exists": true,
+      "sqlite_body_hash_matched": true
+    },
+    {
+      "video_id": "_3Hp53uVsPg",
+      "group": "normal_unaudited",
+      "title": "東急電鉄CM「安心乗車篇」30秒ver - YouTube",
+      "ensemble_mode": null,
+      "ensemble_runs": [],
+      "final_scores": "83/83/83",
+      "final_ratings": "A/A/A",
+      "grade_boundary": false,
+      "analysis_status": "full_analysis",
+      "visual_verification_status": "not_audited",
+      "log_verified_in_report": false,
+      "worker_conversation_ids": [],
+      "ch11_appended": "",
+      "tidb_analysis_sha256": "f2cdf9af346f46f53a7b7057df6eca563713f138dad94a5db533ff682b1961cb",
+      "sqlite_analysis_sha256": "f2cdf9af346f46f53a7b7057df6eca563713f138dad94a5db533ff682b1961cb",
+      "sqlite_exists": true,
+      "sqlite_body_hash_matched": true
+    },
+    {
+      "video_id": "_5XZMPbbJIk",
+      "group": "normal_unaudited",
+      "title": "讐復を能える。",
+      "ensemble_mode": "2_run_mean",
+      "ensemble_runs": [
+        {
+          "run": 1,
+          "overall": 82,
+          "direction": 82,
+          "technique": 77,
+          "worker_conversation_id": "6ca1666c-4b7c-4a4a-bcc2-859bb436919a",
+          "audit_run_token": "e08dee1300b2"
+        },
+        {
+          "run": 2,
+          "overall": 83,
+          "direction": 81,
+          "technique": 78,
+          "worker_conversation_id": "3c8c23e9-1563-4de3-a939-53e68a9b1626",
+          "audit_run_token": "39cb43cbfd4d"
+        }
+      ],
+      "final_scores": "82/82/78",
+      "final_ratings": "A/A/A-",
+      "grade_boundary": true,
+      "analysis_status": "full_analysis",
+      "visual_verification_status": "log_verified",
+      "log_verified_in_report": true,
+      "worker_conversation_ids": [
+        "6ca1666c-4b7c-4a4a-bcc2-859bb436919a",
+        "3c8c23e9-1563-4de3-a939-53e68a9b1626"
+      ],
+      "ch11_appended": "## 11. 実映像ビジュアル監査・実測補正\n- **監査判定**: `minor_fix`（静止画コンタクトシート確認: ログ照合済）\n- **実映像カット実測値（ffmpeg scdet）**: 実カット数: 30カット / 実平均カット尺: 6.56秒 / 中央値: 0.583秒（9.15カット/分）\n- **100点ルーブリック確定スコア**: 総合/演出/技術 = `82/82/78`（ランク `A/A/A-`）\n- **監査・補正メモ**: 【確認できた範囲】sheet_01・sheet_02（計32コマ）およびffprobe/scdet実測値（尺196.812秒・24fps・実カット30・平均6.56秒・中央値0.583秒）を既存分析と照合した結果、全体の構成（青い霧とボクセル状青い棘の冒頭・終盤の回収、鉄格子とショートケーキ＆赤丸モニターのベージュ空間、深夜道路、HTMLソースコード付き4:3フレーム、深紅の廊下・赤い光線・破砕、白傘の少女と車からの引き＋明朝体タイトル『讐復を能える。』）および尺（197秒）は概ね正確。一方、細部に以下の軽微な誤描写・漏れあり：①HTMLコードは「両脇に走る」ではなく主に左余白に縦配置（右下は極小クレジットブロックのみ）、②4:3内の少女（sheet_01 R4C4）は雪原歩行ではなく逆光シルエットの背面バストアップであり、終盤の少女（sheet_02 R3C2）も「眼帯」ではなく青い模様入り頭巾/バンダナと前髪の影で目が隠れている描写、③ベージュ部屋のモニターに「ナイフ＋下向き矢印5本」のカット（sheet_01 R2C4）がある点が未記載、④テーブル周囲の影を「拍手する黒い手影」とするのはやや過解釈（椅子や人影・植物状シルエットに見える）。【未確認の限界】静止画コンタクトシートおよび計測JSONの音量項目がnullのため、音響ミックス（mean/max volume・声とビートの分離・音圧）、24fpsモーションの滑らかさ、音ハメ精度は実確認できていない（未確認による減点は実施せず、確認済み水準に準拠して換算）。\n- **ランク変更理由**: 各観点の採点根拠：【演出】hookAndStructure(16): 青い棘の冒頭提示から5段階の空間・色彩転換を経て終盤の引き＋タイトルで閉じる円環構造が優秀（序盤の静的な間は商業フックよりムード重視）。originality(17): 一般的なボカロMVの立ち絵表現と一線を画す、リミナル3DCG×ピクセル棘×HTMLメタ枠×象徴記号の作家性が高い。rhythmAndSync(15): 音ハメ自体は静止画未確認のため減点せず、scdet実測（平均6.56秒/中央値0.583秒）が示す長回しと瞬間カットの緩急設計から堅実なプロ水準と評価。worldAndSubject(17): ショートケーキ・赤丸/ナイフモニター・鉄格子・雪木・赤光線・白傘の少女という異質な記号群が文学的ホラー世界観として高度に統合。intentAchievement(17): ポエトリーリーディング×デジタルホラーMVとしての不穏さ・余韻の設計意図を極めて高い純度で達成。【技術】cinematographyAndArt(15): 前景の鉄格子や棘・4:3枠のフレーミング、終盤の2Dイラスト少女と3D空間の融合が巧みだが、3Dモデル自体の情報量はインディーズ的なミニマル水準。editingAndMotion(15): 実モーション滑らかさは未確認のため減点せず、アスペクト比転換や黒味・赤光線・引きの展開設計から堅実な編集技術と評価。colorAndLook(17): 青霧＋コバルト→くすんだベージュ→青灰CRT→深紅と黒→青霧＋赤灯＋白明朝という明快かつ大胆なカラー・スクリプトが突出。soundAndMix(15): 静止画・計測nullのため未確認であり減点せず、確認できた技術水準に準拠して換算。polishAndFinish(15): 明朝体タイトルやHTML枠のタイポグラフィ・2D/3D合成は丁寧で破綻がない一方、ローポリ/霧ベースの質感は商業ハイエンド比で控えめ。synergyAdjustment(+2): 最小限のローファイ3Dアセットを強烈な色彩設計・メタ枠・象徴回収で作品全体の芸術強度へ引き上げている相乗効果を加点。",
+      "tidb_analysis_sha256": "b23303e83def52d19db2e9a878a71fc169900e536c8004455fbafaf8b6f43f62",
+      "sqlite_analysis_sha256": "b23303e83def52d19db2e9a878a71fc169900e536c8004455fbafaf8b6f43f62",
+      "sqlite_exists": true,
+      "sqlite_body_hash_matched": true
+    },
+    {
+      "video_id": "_7lQGv4ZmBo",
+      "group": "normal_unaudited",
+      "title": "あの、安藤なつ – ブックオフ | 最新CM 2025",
+      "ensemble_mode": "2_run_mean",
+      "ensemble_runs": [
+        {
+          "run": 1,
+          "overall": 66,
+          "direction": 69,
+          "technique": 63,
+          "worker_conversation_id": "c5f0a5ad-52f0-4873-8886-f9b72bccb2c5",
+          "audit_run_token": "d1b09cbbae11"
+        },
+        {
+          "run": 2,
+          "overall": 69,
+          "direction": 71,
+          "technique": 66,
+          "worker_conversation_id": "0697c647-da66-4d8e-92c8-b865b2a5e16c",
+          "audit_run_token": "e54e6c7ed6fc"
+        }
+      ],
+      "final_scores": "67/70/64",
+      "final_ratings": "B-/B/B-",
+      "grade_boundary": true,
+      "analysis_status": "full_analysis",
+      "visual_verification_status": "log_verified",
+      "log_verified_in_report": true,
+      "worker_conversation_ids": [
+        "c5f0a5ad-52f0-4873-8886-f9b72bccb2c5",
+        "0697c647-da66-4d8e-92c8-b865b2a5e16c"
+      ],
+      "ch11_appended": "## 11. 実映像ビジュアル監査・実測補正\n- **監査判定**: `minor_fix`（静止画コンタクトシート確認: ログ照合済）\n- **実映像カット実測値（ffmpeg scdet）**: 実カット数: 35カット / 実平均カット尺: 1.771秒 / 中央値: 1.767秒（33.87カット/分）\n- **100点ルーブリック確定スコア**: 総合/演出/技術 = `67/70/64`（ランク `B-/B/B-`）\n- **監査・補正メモ**: 静止画コンタクトシート（16コマ均等抽出）および実測データ（61.997秒・35カット・平均1.771秒・33.87CPM）と既存分析を照合した結果、15秒CM4篇＋チャンネルアウトロ2秒の全体構成、実店舗ライティング、青・黄・赤の色彩設計は一致した。一方、Ch.3の詳細に複数の事実誤認・ズレを確認した：(1)既存分析#03で「2本目（00:16-00:25）」にあるとされる「あの」名札クローズアップは、実際には4本目冒頭（Row4 Col1、46秒前後）であり、襟元のグレー×黄紺ラインニットから安藤なつの衣装である。(2)既存分析#03-#04で「すまし顔のあのちゃんが対峙」「3人が肩組み」とある2本目（Row2）は、静止画上ではハチマキ姿の先輩店員と安藤なつ（肩に水色ストライプ袖の手）の2ショットであり、あのちゃん本人の顔は確認できない。(3)既存分析#05の「水色チェックのフード」はRow3 Col3では無地寄りの水色パーカーに見える。(4)1〜3本目のエンドカード（Col4各段）には「1,100円買うごとに抽選で金券当たる！」「オンラインストアでも同時開催！」の重要訴求があるが既存分析では言及がない。また4本目の「あのちゃん切り抜き入り特別版エンドカード」（#08）は16コマのサンプリング間隔外のため静止画では確認不能。未確認の限界として、静止画および音量実測値欠損（mean/max_volume_db: null）により、音響・BGM・SE・セリフの掛け合いとミックス（soundAndMix）および30fpsの実モーション滑らかさ・カット間タイミングの細部は直接確認できていない。\n- **ランク変更理由**: 【演出】hookAndStructure(14): 店舗導入→視覚ボケ→高視認性エンドカードの15秒王道フォーマットが4篇一貫して機能するが、まとめ尺としては定型反復のため商業優秀水準。originality(13): 安藤なつの体格を活かした4本腕ギャグや名札・別人顔出しの不条理ボケは巧みだが、タレント×小売コントCMの枠内のため中上位。rhythmAndSync(13): 平均1.77秒・33.87CPMの歯切れよい切り返し構成を確認（音声同期は未確認のため減点せず編集テンポ水準で評価）。worldAndSubject(13): 実店舗の庶民的空気感と出演者のキャラ対比は明快だが、独自美学の深化型ではない。intentAchievement(16): 20%オフ・日程・抽選・オンライン同時開催を記憶定着と視認性の両面で極めて明確に伝達しており広告目的達成度が高い。【技術】cinematographyAndArt(12): 明るく影の少ない堅実なリテール撮影・店舗美術だがシネマティックな造形美は標準域。editingAndMotion(12): 迷いのない実写切り返しと明快な告知カード設計で機能的だがVFX・モーション面のクラフト挑戦は標準域（30fps滑らかさは未確認のため減点なし）。colorAndLook(13): 青エプロン・黄POP・赤セールの3原色コントラストと自然な肌トーンがリテール広告として的確。soundAndMix(13): 静止画・音量データ欠損で未確認のため減点せず、確認済み全国ネット商業CMのプロダクション水準（12〜13点帯）に換算。polishAndFinish(13): 注釈文字の整理やブランド視認性など放送規格の商業仕上げは堅実だが、国際賞クラフト級の極限の磨き込みではないため中上位。",
+      "tidb_analysis_sha256": "9e51e322a3a85df53014a189d087adfa4bb3d16156972d78af7a6d5fe326553d",
+      "sqlite_analysis_sha256": "9e51e322a3a85df53014a189d087adfa4bb3d16156972d78af7a6d5fe326553d",
+      "sqlite_exists": true,
+      "sqlite_body_hash_matched": true
+    },
+    {
+      "video_id": "_7VNKU010JI",
+      "group": "normal_unaudited",
+      "title": "ロッテ プレミアムガーナ TVCM「劇的一粒」篇 15秒(5品) 木村拓哉",
+      "ensemble_mode": "2_run_mean",
+      "ensemble_runs": [
+        {
+          "run": 1,
+          "overall": 81,
+          "direction": 79,
+          "technique": 81,
+          "worker_conversation_id": "a00bd8bc-00e4-49d0-b42e-b8cf7697f452",
+          "audit_run_token": "ee3922ac40c9"
+        },
+        {
+          "run": 2,
+          "overall": 83,
+          "direction": 80,
+          "technique": 83,
+          "worker_conversation_id": "f49a8c07-c039-44a2-b267-c7ba85e246c7",
+          "audit_run_token": "5dfcc469710e"
+        }
+      ],
+      "final_scores": "83/80/82",
+      "final_ratings": "A/A-/A",
+      "grade_boundary": false,
+      "analysis_status": "full_analysis",
+      "visual_verification_status": "log_verified",
+      "log_verified_in_report": true,
+      "worker_conversation_ids": [
+        "a00bd8bc-00e4-49d0-b42e-b8cf7697f452",
+        "f49a8c07-c039-44a2-b267-c7ba85e246c7"
+      ],
+      "ch11_appended": "## 11. 実映像ビジュアル監査・実測補正\n- **監査判定**: `minor_fix`（静止画コンタクトシート確認: ログ照合済）\n- **実映像カット実測値（ffmpeg scdet）**: 実カット数: 6カット / 実平均カット尺: 2.504秒 / 中央値: 1.502秒（23.96カット/分）\n- **100点ルーブリック確定スコア**: 総合/演出/技術 = `83/80/82`（ランク `A/A-/A`）\n- **監査・補正メモ**: 4列×4行（計16コマ）の静止画コンタクトシートとffprobe/scdet実測値（15.023秒・640×360・23.976fps・実カット数6）を照合。①6カット構成（冒頭木村→パッケージ→試食リアクション→ガナッシュシズル＆コピー→木村＋5品合成→LOTTE CI）および全体のトーン・被写体演出の把握は概ね妥当。②ただし既存分析にはコマ位置の誤記が複数ある：チョコシズルは実際は3段目左3〜右端（11〜12コマ目）、木村＋5品合成は4段目左1〜左3（13〜15コマ目）、最終LOTTE CIは4段目右端（16コマ目）だが、既存分析では「3段目右端〜4段目左2」「最終コマ（4段目左3）」と1コマずれて記述されている。またコピーは実際は横書き2行だが「縦2行」と紛らわしい表記があり、2段目左3（7コマ目）も「唇を結びながらじっと空間の一点を見つめる」ではなく右手を軽く握って上げやや微笑む表情である。解像度・尺にも取得ストリーム差（実測640×360/15.023s vs 分析854×480/15.07s）がある。③未確認の限界：静止画コンタクトシートかつ今回計測の音量値がnullのため、音響・ミックス・台詞・BGM、フレーム間のモーション滑らかさ、および「事前試食なしの撮影設計」や制作クレジット等の外部情報は未確認。\n- **ランク変更理由**: 【演出】hookAndStructure(16): 15秒6カットの引き算構成で導入→商品→試食→余韻→シズル→5品→CIを破綻なく繋ぐが後半は定型着地。originality(13): セレブリティの無言試食＋シズルという王道フォーマットの洗練であり国際賞級の企画革新ではない。rhythmAndSync(16): 平均2.5秒の落ち着いた間合いが「言葉を失う」企画と合致（音画同期細部は未確認のため確認可能水準に準拠）。worldAndSubject(17): オリーブゴールド単色背景と衣装でノイズを排し木村拓哉の繊細な表情変化を主役化した被写体演出が優秀。intentAchievement(17): 15秒TVCMとして認知・シズル・コピー・5品展開・CIの商業目的を高密度に達成。【技術】cinematographyAndArt(17): パッケージのキアロスクーロ照明、人物の柔らかなモデリング光、ガナッシュの艶やかなマクロ撮影がいずれも高水準。editingAndMotion(15): 6カットの的確な構成と閉眼からシズルへの繋ぎが自然（動きの滑らかさは未確認のため構成水準に準拠）。colorAndLook(17): オリーブゴールド〜カーキ〜ダークブラウン〜金文字まで高級感あるリッチなパレットで全編統一。soundAndMix(16): 静止画・音量nullで未確認のため減点せず確認済み技術・演出水準の平均値に換算。polishAndFinish(16): 明朝体コピーの視認性・5品合成の整理・CIまで全国放映TVCMとして隙のない仕上げ。synergy(+1): 引き算の人物演出と重厚な照明・色彩設計が単一コンセプトへ綺麗に収斂しているため+1。",
+      "tidb_analysis_sha256": "f397dd8c10f1a9ec9521ddcdc30972227b8175a0af25540c9f8bfb4aac2f56cc",
+      "sqlite_analysis_sha256": "f397dd8c10f1a9ec9521ddcdc30972227b8175a0af25540c9f8bfb4aac2f56cc",
+      "sqlite_exists": true,
+      "sqlite_body_hash_matched": true
+    },
+    {
+      "video_id": "_8ZyMJOVLTM",
+      "group": "normal_unaudited",
+      "title": "Giga & TeddyLoid - ヴィオレッタ feat. 超学生 (Official Video)",
+      "ensemble_mode": "3_run_median",
+      "ensemble_runs": [
+        {
+          "run": 1,
+          "overall": 73,
+          "direction": 71,
+          "technique": 76,
+          "worker_conversation_id": "e1c7be99-6637-4174-b1ca-5053d8b67355",
+          "audit_run_token": "01c087a0032c"
+        },
+        {
+          "run": 2,
+          "overall": 79,
+          "direction": 78,
+          "technique": 81,
+          "worker_conversation_id": "b9372448-863c-462b-aa27-69cb017b983f",
+          "audit_run_token": "a543ad349798"
+        },
+        {
+          "run": 3,
+          "overall": 79,
+          "direction": 77,
+          "technique": 80,
+          "worker_conversation_id": "945e513c-2414-470b-808a-e51cd326520d",
+          "audit_run_token": "5ad058cc8fe5"
+        }
+      ],
+      "final_scores": "78/77/80",
+      "final_ratings": "A-/B+/A-",
+      "grade_boundary": true,
+      "analysis_status": "full_analysis",
+      "visual_verification_status": "log_verified",
+      "log_verified_in_report": true,
+      "worker_conversation_ids": [
+        "e1c7be99-6637-4174-b1ca-5053d8b67355",
+        "b9372448-863c-462b-aa27-69cb017b983f",
+        "945e513c-2414-470b-808a-e51cd326520d"
+      ],
+      "ch11_appended": "## 11. 実映像ビジュアル監査・実測補正\n- **監査判定**: `minor_fix`（静止画コンタクトシート確認: ログ照合済）\n- **実映像カット実測値（ffmpeg scdet）**: 実カット数: 74カット / 実平均カット尺: 2.5秒 / 中央値: 1.209秒（24カット/分）\n- **100点ルーブリック確定スコア**: 総合/演出/技術 = `78/77/80`（ランク `A-/B+/A-`）\n- **監査・補正メモ**: コンタクトシート32コマ（sheet_01/02）と実測データ（185.017秒・24fps・74カット・平均2.5秒・中央値1.209秒）を照合した結果、全体トーン（ネオン紫×蛍光緑のサイバーMV）、序盤約40秒間の同一キャラクターイラスト固定構図、サビの『荒いパッション』『VIOLETTA』タイポ爆発、中盤以降の3DCG空間（白箱都市を飛ぶドローン、ネオンDJ卓、トンネル、DAWピアノロール風UI）という大筋は既存分析と一致している。一方、既存分析の#06「赤色CRTモニター壁」「赤い蜘蛛型UI」は、sheet_02上では「赤いレンズを持つ監視カメラ群3台（2行目左）」および「赤い球体コア＆触手/背骨状3DCG（1行目左2コマ）」として確認され描写にズレがあるほか、#01「紫のボトル」や#05「黄色いスマイル」はシートの約5.8秒間隔サンプリング上では未確認だった。なお静止画監査の限界として、音響ミックス（実測値もnull）、24fps実モーションの滑らかさ、ビートに対する厳密な音ハメ精度は直接確認できていない。\n- **ランク変更理由**: 【演出5観点】hookAndStructure(15): 序盤7コマ連続で同一イラスト構図が続く停滞感は構成上の弱点だが、サビのブラー爆発と白箱都市ドローンでの劇的転換が強力。originality(14): 紫×蛍光緑のサイバーHUD＆リリックMVは現代ネット音楽MVの王道語法でありフォーマット革新には至らないが、バイオメカニカル造形や白箱都市など異質モチーフの統合力は高い。rhythmAndSync(16): 中央値1.209秒の緩急とDAWシーケンサー風演出・大型タイポ連打が楽曲ビートを的確に視覚化（厳密な音ハメは静止画未確認のため減点なし）。worldAndSubject(16): 仮面フードキャラのアイコン性と一貫したネオン×アンダーグラウンド3DCG空間が魅力的。intentAchievement(17): 豪華ネット音楽コラボの配信シングルMVとしてターゲット層の視覚的フックと情報密度を極めて高く達成。【技術5観点】cinematographyAndArt(16): 広角パースイラストに加え、DJ卓・監視カメラ・白箱都市・バイオメカニカル球体など3DCG美術のバリエーションと造形力がリッチ。editingAndMotion(16): 書体とレイアウトの引き出しが豊富なキネティックタイポと高密度コンポジットが優秀（動きの滑らかさは未確認のため減点せず水準換算）。colorAndLook(17): 紫×蛍光緑の主軸から深紅・無彩色ハイキー（白箱都市）・ダークブルーへ切り替えるカラーブロック設計とグロー/色収差の統一感が秀逸。soundAndMix(16): 音声未確認のため減点せず、映像全体の商業プロ基準水準から換算。polishAndFinish(16): 2Dイラスト・HUD・3DCG・タイポの統合仕上げとクレジット画面まで高水準だが、序盤の同一構図の引き伸ばし感が全体の隙のなさをわずかに削ぐ。",
+      "tidb_analysis_sha256": "7c97508dc798fee821c291a82365c4b60b3dd0adc911589cc20c8818eea75832",
+      "sqlite_analysis_sha256": "7c97508dc798fee821c291a82365c4b60b3dd0adc911589cc20c8818eea75832",
+      "sqlite_exists": true,
+      "sqlite_body_hash_matched": true
+    },
+    {
+      "video_id": "_9cGKFO4mm8",
+      "group": "normal_unaudited",
+      "title": "乃木坂46 山下美月、チョコラタイムで心も体もキレイに！？　“弟役”細田佳央太とユニークなやり取りも　『チョコラBB』新CM",
+      "ensemble_mode": "2_run_mean",
+      "ensemble_runs": [
+        {
+          "run": 1,
+          "overall": 54,
+          "direction": 55,
+          "technique": 53,
+          "worker_conversation_id": "8a863e77-82c9-4f73-b78c-d9c9a52486a6",
+          "audit_run_token": "25bef140112d"
+        },
+        {
+          "run": 2,
+          "overall": 56,
+          "direction": 56,
+          "technique": 56,
+          "worker_conversation_id": "2012895a-213e-43f3-b2e8-9f147126a085",
+          "audit_run_token": "9e276c69112e"
+        }
+      ],
+      "final_scores": "55/56/54",
+      "final_ratings": "C/C/C",
+      "grade_boundary": false,
+      "analysis_status": "full_analysis",
+      "visual_verification_status": "log_verified",
+      "log_verified_in_report": true,
+      "worker_conversation_ids": [
+        "8a863e77-82c9-4f73-b78c-d9c9a52486a6",
+        "2012895a-213e-43f3-b2e8-9f147126a085"
+      ],
+      "ch11_appended": "## 11. 実映像ビジュアル監査・実測補正\n- **監査判定**: `minor_fix`（静止画コンタクトシート確認: ログ照合済）\n- **実映像カット実測値（ffmpeg scdet）**: 実カット数: 64カット / 実平均カット尺: 2.218秒 / 中央値: 1.627秒（27.05カット/分）\n- **100点ルーブリック確定スコア**: 総合/演出/技術 = `55/56/54`（ランク `C/C/C`）\n- **監査・補正メモ**: 静止画コンタクトシート2枚（計32フレーム）および実測データ（尺141.944秒、640×360、23.976fps、実カット数64、平均カット長2.218秒、中央値1.627秒、27.05 cuts/min）と既存AI分析を照合した。【確認できた範囲】全編左上にORICON NEWSウォーターマークが入り、冒頭約15〜18秒に高明度パステルイエロー×マスカットグリーンのCM本編（3DCG泡・白ワンピースの山下美月・「キレイはじけて、糖質50％オフ！」テロップ・細田佳央太合成）を配置し、以降約124秒を木漏れ日カット→Sony CineAltaカメラ→自室セットのリハーサル・姉弟掛け合い→細田佳央太グリーンバック→床面グリーンバック・ドリーレール・モニター確認・山下美月グリーンバック撮影→ブルーバックでのコメント収録→花束クランクアップと追う構成・尺感は既存分析と概ね一致する。【軽微な誤認】既存分析#01で導入を「花柄シャツの山下美月が商品を手にする導入から」と記述しているが、sheet_01 r1c1（「美月、チョコラタイム入ります」）は白系衣装であり、花柄ブラウス＋ピンクスカートは終盤のブルーバック収録〜クランクアップ（sheet_02 r3c3〜r4c4）の衣装であるため修正が必要。【未確認の限界】静止画およびffprobeの音量値がnullのため、音響ミックス・BGM/SEバランス・リップシンク精度、23.976fpsのモーション滑らかさ、および既存分析#05記載のクレーン型番「GF-8」や吊り下げガイドボールの細部は静止画からは直接確認できていない（未確認観点による減点は行っていない）。\n- **ランク変更理由**: 【ブラインド独立採点・各観点根拠】全尺の約88%がORICON NEWS配信の標準的メイキング映像、約12%が堅実なナショナルTVCM本編というPRパッケージ構成をプロ基準（Cannes Lions/D&AD/ACC）で評価。演出面：hookAndStructure(11)はCM本編を冒頭に置く掴みは有効だが後半は時系列の定型ダイジェスト構成、originality(9)は爽快系飲料CMの王道フォーマット＋定型メイキングで新規性は限定的、rhythmAndSync(11)は平均2.22秒・中央値1.63秒のテンポ良いカット割りで視聴維持を確保（音同期は未確認のため減点なし）、worldAndSubject(12)は山下美月の表情魅力と爽やかな商品世界観・自室セットの親近感が好印象、intentAchievement(12)は糖質50%オフの機能訴求とPR話題喚起の目的を堅実に達成。技術面：cinematographyAndArt(11)はCineAlta機材のCM本編や自室セット美術は堅実だが尺の大半がENG調メイキング撮影、editingAndMotion(11)はCMのCG泡・クロマキー合成・文字組みとメイキング整理は丁寧だが標準域、colorAndLook(10)はCMの明快なパステル設計に対しメイキングは未グレーディング調の記録ルックが中心、soundAndMix(11)は静止画未確認のため確認済み技術水準に合わせて中立換算、polishAndFinish(10)はCM本編は放送品質だがニュース用ウォーターマーク常駐とメイキング主体の仕上げにより総合完成度は標準レンジ。",
+      "tidb_analysis_sha256": "15d2ede7d379cb45ea240d26b0c364bb1698878f4f523d2ec029ce0b65c4573c",
+      "sqlite_analysis_sha256": "15d2ede7d379cb45ea240d26b0c364bb1698878f4f523d2ec029ce0b65c4573c",
+      "sqlite_exists": true,
+      "sqlite_body_hash_matched": true
+    }
+  ]
+}

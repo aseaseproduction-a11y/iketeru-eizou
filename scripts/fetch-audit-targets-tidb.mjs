@@ -7,6 +7,7 @@ const envText = fs.readFileSync(path.join(REPO_ROOT, ".env"), "utf8").replace(/^
 const dbUrl = process.env.DATABASE_URL || envText.match(/^DATABASE_URL=(.+)$/m)[1].trim();
 
 const videoIdArg = process.argv.find((a) => a.startsWith("--video-id="))?.slice("--video-id=".length)?.trim() || "";
+const videoIdsArg = process.argv.find((a) => a.startsWith("--video-ids="))?.slice("--video-ids=".length)?.trim() || "";
 const ratingsArg = process.argv.find((a) => a.startsWith("--ratings="))?.slice("--ratings=".length)?.trim() || "";
 
 const conn = await mysql.createConnection({
@@ -15,7 +16,21 @@ const conn = await mysql.createConnection({
 });
 
 let rows;
-if (videoIdArg) {
+if (videoIdsArg) {
+  const idList = videoIdsArg.split(",").map((s) => s.trim()).filter(Boolean);
+  const [res] = await conn.query(
+    `SELECT id, platform, title, videoUrl AS video_url,
+            aiOverallRating AS overall_rating,
+            aiDirectionRating AS direction_rating,
+            aiTechniqueRating AS technique_rating,
+            aiAnalysis AS ai_analysis
+       FROM videos
+      WHERE id IN (?)`,
+    [idList]
+  );
+  const byId = new Map(res.map((r) => [String(r.id), r]));
+  rows = idList.map((id) => byId.get(id)).filter(Boolean);
+} else if (videoIdArg) {
   const [res] = await conn.query(
     `SELECT id, platform, title, videoUrl AS video_url,
             aiOverallRating AS overall_rating,

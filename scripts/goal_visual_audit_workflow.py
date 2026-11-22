@@ -195,11 +195,14 @@ wave_size = int(args.get("wave_size", 12))
 chunk_size = int(args.get("chunk_size", 6))
 ratings_filter = args.get("ratings")  # optional list like ["S+", "S"]
 single_video_id = str(args.get("video_id") or "").strip()
+explicit_video_ids = [str(x).strip() for x in (args.get("video_ids") or []) if str(x).strip()]
 
 phase("1. Select next un-audited videos directly from TiDB Cloud (single source of truth)")
 done_ids = load_done_ids()
 fetch_cmd = ["node", "scripts/fetch-audit-targets-tidb.mjs"]
-if single_video_id:
+if explicit_video_ids:
+    fetch_cmd.append("--video-ids=" + ",".join(explicit_video_ids))
+elif single_video_id:
     fetch_cmd.append(f"--video-id={single_video_id}")
 elif ratings_filter:
     fetch_cmd.append("--ratings=" + ",".join(ratings_filter))
@@ -224,7 +227,9 @@ if local_cache_only:
     if cdir.exists():
         cached_ids = {p.stem for p in cdir.iterdir() if p.is_file() and p.suffix.lower() in (".mp4", ".mov", ".mkv", ".webm", ".m4v")}
 
-if single_video_id:
+if explicit_video_ids:
+    targets = [dict(r) for r in all_rows][:wave_size]
+elif single_video_id:
     targets = [dict(r) for r in all_rows][:1]
 else:
     targets = [

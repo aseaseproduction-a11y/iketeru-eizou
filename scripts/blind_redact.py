@@ -18,6 +18,7 @@ _PROTECT_MUSIC_RE = re.compile(r"(?<![A-Za-z0-9])([ABC])(メロ|サビ)")
 # 1. Whole-line removals for rating/verdict summary lines
 _REMOVE_LINE_PATTERNS: list[re.Pattern[str]] = [
     re.compile(r"^.*評価判定.*$", re.MULTILINE),
+    re.compile(r"^.*ランク決定理由.*$", re.MULTILINE),
     re.compile(r"^\s*[-*•・]?\s*\*{0,2}(?:AI)?(?:総合|演出|ディレクション|技術)(?:評価|ランク|スコア)\*{0,2}\s*[:：=＝].*$", re.MULTILINE),
 ]
 
@@ -54,6 +55,8 @@ _REDACT_PATTERNS: list[tuple[re.Pattern[str], str]] = [
     # Any remaining スコア: ...
     (re.compile(r"スコア\s*[:：=＝]\s*[^\s、。,）)\]`\n]+"), "[既存評価非表示]"),
     (re.compile(r"スコア\s*[:：=＝]"), "[既存評価非表示]"),
+    # Sentence-ending standalone grade after ため / で / 。: e.g. "欠けるためB。" / "±0でB。" / "限定的。B。"
+    (re.compile(r"((?:ため|で|。)\s*)[SABCD](?=\s*[。\n]|$)"), r"\1[既存評価非表示]"),
     # Grade transitions: A+ → S, B+ -> A-
     (re.compile(r"(?<![A-Za-z0-9])[SABCD][+-]?\s*(?:→|->|⇒)\s*[SABCD][+-]?(?![A-Za-z0-9])"), "[既存評価非表示]"),
 ]
@@ -73,11 +76,13 @@ _ENGLISH_ARTICLE_A_RE = re.compile(r"^\s+[a-z]")
 
 _HARD_LEAK_DETECTORS: list[tuple[str, re.Pattern[str]]] = [
     ("eval_verdict_word", re.compile(r"評価判定")),
+    ("rank_reason_word", re.compile(r"ランク決定理由")),
     ("score_colon", re.compile(r"スコア\s*[:：=＝]")),
     ("numeric_points", re.compile(r"(?<![A-Za-z0-9])\d{1,3}\s*点(?![A-Za-z0-9])")),
     ("score_slash_100", re.compile(r"\d{1,3}\s*/\s*100")),
     ("plus_minus_grade_anywhere", _PLUS_MINUS_GRADE_RE),
     ("bare_grade_quality_phrase", _BARE_GRADE_QUALITY_RE),
+    ("sentence_end_standalone_grade", re.compile(r"(?:ため|で|。)\s*[SABCD](?=\s*[。\n]|$)")),
 ]
 
 
