@@ -149,6 +149,7 @@ function summarizeSubset(records, label) {
   const craft = records.filter(r => r.craft_or_purpose === "craft_benchmark");
   const craftAMinusPlus = craft.filter(r => A_MINUS_PLUS.has(r.objective_tier));
   const nonAward = records.filter(r => r.craft_or_purpose === "non_award_baseline");
+  const referenceOnly = records.filter(r => r.craft_or_purpose !== "craft_benchmark" && r.craft_or_purpose !== "non_award_baseline");
 
   const xs = craft.map(r => r.target_mid);
   const ys = craft.map(r => r.ai_score);
@@ -203,13 +204,20 @@ function summarizeSubset(records, label) {
     };
   }
 
+  const sBandN = rankBandGroups["S帯(S+/S/S-)"].length;
+  const rangeRestrictionNote = label === "contamination_excluded"
+    ? `参考値（既知除外により上位帯が脱落し範囲が狭い：S帯残存 ${sBandN} 本 / 受賞作計 ${craft.length} 本）`
+    : null;
+
   return {
     subset: label,
+    ...(rangeRestrictionNote ? { note: rangeRestrictionNote } : {}),
     counts: {
       total: records.length,
       craft: craft.length,
       craft_a_minus_plus: craftAMinusPlus.length,
       non_award: nonAward.length,
+      reference_only_scored: referenceOnly.length,
     },
     craft_metrics: {
       spearman_rho: rho,
@@ -236,9 +244,11 @@ function summarizeSubset(records, label) {
 function main() {
   const runId = process.argv[2];
   if (!runId) {
-    console.error("Usage: node scripts/evaluate-calibration-run.mjs <run_id>");
+    console.error("Usage: node scripts/evaluate-calibration-run.mjs <run_id> [--out <filename>]");
     process.exit(2);
   }
+  const outIdx = process.argv.indexOf("--out");
+  const outFilename = outIdx >= 0 && process.argv[outIdx + 1] ? process.argv[outIdx + 1] : "evaluation_summary.json";
   const runDir = path.join(REPO_ROOT, "analysis", "runs", runId);
   const scoresPath = path.join(runDir, "raw_scores.jsonl");
   const bench = JSON.parse(fs.readFileSync(path.join(REPO_ROOT, "analysis", "golden_benchmark.json"), "utf8"));
@@ -351,8 +361,13 @@ function main() {
     };
   }
 
-  const outPath = path.join(runDir, "evaluation_summary.json");
-  fs.writeFileSync(outPath, JSON.stringify({ run_id: runId, evaluated_at: new Date().toISOString(), modes: outByMode }, null, 2) + "\n", "utf8");
+  const outPath = path.join(runDir, outFilename);
+  fs.writeFileSync(outPath, JSON.stringify({
+    run_id: runId,
+    evaluated_at: new Date().toISOString(),
+    ensemble_tiebreaker_rule: "|s1 - s2| >= 5 -> median of 3 (otherwise mean of 2)",
+    modes: outByMode,
+  }, null, 2) + "\n", "utf8");
   console.log(`Wrote ${outPath}`);
   for (const m of ["video", "contact_sheet"]) {
     console.log(`\n=== ${m.toUpperCase()} ===`);

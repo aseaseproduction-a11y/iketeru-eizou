@@ -1314,8 +1314,8 @@
     "embed_status": "available",
     "playable_via_ytdlp": true,
     "genre_bucket": "3DCG/アニメ",
-    "tier_bucket": "上位",
-    "craft_or_purpose": "craft_benchmark",
+    "tier_bucket": "参考枠",
+    "craft_or_purpose": "trailer_or_intro_reference",
     "award_level": "winner",
     "era_bucket": "modern_10y",
     "current_db_rating": "A",
@@ -1329,13 +1329,10 @@
         "sourceUrl": "https://www.joshibi.ac.jp/joshibi-news/news/3350"
       }
     ],
-    "objective_tier": "S-",
-    "objective_band": [
-      90,
-      92
-    ],
-    "evidence_level": "tier2_berlinale_silver_bear",
-    "rationale": "第75回ベルリン国際映画祭 短編コンペティション部門 銀熊賞（審査員賞）（水尻自子『普通の生活 Ordinary Life』）"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "trailer_mismatch_reference",
+    "rationale": "【参考枠へ移動（v8）】ベルリン国際映画祭短編銀熊賞の受賞対象は本編（9分47秒）であるのに対し、DB収録動画は42秒の予告編（Trailer）であり受賞対象本編と不一致のため、ルール1.8に基づき参考枠へ移動。"
   },
   {
     "id": "jvKtHf7kDYs",
@@ -1344,9 +1341,9 @@
     "videoUrl": "https://www.youtube.com/watch?v=jvKtHf7kDYs",
     "embed_status": "available",
     "playable_via_ytdlp": true,
-    "genre_bucket": "3DCG/アニメ",
-    "tier_bucket": "中位",
-    "craft_or_purpose": "craft_benchmark",
+    "genre_bucket": "実写映画（予告・参考）",
+    "tier_bucket": "参考枠",
+    "craft_or_purpose": "trailer_or_intro_reference",
     "award_level": "winner",
     "era_bucket": "modern_10y",
     "current_db_rating": "A-",
@@ -1360,13 +1357,10 @@
         "sourceUrl": "https://2021.tiff-jp.net/award_winners_ja/"
       }
     ],
-    "objective_tier": "A+",
-    "objective_band": [
-      86,
-      89
-    ],
-    "evidence_level": "tier3_intl_festival_winner",
-    "rationale": "第34回東京国際映画祭 アジアの未来 作品賞"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "trailer_mismatch_reference",
+    "rationale": "【参考枠へ移動（v8）】第34回東京国際映画祭アジアの未来作品賞の受賞対象は長編実写劇映画本編であるのに対し、DB収録動画は128秒の映画祭紹介・予告映像であり受賞対象本編と不一致（かつ旧ジャンル分類「3DCG/アニメ」も実写劇映画の誤分類であった）ため、ルール1.8に基づき参考枠へ移動しジャンルを是正。"
   },
   {
     "id": "134832670",
@@ -1648,8 +1642,8 @@
     "embed_status": "available",
     "playable_via_ytdlp": true,
     "genre_bucket": "企業映像",
-    "tier_bucket": "上位",
-    "craft_or_purpose": "craft_benchmark",
+    "tier_bucket": "参考枠",
+    "craft_or_purpose": "purpose_reference_only",
     "award_level": "winner",
     "era_bucket": "modern_10y",
     "current_db_rating": "A",
@@ -1663,13 +1657,10 @@
         "sourceUrl": "https://www.eibunren.or.jp/?p=7067"
       }
     ],
-    "objective_tier": "S-",
-    "objective_band": [
-      90,
-      92
-    ],
-    "evidence_level": "tier2_national_grand_prix",
-    "rationale": "国内企業映像アワード最高賞（映文連アワード 2025 経済産業大臣賞 — MAZDA RX-7）"
+    "objective_tier": null,
+    "objective_band": null,
+    "evidence_level": "purpose_corporate_communication_reference",
+    "rationale": "【参考枠へ移動（v8）】映文連アワード2025経済産業大臣賞は、公式5項目（企画力・構成/演出力・映像表現力・情報発信力・プロデュース力）とマニフェスト上、単なる映像美ではなく企業広報・産業貢献・目的伝達力を総合顕彰する賞であるため、評価基準v8ルール1.2に基づき国際目的系賞（Cannes SDG/Direct/Titanium・YouTube Works Creative Effectiveness等）と同一基準で参考枠へ移動。"
   },
   {
     "id": "D_vdPkCz23g",

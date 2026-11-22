@@ -1,5 +1,5 @@
 {
-  "protocol_version": "v2_preregistered",
+  "protocol_version": "v3_preregistered_v8_benchmark",
   "created_at": "2026-11-22T09:20:47.362Z",
   "seed": 20261122,
   "fixed_pass_criteria_on_holdout": {
@@ -11,12 +11,12 @@
     "note": "固定基準（結果を見て変更しない）。合否判定はすべて未学習の確認用（holdout）の点推定値のみで1回限り実施し、ブートストラップ95%信頼区間を併記する。"
   },
   "counts": {
-    "dev_craft": 20,
+    "dev_craft": 17,
     "holdout_craft": 14,
     "dev_non_award": 23,
     "holdout_non_award": 20,
-    "reference_only": 5,
-    "active_total": 82,
+    "reference_only": 8,
+    "active_calibration_total": 74,
     "excluded_from_both_modes": 1,
     "benchmark_total": 83
   },
@@ -35,11 +35,8 @@
     "FNQ4vqB-waw",
     "35i4zTky9pI",
     "ebzEEEdjHj0",
-    "vohpCZh-Qcw",
     "313084145",
-    "CWhNI_x9W6c",
     "1032202784",
-    "jvKtHf7kDYs",
     "tdQCMuaJUQk",
     "1S-KU2F7wc0",
     "134832670",
@@ -119,7 +116,10 @@
     "DwIur8FBRxw",
     "246660563",
     "D_vdPkCz23g",
-    "9waEFmHUNdk"
+    "9waEFmHUNdk",
+    "vohpCZh-Qcw",
+    "jvKtHf7kDYs",
+    "CWhNI_x9W6c"
   ],
   "tier_distribution": {
     "S+": {
@@ -131,11 +131,11 @@
       "holdout": 1
     },
     "S-": {
-      "dev": 5,
+      "dev": 3,
       "holdout": 4
     },
     "A+": {
-      "dev": 4,
+      "dev": 3,
       "holdout": 3
     },
     "A": {
@@ -174,18 +174,52 @@
       "genre_report_status": "未検証（基準作品1本・確認用0本のためジャンル別結果を出さない）"
     },
     "3DCG/アニメ": {
-      "dev_craft": 4,
+      "dev_craft": 2,
       "holdout_craft": 2,
       "dev_non_award": 6,
       "holdout_non_award": 4,
       "genre_report_status": "参考（n<5：確認用受賞作2本のため合否・結論には使用しない）"
     },
     "企業映像": {
-      "dev_craft": 6,
+      "dev_craft": 5,
       "holdout_craft": 2,
       "dev_non_award": 5,
       "holdout_non_award": 5,
       "genre_report_status": "参考（n<5：確認用受賞作2本のため合否・結論には使用しない）"
     }
-  }
+  },
+  "updated_at": "2026-11-22T12:56:21.565Z",
+  "ensemble_tiebreaker_rule": "|s1 - s2| >= 5 -> median of 3 (otherwise mean of 2); identical across Dev and Holdout",
+  "revision_history": [
+    {
+      "version": "v3_preregistered_v8_benchmark",
+      "date": "2026-11-22T12:56:21.565Z",
+      "applied_before_holdout": true,
+      "rule_applied_uniformly_to_all_83": [
+        "ルール1.8（収録映像＝受賞対象本編）：予告編・紹介映像・受賞告知映像は参考枠（trailer_or_intro_reference, objective_tier: null）へ移動",
+        "ルール1.2（目的・伝達力総合賞の統一扱い）：映文連アワード経済産業大臣賞を国際目的系賞と同一基準で参考枠（purpose_reference_only, objective_tier: null）へ移動"
+      ],
+      "moved_to_reference_only": [
+        {
+          "id": "vohpCZh-Qcw",
+          "from": "dev_craft_ids (S-)",
+          "to": "reference_only_ids (trailer_or_intro_reference)",
+          "reason": "本編9分47秒に対する42秒Trailer"
+        },
+        {
+          "id": "jvKtHf7kDYs",
+          "from": "dev_craft_ids (A+, 3DCG/アニメ)",
+          "to": "reference_only_ids (trailer_or_intro_reference, 実写映画（予告・参考）)",
+          "reason": "長編実写映画本編に対する128秒映画祭紹介・予告映像（旧ジャンル分類も誤分類）"
+        },
+        {
+          "id": "CWhNI_x9W6c",
+          "from": "dev_craft_ids (S-)",
+          "to": "reference_only_ids (purpose_reference_only)",
+          "reason": "映文連アワード経済産業大臣賞は目的・伝達力・産業貢献を総合評価する賞のため対応表v8で参考枠へ移動"
+        }
+      ],
+      "holdout_changes": "0件（全14本が受賞対象本編かつクラフト審査員賞であることを事前確認済み）"
+    }
+  ]
 }
