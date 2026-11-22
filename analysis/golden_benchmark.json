@@ -651,7 +651,7 @@
       {
         "name": "文化庁メディア芸術祭",
         "year": "2014",
-        "category": "第18回 エンターテインメント部門 審査委員会推薦作品",
+        "category": "第18回 アニメーション部門 審査委員会推薦作品",
         "sourceUrl": "https://www.bunka.go.jp/j-mediaarts-festival/award/single/poker/index.html"
       }
     ],
@@ -964,68 +964,6 @@
     "objective_band": null,
     "evidence_level": "baseline_non_awarded_commercial",
     "rationale": "非受賞・インディーズMV（ASIRA）"
-  },
-  {
-    "id": "1119375393",
-    "title": "オープニング映像  モーショングラフィックス   OFFFMX 2025 Main Titles by XK Studio",
-    "platform": "vimeo",
-    "videoUrl": "https://vimeo.com/1119375393",
-    "embed_status": "available",
-    "playable_via_ytdlp": true,
-    "genre_bucket": "モーション",
-    "tier_bucket": "上位",
-    "craft_or_purpose": "craft_benchmark",
-    "award_level": "winner",
-    "era_bucket": "modern_10y",
-    "current_db_rating": "S",
-    "current_db_score": 96,
-    "current_db_analysis_status": "full_analysis",
-    "awards": [
-      {
-        "name": "Stash Permanent Collection",
-        "year": "2025",
-        "category": "Permanent Collection Featured (OFFF MX 2025 Main Titles by XK Studio)",
-        "sourceUrl": "https://www.stashmedia.tv/tag/xk-studio/"
-      }
-    ],
-    "objective_tier": "S-",
-    "objective_band": [
-      90,
-      92
-    ],
-    "evidence_level": "tier2_global_motion_curation",
-    "rationale": "国際モーションデザイン祭典OFFF Mexico 2025公式メインタイトル＆Stash Permanent Collection収録作（XK Studio）"
-  },
-  {
-    "id": "1225708698",
-    "title": "STAIRS",
-    "platform": "vimeo",
-    "videoUrl": "https://vimeo.com/1225708698",
-    "embed_status": "unknown",
-    "playable_via_ytdlp": true,
-    "genre_bucket": "モーション",
-    "tier_bucket": "中位",
-    "craft_or_purpose": "craft_benchmark",
-    "award_level": "shortlist_or_selection",
-    "era_bucket": "modern_10y",
-    "current_db_rating": "A-",
-    "current_db_score": 79,
-    "current_db_analysis_status": "full_analysis",
-    "awards": [
-      {
-        "name": "Vimeo Staff Picks",
-        "year": "2025",
-        "category": "Vimeo Staff Pick (EFA x Vimeo Feature)",
-        "sourceUrl": "https://www.europeanfilmawards.eu/vimeo-movie/stairs/"
-      }
-    ],
-    "objective_tier": "A-",
-    "objective_band": [
-      78,
-      81
-    ],
-    "evidence_level": "tier5_vimeo_staff_pick",
-    "rationale": "Vimeo Staff Pick公式選出（STAIRS。v3改訂で通常Vimeo Staff PickはA-へ適正化）"
   },
   {
     "id": "_5XZMPbbJIk",
@@ -1432,37 +1370,6 @@
     ],
     "evidence_level": "tier3_intl_festival_winner",
     "rationale": "国際映画祭部門作品賞（第34回東京国際映画祭 アジアの未来 作品賞）"
-  },
-  {
-    "id": "1230811867",
-    "title": "Coeur Cerise",
-    "platform": "vimeo",
-    "videoUrl": "https://vimeo.com/1230811867",
-    "embed_status": "unknown",
-    "playable_via_ytdlp": true,
-    "genre_bucket": "3DCG/アニメ",
-    "tier_bucket": "中位",
-    "craft_or_purpose": "craft_benchmark",
-    "award_level": "shortlist_or_selection",
-    "era_bucket": "modern_10y",
-    "current_db_rating": "A",
-    "current_db_score": null,
-    "current_db_analysis_status": "full_analysis",
-    "awards": [
-      {
-        "name": "Vimeo Staff Picks",
-        "year": "2025",
-        "category": "Vimeo Staff Pick",
-        "sourceUrl": "https://vimeo.com/1081499649"
-      }
-    ],
-    "objective_tier": "A-",
-    "objective_band": [
-      78,
-      81
-    ],
-    "evidence_level": "tier5_vimeo_staff_pick",
-    "rationale": "Vimeo Staff Pick公式選出のストップモーション短編（Coeur Cerise。v3改訂でA-へ適正化）"
   },
   {
     "id": "_PTHdkmCLRs",

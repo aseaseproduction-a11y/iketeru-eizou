@@ -1,0 +1,76 @@
+{
+  "checked_count": 7,
+  "ok_count": 7,
+  "results": [
+    {
+      "id": "tdQCMuaJUQk",
+      "url": "https://www.youtube.com/watch?v=tdQCMuaJUQk",
+      "tested_at": "2026-11-22T04:02:29.265Z",
+      "command": "yt-dlp -f \"worst[ext=mp4]/worst\" --download-sections \"*0:00-0:02\" --no-warnings -o <tmp> https://www.youtube.com/watch?v=tdQCMuaJUQk",
+      "ok": true,
+      "downloaded_bytes": 92955,
+      "ext": "mp4",
+      "error": null
+    },
+    {
+      "id": "JFDm4p8T6_4",
+      "url": "https://www.youtube.com/watch?v=JFDm4p8T6_4",
+      "tested_at": "2026-11-22T04:02:36.038Z",
+      "command": "yt-dlp -f \"worst[ext=mp4]/worst\" --download-sections \"*0:00-0:02\" --no-warnings -o <tmp> https://www.youtube.com/watch?v=JFDm4p8T6_4",
+      "ok": true,
+      "downloaded_bytes": 105583,
+      "ext": "mp4",
+      "error": null
+    },
+    {
+      "id": "wXD33Jx25oI",
+      "url": "https://www.youtube.com/watch?v=wXD33Jx25oI",
+      "tested_at": "2026-11-22T04:02:41.967Z",
+      "command": "yt-dlp -f \"worst[ext=mp4]/worst\" --download-sections \"*0:00-0:02\" --no-warnings -o <tmp> https://www.youtube.com/watch?v=wXD33Jx25oI",
+      "ok": true,
+      "downloaded_bytes": 91126,
+      "ext": "mp4",
+      "error": null
+    },
+    {
+      "id": "FSqTqdjf2YQ",
+      "url": "https://www.youtube.com/watch?v=FSqTqdjf2YQ",
+      "tested_at": "2026-11-22T04:02:47.808Z",
+      "command": "yt-dlp -f \"worst[ext=mp4]/worst\" --download-sections \"*0:00-0:02\" --no-warnings -o <tmp> https://www.youtube.com/watch?v=FSqTqdjf2YQ",
+      "ok": true,
+      "downloaded_bytes": 88456,
+      "ext": "mp4",
+      "error": null
+    },
+    {
+      "id": "iXTuYbyH2Rc",
+      "url": "https://www.youtube.com/watch?v=iXTuYbyH2Rc",
+      "tested_at": "2026-11-22T04:02:54.003Z",
+      "command": "yt-dlp -f \"worst[ext=mp4]/worst\" --download-sections \"*0:00-0:02\" --no-warnings -o <tmp> https://www.youtube.com/watch?v=iXTuYbyH2Rc",
+      "ok": true,
+      "downloaded_bytes": 80739,
+      "ext": "mp4",
+      "error": null
+    },
+    {
+      "id": "-J7Oi1-EfG8",
+      "url": "https://www.youtube.com/watch?v=-J7Oi1-EfG8",
+      "tested_at": "2026-11-22T04:02:58.529Z",
+      "command": "yt-dlp -f \"worst[ext=mp4]/worst\" --download-sections \"*0:00-0:02\" --no-warnings -o <tmp> https://www.youtube.com/watch?v=-J7Oi1-EfG8",
+      "ok": true,
+      "downloaded_bytes": 186728,
+      "ext": "mp4",
+      "error": null
+    },
+    {
+      "id": "_H6zuJAtQqI",
+      "url": "https://www.youtube.com/watch?v=_H6zuJAtQqI",
+      "tested_at": "2026-11-22T04:03:03.648Z",
+      "command": "yt-dlp -f \"worst[ext=mp4]/worst\" --download-sections \"*0:00-0:02\" --no-warnings -o <tmp> https://www.youtube.com/watch?v=_H6zuJAtQqI",
+      "ok": true,
+      "downloaded_bytes": 126519,
+      "ext": "mp4",
+      "error": null
+    }
+  ]
+}

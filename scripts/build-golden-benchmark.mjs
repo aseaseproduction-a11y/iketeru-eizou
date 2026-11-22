@@ -365,7 +365,7 @@ const SPECS = [
       {
         name: "文化庁メディア芸術祭",
         year: "2014",
-        category: "第18回 エンターテインメント部門 審査委員会推薦作品",
+        category: "第18回 アニメーション部門 審査委員会推薦作品",
         sourceUrl: "https://www.bunka.go.jp/j-mediaarts-festival/award/single/poker/index.html"
       }
     ],
@@ -468,46 +468,6 @@ const SPECS = [
   // ========================
   // 3. モーション (Motion Graphics / Title Design / Showreel)
   // ========================
-  {
-    id: "1119375393",
-    genre_bucket: "モーション",
-    tier_bucket: "上位",
-    craft_or_purpose: "craft_benchmark",
-    award_level: "winner",
-    era_bucket: "modern_10y",
-    objective_tier: "S-",
-    objective_band: [90, 92],
-    evidence_level: "tier2_global_motion_curation",
-    awards: [
-      {
-        name: "Stash Permanent Collection",
-        year: "2025",
-        category: "Permanent Collection Featured (OFFF MX 2025 Main Titles by XK Studio)",
-        sourceUrl: "https://www.stashmedia.tv/tag/xk-studio/"
-      }
-    ],
-    rationale: "国際モーションデザイン祭典OFFF Mexico 2025公式メインタイトル＆Stash Permanent Collection収録作（XK Studio）"
-  },
-  {
-    id: "1225708698",
-    genre_bucket: "モーション",
-    tier_bucket: "中位",
-    craft_or_purpose: "craft_benchmark",
-    award_level: "shortlist_or_selection",
-    era_bucket: "modern_10y",
-    objective_tier: "A-",
-    objective_band: [78, 81],
-    evidence_level: "tier5_vimeo_staff_pick",
-    awards: [
-      {
-        name: "Vimeo Staff Picks",
-        year: "2025",
-        category: "Vimeo Staff Pick (EFA x Vimeo Feature)",
-        sourceUrl: "https://www.europeanfilmawards.eu/vimeo-movie/stairs/"
-      }
-    ],
-    rationale: "Vimeo Staff Pick公式選出（STAIRS。v3改訂で通常Vimeo Staff PickはA-へ適正化）"
-  },
   {
     id: "_5XZMPbbJIk",
     genre_bucket: "モーション",
@@ -652,26 +612,6 @@ const SPECS = [
       }
     ],
     rationale: "国際映画祭部門作品賞（第34回東京国際映画祭 アジアの未来 作品賞）"
-  },
-  {
-    id: "1230811867",
-    genre_bucket: "3DCG/アニメ",
-    tier_bucket: "中位",
-    craft_or_purpose: "craft_benchmark",
-    award_level: "shortlist_or_selection",
-    era_bucket: "modern_10y",
-    objective_tier: "A-",
-    objective_band: [78, 81],
-    evidence_level: "tier5_vimeo_staff_pick",
-    awards: [
-      {
-        name: "Vimeo Staff Picks",
-        year: "2025",
-        category: "Vimeo Staff Pick",
-        sourceUrl: "https://vimeo.com/1081499649"
-      }
-    ],
-    rationale: "Vimeo Staff Pick公式選出のストップモーション短編（Coeur Cerise。v3改訂でA-へ適正化）"
   },
   {
     id: "_PTHdkmCLRs",

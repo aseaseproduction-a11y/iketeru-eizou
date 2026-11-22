@@ -20,11 +20,11 @@
    - 10年以上前の歴史的傑作・アーカイブ作（例：1955年 *Blinkity Blank*、2014年 *Honda "Hands"*）は `era_bucket: "classic_archive"` と明記し、較正時は現代作のみ・全体双方で集計可能とする。
 5. **非受賞作品（`non_award_baseline`）の評価方法（循環比較の禁止）**:
    - 非受賞の商用映像には **`objective_tier: null` / `objective_band: null`** を設定し、**現行DBのAIランクを正解ラベルとしてコピーしない**（AI自身との循環比較を防止）。
-   - **Spearman $\rho$ および MAE** は、外部受賞・選出が確認された **`craft_benchmark` 作品のみ**で算出する。
-   - **`non_award_baseline`** は、**順位の正解率（Pairwise Ranking Accuracy / ROC-AUC）**＝「（受賞・選出作のAI点数 ＞ 非受賞商用作品のAI点数）となる組み合わせの割合」のみで評価する（全体およびジャンル別）。
+   - **Spearman $\rho$ / Kendall's $\tau_b$ / MAE** は、外部受賞・選出が確認された **`craft_benchmark` 作品のみ**で算出する。
+   - **`non_award_baseline`** は、**順位の正解率（Pairwise Ranking Accuracy / ROC-AUC）**＝「（**`A-` 以上の受賞・選出作**のAI点数 ＞ 非受賞商用作品のAI点数）となる組み合わせの割合」のみで評価する（全体およびジャンル別）。※`B+` 相当の小規模協賛企業賞等はプロ商用作品より上とは限らないため、比較対象から除外する。
 6. **暫定評価・埋め込み制限の扱い**:
    - DB上で `analysisStatus = provisional` の作品は基準セットに含めない。
-   - YouTube の `embedStatus = restricted`（iframe埋め込み無効）作品は、動画方式監査（`yt-dlp`）での再生・取得可否を実測し、`embed_status` と `playable_via_ytdlp` の両方をJSONに明記する。
+   - YouTube の `embedStatus = restricted`（iframe埋め込み無効）作品は、動画方式監査（`yt-dlp`）での実ダウンロード可否を実測し（証跡：`analysis/restricted_ytdlp_check.json`）、`embed_status` と `playable_via_ytdlp` の両方をJSONに明記する。
 
 ---
 
@@ -69,6 +69,10 @@
 1. **基準セットファイル**: `analysis/golden_benchmark.json`
 2. **ブラインド採点**: 既存DBランクおよび受賞名を完全に伏せた状態（`scripts/blind_redact.py` v4 + 2+1アンサンブル方式）でAI採点を実行する。
 3. **2系統の独立評価指標**:
-   - **指標A（`craft_benchmark` 群のみ）**: 外部受賞ランクとの **Spearman順位相関係数（目標 $\rho \ge 0.85$）** および **平均絶対誤差（目標 MAE $\le 4.0$点）**。現代作（`era_bucket: "modern_10y"`）単体と全体双方を出力する。
-   - **指標B（`craft_benchmark` vs `non_award_baseline`）**: **Pairwise順位正解率（ROC-AUC）**＝受賞・選出作の点数が非受賞商用作品の点数を上回る組み合わせ割合（目標 $\ge 0.85$、全体および5ジャンル別）。
+   - **指標A（`craft_benchmark` 群のみ）**:
+     - 外部受賞ランクとの **同点補正付き Spearman 順位相関係数（平均順位法 / midrank、目標 $\rho \ge 0.85$）**、**Kendall's $\tau_b$（同点補正あり）**、および **平均絶対誤差（目標 MAE $\le 4.0$点）**。
+     - 同一ランクの作品が多いため、順位相関に加えて **ランク帯ごとの正解率（完全一致率および ±1ランク以内一致率）** を `S+`〜`B+` 各帯域別に出力する。
+     - 現代作（`era_bucket: "modern_10y"`）単体と全体双方を出力する。
+   - **指標B（`A-` 以上の `craft_benchmark` vs `non_award_baseline`）**:
+     - **Pairwise 順位正解率（ROC-AUC）**＝**`A-` 以上の受賞・選出作**の点数が非受賞商用作品の点数を上回る組み合わせ割合（目標 $\ge 0.85$、全体および5ジャンル別）。`B+` の受賞作（協賛企業賞等）はプロ商用作品より上とは限らないため本指標の比較から除外する。
    - **参考出力**: `non_craft_award_reference` / `purpose_reference_only` は別枠でスコアと乖離のみ参考表示する。
