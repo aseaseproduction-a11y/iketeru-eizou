@@ -2,18 +2,27 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import {
+  BLIND_ID_REGEX,
+  BLIND_ROOT_PREFIX,
+  RUN_ID_REGEX,
+  validateBlindIdMappingForVideo,
+} from "./lib/blind-id-map.mjs";
+import {
   extractParentMessageContent,
   renderCalibrationPrompt,
+  validateAssignedFilePaths,
 } from "./lib/calibration-prompt-template.mjs";
 
 const REPO_ROOT = "E:\\iketeru-eizou";
-const BLIND_ROOT_PREFIX = "e:\\iketeru_blind_eval\\";
+
+// Strict path grammar: E:\iketeru_blind_eval\run_YYYYMMDD_HHMMSS\(video|contact_sheet)\<12hex>\<12hex>(.mp4|_slow.mp4|_sheet_NN.jpg|_sheet_dense.jpg)
+const STRICT_ISOLATED_FILE_RE = /^e:\\iketeru_blind_eval\\(run_\d{8}_\d{6})\\(video|contact_sheet)\\([a-f0-9]{12})\\([a-f0-9]{12})(\.mp4|_slow\.mp4|_sheet_\d{2}\.jpg|_sheet_dense\.jpg)$/;
 
 // Defense-in-depth blacklist (used when --prompt-spec is not supplied, and video-specific checks always run)
 const GLOBAL_FORBIDDEN_PROMPT_PATTERNS = [
   { label: "repo_path", re: /iketeru-eizou/i },
   { label: "brain_path", re: /\\\.gemini\\antigravity\\brain\\|\/\.gemini\/antigravity\/brain\//i },
-  { label: "benchmark_file", re: /golden_benchmark|benchmark_split|benchmark_candidates|benchmark_prefetch/i },
+  { label: "benchmark_file", re: /golden_benchmark|benchmark_split|benchmark_candidates|benchmark_prefetch|blind_id_map/i },
   { label: "split_role", re: /\b(dev_craft|holdout_craft|dev_non_award|holdout_non_award|craft_benchmark|non_award_baseline|reference_only)\b/i },
   { label: "db_field", re: /\b(objective_tier|objective_band|current_db_rating|current_db_score|evidence_level)\b/i },
   { label: "rank_plus_minus", re: /(?:^|[\s「『(（:：・\-])([SABCD][+-])(?=$|[\s」』)）,、。.\-!！?？])/ },
@@ -112,7 +121,7 @@ function escapeRegExp(s) {
   return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-function buildVideoSpecificPatterns(meta, channelName) {
+function buildVideoSpecificPatterns(meta, videoId, channelName) {
   const patterns = [];
   const genericWords = new Set([
     "official", "video", "music", "movie", "commercial", "short", "film", "trailer", "teaser",
@@ -129,6 +138,11 @@ function buildVideoSpecificPatterns(meta, channelName) {
       patterns.push({ label: `${labelPrefix}:${seg.slice(0, 28)}`, re: new RegExp(escapeRegExp(seg), "i") });
     }
   };
+
+  // Original YouTube/Vimeo videoId must NEVER appear anywhere in blind prompt
+  if (videoId && String(videoId).trim().length >= 5) {
+    addPattern(videoId, "original_video_id_in_prompt", 5);
+  }
 
   if (meta) {
     const cleanTitle = String(meta.title || "")
@@ -175,14 +189,60 @@ export function auditTranscript({
   channelName = null,
   promptSpecPath = null,
   promptSpecObj = null,
+  blindMapPath = null,
+  blindMapObj = null,
   strict = false,
 }) {
   const configViolations = [];
+  const pathPolicyViolations = [];
+
   if (strict && (!parentId || String(parentId).trim() === "")) {
     configViolations.push("strict_mode_requires_parent_id");
   }
   if (strict && !promptSpecPath && !promptSpecObj) {
     configViolations.push("strict_mode_requires_prompt_spec");
+  }
+  if (strict && !blindMapPath && !blindMapObj) {
+    configViolations.push("strict_mode_requires_blind_map");
+  }
+
+  // Ensure blind_id_map is stored OUTSIDE E:\iketeru_blind_eval\
+  if (blindMapPath) {
+    const normMap = normWinPath(blindMapPath);
+    if (normMap.startsWith(BLIND_ROOT_PREFIX)) {
+      pathPolicyViolations.push(`blind_map_inside_blind_root:${blindMapPath}`);
+    }
+  }
+
+  const spec = promptSpecObj || (promptSpecPath ? JSON.parse(fs.readFileSync(promptSpecPath, "utf8").replace(/^\uFEFF/, "")) : null);
+  const blindMap = blindMapObj || (blindMapPath ? JSON.parse(fs.readFileSync(blindMapPath, "utf8").replace(/^\uFEFF/, "")) : null);
+
+  // Verify videoId <-> expectedBlindId bijection via blind_id_map
+  let expectedBlindId = null;
+  let expectedRunId = spec?.runId || blindMap?.run_id || null;
+  if (blindMap) {
+    const mapCheck = validateBlindIdMappingForVideo(blindMap, spec?.runId || null, videoId);
+    if (!mapCheck.ok) {
+      for (const err of mapCheck.errors) configViolations.push(err);
+    } else {
+      expectedBlindId = mapCheck.blindId;
+      expectedRunId = blindMap.run_id;
+    }
+  }
+
+  if (spec) {
+    if (!RUN_ID_REGEX.test(String(spec.runId || ""))) {
+      configViolations.push(`prompt_spec_invalid_run_id:${String(spec.runId)}`);
+    }
+    if (!BLIND_ID_REGEX.test(String(spec.blindId || ""))) {
+      configViolations.push(`prompt_spec_invalid_blind_id:${String(spec.blindId)}`);
+    }
+    if (expectedBlindId && spec.blindId !== expectedBlindId) {
+      configViolations.push(`blind_id_mismatch_for_video_id:expected=${expectedBlindId},spec=${String(spec.blindId)}`);
+    }
+    if (String(spec.blindId || "").toLowerCase() === String(videoId || "").toLowerCase()) {
+      configViolations.push("prompt_spec_uses_original_video_id");
+    }
   }
 
   const allowedFiles = (Array.isArray(allowedFilesRaw) ? allowedFilesRaw : String(allowedFilesRaw || "").split(","))
@@ -191,19 +251,49 @@ export function auditTranscript({
     .map(normWinPath);
   const allowedFileSet = new Set(allowedFiles);
 
-  const pathPolicyViolations = [];
+  // Validate EVERY allowed file strictly against mechanical grammar + blindId match + no original videoId
+  const videoIdLow = String(videoId || "").toLowerCase();
   for (const f of allowedFiles) {
     if (!f.startsWith(BLIND_ROOT_PREFIX)) {
       pathPolicyViolations.push(`Allowed file outside isolated root (${BLIND_ROOT_PREFIX}): ${f}`);
+      continue;
+    }
+    if (videoIdLow.length >= 5 && f.includes(videoIdLow)) {
+      pathPolicyViolations.push(`original_video_id_in_path:${f}`);
+    }
+    const m = f.match(STRICT_ISOLATED_FILE_RE);
+    if (!m) {
+      pathPolicyViolations.push(`path_violates_strict_mechanical_grammar:${f}`);
+      continue;
+    }
+    const [, pathRunId, pathMode, folderId, filePrefixId] = m;
+    if (folderId !== filePrefixId) {
+      pathPolicyViolations.push(`folder_filename_id_mismatch:${folderId}!=${filePrefixId}`);
+    }
+    if (expectedRunId && pathRunId !== expectedRunId.toLowerCase()) {
+      pathPolicyViolations.push(`path_run_id_mismatch:expected=${expectedRunId},got=${pathRunId}`);
+    }
+    if (expectedBlindId && folderId !== expectedBlindId.toLowerCase()) {
+      pathPolicyViolations.push(`path_blind_id_mismatch_for_video_id:expected=${expectedBlindId},got=${folderId}`);
+    }
+    if (spec?.mode && pathMode !== spec.mode) {
+      pathPolicyViolations.push(`path_mode_mismatch:expected=${spec.mode},got=${pathMode}`);
     }
   }
 
   // Build expected frozen prompt if promptSpec is supplied
   let expectedPrompt = null;
   let promptSpecError = null;
-  const spec = promptSpecObj || (promptSpecPath ? JSON.parse(fs.readFileSync(promptSpecPath, "utf8").replace(/^\uFEFF/, "")) : null);
   if (spec) {
     try {
+      // Double-check mechanical file list with validateAssignedFilePaths inside renderCalibrationPrompt
+      validateAssignedFilePaths({
+        runId: spec.runId,
+        blindId: spec.blindId,
+        mode: spec.mode,
+        assignedFiles: spec.assignedFiles,
+        slowmoApplied: Boolean(spec.metrics?.slowmo_applied),
+      });
       expectedPrompt = renderCalibrationPrompt(spec).replace(/\r\n/g, "\n").trim();
       const specFilesNorm = (spec.assignedFiles || []).map(normWinPath).sort();
       const allowedSorted = [...allowedFiles].sort();
@@ -220,7 +310,7 @@ export function auditTranscript({
   const benchPath = path.join(REPO_ROOT, "analysis", "golden_benchmark.json");
   const bench = fs.existsSync(benchPath) ? JSON.parse(fs.readFileSync(benchPath, "utf8")) : [];
   const meta = bench.find(x => x.id === videoId) || null;
-  const videoSpecificPatterns = buildVideoSpecificPatterns(meta, channelName);
+  const videoSpecificPatterns = buildVideoSpecificPatterns(meta, videoId, channelName);
 
   const steps = loadTranscriptSteps(transcriptPath);
   const promptLeakViolations = [];
@@ -271,9 +361,7 @@ export function auditTranscript({
       const extracted = extractParentMessageContent(step.content);
 
       if (expectedPrompt !== null) {
-        // Primary airtight check: EXACT MATCH against regenerated frozen template
         if (extracted !== expectedPrompt) {
-          // Find first differing position for clear diagnostics
           let diffPos = 0;
           const minLen = Math.min(extracted.length, expectedPrompt.length);
           while (diffPos < minLen && extracted[diffPos] === expectedPrompt[diffPos]) diffPos++;
@@ -287,7 +375,6 @@ export function auditTranscript({
           });
         }
       } else {
-        // Fallback defense-in-depth blacklist when --prompt-spec is omitted
         for (const p of GLOBAL_FORBIDDEN_PROMPT_PATTERNS) {
           const m = extracted.match(p.re);
           if (m) {
@@ -302,7 +389,6 @@ export function auditTranscript({
         }
       }
 
-      // Always run video-specific metadata check as additional defense-in-depth
       for (const p of videoSpecificPatterns) {
         const m = extracted.match(p.re);
         if (m) {
@@ -352,6 +438,31 @@ export function auditTranscript({
               tool: name,
               reason: "read_file_outside_blind_root",
               target: rawTargetPath,
+            });
+          }
+          if (videoIdLow.length >= 5 && normTarget.includes(videoIdLow)) {
+            toolViolations.push({
+              step_index: step.step_index,
+              tool: name,
+              reason: "read_file_contains_original_video_id",
+              target: rawTargetPath,
+            });
+          }
+          const pm = normTarget.match(STRICT_ISOLATED_FILE_RE);
+          if (!pm) {
+            toolViolations.push({
+              step_index: step.step_index,
+              tool: name,
+              reason: "read_file_violates_strict_mechanical_grammar",
+              target: rawTargetPath,
+            });
+          } else if (expectedBlindId && (pm[3] !== expectedBlindId.toLowerCase() || pm[4] !== expectedBlindId.toLowerCase())) {
+            toolViolations.push({
+              step_index: step.step_index,
+              tool: name,
+              reason: "read_file_blind_id_mismatch",
+              target: rawTargetPath,
+              expected_blind_id: expectedBlindId,
             });
           }
 
@@ -423,6 +534,8 @@ export function auditTranscript({
     valid,
     strict,
     video_id: videoId,
+    expected_blind_id: expectedBlindId,
+    expected_run_id: expectedRunId,
     transcript_path: transcriptPath,
     prompt_exact_match_checked: expectedPrompt !== null,
     prompt_spec_error: promptSpecError,
@@ -458,11 +571,12 @@ function main() {
   const parentId = args["parent-id"] || null;
   const channelName = args["channel-name"] || null;
   const promptSpecPath = args["prompt-spec"] || null;
+  const blindMapPath = args["blind-map"] || null;
   const strict = Boolean(args["strict"]);
 
   if (!transcriptPath || !videoId || !allowedFilesRaw) {
     console.error(
-      "Usage: node scripts/audit-blind-transcript.mjs --transcript <path> --video-id <id> --allowed-files <p1,p2> --parent-id <convId> --prompt-spec <spec.json> [--channel-name <name>] [--strict]"
+      "Usage: node scripts/audit-blind-transcript.mjs --transcript <path> --video-id <id> --allowed-files <p1,p2> --parent-id <convId> --prompt-spec <spec.json> --blind-map <map.json> [--channel-name <name>] [--strict]"
     );
     process.exit(2);
   }
@@ -474,6 +588,7 @@ function main() {
     parentId,
     channelName,
     promptSpecPath,
+    blindMapPath,
     strict,
   });
 

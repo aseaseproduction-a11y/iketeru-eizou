@@ -1,6 +1,5 @@
 import path from "node:path";
-
-export const BLIND_ROOT_REGEX = /^E:\\iketeru_blind_eval\\[A-Za-z0-9_-]+\\(video|contact_sheet)\\[A-Za-z0-9_-]+\\[A-Za-z0-9_.-]+\.(mp4|jpg|jpeg|png)$/i;
+import { BLIND_ID_REGEX, RUN_ID_REGEX } from "./blind-id-map.mjs";
 
 export const PROMPT_VERSIONS = Object.freeze(["v1_baseline"]);
 
@@ -18,19 +17,113 @@ function assertNonNegativeInt(val, name) {
   return val;
 }
 
-export function validateAssignedFilePath(filePath, mode) {
-  if (typeof filePath !== "string" || filePath.includes("..") || filePath.includes("\n") || filePath.includes("\r")) {
-    throw new Error(`Invalid assigned file path: ${String(filePath)}`);
+export function validateRunId(runId) {
+  if (typeof runId !== "string" || !RUN_ID_REGEX.test(runId)) {
+    throw new Error(`Invalid runId (expected ^run_\\d{8}_\\d{6}$): ${String(runId)}`);
   }
-  const normalized = path.win32.normalize(filePath.replace(/\//g, "\\"));
-  if (!BLIND_ROOT_REGEX.test(normalized)) {
-    throw new Error(`Assigned file path does not match strict isolated pattern: ${normalized}`);
+  return runId;
+}
+
+export function validateBlindId(blindId) {
+  if (typeof blindId !== "string" || !BLIND_ID_REGEX.test(blindId)) {
+    throw new Error(`Invalid blindId (expected 12-char lowercase hex ^[a-f0-9]{12}$): ${String(blindId)}`);
   }
-  const modeToken = `\\${mode}\\`;
-  if (!normalized.toLowerCase().includes(modeToken)) {
-    throw new Error(`Assigned file path "${normalized}" does not match mode "${mode}"`);
+  return blindId;
+}
+
+/**
+ * Strictly validates that every assigned file path matches:
+ *   E:\iketeru_blind_eval\<runId>\<mode>\<blindId>\<mechanical_filename>
+ * where:
+ *   - video mode: <blindId>.mp4 (and <blindId>_slow.mp4 iff slowmo_applied)
+ *   - contact_sheet mode: <blindId>_sheet_\d{2}.jpg (and <blindId>_sheet_dense.jpg iff slowmo_applied)
+ */
+export function validateAssignedFilePaths({ runId, blindId, mode, assignedFiles, slowmoApplied }) {
+  const safeRunId = validateRunId(runId);
+  const safeBlindId = validateBlindId(blindId);
+  if (mode !== "video" && mode !== "contact_sheet") {
+    throw new Error(`Unsupported mode: ${String(mode)}`);
   }
-  return normalized;
+  if (!Array.isArray(assignedFiles) || assignedFiles.length === 0) {
+    throw new Error("assignedFiles must be a non-empty array");
+  }
+
+  const expectedDir = `E:\\iketeru_blind_eval\\${safeRunId}\\${mode}\\${safeBlindId}`;
+  const normalizedList = [];
+  const seen = new Set();
+
+  const videoMainName = `${safeBlindId}.mp4`;
+  const videoSlowName = `${safeBlindId}_slow.mp4`;
+  const sheetSeqRe = new RegExp(`^${safeBlindId}_sheet_(\\d{2})\\.jpg$`);
+  const sheetDenseName = `${safeBlindId}_sheet_dense.jpg`;
+
+  let hasMainVideo = false;
+  let hasSlowVideo = false;
+  let seqSheetCount = 0;
+  let hasDenseSheet = false;
+
+  for (const rawPath of assignedFiles) {
+    if (typeof rawPath !== "string" || rawPath.includes("..") || rawPath.includes("\n") || rawPath.includes("\r")) {
+      throw new Error(`Invalid assigned file path: ${String(rawPath)}`);
+    }
+    const normalized = path.win32.normalize(rawPath.replace(/\//g, "\\"));
+    const dirName = path.win32.dirname(normalized);
+    const baseName = path.win32.basename(normalized);
+
+    if (dirName.toLowerCase() !== expectedDir.toLowerCase()) {
+      throw new Error(`Assigned file directory mismatch: expected "${expectedDir}", got "${dirName}"`);
+    }
+
+    const low = normalized.toLowerCase();
+    if (seen.has(low)) {
+      throw new Error(`Duplicate assigned file path: ${normalized}`);
+    }
+    seen.add(low);
+
+    if (mode === "video") {
+      if (baseName === videoMainName) {
+        hasMainVideo = true;
+      } else if (baseName === videoSlowName) {
+        if (!slowmoApplied) {
+          throw new Error(`Slow-mo file "${baseName}" supplied when slowmo_applied=false`);
+        }
+        hasSlowVideo = true;
+      } else {
+        throw new Error(`Invalid video filename "${baseName}" (expected "${videoMainName}" or "${videoSlowName}")`);
+      }
+    } else {
+      if (sheetSeqRe.test(baseName)) {
+        seqSheetCount++;
+      } else if (baseName === sheetDenseName) {
+        if (!slowmoApplied) {
+          throw new Error(`Dense sheet "${baseName}" supplied when slowmo_applied=false`);
+        }
+        hasDenseSheet = true;
+      } else {
+        throw new Error(`Invalid contact_sheet filename "${baseName}" (expected "${safeBlindId}_sheet_XX.jpg" or "${sheetDenseName}")`);
+      }
+    }
+
+    normalizedList.push(`${expectedDir}\\${baseName}`);
+  }
+
+  if (mode === "video") {
+    if (!hasMainVideo) {
+      throw new Error(`Missing required main video file "${videoMainName}"`);
+    }
+    if (slowmoApplied && !hasSlowVideo) {
+      throw new Error(`Missing required slow-mo video file "${videoSlowName}" when slowmo_applied=true`);
+    }
+  } else {
+    if (seqSheetCount < 1) {
+      throw new Error(`Missing required sequential contact sheet "${safeBlindId}_sheet_01.jpg"`);
+    }
+    if (slowmoApplied && !hasDenseSheet) {
+      throw new Error(`Missing required dense contact sheet "${sheetDenseName}" when slowmo_applied=true`);
+    }
+  }
+
+  return normalizedList;
 }
 
 export function validateMetrics(metrics) {
@@ -60,10 +153,7 @@ export function validateMetrics(metrics) {
       throw new Error(`Invalid slowmo_factor: ${String(metrics.slowmo_factor)}`);
     }
     slowmo_factor = metrics.slowmo_factor;
-    if (
-      !Array.isArray(metrics.slowmo_window_sec) ||
-      metrics.slowmo_window_sec.length !== 2
-    ) {
+    if (!Array.isArray(metrics.slowmo_window_sec) || metrics.slowmo_window_sec.length !== 2) {
       throw new Error(`Invalid slowmo_window_sec: ${JSON.stringify(metrics.slowmo_window_sec)}`);
     }
     const w0 = assertFiniteNumber(metrics.slowmo_window_sec[0], "slowmo_window_sec[0]");
@@ -74,10 +164,10 @@ export function validateMetrics(metrics) {
     slowmo_window_sec = [w0, w1];
   } else {
     if (metrics.slowmo_factor !== null && metrics.slowmo_factor !== undefined) {
-      throw new Error(`slowmo_factor must be null when slowmo_applied=false`);
+      throw new Error("slowmo_factor must be null when slowmo_applied=false");
     }
     if (metrics.slowmo_window_sec !== null && metrics.slowmo_window_sec !== undefined) {
-      throw new Error(`slowmo_window_sec must be null when slowmo_applied=false`);
+      throw new Error("slowmo_window_sec must be null when slowmo_applied=false");
     }
   }
 
@@ -101,24 +191,26 @@ function fmtNum(n, digits = 2) {
 /**
  * Renders the frozen blind scoring prompt strictly from:
  * - frozen template version
+ * - fixed runId (^run_\d{8}_\d{6}$)
+ * - random per-run opaque blindId (^[a-f0-9]{12}$) — NEVER original YouTube/Vimeo ID
  * - mode ("video" | "contact_sheet")
- * - strictly validated isolated file paths inside E:\iketeru_blind_eval\
+ * - mechanically validated isolated file paths derived from runId + blindId
  * - strictly validated numeric scdet/LUFS metrics
- * No free-text metadata (title, channel, awards, DB text) can ever be injected.
  */
-export function renderCalibrationPrompt({ version, mode, assignedFiles, metrics }) {
+export function renderCalibrationPrompt({ version, runId, blindId, mode, assignedFiles, metrics }) {
   if (!PROMPT_VERSIONS.includes(version)) {
     throw new Error(`Unsupported prompt version: ${String(version)}`);
   }
-  if (mode !== "video" && mode !== "contact_sheet") {
-    throw new Error(`Unsupported mode: ${String(mode)}`);
-  }
-  if (!Array.isArray(assignedFiles) || assignedFiles.length === 0) {
-    throw new Error("assignedFiles must be a non-empty array");
-  }
-
-  const safeFiles = assignedFiles.map(f => validateAssignedFilePath(f, mode));
+  const safeRunId = validateRunId(runId);
+  const safeBlindId = validateBlindId(blindId);
   const safeMetrics = validateMetrics(metrics);
+  const safeFiles = validateAssignedFilePaths({
+    runId: safeRunId,
+    blindId: safeBlindId,
+    mode,
+    assignedFiles,
+    slowmoApplied: safeMetrics.slowmo_applied,
+  });
 
   const fileListLines = safeFiles.map((f, idx) => `${idx + 1}. \`${f}\``).join("\n");
   const modeDesc = mode === "video"
@@ -137,9 +229,8 @@ export function renderCalibrationPrompt({ version, mode, assignedFiles, metrics 
     ? `適用あり（${safeMetrics.slowmo_factor} / 区間 ${fmtNum(safeMetrics.slowmo_window_sec[0], 1)}s - ${fmtNum(safeMetrics.slowmo_window_sec[1], 1)}s）`
     : "なし";
 
-  // Frozen v1_baseline template
   return [
-    `[CALIBRATION_BLIND_EVAL | ${version} | mode=${mode}]`,
+    `[CALIBRATION_BLIND_EVAL | ${version} | run=${safeRunId} | item=${safeBlindId} | mode=${mode}]`,
     "",
     "あなたは映像制作・演出の専門審査員です。以下の割り当てファイルのみを観察し、映像クラフトの到達度を0〜100点で独立採点してください。",
     "",
@@ -207,10 +298,6 @@ export function renderCalibrationPrompt({ version, mode, assignedFiles, metrics 
   ].join("\n");
 }
 
-/**
- * Extracts the exact parent-delivered prompt payload from a subagent transcript step content.
- * Handles Antigravity's <SYSTEM_MESSAGE> [Message] ... content=... wrapper as well as raw USER_INPUT.
- */
 export function extractParentMessageContent(stepContent) {
   const s = String(stepContent || "").replace(/\r\n/g, "\n");
   const wrapped = s.match(/<SYSTEM_MESSAGE>\s*\[Message\][^\n]*?\scontent=([\s\S]*?)\n<\/SYSTEM_MESSAGE>/);
