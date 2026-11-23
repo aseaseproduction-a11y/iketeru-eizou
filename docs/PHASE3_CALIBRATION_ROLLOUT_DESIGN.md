@@ -1,20 +1,31 @@
 # Phase 3 既存DB 5,653本への校正済み評価（D＋C）導入設計書・ドライラン結果
 
 作成日: 2026-11-23  
-対象リポジトリ: `E:\iketeru-eizou`（本番 TiDB）および `E:\iketeru-creative-studio`（ローカル SQLite ミラー）  
-ステータス: **設計＋読み取り専用ドライラン完了（本番 TiDB / SQLite への書き込み未実施・ユーザーGO待ち）**
+対象リポジトリ: `E:\iketeru-eizou`（本番 TiDB＝**正本**）および `E:\iketeru-creative-studio`（ローカル SQLite＝**TiDB からの同期ミラー**）  
+ステータス: **条件付きGO受領 → D（完全バックアップ＋TiDBマイグレーション＋初期印付け＋UI区別）実行対象（C第1バッチ前で停止）**
 
 ---
 
-## 1. 方針（D＋C）と絶対条件
+## 1. 方針（D＋C）・正本決定・絶対条件
 
 Phase 2 凍結 Holdout v1（74本・1回限り検証）で **GO**（`P-1 ROC-AUC = 0.9750`, `P-2 = 91.67% (22/24)`, `P-3 = 88.00% (22/25)`, `P-4 = 0`, `S-1 = 0`, `S-2 = 1.0000`）を達成したことを受け、既存DB 5,653本に対して **D＋C 方式** で移行する。
 
+### 1.1 正本（基準DB）とミラー同期方針（条件1）
+- **正本（Source of Truth）**: **本番 TiDB（`videos` テーブル）** を唯一の正本とする。
+- **ミラー（読み取り用キャッシュ）**: `E:\iketeru-creative-studio\data\iketeru_knowledge.db`（ローカル SQLite）は、**TiDB から同期するミラー** として位置づける。
+- **二重書き込みの禁止**: C（段階的再採点）の結果書き込みは **TiDB（正本）のみ** に行い、SQLite へは同期スクリプト（または `indexer.py::sync_catalog`）経由で一方向反映する。TiDB と SQLite へ別々に書き込む運用は行わない。
+- **既存 ID 差分（TiDBのみ 66件／SQLiteのみ 48件）の扱い（削除なし）**:
+  - **SQLite のみ 48件**: **削除しない**。既存のローカル分析アーカイブとして SQLite 側にそのまま保全し、TiDB 側へ逆流もさせない。
+  - **TiDB のみ 66件**: 同期実行時に TiDB から SQLite へ `UPSERT` で取り込む（削除は一切行わない）。
+
+### 1.2 D＋C の役割分担
 - **D（旧点数の明示保護＋新規登録分への適用）**:
   - 既存の旧スコアには「旧基準・未校正」の印を付け、値を一切消さず・上書きせず保全する。
   - 今後新規登録される動画は、Phase 2 凍結設定（新しい物差し）で採点し、新設カラムへ記録する。
 - **C（優先順の段階的再採点）**:
   - 既存 5,653本を優先順 ①→②→③ で **1回最大 200本** ごとに区切って再採点し、区切りごとに報告して停止する。
+  - **純 `branded-movie` の扱い（条件5・確定）**: `tv-cm`/`web-cm`/`corporate` の副タグを持たない純 `branded-movie`（優先① 13本・優先③ 122本）は、保守的に **「未検証ジャンル（`unverified:branded-movie`）」** 扱いとする。
+  - **優先①（492本）の報告付記（条件4）**: 優先①の報告には、ユーザーの `privateRating` と校正済み点数の対応表（一致・ずれの多いジャンル別集計）を必ず添付する。ただしこれは **参考情報のみ** であり、物差しの良し悪しの判定基準や閾値変更には使わない。
 
 ### 絶対条件（すべて設計・スクリプトに組み込み済み）
 1. **旧点数カラムの完全保全**: `aiOverallScore` / `aiDirectionScore` / `aiTechniqueScore` / `aiScoreBreakdown`（および `aiOverallRating` / `aiDirectionRating` / `aiTechniqueRating` / `aiAnalysis`）は **1バイトも削除・上書きしない**。新点数は完全に別のカラム群に格納し、画面でも「旧基準（未校正）」と「校正済み（Phase 2 v1）」を明確に区別表示する。
@@ -92,22 +103,24 @@ SET
 WHERE `calibrationStatus` IS NULL;
 ```
 
-### 2.4 SQLite ミラー側のマイグレーション（`E:\iketeru-creative-studio\iketeru_studio\indexer.py`）
+### 2.4 SQLite ミラー側・MCP サーバー・`creative-studio` `indexer` の参照DB確認と拡張計画（条件2・今回は計画のみ／未実装）
 
-既存の `_init_schema()` における非破壊 `ALTER TABLE videos ADD COLUMN ...` パターン（`overall_score_100` 導入時と同一方式）で上記10カラムを追記し、以下の初期印付けを実行する。
+#### 現在の参照DB確認結果
+- **`iketeru-eizou` MCP サーバー**（`E:\iketeru-creative-studio\iketeru_studio\mcp_server.py` の `search_references` / `search_scenes` / `get_video_playbook` / `get_anti_patterns` / `get_pacing_benchmarks`）:
+  - すべて `KnowledgeIndex` を経由して **ローカル SQLite ミラー（`E:\iketeru-creative-studio\data\iketeru_knowledge.db`）のみ** を読み取る。TiDB へ直接クエリは行わない。
+- **`creative-studio` の `indexer.py`**（`E:\iketeru-creative-studio\iketeru_studio\indexer.py`）:
+  - `sync_catalog()` が本番 Web API（`https://iketeru-eizou.vercel.app/api/trpc/videos.list` → 裏側の **本番 TiDB**）からカタログを取得し、ローカル SQLite へ `UPSERT` する。
+  - `hydrate_missing_analyses()` が `videos.get`（本番 TiDB）から詳細解析を取得し、ローカル SQLite へ反映する。
 
-```sql
-UPDATE videos
-SET calibration_status = CASE
-  WHEN overall_score_100 IS NOT NULL
-    OR (overall_rating IS NOT NULL AND TRIM(overall_rating) != '')
-  THEN 'legacy_uncalibrated'
-  ELSE 'unscored'
-END
-WHERE calibration_status IS NULL;
-```
-
-※ドライランで判明したとおり、現在 SQLite（5,635行）と TiDB（5,653行）には 18行の差分（共通 5,587 / TiDBのみ 66 / SQLiteのみ 48）がある。D 段階では両DBの既存行をそのまま保全して印付けし、C の再採点結果書き込み時に TiDB と SQLite の対象IDを同期更新する（SQLite 側の48件の単独行は削除しない）。
+#### 校正済み欄を読めるようにする拡張計画（次フェーズで実装予定・D段階ではSQLite未変更）
+1. **TiDB 側 API 公開（今回 D で先行対応）**: `server/db.ts` の `getAllVideos()`（`videos.list`）と `getVideoById()`（`videos.get`）の返却オブジェクトに、新設10カラム（`calibrationStatus`〜`calibrationGenreBucket`）を含める。
+2. **SQLite スキーマ拡張（`indexer.py::_init_schema`）**: 既存の非破壊 `ALTER TABLE videos ADD COLUMN ...` 方式で §2.1 の10カラム（`calibration_status`〜`calibration_genre_bucket`）を追加する。既存の SQLite 単独48行は削除せず保持する。
+3. **一方向同期スクリプト / `upsert_video` 更新（`indexer.py`）**:
+   - TiDB（正本）から `videos.list` API または読み取り専用 TiDB 接続で新10カラムを読み取り、SQLite ミラーへ `UPSERT` 反映する（TiDBのみ 66件は自然に取り込まれ、SQLiteのみ 48件は削除せず `calibration_status = 'legacy_uncalibrated'` 等でそのまま保全）。
+   - C の各バッチ完了後にこの一方向同期を実行する運用とし、SQLite への直接の二重書き込みは行わない。
+4. **MCP ツール返却拡張（`mcp_server.py`）**:
+   - `search_references` / `get_video_playbook` / `get_pacing_benchmarks` / `get_anti_patterns` の返却JSONに `calibration_status` / `calibrated_score` / `calibrated_rank` / `calibrated_tier_band` / `calibration_genre_bucket` を併記する。
+   - オプション引数 `calibration_filter`（`"all" | "calibrated_only" | "calibrated_verified_only"`、既定 `"all"`）を追加し、旧基準スコアのみの動画には `"legacy_uncalibrated"`、未検証ジャンルの校正済み動画には `"calibrated_unverified_genre"` を明示返却して、下流の制作AIが旧基準と校正済みを取り違えないようにする。
 
 ---
 

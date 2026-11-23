@@ -1,0 +1,71 @@
+{
+  "executed_at": "2026-11-23T06:36:47.302Z",
+  "step": "Phase 3 Step D (TiDB source-of-truth migration + initial legacy tagging)",
+  "backup_manifest_ref": "analysis/phase3_pre_d_backup_manifest.json",
+  "backup_dir": "E:\\iketeru_backups\\phase3_pre_d_20261123_153343",
+  "tidb_backup_jsonl_sha256": "17856f0338c760b2f88d415543eb6d48a7977c06e76a5c04476b0d5943446a3b",
+  "sqlite_backup_sha256": "0e1d08dbc8023bac278f52625531d11e2c8c9de5e8a7df381bc503d0bb3f77e3",
+  "ddl_applied": {
+    "added_columns": [
+      "calibrationStatus",
+      "calibratedScore",
+      "calibratedRank",
+      "calibratedTierBand",
+      "calibratedBreakdown",
+      "calibrationVersion",
+      "calibratedAt",
+      "calibratedRoute",
+      "calibratedRunId",
+      "calibrationGenreBucket"
+    ],
+    "added_indexes": [
+      "idx_videos_calibration_status",
+      "idx_videos_calibrated_run_id"
+    ],
+    "total_columns_after": 50
+  },
+  "backfill_affected_rows": 5653,
+  "post_verification": {
+    "row_count_after": 5653,
+    "max_updated_at_before": "2026-11-21T17:57:26.000Z",
+    "max_updated_at_after": "2026-11-21T17:57:26.000Z",
+    "calibration_status_counts": {
+      "legacy_uncalibrated": 5252,
+      "unscored": 401
+    },
+    "calibrated_columns_non_null_counts": {
+      "calibratedScore": 0,
+      "calibratedRank": 0,
+      "calibratedTierBand": 0,
+      "calibratedBreakdown": 0,
+      "calibrationVersion": 0,
+      "calibratedAt": 0,
+      "calibratedRoute": 0,
+      "calibratedRunId": 0,
+      "calibrationGenreBucket": 0
+    },
+    "full_row_diff_against_backup": {
+      "rows_compared": 5653,
+      "columns_compared_per_row": 40,
+      "total_cells_compared": 226120,
+      "legacy_8_score_columns_mismatches": 0,
+      "all_40_original_columns_mismatches": 0,
+      "updated_at_row_mismatches": 0,
+      "sample_mismatches": []
+    },
+    "sqlite_source_sha256_after": "f25c464f7a5a8531843205f9e940ee0cc880d7e7e1985c5fdb83c33319064cc3",
+    "sqlite_untouched": true
+  },
+  "all_checks_passed": true,
+  "checks": {
+    "row_count_matches_5653": true,
+    "column_count_is_50": true,
+    "status_counts_match_dryrun": true,
+    "all_calibrated_value_columns_null": true,
+    "max_updated_at_unchanged": true,
+    "legacy_8_columns_zero_diffs": true,
+    "all_40_original_columns_zero_diffs": true,
+    "updated_at_per_row_zero_diffs": true,
+    "sqlite_mirror_untouched": true
+  }
+}

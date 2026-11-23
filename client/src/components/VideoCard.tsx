@@ -116,6 +116,19 @@ export default function VideoCard({ video, index, isFavorite = false, hasNote = 
     { shortLabel: "演", fullLabel: "ディレクション", value: video.aiDirectionRating, score: video.aiDirectionScore },
     { shortLabel: "技", fullLabel: "技術", value: video.aiTechniqueRating, score: video.aiTechniqueScore },
   ].filter((rating) => Boolean(rating.value));
+  const hasCalibrated = typeof video.calibratedScore === "number";
+  const isUnverifiedCalibratedGenre =
+    hasCalibrated && video.calibrationStatus === "calibrated_unverified_genre";
+  const isLegacyUncalibrated =
+    !hasCalibrated &&
+    (video.calibrationStatus === "legacy_uncalibrated" ||
+      aiRatings.length > 0 ||
+      typeof video.aiOverallScore === "number");
+  const calibratedScoreLabel = hasCalibrated
+    ? Number.isInteger(video.calibratedScore)
+      ? String(video.calibratedScore)
+      : video.calibratedScore!.toFixed(1)
+    : "";
   const embedRecheckDue = isEmbedStatusRecheckDue(video.embedStatus, video.embedCheckedAt);
   const embedRecheckAt = formatEmbedRecheckAt(video.embedCheckedAt);
 
@@ -278,18 +291,60 @@ export default function VideoCard({ video, index, isFavorite = false, hasNote = 
             <span className="truncate">{mainCreator}</span>
           </p>
         )}
-        {aiRatings.length > 0 && (
-          <div className="mt-1.5 flex flex-wrap gap-1" aria-label="AI評価">
+        {(hasCalibrated || aiRatings.length > 0 || isLegacyUncalibrated) && (
+          <div className="mt-1.5 flex flex-wrap items-center gap-1" aria-label="AI評価">
+            {hasCalibrated && (
+              <>
+                <span
+                  title={`校正済み評価（${video.calibrationVersion || "phase2_v1"}）：${calibratedScoreLabel}点${video.calibratedRank ? `（${video.calibratedRank}）` : ""}${isUnverifiedCalibratedGenre ? " ※このジャンルは未検証" : ""}`}
+                  className={`inline-flex items-center gap-1 rounded-sm border px-1.5 py-0.5 text-[9px] font-semibold ${
+                    isUnverifiedCalibratedGenre
+                      ? "border-amber-400/35 bg-amber-500/15 text-amber-200"
+                      : "border-emerald-400/35 bg-emerald-500/15 text-emerald-200"
+                  }`}
+                >
+                  <span className={isUnverifiedCalibratedGenre ? "text-amber-300/80" : "text-emerald-300/80"}>
+                    校正済
+                  </span>
+                  {video.calibratedRank && <span className="font-bold">{video.calibratedRank}</span>}
+                  <span className="font-mono text-[8.5px]">{calibratedScoreLabel}</span>
+                </span>
+                {isUnverifiedCalibratedGenre && (
+                  <span
+                    title="このジャンルは Phase 2 検証対象外のため参考値です"
+                    className="inline-flex items-center rounded-sm border border-amber-400/30 bg-amber-500/10 px-1 py-0.5 text-[8.5px] font-medium text-amber-300"
+                  >
+                    未検証ジャンル
+                  </span>
+                )}
+              </>
+            )}
+            {isLegacyUncalibrated && (
+              <span
+                title="Phase 2 校正導入前の旧基準スコアです（未校正・参考保持）"
+                className="inline-flex items-center rounded-sm border border-zinc-500/35 bg-zinc-500/15 px-1.5 py-0.5 text-[8.5px] font-medium text-zinc-300"
+              >
+                旧基準・未校正
+              </span>
+            )}
             {aiRatings.map((rating) => (
               <span
                 key={rating.shortLabel}
-                title={`AI評価（${rating.fullLabel}）：${rating.value}${typeof rating.score === "number" ? `（${rating.score}点）` : ""}`}
-                className="inline-flex items-center gap-1 rounded-sm border border-sky-400/20 bg-sky-400/[0.07] px-1.5 py-0.5 text-[9px] font-semibold text-sky-300"
+                title={`旧基準AI評価（${rating.fullLabel}・未校正）：${rating.value}${typeof rating.score === "number" ? `（${rating.score}点）` : ""}`}
+                className={`inline-flex items-center gap-1 rounded-sm border px-1.5 py-0.5 text-[9px] font-semibold ${
+                  hasCalibrated
+                    ? "border-white/10 bg-white/[0.03] text-white/45"
+                    : "border-sky-400/20 bg-sky-400/[0.07] text-sky-300"
+                }`}
               >
-                <span className="text-sky-300/65">AI {rating.shortLabel}</span>
-                <span className="text-sky-100">{rating.value}</span>
+                <span className={hasCalibrated ? "text-white/35" : "text-sky-300/65"}>
+                  {hasCalibrated ? `旧${rating.shortLabel}` : `AI ${rating.shortLabel}`}
+                </span>
+                <span className={hasCalibrated ? "text-white/55" : "text-sky-100"}>{rating.value}</span>
                 {typeof rating.score === "number" && (
-                  <span className="text-sky-300/80 font-mono text-[8.5px]">{rating.score}</span>
+                  <span className={`font-mono text-[8.5px] ${hasCalibrated ? "text-white/40" : "text-sky-300/80"}`}>
+                    {rating.score}
+                  </span>
                 )}
               </span>
             ))}

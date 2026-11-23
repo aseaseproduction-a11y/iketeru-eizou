@@ -104,6 +104,7 @@ export default function Home() {
     setAiOverallRating,
     setAiDirectionRating,
     setAiTechniqueRating,
+    setCalibrationFilter,
     setSource,
     setEizo100Only,
     setEizo100Year,
@@ -924,7 +925,18 @@ export default function Home() {
                   </button>
                 )}
               </div>
-              <div className="flex items-center gap-2 flex-shrink-0">
+              <div className="flex items-center gap-2 flex-shrink-0 flex-wrap">
+                <select
+                  aria-label="校正ステータス絞り込み"
+                  value={filters.calibrationFilter ?? "all"}
+                  onChange={(e) => setCalibrationFilter(e.target.value as import("@/lib/types").CalibrationFilterMode)}
+                  className="text-xs bg-surface-1 border border-white/10 rounded-md px-2.5 py-1.5 text-foreground outline-none focus:ring-1 focus:ring-cinematic-red/40"
+                >
+                  <option value="all">評価基準：すべて</option>
+                  <option value="calibrated">校正済みのみ (Phase 2 v1)</option>
+                  <option value="calibrated_verified">校正済み（検証済5ジャンルのみ）</option>
+                  <option value="legacy_uncalibrated">旧基準・未校正のみ</option>
+                </select>
                 <select
                   value={filters.sort}
                   onChange={(e) => setSort(e.target.value as import("@/lib/types").SortType)}
@@ -932,9 +944,10 @@ export default function Home() {
                 >
                   <option value="newest">新しい順</option>
                   <option value="oldest">古い順</option>
-                  <option value="aiOverallScoreDesc">AI総合 高い順</option>
-                  <option value="aiDirectionScoreDesc">AI演出 高い順</option>
-                  <option value="aiTechniqueScoreDesc">AI技術 高い順</option>
+                  <option value="calibratedScoreDesc">校正済みスコア 高い順</option>
+                  <option value="aiOverallScoreDesc">旧基準AI総合 高い順</option>
+                  <option value="aiDirectionScoreDesc">旧基準AI演出 高い順</option>
+                  <option value="aiTechniqueScoreDesc">旧基準AI技術 高い順</option>
                 </select>
               </div>
             </div>

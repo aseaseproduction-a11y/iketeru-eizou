@@ -319,6 +319,27 @@ export default function VideoModal({
     { label: "AI評価（ディレクション）", key: "aiDirectionRating" as const, value: video.aiDirectionRating, score: video.aiDirectionScore },
     { label: "AI評価（技術）", key: "aiTechniqueRating" as const, value: video.aiTechniqueRating, score: video.aiTechniqueScore },
   ].filter((rating) => Boolean(rating.value));
+  const hasCalibrated = typeof video.calibratedScore === "number";
+  const isUnverifiedCalibratedGenre =
+    hasCalibrated && video.calibrationStatus === "calibrated_unverified_genre";
+  const isLegacyUncalibrated =
+    !hasCalibrated &&
+    (video.calibrationStatus === "legacy_uncalibrated" ||
+      aiRatings.length > 0 ||
+      typeof video.aiOverallScore === "number");
+  const calibratedScoreText = hasCalibrated
+    ? Number.isInteger(video.calibratedScore)
+      ? String(video.calibratedScore)
+      : video.calibratedScore!.toFixed(1)
+    : "";
+  const calibratedBandLabel =
+    video.calibratedTierBand === "award_tier"
+      ? "受賞水準 (83点以上)"
+      : video.calibratedTierBand === "pro_band"
+      ? "商業標準 (63〜82.9点)"
+      : video.calibratedTierBand === "low_band"
+      ? "低品質域 (63点未満)"
+      : "";
 
   const embedSrc = getEmbedSrc(video, initialStartTime);
 
@@ -375,12 +396,31 @@ export default function VideoModal({
                 </span>
               )}
             </div>
-            {aiRatings.length > 0 && (
-              <div className="min-w-0 flex-1 flex items-center justify-center gap-1.5 px-1 sm:gap-2 sm:px-4" aria-label={aiRatings.map((rating) => `${rating.label} ${rating.value}`).join("、")}>
+            {(hasCalibrated || aiRatings.length > 0) && (
+              <div className="min-w-0 flex-1 flex items-center justify-center gap-1.5 px-1 sm:gap-2 sm:px-4 flex-wrap" aria-label={aiRatings.map((rating) => `${rating.label} ${rating.value}`).join("、")}>
+                {hasCalibrated && (
+                  <span
+                    className={`inline-flex items-center gap-1 rounded-full border px-2.5 py-1 text-[9px] sm:text-[10px] font-semibold tracking-wide ${
+                      isUnverifiedCalibratedGenre
+                        ? "border-amber-400/40 bg-amber-500/15 text-amber-200"
+                        : "border-emerald-400/40 bg-emerald-500/15 text-emerald-200"
+                    }`}
+                  >
+                    <span className="opacity-75 font-medium">校正済 v1</span>
+                    {video.calibratedRank && <span className="font-bold">{video.calibratedRank}</span>}
+                    <span className="font-mono text-[9px]">{calibratedScoreText}pt</span>
+                    {isUnverifiedCalibratedGenre && <span className="ml-0.5 text-[8.5px] text-amber-300">(未検証ジャンル)</span>}
+                  </span>
+                )}
+                {isLegacyUncalibrated && (
+                  <span className="inline-flex items-center rounded-full border border-zinc-500/40 bg-zinc-500/15 px-2 py-0.5 text-[9px] font-medium text-zinc-300">
+                    旧基準・未校正
+                  </span>
+                )}
                 {aiRatings.map((rating) => (
                   <span key={rating.key} className={`inline-flex items-center gap-1 rounded-full border px-2 py-1 text-[9px] sm:px-2.5 sm:text-[10px] font-semibold tracking-wide ${getAiRatingBadgeClass(rating.value!)}`}>
                     <span className="text-white/45 font-medium">
-                      {rating.key === "aiOverallRating" ? "AI総合" : rating.key === "aiDirectionRating" ? "AI演出" : "AI技術"}
+                      {rating.key === "aiOverallRating" ? "旧AI総合" : rating.key === "aiDirectionRating" ? "旧AI演出" : "旧AI技術"}
                     </span>
                     <span className="font-bold">{rating.value}</span>
                     {typeof rating.score === "number" && (
@@ -672,8 +712,53 @@ export default function VideoModal({
                       </div>
                     )}
                   </dl>
-                  {(aiRatings.length > 0 || video.aiAnalysis) && (
+                  {(hasCalibrated || aiRatings.length > 0 || video.aiAnalysis) && (
                     <div className="mt-4 border-t border-white/[0.07] pt-3">
+                      {hasCalibrated && (
+                        <div className={`mb-4 rounded-lg border px-3 py-2.5 ${
+                          isUnverifiedCalibratedGenre
+                            ? "border-amber-400/35 bg-amber-500/[0.07]"
+                            : "border-emerald-400/35 bg-emerald-500/[0.07]"
+                        }`}>
+                          <div className="flex flex-wrap items-center justify-between gap-2">
+                            <span className={`text-xs font-semibold ${isUnverifiedCalibratedGenre ? "text-amber-200" : "text-emerald-200"}`}>
+                              校正済みAI評価（{video.calibrationVersion || "phase2_v1"}）
+                            </span>
+                            <div className="flex flex-wrap items-center gap-1.5 text-[10px]">
+                              {calibratedBandLabel && (
+                                <span className="rounded border border-white/15 bg-black/25 px-1.5 py-0.5 text-white/85">
+                                  {calibratedBandLabel}
+                                </span>
+                              )}
+                              {video.calibratedRoute && (
+                                <span className="rounded border border-white/10 bg-black/20 px-1.5 py-0.5 font-mono text-white/65">
+                                  {video.calibratedRoute}
+                                </span>
+                              )}
+                            </div>
+                          </div>
+                          <div className="mt-1.5 flex items-baseline gap-2">
+                            <span className="text-xl font-bold text-white">{calibratedScoreText}点</span>
+                            {video.calibratedRank && (
+                              <span className="text-sm font-bold text-emerald-200">({video.calibratedRank})</span>
+                            )}
+                            {video.calibrationGenreBucket && (
+                              <span className="text-[11px] text-white/60">枠: {video.calibrationGenreBucket}</span>
+                            )}
+                          </div>
+                          {isUnverifiedCalibratedGenre && (
+                            <p className="mt-1.5 text-[11px] text-amber-200/90">
+                              ※ このジャンルは未検証です（Phase 2 検証対象5ジャンル外のため参考値として表示しています）。
+                            </p>
+                          )}
+                          {(video.calibratedAt || video.calibratedRunId) && (
+                            <p className="mt-1 text-[10px] font-mono text-white/45">
+                              {video.calibratedAt ? `採点日時: ${video.calibratedAt.slice(0, 10)}` : ""}
+                              {video.calibratedRunId ? ` / Run: ${video.calibratedRunId}` : ""}
+                            </p>
+                          )}
+                        </div>
+                      )}
                       {video.isProvisional && (
                         <div className="mb-3 rounded-md border border-amber-500/40 bg-amber-500/10 px-3 py-2 text-xs text-amber-200">
                           <span className="font-bold text-amber-300">【暫定評価】</span>
@@ -708,7 +793,7 @@ export default function VideoModal({
                       {aiRatings.length > 0 && (
                         <div className="mb-3">
                           <span className="mb-1.5 block text-xs font-semibold text-foreground/85">
-                            AI評価{video.isProvisional ? "（暫定）" : ""}
+                            旧基準AI評価（未校正・参考保持）{video.isProvisional ? "（暫定）" : ""}
                           </span>
                           <div className="grid grid-cols-3 gap-2">
                             {aiRatings.map((rating) => {

@@ -13,7 +13,7 @@
  *   複数指定可: "CM -source:notion -アニメ"
  */
 import { useState, useMemo, useCallback } from "react";
-import type { Video, FilterState, SortType } from "@/lib/types";
+import type { Video, FilterState, SortType, CalibrationFilterMode } from "@/lib/types";
 import { trpc } from "@/lib/trpc";
 import { getProductionRoles } from "@shared/productionCredits";
 import { CREATOR_INDEX_OVERRIDES } from "@shared/creatorIndexOverrides";
@@ -335,6 +335,24 @@ export function applyVideoFilters(allVideos: Video[], filters: FilterState, favo
     if (value) result = result.filter((video) => matchesMetadataFilter(video[videoKey], value));
   });
 
+  if (filters.calibrationFilter === "calibrated") {
+    result = result.filter((video) => typeof video.calibratedScore === "number");
+  } else if (filters.calibrationFilter === "calibrated_verified") {
+    result = result.filter(
+      (video) =>
+        typeof video.calibratedScore === "number" &&
+        video.calibrationStatus === "calibrated_verified"
+    );
+  } else if (filters.calibrationFilter === "legacy_uncalibrated") {
+    result = result.filter(
+      (video) =>
+        typeof video.calibratedScore !== "number" &&
+        (video.calibrationStatus === "legacy_uncalibrated" ||
+          typeof video.aiOverallScore === "number" ||
+          Boolean(video.aiOverallRating?.trim()))
+    );
+  }
+
   return result
     .filter((video) => matchesRatingFilter(video.privateRating, filters.privateRating))
     .filter((video) => matchesRatingFilter(video.aiOverallRating, filters.aiOverallRating))
@@ -360,6 +378,7 @@ export function useVideos(favorites: string[] = []) {
     aiOverallRating: null,
     aiDirectionRating: null,
     aiTechniqueRating: null,
+    calibrationFilter: "all",
     source: null,
     eizo100Only: false,
     eizo100Year: null,
@@ -435,6 +454,13 @@ export function useVideos(favorites: string[] = []) {
         (a, b) =>
           new Date(a.addedDate).getTime() - new Date(b.addedDate).getTime()
       );
+    } else if (filters.sort === "calibratedScoreDesc") {
+      result.sort((a, b) => {
+        const scoreA = typeof a.calibratedScore === "number" ? a.calibratedScore : -1;
+        const scoreB = typeof b.calibratedScore === "number" ? b.calibratedScore : -1;
+        const diff = scoreB - scoreA;
+        return diff !== 0 ? diff : new Date(b.addedDate).getTime() - new Date(a.addedDate).getTime();
+      });
     } else if (filters.sort === "aiOverallScoreDesc") {
       result.sort((a, b) => {
         const diff =
@@ -541,6 +567,10 @@ export function useVideos(favorites: string[] = []) {
     setFilters((prev) => ({ ...prev, aiTechniqueRating }));
     setVisibleCount(ITEMS_PER_PAGE);
   }, []);
+  const setCalibrationFilter = useCallback((calibrationFilter: CalibrationFilterMode) => {
+    setFilters((prev) => ({ ...prev, calibrationFilter }));
+    setVisibleCount(ITEMS_PER_PAGE);
+  }, []);
   const setSource = useCallback((source: string | null) => {
     setFilters((prev) => ({ ...prev, source }));
     setVisibleCount(ITEMS_PER_PAGE);
@@ -590,6 +620,7 @@ export function useVideos(favorites: string[] = []) {
       aiOverallRating: null,
       aiDirectionRating: null,
       aiTechniqueRating: null,
+      calibrationFilter: "all",
       source: null,
       eizo100Only: false,
       eizo100Year: null,
@@ -617,6 +648,7 @@ export function useVideos(favorites: string[] = []) {
     if (filters.aiOverallRating) count++;
     if (filters.aiDirectionRating) count++;
     if (filters.aiTechniqueRating) count++;
+    if (filters.calibrationFilter && filters.calibrationFilter !== "all") count++;
     if (filters.source) count++;
     if (filters.eizo100Only) count++;
     if (filters.showUnavailable) count++;
@@ -651,6 +683,7 @@ export function useVideos(favorites: string[] = []) {
     setAiOverallRating,
     setAiDirectionRating,
     setAiTechniqueRating,
+    setCalibrationFilter,
     setSource,
     setEizo100Only,
     setEizo100Year,

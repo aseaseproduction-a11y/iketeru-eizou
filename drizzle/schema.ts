@@ -1,4 +1,4 @@
-import { int, mediumtext, mysqlEnum, mysqlTable, text, timestamp, uniqueIndex, varchar } from "drizzle-orm/mysql-core";
+import { decimal, int, mediumtext, mysqlEnum, mysqlTable, text, timestamp, uniqueIndex, varchar } from "drizzle-orm/mysql-core";
 
 /**
  * Core user table backing auth flow.
@@ -66,6 +66,16 @@ export const videos = mysqlTable("videos", {
   aiTechniqueScore: int("aiTechniqueScore"), // AI評価100点満点（技術: 0-100）
   aiScoreBreakdown: mediumtext("aiScoreBreakdown"), // JSON: 5観点x20点ルーブリック内訳
   aiAnalysis: mediumtext("aiAnalysis"), // Notion AI分析結果
+  calibrationStatus: varchar("calibrationStatus", { length: 32 }), // legacy_uncalibrated | unscored | calibrated_verified | calibrated_unverified_genre
+  calibratedScore: decimal("calibratedScore", { precision: 5, scale: 2 }), // Phase 2 校正済み総合スコア (0.00-100.00)
+  calibratedRank: varchar("calibratedRank", { length: 8 }), // S+..D
+  calibratedTierBand: varchar("calibratedTierBand", { length: 24 }), // award_tier | pro_band | low_band
+  calibratedBreakdown: mediumtext("calibratedBreakdown"), // JSON: 2+1各回点数・5観点内訳・監査証跡
+  calibrationVersion: varchar("calibrationVersion", { length: 32 }), // 'phase2_v1'
+  calibratedAt: timestamp("calibratedAt"), // 校正完了日時 (UTC)
+  calibratedRoute: varchar("calibratedRoute", { length: 32 }), // video_h1 | video_h2_escalated | contact_sheet
+  calibratedRunId: varchar("calibratedRunId", { length: 64 }), // analysis/runs/<run_id>
+  calibrationGenreBucket: varchar("calibrationGenreBucket", { length: 64 }), // CM | MV | モーション | 3DCG/アニメ | 企業映像 | unverified:<slug>
   embedStatus: varchar("embedStatus", { length: 16 }).notNull().default("unknown"), // unknown | available | restricted
   embedReason: varchar("embedReason", { length: 128 }), // unavailable_private_or_deleted | unavailable_access_restricted | unavailable_embed_restricted | unavailable_page_unavailable
   embedCheckedAt: timestamp("embedCheckedAt"),

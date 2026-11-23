@@ -96,6 +96,16 @@ export interface Video {
   aiTechniqueScore?: number | null;
   aiScoreBreakdown?: AiScoreBreakdown | null;
   aiAnalysis: string;
+  calibrationStatus?: CalibrationStatus;
+  calibratedScore?: number | null;
+  calibratedRank?: string | null;
+  calibratedTierBand?: CalibrationTierBand | null;
+  calibratedBreakdown?: Record<string, unknown> | null;
+  calibrationVersion?: string | null;
+  calibratedAt?: string | null;
+  calibratedRoute?: "video_h1" | "video_h2_escalated" | "contact_sheet" | null;
+  calibratedRunId?: string | null;
+  calibrationGenreBucket?: string | null;
   isProvisional?: boolean;
   gradeBoundary?: boolean;
   visualVerificationStatus?: "log_verified" | "unverifiable_no_log" | "unverified_pending" | "invalidated_no_visual" | "not_audited";
@@ -122,8 +132,28 @@ export interface CategoryItem {
   count?: number;
 }
 
+export type CalibrationStatus =
+  | "legacy_uncalibrated"
+  | "unscored"
+  | "calibrated_verified"
+  | "calibrated_unverified_genre";
+
+export type CalibrationTierBand = "award_tier" | "pro_band" | "low_band";
+
+export type CalibrationFilterMode =
+  | "all"
+  | "calibrated"
+  | "calibrated_verified"
+  | "legacy_uncalibrated";
+
 export type FilterType = "genre" | "product" | "direction" | "tone" | "duration";
-export type SortType = "newest" | "oldest" | "aiOverallScoreDesc" | "aiDirectionScoreDesc" | "aiTechniqueScoreDesc";
+export type SortType =
+  | "newest"
+  | "oldest"
+  | "calibratedScoreDesc"
+  | "aiOverallScoreDesc"
+  | "aiDirectionScoreDesc"
+  | "aiTechniqueScoreDesc";
 
 export interface FilterState {
   search: string;
@@ -142,6 +172,7 @@ export interface FilterState {
   aiOverallRating: string | null;
   aiDirectionRating: string | null;
   aiTechniqueRating: string | null;
+  calibrationFilter?: CalibrationFilterMode;
   source?: string | null;
   eizo100Only: boolean;
   eizo100Year: number | null;
