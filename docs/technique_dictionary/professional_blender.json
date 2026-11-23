@@ -1,0 +1,79 @@
+{
+  "dictionary_version": "1.0",
+  "purpose": "reproducible_decomposition_technique_dictionary_only",
+  "never_use_for_scoring_criteria": true,
+  "numeric_verification_script": "scripts/verify-technique-dictionary-numbers.py",
+  "target_software_versions": {
+    "blender_primary": "4.2",
+    "blender_notes": "本書 p.2（PDF p.2）に『Blender 4.2』と明記。執筆時期により一部 3.6 / 4.0 系の画面・ノード名（Mix RGB 等）が混在する旨を本書内注記。",
+    "substance_3d_designer_part3": "12.4.0",
+    "substance_3d_painter_part3": "8.3.0"
+  },
+  "image_verified_numbers": [
+    {
+      "entry_id": "BL-030",
+      "token": "100%",
+      "pdf_page": 499,
+      "book_page": 491,
+      "reason": "PDF p.499（本書 p.491）本文の画像を直接目視確認し『すべての頂点にぴったり 100% のウェイト』『該当ボーンに対して 100% で設定する機能』を確認（OCRが100%を18%と誤読したため）"
+    }
+  ],
+  "book": {
+    "order": 3,
+    "title_ja": "プロフェッショナル Blender",
+    "authors": ["實方佑介", "mino", "稲村JIN"],
+    "publisher_ja": "株式会社ボーンデジタル",
+    "source_pdf_nfc": "プロフェッショナルblender.pdf",
+    "total_pages": 536,
+    "ocr_private_path": "E:\\技術書_index\\ocr_private\\professional_blender_ocr.jsonl"
+  },
+  "ocr_quality": {
+    "engine": "Windows.Media.Ocr.OcrEngine (ja, local offline)",
+    "dpi": 250,
+    "elapsed_sec": 560.4,
+    "total_pages": 536,
+    "readable_text_pages_gte_50_chars": 526,
+    "readable_page_ratio": 0.9813,
+    "sparse_pages_1_to_49_chars": 10,
+    "sparse_page_numbers_pdf": [1, 110, 126, 130, 282, 354, 407, 418, 444, 472],
+    "unreadable_0_char_pages": 0,
+    "unreadable_page_numbers_pdf": [],
+    "total_non_ws_chars": 264367,
+    "total_valid_chars": 263000,
+    "overall_valid_char_ratio": 0.9948,
+    "avg_chars_per_page": 493.2
+  },
+  "entry_count": 30,
+  "entries": [
+    {"id": "BL-001", "name_ja": "3D空間の基本構造・操作モード・モディファイア・コレクション", "part": "Part 1 Ch.1-4", "book_pages": "p.22-71", "pdf_pages": "p.22-71", "tools": ["Blender", "After Effects", "DaVinci Resolve"]},
+    {"id": "BL-002", "name_ja": "データブロック参照切替・未使用削除・外部データパック", "part": "Part 1 Ch.5", "book_pages": "p.72-79", "pdf_pages": "p.72-79", "tools": ["Blender", "After Effects", "DaVinci Resolve"]},
+    {"id": "BL-003", "name_ja": "マテリアルノード基礎と Principled BSDF（PBR）", "part": "Part 1 Ch.6", "book_pages": "p.80-88", "pdf_pages": "p.80-88", "tools": ["Blender", "After Effects", "DaVinci Resolve"]},
+    {"id": "BL-004", "name_ja": "キャラクターのデータ構造（アーマチュア・ミラー・ウェイト）", "part": "Part 1 Ch.7", "book_pages": "p.89-95", "pdf_pages": "p.89-95", "tools": ["Blender", "After Effects", "DaVinci Resolve"]},
+    {"id": "BL-005", "name_ja": "3大レンダリングエンジン（EEVEE / Cycles / Workbench）の使い分け", "part": "Part 1 Ch.8", "book_pages": "p.96-110", "pdf_pages": "p.96-110", "tools": ["Blender", "After Effects", "DaVinci Resolve"]},
+    {"id": "BL-006", "name_ja": "プロシージャルマテリアル設計と Node Wrangler・エリア構成", "part": "Part 2 Ch.1-2", "book_pages": "p.112-131", "pdf_pages": "p.112-135", "tools": ["Blender", "After Effects", "DaVinci Resolve"]},
+    {"id": "BL-007", "name_ja": "座標・グラデーション・Math ノードによる変位視覚化と整理", "part": "Part 2 Ch.3-4", "book_pages": "p.132-142", "pdf_pages": "p.136-146", "tools": ["Blender", "After Effects", "DaVinci Resolve"]},
+    {"id": "BL-008", "name_ja": "テクスチャベイク（Cycles ベイク・多重ベイク回避・レンダ代替）", "part": "Part 2 Ch.5", "book_pages": "p.143-150", "pdf_pages": "p.147-154", "tools": ["Blender", "After Effects", "DaVinci Resolve"]},
+    {"id": "BL-009", "name_ja": "グリッターマテリアル（Voronoi＋Math＋Mix Color＋Bump）", "part": "Part 2 Ch.6", "book_pages": "p.151-160", "pdf_pages": "p.155-164", "tools": ["Blender", "After Effects", "DaVinci Resolve"]},
+    {"id": "BL-010", "name_ja": "布マテリアル（UV Vector 合成・タイリング・織り目凹凸）", "part": "Part 2 Ch.7", "book_pages": "p.161-171", "pdf_pages": "p.165-175", "tools": ["Blender", "After Effects", "DaVinci Resolve"]},
+    {"id": "BL-011", "name_ja": "ランダムに変化する炎マテリアル（Ping-Pong・Emission＋透過）", "part": "Part 2 Ch.8", "book_pages": "p.172-177", "pdf_pages": "p.176-181", "tools": ["Blender", "After Effects", "DaVinci Resolve"]},
+    {"id": "BL-012", "name_ja": "シェーダーノードでの擬似ブラー＆Equirectangular ブラー", "part": "Part 2 Ch.9", "book_pages": "p.178-182", "pdf_pages": "p.182-186", "tools": ["Blender", "After Effects", "DaVinci Resolve"]},
+    {"id": "BL-013", "name_ja": "RGB マスク作成と ORM 法（1枚画像への多チャンネル格納）", "part": "Part 2 Ch.10", "book_pages": "p.183-197", "pdf_pages": "p.187-201", "tools": ["Blender", "After Effects", "DaVinci Resolve"]},
+    {"id": "BL-014", "name_ja": "RGB マスク活用の実用シンプルマテリアル（Separate Color）", "part": "Part 2 Ch.11", "book_pages": "p.198-205", "pdf_pages": "p.202-209", "tools": ["Blender", "After Effects", "DaVinci Resolve"]},
+    {"id": "BL-015", "name_ja": "テクスチャスキャッタリング（2D Voronoi・ランダム回転・多重合成）", "part": "Part 2 Ch.12", "book_pages": "p.206-222", "pdf_pages": "p.210-226", "tools": ["Blender", "After Effects", "DaVinci Resolve"]},
+    {"id": "BL-016", "name_ja": "スカルプト×Substance 3D の反復型ハイディテールワークフロー", "part": "Part 3 Ch.1", "book_pages": "p.224-228", "pdf_pages": "p.228-232", "tools": ["Blender", "After Effects", "DaVinci Resolve"]},
+    {"id": "BL-017", "name_ja": "Substance 3D Designer でのアルファ画像＆Normal デカール生成", "part": "Part 3 Ch.2", "book_pages": "p.229-235", "pdf_pages": "p.233-239", "tools": ["Blender", "After Effects", "DaVinci Resolve"]},
+    {"id": "BL-018", "name_ja": "1次スカルプトスケッチ（リメッシュ／Dyntopo＋プリミティブ併用）", "part": "Part 3 Ch.3", "book_pages": "p.236-241", "pdf_pages": "p.240-245", "tools": ["Blender", "After Effects", "DaVinci Resolve"]},
+    {"id": "BL-019", "name_ja": "リトポロジー実行（面に投影スナップ・ミラー・ソリッド化・LoopTools）", "part": "Part 3 Ch.4", "book_pages": "p.242-256", "pdf_pages": "p.246-260", "tools": ["Blender", "After Effects", "DaVinci Resolve"]},
+    {"id": "BL-020", "name_ja": "2次スカルプト（マルチレゾ・面セット・アルファ＆マスク）と2次リトポ", "part": "Part 3 Ch.5-6", "book_pages": "p.257-273", "pdf_pages": "p.261-277", "tools": ["Blender", "After Effects", "DaVinci Resolve"]},
+    {"id": "BL-021", "name_ja": "メッシュ品質チェック（法線反転・歪み・三角面化）と UV 展開・パッキング", "part": "Part 3 Ch.7", "book_pages": "p.274-284", "pdf_pages": "p.278-290", "tools": ["Blender", "After Effects", "DaVinci Resolve"]},
+    {"id": "BL-022", "name_ja": "ベイク用データ準備（ID マップ・命名規則・スムーズシェード・FBX出力）", "part": "Part 3 Ch.8", "book_pages": "p.285-294", "pdf_pages": "p.291-300", "tools": ["Blender", "After Effects", "DaVinci Resolve"]},
+    {"id": "BL-023", "name_ja": "Substance 3D Painter ディテールアップと Blender／UE／Unity 出力", "part": "Part 3 Ch.9-10", "book_pages": "p.295-308", "pdf_pages": "p.301-314", "tools": ["Blender", "After Effects", "DaVinci Resolve"]},
+    {"id": "BL-024", "name_ja": "Blender Python スクリプトの4実行経路と開発エリア活用", "part": "Part 4 Ch.1-3", "book_pages": "p.310-329", "pdf_pages": "p.315-335", "tools": ["Blender", "After Effects", "DaVinci Resolve"]},
+    {"id": "BL-025", "name_ja": "Python 基礎文法と bpy API（context / data / ops / Vector）", "part": "Part 4 Ch.4-8", "book_pages": "p.330-374", "pdf_pages": "p.336-380", "tools": ["Blender", "After Effects", "DaVinci Resolve"]},
+    {"id": "BL-026", "name_ja": "実践スクリプト設計（手動手順記録→関数化→クラス設計）", "part": "Part 4 Ch.9-12", "book_pages": "p.375-410", "pdf_pages": "p.381-418", "tools": ["Blender", "After Effects", "DaVinci Resolve"]},
+    {"id": "BL-027", "name_ja": "CLI バックグラウンド実行（-b / --python）による自動レンダリング", "part": "Part 5 Ch.1-2", "book_pages": "p.412-435", "pdf_pages": "p.419-443", "tools": ["Blender", "After Effects", "DaVinci Resolve"]},
+    {"id": "BL-028", "name_ja": "subprocess.run() 外部連携と複数3Dモデル一括 .blend 変換", "part": "Part 5 Ch.3-5", "book_pages": "p.436-464", "pdf_pages": "p.444-472", "tools": ["Blender", "After Effects", "DaVinci Resolve"]},
+    {"id": "BL-029", "name_ja": "Addon の導入・配置構造と基本アーキテクチャ（Operator / Panel）", "part": "Part 6 Ch.1-2", "book_pages": "p.466-489", "pdf_pages": "p.474-497", "tools": ["Blender", "After Effects", "DaVinci Resolve"]},
+    {"id": "BL-030", "name_ja": "ソリッドモデルのロボットスキニング自動化 Addon（Robot Skinner）", "part": "Part 6 Ch.3", "book_pages": "p.490-512", "pdf_pages": "p.498-520", "tools": ["Blender", "After Effects", "DaVinci Resolve"]}
+  ]
+}

@@ -164,7 +164,12 @@ def extract_numeric_claims(text: str) -> List[Tuple[str, bool]]:
         start = max(0, m.start() - 45)
         end = min(len(cleaned), m.end() + 65)
         window = cleaned[start:end]
-        marked_unlisted = ("本書に記載なし" in window) or ("補足目安" in window) or ("固有設定" in window)
+        marked_unlisted = (
+            ("本書に記載なし" in window)
+            or ("補足目安" in window)
+            or ("固有設定" in window)
+            or ("現行版" in window)
+        )
         results.append((tok, marked_unlisted))
     return results
 
