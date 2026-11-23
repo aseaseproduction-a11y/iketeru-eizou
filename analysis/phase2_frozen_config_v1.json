@@ -1,0 +1,77 @@
+{
+  "config_version": "phase2_frozen_config_v1",
+  "created_at": "2026-11-23T04:11:00.000Z",
+  "t_award": 83,
+  "t_low": 63,
+  "frozen_commit": "5e42f16ace5093964f054bd1ebe44ab30b251296",
+  "frozen_commit_short": "5e42f16",
+  "pre_scoring_rule_commit": "1551c3f",
+  "expected_model": "gemini-4-neon-high",
+  "prompt_version": "v1_baseline",
+  "hybrid_router_version": "phase2_hybrid_v1",
+  "hybrid_router_rules": {
+    "spec_ref": "docs/CALIBRATION_PHASE2_DESIGN.md Section 6.2 & scripts/phase2-hybrid-router.mjs",
+    "h1_pre_route_to_video": [
+      "H1-a: genre === 'MV'",
+      "H1-b: genre === 'モーション'",
+      "H1-c: max_cuts_per_10s >= 12 (regardless of genre or integrated_lufs)"
+    ],
+    "h2_post_cs_escalation_to_video": [
+      "H2-a: |contact_sheet_score - 83| <= 3.0 OR |contact_sheet_score - 63| <= 3.0",
+      "H2-b: duration_sec >= 60.0 AND (avg_cut_interval_sec >= 15.0 OR total_cuts <= 2) AND contact_sheet_score >= 63",
+      "H2-c: (integrated_lufs === null OR integrated_lufs <= -28.0) AND contact_sheet_score >= 63"
+    ]
+  },
+  "ensemble_rule": {
+    "runs_per_mode": 2,
+    "tiebreaker_trigger": "|score_r1 - score_r2| >= 5",
+    "aggregation": "median_of_3_if_tiebreaker_else_mean_of_2"
+  },
+  "grid_truncation_disclosure": {
+    "pre_registered_grid_t_award": [75, 84],
+    "pre_registered_grid_t_low": [58, 68],
+    "pre_registered_go_range_t_award": [81, 84],
+    "pre_registered_go_range_t_low": [58, 68],
+    "pre_registered_selected_t_award": 83,
+    "pre_registered_selected_youden_j": 0.8167,
+    "extended_diagnostic_grid_t_award": [75, 92],
+    "extended_true_go_range_t_award": [81, 86],
+    "extended_max_youden_j_t_award": [85, 86],
+    "extended_max_youden_j": 0.825,
+    "rationale": "Pre-registered grid stopped at T_award=84; extended diagnostic recalculation over 85..92 shows true GO range 81..86 with max Youden J=0.825 at 85..86 (outside pre-registered grid). Because 83 lies near the center of the true GO range 81..86, T_award=83 is strictly retained per pre-registration without post-hoc shifting to 85-86."
+  },
+  "holdout_protocol": {
+    "dataset_path": "analysis/phase2_holdout_v1.json",
+    "one_shot_only": true,
+    "no_post_hoc_adjustment": true,
+    "no_go_action": "Do NOT re-tune thresholds/prompts or re-run on Holdout v1. Any re-tuning requires building a brand-new unseen Holdout v2.",
+    "decision_basis": "PRIMARY_JUDGMENT_ONLY",
+    "primary_criteria": {
+      "P1_roc_auc_min": 0.9,
+      "P2_tier2_sensitivity_rule": "hits >= ceil(N_T2 * 0.80) (N_T2=24 => >=20/24 = 83.33%)",
+      "P3_pro_specificity_rule": "correct >= ceil(N_PRO * 0.84) (N_PRO=25 => >=21/25 = 84.0%)",
+      "P4_major_error_a_max": 0,
+      "S1_major_error_b_max": 0,
+      "S2_tier2_vs_low_auc_min": 0.95,
+      "S3_pro_vs_low_auc_min": 0.8,
+      "S3_mwu_one_sided_p_max": 0.05
+    },
+    "mandatory_supplementary_reports": [
+      {
+        "id": "a",
+        "key": "contamination_excluded_p1_to_p3",
+        "description": "P-1 to P-3 metrics after excluding videos where knows_work === true OR knows_award_history === true."
+      },
+      {
+        "id": "b",
+        "key": "low_exposure_recent_tier2_p2",
+        "description": "P-2 sensitivity on the 15 low-exposure / recent Tier 2 works only (award/release year 2022-2026 and view_count < 500k YouTube / < 100k Vimeo)."
+      },
+      {
+        "id": "c",
+        "key": "per_genre_false_positives",
+        "description": "Per-genre false positive list (R-PRO >= T_award and R-LOW >= T_award), explicitly flagging anime-style TV CMs."
+      }
+    ]
+  }
+}
