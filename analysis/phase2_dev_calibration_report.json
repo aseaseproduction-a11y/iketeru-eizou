@@ -1,0 +1,3097 @@
+{
+  "generated_at": "2026-11-23T00:50:16.452Z",
+  "dev_run_id": "run_20261123_082500",
+  "expected_model": "gemini-4-neon-high",
+  "audit_summary": {
+    "valid_video_subagent_runs": 64,
+    "valid_cs_subagent_runs": 65,
+    "invalid_subagent_runs": 0,
+    "model_mismatch_count": 0,
+    "new_dev_videos_with_both_modes": 31,
+    "tiebreakers_pending_video": [],
+    "tiebreakers_pending_cs": [],
+    "excluded_new_award_badge_detected": []
+  },
+  "pool_counts": {
+    "total_combined": 59,
+    "phase1_surviving_dev_note": "Phase 1 surviving Dev (28 videos: 19 Tier 2 + 9 R-PRO) is previously-seen data and acts as an optimistic reference subset; combined pool adds 31 brand-new unseen Dev videos.",
+    "phase1_surviving": 28,
+    "phase2_new_dev": 31,
+    "tier2_award": 24,
+    "non_tier2_pro": 20,
+    "non_tier2_low": 15
+  },
+  "pre_registered_selection_rule": "CALIBRATION_PHASE2_DESIGN.md Section 5.6 (upper-median of longest contiguous max-Youden-J GO run for T_award and T_low)",
+  "threshold_selection": {
+    "selected": {
+      "t_award": 83,
+      "t_low": 63,
+      "decision": "GO",
+      "p1_auc": 0.976,
+      "p2_sens": 0.9167,
+      "p3_spec": 0.9,
+      "p4_err": 0,
+      "s1_err": 0,
+      "video_rate": 0.7797,
+      "youden_j": 0.8167
+    },
+    "reason": "UPPER_MEDIAN_OF_LONGEST_CONTIGUOUS_MAX_YOUDEN_J_RUN",
+    "max_youden_j": 0.8167,
+    "tied_best_count": 33,
+    "best_t_award_run": [
+      82,
+      83,
+      84
+    ],
+    "best_t_low_run": [
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68
+    ],
+    "pass_range": {
+      "go_pair_count": 44,
+      "total_pair_count": 110,
+      "t_award_go_runs": [
+        [
+          81,
+          82,
+          83,
+          84
+        ]
+      ],
+      "t_award_go_min": 81,
+      "t_award_go_max": 84,
+      "t_low_go_runs": [
+        [
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68
+        ]
+      ],
+      "t_low_go_min": 58,
+      "t_low_go_max": 68,
+      "t_low_go_runs_at_selected_t_award": [
+        [
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68
+        ]
+      ]
+    }
+  },
+  "evaluations_at_selected_thresholds": {
+    "thresholds_used": {
+      "tAward": 83,
+      "tLow": 63
+    },
+    "hybrid_primary": {
+      "thresholds": {
+        "t_award": 83,
+        "t_low": 63
+      },
+      "counts": {
+        "tier2": 24,
+        "primary_pro": 20,
+        "all_pro": 20,
+        "low_all": 15,
+        "low_excl_r_low_04": 15
+      },
+      "primary": {
+        "scope": "5_genres_all",
+        "p1_roc_auc": 0.976,
+        "p1_ci95": {
+          "low": 0.9333,
+          "high": 1
+        },
+        "p1_pass": true,
+        "p2_sensitivity": 0.9167,
+        "p2_hits": 22,
+        "p2_min_required": 20,
+        "p2_pass": true,
+        "p3_specificity": 0.9,
+        "p3_correct": 18,
+        "p3_min_required": 17,
+        "p3_pass": true,
+        "p4_major_error_a": 0,
+        "p4_max_allowed": 0,
+        "p4_pass": true,
+        "all_primary_pass": true
+      },
+      "secondary_all_low": {
+        "n_low": 15,
+        "s1_major_error_b_count": 0,
+        "s1_major_error_b_max": 0,
+        "s1_major_error_b_rate": 0,
+        "s1_pass": true,
+        "s2_tier2_vs_low_auc": 1,
+        "s2_pass": true,
+        "s3_pro_vs_low_auc": 0.95,
+        "s3_pro_minus_low_mean_gap": 24.86,
+        "s3_mwu_one_sided_p": 0.000003651,
+        "s3_pass": true
+      },
+      "secondary_excl_r_low_04": {
+        "n_low": 15,
+        "s1_major_error_b_count": 0,
+        "s1_major_error_b_max": 0,
+        "s1_major_error_b_rate": 0,
+        "s1_pass": true,
+        "s2_tier2_vs_low_auc": 1,
+        "s2_pass": true,
+        "s3_pro_vs_low_auc": 0.95,
+        "s3_pro_minus_low_mean_gap": 24.86,
+        "s3_mwu_one_sided_p": 0.000003651,
+        "s3_pass": true
+      },
+      "reference": {
+        "tier2_vs_all_non_tier2_auc": 0.9863,
+        "tier2_vs_all_pro_auc": 0.976,
+        "cross_table": {
+          "tier2_award": {
+            "gte_t_award": 22,
+            "mid_t_low_to_t_award": 2,
+            "lt_t_low": 0,
+            "mean": 91.5
+          },
+          "non_tier2_pro": {
+            "gte_t_award": 2,
+            "mid_t_low_to_t_award": 16,
+            "lt_t_low": 2,
+            "mean": 71.93
+          },
+          "non_tier2_low": {
+            "gte_t_award": 0,
+            "mid_t_low_to_t_award": 1,
+            "lt_t_low": 14,
+            "mean": 47.07
+          }
+        }
+      },
+      "decision": "GO"
+    },
+    "video_only_reference": {
+      "thresholds": {
+        "t_award": 83,
+        "t_low": 63
+      },
+      "counts": {
+        "tier2": 24,
+        "primary_pro": 20,
+        "all_pro": 20,
+        "low_all": 15,
+        "low_excl_r_low_04": 15
+      },
+      "primary": {
+        "scope": "5_genres_all",
+        "p1_roc_auc": 0.976,
+        "p1_ci95": {
+          "low": 0.9333,
+          "high": 1
+        },
+        "p1_pass": true,
+        "p2_sensitivity": 0.9167,
+        "p2_hits": 22,
+        "p2_min_required": 20,
+        "p2_pass": true,
+        "p3_specificity": 0.9,
+        "p3_correct": 18,
+        "p3_min_required": 17,
+        "p3_pass": true,
+        "p4_major_error_a": 0,
+        "p4_max_allowed": 0,
+        "p4_pass": true,
+        "all_primary_pass": true
+      },
+      "secondary_all_low": {
+        "n_low": 15,
+        "s1_major_error_b_count": 0,
+        "s1_major_error_b_max": 0,
+        "s1_major_error_b_rate": 0,
+        "s1_pass": true,
+        "s2_tier2_vs_low_auc": 1,
+        "s2_pass": true,
+        "s3_pro_vs_low_auc": 0.9567,
+        "s3_pro_minus_low_mean_gap": 26.82,
+        "s3_mwu_one_sided_p": 0.000002669,
+        "s3_pass": true
+      },
+      "secondary_excl_r_low_04": {
+        "n_low": 15,
+        "s1_major_error_b_count": 0,
+        "s1_major_error_b_max": 0,
+        "s1_major_error_b_rate": 0,
+        "s1_pass": true,
+        "s2_tier2_vs_low_auc": 1,
+        "s2_pass": true,
+        "s3_pro_vs_low_auc": 0.9567,
+        "s3_pro_minus_low_mean_gap": 26.82,
+        "s3_mwu_one_sided_p": 0.000002669,
+        "s3_pass": true
+      },
+      "reference": {
+        "tier2_vs_all_non_tier2_auc": 0.9863,
+        "tier2_vs_all_pro_auc": 0.976,
+        "cross_table": {
+          "tier2_award": {
+            "gte_t_award": 22,
+            "mid_t_low_to_t_award": 2,
+            "lt_t_low": 0,
+            "mean": 91.58
+          },
+          "non_tier2_pro": {
+            "gte_t_award": 2,
+            "mid_t_low_to_t_award": 16,
+            "lt_t_low": 2,
+            "mean": 71.85
+          },
+          "non_tier2_low": {
+            "gte_t_award": 0,
+            "mid_t_low_to_t_award": 1,
+            "lt_t_low": 14,
+            "mean": 45.03
+          }
+        }
+      },
+      "decision": "GO"
+    },
+    "contact_sheet_only_reference": {
+      "thresholds": {
+        "t_award": 83,
+        "t_low": 63
+      },
+      "counts": {
+        "tier2": 24,
+        "primary_pro": 20,
+        "all_pro": 20,
+        "low_all": 15,
+        "low_excl_r_low_04": 15
+      },
+      "primary": {
+        "scope": "5_genres_all",
+        "p1_roc_auc": 0.9594,
+        "p1_ci95": {
+          "low": 0.899,
+          "high": 0.9969
+        },
+        "p1_pass": true,
+        "p2_sensitivity": 0.875,
+        "p2_hits": 21,
+        "p2_min_required": 20,
+        "p2_pass": true,
+        "p3_specificity": 0.85,
+        "p3_correct": 17,
+        "p3_min_required": 17,
+        "p3_pass": true,
+        "p4_major_error_a": 0,
+        "p4_max_allowed": 0,
+        "p4_pass": true,
+        "all_primary_pass": true
+      },
+      "secondary_all_low": {
+        "n_low": 15,
+        "s1_major_error_b_count": 0,
+        "s1_major_error_b_max": 0,
+        "s1_major_error_b_rate": 0,
+        "s1_pass": true,
+        "s2_tier2_vs_low_auc": 1,
+        "s2_pass": true,
+        "s3_pro_vs_low_auc": 0.96,
+        "s3_pro_minus_low_mean_gap": 23.42,
+        "s3_mwu_one_sided_p": 0.000002266,
+        "s3_pass": true
+      },
+      "secondary_excl_r_low_04": {
+        "n_low": 15,
+        "s1_major_error_b_count": 0,
+        "s1_major_error_b_max": 0,
+        "s1_major_error_b_rate": 0,
+        "s1_pass": true,
+        "s2_tier2_vs_low_auc": 1,
+        "s2_pass": true,
+        "s3_pro_vs_low_auc": 0.96,
+        "s3_pro_minus_low_mean_gap": 23.42,
+        "s3_mwu_one_sided_p": 0.000002266,
+        "s3_pass": true
+      },
+      "reference": {
+        "tier2_vs_all_non_tier2_auc": 0.9768,
+        "tier2_vs_all_pro_auc": 0.9594,
+        "cross_table": {
+          "tier2_award": {
+            "gte_t_award": 21,
+            "mid_t_low_to_t_award": 3,
+            "lt_t_low": 0,
+            "mean": 88.17
+          },
+          "non_tier2_pro": {
+            "gte_t_award": 3,
+            "mid_t_low_to_t_award": 14,
+            "lt_t_low": 3,
+            "mean": 71.85
+          },
+          "non_tier2_low": {
+            "gte_t_award": 0,
+            "mid_t_low_to_t_award": 1,
+            "lt_t_low": 14,
+            "mean": 48.43
+          }
+        }
+      },
+      "decision": "GO"
+    },
+    "contamination_excluded_hybrid_reference": {
+      "thresholds": {
+        "t_award": 83,
+        "t_low": 63
+      },
+      "counts": {
+        "tier2": 4,
+        "primary_pro": 15,
+        "all_pro": 15,
+        "low_all": 15,
+        "low_excl_r_low_04": 15
+      },
+      "primary": {
+        "scope": "5_genres_all",
+        "p1_roc_auc": 0.95,
+        "p1_ci95": {
+          "low": 0.8167,
+          "high": 1
+        },
+        "p1_pass": true,
+        "p2_sensitivity": 0.75,
+        "p2_hits": 3,
+        "p2_min_required": 4,
+        "p2_pass": false,
+        "p3_specificity": 0.9333,
+        "p3_correct": 14,
+        "p3_min_required": 13,
+        "p3_pass": true,
+        "p4_major_error_a": 0,
+        "p4_max_allowed": 0,
+        "p4_pass": true,
+        "all_primary_pass": false
+      },
+      "secondary_all_low": {
+        "n_low": 15,
+        "s1_major_error_b_count": 0,
+        "s1_major_error_b_max": 0,
+        "s1_major_error_b_rate": 0,
+        "s1_pass": true,
+        "s2_tier2_vs_low_auc": 1,
+        "s2_pass": true,
+        "s3_pro_vs_low_auc": 0.9333,
+        "s3_pro_minus_low_mean_gap": 22.17,
+        "s3_mwu_one_sided_p": 0.00002848,
+        "s3_pass": true
+      },
+      "secondary_excl_r_low_04": {
+        "n_low": 15,
+        "s1_major_error_b_count": 0,
+        "s1_major_error_b_max": 0,
+        "s1_major_error_b_rate": 0,
+        "s1_pass": true,
+        "s2_tier2_vs_low_auc": 1,
+        "s2_pass": true,
+        "s3_pro_vs_low_auc": 0.9333,
+        "s3_pro_minus_low_mean_gap": 22.17,
+        "s3_mwu_one_sided_p": 0.00002848,
+        "s3_pass": true
+      },
+      "reference": {
+        "tier2_vs_all_non_tier2_auc": 0.975,
+        "tier2_vs_all_pro_auc": 0.95,
+        "cross_table": {
+          "tier2_award": {
+            "gte_t_award": 3,
+            "mid_t_low_to_t_award": 1,
+            "lt_t_low": 0,
+            "mean": 85
+          },
+          "non_tier2_pro": {
+            "gte_t_award": 1,
+            "mid_t_low_to_t_award": 12,
+            "lt_t_low": 2,
+            "mean": 69.23
+          },
+          "non_tier2_low": {
+            "gte_t_award": 0,
+            "mid_t_low_to_t_award": 1,
+            "lt_t_low": 14,
+            "mean": 47.07
+          }
+        }
+      },
+      "decision": "NO-GO"
+    },
+    "new_dev_31_only_reference": {
+      "thresholds": {
+        "t_award": 83,
+        "t_low": 63
+      },
+      "counts": {
+        "tier2": 5,
+        "primary_pro": 11,
+        "all_pro": 11,
+        "low_all": 15,
+        "low_excl_r_low_04": 15
+      },
+      "primary": {
+        "scope": "5_genres_all",
+        "p1_roc_auc": 0.9818,
+        "p1_ci95": {
+          "low": 0.8909,
+          "high": 1
+        },
+        "p1_pass": true,
+        "p2_sensitivity": 1,
+        "p2_hits": 5,
+        "p2_min_required": 4,
+        "p2_pass": true,
+        "p3_specificity": 0.8182,
+        "p3_correct": 9,
+        "p3_min_required": 10,
+        "p3_pass": false,
+        "p4_major_error_a": 0,
+        "p4_max_allowed": 0,
+        "p4_pass": true,
+        "all_primary_pass": false
+      },
+      "secondary_all_low": {
+        "n_low": 15,
+        "s1_major_error_b_count": 0,
+        "s1_major_error_b_max": 0,
+        "s1_major_error_b_rate": 0,
+        "s1_pass": true,
+        "s2_tier2_vs_low_auc": 1,
+        "s2_pass": true,
+        "s3_pro_vs_low_auc": 0.9576,
+        "s3_pro_minus_low_mean_gap": 27.02,
+        "s3_mwu_one_sided_p": 0.00004922,
+        "s3_pass": true
+      },
+      "secondary_excl_r_low_04": {
+        "n_low": 15,
+        "s1_major_error_b_count": 0,
+        "s1_major_error_b_max": 0,
+        "s1_major_error_b_rate": 0,
+        "s1_pass": true,
+        "s2_tier2_vs_low_auc": 1,
+        "s2_pass": true,
+        "s3_pro_vs_low_auc": 0.9576,
+        "s3_pro_minus_low_mean_gap": 27.02,
+        "s3_mwu_one_sided_p": 0.00004922,
+        "s3_pass": true
+      },
+      "reference": {
+        "tier2_vs_all_non_tier2_auc": 0.9923,
+        "tier2_vs_all_pro_auc": 0.9818,
+        "cross_table": {
+          "tier2_award": {
+            "gte_t_award": 5,
+            "mid_t_low_to_t_award": 0,
+            "lt_t_low": 0,
+            "mean": 91.2
+          },
+          "non_tier2_pro": {
+            "gte_t_award": 2,
+            "mid_t_low_to_t_award": 8,
+            "lt_t_low": 1,
+            "mean": 74.09
+          },
+          "non_tier2_low": {
+            "gte_t_award": 0,
+            "mid_t_low_to_t_award": 1,
+            "lt_t_low": 14,
+            "mean": 47.07
+          }
+        }
+      },
+      "decision": "NO-GO"
+    },
+    "phase1_surviving_28_only_reference": {
+      "thresholds": {
+        "t_award": 83,
+        "t_low": 63
+      },
+      "counts": {
+        "tier2": 19,
+        "primary_pro": 9,
+        "all_pro": 9,
+        "low_all": 0,
+        "low_excl_r_low_04": 0
+      },
+      "primary": {
+        "scope": "5_genres_all",
+        "p1_roc_auc": 0.9912,
+        "p1_ci95": {
+          "low": 0.9561,
+          "high": 1
+        },
+        "p1_pass": true,
+        "p2_sensitivity": 0.8947,
+        "p2_hits": 17,
+        "p2_min_required": 16,
+        "p2_pass": true,
+        "p3_specificity": 1,
+        "p3_correct": 9,
+        "p3_min_required": 8,
+        "p3_pass": true,
+        "p4_major_error_a": 0,
+        "p4_max_allowed": 0,
+        "p4_pass": true,
+        "all_primary_pass": true
+      },
+      "secondary_all_low": null,
+      "secondary_excl_r_low_04": null,
+      "reference": {
+        "tier2_vs_all_non_tier2_auc": 0.9912,
+        "tier2_vs_all_pro_auc": 0.9912,
+        "cross_table": {
+          "tier2_award": {
+            "gte_t_award": 17,
+            "mid_t_low_to_t_award": 2,
+            "lt_t_low": 0,
+            "mean": 91.58
+          },
+          "non_tier2_pro": {
+            "gte_t_award": 0,
+            "mid_t_low_to_t_award": 8,
+            "lt_t_low": 1,
+            "mean": 69.28
+          },
+          "non_tier2_low": {
+            "gte_t_award": 0,
+            "mid_t_low_to_t_award": 0,
+            "lt_t_low": 0,
+            "mean": null
+          }
+        }
+      },
+      "decision": "GO"
+    }
+  },
+  "hybrid_routing_stats": {
+    "combined_59": {
+      "video_h1": 38,
+      "video_h2_escalated": 8,
+      "contact_sheet": 13
+    },
+    "new_dev_31": {
+      "video_h1": 17,
+      "video_h2_escalated": 3,
+      "contact_sheet": 11
+    },
+    "new_dev_token_comparison": {
+      "all_video_raw_input_tokens": 241523,
+      "hybrid_raw_input_tokens": 208711,
+      "raw_token_reduction_pct": 13.59,
+      "all_video_eff_input_tokens": 483280,
+      "hybrid_eff_input_tokens": 461432,
+      "eff_token_reduction_pct": 4.52
+    }
+  },
+  "sweep_top_20": [
+    {
+      "t_award": 82,
+      "t_low": 58,
+      "decision": "GO",
+      "p1_auc": 0.976,
+      "p2_sens": 0.9167,
+      "p3_spec": 0.9,
+      "p4_err": 0,
+      "s1_err": 0,
+      "video_rate": 0.7797,
+      "youden_j": 0.8167
+    },
+    {
+      "t_award": 82,
+      "t_low": 59,
+      "decision": "GO",
+      "p1_auc": 0.976,
+      "p2_sens": 0.9167,
+      "p3_spec": 0.9,
+      "p4_err": 0,
+      "s1_err": 0,
+      "video_rate": 0.7797,
+      "youden_j": 0.8167
+    },
+    {
+      "t_award": 82,
+      "t_low": 60,
+      "decision": "GO",
+      "p1_auc": 0.976,
+      "p2_sens": 0.9167,
+      "p3_spec": 0.9,
+      "p4_err": 0,
+      "s1_err": 0,
+      "video_rate": 0.7966,
+      "youden_j": 0.8167
+    },
+    {
+      "t_award": 82,
+      "t_low": 61,
+      "decision": "GO",
+      "p1_auc": 0.976,
+      "p2_sens": 0.9167,
+      "p3_spec": 0.9,
+      "p4_err": 0,
+      "s1_err": 0,
+      "video_rate": 0.7627,
+      "youden_j": 0.8167
+    },
+    {
+      "t_award": 82,
+      "t_low": 62,
+      "decision": "GO",
+      "p1_auc": 0.976,
+      "p2_sens": 0.9167,
+      "p3_spec": 0.9,
+      "p4_err": 0,
+      "s1_err": 0,
+      "video_rate": 0.7797,
+      "youden_j": 0.8167
+    },
+    {
+      "t_award": 82,
+      "t_low": 63,
+      "decision": "GO",
+      "p1_auc": 0.976,
+      "p2_sens": 0.9167,
+      "p3_spec": 0.9,
+      "p4_err": 0,
+      "s1_err": 0,
+      "video_rate": 0.7966,
+      "youden_j": 0.8167
+    },
+    {
+      "t_award": 82,
+      "t_low": 64,
+      "decision": "GO",
+      "p1_auc": 0.976,
+      "p2_sens": 0.9167,
+      "p3_spec": 0.9,
+      "p4_err": 0,
+      "s1_err": 0,
+      "video_rate": 0.7966,
+      "youden_j": 0.8167
+    },
+    {
+      "t_award": 82,
+      "t_low": 65,
+      "decision": "GO",
+      "p1_auc": 0.976,
+      "p2_sens": 0.9167,
+      "p3_spec": 0.9,
+      "p4_err": 0,
+      "s1_err": 0,
+      "video_rate": 0.7966,
+      "youden_j": 0.8167
+    },
+    {
+      "t_award": 82,
+      "t_low": 66,
+      "decision": "GO",
+      "p1_auc": 0.976,
+      "p2_sens": 0.9167,
+      "p3_spec": 0.9,
+      "p4_err": 0,
+      "s1_err": 0,
+      "video_rate": 0.7966,
+      "youden_j": 0.8167
+    },
+    {
+      "t_award": 82,
+      "t_low": 67,
+      "decision": "GO",
+      "p1_auc": 0.976,
+      "p2_sens": 0.9167,
+      "p3_spec": 0.9,
+      "p4_err": 0,
+      "s1_err": 0,
+      "video_rate": 0.7966,
+      "youden_j": 0.8167
+    },
+    {
+      "t_award": 82,
+      "t_low": 68,
+      "decision": "GO",
+      "p1_auc": 0.976,
+      "p2_sens": 0.9167,
+      "p3_spec": 0.9,
+      "p4_err": 0,
+      "s1_err": 0,
+      "video_rate": 0.7966,
+      "youden_j": 0.8167
+    },
+    {
+      "t_award": 83,
+      "t_low": 58,
+      "decision": "GO",
+      "p1_auc": 0.976,
+      "p2_sens": 0.9167,
+      "p3_spec": 0.9,
+      "p4_err": 0,
+      "s1_err": 0,
+      "video_rate": 0.7627,
+      "youden_j": 0.8167
+    },
+    {
+      "t_award": 83,
+      "t_low": 59,
+      "decision": "GO",
+      "p1_auc": 0.976,
+      "p2_sens": 0.9167,
+      "p3_spec": 0.9,
+      "p4_err": 0,
+      "s1_err": 0,
+      "video_rate": 0.7627,
+      "youden_j": 0.8167
+    },
+    {
+      "t_award": 83,
+      "t_low": 60,
+      "decision": "GO",
+      "p1_auc": 0.976,
+      "p2_sens": 0.9167,
+      "p3_spec": 0.9,
+      "p4_err": 0,
+      "s1_err": 0,
+      "video_rate": 0.7797,
+      "youden_j": 0.8167
+    },
+    {
+      "t_award": 83,
+      "t_low": 61,
+      "decision": "GO",
+      "p1_auc": 0.976,
+      "p2_sens": 0.9167,
+      "p3_spec": 0.9,
+      "p4_err": 0,
+      "s1_err": 0,
+      "video_rate": 0.7458,
+      "youden_j": 0.8167
+    },
+    {
+      "t_award": 83,
+      "t_low": 62,
+      "decision": "GO",
+      "p1_auc": 0.976,
+      "p2_sens": 0.9167,
+      "p3_spec": 0.9,
+      "p4_err": 0,
+      "s1_err": 0,
+      "video_rate": 0.7627,
+      "youden_j": 0.8167
+    },
+    {
+      "t_award": 83,
+      "t_low": 63,
+      "decision": "GO",
+      "p1_auc": 0.976,
+      "p2_sens": 0.9167,
+      "p3_spec": 0.9,
+      "p4_err": 0,
+      "s1_err": 0,
+      "video_rate": 0.7797,
+      "youden_j": 0.8167
+    },
+    {
+      "t_award": 83,
+      "t_low": 64,
+      "decision": "GO",
+      "p1_auc": 0.976,
+      "p2_sens": 0.9167,
+      "p3_spec": 0.9,
+      "p4_err": 0,
+      "s1_err": 0,
+      "video_rate": 0.7797,
+      "youden_j": 0.8167
+    },
+    {
+      "t_award": 83,
+      "t_low": 65,
+      "decision": "GO",
+      "p1_auc": 0.976,
+      "p2_sens": 0.9167,
+      "p3_spec": 0.9,
+      "p4_err": 0,
+      "s1_err": 0,
+      "video_rate": 0.7797,
+      "youden_j": 0.8167
+    },
+    {
+      "t_award": 83,
+      "t_low": 66,
+      "decision": "GO",
+      "p1_auc": 0.976,
+      "p2_sens": 0.9167,
+      "p3_spec": 0.9,
+      "p4_err": 0,
+      "s1_err": 0,
+      "video_rate": 0.7797,
+      "youden_j": 0.8167
+    }
+  ],
+  "per_video": [
+    {
+      "video_id": "FNQ4vqB-waw",
+      "source_pool": "phase1_surviving_dev",
+      "title": "Father and Daughter | Sotetsu Train Commercial | Translated",
+      "stratum": "tier2_award",
+      "genre": "CM",
+      "label_rule_id": "phase1_craft_benchmark",
+      "duration_sec": 150.1,
+      "total_cuts": 0,
+      "avg_cut_interval_sec": 150.1,
+      "max_cuts_per_10s": 0,
+      "integrated_lufs": -14.2,
+      "video_score": 95,
+      "contact_sheet_score": 94,
+      "flagged_contamination": true,
+      "hybrid": {
+        "final_score": 95,
+        "final_mode": "video_h2_escalated",
+        "escalated": true,
+        "h1_triggers": [],
+        "h2_triggers": [
+          "H2-b:static_long_video(dur=150.1s,avgInt=150.1s,cuts=0)"
+        ],
+        "modes_executed": [
+          "contact_sheet",
+          "video"
+        ]
+      },
+      "score": 95
+    },
+    {
+      "video_id": "5wEjV2ekSwE",
+      "source_pool": "phase1_surviving_dev",
+      "title": "WINNER - 2014 BEST AUTO COMMERCIAL Honda &quot;Hands&quot;",
+      "stratum": "tier2_award",
+      "genre": "CM",
+      "label_rule_id": "phase1_craft_benchmark",
+      "duration_sec": 125.7,
+      "total_cuts": 1,
+      "avg_cut_interval_sec": 125.7,
+      "max_cuts_per_10s": 1,
+      "integrated_lufs": -20,
+      "video_score": 95,
+      "contact_sheet_score": 93,
+      "flagged_contamination": true,
+      "hybrid": {
+        "final_score": 95,
+        "final_mode": "video_h2_escalated",
+        "escalated": true,
+        "h1_triggers": [],
+        "h2_triggers": [
+          "H2-b:static_long_video(dur=125.7s,avgInt=125.7s,cuts=1)"
+        ],
+        "modes_executed": [
+          "contact_sheet",
+          "video"
+        ]
+      },
+      "score": 95
+    },
+    {
+      "video_id": "vpyeQeTDGFA",
+      "source_pool": "phase1_surviving_dev",
+      "title": "Honda \"Paper\" by PES | Emmy Nominated Commercial",
+      "stratum": "tier2_award",
+      "genre": "CM",
+      "label_rule_id": "phase1_craft_benchmark",
+      "duration_sec": 121.3,
+      "total_cuts": 47,
+      "avg_cut_interval_sec": 2.58,
+      "max_cuts_per_10s": 21,
+      "integrated_lufs": -16.9,
+      "video_score": 96.5,
+      "contact_sheet_score": 93.5,
+      "flagged_contamination": true,
+      "hybrid": {
+        "final_score": 96.5,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-c:max_cuts_per_10s=21>=12"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      },
+      "score": 96.5
+    },
+    {
+      "video_id": "iIL_CB_YjFk",
+      "source_pool": "phase1_surviving_dev",
+      "title": "講談社ブランデッドフィルム | LIGHT HOLE",
+      "stratum": "tier2_award",
+      "genre": "CM",
+      "label_rule_id": "phase1_craft_benchmark",
+      "duration_sec": 105.1,
+      "total_cuts": 101,
+      "avg_cut_interval_sec": 1.04,
+      "max_cuts_per_10s": 38,
+      "integrated_lufs": -15.7,
+      "video_score": 95,
+      "contact_sheet_score": 92,
+      "flagged_contamination": true,
+      "hybrid": {
+        "final_score": 95,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-c:max_cuts_per_10s=38>=12"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      },
+      "score": 95
+    },
+    {
+      "video_id": "5URefVYaJrA",
+      "source_pool": "phase1_surviving_dev",
+      "title": "MV  実写   A$AP Rocky - Tailor Swif (Official Video)",
+      "stratum": "tier2_award",
+      "genre": "MV",
+      "label_rule_id": "phase1_craft_benchmark",
+      "duration_sec": 194.2,
+      "total_cuts": 20,
+      "avg_cut_interval_sec": 9.71,
+      "max_cuts_per_10s": 6,
+      "integrated_lufs": -12.4,
+      "video_score": 94,
+      "contact_sheet_score": 93,
+      "flagged_contamination": true,
+      "hybrid": {
+        "final_score": 94,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-a:genre=MV"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      },
+      "score": 94
+    },
+    {
+      "video_id": "tvTRZJ-4EyI",
+      "source_pool": "phase1_surviving_dev",
+      "title": "Kendrick Lamar - HUMBLE.",
+      "stratum": "tier2_award",
+      "genre": "MV",
+      "label_rule_id": "phase1_craft_benchmark",
+      "duration_sec": 183.6,
+      "total_cuts": 103,
+      "avg_cut_interval_sec": 1.78,
+      "max_cuts_per_10s": 16,
+      "integrated_lufs": -10.5,
+      "video_score": 96,
+      "contact_sheet_score": 94,
+      "flagged_contamination": true,
+      "hybrid": {
+        "final_score": 96,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-a:genre=MV",
+          "H1-c:max_cuts_per_10s=16>=12"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      },
+      "score": 96
+    },
+    {
+      "video_id": "ebzEEEdjHj0",
+      "source_pool": "phase1_surviving_dev",
+      "title": "Bonobo - No Reason (feat. Nick Murphy) (Official Video)",
+      "stratum": "tier2_award",
+      "genre": "MV",
+      "label_rule_id": "phase1_craft_benchmark",
+      "duration_sec": 243.6,
+      "total_cuts": 3,
+      "avg_cut_interval_sec": 81.2,
+      "max_cuts_per_10s": 1,
+      "integrated_lufs": -12.4,
+      "video_score": 93,
+      "contact_sheet_score": 85,
+      "flagged_contamination": true,
+      "hybrid": {
+        "final_score": 93,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-a:genre=MV"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      },
+      "score": 93
+    },
+    {
+      "video_id": "153159513",
+      "source_pool": "phase1_surviving_dev",
+      "title": "Valentino Khan - Deep Down Low (Official Video)",
+      "stratum": "tier2_award",
+      "genre": "MV",
+      "label_rule_id": "phase1_craft_benchmark",
+      "duration_sec": 184.7,
+      "total_cuts": 93,
+      "avg_cut_interval_sec": 1.99,
+      "max_cuts_per_10s": 18,
+      "integrated_lufs": -6.4,
+      "video_score": 91.5,
+      "contact_sheet_score": 85,
+      "flagged_contamination": true,
+      "hybrid": {
+        "final_score": 91.5,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-a:genre=MV",
+          "H1-c:max_cuts_per_10s=18>=12"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      },
+      "score": 91.5
+    },
+    {
+      "video_id": "313084145",
+      "source_pool": "phase1_surviving_dev",
+      "title": "Mitski : A Pearl",
+      "stratum": "tier2_award",
+      "genre": "MV",
+      "label_rule_id": "phase1_craft_benchmark",
+      "duration_sec": 151.8,
+      "total_cuts": 25,
+      "avg_cut_interval_sec": 6.07,
+      "max_cuts_per_10s": 8,
+      "integrated_lufs": -7.8,
+      "video_score": 92.5,
+      "contact_sheet_score": 90.5,
+      "flagged_contamination": true,
+      "hybrid": {
+        "final_score": 92.5,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-a:genre=MV"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      },
+      "score": 92.5
+    },
+    {
+      "video_id": "49367868",
+      "source_pool": "phase1_surviving_dev",
+      "title": "Dynamics of the Subway / Haisuinonasa  (Official Video)",
+      "stratum": "tier2_award",
+      "genre": "MV",
+      "label_rule_id": "phase1_craft_benchmark",
+      "duration_sec": 261.5,
+      "total_cuts": 36,
+      "avg_cut_interval_sec": 7.26,
+      "max_cuts_per_10s": 10,
+      "integrated_lufs": -10,
+      "video_score": 93.5,
+      "contact_sheet_score": 86,
+      "flagged_contamination": true,
+      "hybrid": {
+        "final_score": 93.5,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-a:genre=MV"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      },
+      "score": 93.5
+    },
+    {
+      "video_id": "5zj3aHgLFQE",
+      "source_pool": "phase1_surviving_dev",
+      "title": "Shugo Tokumaru (トクマルシューゴ) - Poker (Official Music Video)",
+      "stratum": "tier2_award",
+      "genre": "MV",
+      "label_rule_id": "phase1_craft_benchmark",
+      "duration_sec": 218,
+      "total_cuts": 21,
+      "avg_cut_interval_sec": 10.38,
+      "max_cuts_per_10s": 15,
+      "integrated_lufs": -10.7,
+      "video_score": 91,
+      "contact_sheet_score": 84.5,
+      "flagged_contamination": true,
+      "hybrid": {
+        "final_score": 91,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-a:genre=MV",
+          "H1-c:max_cuts_per_10s=15>=12"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      },
+      "score": 91
+    },
+    {
+      "video_id": "3JtO1WMYb58",
+      "source_pool": "phase1_surviving_dev",
+      "title": "Frasco / Viewtiful",
+      "stratum": "tier2_award",
+      "genre": "MV",
+      "label_rule_id": "phase1_craft_benchmark",
+      "duration_sec": 229.3,
+      "total_cuts": 49,
+      "avg_cut_interval_sec": 4.68,
+      "max_cuts_per_10s": 7,
+      "integrated_lufs": -8.9,
+      "video_score": 84,
+      "contact_sheet_score": 86,
+      "flagged_contamination": false,
+      "hybrid": {
+        "final_score": 84,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-a:genre=MV"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      },
+      "score": 84
+    },
+    {
+      "video_id": "QmLBz4FuVDA",
+      "source_pool": "phase1_surviving_dev",
+      "title": "INNOSENT in FORMAL「Footloose」Music Video",
+      "stratum": "tier2_award",
+      "genre": "MV",
+      "label_rule_id": "phase1_craft_benchmark",
+      "duration_sec": 216.3,
+      "total_cuts": 92,
+      "avg_cut_interval_sec": 2.35,
+      "max_cuts_per_10s": 14,
+      "integrated_lufs": -7.6,
+      "video_score": 76.5,
+      "contact_sheet_score": 73,
+      "flagged_contamination": false,
+      "hybrid": {
+        "final_score": 76.5,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-a:genre=MV",
+          "H1-c:max_cuts_per_10s=14>=12"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      },
+      "score": 76.5
+    },
+    {
+      "video_id": "-n1ljTOQK-s",
+      "source_pool": "phase1_surviving_dev",
+      "title": "僕が見たかった青空 /「初めて好きになった人」Music Video（YouTube ver.）",
+      "stratum": "non_tier2_pro",
+      "genre": "MV",
+      "label_rule_id": "R-PRO-kept",
+      "duration_sec": 276.3,
+      "total_cuts": 62,
+      "avg_cut_interval_sec": 4.46,
+      "max_cuts_per_10s": 6,
+      "integrated_lufs": -6.5,
+      "video_score": 72.5,
+      "contact_sheet_score": 70,
+      "flagged_contamination": false,
+      "hybrid": {
+        "final_score": 72.5,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-a:genre=MV"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      },
+      "score": 72.5
+    },
+    {
+      "video_id": "_C7k63knGz8",
+      "source_pool": "phase1_surviving_dev",
+      "title": "XOX New Single『PINKY BABY』MUSIC VIDEO",
+      "stratum": "non_tier2_pro",
+      "genre": "MV",
+      "label_rule_id": "R-PRO-kept",
+      "duration_sec": 182.2,
+      "total_cuts": 78,
+      "avg_cut_interval_sec": 2.34,
+      "max_cuts_per_10s": 10,
+      "integrated_lufs": -5.5,
+      "video_score": 72,
+      "contact_sheet_score": 66.5,
+      "flagged_contamination": false,
+      "hybrid": {
+        "final_score": 72,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-a:genre=MV"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      },
+      "score": 72
+    },
+    {
+      "video_id": "-J3OnxCEzl0",
+      "source_pool": "phase1_surviving_dev",
+      "title": "【MV】ZeroGravity / 上水流宇宙 【オリジナル曲】#ヴイアラ",
+      "stratum": "non_tier2_pro",
+      "genre": "MV",
+      "label_rule_id": "R-PRO-kept",
+      "duration_sec": 199,
+      "total_cuts": 105,
+      "avg_cut_interval_sec": 1.9,
+      "max_cuts_per_10s": 12,
+      "integrated_lufs": -7.4,
+      "video_score": 76,
+      "contact_sheet_score": 80,
+      "flagged_contamination": false,
+      "hybrid": {
+        "final_score": 76,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-a:genre=MV",
+          "H1-c:max_cuts_per_10s=12>=12"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      },
+      "score": 76
+    },
+    {
+      "video_id": "_2lHuvAwhwk",
+      "source_pool": "phase1_surviving_dev",
+      "title": "R BANDIT X MR RIGHT (BURUKLYN BOYZ) - RICH (Official Music Video)",
+      "stratum": "non_tier2_pro",
+      "genre": "MV",
+      "label_rule_id": "R-PRO-kept",
+      "duration_sec": 183.8,
+      "total_cuts": 145,
+      "avg_cut_interval_sec": 1.27,
+      "max_cuts_per_10s": 15,
+      "integrated_lufs": -10.9,
+      "video_score": 64.5,
+      "contact_sheet_score": 69,
+      "flagged_contamination": false,
+      "hybrid": {
+        "final_score": 64.5,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-a:genre=MV",
+          "H1-c:max_cuts_per_10s=15>=12"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      },
+      "score": 64.5
+    },
+    {
+      "video_id": "7ErE0YPc_PY",
+      "source_pool": "phase1_surviving_dev",
+      "title": "Lil Eazzyy - IM GOOD (OFFICIAL MUSIC VIDEO) DIR: @708visuals",
+      "stratum": "non_tier2_pro",
+      "genre": "MV",
+      "label_rule_id": "R-PRO-kept",
+      "duration_sec": 282.7,
+      "total_cuts": 255,
+      "avg_cut_interval_sec": 1.11,
+      "max_cuts_per_10s": 22,
+      "integrated_lufs": -6.7,
+      "video_score": 54,
+      "contact_sheet_score": 57,
+      "flagged_contamination": false,
+      "hybrid": {
+        "final_score": 54,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-a:genre=MV",
+          "H1-c:max_cuts_per_10s=22>=12"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      },
+      "score": 54
+    },
+    {
+      "video_id": "1032202784",
+      "source_pool": "phase1_surviving_dev",
+      "title": "Node Fest 2024",
+      "stratum": "tier2_award",
+      "genre": "モーション",
+      "label_rule_id": "phase1_craft_benchmark",
+      "duration_sec": 110,
+      "total_cuts": 66,
+      "avg_cut_interval_sec": 1.67,
+      "max_cuts_per_10s": 27,
+      "integrated_lufs": -8.9,
+      "video_score": 92.5,
+      "contact_sheet_score": 88.5,
+      "flagged_contamination": true,
+      "hybrid": {
+        "final_score": 92.5,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-b:genre=モーション",
+          "H1-c:max_cuts_per_10s=27>=12"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      },
+      "score": 92.5
+    },
+    {
+      "video_id": "bJ4LFnk785g",
+      "source_pool": "phase1_surviving_dev",
+      "title": "プライマルハーツ2　オープニングムービー",
+      "stratum": "non_tier2_pro",
+      "genre": "モーション",
+      "label_rule_id": "R-PRO-kept",
+      "duration_sec": 143.4,
+      "total_cuts": 30,
+      "avg_cut_interval_sec": 4.78,
+      "max_cuts_per_10s": 9,
+      "integrated_lufs": -8.9,
+      "video_score": 69.5,
+      "contact_sheet_score": 68.5,
+      "flagged_contamination": false,
+      "hybrid": {
+        "final_score": 69.5,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-b:genre=モーション"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      },
+      "score": 69.5
+    },
+    {
+      "video_id": "vRBVWCs1KW4",
+      "source_pool": "phase1_surviving_dev",
+      "title": "Blinkity Blank",
+      "stratum": "tier2_award",
+      "genre": "3DCG/アニメ",
+      "label_rule_id": "phase1_craft_benchmark",
+      "duration_sec": 314.8,
+      "total_cuts": 32,
+      "avg_cut_interval_sec": 9.84,
+      "max_cuts_per_10s": 18,
+      "integrated_lufs": -34.4,
+      "video_score": 93.5,
+      "contact_sheet_score": 92.5,
+      "flagged_contamination": true,
+      "hybrid": {
+        "final_score": 93.5,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-c:max_cuts_per_10s=18>=12"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      },
+      "score": 93.5
+    },
+    {
+      "video_id": "X0hyTmlsBUI",
+      "source_pool": "phase1_surviving_dev",
+      "title": "Origami | OSCARS® Shortlisted Short Film by Kei Kanamori",
+      "stratum": "tier2_award",
+      "genre": "3DCG/アニメ",
+      "label_rule_id": "phase1_craft_benchmark",
+      "duration_sec": 175.1,
+      "total_cuts": 10,
+      "avg_cut_interval_sec": 17.51,
+      "max_cuts_per_10s": 2,
+      "integrated_lufs": -14.8,
+      "video_score": 81.5,
+      "contact_sheet_score": 80.5,
+      "flagged_contamination": true,
+      "hybrid": {
+        "final_score": 81.5,
+        "final_mode": "video_h2_escalated",
+        "escalated": true,
+        "h1_triggers": [],
+        "h2_triggers": [
+          "H2-a:near_t_award(80.5 within 83+/-3)",
+          "H2-b:static_long_video(dur=175.1s,avgInt=17.5s,cuts=10)"
+        ],
+        "modes_executed": [
+          "contact_sheet",
+          "video"
+        ]
+      },
+      "score": 81.5
+    },
+    {
+      "video_id": "35i4zTky9pI",
+      "source_pool": "phase1_surviving_dev",
+      "title": "Lost &amp; Found | Shortlisted for Academy Award for Best Animated Short Film",
+      "stratum": "tier2_award",
+      "genre": "3DCG/アニメ",
+      "label_rule_id": "phase1_craft_benchmark",
+      "duration_sec": 458.6,
+      "total_cuts": 63,
+      "avg_cut_interval_sec": 7.28,
+      "max_cuts_per_10s": 5,
+      "integrated_lufs": -19.1,
+      "video_score": 94,
+      "contact_sheet_score": 92,
+      "flagged_contamination": true,
+      "hybrid": {
+        "final_score": 92,
+        "final_mode": "contact_sheet",
+        "escalated": false,
+        "h1_triggers": [],
+        "h2_triggers": [],
+        "modes_executed": [
+          "contact_sheet"
+        ]
+      },
+      "score": 92
+    },
+    {
+      "video_id": "134832670",
+      "source_pool": "phase1_surviving_dev",
+      "title": "L'Œil du Cyclone",
+      "stratum": "tier2_award",
+      "genre": "3DCG/アニメ",
+      "label_rule_id": "phase1_craft_benchmark",
+      "duration_sec": 294.7,
+      "total_cuts": 21,
+      "avg_cut_interval_sec": 14.03,
+      "max_cuts_per_10s": 5,
+      "integrated_lufs": -9.2,
+      "video_score": 91,
+      "contact_sheet_score": 83,
+      "flagged_contamination": false,
+      "hybrid": {
+        "final_score": 91,
+        "final_mode": "video_h2_escalated",
+        "escalated": true,
+        "h1_triggers": [],
+        "h2_triggers": [
+          "H2-a:near_t_award(83 within 83+/-3)"
+        ],
+        "modes_executed": [
+          "contact_sheet",
+          "video"
+        ]
+      },
+      "score": 91
+    },
+    {
+      "video_id": "8XpGThBki3Y",
+      "source_pool": "phase1_surviving_dev",
+      "title": "『この素晴らしい世界に祝福を！』アニメ10周年記念PV",
+      "stratum": "non_tier2_pro",
+      "genre": "3DCG/アニメ",
+      "label_rule_id": "R-PRO-kept",
+      "duration_sec": 324.4,
+      "total_cuts": 529,
+      "avg_cut_interval_sec": 0.61,
+      "max_cuts_per_10s": 72,
+      "integrated_lufs": -13.8,
+      "video_score": 81.5,
+      "contact_sheet_score": 79,
+      "flagged_contamination": false,
+      "hybrid": {
+        "final_score": 81.5,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-c:max_cuts_per_10s=72>=12"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      },
+      "score": 81.5
+    },
+    {
+      "video_id": "UvGwIFVUK7M",
+      "source_pool": "phase1_surviving_dev",
+      "title": "Jindal Steel | The Steel Of India | Brand Film",
+      "stratum": "tier2_award",
+      "genre": "企業映像",
+      "label_rule_id": "phase1_craft_benchmark",
+      "duration_sec": 120,
+      "total_cuts": 99,
+      "avg_cut_interval_sec": 1.21,
+      "max_cuts_per_10s": 14,
+      "integrated_lufs": -12.4,
+      "video_score": 96,
+      "contact_sheet_score": 89.5,
+      "flagged_contamination": true,
+      "hybrid": {
+        "final_score": 96,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-c:max_cuts_per_10s=14>=12"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      },
+      "score": 96
+    },
+    {
+      "video_id": "-nr56fLZ11o",
+      "source_pool": "phase1_surviving_dev",
+      "title": "【企業CM】Kezuru実験「グラインディング」編",
+      "stratum": "non_tier2_pro",
+      "genre": "企業映像",
+      "label_rule_id": "R-PRO-kept",
+      "duration_sec": 112.2,
+      "total_cuts": 29,
+      "avg_cut_interval_sec": 3.87,
+      "max_cuts_per_10s": 5,
+      "integrated_lufs": -14.1,
+      "video_score": 69.5,
+      "contact_sheet_score": 69.5,
+      "flagged_contamination": false,
+      "hybrid": {
+        "final_score": 69.5,
+        "final_mode": "contact_sheet",
+        "escalated": false,
+        "h1_triggers": [],
+        "h2_triggers": [],
+        "modes_executed": [
+          "contact_sheet"
+        ]
+      },
+      "score": 69.5
+    },
+    {
+      "video_id": "-BVWPusea_A",
+      "source_pool": "phase1_surviving_dev",
+      "title": "【採用動画】通信会社様：営業社員PV",
+      "stratum": "non_tier2_pro",
+      "genre": "企業映像",
+      "label_rule_id": "R-PRO-kept",
+      "duration_sec": 85.9,
+      "total_cuts": 40,
+      "avg_cut_interval_sec": 2.15,
+      "max_cuts_per_10s": 8,
+      "integrated_lufs": -12.6,
+      "video_score": 64,
+      "contact_sheet_score": 66,
+      "flagged_contamination": false,
+      "hybrid": {
+        "final_score": 64,
+        "final_mode": "video_h2_escalated",
+        "escalated": true,
+        "h1_triggers": [],
+        "h2_triggers": [
+          "H2-a:near_t_low(66 within 63+/-3)"
+        ],
+        "modes_executed": [
+          "contact_sheet",
+          "video"
+        ]
+      },
+      "score": 64
+    },
+    {
+      "video_id": "D2J8YDIHhtY",
+      "source_pool": "phase2_dev_additions_v1",
+      "title": "Rick & Morty Wormageddon | Golden Wolf",
+      "stratum": "tier2_award",
+      "genre": "モーション",
+      "label_rule_id": "R-T2-03",
+      "duration_sec": 153,
+      "total_cuts": 92,
+      "avg_cut_interval_sec": 1.66,
+      "max_cuts_per_10s": 13,
+      "integrated_lufs": -16.6,
+      "video_score": 86,
+      "video_raw_scores": [
+        86,
+        86
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": 81.5,
+      "contact_sheet_raw_scores": [
+        82,
+        81
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": true,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": true,
+      "avg_video_input_tokens": 18120,
+      "avg_cs_input_tokens": 3915,
+      "avg_video_eff_tokens": 25976,
+      "avg_cs_eff_tokens": 11845,
+      "hybrid": {
+        "final_score": 86,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-b:genre=モーション",
+          "H1-c:max_cuts_per_10s=13>=12"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      },
+      "score": 86
+    },
+    {
+      "video_id": "b1Izefj7Eag",
+      "source_pool": "phase2_dev_additions_v1",
+      "title": "MURDER IN THE BELL TOWER | TV PROMO",
+      "stratum": "tier2_award",
+      "genre": "モーション",
+      "label_rule_id": "R-T2-03",
+      "duration_sec": 73.3,
+      "total_cuts": 0,
+      "avg_cut_interval_sec": 73.3,
+      "max_cuts_per_10s": 0,
+      "integrated_lufs": -11.1,
+      "video_score": 88.5,
+      "video_raw_scores": [
+        89,
+        88
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": 84,
+      "contact_sheet_raw_scores": [
+        88,
+        83,
+        84
+      ],
+      "contact_sheet_ensemble_rule": "median_of_3",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "avg_video_input_tokens": 9628,
+      "avg_cs_input_tokens": 2635,
+      "avg_video_eff_tokens": 17467,
+      "avg_cs_eff_tokens": 10479,
+      "hybrid": {
+        "final_score": 88.5,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-b:genre=モーション"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      },
+      "score": 88.5
+    },
+    {
+      "video_id": "NmS3m0OG-Ug",
+      "source_pool": "phase2_dev_additions_v1",
+      "title": "Severance - Official Intro Title Sequence  2022 / Credits / Opening 4K  ( Apple TV+ )  | extraweg",
+      "stratum": "tier2_award",
+      "genre": "モーション",
+      "label_rule_id": "R-T2-03",
+      "duration_sec": 86.4,
+      "total_cuts": 5,
+      "avg_cut_interval_sec": 17.28,
+      "max_cuts_per_10s": 3,
+      "integrated_lufs": -16.5,
+      "video_score": 95.5,
+      "video_raw_scores": [
+        96,
+        95
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": 93.5,
+      "contact_sheet_raw_scores": [
+        93,
+        94
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": true,
+      "knows_award_history": true,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": true,
+      "avg_video_input_tokens": 11076,
+      "avg_cs_input_tokens": 2650,
+      "avg_video_eff_tokens": 18931,
+      "avg_cs_eff_tokens": 10509,
+      "hybrid": {
+        "final_score": 95.5,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-b:genre=モーション"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      },
+      "score": 95.5
+    },
+    {
+      "video_id": "8SWhBsbxmpk",
+      "source_pool": "phase2_dev_additions_v1",
+      "title": "The Last of Us | Opening Credits | Max",
+      "stratum": "tier2_award",
+      "genre": "モーション",
+      "label_rule_id": "R-T2-03",
+      "duration_sec": 79.2,
+      "total_cuts": 2,
+      "avg_cut_interval_sec": 39.6,
+      "max_cuts_per_10s": 1,
+      "integrated_lufs": -22.4,
+      "video_score": 93.5,
+      "video_raw_scores": [
+        93,
+        94
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": 93,
+      "contact_sheet_raw_scores": [
+        93,
+        93
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": true,
+      "knows_award_history": true,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": true,
+      "avg_video_input_tokens": 10324,
+      "avg_cs_input_tokens": 2641,
+      "avg_video_eff_tokens": 18174,
+      "avg_cs_eff_tokens": 10496,
+      "hybrid": {
+        "final_score": 93.5,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-b:genre=モーション"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      },
+      "score": 93.5
+    },
+    {
+      "video_id": "AJlOS6ZeIcA",
+      "source_pool": "phase2_dev_additions_v1",
+      "title": "Silo — Opening Title Sequence | Apple TV",
+      "stratum": "tier2_award",
+      "genre": "モーション",
+      "label_rule_id": "R-T2-03",
+      "duration_sec": 108.3,
+      "total_cuts": 10,
+      "avg_cut_interval_sec": 10.83,
+      "max_cuts_per_10s": 4,
+      "integrated_lufs": -20.6,
+      "video_score": 92.5,
+      "video_raw_scores": [
+        93,
+        92
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": 88.5,
+      "contact_sheet_raw_scores": [
+        89,
+        88
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": true,
+      "knows_award_history": true,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": true,
+      "avg_video_input_tokens": 13416,
+      "avg_cs_input_tokens": 2610,
+      "avg_video_eff_tokens": 21262,
+      "avg_cs_eff_tokens": 10461,
+      "hybrid": {
+        "final_score": 92.5,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-b:genre=モーション"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      },
+      "score": 92.5
+    },
+    {
+      "video_id": "GCdPC3gTBDs",
+      "source_pool": "phase2_dev_additions_v1",
+      "title": "Fate/Grand Order「第2部 終章」告知TVCM 30秒ver.",
+      "stratum": "non_tier2_pro",
+      "genre": "CM",
+      "label_rule_id": "R-PRO-04",
+      "duration_sec": 30.1,
+      "total_cuts": 53,
+      "avg_cut_interval_sec": 0.57,
+      "max_cuts_per_10s": 24,
+      "integrated_lufs": -14.5,
+      "video_score": 84.5,
+      "video_raw_scores": [
+        86,
+        83
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": 83,
+      "contact_sheet_raw_scores": [
+        82,
+        84
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "avg_video_input_tokens": 5194,
+      "avg_cs_input_tokens": 2756,
+      "avg_video_eff_tokens": 13044,
+      "avg_cs_eff_tokens": 10614,
+      "hybrid": {
+        "final_score": 84.5,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-c:max_cuts_per_10s=24>=12"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      },
+      "score": 84.5
+    },
+    {
+      "video_id": "fBR8Wp2WF60",
+      "source_pool": "phase2_dev_additions_v1",
+      "title": "TVCM『僕は知っている』篇30秒（2026年）",
+      "stratum": "non_tier2_pro",
+      "genre": "CM",
+      "label_rule_id": "R-PRO-04",
+      "duration_sec": 30.1,
+      "total_cuts": 15,
+      "avg_cut_interval_sec": 2.01,
+      "max_cuts_per_10s": 7,
+      "integrated_lufs": -14,
+      "video_score": 76,
+      "video_raw_scores": [
+        76,
+        76
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": 75,
+      "contact_sheet_raw_scores": [
+        76,
+        74
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "avg_video_input_tokens": 5208,
+      "avg_cs_input_tokens": 2650,
+      "avg_video_eff_tokens": 13052,
+      "avg_cs_eff_tokens": 10503,
+      "hybrid": {
+        "final_score": 75,
+        "final_mode": "contact_sheet",
+        "escalated": false,
+        "h1_triggers": [],
+        "h2_triggers": [],
+        "modes_executed": [
+          "contact_sheet"
+        ]
+      },
+      "score": 75
+    },
+    {
+      "video_id": "xZ5DIjJOsgg",
+      "source_pool": "phase2_dev_additions_v1",
+      "title": "テレビCM「ありがとう　だんだん篇」30秒",
+      "stratum": "non_tier2_pro",
+      "genre": "CM",
+      "label_rule_id": "R-PRO-04",
+      "duration_sec": 30.1,
+      "total_cuts": 9,
+      "avg_cut_interval_sec": 3.34,
+      "max_cuts_per_10s": 4,
+      "integrated_lufs": -14.1,
+      "video_score": 77.5,
+      "video_raw_scores": [
+        77,
+        78
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": 79,
+      "contact_sheet_raw_scores": [
+        79,
+        79
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": true,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": true,
+      "avg_video_input_tokens": 3438,
+      "avg_cs_input_tokens": 2809,
+      "avg_video_eff_tokens": 11167,
+      "avg_cs_eff_tokens": 9146,
+      "hybrid": {
+        "final_score": 79,
+        "final_mode": "contact_sheet",
+        "escalated": false,
+        "h1_triggers": [],
+        "h2_triggers": [],
+        "modes_executed": [
+          "contact_sheet"
+        ]
+      },
+      "score": 79
+    },
+    {
+      "video_id": "u_lAdKpRp-8",
+      "source_pool": "phase2_dev_additions_v1",
+      "title": "日本メディアシステム TVCM｜「整ってますか」篇　30秒ver",
+      "stratum": "non_tier2_pro",
+      "genre": "CM",
+      "label_rule_id": "R-PRO-04",
+      "duration_sec": 33,
+      "total_cuts": 14,
+      "avg_cut_interval_sec": 2.36,
+      "max_cuts_per_10s": 7,
+      "integrated_lufs": -11.1,
+      "video_score": 72,
+      "video_raw_scores": [
+        73,
+        71
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": 73,
+      "contact_sheet_raw_scores": [
+        71,
+        75
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "avg_video_input_tokens": 5505,
+      "avg_cs_input_tokens": 2704,
+      "avg_video_eff_tokens": 13353,
+      "avg_cs_eff_tokens": 10560,
+      "hybrid": {
+        "final_score": 73,
+        "final_mode": "contact_sheet",
+        "escalated": false,
+        "h1_triggers": [],
+        "h2_triggers": [],
+        "modes_executed": [
+          "contact_sheet"
+        ]
+      },
+      "score": 73
+    },
+    {
+      "video_id": "aMWeNABISlg",
+      "source_pool": "phase2_dev_additions_v1",
+      "title": "【パズドラTVCM】「冬の青春」篇30秒 ✯",
+      "stratum": "non_tier2_pro",
+      "genre": "CM",
+      "label_rule_id": "R-PRO-04",
+      "duration_sec": 30.2,
+      "total_cuts": 11,
+      "avg_cut_interval_sec": 2.75,
+      "max_cuts_per_10s": 6,
+      "integrated_lufs": -24.2,
+      "video_score": 87.5,
+      "video_raw_scores": [
+        88,
+        87
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": 84,
+      "contact_sheet_raw_scores": [
+        84,
+        84
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": true,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": true,
+      "avg_video_input_tokens": 5164,
+      "avg_cs_input_tokens": 2618,
+      "avg_video_eff_tokens": 13014,
+      "avg_cs_eff_tokens": 10470,
+      "hybrid": {
+        "final_score": 87.5,
+        "final_mode": "video_h2_escalated",
+        "escalated": true,
+        "h1_triggers": [],
+        "h2_triggers": [
+          "H2-a:near_t_award(84 within 83+/-3)"
+        ],
+        "modes_executed": [
+          "contact_sheet",
+          "video"
+        ]
+      },
+      "score": 87.5
+    },
+    {
+      "video_id": "qtZPdgesJVk",
+      "source_pool": "phase2_dev_additions_v1",
+      "title": "Commercial Video Ad Production: Rise Cola Campaign & Motion Design",
+      "stratum": "non_tier2_pro",
+      "genre": "モーション",
+      "label_rule_id": "R-PRO-03",
+      "duration_sec": 21.3,
+      "total_cuts": 5,
+      "avg_cut_interval_sec": 4.26,
+      "max_cuts_per_10s": 5,
+      "integrated_lufs": -9.6,
+      "video_score": 54,
+      "video_raw_scores": [
+        53,
+        55
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": 54,
+      "contact_sheet_raw_scores": [
+        53,
+        55
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "avg_video_input_tokens": 4210,
+      "avg_cs_input_tokens": 2716,
+      "avg_video_eff_tokens": 12050,
+      "avg_cs_eff_tokens": 10565,
+      "hybrid": {
+        "final_score": 54,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-b:genre=モーション"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      },
+      "score": 54
+    },
+    {
+      "video_id": "5NsgViu8V0g",
+      "source_pool": "phase2_dev_additions_v1",
+      "title": "TANKA様 サービス紹介動画｜モーショングラフィックス｜Unplug",
+      "stratum": "non_tier2_pro",
+      "genre": "モーション",
+      "label_rule_id": "R-PRO-03",
+      "duration_sec": 111.9,
+      "total_cuts": 4,
+      "avg_cut_interval_sec": 27.98,
+      "max_cuts_per_10s": 3,
+      "integrated_lufs": -16.8,
+      "video_score": 65.5,
+      "video_raw_scores": [
+        65,
+        66
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": 62,
+      "contact_sheet_raw_scores": [
+        64,
+        60
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "avg_video_input_tokens": 13778,
+      "avg_cs_input_tokens": 2684,
+      "avg_video_eff_tokens": 21622,
+      "avg_cs_eff_tokens": 10530,
+      "hybrid": {
+        "final_score": 65.5,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-b:genre=モーション"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      },
+      "score": 65.5
+    },
+    {
+      "video_id": "QqLA-04V_uw",
+      "source_pool": "phase2_dev_additions_v1",
+      "title": "TVアニメ『ワンダンス』　PV第1弾｜2025年10月より放送開始！",
+      "stratum": "non_tier2_pro",
+      "genre": "3DCG/アニメ",
+      "label_rule_id": "R-PRO-03",
+      "duration_sec": 42.1,
+      "total_cuts": 39,
+      "avg_cut_interval_sec": 1.08,
+      "max_cuts_per_10s": 20,
+      "integrated_lufs": -15.7,
+      "video_score": 74,
+      "video_raw_scores": [
+        74,
+        74
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": 74,
+      "contact_sheet_raw_scores": [
+        75,
+        73
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": true,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": true,
+      "avg_video_input_tokens": 6452,
+      "avg_cs_input_tokens": 2718,
+      "avg_video_eff_tokens": 14310,
+      "avg_cs_eff_tokens": 10577,
+      "hybrid": {
+        "final_score": 74,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-c:max_cuts_per_10s=20>=12"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      },
+      "score": 74
+    },
+    {
+      "video_id": "YT2Sh7sbZak",
+      "source_pool": "phase2_dev_additions_v1",
+      "title": "劇場アニメ『ひゃくえむ。』キャラクターPV【𝟗.𝟏𝟗(𝐅𝐫𝐢)公開】",
+      "stratum": "non_tier2_pro",
+      "genre": "3DCG/アニメ",
+      "label_rule_id": "R-PRO-03",
+      "duration_sec": 49,
+      "total_cuts": 82,
+      "avg_cut_interval_sec": 0.6,
+      "max_cuts_per_10s": 26,
+      "integrated_lufs": -13.4,
+      "video_score": 79,
+      "video_raw_scores": [
+        79,
+        79
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": 81.5,
+      "contact_sheet_raw_scores": [
+        81,
+        82
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": true,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": true,
+      "avg_video_input_tokens": 7115,
+      "avg_cs_input_tokens": 2808,
+      "avg_video_eff_tokens": 14959,
+      "avg_cs_eff_tokens": 10657,
+      "hybrid": {
+        "final_score": 79,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-c:max_cuts_per_10s=26>=12"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      },
+      "score": 79
+    },
+    {
+      "video_id": "hQjGJJ23BCE",
+      "source_pool": "phase2_dev_additions_v1",
+      "title": "Gachiakuta Anime Series Teaser PV／Set for Release in 2025",
+      "stratum": "non_tier2_pro",
+      "genre": "3DCG/アニメ",
+      "label_rule_id": "R-PRO-03",
+      "duration_sec": 34.3,
+      "total_cuts": 73,
+      "avg_cut_interval_sec": 0.47,
+      "max_cuts_per_10s": 36,
+      "integrated_lufs": -7.4,
+      "video_score": 80.5,
+      "video_raw_scores": [
+        81,
+        80
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": 83,
+      "contact_sheet_raw_scores": [
+        81,
+        85
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": true,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": true,
+      "avg_video_input_tokens": 5539,
+      "avg_cs_input_tokens": 2714,
+      "avg_video_eff_tokens": 13388,
+      "avg_cs_eff_tokens": 10570,
+      "hybrid": {
+        "final_score": 80.5,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-c:max_cuts_per_10s=36>=12"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      },
+      "score": 80.5
+    },
+    {
+      "video_id": "OMFRjbG7aX8",
+      "source_pool": "phase2_dev_additions_v1",
+      "title": "【ブランディング動画】株式会社AIBJ 様　【CINEMATO制作実績】",
+      "stratum": "non_tier2_pro",
+      "genre": "企業映像",
+      "label_rule_id": "R-PRO-03",
+      "duration_sec": 154.3,
+      "total_cuts": 28,
+      "avg_cut_interval_sec": 5.51,
+      "max_cuts_per_10s": 5,
+      "integrated_lufs": -14.3,
+      "video_score": 63,
+      "video_raw_scores": [
+        63,
+        63
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": 63,
+      "contact_sheet_raw_scores": [
+        63,
+        63
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "avg_video_input_tokens": 16521,
+      "avg_cs_input_tokens": 2661,
+      "avg_video_eff_tokens": 24248,
+      "avg_cs_eff_tokens": 10460,
+      "hybrid": {
+        "final_score": 63,
+        "final_mode": "video_h2_escalated",
+        "escalated": true,
+        "h1_triggers": [],
+        "h2_triggers": [
+          "H2-a:near_t_low(63 within 63+/-3)"
+        ],
+        "modes_executed": [
+          "contact_sheet",
+          "video"
+        ]
+      },
+      "score": 63
+    },
+    {
+      "video_id": "zhRq3VuQZ_Q",
+      "source_pool": "phase2_dev_additions_v1",
+      "title": "We, the Business Geeks. We made an ad as our class assignment.",
+      "stratum": "non_tier2_low",
+      "genre": "CM",
+      "label_rule_id": "R-LOW-01",
+      "duration_sec": 98.5,
+      "total_cuts": 7,
+      "avg_cut_interval_sec": 14.07,
+      "max_cuts_per_10s": 4,
+      "integrated_lufs": -8.1,
+      "video_score": 37.5,
+      "video_raw_scores": [
+        36,
+        39
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": 48,
+      "contact_sheet_raw_scores": [
+        48,
+        48
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "avg_video_input_tokens": 10624,
+      "avg_cs_input_tokens": 2823,
+      "avg_video_eff_tokens": 18359,
+      "avg_cs_eff_tokens": 9159,
+      "hybrid": {
+        "final_score": 48,
+        "final_mode": "contact_sheet",
+        "escalated": false,
+        "h1_triggers": [],
+        "h2_triggers": [],
+        "modes_executed": [
+          "contact_sheet"
+        ]
+      },
+      "score": 48
+    },
+    {
+      "video_id": "TYPrMMTbIE4",
+      "source_pool": "phase2_dev_additions_v1",
+      "title": "American Apparel Commercial (advertising class assignment)",
+      "stratum": "non_tier2_low",
+      "genre": "CM",
+      "label_rule_id": "R-LOW-01",
+      "duration_sec": 23.8,
+      "total_cuts": 2,
+      "avg_cut_interval_sec": 11.9,
+      "max_cuts_per_10s": 2,
+      "integrated_lufs": -18,
+      "video_score": 54.5,
+      "video_raw_scores": [
+        54,
+        55
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": 57,
+      "contact_sheet_raw_scores": [
+        58,
+        56
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "avg_video_input_tokens": 2824,
+      "avg_cs_input_tokens": 2763,
+      "avg_video_eff_tokens": 10554,
+      "avg_cs_eff_tokens": 9105,
+      "hybrid": {
+        "final_score": 57,
+        "final_mode": "contact_sheet",
+        "escalated": false,
+        "h1_triggers": [],
+        "h2_triggers": [],
+        "modes_executed": [
+          "contact_sheet"
+        ]
+      },
+      "score": 57
+    },
+    {
+      "video_id": "4iuLitLBhl8",
+      "source_pool": "phase2_dev_additions_v1",
+      "title": "SHOE AD (Editing class assignment #5)",
+      "stratum": "non_tier2_low",
+      "genre": "CM",
+      "label_rule_id": "R-LOW-01",
+      "duration_sec": 45.1,
+      "total_cuts": 17,
+      "avg_cut_interval_sec": 2.65,
+      "max_cuts_per_10s": 7,
+      "integrated_lufs": -17.3,
+      "video_score": 57.5,
+      "video_raw_scores": [
+        58,
+        57
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": 65,
+      "contact_sheet_raw_scores": [
+        67,
+        63
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "avg_video_input_tokens": 6543,
+      "avg_cs_input_tokens": 2661,
+      "avg_video_eff_tokens": 14382,
+      "avg_cs_eff_tokens": 10508,
+      "hybrid": {
+        "final_score": 57.5,
+        "final_mode": "video_h2_escalated",
+        "escalated": true,
+        "h1_triggers": [],
+        "h2_triggers": [
+          "H2-a:near_t_low(65 within 63+/-3)"
+        ],
+        "modes_executed": [
+          "contact_sheet",
+          "video"
+        ]
+      },
+      "score": 57.5
+    },
+    {
+      "video_id": "q2412-rz1ts",
+      "source_pool": "phase2_dev_additions_v1",
+      "title": "TRYD（オリジナル漫画のMV風映像）無謀、ギター初心者が作詞作曲して絵を描いてMV風動画にしてみた！",
+      "stratum": "non_tier2_low",
+      "genre": "MV",
+      "label_rule_id": "R-LOW-01",
+      "duration_sec": 121.2,
+      "total_cuts": 4,
+      "avg_cut_interval_sec": 30.3,
+      "max_cuts_per_10s": 2,
+      "integrated_lufs": -4.3,
+      "video_score": 27,
+      "video_raw_scores": [
+        28,
+        26
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": 36.5,
+      "contact_sheet_raw_scores": [
+        35,
+        38
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "avg_video_input_tokens": 13001,
+      "avg_cs_input_tokens": 2709,
+      "avg_video_eff_tokens": 20727,
+      "avg_cs_eff_tokens": 10508,
+      "hybrid": {
+        "final_score": 27,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-a:genre=MV"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      },
+      "score": 27
+    },
+    {
+      "video_id": "Y6EztTVFX5M",
+      "source_pool": "phase2_dev_additions_v1",
+      "title": "【AviUtl】インドア系ならトラックメイカー 【MV 初心者が作ってみた】",
+      "stratum": "non_tier2_low",
+      "genre": "MV",
+      "label_rule_id": "R-LOW-01",
+      "duration_sec": 30.5,
+      "total_cuts": 6,
+      "avg_cut_interval_sec": 5.08,
+      "max_cuts_per_10s": 5,
+      "integrated_lufs": -23.6,
+      "video_score": 65,
+      "video_raw_scores": [
+        65,
+        65
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": 59.5,
+      "contact_sheet_raw_scores": [
+        59,
+        60
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "avg_video_input_tokens": 3563,
+      "avg_cs_input_tokens": 2873,
+      "avg_video_eff_tokens": 11298,
+      "avg_cs_eff_tokens": 9211,
+      "hybrid": {
+        "final_score": 65,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-a:genre=MV"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      },
+      "score": 65
+    },
+    {
+      "video_id": "L1zAQoHoBUw",
+      "source_pool": "phase2_dev_additions_v1",
+      "title": "My First Motion Graphics Edit",
+      "stratum": "non_tier2_low",
+      "genre": "モーション",
+      "label_rule_id": "R-LOW-01",
+      "duration_sec": 23.3,
+      "total_cuts": 0,
+      "avg_cut_interval_sec": 23.3,
+      "max_cuts_per_10s": 0,
+      "integrated_lufs": -19.1,
+      "video_score": 41,
+      "video_raw_scores": [
+        40,
+        42
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": 51.5,
+      "contact_sheet_raw_scores": [
+        52,
+        51
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "avg_video_input_tokens": 4293,
+      "avg_cs_input_tokens": 2619,
+      "avg_video_eff_tokens": 12135,
+      "avg_cs_eff_tokens": 10458,
+      "hybrid": {
+        "final_score": 41,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-b:genre=モーション"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      },
+      "score": 41
+    },
+    {
+      "video_id": "dYqCocdxmZo",
+      "source_pool": "phase2_dev_additions_v1",
+      "title": "My first motion graphics video",
+      "stratum": "non_tier2_low",
+      "genre": "モーション",
+      "label_rule_id": "R-LOW-01",
+      "duration_sec": 28.8,
+      "total_cuts": 14,
+      "avg_cut_interval_sec": 2.06,
+      "max_cuts_per_10s": 11,
+      "integrated_lufs": -8.3,
+      "video_score": 56.5,
+      "video_raw_scores": [
+        55,
+        58
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": 55,
+      "contact_sheet_raw_scores": [
+        54,
+        56
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "avg_video_input_tokens": 5073,
+      "avg_cs_input_tokens": 2696,
+      "avg_video_eff_tokens": 12924,
+      "avg_cs_eff_tokens": 10550,
+      "hybrid": {
+        "final_score": 56.5,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-b:genre=モーション"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      },
+      "score": 56.5
+    },
+    {
+      "video_id": "J4H5DFrB8cQ",
+      "source_pool": "phase2_dev_additions_v1",
+      "title": "初めて作ったAviutl動画",
+      "stratum": "non_tier2_low",
+      "genre": "モーション",
+      "label_rule_id": "R-LOW-01",
+      "duration_sec": 37.9,
+      "total_cuts": 1,
+      "avg_cut_interval_sec": 37.9,
+      "max_cuts_per_10s": 1,
+      "integrated_lufs": -4.3,
+      "video_score": 52,
+      "video_raw_scores": [
+        46,
+        52,
+        53
+      ],
+      "video_ensemble_rule": "median_of_3",
+      "contact_sheet_score": 52,
+      "contact_sheet_raw_scores": [
+        52,
+        52
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "avg_video_input_tokens": 5994,
+      "avg_cs_input_tokens": 2778,
+      "avg_video_eff_tokens": 13839,
+      "avg_cs_eff_tokens": 10634,
+      "hybrid": {
+        "final_score": 52,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-b:genre=モーション"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      },
+      "score": 52
+    },
+    {
+      "video_id": "n8wefcKLOnY",
+      "source_pool": "phase2_dev_additions_v1",
+      "title": "Blender Test Animation - Geoman",
+      "stratum": "non_tier2_low",
+      "genre": "3DCG/アニメ",
+      "label_rule_id": "R-LOW-01",
+      "duration_sec": 42.9,
+      "total_cuts": 0,
+      "avg_cut_interval_sec": 42.9,
+      "max_cuts_per_10s": 0,
+      "integrated_lufs": -11.1,
+      "video_score": 33.5,
+      "video_raw_scores": [
+        34,
+        33
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": 37,
+      "contact_sheet_raw_scores": [
+        36,
+        38
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "avg_video_input_tokens": 4918,
+      "avg_cs_input_tokens": 2792,
+      "avg_video_eff_tokens": 12649,
+      "avg_cs_eff_tokens": 9126,
+      "hybrid": {
+        "final_score": 37,
+        "final_mode": "contact_sheet",
+        "escalated": false,
+        "h1_triggers": [],
+        "h2_triggers": [],
+        "modes_executed": [
+          "contact_sheet"
+        ]
+      },
+      "score": 37
+    },
+    {
+      "video_id": "7ZA_8FKwgLY",
+      "source_pool": "phase2_dev_additions_v1",
+      "title": "Kong Test Animation #2 (Blender)",
+      "stratum": "non_tier2_low",
+      "genre": "3DCG/アニメ",
+      "label_rule_id": "R-LOW-01",
+      "duration_sec": 31.5,
+      "total_cuts": 0,
+      "avg_cut_interval_sec": 31.5,
+      "max_cuts_per_10s": 0,
+      "integrated_lufs": -13.2,
+      "video_score": 45,
+      "video_raw_scores": [
+        46,
+        44
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": 48,
+      "contact_sheet_raw_scores": [
+        42,
+        52,
+        48
+      ],
+      "contact_sheet_ensemble_rule": "median_of_3",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "avg_video_input_tokens": 3563,
+      "avg_cs_input_tokens": 2865,
+      "avg_video_eff_tokens": 11299,
+      "avg_cs_eff_tokens": 9204,
+      "hybrid": {
+        "final_score": 48,
+        "final_mode": "contact_sheet",
+        "escalated": false,
+        "h1_triggers": [],
+        "h2_triggers": [],
+        "modes_executed": [
+          "contact_sheet"
+        ]
+      },
+      "score": 48
+    },
+    {
+      "video_id": "3_c0l_p9dd8",
+      "source_pool": "phase2_dev_additions_v1",
+      "title": "Test Blender Animation",
+      "stratum": "non_tier2_low",
+      "genre": "3DCG/アニメ",
+      "label_rule_id": "R-LOW-01",
+      "duration_sec": 36.5,
+      "total_cuts": 0,
+      "avg_cut_interval_sec": 36.5,
+      "max_cuts_per_10s": 0,
+      "integrated_lufs": -14.5,
+      "video_score": 41.5,
+      "video_raw_scores": [
+        42,
+        41
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": 42.5,
+      "contact_sheet_raw_scores": [
+        43,
+        42
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "avg_video_input_tokens": 4217,
+      "avg_cs_input_tokens": 2817,
+      "avg_video_eff_tokens": 11948,
+      "avg_cs_eff_tokens": 9157,
+      "hybrid": {
+        "final_score": 42.5,
+        "final_mode": "contact_sheet",
+        "escalated": false,
+        "h1_triggers": [],
+        "h2_triggers": [],
+        "modes_executed": [
+          "contact_sheet"
+        ]
+      },
+      "score": 42.5
+    },
+    {
+      "video_id": "CPeyrWJQi3U",
+      "source_pool": "phase2_dev_additions_v1",
+      "title": "事業内容紹介動画｜アニメーション｜VYOND",
+      "stratum": "non_tier2_low",
+      "genre": "企業映像",
+      "label_rule_id": "R-LOW-02",
+      "duration_sec": 119.7,
+      "total_cuts": 6,
+      "avg_cut_interval_sec": 19.95,
+      "max_cuts_per_10s": 3,
+      "integrated_lufs": -18.5,
+      "video_score": 53.5,
+      "video_raw_scores": [
+        54,
+        53
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": 57,
+      "contact_sheet_raw_scores": [
+        57,
+        57
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "avg_video_input_tokens": 12969,
+      "avg_cs_input_tokens": 2857,
+      "avg_video_eff_tokens": 20704,
+      "avg_cs_eff_tokens": 9194,
+      "hybrid": {
+        "final_score": 57,
+        "final_mode": "contact_sheet",
+        "escalated": false,
+        "h1_triggers": [],
+        "h2_triggers": [],
+        "modes_executed": [
+          "contact_sheet"
+        ]
+      },
+      "score": 57
+    },
+    {
+      "video_id": "Fc63x0Bf6NY",
+      "source_pool": "phase2_dev_additions_v1",
+      "title": "Why You Must Have A Website for Your Business",
+      "stratum": "non_tier2_low",
+      "genre": "企業映像",
+      "label_rule_id": "R-LOW-02",
+      "duration_sec": 82.5,
+      "total_cuts": 3,
+      "avg_cut_interval_sec": 27.5,
+      "max_cuts_per_10s": 2,
+      "integrated_lufs": -15.7,
+      "video_score": 29,
+      "video_raw_scores": [
+        33,
+        28,
+        29
+      ],
+      "video_ensemble_rule": "median_of_3",
+      "contact_sheet_score": 29.5,
+      "contact_sheet_raw_scores": [
+        31,
+        28
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "avg_video_input_tokens": 9052,
+      "avg_cs_input_tokens": 2824,
+      "avg_video_eff_tokens": 16786,
+      "avg_cs_eff_tokens": 9160,
+      "hybrid": {
+        "final_score": 29.5,
+        "final_mode": "contact_sheet",
+        "escalated": false,
+        "h1_triggers": [],
+        "h2_triggers": [],
+        "modes_executed": [
+          "contact_sheet"
+        ]
+      },
+      "score": 29.5
+    },
+    {
+      "video_id": "DVKMAFQBBGk",
+      "source_pool": "phase2_dev_additions_v1",
+      "title": "Announcement created with Powtoon",
+      "stratum": "non_tier2_low",
+      "genre": "企業映像",
+      "label_rule_id": "R-LOW-02",
+      "duration_sec": 83.6,
+      "total_cuts": 2,
+      "avg_cut_interval_sec": 41.8,
+      "max_cuts_per_10s": 1,
+      "integrated_lufs": -12.6,
+      "video_score": 24,
+      "video_raw_scores": [
+        25,
+        23
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": 30,
+      "contact_sheet_raw_scores": [
+        28,
+        34,
+        30
+      ],
+      "contact_sheet_ensemble_rule": "median_of_3",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "avg_video_input_tokens": 9144,
+      "avg_cs_input_tokens": 2806,
+      "avg_video_eff_tokens": 16874,
+      "avg_cs_eff_tokens": 9145,
+      "hybrid": {
+        "final_score": 30,
+        "final_mode": "contact_sheet",
+        "escalated": false,
+        "h1_triggers": [],
+        "h2_triggers": [],
+        "modes_executed": [
+          "contact_sheet"
+        ]
+      },
+      "score": 30
+    },
+    {
+      "video_id": "tGc4U3XeE_4",
+      "source_pool": "phase2_dev_additions_v1",
+      "title": "絵も音楽も初心者の僕がオリジナルMVを作ってみた「Labor」",
+      "stratum": "non_tier2_low",
+      "genre": "MV",
+      "label_rule_id": "R-LOW-01",
+      "duration_sec": 45,
+      "total_cuts": 0,
+      "avg_cut_interval_sec": 45,
+      "max_cuts_per_10s": 0,
+      "integrated_lufs": -24.9,
+      "video_score": 58,
+      "video_raw_scores": [
+        58,
+        58
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": 58,
+      "contact_sheet_raw_scores": [
+        57,
+        59
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "avg_video_input_tokens": 5057,
+      "avg_cs_input_tokens": 2820,
+      "avg_video_eff_tokens": 12785,
+      "avg_cs_eff_tokens": 9159,
+      "hybrid": {
+        "final_score": 58,
+        "final_mode": "video_h1",
+        "escalated": false,
+        "h1_triggers": [
+          "H1-a:genre=MV"
+        ],
+        "h2_triggers": [],
+        "modes_executed": [
+          "video"
+        ]
+      },
+      "score": 58
+    }
+  ]
+}
