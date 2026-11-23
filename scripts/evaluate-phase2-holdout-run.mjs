@@ -60,14 +60,14 @@ function aggregate2Plus1(rows) {
     const knowsWork = list.some((x) => x.post_check?.knows_work === true);
     const knowsAward = list.some((x) => x.post_check?.knows_award_history === true);
     const badgeVisible = list.some((x) => x.post_check?.award_badge_visible_in_video === true);
-    const avgInputTokens = Math.round(
-      list.reduce((a, x) => a + (x.token_usage?.input_tokens || 0), 0) / list.length
-    );
-    const avgEffTokens = Math.round(
-      list.reduce((a, x) => a + (x.token_usage?.effective_input_tokens || 0), 0) / list.length
-    );
-    const totalInputTokens = list.reduce((a, x) => a + (x.token_usage?.input_tokens || 0), 0);
-    const totalEffTokens = list.reduce((a, x) => a + (x.token_usage?.effective_input_tokens || 0), 0);
+    const getIn = (x) =>
+      x.token_usage?.first_post_read_input_tokens ?? x.token_usage?.input_tokens ?? 0;
+    const getEff = (x) =>
+      x.token_usage?.first_post_read_effective_input_tokens ?? x.token_usage?.effective_input_tokens ?? 0;
+    const avgInputTokens = Math.round(list.reduce((a, x) => a + getIn(x), 0) / list.length);
+    const avgEffTokens = Math.round(list.reduce((a, x) => a + getEff(x), 0) / list.length);
+    const totalInputTokens = list.reduce((a, x) => a + getIn(x), 0);
+    const totalEffTokens = list.reduce((a, x) => a + getEff(x), 0);
 
     out.set(vid, {
       video_id: vid,

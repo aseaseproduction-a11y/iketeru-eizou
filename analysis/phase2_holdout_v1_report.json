@@ -1,0 +1,3793 @@
+{
+  "generated_at": "2026-11-23T05:36:17.552Z",
+  "holdout_run_id": "run_20261123_131300",
+  "frozen_config_path": "analysis/phase2_frozen_config_v1.json",
+  "frozen_config_snapshot": {
+    "config_version": "phase2_frozen_config_v1",
+    "t_award": 83,
+    "t_low": 63,
+    "frozen_commit": "5e42f16ace5093964f054bd1ebe44ab30b251296",
+    "expected_model": "gemini-4-neon-high",
+    "prompt_version": "v1_baseline",
+    "hybrid_router_version": "phase2_hybrid_v1",
+    "grid_truncation_disclosure": {
+      "pre_registered_grid_t_award": [
+        75,
+        84
+      ],
+      "pre_registered_grid_t_low": [
+        58,
+        68
+      ],
+      "pre_registered_go_range_t_award": [
+        81,
+        84
+      ],
+      "pre_registered_go_range_t_low": [
+        58,
+        68
+      ],
+      "pre_registered_selected_t_award": 83,
+      "pre_registered_selected_youden_j": 0.8167,
+      "extended_diagnostic_grid_t_award": [
+        75,
+        92
+      ],
+      "extended_true_go_range_t_award": [
+        81,
+        86
+      ],
+      "extended_max_youden_j_t_award": [
+        85,
+        86
+      ],
+      "extended_max_youden_j": 0.825,
+      "rationale": "Pre-registered grid stopped at T_award=84; extended diagnostic recalculation over 85..92 shows true GO range 81..86 with max Youden J=0.825 at 85..86 (outside pre-registered grid). Because 83 lies near the center of the true GO range 81..86, T_award=83 is strictly retained per pre-registration without post-hoc shifting to 85-86."
+    }
+  },
+  "audit_summary": {
+    "total_videos_evaluated": 74,
+    "valid_video_subagent_runs": 100,
+    "valid_cs_subagent_runs": 63,
+    "total_valid_subagent_runs": 163,
+    "invalid_subagent_runs": 0,
+    "model_mismatch_count": 0,
+    "award_badge_visible_detected": []
+  },
+  "primary_judgment": {
+    "thresholds": {
+      "t_award": 83,
+      "t_low": 63
+    },
+    "counts": {
+      "tier2": 24,
+      "primary_pro": 25,
+      "all_pro": 25,
+      "low_all": 25,
+      "low_excl_r_low_04": 25
+    },
+    "primary": {
+      "scope": "5_genres_all",
+      "p1_roc_auc": 0.975,
+      "p1_ci95": {
+        "low": 0.9342,
+        "high": 1
+      },
+      "p1_pass": true,
+      "p2_sensitivity": 0.9167,
+      "p2_hits": 22,
+      "p2_min_required": 20,
+      "p2_pass": true,
+      "p3_specificity": 0.88,
+      "p3_correct": 22,
+      "p3_min_required": 21,
+      "p3_pass": true,
+      "p4_major_error_a": 0,
+      "p4_max_allowed": 0,
+      "p4_pass": true,
+      "all_primary_pass": true
+    },
+    "secondary_all_low": {
+      "n_low": 25,
+      "s1_major_error_b_count": 0,
+      "s1_major_error_b_max": 1,
+      "s1_major_error_b_rate": 0,
+      "s1_pass": true,
+      "s2_tier2_vs_low_auc": 1,
+      "s2_pass": true,
+      "s3_pro_vs_low_auc": 0.9768,
+      "s3_pro_minus_low_mean_gap": 24.56,
+      "s3_mwu_one_sided_p": 3.863e-9,
+      "s3_pass": true
+    },
+    "secondary_excl_r_low_04": {
+      "n_low": 25,
+      "s1_major_error_b_count": 0,
+      "s1_major_error_b_max": 1,
+      "s1_major_error_b_rate": 0,
+      "s1_pass": true,
+      "s2_tier2_vs_low_auc": 1,
+      "s2_pass": true,
+      "s3_pro_vs_low_auc": 0.9768,
+      "s3_pro_minus_low_mean_gap": 24.56,
+      "s3_mwu_one_sided_p": 3.863e-9,
+      "s3_pass": true
+    },
+    "reference": {
+      "tier2_vs_all_non_tier2_auc": 0.9875,
+      "tier2_vs_all_pro_auc": 0.975,
+      "cross_table": {
+        "tier2_award": {
+          "gte_t_award": 22,
+          "mid_t_low_to_t_award": 2,
+          "lt_t_low": 0,
+          "mean": 88.15
+        },
+        "non_tier2_pro": {
+          "gte_t_award": 3,
+          "mid_t_low_to_t_award": 19,
+          "lt_t_low": 3,
+          "mean": 72.8
+        },
+        "non_tier2_low": {
+          "gte_t_award": 0,
+          "mid_t_low_to_t_award": 0,
+          "lt_t_low": 25,
+          "mean": 48.24
+        }
+      }
+    },
+    "decision": "GO"
+  },
+  "mandatory_supplementary_reports": {
+    "note": "Pass/fail (GO/NO-GO) is determined strictly by primary_judgment only.",
+    "a_contamination_excluded_p1_to_p3": {
+      "rule": "Exclude videos with knows_work === true OR knows_award_history === true",
+      "counts": {
+        "tier2": 12,
+        "primary_pro": 18,
+        "all_pro": 18,
+        "low_all": 25,
+        "low_excl_r_low_04": 25
+      },
+      "primary": {
+        "scope": "5_genres_all",
+        "p1_roc_auc": 0.9815,
+        "p1_ci95": {
+          "low": 0.9306,
+          "high": 1
+        },
+        "p1_pass": true,
+        "p2_sensitivity": 0.8333,
+        "p2_hits": 10,
+        "p2_min_required": 10,
+        "p2_pass": true,
+        "p3_specificity": 0.9444,
+        "p3_correct": 17,
+        "p3_min_required": 16,
+        "p3_pass": true,
+        "p4_major_error_a": 0,
+        "p4_max_allowed": 0,
+        "p4_pass": true,
+        "all_primary_pass": true
+      },
+      "cross_table": {
+        "tier2_award": {
+          "gte_t_award": 10,
+          "mid_t_low_to_t_award": 2,
+          "lt_t_low": 0,
+          "mean": 86.08
+        },
+        "non_tier2_pro": {
+          "gte_t_award": 1,
+          "mid_t_low_to_t_award": 14,
+          "lt_t_low": 3,
+          "mean": 70.36
+        },
+        "non_tier2_low": {
+          "gte_t_award": 0,
+          "mid_t_low_to_t_award": 0,
+          "lt_t_low": 25,
+          "mean": 48.24
+        }
+      },
+      "extra_reference_knows_award_history_only_excluded": {
+        "counts": {
+          "tier2": 21,
+          "primary_pro": 25,
+          "all_pro": 25,
+          "low_all": 25,
+          "low_excl_r_low_04": 25
+        },
+        "primary": {
+          "scope": "5_genres_all",
+          "p1_roc_auc": 0.9714,
+          "p1_ci95": {
+            "low": 0.9238,
+            "high": 0.999
+          },
+          "p1_pass": true,
+          "p2_sensitivity": 0.9048,
+          "p2_hits": 19,
+          "p2_min_required": 17,
+          "p2_pass": true,
+          "p3_specificity": 0.88,
+          "p3_correct": 22,
+          "p3_min_required": 21,
+          "p3_pass": true,
+          "p4_major_error_a": 0,
+          "p4_max_allowed": 0,
+          "p4_pass": true,
+          "all_primary_pass": true
+        }
+      }
+    },
+    "b_low_exposure_recent_tier2_p2": {
+      "count": 15,
+      "hits": 14,
+      "sensitivity": 0.9333,
+      "mean_score": 87.83,
+      "missed_items": [
+        {
+          "video_id": "LZ_ibd8XfJs",
+          "genre": "企業映像",
+          "title": "What does a Good Life mean? // Emotional Employer Branding // Wernsing Food Family",
+          "score": 82,
+          "hybrid_mode": "video_h1",
+          "knows_work": false,
+          "knows_award_history": false
+        }
+      ]
+    },
+    "c_per_genre_false_positives": {
+      "total_false_positives": 3,
+      "anime_cm_false_positives": [
+        {
+          "video_id": "t4nVyE0J9eo",
+          "stratum": "non_tier2_pro",
+          "genre": "CM",
+          "title": "【企業広告】TVCM　総合モビリティカンパニー 「みんなを喜ばせたい」篇 30秒",
+          "channel": "本田技研工業株式会社 (Honda)",
+          "score": 83,
+          "hybrid_mode": "video_h1",
+          "contact_sheet_score": null,
+          "video_score": 83,
+          "knows_work": false,
+          "knows_award_history": false,
+          "likely_anime_cm": true
+        }
+      ],
+      "by_genre": {
+        "CM": [
+          {
+            "video_id": "t4nVyE0J9eo",
+            "stratum": "non_tier2_pro",
+            "genre": "CM",
+            "title": "【企業広告】TVCM　総合モビリティカンパニー 「みんなを喜ばせたい」篇 30秒",
+            "channel": "本田技研工業株式会社 (Honda)",
+            "score": 83,
+            "hybrid_mode": "video_h1",
+            "contact_sheet_score": null,
+            "video_score": 83,
+            "knows_work": false,
+            "knows_award_history": false,
+            "likely_anime_cm": true
+          }
+        ],
+        "MV": [
+          {
+            "video_id": "SZpiiixlHWY",
+            "stratum": "non_tier2_pro",
+            "genre": "MV",
+            "title": "Tyla - IS IT (Official Music Video)",
+            "channel": "Tyla",
+            "score": 84.5,
+            "hybrid_mode": "video_h1",
+            "contact_sheet_score": null,
+            "video_score": 84.5,
+            "knows_work": true,
+            "knows_award_history": false,
+            "likely_anime_cm": false
+          }
+        ],
+        "モーション": [],
+        "3DCG/アニメ": [
+          {
+            "video_id": "cmNtgMq5khQ",
+            "stratum": "non_tier2_pro",
+            "genre": "3DCG/アニメ",
+            "title": "『最終楽章 響け！ユーフォニアム』後編 ファイナルPV",
+            "channel": "KyoaniChannel",
+            "score": 84.5,
+            "hybrid_mode": "video_h1",
+            "contact_sheet_score": null,
+            "video_score": 84.5,
+            "knows_work": true,
+            "knows_award_history": false,
+            "likely_anime_cm": false
+          }
+        ],
+        "企業映像": []
+      },
+      "per_genre_summary": {
+        "CM": {
+          "tier2_hits": 5,
+          "tier2_total": 5,
+          "pro_correct": 4,
+          "pro_false_positives": 1,
+          "pro_total": 5,
+          "low_false_positives": 0,
+          "low_total": 5,
+          "tier2_mean": 90.2,
+          "pro_mean": 75,
+          "low_mean": 51
+        },
+        "MV": {
+          "tier2_hits": 5,
+          "tier2_total": 5,
+          "pro_correct": 4,
+          "pro_false_positives": 1,
+          "pro_total": 5,
+          "low_false_positives": 0,
+          "low_total": 5,
+          "tier2_mean": 90,
+          "pro_mean": 77.8,
+          "low_mean": 44.6
+        },
+        "モーション": {
+          "tier2_hits": 5,
+          "tier2_total": 5,
+          "pro_correct": 5,
+          "pro_false_positives": 0,
+          "pro_total": 5,
+          "low_false_positives": 0,
+          "low_total": 5,
+          "tier2_mean": 86.8,
+          "pro_mean": 71.9,
+          "low_mean": 45.9
+        },
+        "3DCG/アニメ": {
+          "tier2_hits": 5,
+          "tier2_total": 5,
+          "pro_correct": 4,
+          "pro_false_positives": 1,
+          "pro_total": 5,
+          "low_false_positives": 0,
+          "low_total": 5,
+          "tier2_mean": 89.2,
+          "pro_mean": 77.4,
+          "low_mean": 52.7
+        },
+        "企業映像": {
+          "tier2_hits": 2,
+          "tier2_total": 4,
+          "pro_correct": 5,
+          "pro_false_positives": 0,
+          "pro_total": 5,
+          "low_false_positives": 0,
+          "low_total": 5,
+          "tier2_mean": 83.63,
+          "pro_mean": 61.9,
+          "low_mean": 47
+        }
+      }
+    }
+  },
+  "hybrid_routing_and_tokens": {
+    "route_counts": {
+      "video_h1": 44,
+      "video_h2_escalated": 4,
+      "contact_sheet": 26
+    },
+    "total_input_tokens": 1711917,
+    "total_effective_input_tokens": 2938578
+  },
+  "per_video": [
+    {
+      "video_id": "QmDckNBoKsY",
+      "blind_id": "5886c44523a8",
+      "title": "Hornbach - The Square Meter (HD film)",
+      "channel": "LLLLITL",
+      "platform": "youtube",
+      "stratum": "tier2_award",
+      "genre": "CM",
+      "label_rule_id": "R-T2-01",
+      "low_exposure_recent_tier2": true,
+      "metrics": {
+        "duration_sec": 60.1,
+        "scdet_threshold": 10,
+        "total_cuts": 2,
+        "avg_cut_interval_sec": 30.05,
+        "max_cuts_per_10s": 2,
+        "integrated_lufs": -12.2,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "hybrid_mode": "video_h2_escalated",
+      "h1_triggers": [],
+      "h2_triggers": [
+        "H2-b:static_long_video(dur=60.1s,avgInt=30.1s,cuts=2)"
+      ],
+      "modes_executed": [
+        "contact_sheet",
+        "video"
+      ],
+      "score": 95,
+      "video_score": 95,
+      "video_raw_scores": [
+        95,
+        95
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": 92,
+      "contact_sheet_raw_scores": [
+        93,
+        91
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": true,
+      "knows_award_history": true,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": true,
+      "total_input_tokens": 18833,
+      "total_eff_tokens": 46966
+    },
+    {
+      "video_id": "ev83o3hVoso",
+      "blind_id": "ca9cbe962bc1",
+      "title": "RSPCA - RESPECT #ForEveryKind | Hand-picked by Good Ads Matter",
+      "channel": "Good Ads Matter Selects",
+      "platform": "youtube",
+      "stratum": "tier2_award",
+      "genre": "CM",
+      "label_rule_id": "R-T2-01",
+      "low_exposure_recent_tier2": true,
+      "metrics": {
+        "duration_sec": 120,
+        "scdet_threshold": 10,
+        "total_cuts": 44,
+        "avg_cut_interval_sec": 2.73,
+        "max_cuts_per_10s": 9,
+        "integrated_lufs": -15.2,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          54,
+          64
+        ]
+      },
+      "hybrid_mode": "contact_sheet",
+      "h1_triggers": [],
+      "h2_triggers": [],
+      "modes_executed": [
+        "contact_sheet"
+      ],
+      "score": 89,
+      "video_score": null,
+      "contact_sheet_score": 89,
+      "contact_sheet_raw_scores": [
+        93,
+        88,
+        89
+      ],
+      "contact_sheet_ensemble_rule": "median_of_3",
+      "knows_work": true,
+      "knows_award_history": true,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": true,
+      "total_input_tokens": 7889,
+      "total_eff_tokens": 31394
+    },
+    {
+      "video_id": "0PWmNDBWNz0",
+      "blind_id": "b21918bc9d78",
+      "title": "Otsuka 大塚製薬 Calorie Mate CM 「光も影も」篇 120秒",
+      "channel": "TV-CM JAPAN",
+      "platform": "youtube",
+      "stratum": "tier2_award",
+      "genre": "CM",
+      "label_rule_id": "R-T2-01",
+      "low_exposure_recent_tier2": true,
+      "metrics": {
+        "duration_sec": 119.9,
+        "scdet_threshold": 10,
+        "total_cuts": 65,
+        "avg_cut_interval_sec": 1.84,
+        "max_cuts_per_10s": 9,
+        "integrated_lufs": -24.2,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          100,
+          110
+        ]
+      },
+      "hybrid_mode": "contact_sheet",
+      "h1_triggers": [],
+      "h2_triggers": [],
+      "modes_executed": [
+        "contact_sheet"
+      ],
+      "score": 88,
+      "video_score": null,
+      "contact_sheet_score": 88,
+      "contact_sheet_raw_scores": [
+        90,
+        86
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": true,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": true,
+      "total_input_tokens": 5309,
+      "total_eff_tokens": 21021
+    },
+    {
+      "video_id": "nDI4TfI41FU",
+      "blind_id": "ba3ac4646ad0",
+      "title": "完璧じゃなくていい。｜NIKE JAPAN",
+      "channel": "NIKE JAPAN",
+      "platform": "youtube",
+      "stratum": "tier2_award",
+      "genre": "CM",
+      "label_rule_id": "R-T2-01",
+      "low_exposure_recent_tier2": true,
+      "metrics": {
+        "duration_sec": 167.2,
+        "scdet_threshold": 10,
+        "total_cuts": 108,
+        "avg_cut_interval_sec": 1.55,
+        "max_cuts_per_10s": 18,
+        "integrated_lufs": -14.1,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          155,
+          160
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-c:max_cuts_per_10s=18>=12"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 94.5,
+      "video_score": 94.5,
+      "video_raw_scores": [
+        95,
+        94
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": true,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": true,
+      "total_input_tokens": 36844,
+      "total_eff_tokens": 52538
+    },
+    {
+      "video_id": "5G99rijm2AI",
+      "blind_id": "289028508010",
+      "title": "SUNTORY 天然水 CM 「大自然を味方に」篇 60秒",
+      "channel": "TV-CM JAPAN",
+      "platform": "youtube",
+      "stratum": "tier2_award",
+      "genre": "CM",
+      "label_rule_id": "R-T2-01",
+      "low_exposure_recent_tier2": true,
+      "metrics": {
+        "duration_sec": 60,
+        "scdet_threshold": 10,
+        "total_cuts": 18,
+        "avg_cut_interval_sec": 3.33,
+        "max_cuts_per_10s": 6,
+        "integrated_lufs": -22.6,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          31,
+          41
+        ]
+      },
+      "hybrid_mode": "video_h2_escalated",
+      "h1_triggers": [],
+      "h2_triggers": [
+        "H2-a:near_t_award(84 within 83+/-3)"
+      ],
+      "modes_executed": [
+        "contact_sheet",
+        "video"
+      ],
+      "score": 84.5,
+      "video_score": 84.5,
+      "video_raw_scores": [
+        85,
+        84
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": 84,
+      "contact_sheet_raw_scores": [
+        84,
+        84
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": true,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": true,
+      "total_input_tokens": 21991,
+      "total_eff_tokens": 53424
+    },
+    {
+      "video_id": "Z8hWLECF2kE",
+      "blind_id": "545f86cb47ed",
+      "title": "SKIIFALL -  2 Charming",
+      "channel": "SKIIFALL",
+      "platform": "youtube",
+      "stratum": "tier2_award",
+      "genre": "MV",
+      "label_rule_id": "R-T2-02",
+      "low_exposure_recent_tier2": true,
+      "metrics": {
+        "duration_sec": 162.4,
+        "scdet_threshold": 10,
+        "total_cuts": 0,
+        "avg_cut_interval_sec": 162.4,
+        "max_cuts_per_10s": 0,
+        "integrated_lufs": -10.4,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-a:genre=MV"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 86,
+      "video_score": 86,
+      "video_raw_scores": [
+        85,
+        87
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 34678,
+      "total_eff_tokens": 50131
+    },
+    {
+      "video_id": "3DnDPArgl_I",
+      "blind_id": "1c464a259894",
+      "title": "METTE - BET (OFFICIAL VIDEO)",
+      "channel": "METTE",
+      "platform": "youtube",
+      "stratum": "tier2_award",
+      "genre": "MV",
+      "label_rule_id": "R-T2-02",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 227.1,
+        "scdet_threshold": 10,
+        "total_cuts": 44,
+        "avg_cut_interval_sec": 5.16,
+        "max_cuts_per_10s": 11,
+        "integrated_lufs": -7.7,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          166,
+          176
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-a:genre=MV"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 91,
+      "video_score": 91,
+      "video_raw_scores": [
+        87,
+        94,
+        91
+      ],
+      "video_ensemble_rule": "median_of_3",
+      "contact_sheet_score": null,
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 73149,
+      "total_eff_tokens": 96708
+    },
+    {
+      "video_id": "sDMLGzeHH6E",
+      "blind_id": "2278ce9a1a60",
+      "title": "AUDREY NUNA - Locket (Official Video)",
+      "channel": "audrey Nuna",
+      "platform": "youtube",
+      "stratum": "tier2_award",
+      "genre": "MV",
+      "label_rule_id": "R-T2-02",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 153.8,
+        "scdet_threshold": 10,
+        "total_cuts": 142,
+        "avg_cut_interval_sec": 1.08,
+        "max_cuts_per_10s": 42,
+        "integrated_lufs": -9.5,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          65,
+          70
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-a:genre=MV",
+        "H1-c:max_cuts_per_10s=42>=12"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 91.5,
+      "video_score": 91.5,
+      "video_raw_scores": [
+        91,
+        92
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": true,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": true,
+      "total_input_tokens": 36345,
+      "total_eff_tokens": 52040
+    },
+    {
+      "video_id": "4HZiS4VtscU",
+      "blind_id": "c150ca35ea2a",
+      "title": "HYUKOH(혁오), Sunset Rollercoaster - Antenna (Official MV)",
+      "channel": "HYUKOH",
+      "platform": "youtube",
+      "stratum": "tier2_award",
+      "genre": "MV",
+      "label_rule_id": "R-T2-02",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 257.5,
+        "scdet_threshold": 10,
+        "total_cuts": 170,
+        "avg_cut_interval_sec": 1.51,
+        "max_cuts_per_10s": 42,
+        "integrated_lufs": -10.3,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          171,
+          176
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-a:genre=MV",
+        "H1-c:max_cuts_per_10s=42>=12"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 88.5,
+      "video_score": 88.5,
+      "video_raw_scores": [
+        90,
+        87
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": true,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": true,
+      "total_input_tokens": 54828,
+      "total_eff_tokens": 70523
+    },
+    {
+      "video_id": "nRtxogXp8sY",
+      "blind_id": "bd8fb22d3203",
+      "title": "The Chemical Brothers - Skipping Like A Stone (Official Music Video) ft. Beck",
+      "channel": "The Chemical Brothers",
+      "platform": "youtube",
+      "stratum": "tier2_award",
+      "genre": "MV",
+      "label_rule_id": "R-T2-02",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 272.4,
+        "scdet_threshold": 10,
+        "total_cuts": 207,
+        "avg_cut_interval_sec": 1.32,
+        "max_cuts_per_10s": 93,
+        "integrated_lufs": -9.8,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          181,
+          186
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-a:genre=MV",
+        "H1-c:max_cuts_per_10s=93>=12"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 93,
+      "video_score": 93,
+      "video_raw_scores": [
+        92,
+        94
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": true,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": true,
+      "total_input_tokens": 61161,
+      "total_eff_tokens": 76855
+    },
+    {
+      "video_id": "ZFVtLHLN8aU",
+      "blind_id": "8151d24e9fe4",
+      "title": "Star Trek Strange New Worlds Opening Titles Intro Season 1 ► 4K ◄",
+      "channel": "ScifinewsDE",
+      "platform": "youtube",
+      "stratum": "tier2_award",
+      "genre": "モーション",
+      "label_rule_id": "R-T2-03",
+      "low_exposure_recent_tier2": true,
+      "metrics": {
+        "duration_sec": 107.2,
+        "scdet_threshold": 10,
+        "total_cuts": 10,
+        "avg_cut_interval_sec": 10.72,
+        "max_cuts_per_10s": 3,
+        "integrated_lufs": -16.7,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          48,
+          58
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-b:genre=モーション"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 87,
+      "video_score": 87,
+      "video_raw_scores": [
+        86,
+        88
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": true,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": true,
+      "total_input_tokens": 26576,
+      "total_eff_tokens": 42269
+    },
+    {
+      "video_id": "6jhuEo2Upqs",
+      "blind_id": "e448525bc015",
+      "title": "VALORANT, LOUDER // 2023 GAME CHANGERS CHAMPIONSHIP HYPE FILM",
+      "channel": "VALORANT",
+      "platform": "youtube",
+      "stratum": "tier2_award",
+      "genre": "モーション",
+      "label_rule_id": "R-T2-03",
+      "low_exposure_recent_tier2": true,
+      "metrics": {
+        "duration_sec": 99.1,
+        "scdet_threshold": 10,
+        "total_cuts": 161,
+        "avg_cut_interval_sec": 0.62,
+        "max_cuts_per_10s": 31,
+        "integrated_lufs": -16.6,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          16,
+          21
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-b:genre=モーション",
+        "H1-c:max_cuts_per_10s=31>=12"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 88,
+      "video_score": 88,
+      "video_raw_scores": [
+        88,
+        88
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 22314,
+      "total_eff_tokens": 38013
+    },
+    {
+      "video_id": "GJOn8nL2C8o",
+      "blind_id": "b53e3de90362",
+      "title": "Rugby's greatest stage awaits! | Rugby World Cup 2023 Opening Titles",
+      "channel": "World Rugby",
+      "platform": "youtube",
+      "stratum": "tier2_award",
+      "genre": "モーション",
+      "label_rule_id": "R-T2-03",
+      "low_exposure_recent_tier2": true,
+      "metrics": {
+        "duration_sec": 35,
+        "scdet_threshold": 10,
+        "total_cuts": 25,
+        "avg_cut_interval_sec": 1.4,
+        "max_cuts_per_10s": 12,
+        "integrated_lufs": -22.5,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          11,
+          16
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-b:genre=モーション",
+        "H1-c:max_cuts_per_10s=12>=12"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 83.5,
+      "video_score": 83.5,
+      "video_raw_scores": [
+        83,
+        84
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 11419,
+      "total_eff_tokens": 27112
+    },
+    {
+      "video_id": "-15nbjw0IHU",
+      "blind_id": "004021190de4",
+      "title": "OOHA - Clash of Flavours | Golden Wolf, Stink Films & Ogilvy",
+      "channel": "Golden Wolf",
+      "platform": "youtube",
+      "stratum": "tier2_award",
+      "genre": "モーション",
+      "label_rule_id": "R-T2-03",
+      "low_exposure_recent_tier2": true,
+      "metrics": {
+        "duration_sec": 65.1,
+        "scdet_threshold": 10,
+        "total_cuts": 56,
+        "avg_cut_interval_sec": 1.16,
+        "max_cuts_per_10s": 20,
+        "integrated_lufs": -7.7,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          16,
+          21
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-b:genre=モーション",
+        "H1-c:max_cuts_per_10s=20>=12"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 88,
+      "video_score": 88,
+      "video_raw_scores": [
+        89,
+        87
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 17612,
+      "total_eff_tokens": 33310
+    },
+    {
+      "video_id": "OfCn09kBXXg",
+      "blind_id": "5ba4877f1e91",
+      "title": "Three Little Pigs Weetabix Advert | Golden Wolf",
+      "channel": "Golden Wolf",
+      "platform": "youtube",
+      "stratum": "tier2_award",
+      "genre": "モーション",
+      "label_rule_id": "R-T2-03",
+      "low_exposure_recent_tier2": true,
+      "metrics": {
+        "duration_sec": 45.1,
+        "scdet_threshold": 10,
+        "total_cuts": 21,
+        "avg_cut_interval_sec": 2.15,
+        "max_cuts_per_10s": 13,
+        "integrated_lufs": -16.1,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          15,
+          20
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-b:genre=モーション",
+        "H1-c:max_cuts_per_10s=13>=12"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 87.5,
+      "video_score": 87.5,
+      "video_raw_scores": [
+        88,
+        87
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 13341,
+      "total_eff_tokens": 29047
+    },
+    {
+      "video_id": "a1EwwLFNQI0",
+      "blind_id": "a69975b341c3",
+      "title": "PICTOPLASMA OPENER 2023",
+      "channel": "Will Anderson",
+      "platform": "youtube",
+      "stratum": "tier2_award",
+      "genre": "3DCG/アニメ",
+      "label_rule_id": "R-T2-04",
+      "low_exposure_recent_tier2": true,
+      "metrics": {
+        "duration_sec": 71.1,
+        "scdet_threshold": 10,
+        "total_cuts": 14,
+        "avg_cut_interval_sec": 5.08,
+        "max_cuts_per_10s": 4,
+        "integrated_lufs": -18.5,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "hybrid_mode": "video_h2_escalated",
+      "h1_triggers": [],
+      "h2_triggers": [
+        "H2-a:near_t_award(83.5 within 83+/-3)"
+      ],
+      "modes_executed": [
+        "contact_sheet",
+        "video"
+      ],
+      "score": 89,
+      "video_score": 89,
+      "video_raw_scores": [
+        89,
+        89
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": 83.5,
+      "contact_sheet_raw_scores": [
+        83,
+        84
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 21208,
+      "total_eff_tokens": 49363
+    },
+    {
+      "video_id": "HoMeijpAI9E",
+      "blind_id": "5737b91123d5",
+      "title": "THE FRENCH DISPATCH | \"Aline\" Music Video | Directed by Wes Anderson",
+      "channel": "Searchlight Pictures UK",
+      "platform": "youtube",
+      "stratum": "tier2_award",
+      "genre": "3DCG/アニメ",
+      "label_rule_id": "R-T2-04",
+      "low_exposure_recent_tier2": true,
+      "metrics": {
+        "duration_sec": 220,
+        "scdet_threshold": 10,
+        "total_cuts": 22,
+        "avg_cut_interval_sec": 10,
+        "max_cuts_per_10s": 6,
+        "integrated_lufs": -13.6,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          169,
+          179
+        ]
+      },
+      "hybrid_mode": "contact_sheet",
+      "h1_triggers": [],
+      "h2_triggers": [],
+      "modes_executed": [
+        "contact_sheet"
+      ],
+      "score": 87,
+      "video_score": null,
+      "contact_sheet_score": 87,
+      "contact_sheet_raw_scores": [
+        88,
+        86
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": true,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": true,
+      "total_input_tokens": 7825,
+      "total_eff_tokens": 23684
+    },
+    {
+      "video_id": "ke4kVFycpYY",
+      "blind_id": "b032d32f62ed",
+      "title": "How did South African Apartheid happen, and how did it finally end? - Thula Simpson",
+      "channel": "TED-Ed",
+      "platform": "youtube",
+      "stratum": "tier2_award",
+      "genre": "3DCG/アニメ",
+      "label_rule_id": "R-T2-04",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 411.8,
+        "scdet_threshold": 10,
+        "total_cuts": 98,
+        "avg_cut_interval_sec": 4.2,
+        "max_cuts_per_10s": 18,
+        "integrated_lufs": -15.9,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          210,
+          215
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-c:max_cuts_per_10s=18>=12"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 85.5,
+      "video_score": 85.5,
+      "video_raw_scores": [
+        86,
+        85
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 90600,
+      "total_eff_tokens": 106310
+    },
+    {
+      "video_id": "9acxn7qAST4",
+      "blind_id": "33463f141aea",
+      "title": "Overwatch 2 Animated Short | “Kiriko”",
+      "channel": "PlayOverwatch",
+      "platform": "youtube",
+      "stratum": "tier2_award",
+      "genre": "3DCG/アニメ",
+      "label_rule_id": "R-T2-04",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 586.6,
+        "scdet_threshold": 10,
+        "total_cuts": 103,
+        "avg_cut_interval_sec": 5.7,
+        "max_cuts_per_10s": 11,
+        "integrated_lufs": -14.2,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          0,
+          10
+        ]
+      },
+      "hybrid_mode": "contact_sheet",
+      "h1_triggers": [],
+      "h2_triggers": [],
+      "modes_executed": [
+        "contact_sheet"
+      ],
+      "score": 89,
+      "video_score": null,
+      "contact_sheet_score": 89,
+      "contact_sheet_raw_scores": [
+        90,
+        88
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": true,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": true,
+      "total_input_tokens": 10294,
+      "total_eff_tokens": 26248
+    },
+    {
+      "video_id": "5XwXliCK19Y",
+      "blind_id": "a5e56c8f5331",
+      "title": "The Beatles - I'm Only Sleeping",
+      "channel": "The Beatles",
+      "platform": "youtube",
+      "stratum": "tier2_award",
+      "genre": "3DCG/アニメ",
+      "label_rule_id": "R-T2-04",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 186.7,
+        "scdet_threshold": 10,
+        "total_cuts": 164,
+        "avg_cut_interval_sec": 1.14,
+        "max_cuts_per_10s": 25,
+        "integrated_lufs": -9.9,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          0,
+          5
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-c:max_cuts_per_10s=25>=12"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 95.5,
+      "video_score": 95.5,
+      "video_raw_scores": [
+        95,
+        96
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": true,
+      "knows_award_history": true,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": true,
+      "total_input_tokens": 43175,
+      "total_eff_tokens": 58884
+    },
+    {
+      "video_id": "-BNMlu1P1Cc",
+      "blind_id": "9c94681187ef",
+      "title": "The Broken Heart – Your Choices, Your Health, Your Future",
+      "channel": "Novo Nordisk",
+      "platform": "youtube",
+      "stratum": "tier2_award",
+      "genre": "企業映像",
+      "label_rule_id": "R-T2-05",
+      "low_exposure_recent_tier2": true,
+      "metrics": {
+        "duration_sec": 180,
+        "scdet_threshold": 10,
+        "total_cuts": 89,
+        "avg_cut_interval_sec": 2.02,
+        "max_cuts_per_10s": 13,
+        "integrated_lufs": -15.5,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          17,
+          22
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-c:max_cuts_per_10s=13>=12"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 88.5,
+      "video_score": 88.5,
+      "video_raw_scores": [
+        89,
+        88
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 41829,
+      "total_eff_tokens": 57526
+    },
+    {
+      "video_id": "LZ_ibd8XfJs",
+      "blind_id": "25b080547775",
+      "title": "What does a Good Life mean? // Emotional Employer Branding // Wernsing Food Family",
+      "channel": "Al Dente Entertainment",
+      "platform": "youtube",
+      "stratum": "tier2_award",
+      "genre": "企業映像",
+      "label_rule_id": "R-T2-05",
+      "low_exposure_recent_tier2": true,
+      "metrics": {
+        "duration_sec": 266.8,
+        "scdet_threshold": 10,
+        "total_cuts": 190,
+        "avg_cut_interval_sec": 1.4,
+        "max_cuts_per_10s": 31,
+        "integrated_lufs": -16.1,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          9,
+          14
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-c:max_cuts_per_10s=31>=12"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 82,
+      "video_score": 82,
+      "video_raw_scores": [
+        82,
+        82
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 60101,
+      "total_eff_tokens": 75796
+    },
+    {
+      "video_id": "LgvVJkTeWBw",
+      "blind_id": "6f3252d1fb85",
+      "title": "Michelin, a matter of substance",
+      "channel": "Michelin",
+      "platform": "youtube",
+      "stratum": "tier2_award",
+      "genre": "企業映像",
+      "label_rule_id": "R-T2-05",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 294.7,
+        "scdet_threshold": 10,
+        "total_cuts": 23,
+        "avg_cut_interval_sec": 12.81,
+        "max_cuts_per_10s": 6,
+        "integrated_lufs": -13,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          159,
+          169
+        ]
+      },
+      "hybrid_mode": "contact_sheet",
+      "h1_triggers": [],
+      "h2_triggers": [],
+      "modes_executed": [
+        "contact_sheet"
+      ],
+      "score": 79,
+      "video_score": null,
+      "contact_sheet_score": 79,
+      "contact_sheet_raw_scores": [
+        79,
+        79
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 8162,
+      "total_eff_tokens": 24017
+    },
+    {
+      "video_id": "GiKYGCz9EBI",
+      "blind_id": "af93debbfd52",
+      "title": "#من_الشدة_للرخاء - يوم التأسيس 2026م",
+      "channel": "aramco",
+      "platform": "youtube",
+      "stratum": "tier2_award",
+      "genre": "企業映像",
+      "label_rule_id": "R-T2-05",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 211.2,
+        "scdet_threshold": 10,
+        "total_cuts": 52,
+        "avg_cut_interval_sec": 4.06,
+        "max_cuts_per_10s": 13,
+        "integrated_lufs": -10,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          128,
+          133
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-c:max_cuts_per_10s=13>=12"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 85,
+      "video_score": 85,
+      "video_raw_scores": [
+        87,
+        83
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 45554,
+      "total_eff_tokens": 61222
+    },
+    {
+      "video_id": "sjURCaINARk",
+      "blind_id": "1fd4699bf154",
+      "title": "テレビCM「待たずに、幸せ！篇 」30秒",
+      "channel": "セブン‐イレブン・ジャパン 公式チャンネル",
+      "platform": "youtube",
+      "stratum": "non_tier2_pro",
+      "genre": "CM",
+      "label_rule_id": "R-PRO-04",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 30.1,
+        "scdet_threshold": 10,
+        "total_cuts": 9,
+        "avg_cut_interval_sec": 3.34,
+        "max_cuts_per_10s": 6,
+        "integrated_lufs": -14.1,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          2,
+          12
+        ]
+      },
+      "hybrid_mode": "contact_sheet",
+      "h1_triggers": [],
+      "h2_triggers": [],
+      "modes_executed": [
+        "contact_sheet"
+      ],
+      "score": 73.5,
+      "video_score": null,
+      "contact_sheet_score": 73.5,
+      "contact_sheet_raw_scores": [
+        73,
+        74
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 5456,
+      "total_eff_tokens": 21143
+    },
+    {
+      "video_id": "t4nVyE0J9eo",
+      "blind_id": "d46e70d40086",
+      "title": "【企業広告】TVCM　総合モビリティカンパニー 「みんなを喜ばせたい」篇 30秒",
+      "channel": "本田技研工業株式会社 (Honda)",
+      "platform": "youtube",
+      "stratum": "non_tier2_pro",
+      "genre": "CM",
+      "label_rule_id": "R-PRO-04",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 30.1,
+        "scdet_threshold": 10,
+        "total_cuts": 51,
+        "avg_cut_interval_sec": 0.59,
+        "max_cuts_per_10s": 22,
+        "integrated_lufs": -14.1,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          0,
+          5
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-c:max_cuts_per_10s=22>=12"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 83,
+      "video_score": 83,
+      "video_raw_scores": [
+        84,
+        82
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 10330,
+      "total_eff_tokens": 26027
+    },
+    {
+      "video_id": "5jEJg-Sxl9U",
+      "blind_id": "027fff89a73b",
+      "title": "【CIVIC】TVCM（WEB版）「風に、乗れ。」篇 30秒",
+      "channel": "本田技研工業株式会社 (Honda)",
+      "platform": "youtube",
+      "stratum": "non_tier2_pro",
+      "genre": "CM",
+      "label_rule_id": "R-PRO-04",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 30.1,
+        "scdet_threshold": 10,
+        "total_cuts": 8,
+        "avg_cut_interval_sec": 3.76,
+        "max_cuts_per_10s": 5,
+        "integrated_lufs": -14.1,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "hybrid_mode": "contact_sheet",
+      "h1_triggers": [],
+      "h2_triggers": [],
+      "modes_executed": [
+        "contact_sheet"
+      ],
+      "score": 75,
+      "video_score": null,
+      "contact_sheet_score": 75,
+      "contact_sheet_raw_scores": [
+        74,
+        76
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 5624,
+      "total_eff_tokens": 18292
+    },
+    {
+      "video_id": "W796t4glQnU",
+      "blind_id": "f958110c580a",
+      "title": "【エルグランド】TVCM 「ELGRAND IS BACK」篇 30秒",
+      "channel": "日産自動車株式会社",
+      "platform": "youtube",
+      "stratum": "non_tier2_pro",
+      "genre": "CM",
+      "label_rule_id": "R-PRO-04",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 30.1,
+        "scdet_threshold": 10,
+        "total_cuts": 5,
+        "avg_cut_interval_sec": 6.02,
+        "max_cuts_per_10s": 3,
+        "integrated_lufs": -14.2,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "hybrid_mode": "contact_sheet",
+      "h1_triggers": [],
+      "h2_triggers": [],
+      "modes_executed": [
+        "contact_sheet"
+      ],
+      "score": 73.5,
+      "video_score": null,
+      "contact_sheet_score": 73.5,
+      "contact_sheet_raw_scores": [
+        74,
+        73
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 5664,
+      "total_eff_tokens": 18331
+    },
+    {
+      "video_id": "xuMf1KZzMd8",
+      "blind_id": "54bae2b06ac6",
+      "title": "イエローハット 2025年テレビCM 30秒",
+      "channel": "YellowHat channel",
+      "platform": "youtube",
+      "stratum": "non_tier2_pro",
+      "genre": "CM",
+      "label_rule_id": "R-PRO-04",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 30.1,
+        "scdet_threshold": 10,
+        "total_cuts": 10,
+        "avg_cut_interval_sec": 3.01,
+        "max_cuts_per_10s": 5,
+        "integrated_lufs": -13.8,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "hybrid_mode": "contact_sheet",
+      "h1_triggers": [],
+      "h2_triggers": [],
+      "modes_executed": [
+        "contact_sheet"
+      ],
+      "score": 70,
+      "video_score": null,
+      "contact_sheet_score": 70,
+      "contact_sheet_raw_scores": [
+        71,
+        69
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 5699,
+      "total_eff_tokens": 18369
+    },
+    {
+      "video_id": "Xvx1GvsOMdI",
+      "blind_id": "ff24e1ff2e2f",
+      "title": "玉置浩二「ファンファーレ」MUSIC VIDEO(TBS系 日曜劇場『ザ・ロイヤルファミリー』主題歌)",
+      "channel": "【公式】玉置浩二 Koji Tamaki SALTMODERATE",
+      "platform": "youtube",
+      "stratum": "non_tier2_pro",
+      "genre": "MV",
+      "label_rule_id": "R-PRO-02",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 242.3,
+        "scdet_threshold": 10,
+        "total_cuts": 66,
+        "avg_cut_interval_sec": 3.67,
+        "max_cuts_per_10s": 7,
+        "integrated_lufs": -14.2,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          26,
+          36
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-a:genre=MV"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 74.5,
+      "video_score": 74.5,
+      "video_raw_scores": [
+        73,
+        76
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 54686,
+      "total_eff_tokens": 70363
+    },
+    {
+      "video_id": "P7bVX6fJfCg",
+      "blind_id": "585e15eb9fc0",
+      "title": "Omoinotake | 幾億光年 【Official Music Video】",
+      "channel": "Omoinotake",
+      "platform": "youtube",
+      "stratum": "non_tier2_pro",
+      "genre": "MV",
+      "label_rule_id": "R-PRO-02",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 315.4,
+        "scdet_threshold": 10,
+        "total_cuts": 271,
+        "avg_cut_interval_sec": 1.16,
+        "max_cuts_per_10s": 24,
+        "integrated_lufs": -9.1,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          162,
+          167
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-a:genre=MV",
+        "H1-c:max_cuts_per_10s=24>=12"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 82,
+      "video_score": 82,
+      "video_raw_scores": [
+        81,
+        83
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": true,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": true,
+      "total_input_tokens": 66123,
+      "total_eff_tokens": 81817
+    },
+    {
+      "video_id": "m0lJzV55jKg",
+      "blind_id": "da9f1320ce2f",
+      "title": "arban「Spring Love」OFFICIAL MV",
+      "channel": "Sony Music Japan",
+      "platform": "youtube",
+      "stratum": "non_tier2_pro",
+      "genre": "MV",
+      "label_rule_id": "R-PRO-02",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 207.2,
+        "scdet_threshold": 10,
+        "total_cuts": 81,
+        "avg_cut_interval_sec": 2.56,
+        "max_cuts_per_10s": 10,
+        "integrated_lufs": -11.5,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          45,
+          55
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-a:genre=MV"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 65.5,
+      "video_score": 65.5,
+      "video_raw_scores": [
+        66,
+        65
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 47570,
+      "total_eff_tokens": 63253
+    },
+    {
+      "video_id": "SZpiiixlHWY",
+      "blind_id": "280461af9c7b",
+      "title": "Tyla - IS IT (Official Music Video)",
+      "channel": "Tyla",
+      "platform": "youtube",
+      "stratum": "non_tier2_pro",
+      "genre": "MV",
+      "label_rule_id": "R-PRO-02",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 160.8,
+        "scdet_threshold": 10,
+        "total_cuts": 85,
+        "avg_cut_interval_sec": 1.89,
+        "max_cuts_per_10s": 14,
+        "integrated_lufs": -7.7,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          52,
+          57
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-a:genre=MV",
+        "H1-c:max_cuts_per_10s=14>=12"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 84.5,
+      "video_score": 84.5,
+      "video_raw_scores": [
+        84,
+        85
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": true,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": true,
+      "total_input_tokens": 35684,
+      "total_eff_tokens": 51379
+    },
+    {
+      "video_id": "1rSz3x1x0Ew",
+      "blind_id": "fa76591b534d",
+      "title": "TRUSTART様 事業紹介動画｜モーショングラフィックス｜Unplug",
+      "channel": "Unplug",
+      "platform": "youtube",
+      "stratum": "non_tier2_pro",
+      "genre": "モーション",
+      "label_rule_id": "R-PRO-03",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 115.3,
+        "scdet_threshold": 10,
+        "total_cuts": 3,
+        "avg_cut_interval_sec": 38.43,
+        "max_cuts_per_10s": 1,
+        "integrated_lufs": -18.1,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          52,
+          62
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-b:genre=モーション"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 65,
+      "video_score": 65,
+      "video_raw_scores": [
+        65,
+        65
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 28206,
+      "total_eff_tokens": 43901
+    },
+    {
+      "video_id": "YlINk0vjtLg",
+      "blind_id": "f47dca473f92",
+      "title": "MCD3様 Designship2025告知動画｜モーショングラフィックス｜Unplug",
+      "channel": "Unplug",
+      "platform": "youtube",
+      "stratum": "non_tier2_pro",
+      "genre": "モーション",
+      "label_rule_id": "R-PRO-03",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 15.2,
+        "scdet_threshold": 10,
+        "total_cuts": 15,
+        "avg_cut_interval_sec": 1.01,
+        "max_cuts_per_10s": 14,
+        "integrated_lufs": -17.4,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          5,
+          10
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-b:genre=モーション",
+        "H1-c:max_cuts_per_10s=14>=12"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 78,
+      "video_score": 78,
+      "video_raw_scores": [
+        78,
+        78
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 7039,
+      "total_eff_tokens": 22725
+    },
+    {
+      "video_id": "67UqYS-UsUI",
+      "blind_id": "c0a2cf6fb9d4",
+      "title": "【制作実績】HITOCREW様 サービスPRムービー(アニメーション動画)",
+      "channel": "HITO-musubi |  良い会社を、伝わる会社に",
+      "platform": "youtube",
+      "stratum": "non_tier2_pro",
+      "genre": "モーション",
+      "label_rule_id": "R-PRO-03",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 60.1,
+        "scdet_threshold": 10,
+        "total_cuts": 5,
+        "avg_cut_interval_sec": 12.02,
+        "max_cuts_per_10s": 4,
+        "integrated_lufs": -21.5,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          25,
+          35
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-b:genre=モーション"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 63.5,
+      "video_score": 63.5,
+      "video_raw_scores": [
+        64,
+        63
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 16557,
+      "total_eff_tokens": 32245
+    },
+    {
+      "video_id": "i70ijS4y6js",
+      "blind_id": "5f1176baf1c5",
+      "title": "高知アニクリ祭2025 オープニングムービー│【スタジオエイトカラーズ】",
+      "channel": "高知アニメクリエイター聖地プロジェクト 公式",
+      "platform": "youtube",
+      "stratum": "non_tier2_pro",
+      "genre": "モーション",
+      "label_rule_id": "R-PRO-03",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 115.1,
+        "scdet_threshold": 10,
+        "total_cuts": 76,
+        "avg_cut_interval_sec": 1.51,
+        "max_cuts_per_10s": 22,
+        "integrated_lufs": -21.5,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          76,
+          81
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-b:genre=モーション",
+        "H1-c:max_cuts_per_10s=22>=12"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 77,
+      "video_score": 77,
+      "video_raw_scores": [
+        78,
+        76
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 28054,
+      "total_eff_tokens": 43740
+    },
+    {
+      "video_id": "uTbgFqFA9GU",
+      "blind_id": "3bdcea2c3afb",
+      "title": "Best SaaS Motion Graphics Product Launch Video for Agentic IDE | Coldtea",
+      "channel": "Burnwe",
+      "platform": "youtube",
+      "stratum": "non_tier2_pro",
+      "genre": "モーション",
+      "label_rule_id": "R-PRO-03",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 60.1,
+        "scdet_threshold": 10,
+        "total_cuts": 7,
+        "avg_cut_interval_sec": 8.59,
+        "max_cuts_per_10s": 3,
+        "integrated_lufs": -8.6,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          25,
+          35
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-b:genre=モーション"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 76,
+      "video_score": 76,
+      "video_raw_scores": [
+        76,
+        76
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 16581,
+      "total_eff_tokens": 32232
+    },
+    {
+      "video_id": "kdh0ucpJEH8",
+      "blind_id": "a458e2320ce4",
+      "title": "TVアニメ「瑠璃の宝石」第２弾PV ｜ 2025年7月6日（日）より順次放送開始！",
+      "channel": "アニプレックス チャンネル",
+      "platform": "youtube",
+      "stratum": "non_tier2_pro",
+      "genre": "3DCG/アニメ",
+      "label_rule_id": "R-PRO-03",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 131.8,
+        "scdet_threshold": 10,
+        "total_cuts": 105,
+        "avg_cut_interval_sec": 1.26,
+        "max_cuts_per_10s": 16,
+        "integrated_lufs": -12.9,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          50,
+          55
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-c:max_cuts_per_10s=16>=12"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 82.5,
+      "video_score": 82.5,
+      "video_raw_scores": [
+        82,
+        83
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": true,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": true,
+      "total_input_tokens": 31598,
+      "total_eff_tokens": 47303
+    },
+    {
+      "video_id": "j5k7BgIqkI0",
+      "blind_id": "784b7bd8cbf0",
+      "title": "TVアニメ『カラオケ行こ！』PV第2弾｜2025年7月24日（木）放送開始！",
+      "channel": "KADOKAWAanime",
+      "platform": "youtube",
+      "stratum": "non_tier2_pro",
+      "genre": "3DCG/アニメ",
+      "label_rule_id": "R-PRO-03",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 98.2,
+        "scdet_threshold": 10,
+        "total_cuts": 76,
+        "avg_cut_interval_sec": 1.29,
+        "max_cuts_per_10s": 16,
+        "integrated_lufs": -14.1,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          1,
+          6
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-c:max_cuts_per_10s=16>=12"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 79,
+      "video_score": 79,
+      "video_raw_scores": [
+        79,
+        79
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": true,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": true,
+      "total_input_tokens": 24589,
+      "total_eff_tokens": 40261
+    },
+    {
+      "video_id": "gcZXJ8cxDpM",
+      "blind_id": "4cc64efc8013",
+      "title": "【本PV vol.1】TVアニメ『ザ・ファブル』2024年4月6日(土)24:55より、日本テレビ系にて順次全国放送開始──!!",
+      "channel": "VAP Official",
+      "platform": "youtube",
+      "stratum": "non_tier2_pro",
+      "genre": "3DCG/アニメ",
+      "label_rule_id": "R-PRO-03",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 81.3,
+        "scdet_threshold": 10,
+        "total_cuts": 26,
+        "avg_cut_interval_sec": 3.13,
+        "max_cuts_per_10s": 7,
+        "integrated_lufs": -16.6,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          56,
+          66
+        ]
+      },
+      "hybrid_mode": "video_h2_escalated",
+      "h1_triggers": [],
+      "h2_triggers": [
+        "H2-a:near_t_low(66 within 63+/-3)"
+      ],
+      "modes_executed": [
+        "contact_sheet",
+        "video"
+      ],
+      "score": 67.5,
+      "video_score": 67.5,
+      "video_raw_scores": [
+        69,
+        66
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": 66,
+      "contact_sheet_raw_scores": [
+        67,
+        65
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": true,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": true,
+      "total_input_tokens": 26516,
+      "total_eff_tokens": 57880
+    },
+    {
+      "video_id": "cmNtgMq5khQ",
+      "blind_id": "73f856202976",
+      "title": "『最終楽章 響け！ユーフォニアム』後編 ファイナルPV",
+      "channel": "KyoaniChannel",
+      "platform": "youtube",
+      "stratum": "non_tier2_pro",
+      "genre": "3DCG/アニメ",
+      "label_rule_id": "R-PRO-03",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 215.1,
+        "scdet_threshold": 10,
+        "total_cuts": 179,
+        "avg_cut_interval_sec": 1.2,
+        "max_cuts_per_10s": 23,
+        "integrated_lufs": -13.9,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          187,
+          192
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-c:max_cuts_per_10s=23>=12"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 84.5,
+      "video_score": 84.5,
+      "video_raw_scores": [
+        84,
+        85
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": true,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": true,
+      "total_input_tokens": 49253,
+      "total_eff_tokens": 64953
+    },
+    {
+      "video_id": "_sp_rADhJbI",
+      "blind_id": "0c52d5cefee2",
+      "title": "【コンセプト動画】株式会社出前館様 採用動画【CINEMATO制作実績】",
+      "channel": "CINEMATO - 動画制作・映像制作サービス -",
+      "platform": "youtube",
+      "stratum": "non_tier2_pro",
+      "genre": "企業映像",
+      "label_rule_id": "R-PRO-03",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 110.1,
+        "scdet_threshold": 10,
+        "total_cuts": 23,
+        "avg_cut_interval_sec": 4.79,
+        "max_cuts_per_10s": 13,
+        "integrated_lufs": -25.9,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          69,
+          74
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-c:max_cuts_per_10s=13>=12"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 73,
+      "video_score": 73,
+      "video_raw_scores": [
+        73,
+        73
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 27165,
+      "total_eff_tokens": 42851
+    },
+    {
+      "video_id": "sEYd0PBAuo0",
+      "blind_id": "df4789082ba7",
+      "title": "【AMR inc 制作実績動画】カタギ食品様 企業紹介動画",
+      "channel": "AMR Inc.",
+      "platform": "youtube",
+      "stratum": "non_tier2_pro",
+      "genre": "企業映像",
+      "label_rule_id": "R-PRO-03",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 210,
+        "scdet_threshold": 10,
+        "total_cuts": 0,
+        "avg_cut_interval_sec": 210,
+        "max_cuts_per_10s": 0,
+        "integrated_lufs": -10,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "hybrid_mode": "contact_sheet",
+      "h1_triggers": [],
+      "h2_triggers": [],
+      "modes_executed": [
+        "contact_sheet"
+      ],
+      "score": 58,
+      "video_score": null,
+      "contact_sheet_score": 58,
+      "contact_sheet_raw_scores": [
+        59,
+        57
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 5311,
+      "total_eff_tokens": 20917
+    },
+    {
+      "video_id": "MB5ZxJvIwUw",
+      "blind_id": "94bd61552f69",
+      "title": "【企業プロモーションムービー】愛媛県四国中央市／井原工業株式会社／建設業",
+      "channel": "株式会社CIRCLE",
+      "platform": "youtube",
+      "stratum": "non_tier2_pro",
+      "genre": "企業映像",
+      "label_rule_id": "R-PRO-03",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 65.1,
+        "scdet_threshold": 10,
+        "total_cuts": 42,
+        "avg_cut_interval_sec": 1.55,
+        "max_cuts_per_10s": 10,
+        "integrated_lufs": -9.6,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          6,
+          16
+        ]
+      },
+      "hybrid_mode": "contact_sheet",
+      "h1_triggers": [],
+      "h2_triggers": [],
+      "modes_executed": [
+        "contact_sheet"
+      ],
+      "score": 69.5,
+      "video_score": null,
+      "contact_sheet_score": 69.5,
+      "contact_sheet_raw_scores": [
+        69,
+        70
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 5370,
+      "total_eff_tokens": 21070
+    },
+    {
+      "video_id": "qPZWGWxWPYs",
+      "blind_id": "f26f2d4c16de",
+      "title": "株式会社RBadvance：プロモーションビデオ2020",
+      "channel": "Prets Promotion Inc.　プリッツプロモーション",
+      "platform": "youtube",
+      "stratum": "non_tier2_pro",
+      "genre": "企業映像",
+      "label_rule_id": "R-PRO-03",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 165.1,
+        "scdet_threshold": 10,
+        "total_cuts": 45,
+        "avg_cut_interval_sec": 3.67,
+        "max_cuts_per_10s": 18,
+        "integrated_lufs": -13.7,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          134,
+          139
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-c:max_cuts_per_10s=18>=12"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 54.5,
+      "video_score": 54.5,
+      "video_raw_scores": [
+        54,
+        55
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 38588,
+      "total_eff_tokens": 54292
+    },
+    {
+      "video_id": "FhhBAhJPUyE",
+      "blind_id": "574aa0c9e024",
+      "title": "制作事例　企業プロモーション映像　ジェネティックファクター美容　プリマポルタ 様　ＰＶ@PrimaPorta PV",
+      "channel": "株式会社Hacer アセール",
+      "platform": "youtube",
+      "stratum": "non_tier2_pro",
+      "genre": "企業映像",
+      "label_rule_id": "R-PRO-03",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 118.4,
+        "scdet_threshold": 10,
+        "total_cuts": 0,
+        "avg_cut_interval_sec": 118.4,
+        "max_cuts_per_10s": 0,
+        "integrated_lufs": -15.6,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "hybrid_mode": "contact_sheet",
+      "h1_triggers": [],
+      "h2_triggers": [],
+      "modes_executed": [
+        "contact_sheet"
+      ],
+      "score": 54.5,
+      "video_score": null,
+      "contact_sheet_score": 54.5,
+      "contact_sheet_raw_scores": [
+        54,
+        55
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 5784,
+      "total_eff_tokens": 18455
+    },
+    {
+      "video_id": "JBdhIf-49nc",
+      "blind_id": "e36f04542c9c",
+      "title": "【Aviutl練習がてら作ってみた】AviUtlのCMっぽいのを作ってみた",
+      "channel": "K Nihil",
+      "platform": "youtube",
+      "stratum": "non_tier2_low",
+      "genre": "CM",
+      "label_rule_id": "R-LOW-01",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 21,
+        "scdet_threshold": 10,
+        "total_cuts": 5,
+        "avg_cut_interval_sec": 4.2,
+        "max_cuts_per_10s": 3,
+        "integrated_lufs": -14,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "hybrid_mode": "contact_sheet",
+      "h1_triggers": [],
+      "h2_triggers": [],
+      "modes_executed": [
+        "contact_sheet"
+      ],
+      "score": 48,
+      "video_score": null,
+      "contact_sheet_score": 48,
+      "contact_sheet_raw_scores": [
+        48,
+        43,
+        52
+      ],
+      "contact_sheet_ensemble_rule": "median_of_3",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 8505,
+      "total_eff_tokens": 27523
+    },
+    {
+      "video_id": "4bFPZNmx18o",
+      "blind_id": "520d4231c174",
+      "title": "AviUtl初心者がAviUtlの30秒CM(?)作ってみた",
+      "channel": "あんぱん2017",
+      "platform": "youtube",
+      "stratum": "non_tier2_low",
+      "genre": "CM",
+      "label_rule_id": "R-LOW-01",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 30,
+        "scdet_threshold": 10,
+        "total_cuts": 5,
+        "avg_cut_interval_sec": 6,
+        "max_cuts_per_10s": 4,
+        "integrated_lufs": -8.3,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "hybrid_mode": "contact_sheet",
+      "h1_triggers": [],
+      "h2_triggers": [],
+      "modes_executed": [
+        "contact_sheet"
+      ],
+      "score": 46,
+      "video_score": null,
+      "contact_sheet_score": 46,
+      "contact_sheet_raw_scores": [
+        47,
+        45
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 5670,
+      "total_eff_tokens": 18346
+    },
+    {
+      "video_id": "Ne9QqlYJJ24",
+      "blind_id": "3b57c594426a",
+      "title": "主婦が無料ソフトでCM風動画作ってみた。",
+      "channel": "けろり。",
+      "platform": "youtube",
+      "stratum": "non_tier2_low",
+      "genre": "CM",
+      "label_rule_id": "R-LOW-01",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 42.8,
+        "scdet_threshold": 10,
+        "total_cuts": 5,
+        "avg_cut_interval_sec": 8.56,
+        "max_cuts_per_10s": 2,
+        "integrated_lufs": -23.1,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "hybrid_mode": "contact_sheet",
+      "h1_triggers": [],
+      "h2_triggers": [],
+      "modes_executed": [
+        "contact_sheet"
+      ],
+      "score": 54,
+      "video_score": null,
+      "contact_sheet_score": 54,
+      "contact_sheet_raw_scores": [
+        54,
+        54
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 5647,
+      "total_eff_tokens": 18314
+    },
+    {
+      "video_id": "0Ee4dRb1laM",
+      "blind_id": "979dec3f5695",
+      "title": "商品紹介動画(Vyond練習用③)",
+      "channel": "ともきチャンネル",
+      "platform": "youtube",
+      "stratum": "non_tier2_low",
+      "genre": "CM",
+      "label_rule_id": "R-LOW-02",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 26.1,
+        "scdet_threshold": 10,
+        "total_cuts": 1,
+        "avg_cut_interval_sec": 26.1,
+        "max_cuts_per_10s": 1,
+        "integrated_lufs": -11.2,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "hybrid_mode": "contact_sheet",
+      "h1_triggers": [],
+      "h2_triggers": [],
+      "modes_executed": [
+        "contact_sheet"
+      ],
+      "score": 55.5,
+      "video_score": null,
+      "contact_sheet_score": 55.5,
+      "contact_sheet_raw_scores": [
+        54,
+        57
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 5702,
+      "total_eff_tokens": 18388
+    },
+    {
+      "video_id": "94OoXKHO8mI",
+      "blind_id": "cd504ce1fa01",
+      "title": "Class Assignment - Graduate School Commercial",
+      "channel": "Jasmine Brown",
+      "platform": "youtube",
+      "stratum": "non_tier2_low",
+      "genre": "CM",
+      "label_rule_id": "R-LOW-01",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 30.1,
+        "scdet_threshold": 10,
+        "total_cuts": 16,
+        "avg_cut_interval_sec": 1.88,
+        "max_cuts_per_10s": 8,
+        "integrated_lufs": -19,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          3,
+          13
+        ]
+      },
+      "hybrid_mode": "contact_sheet",
+      "h1_triggers": [],
+      "h2_triggers": [],
+      "modes_executed": [
+        "contact_sheet"
+      ],
+      "score": 51.5,
+      "video_score": null,
+      "contact_sheet_score": 51.5,
+      "contact_sheet_raw_scores": [
+        52,
+        51
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 5538,
+      "total_eff_tokens": 21216
+    },
+    {
+      "video_id": "Z1gGDaQWwdg",
+      "blind_id": "ef892ea47470",
+      "title": "【MV風】初心者が一から制作！？",
+      "channel": "さやpiii channel",
+      "platform": "youtube",
+      "stratum": "non_tier2_low",
+      "genre": "MV",
+      "label_rule_id": "R-LOW-01",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 169.6,
+        "scdet_threshold": 10,
+        "total_cuts": 41,
+        "avg_cut_interval_sec": 4.14,
+        "max_cuts_per_10s": 14,
+        "integrated_lufs": -7.4,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          0,
+          5
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-a:genre=MV",
+        "H1-c:max_cuts_per_10s=14>=12"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 51.5,
+      "video_score": 51.5,
+      "video_raw_scores": [
+        52,
+        51
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 39710,
+      "total_eff_tokens": 55394
+    },
+    {
+      "video_id": "Jyv8dO8XDEs",
+      "blind_id": "f0574df40879",
+      "title": "【オリジナル曲・MV】宝物/かぐや将軍　#オリジナル曲 #mv #cubase #作曲初心者 #lyricvideo",
+      "channel": "かぐや将軍",
+      "platform": "youtube",
+      "stratum": "non_tier2_low",
+      "genre": "MV",
+      "label_rule_id": "R-LOW-01",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 190.5,
+        "scdet_threshold": 10,
+        "total_cuts": 1,
+        "avg_cut_interval_sec": 190.5,
+        "max_cuts_per_10s": 1,
+        "integrated_lufs": -14.9,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-a:genre=MV"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 30,
+      "video_score": 30,
+      "video_raw_scores": [
+        30,
+        30
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 40510,
+      "total_eff_tokens": 55983
+    },
+    {
+      "video_id": "omQ99jeUujs",
+      "blind_id": "b40ac93f97e9",
+      "title": "色々ド初心者が文化祭に向け作ったオリジナルMV",
+      "channel": "九尾(つづらお)",
+      "platform": "youtube",
+      "stratum": "non_tier2_low",
+      "genre": "MV",
+      "label_rule_id": "R-LOW-01",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 114.3,
+        "scdet_threshold": 10,
+        "total_cuts": 84,
+        "avg_cut_interval_sec": 1.36,
+        "max_cuts_per_10s": 23,
+        "integrated_lufs": -11,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          102,
+          107
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-a:genre=MV",
+        "H1-c:max_cuts_per_10s=23>=12"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 59,
+      "video_score": 59,
+      "video_raw_scores": [
+        60,
+        58
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 27139,
+      "total_eff_tokens": 42840
+    },
+    {
+      "video_id": "Z0lN-XgQzlI",
+      "blind_id": "5bab5c65d8f4",
+      "title": "Premiere Pro 初心者がプチMV作ってみた。オリジナル曲「うそつき」",
+      "channel": "sho-uta",
+      "platform": "youtube",
+      "stratum": "non_tier2_low",
+      "genre": "MV",
+      "label_rule_id": "R-LOW-01",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 61.8,
+        "scdet_threshold": 10,
+        "total_cuts": 13,
+        "avg_cut_interval_sec": 4.75,
+        "max_cuts_per_10s": 13,
+        "integrated_lufs": -15.9,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          3,
+          8
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-a:genre=MV",
+        "H1-c:max_cuts_per_10s=13>=12"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 35.5,
+      "video_score": 35.5,
+      "video_raw_scores": [
+        35,
+        36
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 16784,
+      "total_eff_tokens": 32457
+    },
+    {
+      "video_id": "qQXsOOxsWgw",
+      "blind_id": "3aa4b1fa07dd",
+      "title": "【aviutl】初心者が初めてのモーショングラフィックスを作ってみた。",
+      "channel": "Tokage",
+      "platform": "youtube",
+      "stratum": "non_tier2_low",
+      "genre": "モーション",
+      "label_rule_id": "R-LOW-01",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 22.7,
+        "scdet_threshold": 10,
+        "total_cuts": 1,
+        "avg_cut_interval_sec": 22.7,
+        "max_cuts_per_10s": 0,
+        "integrated_lufs": -27.4,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          6,
+          16
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-b:genre=モーション"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 50,
+      "video_score": 50,
+      "video_raw_scores": [
+        48,
+        52
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 8823,
+      "total_eff_tokens": 24492
+    },
+    {
+      "video_id": "PupfzrYviGc",
+      "blind_id": "b818350924b5",
+      "title": "【Capsule/Hello】超初心者のモーショングラフィックス練習【Aviutl】",
+      "channel": "non",
+      "platform": "youtube",
+      "stratum": "non_tier2_low",
+      "genre": "モーション",
+      "label_rule_id": "R-LOW-01",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 29,
+        "scdet_threshold": 10,
+        "total_cuts": 2,
+        "avg_cut_interval_sec": 14.5,
+        "max_cuts_per_10s": 1,
+        "integrated_lufs": -20.3,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          9,
+          19
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-b:genre=モーション"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 59.5,
+      "video_score": 59.5,
+      "video_raw_scores": [
+        59,
+        60
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 10240,
+      "total_eff_tokens": 25942
+    },
+    {
+      "video_id": "ZkQsrYzzG38",
+      "blind_id": "f2bdea2941e6",
+      "title": "【AviUtl】モーショングラフィックスの練習 #1",
+      "channel": "ELM / えるむ",
+      "platform": "youtube",
+      "stratum": "non_tier2_low",
+      "genre": "モーション",
+      "label_rule_id": "R-LOW-01",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 38.8,
+        "scdet_threshold": 10,
+        "total_cuts": 5,
+        "avg_cut_interval_sec": 7.76,
+        "max_cuts_per_10s": 3,
+        "integrated_lufs": -9.8,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          14,
+          24
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-b:genre=モーション"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 40,
+      "video_score": 40,
+      "video_raw_scores": [
+        35,
+        40,
+        41
+      ],
+      "video_ensemble_rule": "median_of_3",
+      "contact_sheet_score": null,
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 18283,
+      "total_eff_tokens": 41790
+    },
+    {
+      "video_id": "bHbDA2R5EQ8",
+      "blind_id": "4b982dede7ab",
+      "title": "【AviUtl】初心者がモーショングラフィックスに初挑戦した件www【NCS - High】",
+      "channel": "キュー. onion",
+      "platform": "youtube",
+      "stratum": "non_tier2_low",
+      "genre": "モーション",
+      "label_rule_id": "R-LOW-01",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 53.8,
+        "scdet_threshold": 10,
+        "total_cuts": 9,
+        "avg_cut_interval_sec": 5.98,
+        "max_cuts_per_10s": 5,
+        "integrated_lufs": -8.3,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          21,
+          31
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-b:genre=モーション"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 48,
+      "video_score": 48,
+      "video_raw_scores": [
+        54,
+        46,
+        48
+      ],
+      "video_ensemble_rule": "median_of_3",
+      "contact_sheet_score": null,
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 22847,
+      "total_eff_tokens": 46354
+    },
+    {
+      "video_id": "oC1882y0IgA",
+      "blind_id": "f68f1ba9f5f6",
+      "title": "Learning After Effects – Day 1  My First Text Reveal Animation",
+      "channel": "Birdshaded Motion",
+      "platform": "youtube",
+      "stratum": "non_tier2_low",
+      "genre": "モーション",
+      "label_rule_id": "R-LOW-01",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 47.9,
+        "scdet_threshold": 10,
+        "total_cuts": 3,
+        "avg_cut_interval_sec": 15.97,
+        "max_cuts_per_10s": 2,
+        "integrated_lufs": -31.7,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          18,
+          28
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-b:genre=モーション"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 32,
+      "video_score": 32,
+      "video_raw_scores": [
+        32,
+        32
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 14152,
+      "total_eff_tokens": 29846
+    },
+    {
+      "video_id": "5AAcdVSxDdI",
+      "blind_id": "d28b826c0913",
+      "title": "My first animation made with Blender! Hope you like it !!",
+      "channel": "Kns sketch",
+      "platform": "youtube",
+      "stratum": "non_tier2_low",
+      "genre": "3DCG/アニメ",
+      "label_rule_id": "R-LOW-01",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 29.8,
+        "scdet_threshold": 10,
+        "total_cuts": 12,
+        "avg_cut_interval_sec": 2.48,
+        "max_cuts_per_10s": 12,
+        "integrated_lufs": -13.5,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          1,
+          6
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-c:max_cuts_per_10s=12>=12"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 51.5,
+      "video_score": 51.5,
+      "video_raw_scores": [
+        51,
+        52
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 10203,
+      "total_eff_tokens": 25889
+    },
+    {
+      "video_id": "v-fCUQ1R51o",
+      "blind_id": "fb5f082ab5f2",
+      "title": "Mundane monday - Blender 3.2 (EEVEE) and grease pencil timelapse test animation",
+      "channel": "Unaninated",
+      "platform": "youtube",
+      "stratum": "non_tier2_low",
+      "genre": "3DCG/アニメ",
+      "label_rule_id": "R-LOW-01",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 49.2,
+        "scdet_threshold": 10,
+        "total_cuts": 0,
+        "avg_cut_interval_sec": 49.2,
+        "max_cuts_per_10s": 0,
+        "integrated_lufs": -39.5,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "hybrid_mode": "contact_sheet",
+      "h1_triggers": [],
+      "h2_triggers": [],
+      "modes_executed": [
+        "contact_sheet"
+      ],
+      "score": 59.5,
+      "video_score": null,
+      "contact_sheet_score": 59.5,
+      "contact_sheet_raw_scores": [
+        59,
+        60
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 5733,
+      "total_eff_tokens": 18419
+    },
+    {
+      "video_id": "KrCbjxKDY7Q",
+      "blind_id": "f61534ec3869",
+      "title": "Transformers test animation (Blender 3.4)",
+      "channel": "Carbon Animation Productions",
+      "platform": "youtube",
+      "stratum": "non_tier2_low",
+      "genre": "3DCG/アニメ",
+      "label_rule_id": "R-LOW-01",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 20.3,
+        "scdet_threshold": 10,
+        "total_cuts": 10,
+        "avg_cut_interval_sec": 2.03,
+        "max_cuts_per_10s": 9,
+        "integrated_lufs": -8.2,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          2,
+          12
+        ]
+      },
+      "hybrid_mode": "contact_sheet",
+      "h1_triggers": [],
+      "h2_triggers": [],
+      "modes_executed": [
+        "contact_sheet"
+      ],
+      "score": 54,
+      "video_score": null,
+      "contact_sheet_score": 54,
+      "contact_sheet_raw_scores": [
+        56,
+        52
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 5357,
+      "total_eff_tokens": 21052
+    },
+    {
+      "video_id": "HaENcp4_4uY",
+      "blind_id": "4fc99394ea08",
+      "title": "[Blender] Toy Story Woody Test Animation",
+      "channel": "TeknicalAnimations",
+      "platform": "youtube",
+      "stratum": "non_tier2_low",
+      "genre": "3DCG/アニメ",
+      "label_rule_id": "R-LOW-01",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 19,
+        "scdet_threshold": 10,
+        "total_cuts": 1,
+        "avg_cut_interval_sec": 19,
+        "max_cuts_per_10s": 1,
+        "integrated_lufs": -28.3,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "hybrid_mode": "contact_sheet",
+      "h1_triggers": [],
+      "h2_triggers": [],
+      "modes_executed": [
+        "contact_sheet"
+      ],
+      "score": 58,
+      "video_score": null,
+      "contact_sheet_score": 58,
+      "contact_sheet_raw_scores": [
+        58,
+        58
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 5591,
+      "total_eff_tokens": 18265
+    },
+    {
+      "video_id": "nzmA4Gj5SrQ",
+      "blind_id": "9ff6beaa9718",
+      "title": "Website Webinar Recording (Intro): How to get a great website with top design and Google setup",
+      "channel": "HCG corporate designs",
+      "platform": "youtube",
+      "stratum": "non_tier2_low",
+      "genre": "企業映像",
+      "label_rule_id": "R-LOW-03",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 38,
+        "scdet_threshold": 10,
+        "total_cuts": 0,
+        "avg_cut_interval_sec": 38,
+        "max_cuts_per_10s": 0,
+        "integrated_lufs": -34.3,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "hybrid_mode": "contact_sheet",
+      "h1_triggers": [],
+      "h2_triggers": [],
+      "modes_executed": [
+        "contact_sheet"
+      ],
+      "score": 22.5,
+      "video_score": null,
+      "contact_sheet_score": 22.5,
+      "contact_sheet_raw_scores": [
+        22,
+        23
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 5632,
+      "total_eff_tokens": 18308
+    },
+    {
+      "video_id": "qDHqAFdcxgw",
+      "blind_id": "8cf651a2cea7",
+      "title": "【Vyond】サービス紹介動画",
+      "channel": "myportfolio",
+      "platform": "youtube",
+      "stratum": "non_tier2_low",
+      "genre": "企業映像",
+      "label_rule_id": "R-LOW-02",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 68.3,
+        "scdet_threshold": 10,
+        "total_cuts": 5,
+        "avg_cut_interval_sec": 13.66,
+        "max_cuts_per_10s": 1,
+        "integrated_lufs": -19.3,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "hybrid_mode": "contact_sheet",
+      "h1_triggers": [],
+      "h2_triggers": [],
+      "modes_executed": [
+        "contact_sheet"
+      ],
+      "score": 52,
+      "video_score": null,
+      "contact_sheet_score": 52,
+      "contact_sheet_raw_scores": [
+        52,
+        47,
+        52
+      ],
+      "contact_sheet_ensemble_rule": "median_of_3",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 8482,
+      "total_eff_tokens": 27504
+    },
+    {
+      "video_id": "u0h78N8hb8Y",
+      "blind_id": "83a14c2d16ac",
+      "title": "営業支援サービス会社様向け紹介動画【サンプル動画】VYONDビジネスアニメーション",
+      "channel": "オフィスハピネス合同会社",
+      "platform": "youtube",
+      "stratum": "non_tier2_low",
+      "genre": "企業映像",
+      "label_rule_id": "R-LOW-02",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 175.3,
+        "scdet_threshold": 10,
+        "total_cuts": 36,
+        "avg_cut_interval_sec": 4.87,
+        "max_cuts_per_10s": 4,
+        "integrated_lufs": -21,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "hybrid_mode": "contact_sheet",
+      "h1_triggers": [],
+      "h2_triggers": [],
+      "modes_executed": [
+        "contact_sheet"
+      ],
+      "score": 53.5,
+      "video_score": null,
+      "contact_sheet_score": 53.5,
+      "contact_sheet_raw_scores": [
+        54,
+        53
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 5447,
+      "total_eff_tokens": 21056
+    },
+    {
+      "video_id": "Z2eGGc9Z3CM",
+      "blind_id": "9deae317b8bf",
+      "title": "商品・サービス紹介 動画広告 30秒【サンプル動画】VYOND ビジネスアニメーション",
+      "channel": "オフィスハピネス合同会社",
+      "platform": "youtube",
+      "stratum": "non_tier2_low",
+      "genre": "企業映像",
+      "label_rule_id": "R-LOW-02",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 32.2,
+        "scdet_threshold": 10,
+        "total_cuts": 8,
+        "avg_cut_interval_sec": 4.03,
+        "max_cuts_per_10s": 4,
+        "integrated_lufs": -21,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "hybrid_mode": "contact_sheet",
+      "h1_triggers": [],
+      "h2_triggers": [],
+      "modes_executed": [
+        "contact_sheet"
+      ],
+      "score": 52.5,
+      "video_score": null,
+      "contact_sheet_score": 52.5,
+      "contact_sheet_raw_scores": [
+        52,
+        53
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 5596,
+      "total_eff_tokens": 18273
+    },
+    {
+      "video_id": "a_C24dNnDQE",
+      "blind_id": "4696179ab69e",
+      "title": "VYONDで作る商品・サービス紹介アニメ」のサンプル｜services introduction animation video.",
+      "channel": "Ucha Design / VYONDクリエイター",
+      "platform": "youtube",
+      "stratum": "non_tier2_low",
+      "genre": "企業映像",
+      "label_rule_id": "R-LOW-02",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 61.8,
+        "scdet_threshold": 10,
+        "total_cuts": 13,
+        "avg_cut_interval_sec": 4.75,
+        "max_cuts_per_10s": 4,
+        "integrated_lufs": -70,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "hybrid_mode": "contact_sheet",
+      "h1_triggers": [],
+      "h2_triggers": [],
+      "modes_executed": [
+        "contact_sheet"
+      ],
+      "score": 54.5,
+      "video_score": null,
+      "contact_sheet_score": 54.5,
+      "contact_sheet_raw_scores": [
+        54,
+        55
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 5734,
+      "total_eff_tokens": 18408
+    },
+    {
+      "video_id": "Wjew3Rc1PYI",
+      "blind_id": "1c74fe657ec4",
+      "title": "Rathinamo - Official Music Video | Saurav Srisan | Tanisha Gnanavel | Vidhu, Yogalakshmi |TamilIndie",
+      "channel": "Sony Music South",
+      "platform": "youtube",
+      "stratum": "non_tier2_pro",
+      "genre": "MV",
+      "label_rule_id": "R-PRO-02",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 190.2,
+        "scdet_threshold": 10,
+        "total_cuts": 106,
+        "avg_cut_interval_sec": 1.79,
+        "max_cuts_per_10s": 23,
+        "integrated_lufs": -9.5,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          8,
+          13
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-a:genre=MV",
+        "H1-c:max_cuts_per_10s=23>=12"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 82.5,
+      "video_score": 82.5,
+      "video_raw_scores": [
+        83,
+        82
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 41448,
+      "total_eff_tokens": 57140
+    },
+    {
+      "video_id": "aE0Eb23d6Dk",
+      "blind_id": "e3fba1e478cc",
+      "title": "TVアニメ「もめんたりー・リリィ」ティザーPV【2025年1月より放送予定】GoHands New Animation Project",
+      "channel": "SHOCHIKU anime Channel",
+      "platform": "youtube",
+      "stratum": "non_tier2_pro",
+      "genre": "3DCG/アニメ",
+      "label_rule_id": "R-PRO-03",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 22,
+        "scdet_threshold": 10,
+        "total_cuts": 21,
+        "avg_cut_interval_sec": 1.05,
+        "max_cuts_per_10s": 15,
+        "integrated_lufs": -17.2,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          16,
+          21
+        ]
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-c:max_cuts_per_10s=15>=12"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 73.5,
+      "video_score": 73.5,
+      "video_raw_scores": [
+        74,
+        73
+      ],
+      "video_ensemble_rule": "mean_of_2",
+      "contact_sheet_score": null,
+      "knows_work": true,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": true,
+      "total_input_tokens": 8624,
+      "total_eff_tokens": 24298
+    },
+    {
+      "video_id": "aV9CPYsqz9k",
+      "blind_id": "8b421b08c2c2",
+      "title": "【オリジナル MV】つくってみた｜水の星｜歌ってみた　[何もかも超初心者]",
+      "channel": "くう",
+      "platform": "youtube",
+      "stratum": "non_tier2_low",
+      "genre": "MV",
+      "label_rule_id": "R-LOW-01",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 157.8,
+        "scdet_threshold": 10,
+        "total_cuts": 1,
+        "avg_cut_interval_sec": 157.8,
+        "max_cuts_per_10s": 1,
+        "integrated_lufs": -10.2,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "hybrid_mode": "video_h1",
+      "h1_triggers": [
+        "H1-a:genre=MV"
+      ],
+      "h2_triggers": [],
+      "modes_executed": [
+        "video"
+      ],
+      "score": 47,
+      "video_score": 47,
+      "video_raw_scores": [
+        47,
+        42,
+        52
+      ],
+      "video_ensemble_rule": "median_of_3",
+      "contact_sheet_score": null,
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 50612,
+      "total_eff_tokens": 73833
+    },
+    {
+      "video_id": "jjXPrOUXmZg",
+      "blind_id": "f06b2f788a16",
+      "title": "My First Animation in Blender [beginner journey]",
+      "channel": "Sondos Abobukr",
+      "platform": "youtube",
+      "stratum": "non_tier2_low",
+      "genre": "3DCG/アニメ",
+      "label_rule_id": "R-LOW-01",
+      "low_exposure_recent_tier2": false,
+      "metrics": {
+        "duration_sec": 147.4,
+        "scdet_threshold": 10,
+        "total_cuts": 5,
+        "avg_cut_interval_sec": 29.48,
+        "max_cuts_per_10s": 3,
+        "integrated_lufs": -21.1,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "hybrid_mode": "contact_sheet",
+      "h1_triggers": [],
+      "h2_triggers": [],
+      "modes_executed": [
+        "contact_sheet"
+      ],
+      "score": 40.5,
+      "video_score": null,
+      "contact_sheet_score": 40.5,
+      "contact_sheet_raw_scores": [
+        41,
+        40
+      ],
+      "contact_sheet_ensemble_rule": "mean_of_2",
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "flagged_contamination": false,
+      "total_input_tokens": 5424,
+      "total_eff_tokens": 21048
+    }
+  ]
+}
