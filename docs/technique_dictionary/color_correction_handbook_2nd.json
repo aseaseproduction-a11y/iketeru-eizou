@@ -1,7 +1,8 @@
 {
-  "dictionary_version": "1.0",
+  "dictionary_version": "1.1",
   "purpose": "reproducible_decomposition_technique_dictionary_only",
   "never_use_for_scoring_criteria": true,
+  "numeric_verification_script": "scripts/verify-technique-dictionary-numbers.py",
   "book": {
     "order": 1,
     "title_ja": "カラーコレクションハンドブック 第2版",
@@ -53,9 +54,9 @@
     {"id": "COLOR-021", "name_ja": "シェイプ×HSL複合によるデジタルリライティング", "chapter": "Ch.6.4-6.5", "book_pages": "p.328-333", "pdf_pages": "p.354-359", "tools": ["DaVinci Resolve", "After Effects", "Blender"]},
     {"id": "COLOR-022", "name_ja": "トラッキングとマスクアニメーションによる移動追従", "chapter": "Ch.6.6", "book_pages": "p.334-340", "pdf_pages": "p.360-366", "tools": ["DaVinci Resolve", "After Effects", "Blender"]},
     {"id": "COLOR-023", "name_ja": "グレードのアニメーション（露出・色温度変化と人為的照明演出）", "chapter": "Ch.7.1-7.5", "book_pages": "p.341-363", "pdf_pages": "p.369-391", "tools": ["DaVinci Resolve", "After Effects", "Blender"]},
-    {"id": "COLOR-024", "name_ja": "記憶色とスキントーンライン（Iライン）による肌色補正", "chapter": "Ch.8.1-8.2", "book_pages": "p.370-392", "pdf_pages": "p.398-422", "tools": ["DaVinci Resolve", "After Effects", "Blender"]},
+    {"id": "COLOR-024", "name_ja": "記憶色とスキントーンインジケータ（Iバー）による肌色補正", "chapter": "Ch.8.1-8.2", "book_pages": "p.370-395", "pdf_pages": "p.398-425", "tools": ["DaVinci Resolve", "After Effects", "Blender"]},
     {"id": "COLOR-025", "name_ja": "セカンダリによる肌仕上げ（保護・光沢・テカリ抑制・ソフトネス）", "chapter": "Ch.8.3", "book_pages": "p.420-433", "pdf_pages": "p.450-463", "tools": ["DaVinci Resolve", "After Effects", "Blender"]},
-    {"id": "COLOR-026", "name_ja": "理想的な空の設計（60–70 IRE・グラデND・夕焼け・雲）", "chapter": "Ch.8.4-8.5", "book_pages": "p.434-460", "pdf_pages": "p.464-492", "tools": ["DaVinci Resolve", "After Effects", "Blender"]},
+    {"id": "COLOR-026", "name_ja": "理想的な空の設計（天頂〜地平線の彩度・輝度勾配・グラデND・夕焼け・雲）", "chapter": "Ch.8.4-8.5", "book_pages": "p.434-460", "pdf_pages": "p.464-492", "tools": ["DaVinci Resolve", "After Effects", "Blender"]},
     {"id": "COLOR-027", "name_ja": "理想的な葉・植物の緑の調整", "chapter": "Ch.8.6", "book_pages": "p.460-468", "pdf_pages": "p.492-500", "tools": ["DaVinci Resolve", "After Effects", "Blender"]},
     {"id": "COLOR-028", "name_ja": "ショットマッチングと2段階ワークフロー（バランス→ルック）", "chapter": "Ch.9.3-9.6", "book_pages": "p.478-504", "pdf_pages": "p.510-536", "tools": ["DaVinci Resolve", "After Effects", "Blender"]},
     {"id": "COLOR-029", "name_ja": "放送規格適合と Soft Clip（ソフトクリッピング）", "chapter": "Ch.10.2-10.7", "book_pages": "p.514-538", "pdf_pages": "p.546-572", "tools": ["DaVinci Resolve", "After Effects", "Blender"]},
