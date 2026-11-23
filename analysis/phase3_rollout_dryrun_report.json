@@ -1,0 +1,283 @@
+{
+  "generated_at": "2026-11-23T05:53:24.779Z",
+  "mode": "READ_ONLY_DRY_RUN",
+  "production_db_written": false,
+  "sqlite_written": false,
+  "frozen_calibration_settings": {
+    "config_path": "analysis/phase2_frozen_config_v1.json",
+    "calibration_version": "phase2_v1",
+    "t_award": 83,
+    "t_low": 63,
+    "expected_model": "gemini-4-neon-high",
+    "prompt_version": "v1_baseline",
+    "hybrid_router_version": "phase2_hybrid_v1",
+    "frozen_commit": "5e42f16ace5093964f054bd1ebe44ab30b251296"
+  },
+  "tidb_snapshot_before": {
+    "row_count": 5653,
+    "max_updated_at": "2026-11-21T17:57:26.000Z",
+    "existing_columns_count": 40,
+    "already_has_calibration_cols": []
+  },
+  "sqlite_snapshot_before": {
+    "exists": true,
+    "path": "E:\\iketeru-creative-studio\\data\\iketeru_knowledge.db",
+    "bytes": 1449013248,
+    "sha256": "f25c464f7a5a8531843205f9e940ee0cc880d7e7e1985c5fdb83c33319064cc3",
+    "videos_count": 5635,
+    "existing_columns_count": 34,
+    "already_has_calibration_cols": [],
+    "backfill_legacy_uncalibrated": 5495,
+    "backfill_legacy_with_100pt": 1062,
+    "backfill_legacy_rating_only": 4433,
+    "backfill_unscored": 140
+  },
+  "tidb_sqlite_id_diff": {
+    "tidb_rows": 5653,
+    "sqlite_rows": 5635,
+    "in_both": 5587,
+    "tidb_only": 66,
+    "sqlite_only": 48
+  },
+  "new_tidb_columns": [
+    {
+      "name": "calibrationStatus",
+      "sql": "varchar(32) DEFAULT NULL"
+    },
+    {
+      "name": "calibratedScore",
+      "sql": "decimal(5,2) DEFAULT NULL"
+    },
+    {
+      "name": "calibratedRank",
+      "sql": "varchar(8) DEFAULT NULL"
+    },
+    {
+      "name": "calibratedTierBand",
+      "sql": "varchar(24) DEFAULT NULL"
+    },
+    {
+      "name": "calibratedBreakdown",
+      "sql": "mediumtext DEFAULT NULL"
+    },
+    {
+      "name": "calibrationVersion",
+      "sql": "varchar(32) DEFAULT NULL"
+    },
+    {
+      "name": "calibratedAt",
+      "sql": "timestamp NULL DEFAULT NULL"
+    },
+    {
+      "name": "calibratedRoute",
+      "sql": "varchar(32) DEFAULT NULL"
+    },
+    {
+      "name": "calibratedRunId",
+      "sql": "varchar(64) DEFAULT NULL"
+    },
+    {
+      "name": "calibrationGenreBucket",
+      "sql": "varchar(64) DEFAULT NULL"
+    }
+  ],
+  "new_sqlite_columns": [
+    {
+      "name": "calibration_status",
+      "sql": "TEXT DEFAULT NULL"
+    },
+    {
+      "name": "calibrated_score",
+      "sql": "REAL DEFAULT NULL"
+    },
+    {
+      "name": "calibrated_rank",
+      "sql": "TEXT DEFAULT NULL"
+    },
+    {
+      "name": "calibrated_tier_band",
+      "sql": "TEXT DEFAULT NULL"
+    },
+    {
+      "name": "calibrated_breakdown_json",
+      "sql": "TEXT DEFAULT ''"
+    },
+    {
+      "name": "calibration_version",
+      "sql": "TEXT DEFAULT NULL"
+    },
+    {
+      "name": "calibrated_at",
+      "sql": "INTEGER DEFAULT NULL"
+    },
+    {
+      "name": "calibrated_route",
+      "sql": "TEXT DEFAULT NULL"
+    },
+    {
+      "name": "calibrated_run_id",
+      "sql": "TEXT DEFAULT NULL"
+    },
+    {
+      "name": "calibration_genre_bucket",
+      "sql": "TEXT DEFAULT NULL"
+    }
+  ],
+  "migration_d_tidb": {
+    "total_rows": 5653,
+    "legacy_protected_columns_overwritten": 0,
+    "legacy_protected_columns": [
+      "aiOverallScore",
+      "aiDirectionScore",
+      "aiTechniqueScore",
+      "aiScoreBreakdown",
+      "aiOverallRating",
+      "aiDirectionRating",
+      "aiTechniqueRating",
+      "aiAnalysis"
+    ],
+    "new_columns_to_add_count": 10,
+    "backfill_set_legacy_uncalibrated": 5252,
+    "backfill_set_legacy_uncalibrated_with_100pt": 4566,
+    "backfill_set_legacy_uncalibrated_rating_only": 686,
+    "backfill_set_unscored": 401,
+    "calibrated_columns_initialized_null": 5653
+  },
+  "rescore_c_priorities": {
+    "P1_private_rating": {
+      "total": 492,
+      "fetchable_without_known_block": 485,
+      "likely_fetch_blocked_or_unsupported": 7,
+      "batch_count_max_200": 3,
+      "batch_sizes": [
+        200,
+        200,
+        92
+      ],
+      "by_calibration_genre_bucket": {
+        "モーション": 89,
+        "unverified:opening": 88,
+        "CM": 72,
+        "unverified:concept-art": 72,
+        "MV": 72,
+        "unverified:teaser-trailer": 22,
+        "unverified:film": 21,
+        "企業映像": 17,
+        "unverified:documentary": 13,
+        "unverified:branded-movie": 13,
+        "unverified:youtube-sns": 12,
+        "3DCG/アニメ": 1
+      },
+      "by_target_status": {
+        "calibrated_verified": 251,
+        "calibrated_unverified_genre": 241
+      },
+      "by_platform": {
+        "vimeo": 469,
+        "youtube": 19,
+        "external": 4
+      },
+      "by_embed_status": {
+        "available": 255,
+        "unknown": 234,
+        "restricted": 3
+      }
+    },
+    "P2_verified_5_genres": {
+      "total": 3420,
+      "fetchable_without_known_block": 3024,
+      "likely_fetch_blocked_or_unsupported": 396,
+      "batch_count_max_200": 18,
+      "batch_sizes": [
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        20
+      ],
+      "by_calibration_genre_bucket": {
+        "MV": 2081,
+        "CM": 756,
+        "モーション": 309,
+        "企業映像": 272,
+        "3DCG/アニメ": 2
+      },
+      "by_target_status": {
+        "calibrated_verified": 3420
+      },
+      "by_platform": {
+        "youtube": 3302,
+        "vimeo": 118
+      },
+      "by_embed_status": {
+        "available": 2559,
+        "unknown": 465,
+        "restricted": 396
+      }
+    },
+    "P3_unverified_genres": {
+      "total": 1741,
+      "fetchable_without_known_block": 1563,
+      "likely_fetch_blocked_or_unsupported": 178,
+      "batch_count_max_200": 9,
+      "batch_sizes": [
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        141
+      ],
+      "by_calibration_genre_bucket": {
+        "unverified:opening": 288,
+        "unverified:empty": 251,
+        "unverified:youtube-sns": 221,
+        "unverified:concept-art": 220,
+        "unverified:film": 190,
+        "unverified:teaser-trailer": 166,
+        "unverified:branded-movie": 122,
+        "unverified:making": 78,
+        "unverified:documentary": 71,
+        "unverified:how-to": 50,
+        "unverified:event-live": 50,
+        "unverified:showreel": 33,
+        "unverified:web": 1
+      },
+      "by_target_status": {
+        "calibrated_unverified_genre": 1741
+      },
+      "by_platform": {
+        "youtube": 1397,
+        "vimeo": 340,
+        "external": 1,
+        "instagram": 3
+      },
+      "by_embed_status": {
+        "available": 1190,
+        "unknown": 377,
+        "restricted": 174
+      }
+    }
+  },
+  "totals_check": {
+    "sum_priorities": 5653,
+    "total_rows": 5653,
+    "exact_match": true
+  }
+}
