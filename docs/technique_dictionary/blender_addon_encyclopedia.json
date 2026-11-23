@@ -1,0 +1,3251 @@
+{
+  "dictionary_version": "1.0",
+  "purpose": "reproducible_decomposition_addon_reverse_index_only",
+  "never_use_for_scoring_criteria": true,
+  "numeric_verification_script": "scripts/verify-technique-dictionary-numbers.py",
+  "status_checked_date": "2026-11-23",
+  "target_software_versions": {
+    "blender_range": "3.6-4.3",
+    "book_verification_date": "2025-02",
+    "notes": "Blender 4.2 以降の公式 Extensions プラットフォームおよび従来の ZIP インストール双方に対応（本書 p.5 / PDF p.25）。"
+  },
+  "image_verified_numbers": [],
+  "book": {
+    "order": 4,
+    "title_ja": "職種と用途で探せる Blender アドオン事典",
+    "author": "3D人",
+    "publisher_ja": "株式会社ボーンデジタル",
+    "published_date": "2025-03-25",
+    "source_pdf_nfc": "blenderアドオン事典.pdf",
+    "total_pages": 439,
+    "ocr_private_path": "E:\\技術書_index\\ocr_private\\blender_addon_encyclopedia_ocr.jsonl"
+  },
+  "ocr_quality": {
+    "engine": "Windows.Media.Ocr.OcrEngine (ja, local offline)",
+    "dpi": 250,
+    "elapsed_sec": 444.4,
+    "total_pages": 439,
+    "readable_text_pages_gte_50_chars": 422,
+    "readable_page_ratio": 0.9613,
+    "sparse_pages_1_to_49_chars": 11,
+    "sparse_page_numbers_pdf": [
+      22,
+      321,
+      332,
+      336,
+      343,
+      355,
+      358,
+      392,
+      402,
+      415,
+      430
+    ],
+    "unreadable_0_char_pages": 6,
+    "unreadable_page_numbers_pdf": [
+      98,
+      302,
+      326,
+      408,
+      412,
+      439
+    ],
+    "total_non_ws_chars": 205216,
+    "total_valid_chars": 203406,
+    "overall_valid_char_ratio": 0.9912,
+    "avg_chars_per_page": 467.5
+  },
+  "counts": {
+    "part1_addons": 188,
+    "part2_extra_addons": 31,
+    "total_addons_indexed": 219,
+    "official_extensions_verified_today": 24,
+    "core_builtin_verified_today": 1
+  },
+  "part1_addons": [
+    {
+      "index": 1,
+      "name": "BoltFactory",
+      "category": "モデリング",
+      "book_page": 6,
+      "pdf_page": 26,
+      "book_price_tier": "無料",
+      "book_source": "標準搭載・Extensions",
+      "current_status_2026_11_23": "公式Extensions確認済 (2026-11-23)",
+      "related_technique_ids": [
+        "BL-001",
+        "BL-019"
+      ],
+      "summary_ja": "ボルト・ナット・ネジをパラメータ指定で即座に生成する。"
+    },
+    {
+      "index": 2,
+      "name": "Bool Tool",
+      "category": "モデリング",
+      "book_page": 7,
+      "pdf_page": 27,
+      "book_price_tier": "無料",
+      "book_source": "標準搭載・Extensions",
+      "current_status_2026_11_23": "公式Extensions確認済 (2026-11-23)",
+      "related_technique_ids": [
+        "BL-001",
+        "BL-019",
+        "BL-029"
+      ],
+      "summary_ja": "ショートカットで非破壊／自動ブーリアン演算（差・和・交差・スライス）を高速実行する。"
+    },
+    {
+      "index": 3,
+      "name": "QBlocker",
+      "category": "モデリング",
+      "book_page": 8,
+      "pdf_page": 28,
+      "book_price_tier": "無料・有料",
+      "book_source": "Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-001",
+        "BL-018"
+      ],
+      "summary_ja": "作業平面やグリッド上へ直感的なドラッグ操作で基本プリミティブを配置生成する。"
+    },
+    {
+      "index": 4,
+      "name": "F2",
+      "category": "モデリング",
+      "book_page": 9,
+      "pdf_page": 29,
+      "book_price_tier": "無料",
+      "book_source": "標準搭載・Extensions",
+      "current_status_2026_11_23": "公式Extensions確認済 (2026-11-23)",
+      "related_technique_ids": [
+        "BL-019",
+        "BL-020"
+      ],
+      "summary_ja": "1頂点・1辺の選択からFキー一発で四角面を張り、リトポや穴埋めを高速化する。"
+    },
+    {
+      "index": 5,
+      "name": "LoopTools",
+      "category": "モデリング",
+      "book_page": 10,
+      "pdf_page": 30,
+      "book_price_tier": "無料",
+      "book_source": "標準搭載・Extensions",
+      "current_status_2026_11_23": "公式Extensions確認済 (2026-11-23)",
+      "related_technique_ids": [
+        "BL-019",
+        "BL-020"
+      ],
+      "summary_ja": "円形化・リラックス・ブリッジ・平坦化などトポロジー整形ツール群を追加する。"
+    },
+    {
+      "index": 6,
+      "name": "EdgeFlow",
+      "category": "モデリング",
+      "book_page": 11,
+      "pdf_page": 31,
+      "book_price_tier": "無料",
+      "book_source": "Extensions・GitHub",
+      "current_status_2026_11_23": "公式Extensions確認済 (2026-11-23)",
+      "related_technique_ids": [
+        "BL-019",
+        "BL-020"
+      ],
+      "summary_ja": "周囲の曲面曲率に合わせて選択エッジの流れと間隔を滑らかに整列させる。"
+    },
+    {
+      "index": 7,
+      "name": "Bezier Mesh Shaper",
+      "category": "モデリング",
+      "book_page": 12,
+      "pdf_page": 32,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-019"
+      ],
+      "summary_ja": "ベジェカーブのハンドル操作でメッシュ頂点群の形状を滑らかに変形する。"
+    },
+    {
+      "index": 8,
+      "name": "SimpleDeformHelper",
+      "category": "モデリング",
+      "book_page": 13,
+      "pdf_page": 33,
+      "book_price_tier": "無料",
+      "book_source": "Extensions・GitHub",
+      "current_status_2026_11_23": "本書Extensions記載 / 2026-11-23個別未確認",
+      "related_technique_ids": [
+        "BL-001",
+        "AE-003"
+      ],
+      "summary_ja": "シンプル変形モディファイアに視覚ギズモを追加し曲げ・ねじり軸を直感操作する。"
+    },
+    {
+      "index": 9,
+      "name": "Half Knife",
+      "category": "モデリング",
+      "book_page": 14,
+      "pdf_page": 34,
+      "book_price_tier": "無料",
+      "book_source": "Extensions・GitHub・Gumroad",
+      "current_status_2026_11_23": "本書Extensions記載 / 2026-11-23個別未確認",
+      "related_technique_ids": [
+        "BL-019",
+        "BL-020"
+      ],
+      "summary_ja": "画面上のドラッグ操作だけで素早くメッシュを直線カット・分割する軽量ナイフ。"
+    },
+    {
+      "index": 10,
+      "name": "Hard Bevel",
+      "category": "モデリング",
+      "book_page": 15,
+      "pdf_page": 35,
+      "book_price_tier": "有料",
+      "book_source": "Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-019"
+      ],
+      "summary_ja": "エッジ同士が重なりにくい滑らかなベベルを多角形（Nゴン）交差部にも適用する。"
+    },
+    {
+      "index": 11,
+      "name": "Grid Modeler",
+      "category": "モデリング",
+      "book_page": 16,
+      "pdf_page": 36,
+      "book_price_tier": "有料",
+      "book_source": "Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-019"
+      ],
+      "summary_ja": "メッシュ面上に一時グリッドを描き、2D図形からそのまま押し出しやブーリアンを行う。"
+    },
+    {
+      "index": 12,
+      "name": "Construction Lines",
+      "category": "モデリング",
+      "book_page": 17,
+      "pdf_page": 37,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-001",
+        "BL-019"
+      ],
+      "summary_ja": "ガイド線・スナップ・寸法入力によるCAD風の精密作図と面生成をビューポート上で行う。"
+    },
+    {
+      "index": 13,
+      "name": "PolyQuilt",
+      "category": "リトポロジー",
+      "book_page": 19,
+      "pdf_page": 39,
+      "book_price_tier": "無料",
+      "book_source": "Extensions・GitHub",
+      "current_status_2026_11_23": "公式Extensions確認済 (2026-11-23 / fork版)",
+      "related_technique_ids": [
+        "BL-019",
+        "BL-020"
+      ],
+      "summary_ja": "クリック・ドラッグ・ホールド主体で面張り・ループカット・リトポを直感操作する。"
+    },
+    {
+      "index": 14,
+      "name": "Quad Maker",
+      "category": "リトポロジー",
+      "book_page": 20,
+      "pdf_page": 40,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-019",
+        "BL-020"
+      ],
+      "summary_ja": "MayaのQuad Draw風にスカルプト表面へ四角ポリゴンを軽快に張り直す。"
+    },
+    {
+      "index": 15,
+      "name": "nSolve",
+      "category": "モデリング",
+      "book_page": 21,
+      "pdf_page": 41,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-019"
+      ],
+      "summary_ja": "手動モデリング・トポロジー整理を補助する多機能ツールとプリセット管理を提供する。"
+    },
+    {
+      "index": 16,
+      "name": "Quad Remesher",
+      "category": "リトポロジー",
+      "book_page": 22,
+      "pdf_page": 42,
+      "book_price_tier": "有料",
+      "book_source": "公式サイト",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-018",
+        "BL-019"
+      ],
+      "summary_ja": "スカルプトやスキャンモデルを高精度な自動四角形メッシュへ再構成するリメッシャー。"
+    },
+    {
+      "index": 17,
+      "name": "QRemeshify",
+      "category": "リトポロジー",
+      "book_page": 23,
+      "pdf_page": 43,
+      "book_price_tier": "無料・有料",
+      "book_source": "GitHub・Gumroad・Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-018",
+        "BL-019"
+      ],
+      "summary_ja": "エッジ流れや対称性を考慮した四角形リメッシュを無料ベースで実行する。"
+    },
+    {
+      "index": 18,
+      "name": "SoftWrap",
+      "category": "リトポロジー",
+      "book_page": 24,
+      "pdf_page": 44,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-019",
+        "BL-020"
+      ],
+      "summary_ja": "既存トポロジーをソフトボディ変形で別スカルプト表面へ吸着させ再利用する。"
+    },
+    {
+      "index": 19,
+      "name": "Step Loop Select",
+      "category": "選択・補助",
+      "book_page": 25,
+      "pdf_page": 45,
+      "book_price_tier": "無料",
+      "book_source": "BOOTH・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-019"
+      ],
+      "summary_ja": "頂点・辺・面を一定間隔飛ばしで連続ループ選択する。"
+    },
+    {
+      "index": 20,
+      "name": "Transparent Select",
+      "category": "選択・補助",
+      "book_page": 26,
+      "pdf_page": 46,
+      "book_price_tier": "無料・有料",
+      "book_source": "BOOTH・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-019"
+      ],
+      "summary_ja": "ショートカット併用のドラッグだけで透過（裏側込み）ボックス選択を切り替える。"
+    },
+    {
+      "index": 21,
+      "name": "X-Ray Selection Tools",
+      "category": "選択・補助",
+      "book_page": 27,
+      "pdf_page": 47,
+      "book_price_tier": "無料",
+      "book_source": "GitHub・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-019"
+      ],
+      "summary_ja": "ボックス・サークル・ラッソ選択時の透過選択挙動を細かくカスタマイズする。"
+    },
+    {
+      "index": 22,
+      "name": "NGon Loop Select",
+      "category": "選択・補助",
+      "book_page": 28,
+      "pdf_page": 48,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-019"
+      ],
+      "summary_ja": "Nゴンを含むメッシュでもエッジループをワンクリックで連続選択する。"
+    },
+    {
+      "index": 23,
+      "name": "Select Polygons By Angle",
+      "category": "選択・補助",
+      "book_page": 29,
+      "pdf_page": 49,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-019",
+        "BL-022"
+      ],
+      "summary_ja": "隣接する面の法線角度しきい値に基づきポリゴン領域を一括選択する。"
+    },
+    {
+      "index": 24,
+      "name": "Conform Object",
+      "category": "モデリング",
+      "book_page": 30,
+      "pdf_page": 50,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-019",
+        "BL-020"
+      ],
+      "summary_ja": "装飾パーツ等を別メッシュの曲面へ自然な法線転写付きで投影フィットさせる。"
+    },
+    {
+      "index": 25,
+      "name": "Orient and Origin to Selected",
+      "category": "モデリング",
+      "book_page": 31,
+      "pdf_page": 51,
+      "book_price_tier": "無料・有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-001",
+        "BL-024"
+      ],
+      "summary_ja": "選択した要素の向きに合わせてローカル軸やオブジェクト原点を素早く移動する。"
+    },
+    {
+      "index": 26,
+      "name": "Maxivz's Interactive Tools",
+      "category": "モデリング",
+      "book_page": 32,
+      "pdf_page": 52,
+      "book_price_tier": "無料",
+      "book_source": "GitHub・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-001",
+        "BL-019"
+      ],
+      "summary_ja": "ピボット・整列・スマート選択などモデリング頻出補助機能を1パネルに集約する。"
+    },
+    {
+      "index": 27,
+      "name": "More Colors!",
+      "category": "テクスチャ・ID",
+      "book_page": 34,
+      "pdf_page": 54,
+      "book_price_tier": "無料",
+      "book_source": "Extensions・GitHub",
+      "current_status_2026_11_23": "本書Extensions記載 / 2026-11-23個別未確認",
+      "related_technique_ids": [
+        "BL-013",
+        "BL-022"
+      ],
+      "summary_ja": "頂点カラーのプレビュー・グラデーション・IDマップ用塗り分けを簡単にする。"
+    },
+    {
+      "index": 28,
+      "name": "TraceGenius Pro",
+      "category": "モデリング",
+      "book_page": 35,
+      "pdf_page": 55,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-001",
+        "AE-001"
+      ],
+      "summary_ja": "2Dロゴやイラスト画像をドラッグ＆ドロップで輪郭抽出し3Dメッシュ化する。"
+    },
+    {
+      "index": 29,
+      "name": "Transfer the vertex order",
+      "category": "モデリング",
+      "book_page": 36,
+      "pdf_page": 56,
+      "book_price_tier": "無料・有料",
+      "book_source": "Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-004",
+        "BL-021"
+      ],
+      "summary_ja": "同一トポロジーを持つ2メッシュ間で頂点番号順序やUV・要素を転送整合させる。"
+    },
+    {
+      "index": 30,
+      "name": "Mio3 ShapeKey",
+      "category": "キャラ・変形",
+      "book_page": 37,
+      "pdf_page": 57,
+      "book_price_tier": "無料",
+      "book_source": "GitHub",
+      "current_status_2026_11_23": "外部配布確認済・非Extensions (2026-11-23)",
+      "related_technique_ids": [
+        "BL-004",
+        "AE-019",
+        "AE-022"
+      ],
+      "summary_ja": "複数オブジェクト間で表情・モーフ用のシェイプキーを同期・一括管理する。"
+    },
+    {
+      "index": 31,
+      "name": "Mesh Repair Tools",
+      "category": "メッシュ検査",
+      "book_page": 38,
+      "pdf_page": 58,
+      "book_price_tier": "無料・有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-021"
+      ],
+      "summary_ja": "穴・非多様体・重複面など3Dプリントやベイク前に問題となるメッシュを修復する。"
+    },
+    {
+      "index": 32,
+      "name": "Analyze Mesh",
+      "category": "メッシュ検査",
+      "book_page": 40,
+      "pdf_page": 60,
+      "book_price_tier": "無料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-021"
+      ],
+      "summary_ja": "選択メッシュの三角・四角・Nゴン比率やトポロジー情報を即座に可視化確認する。"
+    },
+    {
+      "index": 33,
+      "name": "CheckToolBox",
+      "category": "メッシュ検査",
+      "book_page": 41,
+      "pdf_page": 61,
+      "book_price_tier": "無料・有料",
+      "book_source": "Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-021"
+      ],
+      "summary_ja": "Nゴン・非多様体・ポール等のエラー箇所を色分けハイライトでリアルタイム検査する。"
+    },
+    {
+      "index": 34,
+      "name": "OCD",
+      "category": "モデリング",
+      "book_page": 42,
+      "pdf_page": 62,
+      "book_price_tier": "有料",
+      "book_source": "Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-018",
+        "BL-020"
+      ],
+      "summary_ja": "選択メッシュの角や表面にワンクリックで欠け・傷のダメージ形状を非破壊追加する。"
+    },
+    {
+      "index": 35,
+      "name": "Wear N' Tear",
+      "category": "モデリング",
+      "book_page": 43,
+      "pdf_page": 63,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-018",
+        "BL-020"
+      ],
+      "summary_ja": "建物や構造物モデルへひび割れ・剥離などの風化ダメージ形状を非破壊追加する。"
+    },
+    {
+      "index": 36,
+      "name": "Curve Basher",
+      "category": "モデリング",
+      "book_page": 44,
+      "pdf_page": 64,
+      "book_price_tier": "有料",
+      "book_source": "Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-019"
+      ],
+      "summary_ja": "プリセットのケーブル・パイプ・ワイヤーをメッシュ表面間へ直感配置する。"
+    },
+    {
+      "index": 37,
+      "name": "VRM format",
+      "category": "外部連携・キャラ",
+      "book_page": 46,
+      "pdf_page": 66,
+      "book_price_tier": "無料",
+      "book_source": "Extensions・GitHub",
+      "current_status_2026_11_23": "公式Extensions確認済 (2026-11-23)",
+      "related_technique_ids": [
+        "BL-004",
+        "BL-023"
+      ],
+      "summary_ja": "VRM形式アバターの入出力・Humanoidボーン・MToon・表情設定に対応する。"
+    },
+    {
+      "index": 38,
+      "name": "VDM Brush Baker",
+      "category": "スカルプト",
+      "book_page": 47,
+      "pdf_page": 67,
+      "book_price_tier": "無料・有料",
+      "book_source": "標準搭載・Extensions・Gumroad",
+      "current_status_2026_11_23": "本書Extensions記載 / 2026-11-23個別未確認",
+      "related_technique_ids": [
+        "BL-017",
+        "BL-020"
+      ],
+      "summary_ja": "オーバーハング表現も彫れるベクターディスプレイスメント（VDM）ブラシをベイク作成する。"
+    },
+    {
+      "index": 39,
+      "name": "Blob Fusion",
+      "category": "スカルプト",
+      "book_page": 48,
+      "pdf_page": 68,
+      "book_price_tier": "有料",
+      "book_source": "Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-018"
+      ],
+      "summary_ja": "プリミティブをメタボールのように滑らか融合させスカルプト用ベース形状を作る。"
+    },
+    {
+      "index": 40,
+      "name": "Woolly Tools & Shaders",
+      "category": "毛・布・質感",
+      "book_page": 49,
+      "pdf_page": 69,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-010"
+      ],
+      "summary_ja": "フェルトや羊毛・手芸風のモフモフした毛羽立ち質感とシェーダーを一括追加する。"
+    },
+    {
+      "index": 41,
+      "name": "3D Hair Brush",
+      "category": "毛・布・質感",
+      "book_page": 50,
+      "pdf_page": 70,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-004"
+      ],
+      "summary_ja": "専用グルーミングブラシとプリセットでリアルな毛髪・ファーを造形する。"
+    },
+    {
+      "index": 42,
+      "name": "Hair Tool",
+      "category": "毛・布・質感",
+      "book_page": 51,
+      "pdf_page": 71,
+      "book_price_tier": "有料",
+      "book_source": "Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-004",
+        "BL-021"
+      ],
+      "summary_ja": "ジオメトリノードとカーブからゲーム向けヘアカードやUV付き髪束をプロシージャル生成する。"
+    },
+    {
+      "index": 43,
+      "name": "Simply Cloth",
+      "category": "毛・布・質感",
+      "book_page": 53,
+      "pdf_page": 73,
+      "book_price_tier": "有料",
+      "book_source": "Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-010"
+      ],
+      "summary_ja": "プリセットと簡易操作で衣装モデリングや布シミュレーションを手軽に行う。"
+    },
+    {
+      "index": 44,
+      "name": "Random Flow",
+      "category": "ハードサーフェス",
+      "book_page": 55,
+      "pdf_page": 75,
+      "book_price_tier": "有料",
+      "book_source": "Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-019",
+        "BL-020"
+      ],
+      "summary_ja": "パネル分割・押し出し・配管などSFハードサーフェスのランダム細部を自動生成する。"
+    },
+    {
+      "index": 45,
+      "name": "DECALmachine",
+      "category": "ハードサーフェス",
+      "book_page": 56,
+      "pdf_page": 76,
+      "book_price_tier": "有料",
+      "book_source": "Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-017",
+        "BL-023"
+      ],
+      "summary_ja": "UVやトポロジーを汚さず視差法線デカールをメッシュ表面へ非破壊で貼り付ける。"
+    },
+    {
+      "index": 46,
+      "name": "MESHmachine",
+      "category": "ハードサーフェス",
+      "book_page": 58,
+      "pdf_page": 78,
+      "book_price_tier": "有料",
+      "book_source": "Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-019",
+        "BL-022"
+      ],
+      "summary_ja": "ベベル修正・フィレット・法線転写・プラグ配置などハードサーフェス編集を大幅強化する。"
+    },
+    {
+      "index": 47,
+      "name": "Kit Ops 3",
+      "category": "ハードサーフェス",
+      "book_page": 60,
+      "pdf_page": 80,
+      "book_price_tier": "無料・有料",
+      "book_source": "Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-019"
+      ],
+      "summary_ja": "差し込みパーツ（INSERT）でブーリアンや装飾を素早く組み込むキットバッシングツール。"
+    },
+    {
+      "index": 48,
+      "name": "Boxcutter",
+      "category": "ハードサーフェス",
+      "book_page": 62,
+      "pdf_page": 82,
+      "book_price_tier": "有料",
+      "book_source": "Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-019"
+      ],
+      "summary_ja": "ビューポート上での自由な図形描画から即座に非破壊ブーリアンカット・スライスを行う。"
+    },
+    {
+      "index": 49,
+      "name": "Hardops",
+      "category": "ハードサーフェス",
+      "book_page": 63,
+      "pdf_page": 83,
+      "book_price_tier": "有料",
+      "book_source": "Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-001",
+        "BL-019"
+      ],
+      "summary_ja": "Qキーの統一メニューからモディファイア・ベベル・ミラー等ハードサーフェス工程を一貫制御する。"
+    },
+    {
+      "index": 50,
+      "name": "Fluent",
+      "category": "ハードサーフェス",
+      "book_page": 64,
+      "pdf_page": 84,
+      "book_price_tier": "有料",
+      "book_source": "Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-019"
+      ],
+      "summary_ja": "専用グリッドと独自HUDで非破壊ハードサーフェス造形や配管・布生成を行う。"
+    },
+    {
+      "index": 51,
+      "name": "True TERRAIN 5",
+      "category": "自然・背景",
+      "book_page": 67,
+      "pdf_page": 87,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-006",
+        "BL-015"
+      ],
+      "summary_ja": "レイヤー構成と侵食シミュレーションで大規模な自然地形・植生シェーダーを構築する。"
+    },
+    {
+      "index": 52,
+      "name": "Texel Density Checker",
+      "category": "UV編集",
+      "book_page": 69,
+      "pdf_page": 89,
+      "book_price_tier": "無料・有料",
+      "book_source": "Extensions・GitHub・Gumroad",
+      "current_status_2026_11_23": "公式Extensions確認済 (2026-11-23)",
+      "related_technique_ids": [
+        "BL-021"
+      ],
+      "summary_ja": "モデル間のテクセル密度（UV解像度比率）を計算しワンクリックで均一化する。"
+    },
+    {
+      "index": 53,
+      "name": "Zen UV Checker",
+      "category": "UV編集",
+      "book_page": 70,
+      "pdf_page": 90,
+      "book_price_tier": "無料",
+      "book_source": "Extensions・Gumroad",
+      "current_status_2026_11_23": "本書Extensions記載 / 2026-11-23個別未確認",
+      "related_technique_ids": [
+        "BL-021"
+      ],
+      "summary_ja": "既存マテリアルを壊さず1クリックでチェッカーマップを表示しUV歪みを確認する。"
+    },
+    {
+      "index": 54,
+      "name": "TexTools",
+      "category": "UV編集・ベイク",
+      "book_page": 71,
+      "pdf_page": 91,
+      "book_price_tier": "無料",
+      "book_source": "GitHub",
+      "current_status_2026_11_23": "外部配布確認済・非Extensions (2026-11-23)",
+      "related_technique_ids": [
+        "BL-008",
+        "BL-021"
+      ],
+      "summary_ja": "UV整列・短冊化・歪み検査から各種テクスチャベイクまで網羅する定番無料ツール群。"
+    },
+    {
+      "index": 55,
+      "name": "UniV",
+      "category": "UV編集",
+      "book_page": 73,
+      "pdf_page": 93,
+      "book_price_tier": "無料・有料",
+      "book_source": "Extensions・GitHub・Gumroad・Superhive",
+      "current_status_2026_11_23": "公式Extensions確認済 (2026-11-23)",
+      "related_technique_ids": [
+        "BL-021"
+      ],
+      "summary_ja": "軽量かつシンプルな操作感でUV展開・整列・チェッカー確認を効率化する。"
+    },
+    {
+      "index": 56,
+      "name": "Mio3 UV",
+      "category": "UV編集",
+      "book_page": 74,
+      "pdf_page": 94,
+      "book_price_tier": "無料",
+      "book_source": "Extensions・GitHub",
+      "current_status_2026_11_23": "公式Extensions確認済 (2026-11-23)",
+      "related_technique_ids": [
+        "BL-021"
+      ],
+      "summary_ja": "キャラ制作に強い格子整形・直線化・UDIM・シーム補助を備えた高機能無料UVツール。"
+    },
+    {
+      "index": 57,
+      "name": "DreamUV",
+      "category": "UV編集",
+      "book_page": 75,
+      "pdf_page": 95,
+      "book_price_tier": "無料",
+      "book_source": "GitHub",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-021"
+      ],
+      "summary_ja": "トリムシート活用向けに3Dビューポート上で直接UVの移動・回転・拡縮を行う。"
+    },
+    {
+      "index": 58,
+      "name": "UV-Packer for Blender",
+      "category": "UV編集",
+      "book_page": 76,
+      "pdf_page": 96,
+      "book_price_tier": "無料",
+      "book_source": "公式サイト",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-021"
+      ],
+      "summary_ja": "外部高速エンジンと連携しUVアイランドを余白最小で自動パッキングする。"
+    },
+    {
+      "index": 59,
+      "name": "UVPackmaster 3 PRO",
+      "category": "UV編集",
+      "book_page": 77,
+      "pdf_page": 97,
+      "book_price_tier": "有料",
+      "book_source": "Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-021"
+      ],
+      "summary_ja": "CPU/GPU併用で高速・高密度パッキングとUDIM・グルーピング配置を行う。"
+    },
+    {
+      "index": 60,
+      "name": "Zen UV",
+      "category": "UV編集",
+      "book_page": 79,
+      "pdf_page": 103,
+      "book_price_tier": "有料",
+      "book_source": "Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-021"
+      ],
+      "summary_ja": "3Dビュー上の直感UV操作・トリムシート・スタック管理を備えた総合UVツールセット。"
+    },
+    {
+      "index": 61,
+      "name": "Ucupaint",
+      "category": "ペイント・質感",
+      "book_page": 81,
+      "pdf_page": 105,
+      "book_price_tier": "無料",
+      "book_source": "Extensions・GitHub",
+      "current_status_2026_11_23": "公式Extensions確認済 (2026-11-23)",
+      "related_technique_ids": [
+        "BL-008",
+        "BL-013",
+        "BL-023"
+      ],
+      "summary_ja": "Blender内でPhotoshop風のレイヤーベースPBRテクスチャペイントとベイクを行う。"
+    },
+    {
+      "index": 62,
+      "name": "Philogix PBR Painter",
+      "category": "ペイント・質感",
+      "book_page": 82,
+      "pdf_page": 106,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-003",
+        "BL-023"
+      ],
+      "summary_ja": "スマートマテリアルやレイヤーUIでBlender単体のPBRテクスチャリングを実現する。"
+    },
+    {
+      "index": 63,
+      "name": "Flow Map Painter",
+      "category": "ペイント・質感",
+      "book_page": 83,
+      "pdf_page": 107,
+      "book_price_tier": "無料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-006",
+        "BL-011"
+      ],
+      "summary_ja": "水流や髪の毛並みの方向データ（フローマップ）をブラシで直接ペイント作成する。"
+    },
+    {
+      "index": 64,
+      "name": "Node Wrangler",
+      "category": "マテリアルノード",
+      "book_page": 84,
+      "pdf_page": 108,
+      "book_price_tier": "無料",
+      "book_source": "標準搭載・Extensions",
+      "current_status_2026_11_23": "本体同梱コア確認済 (2026-11-23)",
+      "related_technique_ids": [
+        "BL-006",
+        "BL-007"
+      ],
+      "summary_ja": "ノードの単独プレビュー・自動接続・PBRテクスチャ一括読み込みをショートカット化する必須拡張。"
+    },
+    {
+      "index": 65,
+      "name": "Node Preview",
+      "category": "マテリアルノード",
+      "book_page": 85,
+      "pdf_page": 109,
+      "book_price_tier": "有料",
+      "book_source": "Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-006",
+        "BL-007"
+      ],
+      "summary_ja": "各シェーダーノードの上に計算結果サムネイルをリアルタイム表示する。"
+    },
+    {
+      "index": 66,
+      "name": "Grungit",
+      "category": "マテリアルノード",
+      "book_page": 86,
+      "pdf_page": 110,
+      "book_price_tier": "無料・有料",
+      "book_source": "Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-006",
+        "BL-013"
+      ],
+      "summary_ja": "エッジ摩耗や汚れのグランジ質感をEEVEE対応ノードでワンクリック追加する。"
+    },
+    {
+      "index": 67,
+      "name": "Fluent : Materializer",
+      "category": "マテリアルノード",
+      "book_page": 87,
+      "pdf_page": 111,
+      "book_price_tier": "有料",
+      "book_source": "Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-006",
+        "BL-008"
+      ],
+      "summary_ja": "豊富なプロシージャルノード群とデカール・ベイク機能で複雑マテリアルを高速構築する。"
+    },
+    {
+      "index": 68,
+      "name": "Portal Projection",
+      "category": "マテリアルノード",
+      "book_page": 88,
+      "pdf_page": 112,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-003",
+        "BL-005"
+      ],
+      "summary_ja": "Blender 4.2のRay Portal BSDFを使い異空間ポータル表現をワンクリック設定する。"
+    },
+    {
+      "index": 69,
+      "name": "GrabDoc",
+      "category": "ベイク・素材",
+      "book_page": 89,
+      "pdf_page": 113,
+      "book_price_tier": "無料・有料",
+      "book_source": "Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布確認済・非Extensions (2026-11-23)",
+      "related_technique_ids": [
+        "BL-008",
+        "BL-017"
+      ],
+      "summary_ja": "平面上の立体パーツからノーマルやAO等のトリムシート・デカール画像を即時ベイクする。"
+    },
+    {
+      "index": 70,
+      "name": "SimpleBake",
+      "category": "ベイク・素材",
+      "book_page": 90,
+      "pdf_page": 114,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-008",
+        "BL-022"
+      ],
+      "summary_ja": "Cyclesの煩雑なPBR複数チャンネル一括ベイクとハイ→ロー転写を簡略化する。"
+    },
+    {
+      "index": 71,
+      "name": "Instant Impostors",
+      "category": "最適化・ベイク",
+      "book_page": 92,
+      "pdf_page": 116,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-005",
+        "BL-008"
+      ],
+      "summary_ja": "遠景用3Dメッシュを多方向テクスチャ板（インポスター）へ変換しEEVEE描画を軽量化する。"
+    },
+    {
+      "index": 72,
+      "name": "Deep Paint",
+      "category": "NPR・イラスト",
+      "book_page": 93,
+      "pdf_page": 117,
+      "book_price_tier": "有料",
+      "book_source": "Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-006",
+        "AE-032"
+      ],
+      "summary_ja": "Grease Pencilや頂点カラーペイントを組み合わせ立体絵画風3Dイラストを制作する。"
+    },
+    {
+      "index": 73,
+      "name": "NijiGPen",
+      "category": "NPR・イラスト",
+      "book_page": 94,
+      "pdf_page": 118,
+      "book_price_tier": "無料",
+      "book_source": "GitHub・Gumroad",
+      "current_status_2026_11_23": "外部配布確認済・非Extensions (2026-11-23)",
+      "related_technique_ids": [
+        "AE-016",
+        "AE-032"
+      ],
+      "summary_ja": "Grease Pencilに2Dブーリアン・オフセット・メッシュ変換などイラスト向け機能を追加する。"
+    },
+    {
+      "index": 74,
+      "name": "Brushstroke Tools",
+      "category": "NPR・イラスト",
+      "book_page": 95,
+      "pdf_page": 119,
+      "book_price_tier": "無料",
+      "book_source": "Extensions",
+      "current_status_2026_11_23": "本書Extensions記載 / 2026-11-23個別未確認",
+      "related_technique_ids": [
+        "BL-006",
+        "AE-032"
+      ],
+      "summary_ja": "ジオメトリノードを活用し3D表面へ手描き風の筆跡ストロークを立体配置する。"
+    },
+    {
+      "index": 75,
+      "name": "Pencil+ 4 Line for Blender",
+      "category": "NPR・イラスト",
+      "book_page": 96,
+      "pdf_page": 120,
+      "book_price_tier": "無料・有料",
+      "book_source": "GitHub・公式サイト（Render App有料）",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "AE-032"
+      ],
+      "summary_ja": "商業アニメ現場実績のある高品質なセル調輪郭線・交差線を描画する（別途描画アプリ要）。"
+    },
+    {
+      "index": 76,
+      "name": "Mio3 Copy Weight",
+      "category": "ウェイト・リグ",
+      "book_page": 97,
+      "pdf_page": 121,
+      "book_price_tier": "無料",
+      "book_source": "Extensions・GitHub",
+      "current_status_2026_11_23": "公式Extensions確認済 (2026-11-23)",
+      "related_technique_ids": [
+        "BL-004",
+        "BL-030"
+      ],
+      "summary_ja": "別オブジェクト間の選択頂点同士でスキンウェイトを直感的にコピーする。"
+    },
+    {
+      "index": 77,
+      "name": "EasyWeight",
+      "category": "ウェイト・リグ",
+      "book_page": 98,
+      "pdf_page": 122,
+      "book_price_tier": "無料",
+      "book_source": "標準搭載・Extensions",
+      "current_status_2026_11_23": "本書Extensions記載 / 2026-11-23個別未確認",
+      "related_technique_ids": [
+        "BL-004",
+        "BL-030"
+      ],
+      "summary_ja": "アーマチュア未選択でもウェイトペイント移行やゼロウェイト自動整理を行う。"
+    },
+    {
+      "index": 78,
+      "name": "Voxel Heat Diffuse Skinning",
+      "category": "ウェイト・リグ",
+      "book_page": 99,
+      "pdf_page": 123,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-004",
+        "BL-030"
+      ],
+      "summary_ja": "複雑パーツや分離メッシュにも破綻しにくいボクセル熱拡散ベースで自動スキニングする。"
+    },
+    {
+      "index": 79,
+      "name": "smoothWeights",
+      "category": "ウェイト・リグ",
+      "book_page": 100,
+      "pdf_page": 124,
+      "book_price_tier": "有料",
+      "book_source": "Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-004"
+      ],
+      "summary_ja": "メッシュ境界を越えて高速・滑らかにスキンウェイトをぼかす専用ブラシを提供する。"
+    },
+    {
+      "index": 80,
+      "name": "Handy Weight Edit",
+      "category": "ウェイト・リグ",
+      "book_page": 101,
+      "pdf_page": 125,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-004",
+        "BL-030"
+      ],
+      "summary_ja": "編集モードの頂点選択から左右ミラーコピーやしきい値削除など手動ウェイト調整を支援する。"
+    },
+    {
+      "index": 81,
+      "name": "Lazy Weight Tool",
+      "category": "ウェイト・リグ",
+      "book_page": 102,
+      "pdf_page": 126,
+      "book_price_tier": "有料",
+      "book_source": "BOOTH・Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-004",
+        "BL-030"
+      ],
+      "summary_ja": "数値テーブル表示や別オブジェクト間コピーで精密なウェイト調整を効率化する。"
+    },
+    {
+      "index": 82,
+      "name": "cvELD_QuickRig",
+      "category": "ウェイト・リグ",
+      "book_page": 103,
+      "pdf_page": 127,
+      "book_price_tier": "有料",
+      "book_source": "BOOTH・Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-004"
+      ],
+      "summary_ja": "ポーズモードのままボーン生成・整列・簡易メッシュ生成を行えるリギング補助ツール。"
+    },
+    {
+      "index": 83,
+      "name": "Auto-Rig Pro",
+      "category": "ウェイト・リグ",
+      "book_page": 105,
+      "pdf_page": 129,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-004",
+        "BL-023"
+      ],
+      "summary_ja": "人型・動物キャラの自動リギング、モーションリターゲット、ゲーム向けFBX/GLTF出力を網羅する。"
+    },
+    {
+      "index": 84,
+      "name": "X-Muscle System",
+      "category": "ウェイト・リグ",
+      "book_page": 107,
+      "pdf_page": 131,
+      "book_price_tier": "有料",
+      "book_source": "Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-004"
+      ],
+      "summary_ja": "リグの動きに連動して皮膚下の筋肉の膨張・揺れを物理シミュレートする。"
+    },
+    {
+      "index": 85,
+      "name": "Faceit",
+      "category": "ウェイト・リグ",
+      "book_page": 109,
+      "pdf_page": 133,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-004",
+        "AE-019"
+      ],
+      "summary_ja": "ARKit対応フェイシャルリグとシェイプキー構築・リアルタイム表情キャプチャを行う。"
+    },
+    {
+      "index": 86,
+      "name": "RBC",
+      "category": "車両リグ",
+      "book_page": 110,
+      "pdf_page": 134,
+      "book_price_tier": "無料・有料",
+      "book_source": "Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-004"
+      ],
+      "summary_ja": "サスペンションやタイヤ回転を含む物理ベース車両リグを対話的にセットアップする。"
+    },
+    {
+      "index": 87,
+      "name": "RIGICAR",
+      "category": "車両リグ",
+      "book_page": 111,
+      "pdf_page": 135,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-004"
+      ],
+      "summary_ja": "ボーン手組み不要で数ステップでリアルな車体挙動・傾斜アニメーションを作る。"
+    },
+    {
+      "index": 88,
+      "name": "Launch Control",
+      "category": "車両リグ",
+      "book_page": 112,
+      "pdf_page": 136,
+      "book_price_tier": "有料",
+      "book_source": "Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-004"
+      ],
+      "summary_ja": "自動車両リギングとリアルタイム物理操作・複数車両の同時アニメーション制御を行う。"
+    },
+    {
+      "index": 89,
+      "name": "AbraTools",
+      "category": "アニメーション",
+      "book_page": 113,
+      "pdf_page": 137,
+      "book_price_tier": "無料",
+      "book_source": "GitHub",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-004",
+        "AE-021"
+      ],
+      "summary_ja": "モーションパス管理やグラフ表示補助などアニメーター向け細部ツールを集約する。"
+    },
+    {
+      "index": 90,
+      "name": "Animation Layers",
+      "category": "アニメーション",
+      "book_page": 114,
+      "pdf_page": 138,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-004",
+        "AE-021"
+      ],
+      "summary_ja": "NLAエディタを直感的なアニメーションレイヤー方式で非破壊管理・加算合成する。"
+    },
+    {
+      "index": 91,
+      "name": "Wiggle 2",
+      "category": "アニメーション",
+      "book_page": 115,
+      "pdf_page": 139,
+      "book_price_tier": "無料",
+      "book_source": "GitHub",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-004",
+        "AE-020"
+      ],
+      "summary_ja": "髪・尻尾・装飾ボーンに物理ベースの自然な揺れ・追従アニメーションを自動付与する。"
+    },
+    {
+      "index": 92,
+      "name": "SMEAR",
+      "category": "アニメーション",
+      "book_page": 116,
+      "pdf_page": 140,
+      "book_price_tier": "無料",
+      "book_source": "Extensions・GitHub",
+      "current_status_2026_11_23": "本書Extensions記載 / 2026-11-23個別未確認",
+      "related_technique_ids": [
+        "AE-003",
+        "AE-021"
+      ],
+      "summary_ja": "3Dアニメーションへ手描きアニメ風の残像・引き伸ばし（スミアフレーム）を加える。"
+    },
+    {
+      "index": 93,
+      "name": "ANIMAX",
+      "category": "モーショングラフィックス",
+      "book_page": 117,
+      "pdf_page": 141,
+      "book_price_tier": "有料",
+      "book_source": "Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "AE-002",
+        "AE-008",
+        "AE-018"
+      ],
+      "summary_ja": "複数インスタンスや文字・破片をプロシージャルに時間差アニメーションさせる。"
+    },
+    {
+      "index": 94,
+      "name": "GP Animator Desk",
+      "category": "アニメーション",
+      "book_page": 118,
+      "pdf_page": 142,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "AE-019",
+        "AE-032"
+      ],
+      "summary_ja": "Grease Pencil作画用のオニオンスキン・ナビゲーション・描画支援UIを追加する。"
+    },
+    {
+      "index": 95,
+      "name": "Simplify+",
+      "category": "最適化・アニメ",
+      "book_page": 119,
+      "pdf_page": 143,
+      "book_price_tier": "無料・有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-001",
+        "BL-005"
+      ],
+      "summary_ja": "重いモディファイアを一括無効化しアニメーション確認時のビューポート再生を高速化する。"
+    },
+    {
+      "index": 96,
+      "name": "Gaffer",
+      "category": "ライティング",
+      "book_page": 120,
+      "pdf_page": 144,
+      "book_price_tier": "無料・有料",
+      "book_source": "GitHub・Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-005",
+        "COLOR-021"
+      ],
+      "summary_ja": "シーン内全ライトとHDRI環境マップの強度・色・オンオフを1パネルで集中管理する。"
+    },
+    {
+      "index": 97,
+      "name": "Tri-lighting",
+      "category": "ライティング",
+      "book_page": 121,
+      "pdf_page": 145,
+      "book_price_tier": "無料",
+      "book_source": "標準搭載・Extensions",
+      "current_status_2026_11_23": "本書Extensions記載 / 2026-11-23個別未確認",
+      "related_technique_ids": [
+        "BL-005"
+      ],
+      "summary_ja": "被写体に対して定番の3点照明（キー・フィル・バックライト）をワンクリック配置する。"
+    },
+    {
+      "index": 98,
+      "name": "Light Wrangler",
+      "category": "ライティング",
+      "book_page": 122,
+      "pdf_page": 146,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-005",
+        "COLOR-021"
+      ],
+      "summary_ja": "反射位置の直接ドラッグ配置やゴボ（影投影）・HDRI内蔵で直感的に照明設計する。"
+    },
+    {
+      "index": 99,
+      "name": "Real Time Cycles",
+      "category": "ライティング・ベイク",
+      "book_page": 124,
+      "pdf_page": 148,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-005",
+        "BL-008"
+      ],
+      "summary_ja": "Cyclesの光影をワンクリックでライトマップへ自動ベイクしリアルタイム表示へ渡す。"
+    },
+    {
+      "index": 100,
+      "name": "Photographer 5",
+      "category": "カメラ・照明",
+      "book_page": 125,
+      "pdf_page": 149,
+      "book_price_tier": "有料",
+      "book_source": "Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-005",
+        "COLOR-009",
+        "COLOR-010"
+      ],
+      "summary_ja": "ISO・シャッター速度・絞り・色温度・物理ライトミキサーなど実写カメラ挙動を統合する。"
+    },
+    {
+      "index": 101,
+      "name": "Easy HDRI",
+      "category": "ライティング",
+      "book_page": 127,
+      "pdf_page": 151,
+      "book_price_tier": "無料",
+      "book_source": "公式サイト",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-005",
+        "BL-012"
+      ],
+      "summary_ja": "手元のHDRIフォルダをサムネイル一覧化し回転・露出を素早く切り替える。"
+    },
+    {
+      "index": 102,
+      "name": "HDRI Maker",
+      "category": "ライティング",
+      "book_page": 128,
+      "pdf_page": 152,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-005",
+        "BL-012"
+      ],
+      "summary_ja": "HDRIを立体ドーム化して接地影や背景を自然に合成する環境ライブラリ付きツール。"
+    },
+    {
+      "index": 103,
+      "name": "Dynamic Sky",
+      "category": "空・大気",
+      "book_page": 130,
+      "pdf_page": 154,
+      "book_price_tier": "無料",
+      "book_source": "標準搭載・Extensions",
+      "current_status_2026_11_23": "公式Extensions確認済 (2026-11-23)",
+      "related_technique_ids": [
+        "BL-005",
+        "COLOR-026"
+      ],
+      "summary_ja": "軽量なプロシージャルの青空と太陽光を数クリックでワールドへ生成する。"
+    },
+    {
+      "index": 104,
+      "name": "Real Sky",
+      "category": "空・大気",
+      "book_page": 131,
+      "pdf_page": 155,
+      "book_price_tier": "無料",
+      "book_source": "GitLab",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-005",
+        "COLOR-026"
+      ],
+      "summary_ja": "緯度・日時指定で物理的な太陽位置とリアルな空ライティングをワンクリック設定する。"
+    },
+    {
+      "index": 105,
+      "name": "True-Sky",
+      "category": "空・大気",
+      "book_page": 132,
+      "pdf_page": 156,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-005",
+        "COLOR-026"
+      ],
+      "summary_ja": "物理ベースの空・時間変化・ボリューム雲・夜景をボタン操作で構築する。"
+    },
+    {
+      "index": 106,
+      "name": "Physical Starlight And Atmosphere",
+      "category": "空・大気",
+      "book_page": 133,
+      "pdf_page": 157,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-005",
+        "COLOR-026"
+      ],
+      "summary_ja": "EEVEE/Cycles両対応で太陽光・星・大気散乱・霧を物理シミュレーションする。"
+    },
+    {
+      "index": 107,
+      "name": "Per-Camera Resolution",
+      "category": "カメラ・出力",
+      "book_page": 134,
+      "pdf_page": 158,
+      "book_price_tier": "無料",
+      "book_source": "Extensions",
+      "current_status_2026_11_23": "本書Extensions記載 / 2026-11-23個別未確認",
+      "related_technique_ids": [
+        "BL-005",
+        "BL-027"
+      ],
+      "summary_ja": "シーン内の複数カメラごとに異なる縦横比・解像度を個別保存し切替レンダリングする。"
+    },
+    {
+      "index": 108,
+      "name": "Omniscient Importer",
+      "category": "トラッキング・VFX",
+      "book_page": 135,
+      "pdf_page": 159,
+      "book_price_tier": "無料・有料",
+      "book_source": "公式サイト・GitHub",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "AE-024"
+      ],
+      "summary_ja": "iOSアプリの3Dトラッキング＆LiDARスキャン結果を実寸スケールでBlenderへ取り込む。"
+    },
+    {
+      "index": 109,
+      "name": "Perspective Plotter",
+      "category": "カメラ・合成",
+      "book_page": 136,
+      "pdf_page": 160,
+      "book_price_tier": "有料",
+      "book_source": "Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-005"
+      ],
+      "summary_ja": "背景写真の消失点ガイド線を合わせてカメラ画角・位置をリアルタイムにパース一致させる。"
+    },
+    {
+      "index": 110,
+      "name": "GeoTracker for Blender",
+      "category": "トラッキング・VFX",
+      "book_page": 137,
+      "pdf_page": 161,
+      "book_price_tier": "有料",
+      "book_source": "公式サイト",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "COLOR-022"
+      ],
+      "summary_ja": "実写映像内の剛体オブジェクトへ3Dモデルを高精度に3Dマッチムーブ追従させる。"
+    },
+    {
+      "index": 111,
+      "name": "Colorista",
+      "category": "カラー・ルック",
+      "book_page": 138,
+      "pdf_page": 162,
+      "book_price_tier": "無料",
+      "book_source": "Extensions・GitHub",
+      "current_status_2026_11_23": "本書Extensions記載 / 2026-11-23個別未確認",
+      "related_technique_ids": [
+        "COLOR-004",
+        "COLOR-011",
+        "COLOR-030"
+      ],
+      "summary_ja": "ビューポートやコンポジット上で手軽にカラーグレーディングとプリセット管理を行う。"
+    },
+    {
+      "index": 112,
+      "name": "Colorist Pro",
+      "category": "カラー・ルック",
+      "book_page": 139,
+      "pdf_page": 163,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "COLOR-004",
+        "COLOR-011",
+        "COLOR-030"
+      ],
+      "summary_ja": "LUT適用・ACES切替・プロ向けカラーホイール調整をビューポート上でリアルタイム操作する。"
+    },
+    {
+      "index": 113,
+      "name": "Final LUT",
+      "category": "カラー・ルック",
+      "book_page": 140,
+      "pdf_page": 164,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "COLOR-007",
+        "COLOR-030"
+      ],
+      "summary_ja": ".cube等のLUTファイルをAgX/Filmic等と組み合わせてビューポートでリアルタイム確認する。"
+    },
+    {
+      "index": 114,
+      "name": "Blendshop",
+      "category": "コンポジット",
+      "book_page": 141,
+      "pdf_page": 165,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "COLOR-030",
+        "AE-033"
+      ],
+      "summary_ja": "ノード操作に不慣れでもPhotoshop風のレイヤー構造でコンポジット・色調補正を行える。"
+    },
+    {
+      "index": 115,
+      "name": "Pixel",
+      "category": "NPR・ルック",
+      "book_page": 142,
+      "pdf_page": 166,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "AE-031",
+        "AE-032"
+      ],
+      "summary_ja": "ワンクリックで3Dシーンをアイソメトリック風ドット絵・ピクセルアート表現へ変換する。"
+    },
+    {
+      "index": 116,
+      "name": "Real Snow",
+      "category": "自然FX",
+      "book_page": 143,
+      "pdf_page": 167,
+      "book_price_tier": "無料",
+      "book_source": "標準搭載・Extensions",
+      "current_status_2026_11_23": "本書Extensions記載 / 2026-11-23個別未確認",
+      "related_technique_ids": [
+        "BL-006"
+      ],
+      "summary_ja": "選択メッシュの上面へワンクリックで積雪メッシュと雪マテリアルを生成する。"
+    },
+    {
+      "index": 117,
+      "name": "Fluffy Clouds Planes",
+      "category": "自然FX",
+      "book_page": 144,
+      "pdf_page": 168,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "COLOR-026"
+      ],
+      "summary_ja": "軽量な2D板ポリゴンベースでカメラ追従するリアルな雲をシーンへ配置する。"
+    },
+    {
+      "index": 118,
+      "name": "Volumetric Clouds Generator",
+      "category": "自然FX",
+      "book_page": 145,
+      "pdf_page": 169,
+      "book_price_tier": "無料・有料",
+      "book_source": "GitHub・標準搭載・Extensions",
+      "current_status_2026_11_23": "本書Extensions記載 / 2026-11-23個別未確認",
+      "related_technique_ids": [
+        "COLOR-026"
+      ],
+      "summary_ja": "Cycles/EEVEE両対応の立体ボリューム雲をパラメータ調整付きで手軽に追加する。"
+    },
+    {
+      "index": 119,
+      "name": "Real Cloud",
+      "category": "自然FX",
+      "book_page": 146,
+      "pdf_page": 170,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "COLOR-026"
+      ],
+      "summary_ja": "任意メッシュの雲化と大量のVDB雲アセットライブラリを提供する。"
+    },
+    {
+      "index": 120,
+      "name": "Baga Rain Generator",
+      "category": "自然FX",
+      "book_page": 147,
+      "pdf_page": 171,
+      "book_price_tier": "有料",
+      "book_source": "Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-015"
+      ],
+      "summary_ja": "ジオメトリノードで雨粒・スプラッシュ・地面の濡れ質感をプロシージャル追加する。"
+    },
+    {
+      "index": 121,
+      "name": "Alt Tab Ocean & Water",
+      "category": "自然FX",
+      "book_page": 148,
+      "pdf_page": 172,
+      "book_price_tier": "無料・有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-006"
+      ],
+      "summary_ja": "海洋・波・水面シェーダーとプリセットを素早く構築する。"
+    },
+    {
+      "index": 122,
+      "name": "Real Water",
+      "category": "自然FX",
+      "book_page": 149,
+      "pdf_page": 173,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-006"
+      ],
+      "summary_ja": "Cycles/EEVEE両対応のリアル水面シェーダーをドラッグ＆ドロップで追加する。"
+    },
+    {
+      "index": 123,
+      "name": "Alt Tab Easy Fog 2",
+      "category": "自然FX",
+      "book_page": 150,
+      "pdf_page": 174,
+      "book_price_tier": "無料・有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "COLOR-020"
+      ],
+      "summary_ja": "ボリューム霧・スモーク表現をプリセット選択だけでシーンへ加え奥行きを演出する。"
+    },
+    {
+      "index": 124,
+      "name": "GEO-SWARM",
+      "category": "群衆FX",
+      "book_page": 151,
+      "pdf_page": 175,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-015"
+      ],
+      "summary_ja": "ジオメトリノードで鳥・魚・虫などの生物群衆の飛行・回避シミュレーションを作る。"
+    },
+    {
+      "index": 125,
+      "name": "Procedural Crowds",
+      "category": "群衆FX",
+      "book_page": 152,
+      "pdf_page": 176,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-015"
+      ],
+      "summary_ja": "歩行・観戦・カーブ沿い移動など大量の人物群衆シーンをプロシージャル配置する。"
+    },
+    {
+      "index": 126,
+      "name": "Cell Fracture",
+      "category": "破壊FX",
+      "book_page": 153,
+      "pdf_page": 177,
+      "book_price_tier": "無料",
+      "book_source": "標準搭載・Extensions",
+      "current_status_2026_11_23": "公式Extensions確認済 (2026-11-23)",
+      "related_technique_ids": [
+        "BL-001"
+      ],
+      "summary_ja": "オブジェクトを破片パーツへ自動分割し、剛体物理と組んだ破壊表現の基礎を作る。"
+    },
+    {
+      "index": 127,
+      "name": "Cracker",
+      "category": "破壊FX",
+      "book_page": 154,
+      "pdf_page": 178,
+      "book_price_tier": "有料",
+      "book_source": "Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-018",
+        "BL-020"
+      ],
+      "summary_ja": "メッシュ表面へ任意の割れ目・亀裂形状を非破壊かつ直感的に生成する。"
+    },
+    {
+      "index": 128,
+      "name": "Kaboom",
+      "category": "破壊FX",
+      "book_page": 155,
+      "pdf_page": 179,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-001"
+      ],
+      "summary_ja": "破片分割から動的破壊アニメーション・VDB煙追加までを一貫サポートする。"
+    },
+    {
+      "index": 129,
+      "name": "KaFire",
+      "category": "爆発・炎FX",
+      "book_page": 156,
+      "pdf_page": 180,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-011"
+      ],
+      "summary_ja": "エミッター設定とプリセット調整で炎・煙・爆発シミュレーションを手軽に組む。"
+    },
+    {
+      "index": 130,
+      "name": "RBDLab",
+      "category": "破壊FX",
+      "book_page": 157,
+      "pdf_page": 181,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-001"
+      ],
+      "summary_ja": "金属の曲げや粉砕・破片飛び散りを含む高度な剛体破壊VFXを構築する。"
+    },
+    {
+      "index": 131,
+      "name": "VDBLab",
+      "category": "爆発・煙FX",
+      "book_page": 158,
+      "pdf_page": 182,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-011"
+      ],
+      "summary_ja": "VDBベースの高度な炎・煙・爆発シミュレーションと制御フローを提供する。"
+    },
+    {
+      "index": 132,
+      "name": "True-VDB",
+      "category": "爆発・煙FX",
+      "book_page": 159,
+      "pdf_page": 183,
+      "book_price_tier": "無料・有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-011"
+      ],
+      "summary_ja": "高品質な煙・炎・雲のシミュレーション済みVDBアセットを即座に配置する。"
+    },
+    {
+      "index": 133,
+      "name": "Molecular +",
+      "category": "物理FX",
+      "book_page": 161,
+      "pdf_page": 185,
+      "book_price_tier": "無料",
+      "book_source": "GitHub",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-001"
+      ],
+      "summary_ja": "粒子同士の結合・反発を計算し砂・雪・ゼリー等の分子物理挙動をシミュレートする。"
+    },
+    {
+      "index": 134,
+      "name": "Fluid Painter",
+      "category": "流体FX",
+      "book_page": 162,
+      "pdf_page": 186,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "AE-014"
+      ],
+      "summary_ja": "メッシュ表面をペンでなぞった軌道に沿ってソース・シロップ等の流体メッシュを描く。"
+    },
+    {
+      "index": 135,
+      "name": "Geodroplets Plus",
+      "category": "流体FX",
+      "book_page": 163,
+      "pdf_page": 187,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "AE-014"
+      ],
+      "summary_ja": "商品カットやボトル表面へリアルな結露・流れる水滴をジオメトリノードで追加する。"
+    },
+    {
+      "index": 136,
+      "name": "Quick Fluid Kit",
+      "category": "流体FX",
+      "book_page": 164,
+      "pdf_page": 188,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "AE-014"
+      ],
+      "summary_ja": "計算済みの高品質な流体アニメーションアセット（Alembic等）を即座にシーン配置する。"
+    },
+    {
+      "index": 137,
+      "name": "Cell Fluids",
+      "category": "流体FX",
+      "book_page": 166,
+      "pdf_page": 190,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-005"
+      ],
+      "summary_ja": "ジオメトリノードで軽量動作する2.5D水面・流体シミュレーションとフローマップ出力を行う。"
+    },
+    {
+      "index": 138,
+      "name": "FluidLab",
+      "category": "流体FX",
+      "book_page": 167,
+      "pdf_page": 191,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-001"
+      ],
+      "summary_ja": "ドメイン不要のSPH粒子法で水・粘性体・スライムなど中規模流体を手軽に計算する。"
+    },
+    {
+      "index": 139,
+      "name": "FLIP Fluids",
+      "category": "流体FX",
+      "book_page": 169,
+      "pdf_page": 193,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-001"
+      ],
+      "summary_ja": "泡・飛沫・高粘性・高解像度メッシュ対応の本格FLIP流体シミュレーター。"
+    },
+    {
+      "index": 140,
+      "name": "Context Pie",
+      "category": "UI・操作",
+      "book_page": 171,
+      "pdf_page": 195,
+      "book_price_tier": "無料",
+      "book_source": "Extensions",
+      "current_status_2026_11_23": "本書Extensions記載 / 2026-11-23個別未確認",
+      "related_technique_ids": [
+        "BL-001"
+      ],
+      "summary_ja": "作業モードに応じた右クリックメニューをシンプルで使いやすいPieメニューへ置き換える。"
+    },
+    {
+      "index": 141,
+      "name": "3D Viewport Pie Menus",
+      "category": "UI・操作",
+      "book_page": 172,
+      "pdf_page": 196,
+      "book_price_tier": "無料",
+      "book_source": "標準搭載・Extensions",
+      "current_status_2026_11_23": "公式Extensions確認済 (2026-11-23)",
+      "related_technique_ids": [
+        "BL-001"
+      ],
+      "summary_ja": "視点・シェーディング・整列・編集モード切替の包括的なPieメニュー群を追加する。"
+    },
+    {
+      "index": 142,
+      "name": "Node Pie",
+      "category": "UI・操作",
+      "book_page": 174,
+      "pdf_page": 198,
+      "book_price_tier": "無料",
+      "book_source": "Extensions・GitHub",
+      "current_status_2026_11_23": "本書Extensions記載 / 2026-11-23個別未確認",
+      "related_technique_ids": [
+        "BL-006",
+        "BL-007"
+      ],
+      "summary_ja": "シェーダー／コンポジット／ジオメトリノードで種類別Pieメニューから素早くノード追加する。"
+    },
+    {
+      "index": 143,
+      "name": "MACHIN3tools",
+      "category": "UI・操作",
+      "book_page": 176,
+      "pdf_page": 200,
+      "book_price_tier": "有料",
+      "book_source": "Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-001",
+        "BL-019"
+      ],
+      "summary_ja": "最適化されたPieメニュー・整列・スマートフェース・アセット管理で操作全般を高速化する。"
+    },
+    {
+      "index": 144,
+      "name": "Matalogue",
+      "category": "UI・操作",
+      "book_page": 179,
+      "pdf_page": 203,
+      "book_price_tier": "無料",
+      "book_source": "Extensions・GitHub",
+      "current_status_2026_11_23": "本書Extensions記載 / 2026-11-23個別未確認",
+      "related_technique_ids": [
+        "BL-002",
+        "BL-006"
+      ],
+      "summary_ja": "シーン内のマテリアル・ジオメトリ・コンポジットノードツリーをサイドバーから一覧切替する。"
+    },
+    {
+      "index": 145,
+      "name": "Mouse-look Navigation",
+      "category": "ナビゲーション",
+      "book_page": 180,
+      "pdf_page": 204,
+      "book_price_tier": "無料・有料",
+      "book_source": "Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-001"
+      ],
+      "summary_ja": "ZBrush風やFPSゲーム風のビューポート視点ナビゲーション操作を追加する。"
+    },
+    {
+      "index": 146,
+      "name": "Right Mouse Navigation",
+      "category": "ナビゲーション",
+      "book_page": 181,
+      "pdf_page": 205,
+      "book_price_tier": "無料",
+      "book_source": "Extensions・GitHub",
+      "current_status_2026_11_23": "本書Extensions記載 / 2026-11-23個別未確認",
+      "related_technique_ids": [
+        "BL-001"
+      ],
+      "summary_ja": "右クリック長押し＋WASDキーでUnreal/Unity風のFPS視点移動を実現する。"
+    },
+    {
+      "index": 147,
+      "name": "OmniStep",
+      "category": "ナビゲーション",
+      "book_page": 182,
+      "pdf_page": 206,
+      "book_price_tier": "有料",
+      "book_source": "Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-001"
+      ],
+      "summary_ja": "物理衝突付きの一人称ウォークスルー操作とカメラモーション記録を行う。"
+    },
+    {
+      "index": 148,
+      "name": "Saved Views",
+      "category": "カメラ・視点",
+      "book_page": 183,
+      "pdf_page": 207,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-001"
+      ],
+      "summary_ja": "カメラオブジェクトを作らずにビューポート視点位置をサムネイル付きで保存・復元する。"
+    },
+    {
+      "index": 149,
+      "name": "Sync | Lock Viewport",
+      "category": "カメラ・視点",
+      "book_page": 184,
+      "pdf_page": 208,
+      "book_price_tier": "無料",
+      "book_source": "Extensions・Gumroad",
+      "current_status_2026_11_23": "本書Extensions記載 / 2026-11-23個別未確認",
+      "related_technique_ids": [
+        "BL-001",
+        "BL-006"
+      ],
+      "summary_ja": "複数に分割した3Dビューポートの視点移動をリアルタイム同期・ロックする。"
+    },
+    {
+      "index": 150,
+      "name": "Dolly Zoom",
+      "category": "カメラワーク",
+      "book_page": 185,
+      "pdf_page": 209,
+      "book_price_tier": "無料",
+      "book_source": "Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "AE-034"
+      ],
+      "summary_ja": "焦点距離とカメラ距離を連動させ映画的なドリーズーム（めまい効果）を簡単に作る。"
+    },
+    {
+      "index": 151,
+      "name": "Camera Shakify",
+      "category": "カメラワーク",
+      "book_page": 186,
+      "pdf_page": 210,
+      "book_price_tier": "無料",
+      "book_source": "Extensions・GitHub",
+      "current_status_2026_11_23": "公式Extensions確認済 (2026-11-23)",
+      "related_technique_ids": [
+        "AE-034"
+      ],
+      "summary_ja": "実写計測ベースの手ブレ・揺れプリセットをカメラへ非破壊レイヤー追加する。"
+    },
+    {
+      "index": 152,
+      "name": "Cinepack",
+      "category": "カメラワーク",
+      "book_page": 187,
+      "pdf_page": 211,
+      "book_price_tier": "有料",
+      "book_source": "Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "AE-034"
+      ],
+      "summary_ja": "映画的カメラワークのアニメーションプリセットをワンクリックでシーンへ適用する。"
+    },
+    {
+      "index": 153,
+      "name": "VirtuCamera for Blender Addon",
+      "category": "カメラワーク",
+      "book_page": 189,
+      "pdf_page": 213,
+      "book_price_tier": "無料",
+      "book_source": "公式サイト・GitHub",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "AE-034"
+      ],
+      "summary_ja": "スマホアプリと連携し手持ちの実時間カメラワークをBlenderへ直接収録する。"
+    },
+    {
+      "index": 154,
+      "name": "Shot Manager",
+      "category": "カメラ・出力",
+      "book_page": 190,
+      "pdf_page": 214,
+      "book_price_tier": "無料・有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-027"
+      ],
+      "summary_ja": "複数カット・カメラ切替・出力パス・バッチレンダリングを一元管理する。"
+    },
+    {
+      "index": 155,
+      "name": "Camera Plane",
+      "category": "カメラ・合成",
+      "book_page": 191,
+      "pdf_page": 215,
+      "book_price_tier": "無料",
+      "book_source": "Extensions・GitHub",
+      "current_status_2026_11_23": "本書Extensions記載 / 2026-11-23個別未確認",
+      "related_technique_ids": [
+        "AE-024"
+      ],
+      "summary_ja": "カメラ画角へぴったりフィットする画像・動画プレーンを親子付け配置する。"
+    },
+    {
+      "index": 156,
+      "name": "Copy Attributes Menu",
+      "category": "操作補助",
+      "book_page": 192,
+      "pdf_page": 216,
+      "book_price_tier": "無料",
+      "book_source": "標準搭載・Extensions",
+      "current_status_2026_11_23": "公式Extensions確認済 (2026-11-23)",
+      "related_technique_ids": [
+        "BL-001",
+        "BL-002"
+      ],
+      "summary_ja": "Ctrl+Cメニューを拡張し位置・モディファイア・コンストレイント等を複数オブジェクトへ一括コピーする。"
+    },
+    {
+      "index": 157,
+      "name": "Modifier List",
+      "category": "操作補助",
+      "book_page": 193,
+      "pdf_page": 217,
+      "book_price_tier": "無料",
+      "book_source": "Extensions・GitHub",
+      "current_status_2026_11_23": "公式Extensions確認済 (2026-11-23 / fork版)",
+      "related_technique_ids": [
+        "BL-001"
+      ],
+      "summary_ja": "3ds Max風のコンパクトな一覧リスト＆お気に入りUIでモディファイアを管理する。"
+    },
+    {
+      "index": 158,
+      "name": "Auto-Highlight in Outliner",
+      "category": "UI・操作",
+      "book_page": 194,
+      "pdf_page": 218,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-001"
+      ],
+      "summary_ja": "3Dビューで選択したオブジェクトをアウトライナー上で自動展開・ハイライト表示する。"
+    },
+    {
+      "index": 159,
+      "name": "Simply Fast",
+      "category": "UI・操作",
+      "book_page": 195,
+      "pdf_page": 219,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-001"
+      ],
+      "summary_ja": "頻出操作をワンボタン化したコンパクトなショートカットNパネルを提供する。"
+    },
+    {
+      "index": 160,
+      "name": "Sakura UX Enhancer",
+      "category": "UI・操作",
+      "book_page": 196,
+      "pdf_page": 220,
+      "book_price_tier": "有料",
+      "book_source": "Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-001",
+        "BL-006"
+      ],
+      "summary_ja": "ダブルクリック表示や画像エディタ検索などBlender全体の細かな使い勝手を底上げする。"
+    },
+    {
+      "index": 161,
+      "name": "Drop It",
+      "category": "配置・散布",
+      "book_page": 198,
+      "pdf_page": 222,
+      "book_price_tier": "無料",
+      "book_source": "Gumroad",
+      "current_status_2026_11_23": "外部配布確認済・非Extensions (2026-11-23)",
+      "related_technique_ids": [
+        "BL-001"
+      ],
+      "summary_ja": "選択オブジェクトを下の地面やメッシュ表面の法線へ合わせてワンキー接地させる。"
+    },
+    {
+      "index": 162,
+      "name": "POPOTI Align Helper",
+      "category": "配置・散布",
+      "book_page": 199,
+      "pdf_page": 223,
+      "book_price_tier": "無料",
+      "book_source": "Extensions・GitHub",
+      "current_status_2026_11_23": "本書Extensions記載 / 2026-11-23個別未確認",
+      "related_technique_ids": [
+        "BL-001"
+      ],
+      "summary_ja": "PhotoshopやPowerPointのように複数オブジェクトを等間隔・端揃えで直感整列させる。"
+    },
+    {
+      "index": 163,
+      "name": "Physics Dropper",
+      "category": "配置・散布",
+      "book_page": 200,
+      "pdf_page": 224,
+      "book_price_tier": "無料・有料",
+      "book_source": "GitHub・Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-001"
+      ],
+      "summary_ja": "物理シミュレーションで小物を自然に落下・堆積させてリアルなランダム配置を作る。"
+    },
+    {
+      "index": 164,
+      "name": "BagaPie",
+      "category": "配置・散布",
+      "book_page": 201,
+      "pdf_page": 225,
+      "book_price_tier": "無料・有料",
+      "book_source": "Extensions・Superhive・Gumroad",
+      "current_status_2026_11_23": "公式Extensions確認済 (2026-11-23 / 本体無料)",
+      "related_technique_ids": [
+        "BL-015",
+        "BL-019"
+      ],
+      "summary_ja": "ジオメトリノードによるスキャッター・配列・建築パラメトリック生成を統合する多機能拡張。"
+    },
+    {
+      "index": 165,
+      "name": "Geo-Scatter",
+      "category": "配置・散布",
+      "book_page": 202,
+      "pdf_page": 226,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-015"
+      ],
+      "summary_ja": "植生・バイオーム・カメラカリング対応の本格ジオメトリノード散布システム。"
+    },
+    {
+      "index": 166,
+      "name": "Alpha Trees",
+      "category": "アセット・自然",
+      "book_page": 203,
+      "pdf_page": 227,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-005",
+        "BL-015"
+      ],
+      "summary_ja": "軽量なビルボード木カードを使って広大な森林シーンを省メモリ・高速レンダリングする。"
+    },
+    {
+      "index": 167,
+      "name": "Instant Asset",
+      "category": "アセット管理",
+      "book_page": 204,
+      "pdf_page": 228,
+      "book_price_tier": "無料",
+      "book_source": "Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-002"
+      ],
+      "summary_ja": "選択オブジェクトやコレクションを手軽にアセットブラウザ用ライブラリへ書き出す。"
+    },
+    {
+      "index": 168,
+      "name": "Sanctus Library",
+      "category": "アセット・質感",
+      "book_page": 205,
+      "pdf_page": 229,
+      "book_price_tier": "無料・有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-006",
+        "BL-008"
+      ],
+      "summary_ja": "高品質なプロシージャルマテリアル群・ジオメトリノード生成器・簡易ベイク機能を提供する。"
+    },
+    {
+      "index": 169,
+      "name": "Poly Haven Asset Browser",
+      "category": "アセット管理",
+      "book_page": 206,
+      "pdf_page": 230,
+      "book_price_tier": "無料・有料",
+      "book_source": "GitHub・Superhive・Patreon",
+      "current_status_2026_11_23": "外部配布確認済・非Extensions (2026-11-23)",
+      "related_technique_ids": [
+        "BL-002",
+        "BL-005"
+      ],
+      "summary_ja": "CC0のHDRI・3Dモデル・PBRテクスチャをアセットブラウザ上から直接取り込む。"
+    },
+    {
+      "index": 170,
+      "name": "The Plant Library",
+      "category": "アセット・自然",
+      "book_page": 208,
+      "pdf_page": 232,
+      "book_price_tier": "無料",
+      "book_source": "公式サイト",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-015"
+      ],
+      "summary_ja": "無料利用可能な自然植物3Dアセット群をアセットブラウザ経由で即座に配置する。"
+    },
+    {
+      "index": 171,
+      "name": "BlenderGIS",
+      "category": "GIS・都市",
+      "book_page": 210,
+      "pdf_page": 234,
+      "book_price_tier": "無料",
+      "book_source": "GitHub",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-001"
+      ],
+      "summary_ja": "衛星地図・標高データ（DEM）・建物データをBlender内へ直接インポートし地形化する。"
+    },
+    {
+      "index": 172,
+      "name": "Blosm for Blender",
+      "category": "GIS・都市",
+      "book_page": 211,
+      "pdf_page": 235,
+      "book_price_tier": "無料・有料",
+      "book_source": "Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-001"
+      ],
+      "summary_ja": "OpenStreetMapや3D都市・地形データを取り込み街並みを高速構築する。"
+    },
+    {
+      "index": 173,
+      "name": "Auto Reload",
+      "category": "外部連携",
+      "book_page": 212,
+      "pdf_page": 236,
+      "book_price_tier": "無料",
+      "book_source": "Extensions・GitHub",
+      "current_status_2026_11_23": "公式Extensions確認済 (2026-11-23)",
+      "related_technique_ids": [
+        "BL-002",
+        "BL-023"
+      ],
+      "summary_ja": "外部ペイントソフト等で更新した画像テクスチャやライブラリを自動再読み込みする。"
+    },
+    {
+      "index": 174,
+      "name": "ACT",
+      "category": "外部連携・出力",
+      "book_page": 213,
+      "pdf_page": 237,
+      "book_price_tier": "無料",
+      "book_source": "Extensions・GitHub・Gumroad",
+      "current_status_2026_11_23": "本書Extensions記載 / 2026-11-23個別未確認",
+      "related_technique_ids": [
+        "BL-022",
+        "BL-023"
+      ],
+      "summary_ja": "Unity/Unreal/Godot向けの一括FBX/GLTF書き出し・原点調整・リネーム等を統合する。"
+    },
+    {
+      "index": 175,
+      "name": "Better FBX Importer & Exporter",
+      "category": "外部連携・出力",
+      "book_page": 214,
+      "pdf_page": 238,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-022",
+        "BL-028"
+      ],
+      "summary_ja": "標準FBXの互換性課題を補い、他DCCやゲームエンジンとのリグ・アニメ入出力精度を高める。"
+    },
+    {
+      "index": 176,
+      "name": "3DGS Render by KIRI Engine",
+      "category": "外部連携・3DGS",
+      "book_page": 215,
+      "pdf_page": 239,
+      "book_price_tier": "無料",
+      "book_source": "GitHub・Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-005"
+      ],
+      "summary_ja": "3D Gaussian Splatting（3DGS）スキャンデータをEEVEE上で高速描画・合成する。"
+    },
+    {
+      "index": 177,
+      "name": "OpenVAT",
+      "category": "外部連携・出力",
+      "book_page": 216,
+      "pdf_page": 240,
+      "book_price_tier": "無料",
+      "book_source": "Extensions・GitHub",
+      "current_status_2026_11_23": "本書Extensions記載 / 2026-11-23個別未確認",
+      "related_technique_ids": [
+        "BL-008",
+        "BL-023"
+      ],
+      "summary_ja": "シミュレーションや複雑な変形をゲームエンジン向け頂点アニメーションテクスチャ（VAT）へ出力する。"
+    },
+    {
+      "index": 178,
+      "name": "Memsaver",
+      "category": "最適化",
+      "book_page": 217,
+      "pdf_page": 241,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-005",
+        "BL-008"
+      ],
+      "summary_ja": "カメラ距離に応じてテクスチャ解像度を自動最適化しレンダリング時のVRAM消費を抑える。"
+    },
+    {
+      "index": 179,
+      "name": "Turbo Tools",
+      "category": "最適化",
+      "book_page": 219,
+      "pdf_page": 243,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-005"
+      ],
+      "summary_ja": "Cyclesのサンプル数・デノイズ・キャッシュを最適化し画質維持のままレンダリングを高速化する。"
+    },
+    {
+      "index": 180,
+      "name": "RenderBoost",
+      "category": "最適化",
+      "book_page": 221,
+      "pdf_page": 245,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-005",
+        "BL-027"
+      ],
+      "summary_ja": "機械学習によるフレーム補間で実レンダリング枚数を減らし動画出力時間を短縮する。"
+    },
+    {
+      "index": 181,
+      "name": "N Panel Sub Tabs",
+      "category": "アドオン管理",
+      "book_page": 222,
+      "pdf_page": 246,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-029"
+      ],
+      "summary_ja": "増えすぎたサイドバー（Nパネル）のアドオンタブをカテゴリ別サブタブへ整理する。"
+    },
+    {
+      "index": 182,
+      "name": "Powermanage",
+      "category": "アドオン管理",
+      "book_page": 223,
+      "pdf_page": 247,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-029"
+      ],
+      "summary_ja": "用途別プリセットで大量アドオンの有効／無効と設定バックアップを一括切替する。"
+    },
+    {
+      "index": 183,
+      "name": "Clean Panels",
+      "category": "アドオン管理",
+      "book_page": 224,
+      "pdf_page": 248,
+      "book_price_tier": "有料",
+      "book_source": "Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-029"
+      ],
+      "summary_ja": "ワークスペース別フィルタやドロップダウン・Pie化でNパネルをすっきり整理する。"
+    },
+    {
+      "index": 184,
+      "name": "Ttranslation",
+      "category": "言語・UI",
+      "book_page": 226,
+      "pdf_page": 250,
+      "book_price_tier": "無料",
+      "book_source": "ArtStation",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-001"
+      ],
+      "summary_ja": "ショートカット一発でBlenderのUI言語（英語⇔日本語等）を瞬時に切り替える。"
+    },
+    {
+      "index": 185,
+      "name": "User Translate",
+      "category": "言語・UI",
+      "book_page": 227,
+      "pdf_page": 251,
+      "book_price_tier": "無料・有料",
+      "book_source": "Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-001",
+        "BL-029"
+      ],
+      "summary_ja": "英語オンリーの外部アドオンUIをCSV辞書で自分好みに日本語化する。"
+    },
+    {
+      "index": 186,
+      "name": "Screencast Keys",
+      "category": "解説・収録",
+      "book_page": 228,
+      "pdf_page": 252,
+      "book_price_tier": "無料・有料",
+      "book_source": "Extensions・GitHub・Superhive",
+      "current_status_2026_11_23": "本書Extensions記載 / 2026-11-23個別未確認",
+      "related_technique_ids": [
+        "BL-001"
+      ],
+      "summary_ja": "操作中のキーボード入力とマウスクリックをビューポート画面上へリアルタイム表示する。"
+    },
+    {
+      "index": 187,
+      "name": "Customize Menu Editor",
+      "category": "アドオン開発",
+      "book_page": 229,
+      "pdf_page": 253,
+      "book_price_tier": "有料",
+      "book_source": "BOOTH・Superhive",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-029"
+      ],
+      "summary_ja": "自分専用のカスタムメニューやマクロボタンをGUI上で組み、アドオンとして書き出す。"
+    },
+    {
+      "index": 188,
+      "name": "Serpens",
+      "category": "アドオン開発",
+      "book_page": 230,
+      "pdf_page": 254,
+      "book_price_tier": "有料",
+      "book_source": "Superhive・Gumroad",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-024",
+        "BL-029"
+      ],
+      "summary_ja": "Pythonコードを手書きせずビジュアルノードの組み合わせでBlenderアドオンを開発する。"
+    }
+  ],
+  "part2_extra_addons": [
+    {
+      "index": "P2-01",
+      "name": "Wireframe Color Tools",
+      "category": "キャラ・UI",
+      "book_page": 237,
+      "pdf_page": 261,
+      "book_price_tier": "未記載（外部）",
+      "book_source": "Part 2 キャラモデラー編",
+      "current_status_2026_11_23": "外部配布 / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-001"
+      ],
+      "summary_ja": "オブジェクト別にワイヤーフレーム表示色を変えて重なったメッシュを見分けやすくする。"
+    },
+    {
+      "index": "P2-02",
+      "name": "Synchronize Workspaces",
+      "category": "キャラ・UI",
+      "book_page": 238,
+      "pdf_page": 262,
+      "book_price_tier": "未記載（外部）",
+      "book_source": "Part 2 キャラモデラー編",
+      "current_status_2026_11_23": "外部配布 / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-001"
+      ],
+      "summary_ja": "ワークスペース切替時に3Dビューの視点や状態を同期維持する。"
+    },
+    {
+      "index": "P2-03",
+      "name": "Hdr Rotation 3D",
+      "category": "ライティング",
+      "book_page": 239,
+      "pdf_page": 263,
+      "book_price_tier": "未記載（外部）",
+      "book_source": "Part 2 キャラモデラー編",
+      "current_status_2026_11_23": "外部配布 / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-005"
+      ],
+      "summary_ja": "3Dビュー上でHDRI環境の回転を直感的に操作する。"
+    },
+    {
+      "index": "P2-04",
+      "name": "Material Utilities",
+      "category": "マテリアル",
+      "book_page": 239,
+      "pdf_page": 263,
+      "book_price_tier": "無料",
+      "book_source": "標準搭載・Extensions",
+      "current_status_2026_11_23": "公式Extensions確認済 (2026-11-23)",
+      "related_technique_ids": [
+        "BL-002",
+        "BL-003"
+      ],
+      "summary_ja": "マテリアルの一括割り当て・選択・クリーンアップを専用メニューから素早く行う。"
+    },
+    {
+      "index": "P2-05",
+      "name": "RM_SubdivisionSurface",
+      "category": "モデリング",
+      "book_page": 242,
+      "pdf_page": 266,
+      "book_price_tier": "未記載（外部）",
+      "book_source": "Part 2 キャラモデラー編",
+      "current_status_2026_11_23": "外部配布 / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-001",
+        "BL-019"
+      ],
+      "summary_ja": "サブディビジョンサーフェスのレベル切替やクリース設定を素早く操作する。"
+    },
+    {
+      "index": "P2-06",
+      "name": "Restore Symmetry",
+      "category": "モデリング",
+      "book_page": 242,
+      "pdf_page": 266,
+      "book_price_tier": "未記載（外部）",
+      "book_source": "Part 2 キャラモデラー編",
+      "current_status_2026_11_23": "外部配布 / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-004",
+        "BL-019"
+      ],
+      "summary_ja": "わずかに崩れたメッシュの左右対称性を復元する。"
+    },
+    {
+      "index": "P2-07",
+      "name": "BBrush",
+      "category": "スカルプト",
+      "book_page": 246,
+      "pdf_page": 270,
+      "book_price_tier": "未記載（外部）",
+      "book_source": "Part 2 キャラモデラー編",
+      "current_status_2026_11_23": "外部配布 / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-018",
+        "BL-020"
+      ],
+      "summary_ja": "ZBrush風の操作感でBlenderのスカルプト作業を行えるようにする。"
+    },
+    {
+      "index": "P2-08",
+      "name": "Anime Hair Maker",
+      "category": "キャラ・髪",
+      "book_page": 249,
+      "pdf_page": 273,
+      "book_price_tier": "未記載（外部）",
+      "book_source": "Part 2 キャラモデラー編",
+      "current_status_2026_11_23": "外部配布 / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-004"
+      ],
+      "summary_ja": "アニメ調キャラクターの房状ヘアスタイルを効率よく生成・調整する。"
+    },
+    {
+      "index": "P2-09",
+      "name": "Symmetrize UV Util",
+      "category": "UV編集",
+      "book_page": 251,
+      "pdf_page": 275,
+      "book_price_tier": "未記載（外部）",
+      "book_source": "Part 2 キャラモデラー編",
+      "current_status_2026_11_23": "外部配布 / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-021"
+      ],
+      "summary_ja": "左右対称メッシュのUVレイアウトを対称化・整列させる。"
+    },
+    {
+      "index": "P2-10",
+      "name": "SK Keeper",
+      "category": "キャラ・変形",
+      "book_page": 255,
+      "pdf_page": 279,
+      "book_price_tier": "未記載（外部）",
+      "book_source": "Part 2 キャラモデラー編",
+      "current_status_2026_11_23": "外部配布 / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-001",
+        "BL-004"
+      ],
+      "summary_ja": "シェイプキーを持つメッシュでもモディファイア適用を保持したまま実行する。"
+    },
+    {
+      "index": "P2-11",
+      "name": "ShapeKeySwapper",
+      "category": "キャラ・変形",
+      "book_page": 255,
+      "pdf_page": 279,
+      "book_price_tier": "未記載（外部）",
+      "book_source": "Part 2 キャラモデラー編",
+      "current_status_2026_11_23": "外部配布 / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-004",
+        "AE-019"
+      ],
+      "summary_ja": "シェイプキーの並び替えや差し替え整理を効率化する。"
+    },
+    {
+      "index": "P2-12",
+      "name": "Clay Doh",
+      "category": "質感・NPR",
+      "book_page": 260,
+      "pdf_page": 284,
+      "book_price_tier": "未記載（外部）",
+      "book_source": "Part 2 キャラモデラー編",
+      "current_status_2026_11_23": "外部配布 / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-006"
+      ],
+      "summary_ja": "クレイアニメ調の指紋・粘土質感をプロシージャルシェーダーで付与する。"
+    },
+    {
+      "index": "P2-13",
+      "name": "Komikaze",
+      "category": "質感・NPR",
+      "book_page": 261,
+      "pdf_page": 285,
+      "book_price_tier": "未記載（外部）",
+      "book_source": "Part 2 キャラモデラー編",
+      "current_status_2026_11_23": "外部配布 / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-006",
+        "AE-031"
+      ],
+      "summary_ja": "コミック・アニメ風のトゥーンシェーダー群を手軽に適用する。"
+    },
+    {
+      "index": "P2-14",
+      "name": "InkTool",
+      "category": "質感・NPR",
+      "book_page": 261,
+      "pdf_page": 285,
+      "book_price_tier": "未記載（外部）",
+      "book_source": "Part 2 キャラモデラー編",
+      "current_status_2026_11_23": "外部配布 / 2026-11-23未確認",
+      "related_technique_ids": [
+        "AE-032"
+      ],
+      "summary_ja": "手描きインク風のアウトラインや陰影表現を構築する。"
+    },
+    {
+      "index": "P2-15",
+      "name": "GoB / 3D-Coat Applink",
+      "category": "外部連携",
+      "book_page": 263,
+      "pdf_page": 287,
+      "book_price_tier": "未記載（外部）",
+      "book_source": "Part 2 キャラモデラー編",
+      "current_status_2026_11_23": "外部配布 / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-016",
+        "BL-018"
+      ],
+      "summary_ja": "ZBrushや3D-CoatとBlender間でモデル・テクスチャをワンクリック往復連携する。"
+    },
+    {
+      "index": "P2-16",
+      "name": "Cats Blender Plugin",
+      "category": "キャラ・VRM",
+      "book_page": 268,
+      "pdf_page": 292,
+      "book_price_tier": "未記載（外部）",
+      "book_source": "Part 2 キャラモデラー編",
+      "current_status_2026_11_23": "外部配布 / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-004"
+      ],
+      "summary_ja": "VRChat/MMD向けアバターモデルのボーン修正・最適化・リップシンク設定を補助する。"
+    },
+    {
+      "index": "P2-17",
+      "name": "TRIToon",
+      "category": "質感・NPR",
+      "book_page": 268,
+      "pdf_page": 292,
+      "book_price_tier": "未記載（外部）",
+      "book_source": "Part 2 キャラモデラー編",
+      "current_status_2026_11_23": "外部配布 / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-006"
+      ],
+      "summary_ja": "リアルタイム用途向けのアニメ調トゥーンシェーダー表現を構築する。"
+    },
+    {
+      "index": "P2-18",
+      "name": "Pie Menu Editor",
+      "category": "UI・操作",
+      "book_page": 287,
+      "pdf_page": 311,
+      "book_price_tier": "未記載（有料系）",
+      "book_source": "Part 2 背景アーティスト編",
+      "current_status_2026_11_23": "外部配布 / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-029"
+      ],
+      "summary_ja": "任意のコマンドやパネルを自在に組み合わせた自作Pieメニュー・ポップアップを作る。"
+    },
+    {
+      "index": "P2-19",
+      "name": "Tools for me (TFM)",
+      "category": "背景・操作",
+      "book_page": 292,
+      "pdf_page": 316,
+      "book_price_tier": "未記載（外部）",
+      "book_source": "Part 2 背景アーティスト編",
+      "current_status_2026_11_23": "外部配布 / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-001"
+      ],
+      "summary_ja": "背景制作向けのトランスフォーム補助・時短パネル群を提供する。"
+    },
+    {
+      "index": "P2-20",
+      "name": "Material Organizer",
+      "category": "マテリアル",
+      "book_page": 296,
+      "pdf_page": 320,
+      "book_price_tier": "未記載（外部）",
+      "book_source": "Part 2 背景アーティスト編",
+      "current_status_2026_11_23": "外部配布 / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-002",
+        "BL-006"
+      ],
+      "summary_ja": "大量のマテリアルを整理・一括管理し背景シーンの見通しを良くする。"
+    },
+    {
+      "index": "P2-21",
+      "name": "Geo Primitive",
+      "category": "CG・プロシージャル",
+      "book_page": 304,
+      "pdf_page": 328,
+      "book_price_tier": "未記載（外部）",
+      "book_source": "Part 2 CGアーティスト編",
+      "current_status_2026_11_23": "外部配布 / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-001",
+        "AE-029"
+      ],
+      "summary_ja": "カーブやアニメ付きパラメトリック幾何学オブジェクトを手早く生成する。"
+    },
+    {
+      "index": "P2-22",
+      "name": "Quick Lighting Kit",
+      "category": "ライティング",
+      "book_page": 310,
+      "pdf_page": 334,
+      "book_price_tier": "未記載（外部）",
+      "book_source": "Part 2 CGアーティスト編",
+      "current_status_2026_11_23": "外部配布 / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-005"
+      ],
+      "summary_ja": "スタジオ照明・背景ライトの配置と色・強度調整を素早くセットアップする。"
+    },
+    {
+      "index": "P2-23",
+      "name": "Chain Generator",
+      "category": "CG・プロシージャル",
+      "book_page": 315,
+      "pdf_page": 339,
+      "book_price_tier": "未記載（外部）",
+      "book_source": "Part 2 CGアーティスト編",
+      "current_status_2026_11_23": "外部配布 / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-001"
+      ],
+      "summary_ja": "カーブに沿った鎖・チェーン形状を自動生成・レイアウトする。"
+    },
+    {
+      "index": "P2-24",
+      "name": "FALCON CAM",
+      "category": "カメラワーク",
+      "book_page": 323,
+      "pdf_page": 347,
+      "book_price_tier": "未記載（外部）",
+      "book_source": "Part 2 CGアーティスト編",
+      "current_status_2026_11_23": "外部配布 / 2026-11-23未確認",
+      "related_technique_ids": [
+        "AE-034"
+      ],
+      "summary_ja": "軌道・被写界深度・フォーカス・ターゲット管理を統合した映像向けカメラツール。"
+    },
+    {
+      "index": "P2-25",
+      "name": "Freebird XR",
+      "category": "XR・アニメ",
+      "book_page": 336,
+      "pdf_page": 360,
+      "book_price_tier": "未記載（外部）",
+      "book_source": "Part 2 アニメーター編",
+      "current_status_2026_11_23": "外部配布 / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-001"
+      ],
+      "summary_ja": "VR空間内でコントローラーを使って直感的にBlenderの造形・アニメ作業を行う。"
+    },
+    {
+      "index": "P2-26",
+      "name": "fSpy",
+      "category": "カメラ・合成",
+      "book_page": 366,
+      "pdf_page": 390,
+      "book_price_tier": "無料（オープンソース）",
+      "book_source": "Part 2 アニメーター編",
+      "current_status_2026_11_23": "外部配布 (ZIP導入) / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-005"
+      ],
+      "summary_ja": "静止画・イラストからカメラ画角と消失点パースを抽出しBlenderカメラへ復元する。"
+    },
+    {
+      "index": "P2-27",
+      "name": "AnimAll",
+      "category": "アニメーション",
+      "book_page": 374,
+      "pdf_page": 398,
+      "book_price_tier": "無料",
+      "book_source": "標準搭載・Extensions",
+      "current_status_2026_11_23": "公式Extensions確認済 (2026-11-23)",
+      "related_technique_ids": [
+        "AE-022"
+      ],
+      "summary_ja": "メッシュ頂点・UV・頂点カラーなど通常キーを打てない要素へ直接キーフレームを打つ。"
+    },
+    {
+      "index": "P2-28",
+      "name": "Refine Tracking Solution",
+      "category": "トラッキング・VFX",
+      "book_page": 386,
+      "pdf_page": 410,
+      "book_price_tier": "無料",
+      "book_source": "Extensions",
+      "current_status_2026_11_23": "公式Extensions確認済 (2026-11-23)",
+      "related_technique_ids": [
+        "COLOR-022"
+      ],
+      "summary_ja": "カメラトラッキングのソルブ誤差が大きいマーカーを自動整理し精度を改善する。"
+    },
+    {
+      "index": "P2-29",
+      "name": "Align and Distribute",
+      "category": "配置・VFX",
+      "book_page": 392,
+      "pdf_page": 416,
+      "book_price_tier": "未記載（外部）",
+      "book_source": "Part 2 VFXアーティスト編",
+      "current_status_2026_11_23": "外部配布 / 2026-11-23未確認",
+      "related_technique_ids": [
+        "BL-001"
+      ],
+      "summary_ja": "複数オブジェクトを規則的に整列・等間隔配置し物理シミュレーション準備を助ける。"
+    },
+    {
+      "index": "P2-30",
+      "name": "Denoiser Comp",
+      "category": "コンポジット・VFX",
+      "book_page": 399,
+      "pdf_page": 423,
+      "book_price_tier": "未記載（外部）",
+      "book_source": "Part 2 VFXアーティスト編",
+      "current_status_2026_11_23": "外部配布 / 2026-11-23未確認",
+      "related_technique_ids": [
+        "COLOR-009",
+        "BL-005"
+      ],
+      "summary_ja": "コンポジット段階のデノイズ設定を素早く組み込んでノイズを抑える。"
+    },
+    {
+      "index": "P2-31",
+      "name": "Export: Adobe After Effects (.jsx)",
+      "category": "AE連携・VFX",
+      "book_page": 401,
+      "pdf_page": 425,
+      "book_price_tier": "無料",
+      "book_source": "標準搭載・Extensions",
+      "current_status_2026_11_23": "公式Extensions確認済 (2026-11-23)",
+      "related_technique_ids": [
+        "AE-024",
+        "AE-034",
+        "BL-027"
+      ],
+      "summary_ja": "Blenderの3Dカメラ・ライト・ヌル座標をAfter Effects用ExtendScript（.jsx）として書き出す。"
+    }
+  ]
+}
