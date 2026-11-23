@@ -1,0 +1,38 @@
+{
+  "executed_at": "2026-11-23T12:36:24.077Z",
+  "run_id": "run_20261123_192500",
+  "priority": "P1_private_rating",
+  "batch_index": 1,
+  "payload_count": 200,
+  "affected_rows": 200,
+  "tidb_rows_with_run_id": 200,
+  "tidb_calibration_status_counts": {
+    "legacy_uncalibrated": 5052,
+    "unscored": 401,
+    "calibrated_verified": 106,
+    "calibrated_unverified_genre": 94
+  },
+  "max_updated_at_before": "2026-11-21T17:57:26.000Z",
+  "max_updated_at_after": "2026-11-21T17:57:26.000Z",
+  "full_row_diff_against_pre_d_backup": {
+    "rows_compared": 5653,
+    "columns_compared_per_row": 40,
+    "total_cells_compared": 226120,
+    "legacy_8_score_columns_mismatches": 0,
+    "all_40_original_columns_mismatches": 0,
+    "updated_at_row_mismatches": 0,
+    "sample_mismatches": []
+  },
+  "sqlite_source_sha256_after": "f25c464f7a5a8531843205f9e940ee0cc880d7e7e1985c5fdb83c33319064cc3",
+  "sqlite_untouched": true,
+  "all_checks_passed": true,
+  "checks": {
+    "row_count_matches_5653": true,
+    "updated_rows_match_payload": true,
+    "max_updated_at_unchanged": true,
+    "legacy_8_columns_zero_diffs": true,
+    "all_40_original_columns_zero_diffs": true,
+    "updated_at_per_row_zero_diffs": true,
+    "sqlite_mirror_untouched": true
+  }
+}

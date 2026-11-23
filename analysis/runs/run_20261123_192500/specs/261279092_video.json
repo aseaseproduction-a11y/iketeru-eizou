@@ -1,0 +1,24 @@
+{
+  "version": "v1_baseline",
+  "runId": "run_20261123_192500",
+  "blindId": "0bed3430dfcc",
+  "mode": "video",
+  "assignedFiles": [
+    "E:\\iketeru_blind_eval\\run_20261123_192500\\video\\0bed3430dfcc\\0bed3430dfcc.mp4",
+    "E:\\iketeru_blind_eval\\run_20261123_192500\\video\\0bed3430dfcc\\0bed3430dfcc_slow.mp4"
+  ],
+  "metrics": {
+    "duration_sec": 20.6,
+    "scdet_threshold": 10,
+    "total_cuts": 40,
+    "avg_cut_interval_sec": 0.52,
+    "max_cuts_per_10s": 34,
+    "integrated_lufs": -22.6,
+    "slowmo_applied": true,
+    "slowmo_factor": "4x",
+    "slowmo_window_sec": [
+      8,
+      13
+    ]
+  }
+}
