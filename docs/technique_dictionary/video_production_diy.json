@@ -1,0 +1,72 @@
+{
+  "dictionary_version": "1.0",
+  "purpose": "reproducible_decomposition_technique_dictionary_only",
+  "never_use_for_scoring_criteria": true,
+  "no_personal_contact_info": true,
+  "numeric_verification_script": "scripts/verify-technique-dictionary-numbers.py",
+  "image_verified_numbers": [
+    {
+      "entry_id": "DIY-016",
+      "token": "10",
+      "pdf_page": 160,
+      "book_page": 158,
+      "reason": "PDF p.160（本書 p.158）本文の画像を直接目視確認し『縦10台×横25台』を確認（OCRで10が欠落したため）"
+    },
+    {
+      "entry_id": "DIY-016",
+      "token": "250",
+      "pdf_page": 160,
+      "book_page": 158,
+      "reason": "PDF p.160（本書 p.158）実物画像『縦10台×横25台』の積（10×25=250台）の補足確認"
+    }
+  ],
+  "book": {
+    "order": 5,
+    "title_ja": "映像制作 D.I.Y.",
+    "editor_ja": "古屋蔵人",
+    "publisher_ja": "株式会社ビー・エヌ・エヌ新社",
+    "published_date": "2011-10-25",
+    "source_pdf_nfc": "映像制作DIY.pdf",
+    "total_pages": 207,
+    "ocr_private_path": "E:\\技術書_index\\ocr_private\\video_production_diy_ocr.jsonl"
+  },
+  "ocr_quality": {
+    "engine": "Windows.Media.Ocr.OcrEngine (ja, local offline)",
+    "dpi": 250,
+    "elapsed_sec": 256.0,
+    "total_pages": 207,
+    "readable_text_pages_gte_50_chars": 194,
+    "readable_page_ratio": 0.9372,
+    "sparse_pages_1_to_49_chars": 7,
+    "sparse_page_numbers_pdf": [6, 7, 9, 68, 90, 140, 178],
+    "unreadable_0_char_pages": 6,
+    "unreadable_page_numbers_pdf": [4, 69, 91, 141, 179, 207],
+    "total_non_ws_chars": 104395,
+    "total_valid_chars": 103886,
+    "overall_valid_char_ratio": 0.9951,
+    "avg_chars_per_page": 504.3
+  },
+  "entry_count": 20,
+  "entries": [
+    {"id": "DIY-001", "creator": "坂本渉太", "theme": "フラッシュ風アニメ（音楽同期キャラクター）", "book_pages": "p.8-17", "pdf_pages": "p.10-19", "related_ids": ["AE-020", "AE-021", "AE-034"]},
+    {"id": "DIY-002", "creator": "水尻自子", "theme": "手描きアニメ（シンプル線画の質感）", "book_pages": "p.18-27", "pdf_pages": "p.20-29", "related_ids": ["AE-019", "AE-031", "AE-032"]},
+    {"id": "DIY-003", "creator": "稲葉まり", "theme": "切り絵アニメ（自宅マルチプレーン撮影）", "book_pages": "p.28-37", "pdf_pages": "p.30-39", "related_ids": ["COLOR-020", "AE-021", "AE-033"]},
+    {"id": "DIY-004", "creator": "菅原そうた", "theme": "低予算モーションキャプチャ（Kinect＋MMD）", "book_pages": "p.38-47", "pdf_pages": "p.40-49", "related_ids": ["BL-004", "BL-023"]},
+    {"id": "DIY-005", "creator": "山口悠野", "theme": "おいしいとこ取り GIF アニメ", "book_pages": "p.48-55", "pdf_pages": "p.50-57", "related_ids": ["BL-001", "BL-027", "AE-027"]},
+    {"id": "DIY-006", "creator": "TYMOTE", "theme": "モーショングラフィックス（ロゴを動かす）", "book_pages": "p.56-65", "pdf_pages": "p.58-67", "related_ids": ["AE-001", "AE-023", "AE-024"]},
+    {"id": "DIY-007", "creator": "ひらのりょう", "theme": "水彩＋ちょっぴり CG アニメーション", "book_pages": "p.68-77", "pdf_pages": "p.70-79", "related_ids": ["AE-031", "AE-033", "BL-003"]},
+    {"id": "DIY-008", "creator": "亀島耕", "theme": "モーフィングアニメとアイデア出し", "book_pages": "p.78-87", "pdf_pages": "p.80-89", "related_ids": ["AE-022", "AE-034"]},
+    {"id": "DIY-009", "creator": "大月壮", "theme": "映像コラージュ・データモッシング", "book_pages": "p.90-99", "pdf_pages": "p.92-101", "related_ids": ["AE-008", "COLOR-015"]},
+    {"id": "DIY-010", "creator": "AC部", "theme": "究極の DIY アフレコ", "book_pages": "p.100-109", "pdf_pages": "p.102-111", "related_ids": ["AE-019", "AE-021"]},
+    {"id": "DIY-011", "creator": "細金卓矢", "theme": "簡易 3D モーショングラフィックス", "book_pages": "p.110-117", "pdf_pages": "p.112-119", "related_ids": ["BL-018", "BL-021", "AE-029"]},
+    {"id": "DIY-012", "creator": "チームラボ", "theme": "質感のある CG（日本画・水彩融合）", "book_pages": "p.118-127", "pdf_pages": "p.120-129", "related_ids": ["BL-003", "BL-006", "BL-010"]},
+    {"id": "DIY-013", "creator": "VIDEO BOY", "theme": "ビデオデッキ組み込みアナログ VJ", "book_pages": "p.128-137", "pdf_pages": "p.130-139", "related_ids": ["AE-008", "COLOR-030"]},
+    {"id": "DIY-014", "creator": "ほぼ日「宇宙部」", "theme": "ネット生配信メディアの DIY", "book_pages": "p.140-149", "pdf_pages": "p.142-151", "related_ids": ["COLOR-002", "COLOR-008"]},
+    {"id": "DIY-015", "creator": "伊藤ガビン", "theme": "絵コンテを書かない MV 企画・演出", "book_pages": "p.150-157", "pdf_pages": "p.152-159", "related_ids": ["COLOR-028"]},
+    {"id": "DIY-016", "creator": "長添雅嗣・川村真司・清水幹太", "theme": "フラッシュ演出スタジオ MV 撮影", "book_pages": "p.158-167", "pdf_pages": "p.160-169", "related_ids": ["AE-018", "BL-027"]},
+    {"id": "DIY-017", "creator": "辻川幸一郎", "theme": "CG の質感を活かすセット撮影", "book_pages": "p.168-175", "pdf_pages": "p.170-177", "related_ids": ["BL-005", "COLOR-020", "COLOR-028"]},
+    {"id": "DIY-018", "creator": "勅使河原一雅", "theme": "映像プログラミング（自動生成モンタージュ）", "book_pages": "p.178-187", "pdf_pages": "p.180-189", "related_ids": ["BL-025", "AE-002"]},
+    {"id": "DIY-019", "creator": "山口崇司", "theme": "音と映像のシンクロプログラミング", "book_pages": "p.188-197", "pdf_pages": "p.190-199", "related_ids": ["BL-025", "BL-028"]},
+    {"id": "DIY-020", "creator": "作った映像を広めよう", "theme": "公開・発信の設計", "book_pages": "p.198-205", "pdf_pages": "p.200-205", "related_ids": ["DIY-005", "DIY-009", "DIY-012"]}
+  ]
+}

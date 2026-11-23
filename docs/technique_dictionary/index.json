@@ -1,0 +1,79 @@
+{
+  "index_version": "1.0",
+  "created_date": "2026-11-23",
+  "purpose": "reproducible_decomposition_technique_dictionary_master_index",
+  "never_use_for_scoring_criteria": true,
+  "verification_script": "scripts/verify-technique-dictionary-numbers.py",
+  "totals": {
+    "books": 5,
+    "source_pdf_pages": 2085,
+    "technique_entries": 116,
+    "addon_reverse_index_entries": 219
+  },
+  "books": [
+    {
+      "order": 1,
+      "id_prefix": "COLOR",
+      "title_ja": "カラーコレクションハンドブック 第2版",
+      "md_path": "docs/technique_dictionary/color_correction_handbook_2nd.md",
+      "json_path": "docs/technique_dictionary/color_correction_handbook_2nd.json",
+      "total_pages": 630,
+      "entry_count": 30,
+      "id_range": "COLOR-001..COLOR-030",
+      "ocr_valid_char_ratio": 0.9947,
+      "ocr_readable_page_ratio": 0.9825
+    },
+    {
+      "order": 2,
+      "id_prefix": "AE",
+      "title_ja": "After Effects モーションデザイン すぐに使える実用アイデア見本帳",
+      "md_path": "docs/technique_dictionary/aftereffects_motion_design.md",
+      "json_path": "docs/technique_dictionary/aftereffects_motion_design.json",
+      "total_pages": 273,
+      "entry_count": 34,
+      "id_range": "AE-001..AE-034",
+      "ocr_valid_char_ratio": 0.9883,
+      "ocr_readable_page_ratio": 0.9707
+    },
+    {
+      "order": 3,
+      "id_prefix": "BL",
+      "title_ja": "プロフェッショナル Blender",
+      "target_blender_version": "4.2",
+      "md_path": "docs/technique_dictionary/professional_blender.md",
+      "json_path": "docs/technique_dictionary/professional_blender.json",
+      "total_pages": 536,
+      "entry_count": 30,
+      "id_range": "BL-001..BL-030",
+      "ocr_valid_char_ratio": 0.9948,
+      "ocr_readable_page_ratio": 0.9813
+    },
+    {
+      "order": 4,
+      "id_prefix": "ADDON",
+      "title_ja": "職種と用途で探せる Blender アドオン事典",
+      "target_blender_version": "3.6-4.3",
+      "md_path": "docs/technique_dictionary/blender_addon_encyclopedia.md",
+      "json_path": "docs/technique_dictionary/blender_addon_encyclopedia.json",
+      "total_pages": 439,
+      "entry_count": 2,
+      "addon_index_count": 219,
+      "id_range": "ADDON-001..ADDON-002 + 219 addons",
+      "ocr_valid_char_ratio": 0.9912,
+      "ocr_readable_page_ratio": 0.9613
+    },
+    {
+      "order": 5,
+      "id_prefix": "DIY",
+      "title_ja": "映像制作 D.I.Y.",
+      "published_year": 2011,
+      "md_path": "docs/technique_dictionary/video_production_diy.md",
+      "json_path": "docs/technique_dictionary/video_production_diy.json",
+      "total_pages": 207,
+      "entry_count": 20,
+      "id_range": "DIY-001..DIY-020",
+      "ocr_valid_char_ratio": 0.9951,
+      "ocr_readable_page_ratio": 0.9372
+    }
+  ]
+}
