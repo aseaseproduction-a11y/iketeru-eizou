@@ -1,0 +1,90 @@
+{
+  "generatedAtUtc": "2026-11-23T22:50:50.777Z",
+  "direction": "TiDB (read-only) -> SQLite mirror (one-way)",
+  "tidb": {
+    "pre": {
+      "count": 5653,
+      "maxUpdatedAt": "2026-11-21T17:57:26.000Z"
+    },
+    "post": {
+      "count": 5653,
+      "maxUpdatedAt": "2026-11-21T17:57:26.000Z"
+    },
+    "unchanged": true
+  },
+  "mode": "apply",
+  "sqlitePath": "E:\\iketeru-creative-studio\\data\\iketeru_knowledge.db",
+  "preSync": {
+    "columnsCount": 44,
+    "missingCalibrationColumns": [],
+    "counts": {
+      "videos": 5701,
+      "scenes": 35848,
+      "craft_recipes": 1036
+    }
+  },
+  "idDiff": {
+    "tidbTotal": 5653,
+    "sqlitePreTotal": 5701,
+    "sharedCount": 5653,
+    "tidbOnlyCount": 0,
+    "sqliteOnlyCount": 48,
+    "expectedSqlitePostTotal": 5701,
+    "tidbCalibratedCount": 393,
+    "tidbCalibrationStatusCounts": {
+      "legacy_uncalibrated": 4859,
+      "unscored": 401,
+      "calibrated_verified": 204,
+      "calibrated_unverified_genre": 189
+    }
+  },
+  "apply": {
+    "syncTimestampUtc": "2026-11-23T22:50:48.766177+00:00",
+    "sharedRowsUpdated": 5653,
+    "tidbOnlyRowsInserted": 0,
+    "sqliteOnlyRowsPreserved": 48,
+    "sqliteOnlyRowsTagged": 0
+  },
+  "postSync": {
+    "columnsCount": 44,
+    "addedColumns": [],
+    "counts": {
+      "videos": 5701,
+      "scenes": 35848,
+      "craft_recipes": 1036
+    },
+    "calibrationStatusCounts": {
+      "calibrated_unverified_genre": 189,
+      "calibrated_verified": 204,
+      "legacy_uncalibrated": 4907,
+      "unscored": 401
+    },
+    "sqliteOnlyCalibrationStatusCounts": {
+      "legacy_uncalibrated": 48
+    },
+    "sqliteFileBytes": 1449013248,
+    "sqliteSha256": "0ea226e3c74c2498e720868bc166a3f07b813e3911306865f96877648e5900a4"
+  },
+  "verification": {
+    "zeroDeletions": true,
+    "missingSqliteOnlyIds": [],
+    "missingTidbOnlyIds": [],
+    "scenesNonRegressing": true,
+    "craftRecipesUnchanged": true,
+    "tidbAllRowsChecked": 5653,
+    "tidbAllRowsMismatchCount": 0,
+    "tidbAllRowsSampleMismatches": [],
+    "calibratedRowsChecked": 393,
+    "calibratedRowsMismatchCount": 0,
+    "calibratedRowsSampleMismatches": [],
+    "existingColumnsDiffAgainstBackup": {
+      "backupPath": "E:\\iketeru_backups\\phase3_pre_craft_b1_sqlite_sync_20261124_074959\\iketeru_knowledge.db",
+      "existingColumnsChecked": 34,
+      "preExistingRowsChecked": 5701,
+      "diffCount": 0,
+      "sampleDiffs": []
+    },
+    "allPassed": true,
+    "tidbUnchanged": true
+  }
+}

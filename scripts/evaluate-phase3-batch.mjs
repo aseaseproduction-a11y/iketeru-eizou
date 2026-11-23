@@ -603,7 +603,9 @@ function main() {
   const canonicalReportName =
     manifest.priority === "P1_private_rating"
       ? `phase3_c_p1_batch${String(manifest.batch_index).padStart(2, "0")}_report.json`
-      : reportName;
+      : manifest.priority === "P0_craft_recipes"
+        ? `phase3_c_craft_batch${String(manifest.batch_index).padStart(2, "0")}_report.json`
+        : reportName;
   const reportPath = path.join(REPO_ROOT, "analysis", canonicalReportName);
 
   const payload = {

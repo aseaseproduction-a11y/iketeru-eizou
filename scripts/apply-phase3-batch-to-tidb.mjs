@@ -91,7 +91,9 @@ async function main() {
   if (actualBackupSha !== backupManifest.tidb.jsonl_sha256) {
     throw new Error(`Pre-D backup SHA-256 mismatch! expected=${backupManifest.tidb.jsonl_sha256} actual=${actualBackupSha}`);
   }
+  const sqliteShaBefore = sha256File(backupManifest.sqlite.source_path);
   console.log(`Pre-flight pre-D backup SHA-256 verified: ${actualBackupSha}`);
+  console.log(`Pre-flight live SQLite SHA-256 recorded: ${sqliteShaBefore}`);
   console.log(`Payload ready: run_id=${runId}, rows=${payload.updates.length}, dry_run=${dryRun}`);
 
   if (dryRun) {
@@ -205,7 +207,7 @@ async function main() {
     }
 
     const sqliteShaAfter = sha256File(backupManifest.sqlite.source_path);
-    const sqliteUntouched = sqliteShaAfter === backupManifest.sqlite.source_sha256;
+    const sqliteUntouched = sqliteShaAfter === sqliteShaBefore;
 
     const checks = {
       row_count_matches_5653: afterCount === 5653 && rowsCompared === 5653,
@@ -237,6 +239,7 @@ async function main() {
         updated_at_row_mismatches: updatedAtMismatches,
         sample_mismatches: sampleMismatches,
       },
+      sqlite_source_sha256_before: sqliteShaBefore,
       sqlite_source_sha256_after: sqliteShaAfter,
       sqlite_untouched: sqliteUntouched,
       all_checks_passed: Object.values(checks).every(Boolean),

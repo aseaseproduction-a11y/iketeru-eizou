@@ -297,7 +297,7 @@ async function downloadToCacheGently(item) {
   }
 }
 
-async function fetchBatchFromTidb({ priority, batchIndex, batchSize }) {
+async function fetchBatchFromTidb({ priority, batchIndex, batchSize, idListPath = null }) {
   const require = createRequire(path.join(REPO_ROOT, "package.json"));
   require("dotenv").config({ path: path.join(REPO_ROOT, ".env") });
   const mysql = require("mysql2/promise");
@@ -318,7 +318,21 @@ async function fetchBatchFromTidb({ priority, batchIndex, batchSize }) {
       row: r,
       cls: classifyVideoForCalibration(r),
     }));
-    const tierRows = classified.filter((x) => x.cls.priority_tier === priority);
+    let tierRows;
+    if (priority === "P0_craft_recipes" && idListPath) {
+      const idDoc = JSON.parse(fs.readFileSync(path.resolve(REPO_ROOT, idListPath), "utf8"));
+      const orderedIds = Array.isArray(idDoc) ? idDoc : idDoc.video_ids || [];
+      const byId = new Map(classified.map((x) => [String(x.row.id), x]));
+      tierRows = [];
+      for (const vid of orderedIds) {
+        const hit = byId.get(String(vid));
+        if (hit && hit.row.calibratedScore == null) {
+          tierRows.push(hit);
+        }
+      }
+    } else {
+      tierRows = classified.filter((x) => x.cls.priority_tier === priority);
+    }
     const start = (batchIndex - 1) * batchSize;
     const end = start + batchSize;
     const slice = tierRows.slice(start, end);
@@ -351,6 +365,7 @@ async function fetchBatchFromTidb({ priority, batchIndex, batchSize }) {
 async function main() {
   const args = parseArgs(process.argv);
   const priority = args["priority"] || "P1_private_rating";
+  const idListPath = args["id-list"] || null;
   const batchIndex = parseInt(args["batch"] || "1", 10);
   const batchSize = Math.min(MAX_BATCH_SIZE, parseInt(args["batch-size"] || String(MAX_BATCH_SIZE), 10));
   const frozenConfigPath = path.resolve(REPO_ROOT, args["frozen-config"] || "analysis/phase2_frozen_config_v1.json");
@@ -364,8 +379,11 @@ async function main() {
   if (!RUN_ID_REGEX.test(runId)) {
     throw new Error(`Invalid --run-id (expected ^run_\\d{8}_\\d{6}$): ${runId}`);
   }
-  if (!["P1_private_rating", "P2_verified_5_genres", "P3_unverified_genres"].includes(priority)) {
+  if (!["P0_craft_recipes", "P1_private_rating", "P2_verified_5_genres", "P3_unverified_genres"].includes(priority)) {
     throw new Error(`Invalid --priority: ${priority}`);
+  }
+  if (priority === "P0_craft_recipes" && !idListPath) {
+    throw new Error("--id-list is required when --priority P0_craft_recipes");
   }
   if (!Number.isInteger(batchIndex) || batchIndex < 1) {
     throw new Error(`Invalid --batch: ${batchIndex}`);
@@ -389,7 +407,7 @@ async function main() {
   if (resume && fs.existsSync(selectionPath)) {
     selection = JSON.parse(fs.readFileSync(selectionPath, "utf8"));
   } else {
-    const fetched = await fetchBatchFromTidb({ priority, batchIndex, batchSize });
+    const fetched = await fetchBatchFromTidb({ priority, batchIndex, batchSize, idListPath });
     selection = {
       phase: "phase3_c",
       priority,

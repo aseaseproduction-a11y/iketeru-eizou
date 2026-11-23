@@ -391,7 +391,7 @@ legacy_col_diff_summary = None
 if backup_path and os.path.exists(backup_path):
     bak = sqlite3.connect(f"file:{backup_path}?mode=ro", uri=True)
     bak.row_factory = sqlite3.Row
-    bak_cols = [r[1] for r in bak.execute("PRAGMA table_info(videos)").fetchall()]
+    bak_cols = [r[1] for r in bak.execute("PRAGMA table_info(videos)").fetchall() if r[1] not in cal_col_names]
     cols_sql = ", ".join(f'"{c}"' for c in bak_cols)
     cur_bak = bak.execute(f"SELECT {cols_sql} FROM videos ORDER BY id ASC")
     cur_now = con.execute(f"SELECT {cols_sql} FROM videos WHERE id IN ({','.join('?' for _ in pre_ids)}) ORDER BY id ASC", sorted(pre_ids))
