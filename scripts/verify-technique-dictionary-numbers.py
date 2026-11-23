@@ -309,12 +309,14 @@ def parse_dictionary_entries(md_text: str) -> List[Tuple[str, str, List[int], st
 
 
 def evaluate_token(
+    entry_id: str,
     tok: str,
     marked: bool,
     section: str,
     cited_pages: List[int],
     exact_pages: Dict[int, str],
     glyph_pages: Dict[int, str],
+    image_verified_map: Dict[Tuple[str, str], List[int]],
 ) -> TokenResult:
     exact_hits = search_in_pages(tok, cited_pages, exact_pages)
     if exact_hits:
@@ -322,21 +324,42 @@ def evaluate_token(
     glyph_hits = search_in_pages(tok, cited_pages, glyph_pages)
     if glyph_hits:
         return TokenResult(tok, section, "FOUND_OCR_GLYPH", glyph_hits, marked)
+    norm_tok = normalize_text(tok).replace("~", "-")
+    iv_pages = [p for p in image_verified_map.get((entry_id, norm_tok), []) if p in cited_pages]
+    if iv_pages:
+        return TokenResult(tok, section, "VERIFIED_BY_IMAGE", iv_pages, marked)
     if marked and section == "supplement":
         return TokenResult(tok, section, "UNLISTED_MARKED", [], marked)
     return TokenResult(tok, section, "NOT_FOUND", [], marked)
+
+
+def load_image_verified_map(meta_path: pathlib.Path | None) -> Dict[Tuple[str, str], List[int]]:
+    iv_map: Dict[Tuple[str, str], List[int]] = {}
+    if not meta_path or not meta_path.exists():
+        return iv_map
+    data = json.loads(meta_path.read_text(encoding="utf-8"))
+    for rec in data.get("image_verified_numbers", []):
+        eid = str(rec.get("entry_id", "")).strip()
+        tok = normalize_text(str(rec.get("token", "")).strip()).replace("~", "-")
+        pno = int(rec.get("pdf_page", 0))
+        if eid and tok and pno > 0:
+            iv_map.setdefault((eid, tok), []).append(pno)
+    return iv_map
 
 
 def main() -> int:
     ap = argparse.ArgumentParser(description="Verify numeric values in technique dictionary against private OCR.")
     ap.add_argument("--dict", required=True, help="Path to technique dictionary .md file")
     ap.add_argument("--ocr", required=True, help="Path to private OCR .jsonl file (outside repo)")
+    ap.add_argument("--meta", help="Optional path to companion .json metadata containing image_verified_numbers (auto-detected if sibling .json exists)")
     ap.add_argument("--out", help="Optional path to save structured JSON verification report (no OCR text)")
     ap.add_argument("--strict", action="store_true", help="Exit non-zero if any NOT_FOUND token exists")
     args = ap.parse_args()
 
     md_path = pathlib.Path(args.dict)
     ocr_path = pathlib.Path(args.ocr)
+    meta_path = pathlib.Path(args.meta) if args.meta else md_path.with_suffix(".json")
+    image_verified_map = load_image_verified_map(meta_path if meta_path.exists() else None)
     md_text = md_path.read_text(encoding="utf-8")
     exact_pages, glyph_pages = load_ocr_pages(ocr_path)
 
@@ -347,6 +370,7 @@ def main() -> int:
     counts = {
         "FOUND_EXACT": 0,
         "FOUND_OCR_GLYPH": 0,
+        "VERIFIED_BY_IMAGE": 0,
         "UNLISTED_MARKED": 0,
         "NOT_FOUND_TABLE": 0,
         "NOT_FOUND_BOOK": 0,
@@ -364,9 +388,9 @@ def main() -> int:
 
         for sec_name, sec_text, sec_pages in sections_to_check:
             for tok, marked in extract_numeric_claims(sec_text):
-                tr = evaluate_token(tok, marked, sec_name, sec_pages, exact_pages, glyph_pages)
+                tr = evaluate_token(entry_id, tok, marked, sec_name, sec_pages, exact_pages, glyph_pages, image_verified_map)
                 er.tokens.append(tr)
-                if tr.status in ("FOUND_EXACT", "FOUND_OCR_GLYPH", "UNLISTED_MARKED"):
+                if tr.status in ("FOUND_EXACT", "FOUND_OCR_GLYPH", "VERIFIED_BY_IMAGE", "UNLISTED_MARKED"):
                     counts[tr.status] += 1
                 else:
                     counts[f"NOT_FOUND_{sec_name.upper()}"] += 1
@@ -376,6 +400,7 @@ def main() -> int:
     print(f"Entries checked: {len(reports)} (table rows: {len(table_rows)})")
     print(f"FOUND_EXACT: {counts['FOUND_EXACT']}")
     print(f"FOUND_OCR_GLYPH: {counts['FOUND_OCR_GLYPH']}")
+    print(f"VERIFIED_BY_IMAGE: {counts['VERIFIED_BY_IMAGE']}")
     print(f"UNLISTED_MARKED (supplement): {counts['UNLISTED_MARKED']}")
     print(f"NOT_FOUND (table): {counts['NOT_FOUND_TABLE']}")
     print(f"NOT_FOUND (book): {counts['NOT_FOUND_BOOK']}")

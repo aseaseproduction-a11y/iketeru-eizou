@@ -1,8 +1,17 @@
 {
-  "dictionary_version": "1.1",
+  "dictionary_version": "1.2",
   "purpose": "reproducible_decomposition_technique_dictionary_only",
   "never_use_for_scoring_criteria": true,
   "numeric_verification_script": "scripts/verify-technique-dictionary-numbers.py",
+  "image_verified_numbers": [
+    {
+      "entry_id": "COLOR-003",
+      "token": "101-110%",
+      "pdf_page": 108,
+      "book_page": 86,
+      "reason": "PDF p.108（本書 p.86）本文の画像を直接目視確認し『101〜110%』の記載を確認（OCRで数字が崩れたため）"
+    }
+  ],
   "book": {
     "order": 1,
     "title_ja": "カラーコレクションハンドブック 第2版",
