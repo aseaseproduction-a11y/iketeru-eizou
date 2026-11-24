@@ -25,7 +25,17 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, "..");
 const CLAIMS_DIR = path.join(REPO_ROOT, "analysis", "claims");
+const CACHE_DIR = process.env.IKETERU_VIDEO_CACHE_DIR || "D:\\マイドライブ\\iketeru_videos";
 const MAX_BATCH_SIZE = 200;
+
+function findCachedFile(id) {
+  if (!fs.existsSync(CACHE_DIR)) return null;
+  for (const ext of [".mp4", ".mov", ".mkv", ".webm", ".m4v"]) {
+    const p = path.join(CACHE_DIR, `${id}${ext}`);
+    if (fs.existsSync(p) && fs.statSync(p).size > 0) return p;
+  }
+  return null;
+}
 
 function parseArgs(argv) {
   const args = {};
@@ -261,8 +271,11 @@ async function main() {
     const worker = String(args["worker"] || os.hostname());
     const priority = String(args["priority"] || "P1_private_rating");
     const batchSize = Math.max(1, Math.min(MAX_BATCH_SIZE, parseInt(args["batch-size"] || "200", 10)));
+    const batchIndex = args["batch-index"] ? parseInt(args["batch-index"], 10) : null;
     const runId = String(args["run-id"] || generateRunId());
     const idListPath = args["id-list"] ? path.resolve(REPO_ROOT, String(args["id-list"])) : null;
+    const nonYoutube = Boolean(args["non-youtube"]);
+    const cachedOnly = Boolean(args["cached-only"]);
     const dryRun = Boolean(args["dry-run"]);
 
     const claims = loadAllClaims();
@@ -274,6 +287,7 @@ async function main() {
     const rows = await fetchTidbVideos();
     const byId = new Map(rows.map((r) => [String(r.id), r]));
     const candidates = [];
+    const matchesPlatform = (r) => (nonYoutube ? !isYoutubeRow(r) : isYoutubeRow(r));
 
     if (priority === "P0_craft_recipes") {
       const targetPath = idListPath || path.join(REPO_ROOT, "analysis", "phase3_craft_recipes_target_ids.json");
@@ -282,29 +296,45 @@ async function main() {
       for (const vid of ids) {
         const r = byId.get(vid);
         if (!r || r.calibratedScore != null || check.ownerById.has(vid)) continue;
-        if (!isYoutubeRow(r)) continue;
+        if (!matchesPlatform(r)) continue;
+        if (cachedOnly && !findCachedFile(vid)) continue;
         candidates.push(vid);
       }
     } else if (priority === "P1_private_rating") {
       for (const r of rows) {
         const vid = String(r.id);
         if (r.privateRating == null || r.calibratedScore != null || check.ownerById.has(vid)) continue;
-        if (!isYoutubeRow(r)) continue;
+        if (!matchesPlatform(r)) continue;
+        if (cachedOnly && !findCachedFile(vid)) continue;
         candidates.push(vid);
       }
     } else {
       for (const r of rows) {
         const vid = String(r.id);
         if (r.calibratedScore != null || check.ownerById.has(vid)) continue;
-        if (!isYoutubeRow(r)) continue;
+        if (!matchesPlatform(r)) continue;
+        if (cachedOnly && !findCachedFile(vid)) continue;
         candidates.push(vid);
       }
     }
 
     const chosen = candidates.slice(0, batchSize);
     if (chosen.length === 0) {
-      console.log(JSON.stringify({ message: "No unclaimed uncalibrated YouTube videos available for this priority.", priority, active_locked: check.totalLockedIds }, null, 2));
+      console.log(JSON.stringify({ message: "No matching unclaimed uncalibrated videos available for this priority/filter.", priority, non_youtube: nonYoutube, cached_only: cachedOnly, cache_dir: CACHE_DIR, active_locked: check.totalLockedIds }, null, 2));
       return;
+    }
+
+    let youtubeCount = 0;
+    let nonYoutubeCount = 0;
+    let cachedMatchCount = 0;
+    const platformBreakdown = {};
+    for (const vid of chosen) {
+      const r = byId.get(vid);
+      if (isYoutubeRow(r)) youtubeCount++;
+      else nonYoutubeCount++;
+      if (findCachedFile(vid)) cachedMatchCount++;
+      const pKey = String(r?.platform || "unknown").toLowerCase();
+      platformBreakdown[pKey] = (platformBreakdown[pKey] || 0) + 1;
     }
 
     const claim = {
@@ -312,6 +342,8 @@ async function main() {
       run_id: runId,
       worker,
       priority,
+      batch_index: batchIndex,
+      filters: { non_youtube: nonYoutube, cached_only: cachedOnly },
       status: "active",
       claimed_at: new Date().toISOString(),
       video_ids: chosen,
@@ -321,21 +353,30 @@ async function main() {
       fs.writeFileSync(path.join(CLAIMS_DIR, `${runId}.json`), JSON.stringify(claim, null, 2) + "\n", "utf8");
       fs.writeFileSync(
         path.join(CLAIMS_DIR, `${runId}_ids.json`),
-        JSON.stringify({ run_id: runId, worker, priority, video_ids: chosen }, null, 2) + "\n",
+        JSON.stringify({ run_id: runId, worker, priority, batch_index: batchIndex, video_ids: chosen }, null, 2) + "\n",
         "utf8"
       );
     }
 
+    const effectiveBatch = batchIndex ?? 1;
+    const noDlFlag = cachedOnly ? " --no-download" : "";
     console.log(JSON.stringify({
       dry_run: dryRun,
       run_id: runId,
       worker,
       priority,
+      batch_index: batchIndex,
+      cache_dir: CACHE_DIR,
+      filters: { non_youtube: nonYoutube, cached_only: cachedOnly },
       claimed_count: chosen.length,
+      youtube_count: youtubeCount,
+      non_youtube_count: nonYoutubeCount,
+      cached_match_count: cachedMatchCount,
+      platform_breakdown: platformBreakdown,
       remaining_unclaimed_in_pool: candidates.length - chosen.length,
       claim_file: `analysis/claims/${runId}.json`,
       id_list_file: `analysis/claims/${runId}_ids.json`,
-      next_prepare_cmd: `node scripts/prepare-phase3-batch.mjs --priority P0_craft_recipes --id-list analysis/claims/${runId}_ids.json --batch 1 --batch-size ${chosen.length} --uncalibrated-head --run-id ${runId} --frozen-config analysis/phase2_frozen_config_v1.json`,
+      next_prepare_cmd: `node scripts/prepare-phase3-batch.mjs --priority ${priority} --id-list analysis/claims/${runId}_ids.json --batch ${effectiveBatch} --batch-size ${chosen.length} --uncalibrated-head --run-id ${runId} --frozen-config analysis/phase2_frozen_config_v1.json${noDlFlag}`,
     }, null, 2));
     return;
   }
@@ -344,7 +385,7 @@ async function main() {
   node scripts/claim-phase3-batch.mjs --status
   node scripts/claim-phase3-batch.mjs --verify
   node scripts/claim-phase3-batch.mjs --register-run <run_id> [--worker <name>]
-  node scripts/claim-phase3-batch.mjs --claim --worker <name> --priority <P0_craft_recipes|P1_private_rating|ALL> [--batch-size 200] [--dry-run]
+  node scripts/claim-phase3-batch.mjs --claim --worker <name> --priority <P0_craft_recipes|P1_private_rating|ALL> [--batch-size 200] [--batch-index <N>] [--non-youtube] [--cached-only] [--dry-run]
   node scripts/claim-phase3-batch.mjs --complete <run_id>
   node scripts/claim-phase3-batch.mjs --release --run-id <run_id> [--reason <text>]`);
 }

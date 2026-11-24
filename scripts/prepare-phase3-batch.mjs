@@ -39,7 +39,7 @@ import { isBotCheckError, validateSplitGuard } from "./prepare-phase2-run.mjs";
 
 const execFileAsync = promisify(execFile);
 const REPO_ROOT = "E:\\iketeru-eizou";
-const CACHE_DIR = "D:\\マイドライブ\\iketeru_videos";
+const CACHE_DIR = process.env.IKETERU_VIDEO_CACHE_DIR || "D:\\マイドライブ\\iketeru_videos";
 const BLIND_ROOT = "E:\\iketeru_blind_eval";
 
 function parseArgs(argv) {
@@ -319,7 +319,7 @@ async function fetchBatchFromTidb({ priority, batchIndex, batchSize, idListPath 
       cls: classifyVideoForCalibration(r),
     }));
     let tierRows;
-    if (priority === "P0_craft_recipes" && idListPath) {
+    if (idListPath) {
       const idDoc = JSON.parse(fs.readFileSync(path.resolve(REPO_ROOT, idListPath), "utf8"));
       const orderedIds = Array.isArray(idDoc) ? idDoc : idDoc.video_ids || [];
       const byId = new Map(classified.map((x) => [String(x.row.id), x]));
@@ -373,6 +373,8 @@ async function main() {
   const runId = args["run-id"] || generateRunId();
   const resume = Boolean(args["resume"]);
   const dryRun = Boolean(args["dry-run"]);
+  const noDownload = Boolean(args["no-download"]);
+  const limitStage = args["limit-stage"] ? parseInt(args["limit-stage"], 10) : null;
   const minWaitSec = Number(args["min-wait-sec"] || 15);
   const maxWaitSec = Number(args["max-wait-sec"] || 30);
   const concurrency = Math.max(1, Math.min(8, parseInt(args["concurrency"] || "4", 10)));
@@ -430,7 +432,7 @@ async function main() {
   const cachedCount = targetIds.filter((id) => Boolean(findCachedFile(id))).length;
 
   console.log(
-    `[Phase 3 C Prepare] priority=${priority} batch=${batchIndex} total=${targetIds.length} cached=${cachedCount} missing=${targetIds.length - cachedCount} run_id=${runId} concurrency=${concurrency}`
+    `[Phase 3 C Prepare] priority=${priority} batch=${batchIndex} total=${targetIds.length} cached=${cachedCount} missing=${targetIds.length - cachedCount} run_id=${runId} concurrency=${concurrency} cache_dir=${CACHE_DIR} no_download=${noDownload} limit_stage=${limitStage ?? "all"}`
   );
 
   if (dryRun) {
@@ -491,6 +493,9 @@ async function main() {
 
   // Step A: Download any uncached files strictly sequentially with 15-30s random wait
   const uncachedIds = pendingIds.filter((id) => !findCachedFile(id));
+  if (noDownload && uncachedIds.length > 0) {
+    throw new Error(`--no-download is set, refusing to invoke yt-dlp for ${uncachedIds.length} uncached video(s): ${uncachedIds.slice(0, 5).join(", ")}`);
+  }
   for (const videoId of uncachedIds) {
     const meta = itemById.get(videoId);
     const blindId = blindMap.video_to_blind[videoId];
@@ -520,7 +525,9 @@ async function main() {
   }
 
   // Step B: Locally process & stage all available cached files with bounded CPU concurrency
-  const readyIds = pendingIds.filter((id) => Boolean(findCachedFile(id)));
+  const allReadyIds = pendingIds.filter((id) => Boolean(findCachedFile(id)));
+  const readyIds = limitStage && limitStage > 0 ? allReadyIds.slice(0, limitStage) : allReadyIds;
+  console.log(`[Phase 3 C Stage] yt_dlp_downloads=${downloadsDone} staging=${readyIds.length}/${allReadyIds.length} pending`);
   let nextIdx = 0;
 
   async function processOne(videoId) {
