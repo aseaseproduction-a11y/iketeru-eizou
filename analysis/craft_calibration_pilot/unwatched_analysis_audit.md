@@ -27,7 +27,7 @@
 | 区分 | SQLite（総数 5,701本） | TiDB（総数 5,653本） | 備考 |
 |---|---:|---:|---|
 | **確定・未視聴分析 合計（B1+B2+B3）** | **259本** | **257本** | Vimeo 237本が大多数（91.5%）／Phase 3 校正済みとの重複 **0本** |
-| 　└ `B1` メタデータ単独一次評価 | 249本 | 249本 | SQLite・TiDB 完全一致（Vimeo 236 / YouTube 13） |
+| 　└ `B1` メタデータ単独一次評価 | 249本 | 249本 | SQLite・TiDB 完全一致（Vimeo 237 / YouTube 12） |
 | 　└ `B2` 動画未取得・シート未生成 | 2本 | 0本 | `G4FxpJVuIfc`, `JVlAJlvaT0Y`（ローカル SQLite のみ存在） |
 | 　└ `B3` 1次速報・定型文のみ | 8本 | 8本 | SQLite・TiDB 完全一致（すべて YouTube） |
 | **要確認 `C`（実測値なし短文1次速報）** | **21本** | **17本** | 差分4本はローカル SQLite のみ存在 |
@@ -71,7 +71,7 @@
 | `lJJ2MJlIazI` | youtube | S | 556 | キリン 午後の紅茶　「遠くの町の夏の午後」篇　60秒 |
 
 ### 4-3. `B1` メタデータ単独一次評価テンプレート（全 249本・SQLite/TiDB 一致）
-※全 249本の完全リストは `unwatched_analysis_audit.json` の `confirmed_unwatched_entries_sqlite` に格納。うち YouTube 全 13本＋Vimeo 代表 15本（Britbox `1069311388` 含む）を以下に抜粋：
+※全 249本の完全リストは `unwatched_analysis_audit.json` の `confirmed_unwatched_entries_sqlite` に格納。うち YouTube 全 12本＋Vimeo 代表 15本（Britbox `1069311388` 含む）を以下に抜粋：
 
 | Video ID | Platform | 旧評価 | タイトル |
 |---|---|---|---|

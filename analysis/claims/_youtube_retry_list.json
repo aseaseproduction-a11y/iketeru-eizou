@@ -1,6 +1,6 @@
 {
-  "schema_version": 1,
-  "generated_at": "2026-11-24T20:53:03+09:00",
+  "schema_version": 2,
+  "generated_at": "2026-11-24T21:22:55+09:00",
   "generated_by": "chibatmute",
   "filename_note": "先頭アンダースコア `_` は analysis/claims/_skip_list.json / _apply_lock.json と同じ規約（claim-phase3-batch.mjs --verify がバッチ予約JSONと誤認しないため）。",
   "retry_policy_rules": {
@@ -10,19 +10,29 @@
     "execution_status": "awaiting_user_approval (現在はリスト作成まで。再試行はユーザー指示待ち)"
   },
   "summary": {
-    "total_pending_youtube_failures": 60,
-    "retry_allowed_count": 58,
+    "total_pending_youtube_entries": 103,
+    "total_pending_youtube_failures": 103,
+    "retry_allowed_count": 101,
     "permanent_exclude_candidate_count": 2,
     "already_recovered_in_phase3_excluded_count": 7,
+    "by_list_purpose": {
+      "phase3_download_failure": 60,
+      "unwatched_analysis_reanalysis": 43
+    },
     "by_failure_category": {
       "bot_check": 44,
       "format_unavailable": 14,
       "unavailable_or_private": 1,
-      "decode_corrupted": 1
+      "decode_corrupted": 1,
+      "unwatched_c_suspect_short": 21,
+      "unwatched_b1_metadata_only": 12,
+      "unwatched_b2_missing_video": 2,
+      "unwatched_b3_triage_boilerplate": 8
     },
     "by_latest_worker_and_run": {
       "CHIBA-PC / run_20261124_145350": 44,
-      "chibatmute / run_20261124_080300": 16
+      "chibatmute / run_20261124_080300": 16,
+      "chibatmute / audit_20261124_unwatched": 43
     }
   },
   "already_recovered_in_phase3": [
@@ -75,7 +85,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "D6flbP5cO_4",
@@ -96,7 +109,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "EzEFCikg4tk",
@@ -117,7 +133,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "ICs3wEegMgw",
@@ -138,7 +157,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "ITfpkCiJIEY",
@@ -159,7 +181,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "M7pWj2hq_f8",
@@ -180,7 +205,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "OUQ6NV9r2Lk",
@@ -201,7 +229,10 @@
           "attempted_at": "2026-11-24T00:44:15.580Z",
           "error": "ERROR: [youtube] OUQ6NV9r2Lk: Requested format is not available. Use --list-formats for a list of available formats"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "RFYP-tY6xOg",
@@ -222,7 +253,10 @@
           "attempted_at": "2026-11-24T00:44:15.580Z",
           "error": "ERROR: [youtube] RFYP-tY6xOg: Requested format is not available. Use --list-formats for a list of available formats"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "SWzfm9PED6s",
@@ -243,7 +277,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "U-FuKvu5RV0",
@@ -264,7 +301,10 @@
           "attempted_at": "2026-11-24T00:44:15.580Z",
           "error": "ERROR: [youtube] U-FuKvu5RV0: Requested format is not available. Use --list-formats for a list of available formats"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "UccHEifTIo4",
@@ -285,7 +325,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "V8FGju_xYjo",
@@ -306,7 +349,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "W_yKEhESgUI",
@@ -327,7 +373,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "YH2qyPanqK4",
@@ -348,7 +397,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "_OUWtPhDQpk",
@@ -369,7 +421,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "dWvAJMYdTFI",
@@ -390,7 +445,10 @@
           "attempted_at": "2026-11-24T00:44:15.580Z",
           "error": "ERROR: [youtube] dWvAJMYdTFI: Requested format is not available. Use --list-formats for a list of available formats"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "drPEdug9fZk",
@@ -411,7 +469,10 @@
           "attempted_at": "2026-11-24T00:44:15.580Z",
           "error": "ERROR: [youtube] drPEdug9fZk: Requested format is not available. Use --list-formats for a list of available formats"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "dsXcE8jvESw",
@@ -432,7 +493,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "eEiMPYiNZAo",
@@ -453,7 +517,10 @@
           "attempted_at": "2026-11-24T00:44:15.580Z",
           "error": "ERROR: [youtube] eEiMPYiNZAo: Requested format is not available. Use --list-formats for a list of available formats"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "efXqozK4A40",
@@ -474,7 +541,10 @@
           "attempted_at": "2026-11-24T00:44:15.580Z",
           "error": "ERROR: [youtube] efXqozK4A40: Requested format is not available. Use --list-formats for a list of available formats"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "fvbEnWLRo1s",
@@ -495,7 +565,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "gpBFiG_hSFs",
@@ -516,7 +589,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "iK725ck2NIk",
@@ -537,7 +613,10 @@
           "attempted_at": "2026-11-24T00:44:15.580Z",
           "error": "ERROR: [youtube] iK725ck2NIk: Requested format is not available. Use --list-formats for a list of available formats"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "jfNr2Gju2Mk",
@@ -558,7 +637,10 @@
           "attempted_at": "2026-11-24T00:44:15.580Z",
           "error": "ERROR: [youtube] jfNr2Gju2Mk: This video is not available"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "kw7D7Il13_k",
@@ -579,7 +661,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "lB3mij3gmVo",
@@ -600,7 +685,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "mI9MSQGlbH0",
@@ -621,7 +709,10 @@
           "attempted_at": "2026-11-24T00:44:15.580Z",
           "error": "ERROR: [youtube] mI9MSQGlbH0: Requested format is not available. Use --list-formats for a list of available formats"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "oXRPnu9nBpc",
@@ -642,7 +733,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "qe29NgNqJZw",
@@ -663,7 +757,10 @@
           "attempted_at": "2026-11-24T00:44:15.580Z",
           "error": "ERROR: [youtube] qe29NgNqJZw: Requested format is not available. Use --list-formats for a list of available formats"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "rON_9zSnU2k",
@@ -684,7 +781,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "rolo_BHlDmQ",
@@ -705,7 +805,10 @@
           "attempted_at": "2026-11-24T00:44:15.580Z",
           "error": "ERROR: [youtube] rolo_BHlDmQ: Requested format is not available. Use --list-formats for a list of available formats"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "t5jPgM_VKZo",
@@ -726,7 +829,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "tk9mbNFEKZw",
@@ -747,7 +853,10 @@
           "attempted_at": "2026-11-24T00:44:15.580Z",
           "error": "ERROR: [youtube] tk9mbNFEKZw: Requested format is not available. Use --list-formats for a list of available formats"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "tpWIK6D-yVM",
@@ -768,7 +877,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "vS6wzjpCvec",
@@ -789,7 +901,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "vpyeQeTDGFA",
@@ -810,7 +925,10 @@
           "attempted_at": "2026-11-24T00:44:15.580Z",
           "error": "ERROR: [youtube] vpyeQeTDGFA: Requested format is not available. Use --list-formats for a list of available formats"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "w8QgUN09cqk",
@@ -831,7 +949,10 @@
           "attempted_at": "2026-11-24T00:44:15.580Z",
           "error": "ERROR: [youtube] w8QgUN09cqk: Requested format is not available. Use --list-formats for a list of available formats"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "wRXAEZ0RKCw",
@@ -852,7 +973,10 @@
           "attempted_at": "2026-11-24T00:44:15.580Z",
           "error": "[h264 @ 000001d9063417c0] Invalid NAL unit size (1245184 > 47292). [h264 @ 000001d9063417c0] missing picture in access unit with size 47296 [h264 @ 000001d9063417c0] Invalid NAL unit size (1245184 > 47292). [h264 @ 00000"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "wx_H_pxbwdE",
@@ -873,7 +997,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "x6_mbnsh6VU",
@@ -894,7 +1021,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "x7mSpHbqOGs",
@@ -915,7 +1045,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "xRU1XXHIpIc",
@@ -936,7 +1069,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "xnWku2LSI1o",
@@ -957,7 +1093,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "xpn5Ax2pz14",
@@ -978,7 +1117,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "xtpEqWX-KuI",
@@ -999,7 +1141,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "xw5u-NoA3Ec",
@@ -1020,7 +1165,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "yRv-MikY3d0",
@@ -1041,7 +1189,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "yTASHD-MWwE",
@@ -1062,7 +1213,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "yVX34hPLKtI",
@@ -1083,7 +1237,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "yow8PBNcINU",
@@ -1104,7 +1261,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "yu3YGphrBbI",
@@ -1125,7 +1285,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "z02-yCIHPCY",
@@ -1146,7 +1309,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "z4r3l2aAdrg",
@@ -1167,7 +1333,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "zFvChQ6dSdk",
@@ -1188,7 +1357,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "zJtsfgrJiWE",
@@ -1209,7 +1381,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "zP5fTB_MAXU",
@@ -1230,7 +1405,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "zPDMm7XUpkI",
@@ -1251,7 +1429,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "zRJS0P1GwC4",
@@ -1272,7 +1453,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "zSPMR9UdKuI",
@@ -1293,7 +1477,10 @@
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
         }
-      ]
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
     },
     {
       "video_id": "zyktN7x_DSQ",
@@ -1313,6 +1500,1170 @@
           "worker": "CHIBA-PC",
           "attempted_at": "2026-11-24T06:13:10.543Z",
           "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ],
+      "list_purpose": "phase3_download_failure",
+      "unwatched_category": null,
+      "reanalysis_priority": "after_batch2_user_approval"
+    },
+    {
+      "video_id": "DVTp2N1wuzw",
+      "title": "＜Campus＞モーションロゴ - YouTube",
+      "video_url": "https://www.youtube.com/watch?v=DVTp2N1wuzw",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "suspect_C_short_triage_no_probe_metrics",
+      "analysis_observation_scope": "triage_unverified_short",
+      "reanalysis_priority": "first_verify_black_or_white",
+      "present_in_tidb": true,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_c_suspect_short",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "要確認C（実測値なしの短文1次速報）。まず再分析で実視聴か未視聴かの白黒をつける対象。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:suspect_C_short_triage_no_probe_metrics",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "first_verify_black_or_white",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:suspect_C_short_triage_no_probe_metrics (in_tidb=True)"
+        }
+      ]
+    },
+    {
+      "video_id": "FlqDBh8QjZk",
+      "title": "TVアニメ「正反対な君と僕」第2期ノンクレジットエンディング映像",
+      "video_url": "https://www.youtube.com/watch?v=FlqDBh8QjZk",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "suspect_C_short_triage_no_probe_metrics",
+      "analysis_observation_scope": "triage_unverified_short",
+      "reanalysis_priority": "first_verify_black_or_white",
+      "present_in_tidb": true,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_c_suspect_short",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "要確認C（実測値なしの短文1次速報）。まず再分析で実視聴か未視聴かの白黒をつける対象。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:suspect_C_short_triage_no_probe_metrics",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "first_verify_black_or_white",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:suspect_C_short_triage_no_probe_metrics (in_tidb=True)"
+        }
+      ]
+    },
+    {
+      "video_id": "HCC-0sr_-lo",
+      "title": "sumika / 赤春花 (feat. 幾田りら)【Music Video】",
+      "video_url": "https://www.youtube.com/watch?v=HCC-0sr_-lo",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "suspect_C_short_triage_no_probe_metrics",
+      "analysis_observation_scope": "triage_unverified_short",
+      "reanalysis_priority": "first_verify_black_or_white",
+      "present_in_tidb": true,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_c_suspect_short",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "要確認C（実測値なしの短文1次速報）。まず再分析で実視聴か未視聴かの白黒をつける対象。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:suspect_C_short_triage_no_probe_metrics",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "first_verify_black_or_white",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:suspect_C_short_triage_no_probe_metrics (in_tidb=True)"
+        }
+      ]
+    },
+    {
+      "video_id": "ISrRQs87DnI",
+      "title": "【スペシャル映像】漫画『君と宇宙を歩くために』×BUMP OF CHICKEN『セントエルモの火』",
+      "video_url": "https://www.youtube.com/watch?v=ISrRQs87DnI",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "suspect_C_short_triage_no_probe_metrics",
+      "analysis_observation_scope": "triage_unverified_short",
+      "reanalysis_priority": "first_verify_black_or_white",
+      "present_in_tidb": false,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_c_suspect_short",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "要確認C（実測値なしの短文1次速報）。まず再分析で実視聴か未視聴かの白黒をつける対象。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:suspect_C_short_triage_no_probe_metrics",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "first_verify_black_or_white",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:suspect_C_short_triage_no_probe_metrics (in_tidb=False)"
+        }
+      ]
+    },
+    {
+      "video_id": "JcDm0pNQrI8",
+      "title": "circus / 鏑木ろこ cover",
+      "video_url": "https://www.youtube.com/watch?v=JcDm0pNQrI8",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "suspect_C_short_triage_no_probe_metrics",
+      "analysis_observation_scope": "triage_unverified_short",
+      "reanalysis_priority": "first_verify_black_or_white",
+      "present_in_tidb": true,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_c_suspect_short",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "要確認C（実測値なしの短文1次速報）。まず再分析で実視聴か未視聴かの白黒をつける対象。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:suspect_C_short_triage_no_probe_metrics",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "first_verify_black_or_white",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:suspect_C_short_triage_no_probe_metrics (in_tidb=True)"
+        }
+      ]
+    },
+    {
+      "video_id": "QcDn6TATqOw",
+      "title": "サントリー緑茶 伊右衛門 特茶『特茶研究所　テクテク歩く』篇 15秒 ​本木雅弘 上白石萌音 サントリーCM",
+      "video_url": "https://www.youtube.com/watch?v=QcDn6TATqOw",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "suspect_C_short_triage_no_probe_metrics",
+      "analysis_observation_scope": "triage_unverified_short",
+      "reanalysis_priority": "first_verify_black_or_white",
+      "present_in_tidb": true,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_c_suspect_short",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "要確認C（実測値なしの短文1次速報）。まず再分析で実視聴か未視聴かの白黒をつける対象。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:suspect_C_short_triage_no_probe_metrics",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "first_verify_black_or_white",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:suspect_C_short_triage_no_probe_metrics (in_tidb=True)"
+        }
+      ]
+    },
+    {
+      "video_id": "Rz8_lGd2JzQ",
+      "title": "【MV】Genesis - 3SKM",
+      "video_url": "https://www.youtube.com/watch?v=Rz8_lGd2JzQ",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "suspect_C_short_triage_no_probe_metrics",
+      "analysis_observation_scope": "triage_unverified_short",
+      "reanalysis_priority": "first_verify_black_or_white",
+      "present_in_tidb": true,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_c_suspect_short",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "要確認C（実測値なしの短文1次速報）。まず再分析で実視聴か未視聴かの白黒をつける対象。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:suspect_C_short_triage_no_probe_metrics",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "first_verify_black_or_white",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:suspect_C_short_triage_no_probe_metrics (in_tidb=True)"
+        }
+      ]
+    },
+    {
+      "video_id": "TwumA6YhQp4",
+      "title": "TVアニメ『ヤニねこ』ノンクレジットエンディング映像｜ネクライトーキー「煙とブルー」",
+      "video_url": "https://www.youtube.com/watch?v=TwumA6YhQp4",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "suspect_C_short_triage_no_probe_metrics",
+      "analysis_observation_scope": "triage_unverified_short",
+      "reanalysis_priority": "first_verify_black_or_white",
+      "present_in_tidb": true,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_c_suspect_short",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "要確認C（実測値なしの短文1次速報）。まず再分析で実視聴か未視聴かの白黒をつける対象。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:suspect_C_short_triage_no_probe_metrics",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "first_verify_black_or_white",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:suspect_C_short_triage_no_probe_metrics (in_tidb=True)"
+        }
+      ]
+    },
+    {
+      "video_id": "UOnnmfdvRmk",
+      "title": "「なるほど使える、経営にビジネス・カード」（資金繰り篇）",
+      "video_url": "https://www.youtube.com/watch?v=UOnnmfdvRmk",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "suspect_C_short_triage_no_probe_metrics",
+      "analysis_observation_scope": "triage_unverified_short",
+      "reanalysis_priority": "first_verify_black_or_white",
+      "present_in_tidb": true,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_c_suspect_short",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "要確認C（実測値なしの短文1次速報）。まず再分析で実視聴か未視聴かの白黒をつける対象。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:suspect_C_short_triage_no_probe_metrics",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "first_verify_black_or_white",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:suspect_C_short_triage_no_probe_metrics (in_tidb=True)"
+        }
+      ]
+    },
+    {
+      "video_id": "W73yqEnXBmA",
+      "title": "保育・お子様向け食育ムービーのご紹介　フル",
+      "video_url": "https://www.youtube.com/watch?v=W73yqEnXBmA",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "suspect_C_short_triage_no_probe_metrics",
+      "analysis_observation_scope": "triage_unverified_short",
+      "reanalysis_priority": "first_verify_black_or_white",
+      "present_in_tidb": true,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_c_suspect_short",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "要確認C（実測値なしの短文1次速報）。まず再分析で実視聴か未視聴かの白黒をつける対象。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:suspect_C_short_triage_no_probe_metrics",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "first_verify_black_or_white",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:suspect_C_short_triage_no_probe_metrics (in_tidb=True)"
+        }
+      ]
+    },
+    {
+      "video_id": "XPm7zy-X_fI",
+      "title": "VOLTA - Blender Short",
+      "video_url": "https://www.youtube.com/watch?v=XPm7zy-X_fI",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "suspect_C_short_triage_no_probe_metrics",
+      "analysis_observation_scope": "triage_unverified_short",
+      "reanalysis_priority": "first_verify_black_or_white",
+      "present_in_tidb": false,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_c_suspect_short",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "要確認C（実測値なしの短文1次速報）。まず再分析で実視聴か未視聴かの白黒をつける対象。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:suspect_C_short_triage_no_probe_metrics",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "first_verify_black_or_white",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:suspect_C_short_triage_no_probe_metrics (in_tidb=False)"
+        }
+      ]
+    },
+    {
+      "video_id": "bKA-ePajnTY",
+      "title": "こんにちは。Campusです。 - YouTube",
+      "video_url": "https://www.youtube.com/watch?v=bKA-ePajnTY",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "suspect_C_short_triage_no_probe_metrics",
+      "analysis_observation_scope": "triage_unverified_short",
+      "reanalysis_priority": "first_verify_black_or_white",
+      "present_in_tidb": true,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_c_suspect_short",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "要確認C（実測値なしの短文1次速報）。まず再分析で実視聴か未視聴かの白黒をつける対象。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:suspect_C_short_triage_no_probe_metrics",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "first_verify_black_or_white",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:suspect_C_short_triage_no_probe_metrics (in_tidb=True)"
+        }
+      ]
+    },
+    {
+      "video_id": "cUvp3ERw-Kg",
+      "title": "【陰キャギャルでもイキがりたい！】第4巻発売記念PV໒꒱‧₊˚ 7月28日(火)発売！",
+      "video_url": "https://www.youtube.com/watch?v=cUvp3ERw-Kg",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "suspect_C_short_triage_no_probe_metrics",
+      "analysis_observation_scope": "triage_unverified_short",
+      "reanalysis_priority": "first_verify_black_or_white",
+      "present_in_tidb": true,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_c_suspect_short",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "要確認C（実測値なしの短文1次速報）。まず再分析で実視聴か未視聴かの白黒をつける対象。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:suspect_C_short_triage_no_probe_metrics",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "first_verify_black_or_white",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:suspect_C_short_triage_no_probe_metrics (in_tidb=True)"
+        }
+      ]
+    },
+    {
+      "video_id": "cybOVzgtL2Q",
+      "title": "簒奪 / 重音テトSV",
+      "video_url": "https://www.youtube.com/watch?v=cybOVzgtL2Q",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "suspect_C_short_triage_no_probe_metrics",
+      "analysis_observation_scope": "triage_unverified_short",
+      "reanalysis_priority": "first_verify_black_or_white",
+      "present_in_tidb": true,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_c_suspect_short",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "要確認C（実測値なしの短文1次速報）。まず再分析で実視聴か未視聴かの白黒をつける対象。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:suspect_C_short_triage_no_probe_metrics",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "first_verify_black_or_white",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:suspect_C_short_triage_no_probe_metrics (in_tidb=True)"
+        }
+      ]
+    },
+    {
+      "video_id": "dUN8bvnygMQ",
+      "title": "PORSCHE 9HATE9 - BLENDER ANIMATION",
+      "video_url": "https://www.youtube.com/watch?v=dUN8bvnygMQ",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "suspect_C_short_triage_no_probe_metrics",
+      "analysis_observation_scope": "triage_unverified_short",
+      "reanalysis_priority": "first_verify_black_or_white",
+      "present_in_tidb": true,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_c_suspect_short",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "要確認C（実測値なしの短文1次速報）。まず再分析で実視聴か未視聴かの白黒をつける対象。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:suspect_C_short_triage_no_probe_metrics",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "first_verify_black_or_white",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:suspect_C_short_triage_no_probe_metrics (in_tidb=True)"
+        }
+      ]
+    },
+    {
+      "video_id": "i47RggTEuPQ",
+      "title": "キャンパスノート（青色ドットボーダー）商品紹介（横） - YouTube",
+      "video_url": "https://www.youtube.com/watch?v=i47RggTEuPQ",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "suspect_C_short_triage_no_probe_metrics",
+      "analysis_observation_scope": "triage_unverified_short",
+      "reanalysis_priority": "first_verify_black_or_white",
+      "present_in_tidb": true,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_c_suspect_short",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "要確認C（実測値なしの短文1次速報）。まず再分析で実視聴か未視聴かの白黒をつける対象。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:suspect_C_short_triage_no_probe_metrics",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "first_verify_black_or_white",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:suspect_C_short_triage_no_probe_metrics (in_tidb=True)"
+        }
+      ]
+    },
+    {
+      "video_id": "lR2gNpgl-G8",
+      "title": "CUBERU",
+      "video_url": "https://www.youtube.com/watch?v=lR2gNpgl-G8",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "suspect_C_short_triage_no_probe_metrics",
+      "analysis_observation_scope": "triage_unverified_short",
+      "reanalysis_priority": "first_verify_black_or_white",
+      "present_in_tidb": true,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_c_suspect_short",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "要確認C（実測値なしの短文1次速報）。まず再分析で実視聴か未視聴かの白黒をつける対象。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:suspect_C_short_triage_no_probe_metrics",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "first_verify_black_or_white",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:suspect_C_short_triage_no_probe_metrics (in_tidb=True)"
+        }
+      ]
+    },
+    {
+      "video_id": "noFwvq8FHoI",
+      "title": "彌生「お似合いだったのに石野陽子…かわいい妻🩷」# #志村けん #石野陽子#やきもち#かわいい🩷#志村けんの表情が違う",
+      "video_url": "https://www.youtube.com/watch?v=noFwvq8FHoI",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "suspect_C_short_triage_no_probe_metrics",
+      "analysis_observation_scope": "triage_unverified_short",
+      "reanalysis_priority": "first_verify_black_or_white",
+      "present_in_tidb": false,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_c_suspect_short",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "要確認C（実測値なしの短文1次速報）。まず再分析で実視聴か未視聴かの白黒をつける対象。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:suspect_C_short_triage_no_probe_metrics",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "first_verify_black_or_white",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:suspect_C_short_triage_no_probe_metrics (in_tidb=False)"
+        }
+      ]
+    },
+    {
+      "video_id": "qeddzEzDnic",
+      "title": "XR BALL＠TOKYO NODE “XR PARADE” created with TNXR",
+      "video_url": "https://www.youtube.com/watch?v=qeddzEzDnic",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "suspect_C_short_triage_no_probe_metrics",
+      "analysis_observation_scope": "triage_unverified_short",
+      "reanalysis_priority": "first_verify_black_or_white",
+      "present_in_tidb": false,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_c_suspect_short",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "要確認C（実測値なしの短文1次速報）。まず再分析で実視聴か未視聴かの白黒をつける対象。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:suspect_C_short_triage_no_probe_metrics",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "first_verify_black_or_white",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:suspect_C_short_triage_no_probe_metrics (in_tidb=False)"
+        }
+      ]
+    },
+    {
+      "video_id": "sG_ifd5hnHI",
+      "title": "MAKE HASTE CORP",
+      "video_url": "https://www.youtube.com/watch?v=sG_ifd5hnHI",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "suspect_C_short_triage_no_probe_metrics",
+      "analysis_observation_scope": "triage_unverified_short",
+      "reanalysis_priority": "first_verify_black_or_white",
+      "present_in_tidb": true,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_c_suspect_short",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "要確認C（実測値なしの短文1次速報）。まず再分析で実視聴か未視聴かの白黒をつける対象。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:suspect_C_short_triage_no_probe_metrics",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "first_verify_black_or_white",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:suspect_C_short_triage_no_probe_metrics (in_tidb=True)"
+        }
+      ]
+    },
+    {
+      "video_id": "xz7dvSS2lI8",
+      "title": "死神 / ゆう。- cover【オリジナルMV】",
+      "video_url": "https://www.youtube.com/watch?v=xz7dvSS2lI8",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "suspect_C_short_triage_no_probe_metrics",
+      "analysis_observation_scope": "triage_unverified_short",
+      "reanalysis_priority": "first_verify_black_or_white",
+      "present_in_tidb": true,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_c_suspect_short",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "要確認C（実測値なしの短文1次速報）。まず再分析で実視聴か未視聴かの白黒をつける対象。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:suspect_C_short_triage_no_probe_metrics",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "first_verify_black_or_white",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:suspect_C_short_triage_no_probe_metrics (in_tidb=True)"
+        }
+      ]
+    },
+    {
+      "video_id": "47GuClGEtyM",
+      "title": "DARLING in the FRANXX OPENING",
+      "video_url": "https://www.youtube.com/watch?v=47GuClGEtyM",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "unwatched_B1_metadata_only_primary_eval",
+      "analysis_observation_scope": "metadata_only_unwatched",
+      "reanalysis_priority": "after_suspect_c_and_vimeo",
+      "present_in_tidb": true,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_b1_metadata_only",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "未視聴分析（unwatched_B1_metadata_only_primary_eval / scope=metadata_only_unwatched）のため実映像での再分析が必要。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:unwatched_B1_metadata_only_primary_eval",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "after_suspect_c_and_vimeo",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:unwatched_B1_metadata_only_primary_eval (in_tidb=True)"
+        }
+      ]
+    },
+    {
+      "video_id": "6FdqnZ8brOA",
+      "title": "Brand Storytelling Case Study | Professional Video for Businesses",
+      "video_url": "https://www.youtube.com/watch?v=6FdqnZ8brOA",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "unwatched_B1_metadata_only_primary_eval",
+      "analysis_observation_scope": "metadata_only_unwatched",
+      "reanalysis_priority": "after_suspect_c_and_vimeo",
+      "present_in_tidb": true,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_b1_metadata_only",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "未視聴分析（unwatched_B1_metadata_only_primary_eval / scope=metadata_only_unwatched）のため実映像での再分析が必要。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:unwatched_B1_metadata_only_primary_eval",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "after_suspect_c_and_vimeo",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:unwatched_B1_metadata_only_primary_eval (in_tidb=True)"
+        }
+      ]
+    },
+    {
+      "video_id": "8l8RIntUIm8",
+      "title": "短編映画「運命代行屋」タイトルシーケンス",
+      "video_url": "https://www.youtube.com/watch?v=8l8RIntUIm8",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "unwatched_B1_metadata_only_primary_eval",
+      "analysis_observation_scope": "metadata_only_unwatched",
+      "reanalysis_priority": "after_suspect_c_and_vimeo",
+      "present_in_tidb": true,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_b1_metadata_only",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "未視聴分析（unwatched_B1_metadata_only_primary_eval / scope=metadata_only_unwatched）のため実映像での再分析が必要。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:unwatched_B1_metadata_only_primary_eval",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "after_suspect_c_and_vimeo",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:unwatched_B1_metadata_only_primary_eval (in_tidb=True)"
+        }
+      ]
+    },
+    {
+      "video_id": "ADSho62yiDk",
+      "title": "トヨタ自動車株式会社「#ありがとう平成」",
+      "video_url": "https://www.youtube.com/watch?v=ADSho62yiDk",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "unwatched_B1_metadata_only_primary_eval",
+      "analysis_observation_scope": "metadata_only_unwatched",
+      "reanalysis_priority": "after_suspect_c_and_vimeo",
+      "present_in_tidb": true,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_b1_metadata_only",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "未視聴分析（unwatched_B1_metadata_only_primary_eval / scope=metadata_only_unwatched）のため実映像での再分析が必要。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:unwatched_B1_metadata_only_primary_eval",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "after_suspect_c_and_vimeo",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:unwatched_B1_metadata_only_primary_eval (in_tidb=True)"
+        }
+      ]
+    },
+    {
+      "video_id": "W5AA6QZzfDk",
+      "title": "【MMGC2023 Day7】ブルージャイアント「海中の氷塊」",
+      "video_url": "https://www.youtube.com/watch?v=W5AA6QZzfDk",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "unwatched_B1_metadata_only_primary_eval",
+      "analysis_observation_scope": "metadata_only_unwatched",
+      "reanalysis_priority": "after_suspect_c_and_vimeo",
+      "present_in_tidb": true,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_b1_metadata_only",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "未視聴分析（unwatched_B1_metadata_only_primary_eval / scope=metadata_only_unwatched）のため実映像での再分析が必要。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:unwatched_B1_metadata_only_primary_eval",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "after_suspect_c_and_vimeo",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:unwatched_B1_metadata_only_primary_eval (in_tidb=True)"
+        }
+      ]
+    },
+    {
+      "video_id": "Wt5AhyH6BRE",
+      "title": "【ドラえもん】ノンクレジットオープニング映像／星野源『ドラえもん』",
+      "video_url": "https://www.youtube.com/watch?v=Wt5AhyH6BRE",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "unwatched_B1_metadata_only_primary_eval",
+      "analysis_observation_scope": "metadata_only_unwatched",
+      "reanalysis_priority": "after_suspect_c_and_vimeo",
+      "present_in_tidb": true,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_b1_metadata_only",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "未視聴分析（unwatched_B1_metadata_only_primary_eval / scope=metadata_only_unwatched）のため実映像での再分析が必要。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:unwatched_B1_metadata_only_primary_eval",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "after_suspect_c_and_vimeo",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:unwatched_B1_metadata_only_primary_eval (in_tidb=True)"
+        }
+      ]
+    },
+    {
+      "video_id": "Xfotcux_lqU",
+      "title": "『 大王饶命』 シーズン2 OP/オープニングテーマ/【大王饶命第二季】动画OP/片头曲《对对对》",
+      "video_url": "https://www.youtube.com/watch?v=Xfotcux_lqU",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "unwatched_B1_metadata_only_primary_eval",
+      "analysis_observation_scope": "metadata_only_unwatched",
+      "reanalysis_priority": "after_suspect_c_and_vimeo",
+      "present_in_tidb": true,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_b1_metadata_only",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "未視聴分析（unwatched_B1_metadata_only_primary_eval / scope=metadata_only_unwatched）のため実映像での再分析が必要。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:unwatched_B1_metadata_only_primary_eval",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "after_suspect_c_and_vimeo",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:unwatched_B1_metadata_only_primary_eval (in_tidb=True)"
+        }
+      ]
+    },
+    {
+      "video_id": "cMb_18qEgoo",
+      "title": "【自主制作アニメーション】スイーツ☆インベイド　season３【尚美アニメーション　オリジナル作品】",
+      "video_url": "https://www.youtube.com/watch?v=cMb_18qEgoo",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "unwatched_B1_metadata_only_primary_eval",
+      "analysis_observation_scope": "metadata_only_unwatched",
+      "reanalysis_priority": "after_suspect_c_and_vimeo",
+      "present_in_tidb": true,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_b1_metadata_only",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "未視聴分析（unwatched_B1_metadata_only_primary_eval / scope=metadata_only_unwatched）のため実映像での再分析が必要。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:unwatched_B1_metadata_only_primary_eval",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "after_suspect_c_and_vimeo",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:unwatched_B1_metadata_only_primary_eval (in_tidb=True)"
+        }
+      ]
+    },
+    {
+      "video_id": "k5-bWHLnfYU",
+      "title": "【自主制作アニメ】心の王国　完全版",
+      "video_url": "https://www.youtube.com/watch?v=k5-bWHLnfYU",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "unwatched_B1_metadata_only_primary_eval",
+      "analysis_observation_scope": "metadata_only_unwatched",
+      "reanalysis_priority": "after_suspect_c_and_vimeo",
+      "present_in_tidb": true,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_b1_metadata_only",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "未視聴分析（unwatched_B1_metadata_only_primary_eval / scope=metadata_only_unwatched）のため実映像での再分析が必要。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:unwatched_B1_metadata_only_primary_eval",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "after_suspect_c_and_vimeo",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:unwatched_B1_metadata_only_primary_eval (in_tidb=True)"
+        }
+      ]
+    },
+    {
+      "video_id": "smx_qbPz_J4",
+      "title": "乃木坂46 『空扉』Short Ver.",
+      "video_url": "https://www.youtube.com/watch?v=smx_qbPz_J4",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "unwatched_B1_metadata_only_primary_eval",
+      "analysis_observation_scope": "metadata_only_unwatched",
+      "reanalysis_priority": "after_suspect_c_and_vimeo",
+      "present_in_tidb": true,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_b1_metadata_only",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "未視聴分析（unwatched_B1_metadata_only_primary_eval / scope=metadata_only_unwatched）のため実映像での再分析が必要。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:unwatched_B1_metadata_only_primary_eval",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "after_suspect_c_and_vimeo",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:unwatched_B1_metadata_only_primary_eval (in_tidb=True)"
+        }
+      ]
+    },
+    {
+      "video_id": "v0et8aR3KF8",
+      "title": "『LAZARUS ラザロ』Opening Movie(Full)｜「Vortex」Kamasi Washington",
+      "video_url": "https://www.youtube.com/watch?v=v0et8aR3KF8",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "unwatched_B1_metadata_only_primary_eval",
+      "analysis_observation_scope": "metadata_only_unwatched",
+      "reanalysis_priority": "after_suspect_c_and_vimeo",
+      "present_in_tidb": true,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_b1_metadata_only",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "未視聴分析（unwatched_B1_metadata_only_primary_eval / scope=metadata_only_unwatched）のため実映像での再分析が必要。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:unwatched_B1_metadata_only_primary_eval",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "after_suspect_c_and_vimeo",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:unwatched_B1_metadata_only_primary_eval (in_tidb=True)"
+        }
+      ]
+    },
+    {
+      "video_id": "yxfg1xxx-og",
+      "title": "サンボマスターとアイナ・ジ・エンド / 花束  MUSIC VIDEO",
+      "video_url": "https://www.youtube.com/watch?v=yxfg1xxx-og",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "unwatched_B1_metadata_only_primary_eval",
+      "analysis_observation_scope": "metadata_only_unwatched",
+      "reanalysis_priority": "after_suspect_c_and_vimeo",
+      "present_in_tidb": true,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_b1_metadata_only",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "未視聴分析（unwatched_B1_metadata_only_primary_eval / scope=metadata_only_unwatched）のため実映像での再分析が必要。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:unwatched_B1_metadata_only_primary_eval",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "after_suspect_c_and_vimeo",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:unwatched_B1_metadata_only_primary_eval (in_tidb=True)"
+        }
+      ]
+    },
+    {
+      "video_id": "G4FxpJVuIfc",
+      "title": "KARTE 10周年記念ムービー",
+      "video_url": "https://www.youtube.com/watch?v=G4FxpJVuIfc",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "unwatched_B2_no_contact_sheet_missing_video",
+      "analysis_observation_scope": "missing_video_unwatched",
+      "reanalysis_priority": "after_suspect_c_and_vimeo",
+      "present_in_tidb": false,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_b2_missing_video",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "未視聴分析（unwatched_B2_no_contact_sheet_missing_video / scope=missing_video_unwatched）のため実映像での再分析が必要。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:unwatched_B2_no_contact_sheet_missing_video",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "after_suspect_c_and_vimeo",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:unwatched_B2_no_contact_sheet_missing_video (in_tidb=False)"
+        }
+      ]
+    },
+    {
+      "video_id": "JVlAJlvaT0Y",
+      "title": "【MV】 てんやわんや、夏。 【月ノ美兎 / 笹木咲 / 椎名唯華】",
+      "video_url": "https://www.youtube.com/watch?v=JVlAJlvaT0Y",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "unwatched_B2_no_contact_sheet_missing_video",
+      "analysis_observation_scope": "missing_video_unwatched",
+      "reanalysis_priority": "after_suspect_c_and_vimeo",
+      "present_in_tidb": false,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_b2_missing_video",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "未視聴分析（unwatched_B2_no_contact_sheet_missing_video / scope=missing_video_unwatched）のため実映像での再分析が必要。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:unwatched_B2_no_contact_sheet_missing_video",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "after_suspect_c_and_vimeo",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:unwatched_B2_no_contact_sheet_missing_video (in_tidb=False)"
+        }
+      ]
+    },
+    {
+      "video_id": "6S4IXJ5QTpY",
+      "title": "「高額下取りがおトク」篇～ジャパネット「夏のエアコン祭り」～ 相葉雅紀さん＆川島明さん出演！",
+      "video_url": "https://www.youtube.com/watch?v=6S4IXJ5QTpY",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "unwatched_B3_triage_boilerplate_no_visual_evidence",
+      "analysis_observation_scope": "triage_boilerplate_unwatched",
+      "reanalysis_priority": "after_suspect_c_and_vimeo",
+      "present_in_tidb": true,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_b3_triage_boilerplate",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "未視聴分析（unwatched_B3_triage_boilerplate_no_visual_evidence / scope=triage_boilerplate_unwatched）のため実映像での再分析が必要。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:unwatched_B3_triage_boilerplate_no_visual_evidence",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "after_suspect_c_and_vimeo",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:unwatched_B3_triage_boilerplate_no_visual_evidence (in_tidb=True)"
+        }
+      ]
+    },
+    {
+      "video_id": "8A6F10zDt2Y",
+      "title": "キリン 午後の紅茶　遠くの町の夏の午後篇　Behind The Scenes",
+      "video_url": "https://www.youtube.com/watch?v=8A6F10zDt2Y",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "unwatched_B3_triage_boilerplate_no_visual_evidence",
+      "analysis_observation_scope": "triage_boilerplate_unwatched",
+      "reanalysis_priority": "after_suspect_c_and_vimeo",
+      "present_in_tidb": true,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_b3_triage_boilerplate",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "未視聴分析（unwatched_B3_triage_boilerplate_no_visual_evidence / scope=triage_boilerplate_unwatched）のため実映像での再分析が必要。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:unwatched_B3_triage_boilerplate_no_visual_evidence",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "after_suspect_c_and_vimeo",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:unwatched_B3_triage_boilerplate_no_visual_evidence (in_tidb=True)"
+        }
+      ]
+    },
+    {
+      "video_id": "95tF137_BKg",
+      "title": "Captain America: The Winter Soldier End Credit Theme",
+      "video_url": "https://www.youtube.com/watch?v=95tF137_BKg",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "unwatched_B3_triage_boilerplate_no_visual_evidence",
+      "analysis_observation_scope": "triage_boilerplate_unwatched",
+      "reanalysis_priority": "after_suspect_c_and_vimeo",
+      "present_in_tidb": true,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_b3_triage_boilerplate",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "未視聴分析（unwatched_B3_triage_boilerplate_no_visual_evidence / scope=triage_boilerplate_unwatched）のため実映像での再分析が必要。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:unwatched_B3_triage_boilerplate_no_visual_evidence",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "after_suspect_c_and_vimeo",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:unwatched_B3_triage_boilerplate_no_visual_evidence (in_tidb=True)"
+        }
+      ]
+    },
+    {
+      "video_id": "BmV1TPKs2Wg",
+      "title": "【公式】カーセンサー　「あの夏の思い出　～もしも平成にあのちゃんとドライブデートしたら～」篇（ロング）",
+      "video_url": "https://www.youtube.com/watch?v=BmV1TPKs2Wg",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "unwatched_B3_triage_boilerplate_no_visual_evidence",
+      "analysis_observation_scope": "triage_boilerplate_unwatched",
+      "reanalysis_priority": "after_suspect_c_and_vimeo",
+      "present_in_tidb": true,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_b3_triage_boilerplate",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "未視聴分析（unwatched_B3_triage_boilerplate_no_visual_evidence / scope=triage_boilerplate_unwatched）のため実映像での再分析が必要。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:unwatched_B3_triage_boilerplate_no_visual_evidence",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "after_suspect_c_and_vimeo",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:unwatched_B3_triage_boilerplate_no_visual_evidence (in_tidb=True)"
+        }
+      ]
+    },
+    {
+      "video_id": "Co03Hc0CIXQ",
+      "title": "【LUMINE】GIFT OF VOICE LUMINE CHRISTMAS 2021",
+      "video_url": "https://www.youtube.com/watch?v=Co03Hc0CIXQ",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "unwatched_B3_triage_boilerplate_no_visual_evidence",
+      "analysis_observation_scope": "triage_boilerplate_unwatched",
+      "reanalysis_priority": "after_suspect_c_and_vimeo",
+      "present_in_tidb": true,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_b3_triage_boilerplate",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "未視聴分析（unwatched_B3_triage_boilerplate_no_visual_evidence / scope=triage_boilerplate_unwatched）のため実映像での再分析が必要。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:unwatched_B3_triage_boilerplate_no_visual_evidence",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "after_suspect_c_and_vimeo",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:unwatched_B3_triage_boilerplate_no_visual_evidence (in_tidb=True)"
+        }
+      ]
+    },
+    {
+      "video_id": "JGAaNRSW_HU",
+      "title": "【バーサス｜13面ラスボス頂上決戦】渋谷13面ジャック特別PV / VERSUS Shibuya 13 screen hijack report movie",
+      "video_url": "https://www.youtube.com/watch?v=JGAaNRSW_HU",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "unwatched_B3_triage_boilerplate_no_visual_evidence",
+      "analysis_observation_scope": "triage_boilerplate_unwatched",
+      "reanalysis_priority": "after_suspect_c_and_vimeo",
+      "present_in_tidb": true,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_b3_triage_boilerplate",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "未視聴分析（unwatched_B3_triage_boilerplate_no_visual_evidence / scope=triage_boilerplate_unwatched）のため実映像での再分析が必要。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:unwatched_B3_triage_boilerplate_no_visual_evidence",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "after_suspect_c_and_vimeo",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:unwatched_B3_triage_boilerplate_no_visual_evidence (in_tidb=True)"
+        }
+      ]
+    },
+    {
+      "video_id": "OQ1-0MmCFfc",
+      "title": "【期間限定公開】ONE PIECE × SAMURAI BLUE｜「おれたちの最高地点へ」",
+      "video_url": "https://www.youtube.com/watch?v=OQ1-0MmCFfc",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "unwatched_B3_triage_boilerplate_no_visual_evidence",
+      "analysis_observation_scope": "triage_boilerplate_unwatched",
+      "reanalysis_priority": "after_suspect_c_and_vimeo",
+      "present_in_tidb": true,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_b3_triage_boilerplate",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "未視聴分析（unwatched_B3_triage_boilerplate_no_visual_evidence / scope=triage_boilerplate_unwatched）のため実映像での再分析が必要。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:unwatched_B3_triage_boilerplate_no_visual_evidence",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "after_suspect_c_and_vimeo",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:unwatched_B3_triage_boilerplate_no_visual_evidence (in_tidb=True)"
+        }
+      ]
+    },
+    {
+      "video_id": "lJJ2MJlIazI",
+      "title": "キリン 午後の紅茶　「遠くの町の夏の午後」篇　60秒",
+      "video_url": "https://www.youtube.com/watch?v=lJJ2MJlIazI",
+      "list_purpose": "unwatched_analysis_reanalysis",
+      "unwatched_category": "unwatched_B3_triage_boilerplate_no_visual_evidence",
+      "analysis_observation_scope": "triage_boilerplate_unwatched",
+      "reanalysis_priority": "after_suspect_c_and_vimeo",
+      "present_in_tidb": true,
+      "present_in_sqlite": true,
+      "failure_category": "unwatched_b3_triage_boilerplate",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "未視聴分析（unwatched_B3_triage_boilerplate_no_visual_evidence / scope=triage_boilerplate_unwatched）のため実映像での再分析が必要。未認証で1本ずつ間隔を空けて取得し、改訂版プロンプトで再分析する（ボット確認が出たら即停止）。",
+      "last_attempted_at": null,
+      "latest_error": "added_from_unwatched_audit:unwatched_B3_triage_boilerplate_no_visual_evidence",
+      "failure_history": [
+        {
+          "source": "unwatched_analysis_audit",
+          "run_id": "audit_20261124_unwatched",
+          "priority": "after_suspect_c_and_vimeo",
+          "batch_index": null,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T21:22:55+09:00",
+          "error": "unwatched_or_unverified_analysis:unwatched_B3_triage_boilerplate_no_visual_evidence (in_tidb=True)"
         }
       ]
     }

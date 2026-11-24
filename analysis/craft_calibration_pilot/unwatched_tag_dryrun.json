@@ -1,0 +1,116 @@
+{
+  "executed_at": "2026-11-24T12:18:23.836Z",
+  "mode": "dry_run_select_only",
+  "worker": "chibatmute",
+  "apply_lock_status": {
+    "schema_version": 1,
+    "status": "unlocked",
+    "worker": null,
+    "run_id": null,
+    "started_at": null,
+    "last_worker": null,
+    "last_run_id": null,
+    "released_at": null
+  },
+  "pre_d_backup_sha256_verified": "17856f0338c760b2f88d415543eb6d48a7977c06e76a5c04476b0d5943446a3b",
+  "tidb_total_rows": 5653,
+  "column_analysisObservationScope_exists": false,
+  "planned_ddl": "ALTER TABLE `videos` ADD COLUMN `analysisObservationScope` VARCHAR(40) NULL DEFAULT NULL AFTER `calibrationGenreBucket`",
+  "planned_updates_total": 274,
+  "counts_by_scope": {
+    "metadata_only_unwatched": 249,
+    "triage_boilerplate_unwatched": 8,
+    "triage_unverified_short": 17
+  },
+  "counts_by_platform": {
+    "vimeo": 237,
+    "youtube": 37
+  },
+  "overlap_with_phase3_calibrated_rows": 0,
+  "overlap_with_craft_recipes_439_sources": 0,
+  "tidb_calibration_status_snapshot": {
+    "legacy_uncalibrated": 4859,
+    "unscored": 401,
+    "calibrated_verified": 204,
+    "calibrated_unverified_genre": 189
+  },
+  "non_destructive_guarantees": [
+    "aiAnalysis / legacy 8 score columns / all 40 original columns: ZERO modifications",
+    "10 Phase 3 calibrated* / calibrationStatus columns: ZERO modifications",
+    "updatedAt = updatedAt preserved on every updated row"
+  ],
+  "sample_updates": [
+    {
+      "id": "10070449",
+      "platform": "vimeo",
+      "scope": "metadata_only_unwatched",
+      "title": "Kraddy - Android Porn (Mochipet Godzillaporn Remix) - Music Video"
+    },
+    {
+      "id": "1041875369",
+      "platform": "vimeo",
+      "scope": "metadata_only_unwatched",
+      "title": "星宮とと+ SOZEN OTSUBO – Hi-fi (Official Music Video)"
+    },
+    {
+      "id": "1041925523",
+      "platform": "vimeo",
+      "scope": "metadata_only_unwatched",
+      "title": "REEL 2025"
+    },
+    {
+      "id": "1046062913",
+      "platform": "vimeo",
+      "scope": "metadata_only_unwatched",
+      "title": "A Composition for Upright Displays #01"
+    },
+    {
+      "id": "1055994596",
+      "platform": "vimeo",
+      "scope": "metadata_only_unwatched",
+      "title": "Beats Powerbeats Pro 2"
+    },
+    {
+      "id": "1056688529",
+      "platform": "vimeo",
+      "scope": "metadata_only_unwatched",
+      "title": "Shibuya WWW Monthly"
+    },
+    {
+      "id": "1056750218",
+      "platform": "vimeo",
+      "scope": "metadata_only_unwatched",
+      "title": "parlor"
+    },
+    {
+      "id": "1056762918",
+      "platform": "vimeo",
+      "scope": "metadata_only_unwatched",
+      "title": "Create magic."
+    },
+    {
+      "id": "106226560",
+      "platform": "vimeo",
+      "scope": "metadata_only_unwatched",
+      "title": "RUSH HOUR"
+    },
+    {
+      "id": "1068014839",
+      "platform": "vimeo",
+      "scope": "metadata_only_unwatched",
+      "title": "Balloon Your Hope."
+    },
+    {
+      "id": "1069311388",
+      "platform": "vimeo",
+      "scope": "metadata_only_unwatched",
+      "title": "MV  モーションコントロールカメラ   See it Differently' - Britbox - Directed by Nicos Livesey"
+    },
+    {
+      "id": "1073816481",
+      "platform": "vimeo",
+      "scope": "metadata_only_unwatched",
+      "title": "夢みる薬膳研究室はじまりの物語"
+    }
+  ]
+}
