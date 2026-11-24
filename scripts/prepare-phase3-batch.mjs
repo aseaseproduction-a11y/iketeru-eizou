@@ -297,7 +297,7 @@ async function downloadToCacheGently(item) {
   }
 }
 
-async function fetchBatchFromTidb({ priority, batchIndex, batchSize, idListPath = null }) {
+async function fetchBatchFromTidb({ priority, batchIndex, batchSize, idListPath = null, uncalibratedHead = false }) {
   const require = createRequire(path.join(REPO_ROOT, "package.json"));
   require("dotenv").config({ path: path.join(REPO_ROOT, ".env") });
   const mysql = require("mysql2/promise");
@@ -333,7 +333,7 @@ async function fetchBatchFromTidb({ priority, batchIndex, batchSize, idListPath 
     } else {
       tierRows = classified.filter((x) => x.cls.priority_tier === priority);
     }
-    const start = (batchIndex - 1) * batchSize;
+    const start = uncalibratedHead ? 0 : (batchIndex - 1) * batchSize;
     const end = start + batchSize;
     const slice = tierRows.slice(start, end);
     return {
@@ -366,6 +366,7 @@ async function main() {
   const args = parseArgs(process.argv);
   const priority = args["priority"] || "P1_private_rating";
   const idListPath = args["id-list"] || null;
+  const uncalibratedHead = Boolean(args["uncalibrated-head"]);
   const batchIndex = parseInt(args["batch"] || "1", 10);
   const batchSize = Math.min(MAX_BATCH_SIZE, parseInt(args["batch-size"] || String(MAX_BATCH_SIZE), 10));
   const frozenConfigPath = path.resolve(REPO_ROOT, args["frozen-config"] || "analysis/phase2_frozen_config_v1.json");
@@ -407,7 +408,7 @@ async function main() {
   if (resume && fs.existsSync(selectionPath)) {
     selection = JSON.parse(fs.readFileSync(selectionPath, "utf8"));
   } else {
-    const fetched = await fetchBatchFromTidb({ priority, batchIndex, batchSize, idListPath });
+    const fetched = await fetchBatchFromTidb({ priority, batchIndex, batchSize, idListPath, uncalibratedHead });
     selection = {
       phase: "phase3_c",
       priority,
