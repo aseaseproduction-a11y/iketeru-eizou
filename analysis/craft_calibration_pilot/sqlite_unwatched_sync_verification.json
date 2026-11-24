@@ -1,0 +1,108 @@
+{
+  "generatedAtUtc": "2026-11-24T12:38:49.970Z",
+  "direction": "TiDB (read-only) -> SQLite mirror (one-way)",
+  "tidb": {
+    "pre": {
+      "count": 5653,
+      "maxUpdatedAt": "2026-11-21T17:57:26.000Z"
+    },
+    "post": {
+      "count": 5653,
+      "maxUpdatedAt": "2026-11-21T17:57:26.000Z"
+    },
+    "unchanged": true
+  },
+  "mode": "apply",
+  "sqlitePath": "E:\\iketeru-creative-studio\\data\\iketeru_knowledge.db",
+  "preSync": {
+    "columnsCount": 44,
+    "missingCalibrationColumns": [
+      "analysis_observation_scope"
+    ],
+    "counts": {
+      "videos": 5701,
+      "scenes": 35848,
+      "craft_recipes": 1036
+    }
+  },
+  "idDiff": {
+    "tidbTotal": 5653,
+    "sqlitePreTotal": 5701,
+    "sharedCount": 5653,
+    "tidbOnlyCount": 0,
+    "sqliteOnlyCount": 48,
+    "expectedSqlitePostTotal": 5701,
+    "tidbCalibratedCount": 393,
+    "tidbCalibrationStatusCounts": {
+      "legacy_uncalibrated": 4859,
+      "unscored": 401,
+      "calibrated_verified": 204,
+      "calibrated_unverified_genre": 189
+    }
+  },
+  "apply": {
+    "syncTimestampUtc": "2026-11-24T12:38:32.057812+00:00",
+    "sharedRowsUpdated": 5653,
+    "tidbOnlyRowsInserted": 0,
+    "sqliteOnlyRowsPreserved": 48,
+    "sqliteOnlyRowsTagged": 0,
+    "sqliteOnlyObservationScopeTagged": 4
+  },
+  "postSync": {
+    "columnsCount": 45,
+    "addedColumns": [
+      "analysis_observation_scope"
+    ],
+    "counts": {
+      "videos": 5701,
+      "scenes": 35848,
+      "craft_recipes": 1036
+    },
+    "calibrationStatusCounts": {
+      "calibrated_unverified_genre": 189,
+      "calibrated_verified": 204,
+      "legacy_uncalibrated": 4907,
+      "unscored": 401
+    },
+    "sqliteOnlyCalibrationStatusCounts": {
+      "legacy_uncalibrated": 48
+    },
+    "observationScopeCounts": {
+      "metadata_only_unwatched": 249,
+      "missing_video_unwatched": 2,
+      "null": 5423,
+      "triage_boilerplate_unwatched": 8,
+      "triage_unverified_short": 19
+    },
+    "observationScopeTaggedTotal": 278,
+    "sqliteOnlyObservationScopeCounts": {
+      "missing_video_unwatched": 2,
+      "null": 44,
+      "triage_unverified_short": 2
+    },
+    "sqliteFileBytes": 1449013248,
+    "sqliteSha256": "cac9f2e7f47b5d6bfd7491d82229a599576e2e66028bec4f8346fcd2661e914b"
+  },
+  "verification": {
+    "zeroDeletions": true,
+    "missingSqliteOnlyIds": [],
+    "missingTidbOnlyIds": [],
+    "scenesNonRegressing": true,
+    "craftRecipesUnchanged": true,
+    "tidbAllRowsChecked": 5653,
+    "tidbAllRowsMismatchCount": 0,
+    "tidbAllRowsSampleMismatches": [],
+    "calibratedRowsChecked": 393,
+    "calibratedRowsMismatchCount": 0,
+    "calibratedRowsSampleMismatches": [],
+    "existingColumnsDiffAgainstBackup": {
+      "backupPath": "E:\\iketeru_backups\\pre_unwatched_mcp_sync_20261124_213223\\iketeru_knowledge.db",
+      "existingColumnsChecked": 34,
+      "preExistingRowsChecked": 5701,
+      "diffCount": 0,
+      "sampleDiffs": []
+    },
+    "allPassed": true,
+    "tidbUnchanged": true
+  }
+}

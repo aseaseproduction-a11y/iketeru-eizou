@@ -1,0 +1,48 @@
+{
+  "executed_at": "2026-11-24T12:31:37.459Z",
+  "worker": "chibatmute",
+  "lock_run_id": "tag_unwatched_analysis_scope",
+  "pre_apply_local_backup": {
+    "created_at": "2026-11-24T12:31:22.238Z",
+    "purpose": "Fresh local pre-apply TiDB snapshot before tag_unwatched_analysis_scope",
+    "row_count": 5653,
+    "jsonl_path": "E:\\iketeru_backups\\phase3_pre_apply_tag_unwatched_analysis_scope_20261124_213112\\tidb_videos_pre_apply.jsonl",
+    "jsonl_bytes": 135211979,
+    "jsonl_sha256": "8d777c4bdd0b15630697b534daa0558ffff814aa647bf82a1c25ec56fca00cf8"
+  },
+  "planned_updates_total": 274,
+  "affected_rows": 274,
+  "scope_counts_after": {
+    "(NULL)": 5379,
+    "metadata_only_unwatched": 249,
+    "triage_unverified_short": 17,
+    "triage_boilerplate_unwatched": 8
+  },
+  "calibration_status_before": {
+    "legacy_uncalibrated": 4859,
+    "unscored": 401,
+    "calibrated_verified": 204,
+    "calibrated_unverified_genre": 189
+  },
+  "calibration_status_after": {
+    "legacy_uncalibrated": 4859,
+    "unscored": 401,
+    "calibrated_verified": 204,
+    "calibrated_unverified_genre": 189
+  },
+  "all_40_original_columns_mismatches": 0,
+  "all_10_calibration_columns_mismatches": 0,
+  "updated_at_mismatches": 0,
+  "all_checks_passed": true,
+  "checks": {
+    "apply_lock_verified": true,
+    "pre_apply_backup_created": true,
+    "row_count_matches_5653": true,
+    "all_40_original_columns_zero_diffs": true,
+    "legacy_8_columns_zero_diffs": true,
+    "all_10_calibration_columns_zero_diffs": true,
+    "updated_at_zero_diffs": true,
+    "calibration_status_counts_unchanged": true,
+    "tagged_non_null_count_matches_payload": true
+  }
+}

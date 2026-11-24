@@ -1,0 +1,70 @@
+{
+  "serverInfo": {
+    "name": "iketeru-eizou",
+    "version": "0.2.0"
+  },
+  "get_index_stats": {
+    "total_videos": 5701,
+    "craft_recipes": 1036,
+    "calibrated_total": 393,
+    "unwatched_analysis_total": 278,
+    "observation_scope_counts": {
+      "metadata_only_unwatched": 249,
+      "missing_video_unwatched": 2,
+      "triage_boilerplate_unwatched": 8,
+      "triage_unverified_short": 19,
+      "watched_or_unset": 5423
+    }
+  },
+  "live_mcp_checks": {
+    "missing_video_unwatched": {
+      "sample_id": "JVlAJlvaT0Y",
+      "query": "てんやわんや、夏",
+      "found_default_with_badge": true,
+      "returned_scope": "missing_video_unwatched",
+      "returned_badge": "[未視聴・動画未取得]",
+      "excluded_when_exclude_unwatched_true": true
+    },
+    "triage_boilerplate_unwatched": {
+      "sample_id": "95tF137_BKg",
+      "query": "Captain America",
+      "found_default_with_badge": true,
+      "returned_scope": "triage_boilerplate_unwatched",
+      "returned_badge": "[未視聴・定型速報]",
+      "excluded_when_exclude_unwatched_true": true
+    },
+    "triage_unverified_short": {
+      "sample_id": "i47RggTEuPQ",
+      "query": "キャンパスノート",
+      "found_default_with_badge": true,
+      "returned_scope": "triage_unverified_short",
+      "returned_badge": "[要確認・実測値なし]",
+      "excluded_when_exclude_unwatched_true": true
+    },
+    "get_video_playbook_B3_95tF137_BKg": {
+      "id": "95tF137_BKg",
+      "analysis_observation_scope": "triage_boilerplate_unwatched",
+      "is_unwatched_analysis": true,
+      "observation_badge": "[未視聴・定型速報]"
+    },
+    "real_db_search_craft_recipes_default": {
+      "count": 15,
+      "unwatched_leaked": []
+    },
+    "real_db_plan_craft_sequence_default": {
+      "exclude_unwatched": true,
+      "reference_candidates_count": 8,
+      "sequence_cuts_count": 6
+    }
+  },
+  "synthetic_guard_proof": {
+    "target_unwatched_id": "95tF137_BKg (non-provisional, triage_boilerplate_unwatched)",
+    "search_craft_recipes_default_blocks_unwatched": true,
+    "search_craft_recipes_exclude_false_returns_badge": true,
+    "get_craft_recipe_default_blocks_unwatched": true,
+    "get_craft_recipe_exclude_false_returns_badge": true,
+    "plan_craft_sequence_default_blocks_unwatched": true,
+    "plan_craft_sequence_exclude_false_includes_unwatched": true
+  },
+  "all_checks_passed": true
+}

@@ -296,27 +296,56 @@ async function main() {
     const calStatusAfter = Object.fromEntries(calAfterRows.map((r) => [r.status, Number(r.cnt)]));
 
     const originalColumns = backupManifest.tidb.columns;
+    const calibrationColumns = [
+      "calibrationStatus",
+      "calibratedScore",
+      "calibratedRank",
+      "calibratedTierBand",
+      "calibratedBreakdown",
+      "calibrationVersion",
+      "calibratedAt",
+      "calibratedRoute",
+      "calibratedRunId",
+      "calibrationGenreBucket",
+    ];
     const backupMap = new Map();
     for (const line of fs.readFileSync(backupJsonlPath, "utf8").split("\n").filter(Boolean)) {
       const obj = JSON.parse(line);
       backupMap.set(obj.id, obj);
     }
-    const colSelect = originalColumns.map((c) => `\`${c}\``).join(", ");
+    const preApplyMap = new Map();
+    for (const line of fs.readFileSync(preApplyBackup.jsonl_path, "utf8").split("\n").filter(Boolean)) {
+      const obj = JSON.parse(line);
+      preApplyMap.set(obj.id, obj);
+    }
+    const allCheckColumns = [...originalColumns, ...calibrationColumns];
+    const colSelect = allCheckColumns.map((c) => `\`${c}\``).join(", ");
     const [liveRows] = await conn.query(`SELECT ${colSelect} FROM videos ORDER BY id ASC`);
     let origMismatches = 0;
     let legacyMismatches = 0;
     let updatedAtMismatches = 0;
+    let calibration10Mismatches = 0;
     for (const row of liveRows) {
       const b = backupMap.get(row.id);
       if (!b) {
         origMismatches++;
-        continue;
+      } else {
+        for (const col of originalColumns) {
+          if (serializeValue(row[col]) !== b[col]) {
+            origMismatches++;
+            if (LEGACY_SCORE_COLUMNS.has(col)) legacyMismatches++;
+            if (col === "updatedAt") updatedAtMismatches++;
+          }
+        }
       }
-      for (const col of originalColumns) {
-        if (serializeValue(row[col]) !== b[col]) {
-          origMismatches++;
-          if (LEGACY_SCORE_COLUMNS.has(col)) legacyMismatches++;
-          if (col === "updatedAt") updatedAtMismatches++;
+      const p = preApplyMap.get(row.id);
+      if (!p) {
+        calibration10Mismatches++;
+      } else {
+        for (const col of calibrationColumns) {
+          if (serializeValue(row[col]) !== p[col]) {
+            calibration10Mismatches++;
+          }
         }
       }
     }
@@ -327,6 +356,7 @@ async function main() {
       row_count_matches_5653: liveRows.length === 5653,
       all_40_original_columns_zero_diffs: origMismatches === 0,
       legacy_8_columns_zero_diffs: legacyMismatches === 0,
+      all_10_calibration_columns_zero_diffs: calibration10Mismatches === 0,
       updated_at_zero_diffs: updatedAtMismatches === 0,
       calibration_status_counts_unchanged: JSON.stringify(calStatusBefore) === JSON.stringify(calStatusAfter),
       tagged_non_null_count_matches_payload:
@@ -346,6 +376,8 @@ async function main() {
       calibration_status_before: calStatusBefore,
       calibration_status_after: calStatusAfter,
       all_40_original_columns_mismatches: origMismatches,
+      all_10_calibration_columns_mismatches: calibration10Mismatches,
+      updated_at_mismatches: updatedAtMismatches,
       all_checks_passed: Object.values(checks).every(Boolean),
       checks,
     };

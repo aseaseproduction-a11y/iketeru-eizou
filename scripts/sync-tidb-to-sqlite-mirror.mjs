@@ -139,6 +139,7 @@ function normalizeTidbRow(row) {
     calibratedRoute: row.calibratedRoute ?? null,
     calibratedRunId: row.calibratedRunId ?? null,
     calibrationGenreBucket: row.calibrationGenreBucket ?? null,
+    analysisObservationScope: row.analysisObservationScope ?? null,
   };
 }
 
@@ -156,7 +157,12 @@ dry_run = sys.argv[4] == "1"
 backup_path = sys.argv[5] if len(sys.argv) > 5 and sys.argv[5] else None
 
 sys.path.insert(0, studio_root)
-from iketeru_studio.indexer import CALIBRATION_COLUMNS, KnowledgeIndex
+from iketeru_studio.indexer import (
+    CALIBRATION_COLUMNS,
+    OBSERVATION_SCOPE_COLUMNS,
+    KnowledgeIndex,
+    classify_observation_scope,
+)
 
 tidb_rows = []
 tidb_by_id = {}
@@ -189,7 +195,9 @@ tidb_only_ids = sorted(tidb_ids - pre_ids)
 sqlite_only_ids = sorted(pre_ids - tidb_ids)
 
 cal_col_names = [c[0] for c in CALIBRATION_COLUMNS]
-missing_cal_cols = [c for c in cal_col_names if c not in pre_cols]
+obs_col_names = [c[0] for c in OBSERVATION_SCOPE_COLUMNS]
+managed_col_names = set(cal_col_names) | set(obs_col_names)
+missing_cal_cols = [c for c in [*cal_col_names, *obs_col_names] if c not in pre_cols]
 
 tidb_cal_status_counts = {}
 tidb_calibrated_ids = []
@@ -228,7 +236,7 @@ idx = KnowledgeIndex(db_path=sqlite_path)
 sync_ts_iso = datetime.now(timezone.utc).isoformat()
 
 with idx._session() as con:
-    # 1. Shared rows: update ONLY the 10 new calibration_* columns (0 mutations to existing 34 columns)
+    # 1. Shared rows: update ONLY the 10 calibration_* columns + analysis_observation_scope (0 mutations to existing 34 columns)
     shared_updates = []
     for vid in shared_ids:
         r = tidb_by_id[vid]
@@ -244,6 +252,7 @@ with idx._session() as con:
                 r.get("calibratedRoute"),
                 r.get("calibratedRunId"),
                 r.get("calibrationGenreBucket"),
+                r.get("analysisObservationScope"),
                 vid,
             )
         )
@@ -259,18 +268,21 @@ with idx._session() as con:
             calibrated_at = ?,
             calibrated_route = ?,
             calibrated_run_id = ?,
-            calibration_genre_bucket = ?
+            calibration_genre_bucket = ?,
+            analysis_observation_scope = ?
         WHERE id = ?
         """,
         shared_updates,
     )
 
-    # 2. TiDB-only rows: insert cleanly via KnowledgeIndex.upsert_video (preserves all 10 calibration columns + FTS + scenes)
+    # 2. TiDB-only rows: insert cleanly via KnowledgeIndex.upsert_video (preserves all 10 calibration + observation_scope columns + FTS + scenes)
     for vid in tidb_only_ids:
         idx.upsert_video(tidb_by_id[vid], con=con)
 
-    # 3. SQLite-only rows: DO NOT delete! Set calibration_status only if NULL, without touching any of the 34 existing columns
+    # 3. SQLite-only rows: DO NOT delete! Set calibration_status (if NULL) and analysis_observation_scope using the exact same classifier,
+    #    without touching any of the 34 existing columns.
     sqlite_only_tagged = 0
+    sqlite_only_obs_tagged = 0
     for vid in sqlite_only_ids:
         cur = con.execute(
             """
@@ -285,6 +297,14 @@ with idx._session() as con:
             (vid,),
         )
         sqlite_only_tagged += cur.rowcount
+        row_ai = con.execute("SELECT ai_analysis FROM videos WHERE id = ?", (vid,)).fetchone()
+        obs_scope = classify_observation_scope(row_ai["ai_analysis"] if row_ai else "")
+        con.execute(
+            "UPDATE videos SET analysis_observation_scope = ? WHERE id = ?",
+            (obs_scope, vid),
+        )
+        if obs_scope is not None:
+            sqlite_only_obs_tagged += 1
 
     con.execute(
         "INSERT OR REPLACE INTO sync_state (key, value) VALUES ('last_tidb_calibration_sync', ?)",
@@ -318,7 +338,8 @@ for row in con.execute(
     """
     SELECT id, calibration_status, calibrated_score, calibrated_rank, calibrated_tier_band,
            calibrated_breakdown_json, calibration_version, calibrated_at,
-           calibrated_route, calibrated_run_id, calibration_genre_bucket
+           calibrated_route, calibrated_run_id, calibration_genre_bucket,
+           analysis_observation_scope
     FROM videos
     """
 ).fetchall():
@@ -348,6 +369,7 @@ for vid, t in tidb_by_id.items():
         ("calibrated_route", t.get("calibratedRoute"), s["calibrated_route"]),
         ("calibrated_run_id", t.get("calibratedRunId"), s["calibrated_run_id"]),
         ("calibration_genre_bucket", t.get("calibrationGenreBucket"), s["calibration_genre_bucket"]),
+        ("analysis_observation_scope", t.get("analysisObservationScope"), s["analysis_observation_scope"]),
     ]
     for fname, tv, sv in pairs:
         if tv != sv:
@@ -386,12 +408,27 @@ if sqlite_only_ids:
     ).fetchall():
         sqlite_only_cal_status_counts[str(r["st"])] = int(r["cnt"])
 
+post_obs_scope_counts = {}
+for r in con.execute(
+    "SELECT COALESCE(analysis_observation_scope, 'null') AS sc, COUNT(*) AS cnt FROM videos GROUP BY COALESCE(analysis_observation_scope, 'null')"
+).fetchall():
+    post_obs_scope_counts[str(r["sc"])] = int(r["cnt"])
+
+sqlite_only_obs_scope_counts = {}
+if sqlite_only_ids:
+    ph = ",".join("?" for _ in sqlite_only_ids)
+    for r in con.execute(
+        f"SELECT COALESCE(analysis_observation_scope, 'null') AS sc, COUNT(*) AS cnt FROM videos WHERE id IN ({ph}) GROUP BY COALESCE(analysis_observation_scope, 'null')",
+        sqlite_only_ids,
+    ).fetchall():
+        sqlite_only_obs_scope_counts[str(r["sc"])] = int(r["cnt"])
+
 # Optional exhaustive comparison of ALL 34 pre-existing columns against pre-sync SQLite backup
 legacy_col_diff_summary = None
 if backup_path and os.path.exists(backup_path):
     bak = sqlite3.connect(f"file:{backup_path}?mode=ro", uri=True)
     bak.row_factory = sqlite3.Row
-    bak_cols = [r[1] for r in bak.execute("PRAGMA table_info(videos)").fetchall() if r[1] not in cal_col_names]
+    bak_cols = [r[1] for r in bak.execute("PRAGMA table_info(videos)").fetchall() if r[1] not in managed_col_names]
     cols_sql = ", ".join(f'"{c}"' for c in bak_cols)
     cur_bak = bak.execute(f"SELECT {cols_sql} FROM videos ORDER BY id ASC")
     cur_now = con.execute(f"SELECT {cols_sql} FROM videos WHERE id IN ({','.join('?' for _ in pre_ids)}) ORDER BY id ASC", sorted(pre_ids))
@@ -428,6 +465,7 @@ result["apply"] = {
     "tidbOnlyRowsInserted": len(tidb_only_ids),
     "sqliteOnlyRowsPreserved": len(sqlite_only_ids),
     "sqliteOnlyRowsTagged": sqlite_only_tagged,
+    "sqliteOnlyObservationScopeTagged": sqlite_only_obs_tagged,
 }
 result["postSync"] = {
     "columnsCount": len(post_cols),
@@ -435,6 +473,9 @@ result["postSync"] = {
     "counts": post_counts,
     "calibrationStatusCounts": post_cal_status_counts,
     "sqliteOnlyCalibrationStatusCounts": sqlite_only_cal_status_counts,
+    "observationScopeCounts": post_obs_scope_counts,
+    "observationScopeTaggedTotal": sum(v for k, v in post_obs_scope_counts.items() if k != "null"),
+    "sqliteOnlyObservationScopeCounts": sqlite_only_obs_scope_counts,
 }
 result["verification"] = {
     "zeroDeletions": len(missing_sqlite_only) == 0 and post_counts["videos"] == len(pre_ids) + len(tidb_only_ids),
@@ -509,7 +550,8 @@ async function main() {
         calibrationStatus, calibratedScore, calibratedRank, calibratedTierBand,
         calibratedBreakdown, calibrationVersion,
         UNIX_TIMESTAMP(calibratedAt) AS calibratedAtEpoch,
-        calibratedRoute, calibratedRunId, calibrationGenreBucket
+        calibratedRoute, calibratedRunId, calibrationGenreBucket,
+        analysisObservationScope
       FROM videos
       ORDER BY id ASC
     `);
