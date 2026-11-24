@@ -431,6 +431,21 @@ async function main() {
   if (!Number.isInteger(batchIndex) || batchIndex < 1) {
     throw new Error(`Invalid --batch: ${batchIndex}`);
   }
+  const normalizedBlindRoot = path.win32.normalize(blindRoot).replace(/\\+$/, "");
+  const requiredBlindRoot = path.win32.normalize(DEFAULT_BLIND_ROOT).replace(/\\+$/, "");
+  if (normalizedBlindRoot.toLowerCase() !== requiredBlindRoot.toLowerCase()) {
+    throw new Error(
+      `Unsupported blind_root "${blindRoot}": frozen scripts/lib/calibration-prompt-template.mjs strictly requires "${requiredBlindRoot}". ` +
+        `On PCs without an E: drive, run \`subst E: <root_dir>\` (e.g. \`subst E: C:\\iketeru\`) under normal user privileges, set IKETERU_BLIND_ROOT=${requiredBlindRoot} (or unset it), verify \`Test-Path ${requiredBlindRoot}\`, and run from E:\\iketeru-eizou.`
+    );
+  }
+  const requiredDriveRoot = path.win32.parse(requiredBlindRoot).root;
+  if (!fs.existsSync(requiredDriveRoot)) {
+    throw new Error(
+      `Drive "${requiredDriveRoot}" is not available (required by frozen scripts/lib/calibration-prompt-template.mjs for "${requiredBlindRoot}"). ` +
+        `Run \`subst E: <root_dir>\` (e.g. \`subst E: C:\\iketeru\`) under normal user privileges and verify \`Test-Path ${requiredBlindRoot}\` before running prepare.`
+    );
+  }
 
   // Verify frozen Phase 2 v1 config against git HEAD (exact same integrity gate as Holdout v1)
   const frozenCfg = validateSplitGuard({

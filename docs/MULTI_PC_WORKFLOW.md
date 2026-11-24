@@ -49,12 +49,13 @@ node scripts/claim-phase3-batch.mjs --claim --worker <このPC名> --priority AL
 #### 追加オプション一覧（すべて任意・未指定時は従来動作のまま）
 - `IKETERU_WORKER_NAME`（環境変数または `.env`）: `--worker` 省略時の既定ワーカー名（未設定時は `os.hostname()`）。同一ホスト名PCの混同防止のため、`.env` に設定しつつ CLI でも `--worker` を明示する。
 - `IKETERU_VIDEO_CACHE_DIR`（環境変数または `.env`）: 動画キャッシュディレクトリの上書き（未設定時は `D:\マイドライブ\iketeru_videos`）。`claim-phase3-batch.mjs` と `prepare-phase3-batch.mjs` の両方で参照。
-- `IKETERU_BLIND_ROOT`（環境変数または `.env`、または `--blind-root` 引数）: ブラインド作業ディレクトリの上書き（未設定時は `E:\iketeru_blind_eval`）。`REPO_ROOT` はスクリプト位置から自動解決される。
-  - **2台目PC（`CHIBA-PC2` / `C:\iketeru\`）の `.env` 設定例**:
+- `IKETERU_BLIND_ROOT`（環境変数または `.env`、または `--blind-root` 引数）: **凍結ファイル `scripts/lib/calibration-prompt-template.mjs` が `E:\iketeru_blind_eval` を固定要求するため、それ以外のパスを指定すると `prepare` の先頭（`--dry-run` 含む）で即停止します**。`E:` ドライブが無いPCでは、通常ユーザー権限で **`subst E: C:\iketeru`** のように仮想ドライブ `E:` を割り当て、`IKETERU_BLIND_ROOT=E:\iketeru_blind_eval`（または未設定）のまま、以後のコマンドも `E:\iketeru-eizou` から実行してください。
+  - **重要（`subst` 運用時の毎回確認）**: `subst` は再起動・サインアウトで解除され、管理者権限プロセスからは見えません。`prepare` や採点を始める前に毎回 **`Test-Path E:\iketeru_blind_eval`** を確認し、`False` なら再度 `subst E: C:\iketeru` を実行してください。
+  - **2台目PC（`CHIBA-PC2` / `subst E: C:\iketeru` 利用）の `.env` 設定例**:
     ```env
     IKETERU_WORKER_NAME=CHIBA-PC2
     IKETERU_VIDEO_CACHE_DIR=G:\マイドライブ\iketeru_videos
-    IKETERU_BLIND_ROOT=C:\iketeru\iketeru_blind_eval
+    IKETERU_BLIND_ROOT=E:\iketeru_blind_eval
     ```
 - `claim-phase3-batch.mjs`:
   - `--cached-only`: キャッシュに存在する動画のみ候補にする。
