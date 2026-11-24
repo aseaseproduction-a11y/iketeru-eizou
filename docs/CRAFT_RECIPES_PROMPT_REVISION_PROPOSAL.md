@@ -122,3 +122,30 @@
 ### 3-3. 反映の進め方
 - 8組検証で上記 5項目すべてが合格基準を満たした場合のみ、`E:\iketeru-creative-studio` の分析／レシピ生成スキルおよびコードへ正式反映する。
 - 既存 DB の確定・未視聴分析 **259本（TiDB 257本）** については、今回の監査一覧（`unwatched_analysis_audit.json`）をもとに、今後「未視聴フラグ（`unverified`）の明示」または「動画取得できたものから再分析」する方針を別途ユーザーと決める。
+
+---
+
+## 4. 最終検証結果と判断（2026-11-25・Track C 区切り）
+
+### 4-1. 公平なホールドアウト再テスト（新規 10 組・二重盲検）の結果
+旧 8 組とは完全に重複しない新規 BTS 付き 10 組（実写主体 2・ストップモーション/ミニチュア 3・ハイブリッド 3・CG/生成AI系 2）を用い、改訂前指示文（`OLD_BASELINE`）と改訂後指示文（`REVISED_3RULE`）をブラインド比較し、独立した盲検審査サブエージェント（無関係 BTS 対照テスト含む）で厳格採点した（詳細：[holdout_fair_ab_eval.json](file:///E:/iketeru-eizou/analysis/craft_calibration_pilot/holdout_fair_ab_eval.json)）。
+
+| 評価指標 | 改訂前 (`OLD_BASELINE`) | 改訂後 (`REVISED_3RULE`) | 判定 |
+|---|---:|---:|---|
+| ① 主仮説＋実写/デジタル比率の厳格一致 | **7/10（70%）** | **6/10（60%）** | 改訂後が悪化（`ho_05` でハイブリッド逃げによる不一致） |
+| ② 逆転誤認がある作品数 / 総箇所数 | 5/10（**19箇所**） | 5/10（**10箇所**） | 作品数は不変、誤断定箇所数は約半減 |
+| ③ 隠れ工程 適合率（BTS確認 / 挙げた数） | 28/84（**33.3%**） | 17/50（**34.0%**） | ほぼ横ばい（約 2/3 は BTS で未確認） |
+| ④ 無関係 BTS 対照テスト（誤ヒット率） | 0/84（0.0%） | 0/50（0.0%） | 定型占星術ヒットは双方とも 0% |
+
+※**監査ログに関する訂正**: `holdout_fair_ab_eval.json` および `_analysis_audit_log.json` において、各サブエージェントへ渡した指示文（`prompt_text`）は抽出キーの不一致により全 40 件 `null`（未保存）となっていた。今後の検証では指示文の非 `null` 保存を完了条件に組み込む。
+
+### 4-2. 各ルールの最終採否（Track C 終了）
+- **ルール 2（未視聴ハードゲート）→ 採用・本番反映済み**:
+  - [iketeru-production-standards/SKILL.md](file:///C:/Users/t1257/.gemini/config/skills/iketeru-production-standards/SKILL.md) 第 5 章、および `E:\iketeru-creative-studio` の `iketeru_studio/craft_recipes.py`（`is_craft_eligible` / `ingest_batch_craft`）・`tests/test_studio.py`（15/15 PASS）へ反映完了。
+- **ルール 3（6 観点チェックリスト）→ 廃止**:
+  - 適合率が改訂前と横ばい（34.0% vs 33.3%）にとどまり、`ho_03`（100% 物理切り絵）でクロマキー観点への誤誘導、`カラーマネジメント順序` で 9/10 件の BTS 未確認ノイズを誘発したため廃止する。
+- **ルール 1（現行の非断定＋両ルート併記案）→ 現行案では不採用**:
+  - 逆転箇所数は 19→10 に減少した一方、両ルート併記が `ho_05` でハイブリッド逃げを誘発し主一致が 7/10→6/10 に低下。10 組では純効果を判定できないため現行案では採用しない。
+- **後続案（DB 書き込みなし・提案書のみ作成）**:
+  - 映像から断定できない 6 領域の規約案: [CRAFT_RECIPES_NON_VISUAL_UNKNOWNS_PROPOSAL.md](file:///E:/iketeru-eizou/docs/CRAFT_RECIPES_NON_VISUAL_UNKNOWNS_PROPOSAL.md)（本番保留）
+  - 既存 `craft_recipes` 1,036 件の「推定（未検証）」表示・区別設計案: [CRAFT_RECIPES_INFERRED_PROVENANCE_PROPOSAL.md](file:///E:/iketeru-eizou/docs/CRAFT_RECIPES_INFERRED_PROVENANCE_PROPOSAL.md)（本番保留）

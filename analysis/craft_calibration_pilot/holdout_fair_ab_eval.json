@@ -1,0 +1,2366 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-25T06:41:00+09:00",
+  "protocol": "Fair Held-Out A/B Evaluation (10 NEW BTS pairs disjoint from original 8; strict primary+ratio match; independent anonymized blind judges; cross-category unrelated-BTS mismatch control; ZERO DB writes)",
+  "anti_leakage_audit": {
+    "total_subagents_audited": 40,
+    "leakage_violations_count": 0,
+    "leakage_violations": [],
+    "all_checks_passed": true
+  },
+  "summary_comparison": {
+    "OLD_BASELINE": {
+      "primary_hypothesis_match": "7/10 (70%)",
+      "works_with_reversal_hallucination": "5/10 (50%)",
+      "total_reversal_hallucination_instances": 19,
+      "matched_bts_hidden_craft": {
+        "total_listed": 84,
+        "total_confirmed": 28,
+        "avg_listed_per_work": 8.4,
+        "avg_confirmed_per_work": 2.8,
+        "micro_precision": 0.3333,
+        "macro_precision": 0.3253
+      },
+      "unrelated_bts_mismatch_control": {
+        "total_listed": 84,
+        "total_false_hits": 0,
+        "micro_false_positive_rate": 0.0,
+        "macro_false_positive_rate": 0.0
+      },
+      "net_specificity_lift_micro": 0.3333,
+      "net_specificity_lift_macro": 0.3253
+    },
+    "REVISED_3RULE": {
+      "primary_hypothesis_match": "6/10 (60%)",
+      "works_with_reversal_hallucination": "5/10 (50%)",
+      "total_reversal_hallucination_instances": 10,
+      "matched_bts_hidden_craft": {
+        "total_listed": 50,
+        "total_confirmed": 17,
+        "avg_listed_per_work": 5.0,
+        "avg_confirmed_per_work": 1.7,
+        "micro_precision": 0.34,
+        "macro_precision": 0.3433
+      },
+      "unrelated_bts_mismatch_control": {
+        "total_listed": 50,
+        "total_false_hits": 0,
+        "micro_false_positive_rate": 0.0,
+        "macro_false_positive_rate": 0.0
+      },
+      "net_specificity_lift_micro": 0.34,
+      "net_specificity_lift_macro": 0.3433
+    }
+  },
+  "per_work_results": [
+    {
+      "code": "ho_01",
+      "category": "live_action_dominant",
+      "selection_reason": "純実写CMのベースライン（不要なCG/ハイブリッド逃げを誘発しないか検証）",
+      "main_id": "I6SqNnSiA8c",
+      "main_title": "TV CM  食品 / 飲料 / 飲食   「オレと吉野家」篇　30秒",
+      "bts_id": "XbuRfdBErro",
+      "bts_title": "メイキング / Behind The Scenes  食品 / 飲料 / 飲食   「オレと吉野家」篇「オレと牛丼」篇　メイキングムービー",
+      "bts_actual_summary_1line": "実在の吉野家店舗（外観・ボックス席・カウンター席）でのロケ撮影に大型シネマカメラリグ・クレーン・実物料理・エキストラを用いた完全実写主体の撮影（23.976fpsシネマ調ルック、VFX/スタジオ建て込みの言及なし）。",
+      "unrelated_control_bts_code": "ho_03",
+      "unrelated_control_bts_title": "CAPAREZZA - MAKING OF A COMIC BOOK SAVED MY LIFE",
+      "blinding_assignment": {
+        "Candidate_X": "REV",
+        "Candidate_Y": "OLD"
+      },
+      "OLD": {
+        "primary_format": "live_action",
+        "estimated_live_vs_digital_ratio": "実写92% / デジタル・ポスプロ8%（本編0:00〜0:27は実在店舗ロケのワンカット実写撮影が主体。デジタル要素は終盤の2Dタイポグラフィ、オレンジ背景のブランドロゴ・エンドカード、カラーグレーディング、および必要に応じたガラス映り込み等の微細クリーンアップのみ）",
+        "primary_hypothesis_match": true,
+        "primary_match_reason": "実在の吉野家店舗ロケ主体の実写撮影（live_action・実写92%／デジタル8%）と推定しており、BTSで確認できる実店舗での実写ロケ主体という実態および主従比率と一致する。",
+        "reversal_hallucination_count": 0,
+        "reversal_details": [],
+        "matched_checklist": {
+          "listed": 8,
+          "confirmed": 1,
+          "precision": 0.125,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": true,
+              "reason": "BTSに「実際にロケで使った吉野家のボックス席」「本編のロケ現場」「店舗外観ロケ全景」「店舗外観の入り口前に立つスタッフ・撮影準備風景」「店舗外観・入店リハーサル」「店舗ガラス戸の動線確認」と明記されており、実在店舗ロケ確保と店舗外観・入口での外ロケ動線管理が直接裏付けられる（なお駐車場の終日貸し切りや車両・通行人自体はBTS未記載）。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": false,
+              "reason": "BTSで確認できるのは「大型シネマカメラを担ぐ撮影監督」「青と緑のSDIケーブル・大きなマットボックス装着の大型シネマカメラリグ」および店内クレーンであり、小型シネマカメラ＋電動ジンバル（またはステディカム／ARRI Trinity等）による屋外〜屋内連続ワンカット追従の記載はない。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": false,
+              "reason": "BTSに2オペレーター間のジンバル受け渡し（ハンドオフ）、延長ブーム、またはカウンター一部脱着による特機オペレーションの記載は一切ない。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": false,
+              "reason": "BTSには大型シネマカメラでのフォーカス確認の記載はあるが、屋外から屋内への無カット進入時のワイヤレスFIZによるアイリスまたは可変電子ND（e-ND）のリアルタイム露出送り制御の記載はない。"
+            },
+            {
+              "index": 4,
+              "confirmed_by_bts": false,
+              "reason": "BTSには「ライティング転換の合間」という一般的な言及のみで、店内天井・隠蔽LEDチューブ／バウンスライトによる照度底上げや、窓面ND調整・時間帯選定による内外輝度差バランス設計の記載はない。"
+            },
+            {
+              "index": 5,
+              "confirmed_by_bts": false,
+              "reason": "BTSでは入店リハーサル・店舗ガラス戸の動線確認・隣席サラリーマン役エキストラとの本番芝居は確認できるが、約15〜20名の客・店員エキストラをBGMテンポ・クリック音に合わせて同期させるという具体的な手法の記載はない。"
+            },
+            {
+              "index": 6,
+              "confirmed_by_bts": false,
+              "reason": "BTSにガラスドアや大窓へのスタッフ・機材映り込みを避ける厳密なアングル設計や、ペイントアウト処理の記載は一切ない。"
+            },
+            {
+              "index": 7,
+              "confirmed_by_bts": false,
+              "reason": "BTSではメイキング動画自身の音響設計や左下チャプターバッジのみが言及されており、CM本編のフォーリー／SE設計や2Dモーションタイポグラフィ・ブランドロゴエンドカード仕上げ工程の記載はない。"
+            }
+          ]
+        },
+        "unrelated_bts_control": {
+          "listed": 8,
+          "false_hits": 0,
+          "false_positive_rate": 0.0,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": false,
+              "reason": "BTSは屋内アトリエでのコマ撮り制作であり、ロードサイド飲食店・駐車場の貸し切りロケや車両・通行人の外ロケ動線コントロールの記載はない。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": false,
+              "reason": "BTSは固定フレームのマルチプレーン撮影台等を用いたコマ撮り制作であり、小型シネマカメラ＋電動ジンバル／ステディカム等による屋外から屋内への連続ワンカット追従撮影の記載はない。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": false,
+              "reason": "BTSに飲食店カウンター越えのための2オペレーター間ジンバル受け渡し、延長ブーム、カウンター脱着オペレーションの記載はない。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": false,
+              "reason": "BTSに屋外直射日光下から屋内店舗への無カット移動やワイヤレスFIZ・可変電子ND（e-ND）によるリアルタイム露出送り制御の記載はない。"
+            },
+            {
+              "index": 4,
+              "confirmed_by_bts": false,
+              "reason": "BTSの照明は撮影台左右の拡散ライトやアトリエ自然光・作業灯等であり、飲食店天井の隠蔽LEDチューブ／バウンスライトや窓面ND調整・時間帯選定による内外輝度差バランス設計の記載はない。"
+            },
+            {
+              "index": 5,
+              "confirmed_by_bts": false,
+              "reason": "BTSに主演タレントや15〜20名の客・店員エキストラによるブロッキング・リハーサルの記載はない。"
+            },
+            {
+              "index": 6,
+              "confirmed_by_bts": false,
+              "reason": "BTSに店舗のガラスドア・大窓への映り込み回避アングル設計やペイントアウト処理の記載はない。"
+            },
+            {
+              "index": 7,
+              "confirmed_by_bts": false,
+              "reason": "BTSは言葉や現場ノイズを排してMV本編楽曲のみをBGMとして敷いた構成と明記されており、車のドア閉め・キーロック・足音・鍵・タブレット操作のフォーリー／SE設計や2Dモーションタイポグラフィ＆ブランドロゴ・エンドカード仕上げの記載はない。"
+            }
+          ]
+        },
+        "net_specificity_lift": 0.125
+      },
+      "REV": {
+        "primary_format": "live_action",
+        "estimated_live_vs_digital_ratio": "実写90%〜95% / デジタル処理・2Dモーショングラフィックス5%〜10%（内訳：00:00〜00:27の本編は実写ワンカット風撮影が主体で、カラーグレーディングや微細なリグ／反射クリーンアップ・隠しカット繋ぎの可能性を含む。00:25〜00:27のキャッチコピー「元気を、いただきますっ。」と00:28〜00:29のオレンジ背景ブランドロゴエンドカードが2Dデジタル生成）",
+        "primary_hypothesis_match": true,
+        "primary_match_reason": "実写主導（live_action・実写90%〜95%／デジタル5%〜10%）を主仮説としており、BTSで確認できる実在の吉野家店舗での実写ロケ主体という実態および主従比率と一致する（隠しカットやスタジオセット併用は可能性の留保にとどめている）。",
+        "reversal_hallucination_count": 0,
+        "reversal_details": [],
+        "matched_checklist": {
+          "listed": 5,
+          "confirmed": 0,
+          "precision": 0.0,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": false,
+              "reason": "BTSでは大型シネマカメラ（肩担ぎ・SDIケーブル・大型マットボックス）とフォーカス確認、店内引き画のクレーン／ブームマイクが確認できるが、ステディカム／ARRI Trinity・大型ジンバル運用や、屋外→屋内移行時のワイヤレスフォーカス・アイリス／可変ND連続遠隔制御の裏付けはない。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": false,
+              "reason": "BTSにガラス面や光沢カウンター上の映り込み回避設計や、ロト／ペイントアウトによる反射クリーンアップ工程の記載は一切ない。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": false,
+              "reason": "BTSでは入店リハーサル・店舗ガラス戸の動線確認・隣席サラリーマン役エキストラ・ライティング転換の合間という言及はあるものの、通行人や十数名の客・店員を楽曲テンポに合わせて動かすキュー出しスタッフや、窓外ディフュージョン／大型照明・窓面NDフィルム施工スタッフの記載はない。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": false,
+              "reason": "BTSは実在吉野家店舗でのロケ撮影を示しており、入口柱ワイプでの隠しカット接続、スタジオセットでの窓外背景合成、トラッキングマーカー管理、スピル抑制・マスク合成の記載は一切ない。"
+            },
+            {
+              "index": 4,
+              "confirmed_by_bts": false,
+              "reason": "BTSには本編が23.976fpsのコントラストのあるシネマ調であるとのルック対比のみがあり、Log収録・シーン参照カラーマネジメント・屋外/屋内間のキーフレーム露出/WB連続補間・2Dテロップ/エンドカード合成の順序設計についての記載はない。"
+            }
+          ]
+        },
+        "unrelated_bts_control": {
+          "listed": 5,
+          "false_hits": 0,
+          "false_positive_rate": 0.0,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": false,
+              "reason": "BTSはアトリエ内での物理的ストップモーション／マルチプレーン撮影台制作であり、降車・風除室・飲食店カウンターのステディカム／ARRI Trinity／ジンバル移動やワイヤレスフォーカス／可変ND制御に関する記載はない。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": false,
+              "reason": "BTSはガラス板の反射防止として撮影台上部の黒い遮光フレームを用いている旨のみ記載されており、店舗ガラス扉や光沢カウンターの映り込みに対するロト／ペイントアウト工程の記載はない。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": false,
+              "reason": "BTSは紙人形や模型の手作業コマ撮りであり、通行人や店内客・店員への動線キュー出しスタッフ、窓外ディフュージョン／大型照明、窓面NDフィルム施工に関する記載はない。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": false,
+              "reason": "BTSに入口柱ワイプの隠しカット接続、窓外背景合成、店内看板・タブレット差し替え、トラッキングマーカー管理やスピル抑制・マスク合成の記載はない。"
+            },
+            {
+              "index": 4,
+              "confirmed_by_bts": false,
+              "reason": "BTSはアトリエ作業とセット撮影の紙アニメーション制作であり、屋外日向から飲食店内のLog収録カラーマネジメント、商業CMルック、2Dテロップ「元気を、いただきますっ。」およびエンドカード合成の記載はない。"
+            }
+          ]
+        },
+        "net_specificity_lift": 0.0
+      }
+    },
+    {
+      "code": "ho_02",
+      "category": "live_action_dominant",
+      "selection_reason": "実写ワイヤースタント・カースタント・特効主体＋補助VFX（大規模実写特効の識別）",
+      "main_id": "xeYiCU7W9as",
+      "main_title": "あいみょん - RING DING【OFFICIAL MUSIC VIDEO】【#あいみょんMVリクエスト 】",
+      "bts_id": "Q2ZAXEzAFw0",
+      "bts_title": "あいみょん - RING DING【MAKING MOVIE】",
+      "bts_actual_summary_1line": "港湾・ボクシングジム・SNOVA雪上スタジオ等の多拠点ロケと巨大風車壁・白ホリ青ハート・赤幕ライブ等の大型スタジオ美術、スタント2社（ワイヤー/カー）・特効を駆使した大規模実写撮影が圧倒的主体で、VFX（Khaki）が補助する制作体制。",
+      "unrelated_control_bts_code": "ho_04",
+      "unrelated_control_bts_title": "メイキング / Behind The Scenes  エモーショナル / 感動的   100年の物語　メイキングムービー",
+      "blinding_assignment": {
+        "Candidate_X": "OLD",
+        "Candidate_Y": "REV"
+      },
+      "OLD": {
+        "primary_format": "live_action",
+        "estimated_live_vs_digital_ratio": "実写92% / CG・VFX8%（内訳：全編がスタジオ美術・多拠点ロケーション・物理特効・スタントによる実写撮影主体。デジタル工程はワイヤーアクションや宙吊りハート美術のワイヤー/リグ消し、手描き風2Dタイトル合成、速度変化・フラッシュ繋ぎ、シーン別カラーグレーディングが中心）",
+        "primary_hypothesis_match": true,
+        "primary_match_reason": "多拠点ロケ（港湾・倉庫街、ボクシングジム、屋内スキー場）と大型スタジオ美術（白ホリ青ハート、風車壁、ライブステージ）、物理特効・ワイヤー/車両スタントによる実写撮影を主体（実写92% / CG・VFX8%）とし、VFXをワイヤー消し等の補助工程と位置づけており、BTSの実態（実写・物理美術・スタント・特効主体＋VFX Khaki）と主従・比率ともに整合している。",
+        "reversal_hallucination_count": 0,
+        "reversal_details": [],
+        "matched_checklist": {
+          "listed": 9,
+          "confirmed": 5,
+          "precision": 0.5556,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": true,
+              "reason": "BTSに「青い巨大ハートが浮かぶ白ホリ」「白空間に吊られた青いハート群」「青ハートを床と空中に配し」およびVFX Khakiのクレジットが明記されており、白ホリでの吊り下げ・床配置の青ハート美術が直接裏付けられる（広角ハンドヘルド/ジンバルの機材名は未記載）。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": false,
+              "reason": "BTSに記載される赤い布はライブステージ奥の「真っ赤な幕」のみであり、伸縮性・光沢のある赤布を張った特設セットでの高所・俯瞰アングル＋指向性照明による陰影演出は確認できない。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": true,
+              "reason": "BTSに「壁一面に設置された数百個のカラフルな風車」「スタジオ全面を覆う色とりどりの風車壁」「特効FLAT inc.」「風や雪マシンの駆動音」が明記されており、風車大型美術壁と風特効が直接裏付けられる（黒格子フレームや同シーンでの紙片散布は未記載）。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": true,
+              "reason": "BTSに「壁一面の巨大風車セットでのワイヤーフライング」「ワイヤーで宙に吊られた演者たちとドラムセットが交錯する様子」「ワイヤースタントK-Stunt Films」「ワイヤーのリギング音」「VFX Khaki」が明記されており、直接裏付けられる。"
+            },
+            {
+              "index": 4,
+              "confirmed_by_bts": true,
+              "reason": "BTSに「SNOVA雪上スタジオでの吹雪」「人工雪が舞うSNOVAの吹雪セット」「スモークと人工雪が激しく舞う」「雪マシンの駆動音」が明記されており、屋内人工雪スキー場での降雪下ロケ撮影という中核工程が裏付けられる（ドラム持ち込み・自転車・ソリ・大光量照明の記載はなし）。"
+            },
+            {
+              "index": 5,
+              "confirmed_by_bts": true,
+              "reason": "BTSに「港湾倉庫街でのセダン屋根乗り撮影」「走行するセダンの屋根に乗るあいみょんと併走カメラ車」「カースタントSHADOW STUNT」および岸壁での「雨ガッパ姿のスタッフ」が明記されており、港湾・倉庫街ロケとセダン車両スタントが裏付けられる（散水特効・レンズ水滴・バイク走行は未記載）。"
+            },
+            {
+              "index": 6,
+              "confirmed_by_bts": false,
+              "reason": "BTSで「老舗風のボクシングジム」でのスパーリング指導とリング内バンド演奏自体は確認できるが、本項目が主張する具体的な撮影手法である「リング内ハンドヘルド密着撮影」および「黒ホリスタジオでのハイスピード（高速度）スロー撮影」はいずれもBTSに記載がない。"
+            },
+            {
+              "index": 7,
+              "confirmed_by_bts": false,
+              "reason": "ミラーボール・紙吹雪・大勢のエキストラを伴うライブステージ美術はBTSで確認できるものの、併記された3系統のセット・手法のうち2系統（レトロ厨房セット＋CRTモニター、滝/水幕背景＋実物パペット操作）およびクラウドサーフがBTSに一切記載されていない。"
+            },
+            {
+              "index": 8,
+              "confirmed_by_bts": false,
+              "reason": "手描きライン風2Dタイポグラフィ合成はBTSに記載がなく、カラーグレーディングの言及もメイキング映像自体の「コントラストを抑えたフィルム調」に関するものであり、本編MVの「世界観ごとの高コントラスト・フィルム調グレーディング」はBTSで確認できない。"
+            }
+          ]
+        },
+        "unrelated_bts_control": {
+          "listed": 9,
+          "false_hits": 0,
+          "false_positive_rate": 0.0,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": false,
+              "reason": "BTSは暗室スタジオでのトレース台・多層撮影櫓による印影と切り絵のストップモーション制作であり、白ホリスタジオ、ハンドヘルド/ジンバル撮影、青いハート型パネル美術、ワイヤーのポスト除去の記載はない。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": false,
+              "reason": "BTSに赤色照明や俯瞰カットの記載はあるが、巨大な伸縮性・光沢のある赤布を張った特設美術セットやそれに対する高所・指向性照明演出の記載はない。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": false,
+              "reason": "BTSに黒格子フレームへ多数の風車を敷き詰めた大型美術壁、大型送風機（強風特効）、紙片散布の記載はない。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": false,
+              "reason": "BTSに風車壁シーン、演者・ドラマーへのハーネス装着・ワイヤーリギングによる空中スタント、VFXワイヤー消し処理の記載はない。"
+            },
+            {
+              "index": 4,
+              "confirmed_by_bts": false,
+              "reason": "BTSはスタジオ内のコマ撮り制作のみで、屋内スキー場、ドラムセット、自転車走行、ソリ滑走、降雪下ロケ撮影の記載はない。"
+            },
+            {
+              "index": 5,
+              "confirmed_by_bts": false,
+              "reason": "BTSに港湾・倉庫街ロケ、散水/降雨特効、バイクのウィリー/スモーク走行、セダン車両スタントの記載はない。"
+            },
+            {
+              "index": 6,
+              "confirmed_by_bts": false,
+              "reason": "BTSにボクシングジムでのリング内撮影や、黒ホリスタジオでの打撃ハイスピード（高速度）スロー撮影の記載はない。"
+            },
+            {
+              "index": 7,
+              "confirmed_by_bts": false,
+              "reason": "BTSにレトロ厨房セット、CRTモニター、滝/水幕背景、実物パペット操作、ミラーボール・紙吹雪・ライブハウスステージ美術の記載はない。"
+            },
+            {
+              "index": 8,
+              "confirmed_by_bts": false,
+              "reason": "BTSは印影と「Shachihata」ロゴおよび照明色変化の記載にとどまり、手描きライン風2Dタイポグラフィ（冒頭白文字・エンドロール赤文字）のコンポジットや世界観ごとのフィルム調カラーグレーディングの記載はない。"
+            }
+          ]
+        },
+        "net_specificity_lift": 0.5556
+      },
+      "REV": {
+        "primary_format": "live_action_vfx_hybrid",
+        "estimated_live_vs_digital_ratio": "実写85〜90% / CG・VFX・デジタル処理10〜15%（ロケ撮影・大型スタジオ美術・物理特効・スタントが主体と推定され、デジタル側はワイヤー／リグのペイントアウト、一部境界ショットの合成補助、2D手描き風タイポグラフィ、カラーグレーディングが中心）",
+        "primary_hypothesis_match": true,
+        "primary_match_reason": "形式名はlive_action_vfx_hybridとしているものの、比率を実写85〜90% / CG・VFX・デジタル処理10〜15%と明確に実写主体に設定し、多拠点ロケ・大型スタジオ美術・物理特効・ワイヤー/車両スタントを中核、VFXをリグ消し等の小規模補助と整理しており、BTSの実態（大規模実写・スタント・特効主体＋VFX Khaki）と比率・主従ともに整合している。",
+        "reversal_hallucination_count": 0,
+        "reversal_details": [],
+        "matched_checklist": {
+          "listed": 5,
+          "confirmed": 3,
+          "precision": 0.6,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": true,
+              "reason": "BTSに風車壁前でのワイヤー宙吊り（ワイヤースタントK-Stunt Films、ワイヤーリグ）、白ホリで吊られた青いハート群、VFX Khakiのクレジットが明記されており、ワイヤー/吊り下げリグ設置とVFX体制の中核が裏付けられる（赤布空間の浮遊・鳥パペット操演棒・クリーンプレート手順詳細は未記載）。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": false,
+              "reason": "セダン車上シーンでの「併走カメラ車」撮影はBTSで明確に確認できるものの、本項目が挙げるカメラ特機・手法の大半（バイクのタンデム走行、車載リグ・スタビライザー、カメラ防滴ハウジング、レンズ水滴コントロール、ボクシングリングや群衆ダイブでの広角近接手持ち撮影）がBTSで確認できない。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": true,
+              "reason": "BTSに「特効FLAT inc.」、風車壁＋「風や雪マシンの駆動音」、SNOVA雪上スタジオでの人工雪降雪演出、ライブステージの「金色の紙吹雪」「青いイルカ型バルーン」、岸壁の雨ガッパ隊が明記されており、主要な物理環境演出・特効が直接裏付けられる（レインバー・バイク白煙・鳥パペット操演は未記載）。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": true,
+              "reason": "BTSに「壁一面に設置された数百個のカラフルな風車」「青い巨大ハートが浮かぶ白ホリ」「ミラーボール」「青いイルカ型バルーン」が明記されており、主要な大型美術・物理小道具造形が直接裏付けられる（キッチン・書き割り・鳥パペット・サメ着ぐるみ・2Dタイポグラフィは未記載）。"
+            },
+            {
+              "index": 4,
+              "confirmed_by_bts": false,
+              "reason": "BTSに記載されるフィルム調カラーグレーディングはメイキング映像自体の仕上げであり、本編MVにおけるLog露出・WB正規化→クリーンプレート合成→統一ルック→2Dタイトルオーバーレイというカラーマネジメント・コンポジット工程順はBTSで確認できない一般的・定型的な推測記述である。"
+            }
+          ]
+        },
+        "unrelated_bts_control": {
+          "listed": 5,
+          "false_hits": 0,
+          "false_positive_rate": 0.0,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": false,
+              "reason": "BTSには切り絵保持用の金属製クランプアームの記載はあるが、風車ウォール・青いハートパネル・赤い布空間・鳥パペットを支えるワイヤー・ハーネス・操演棒や、クリーンプレート復元・ペイントアウト処理の記載はなく対象・工程が異なる。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": false,
+              "reason": "BTSにバイク・セダン追走用のカメラカー／車載リグ、雨天・降雪での防滴ハウジングや水滴コントロール、ボクシングリング・群衆ダイブでの広角近接手持ち撮影の記載はない。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": false,
+              "reason": "BTSに大型送風機、海辺倉庫街の降雨演出（レインバー／散水特効）、白煙スモーク、降雪演出、紙吹雪・バルーン・鳥パペットの操演スタッフの記載はない。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": false,
+              "reason": "BTSにアナログ工作とデジタル仕上げの言及はあるものの、風車美術壁、立体青いハート造形、キッチン／ライブステージ書き割り、ミラーボール・イルカ型バルーン・鳥パペット・サメ風着ぐるみ、手描き風2Dタイポグラフィ制作の記載はなく対象が異なる。"
+            },
+            {
+              "index": 4,
+              "confirmed_by_bts": false,
+              "reason": "BTSに白ホリ・ボクシングジム・曇天岸壁・屋内ゲレンデ・暖色キッチン・深紅の布空間の高速カットバック、Log素材からの露出・WB正規化、ワイヤー／リグ消し・クリーンプレート合成、統一フィルム調ルック、手描き風タイトル・クレジットのオーバーレイ順の記載はない。"
+            }
+          ]
+        },
+        "net_specificity_lift": 0.6
+      }
+    },
+    {
+      "code": "ho_03",
+      "category": "stop_motion_practical",
+      "selection_reason": "デジタル紙シェーダーに見えるが100%物理パステル紙切り絵コマ撮り（逆誤認トラップ）",
+      "main_id": "RZPOe63cjgY",
+      "main_title": "CAPAREZZA - A COMIC BOOK SAVED MY LIFE  (Official Video)",
+      "bts_id": "ApCHvzvzlYw",
+      "bts_title": "CAPAREZZA - MAKING OF A COMIC BOOK SAVED MY LIFE",
+      "bts_actual_summary_1line": "手描きパステル・色鉛筆彩色の紙切り絵とミニチュアセット・竹串操演を金属枠の多層ガラス撮影台（マルチプレーン・ロストラム）とオニオンスキン監視で1コマ撮りする100%物理アトリエ主体のストップモーション作品（デジタルは最小限の編集・仕上げのみ）",
+      "unrelated_control_bts_code": "ho_06",
+      "unrelated_control_bts_title": "メイキング / Behind The Scenes  食品 / 飲料 / 飲食   全人類ガツン、と化計画 メイキング",
+      "blinding_assignment": {
+        "Candidate_X": "OLD",
+        "Candidate_Y": "REV"
+      },
+      "OLD": {
+        "primary_format": "stop_motion_or_practical_miniature",
+        "estimated_live_vs_digital_ratio": "実写（フィジカル・ペーパーカットアウト／コマ撮り撮影）85% / デジタル（編集・ディゾルブ合成・一部多重露光風重ね・リグ消し・カラグレ・クレジット）15%",
+        "primary_hypothesis_match": true,
+        "primary_match_reason": "primary_format（stop_motion_or_practical_miniature）、物理85%／デジタル15%の主従比率、および手描き切り絵・浅い立体セット・マルチプレーン俯瞰撮影台によるアナログ主体ストップモーション＋最小限のデジタル仕上げという主仮説が、BTSの実態（100%物理アトリエ作業のマルチプレーン紙切り絵コマ撮り）と整合している。",
+        "reversal_hallucination_count": 0,
+        "reversal_details": [],
+        "matched_checklist": {
+          "listed": 9,
+          "confirmed": 6,
+          "precision": 0.6667,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": true,
+              "reason": "色鉛筆・パステルによる手描き彩色と、はさみ・カッターによる紙パーツの切り出しはBTS（§0・#05・§5）で明示的に裏付けられている（なお水彩・アクリルおよび黒紙の「手ちぎり」自体はBTS未記載）。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": true,
+              "reason": "ロボット戦士の無数の関節パーツを組み合わせて人形を作る可動型ペーパーカットアウト造形はBTS（#06）で明示的に確認できる（なお表情・口パク・頭部連続変身等のリプレイスメント差し替えパーツはBTS未記載）。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": true,
+              "reason": "金属アングル枠にガラス板を張ったマルチプレーン撮影台（下段背景紙・中段ガラス板上の波パーツ）と青い紙の波を手作業でスライドさせる手法はBTS（§0・#02・#03・§5）で明確に裏付けられている。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": true,
+              "reason": "ベッドと机のある自室セット、歯車とメガホンのグレー工場セット、検査室セット等の立体ミニチュアセット制作はBTS（#04・#07）で明確に確認できる（段ボール箱や即売会テーブル等はBTS未記載）。"
+            },
+            {
+              "index": 4,
+              "confirmed_by_bts": false,
+              "reason": "透明プラスチック製ドーム、コイルコード、実物のハードカバー製本コミックといった異素材プロップの組み込みはBTSに記載がなく未確認。"
+            },
+            {
+              "index": 5,
+              "confirmed_by_bts": true,
+              "reason": "別担当のコミックイラストレーター（Laura Camelli、Lorenzo Mò）の存在と、撮影台上でコミックページの横から星空ガラス面上を物理的なキャンピングカー模型が移動する2Dコミック×物理立体パーツのインカメラ融合撮影はBTS（§0クレジット・#08）で直接裏付けられている（赤マントキャラの見開き上配置自体は未記載）。"
+            },
+            {
+              "index": 6,
+              "confirmed_by_bts": false,
+              "reason": "BTS（§5・#04）で確認できるのはフレーム上部の左右拡散ライト（ディフューザー付きパネル）と工場セットのスポットライト調整のみであり、低角度・一方向のレイキングライトやLED／タングステン種別・フリッカー抑制撮影は未確認。"
+            },
+            {
+              "index": 7,
+              "confirmed_by_bts": true,
+              "reason": "フレーム上部に固定したカメラと、横に置いたノートPC＋大型ライブビューモニターでオニオンスキンを確認しながら1コマずつ撮影するワークフローはBTS（§0・#02・§5）で明確に裏付けられている（12fpsの具体的数値は未記載）。"
+            },
+            {
+              "index": 8,
+              "confirmed_by_bts": false,
+              "reason": "MV本編のビート同期編集・残像レイヤー重ね・粘着材やガラス反射のデジタルクリーンアップはBTS未確認。特にガラス反射については§5で「黒い遮光フレームが外光の映り込みによるガラス面の反射を完璧に防いでいる」と物理対策が明記されており裏付けられない。"
+            }
+          ]
+        },
+        "unrelated_bts_control": {
+          "listed": 9,
+          "false_hits": 0,
+          "false_positive_rate": 0.0,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": false,
+              "reason": "BTSは雨天公園ロケとスタジオのグリーンバック実写撮影であり、厚紙の手描き切り出しや黒色画用紙の手ちぎり造形に関する記載はない。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": false,
+              "reason": "BTSにペーパーカットアウト人形や差し替えによるリプレイスメント・アニメーションの記載はない。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": false,
+              "reason": "BTSに複数枚のガラス板を用いたマルチプレーン撮影台やダウンシューターの記載はない。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": false,
+              "reason": "BTSに登場するセットは公園ロケとスタジオの白い鉄骨足場・グリーンバック台であり、厚紙の3Dレリーフや箱型ミニチュアセットの記載はない。"
+            },
+            {
+              "index": 4,
+              "confirmed_by_bts": false,
+              "reason": "BTSにプラスチック製ドーム、コイルコード、実物コミック等の異素材プロップの記載はない。"
+            },
+            {
+              "index": 5,
+              "confirmed_by_bts": false,
+              "reason": "BTSに印刷コミック原稿と立体切り絵の融合撮影に関する記載はない。"
+            },
+            {
+              "index": 6,
+              "confirmed_by_bts": false,
+              "reason": "BTSの照明は公園での大型HMIライトとスタジオでの青白い強逆光・トップライトであり、紙造形向けの低角度LED/タングステン指向性ライティングやフリッカー抑制撮影の記載はない。"
+            },
+            {
+              "index": 7,
+              "confirmed_by_bts": false,
+              "reason": "BTSにテザー接続一眼カメラやDragonframe相当ソフトによる12fpsコマ撮り収録の記載はない。"
+            },
+            {
+              "index": 8,
+              "confirmed_by_bts": false,
+              "reason": "BTSにコマ撮りの粘着材・ガラス反射クリーンアップや枝登り残像・宇宙から瞳へのトランジション等の記載はない。"
+            }
+          ]
+        },
+        "net_specificity_lift": 0.6667
+      },
+      "REV": {
+        "primary_format": "stop_motion_or_practical_miniature",
+        "estimated_live_vs_digital_ratio": "実写（物理ペーパーカットアウト／立体ミニチュア・実物本コマ撮り）約75〜80% / デジタル合成・VFX・2D処理 約20〜25%（内訳：主仮説ベースで手描き切り紙キャラ・多層ペーパー背景・段ボール箱セット・実物本のめくり等を物理撮影し、ディゾルブ／多重露光遷移・コミック原画とのレイヤー合成・電球や推進炎の発光・支持物消去等をデジタル処理。ただしB案の2.5Dデジタルカットアウト主体の場合はデジタル比率が大きく反転し得る）",
+        "primary_hypothesis_match": true,
+        "primary_match_reason": "primary_format（stop_motion_or_practical_miniature）、物理75〜80%／デジタル20〜25%の比率、および手描き切り紙・立体セットを用いた物理ペーパーカットアウト・ストップモーションを中核とする主仮説は、BTSの実態（物理アトリエ主体のストップモーション）と主従関係・大枠の比率で整合している（ただしデジタル合成比重は実態よりやや高めの見積もり）。",
+        "reversal_hallucination_count": 1,
+        "reversal_details": [
+          "behind_the_scenes_craft_items[3]で、コミック原画と宇宙船（キャンピングカー）等のシーン（03:08〜03:38、本からの飛び出し03:38等）を、別撮りした切り紙素材のクロマキー／ルミナンス抜きによるデジタル合成と断定しているが、BTS（§0・#08）では100%物理的なアトリエ作業であり、コミックページの横から星空のガラス面上をキャンピングカー模型が物理的に飛び去る実写撮影であることが確認されている。"
+        ],
+        "matched_checklist": {
+          "listed": 6,
+          "confirmed": 3,
+          "precision": 0.5,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": true,
+              "reason": "手描き厚紙カットアウト（§0・#05）、ロボット関節パーツの組み立て（#06）、コミック原画・ページの物理制作（クレジット・#08）はBTSで明示的に裏付けられている（なおちぎり紙、差し替えパーツ、丸眼鏡光沢素材、透明プラドーム、段ボール箱セット等はBTS未記載）。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": true,
+              "reason": "多層ガラス板（マルチプレーン）による宇宙キャンピングカーや宙に浮く少年の撮影、物理支持具の使用、および現場ツールとしての練り消しはBTS（§0・#02・#04・#08・§5）で確認できる（ただし実際の支持具は極細ワイヤーではなく細い竹串であり、ガラス反射のデジタルペイントアウトは黒い遮光フレームによる物理防止と異なり未確認）。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": true,
+              "reason": "俯瞰固定のロストラム撮影台カメラリグとライブビュー／オニオンスキンによるフレーム管理はBTS（§0・#02・§5）で明示的に確認できる（精密カメラ移動・多層スライダー・デジタルズーム制御自体はBTS未記載）。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": false,
+              "reason": "トラッキングマーカー、別撮り切り紙素材のクロマキー／ルミナンス抜き、スピル抑制といったデジタル合成工程はBTSに一切記載がなく、#08ではコミックページの横から星空のガラス面上を物理的に撮影している。"
+            },
+            {
+              "index": 4,
+              "confirmed_by_bts": false,
+              "reason": "暖色指向性テーブルトップ照明のフリッカー抑制管理や、計器ランプ・炎への小型LED仕込み（または別パス発光）はBTS未確認。BTSで確認できるのはフレーム上部の左右拡散パネルライト（§5）と工場セットのスポットライト調整（#04）のみ。"
+            },
+            {
+              "index": 5,
+              "confirmed_by_bts": false,
+              "reason": "デフリッカー・WB統一、コミック原画とのトーン統一、MV本編のレイヤー合成・ディゾルブ／多重露光、グロー付与、ビネット・グレインといったカラーマネジメントおよびコンポジット工程はBTSに記載がなく未確認。"
+            }
+          ]
+        },
+        "unrelated_bts_control": {
+          "listed": 6,
+          "false_hits": 0,
+          "false_positive_rate": 0.0,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": false,
+              "reason": "BTSは実写CM撮影のメイキングであり、厚紙カットアウト、ちぎり紙、差し替えパーツ、段ボール立体セット、印刷コミック本等の造形工程の記載はない。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": false,
+              "reason": "BTSの飛行シーンはグリーンバック台上の実写うつ伏せ撮影であり、多層ガラス板や練り消し・極細ワイヤー等の支持具およびデジタルペイントアウトの記載はない。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": false,
+              "reason": "BTSにコマ撮り用俯瞰ロストラム固定リグや多層スライダー・コミックからのズームアウト軌道制御の記載はない。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": false,
+              "reason": "BTSにグリーンバック合成やグリーンスピルへの言及はあるが、本項目は別撮り切り紙素材とカラーコミック原画の合成・本からの飛び出し・紙エッジのスピル抑制を対象としており、BTSの撮影対象・内容と一致しない。"
+            },
+            {
+              "index": 4,
+              "confirmed_by_bts": false,
+              "reason": "BTSに暖色テーブルトップ照明のフリッカー抑制や計器ランプ・カエルの頭上の炎への小型LED仕込みの記載はない。"
+            },
+            {
+              "index": 5,
+              "confirmed_by_bts": false,
+              "reason": "BTSに複数日コマ撮り素材のデフリッカー、切り紙とコミック原画の暖色レトロ調トーン統一、多重露光・グロー・ビネット・グレイン工程の記載はない。"
+            }
+          ]
+        },
+        "net_specificity_lift": 0.5
+      }
+    },
+    {
+      "code": "ho_04",
+      "category": "stop_motion_practical",
+      "selection_reason": "暗室トレース台での物理スタンプ・紙コマ撮り（実制作リグ・照明の適合率検証）",
+      "main_id": "mrO-E5JAqGQ",
+      "main_title": "Web CM  企業 / 商品VP / コンテスト作品   100年の物語",
+      "bts_id": "tBjMJP6Bz5M",
+      "bts_title": "メイキング / Behind The Scenes  エモーショナル / 感動的   100年の物語　メイキングムービー",
+      "bts_actual_summary_1line": "暗室スタジオ内の発光トレース台・アルミ製多層ガラス撮影櫓（マルチプレーン・リグ）・金属クランプアーム上で、実物の朱肉印影紙と物理切り絵シルエット、赤色ゲル・シアン等の実照明転換を用い、Dragonframeで1コマずつ撮影した物理ストップモーション主体（＋Premiere Pro等のNLE編集・音合わせ）の作品。",
+      "unrelated_control_bts_code": "ho_07",
+      "unrelated_control_bts_title": "メイキング / Behind The Scenes  実写   【メイキング】ロケットナウ ゼロ配刑事編｜ゼロ配ならロケットナウ！撮影の舞台裏",
+      "blinding_assignment": {
+        "Candidate_X": "REV",
+        "Candidate_Y": "OLD"
+      },
+      "OLD": {
+        "primary_format": "3dcg_or_2d_animation",
+        "estimated_live_vs_digital_ratio": "実写・実物ストップモーション5〜10% / 2Dアニメーション・デジタル合成90〜95%（冒頭0:00〜0:03の印鑑2本の俯瞰ストップモーションと3:22〜3:26の「たいへんよくできました」評価印の押印カット、および印影・紙目のスキャン素材が実写・実物由来。本編0:04〜4:19の印影キャラクター芝居・切り絵調背景・光影演出・左右分割のすりガラスボケ・映写機風回想・集合写真・ロゴは2Dモーショングラフィックス／デジタルコンポジット）",
+        "primary_hypothesis_match": false,
+        "primary_match_reason": "primary_formatを3dcg_or_2d_animationとし、実写・実物ストップモーション5〜10%／2Dアニメーション・デジタル合成90〜95%（本編0:04〜4:11をIllustrator/Photoshop＋After Effectsの2D/2.5Dデジタル制作）と判定しているが、BTSの実態は多層ガラス撮影櫓と実物印影紙・物理切り絵・実照明を用いた物理ストップモーション主体であり、主手法・比率ともに完全に逆転している。",
+        "reversal_hallucination_count": 4,
+        "reversal_details": [
+          "estimated_live_vs_digital_ratioおよびprimary_production_hypothesisで、本編0:04〜4:11（4:19）の印影芝居・切り絵背景・光影演出を「2Dモーショングラフィックス／デジタルコンポジット」「Illustrator／Photoshopで制作したレイヤー美術とスキャン印影素材をAfter Effects等で2D／2.5Dアニメーション・コンポジットして仕上げた作品と判断できる」と断定している（実際は物理マルチプレーン撮影台上の実物印影紙・物理切り絵・実照明によるアナログ・ストップモーション）。",
+          "behind_the_scenes_craft_items[2]で、障子や木立などの多層背景を「2D切り絵／影絵調背景イラスト制作」とデジタル2Dイラスト制作として断定している（実際はアルミフレーム多層ガラスと金属クランプアームに配置された物理的な切り絵シルエット）。",
+          "behind_the_scenes_craft_items[3]で、印影キャラクターの芝居を「2Dキーフレームアニメーション」と断定している（実際は手袋を着用したアニメーターが発光トレース台上で1コマずつ手で動かしてDragonframe撮影する物理ストップモーション）。",
+          "behind_the_scenes_craft_items[4]で、奥行き表現・窓光・印影の色馴染み等を「After Effects等による2.5Dライティング・コンポジット（乗算合成による印影の色馴染み等）」と断定している（実際は物理マルチプレーン機構とカメラ側のピント送り、発光トレース台・赤色ゲル・シアン照明による物理ライティングと実物の窓枠の影）。"
+        ],
+        "matched_checklist": {
+          "listed": 6,
+          "confirmed": 0,
+          "precision": 0.0,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": false,
+              "reason": "BTSではアルミフレーム多層撮影櫓での俯瞰コマ撮り自体は確認できるが、この項目が具体的に述べる「片側ディフューズ照明を用いた、実物シャチハタ印鑑2本（0:00〜0:03）および『たいへんよくできました』評価印（3:22〜3:26）のテーブルトップ撮影」はBTSに一切記載がない。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": false,
+              "reason": "BTSには実物の赤い朱肉印影紙の接写があるが、高解像度スキャン／マクロ撮影によってデジタル合成用の「印影アセットを作成する工程」は裏付けられておらず、実際は印影紙そのものを発光トレース台上で直接1コマずつ動かして撮影している。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": false,
+              "reason": "BTSで裏付けられるのは多層ガラスとクランプアームに配置した物理的な切り絵シルエット造形であり、「2D切り絵／影絵調背景イラスト制作」は実態と逆。また列挙された古民家・戦時下の川辺・露天風呂・倉庫・野球場・職場・集合写真等の多くもBTSに記載がない。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": false,
+              "reason": "印影を人物キャラクターとして扱う演出自体はBTSに記載があるが、制作手法として述べる「2Dキーフレームアニメーション」は実態と逆であり、実際は手作業の物理ストップモーション＋Dragonframe撮影である。"
+            },
+            {
+              "index": 4,
+              "confirmed_by_bts": false,
+              "reason": "BTSで裏付けられるのは物理マルチプレーン機構、カメラのピント送り、発光トレース台・赤色ゲル照明・シアン照明などの実撮影技術であり、「After Effects等による2.5Dライティング・コンポジット」、すりガラス調ブラー、ベン図スポットライト、雨粒ボケ、乗算合成、8mm映写機風ビネット＆フリッカーはBTSで確認できない。"
+            },
+            {
+              "index": 5,
+              "confirmed_by_bts": false,
+              "reason": "BTSの音響記述はメイキング映像自身のピアノ・アンビエント主体およびポスプロでの音・画合わせのみで、本編の物理スイッチ／シャッター音、押印音、雨や川・映写機の環境音、声優陣のセリフ・ナレーション、弦楽による劇伴といった具体的音響設計はBTSに記載がない。"
+            }
+          ]
+        },
+        "unrelated_bts_control": {
+          "listed": 6,
+          "false_hits": 0,
+          "false_positive_rate": 0.0,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": false,
+              "reason": "BTSはフードデリバリーTVCMのスタジオ実写撮影であり、俯瞰コピースタンドを用いた実物印鑑のテーブルトップ実写・ストップモーション撮影の記載はない。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": false,
+              "reason": "BTSに実物印鑑の押印・高解像度スキャン／マクロ撮影による印影アセット作成工程の記載はない。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": false,
+              "reason": "BTSは民家ブロック塀セット・白ホリ・グリーンバックでの実写撮影であり、1925〜2025年の各時代舞台を描く2D切り絵／影絵調背景イラスト制作の記載はない。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": false,
+              "reason": "BTSに印影をキャラクター化した2Dキーフレームアニメーション制作の記載はない。"
+            },
+            {
+              "index": 4,
+              "confirmed_by_bts": false,
+              "reason": "BTSには特別なVFX処理はないとされ、すりガラス調ブラー、ベン図スポットライト、雨粒ボケ、印影乗算合成、8mm映写機風フリッカー等の2.5Dコンポジットの記載は一切ない。"
+            },
+            {
+              "index": 5,
+              "confirmed_by_bts": false,
+              "reason": "BTSの音響は現場の肉声・笑い声と軽快なBGM・テロップ用SEであり、物理スイッチ音・押印音・雨や川・映写機の環境音・声優ナレーション・ピアノと弦楽の劇伴といった記載はない。"
+            }
+          ]
+        },
+        "net_specificity_lift": 0.0
+      },
+      "REV": {
+        "primary_format": "live_action_vfx_hybrid",
+        "estimated_live_vs_digital_ratio": "主仮説（B案寄りハイブリッド）では実写（卓上俯瞰コマ撮り・実物印影/紙マクロ素材）15〜20% / 2D・2.5Dデジタルアニメーションおよびコンポジット80〜85%（本編の紙・切り絵・押印表現まで物理マルチプレーンで撮影したA案の場合は、物理コマ撮り・実写70〜80% / デジタル合成・グレーディング20〜30%へ比率が反転する余地あり）",
+        "primary_hypothesis_match": false,
+        "primary_match_reason": "主仮説（B案寄りハイブリッド）で実写・物理コマ撮りを15〜20%、2D/2.5Dデジタルアニメーション・コンポジットを80〜85%（本編の約9割をデジタル主体）と見積もっており、物理マルチプレーン撮影台と実物印影紙・物理切り絵・実照明で本編を1コマずつ撮影した物理ストップモーション主体（＋デジタル編集）というBTSの実態と主従・比率が逆転している（括弧内で物理マルチプレーンA案の余地にも言及しているが、主仮説としては不一致）。",
+        "reversal_hallucination_count": 0,
+        "reversal_details": [],
+        "matched_checklist": {
+          "listed": 5,
+          "confirmed": 2,
+          "precision": 0.4,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": false,
+              "reason": "BTSでは多層ガラス間で小さな切り絵パーツを保持する金属製クランプアームが確認できるが、00:00〜00:03の円筒ハンコ直立・キャップ脱着や03:22〜03:26の押印動作に対する練り消し・透明ロッド・上部支持アーム保持およびクリーンプレートによるリグ消し（ペイントアウト）の記載はない。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": true,
+              "reason": "00:00〜00:03や03:22〜03:26自体はBTS未確認だが、項目が述べる中核手法・機材である「剛性の高い俯瞰ロストラム撮影台」「真俯瞰フレーミング・印影の接写」「テザー・レリーズ制御」は、BTSのアルミフレーム多層撮影櫓（マルチプレーン・リグ）、障子・木立や印影群の俯瞰カット・印影紙クローズアップ、およびDragonframeキャプチャ画面によって直接裏付けられている。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": true,
+              "reason": "高解像度スキャンや04:12の紙焼き写真カット自体はBTS未確認だが、項目が明示する「多数の苗字の印影」「実物ハンコ押印」「物理切り絵・透過紙」の造形工程は、BTSの『佐藤』『加藤』『山本』『鈴木』の赤い朱肉印影ペーパー、精巧な切り絵シルエット、透過紙・切り絵の記載によって直接裏付けられている。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": false,
+              "reason": "BTSで確認できる光学環境は下からの高輝度ライトテーブル（発光トレース台）、暖かな卓上ライト、真紅（赤色ゲル）およびシアンブルーの照明転換とシアンの光に浮かぶ窓枠の影であり、00:00〜00:03や03:22〜03:26向けの大型拡散光、円形スポット、木漏れ日、ブラインド影、半画面すりガラス遮蔽、ゴボ投影といった具体的記述はBTSで確認できない。"
+            },
+            {
+              "index": 4,
+              "confirmed_by_bts": false,
+              "reason": "BTSでは色彩変化（白→赤→青→白）は赤色ゲルやシアン照明など撮影現場の実照明で行われ、被写界深度もカメラ側のピント送り・浅い被写界深度による光学表現であり、ポスプロはNLEタイムラインでの音・画合わせの言及にとどまる。印影の乗算合成・レイヤー遮蔽、時代別カラールック設計、被写界深度ブラー・周辺減光・グレインの最終付与といった段階的デジタルコンポジット順序はBTSで裏付けられない。"
+            }
+          ]
+        },
+        "unrelated_bts_control": {
+          "listed": 5,
+          "false_hits": 0,
+          "false_positive_rate": 0.0,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": false,
+              "reason": "BTSは「ロケットナウ ゼロ配刑事編」の実写スタジオ撮影メイキングであり、ハンコを用いた撮影・物理支持リグ・クリーンプレートによるリグ消しの記載は一切ない。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": false,
+              "reason": "BTSに卓上コマ撮り、押印・印影マクロ撮影、俯瞰コピースタンド／ロストラム撮影台やテザー・レリーズ制御の記載はなく対象が異なる。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": false,
+              "reason": "BTSに実物ハンコ押印、朱肉、印影の高解像度スキャン、切り絵や紙焼き写真小道具の制作に関する記載はない。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": false,
+              "reason": "BTSにはスタジオ天井トラスからの生木と大光量ライトによる人工的な木漏れ日の記載はあるが、本項が述べる卓上拡散照明・ゴボ投影・ディフューザー撮影による窓枠光・ブラインド影・すりガラス表現とは対象・手法ともに一致せず裏付けがない。"
+            },
+            {
+              "index": 4,
+              "confirmed_by_bts": false,
+              "reason": "BTSは青・白・緑ホリでの実写CM撮影の舞台裏であり、白紙と朱肉の基準合わせ、印影の乗算合成、1925〜2025年の時代別カラールック設計といったコンポジット工程の記載はない。"
+            }
+          ]
+        },
+        "net_specificity_lift": 0.4
+      }
+    },
+    {
+      "code": "ho_05",
+      "category": "stop_motion_practical",
+      "selection_reason": "実写の手＋物理ミニチュア美術セット（ミニチュア vs CGの識別）",
+      "main_id": "szmzlH_AaFU",
+      "main_title": "Wear Your Best Life",
+      "bts_id": "J6034KSc6Uk",
+      "bts_title": "The Making of Oura's Wear Your Best Life",
+      "bts_actual_summary_1line": "グリーンバック＋フルCGを排し、巨大サウンドステージに約1/12〜1/15スケールの実物ミニチュア都市・2階建て鉄骨ガラスビル・走行ミニチュア電車・屋上プールと巨大な遠景都市バックライト幕を組み上げ、演者が天井や隙間から腕を差し込んで撮る完全なインカメラ特撮（ほぼ100%実写・物理ミニチュア主体）。",
+      "unrelated_control_bts_code": "ho_09",
+      "unrelated_control_bts_title": "メイキング / Behind The Scenes  生成AI   The Making of ANCESTRA | Darren Aronofsky x Google DeepMind",
+      "blinding_assignment": {
+        "Candidate_X": "REV",
+        "Candidate_Y": "OLD"
+      },
+      "OLD": {
+        "primary_format": "stop_motion_or_practical_miniature",
+        "estimated_live_vs_digital_ratio": "実写・実物ミニチュア撮影80% / CG・VFX合成20%（内訳：実写の人間の手・特注ミニチュア衣装・1/6〜1/8スケールの実物ジオラマセット群・実物アクリル水槽・車両走行ギミックが主体。高層ビル群や夜景海岸線の遠景セットエクステンション、エコー画面・CRT映像の画面合成、VHS風オーバーレイ、腕やリグのクリーンアップ等がデジタル工程）",
+        "primary_hypothesis_match": true,
+        "primary_match_reason": "primary_formatをstop_motion_or_practical_miniatureとし、実写・実物ミニチュア80%／CG・VFX20%と物理ミニチュア・実手リアルタイム撮影を明確な主軸に据え、スタジオ内に精密な実物ミニチュア都市・室内セット群を構築して撮るプラクティカル・ミニチュア特撮主体（縮尺推定の1/6〜1/8とBTSの1/12〜1/15程度の差や、遠景セットエクステンションの過大見積もりはあるものの、トランスライト併用にも言及）と正確に捉えており、主手法と主従関係がBTSの実態と整合しているため一致。",
+        "reversal_hallucination_count": 1,
+        "reversal_details": [
+          "behind_the_scenes_craft_items[7]（および比率・主仮説の一部）で、高層ジム窓外・屋上プール奥・公園等の遠景について「マットペイント／2.5D・3DCGセットエクステンション合成（背景差し替え・大気パース統合）」と断定している。BTSでは2階建てガラスビルや公園の背後に遠景都市を描いた物理的な「巨大バックライト幕（摩天楼の背景幕／巨大な街並みスクリーン）」を配置し、合成では出しにくい空気遠近感をインカメラで獲得したことが明示されている。"
+        ],
+        "matched_checklist": {
+          "listed": 9,
+          "confirmed": 5,
+          "precision": 0.5556,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": true,
+              "reason": "巨大サウンドステージに組まれたNY街路・公園・地下鉄ホーム・2階建て鉄骨ガラスオフィスビル・屋上プール等の多場面実物ミニチュア美術セットの精密造形と塗装作業がBTSで直接裏付けられている（BTSの縮尺記載はおおよそ1/12〜1/15前後であり、産科診察室・スケートボウル・アパート内装・岩場等の場面は95秒のBTS内には登場しない）。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": true,
+              "reason": "Oura Ringを装着した手・ピンクの袖の腕・手の甲のタトゥー表現、および地下鉄ホーム天井での無数の腕のリハーサルや屋上プールで4人が一斉に腕を伸ばすなど、複数名のハンドパフォーマーによる同期アクション演出がBTS（#01・#03・#04・#05）で直接裏付けられている（白衣・スポーツウェア等の個別衣装制作は未確認）。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": true,
+              "reason": "演者がセットの天井開口部や上部・隙間から腕を差し込んで演技し、手首から肘までの腕が画面上部に写り込まないよう建築ミニチュアの天井開口部や構造物・カメラ角度で自然に隠蔽する設計がBTS（第0章・#01・#07・第5章）で明示的に裏付けられている。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": true,
+              "reason": "ライトを光らせて走るミニチュア地下鉄車両の走行テスト（#01）と、イエローキャブ・救急車・パトカーが配置され行き交うミニチュアNY街（#05・第4章）がBTSで直接確認できる（ただしRC／ワイヤー牽引／ガイドレールという具体機構および紙くず飛散・実物スチーム演出はBTS未確認）。"
+            },
+            {
+              "index": 4,
+              "confirmed_by_bts": false,
+              "reason": "BTSでは屋上プールミニチュアの水面に指先を浸すカットと4人が腕を伸ばす現場（#04）は映るが、透明アクリル断面水槽の制作や飛び込み・水中遊泳・水面貫通／水中撮影（気泡・コースティクス光）については一切記載がなく未確認。"
+            },
+            {
+              "index": 5,
+              "confirmed_by_bts": false,
+              "reason": "BTSでは公園ミニチュアでのドリーカメラ追従（#04）やカメラ仰角・俯角の設計は確認できるが、項目の中核機材であるプローブレンズ／ペリスコープレンズおよびモーションコントロールの使用はBTSに記載がなく未確認。"
+            },
+            {
+              "index": 6,
+              "confirmed_by_bts": true,
+              "reason": "ミニチュアの街灯・ビル内の蛍光灯・走行電車のライト・LED照明と、スタジオ全体を覆う大型照明および天井の巨大バタフライ（大型ディフューザー枠）・夕景の自然な回り込みの融合がBTS（第0章・#01・#07・第5章・第7章）で明示的に裏付けられている。"
+            },
+            {
+              "index": 7,
+              "confirmed_by_bts": false,
+              "reason": "高層ガラスビルや公園等の背後はBTSで物理的な巨大バックライト幕によるインカメラ撮影（合成では出しにくい空気遠近感の獲得）と明示されており、マットペイント／2.5D・3DCGセットエクステンションによる背景差し替えは事実と逆。リグ／腕のクリーンアップもBTS未確認。"
+            },
+            {
+              "index": 8,
+              "confirmed_by_bts": false,
+              "reason": "産科エコーモニター・CRTテレビのスクリーンインサート、スケートボウルカットへのVHS風オーバーレイ、および本編のカラーグレーディング工程はいずれもBTSに記載がなく未確認。"
+            }
+          ]
+        },
+        "unrelated_bts_control": {
+          "listed": 9,
+          "false_hits": 0,
+          "false_positive_rate": 0.0,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": false,
+              "reason": "BTSには実写分娩室セット撮影の記載はあるが、1/6〜1/8スケールのNY風ストリートや地下鉄ホーム等の実物ミニチュア美術セット造形・塗装の記載は一切ない。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": false,
+              "reason": "BTSに手首用ミニチュア衣装・Ouraリング制作や複数ハンドパフォーマーによる同期アクション演出の記載は一切ない。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": false,
+              "reason": "BTSにセット上方から腕を差し込んで演技する開口構造のミニチュアステージ設計の記載は一切ない。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": false,
+              "reason": "BTSにRC・ワイヤー牽引・ガイドレールを用いたミニチュア車両・地下鉄の実物走行ギミックや、通過風・実物スチーム演出の記載は一切ない。"
+            },
+            {
+              "index": 4,
+              "confirmed_by_bts": false,
+              "reason": "BTSに透明アクリル断面水槽を用いた屋上プールミニチュア制作や、実物の水しぶき・気泡を捉える水面貫通・水中撮影の記載は一切ない。"
+            },
+            {
+              "index": 5,
+              "confirmed_by_bts": false,
+              "reason": "BTSにミニチュア空間撮影向けのプローブレンズ／ペリスコープレンズやモーションコントロール／精密ドリー撮影の記載は一切ない。"
+            },
+            {
+              "index": 6,
+              "confirmed_by_bts": false,
+              "reason": "BTSに記載のある照明はインタビュー用1灯トップ／サイドライト、自然光、暖色光、病院光のみであり、マイクロLED仕込み照明やロフト夕陽・夜景用の大型スタジオ照明の記載はない。"
+            },
+            {
+              "index": 7,
+              "confirmed_by_bts": false,
+              "reason": "BTSに高層ジム・屋上プール・公園・夜景海岸線のマットペイント／2.5D・3DCGセットエクステンション合成やリグ／腕クリーンアップの記載は一切ない。"
+            },
+            {
+              "index": 8,
+              "confirmed_by_bts": false,
+              "reason": "BTSに産科エコーモニターやミニチュアCRTテレビへのスクリーンインサート、スケートボウルへのVHS風オーバーレイ（SP PLAY／SOURCE TV表記・色収差・ノイズ）の記載は一切ない。"
+            }
+          ]
+        },
+        "net_specificity_lift": 0.5556
+      },
+      "REV": {
+        "primary_format": "live_action_vfx_hybrid",
+        "estimated_live_vs_digital_ratio": "実写（実手演技＋実物ミニチュア小道具・水槽等想定）60〜75% / CG・VFX（遠景スカイライン拡張・走行車両/地下鉄表現・モニターはめ込み・リグ/境界処理等）25〜40%（ミニチュア実セット併用のA案基準。背景や建造物まで3DCG主体のB案の場合は実写40〜50% / CG・VFX50〜60%程度の可能性あり）",
+        "primary_hypothesis_match": false,
+        "primary_match_reason": "実写ハンドパフォーマーを中核と見抜いている点は一致するが、primary_formatをlive_action_vfx_hybridとし、遠景スカイライン拡張や走行車両・地下鉄表現をCG・VFX（25〜40%、建造物まで3DCG主体のB案では50〜60%）に割り当てて街並み・高層ビル・地下鉄の実物ミニチュア性を留保している。BTSの実態は都市セット・2階建てガラスビル・走行地下鉄・巨大バックライト遠景幕まで含めた完全なインカメラ物理ミニチュア特撮であり、比率・主従関係が大きく外れているため不一致。",
+        "reversal_hallucination_count": 1,
+        "reversal_details": [
+          "behind_the_scenes_craft_items[3]で、公園・高層ジム（2階建てガラスビル）・屋上プール等の都市スカイライン背景について「トラッキングマーカー・クロマキー管理」「各都市スカイライン合成」「クロマキースピル抑制」と断定している。BTSではグリーンバック＋CGを採らず、公園前や2階建てガラスビル背後に「遠景都市を描いた巨大バックライト幕（摩天楼バックドロップ／巨大な街並みスクリーン）」を物理設置してインカメラ撮影したことが明示されている。"
+        ],
+        "matched_checklist": {
+          "listed": 6,
+          "confirmed": 2,
+          "precision": 0.3333,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": false,
+              "reason": "BTSではピンクの袖の腕や塗装板の作業は映るが、項目の中核である「光造形3Dプリント」「マイクロ印刷小道具」および列挙された店舗看板・超音波カート・解剖図ポスター・洋書・炭酸缶・CRTテレビ等の造形は一切記載がなく、BTSで確認できるのは木製パーツの彫刻刀による削り出しや模型の磨き上げ・窓枠検証等であるため未確認。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": false,
+              "reason": "BTSで確認できるカメラ機材は公園セットでのドリーカメラとシネマカメラの小型モニターのみであり、モーションコントロール／電動スライダー、マクロ・プローブレンズ、透明水槽側面撮影・水中ハウジング運用はいずれもBTSに記載がない。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": true,
+              "reason": "地下鉄ミニチュアホーム天井からの無数の腕のリハーサルや2階建てガラスビル上部からの腕入れ、複数人の演者が不自然な体勢で協調演技する現場、およびスタジオのLED照明・夕景の回り込み・ライトを光らせて走る地下鉄電車がBTSで直接裏付けられている（ただし蒸気／スモーク、シャワー実水・結露、移動する青いヘッドライトのインタラクティブ演出はBTS未確認）。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": false,
+              "reason": "公園・高層ビル・屋上プール等の都市スカイラインはBTSで物理的な巨大バックライト幕（背景スクリーン）によるインカメラ撮影と明示されており、クロマキー合成・スピル抑制は事実と逆。また超音波モニター・レトロTV画面のスクリーン合成もBTSに一切記載がない。"
+            },
+            {
+              "index": 4,
+              "confirmed_by_bts": true,
+              "reason": "セットの天井や隙間から演者の腕を差し込み、建築ミニチュアの天井開口部とカメラ仰角・俯角の設計で手首から肘を自然に隠蔽する工程がBTS（第0章・#01・#07・第5章）で明示的に裏付けられている（ただしワイヤー／レール／モーター等の駆動機構や複数パスのクリーンプレートによるリグ消しはBTS未確認）。"
+            },
+            {
+              "index": 5,
+              "confirmed_by_bts": false,
+              "reason": "本編のLog入力・CG背景との露出／色温度マッチング・背景／画面合成・アナモルフィック風フレア・VHS風色収差／OSD重畳・フィルムグレインといった仕上げ工程の記述はBTSに記載がなく未確認（BTSが言及しているのはメイキング映像自体のグレーディングのみ）。"
+            }
+          ]
+        },
+        "unrelated_bts_control": {
+          "listed": 6,
+          "false_hits": 0,
+          "false_positive_rate": 0.0,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": false,
+              "reason": "BTSは『ANCESTRA』（実写分娩室撮影・Veo生成AI・3D解剖プレビズ）のメイキングであり、光造形3Dプリントの極小プロップや手首用ミニチュア袖衣装の制作は一切記載されていない。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": false,
+              "reason": "BTSにモーションコントロール・電動スライダー・マクロ／プローブレンズを用いた接写軌道制御や、透明水槽・水中ハウジング撮影の記載は一切ない。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": false,
+              "reason": "BTSに複数ハンドパフォーマーの演技、ミニチュア蒸気・シャワー実水演出、地下鉄通過時の移動光やインタラクティブLED演出の記載は一切ない。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": false,
+              "reason": "BTSに都市スカイライン合成、超音波モニター・レトロTV画面の合成トラッキング、金属リングや皮膚エッジ上のクロマキースピル抑制の記載は一切ない。"
+            },
+            {
+              "index": 4,
+              "confirmed_by_bts": false,
+              "reason": "BTSに腕・袖を差し込む開口部処理、ミニチュア車両やトレッドミルの隠し駆動機構、複数パス撮影の境界マスク・クリーンプレートによるリグ消しの記載は一切ない。"
+            },
+            {
+              "index": 5,
+              "confirmed_by_bts": false,
+              "reason": "BTSでは実写質感に合わせたAI生成ショットのグレーディング統合のみ言及されており、実手とミニチュア／CG背景の露出合わせ、Log入力、アナモルフィック風フレア、VHS風色収差／OSD重畳、微細フィルムグレイン等の工程は対象が異なり記載がない。"
+            }
+          ]
+        },
+        "net_specificity_lift": 0.3333
+      }
+    },
+    {
+      "code": "ho_06",
+      "category": "live_action_vfx_hybrid",
+      "selection_reason": "雨天公園ロケ＋スタジオグリーンバック＆宇宙3DCGの複合ハイブリッド（比率推定検証）",
+      "main_id": "HTbFt-GeuuU",
+      "main_title": "TV CM  食品 / 飲料 / 飲食   全人類ガツン、と化計画篇",
+      "bts_id": "K7kzy1DhAHw",
+      "bts_title": "メイキング / Behind The Scenes  食品 / 飲料 / 飲食   全人類ガツン、と化計画 メイキング",
+      "bts_actual_summary_1line": "屋外雨天ロケ（大型HMI照明）および暗転スタジオの足場・青白強逆光・グリーンバック＆グリーン飛行台での実写撮影を基盤に、宇宙空間CG背景へのリアルタイム／ポスト・クロマキー合成を組み合わせた実写×VFXハイブリッド制作（実写基盤＋背景・演出CG/VFX合成）。",
+      "unrelated_control_bts_code": "ho_01",
+      "unrelated_control_bts_title": "メイキング / Behind The Scenes  食品 / 飲料 / 飲食   「オレと吉野家」篇「オレと牛丼」篇　メイキングムービー",
+      "blinding_assignment": {
+        "Candidate_X": "OLD",
+        "Candidate_Y": "REV"
+      },
+      "OLD": {
+        "primary_format": "live_action_vfx_hybrid",
+        "estimated_live_vs_digital_ratio": "実写55% / CG・VFX・2D合成45%（グリーンバック撮影の人物3名・世界各国の実写空撮/風景ストック素材・屋外ロケの少年実写が約55%、宇宙/ワープ背景・地球CG・エネルギー球/彗星/爆炎VFX・筆文字/商品パッケージ合成が約45%）",
+        "primary_hypothesis_match": true,
+        "primary_match_reason": "実写×VFXハイブリッド（live_action_vfx_hybrid、実写55%／CG・VFX・2D合成45%）と判定し、グリーンバックスタジオおよびグリーン支持台での人物実写撮影＋屋外ロケを基盤に宇宙空間CG背景等を合成する主従構成がBTSの実態と整合している。",
+        "reversal_hallucination_count": 0,
+        "reversal_details": [],
+        "matched_checklist": {
+          "listed": 8,
+          "confirmed": 3,
+          "precision": 0.375,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": true,
+              "reason": "BTSの0節および#07にて、スタジオ内の鮮やかなクロマキーグリーン背景・グリーン台の上でうつ伏せになって飛行シーンを横・後ろ・俯瞰アングルで撮影する手法が直接裏付けられている（演者3名や箱馬の細部はBTS未記載）。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": true,
+              "reason": "BTSの#01・#05および4節にて、暗転スタジオでオレンジ（赤タイツ）の上半身に鋭い青白トップライト／青白系の強い逆光スポットライトを当て、宇宙合成時のエッジ分離を狙う高輝度・寒色系の照明仕込みが直接裏付けられている（大型送風機はBTS未記載）。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": false,
+              "reason": "BTSでは現場モニターでのリアルタイムクロマキー合成プレビュー（#06・5節）と撮影時の青白逆光によるエッジ分離（4節）のみが示され、「VFX自体はCM本編側の領域」とされており、クロマキー抜き後のライトラップ（Light Wrap）合成や黄金色の大気圏突入光との馴染ませ処理はBTSで確認できない。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": true,
+              "reason": "BTSの0節・#06・5節にて、青く光る宇宙空間CG背景への合成プレビュー（宇宙CG合成）が直接裏付けられている（放射状スピードライン・球体バリア・彗星・地球CG・宇宙飛行士素材はBTS未記載）。"
+            },
+            {
+              "index": 4,
+              "confirmed_by_bts": false,
+              "reason": "ニューヨーク・エジプト・東京の実写ストック映像の選定や編集についての記載はBTSに一切存在しない。"
+            },
+            {
+              "index": 5,
+              "confirmed_by_bts": false,
+              "reason": "手書き筆文字素材や書道カスタムタイポグラフィのモーションデザインについての記載はBTSに一切存在しない。"
+            },
+            {
+              "index": 6,
+              "confirmed_by_bts": false,
+              "reason": "BTSで確認できる屋外ロケは大型HMI照明を用いた雨天公園ロケ（傘・トレンチコート姿）のみであり、少年とアイスバーの晴天・逆光下での歩道ロケやレフ板フィルライト調整はBTSに記載がない。"
+            },
+            {
+              "index": 7,
+              "confirmed_by_bts": false,
+              "reason": "商品パッケージ3種・爆炎や白煙のストックVFX・上空を横切る縮小グリーンバック人物・企業ロゴの多層コンポジットについての記載はBTSに一切存在しない。"
+            }
+          ]
+        },
+        "unrelated_bts_control": {
+          "listed": 8,
+          "false_hits": 0,
+          "false_positive_rate": 0.0,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": false,
+              "reason": "BTSは吉野家実店舗でのロケおよびボックス席インタビュー記録であり、グリーンバックスタジオや演者3名の飛行撮影・支持台固定の記載はない。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": false,
+              "reason": "BTSに大型送風機（ブロワー）による強風演出や宇宙空間想定の寒色系演出照明の記載はない。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": false,
+              "reason": "BTSにクロマキー抜き、エッジ処理、ライトラップ合成、ワープ光や大気圏突入光の記載はない。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": false,
+              "reason": "BTSに2.5D/3D VFXの宇宙空間・スピードライン・バリア・地球CG・宇宙飛行士合成の記載はない。"
+            },
+            {
+              "index": 4,
+              "confirmed_by_bts": false,
+              "reason": "BTSにニューヨーク・エジプト・東京タワーの実写ストック映像選定や短尺編集の記載はない。"
+            },
+            {
+              "index": 5,
+              "confirmed_by_bts": false,
+              "reason": "BTSに記載されるテロップは左下のオレンジ色角丸矩形バッジのみであり、手書き筆文字やスケールイン・微振動・ドロップシャドウの記載はない。"
+            },
+            {
+              "index": 6,
+              "confirmed_by_bts": false,
+              "reason": "BTSは吉野家店舗内外での木村拓哉の撮影であり、少年とアイスバーの屋外歩道ロケやレフ板による顔面フィルライト調整の記載はない。"
+            },
+            {
+              "index": 7,
+              "confirmed_by_bts": false,
+              "reason": "BTSの終盤はクランクアップの花束贈呈であり、商品パッケージ3種・爆炎白煙VFX・縮小グリーンバック人物等の多層コンポジットの記載はない。"
+            }
+          ]
+        },
+        "net_specificity_lift": 0.375
+      },
+      "REV": {
+        "primary_format": "live_action_vfx_hybrid",
+        "estimated_live_vs_digital_ratio": "実写55% / CG・VFX・モーショングラフィックス45%（演者3名・少年ロケ・世界名所の実写映像をベースに、前半約5秒の宇宙・地球・ワープ発光空間、筆文字テロップ、終盤の商品パッケージ・爆発煙・上空飛行合成をデジタルで構築）",
+        "primary_hypothesis_match": true,
+        "primary_match_reason": "実写×VFXハイブリッド（live_action_vfx_hybrid、実写55%／CG・VFX・MG45%）と判定し、クロマキー収録したスタジオ実写プレートおよび屋外ロケ映像を中心に宇宙CG・2D/3D VFXを統合する主従構成がBTSの実態と整合している。",
+        "reversal_hallucination_count": 0,
+        "reversal_details": [],
+        "matched_checklist": {
+          "listed": 4,
+          "confirmed": 2,
+          "precision": 0.5,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": true,
+              "reason": "BTSの0節および#07にて、スタジオ収録時にグリーン台の上でうつ伏せになり飛行ポーズを支えて撮影している事実が直接裏付けられている（ハーネス／ワイヤーやロトスコープ・ペイントアウト処理はBTS未記載）。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": true,
+              "reason": "BTSの#06・#07・4節・5節にて、クロマキーグリーン背景でのキーイング、宇宙空間背景への合成、エッジ分離、および演者の身体に不要なグリーンスピルが出すぎないよう角度を工夫するスピル対策が直接裏付けられている（トラッキングマーカー・2D/3Dトラッキング・毛髪エッジ抽出・青空合成はBTS未記載）。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": false,
+              "reason": "BTSでは青白系の強い逆光スポットライト／鋭い青白トップライトによる照明仕込みは確認できるものの、本項目が挙げる「物理補助スタッフ」「送風機（ブロワー）による物理風演出」「インタラクティブLED照明」「オレンジ色の光」はいずれもBTS内に裏付けがない。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": false,
+              "reason": "異種素材のカラーマネジメントや、カラーバランス統一後にライトラップ・多段グロー・グレア・放射状モーションブラーを適用するコンポジット順序についての記載はBTSに一切存在せず、一般的なポスプロ工程の推測にとどまる。"
+            }
+          ]
+        },
+        "unrelated_bts_control": {
+          "listed": 4,
+          "false_hits": 0,
+          "false_positive_rate": 0.0,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": false,
+              "reason": "BTSは吉野家店舗内でのインタビューとカウンター芝居の撮影であり、空中飛行姿勢やグリーン塗装支持台・ハーネス／ワイヤー、ロトスコープ・ペイントアウトの記載はない。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": false,
+              "reason": "BTSにグリーン／ブルースクリーンでのキーイング、毛髪エッジ抽出、スピル抑制、宇宙・青空合成や2D/3Dトラッキング管理の記載はない。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": false,
+              "reason": "BTSに送風機による物理風演出や、宇宙・大気圏突入光に合わせたインタラクティブLED照明使用の記載はない。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": false,
+              "reason": "BTSに3DCG宇宙・世界名所・少年ロケ・商品パッケージの統合や、ライトラップ・多段グロー・グレア・放射状モーションブラーのコンポジット工程の記載はない。"
+            }
+          ]
+        },
+        "net_specificity_lift": 0.5
+      }
+    },
+    {
+      "code": "ho_07",
+      "category": "live_action_vfx_hybrid",
+      "selection_reason": "晴天屋外住宅街に見えるがスタジオ建て込み青ホリ＋グリーンバック（ロケ錯覚トラップ）",
+      "main_id": "4k5zlZyKsew",
+      "main_title": "TV CM  Web CM   【公式】ロケットナウ ゼロ配刑事編｜ゼロ配ならロケットナウ！（30秒）",
+      "bts_id": "-E2nOUXBwhU",
+      "bts_title": "メイキング / Behind The Scenes  実写   【メイキング】ロケットナウ ゼロ配刑事編｜ゼロ配ならロケットナウ！撮影の舞台裏",
+      "bts_actual_summary_1line": "屋外住宅街に見える本編大半も大型スタジオ内のフルサイズ建て込みセット＋周囲の巨大ブルーバック＋天井トラスから吊るした生木・大光量ライトによる人工晴天撮影であり、終盤ポーズも巨大グリーンバックで撮影する大規模スタジオ実写×クロマキー合成ハイブリッド制作（別途白ホリでKV撮影）。",
+      "unrelated_control_bts_code": "ho_05",
+      "unrelated_control_bts_title": "The Making of Oura's Wear Your Best Life",
+      "blinding_assignment": {
+        "Candidate_X": "REV",
+        "Candidate_Y": "OLD"
+      },
+      "OLD": {
+        "primary_format": "live_action",
+        "estimated_live_vs_digital_ratio": "実写85% / CG・VFX・モーショングラフィックス15%（内訳：本編の大半を占める住宅街ロケーション撮影・美術仕込み看板・猫・自転車配達員が約85%、終盤のグリーンバック合成＋3DCG巨大「0」オブジェ＆紙吹雪、スマホ画面はめ込み合成、双眼鏡POVマスク＆ウィップパン繋ぎ、タイトル・CIテロップ類が約15%）",
+        "primary_hypothesis_match": false,
+        "primary_match_reason": "primary_formatをlive_actionとし、00:00-00:25・00:28-00:29を「実際の住宅街ブロック塀・電柱前」での「住宅街での実写ロケーション撮影」「屋外補光」と断定している。BTSの実態は大型スタジオ内でのフルサイズ壁面セット建て込み＋周囲の巨大ブルーバック＋天井トラスからの生木・大光量ライトによる人工晴天撮影と、終盤の巨大グリーンバック撮影を組み合わせたスタジオ実写×クロマキー合成であり、主仮説および合成範囲が大きく外れている。",
+        "reversal_hallucination_count": 4,
+        "reversal_details": [
+          "estimated_live_vs_digital_ratio: スタジオ内建て込みセット＋ブルーバック撮影である本編大半を、留保なく「本編の大半を占める住宅街ロケーション撮影」と屋外ロケと断定している。",
+          "primary_production_hypothesis: スタジオ内セット＋人工晴天照明である住宅街シーンを、留保なく「住宅街での実写ロケーション撮影をベースに」「00:00〜00:25および00:28〜00:29は実際の住宅街ブロック塀・電柱前で中望遠レンズと屋外補光を用いて撮影され」と屋外ロケと断定している。",
+          "behind_the_scenes_craft_items[0]: スタジオ内建て込みセットであるにもかかわらず、留保なく「住宅街ロケーション手配」と屋外ロケと断定している。",
+          "behind_the_scenes_craft_items[2]: スタジオ天井トラスの大光量ライトと生木による人工照明であるにもかかわらず、留保なく「屋外デイライト下でのレフ板・ディフューザー・小型HMI/LEDによる日陰側フェイスの自然なフィルライト補光」と屋外撮影と断定している。"
+        ],
+        "matched_checklist": {
+          "listed": 10,
+          "confirmed": 1,
+          "precision": 0.1,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": false,
+              "reason": "住宅街ロケーション手配はBTSのスタジオ建て込みセットという事実と逆であり、劇用車（セダン）・配達員用自転車・オリジナルロゴ入りデリバリーバッグもBTSに記載がない。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": false,
+              "reason": "中望遠シネマレンズや浅い被写界深度設計、前景の植え込みボケについてはBTSに記載がなく、むしろBTS#05のカメラ背面モニター表示は焦点距離29.0mmであり中望遠とは整合しない。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": false,
+              "reason": "BTSでは屋外デイライトではなくスタジオ天井トラスの大光量ライトと吊るした生木による人工的な木漏れ日・太陽影と明記されており、レフ板・ディフューザー・小型HMI/LEDによる補光の記載もない。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": false,
+              "reason": "BTSで確認できるセット上の看板は電柱と「放射線科医院」の看板のみであり、挙げられた「送料ゼロ」貼り紙、「サービス料ゼロ」プレート、「手間ゼロ」看板の特注プロップ制作・設置はBTSに記載がない。"
+            },
+            {
+              "index": 4,
+              "confirmed_by_bts": false,
+              "reason": "茶トラ猫やアニマルトレーナー同伴の撮影についてはBTSに一切記載がない。"
+            },
+            {
+              "index": 5,
+              "confirmed_by_bts": false,
+              "reason": "00:11のスマートフォン画面撮影、トラッキングマーカー、クリーン画面収録、指先ロト・反射合成についてはBTSに一切記載がない。"
+            },
+            {
+              "index": 6,
+              "confirmed_by_bts": false,
+              "reason": "BTSに双眼鏡が登場するのは白ホリKV撮影時の小道具および扉絵アイコンのみであり、双眼鏡POVの双円ビネットマスク・エッジブラー・色収差付与・高速横ウィップパントランジション編集はBTSに記載がない。"
+            },
+            {
+              "index": 7,
+              "confirmed_by_bts": true,
+              "reason": "CM終盤クライマックス用のスタジオ・グリーンバック撮影は、BTSの「グリーンバックでのCM終盤ポーズ撮影」「巨大グリーンバック前で紙袋を持ちポーズを決める2人」「グリーンバック合成パート」の記載で直接裏付けられる（暖色リムライト照明設計の詳細はBTS未記載）。"
+            },
+            {
+              "index": 8,
+              "confirmed_by_bts": false,
+              "reason": "Blender/C4D等のツール、3DCG巨大光沢「0」オブジェのライティング・レンダリング、紙吹雪パーティクルの前後合成についてはBTSに記載がない。"
+            },
+            {
+              "index": 9,
+              "confirmed_by_bts": false,
+              "reason": "本編CMのタイトルロゴ（ゼロ配刑事）・強調テロップ・検索窓/アプリストアバッジの2Dモーショングラフィックスや、刑事ドラマ調から高彩度オレンジへ対比させるカラーグレーディング工程についてはBTSに記載がない。"
+            }
+          ]
+        },
+        "unrelated_bts_control": {
+          "listed": 10,
+          "false_hits": 0,
+          "false_positive_rate": 0.0,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": false,
+              "reason": "BTSはサウンドステージ内のNYミニチュア撮影であり、住宅街ロケーション手配、実車セダン、配達員用自転車、デリバリーバッグ等の準備は記載されていない。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": false,
+              "reason": "BTSに中望遠シネマレンズによる浅い被写界深度設計や、前景の植え込みボケを活かした張り込み構図・切り返し撮影の記載はない。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": false,
+              "reason": "BTSは屋内スタジオでのミニチュア用トップディフューザーやLED照明の記録であり、屋外デイライト下でのレフ板・小型HMI/LEDによる日陰側フェイスのフィルライト補光の記載はない。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": false,
+              "reason": "BTSの美術作業はNYミニチュア建築・車両の制作であり、「送料ゼロ」「サービス料ゼロ」「手間ゼロ」といった特注プロップ制作・現場設置の記載はない。"
+            },
+            {
+              "index": 4,
+              "confirmed_by_bts": false,
+              "reason": "BTSにアニマルトレーナー同伴やブロック塀上の茶トラ猫による実写動物撮影の記載は一切ない。"
+            },
+            {
+              "index": 5,
+              "confirmed_by_bts": false,
+              "reason": "BTSにスマートフォン画面のトラッキング用マーカー撮影、クリーン画面収録、指先ロト・反射合成の記載はない。"
+            },
+            {
+              "index": 6,
+              "confirmed_by_bts": false,
+              "reason": "BTSに双眼鏡POVの双円ビネットマスク、エッジブラー、色収差付与、高速横ウィップパントランジション編集の記載はない。"
+            },
+            {
+              "index": 7,
+              "confirmed_by_bts": false,
+              "reason": "BTSはグリーンバックに頼らないインカメラ特撮であることを明記しており、クライマックス用のグリーンバック撮影やオレンジ背景向け暖色リムライト設計の記載はない。"
+            },
+            {
+              "index": 8,
+              "confirmed_by_bts": false,
+              "reason": "BTSにBlender/C4D等による3DCG巨大光沢「0」オブジェ制作や紙吹雪パーティクル合成の記載はない。"
+            },
+            {
+              "index": 9,
+              "confirmed_by_bts": false,
+              "reason": "BTSにタイトルロゴ（ゼロ配刑事）、検索窓/アプリストアバッジの2Dモーショングラフィックス、刑事ドラマ調から高彩度オレンジへ対比させるカラーグレーディングの記載はない。"
+            }
+          ]
+        },
+        "net_specificity_lift": 0.1
+      },
+      "REV": {
+        "primary_format": "live_action_vfx_hybrid",
+        "estimated_live_vs_digital_ratio": "実写80% / CG・VFX・モーショングラフィックス20%（住宅街の張り込み演技・自転車配達・猫カット等の実写が大半を占め、00:26-00:27の巨大立体「0」背景および紙吹雪表現、00:10-00:11のスマホ画面はめ込み、双眼鏡マスク演出・タイトル／エンドカードがデジタル・CG工程）",
+        "primary_hypothesis_match": false,
+        "primary_match_reason": "live_action_vfx_hybrid自体は方向性として近いが、主仮説が住宅街シーン（00:00-00:25・00:28-00:29）を「実写ロケ（またはハウススタジオ外構）」「木漏れ日の自然な環境光」と捉え、スタジオ合成を00:26-00:27のみに限定している。BTSの実態は住宅街シーン自体がスタジオ内フルサイズ建て込みセット＋周囲の巨大ブルーバック＋天井トラスからの生木・大光量ライトによる人工晴天であり、主手法・合成範囲が実態と不一致。",
+        "reversal_hallucination_count": 2,
+        "reversal_details": [
+          "behind_the_scenes_craft_items[1]: スタジオ内セット＋天井トラスからの生木・大光量ライトによる人工照明である住宅街シーンを、留保なく「屋外木漏れ日下で顔の暗部を均整に起こすレフ板・ディフューザー運用」と屋外撮影前提で断定している。",
+          "behind_the_scenes_craft_items[3]: スタジオ内建て込みセット＋人工晴天照明である00:00-00:25・00:28-00:29を、留保なく「屋外の自然光シネマルック（00:00-00:25, 00:28-00:29）とスタジオ高彩度オレンジカット（00:26-00:27）」とスタジオカットに対比させて屋外自然光と断定している。"
+        ],
+        "matched_checklist": {
+          "listed": 4,
+          "confirmed": 2,
+          "precision": 0.5,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": true,
+              "reason": "00:26-00:27のCM終盤カットにおけるクロマキー（グリーンバック）撮影・合成は、BTSの「グリーンバックでのCM終盤ポーズ撮影」「巨大グリーンバック前で紙袋を持ちポーズを決める2人」「グリーンバック合成パート」および「ブルースクリーン＆グリーンバック」の記述で直接裏付けられる（ただしトラッキングマーカー、毛先・スピル処理、スマホ画面差し替え、看板のポスト差し替え、猫ロトスコープはBTS未記載）。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": false,
+              "reason": "茶トラ猫の動物トレーナー、屋外木漏れ日下のレフ板・ディフューザー、00:26-00:27の暖色系LED照明および物理紙吹雪用の送風機・散布スタッフはいずれもBTSで裏付けられない（BTSの巨大サーキュレーターは住宅街ブロック塀セットでの演技シーン用であり、屋外木漏れ日下の記載もスタジオ人工照明という事実に反する）。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": true,
+              "reason": "電柱の医院案内風美術（BTS#03「電柱や『放射線科医院』の看板が立つセット」）、紙袋（BTS#07「巨大グリーンバック前で紙袋を持ちポーズを決める2人」）、手持ちのチキンレッグやラップ等の実物フード小道具（BTS#06「松重氏がブリトーを拳銃のように構え、のん氏がフライドチキンと双眼鏡を持って」）がBTS内で直接裏付けられる（他の看板類やナンバープレート処理・配達バッグはBTS未記載）。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": false,
+              "reason": "00:00-00:25・00:28-00:29を「屋外の自然光シネマルック」としている点がBTS（スタジオ内人工晴天照明）と矛盾するほか、Log/リニア基準のカラーマネジメント、双眼鏡ビネットマスク、ウィップパンのモーションブラー、スマホUI合成、グレイン前後のコンポジット順序はいずれもBTSに記載がない一般的な推測工程である。"
+            }
+          ]
+        },
+        "unrelated_bts_control": {
+          "listed": 4,
+          "false_hits": 0,
+          "false_positive_rate": 0.0,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": false,
+              "reason": "BTSはOura RingのミニチュアNY都市を用いた完全インカメラ特撮のメイキングであり、オレンジ立体「0」のクロマキー撮影、スマホ画面差し替え、看板のプラナートラッキング、猫のロトスコープはいずれも記載がない（対象作品が異なる）。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": false,
+              "reason": "BTSに動物トレーナーや茶トラ猫、屋外木漏れ日下でのレフ板運用、オレンジ空間用の暖色LED照明や紙吹雪散布の記載はなく、スタジオ内ミニチュア照明・大型ディフューザーとは対象・工程が異なる。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": false,
+              "reason": "BTSの美術造形は地下鉄車両・木製パーツ・公園植栽・2階建てガラスビル等のNYミニチュアであり、「送料ゼロ」等のサイン類や「rocket now」配達バッグ、フードスタイリング等の記載は一切ない。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": false,
+              "reason": "BTSには屋外自然光と高彩度オレンジスタジオカットのトーン統制、双眼鏡ビネットマスク、ウィップパンブラー、スマホUIやエンドカードUI合成の記載はない。"
+            }
+          ]
+        },
+        "net_specificity_lift": 0.5
+      }
+    },
+    {
+      "code": "ho_08",
+      "category": "live_action_vfx_hybrid",
+      "selection_reason": "実写アクション・衣装・スタント＋大規模VFX合成（ハイブリッド比率と隠れ工程検証）",
+      "main_id": "yp0-VHmJNac",
+      "main_title": "Web CM  実写   TEAM FOREST | Official Film",
+      "bts_id": "SltunrTo4Rc",
+      "bts_title": "実写  合成 / VFX / 3DCG   WWF | Team Forest | Behind The Scenes",
+      "bts_actual_summary_1line": "実際の熱帯雨林ロケを主体に、大木へのワイヤーリグ・大型クレーン・ロンジンバル撮影と、森林内に巨大ブルーバックおよび大型照明を立て込んだ実践的ロケーションVFX（Heckler Singapore）を組み合わせた実写主体ハイブリッド制作。",
+      "unrelated_control_bts_code": "ho_10",
+      "unrelated_control_bts_title": "メイキング / Behind The Scenes  実写   Your Way Out | Behind The Scenes",
+      "blinding_assignment": {
+        "Candidate_X": "OLD",
+        "Candidate_Y": "REV"
+      },
+      "OLD": {
+        "primary_format": "live_action_vfx_hybrid",
+        "estimated_live_vs_digital_ratio": "実写70% / CG・VFX30%（熱帯雨林ロケーション撮影・ワイヤーアクション実写・空撮プレート70%、ワイヤー/リグ消去・CGサッカーボール・一部樹冠/高所コンポジット・デジタルダブル・舞い散る葉のVFX・2Dタイトル30%）",
+        "primary_hypothesis_match": true,
+        "primary_match_reason": "実写＋VFXハイブリッドかつ実写主体（70%/30%）という主従関係が、熱帯雨林ロケ＋ワイヤーリグ＋森林内巨大ブルーバックVFXというBTSの実態と整合している。",
+        "reversal_hallucination_count": 0,
+        "reversal_details": [],
+        "matched_checklist": {
+          "listed": 8,
+          "confirmed": 4,
+          "precision": 0.5,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": true,
+              "reason": "BTS総括および#01〜#07で、実際の熱帯雨林（林間・密林・泥道・大木幹・開けた場所）に入り込んでの大規模実写ロケーション撮影が明示されている。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": true,
+              "reason": "BTS総括・#02・#03・#06・#07で、大木へのワイヤーリグ構築、地上数十メートルでのハーネス宙吊りリハーサル、スタント長Udeh Nans指揮下のワイヤーアクションが直接裏付けられている。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": true,
+              "reason": "FPVドローンやケーブルカムはBTS未記載だが、熱帯雨林の俯瞰空撮（#01）、2人がかりで疾走するシネマカメラ搭載ロンジンバル（#06）、広場に持ち込まれた大型クレーン車（#06）が直接裏付けられている。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": false,
+              "reason": "BTS#01冒頭に「ワイヤーで舞うパフォーマーの幻想的なスローカット」との記述はあるが、空中キック・ヘディング向けのハイスピード撮影機材やスピードランプ演出の記載はない。"
+            },
+            {
+              "index": 4,
+              "confirmed_by_bts": false,
+              "reason": "BTSにはワイヤー・ハーネス撮影とHeckler SingaporeのVFXは明記されているが、足場・安全マット消去、クリーンプレート撮影、ロトスコープ、プラナートラッキング／ペイント修復といった具体的ポスプロ手法の記載はない。"
+            },
+            {
+              "index": 5,
+              "confirmed_by_bts": false,
+              "reason": "CGサッカーボールや3Dマッチムーブ合成についての記載はBTSに一切ない。"
+            },
+            {
+              "index": 6,
+              "confirmed_by_bts": false,
+              "reason": "森林内ブルーバックを用いたVFX撮影はあるものの、高所・遠景カットのプレート合成、デジタルダブル、葉パーティクル追加についての記載はBTSにない。"
+            },
+            {
+              "index": 7,
+              "confirmed_by_bts": true,
+              "reason": "BTS§4でHarbor Picture Companyによる深いエメラルド〜ディープグリーンのフォレスト・グレーディングと木漏れ日・逆光演出が明示され、#08で最終カットのタイポグラフィとWWFロゴも裏付けられている。"
+            }
+          ]
+        },
+        "unrelated_bts_control": {
+          "listed": 8,
+          "false_hits": 0,
+          "false_positive_rate": 0.0,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": false,
+              "reason": "BTSはCoinbase『Your Way Out』の巨大サウンドステージ街並みセット・白ホリ・ミニチュア等の撮影記録であり、熱帯雨林ロケーション撮影の記載はない（対象作品が異なる）。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": false,
+              "reason": "BTSには青空バックでのワイヤー落下スタントの記載はあるが、巨木の垂直駆け上がり・枝間ジャンプ・樹冠上ボレーやウィンチリギングの記載はなく、対象・具体内容が異なる。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": false,
+              "reason": "BTSには路上追従の大型カメラカー／ジブクレーンや大型クレーンの記載はあるが、密林でのFPVドローン・シネマドローン・ジンバル・ケーブルカム撮影の記載はない（対象が異なる）。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": false,
+              "reason": "BTSにはハイスピード／スローモーション撮影、スピードランプ、空中キック・ヘディング収録の記載がない（対象が異なる）。"
+            },
+            {
+              "index": 4,
+              "confirmed_by_bts": false,
+              "reason": "BTSはワイヤーワークの現場に言及するのみで、足場・安全マット消去、クリーンプレート撮影、ロトスコープ、プラナートラッキング／ペイント修復といった具体的VFX工程の記載はない。"
+            },
+            {
+              "index": 5,
+              "confirmed_by_bts": false,
+              "reason": "BTSにはCGサッカーボールや3Dマッチムーブ合成、長距離パス・樹冠越えの軌道の記載がない（対象が異なる）。"
+            },
+            {
+              "index": 6,
+              "confirmed_by_bts": false,
+              "reason": "BTSには樹冠俯瞰・巨木仰角ショット、プレート合成、デジタルダブル、葉パーティクル追加の記載がない（対象が異なる）。"
+            },
+            {
+              "index": 7,
+              "confirmed_by_bts": false,
+              "reason": "BTSの最終カットはCoinbaseブルー背景に『Your way out of their system』『coinbase』ロゴであり、密林の深い緑のカラーグレーディングやWWFロゴの記載はない（対象が異なる）。"
+            }
+          ]
+        },
+        "net_specificity_lift": 0.5
+      },
+      "REV": {
+        "primary_format": "live_action_vfx_hybrid",
+        "estimated_live_vs_digital_ratio": "実写65% / CG・VFX35%（人物演技・林床ラン・森林プレート・空撮等の実写要素が主体とみられる一方、垂直幹疾走や樹冠上跳躍に伴うワイヤー・足場のリグ消し、CGサッカーボール差し替え、背景合成・遠景デジタルダブル、大気・タイトル合成が約35%を占める構成と推定）",
+        "primary_hypothesis_match": true,
+        "primary_match_reason": "実写＋VFXハイブリッドかつ実写主体（65%/35%）とし、森林ロケ・ワイヤーアクション・キーイング撮影とVFX合成の組み合わせと推定しており、BTSの実態（実写ロケ主体＋ワイヤー＋森林内ブルーバックVFX）と整合している。",
+        "reversal_hallucination_count": 0,
+        "reversal_details": [],
+        "matched_checklist": {
+          "listed": 5,
+          "confirmed": 2,
+          "precision": 0.4,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": false,
+              "reason": "ハーネス・ワイヤー・大型クレーンの使用自体はBTSに明記されているが、項目の主題である足場構造やクリーンプレート投影・ペイントアウトによるリグ消し工程の記載はBTSにない。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": true,
+              "reason": "3DトラッキングマーカーやCGボール・葉の追従はBTS未記載だが、緑のユニフォーム（#02）および森林背景と分離するための巨大ブルーバック（ブルースクリーン）運用がBTS#07・§5で「本作最大の技術的見どころ」として直接裏付けられている。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": true,
+              "reason": "FPV・ケーブルカム・ローリングヘッド・ハイスピード・シャッター角合わせはBTS未記載だが、広域俯瞰空撮（#01）、2人がかり疾走のロンジンバル（#06）、大型クレーン車（#06）が直接裏付けられている。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": false,
+              "reason": "BTS#06に重いロープを一斉に引くクルーの描写はあるが、項目の中心である画面外スタッフによる枝揺らし・葉撒きや、ヘイズ／大気補助演出についての記載はBTSにない。"
+            },
+            {
+              "index": 4,
+              "confirmed_by_bts": false,
+              "reason": "BTS§4に深緑基調のフォレスト・グレーディング（Harbor Picture Company）の記載はあるが、項目の主題であるLogプレート・リニア色空間統合・CGボール／デジタルダブル合成・光学グレア／ハレーション／フィルムグレイン等のコンポジット順序はBTSで確認できない一般的な工程推測にとどまる。"
+            }
+          ]
+        },
+        "unrelated_bts_control": {
+          "listed": 5,
+          "false_hits": 0,
+          "false_positive_rate": 0.0,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": false,
+              "reason": "BTSに垂直の樹幹駆け上がりや樹冠上ジャンピングボレーは登場せず、リグ消し・クリーンプレート投影・枝葉や木漏れ日のペイントアウト修復工程の記載もない（対象が異なる）。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": false,
+              "reason": "BTSにはNPC群衆背後のブルーバックの言及はあるが、緑のユニフォームや森林背景分離、空中ボレー、スピル抑制、ロトスコープ、CGボールや葉追従の3Dトラッキングマーカー設置・消去の記載はない（対象が異なる）。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": false,
+              "reason": "BTSには密林でのFPV／シネマドローン、ケーブルカム、ジンバル、ロール回転・ローリングヘッド、樹冠上ハイスピード撮影、広域空撮ドローン、複数カメラ間の色・解像感・シャッター角合わせの記載がない（対象が異なる）。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": false,
+              "reason": "BTSには枝葉のかすめ演出、茂みの揺動・葉撒き、樹冠上疾走・着地、逆光木漏れ日やヘイズ／大気補助の記載がない（対象が異なる）。"
+            },
+            {
+              "index": 4,
+              "confirmed_by_bts": false,
+              "reason": "BTSには森林の深い緑や逆光、Logプレート、CGボール・デジタルダブルのリニア空間統合、光学グレア／ハレーション・フィルムグレイン等のコンポジット順序に関する記載がない（対象が異なる）。"
+            }
+          ]
+        },
+        "net_specificity_lift": 0.4
+      }
+    },
+    {
+      "code": "ho_09",
+      "category": "cg_ai_digital_dominant",
+      "selection_reason": "実写病院シーン＋生成AI（Veo）／3Dデジタル表現の大型融合（AI/CG比率の識別）",
+      "main_id": "HEs9miwtwh4",
+      "main_title": "映画 / ドラマ / ショートフィルム  生成AI   ANCESTRA by Eliza McNitt",
+      "bts_id": "WLDARkKs-T4",
+      "bts_title": "メイキング / Behind The Scenes  生成AI   The Making of ANCESTRA | Darren Aronofsky x Google DeepMind",
+      "bts_actual_summary_1line": "実写の分娩室医療セット撮影（母親・医療スタッフ）を軸に、Google DeepMindのVeoによる生成AI映像（新生児・胎内血流・宇宙星雲・深海魚群・有機リング/トンネル・草原等）と3Dプレビズ（骨格・肋骨・心臓）を組み合わせ、実写の質感に合わせてグレーディング・統合したハイブリッド制作。",
+      "unrelated_control_bts_code": "ho_02",
+      "unrelated_control_bts_title": "あいみょん - RING DING【MAKING MOVIE】",
+      "blinding_assignment": {
+        "Candidate_X": "REV",
+        "Candidate_Y": "OLD"
+      },
+      "OLD": {
+        "primary_format": "generative_ai_hybrid",
+        "estimated_live_vs_digital_ratio": "実写30% / 生成AI・VFX・デジタル70%（病院・手術室での緊急帝王切開と親子の再会ドラマが実写約30%、胎内・歴代母子・野生動物・深海生物・細胞分裂・原始地球・宇宙・心臓の穴の治癒マッチカット群が生成AI約55〜60%、画面合成・ワープ遷移・瞳の映り込み・タイトル等のVFX/CGが約10〜15%）",
+        "primary_hypothesis_match": true,
+        "primary_match_reason": "病院・手術室パートの実写撮影ユニット（約30%）とGoogle DeepMind支援のAI制作ユニット（約55〜60%）およびVFX/グレーディング統合（約10〜15%）によるgenerative_ai_hybridという主仮説・比率・主従関係はBTSの実態と整合する（ただし新生児撮影を実写側と誤認する細部のズレはある）。",
+        "reversal_hallucination_count": 1,
+        "reversal_details": [
+          "behind_the_scenes_craft_items[0]で、BTSにおいて「VEO GENERATED NEWBORN（Veoで生成した新生児）」と明記されている新生児パートを、留保なく「本格実写撮影（…新生児撮影を含む）」と実写撮影として断定している。"
+        ],
+        "matched_checklist": {
+          "listed": 8,
+          "confirmed": 3,
+          "precision": 0.375,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": true,
+              "reason": "BTSの#06・##5に「実写分娩室セット撮影」「医療用キャップとガウンをまとった実写撮影現場」「実写の医療セット（ブルーの医療ガウン・冷たい病院光）」と明記されており、医療セットにおけるブルー系照明・医療衣装での実写撮影という中核工程が直接裏付けられる（ただしステディカム・ドリーや廊下・モニターは未記載であり、末尾の「新生児撮影を含む」はBTSのVeo生成新生児と矛盾する）。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": true,
+              "reason": "BTSの##0・#03・#05・#08・##5に、Google DeepMindチームとの連携およびVeoによる生成映像（深紅の胎内・血流、深海魚群、星雲の宇宙爆発、細胞・宇宙的イメージ等）の制作・検証プロセスが明示的に裏付けられている。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": false,
+              "reason": "BTSにはVeo生成の有機的なリング映像や網目状の有機トンネル、心臓の3Dプレビズの記載はあるが、中央の黒い穴を構図アンカーとして20種以上のモチーフを塞ぐマスク制御マッチカット設計という具体的手法の記載はない。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": false,
+              "reason": "超音波モニター画素ズームアウト、母親の瞳からの暗転遷移、手術室からのラジアルワープ、羊膜破水の光フラッシュ、新生児の瞳への宇宙リフレクション合成といった具体的VFX遷移工程はいずれもBTSに記載がない。"
+            },
+            {
+              "index": 4,
+              "confirmed_by_bts": false,
+              "reason": "新生児POVにおけるモノクロ化・光学ボケから段階的に色彩とフォーカスを立ち上げるポストエフェクト演出についての記載はBTSに存在しない。"
+            },
+            {
+              "index": 5,
+              "confirmed_by_bts": true,
+              "reason": "BTSの##5に、ブルー系の実写医療セットと深紅の体液／星雲等のVeo生成映像について「実写の質感に合わせてAI生成ショットをグレーディング・統合している」と明記されており、実写と生成AIの質感差異を解消するカラーグレーディング工程の中核が直接裏付けられる（なおフィルムグレイン付与やコンフォームの細部は未記載）。"
+            },
+            {
+              "index": 6,
+              "confirmed_by_bts": false,
+              "reason": "BTSには音響チーム会議や試写シーンのアンビエント・オーケストラ的スコアへの言及はあるが、心拍音・胎内低域反響・心電図アラーム＆フラットライン・コーラス主体のスコアの精密同期といった具体的サウンドデザインの記載はない。"
+            },
+            {
+              "index": 7,
+              "confirmed_by_bts": false,
+              "reason": "本編のオープニングおよびエンドクレジットにおける赤いハレーション・ブラーと点滅する幾何学的バーを用いたタイトルデザインについての記載はBTSに存在しない。"
+            }
+          ]
+        },
+        "unrelated_bts_control": {
+          "listed": 8,
+          "false_hits": 0,
+          "false_positive_rate": 0.0,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": false,
+              "reason": "BTSに病院廊下・手術室セット、ステディカム／ドリー、医療プロップ、新生児撮影の記載は一切ない。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": false,
+              "reason": "BTSにGoogle DeepMindや専任AIユニットによる胎内・動物・細胞分裂・ビッグバン等の生成AIアセット制作の記載はない。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": false,
+              "reason": "BTSに画面中央の黒い穴（心臓の欠損）をアンカーとした生成AI＋マスク制御マッチカット設計の記載はない。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": false,
+              "reason": "BTSに超音波モニターからのズームアウト、瞳から胎内への暗転遷移、手術室からのラジアルワープ、羊膜破水フラッシュ、新生児の瞳への宇宙合成といったVFX工程の記載はない。"
+            },
+            {
+              "index": 4,
+              "confirmed_by_bts": false,
+              "reason": "BTSに新生児POVシーンやモノクロ・極端な光学ボケから色彩・フォーカスが立ち上がるポストエフェクト演出の記載はない。"
+            },
+            {
+              "index": 5,
+              "confirmed_by_bts": false,
+              "reason": "BTSに実写と生成AIフッテージの質感差を解消するティール＆アンバー／深紅基調のDIグレーディング・フィルムグレイン付与・コンフォーム仕上げの記載はない。"
+            },
+            {
+              "index": 6,
+              "confirmed_by_bts": false,
+              "reason": "BTSの音響は撮影現場の生音・掛け声・雪マシン音・アコースティックギター・楽曲プレイバックで構成されており、心拍音・胎内反響・心電図アラーム・コーラススコアの記載はない。"
+            },
+            {
+              "index": 7,
+              "confirmed_by_bts": false,
+              "reason": "BTSはノン・テロップ構成を特徴としており、赤いハレーション・ブラーと点滅する幾何学的バーを用いたタイトルデザインの記載はない。"
+            }
+          ]
+        },
+        "net_specificity_lift": 0.375
+      },
+      "REV": {
+        "primary_format": "generative_ai_hybrid",
+        "estimated_live_vs_digital_ratio": "実写35% / 生成AI・VFX・CG 65%（本編約5分40秒のうち、病院搬送・緊急帝王切開・蘇生・出産後の対面および新生児視点パート・終盤のスチル写真が実写主体約35%。胎内・心拍シルエット・歴代母子の系譜・野生動物進化・細胞分裂・原始地球の溶岩と雷・宇宙創生・心臓の穴のマクロ連鎖モンタージュおよび空間ワープ遷移が生成AI＋VFX・CG主体約65%と推定）",
+        "primary_hypothesis_match": true,
+        "primary_match_reason": "実写ドラマ（病院・医療パート約35%）を骨格とし、胎内・進化・宇宙・マクロ連鎖等にGoogle DeepMind関連の生成AIとVFX/CG（約65%）を統合するgenerative_ai_hybridという主仮説・主従関係はBTSの実態と整合する（ただし新生児カットを実写側と誤認する細部のズレはある）。",
+        "reversal_hallucination_count": 1,
+        "reversal_details": [
+          "behind_the_scenes_craft_items[2]で、BTSにおいて「VEO GENERATED NEWBORN（Veoで生成した新生児）」と明記されている新生児カットを「実児の近接カット（05:49〜06:15）」と実写（実児）撮影であることを既成事実として記述している。"
+        ],
+        "matched_checklist": {
+          "listed": 5,
+          "confirmed": 1,
+          "precision": 0.2,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": false,
+              "reason": "BTSには実写の分娩室セット撮影の記載はあるが、病院廊下のストレッチャー並走や瞳へのプッシュイン、ステディカム・ドリーを用いた軌道制御についての記載はない。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": false,
+              "reason": "超音波・心電図モニターのプラナートラッキング／スクリーン差し替えや、中央暗部の共通ガイド・アルファマスク管理に関する記載はBTSに存在しない。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": false,
+              "reason": "実写の医療セットと冷たい（ブルー系）照明自体はBTSと整合するが、無影灯・鼻カニューレ・点滴等の具体プロップ列挙や、項目の主眼である「安全代替造形（実児とシリコン／特殊造形ベビーダミーの使い分け）」はBTSに裏付けがなく、BTSでは新生児はVeo生成と明記されており矛盾する。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": false,
+              "reason": "瞳への突入、放射状ワープズーム、瞳への反射合成、およびオプティカルフロー・ラジアルブラー・エッジクリーンアップ（フリッカー補正等）の具体的VFX工程はBTSに記載がない。"
+            },
+            {
+              "index": 4,
+              "confirmed_by_bts": true,
+              "reason": "BTSの##5に、実写の医療セット（ブルーの医療ガウン・冷たい病院光）とVeo生成映像（深紅の体液／星雲等）を並置し「実写の質感に合わせてAI生成ショットをグレーディング・統合している」と明記されており、実写とAI素材の質感・色調を統一する仕上げ工程の中核が直接裏付けられる（なおDITやLog/sRGB、グレイン付与等の細部手順は未記載）。"
+            }
+          ]
+        },
+        "unrelated_bts_control": {
+          "listed": 5,
+          "false_hits": 0,
+          "false_positive_rate": 0.0,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": false,
+              "reason": "BTSは「あいみょん - RING DING」MVのメイキングであり、病院廊下・ストレッチャー・母子や新生児の瞳へのプッシュイン、ステディカムやドリーの記載は一切ない。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": false,
+              "reason": "BTSに超音波モニター・病室・心電図モニター・プラナートラッキング／画面差し替え、心臓の穴モンタージュやアルファマスク管理に関する記載はない。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": false,
+              "reason": "BTSに手術室・無影灯・医療プロップ・シアン基調照明・新生児蘇生処置・シリコン製ベビーダミー等の記載はない。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": false,
+              "reason": "BTSにVFX会社（Khaki）のクレジットはあるが、瞳への突入・手術室からの放射状ワープズーム・新生児の瞳への反射合成やAI素材とのオプティカルフロー／フリッカー補正等の記載はない。"
+            },
+            {
+              "index": 4,
+              "confirmed_by_bts": false,
+              "reason": "BTSにはメイキング映像自体のフィルム調グレーディングへの言及はあるが、Log実写と生成AI／CG素材の統合管理、DIT、ティール／クリムゾン設計、ハレーション／グレイン一括付与やColor・Conform専門会社の記載はない。"
+            }
+          ]
+        },
+        "net_specificity_lift": 0.2
+      }
+    },
+    {
+      "code": "ho_10",
+      "category": "cg_ai_digital_dominant",
+      "selection_reason": "フルローポリ3DCG/AIに見えるが実写マスク装着演者＋実セット＋VFX（CG⇔実写逆転トラップ）",
+      "main_id": "0V4CCxskN_0",
+      "main_title": "映画 / ドラマ / ショートフィルム  生成AI   Your Way Out",
+      "bts_id": "AusVvo_NU2o",
+      "bts_title": "メイキング / Behind The Scenes  実写   Your Way Out | Behind The Scenes",
+      "bts_actual_summary_1line": "ローポリゴン・ゲーム風世界をフル3DCGではなく、巨大屋内サウンドステージの実物大美術セット、角張った特殊マスク・カスタム縫製スーツ着用の生身の俳優・数十人のエキストラ、白ホリ振付指導、高架橋ミニチュア＋赤いラジコンカー特撮、カメラカー／ジブクレーンおよび青空ワイヤーアクションという圧倒的な実写・物理フィジカル手法を主体（ブルーバックやポストVFXは補助）として制作された作品。",
+      "unrelated_control_bts_code": "ho_08",
+      "unrelated_control_bts_title": "実写  合成 / VFX / 3DCG   WWF | Team Forest | Behind The Scenes",
+      "blinding_assignment": {
+        "Candidate_X": "OLD",
+        "Candidate_Y": "REV"
+      },
+      "OLD": {
+        "primary_format": "live_action_vfx_hybrid",
+        "estimated_live_vs_digital_ratio": "実写25% / CG・VFX75%（前半約36秒と中盤導入のローポリ3DCG世界・群衆、中盤の実写プレート上へのミッドポリCG主人公合成、およびエンドカードが約75%。窓ガラスの反射カット、後半の市街地・広場ロケ実写プレート、終盤の完全実写カットが約25%）",
+        "primary_hypothesis_match": false,
+        "primary_match_reason": "実写×VFXハイブリッドという枠組み自体は広義に重なるものの、実写25%・CG/VFX75%と比率・主従が完全に逆転している。BTSではローポリ風の街並み・人物・群衆・高架橋と車まで巨大サウンドステージの実物大セット、特殊マスク＆スーツ着用の生身の俳優・エキストラ、振付指導、ミニチュア特撮による物理実写主体で構築されたことが明かされており、前半〜中盤をフル3DCG＋ミッドポリCG主人公合成とする主仮説はBTSの実態と不一致。",
+        "reversal_hallucination_count": 9,
+        "reversal_details": [
+          "estimated_live_vs_digital_ratioおよびprimary_production_hypothesis根拠(1)で、前半（00:00〜00:36）のローポリ世界・群衆を「実写25% / CG・VFX75%」「カスタム3DCG＆群衆処理で構成されている」と断定（実際は巨大サウンドステージの実物大セットと特殊スーツ・マスク着用の実写俳優・エキストラが主体）。",
+          "primary_production_hypothesis根拠(2)(3)で、00:37〜00:38の「ローポリCGの手元」合成および00:45〜00:50の「主人公のみを中解像度（ミッドポリ）CGキャラのまま実写広場にマッチムーブ合成」と断定（実際はプラスチック／フォーム材風マスクと角張ったスーツを着用した生身の俳優）。",
+          "behind_the_scenes_craft_items[0]で、ローポリ街区・車両等を「ローポリ3DCGのカスタムモデリングおよび低解像度テクスチャ設計」と断定（実際はサウンドステージの実物大張りぼて・スチレンボード美術セットおよび高架橋ミニチュア＋赤いラジコンカーの特撮）。",
+          "behind_the_scenes_craft_items[1]で、主人公の造形と硬直した動きを「段階的LODの3Dアセット制作とモーションキャプチャ／意図的な硬直・グリッチ風アニメーション」と断定（実際は生身の俳優への特殊マスク・平たいスーツ装着と白ホリスタジオでの振付リハーサルによる実演）。",
+          "behind_the_scenes_craft_items[2]で、NPC群衆の待機・行列動作を「大規模NPC群衆配置・サイクルアニメーション制御（3DCG群衆処理）」と断定（実際はカスタム縫製スーツを着た数十人の実写エキストラが現場で演技）。",
+          "behind_the_scenes_craft_items[4]で、00:37のショップ窓カットを「ローポリCG手元」の反射合成と断定（実際はローポリ表現の人物自体がCGではなく特殊造形を纏った実写俳優）。",
+          "behind_the_scenes_craft_items[6]で、00:40〜00:51を「CG街並みから実写ストリートへのシームレス接続」と断定（実際はローポリ街並み自体がCGではなくサウンドステージの実物大セット）。",
+          "behind_the_scenes_craft_items[7]で、00:45〜00:50の主人公を「ミッドポリCG主人公」として実写へのHDRIライティング・接地影合成と断定（実際は実写俳優による実演）。",
+          "behind_the_scenes_craft_items[8]で、前半の低彩度トーンを「（前半CG）」と断定（実際は実物大セットの塗装・美術とサウンドステージ天井からの拡散トップライトによる実写撮影）。"
+        ],
+        "matched_checklist": {
+          "listed": 9,
+          "confirmed": 0,
+          "precision": 0.0,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": false,
+              "reason": "BTSではローポリ街並みは巨大サウンドステージの張りぼて・塗装・スチレンボード実物大セット、車両と高架橋はミニチュアセット＋赤いラジコンカーの特撮と明示されており、3DCGモデリング／テクスチャ設計の記載はなく事実と逆。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": false,
+              "reason": "BTSでは生身の俳優にプラスチック／フォーム材風の角張ったマスクと四角く固めたスーツを装着させ、白ホリスタジオで振付指導によりカクカクした動きを演じており、段階的LOD 3Dアセット制作やモーションキャプチャは記載がなく事実と逆。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": false,
+              "reason": "BTSではカスタム縫製スーツを着た数十人の実写NPCエキストラが現場で待機・演技しており、3DCGの群衆配置・サイクルアニメーション制御は記載がなく事実と逆。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": false,
+              "reason": "頭上の黄色い菱形マーカー、発光ウェイポイントのHUD風VFX、および00:39のガラス破砕物理シミュレーションはいずれもBTSに記載がない。"
+            },
+            {
+              "index": 4,
+              "confirmed_by_bts": false,
+              "reason": "00:37のショップ窓カットやマルチレイヤー反射合成はBTSに記載がなく、ローポリCG手元という前提も実写俳優＋特殊衣装というBTSの実態と反する。"
+            },
+            {
+              "index": 5,
+              "confirmed_by_bts": false,
+              "reason": "BTSに「数十人のグレー服NPC」や「路上で駆け抜ける主人公を捉える大型カメラカー／ジブクレーン」の記載はあるものの、本項目の主眼である「都市広場・夕景の草原での実写ロケ撮影」「ジンバル」「ダッチアングル広角撮影」はBTSで確認できず、街並みと多数のエキストラもBTSでは巨大屋内サウンドステージ（ブルーバック併用）でのスタジオ撮影として描かれているため厳密に未確認。"
+            },
+            {
+              "index": 6,
+              "confirmed_by_bts": false,
+              "reason": "CG街並みから実写ストリートへの接続という前提自体がBTSの実物大スタジオセットと矛盾しており、プリビズ設計、3Dカメラトラッキング、前景オブジェクトを用いたロトスコープ＆ワイプ隠しカットもBTSに記載がない。"
+            },
+            {
+              "index": 7,
+              "confirmed_by_bts": false,
+              "reason": "ミッドポリCG主人公の合成はBTSの実写俳優＋特殊マスク／スーツと矛盾し、HDRI環境マップ収録やCG接地影合成の記載もBTSにない。"
+            },
+            {
+              "index": 8,
+              "confirmed_by_bts": false,
+              "reason": "前半をCGとみなしたカラーグレーディング移行や、ゲームSEから壮大な楽曲へ移行する本編音響設計の工程はBTSに記載がない（BTSの6章はメイキング動画自体の音響解析であり、前半のくすんだグレー調も実物セットと拡散トップライトによるもの）。"
+            }
+          ]
+        },
+        "unrelated_bts_control": {
+          "listed": 9,
+          "false_hits": 0,
+          "false_positive_rate": 0.0,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": false,
+              "reason": "BTSは熱帯雨林での実写ワイヤースタント・クレーン・森林内ブルーバック撮影に関する内容であり、PS2世代風ローポリ3DCGの街区・銀行内装・車両等のモデリングや低解像度テクスチャの記載は一切ない。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": false,
+              "reason": "BTSでは実写パフォーマーのワイヤースタントおよび衣装制作が記録されており、段階的LODの3Dキャラクターアセットやモーションキャプチャ、グリッチ風アニメーションの記載はない。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": false,
+              "reason": "BTSに銀行行列シーンや大規模NPC群衆配置・サイクルアニメーションの記載はない。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": false,
+              "reason": "BTSに頭上の黄色い菱形マーカー、HUD風VFX、ガラス破砕物理シミュレーションの記載はない。"
+            },
+            {
+              "index": 4,
+              "confirmed_by_bts": false,
+              "reason": "BTSにショップ窓カットでの実写プレートとローポリCG手元のマルチレイヤー反射合成の記載はない。"
+            },
+            {
+              "index": 5,
+              "confirmed_by_bts": false,
+              "reason": "BTSに森の泥道での2人がかりのジンバル並走は登場するが、市街地・都市広場・夕景の草原でのロケ、多数エキストラ動員、トラッキング車両、ダッチアングル広角撮影の記載はなく対象が異なる。"
+            },
+            {
+              "index": 6,
+              "confirmed_by_bts": false,
+              "reason": "BTSにテント内でのプレビズ議論への言及はあるが、CG街並みから実写ストリートへの接続、3Dカメラトラッキング、通行人・屋台・壁によるロトスコープ＆ワイプ隠しカットの記載はなく対象が異なる。"
+            },
+            {
+              "index": 7,
+              "confirmed_by_bts": false,
+              "reason": "BTSでは森林内ブルーバックで自然環境光（木漏れ日やバウンス光）を実写人物へ当てる手法が述べられており、HDRI環境マップ収録によるミッドポリCG主人公のライティング・接地影合成の記載はない。"
+            },
+            {
+              "index": 8,
+              "confirmed_by_bts": false,
+              "reason": "BTSでは深いエメラルド〜ディープグリーンの森林グレーディングとシネマティックな劇伴・森の環境音設計が記載されており、低彩度CGから高輝度実写への段階的移行やゲームSEからの楽曲移行の記載はない。"
+            }
+          ]
+        },
+        "net_specificity_lift": 0.0
+      },
+      "REV": {
+        "primary_format": "live_action_vfx_hybrid",
+        "estimated_live_vs_digital_ratio": "実写20% / CG・VFX・デジタル80%（0:00〜0:36および0:39〜0:43のローポリ3DCG世界が尺の約7割を占め、0:37〜0:38のガラス反射と0:44〜0:51の群衆走行は実写プレートとローポリ3DCG要素のハイブリッド合成、0:52〜0:55が実写主体、0:56〜0:59が2Dグラフィックのエンドカードと推定）",
+        "primary_hypothesis_match": false,
+        "primary_match_reason": "実写×VFXハイブリッドと述べるものの、実写20%・CG/VFX/デジタル80%（前半約7割がフル3DCG世界、0:44〜0:51もローポリ3DCG主人公モデル合成）としており、比率・主従がBTSの実態と完全に逆転している。BTSではローポリ世界・人物・群衆・高架橋と車がいずれも巨大サウンドステージの実物美術セット、特殊マスク＆スーツ着用の生身の俳優・エキストラ、振付、ミニチュア特撮などの物理実写手法主体で作られている。",
+        "reversal_hallucination_count": 5,
+        "reversal_details": [
+          "primary_production_hypothesis後半で、0:44〜0:51について「実写の街路・群衆・自然光のなかにローポリ3DCGの主人公モデル（または実写走者に対するCG置換モデル）が直射日光とモーションブラーを合わせて合成されており」と断定（実際は特殊マスクとスーツを着た生身の俳優による実写撮影）。",
+          "behind_the_scenes_craft_items[0]で、0:37〜0:38および0:44〜0:51について「ローポリ3DCGの主人公や手元モデルを位置ズレなく追従させる3Dカメラトラッキング」と断定（実際はローポリ人物は3DCGモデルではなく特殊造形を着用した実写俳優）。",
+          "behind_the_scenes_craft_items[2]で、0:40〜0:43を「仮想カメラ横トラッキング（CGカメラ）」と断定しCG／実写間の軌道同期と記述（実際はローポリ街路・高架橋は実物大スタジオセットやミニチュアセットを実写カメラ・特機で撮影）。",
+          "behind_the_scenes_craft_items[3]で、前景遮蔽物による「CGと実写の繋ぎ目を隠す設計」および「晴天直射日光をローポリCGモデルへ正確に合わせるための360度HDRI／リファレンス球収録」と断定（実際はローポリ世界・人物ともに実写制作）。",
+          "behind_the_scenes_craft_items[4]で、「CGキャラクター合成後に実写と共通の方向性モーションブラー…」とローポリ人物のCG合成を前提として断定（実際は生身の俳優による実演）。"
+        ],
+        "matched_checklist": {
+          "listed": 5,
+          "confirmed": 0,
+          "precision": 0.0,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": false,
+              "reason": "ローポリ3DCGの主人公や手元モデルの3Dカメラトラッキング、基準走者の身体置換、トラッキングマーカー運用やスピル抑制はBTSに記載がなく、ローポリ人物自体が実写俳優＋特殊マスク／スーツであるため実態とも矛盾する。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": false,
+              "reason": "BTSではワイヤーアクション現場が確認できるものの、本項目が具体的に述べる「基準走者をローポリCGモデルへ置換した場合の背景インペインティング」および「0:37〜0:38ガラス反射カットでの機材・スタッフ映り込み除去」はBTSに記載がない。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": false,
+              "reason": "BTSに「路上で駆け抜ける主人公を捉える大型カメラカー／ジブクレーン」の記載はあるが、本項目の主眼である「0:40〜0:43の仮想カメラ（CG）から実写への軌道同期」「ジンバル制御」「焦点距離・並走速度・シャッター角のプリビズ同期」はBTSに記載がなく、仮想カメラ前提も実物セット／ミニチュア特撮というBTSの実態と食い違う。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": false,
+              "reason": "街灯・歩行者・花屋・壁面などの前景遮蔽物でCGと実写の繋ぎ目を隠す演出設計、およびローポリCGモデル用の360度HDRI／リファレンス球収録はいずれもBTSに記載がなく、ローポリCGモデル前提も事実と逆。"
+            },
+            {
+              "index": 4,
+              "confirmed_by_bts": false,
+              "reason": "Log／リニア空間での段階的グレーディング移行、CGキャラクター合成後の共通方向性モーションブラー・ハレーション・フィルムグレイン一括適用はいずれもBTSに記載がない一般的・推測的工程記述であり、CGキャラクター合成の前提もBTSと矛盾する。"
+            }
+          ]
+        },
+        "unrelated_bts_control": {
+          "listed": 5,
+          "false_hits": 0,
+          "false_positive_rate": 0.0,
+          "item_judgments": [
+            {
+              "index": 0,
+              "confirmed_by_bts": false,
+              "reason": "BTSにローポリ3DCG主人公・手元モデルの3Dカメラトラッキング、基準走者の身体置換、トラッキングマーカー運用・スピル抑制の記載はない。"
+            },
+            {
+              "index": 1,
+              "confirmed_by_bts": false,
+              "reason": "BTSに実写の基準走者をローポリCGモデルへ置換するためのクリーンプレート生成・背景インペインティングや、ガラス反射カットでの機材・スタッフ映り込み除去処理の記載はない。"
+            },
+            {
+              "index": 2,
+              "confirmed_by_bts": false,
+              "reason": "BTSに森での2人持ちジンバル並走やプレビズ議論は登場するが、仮想カメラ横トラッキングと実写並走・高速走行カットを接続するためのトラッキングカート制御や焦点距離・速度・シャッター角のプリビズ同期の記載はなく対象が異なる。"
+            },
+            {
+              "index": 3,
+              "confirmed_by_bts": false,
+              "reason": "BTSに街灯・歩行者・花屋・壁面などの前景ワイプ遮蔽物によるCGと実写の繋ぎ目隠しや、ローポリCG向けの360度HDRI／リファレンス球収録の記載はない。"
+            },
+            {
+              "index": 4,
+              "confirmed_by_bts": false,
+              "reason": "BTSにHarbor Picture Companyによる森林グレーディングの記載はあるが、レトロゲーム調から晴天ルックへの段階的移行や、CG合成後の方向性モーションブラー・グレア／ハレーション・フィルムグレイン一括適用の記載はない。"
+            }
+          ]
+        },
+        "net_specificity_lift": 0.0
+      }
+    }
+  ],
+  "subagent_audit_trail": {
+    "analysis_subagents": {
+      "ho_01": {
+        "OLD": {
+          "subagent_id": "ed2f3f07-8b80-4e6d-acfd-73a58009a9ae",
+          "input_files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\ho_01_eval.mp4"
+          ],
+          "prompt_text": null
+        },
+        "REV": {
+          "subagent_id": "8799e5e3-62b9-4d0a-99d6-d32ca93f83b8",
+          "input_files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\ho_01_eval.mp4"
+          ],
+          "prompt_text": null
+        }
+      },
+      "ho_02": {
+        "OLD": {
+          "subagent_id": "c6fba598-b8e3-464c-995f-27bf6082a23b",
+          "input_files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\ho_02_eval.mp4"
+          ],
+          "prompt_text": null
+        },
+        "REV": {
+          "subagent_id": "a2ff6117-bd5c-4c25-9364-7f6c9b03a60f",
+          "input_files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\ho_02_eval.mp4"
+          ],
+          "prompt_text": null
+        }
+      },
+      "ho_03": {
+        "OLD": {
+          "subagent_id": "c43cf8f8-cb4c-4de5-b8af-8416287fd919",
+          "input_files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\ho_03_eval.mp4"
+          ],
+          "prompt_text": null
+        },
+        "REV": {
+          "subagent_id": "2db913a1-7b4b-485e-96f8-9e29e91a13a6",
+          "input_files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\ho_03_eval.mp4"
+          ],
+          "prompt_text": null
+        }
+      },
+      "ho_04": {
+        "OLD": {
+          "subagent_id": "6f486f8b-6629-4204-9d63-30ea3a666cf9",
+          "input_files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\ho_04_eval.mp4"
+          ],
+          "prompt_text": null
+        },
+        "REV": {
+          "subagent_id": "0d72c776-97ce-428a-84b6-1fcfc2903c30",
+          "input_files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\ho_04_eval.mp4"
+          ],
+          "prompt_text": null
+        }
+      },
+      "ho_05": {
+        "OLD": {
+          "subagent_id": "82258bfc-dd45-4260-964e-1f5ceb18ae26",
+          "input_files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\ho_05_eval.mp4"
+          ],
+          "prompt_text": null
+        },
+        "REV": {
+          "subagent_id": "5f25fd07-fd64-4efd-9512-dc91e149ec4b",
+          "input_files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\ho_05_eval.mp4"
+          ],
+          "prompt_text": null
+        }
+      },
+      "ho_06": {
+        "OLD": {
+          "subagent_id": "b284cc8a-6310-4866-ab5a-a88696aa2d5e",
+          "input_files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\ho_06_eval.mp4"
+          ],
+          "prompt_text": null
+        },
+        "REV": {
+          "subagent_id": "faafa7c5-22fa-4b21-a8b2-8ce16f1768e0",
+          "input_files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\ho_06_eval.mp4"
+          ],
+          "prompt_text": null
+        }
+      },
+      "ho_07": {
+        "OLD": {
+          "subagent_id": "16a09abf-3067-4e34-abcf-62d38e6d89e2",
+          "input_files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\ho_07_eval.mp4"
+          ],
+          "prompt_text": null
+        },
+        "REV": {
+          "subagent_id": "df8db54f-45b9-4c26-93de-767ffd2c12b2",
+          "input_files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\ho_07_eval.mp4"
+          ],
+          "prompt_text": null
+        }
+      },
+      "ho_08": {
+        "OLD": {
+          "subagent_id": "cf88f359-7cee-44cd-a325-1030885149b6",
+          "input_files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\ho_08_eval.mp4"
+          ],
+          "prompt_text": null
+        },
+        "REV": {
+          "subagent_id": "f677aa98-d903-437c-86c2-b958d5ea77fe",
+          "input_files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\ho_08_eval.mp4"
+          ],
+          "prompt_text": null
+        }
+      },
+      "ho_09": {
+        "OLD": {
+          "subagent_id": "edbdc89d-18ec-4a05-b6d1-6a28571f9af6",
+          "input_files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\ho_09_eval.mp4"
+          ],
+          "prompt_text": null
+        },
+        "REV": {
+          "subagent_id": "9626495b-dd7d-44bd-9096-86c9d1cd89fe",
+          "input_files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\ho_09_eval.mp4"
+          ],
+          "prompt_text": null
+        }
+      },
+      "ho_10": {
+        "OLD": {
+          "subagent_id": "db66c02b-3a50-472e-9da6-346fa6ad2b70",
+          "input_files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\ho_10_eval.mp4"
+          ],
+          "prompt_text": null
+        },
+        "REV": {
+          "subagent_id": "a4ec2c6c-b5f9-4d33-9c65-ae8aa61a9ee0",
+          "input_files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\ho_10_eval.mp4"
+          ],
+          "prompt_text": null
+        }
+      }
+    },
+    "judge_subagents": {
+      "matched": {
+        "ho_01": {
+          "subagent_id": "4fab3116-3869-40ae-b723-d44641b29eec",
+          "files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\judge_packets\\matched_ho_01.json"
+          ],
+          "prompt_text": null
+        },
+        "ho_02": {
+          "subagent_id": "a007d00b-c81e-4244-82f3-1a2d019a1a32",
+          "files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\judge_packets\\matched_ho_02.json"
+          ],
+          "prompt_text": null
+        },
+        "ho_03": {
+          "subagent_id": "83bcedfd-9c98-4489-9d2e-bc88e3076eff",
+          "files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\judge_packets\\matched_ho_03.json"
+          ],
+          "prompt_text": null
+        },
+        "ho_04": {
+          "subagent_id": "e4028479-7339-4a19-bc79-c86392a2db2d",
+          "files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\judge_packets\\matched_ho_04.json"
+          ],
+          "prompt_text": null
+        },
+        "ho_05": {
+          "subagent_id": "21d7b802-363f-4f1c-b165-edc703503a5c",
+          "files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\judge_packets\\matched_ho_05.json"
+          ],
+          "prompt_text": null
+        },
+        "ho_06": {
+          "subagent_id": "4731b344-95d1-42b9-8d92-b0c13f822d62",
+          "files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\judge_packets\\matched_ho_06.json"
+          ],
+          "prompt_text": null
+        },
+        "ho_07": {
+          "subagent_id": "3a5cb376-e6b5-4da9-b93d-c067fab5800e",
+          "files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\judge_packets\\matched_ho_07.json"
+          ],
+          "prompt_text": null
+        },
+        "ho_08": {
+          "subagent_id": "b9827f8b-04d0-4019-8784-72cab0b1a19a",
+          "files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\judge_packets\\matched_ho_08.json"
+          ],
+          "prompt_text": null
+        },
+        "ho_09": {
+          "subagent_id": "fbfed163-751d-4d2b-b7fa-a7b57c61b4e1",
+          "files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\judge_packets\\matched_ho_09.json"
+          ],
+          "prompt_text": null
+        },
+        "ho_10": {
+          "subagent_id": "854af73b-a8d9-4495-b491-a467afc9db34",
+          "files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\judge_packets\\matched_ho_10.json"
+          ],
+          "prompt_text": null
+        }
+      },
+      "mismatch_control": {
+        "ho_01": {
+          "subagent_id": "c9a64ae3-3f18-4b93-9aa6-109d7d0b0af3",
+          "files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\judge_packets\\ctrl_ho_01.json"
+          ],
+          "prompt_text": null
+        },
+        "ho_02": {
+          "subagent_id": "ad4d0297-e5a0-4d37-be57-b5550c32ec1b",
+          "files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\judge_packets\\ctrl_ho_02.json"
+          ],
+          "prompt_text": null
+        },
+        "ho_03": {
+          "subagent_id": "8edc13b4-7ae5-4098-a0c6-ae79d8f05846",
+          "files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\judge_packets\\ctrl_ho_03.json"
+          ],
+          "prompt_text": null
+        },
+        "ho_04": {
+          "subagent_id": "254794e2-2e24-4f5d-8ee2-e1bf1dfd527e",
+          "files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\judge_packets\\ctrl_ho_04.json"
+          ],
+          "prompt_text": null
+        },
+        "ho_05": {
+          "subagent_id": "761de9b2-a640-4e15-8d43-aa8239b0b8a5",
+          "files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\judge_packets\\ctrl_ho_05.json"
+          ],
+          "prompt_text": null
+        },
+        "ho_06": {
+          "subagent_id": "48b3be45-2316-4ad5-b9c3-8ab080267946",
+          "files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\judge_packets\\ctrl_ho_06.json"
+          ],
+          "prompt_text": null
+        },
+        "ho_07": {
+          "subagent_id": "dfb1be74-b277-4a39-a114-923db8e2182a",
+          "files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\judge_packets\\ctrl_ho_07.json"
+          ],
+          "prompt_text": null
+        },
+        "ho_08": {
+          "subagent_id": "61697aad-99e1-4007-a936-90ed0036f626",
+          "files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\judge_packets\\ctrl_ho_08.json"
+          ],
+          "prompt_text": null
+        },
+        "ho_09": {
+          "subagent_id": "4e068491-2d8c-4b40-8ce8-090f8ffa52e5",
+          "files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\judge_packets\\ctrl_ho_09.json"
+          ],
+          "prompt_text": null
+        },
+        "ho_10": {
+          "subagent_id": "c525287c-3eaa-47da-96a9-65f274cf93fc",
+          "files_read": [
+            "E:\\iketeru_calibration_lab\\priority2_holdout_blind\\judge_packets\\ctrl_ho_10.json"
+          ],
+          "prompt_text": null
+        }
+      }
+    }
+  }
+}
