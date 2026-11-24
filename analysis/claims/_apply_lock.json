@@ -1,8 +1,12 @@
 {
   "schema_version": 1,
-  "status": "locked",
-  "worker": "chibatmute",
-  "run_id": "run_20261124_080300",
-  "started_at": "2026-11-24T13:50:58.593Z",
-  "updated_at": "2026-11-24T13:50:58.593Z"
+  "status": "unlocked",
+  "worker": null,
+  "run_id": null,
+  "started_at": null,
+  "last_worker": "chibatmute",
+  "last_run_id": "run_20261124_080300",
+  "last_started_at": "2026-11-24T13:50:58.593Z",
+  "released_at": "2026-11-24T13:53:05.710Z",
+  "released_by": "chibatmute"
 }
