@@ -1,0 +1,24 @@
+{
+  "version": "v1_baseline",
+  "runId": "run_20261124_080300",
+  "blindId": "e74a110e80dc",
+  "mode": "video",
+  "assignedFiles": [
+    "E:\\iketeru_blind_eval\\run_20261124_080300\\video\\e74a110e80dc\\e74a110e80dc.mp4",
+    "E:\\iketeru_blind_eval\\run_20261124_080300\\video\\e74a110e80dc\\e74a110e80dc_slow.mp4"
+  ],
+  "metrics": {
+    "duration_sec": 1441.5,
+    "scdet_threshold": 10,
+    "total_cuts": 331,
+    "avg_cut_interval_sec": 4.35,
+    "max_cuts_per_10s": 9,
+    "integrated_lufs": -18,
+    "slowmo_applied": true,
+    "slowmo_factor": "2x",
+    "slowmo_window_sec": [
+      1,
+      11
+    ]
+  }
+}

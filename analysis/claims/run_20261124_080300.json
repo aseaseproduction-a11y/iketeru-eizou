@@ -4,7 +4,7 @@
   "worker": "chibatmute",
   "priority": "P0_craft_recipes",
   "batch_index": 2,
-  "status": "active",
+  "status": "completed",
   "claimed_at": "2026-11-24T00:44:15.580Z",
   "prepared_count": 184,
   "failed_count": 16,
@@ -209,5 +209,6 @@
     "wRXAEZ0RKCw",
     "wSTbdqo-j74",
     "wphwtON0O1g"
-  ]
+  ],
+  "completed_at": "2026-11-24T13:53:42.564Z"
 }
