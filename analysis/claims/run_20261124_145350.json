@@ -3,7 +3,7 @@
   "run_id": "run_20261124_145350",
   "worker": "CHIBA-PC",
   "priority": "P0_craft_recipes",
-  "status": "active",
+  "status": "released",
   "claimed_at": "2026-11-24T05:53:50.729Z",
   "video_ids": [
     "x6_mbnsh6VU",
@@ -50,5 +50,7 @@
     "z02-yCIHPCY",
     "zPDMm7XUpkI",
     "zyktN7x_DSQ"
-  ]
+  ],
+  "released_at": "2026-11-24T06:13:10.543Z",
+  "release_reason": "youtube_bot_check_abort_on_CHIBA-PC"
 }

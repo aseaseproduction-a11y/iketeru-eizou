@@ -159,6 +159,33 @@ async function main() {
     return;
   }
 
+  // 2b. Release/cancel an active claim without completing it
+  if (args["release"]) {
+    const runId = typeof args["release"] === "string" ? args["release"] : String(args["run-id"] || "");
+    if (!runId) {
+      throw new Error("Usage: node scripts/claim-phase3-batch.mjs --release --run-id <run_id> [--reason <text>]");
+    }
+    const claimPath = path.join(CLAIMS_DIR, `${runId}.json`);
+    if (!fs.existsSync(claimPath)) {
+      throw new Error(`Claim not found: ${claimPath}`);
+    }
+    const claim = JSON.parse(fs.readFileSync(claimPath, "utf8"));
+    const prevStatus = claim.status;
+    claim.status = "released";
+    claim.released_at = new Date().toISOString();
+    claim.release_reason = String(args["reason"] || "manual_release");
+    fs.writeFileSync(claimPath, JSON.stringify(claim, null, 2) + "\n", "utf8");
+    console.log(JSON.stringify({
+      released: runId,
+      previous_status: prevStatus,
+      status: claim.status,
+      released_at: claim.released_at,
+      release_reason: claim.release_reason,
+      released_ids_count: (claim.video_ids || []).length,
+    }, null, 2));
+    return;
+  }
+
   // 3. Verify all active claims have zero pairwise overlap
   if (args["verify"]) {
     const claims = loadAllClaims();
@@ -318,7 +345,8 @@ async function main() {
   node scripts/claim-phase3-batch.mjs --verify
   node scripts/claim-phase3-batch.mjs --register-run <run_id> [--worker <name>]
   node scripts/claim-phase3-batch.mjs --claim --worker <name> --priority <P0_craft_recipes|P1_private_rating|ALL> [--batch-size 200] [--dry-run]
-  node scripts/claim-phase3-batch.mjs --complete <run_id>`);
+  node scripts/claim-phase3-batch.mjs --complete <run_id>
+  node scripts/claim-phase3-batch.mjs --release --run-id <run_id> [--reason <text>]`);
 }
 
 main().catch((err) => {
