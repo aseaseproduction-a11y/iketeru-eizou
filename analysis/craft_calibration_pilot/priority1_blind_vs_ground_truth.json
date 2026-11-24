@@ -1,0 +1,483 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-24T23:14:30+09:00",
+  "protocol": "Track C Priority 1 Calibration Pilot — Blind Visual-Only Reverse Engineering vs Extracted Ground Truth (7 open-license works, ZERO DB writes)",
+  "ground_truth_source": "analysis/craft_calibration_pilot/priority1_ground_truth_summary.json",
+  "aggregate_metrics": {
+    "blender_3_demos": {
+      "camera_band_accuracy": "3/3",
+      "focal_length_mae_mm": 5.83,
+      "dof_enabled_accuracy": "1/3",
+      "view_transform_accuracy": "2/3",
+      "contrast_look_accuracy": "2/3",
+      "compositor_used_accuracy": "1/3",
+      "lights_count_note": "Light counts were systematically underestimated on multi-light rigs (4 vs 10, 4 vs 9) and HDRI-only sharp sun was misread as 1 SUN lamp (1 vs 0)."
+    },
+    "mit_code_video_4_repos": {
+      "motion_paradigm_accuracy": "4/4",
+      "core_functions_recall_overall": "13/13"
+    },
+    "actionable_calibration_findings": [
+      "1. 高精度に推定可能（信頼してレシピ化できる領域）: カメラ焦点距離帯（広角/望遠 3/3=100%, MAE 5.83mm）、明確な浅いDOFのF値（classroom 2.08 vs 2.0）、モーションパラダイム分類（4/4=100%）、主要イージング／数式関数（13/13=100% 再現）、代表色HEX（#141414, #10b981等）。",
+      "2. 視覚のみでは系統的にズレる領域（断定禁止・レンジ表記または non_visual_unknowns に送るべき領域）: ①ライト総数（10灯→4灯、9灯→4灯と半減推定）および HDRI 単独 vs SUN ライトの区別（0灯→1灯）、②コンポジットノード使用有無（106ノード・14ノードの2作品とも未検出＝1/3一致）、③深いDOF（f/11.2）とDOF無効の区別、および平滑な背景/デノイザと浅いDOFの誤認（DOF有無 1/3一致）、④Standard vs Filmic のトーンマップ判別（2/3一致）、⑤厳密な数値係数（waitFor秒数、noiseScale 1/250、n=1400、stroke alpha 6/255等）。"
+    ]
+  },
+  "blender_comparisons": [
+    {
+      "item_code": "p1_blend_01",
+      "slug": "classroom",
+      "license": "CC0",
+      "subagent_id": "2395a625-c077-40f2-96a1-8403188b3cb6",
+      "blind_render_path": "E:\\iketeru_calibration_lab\\priority1\\blind_renders\\p1_blend_01.png",
+      "ground_truth": {
+        "camera_band": "wide (<=28mm)",
+        "camera_focal_length_mm": 25.0,
+        "dof_enabled": true,
+        "fstop": 2.08,
+        "lights_count": 10,
+        "lights_by_type": {
+          "SUN": 1,
+          "SPOT": 5,
+          "AREA": 2,
+          "POINT": 2
+        },
+        "color_management": {
+          "view_transform": "Standard",
+          "look": "None",
+          "exposure": 0.0,
+          "gamma": 1.0
+        },
+        "compositor_used": true,
+        "compositor_nodes_count": 106,
+        "key_compositor_nodes": [
+          "BLUR(10)",
+          "GLARE(3)",
+          "CURVE_RGB(4)",
+          "LENSDIST(2)",
+          "COLORBALANCE(1)",
+          "BOKEHIMAGE(1)",
+          "DESPECKLE(2)"
+        ]
+      },
+      "blind_estimate": {
+        "item_code": "p1_blend_01",
+        "camera_band": "wide (<=28mm)",
+        "camera_focal_length_mm_est": 26,
+        "dof_enabled": true,
+        "fstop_est": 2.0,
+        "lights_count_est": 4,
+        "lights_by_type_est": [
+          "SUN",
+          "AREA"
+        ],
+        "uses_mesh_emission_or_hdri_only": false,
+        "color_management_est": {
+          "view_transform": "Filmic",
+          "contrast_look": "None",
+          "exposure_bias": "neutral"
+        },
+        "compositor_used": false,
+        "compositor_effects_est": [],
+        "brief_visual_evidence": "教室両壁と天井の収束・手前机の遠近誇張から26mm前後の広角と推定。最前列の机・椅子が大きくボケ、中景〜黒板に合焦する浅いDOF（f/2.0前後）。右窓からのブラインド状の平行影はSUN、室内の柔らかい面光・黒板灯はAREA由来と推測。白飛びする天井灯にグレアや色収差・ビネットは見えず、明暗階調は自然なFilmic調。",
+        "non_visual_unknowns": [
+          "カメラのセンサーサイズ（32mm/36mm）および正確な被写体距離",
+          "天井ペンダント灯・黒板灯がMesh EmissionかLightオブジェクト（AREA/POINT）かの切り分け",
+          "窓面ポータルライトや補助ライトの正確な個数・出力・色温度",
+          "視認しにくい微弱なコンポジット（デノイズ・軽微なトーン調整等）の有無",
+          "Worldシェーダ（Sky TextureかHDRIか）および正確なExposure/Gamma数値"
+        ]
+      },
+      "comparison": {
+        "camera_band_match": true,
+        "focal_length_abs_error_mm": 1.0,
+        "dof_enabled_match": true,
+        "fstop_abs_error": 0.08,
+        "lights_count_delta_est_minus_gt": -6,
+        "primary_light_type_overlap": true,
+        "view_transform_match": false,
+        "contrast_look_match": true,
+        "compositor_used_match": false
+      }
+    },
+    {
+      "item_code": "p1_blend_02",
+      "slug": "monster_under_the_bed",
+      "license": "CC-BY",
+      "subagent_id": "91567f26-4fca-4cc2-91f7-ce70ab6d2c21",
+      "blind_render_path": "E:\\iketeru_calibration_lab\\priority1\\blind_renders\\p1_blend_02.png",
+      "ground_truth": {
+        "camera_band": "telephoto (>=56mm)",
+        "camera_focal_length_mm": 85.0,
+        "dof_enabled": false,
+        "fstop": null,
+        "lights_count": 9,
+        "lights_by_type": {
+          "AREA": 9
+        },
+        "color_management": {
+          "view_transform": "Filmic",
+          "look": "High Contrast",
+          "exposure": 0.3,
+          "gamma": 1.15
+        },
+        "compositor_used": false,
+        "compositor_nodes_count": 0,
+        "key_compositor_nodes": null
+      },
+      "blind_estimate": {
+        "item_code": "p1_blend_02",
+        "camera_band": "telephoto (>=56mm)",
+        "camera_focal_length_mm_est": 70,
+        "dof_enabled": true,
+        "fstop_est": 2.8,
+        "lights_count_est": 4,
+        "lights_by_type_est": [
+          "AREA",
+          "POINT"
+        ],
+        "uses_mesh_emission_or_hdri_only": false,
+        "color_management_est": {
+          "view_transform": "Filmic",
+          "contrast_look": "Medium Contrast",
+          "exposure_bias": "neutral"
+        },
+        "compositor_used": false,
+        "compositor_effects_est": [],
+        "brief_visual_evidence": "ベッド支柱の垂直維持と奥行きの圧縮感から中望遠(約70mm)と推定。手前床面と奥の巾木に穏やかなボケがありDOF有効(f/2.8前後)。瞳の左上キャッチライト、右床の暖色反射、左腕やフード縁のリム光とSSS透過から複数ソフトライト(AREA/POINT)構成。ハイライトが滑らかに白へロールオフしFilmic中コントラスト、グレアや歪み等の明確なコンポジット痕跡はなし。",
+        "non_visual_unknowns": [
+          "シーン実寸スケール・フォーカス距離・センサー幅（焦点距離とF値の絶対値に影響）",
+          "ライトの正確な個数・出力(W)・サイズ、およびWorld/HDRI補助光の有無と強度",
+          "露出バイアスとライト強度の相殺関係",
+          "FilmicとAgXの微細なトーン差および正確なLookプリセット",
+          "Denoiseやごく微弱なColor Balance/Curves等の視覚的に判別困難なコンポジットノードの有無"
+        ]
+      },
+      "comparison": {
+        "camera_band_match": true,
+        "focal_length_abs_error_mm": 15.0,
+        "dof_enabled_match": false,
+        "fstop_abs_error": null,
+        "lights_count_delta_est_minus_gt": -5,
+        "primary_light_type_overlap": true,
+        "view_transform_match": true,
+        "contrast_look_match": false,
+        "compositor_used_match": true
+      }
+    },
+    {
+      "item_code": "p1_blend_03",
+      "slug": "lone_monk",
+      "license": "CC0",
+      "subagent_id": "502838bb-1486-4625-a98e-223d3bb39990",
+      "blind_render_path": "E:\\iketeru_calibration_lab\\priority1\\blind_renders\\p1_blend_03.png",
+      "ground_truth": {
+        "camera_band": "wide (<=28mm)",
+        "camera_focal_length_mm": 25.5,
+        "dof_enabled": true,
+        "fstop": 11.2,
+        "lights_count": 0,
+        "lights_by_type": {},
+        "color_management": {
+          "view_transform": "Filmic",
+          "look": "Medium Contrast",
+          "exposure": -2.0,
+          "gamma": 1.0
+        },
+        "compositor_used": true,
+        "compositor_nodes_count": 14,
+        "key_compositor_nodes": "Render Layers -> Dilate/Erode -> Exposure -> Glare -> Lens Distortion -> Composite"
+      },
+      "blind_estimate": {
+        "item_code": "p1_blend_03",
+        "camera_band": "wide (<=28mm)",
+        "camera_focal_length_mm_est": 24,
+        "dof_enabled": false,
+        "fstop_est": null,
+        "lights_count_est": 1,
+        "lights_by_type_est": [
+          "SUN"
+        ],
+        "uses_mesh_emission_or_hdri_only": false,
+        "color_management_est": {
+          "view_transform": "Filmic",
+          "contrast_look": "Medium Contrast",
+          "exposure_bias": "neutral"
+        },
+        "compositor_used": false,
+        "compositor_effects_est": [],
+        "brief_visual_evidence": "近景の書棚・机から中庭両翼とアーチ天井まで広く収める強い一点透視の広角画角（約24mm）。近景の本から遠景の屋根瓦まで全域シャープで被写界深度ボケなし。屋外中庭の明確な指向性影と青空雲の映り込みから太陽光＋空HDRI構成と推定。暗部回廊と高輝度中庭を破綻なく収め白飛びも穏やかなためFilmic中コントラスト。グレア・色収差・デノイズ痕跡がなく生レンダーに近い。",
+        "non_visual_unknowns": [
+          "センサーサイズおよび正確な焦点距離（mm）",
+          "被写界深度無効時のカメラF値設定",
+          "HDRI単独かSUNライト併用か、およびポータルAREAライト・非点灯ライトの有無",
+          "FilmicとAgXの厳密な判別および正確なExposure数値",
+          "視覚的変化の小さいコンポジットノード（軽微な色調補正やバイパス済みノード）の有無"
+        ]
+      },
+      "comparison": {
+        "camera_band_match": true,
+        "focal_length_abs_error_mm": 1.5,
+        "dof_enabled_match": false,
+        "fstop_abs_error": null,
+        "lights_count_delta_est_minus_gt": 1,
+        "primary_light_type_overlap": false,
+        "view_transform_match": true,
+        "contrast_look_match": true,
+        "compositor_used_match": false
+      }
+    }
+  ],
+  "code_video_comparisons": [
+    {
+      "item_code": "p1_code_01",
+      "repo": "motion-canvas/examples",
+      "license": "MIT",
+      "sample_file": "examples/anniversary/src/scenes/intro.tsx",
+      "subagent_id": "8d80afb2-d491-40ce-a501-811fa4ee7d3f",
+      "ground_truth": {
+        "paradigm": "keyframe_tween_ui",
+        "functions": [
+          "easeInCubic",
+          "easeInOutCubic",
+          "easeOutCubic",
+          "linear"
+        ],
+        "holds_sec": [
+          0.2,
+          2.0,
+          0.2
+        ],
+        "key_hex": [
+          "#141414",
+          "#5558da",
+          "#5fd1f9"
+        ]
+      },
+      "blind_estimate": {
+        "item_code": "p1_code_01",
+        "motion_paradigm": "keyframe_tween_ui",
+        "easing_and_math_functions_est": [
+          "easeInOutCubic",
+          "easeOutCubic",
+          "easeInCubic",
+          "linear",
+          "interpolate"
+        ],
+        "timing_and_holds_est": "00:00-00:01でカード高さ展開とテキスト出現(約0.5-1.0s)、00:01-00:04はコミット表示を約0.8-1.0s間隔で更新。00:04-00:05でエディタUIフレームが出現(約0.6-1.0s)。00:05-00:15の約10秒間でコミット履歴(2023年2月〜12月)・背景グラデーション・UI変遷(00:13頃に右ペイン展開)を序盤緩やか→後半加速で連続進行。00:15-00:16でカット遷移し、00:16-00:21の約5秒間でカーソル移動→拡縮(約1.5s)→回転(約2.0s)→復帰(約1.0s)を短いホールド(約0.3-0.5s)を挟みつつ実行。",
+        "background_and_accent_hex_est": [
+          "#141414",
+          "#1E1E1E",
+          "#5B5CE6",
+          "#5EC5F2",
+          "#D9487A",
+          "#68ABDF",
+          "#D15353",
+          "#E59555",
+          "#FFFFFF"
+        ],
+        "visual_craft_summary": "斜めグラデーション背景上に角丸ダークカードを配置し、Motion Canvasのコミット履歴とバージョンを連続更新。5秒付近でエディタUIが出現し、背景色相の連続遷移とUI変遷（RENDER色変化や右Node Inspector展開）を同期演出。16秒から暗背景の2D座標系デモへ切替わり、グリッド上でカーソルに連動する矩形・円と操作枠の拡縮・回転をベクター描画で滑らかに表現。",
+        "non_visual_unknowns": [
+          "正確なフレームレートおよび各トゥイーン・waitForの厳密な秒数",
+          "イージング関数の正確な次数・種別（Cubic/Quart/Quint/Expoやカスタムベジェ制御点）",
+          "コミット履歴の進行速度カーブの数式および実Gitログ連携の有無",
+          "エディタUI変遷部分の実装方式（画像・動画アセット切替かUIコンポーネント描画か）",
+          "背景グラデーション補間の色空間（RGB/HSL/Lab等）と厳密なHEX・角度値",
+          "後半2D座標系デモのスケール倍率・回転角・カーソル座標の厳密な数値および埋め込みクリップかコード生成かの判別"
+        ]
+      },
+      "comparison": {
+        "motion_paradigm_match": true,
+        "core_functions_recall": "4/4",
+        "core_functions_matched": [
+          "easeInCubic",
+          "easeInOutCubic",
+          "easeOutCubic",
+          "linear"
+        ],
+        "core_functions_missed": [],
+        "extra_guessed_functions": [
+          "interpolate"
+        ]
+      }
+    },
+    {
+      "item_code": "p1_code_02",
+      "repo": "satelllte/remotion-template",
+      "license": "MIT",
+      "sample_file": "src/videos/VideoHello.tsx",
+      "subagent_id": "a92552ff-007b-48cc-9701-7cabe024258c",
+      "ground_truth": {
+        "paradigm": "periodic_trigonometric",
+        "functions": [
+          "interpolate",
+          "sin"
+        ],
+        "motion_detail": "opacity interpolate fade 1.5s, translateY=sin(2t)*15%, rotate=sin(1.25t)*10deg",
+        "key_hex": [
+          "#0c0a09",
+          "#10b981"
+        ]
+      },
+      "blind_estimate": {
+        "item_code": "p1_code_02",
+        "motion_paradigm": "periodic_trigonometric",
+        "easing_and_math_functions_est": [
+          "sin",
+          "cos",
+          "interpolate",
+          "linear"
+        ],
+        "timing_and_holds_est": "ポーズ・静止ホールドなしの連続周期運動（約5秒尺）。中央（00:02付近）を対称軸として、回転は00:01で時計回り最大（約+10°）→00:02で0°→00:03で反時計回り最大（約-10°）となる1周期のsin波、上下移動は00:00/00:04が最下点・00:02が最上点となるcos波（回転と90°位相差）、不透明度は両端約35〜40%から中央100%へ対称にフェードイン・アウトする構造と推定。",
+        "background_and_accent_hex_est": [
+          "#121212",
+          "#1e1e1e",
+          "#10b981"
+        ],
+        "visual_craft_summary": "暗色ベースに微細なグリッドを敷いた静的背景の中央で、ジオメトリック系サンセリフ体のエメラルドグリーン文字「Hello!」が単一レイヤーで描画される。静止ホールドはなく、約5秒周期でsin的な左右傾き（±約10°）とcos的な上下浮遊が90°位相差で連続振動し、前後で対称に不透明度がフェードイン・アウトする構成。",
+        "non_visual_unknowns": [
+          "正確なフレームレート（30fps/60fps等）と総フレーム数・厳密な総尺",
+          "回転振幅・Y軸移動幅・角周波数（ω）および初期位相の正確な数値係数",
+          "不透明度変化の厳密な関数式（半周期sin波かinterpolateによる線形/イージング補間か）",
+          "使用フレームワーク（Remotion/Motion Canvas/p5.js/AE等）および正確なフォント名・文字サイズ・グリッド間隔",
+          "微細なスケール変化の有無（1fps観察範囲ではほぼ等倍に見えるが微小脈動の可能性）",
+          "エンコード圧縮前の厳密な背景色・グリッド線色・テキスト色のHEX値"
+        ]
+      },
+      "comparison": {
+        "motion_paradigm_match": true,
+        "core_functions_recall": "2/2",
+        "core_functions_matched": [
+          "interpolate",
+          "sin"
+        ],
+        "core_functions_missed": [],
+        "extra_guessed_functions": [
+          "cos",
+          "linear"
+        ]
+      }
+    },
+    {
+      "item_code": "p1_code_03",
+      "repo": "tetunori/GenerativeArtWithMath-p5.js",
+      "license": "MIT",
+      "sample_file": "Ch13_Periodic/Pythagoras/drawPythagoras.js",
+      "subagent_id": "494462c2-568d-44f6-8bcf-33ec6a6894e3",
+      "ground_truth": {
+        "paradigm": "procedural_hybrid",
+        "functions": [
+          "sin",
+          "cos",
+          "atan",
+          "sqrt",
+          "rotate"
+        ],
+        "motion_detail": "event-driven static Pythagorean tiling redrawn on slider/button input",
+        "key_hex": [
+          "#ffffff"
+        ]
+      },
+      "blind_estimate": {
+        "item_code": "p1_code_03",
+        "motion_paradigm": "procedural_hybrid",
+        "easing_and_math_functions_est": [
+          "sin",
+          "cos",
+          "atan2",
+          "sqrt",
+          "rotate",
+          "translate"
+        ],
+        "timing_and_holds_est": "00:00〜00:04の全フレームが完全静止（時間軸アニメーション・イージング遷移なし）。Gapスライダーやボタン操作時のみ再計算・再描画されるイベント駆動／静的プロシージャル構成と推定。",
+        "background_and_accent_hex_est": [
+          "#ffffff",
+          "#90ffec",
+          "#e094ff",
+          "#000000",
+          "#0075ff"
+        ],
+        "visual_craft_summary": "白背景ビューポート左上の正方形キャンバスに、大小2種の正方形（水色・薄紫、黒枠線）を斜めに敷き詰めたピタゴラス・タイリングを描画。左上の半透明パネルにCAPTURE IMAGE／SET FIBONACCI／Gap: 0.5スライダー／CHANGE COLORのUIを配置。5秒間完全に静止しており、UI操作時のみ再描画される対話型プロシージャル作品と推定。",
+        "non_visual_unknowns": [
+          "キャンバス実ピクセルサイズおよびnoLoop()使用有無・フレームレート",
+          "Gap値(0.5)と大小正方形辺長比・回転角を結びつける正確な数式とスライダー最小/最大/ステップ値",
+          "SET FIBONACCI押下時の設定値（黄金比0.618等）および変化時のイージング有無",
+          "CHANGE COLORの配色生成ロジック（HSB/RGBランダムか固定パレットか）と初期色決定方式",
+          "実装フレームワーク（p5.jsか素のHTML5 Canvasか）およびCAPTURE IMAGEの書き出し仕様"
+        ]
+      },
+      "comparison": {
+        "motion_paradigm_match": true,
+        "core_functions_recall": "5/5",
+        "core_functions_matched": [
+          "sin",
+          "cos",
+          "atan",
+          "sqrt",
+          "rotate"
+        ],
+        "core_functions_missed": [],
+        "extra_guessed_functions": [
+          "translate"
+        ]
+      }
+    },
+    {
+      "item_code": "p1_code_04",
+      "repo": "kgolid/p5ycho",
+      "license": "MIT",
+      "sample_file": "blanket/sketch.js",
+      "subagent_id": "767e8739-d629-41c1-b782-a624f38cc42e",
+      "ground_truth": {
+        "paradigm": "perlin_noise_flowfield",
+        "functions": [
+          "noise",
+          "linear_y_step"
+        ],
+        "motion_detail": "1400 horizontal points stepping y++ with Perlin noise(i/250, y/250)*2-1, stroke(255,6), no background clear",
+        "key_hex": [
+          "#000000",
+          "#ffffff"
+        ]
+      },
+      "blind_estimate": {
+        "item_code": "p1_code_04",
+        "motion_paradigm": "perlin_noise_flowfield",
+        "easing_and_math_functions_est": [
+          "noise",
+          "linear",
+          "cos",
+          "sin"
+        ],
+        "timing_and_holds_est": "ポーズ・待機・リセット・周期ループは一切なく、開始（約0.0s）から終了（約4〜5s）まで背景未クリアのキャンバス上で上部余白付近から下方へ一定速度（毎秒画面高の約16〜19%ペース）で直線的に連続描画・軌跡蓄積し続ける非周期的な生成アニメーション。",
+        "background_and_accent_hex_est": [
+          "#000000",
+          "#141414",
+          "#555555",
+          "#C8C8C8",
+          "#FFFFFF"
+        ],
+        "visual_craft_summary": "純黒背景上で画面上部から下部へ水平走査線を保ちつつ一定速度で連続描画し、背景クリアせず極低不透明度の白線群を重ね描くモノクロ生成映像。Perlinノイズ場による有機的な横方向変位で線密度が局所的に収束・交差し、絹布や煙・コースティクスのような半透明の折り重なりとモアレ模様を形成する。ポーズや明滅はなく、静謐で滑らかな連続蓄積型フローフィールド表現。",
+        "non_visual_unknowns": [
+          "ノイズ関数の厳密な種類（Perlin vs Simplex）およびnoiseSeed・noiseDetail（オクターブ数/falloff）・空間周波数係数（noiseScale）",
+          "パーティクル／線分の正確な本数、初期配置間隔、線幅（strokeWeight）、正確なアルファ値とブレンドモード（BLEND vs ADD/SCREEN）",
+          "変位計算の具体的数式（ノイズ角度のcos/sinベクトル変換か、スカラー値の直接オフセットか、粒子軌跡描画か水平ポリライン描画か）",
+          "1フレームあたりの垂直ステップ量（dy）・サブステップ回数・正確なフレームレートおよび上下左右マージン定数",
+          "使用ランタイム／フレームワーク（p5.js / Processing / Canvas 2D / GLSL 等）の特定"
+        ]
+      },
+      "comparison": {
+        "motion_paradigm_match": true,
+        "core_functions_recall": "2/2",
+        "core_functions_matched": [
+          "noise",
+          "linear_y_step"
+        ],
+        "core_functions_missed": [],
+        "extra_guessed_functions": [
+          "cos",
+          "sin"
+        ]
+      }
+    }
+  ]
+}
