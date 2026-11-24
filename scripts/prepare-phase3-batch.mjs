@@ -39,8 +39,21 @@ import { isBotCheckError, validateSplitGuard } from "./prepare-phase2-run.mjs";
 
 const execFileAsync = promisify(execFile);
 const REPO_ROOT = "E:\\iketeru-eizou";
-const CACHE_DIR = process.env.IKETERU_VIDEO_CACHE_DIR || "D:\\マイドライブ\\iketeru_videos";
+const DEFAULT_CACHE_DIR = "D:\\マイドライブ\\iketeru_videos";
 const BLIND_ROOT = "E:\\iketeru_blind_eval";
+
+let _dotenvLoaded = false;
+function loadEnvOnce() {
+  if (_dotenvLoaded) return;
+  _dotenvLoaded = true;
+  const require = createRequire(path.join(REPO_ROOT, "package.json"));
+  require("dotenv").config({ path: path.join(REPO_ROOT, ".env"), quiet: true });
+}
+
+function getCacheDir() {
+  loadEnvOnce();
+  return process.env.IKETERU_VIDEO_CACHE_DIR || DEFAULT_CACHE_DIR;
+}
 
 function parseArgs(argv) {
   const args = {};
@@ -61,9 +74,10 @@ function parseArgs(argv) {
 }
 
 function findCachedFile(id) {
-  if (!fs.existsSync(CACHE_DIR)) return null;
+  const cacheDir = getCacheDir();
+  if (!fs.existsSync(cacheDir)) return null;
   for (const ext of [".mp4", ".mov", ".mkv", ".webm", ".m4v"]) {
-    const p = path.join(CACHE_DIR, `${id}${ext}`);
+    const p = path.join(cacheDir, `${id}${ext}`);
     if (fs.existsSync(p) && fs.statSync(p).size > 0) return p;
   }
   return null;
@@ -432,7 +446,7 @@ async function main() {
   const cachedCount = targetIds.filter((id) => Boolean(findCachedFile(id))).length;
 
   console.log(
-    `[Phase 3 C Prepare] priority=${priority} batch=${batchIndex} total=${targetIds.length} cached=${cachedCount} missing=${targetIds.length - cachedCount} run_id=${runId} concurrency=${concurrency} cache_dir=${CACHE_DIR} no_download=${noDownload} limit_stage=${limitStage ?? "all"}`
+    `[Phase 3 C Prepare] priority=${priority} batch=${batchIndex} total=${targetIds.length} cached=${cachedCount} missing=${targetIds.length - cachedCount} run_id=${runId} concurrency=${concurrency} cache_dir=${getCacheDir()} no_download=${noDownload} limit_stage=${limitStage ?? "all"}`
   );
 
   if (dryRun) {

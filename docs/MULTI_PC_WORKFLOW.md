@@ -34,9 +34,25 @@ node scripts/claim-phase3-batch.mjs --claim --worker <このPC名> --priority P0
 # 例: Priority 1（privateRating付き YouTube）を予約する場合
 node scripts/claim-phase3-batch.mjs --claim --worker <このPC名> --priority P1_private_rating --batch-size 200
 
+# 例: ローカルキャッシュ済みの非YouTube（Vimeo等）のみをダウンロード無しで予約する場合
+# （キャッシュ先は環境変数 IKETERU_VIDEO_CACHE_DIR または .env で指定可。未設定時は D:\マイドライブ\iketeru_videos）
+node scripts/claim-phase3-batch.mjs --claim --worker <このPC名> --priority P1_private_rating --batch-index 2 --batch-size 200 --non-youtube --cached-only --dry-run
+
 # 例: 残りの未校正 YouTube 全体から200本予約する場合
 node scripts/claim-phase3-batch.mjs --claim --worker <このPC名> --priority ALL --batch-size 200
 ```
+
+#### 追加オプション一覧（すべて任意・未指定時は従来動作のまま）
+- `IKETERU_VIDEO_CACHE_DIR`（環境変数または `.env`）: 動画キャッシュディレクトリの上書き（未設定時は `D:\マイドライブ\iketeru_videos`）。`claim-phase3-batch.mjs` と `prepare-phase3-batch.mjs` の両方で参照。
+- `claim-phase3-batch.mjs`:
+  - `--cached-only`: キャッシュに存在する動画のみ候補にする。
+  - `--non-youtube`: YouTube 以外（Vimeo 等）のみ候補にする。
+  - `--verify-media`: `--cached-only` 時に `ffprobe` で実際に読めるファイルか検証する（未指定時はサイズ > 0 判定のみ）。
+  - `--batch-index <N>`: claim JSON の `batch_index` と推奨コマンドの `--batch <N>` を明示一致させる。
+  - `--release --run-id <id> [--reason <text>]`: 未完了の予約を正規解除（`status: "released"` に変更しロック対象外へ戻す）。
+- `prepare-phase3-batch.mjs`:
+  - `--no-download`: 未キャッシュ動画が 1 本でもあれば `yt-dlp` を一切呼ばず即停止する。
+  - `--limit-stage <N>`: 先頭 `N` 本だけ試験ステージングし、問題なければ `--resume` で残りを続行する。
 生成された予約ファイルを **採点開始前に必ず commit & push** します：
 ```powershell
 node scripts/claim-phase3-batch.mjs --verify

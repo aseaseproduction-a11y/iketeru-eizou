@@ -16,6 +16,7 @@
  * Does NOT modify any frozen Phase 2 scoring/calibration files.
  */
 
+import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
@@ -25,16 +26,45 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, "..");
 const CLAIMS_DIR = path.join(REPO_ROOT, "analysis", "claims");
-const CACHE_DIR = process.env.IKETERU_VIDEO_CACHE_DIR || "D:\\マイドライブ\\iketeru_videos";
+const DEFAULT_CACHE_DIR = "D:\\マイドライブ\\iketeru_videos";
 const MAX_BATCH_SIZE = 200;
 
+let _dotenvLoaded = false;
+function loadEnvOnce() {
+  if (_dotenvLoaded) return;
+  _dotenvLoaded = true;
+  const require = createRequire(path.join(REPO_ROOT, "package.json"));
+  require("dotenv").config({ path: path.join(REPO_ROOT, ".env"), quiet: true });
+}
+
+function getCacheDir() {
+  loadEnvOnce();
+  return process.env.IKETERU_VIDEO_CACHE_DIR || DEFAULT_CACHE_DIR;
+}
+
 function findCachedFile(id) {
-  if (!fs.existsSync(CACHE_DIR)) return null;
+  const cacheDir = getCacheDir();
+  if (!fs.existsSync(cacheDir)) return null;
   for (const ext of [".mp4", ".mov", ".mkv", ".webm", ".m4v"]) {
-    const p = path.join(CACHE_DIR, `${id}${ext}`);
+    const p = path.join(cacheDir, `${id}${ext}`);
     if (fs.existsSync(p) && fs.statSync(p).size > 0) return p;
   }
   return null;
+}
+
+function isMediaReadable(filePath) {
+  try {
+    const out = execFileSync(
+      "ffprobe",
+      ["-v", "error", "-show_entries", "format=duration", "-of", "json", filePath],
+      { encoding: "utf8", timeout: 15000, stdio: ["ignore", "pipe", "ignore"] }
+    );
+    const parsed = JSON.parse(out);
+    const dur = parseFloat(parsed?.format?.duration);
+    return Number.isFinite(dur) && dur > 0;
+  } catch {
+    return false;
+  }
 }
 
 function parseArgs(argv) {
@@ -276,7 +306,9 @@ async function main() {
     const idListPath = args["id-list"] ? path.resolve(REPO_ROOT, String(args["id-list"])) : null;
     const nonYoutube = Boolean(args["non-youtube"]);
     const cachedOnly = Boolean(args["cached-only"]);
+    const verifyMedia = Boolean(args["verify-media"]);
     const dryRun = Boolean(args["dry-run"]);
+    const cacheDir = getCacheDir();
 
     const claims = loadAllClaims();
     const check = verifyActiveClaims(claims);
@@ -287,7 +319,18 @@ async function main() {
     const rows = await fetchTidbVideos();
     const byId = new Map(rows.map((r) => [String(r.id), r]));
     const candidates = [];
+    const unreadableSkipped = [];
     const matchesPlatform = (r) => (nonYoutube ? !isYoutubeRow(r) : isYoutubeRow(r));
+    const passesCacheFilter = (vid) => {
+      if (!cachedOnly) return true;
+      const p = findCachedFile(vid);
+      if (!p) return false;
+      if (verifyMedia && !isMediaReadable(p)) {
+        unreadableSkipped.push(vid);
+        return false;
+      }
+      return true;
+    };
 
     if (priority === "P0_craft_recipes") {
       const targetPath = idListPath || path.join(REPO_ROOT, "analysis", "phase3_craft_recipes_target_ids.json");
@@ -297,7 +340,7 @@ async function main() {
         const r = byId.get(vid);
         if (!r || r.calibratedScore != null || check.ownerById.has(vid)) continue;
         if (!matchesPlatform(r)) continue;
-        if (cachedOnly && !findCachedFile(vid)) continue;
+        if (!passesCacheFilter(vid)) continue;
         candidates.push(vid);
       }
     } else if (priority === "P1_private_rating") {
@@ -305,7 +348,7 @@ async function main() {
         const vid = String(r.id);
         if (r.privateRating == null || r.calibratedScore != null || check.ownerById.has(vid)) continue;
         if (!matchesPlatform(r)) continue;
-        if (cachedOnly && !findCachedFile(vid)) continue;
+        if (!passesCacheFilter(vid)) continue;
         candidates.push(vid);
       }
     } else {
@@ -313,14 +356,14 @@ async function main() {
         const vid = String(r.id);
         if (r.calibratedScore != null || check.ownerById.has(vid)) continue;
         if (!matchesPlatform(r)) continue;
-        if (cachedOnly && !findCachedFile(vid)) continue;
+        if (!passesCacheFilter(vid)) continue;
         candidates.push(vid);
       }
     }
 
     const chosen = candidates.slice(0, batchSize);
     if (chosen.length === 0) {
-      console.log(JSON.stringify({ message: "No matching unclaimed uncalibrated videos available for this priority/filter.", priority, non_youtube: nonYoutube, cached_only: cachedOnly, cache_dir: CACHE_DIR, active_locked: check.totalLockedIds }, null, 2));
+      console.log(JSON.stringify({ message: "No matching unclaimed uncalibrated videos available for this priority/filter.", priority, non_youtube: nonYoutube, cached_only: cachedOnly, verify_media: verifyMedia, cache_dir: cacheDir, active_locked: check.totalLockedIds }, null, 2));
       return;
     }
 
@@ -343,7 +386,7 @@ async function main() {
       worker,
       priority,
       batch_index: batchIndex,
-      filters: { non_youtube: nonYoutube, cached_only: cachedOnly },
+      filters: { non_youtube: nonYoutube, cached_only: cachedOnly, verify_media: verifyMedia },
       status: "active",
       claimed_at: new Date().toISOString(),
       video_ids: chosen,
@@ -366,12 +409,13 @@ async function main() {
       worker,
       priority,
       batch_index: batchIndex,
-      cache_dir: CACHE_DIR,
-      filters: { non_youtube: nonYoutube, cached_only: cachedOnly },
+      cache_dir: cacheDir,
+      filters: { non_youtube: nonYoutube, cached_only: cachedOnly, verify_media: verifyMedia },
       claimed_count: chosen.length,
       youtube_count: youtubeCount,
       non_youtube_count: nonYoutubeCount,
       cached_match_count: cachedMatchCount,
+      unreadable_skipped_count: unreadableSkipped.length,
       platform_breakdown: platformBreakdown,
       remaining_unclaimed_in_pool: candidates.length - chosen.length,
       claim_file: `analysis/claims/${runId}.json`,
@@ -385,7 +429,7 @@ async function main() {
   node scripts/claim-phase3-batch.mjs --status
   node scripts/claim-phase3-batch.mjs --verify
   node scripts/claim-phase3-batch.mjs --register-run <run_id> [--worker <name>]
-  node scripts/claim-phase3-batch.mjs --claim --worker <name> --priority <P0_craft_recipes|P1_private_rating|ALL> [--batch-size 200] [--batch-index <N>] [--non-youtube] [--cached-only] [--dry-run]
+  node scripts/claim-phase3-batch.mjs --claim --worker <name> --priority <P0_craft_recipes|P1_private_rating|ALL> [--batch-size 200] [--batch-index <N>] [--non-youtube] [--cached-only] [--verify-media] [--dry-run]
   node scripts/claim-phase3-batch.mjs --complete <run_id>
   node scripts/claim-phase3-batch.mjs --release --run-id <run_id> [--reason <text>]`);
 }
