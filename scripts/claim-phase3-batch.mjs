@@ -18,7 +18,6 @@
 
 import { execFileSync } from "node:child_process";
 import fs from "node:fs";
-import os from "node:os";
 import path from "node:path";
 import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
@@ -28,6 +27,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, "..");
 const CLAIMS_DIR = path.join(REPO_ROOT, "analysis", "claims");
 const SKIP_LIST_PATH = path.join(CLAIMS_DIR, "_skip_list.json");
+const APPLY_LOCK_PATH = path.join(CLAIMS_DIR, "_apply_lock.json");
 const PRIMARY_WORKER = "chibatmute";
 const DEFAULT_RETRY_COOLDOWN_DAYS = 7;
 const DEFAULT_CACHE_DIR = "D:\\マイドライブ\\iketeru_videos";
@@ -43,7 +43,27 @@ function loadEnvOnce() {
 
 function resolveWorkerName(argWorker) {
   loadEnvOnce();
-  return String(argWorker || process.env.IKETERU_WORKER_NAME || os.hostname());
+  const name = String(argWorker || process.env.IKETERU_WORKER_NAME || "").trim();
+  if (!name) {
+    throw new Error(
+      "Worker name is required: pass --worker <name> or set IKETERU_WORKER_NAME in .env / environment. " +
+        "(OS hostname fallback is disabled because multiple PCs share hostname 'CHIBA-PC'.)"
+    );
+  }
+  return name;
+}
+
+function loadApplyLock() {
+  if (!fs.existsSync(APPLY_LOCK_PATH)) {
+    return {
+      schema_version: 1,
+      status: "unlocked",
+      worker: null,
+      run_id: null,
+      started_at: null,
+    };
+  }
+  return JSON.parse(fs.readFileSync(APPLY_LOCK_PATH, "utf8"));
 }
 
 function getCacheDir() {
@@ -216,6 +236,129 @@ function isYoutubeRow(row) {
 async function main() {
   const args = parseArgs(process.argv);
   fs.mkdirSync(CLAIMS_DIR, { recursive: true });
+
+  // 0. Serialized TiDB write lock commands (analysis/claims/_apply_lock.json)
+  if (args["apply-lock-status"]) {
+    const lock = loadApplyLock();
+    console.log(
+      JSON.stringify(
+        {
+          lock_file: path.relative(REPO_ROOT, APPLY_LOCK_PATH).replace(/\\/g, "/"),
+          ...lock,
+        },
+        null,
+        2
+      )
+    );
+    return;
+  }
+
+  if (args["acquire-apply-lock"]) {
+    const runId = typeof args["acquire-apply-lock"] === "string"
+      ? args["acquire-apply-lock"]
+      : String(args["run-id"] || "");
+    if (!runId) {
+      throw new Error("Usage: node scripts/claim-phase3-batch.mjs --acquire-apply-lock <run_id> [--worker <name>]");
+    }
+    const worker = resolveWorkerName(args["worker"]);
+    const existing = loadApplyLock();
+    if (existing.status === "locked" && (existing.worker !== worker || existing.run_id !== runId)) {
+      throw new Error(
+        `TiDB apply lock is already held by worker='${existing.worker}' for run_id='${existing.run_id}' since ${existing.started_at}. ` +
+          `Wait until that PC finishes and pushes the lock release before acquiring.`
+      );
+    }
+    const nowIso = new Date().toISOString();
+    const lockDoc = {
+      schema_version: 1,
+      status: "locked",
+      worker,
+      run_id: runId,
+      started_at: existing.status === "locked" && existing.started_at ? existing.started_at : nowIso,
+      updated_at: nowIso,
+    };
+    fs.writeFileSync(APPLY_LOCK_PATH, JSON.stringify(lockDoc, null, 2) + "\n", "utf8");
+    console.log(
+      JSON.stringify(
+        {
+          action: "acquired",
+          lock_file: path.relative(REPO_ROOT, APPLY_LOCK_PATH).replace(/\\/g, "/"),
+          ...lockDoc,
+          next_steps: [
+            "git add analysis/claims/_apply_lock.json",
+            `git commit -m "Lock TiDB apply for ${runId} (${worker})"`,
+            "git push   # MUST succeed before running apply-phase3-batch-to-tidb.mjs --apply",
+          ],
+        },
+        null,
+        2
+      )
+    );
+    return;
+  }
+
+  if (args["release-apply-lock"]) {
+    const runId = typeof args["release-apply-lock"] === "string"
+      ? args["release-apply-lock"]
+      : String(args["run-id"] || "");
+    if (!runId) {
+      throw new Error("Usage: node scripts/claim-phase3-batch.mjs --release-apply-lock <run_id> [--worker <name>]");
+    }
+    const worker = resolveWorkerName(args["worker"]);
+    const force = Boolean(args["force"]);
+    const existing = loadApplyLock();
+    if (existing.status !== "locked") {
+      console.log(
+        JSON.stringify(
+          {
+            action: "already_unlocked",
+            lock_file: path.relative(REPO_ROOT, APPLY_LOCK_PATH).replace(/\\/g, "/"),
+            ...existing,
+          },
+          null,
+          2
+        )
+      );
+      return;
+    }
+    if (!force && (existing.worker !== worker || existing.run_id !== runId)) {
+      throw new Error(
+        `Refusing to release lock owned by worker='${existing.worker}' run_id='${existing.run_id}' ` +
+          `(requested by worker='${worker}' run_id='${runId}').`
+      );
+    }
+    const nowIso = new Date().toISOString();
+    const unlockedDoc = {
+      schema_version: 1,
+      status: "unlocked",
+      worker: null,
+      run_id: null,
+      started_at: null,
+      last_worker: existing.worker,
+      last_run_id: existing.run_id,
+      last_started_at: existing.started_at,
+      released_at: nowIso,
+      released_by: worker,
+    };
+    fs.writeFileSync(APPLY_LOCK_PATH, JSON.stringify(unlockedDoc, null, 2) + "\n", "utf8");
+    console.log(
+      JSON.stringify(
+        {
+          action: "released",
+          lock_file: path.relative(REPO_ROOT, APPLY_LOCK_PATH).replace(/\\/g, "/"),
+          ...unlockedDoc,
+          next_steps: [
+            "git add analysis/claims/_apply_lock.json",
+            `git commit -m "Release TiDB apply lock after ${runId} (${worker})"`,
+            "git push",
+          ],
+        },
+        null,
+        2
+      )
+    );
+    return;
+  }
 
   // 1. Register an existing active run directory as a claim
   if (args["register-run"]) {
@@ -462,6 +605,7 @@ async function main() {
     }
 
     console.log(JSON.stringify({
+      apply_lock: loadApplyLock(),
       active_claims: claims.filter((c) => c.data.status === "active").map((c) => ({
         run_id: c.data.run_id,
         worker: c.data.worker,
@@ -622,6 +766,9 @@ async function main() {
   console.log(`Usage:
   node scripts/claim-phase3-batch.mjs --status
   node scripts/claim-phase3-batch.mjs --verify
+  node scripts/claim-phase3-batch.mjs --apply-lock-status
+  node scripts/claim-phase3-batch.mjs --acquire-apply-lock <run_id> [--worker <name>]
+  node scripts/claim-phase3-batch.mjs --release-apply-lock <run_id> [--worker <name>]
   node scripts/claim-phase3-batch.mjs --register-run <run_id> [--worker <name>]
   node scripts/claim-phase3-batch.mjs --claim --worker <name> --priority <P0_craft_recipes|P1_private_rating|ALL> [--batch-size 200] [--batch-index <N>] [--non-youtube] [--cached-only] [--verify-media] [--include-retryable] [--dry-run]
   node scripts/claim-phase3-batch.mjs --complete <run_id>

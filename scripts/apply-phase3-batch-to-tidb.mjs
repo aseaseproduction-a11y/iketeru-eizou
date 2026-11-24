@@ -3,15 +3,22 @@
  * Phase 3 Step C — Apply Calibrated Batch Scores to TiDB (Source of Truth ONLY) + Exhaustive Audit.
  *
  * Guarantees:
- *  - Pre-flight gate verifies pre-D backup JSONL SHA-256 on disk
+ *  - Multi-PC write serialization: on real apply (non --dry-run), REQUIRES
+ *    `analysis/claims/_apply_lock.json` to be `status === "locked"` for the exact
+ *    `(worker, run_id)` (resolved via `--worker` or `IKETERU_WORKER_NAME`; NO OS hostname fallback).
+ *  - Pre-flight gate verifies pre-D baseline backup JSONL SHA-256 on disk
+ *    (path overrideable via `--pre-d-backup` or `IKETERU_PRE_D_BACKUP_PATH`).
+ *  - Automatically takes a fresh local pre-apply TiDB snapshot backup before writing any rows.
  *  - Writes ONLY the 10 new calibrated* columns for the videos in phase3_batch_payload.json
  *  - Preserves `updatedAt = updatedAt` (never pollutes historical timestamps)
  *  - ZERO changes to any of the 8 legacy score columns or any of the 40 original columns
- *  - ZERO writes to local SQLite mirror (verified via SHA-256)
- *  - Post-flight verification diffs ALL 5,653 rows × ALL 40 original columns against pre-D backup
+ *  - ZERO writes to local SQLite mirror (verified via SHA-256 when present)
+ *  - Post-flight verification diffs ALL 5,653 rows × ALL 40 original columns against pre-D backup,
+ *    verifying own `calibratedRunId = run_id` row count while recording cumulative multi-PC totals.
  *
  * Usage:
- *   node scripts/apply-phase3-batch-to-tidb.mjs <run_id> [--dry-run]
+ *   node scripts/apply-phase3-batch-to-tidb.mjs <run_id> [--dry-run] [--apply] [--worker <name>]
+ *     [--pre-d-backup <path>] [--sqlite <path>] [--backup-dir <dir>] [--allow-missing-sqlite]
  */
 
 import crypto from "node:crypto";
@@ -23,6 +30,7 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, "..");
 const BACKUP_MANIFEST_PATH = path.join(REPO_ROOT, "analysis", "phase3_pre_d_backup_manifest.json");
+const APPLY_LOCK_PATH = path.join(REPO_ROOT, "analysis", "claims", "_apply_lock.json");
 
 const LEGACY_SCORE_COLUMNS = new Set([
   "aiOverallScore",
@@ -34,6 +42,44 @@ const LEGACY_SCORE_COLUMNS = new Set([
   "aiTechniqueRating",
   "aiAnalysis",
 ]);
+
+function getFlagValue(argv, flag) {
+  const idx = argv.indexOf(flag);
+  if (idx === -1) return null;
+  const next = argv[idx + 1];
+  if (!next || next.startsWith("--")) return null;
+  return next;
+}
+
+function loadDotenv() {
+  const require = createRequire(path.join(REPO_ROOT, "package.json"));
+  require("dotenv").config({ path: path.join(REPO_ROOT, ".env"), quiet: true });
+}
+
+function resolveWorkerName(argWorker) {
+  loadDotenv();
+  const name = String(argWorker || process.env.IKETERU_WORKER_NAME || "").trim();
+  if (!name) {
+    throw new Error(
+      "Worker name is required: pass --worker <name> or set IKETERU_WORKER_NAME in .env / environment. " +
+        "(OS hostname fallback is disabled because multiple PCs share hostname 'CHIBA-PC'.)"
+    );
+  }
+  return name;
+}
+
+function loadApplyLock() {
+  if (!fs.existsSync(APPLY_LOCK_PATH)) {
+    return { schema_version: 1, status: "unlocked", worker: null, run_id: null, started_at: null };
+  }
+  return JSON.parse(fs.readFileSync(APPLY_LOCK_PATH, "utf8"));
+}
+
+function localTimestampStamp() {
+  const d = new Date();
+  const pad = (n) => String(n).padStart(2, "0");
+  return `${d.getFullYear()}${pad(d.getMonth() + 1)}${pad(d.getDate())}_${pad(d.getHours())}${pad(d.getMinutes())}${pad(d.getSeconds())}`;
+}
 
 function sha256File(filePath) {
   const hash = crypto.createHash("sha256");
@@ -63,11 +109,55 @@ function toMysqlTimestamp(isoStr) {
   return `${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.getUTCDate())} ${pad(d.getUTCHours())}:${pad(d.getUTCMinutes())}:${pad(d.getUTCSeconds())}`;
 }
 
+async function dumpFreshPreApplyBackup(conn, runId, backupRoot) {
+  const stamp = localTimestampStamp();
+  const dir = path.join(backupRoot, `phase3_pre_apply_${runId}_${stamp}`);
+  fs.mkdirSync(dir, { recursive: true });
+  const outPath = path.join(dir, "tidb_videos_pre_apply.jsonl");
+
+  const [rows] = await conn.query("SELECT * FROM videos ORDER BY id ASC");
+  const fd = fs.openSync(outPath, "w");
+  try {
+    for (const row of rows) {
+      const obj = {};
+      for (const [k, v] of Object.entries(row)) {
+        obj[k] = serializeValue(v);
+      }
+      fs.writeSync(fd, JSON.stringify(obj) + "\n", null, "utf8");
+    }
+  } finally {
+    fs.closeSync(fd);
+  }
+
+  const stat = fs.statSync(outPath);
+  const sha = sha256File(outPath);
+  const meta = {
+    created_at: new Date().toISOString(),
+    purpose: `Fresh local pre-apply TiDB snapshot before applying ${runId}`,
+    run_id: runId,
+    row_count: rows.length,
+    jsonl_path: outPath,
+    jsonl_bytes: stat.size,
+    jsonl_sha256: sha,
+  };
+  fs.writeFileSync(path.join(dir, "pre_apply_backup_meta.json"), JSON.stringify(meta, null, 2) + "\n", "utf8");
+  return meta;
+}
+
 async function main() {
+  loadDotenv();
   const runId = process.argv[2];
   const dryRun = process.argv.includes("--dry-run");
-  if (!runId) {
-    console.error("Usage: node scripts/apply-phase3-batch-to-tidb.mjs <run_id> [--dry-run]");
+  const allowMissingSqlite = process.argv.includes("--allow-missing-sqlite");
+  const workerArg = getFlagValue(process.argv, "--worker");
+  const preDBackupArg = getFlagValue(process.argv, "--pre-d-backup");
+  const sqliteArg = getFlagValue(process.argv, "--sqlite");
+  const backupDirArg = getFlagValue(process.argv, "--backup-dir");
+
+  if (!runId || runId.startsWith("--")) {
+    console.error(
+      "Usage: node scripts/apply-phase3-batch-to-tidb.mjs <run_id> [--dry-run] [--apply] [--worker <name>] [--pre-d-backup <path>] [--sqlite <path>] [--backup-dir <dir>] [--allow-missing-sqlite]"
+    );
     process.exit(2);
   }
 
@@ -84,26 +174,57 @@ async function main() {
     throw new Error(`Refusing to write >200 rows in one batch (got ${payload.updates.length})`);
   }
 
-  // Verify pre-D backup manifest & SHA-256 on disk
+  // Resolve worker and check multi-PC serialized TiDB apply lock
+  const worker = resolveWorkerName(workerArg);
+  const lock = loadApplyLock();
+  const lockMatches = lock.status === "locked" && lock.run_id === runId && lock.worker === worker;
+  if (!dryRun && !lockMatches) {
+    throw new Error(
+      `Refusing to write to TiDB without active write lock in analysis/claims/_apply_lock.json! ` +
+        `Expected status="locked", worker="${worker}", run_id="${runId}", ` +
+        `found=${JSON.stringify({ status: lock.status, worker: lock.worker, run_id: lock.run_id, started_at: lock.started_at })}. ` +
+        `Run git pull --rebase, then: node scripts/claim-phase3-batch.mjs --acquire-apply-lock ${runId} --worker ${worker}, commit and push _apply_lock.json first.`
+    );
+  }
+
+  // Verify pre-D baseline backup manifest & SHA-256 on disk
   const backupManifest = JSON.parse(fs.readFileSync(BACKUP_MANIFEST_PATH, "utf8"));
-  const backupJsonlPath = backupManifest.tidb.jsonl_path;
+  const backupJsonlPath = preDBackupArg || process.env.IKETERU_PRE_D_BACKUP_PATH || backupManifest.tidb.jsonl_path;
+  if (!fs.existsSync(backupJsonlPath)) {
+    throw new Error(
+      `Pre-D baseline backup not found at: ${backupJsonlPath}. ` +
+        `Copy shared_pre_d_baseline/tidb_videos_backup.jsonl locally (or pass --pre-d-backup / set IKETERU_PRE_D_BACKUP_PATH) and verify SHA-256 ${backupManifest.tidb.jsonl_sha256}.`
+    );
+  }
   const actualBackupSha = sha256File(backupJsonlPath);
   if (actualBackupSha !== backupManifest.tidb.jsonl_sha256) {
     throw new Error(`Pre-D backup SHA-256 mismatch! expected=${backupManifest.tidb.jsonl_sha256} actual=${actualBackupSha}`);
   }
-  const sqliteShaBefore = sha256File(backupManifest.sqlite.source_path);
-  console.log(`Pre-flight pre-D backup SHA-256 verified: ${actualBackupSha}`);
-  console.log(`Pre-flight live SQLite SHA-256 recorded: ${sqliteShaBefore}`);
+
+  const sqlitePath = sqliteArg || process.env.IKETERU_SQLITE_PATH || backupManifest.sqlite.source_path;
+  const sqliteExists = fs.existsSync(sqlitePath);
+  if (!sqliteExists && !allowMissingSqlite) {
+    throw new Error(
+      `Local SQLite mirror not found at: ${sqlitePath}. ` +
+        `Pass --sqlite <path> / set IKETERU_SQLITE_PATH, or pass --allow-missing-sqlite if this worker has no local SQLite file.`
+    );
+  }
+  const sqliteShaBefore = sqliteExists ? sha256File(sqlitePath) : null;
+
+  console.log(`Worker: ${worker}`);
+  console.log(`Apply lock status: ${lock.status} (matches_this_run=${lockMatches})`);
+  console.log(`Pre-flight pre-D backup SHA-256 verified: ${actualBackupSha} (${backupJsonlPath})`);
+  console.log(`Pre-flight live SQLite SHA-256: ${sqliteShaBefore ?? "(missing — allowed by --allow-missing-sqlite)"}`);
   console.log(`Payload ready: run_id=${runId}, rows=${payload.updates.length}, dry_run=${dryRun}`);
 
   if (dryRun) {
-    console.log("[DRY-RUN] Verified payload & backup SHA-256. Zero TiDB writes performed.");
+    console.log("[DRY-RUN] Verified payload & pre-D backup SHA-256. Zero TiDB writes performed.");
     return;
   }
 
   const require = createRequire(path.join(REPO_ROOT, "package.json"));
-  require("dotenv").config({ path: path.join(REPO_ROOT, ".env") });
   const mysql = require("mysql2/promise");
+  const backupRoot = backupDirArg || process.env.IKETERU_BACKUP_ROOT || path.dirname(backupManifest.backup_dir);
 
   const conn = await mysql.createConnection({
     uri: process.env.DATABASE_URL,
@@ -111,6 +232,12 @@ async function main() {
   });
 
   try {
+    // Take a fresh local pre-apply snapshot BEFORE touching any TiDB rows
+    const preApplyBackup = await dumpFreshPreApplyBackup(conn, runId, backupRoot);
+    console.log(
+      `Fresh local pre-apply TiDB backup saved: ${preApplyBackup.jsonl_path} (rows=${preApplyBackup.row_count}, sha256=${preApplyBackup.jsonl_sha256})`
+    );
+
     let totalAffected = 0;
     const sqlUpdate = `
       UPDATE \`videos\`
@@ -206,10 +333,12 @@ async function main() {
       }
     }
 
-    const sqliteShaAfter = sha256File(backupManifest.sqlite.source_path);
-    const sqliteUntouched = sqliteShaAfter === sqliteShaBefore;
+    const sqliteShaAfter = sqliteExists ? sha256File(sqlitePath) : null;
+    const sqliteUntouched = sqliteExists ? sqliteShaAfter === sqliteShaBefore : true;
 
     const checks = {
+      apply_lock_verified: lockMatches,
+      pre_apply_backup_created: preApplyBackup.row_count === 5653 && Boolean(preApplyBackup.jsonl_sha256),
       row_count_matches_5653: afterCount === 5653 && rowsCompared === 5653,
       updated_rows_match_payload: runCountInDb === payload.updates.length,
       max_updated_at_unchanged: afterMaxUpd === backupManifest.tidb.max_updated_at,
@@ -221,13 +350,22 @@ async function main() {
 
     const applyReport = {
       executed_at: new Date().toISOString(),
+      worker,
       run_id: runId,
       priority: payload.priority,
       batch_index: payload.batch_index,
+      apply_lock_snapshot: lock,
+      pre_d_baseline_backup: {
+        path: backupJsonlPath,
+        sha256: actualBackupSha,
+      },
+      pre_apply_local_backup: preApplyBackup,
       payload_count: payload.updates.length,
       affected_rows: totalAffected,
       tidb_rows_with_run_id: runCountInDb,
       tidb_calibration_status_counts: statusCounts,
+      multi_pc_audit_note:
+        "tidb_calibration_status_counts reflects cumulative calibrated rows across ALL PCs (including other PCs' completed runs); this run's integrity is verified by tidb_rows_with_run_id === payload_count and all_40_original_columns_zero_diffs === true.",
       max_updated_at_before: backupManifest.tidb.max_updated_at,
       max_updated_at_after: afterMaxUpd,
       full_row_diff_against_pre_d_backup: {
@@ -239,6 +377,8 @@ async function main() {
         updated_at_row_mismatches: updatedAtMismatches,
         sample_mismatches: sampleMismatches,
       },
+      sqlite_check_mode: sqliteExists ? "sha256_verified" : "skipped_missing_local_sqlite",
+      sqlite_path: sqlitePath,
       sqlite_source_sha256_before: sqliteShaBefore,
       sqlite_source_sha256_after: sqliteShaAfter,
       sqlite_untouched: sqliteUntouched,

@@ -9,7 +9,7 @@
 | データ種別 | 唯一の正本（マスター） | 複数台での扱い |
 |---|---|---|
 | **コード・設計書・採点バッチログ・ID予約** | **GitHub**（`iketeru-eizou` / `iketeru-creative-studio` プライベートリポ） | 作業開始前に `git pull`、区切りごとに `git push`（大きな機能開発はPC別ブランチ推奨） |
-| **動画の校正点数・状態（Phase 3）** | **TiDB（クラウド）** | 動画ID単位の `UPDATE` のため、**予約（claim）でIDが重複しなければ何台から同時に反映しても安全** |
+| **動画の校正点数・状態（Phase 3）** | **TiDB（クラウド）** | 動画IDは予約（claim）で完全分離しつつ、**本番 TiDB への書き込み（`--apply`）は `analysis/claims/_apply_lock.json` により同時に1台だけ直列実行**する |
 | **ローカルSQLite（`iketeru_knowledge.db`）** | **TiDBからの片道ミラー（参照専用）** | 各PCで必要に応じて `sync-tidb-to-sqlite-mirror.mjs` を叩き、他PCが反映した最新点数をプルする。`craft_recipes` テーブルへのローカル追記は1台（レシピ担当機）に集約する |
 | **Antigravity 会話DB（`conversations/*.db`）** | **各PCローカル専用（統合不可）** | **同じ会話IDを複数台で同時に進めない**。別PCで作業するときは新しいチャットを立て、引き継ぎ状態は Git（`analysis/claims/`, `analysis/runs/`）と TiDB を参照する |
 
@@ -28,7 +28,7 @@ node scripts/claim-phase3-batch.mjs --verify
 node scripts/claim-phase3-batch.mjs --status
 ```
 
-> **同一ホスト名PCの区別ルール（重要）**: 現在、OS ホスト名が同じ `CHIBA-PC` のマシンが2台存在します（3台目: ユーザー `n _chiba` / `E:\iketeru-eizou` → ワーカー名 **`CHIBA-PC`**、2台目: ユーザー `n_chiba` / `C:\iketeru\iketeru-eizou` → ワーカー名 **`CHIBA-PC2`**）。衝突を防ぐため、ワーカー名を使う操作では必ず **`--worker <ワーカー名>` を明示**し、各PCの `.env`（Git管理外）にも `IKETERU_WORKER_NAME=<ワーカー名>` を設定してください。
+> **同一ホスト名PCの区別ルール（必須）**: 現在、OS ホスト名が同じ `CHIBA-PC` のマシンが2台存在します（3台目: ユーザー `n _chiba` / `E:\iketeru-eizou` → ワーカー名 **`CHIBA-PC`**、2台目: ユーザー `n_chiba` / `C:\iketeru\iketeru-eizou` → ワーカー名 **`CHIBA-PC2`**）。誤認を防ぐため、スクリプトから **`os.hostname()` フォールバックを完全撤去**しました。各PCの `.env`（Git管理外）に **`IKETERU_WORKER_NAME=<ワーカー名>` を必ず設定**し、CLI でも `--worker <ワーカー名>` を明示してください（どちらも未指定だと即エラー停止します）。
 
 ### ステップ2: このPC専用の動画ID枠を予約（claim）して即 push
 ```powershell
@@ -47,7 +47,9 @@ node scripts/claim-phase3-batch.mjs --claim --worker <このPC名> --priority AL
 ```
 
 #### 追加オプション一覧（すべて任意・未指定時は従来動作のまま）
-- `IKETERU_WORKER_NAME`（環境変数または `.env`）: `--worker` 省略時の既定ワーカー名（未設定時は `os.hostname()`）。同一ホスト名PCの混同防止のため、`.env` に設定しつつ CLI でも `--worker` を明示する。
+- `IKETERU_WORKER_NAME`（環境変数または `.env`、**必須**）: `--worker` 省略時のワーカー名（`os.hostname()` フォールバックは撤去済み）。同一ホスト名PCの混同防止のため、`.env` に必ず設定しつつ CLI でも `--worker` を明示する。
+- `IKETERU_PRE_D_BACKUP_PATH`（環境変数または `.env`、任意）: Phase 3 開始前バックアップ（`tidb_videos_backup.jsonl`、旧40列全行照合用）のローカルパス（未設定時は `analysis/phase3_pre_d_backup_manifest.json` のパス）。毎回 SHA-256（`17856f0338c760b2f88d415543eb6d48a7977c06e76a5c04476b0d5943446a3b`）で同一性を厳密検証する。
+- `IKETERU_BACKUP_ROOT`（環境変数または `.env`、任意）: 各 `--apply` 直前に自動取得する「最新ローカルバックアップ」の保存親フォルダ（未設定時は `E:\iketeru_backups`）。
 - `IKETERU_VIDEO_CACHE_DIR`（環境変数または `.env`）: 動画キャッシュディレクトリの上書き（未設定時は `D:\マイドライブ\iketeru_videos`）。`claim-phase3-batch.mjs` と `prepare-phase3-batch.mjs` の両方で参照。
 - `IKETERU_BLIND_ROOT`（環境変数または `.env`、または `--blind-root` 引数）: **凍結ファイル `scripts/lib/calibration-prompt-template.mjs` が `E:\iketeru_blind_eval` を固定要求するため、それ以外のパスを指定すると `prepare` の先頭（`--dry-run` 含む）で即停止します**。`E:` ドライブが無いPCでは、通常ユーザー権限で **`subst E: C:\iketeru`** のように仮想ドライブ `E:` を割り当て、`IKETERU_BLIND_ROOT=E:\iketeru_blind_eval`（または未設定）のまま、以後のコマンドも `E:\iketeru-eizou` から実行してください。
   - **重要（`subst` 運用時の毎回確認）**: `subst` は再起動・サインアウトで解除され、管理者権限プロセスからは見えません。`prepare` や採点を始める前に毎回 **`Test-Path E:\iketeru_blind_eval`** を確認し、`False` なら再度 `subst E: C:\iketeru` を実行してください。
@@ -78,15 +80,45 @@ git push
 ```
 > **衝突時の安全装置**: 別PCとほぼ同時に push して競合した場合は `git pull --rebase` のあと `node scripts/claim-phase3-batch.mjs --verify` を実行してください。重複が1件でもあれば終了コード1で即停止します（その場合は自分の予約ファイルを消してステップ2をやり直せばOK）。
 
-### ステップ3: 予約したIDリストで動画準備〜採点〜TiDB反映
+### ステップ3: 予約したIDリストで動画準備〜採点〜TiDB反映（書き込みロック必須）
 `--claim` が出力する `next_prepare_cmd` を使って `prepare-phase3-batch.mjs` を実行します（凍結設定は不変・YouTubeログイン不要・ボット確認で即停止）。
-完了・監査後：
+
+本番 TiDB への書き込みは **同時に1台だけ** に制限するため、Git 管理の書き込みロック **`analysis/claims/_apply_lock.json`** を使用します（ロック未取得のまま `--apply` を実行すると `apply-phase3-batch-to-tidb.mjs` が即停止します）。
+
+1. **旧40列照合用の Phase 3 開始前バックアップを自PCに用意（初回のみ）**
+   - 共有 Google ドライブの `iketeru_multi_pc_progress/shared_pre_d_baseline/tidb_videos_backup.jsonl`（中身は TiDB `videos` テーブルの旧40列動画メタデータのみ・認証情報や非公開データなし）を自PCローカル（例：`E:\iketeru_backups\phase3_pre_d_20261123_153343\tidb_videos_backup.jsonl`）にコピーし、SHA-256 が `17856f0338c760b2f88d415543eb6d48a7977c06e76a5c04476b0d5943446a3b` と完全一致することを確認してください（別パスに置く場合は `.env` の `IKETERU_PRE_D_BACKUP_PATH` または `--pre-d-backup` で指定）。
+2. **最新取得＆書き込みロック取得（`git push` 成功まで `--apply` しない）**
 ```powershell
-node scripts/apply-phase3-batch-to-tidb.mjs <run_id> --dry-run
-node scripts/apply-phase3-batch-to-tidb.mjs <run_id> --apply
-node scripts/claim-phase3-batch.mjs --complete <run_id>
+git pull --rebase --autostash origin main
+node scripts/claim-phase3-batch.mjs --apply-lock-status
+# status が "locked"（他PCが書き込み中）なら解除されるまで待機！
+
+# ロック取得して即 push（他PCと競合したら push が弾かれるので pull して待機）
+node scripts/claim-phase3-batch.mjs --acquire-apply-lock <run_id> --worker <このPC名>
+git add analysis/claims/_apply_lock.json
+git commit -m "Lock TiDB apply for <run_id> (<このPC名>)"
+git push
 ```
-その後、`analysis/runs/<run_id>/` と更新された `analysis/claims/<run_id>.json` を `git commit && git push` します。
+3. **ドライラン → 本番反映（反映直前に自動で自PC最新バックアップを取得）**
+```powershell
+node scripts/apply-phase3-batch-to-tidb.mjs <run_id> --dry-run --worker <このPC名>
+node scripts/apply-phase3-batch-to-tidb.mjs <run_id> --apply --worker <このPC名>
+```
+   - 書き込み後の確認は **自分の `run_id` の行数（`tidb_rows_with_run_id === payload_count`）と旧40列の差分 0** を中心に行い、全体の校正済み件数（`tidb_calibration_status_counts`）は「他PCの反映分を含む累計」として記録します。
+4. **ロック解除・予約完了・結果 push**
+```powershell
+node scripts/claim-phase3-batch.mjs --release-apply-lock <run_id> --worker <このPC名>
+node scripts/claim-phase3-batch.mjs --complete <run_id>
+git pull --rebase --autostash origin main
+git add analysis/claims/_apply_lock.json analysis/claims/<run_id>.json analysis/runs/<run_id>/
+git commit -m "Complete Phase 3 batch <run_id> and release TiDB apply lock (<このPC名>)"
+git push
+```
+
+### ステップ3.8: 共有進捗フォルダ（Google ドライブ）と情報管理ルール
+- 共有フォルダ（`iketeru_multi_pc_progress/`）では、**各PCは自分の `status_<ワーカー名>.md` / `.json` のみ更新**し、他PCのファイル（`README.md` 含む）は閲覧のみ（編集禁止）とします。
+- 他PCの進捗に不備・注意点を見つけた場合は、他PCのファイルを直接直さず、**自PCの `status_<ワーカー名>.md` に「他PC向けのお知らせ」として記載**してください（コード修正は Git で行い、`push` 前に `git pull --rebase` を実行）。
+- **厳禁事項**: 共有の Google ドライブには、**技法辞典の OCR 生データ（`E:\技術書_index\ocr_private`）や社外秘ファイルを一切置かないこと**。
 
 ### ステップ3.5: 取得不可動画の除外リスト（`analysis/claims/_skip_list.json`）運用
 バッチ完了後に未校正のまま残る取得失敗動画が別PCで繰り返し再予約されるのを防ぐため、`analysis/claims/_skip_list.json` で除外管理します（`--status`・`--claim` の空きプール計算から自動除外）。
