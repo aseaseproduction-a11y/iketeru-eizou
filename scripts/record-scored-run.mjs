@@ -1,9 +1,10 @@
 import fs from "node:fs";
+import os from "node:os";
 import path from "node:path";
 import { auditTranscript } from "./audit-blind-transcript.mjs";
 
 const REPO_ROOT = "E:\\iketeru-eizou";
-const BRAIN_ROOT = "C:\\Users\\t1257\\.gemini\\antigravity\\brain";
+const BRAIN_ROOT = process.env.ANTIGRAVITY_BRAIN_ROOT || path.join(os.homedir(), ".gemini", "antigravity", "brain");
 
 function parseArgs(argv) {
   const args = {};
