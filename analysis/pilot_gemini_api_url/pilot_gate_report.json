@@ -1,0 +1,82 @@
+{
+  "checked_at": "2026-11-24T20:38:00+09:00",
+  "status": "closed_by_user_decision",
+  "reason": "models/gemini-4-neon is available via Gemini API (thinking_level='high') and directly accepts YouTube URLs, but gemini-4-neon has NO free tier (paid tier only: $3.00/1M input tokens, $15.00/1M output+thinking tokens). Stopped immediately after 1 probe request per Rule 7 ('無料枠で実行し、課金が発生しそうなら止める').",
+  "env_check": {
+    "process_env_present": false,
+    "windows_user_env_present": true,
+    "format_clean": true,
+    "restart_note": "Antigravity の起動後にユーザー環境変数が設定されたため、親プロセスの環境変数には未反映（再起動すると自動反映）。本確認では子プロセス起動時に Windows ユーザー環境変数から直接メモリ読み込みした（値の一切非表示・非保存）。"
+  },
+  "cli_install": {
+    "repo": "https://github.com/google-gemini/gemini-api-cli",
+    "version": "v0.5.0",
+    "built_at": "2026-11-20T00:48:16Z",
+    "install_dir": "E:\\tools\\gemini-api",
+    "asset": "gemini-api_Windows_x86_64.zip",
+    "sha256_expected": "d2bc738fb8c83f663e1fca5e3382876dcbde54880c7375cfcb49351298b264ec",
+    "sha256_actual": "d2bc738fb8c83f663e1fca5e3382876dcbde54880c7375cfcb49351298b264ec",
+    "sha256_verified": true
+  },
+  "model_check": {
+    "frozen_model_alias": "gemini-4-neon-high",
+    "api_model_name": "models/gemini-4-neon",
+    "api_display_name": "Gemini 4 Neon",
+    "thinking_supported": true,
+    "thinking_level_parameter": "generation_config.thinking_level = 'high'",
+    "available_in_models_list": true
+  },
+  "probe_request": {
+    "requests_sent": 1,
+    "video_id": "HRJr0tAASjI",
+    "youtube_url": "https://www.youtube.com/watch?v=HRJr0tAASjI",
+    "existing_calibrated_score": 60.5,
+    "existing_calibrated_rank": "C+",
+    "interaction_id": "v1_Chc4bllGYTUzdUZmZkQwLWtQZ1A3YmdRSRIXOG5ZRmE1M3VGZmZEMC1rUGdQN2JnUUk",
+    "http_status": "completed",
+    "service_tier": "standard",
+    "elapsed_sec": 55.17,
+    "usage": {
+      "total_tokens": 33813,
+      "total_input_tokens": 31084,
+      "input_text_tokens": 2083,
+      "input_video_tokens": 29001,
+      "total_output_tokens": 242,
+      "total_thought_tokens": 2487
+    },
+    "estimated_cost_usd": 0.1342,
+    "estimated_10_videos_20_calls_usd_range": "2.50 - 5.00",
+    "probe_result": {
+      "retrieved_without_extra_billing": true,
+      "retrieval_method": "GET /v1beta/interactions/<interaction_id> (read-only)",
+      "parsed_json": {
+        "scores": {
+          "direction": 13,
+          "visual_craft": 13,
+          "editing_rhythm": 12,
+          "sound_integration": 13,
+          "originality_finish": 12
+        },
+        "total_score": 63,
+        "rank": "B-",
+        "brief_rationale": "企業沿革とCEOインタビューで構成された標準的な企業映像。オフィスや商品の実写撮影は堅実だが、前半の年表パートは既製テンプレート依存が強く背景年号の不整合も見られる。後半3分超のインタビューはインサート映像がなく2カメ切替のみで単調になりがちで、室内反響音や仕切り板の映り込みなど仕上げに粗さが残る。",
+        "post_check": {
+          "knows_work": false,
+          "knows_award_history": false,
+          "award_badge_visible_in_video": false,
+          "post_check_note": ""
+        }
+      },
+      "diff_vs_existing_calibrated_score": 2.5,
+      "band_change_note": "既存 60.5 (<63 / C+) に対し URL 採点 63 (63-83境界 / B-)。knows_work=false・タイトル/チャンネル参照の形跡なし。"
+    }
+  },
+  "candidate_pool_ready": {
+    "calibrated_youtube_video_mode_total": 58,
+    "ge_83": 20,
+    "mid_63_to_83": 37,
+    "lt_63": 1
+  },
+  "closed_at": "2026-11-24T20:49:00+09:00",
+  "decision": "ユーザー判断で終了（無料枠なし・有料枠専用のため本試験は終了。以後 gemini-api-cli は使用しない。E:\\tools\\gemini-api はローカルに残置）"
+}

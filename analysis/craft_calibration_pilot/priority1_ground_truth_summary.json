@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-24T20:57:00+09:00",
+  "external_lab_dir_outside_git": "E:\\iketeru_calibration_lab\\priority1",
+  "git_policy": "外部の編集データ本体（.blend / ソースコード）は Git リポジトリ外に保管し、本ファイルには機械抽出した数値集計とメタデータのみ記録する。",
+  "blender_demos_ground_truth": [
+    {
+      "slug": "classroom",
+      "file": "classroom.blend",
+      "source_url": "https://download.blender.org/demo/test/classroom.zip",
+      "license": "CC0",
+      "license_verified_date": "2026-11-24",
+      "render_engine": "CYCLES",
+      "camera_focal_length_mm": 25.0,
+      "camera_band": "wide (<=28mm)",
+      "camera_fov_deg": 65.24,
+      "dof_enabled": true,
+      "fstop": 2.08,
+      "lights_count": 10,
+      "lights_by_type": { "SUN": 1, "SPOT": 5, "AREA": 2, "POINT": 2 },
+      "color_management": { "view_transform": "Standard", "look": "None", "exposure": 0.0, "gamma": 1.0 },
+      "compositor_nodes_count": 106,
+      "key_compositor_nodes": ["BLUR(10)", "GLARE(3)", "CURVE_RGB(4)", "LENSDIST(2)", "COLORBALANCE(1)", "BOKEHIMAGE(1)", "DESPECKLE(2)"]
+    },
+    {
+      "slug": "monster_under_the_bed",
+      "file": "monster_under_the_bed_sss_demo_by_metin_seven.blend",
+      "source_url": "https://download.blender.org/demo/cycles/monster_under_the_bed_sss_demo_by_metin_seven.blend",
+      "license": "CC-BY",
+      "license_verified_date": "2026-11-24",
+      "render_engine": "CYCLES",
+      "camera_focal_length_mm": 85.0,
+      "camera_band": "telephoto (>=56mm)",
+      "camera_fov_deg": 23.91,
+      "dof_enabled": false,
+      "fstop": null,
+      "lights_count": 9,
+      "lights_by_type": { "AREA": 9 },
+      "color_management": { "view_transform": "Filmic", "look": "High Contrast", "exposure": 0.3, "gamma": 1.15 },
+      "compositor_nodes_count": 0,
+      "key_compositor_nodes": []
+    },
+    {
+      "slug": "lone_monk",
+      "file": "lone-monk_cycles_and_exposure-node_demo.blend",
+      "source_url": "https://download.blender.org/demo/cycles/lone-monk_cycles_and_exposure-node_demo.blend",
+      "license": "CC0",
+      "license_verified_date": "2026-11-24",
+      "render_engine": "CYCLES",
+      "camera_focal_length_mm": 25.5,
+      "camera_band": "wide (<=28mm)",
+      "camera_fov_deg": 70.44,
+      "dof_enabled": true,
+      "fstop": 11.2,
+      "lights_count": 0,
+      "lights_by_type": {},
+      "color_management": { "view_transform": "Filmic", "look": "Medium Contrast", "exposure": -2.0, "gamma": 1.0 },
+      "compositor_nodes_count": 14,
+      "compositor_chain_summary": "Render Layers -> Dilate/Erode -> Exposure -> Glare -> Lens Distortion -> Composite"
+    }
+  ],
+  "mit_code_video_repos_ground_truth": [
+    {
+      "repo": "motion-canvas/examples",
+      "url": "https://github.com/motion-canvas/examples",
+      "license": "MIT",
+      "license_verified_date": "2026-11-24",
+      "total_source_files": 104,
+      "motion_files_extracted": 50,
+      "representative_ground_truth": "examples/anniversary/src/scenes/intro.tsx: easeInCubic, easeInOutCubic, easeOutCubic, linear; waitFor=[0.2, 2.0, 0.2]s"
+    },
+    {
+      "repo": "satelllte/remotion-template",
+      "url": "https://github.com/satelllte/remotion-template",
+      "license": "MIT",
+      "license_verified_date": "2026-11-24",
+      "total_source_files": 6,
+      "motion_files_extracted": 1,
+      "representative_ground_truth": "src/videos/VideoHello.tsx: interpolate, sin"
+    },
+    {
+      "repo": "tetunori/GenerativeArtWithMath-p5.js",
+      "url": "https://github.com/tetunori/GenerativeArtWithMath-p5.js",
+      "license": "MIT",
+      "license_verified_date": "2026-11-24",
+      "total_source_files": 385,
+      "motion_files_extracted": 10,
+      "representative_ground_truth": "Ch13_Periodic/Pythagoras/drawPythagoras.js: sin, cos"
+    },
+    {
+      "repo": "kgolid/p5ycho",
+      "url": "https://github.com/kgolid/p5ycho",
+      "license": "MIT",
+      "license_verified_date": "2026-11-24",
+      "total_source_files": 92,
+      "motion_files_extracted": 56,
+      "representative_ground_truth": "blanket/sketch.js & blanket2/sketch.js: noise, sin, cos"
+    }
+  ],
+  "next_step_after_quota_reset": "上記3件の.blendをヘッドレスで1フレームレンダーし、完成画像／動画のみを見たAIのブラインド推測レシピと本JSONの真値（焦点距離・DOF有無・ライト構成・コンポジット順・イージング分類）のズレを定量採点する。"
+}

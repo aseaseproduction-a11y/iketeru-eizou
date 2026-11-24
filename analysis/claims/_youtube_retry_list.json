@@ -1,0 +1,1320 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-24T20:53:03+09:00",
+  "generated_by": "chibatmute",
+  "filename_note": "先頭アンダースコア `_` は analysis/claims/_skip_list.json / _apply_lock.json と同じ規約（claim-phase3-batch.mjs --verify がバッチ予約JSONと誤認しないため）。",
+  "retry_policy_rules": {
+    "login_or_cookies": "FORBIDDEN (一切使用しない)",
+    "bot_check_bypass": "FORBIDDEN (回避策は一切使わない)",
+    "execution_mode": "時間を十分に空け、未認証で1本ずつ間隔を空けてダウンロードするのみ。ボット確認が出たら即停止。",
+    "execution_status": "awaiting_user_approval (現在はリスト作成まで。再試行はユーザー指示待ち)"
+  },
+  "summary": {
+    "total_pending_youtube_failures": 60,
+    "retry_allowed_count": 58,
+    "permanent_exclude_candidate_count": 2,
+    "already_recovered_in_phase3_excluded_count": 7,
+    "by_failure_category": {
+      "bot_check": 44,
+      "format_unavailable": 14,
+      "unavailable_or_private": 1,
+      "decode_corrupted": 1
+    },
+    "by_latest_worker_and_run": {
+      "CHIBA-PC / run_20261124_145350": 44,
+      "chibatmute / run_20261124_080300": 16
+    }
+  },
+  "already_recovered_in_phase3": [
+    {
+      "video_id": "0Wmwc8u98lI",
+      "reason": "prepared_in:run_20261124_080300"
+    },
+    {
+      "video_id": "5CfITO98wMc",
+      "reason": "prepared_in:run_20261124_080300"
+    },
+    {
+      "video_id": "AuHOKJ-upSE",
+      "reason": "prepared_in:run_20261124_080300"
+    },
+    {
+      "video_id": "BYwPol2pCFI",
+      "reason": "prepared_in:run_20261124_080300"
+    },
+    {
+      "video_id": "Dcaby0YwOkM",
+      "reason": "prepared_in:run_20261124_080300"
+    },
+    {
+      "video_id": "FRIxN3i8HY4",
+      "reason": "prepared_in:run_20261124_080300"
+    },
+    {
+      "video_id": "GlhV-OKHecI",
+      "reason": "prepared_in:run_20261124_080300"
+    }
+  ],
+  "entries": [
+    {
+      "video_id": "2nGPUtId7vM",
+      "title": "KDDIブランドメッセージ",
+      "video_url": "https://www.youtube.com/watch?v=2nGPUtId7vM",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "D6flbP5cO_4",
+      "title": "【＋ID(プラスID）】プラスでイイこと。＋ID",
+      "video_url": "https://www.youtube.com/watch?v=D6flbP5cO_4",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "EzEFCikg4tk",
+      "title": "【博報堂／博報堂ＤＹメディアパートナーズ 】答えは、きみの中にある。",
+      "video_url": "https://www.youtube.com/watch?v=EzEFCikg4tk",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "ICs3wEegMgw",
+      "title": "Tempalay \"ふぉ\" (Official Music Video)",
+      "video_url": "https://www.youtube.com/watch?v=ICs3wEegMgw",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "ITfpkCiJIEY",
+      "title": "BOF:ET | 凛として純情 / Ino(chronoize) feat. 柳瀬マサキ",
+      "video_url": "https://www.youtube.com/watch?v=ITfpkCiJIEY",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "M7pWj2hq_f8",
+      "title": "株式会社ハーレージャパン Phantom ポリプロピレンウェア 機能検証動画",
+      "video_url": "https://www.youtube.com/watch?v=M7pWj2hq_f8",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "OUQ6NV9r2Lk",
+      "title": "Balming Tiger - Keep On (Official Video)",
+      "video_url": "https://www.youtube.com/watch?v=OUQ6NV9r2Lk",
+      "failure_category": "format_unavailable",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "形式取得不可（480p以下 DASH フォールバック対応後の再試行対象）。",
+      "last_attempted_at": "2026-11-24T00:44:15.580Z",
+      "latest_error": "ERROR: [youtube] OUQ6NV9r2Lk: Requested format is not available. Use --list-formats for a list of available formats",
+      "failure_history": [
+        {
+          "source": "run_manifest",
+          "run_id": "run_20261124_080300",
+          "priority": "P0_craft_recipes",
+          "batch_index": 2,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T00:44:15.580Z",
+          "error": "ERROR: [youtube] OUQ6NV9r2Lk: Requested format is not available. Use --list-formats for a list of available formats"
+        }
+      ]
+    },
+    {
+      "video_id": "RFYP-tY6xOg",
+      "title": "TVアニメ「らんま1/2」 ノンクレジットオープニング｜ano「許婚っきゅん」 ／ \"Ranma1/2\" Opening Movie",
+      "video_url": "https://www.youtube.com/watch?v=RFYP-tY6xOg",
+      "failure_category": "format_unavailable",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "形式取得不可（480p以下 DASH フォールバック対応後の再試行対象）。",
+      "last_attempted_at": "2026-11-24T00:44:15.580Z",
+      "latest_error": "ERROR: [youtube] RFYP-tY6xOg: Requested format is not available. Use --list-formats for a list of available formats",
+      "failure_history": [
+        {
+          "source": "run_manifest",
+          "run_id": "run_20261124_080300",
+          "priority": "P0_craft_recipes",
+          "batch_index": 2,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T00:44:15.580Z",
+          "error": "ERROR: [youtube] RFYP-tY6xOg: Requested format is not available. Use --list-formats for a list of available formats"
+        }
+      ]
+    },
+    {
+      "video_id": "SWzfm9PED6s",
+      "title": "Mrs. GREEN APPLE「シンデレラ」Official Music Video",
+      "video_url": "https://www.youtube.com/watch?v=SWzfm9PED6s",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "U-FuKvu5RV0",
+      "title": "Imy - Dreamscape (feat. 藍月なくる) Music Video",
+      "video_url": "https://www.youtube.com/watch?v=U-FuKvu5RV0",
+      "failure_category": "format_unavailable",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "形式取得不可（480p以下 DASH フォールバック対応後の再試行対象）。",
+      "last_attempted_at": "2026-11-24T00:44:15.580Z",
+      "latest_error": "ERROR: [youtube] U-FuKvu5RV0: Requested format is not available. Use --list-formats for a list of available formats",
+      "failure_history": [
+        {
+          "source": "run_manifest",
+          "run_id": "run_20261124_080300",
+          "priority": "P0_craft_recipes",
+          "batch_index": 2,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T00:44:15.580Z",
+          "error": "ERROR: [youtube] U-FuKvu5RV0: Requested format is not available. Use --list-formats for a list of available formats"
+        }
+      ]
+    },
+    {
+      "video_id": "UccHEifTIo4",
+      "title": "TV CM  企業 / 商品VP / コンテスト作品   TVCM「新しいワクワクヘ」篇　30秒",
+      "video_url": "https://www.youtube.com/watch?v=UccHEifTIo4",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "V8FGju_xYjo",
+      "title": "「Future of Work Japan 2018」オープニングムービー（Crevo制作実績）",
+      "video_url": "https://www.youtube.com/watch?v=V8FGju_xYjo",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "W_yKEhESgUI",
+      "title": "SAPPORO poteto \"新個性\"/calbee",
+      "video_url": "https://www.youtube.com/watch?v=W_yKEhESgUI",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "YH2qyPanqK4",
+      "title": "【リクルート新卒採用】コンセプトムービー『PLAY RECRUIT, PLAY OPPORTUNITIES.』(Short Ver.)",
+      "video_url": "https://www.youtube.com/watch?v=YH2qyPanqK4",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "_OUWtPhDQpk",
+      "title": "Honkai: Star Rail Two-Year Anniversary Special Animation: On the Journey",
+      "video_url": "https://www.youtube.com/watch?v=_OUWtPhDQpk",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "dWvAJMYdTFI",
+      "title": "2023年9月27日(水)京都高島屋S.C.開業スペシャルムービー",
+      "video_url": "https://www.youtube.com/watch?v=dWvAJMYdTFI",
+      "failure_category": "format_unavailable",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "形式取得不可（480p以下 DASH フォールバック対応後の再試行対象）。",
+      "last_attempted_at": "2026-11-24T00:44:15.580Z",
+      "latest_error": "ERROR: [youtube] dWvAJMYdTFI: Requested format is not available. Use --list-formats for a list of available formats",
+      "failure_history": [
+        {
+          "source": "run_manifest",
+          "run_id": "run_20261124_080300",
+          "priority": "P0_craft_recipes",
+          "batch_index": 2,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T00:44:15.580Z",
+          "error": "ERROR: [youtube] dWvAJMYdTFI: Requested format is not available. Use --list-formats for a list of available formats"
+        }
+      ]
+    },
+    {
+      "video_id": "drPEdug9fZk",
+      "title": "明透 - Aster / ASU - Aster",
+      "video_url": "https://www.youtube.com/watch?v=drPEdug9fZk",
+      "failure_category": "format_unavailable",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "形式取得不可（480p以下 DASH フォールバック対応後の再試行対象）。",
+      "last_attempted_at": "2026-11-24T00:44:15.580Z",
+      "latest_error": "ERROR: [youtube] drPEdug9fZk: Requested format is not available. Use --list-formats for a list of available formats",
+      "failure_history": [
+        {
+          "source": "run_manifest",
+          "run_id": "run_20261124_080300",
+          "priority": "P0_craft_recipes",
+          "batch_index": 2,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T00:44:15.580Z",
+          "error": "ERROR: [youtube] drPEdug9fZk: Requested format is not available. Use --list-formats for a list of available formats"
+        }
+      ]
+    },
+    {
+      "video_id": "dsXcE8jvESw",
+      "title": "【昭和建設】2026年CM　モーショングラフィックス編｜近藤健介選手　栗原陵矢選手出演",
+      "video_url": "https://www.youtube.com/watch?v=dsXcE8jvESw",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "eEiMPYiNZAo",
+      "title": "花譜 # 145「アポカリプスより」【オリジナルMV】",
+      "video_url": "https://www.youtube.com/watch?v=eEiMPYiNZAo",
+      "failure_category": "format_unavailable",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "形式取得不可（480p以下 DASH フォールバック対応後の再試行対象）。",
+      "last_attempted_at": "2026-11-24T00:44:15.580Z",
+      "latest_error": "ERROR: [youtube] eEiMPYiNZAo: Requested format is not available. Use --list-formats for a list of available formats",
+      "failure_history": [
+        {
+          "source": "run_manifest",
+          "run_id": "run_20261124_080300",
+          "priority": "P0_craft_recipes",
+          "batch_index": 2,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T00:44:15.580Z",
+          "error": "ERROR: [youtube] eEiMPYiNZAo: Requested format is not available. Use --list-formats for a list of available formats"
+        }
+      ]
+    },
+    {
+      "video_id": "efXqozK4A40",
+      "title": "プシ / r-906 feat.初音ミク",
+      "video_url": "https://www.youtube.com/watch?v=efXqozK4A40",
+      "failure_category": "format_unavailable",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "形式取得不可（480p以下 DASH フォールバック対応後の再試行対象）。",
+      "last_attempted_at": "2026-11-24T00:44:15.580Z",
+      "latest_error": "ERROR: [youtube] efXqozK4A40: Requested format is not available. Use --list-formats for a list of available formats",
+      "failure_history": [
+        {
+          "source": "run_manifest",
+          "run_id": "run_20261124_080300",
+          "priority": "P0_craft_recipes",
+          "batch_index": 2,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T00:44:15.580Z",
+          "error": "ERROR: [youtube] efXqozK4A40: Requested format is not available. Use --list-formats for a list of available formats"
+        }
+      ]
+    },
+    {
+      "video_id": "fvbEnWLRo1s",
+      "title": "Marathon | Reveal Cinematic Short",
+      "video_url": "https://www.youtube.com/watch?v=fvbEnWLRo1s",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "gpBFiG_hSFs",
+      "title": "京セラソーラー｜80秒で分かる太陽光発電システム",
+      "video_url": "https://www.youtube.com/watch?v=gpBFiG_hSFs",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "iK725ck2NIk",
+      "title": "#Kroi - Kinetic feat. INCOGNITO [Official Video]",
+      "video_url": "https://www.youtube.com/watch?v=iK725ck2NIk",
+      "failure_category": "format_unavailable",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "形式取得不可（480p以下 DASH フォールバック対応後の再試行対象）。",
+      "last_attempted_at": "2026-11-24T00:44:15.580Z",
+      "latest_error": "ERROR: [youtube] iK725ck2NIk: Requested format is not available. Use --list-formats for a list of available formats",
+      "failure_history": [
+        {
+          "source": "run_manifest",
+          "run_id": "run_20261124_080300",
+          "priority": "P0_craft_recipes",
+          "batch_index": 2,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T00:44:15.580Z",
+          "error": "ERROR: [youtube] iK725ck2NIk: Requested format is not available. Use --list-formats for a list of available formats"
+        }
+      ]
+    },
+    {
+      "video_id": "jfNr2Gju2Mk",
+      "title": "【公式】ポケモンアニメ 「めがはなせないね ガルーラ」 【POKÉTOON】",
+      "video_url": "https://www.youtube.com/watch?v=jfNr2Gju2Mk",
+      "failure_category": "unavailable_or_private",
+      "retry_disposition": "permanent_exclude_candidate",
+      "disposition_note": "非公開・削除・メンバー限定等の可能性が高い（恒久除外の候補）。",
+      "last_attempted_at": "2026-11-24T00:44:15.580Z",
+      "latest_error": "ERROR: [youtube] jfNr2Gju2Mk: This video is not available",
+      "failure_history": [
+        {
+          "source": "run_manifest",
+          "run_id": "run_20261124_080300",
+          "priority": "P0_craft_recipes",
+          "batch_index": 2,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T00:44:15.580Z",
+          "error": "ERROR: [youtube] jfNr2Gju2Mk: This video is not available"
+        }
+      ]
+    },
+    {
+      "video_id": "kw7D7Il13_k",
+      "title": "Pure Pure (not)",
+      "video_url": "https://www.youtube.com/shorts/kw7D7Il13_k",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "lB3mij3gmVo",
+      "title": "DUSTCELL - 表情差分 / Different Expression",
+      "video_url": "https://www.youtube.com/watch?v=lB3mij3gmVo",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "mI9MSQGlbH0",
+      "title": "TV CM  交通 / 物流 / 産業素材   西鉄企業イメージCM「つぎは、あなたのほしい明日」 30s",
+      "video_url": "https://www.youtube.com/watch?v=mI9MSQGlbH0",
+      "failure_category": "format_unavailable",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "形式取得不可（480p以下 DASH フォールバック対応後の再試行対象）。",
+      "last_attempted_at": "2026-11-24T00:44:15.580Z",
+      "latest_error": "ERROR: [youtube] mI9MSQGlbH0: Requested format is not available. Use --list-formats for a list of available formats",
+      "failure_history": [
+        {
+          "source": "run_manifest",
+          "run_id": "run_20261124_080300",
+          "priority": "P0_craft_recipes",
+          "batch_index": 2,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T00:44:15.580Z",
+          "error": "ERROR: [youtube] mI9MSQGlbH0: Requested format is not available. Use --list-formats for a list of available formats"
+        }
+      ]
+    },
+    {
+      "video_id": "oXRPnu9nBpc",
+      "title": "Panasonic Technics Turntable History Movie #1~#5",
+      "video_url": "https://www.youtube.com/watch?v=oXRPnu9nBpc",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "qe29NgNqJZw",
+      "title": "the Hole / 足立レイ",
+      "video_url": "https://www.youtube.com/watch?v=qe29NgNqJZw",
+      "failure_category": "format_unavailable",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "形式取得不可（480p以下 DASH フォールバック対応後の再試行対象）。",
+      "last_attempted_at": "2026-11-24T00:44:15.580Z",
+      "latest_error": "ERROR: [youtube] qe29NgNqJZw: Requested format is not available. Use --list-formats for a list of available formats",
+      "failure_history": [
+        {
+          "source": "run_manifest",
+          "run_id": "run_20261124_080300",
+          "priority": "P0_craft_recipes",
+          "batch_index": 2,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T00:44:15.580Z",
+          "error": "ERROR: [youtube] qe29NgNqJZw: Requested format is not available. Use --list-formats for a list of available formats"
+        }
+      ]
+    },
+    {
+      "video_id": "rON_9zSnU2k",
+      "title": "三井のオフィス",
+      "video_url": "https://www.youtube.com/watch?v=rON_9zSnU2k",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "rolo_BHlDmQ",
+      "title": "リコレクションエンドロウル by 燦鳥ノム【歌ってみた】",
+      "video_url": "https://www.youtube.com/watch?v=rolo_BHlDmQ",
+      "failure_category": "format_unavailable",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "形式取得不可（480p以下 DASH フォールバック対応後の再試行対象）。",
+      "last_attempted_at": "2026-11-24T00:44:15.580Z",
+      "latest_error": "ERROR: [youtube] rolo_BHlDmQ: Requested format is not available. Use --list-formats for a list of available formats",
+      "failure_history": [
+        {
+          "source": "run_manifest",
+          "run_id": "run_20261124_080300",
+          "priority": "P0_craft_recipes",
+          "batch_index": 2,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T00:44:15.580Z",
+          "error": "ERROR: [youtube] rolo_BHlDmQ: Requested format is not available. Use --list-formats for a list of available formats"
+        }
+      ]
+    },
+    {
+      "video_id": "t5jPgM_VKZo",
+      "title": "みみめめMIMI「Mr. Darling」MV",
+      "video_url": "https://www.youtube.com/watch?v=t5jPgM_VKZo",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "tk9mbNFEKZw",
+      "title": "採用動画制作サービス｜動画制作・映像制作のLOCUS",
+      "video_url": "https://www.youtube.com/watch?v=tk9mbNFEKZw",
+      "failure_category": "format_unavailable",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "形式取得不可（480p以下 DASH フォールバック対応後の再試行対象）。",
+      "last_attempted_at": "2026-11-24T00:44:15.580Z",
+      "latest_error": "ERROR: [youtube] tk9mbNFEKZw: Requested format is not available. Use --list-formats for a list of available formats",
+      "failure_history": [
+        {
+          "source": "run_manifest",
+          "run_id": "run_20261124_080300",
+          "priority": "P0_craft_recipes",
+          "batch_index": 2,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T00:44:15.580Z",
+          "error": "ERROR: [youtube] tk9mbNFEKZw: Requested format is not available. Use --list-formats for a list of available formats"
+        }
+      ]
+    },
+    {
+      "video_id": "tpWIK6D-yVM",
+      "title": "JELEE『最強ガール』Music Video",
+      "video_url": "https://www.youtube.com/watch?v=tpWIK6D-yVM",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "vS6wzjpCvec",
+      "title": "サカナクション - アルクアラウンド（MUSIC VIDEO） -BEST ALBUM「魚図鑑」(3/28release)-",
+      "video_url": "https://www.youtube.com/watch?v=vS6wzjpCvec",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "vpyeQeTDGFA",
+      "title": "Honda \"Paper\" by PES | Emmy Nominated Commercial",
+      "video_url": "https://www.youtube.com/watch?v=vpyeQeTDGFA",
+      "failure_category": "format_unavailable",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "形式取得不可（480p以下 DASH フォールバック対応後の再試行対象）。",
+      "last_attempted_at": "2026-11-24T00:44:15.580Z",
+      "latest_error": "ERROR: [youtube] vpyeQeTDGFA: Requested format is not available. Use --list-formats for a list of available formats",
+      "failure_history": [
+        {
+          "source": "run_manifest",
+          "run_id": "run_20261124_080300",
+          "priority": "P0_craft_recipes",
+          "batch_index": 2,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T00:44:15.580Z",
+          "error": "ERROR: [youtube] vpyeQeTDGFA: Requested format is not available. Use --list-formats for a list of available formats"
+        }
+      ]
+    },
+    {
+      "video_id": "w8QgUN09cqk",
+      "title": "パーパスムービー2023「ONE PERSON ONE PURPOSE」",
+      "video_url": "https://www.youtube.com/watch?v=w8QgUN09cqk",
+      "failure_category": "format_unavailable",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "形式取得不可（480p以下 DASH フォールバック対応後の再試行対象）。",
+      "last_attempted_at": "2026-11-24T00:44:15.580Z",
+      "latest_error": "ERROR: [youtube] w8QgUN09cqk: Requested format is not available. Use --list-formats for a list of available formats",
+      "failure_history": [
+        {
+          "source": "run_manifest",
+          "run_id": "run_20261124_080300",
+          "priority": "P0_craft_recipes",
+          "batch_index": 2,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T00:44:15.580Z",
+          "error": "ERROR: [youtube] w8QgUN09cqk: Requested format is not available. Use --list-formats for a list of available formats"
+        }
+      ]
+    },
+    {
+      "video_id": "wRXAEZ0RKCw",
+      "title": "人マニア / 原口沙輔 - 月ノ美兎withブラクラーズ(cover)",
+      "video_url": "https://www.youtube.com/watch?v=wRXAEZ0RKCw",
+      "failure_category": "decode_corrupted",
+      "retry_disposition": "permanent_exclude_candidate",
+      "disposition_note": "映像ストリーム破損・デコード不可（恒久除外の候補）。",
+      "last_attempted_at": "2026-11-24T00:44:15.580Z",
+      "latest_error": "[h264 @ 000001d9063417c0] Invalid NAL unit size (1245184 > 47292). [h264 @ 000001d9063417c0] missing picture in access unit with size 47296 [h264 @ 000001d9063417c0] Invalid NAL unit size (1245184 > 47292). [h264 @ 00000",
+      "failure_history": [
+        {
+          "source": "run_manifest",
+          "run_id": "run_20261124_080300",
+          "priority": "P0_craft_recipes",
+          "batch_index": 2,
+          "worker": "chibatmute",
+          "attempted_at": "2026-11-24T00:44:15.580Z",
+          "error": "[h264 @ 000001d9063417c0] Invalid NAL unit size (1245184 > 47292). [h264 @ 000001d9063417c0] missing picture in access unit with size 47296 [h264 @ 000001d9063417c0] Invalid NAL unit size (1245184 > 47292). [h264 @ 00000"
+        }
+      ]
+    },
+    {
+      "video_id": "wx_H_pxbwdE",
+      "title": "あなたのやりたいことはデザインかもしれない ｜Goodpatch",
+      "video_url": "https://www.youtube.com/watch?v=wx_H_pxbwdE",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "x6_mbnsh6VU",
+      "title": "GENER8ION - STORM starring Yung Lean",
+      "video_url": "https://www.youtube.com/watch?v=x6_mbnsh6VU",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "x7mSpHbqOGs",
+      "title": "FUJITSU RECRUIT",
+      "video_url": "https://www.youtube.com/watch?v=x7mSpHbqOGs",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "xRU1XXHIpIc",
+      "title": "ILLIT (아일릿) 'bomb' Brand Film (little monster MV)",
+      "video_url": "https://www.youtube.com/watch?v=xRU1XXHIpIc",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "xnWku2LSI1o",
+      "title": "🇮🇳 India got this iconic ad because of JAPAN!",
+      "video_url": "https://www.youtube.com/watch?v=xnWku2LSI1o",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "xpn5Ax2pz14",
+      "title": "KETE 2022 Brand Movie No More Rules",
+      "video_url": "https://www.youtube.com/watch?v=xpn5Ax2pz14",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "xtpEqWX-KuI",
+      "title": "日本代表応援ムービー「俺たち、めっちゃ」",
+      "video_url": "https://www.youtube.com/watch?v=xtpEqWX-KuI",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "xw5u-NoA3Ec",
+      "title": "【公式】『ポケポケ』テーマ拡張パック「シャイニングメガ」",
+      "video_url": "https://www.youtube.com/watch?v=xw5u-NoA3Ec",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "yRv-MikY3d0",
+      "title": "「その瞬間に、心がはずむ。」ザ・パークハビオ コンセプトムービー｜三菱地所レジデンス",
+      "video_url": "https://www.youtube.com/watch?v=yRv-MikY3d0",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "yTASHD-MWwE",
+      "title": "come again - m-flo (Cover) / KMNZ LITA × TINA",
+      "video_url": "https://www.youtube.com/watch?v=yTASHD-MWwE",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "yVX34hPLKtI",
+      "title": "MV  合成 / VFX / 3DCG   LV MURAKAMI (Official Music Video) - MNNK Bro. (Takashi Murakami & JP THE WAVY)",
+      "video_url": "https://www.youtube.com/watch?v=yVX34hPLKtI",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "yow8PBNcINU",
+      "title": "Ｚ会グループ × loundraw × FLAT STUDIO　応援ムービー『いつかの私より』",
+      "video_url": "https://youtu.be/yow8PBNcINU",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "yu3YGphrBbI",
+      "title": "Max Cooper - Obsessive Compulsive Order (Official Video by Ksawery Komputery)",
+      "video_url": "https://www.youtube.com/watch?v=yu3YGphrBbI",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "z02-yCIHPCY",
+      "title": "TV CM  IT / 通信 / ネットサービス   Telstra | Oberon is better on a better mobile network",
+      "video_url": "https://www.youtube.com/watch?v=z02-yCIHPCY",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "z4r3l2aAdrg",
+      "title": "BrokenDaybreak / 七篠さよ -Music Video -",
+      "video_url": "https://www.youtube.com/watch?v=z4r3l2aAdrg",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "zFvChQ6dSdk",
+      "title": "2周年記念テーマソングMV「預言」｜ゼンレスゾーンゼロ",
+      "video_url": "https://youtu.be/zFvChQ6dSdk",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "zJtsfgrJiWE",
+      "title": "漫画『メダリスト』× HANA『Cold Night』｜スペシャル MV",
+      "video_url": "https://youtu.be/zJtsfgrJiWE",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "zP5fTB_MAXU",
+      "title": "『Adam by Eve: A Live in Animation』予告編 - Netflix",
+      "video_url": "https://www.youtube.com/watch?v=zP5fTB_MAXU",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "zPDMm7XUpkI",
+      "title": "日本大学理工学部建築学科ブランドムービー “建築はつづく。未来がはじまる。”ver.2",
+      "video_url": "https://www.youtube.com/watch?v=zPDMm7XUpkI",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "zRJS0P1GwC4",
+      "title": "『DRAGON BALL』40周年記念スペシャル映像",
+      "video_url": "https://youtu.be/zRJS0P1GwC4",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "zSPMR9UdKuI",
+      "title": "GAMBLER'S FALLACY (ft. Kasane Teto)",
+      "video_url": "https://youtu.be/zSPMR9UdKuI",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    },
+    {
+      "video_id": "zyktN7x_DSQ",
+      "title": "【ゼンゼロ】パリピ雅",
+      "video_url": "https://www.youtube.com/watch?v=zyktN7x_DSQ",
+      "failure_category": "bot_check",
+      "retry_disposition": "retry_allowed",
+      "disposition_note": "ボット確認または回数制限による中断。時間を空けて未認証で1本ずつ再試行可（ボット確認が出たら即停止）。",
+      "last_attempted_at": "2026-11-24T06:13:10.543Z",
+      "latest_error": "youtube_bot_check_abort_on_CHIBA-PC",
+      "failure_history": [
+        {
+          "source": "released_claim",
+          "run_id": "run_20261124_145350",
+          "priority": "P0_craft_recipes",
+          "batch_index": null,
+          "worker": "CHIBA-PC",
+          "attempted_at": "2026-11-24T06:13:10.543Z",
+          "error": "youtube_bot_check_abort_on_CHIBA-PC"
+        }
+      ]
+    }
+  ]
+}

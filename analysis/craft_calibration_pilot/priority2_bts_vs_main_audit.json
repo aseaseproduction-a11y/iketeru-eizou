@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-24T20:57:00+09:00",
+  "method": "Iketeru既存ローカルDB（iketeru_knowledge.db、読み取り専用）内の本編 ai_analysis と対になるメイキング/BTS ai_analysis を突き合わせ、撮影手法・特機・照明/VFX境界の誤認（ハルシネーション）と具体化余地を定量監査した。",
+  "pairs_audited": 8,
+  "baseline_metrics": {
+    "primary_technique_category_match_count": 5,
+    "primary_technique_category_match_rate": 0.625,
+    "major_hallucination_or_misclassification_pairs": 3,
+    "major_hallucination_rate": 0.375,
+    "error_breakdown": {
+      "cg_or_vfx_misread_as_practical_or_location": 2,
+      "practical_motion_control_misread_as_2d_from_metadata_only": 1,
+      "minor_scale_or_rig_detail_omission_only": 5
+    }
+  },
+  "pair_results": [
+    {
+      "pair_index": 1,
+      "title": "Honda Power Products「Hakoniwa」",
+      "main_id": "hyfcLfbD-VU",
+      "bts_id": "EAtYC9fkjGA",
+      "primary_method_match": true,
+      "error_type": "minor_detail_gap",
+      "main_claim": "実物ミニチュアジオラマ・クレイ＆樹脂人形コマ撮り＋人間の手の実写",
+      "bts_ground_truth": "光造形レジン3Dプリンタ出力＋無塗装グレーパーツの筆塗り＋発泡スチロール雪面＋熱気球の金属アーム空中固定（ポストでリグ消し＋夕焼け空合成）",
+      "takeaway": "大枠の手法（実物ミニチュア＋コマ撮り）は的中。3Dプリント＋金属アーム固定＋空合成のハイブリッド工程を技法辞典へ具体化可能。"
+    },
+    {
+      "pair_index": 2,
+      "title": "LE SSERAFIM × ILLIT × KATSEYE 'ICONIC BY MISTAKE'",
+      "main_id": "27C4pfRsf9g",
+      "bts_id": "w9Mx7pjeIpk",
+      "primary_method_match": false,
+      "error_type": "cg_or_vfx_misread_as_practical_or_location",
+      "main_claim": "①炎上トウモロコシ畑は『安易なCG合成に逃げず実際に巨大な炎の壁を焚いた実炎ロケ、CGでは代用不可能』と断定。②口腔内POVは『巨大な舌・歯列のフレーム美術を組んだアナログ特撮』と断定。",
+      "bts_ground_truth": "Infinite VFX による公式ブレイクダウンで、①全面ブルースクリーン＋トラス3Dワイヤーフレーム＋流体CG炎／火の粉パーティクル＋インタラクティブライト合成、②未塗装3DCG口腔内メッシュ＋実写プレート合成だったことが判明。",
+      "takeaway": "【最重要誤認】『CGでは代用不可能』『実炎ロケ』『アナログ美術』といった強い断定が2か所で完全に逆だった。照明反射が自然な最新VFXを実写と誤認しやすい。"
+    },
+    {
+      "pair_index": 3,
+      "title": "ポカリスエット「POCARI HUMAN CHALLENGE」",
+      "main_id": "4y9q0_TktCA",
+      "bts_id": "_EZk4P5tl94",
+      "primary_method_match": true,
+      "error_type": "minor_detail_gap",
+      "main_claim": "数百人規模の実写海上マスゲーム＋ドローン空撮＋水中ハウジングカメラ（Tier 3）",
+      "bts_ground_truth": "約1,000人規模の実写海上マスゲーム（Tier 4）、水上タワーの青い旗振り誘導、ジェットスキー安全監視、波打ち際カメラマン密着撮影",
+      "takeaway": "手法分類は完全的中。規模感のみ『数百人→約1,000人（Tier 4）』とやや過小推定。"
+    },
+    {
+      "pair_index": 4,
+      "title": "Britbox 'See it Differently' (Nicos Livesey)",
+      "main_id": "1069311388",
+      "bts_id": "1067426859",
+      "primary_method_match": false,
+      "error_type": "practical_motion_control_misread_as_2d_from_metadata_only",
+      "main_claim": "未視聴メタデータ一次評価で『表現手法: 2D』『After Effects / Illustrator 推定』『再現規模: Tier 1（1〜2人・30万以内）』と記載。",
+      "bts_ground_truth": "14時間に及ぶ巨大スタジオでの実写セット転換＋モーションコントロール実写撮影（Tier 4 大型CMセット）。",
+      "takeaway": "【未視聴メタデータ推定の危険性を実証】MP4未視聴のまま表現手法やTier規模を推測すると致命的な誤分類（2D/Tier1 vs 実写特機/Tier4）が起きる。"
+    },
+    {
+      "pair_index": 5,
+      "title": "Mrs. GREEN APPLE「クスシキ」",
+      "main_id": "RCaTLn4qoz4",
+      "bts_id": "XwUhFsrkuNY",
+      "primary_method_match": true,
+      "error_type": "minor_detail_gap",
+      "main_claim": "大型宮殿セット＋全面クロマキー×3DCG都市＋高密度パーティクルVFX＋ワイヤーアクション",
+      "bts_ground_truth": "朱塗り宮殿セット＋背面グリーンバック（黒十字トラッキングマーカー）＋大型クレーン＆ジンバル並走＋全身緑タイツ黒子によるワイヤー制御＋下方強風送風機（※BTS側要約で監督名を誤記する別種エラーも検出）",
+      "takeaway": "本編側の手法推定は高精度で的中。黒子ワーク・送風機・トラッキングマーカー配置まで具体化可能。"
+    },
+    {
+      "pair_index": 6,
+      "title": "Uber TVCM「タクシーを、思いのままに 第六感篇」",
+      "main_id": "M9mqT8NE6iQ",
+      "bts_id": "BAScFIEfrOc",
+      "primary_method_match": false,
+      "error_type": "cg_or_vfx_misread_as_practical_or_location",
+      "main_claim": "『封鎖に近い都心ビジネス街ロケ』＋『人物マスクを抜いて背景を傾ける低コストなディストーション』と断定。",
+      "bts_ground_truth": "大型全面グリーンバックスタジオ内に実物タクシー（Japan Taxi）を持ち込み、巨大なMRMCモーションコントロール・ロボットアームカメラで撮影。",
+      "takeaway": "【重大誤認】自然光に見える合成ライティングに騙され、『屋外ロケ＋簡易2D歪み』と誤断定していた。実際はグリーンバック＋MRMCロボットアーム撮影。"
+    },
+    {
+      "pair_index": 7,
+      "title": "Google Chrome アニメ #3「がんばれ！くろーむ」",
+      "main_id": "nMF3nLV-m24",
+      "bts_id": "CQdeuG6Uy14",
+      "primary_method_match": true,
+      "error_type": "minor_detail_gap",
+      "main_claim": "dwarf studios の羊毛フェルト・紙工作コマ撮り＋差し替えパーツ＋実写スマホ",
+      "bts_ground_truth": "羊毛フェルト人形＋真鍮製タンク（リグ）での空中保持＋ペンチによる針金骨組み調整＋ミニチュア階段セット",
+      "takeaway": "手法分類は完全的中。空中ジャンプ等の裏にある真鍮リグ固定・針金調整という実制作工程が補完できる。"
+    },
+    {
+      "pair_index": 8,
+      "title": "サカナクション「怪獣」",
+      "main_id": "a8dgNdJVluc",
+      "bts_id": "rtDCbL1Nh-E",
+      "primary_method_match": true,
+      "error_type": "minor_detail_gap",
+      "main_claim": "角川大映スタジオの黄色〜オリーブ色タイル地下通路セット＋天井蛍光灯＋実写撮影",
+      "bts_ground_truth": "L字黄色タイル壁と長いスロープ状地下通路の実寸セット＋天井蛍光灯＋スモーク＋激しいカメラパン・モニター確認",
+      "takeaway": "手法分類は完全的中。ただしクレジット上のVFX（Khaki）と実寸セットの境界は本編のみでは断定不可。"
+    }
+  ],
+  "concrete_improvement_rules_for_craft_recipes": [
+    "ルール1（強い断定の禁止）: 『実炎ロケに違いない』『CGでは代用不可能』『アナログ特撮で組んでいる』等の断定表現を禁止し、自然光・炎・空間歪みが伴うショットは『実写ロケ／グリーンバック＋インタラクティブライト合成の両可能性あり（確信度: inferred）』と併記する。",
+    "ルール2（未視聴メタデータからの手法・Tier推定禁止）: Britbox事例のようにMP4未視聴のまま2D/Tier1等を推測すると大誤分類を招くため、未視聴レコードでは手法・ツール・Tier欄を null / unverified とする。",
+    "ルール3（実制作リグ・隠れ工程の候補提示）: ミニチュア／コマ撮りやワイヤーVFXのレシピ生成時は、完成画面に見えない『真鍮リグ・金属アーム固定＋リグ消し』『黒十字トラッキングマーカー』『MRMCロボットアーム』等の実務工程を標準チェック項目に加える。"
+  ]
+}
