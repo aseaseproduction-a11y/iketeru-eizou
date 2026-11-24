@@ -1,0 +1,2878 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-24T21:08:12+09:00",
+  "read_only_guarantee": "SQLite は mode=ro、TiDB は SELECT クエリのみ実行（DB 書き込みゼロ）。",
+  "detection_criteria": {
+    "unwatched_B1_metadata_only_primary_eval": "ai_analysis 内に『公式公開メタデータ・クレジット完全精査』『公開公式メタデータ・公式制作解説・クレジット・サムネイルURLに基づく一次完全評価』『未視聴のタイムコード捏造を禁止』のいずれかを含む（明示的なメタデータ単独一次評価テンプレート）。",
+    "unwatched_B2_no_contact_sheet_missing_video": "ai_analysis 内に『前処理コンタクトシート未生成』『動画本体が取得できないため』『コンタクトシート未生成のため確認不能』『コンタクトシートなし』のいずれかを含む（動画未取得のまま生成された記録）。",
+    "unwatched_B3_triage_boilerplate_no_visual_evidence": "『【1次速報診断レポート』形式かつ映像実測値（fps / 解像度 / dB / タイムスタンプ / シート番号）が一切なく、定型文（『標準的な映像構成であり、破綻はないものの…』等）のみで生成された記録。",
+    "suspect_C_short_triage_no_probe_metrics": "『【1次速報診断レポート』形式で映像実測値（fps/dB/解像度）の記載がない短文（例：Campus ノートの短尺クリップ等、目視メモかメタデータ推測か本文だけでは断定できない要確認群）。",
+    "empty_unanalyzed": "ai_analysis が NULL または空文字（動画を見ずに分析した記録ではなく、分析自体が未実施のレコードとして別集計）。",
+    "false_positive_exclusion": "単純な『未視聴』語検索で誤検知された『アニメ未視聴層でも楽しめる』『既存分析は未視聴だったが実映像で補正済み』等の実視聴済みレビュー（約31件）は除外検証済み。"
+  },
+  "sqlite_summary": {
+    "total_videos": 5701,
+    "counts_by_category": {
+      "watched_or_standard_analysis": 5197,
+      "empty_unanalyzed": 183,
+      "watched_triage_with_video_probe": 41,
+      "unwatched_B1_metadata_only_primary_eval": 249,
+      "unwatched_B3_triage_boilerplate_no_visual_evidence": 8,
+      "suspect_C_short_triage_no_probe_metrics": 21,
+      "unwatched_B2_no_contact_sheet_missing_video": 2
+    },
+    "confirmed_unwatched_analyzed_total": 259,
+    "suspect_triage_no_probe_total": 21,
+    "confirmed_unwatched_by_platform": {
+      "vimeo": 237,
+      "youtube": 22
+    },
+    "confirmed_unwatched_already_phase3_calibrated": 0,
+    "empty_unanalyzed_total": 183
+  },
+  "tidb_summary": {
+    "total_videos": 5653,
+    "counts_by_category": {
+      "watched_or_standard_analysis": 5190,
+      "empty_unanalyzed": 182,
+      "unwatched_B1_metadata_only_primary_eval": 249,
+      "unwatched_B3_triage_boilerplate_no_visual_evidence": 8,
+      "suspect_C_short_triage_no_probe_metrics": 17,
+      "watched_triage_with_video_probe": 7
+    },
+    "confirmed_unwatched_analyzed_total": 257,
+    "suspect_triage_no_probe_total": 17,
+    "confirmed_unwatched_by_platform": {
+      "vimeo": 237,
+      "youtube": 20
+    },
+    "confirmed_unwatched_already_phase3_calibrated": 0,
+    "empty_unanalyzed_total": 182
+  },
+  "sqlite_vs_tidb_diff": {
+    "flagged_only_in_sqlite": [
+      "G4FxpJVuIfc",
+      "ISrRQs87DnI",
+      "JVlAJlvaT0Y",
+      "XPm7zy-X_fI",
+      "noFwvq8FHoI",
+      "qeddzEzDnic"
+    ],
+    "flagged_only_in_tidb": []
+  },
+  "craft_recipes_439_audit": {
+    "unique_source_videos": 439,
+    "total_recipe_rows": 1036,
+    "source_videos_with_extracted_gif_strip_or_keyframes": 439,
+    "source_videos_without_media_artifacts": 0,
+    "confirmed_unwatched_in_sqlite": [],
+    "confirmed_unwatched_in_tidb": [],
+    "empty_ai_analysis_in_sqlite": [],
+    "empty_ai_analysis_in_tidb": [],
+    "verdict": "craft_recipes の元動画 439本（1,036レシピ）は、全439本で実動画からの GIF / ストリップ画像 / キーフレーム抽出物を有しており、未視聴・メタデータのみで作成されたレコードは 0本（0件）であることを確認。"
+  },
+  "confirmed_unwatched_entries_sqlite": [
+    {
+      "id": "10070449",
+      "platform": "vimeo",
+      "title": "Kraddy - Android Porn (Mochipet Godzillaporn Remix) - Music Video",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1733,
+      "legacy_rating": "",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1041875369",
+      "platform": "vimeo",
+      "title": "星宮とと+ SOZEN OTSUBO - Hi-fi (Official Music Video)",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1124,
+      "legacy_rating": "",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1041925523",
+      "platform": "vimeo",
+      "title": "REEL 2025",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1036,
+      "legacy_rating": "",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1046062913",
+      "platform": "vimeo",
+      "title": "A Composition for Upright Displays #01",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1079,
+      "legacy_rating": "",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1055994596",
+      "platform": "vimeo",
+      "title": "Beats Powerbeats Pro 2",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1036,
+      "legacy_rating": "",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1056688529",
+      "platform": "vimeo",
+      "title": "WWW",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 965,
+      "legacy_rating": "",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1056750218",
+      "platform": "vimeo",
+      "title": "parlor",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 962,
+      "legacy_rating": "",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1056762918",
+      "platform": "vimeo",
+      "title": "Create magic.",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1127,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "106226560",
+      "platform": "vimeo",
+      "title": "RUSH HOUR",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1072,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1068014839",
+      "platform": "vimeo",
+      "title": "Balloon Your Hope.",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1297,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1069311388",
+      "platform": "vimeo",
+      "title": "'See it Differently' - Britbox - Directed by Nicos Livesey",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1069,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1073816481",
+      "platform": "vimeo",
+      "title": "夢みる薬膳研究室はじまりの物語",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1109,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1076319399",
+      "platform": "vimeo",
+      "title": "Neltz Ident",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1037,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1078424906",
+      "platform": "vimeo",
+      "title": "Revolut - Money Possibilities DC",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1890,
+      "legacy_rating": "A+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1080372107",
+      "platform": "vimeo",
+      "title": "Life360 - I Think of You (Dying)",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1065,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1082913421",
+      "platform": "vimeo",
+      "title": "【募集①】提出映像.岡田洋之",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1269,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1089437609",
+      "platform": "vimeo",
+      "title": "Nobuaki Satoh - Asian music guide (2024) - Live recording Ver.",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1739,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1090867433",
+      "platform": "vimeo",
+      "title": "Expo2025 Opening Movie",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1226,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1091825437",
+      "platform": "vimeo",
+      "title": "SKYTOPIA feat. Sigma-T \"ODORIBA\" Music Video",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1786,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1096899031",
+      "platform": "vimeo",
+      "title": "Expo 2025 Osaka Signature Pavilion “null²”",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1794,
+      "legacy_rating": "A",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1099272261",
+      "platform": "vimeo",
+      "title": "生成AI映像DEMO",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 952,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1099839172",
+      "platform": "vimeo",
+      "title": "TAKESHI TSUNEHASHI SHOWREEL 2025",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1159,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "112098216",
+      "platform": "vimeo",
+      "title": "9 Days in Japan",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1521,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "112332464",
+      "platform": "vimeo",
+      "title": "BUCK - Logo Animation",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1713,
+      "legacy_rating": "A",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1134459568",
+      "platform": "vimeo",
+      "title": "映像職人の魂 ― 光が差す場所へ ―The Soul of a Filmmaker – Where the Light Shines –",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1742,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1135619204",
+      "platform": "vimeo",
+      "title": "MULTRA Brand Film",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1489,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1147780380",
+      "platform": "vimeo",
+      "title": "Kate Spade - Spark Something Beautiful",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1823,
+      "legacy_rating": "A+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1151446136",
+      "platform": "vimeo",
+      "title": "REEL 2026",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1036,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1151511255",
+      "platform": "vimeo",
+      "title": "ETHEREA",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1603,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1151598827",
+      "platform": "vimeo",
+      "title": "Etherea - Behind The Scenes",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1638,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1153106405",
+      "platform": "vimeo",
+      "title": "Harry Winston -  Lily Cluster Collection",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1065,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1162287530",
+      "platform": "vimeo",
+      "title": "STARMONGER - Mothra (Music Video)",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1382,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1165314277",
+      "platform": "vimeo",
+      "title": "aflac_conceptMovie_newgraduate",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1036,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1165316695",
+      "platform": "vimeo",
+      "title": "aflac_kv_newgraduate_PC_master",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1036,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1165316721",
+      "platform": "vimeo",
+      "title": "aflac_kv_newgraduate_SP_master",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1036,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1165316753",
+      "platform": "vimeo",
+      "title": "aflac_thumb_newgraduate",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1020,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1168349920",
+      "platform": "vimeo",
+      "title": "BANNY BUGS – TSUKI (Official Video)",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1691,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1179466096",
+      "platform": "vimeo",
+      "title": "UNIQLO Holiday 2025",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1922,
+      "legacy_rating": "A+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1179831238",
+      "platform": "vimeo",
+      "title": "NANAME REEL 2026",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 995,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1184573672",
+      "platform": "vimeo",
+      "title": "Riku Kojima - SHOWREEL 2025",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1054,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1186447729",
+      "platform": "vimeo",
+      "title": "Element",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1004,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1186826049",
+      "platform": "vimeo",
+      "title": "WOWOW Excite Match 35th Opening Movie 2026",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1701,
+      "legacy_rating": "A+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1188576972",
+      "platform": "vimeo",
+      "title": "Passing",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1686,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1200315008",
+      "platform": "vimeo",
+      "title": "Jennie - Music Video",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1014,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1210405418",
+      "platform": "vimeo",
+      "title": "Balming Tiger - Janjan (Official Video)",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1669,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1236237071",
+      "platform": "vimeo",
+      "title": "Dancing on Osees",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1091,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1240299939",
+      "platform": "vimeo",
+      "title": "Snow In September",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1248,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "124038722",
+      "platform": "vimeo",
+      "title": "ANA \"Network\"",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1670,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "124038723",
+      "platform": "vimeo",
+      "title": "ANA \"Service\"",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1670,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1243581164",
+      "platform": "vimeo",
+      "title": "IMaGO",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1627,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1244470254",
+      "platform": "vimeo",
+      "title": "Me, Myself and Mary",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1677,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "1245502303",
+      "platform": "vimeo",
+      "title": "PSYCHONAUTS",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1168,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "127580586",
+      "platform": "vimeo",
+      "title": "Beyond Tellerrand",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1839,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "128114550",
+      "platform": "vimeo",
+      "title": "0406 previz",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1140,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "131162925",
+      "platform": "vimeo",
+      "title": "MANGACAMOTION /PHASE 01 / 3sec.",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1280,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "132523286",
+      "platform": "vimeo",
+      "title": "Top Maker - Make for All 創客擂台百萬競賽宣傳影片",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1597,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "138747650",
+      "platform": "vimeo",
+      "title": "CrowdStrike - Black Hat 2015",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1260,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "144526368",
+      "platform": "vimeo",
+      "title": "DJI Osmo First test",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1403,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "147440310",
+      "platform": "vimeo",
+      "title": "URBAN RESEARCH 2015 Autumn / Winter Collection \"THE SEVEN\"",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1140,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "155341731",
+      "platform": "vimeo",
+      "title": "Japan",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1356,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "157903196",
+      "platform": "vimeo",
+      "title": "Dji OSMO 120fps",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1003,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "158022425",
+      "platform": "vimeo",
+      "title": "Kenzo SS16 — Prints Video",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1355,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "159770796",
+      "platform": "vimeo",
+      "title": "Paris II Memphis II",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1127,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "162638115",
+      "platform": "vimeo",
+      "title": "NO SALT RESTAURANT",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1607,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "16343398",
+      "platform": "vimeo",
+      "title": "Handsome Mask",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1155,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "165030056",
+      "platform": "vimeo",
+      "title": "Google - Palette Perfect",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1864,
+      "legacy_rating": "A+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "178641119",
+      "platform": "vimeo",
+      "title": "Nike LunarEpic Flyknit Summer",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1888,
+      "legacy_rating": "A+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "184468120",
+      "platform": "vimeo",
+      "title": "2016 Hit The Stage Main Title",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1507,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "184700264",
+      "platform": "vimeo",
+      "title": "Hubble Space Telescope",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1180,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "187327483",
+      "platform": "vimeo",
+      "title": "Ataxia \"Glitch\"",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1006,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "189282809",
+      "platform": "vimeo",
+      "title": "DDD + OFFF Italy 2016 Main Titles",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1496,
+      "legacy_rating": "A",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "194683978",
+      "platform": "vimeo",
+      "title": "What makes a company creative?",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1714,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "197474335",
+      "platform": "vimeo",
+      "title": "Gik_",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1579,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "201655292",
+      "platform": "vimeo",
+      "title": "Pizza Street",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1034,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "201800425",
+      "platform": "vimeo",
+      "title": "Air Cheesecake",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1094,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "202925050",
+      "platform": "vimeo",
+      "title": "Zurich 2.0",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1666,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "20435037",
+      "platform": "vimeo",
+      "title": "Bathstore 'Cambridge Roll Top'",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1104,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "20974781",
+      "platform": "vimeo",
+      "title": "Little Japan",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1440,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "21139698",
+      "platform": "vimeo",
+      "title": "save Japan",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1533,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "216660551",
+      "platform": "vimeo",
+      "title": "2d line growth effect 02",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1148,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "219324365",
+      "platform": "vimeo",
+      "title": "Conference on Anti-Corruption — Official Ident",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1758,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "219952024",
+      "platform": "vimeo",
+      "title": "18 Days in Japan",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1056,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "221538677",
+      "platform": "vimeo",
+      "title": "EXISDANCE - Real time tracking & Projection mapping",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1624,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "223707948",
+      "platform": "vimeo",
+      "title": "REPUBLIC 2017",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1182,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "233253005",
+      "platform": "vimeo",
+      "title": "Strange Echo    (MUSIC VIDEO)",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1278,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "233561405",
+      "platform": "vimeo",
+      "title": "UNIVERSAL AUDIO | CLASSIC FX BUNDLE",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1645,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "23399719",
+      "platform": "vimeo",
+      "title": "HUMMER \"Videogame\"",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1101,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "236279171",
+      "platform": "vimeo",
+      "title": ">-ES",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1076,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "239553052",
+      "platform": "vimeo",
+      "title": "Death Rattle by NIGHT FLIGHT Music Video",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1518,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "24305236",
+      "platform": "vimeo",
+      "title": "HYPER ISLAND INFOGRAPHICAL/ IdN MAGAZINE",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1733,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "245323254",
+      "platform": "vimeo",
+      "title": "REEL2018",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1098,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "246259369",
+      "platform": "vimeo",
+      "title": "SPACESHOWER TV / BIGHITS!",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1250,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "25083479",
+      "platform": "vimeo",
+      "title": "'Hello and Welcome to...' on Videohive",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1487,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "252080910",
+      "platform": "vimeo",
+      "title": "Distortion",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1047,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "253710582",
+      "platform": "vimeo",
+      "title": "Ranger & Fox | Emoji Manifesto",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1765,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "255010415",
+      "platform": "vimeo",
+      "title": "東京国際フォーラム開館 20 周年記念イベント「光のアクアリウム」",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1925,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "261165571",
+      "platform": "vimeo",
+      "title": "\"Rise\"",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1179,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "26366717",
+      "platform": "vimeo",
+      "title": "Doe, OUI! (MV)",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1160,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "264584850",
+      "platform": "vimeo",
+      "title": "| Japan Memories",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1346,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "264920400",
+      "platform": "vimeo",
+      "title": "Lauren Tsai — '18 Intl Women's Day (Nike Japan x wk tokyo)",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1227,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "264920463",
+      "platform": "vimeo",
+      "title": "Aori Nishimura — '18 Intl Women's Day (Nike Japan)",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1211,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "265567437",
+      "platform": "vimeo",
+      "title": "Trailer Motion Motion 2018",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1383,
+      "legacy_rating": "A",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "267952082",
+      "platform": "vimeo",
+      "title": "VJ set - Yung Bae 1st Japan Tour in Tokyo 2018",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1189,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "27124676",
+      "platform": "vimeo",
+      "title": "love in tokyo-(my_sister wedding MV)_iphone4",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1224,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "276239525",
+      "platform": "vimeo",
+      "title": "OPPO FIND X",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1584,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "279712953",
+      "platform": "vimeo",
+      "title": "tio “SUN” official music video",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1429,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "280242311",
+      "platform": "vimeo",
+      "title": "xGFs",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1053,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "280463244",
+      "platform": "vimeo",
+      "title": "JAM Live Summer 2018",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1436,
+      "legacy_rating": "A",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "280752983",
+      "platform": "vimeo",
+      "title": "Fragmented Fantasy",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1539,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "283399049",
+      "platform": "vimeo",
+      "title": "SPACE SHOWER TV - \"THE PLAYLIST\"",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1383,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "287627514",
+      "platform": "vimeo",
+      "title": "Sin So Seek(新層C区) - AUN [Official video]",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1743,
+      "legacy_rating": "A",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "292850914",
+      "platform": "vimeo",
+      "title": "UNIQLO ~Life wear day~ Arts and Science in Paris teaser",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1132,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "293941650",
+      "platform": "vimeo",
+      "title": "Ray-ban",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1113,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "296187295",
+      "platform": "vimeo",
+      "title": "King Gnu - Prayer X (Music Video)",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1107,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "307086328",
+      "platform": "vimeo",
+      "title": "DJI Osmo Pocket",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1739,
+      "legacy_rating": "A+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "308295376",
+      "platform": "vimeo",
+      "title": "WEF_Public Goods",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1405,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "310253952",
+      "platform": "vimeo",
+      "title": "Seven Stars",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1363,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "312128490",
+      "platform": "vimeo",
+      "title": "INNOSENT in FORMAL - Highway",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1780,
+      "legacy_rating": "A",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "31292820",
+      "platform": "vimeo",
+      "title": "Ladbrokes '£5 Free Bet'",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1071,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "313992356",
+      "platform": "vimeo",
+      "title": "LAMY aion / Special Edition 2019",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1739,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "313995646",
+      "platform": "vimeo",
+      "title": "LAMY scala / Special Edition 2019",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1720,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "314621240",
+      "platform": "vimeo",
+      "title": "LAMY AL-star / Special Edition 2019",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1690,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "324917821",
+      "platform": "vimeo",
+      "title": "The Tokyo Department Presented by NIKE ON AIR",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1695,
+      "legacy_rating": "A+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "325179744",
+      "platform": "vimeo",
+      "title": "IBM think 2019 Generation",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1151,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "326512213",
+      "platform": "vimeo",
+      "title": "Station ID「Shapeshifter」",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1379,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "329037793",
+      "platform": "vimeo",
+      "title": "Filler ID SPACE SHOWER MAN　　  Legacy for the future",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1149,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "330051652",
+      "platform": "vimeo",
+      "title": "たき工房：絵Motion",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1270,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "344975560",
+      "platform": "vimeo",
+      "title": "Summer Jazz Party 2019 兩廳院夏日爵士派對",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1769,
+      "legacy_rating": "A+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "347354764",
+      "platform": "vimeo",
+      "title": "VIZIO | P-Series X Quantum",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1515,
+      "legacy_rating": "A",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "353563482",
+      "platform": "vimeo",
+      "title": "FLAGSTUFF teaser",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1173,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "355039138",
+      "platform": "vimeo",
+      "title": "The Very Special Day - Trailer",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1700,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "358220955",
+      "platform": "vimeo",
+      "title": "交",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1032,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "360269073",
+      "platform": "vimeo",
+      "title": "School of Motion: Manifesto",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1907,
+      "legacy_rating": "A+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "370927473",
+      "platform": "vimeo",
+      "title": "MTV EMA 2019 - Opening Titles",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1833,
+      "legacy_rating": "A",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "380639683",
+      "platform": "vimeo",
+      "title": "Cho_Nans - しないで",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1363,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "38853378",
+      "platform": "vimeo",
+      "title": "Toyota Aygo Connected Song",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1803,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "390526488",
+      "platform": "vimeo",
+      "title": "ひ なんて、なくなってしまえ！　",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1044,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "390558243",
+      "platform": "vimeo",
+      "title": "Insert a cool shoe brand here.",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1603,
+      "legacy_rating": "A+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "391434825",
+      "platform": "vimeo",
+      "title": "Visual ASMR",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1800,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "392882267",
+      "platform": "vimeo",
+      "title": "名古屋城 夜会",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1183,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "393627824",
+      "platform": "vimeo",
+      "title": "ASICS CM「ぜんぶ、カラダなんだ。」",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1203,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "39761744",
+      "platform": "vimeo",
+      "title": "Thai For Japan (Official MV)",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1255,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "397970548",
+      "platform": "vimeo",
+      "title": "The Statue Experiment - Cloth Sim Collection -",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1208,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "412229474",
+      "platform": "vimeo",
+      "title": "WINTER IN JAPAN",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1626,
+      "legacy_rating": "A",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "43256775",
+      "platform": "vimeo",
+      "title": "AMaison V2.5",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1155,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "43276183",
+      "platform": "vimeo",
+      "title": "Nissin - Cup Noodle - Boil Japan - Yoda - 2012 - CM",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1107,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "433100961",
+      "platform": "vimeo",
+      "title": "mimoid.inc Reel 2020",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1164,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "43718485",
+      "platform": "vimeo",
+      "title": "3min 42sec.May.2012.Tokyo.Japan (unofficial Madeon-pop culture mv)",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1229,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "439186248",
+      "platform": "vimeo",
+      "title": "HITO-TO-HITO.HD Branding Movie / HITO-TO-HITO.HD",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1638,
+      "legacy_rating": "A",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "443924510",
+      "platform": "vimeo",
+      "title": "GoodLuckYonpey",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1613,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "44789160",
+      "platform": "vimeo",
+      "title": "Imitation Of Life / Eiko Ishibashi",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1472,
+      "legacy_rating": "A",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "448284500",
+      "platform": "vimeo",
+      "title": "Stay Yourself",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 996,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "453898163",
+      "platform": "vimeo",
+      "title": "Upopoy Kamuy Symphonia : Projection Mapping and Lighting Show  [Full ver.]",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 2092,
+      "legacy_rating": "A+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "455353359",
+      "platform": "vimeo",
+      "title": "for『LUGINSKY』PFFアワード2020入選記念MV",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1645,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "47GuClGEtyM",
+      "platform": "youtube",
+      "title": "DARLING in the FRANXX OPENING",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1092,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "494756323",
+      "platform": "vimeo",
+      "title": "Cuushe - Magic",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1506,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "496193183",
+      "platform": "vimeo",
+      "title": "maxilla 2020 Brand Reel",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1701,
+      "legacy_rating": "A",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "49963573",
+      "platform": "vimeo",
+      "title": "OGASAWARA experience in TOKYO",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1820,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "50201092",
+      "platform": "vimeo",
+      "title": "Introduction of Decor Tab Creator",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1127,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "50347221",
+      "platform": "vimeo",
+      "title": "コマ撮り十三番地/ Stopmotion animation 13 (2006)",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1080,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "510148574",
+      "platform": "vimeo",
+      "title": "PRIVATE WORKS SHOW REEL  2021",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1135,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "514214406",
+      "platform": "vimeo",
+      "title": "ACID.mov",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1061,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "52908595",
+      "platform": "vimeo",
+      "title": "IA x JIN | WORLDCALLING",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1642,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "533470535",
+      "platform": "vimeo",
+      "title": "O0u Brand Movie",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1020,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "538690962",
+      "platform": "vimeo",
+      "title": "Nipponpaint Automotive “LOOP”",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1537,
+      "legacy_rating": "A",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "539055827",
+      "platform": "vimeo",
+      "title": "shun yamaguchi reel 2021",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1155,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "539472350",
+      "platform": "vimeo",
+      "title": "CONFLUENCE BORDER",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1266,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "540604030",
+      "platform": "vimeo",
+      "title": "Converse Renew",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1451,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "554202247",
+      "platform": "vimeo",
+      "title": "【観光・ブランディング】「福智町観光映像」WEB CM.mp4",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1051,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "566764820",
+      "platform": "vimeo",
+      "title": "Marina Nakagawa Reel 2026",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1717,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "60749138",
+      "platform": "vimeo",
+      "title": "SOYJOY 5sec CM",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1461,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "61507218",
+      "platform": "vimeo",
+      "title": "Branded to Kill Teaser- Motion 2 - Final",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1234,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "629641425",
+      "platform": "vimeo",
+      "title": "Reel2021",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 995,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "639034386",
+      "platform": "vimeo",
+      "title": "GOOD DESIGN SHOW 2021　コンセプトムービー",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1135,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "640272915",
+      "platform": "vimeo",
+      "title": "Brand Video",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1044,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "661835461",
+      "platform": "vimeo",
+      "title": "ShowReel2022",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1104,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "666520118",
+      "platform": "vimeo",
+      "title": "IM_CNY",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 962,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "67254528",
+      "platform": "vimeo",
+      "title": "sweet for After Effects - demo",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1112,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "682141444",
+      "platform": "vimeo",
+      "title": "Chugai Seiyaku Attack Movie",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1176,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "68226853",
+      "platform": "vimeo",
+      "title": "Journey MV - YZU Graduation MV 2013",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1639,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "682833198",
+      "platform": "vimeo",
+      "title": "VOGUE JAPAN/GQ JAPAN - MARK&LONA AD Time Traveler\"",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1905,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "688282445",
+      "platform": "vimeo",
+      "title": "NIKE Artist Pack 22SP with Ryohei Kaneda",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1489,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "694749404",
+      "platform": "vimeo",
+      "title": "LIKI inc. REEL 2021~22",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1107,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "695549616",
+      "platform": "vimeo",
+      "title": "NANAME REEL 2021",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1005,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "695626316",
+      "platform": "vimeo",
+      "title": "Milling Stop-Motion",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1112,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "699321535",
+      "platform": "vimeo",
+      "title": "sony japan cup 2021 featuring fortnite『yama live show』nosound",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1121,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "699367426",
+      "platform": "vimeo",
+      "title": "MARVEL GO COLLECTION wave.1",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1492,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "6FdqnZ8brOA",
+      "platform": "youtube",
+      "title": "Brand Storytelling Case Study | Professional Video for Businesses",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1137,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "6S4IXJ5QTpY",
+      "platform": "youtube",
+      "title": "「高額下取りがおトク」篇～ジャパネット「夏のエアコン祭り」～ 相葉雅紀さん＆川島明さん出演！",
+      "category": "unwatched_B3_triage_boilerplate_no_visual_evidence",
+      "ai_len": 436,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "700220685",
+      "platform": "vimeo",
+      "title": "mixi Office Entrance LED Signage - future",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1055,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "700652038",
+      "platform": "vimeo",
+      "title": "ASO CALDERA HIKE",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1670,
+      "legacy_rating": "A",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "701287573",
+      "platform": "vimeo",
+      "title": "animworks_2020_2021",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1041,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "702004093",
+      "platform": "vimeo",
+      "title": "Genesi",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1533,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "730754155",
+      "platform": "vimeo",
+      "title": "ZombieHunter EX",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 984,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "756276184",
+      "platform": "vimeo",
+      "title": "PLEATS PLEASE / ISSEY MIYAKE 2022",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1745,
+      "legacy_rating": "A+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "75629718",
+      "platform": "vimeo",
+      "title": "N-qia / tree MV from \"Fringe Popcical\"",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1616,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "760914688",
+      "platform": "vimeo",
+      "title": "fighting and peeling",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1115,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "769875945",
+      "platform": "vimeo",
+      "title": "Blue Marble - Brand concept movie",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1405,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "77119447",
+      "platform": "vimeo",
+      "title": "Ghost dancers (SPACE SHOWER TV STATION ID 2013)",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1355,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "773889903",
+      "platform": "vimeo",
+      "title": "au Monday cinema advertising",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1465,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "776884130",
+      "platform": "vimeo",
+      "title": "AUTUMN WINTER 2022/23 HOLIDAY MOVIE “STREAK”",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1704,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "782849884",
+      "platform": "vimeo",
+      "title": "Z&V",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 956,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "782854106",
+      "platform": "vimeo",
+      "title": "MEMPO",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 960,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "785646120",
+      "platform": "vimeo",
+      "title": "UNIQLO Masterpiece 22AW social asset",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1442,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "789215369",
+      "platform": "vimeo",
+      "title": "Sanctuary@AlternativeKyoto",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1707,
+      "legacy_rating": "A",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "789581840",
+      "platform": "vimeo",
+      "title": "REEL 2023",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1036,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "79082780",
+      "platform": "vimeo",
+      "title": "Mixcode logo  Animation",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1128,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "802977485",
+      "platform": "vimeo",
+      "title": "ShowReel 2023",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1148,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "802987670",
+      "platform": "vimeo",
+      "title": "ユクエオン",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 975,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "803337173",
+      "platform": "vimeo",
+      "title": "CHIHEI HATAKEYAMA & SEIICHI SEGA(jp) @ MUTEK.jp 2021",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1095,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "807950415",
+      "platform": "vimeo",
+      "title": "_30sec_fix",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 970,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "812203754",
+      "platform": "vimeo",
+      "title": "HATCHED",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1312,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "814331964",
+      "platform": "vimeo",
+      "title": "Senpookyaku Hoshiko (Merry Men) Reel 2023",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1141,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "815306117",
+      "platform": "vimeo",
+      "title": "3D OOH for NBA Japan Games 2022",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1808,
+      "legacy_rating": "A+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "826105887",
+      "platform": "vimeo",
+      "title": "2012 ROMEO 'Give Me Your Heart' MV  (Japan Album)",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1059,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "843864835",
+      "platform": "vimeo",
+      "title": "KPI Park Yokohama (Branded Documentary)",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1495,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "878152560",
+      "platform": "vimeo",
+      "title": "NTT Action Compass",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1098,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "893228487",
+      "platform": "vimeo",
+      "title": "some snow scenes",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1795,
+      "legacy_rating": "A",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "896393741",
+      "platform": "vimeo",
+      "title": "Urban Reflection",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1705,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "898021018",
+      "platform": "vimeo",
+      "title": "REEL 2024",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1036,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "8A6F10zDt2Y",
+      "platform": "youtube",
+      "title": "キリン 午後の紅茶　遠くの町の夏の午後篇　Behind The Scenes",
+      "category": "unwatched_B3_triage_boilerplate_no_visual_evidence",
+      "ai_len": 436,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "8l8RIntUIm8",
+      "platform": "youtube",
+      "title": "短編映画「運命代行屋」タイトルシーケンス",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1036,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "906242178",
+      "platform": "vimeo",
+      "title": "OBJECT INDEX",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1052,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "909586425",
+      "platform": "vimeo",
+      "title": "Cuzen Matcha Japan - CM",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1362,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "914679546",
+      "platform": "vimeo",
+      "title": "Rage run",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1040,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "925776599",
+      "platform": "vimeo",
+      "title": "SD_Trilogy",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 975,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "925778366",
+      "platform": "vimeo",
+      "title": "mtrmin",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 962,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "92984293",
+      "platform": "vimeo",
+      "title": "Ex-formation TOKYO_東京脈動",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1111,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "930191754",
+      "platform": "vimeo",
+      "title": "LIKI inc. REEL 2023~24",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1139,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "931257238",
+      "platform": "vimeo",
+      "title": "SUPER SLIT SCAN - AIR MAX DYNAMIC LAND ver",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1097,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "933948780",
+      "platform": "vimeo",
+      "title": "#JVMC2023_MARU AKARI",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1009,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "936067765",
+      "platform": "vimeo",
+      "title": "3D OOH for EUROJAPAN CUP",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1130,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "936903617",
+      "platform": "vimeo",
+      "title": "お笑い4コマパーティーロロロロ OP",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1063,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "95tF137_BKg",
+      "platform": "youtube",
+      "title": "Captain America: The Winter Soldier End Credit Theme",
+      "category": "unwatched_B3_triage_boilerplate_no_visual_evidence",
+      "ai_len": 436,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "98830957",
+      "platform": "vimeo",
+      "title": "「01 Mekaku City Actors」CM Eneプロモーション映像 第 (Spanish Fandub)",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1249,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "98831817",
+      "platform": "vimeo",
+      "title": "「02 Mekaku City Actors」CM Mary プロモーション映像 第 (Spanish Fandub)",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1256,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "98831975",
+      "platform": "vimeo",
+      "title": "「03 Mekaku City Actors」CM Kido プロモーション映像 第 (Spanish Fandub)",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1252,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "98832806",
+      "platform": "vimeo",
+      "title": "「04 Mekaku City Actors」CM Konoha プロモーション映像 第 (Spanish Fandub)",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1187,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "98833075",
+      "platform": "vimeo",
+      "title": "「05 Mekaku City Actors」CM Momo プロモーション映像 第 (Spanish Fandub)",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1250,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "98834462",
+      "platform": "vimeo",
+      "title": "「07 Mekaku City Actors」CM Hibiya プロモーション映像 第 (Spanish Fandub)",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1262,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "98834555",
+      "platform": "vimeo",
+      "title": "「08 Mekaku City Actors」CM Seto プロモーション映像 第 (Spanish Fandub)",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1251,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "98835535",
+      "platform": "vimeo",
+      "title": "「09 Mekaku City Actors」CM Shintaro プロモーション映像 第 (Spanish Fandub)",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1261,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "98835536",
+      "platform": "vimeo",
+      "title": "「10 Mekaku City Actors」CM Ayano プロモーション映像 第 (Spanish Fandub)",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1175,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "ADSho62yiDk",
+      "platform": "youtube",
+      "title": "トヨタ自動車株式会社「#ありがとう平成」",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1009,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "BmV1TPKs2Wg",
+      "platform": "youtube",
+      "title": "【公式】カーセンサー　「あの夏の思い出　～もしも平成にあのちゃんとドライブデートしたら～」篇（ロング）",
+      "category": "unwatched_B3_triage_boilerplate_no_visual_evidence",
+      "ai_len": 509,
+      "legacy_rating": "A+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "Co03Hc0CIXQ",
+      "platform": "youtube",
+      "title": "【LUMINE】GIFT OF VOICE LUMINE CHRISTMAS 2021",
+      "category": "unwatched_B3_triage_boilerplate_no_visual_evidence",
+      "ai_len": 436,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "G4FxpJVuIfc",
+      "platform": "youtube",
+      "title": "KARTE 10周年記念ムービー",
+      "category": "unwatched_B2_no_contact_sheet_missing_video",
+      "ai_len": 3409,
+      "legacy_rating": "D-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "JGAaNRSW_HU",
+      "platform": "youtube",
+      "title": "【バーサス｜13面ラスボス頂上決戦】渋谷13面ジャック特別PV / VERSUS Shibuya 13 screen hijack report movie",
+      "category": "unwatched_B3_triage_boilerplate_no_visual_evidence",
+      "ai_len": 436,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "JVlAJlvaT0Y",
+      "platform": "youtube",
+      "title": "【MV】 てんやわんや、夏。 【月ノ美兎 / 笹木咲 / 椎名唯華】",
+      "category": "unwatched_B2_no_contact_sheet_missing_video",
+      "ai_len": 3495,
+      "legacy_rating": "D-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "OQ1-0MmCFfc",
+      "platform": "youtube",
+      "title": "【期間限定公開】ONE PIECE × SAMURAI BLUE｜「おれたちの最高地点へ」",
+      "category": "unwatched_B3_triage_boilerplate_no_visual_evidence",
+      "ai_len": 435,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "W5AA6QZzfDk",
+      "platform": "youtube",
+      "title": "【MMGC2023 Day7】ブルージャイアント「海中の氷塊」",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1049,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "Wt5AhyH6BRE",
+      "platform": "youtube",
+      "title": "【ドラえもん】ノンクレジットオープニング映像／星野源『ドラえもん』",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1086,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "Xfotcux_lqU",
+      "platform": "youtube",
+      "title": "『 大王饶命』 シーズン2 OP/オープニングテーマ/【大王饶命第二季】动画OP/片头曲《对对对》",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1099,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "cMb_18qEgoo",
+      "platform": "youtube",
+      "title": "【自主制作アニメーション】スイーツ☆インベイド　season３【尚美アニメーション　オリジナル作品】",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1133,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "k5-bWHLnfYU",
+      "platform": "youtube",
+      "title": "【自主制作アニメ】心の王国　完全版",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1028,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "lJJ2MJlIazI",
+      "platform": "youtube",
+      "title": "キリン 午後の紅茶　「遠くの町の夏の午後」篇　60秒",
+      "category": "unwatched_B3_triage_boilerplate_no_visual_evidence",
+      "ai_len": 556,
+      "legacy_rating": "S",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "smx_qbPz_J4",
+      "platform": "youtube",
+      "title": "乃木坂46 『空扉』Short Ver.",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1083,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "v0et8aR3KF8",
+      "platform": "youtube",
+      "title": "『LAZARUS ラザロ』Opening Movie(Full)｜「Vortex」Kamasi Washington",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1153,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "yxfg1xxx-og",
+      "platform": "youtube",
+      "title": "サンボマスターとアイナ・ジ・エンド / 花束  MUSIC VIDEO",
+      "category": "unwatched_B1_metadata_only_primary_eval",
+      "ai_len": 1031,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    }
+  ],
+  "suspect_triage_entries_sqlite": [
+    {
+      "id": "DVTp2N1wuzw",
+      "platform": "youtube",
+      "title": "＜Campus＞モーションロゴ - YouTube",
+      "category": "suspect_C_short_triage_no_probe_metrics",
+      "ai_len": 254,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "FlqDBh8QjZk",
+      "platform": "youtube",
+      "title": "TVアニメ「正反対な君と僕」第2期ノンクレジットエンディング映像",
+      "category": "suspect_C_short_triage_no_probe_metrics",
+      "ai_len": 271,
+      "legacy_rating": "A",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "HCC-0sr_-lo",
+      "platform": "youtube",
+      "title": "sumika / 赤春花 (feat. 幾田りら)【Music Video】",
+      "category": "suspect_C_short_triage_no_probe_metrics",
+      "ai_len": 300,
+      "legacy_rating": "S",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "ISrRQs87DnI",
+      "platform": "youtube",
+      "title": "【スペシャル映像】漫画『君と宇宙を歩くために』×BUMP OF CHICKEN『セントエルモの火』",
+      "category": "suspect_C_short_triage_no_probe_metrics",
+      "ai_len": 303,
+      "legacy_rating": "A+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "JcDm0pNQrI8",
+      "platform": "youtube",
+      "title": "circus / 鏑木ろこ cover",
+      "category": "suspect_C_short_triage_no_probe_metrics",
+      "ai_len": 284,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "QcDn6TATqOw",
+      "platform": "youtube",
+      "title": "サントリー緑茶 伊右衛門 特茶『特茶研究所　テクテク歩く』篇 15秒 ​本木雅弘 上白石萌音 サントリーCM",
+      "category": "suspect_C_short_triage_no_probe_metrics",
+      "ai_len": 420,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "Rz8_lGd2JzQ",
+      "platform": "youtube",
+      "title": "【MV】Genesis - 3SKM",
+      "category": "suspect_C_short_triage_no_probe_metrics",
+      "ai_len": 283,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "TwumA6YhQp4",
+      "platform": "youtube",
+      "title": "TVアニメ『ヤニねこ』ノンクレジットエンディング映像｜ネクライトーキー「煙とブルー」",
+      "category": "suspect_C_short_triage_no_probe_metrics",
+      "ai_len": 274,
+      "legacy_rating": "A",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "UOnnmfdvRmk",
+      "platform": "youtube",
+      "title": "「なるほど使える、経営にビジネス・カード」（資金繰り篇）",
+      "category": "suspect_C_short_triage_no_probe_metrics",
+      "ai_len": 308,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "W73yqEnXBmA",
+      "platform": "youtube",
+      "title": "保育・お子様向け食育ムービーのご紹介　フル",
+      "category": "suspect_C_short_triage_no_probe_metrics",
+      "ai_len": 265,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "XPm7zy-X_fI",
+      "platform": "youtube",
+      "title": "VOLTA - Blender Short",
+      "category": "suspect_C_short_triage_no_probe_metrics",
+      "ai_len": 297,
+      "legacy_rating": "A+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "bKA-ePajnTY",
+      "platform": "youtube",
+      "title": "こんにちは。Campusです。 - YouTube",
+      "category": "suspect_C_short_triage_no_probe_metrics",
+      "ai_len": 254,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "cUvp3ERw-Kg",
+      "platform": "youtube",
+      "title": "【陰キャギャルでもイキがりたい！】第4巻発売記念PV໒꒱‧₊˚ 7月28日(火)発売！",
+      "category": "suspect_C_short_triage_no_probe_metrics",
+      "ai_len": 308,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "cybOVzgtL2Q",
+      "platform": "youtube",
+      "title": "簒奪 / 重音テトSV",
+      "category": "suspect_C_short_triage_no_probe_metrics",
+      "ai_len": 276,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "dUN8bvnygMQ",
+      "platform": "youtube",
+      "title": "PORSCHE 9HATE9 - BLENDER ANIMATION",
+      "category": "suspect_C_short_triage_no_probe_metrics",
+      "ai_len": 283,
+      "legacy_rating": "A",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "i47RggTEuPQ",
+      "platform": "youtube",
+      "title": "キャンパスノート（青色ドットボーダー）商品紹介（横） - YouTube",
+      "category": "suspect_C_short_triage_no_probe_metrics",
+      "ai_len": 261,
+      "legacy_rating": "B",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "lR2gNpgl-G8",
+      "platform": "youtube",
+      "title": "CUBERU",
+      "category": "suspect_C_short_triage_no_probe_metrics",
+      "ai_len": 278,
+      "legacy_rating": "B+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "noFwvq8FHoI",
+      "platform": "youtube",
+      "title": "彌生「お似合いだったのに石野陽子…かわいい妻🩷」# #志村けん #石野陽子#やきもち#かわいい🩷#志村けんの表情が違う",
+      "category": "suspect_C_short_triage_no_probe_metrics",
+      "ai_len": 430,
+      "legacy_rating": "D",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "qeddzEzDnic",
+      "platform": "youtube",
+      "title": "XR BALL＠TOKYO NODE “XR PARADE” created with TNXR",
+      "category": "suspect_C_short_triage_no_probe_metrics",
+      "ai_len": 724,
+      "legacy_rating": "D+",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "sG_ifd5hnHI",
+      "platform": "youtube",
+      "title": "MAKE HASTE CORP",
+      "category": "suspect_C_short_triage_no_probe_metrics",
+      "ai_len": 280,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    },
+    {
+      "id": "xz7dvSS2lI8",
+      "platform": "youtube",
+      "title": "死神 / ゆう。- cover【オリジナルMV】",
+      "category": "suspect_C_short_triage_no_probe_metrics",
+      "ai_len": 289,
+      "legacy_rating": "A-",
+      "calibrated_score": null,
+      "in_craft_recipes_439": false
+    }
+  ]
+}
