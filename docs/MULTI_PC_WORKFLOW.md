@@ -19,12 +19,16 @@
 
 動画IDの二重採点を防ぐため、`analysis/claims/<run_id>.json` に**Git管理の予約ファイル（claim）**を置いてから作業します。
 
-### ステップ1: 最新状態を取得し、空きプールを確認
+### ステップ1: 最新状態を取得し、空きプールを確認（必須ルール）
+**作業開始前・予約（`--claim`）前・`git push` 前に、必ず `git pull` してから `--verify` と `--status` を確認します。**（`pull` 前の古い状態から予約すると二重予約や不整合の原因になります。）
 ```powershell
-cd E:\iketeru-eizou
-git pull
+cd C:\iketeru\iketeru-eizou   # 元PC・3台目PCは E:\iketeru-eizou
+git pull --ff-only
+node scripts/claim-phase3-batch.mjs --verify
 node scripts/claim-phase3-batch.mjs --status
 ```
+
+> **同一ホスト名PCの区別ルール（重要）**: 現在、OS ホスト名が同じ `CHIBA-PC` のマシンが2台存在します（3台目: ユーザー `n _chiba` / `E:\iketeru-eizou` → ワーカー名 **`CHIBA-PC`**、2台目: ユーザー `n_chiba` / `C:\iketeru\iketeru-eizou` → ワーカー名 **`CHIBA-PC2`**）。衝突を防ぐため、ワーカー名を使う操作では必ず **`--worker <ワーカー名>` を明示**し、各PCの `.env`（Git管理外）にも `IKETERU_WORKER_NAME=<ワーカー名>` を設定してください。
 
 ### ステップ2: このPC専用の動画ID枠を予約（claim）して即 push
 ```powershell
@@ -43,16 +47,27 @@ node scripts/claim-phase3-batch.mjs --claim --worker <このPC名> --priority AL
 ```
 
 #### 追加オプション一覧（すべて任意・未指定時は従来動作のまま）
+- `IKETERU_WORKER_NAME`（環境変数または `.env`）: `--worker` 省略時の既定ワーカー名（未設定時は `os.hostname()`）。同一ホスト名PCの混同防止のため、`.env` に設定しつつ CLI でも `--worker` を明示する。
 - `IKETERU_VIDEO_CACHE_DIR`（環境変数または `.env`）: 動画キャッシュディレクトリの上書き（未設定時は `D:\マイドライブ\iketeru_videos`）。`claim-phase3-batch.mjs` と `prepare-phase3-batch.mjs` の両方で参照。
+- `IKETERU_BLIND_ROOT`（環境変数または `.env`、または `--blind-root` 引数）: ブラインド作業ディレクトリの上書き（未設定時は `E:\iketeru_blind_eval`）。`REPO_ROOT` はスクリプト位置から自動解決される。
+  - **2台目PC（`CHIBA-PC2` / `C:\iketeru\`）の `.env` 設定例**:
+    ```env
+    IKETERU_WORKER_NAME=CHIBA-PC2
+    IKETERU_VIDEO_CACHE_DIR=G:\マイドライブ\iketeru_videos
+    IKETERU_BLIND_ROOT=C:\iketeru\iketeru_blind_eval
+    ```
 - `claim-phase3-batch.mjs`:
   - `--cached-only`: キャッシュに存在する動画のみ候補にする。
   - `--non-youtube`: YouTube 以外（Vimeo 等）のみ候補にする。
   - `--verify-media`: `--cached-only` 時に `ffprobe` で実際に読めるファイルか検証する（未指定時はサイズ > 0 判定のみ）。
   - `--batch-index <N>`: claim JSON の `batch_index` と推奨コマンドの `--batch <N>` を明示一致させる。
   - `--release --run-id <id> [--reason <text>]`: 未完了の予約を正規解除（`status: "released"` に変更しロック対象外へ戻す）。
+  - `--add-skip-from-run <run_id> [--worker <name>] [--include-format-failures] [--cooldown-days 7]`: 失敗動画を `analysis/claims/_skip_list.json` へ登録（詳細はステップ3.5）。
 - `prepare-phase3-batch.mjs`:
   - `--no-download`: 未キャッシュ動画が 1 本でもあれば `yt-dlp` を一切呼ばず即停止する。
   - `--limit-stage <N>`: 先頭 `N` 本だけ試験ステージングし、問題なければ `--resume` で残りを続行する。
+  - `--blind-root <path>`: `IKETERU_BLIND_ROOT` の CLI 上書き。
+  - **`yt-dlp` 形式フォールバック**: 第1候補は従来どおり progressive `18`（高さ上限 `<=480` 厳守・無制限 `/best` なし）。`18` が取れないときのみ `--js-runtimes node`＋`<=480p` DASH 結合（`mp4`）へフォールバックし、各動画の `run_manifest.json` に `download_format_id` と `download_is_dash` を記録する（※ `--js-runtimes node` はボット確認の回避策ではなく、ボット確認・429 検知時は従来どおり即停止する）。
 生成された予約ファイルを **採点開始前に必ず commit & push** します：
 ```powershell
 node scripts/claim-phase3-batch.mjs --verify
@@ -72,6 +87,27 @@ node scripts/claim-phase3-batch.mjs --complete <run_id>
 ```
 その後、`analysis/runs/<run_id>/` と更新された `analysis/claims/<run_id>.json` を `git commit && git push` します。
 
+### ステップ3.5: 取得不可動画の除外リスト（`analysis/claims/_skip_list.json`）運用
+バッチ完了後に未校正のまま残る取得失敗動画が別PCで繰り返し再予約されるのを防ぐため、`analysis/claims/_skip_list.json` で除外管理します（`--status`・`--claim` の空きプール計算から自動除外）。
+
+- **分類と再試行ポリシー**:
+  - **ボット確認・回数制限（`isBotCheckError` 該当）**: **除外リストには一切登録しない**（`aborted_by_bot_check: true` の run では警告を表示）。
+  - `likely_blocked`（`skipped_likely_blocked:*`）: `retry_policy: "needs_review"` として記録する（**自動では空きプールから除外せず**、`--status` の `skip_list.needs_review` に件数を集計する。運用者が内容を確認し、恒久除外と判断したものだけ `analysis/claims/_skip_list.json` 上で手動で `"retry_policy": "permanent"` に変更してコミット・push する）。
+  - `unavailable`（非公開・削除等）/ `decode_corrupted`（デコード破損）: `retry_policy: "permanent"`（恒久除外）。
+  - `format_unavailable`（形式取得不可）: まず DASH フォールバック対応後の `prepare` で元PCにて再試行し、それでも失敗したものだけを `--include-format-failures` 付きで `retry_policy: "retry_once"`（7日間クールダウン後 1 回のみ再試行可、2回目失敗で `permanent` へ昇格）として登録する。
+- **登録手順（原則、主担当ワーカー `chibatmute` で実施。他ワーカー名で実行時は警告表示）**:
+```powershell
+# 恒久除外（unavailable / decode_corrupted / likely_blocked）のみ登録（format_unavailable は再試行待ちとして保留）
+node scripts/claim-phase3-batch.mjs --add-skip-from-run <run_id> --worker chibatmute
+
+# DASH 修正後の再試行でも失敗した format_unavailable も含めて登録する場合
+node scripts/claim-phase3-batch.mjs --add-skip-from-run <run_id> --worker chibatmute --include-format-failures
+
+git add analysis/claims/_skip_list.json
+git commit -m "Update _skip_list.json from <run_id>"
+git push
+```
+
 ### ステップ4: 各PCのローカル SQLite を最新化（任意タイミング）
 他のPCが TiDB に新しいバッチを反映したら、自分のPCでも以下を実行するだけで MCP（`search_references` / `plan_craft_sequence` 等）に最新点数が反映されます：
 ```powershell
@@ -90,6 +126,17 @@ node scripts/sync-tidb-to-sqlite-mirror.mjs --sqlite E:\iketeru-creative-studio\
   gh repo create aseaseproduction-a11y/iketeru-creative-studio --private --source=. --remote=origin --push
   ```
 - 各PCの `C:\Users\<ユーザー名>\.gemini\config\mcp_config.json` はドライブ文字・ユーザー名がPC依存のため、**Git共有せず各PCローカルで管理**してください（`PYTHONUTF8=1` / `PYTHONIOENCODING=utf-8` の2行は全PC共通で設定）。
+
+### 2台目以降（ZIP展開済みPC）を Git 管理へ切り替える手順
+元PCで `iketeru-creative-studio` の非公開リポジトリ作成・push が完了するまで、2台目以降ではコードを編集しません。push 完了後、2台目PCでは以下を実行して Git 管理へ切り替えます：
+
+1. 既存フォルダを一時退避（例: `C:\iketeru\iketeru-creative-studio` → `C:\iketeru\iketeru-creative-studio.bak`）
+2. GitHub から新規 clone：`git clone https://github.com/aseaseproduction-a11y/iketeru-creative-studio.git C:\iketeru\iketeru-creative-studio`
+3. 退避先から Git 除外対象のみコピー戻し：
+   - `data\iketeru_knowledge.db`（および必要に応じて `data\craft_recipes\`）
+   - `data\stock_sites.local.json`
+   - `.env`（存在する場合）
+4. `pip install -e .` と `python -m unittest discover -s tests -v`（14/14 合格）を確認後、`.bak` を削除
 
 ---
 

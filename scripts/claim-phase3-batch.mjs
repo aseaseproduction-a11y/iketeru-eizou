@@ -22,10 +22,14 @@ import os from "node:os";
 import path from "node:path";
 import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
+import { isBotCheckError } from "./prepare-phase2-run.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, "..");
 const CLAIMS_DIR = path.join(REPO_ROOT, "analysis", "claims");
+const SKIP_LIST_PATH = path.join(CLAIMS_DIR, "_skip_list.json");
+const PRIMARY_WORKER = "chibatmute";
+const DEFAULT_RETRY_COOLDOWN_DAYS = 7;
 const DEFAULT_CACHE_DIR = "D:\\マイドライブ\\iketeru_videos";
 const MAX_BATCH_SIZE = 200;
 
@@ -35,6 +39,11 @@ function loadEnvOnce() {
   _dotenvLoaded = true;
   const require = createRequire(path.join(REPO_ROOT, "package.json"));
   require("dotenv").config({ path: path.join(REPO_ROOT, ".env"), quiet: true });
+}
+
+function resolveWorkerName(argWorker) {
+  loadEnvOnce();
+  return String(argWorker || process.env.IKETERU_WORKER_NAME || os.hostname());
 }
 
 function getCacheDir() {
@@ -93,12 +102,72 @@ function generateRunId() {
 
 function loadAllClaims() {
   if (!fs.existsSync(CLAIMS_DIR)) return [];
-  const files = fs.readdirSync(CLAIMS_DIR).filter((f) => f.endsWith(".json") && !f.endsWith("_ids.json")).sort();
+  const files = fs
+    .readdirSync(CLAIMS_DIR)
+    .filter((f) => f.endsWith(".json") && !f.endsWith("_ids.json") && !f.startsWith("_"))
+    .sort();
   return files.map((f) => {
     const full = path.join(CLAIMS_DIR, f);
     const data = JSON.parse(fs.readFileSync(full, "utf8"));
     return { file: f, path: full, data };
   });
+}
+
+function loadSkipList(nowMs = Date.now()) {
+  const empty = { schema_version: 1, updated_at: null, entries: [] };
+  const doc = fs.existsSync(SKIP_LIST_PATH)
+    ? JSON.parse(fs.readFileSync(SKIP_LIST_PATH, "utf8"))
+    : empty;
+  const entries = Array.isArray(doc.entries) ? doc.entries : [];
+  const permanentIds = new Set();
+  const waitingRetryIds = new Set();
+  const retryableNowIds = new Set();
+  const needsReviewIds = new Set();
+
+  for (const e of entries) {
+    const vid = String(e.video_id || "");
+    if (!vid) continue;
+    const retryPolicy = e.retry_policy || "permanent";
+    const retryCount = Number(e.retry_count || 0);
+    if (retryPolicy === "needs_review") {
+      // Do NOT exclude from available pools until manually approved as "permanent"
+      needsReviewIds.add(vid);
+    } else if (retryPolicy === "permanent" || retryCount >= 1) {
+      permanentIds.add(vid);
+    } else if (retryPolicy === "retry_once") {
+      const retryAfterMs = e.retry_after ? Date.parse(e.retry_after) : NaN;
+      if (Number.isFinite(retryAfterMs) && nowMs < retryAfterMs) {
+        waitingRetryIds.add(vid);
+      } else {
+        retryableNowIds.add(vid);
+      }
+    } else {
+      permanentIds.add(vid);
+    }
+  }
+
+  const activeSkippedIds = new Set([...permanentIds, ...waitingRetryIds]);
+  return { doc, entries, permanentIds, waitingRetryIds, retryableNowIds, needsReviewIds, activeSkippedIds };
+}
+
+function classifyFailureReason(errorMsg) {
+  const s = String(errorMsg || "");
+  if (isBotCheckError(s) || /BOT_CHECK_ABORT/i.test(s)) {
+    return { category: "bot_check", retry_policy: "do_not_skip" };
+  }
+  if (/^skipped_likely_blocked/i.test(s)) {
+    return { category: "likely_blocked", retry_policy: "needs_review" };
+  }
+  if (/requested format is not available/i.test(s)) {
+    return { category: "format_unavailable", retry_policy: "retry_once" };
+  }
+  if (/this video is not available|video unavailable|private video|removed/i.test(s)) {
+    return { category: "unavailable", retry_policy: "permanent" };
+  }
+  if (/invalid nal unit|missing picture|metadata strip|ffmpeg|h264|decode/i.test(s)) {
+    return { category: "decode_corrupted", retry_policy: "permanent" };
+  }
+  return { category: "other_error", retry_policy: "retry_once" };
 }
 
 function verifyActiveClaims(claims) {
@@ -151,7 +220,7 @@ async function main() {
   // 1. Register an existing active run directory as a claim
   if (args["register-run"]) {
     const runId = String(args["register-run"]);
-    const worker = String(args["worker"] || os.hostname());
+    const worker = resolveWorkerName(args["worker"]);
     const manifestPath = path.join(REPO_ROOT, "analysis", "runs", runId, "run_manifest.json");
     if (!fs.existsSync(manifestPath)) {
       throw new Error(`run_manifest.json not found: ${manifestPath}`);
@@ -226,6 +295,120 @@ async function main() {
     return;
   }
 
+  // 2c. Register failed videos from a run_manifest.json into _skip_list.json (primary worker recommended)
+  if (args["add-skip-from-run"]) {
+    const runId = String(args["add-skip-from-run"]);
+    const worker = resolveWorkerName(args["worker"]);
+    const includeFormatFailures = Boolean(args["include-format-failures"]);
+    const cooldownDays = Math.max(1, parseInt(args["cooldown-days"] || String(DEFAULT_RETRY_COOLDOWN_DAYS), 10));
+
+    if (worker.toLowerCase() !== PRIMARY_WORKER) {
+      console.warn(
+        `[WARNING] --add-skip-from-run is being run with worker '${worker}' instead of primary worker '${PRIMARY_WORKER}'. ` +
+          `Confirm ownership before committing analysis/claims/_skip_list.json.`
+      );
+    }
+
+    const manifestPath = path.join(REPO_ROOT, "analysis", "runs", runId, "run_manifest.json");
+    if (!fs.existsSync(manifestPath)) {
+      throw new Error(`run_manifest.json not found: ${manifestPath}`);
+    }
+    const rm = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
+    const abortedByBotCheck = Boolean(rm.aborted_by_bot_check);
+    if (abortedByBotCheck) {
+      console.warn(
+        `[WARNING] Run '${runId}' has aborted_by_bot_check=true. Bot-check / rate-limit errors will NOT be added to _skip_list.json; review remaining failures carefully.`
+      );
+    }
+
+    const failures = Array.isArray(rm.runtime_failures) ? rm.runtime_failures : [];
+    const nowIso = new Date().toISOString();
+    const retryAfterIso = new Date(Date.now() + cooldownDays * 24 * 60 * 60 * 1000).toISOString();
+
+    const skipInfo = loadSkipList();
+    const byId = new Map(skipInfo.entries.map((e) => [String(e.video_id), { ...e }]));
+    let added = 0;
+    let upgradedToPermanent = 0;
+    let deferredFormatCount = 0;
+    let skippedBotCheckCount = 0;
+
+    for (const f of failures) {
+      const vid = String(f.video_id || f.id || "");
+      if (!vid) continue;
+      const reason = String(f.error || f.reason || "unknown_error");
+      const { category, retry_policy } = classifyFailureReason(reason);
+
+      if (retry_policy === "do_not_skip") {
+        skippedBotCheckCount++;
+        continue;
+      }
+      if (category === "format_unavailable" && !includeFormatFailures) {
+        deferredFormatCount++;
+        continue;
+      }
+
+      const existing = byId.get(vid);
+      if (existing) {
+        const nextRetryCount = Number(existing.retry_count || 0) + 1;
+        existing.category = category;
+        existing.reason = reason;
+        existing.checked_at = nowIso;
+        existing.checked_by = worker;
+        existing.source_run_id = runId;
+        existing.retry_count = nextRetryCount;
+        if (existing.retry_policy === "retry_once" && nextRetryCount >= 1) {
+          existing.retry_policy = "permanent";
+          existing.retry_after = null;
+          upgradedToPermanent++;
+        }
+        byId.set(vid, existing);
+      } else {
+        byId.set(vid, {
+          video_id: vid,
+          category,
+          reason,
+          checked_at: nowIso,
+          checked_by: worker,
+          source_run_id: runId,
+          retry_policy,
+          retry_count: 0,
+          retry_after: retry_policy === "retry_once" ? retryAfterIso : null,
+        });
+        added++;
+      }
+    }
+
+    const sortedEntries = [...byId.values()].sort((a, b) => String(a.video_id).localeCompare(String(b.video_id)));
+    const nextDoc = {
+      schema_version: 1,
+      updated_at: nowIso,
+      entries: sortedEntries,
+    };
+    fs.writeFileSync(SKIP_LIST_PATH, JSON.stringify(nextDoc, null, 2) + "\n", "utf8");
+    console.log(
+      JSON.stringify(
+        {
+          skip_list_path: path.relative(REPO_ROOT, SKIP_LIST_PATH).replace(/\\/g, "/"),
+          source_run_id: runId,
+          worker,
+          aborted_by_bot_check: abortedByBotCheck,
+          added,
+          upgraded_to_permanent: upgradedToPermanent,
+          skipped_bot_check: skippedBotCheckCount,
+          deferred_format_unavailable: deferredFormatCount,
+          note:
+            deferredFormatCount > 0
+              ? "format_unavailable failures were deferred so they can be retried after the prepare DASH fix; pass --include-format-failures to register remaining failures as retry_once."
+              : null,
+          total_skip_entries: sortedEntries.length,
+        },
+        null,
+        2
+      )
+    );
+    return;
+  }
+
   // 3. Verify all active claims have zero pairwise overlap
   if (args["verify"]) {
     const claims = loadAllClaims();
@@ -241,10 +424,11 @@ async function main() {
     return;
   }
 
-  // 4. Status across TiDB + active claims
+  // 4. Status across TiDB + active claims + skip list
   if (args["status"]) {
     const claims = loadAllClaims();
     const check = verifyActiveClaims(claims);
+    const skip = loadSkipList();
     const rows = await fetchTidbVideos();
     const byId = new Map(rows.map((r) => [String(r.id), r]));
 
@@ -256,7 +440,7 @@ async function main() {
       const ids = (Array.isArray(doc) ? doc : doc.video_ids || []).map(String);
       for (const vid of ids) {
         const r = byId.get(vid);
-        if (!r || r.calibratedScore != null || check.ownerById.has(vid)) continue;
+        if (!r || r.calibratedScore != null || check.ownerById.has(vid) || skip.activeSkippedIds.has(vid)) continue;
         if (isYoutubeRow(r)) craftUnclaimedYt++;
         else craftUnclaimedOther++;
       }
@@ -268,7 +452,7 @@ async function main() {
     for (const r of rows) {
       if (r.calibratedScore != null) continue;
       const vid = String(r.id);
-      if (check.ownerById.has(vid)) continue;
+      if (check.ownerById.has(vid) || skip.activeSkippedIds.has(vid)) continue;
       const yt = isYoutubeRow(r);
       if (yt) totalUncalYt++;
       if (r.privateRating != null) {
@@ -285,6 +469,13 @@ async function main() {
         locked_ids: (c.data.video_ids || []).length,
       })),
       overlaps_count: check.overlaps.length,
+      skip_list: {
+        total_entries: skip.entries.length,
+        permanent: skip.permanentIds.size,
+        waiting_retry: skip.waitingRetryIds.size,
+        retryable_now: skip.retryableNowIds.size,
+        needs_review: skip.needsReviewIds.size,
+      },
       available_unclaimed_pools: {
         P0_craft_recipes_youtube: craftUnclaimedYt,
         P0_craft_recipes_non_youtube: craftUnclaimedOther,
@@ -298,7 +489,7 @@ async function main() {
 
   // 5. Create a new disjoint claim for a machine
   if (args["claim"]) {
-    const worker = String(args["worker"] || os.hostname());
+    const worker = resolveWorkerName(args["worker"]);
     const priority = String(args["priority"] || "P1_private_rating");
     const batchSize = Math.max(1, Math.min(MAX_BATCH_SIZE, parseInt(args["batch-size"] || "200", 10)));
     const batchIndex = args["batch-index"] ? parseInt(args["batch-index"], 10) : null;
@@ -307,6 +498,7 @@ async function main() {
     const nonYoutube = Boolean(args["non-youtube"]);
     const cachedOnly = Boolean(args["cached-only"]);
     const verifyMedia = Boolean(args["verify-media"]);
+    const includeRetryable = Boolean(args["include-retryable"]);
     const dryRun = Boolean(args["dry-run"]);
     const cacheDir = getCacheDir();
 
@@ -315,6 +507,8 @@ async function main() {
     if (check.overlaps.length > 0) {
       throw new Error(`Existing active claims have overlaps! Fix first: ${JSON.stringify(check.overlaps.slice(0, 5))}`);
     }
+    const skip = loadSkipList();
+    const excludedSkipIds = includeRetryable ? skip.permanentIds : skip.activeSkippedIds;
 
     const rows = await fetchTidbVideos();
     const byId = new Map(rows.map((r) => [String(r.id), r]));
@@ -338,7 +532,7 @@ async function main() {
       const ids = (Array.isArray(doc) ? doc : doc.video_ids || []).map(String);
       for (const vid of ids) {
         const r = byId.get(vid);
-        if (!r || r.calibratedScore != null || check.ownerById.has(vid)) continue;
+        if (!r || r.calibratedScore != null || check.ownerById.has(vid) || excludedSkipIds.has(vid)) continue;
         if (!matchesPlatform(r)) continue;
         if (!passesCacheFilter(vid)) continue;
         candidates.push(vid);
@@ -346,7 +540,7 @@ async function main() {
     } else if (priority === "P1_private_rating") {
       for (const r of rows) {
         const vid = String(r.id);
-        if (r.privateRating == null || r.calibratedScore != null || check.ownerById.has(vid)) continue;
+        if (r.privateRating == null || r.calibratedScore != null || check.ownerById.has(vid) || excludedSkipIds.has(vid)) continue;
         if (!matchesPlatform(r)) continue;
         if (!passesCacheFilter(vid)) continue;
         candidates.push(vid);
@@ -354,7 +548,7 @@ async function main() {
     } else {
       for (const r of rows) {
         const vid = String(r.id);
-        if (r.calibratedScore != null || check.ownerById.has(vid)) continue;
+        if (r.calibratedScore != null || check.ownerById.has(vid) || excludedSkipIds.has(vid)) continue;
         if (!matchesPlatform(r)) continue;
         if (!passesCacheFilter(vid)) continue;
         candidates.push(vid);
@@ -429,9 +623,10 @@ async function main() {
   node scripts/claim-phase3-batch.mjs --status
   node scripts/claim-phase3-batch.mjs --verify
   node scripts/claim-phase3-batch.mjs --register-run <run_id> [--worker <name>]
-  node scripts/claim-phase3-batch.mjs --claim --worker <name> --priority <P0_craft_recipes|P1_private_rating|ALL> [--batch-size 200] [--batch-index <N>] [--non-youtube] [--cached-only] [--verify-media] [--dry-run]
+  node scripts/claim-phase3-batch.mjs --claim --worker <name> --priority <P0_craft_recipes|P1_private_rating|ALL> [--batch-size 200] [--batch-index <N>] [--non-youtube] [--cached-only] [--verify-media] [--include-retryable] [--dry-run]
   node scripts/claim-phase3-batch.mjs --complete <run_id>
-  node scripts/claim-phase3-batch.mjs --release --run-id <run_id> [--reason <text>]`);
+  node scripts/claim-phase3-batch.mjs --release --run-id <run_id> [--reason <text>]
+  node scripts/claim-phase3-batch.mjs --add-skip-from-run <run_id> [--worker <name>] [--include-format-failures] [--cooldown-days 7]`);
 }
 
 main().catch((err) => {

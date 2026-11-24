@@ -38,9 +38,12 @@ import { decidePhase1Route } from "./phase2-hybrid-router.mjs";
 import { isBotCheckError, validateSplitGuard } from "./prepare-phase2-run.mjs";
 
 const execFileAsync = promisify(execFile);
-const REPO_ROOT = "E:\\iketeru-eizou";
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const REPO_ROOT = path.resolve(__dirname, "..");
 const DEFAULT_CACHE_DIR = "D:\\マイドライブ\\iketeru_videos";
-const BLIND_ROOT = "E:\\iketeru_blind_eval";
+const DEFAULT_BLIND_ROOT = "E:\\iketeru_blind_eval";
+const YTDLP_FORMAT_SELECTOR =
+  "18/best[height<=480][ext=mp4]/bestvideo[height<=480][vcodec^=avc1][ext=mp4]+bestaudio[ext=m4a]/bestvideo[height<=480][ext=mp4]+bestaudio[ext=m4a]/worst[ext=mp4]/best[height<=480]";
 
 let _dotenvLoaded = false;
 function loadEnvOnce() {
@@ -53,6 +56,11 @@ function loadEnvOnce() {
 function getCacheDir() {
   loadEnvOnce();
   return process.env.IKETERU_VIDEO_CACHE_DIR || DEFAULT_CACHE_DIR;
+}
+
+function getBlindRoot(argVal = null) {
+  loadEnvOnce();
+  return path.resolve(String(argVal || process.env.IKETERU_BLIND_ROOT || DEFAULT_BLIND_ROOT));
 }
 
 function parseArgs(argv) {
@@ -281,24 +289,41 @@ async function verifyMetadataStripped(mp4Path) {
 }
 
 async function downloadToCacheGently(item) {
-  fs.mkdirSync(CACHE_DIR, { recursive: true });
-  const outFile = path.join(CACHE_DIR, `${item.video_id}.mp4`);
+  const cacheDir = getCacheDir();
+  fs.mkdirSync(cacheDir, { recursive: true });
+  const outFile = path.join(cacheDir, `${item.video_id}.mp4`);
   const url = item.video_url;
   if (!url) throw new Error(`Missing video_url for ${item.video_id}`);
   try {
-    // Strictly unauthenticated, NO cookies, NO login, NO bot-check bypass
-    await execFileAsync(
+    // Strictly unauthenticated, NO cookies, NO login, NO bot-check bypass.
+    // --js-runtimes node is only for standard format extraction; bot-check/429 still aborts immediately.
+    // Prefer progressive format 18; fall back to <=480p DASH merge only when 18 is unavailable.
+    const { stdout, stderr } = await execFileAsync(
       "yt-dlp",
       [
-        "-f", "18/best[height<=480][ext=mp4]/worst[ext=mp4]/best",
+        "--js-runtimes", "node",
+        "-f", YTDLP_FORMAT_SELECTOR,
+        "--merge-output-format", "mp4",
         "--no-warnings",
         "--no-playlist",
+        "--no-simulate",
+        "--print", "after_move:IKETERU_FORMAT_ID=%(format_id)s",
         "-o", outFile,
         url,
       ],
       { timeout: 180000 }
     );
-    if (fs.existsSync(outFile) && fs.statSync(outFile).size > 0) return outFile;
+    const combinedOut = `${stdout || ""}\n${stderr || ""}`;
+    const printMatch = combinedOut.match(/IKETERU_FORMAT_ID=([^\r\n]+)/);
+    const infoMatch = combinedOut.match(/Downloading \d+ format\(s\):\s*([^\r\n]+)/);
+    const formatId = (printMatch ? printMatch[1] : infoMatch ? infoMatch[1] : "").trim() || null;
+    if (fs.existsSync(outFile) && fs.statSync(outFile).size > 0) {
+      return {
+        path: outFile,
+        format_id: formatId,
+        is_dash: Boolean(formatId && formatId.includes("+")),
+      };
+    }
     throw new Error(`yt-dlp produced empty file for ${item.video_id}`);
   } catch (e) {
     const combined = `${e.stderr || ""}\n${e.stdout || ""}\n${e.message || ""}`;
@@ -392,6 +417,7 @@ async function main() {
   const minWaitSec = Number(args["min-wait-sec"] || 15);
   const maxWaitSec = Number(args["max-wait-sec"] || 30);
   const concurrency = Math.max(1, Math.min(8, parseInt(args["concurrency"] || "4", 10)));
+  const blindRoot = getBlindRoot(args["blind-root"] || null);
 
   if (!RUN_ID_REGEX.test(runId)) {
     throw new Error(`Invalid --run-id (expected ^run_\\d{8}_\\d{6}$): ${runId}`);
@@ -446,7 +472,7 @@ async function main() {
   const cachedCount = targetIds.filter((id) => Boolean(findCachedFile(id))).length;
 
   console.log(
-    `[Phase 3 C Prepare] priority=${priority} batch=${batchIndex} total=${targetIds.length} cached=${cachedCount} missing=${targetIds.length - cachedCount} run_id=${runId} concurrency=${concurrency} cache_dir=${getCacheDir()} no_download=${noDownload} limit_stage=${limitStage ?? "all"}`
+    `[Phase 3 C Prepare] priority=${priority} batch=${batchIndex} total=${targetIds.length} cached=${cachedCount} missing=${targetIds.length - cachedCount} run_id=${runId} concurrency=${concurrency} cache_dir=${getCacheDir()} blind_root=${blindRoot} no_download=${noDownload} limit_stage=${limitStage ?? "all"}`
   );
 
   if (dryRun) {
@@ -507,6 +533,7 @@ async function main() {
 
   // Step A: Download any uncached files strictly sequentially with 15-30s random wait
   const uncachedIds = pendingIds.filter((id) => !findCachedFile(id));
+  const downloadMetaById = new Map();
   if (noDownload && uncachedIds.length > 0) {
     throw new Error(`--no-download is set, refusing to invoke yt-dlp for ${uncachedIds.length} uncached video(s): ${uncachedIds.slice(0, 5).join(", ")}`);
   }
@@ -523,7 +550,8 @@ async function main() {
         console.log(`  [gentle-wait] waiting ${waitSec}s before next unauthenticated download...`);
         await new Promise((r) => setTimeout(r, waitSec * 1000));
       }
-      await downloadToCacheGently(meta);
+      const dlRes = await downloadToCacheGently(meta);
+      downloadMetaById.set(videoId, dlRes);
       downloadsDone++;
     } catch (e) {
       const msg = (e.stderr || e.message || String(e)).replace(/\s+/g, " ").trim().slice(0, 220);
@@ -548,6 +576,7 @@ async function main() {
     const meta = itemById.get(videoId);
     const blindId = blindMap.video_to_blind[videoId];
     const srcPath = findCachedFile(videoId);
+    const dlMeta = downloadMetaById.get(videoId) || null;
     const sourceMethod = uncachedIds.includes(videoId) ? "ytdlp_unauthenticated_gentle_cache" : "local_cache";
 
     try {
@@ -593,7 +622,7 @@ async function main() {
         }
       }
 
-      const videoBlindDir = path.join(BLIND_ROOT, runId, "video", blindId);
+      const videoBlindDir = path.join(blindRoot, runId, "video", blindId);
       fs.mkdirSync(videoBlindDir, { recursive: true });
       const stagedVideoMain = path.join(videoBlindDir, `${blindId}.mp4`);
       await stageCleanMp4(srcPath, stagedVideoMain, canStreamCopy, tmpDir);
@@ -625,7 +654,7 @@ async function main() {
         });
       }
 
-      const csBlindDir = path.join(BLIND_ROOT, runId, "contact_sheet", blindId);
+      const csBlindDir = path.join(blindRoot, runId, "contact_sheet", blindId);
       fs.mkdirSync(csBlindDir, { recursive: true });
       const numSheets = durationSec <= 120 ? 1 : durationSec <= 300 ? 2 : 3;
       const stagedCsFiles = [];
@@ -695,6 +724,8 @@ async function main() {
         genre_verified: meta.genre_verified,
         target_status_after_calibration: meta.target_status_after_calibration,
         source_method: sourceMethod,
+        download_format_id: dlMeta ? dlMeta.format_id : null,
+        download_is_dash: dlMeta ? dlMeta.is_dash : null,
         source_sha256: sourceSha256,
         metadata_stripped_verified: true,
         h1_pre_route: h1Decision,
@@ -734,9 +765,10 @@ async function main() {
 
   const h1VideoCount = Object.values(itemsManifest).filter((x) => x.h1_pre_route?.route === "video").length;
   const h1CsCount = Object.values(itemsManifest).length - h1VideoCount;
+  const dashCount = Object.values(itemsManifest).filter((x) => x.download_is_dash === true).length;
   console.log(`\nWrote ${manifestPath}`);
   console.log(
-    `Summary: run_id=${runId} prepared=${Object.keys(itemsManifest).length}/${targetIds.length} (h1_video=${h1VideoCount}, h1_contact_sheet=${h1CsCount}), failures=${runtimeFailures.length}`
+    `Summary: run_id=${runId} prepared=${Object.keys(itemsManifest).length}/${targetIds.length} (h1_video=${h1VideoCount}, h1_contact_sheet=${h1CsCount}, dash_downloads=${dashCount}), failures=${runtimeFailures.length}`
   );
   if (runtimeFailures.length > 0) process.exit(1);
 }
