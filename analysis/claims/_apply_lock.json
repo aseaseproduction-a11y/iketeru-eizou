@@ -1,10 +1,8 @@
 {
   "schema_version": 1,
-  "status": "unlocked",
-  "worker": null,
-  "run_id": null,
-  "started_at": null,
-  "last_worker": null,
-  "last_run_id": null,
-  "released_at": null
+  "status": "locked",
+  "worker": "chibatmute",
+  "run_id": "tag_unwatched_analysis_scope",
+  "started_at": "2026-11-24T12:30:33.459Z",
+  "updated_at": "2026-11-24T12:30:33.459Z"
 }
