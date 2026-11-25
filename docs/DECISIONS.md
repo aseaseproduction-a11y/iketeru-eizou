@@ -89,7 +89,7 @@
 ### D-015 SQLite にだけ残っている 48 行は専用スクリプトで削除（2026-11-25）
 - 経緯：TiDB から削除された 48 件が、削除を反映しない SQLite に残っていた。
 - 決定：案 (a)。`prune-sqlite-tidb-orphans.mjs` で --dry-run → 承認 → --apply（事前にバックアップ）。普段の同期（zeroDeletions）は変えない。全 PC で同じ手順を実行する。
-- 状態：chibatmute で実施済み（2026-11-25 14:38 JST、事前バックアップ `E:\iketeru_backups\sqlite_pre_prune_orphans_20261125_143831\iketeru_knowledge.db` 取得、SQLite 5,653 件＝TiDB と一致・校正済み 912 件・`craft_recipes` 1,036 件不変）。CHIBA-PC と CHIBA-PC2 は未実施。
+- 状態：chibatmute で実施済み（2026-11-25 14:38 JST、事前バックアップ `E:\iketeru_backups\sqlite_pre_prune_orphans_20261125_143831\iketeru_knowledge.db` 取得、SQLite 5,653 件＝TiDB と一致・校正済み 912 件・`craft_recipes` 1,036 件不変）。CHIBA-PC でも実施済み（2026-11-25 15:27 JST、事前バックアップ `E:\iketeru_backups\sqlite_pre_prune_orphans_20261125_152746\iketeru_knowledge.db` 取得、SQLite 5,653 件＝TiDB と一致・校正済み 939 件・`craft_recipes` 1,036 件不変）。CHIBA-PC2 は未実施。
 
 ### D-016 YouTube の再取得は見送る（2026-11-25）
 - 決定：ボット確認が続いているため、YouTube の再取得は保留する。会社の回線全体が制限されるおそれがあるため。
