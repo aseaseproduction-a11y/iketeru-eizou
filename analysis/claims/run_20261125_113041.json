@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "run_id": "run_20261125_113041",
+  "worker": "CHIBA-PC",
+  "priority": "P3_unverified_genres",
+  "batch_index": 1,
+  "filters": {
+    "non_youtube": true,
+    "cached_only": true,
+    "verify_media": true
+  },
+  "status": "active",
+  "claimed_at": "2026-11-25T02:30:48.319Z",
+  "video_ids": [
+    "1117240355",
+    "1119375393",
+    "1151511255",
+    "1151598827",
+    "1154070144",
+    "1202148916",
+    "145927299",
+    "26784202",
+    "31479392",
+    "391434825",
+    "49963573",
+    "97090992",
+    "external-1vuy67w",
+    "instagram-DYOAFMVAAHM"
+  ]
+}
