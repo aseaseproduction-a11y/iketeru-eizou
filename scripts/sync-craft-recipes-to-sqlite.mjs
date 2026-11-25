@@ -36,7 +36,12 @@ apply_mode = sys.argv[4] == "1"
 backup_root = pathlib.Path(sys.argv[5])
 
 sys.path.insert(0, str(studio_root))
-from iketeru_studio.craft_recipes import normalize_media_paths, to_studio_relative_path
+from iketeru_studio.craft_recipes import (
+    format_expressive_purpose_fts_text,
+    has_valid_expressive_purpose,
+    normalize_media_paths,
+    to_studio_relative_path,
+)
 from iketeru_studio.indexer import rating_to_score
 
 FORBIDDEN_EXTS = {".gdoc", ".gsheet", ".gslides", ".gdraw", ".gmap"}
@@ -106,7 +111,9 @@ for vid, _ in recipes:
 # Compute exact content diff vs current SQLite
 pre_sig = {}
 for r in rcon.execute("SELECT video_id, cut_index, title, category, start_sec, end_sec, recipe_json FROM craft_recipes ORDER BY video_id, cut_index").fetchall():
-    pre_sig.setdefault(r["video_id"], []).append((r["cut_index"], r["title"], r["category"], round(float(r["start_sec"] or 0), 4), round(float(r["end_sec"] or 0), 4)))
+    rj = json.loads(r["recipe_json"] or "{}")
+    ep_sig = json.dumps(rj.get("expressive_purpose") or {}, ensure_ascii=False, sort_keys=True)
+    pre_sig.setdefault(r["video_id"], []).append((r["cut_index"], r["title"], r["category"], round(float(r["start_sec"] or 0), 4), round(float(r["end_sec"] or 0), 4), ep_sig))
 rcon.close()
 
 if errors:
@@ -117,23 +124,34 @@ store_vids = {vid for vid, _ in recipes}
 store_total_cuts = sum(len(doc["cuts"]) for _, doc in recipes)
 v2_cuts_count = 0
 v2_full_vids = 0
+purpose_cuts_count = 0
+purpose_full_vids = 0
 changed_vids = []
 for vid, doc in recipes:
     sig = []
     all_v2 = True
+    all_purpose = True
     for idx, c in enumerate(doc["cuts"], start=1):
         cidx = int(c.get("cut_index") or idx)
         st_s = round(float(c.get("start_sec") or 0.0), 4)
         en_s = round(float(c.get("end_sec") or 0.0), 4)
-        sig.append((cidx, str(c.get("title") or f"Cut #{cidx:02d}"), str(c.get("category") or ""), st_s, en_s))
+        ep_sig = json.dumps(c.get("expressive_purpose") or {}, ensure_ascii=False, sort_keys=True)
+        sig.append((cidx, str(c.get("title") or f"Cut #{cidx:02d}"), str(c.get("category") or ""), st_s, en_s, ep_sig))
         is_v2 = bool(c.get("frame_timeline") and c.get("effect_chain") and (c.get("primary_tool") or (c.get("tool_decision") or {}).get("primary_tool")))
+        has_ep = has_valid_expressive_purpose(c)
         dur = en_s - st_s
         if is_v2:
             v2_cuts_count += 1
+        if has_ep:
+            purpose_cuts_count += 1
+        else:
+            all_purpose = False
         if not (is_v2 and dur <= 15.0):
             all_v2 = False
     if all_v2:
         v2_full_vids += 1
+    if all_purpose:
+        purpose_full_vids += 1
     if pre_sig.get(vid) != sig:
         changed_vids.append(vid)
 
@@ -153,6 +171,8 @@ report = {
         "recipe_cuts": store_total_cuts,
         "v2_cuts": v2_cuts_count,
         "v2_full_vids": v2_full_vids,
+        "purpose_cuts": purpose_cuts_count,
+        "purpose_full_vids": purpose_full_vids,
     },
     "diff": {
         "added_vids": sorted(store_vids - pre_craft_vids),
@@ -192,6 +212,25 @@ now_ts = int(time.time())
 wcon = sqlite3.connect(str(sqlite_path))
 try:
     wcon.execute("BEGIN IMMEDIATE")
+    # Ensure craft_recipes_fts has purpose_text column (D-024)
+    fts_cols = {r[1] for r in wcon.execute("PRAGMA table_info(craft_recipes_fts)").fetchall()}
+    if "purpose_text" not in fts_cols:
+        wcon.execute("DROP TABLE IF EXISTS craft_recipes_fts")
+        wcon.execute(
+            """
+            CREATE VIRTUAL TABLE craft_recipes_fts USING fts5(
+                video_id UNINDEXED,
+                cut_index UNINDEXED,
+                title,
+                category,
+                software_text,
+                plugins_text,
+                flow_text,
+                purpose_text,
+                tokenize="trigram"
+            )
+            """
+        )
     wcon.execute("DELETE FROM craft_recipes")
     wcon.execute("DELETE FROM craft_recipes_fts")
     for vid, doc in recipes:
@@ -267,10 +306,16 @@ try:
             wcon.execute(
                 """
                 INSERT INTO craft_recipes_fts (
-                    video_id, cut_index, title, category, software_text, plugins_text, flow_text
-                ) VALUES (?, ?, ?, ?, ?, ?, ?)
+                    video_id, cut_index, title, category, software_text, plugins_text, flow_text, purpose_text
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
                 """,
-                (vid, cut_idx, title, category, " ".join(str(x) for x in sw_for_index), " ".join(str(x) for x in plugins), " ".join(flow_parts)),
+                (
+                    vid, cut_idx, title, category,
+                    " ".join(str(x) for x in sw_for_index),
+                    " ".join(str(x) for x in plugins),
+                    " ".join(flow_parts),
+                    format_expressive_purpose_fts_text(enriched),
+                ),
             )
     wcon.commit()
 except Exception:

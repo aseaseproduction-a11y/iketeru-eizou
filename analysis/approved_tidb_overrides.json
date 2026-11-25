@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "description": "Approved TiDB original-40-column override list (D-024). Entries take effect in Pre-D audits ONLY when status === 'approved' and approved_at is set.",
+  "overrides": [
+    {
+      "video_id": "O1DQObWYYLQ",
+      "column": "aiScoreBreakdown",
+      "after_sha256": "30a61a1926578dec06e48301f50eb7962b99d3657982a2a8963262572533bab3",
+      "reason": "Visual audit passed (verdict: 合っている; restore visualVerificationStatus=log_verified, invalidatedNoVisual=false)",
+      "decision_id": "D-024",
+      "approved_at": null,
+      "status": "pending_approval"
+    },
+    {
+      "video_id": "1018644295",
+      "column": "aiAnalysis",
+      "after_sha256": "9ba91b1c6edf29d75f4dbb0b258e676cf30efd06f009bcd5de56d6fcc5d8dd96",
+      "reason": "Replace truncated/mismatched analysis with visually verified full 10-chapter analysis (6040 chars, 0 backticks)",
+      "decision_id": "D-024",
+      "approved_at": null,
+      "status": "pending_approval"
+    },
+    {
+      "video_id": "Gwgo9GS4mVM",
+      "column": "aiAnalysis",
+      "after_sha256": "fe4196e0b822f4597a87192b0c971c68afd033f72e1955fa5925081df8c0da99",
+      "reason": "Replace truncated/mismatched analysis with visually verified full 10-chapter analysis (5725 chars, 0 backticks)",
+      "decision_id": "D-024",
+      "approved_at": null,
+      "status": "pending_approval"
+    }
+  ]
+}

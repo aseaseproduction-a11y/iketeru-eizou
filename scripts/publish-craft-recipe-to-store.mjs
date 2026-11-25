@@ -15,6 +15,10 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const VOCAB_PATH = path.resolve(__dirname, "..", "shared", "expressivePurposeVocab.json");
+export const EXPRESSIVE_PURPOSE_VOCAB = JSON.parse(fs.readFileSync(VOCAB_PATH, "utf8"));
+
 const GEN_AI_VIDEO_RE = /\b(runway|kling|veo|sora|pika|luma|gen-3|hailuo)\b/i;
 const IMAGE_TELOP_RE = /(画像生成[^"\n]{0,24}テロップ|テロップ[^"\n]{0,24}画像生成|png[^"\n]{0,24}テロップ|テロップ[^"\n]{0,24}png)/i;
 
@@ -34,6 +38,97 @@ export function sha256File(filePath) {
   return hash.digest("hex");
 }
 
+export function validateExpressivePurposeCut(cut, prefix = "cut") {
+  const errors = [];
+  const ep = cut?.expressive_purpose;
+  if (!ep || typeof ep !== "object") {
+    errors.push(`${prefix}: missing expressive_purpose object`);
+    return errors;
+  }
+  const v = EXPRESSIVE_PURPOSE_VOCAB;
+  const c = v.constraints || {};
+  const intent = String(ep.intent_summary || "").trim();
+  if (intent.length < (c.intent_summary_min_chars ?? 15)) {
+    errors.push(`${prefix}: expressive_purpose.intent_summary missing or < ${c.intent_summary_min_chars ?? 15} chars`);
+  }
+  const allowedRoles = new Set(v.narrative_role || []);
+  if (!allowedRoles.has(String(ep.narrative_role || ""))) {
+    errors.push(`${prefix}: invalid narrative_role "${ep.narrative_role}"`);
+  }
+  const allowedVe = new Set(v.viewer_effect || []);
+  const ve = ep.viewer_effect;
+  if (!Array.isArray(ve) || ve.length < (c.viewer_effect_min ?? 2) || ve.length > (c.viewer_effect_max ?? 4)) {
+    errors.push(`${prefix}: viewer_effect count must be 2..4 (got ${Array.isArray(ve) ? ve.length : "non-array"})`);
+  } else {
+    const badVe = ve.filter((x) => !allowedVe.has(x));
+    if (badVe.length > 0) errors.push(`${prefix}: invalid viewer_effect ${JSON.stringify(badVe)}`);
+  }
+  const bf = ep.best_for;
+  if (!bf || typeof bf !== "object") {
+    errors.push(`${prefix}: missing expressive_purpose.best_for`);
+  } else {
+    for (const k of ["purposes", "genres", "industries", "media_formats", "duration_fit"]) {
+      const allowed = new Set((v.best_for || {})[k] || []);
+      const vals = bf[k];
+      if (!Array.isArray(vals) || vals.length < (c.best_for_each_min ?? 1) || vals.length > (c.best_for_each_max ?? 3)) {
+        errors.push(`${prefix}: best_for.${k} count must be 1..3`);
+      } else {
+        const bad = vals.filter((x) => !allowed.has(x));
+        if (bad.length > 0) errors.push(`${prefix}: best_for.${k} invalid values ${JSON.stringify(bad)}`);
+      }
+    }
+  }
+  const aw = ep.avoid_when;
+  if (!Array.isArray(aw) || aw.length < (c.avoid_when_min ?? 1) || aw.length > (c.avoid_when_max ?? 3) || aw.some((x) => !String(x || "").trim())) {
+    errors.push(`${prefix}: avoid_when must have 1..3 non-empty strings`);
+  }
+  const sp = ep.search_phrases;
+  const spMin = c.search_phrases_min ?? 3;
+  const spMax = c.search_phrases_max ?? 6;
+  if (!Array.isArray(sp) || sp.length < spMin || sp.length > spMax || sp.some((x) => !String(x || "").trim())) {
+    errors.push(`${prefix}: search_phrases must have ${spMin}..${spMax} non-empty phrases`);
+  }
+  const kw = ep.keywords;
+  const kwMin = c.keywords_min ?? 5;
+  const kwMax = c.keywords_max ?? 10;
+  const kwMinC = c.keyword_min_chars ?? 2;
+  const kwMaxC = c.keyword_max_chars ?? 10;
+  if (!Array.isArray(kw) || kw.length < kwMin || kw.length > kwMax) {
+    errors.push(`${prefix}: keywords must have ${kwMin}..${kwMax} items (got ${Array.isArray(kw) ? kw.length : "non-array"})`);
+  } else {
+    const trimmed = kw.map((x) => String(x || "").trim());
+    const badLen = trimmed.filter((x) => x.length < kwMinC || x.length > kwMaxC);
+    if (badLen.length > 0) {
+      errors.push(`${prefix}: keywords char length must be ${kwMinC}..${kwMaxC}: ${JSON.stringify(badLen)}`);
+    }
+    if (new Set(trimmed).size !== trimmed.length) {
+      errors.push(`${prefix}: keywords contains duplicates`);
+    }
+  }
+  const allowedProv = new Set(v.provenance || []);
+  if (!allowedProv.has(String(ep.provenance || ""))) {
+    errors.push(`${prefix}: invalid provenance "${ep.provenance}"`);
+  }
+  const ev = ep.evidence;
+  const st = Number(cut?.start_sec);
+  const en = Number(cut?.end_sec);
+  if (!Array.isArray(ev) || ev.length < (c.evidence_min ?? 1)) {
+    errors.push(`${prefix}: evidence must have >= 1 entry`);
+  } else {
+    for (const item of ev) {
+      const ts = Number(item?.timestamp_sec);
+      if (!Number.isFinite(ts) || !String(item?.observation || "").trim()) {
+        errors.push(`${prefix}: evidence entry missing numeric timestamp_sec or observation`);
+        continue;
+      }
+      if (Number.isFinite(st) && Number.isFinite(en) && (ts < st || ts > en)) {
+        errors.push(`${prefix}: evidence timestamp_sec ${ts} out of cut range [${st}, ${en}]`);
+      }
+    }
+  }
+  return errors;
+}
+
 export function validateRecipeGates({
   videoId,
   stagingDir,
@@ -42,6 +137,7 @@ export function validateRecipeGates({
   observationScope = null,
   minCredibilityScore = 90,
   minCalibratedScore = 78.0,
+  requirePurpose = false,
 }) {
   const gates = {
     G1_schema_and_v2: { passed: true, errors: [] },
@@ -51,6 +147,7 @@ export function validateRecipeGates({
     G5_media_and_telemetry: { passed: true, errors: [] },
     G6_paths_and_provenance: { passed: true, errors: [] },
     G7_rule2_and_d022: { passed: true, errors: [] },
+    G8_expressive_purpose: { passed: true, errors: [] },
   };
 
   const rjPath = path.join(stagingDir, "recipe.json");
@@ -146,6 +243,11 @@ export function validateRecipeGates({
     if (media.telemetry?.available !== true) {
       gates.G5_media_and_telemetry.errors.push(`${prefix}: media.telemetry.available is not true`);
     }
+
+    // G8: expressive_purpose (D-024) — always validated when present; required when requirePurpose=true
+    if (requirePurpose || c.expressive_purpose !== undefined) {
+      gates.G8_expressive_purpose.errors.push(...validateExpressivePurposeCut(c, prefix));
+    }
   }
 
   // G7: Rule 2 unwatched & D-022 >= 78
@@ -180,7 +282,7 @@ export function publishStagedRecipeToStore({
   const dstDir = path.join(storeDir, videoId);
   let backupPath = null;
   if (fs.existsSync(dstDir)) {
-    const stamp = new Date().toISOString().replace(/[-:T]/g, "").slice(0, 15);
+    const stamp = new Date().toISOString().replace(/[-:T]/g, "").slice(0, 14);
     backupPath = path.join(backupRoot, `craft_pre_upgrade_${runId}_${stamp}`, videoId);
     fs.mkdirSync(backupPath, { recursive: true });
     for (const name of fs.readdirSync(dstDir)) {
@@ -297,6 +399,7 @@ if (isMain) {
         videoDurationSec: args["video-duration"] ? Number(args["video-duration"]) : null,
         calibratedScore: args["calibrated-score"] ? Number(args["calibrated-score"]) : null,
         observationScope: args["observation-scope"] || null,
+        requirePurpose: Boolean(args["require-purpose"]),
       },
     });
     console.log(JSON.stringify(res, null, 2));

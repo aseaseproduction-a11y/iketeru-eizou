@@ -181,3 +181,54 @@ test("G4 image telop check ignores media.start_png filenames while catching real
     fs.rmSync(td, { recursive: true, force: true });
   }
 });
+
+test("G8 expressive_purpose validates controlled vocab, evidence range, search_phrases 3..6, and keywords 5..10 (2..10 chars)", () => {
+  const td = fs.mkdtempSync(path.join(os.tmpdir(), "craft-g8-test-"));
+  try {
+    const staging = path.join(td, "vidG8");
+    makeValidStagedVideo(staging, "vidG8");
+    const rPath = path.join(staging, "recipe.json");
+    const doc = JSON.parse(fs.readFileSync(rPath, "utf8"));
+
+    // requirePurpose=true fails when expressive_purpose is missing
+    const missing = validateRecipeGates({ videoId: "vidG8", stagingDir: staging, videoDurationSec: 30, calibratedScore: 84.0, requirePurpose: true });
+    assert.equal(missing.all_passed, false);
+    assert.equal(missing.gates.G8_expressive_purpose.passed, false);
+
+    // Valid expressive_purpose passes all 8 gates
+    doc.cuts[0].expressive_purpose = {
+      intent_summary: "冒頭で高コントラストな光帯転換を使い視聴者の視線を一気に掴む導入演出。",
+      viewer_effect: ["疾走感", "視線誘導"],
+      narrative_role: "掴み",
+      best_for: {
+        purposes: ["プロモーション", "MV"],
+        genres: ["web-cm", "mv"],
+        industries: ["it", "music-artist"],
+        media_formats: ["Web CM / 広告"],
+        duration_fit: ["15s", "30s"],
+      },
+      avoid_when: ["落ち着いた医療説明動画"],
+      search_phrases: ["冒頭で一気に目を引く転換", "音ハメで切り替わる導入", "スピード感のある掴み"],
+      keywords: ["冒頭フック", "音ハメ転換", "疾走感", "光帯遷移", "Web広告向け"],
+      evidence: [{ timestamp_sec: 1.5, timecode: "00:01.50", observation: "中央に光帯が発生し場面が切り替わる" }],
+      provenance: "video_observed",
+    };
+    fs.writeFileSync(rPath, JSON.stringify(doc, null, 2), "utf8");
+    const ok = validateRecipeGates({ videoId: "vidG8", stagingDir: staging, videoDurationSec: 30, calibratedScore: 84.0, requirePurpose: true });
+    assert.equal(ok.all_passed, true);
+    assert.equal(ok.gates.G8_expressive_purpose.passed, true);
+
+    // Out-of-range evidence & >10-char keyword & too few search_phrases must fail G8
+    doc.cuts[0].expressive_purpose.search_phrases = ["1個だけ"];
+    doc.cuts[0].expressive_purpose.keywords[0] = "これは十一文字を超える長すぎるキーワード";
+    doc.cuts[0].expressive_purpose.evidence[0].timestamp_sec = 9.9;
+    fs.writeFileSync(rPath, JSON.stringify(doc, null, 2), "utf8");
+    const bad = validateRecipeGates({ videoId: "vidG8", stagingDir: staging, videoDurationSec: 30, calibratedScore: 84.0, requirePurpose: true });
+    assert.equal(bad.gates.G8_expressive_purpose.passed, false);
+    assert.ok(bad.gates.G8_expressive_purpose.errors.some((e) => e.includes("search_phrases")));
+    assert.ok(bad.gates.G8_expressive_purpose.errors.some((e) => e.includes("keywords char length")));
+    assert.ok(bad.gates.G8_expressive_purpose.errors.some((e) => e.includes("out of cut range")));
+  } finally {
+    fs.rmSync(td, { recursive: true, force: true });
+  }
+});

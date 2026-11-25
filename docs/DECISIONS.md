@@ -145,3 +145,12 @@
   4. **料金ティアと実行時間帯**：料金は **Flex**（`service_tier: "flex"`）を使う（Flex 事前検証 `flex_smoke_20261125_144800` で Standard との差は平均 `+0.50` 点、誤差の平均〔MAE〕`1.30` 点だったため）。503 が多いため、本番は混雑しにくい時間帯（**夜間・早朝**）に流すことを基本とする。
   5. **② の開始条件**：② を始めるのは、答え合わせ用の動画（アンカー）が **30 本** たまって、補正の幅（`analysis/api_url_bias_config_v1.json`）を承認してからとする。
 - 根拠：`docs/API_CRAFT_RECIPE_DESIGN.md`、`docs/API_URL_SCORING_DESIGN.md`、`flex_smoke_20261125_144800`、`analysis/pilot_api_craft_recipe/preregistration.json`。
+
+### D-024 クラフトレシピへのカット単位「目的（expressive_purpose）」追加・単一語彙ファイル化と、TiDB 元 40 カラム「承認済み変更リスト」方式（2026-11-25）
+- 決定：
+  1. **カット単位の目的スキーマ（`expressive_purpose`）**：各カットに `expressive_purpose` ブロックを追加する。必須キーは `intent_summary`（1〜2文）、`viewer_effect`（2〜4語）、`narrative_role`（固定 9 種：`掴み` / `世界観提示` / `転換` / `情報提示` / `盛り上げ` / `感情強調` / `緩急の抜き` / `ブランド回収` / `締め`）、`best_for`（`purposes` / `genres` / `industries` / `media_formats` / `duration_fit` 各 1〜3 語）、`avoid_when`（1〜3件）、**`search_phrases`（自然文検索用の言い換え文 3〜6 個）**、**`keywords`（サイトのチップ表示用の短い語 2〜10 文字程度・5〜10 個）**、`evidence`（必須 1 件以上・`timestamp_sec` はカットの `[start_sec, end_sec]` 範囲内を機械検証）、`provenance`（`video_observed` / `text_derived` / `api_interpreted`）。
+  2. **単一の統制語彙ファイル**：全選択肢は `shared/expressivePurposeVocab.json` を正本とし、`publish-craft-recipe-to-store.mjs`（G8）、`iketeru-creative-studio`（`craft_recipes.py`、ローカルコピーを持つ場合は一致を自動テストで検証）、およびサイト側のすべてが同ファイルを参照する。
+  3. **既存 v2・credibility の非破壊維持と検索統合**：既存の `is_v2` 判定および `credibility_score` は変更せず、別フラグ `has_expressive_purpose` とゲート `G8_expressive_purpose` を追加する。SQLite `craft_recipes_fts` に `purpose_text` 列を追加し、自然文・短いキーワードの双方で検索可能にする。フェーズ 1 の v2 化プロンプトに `expressive_purpose` を組み込み、1 回の作業で同時生成する。既 v2 への後付けは `claim-craft-batch.mjs` の新種別 `craft_purpose_backfill` で 3 台分担する。
+  4. **TiDB 元 40 カラム更新の「承認済み変更リスト」方式**：除外復帰（`O1DQObWYYLQ` の `aiScoreBreakdown`）や分析差し替え（`1018644295` / `Gwgo9GS4mVM` の `aiAnalysis`）のように元 40 カラムを更新する必要がある場合、新カラムは追加せず `analysis/approved_tidb_overrides.json` に 1 件ごとに `video_id`・`column`・変更後の値の `after_sha256`・`reason`・`decision_id`・`approved_at` を記録する。`apply-phase3-batch-to-tidb.mjs` 等の Pre-D 監査は、リストに完全一致する差分のみ許可し、リストにない差分や SHA-256 不一致は従来どおり失敗にする。
+  5. **除外動画点検で「一部違う」だった残り 12 本の扱い**：据え置きにせず、作り直し順番待ちキュー（`analysis/visual_audit_remake_queue.json`）で管理する。
+- 根拠：`shared/expressivePurposeVocab.json`、`docs/prompts/craft_v2_with_purpose_prompt.md`、`scripts/publish-craft-recipe-to-store.mjs`、`scripts/approved-tidb-overrides.mjs`、`analysis/approved_tidb_overrides.json`、`analysis/visual_audit_remake_queue.json`。

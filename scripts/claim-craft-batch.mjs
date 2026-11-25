@@ -30,12 +30,14 @@ const DEFAULT_CACHE_DIR = "D:\\マイドライブ\\iketeru_videos";
 export const VALID_CRAFT_TASK_TYPES = Object.freeze([
   "craft_recipe_v2_upgrade",
   "craft_recipe_new",
+  "craft_purpose_backfill",
 ]);
 
 export const VALID_CRAFT_POOLS = Object.freeze([
   "381_gt15s_ge78",
   "381_le15s_ge78",
   "new_138_ge78",
+  "v2_ge78_missing_purpose",
   "custom",
 ]);
 
@@ -56,7 +58,9 @@ export function validateCraftPool(pool) {
 }
 
 export function defaultTaskTypeForPool(pool) {
-  return pool === "new_138_ge78" ? "craft_recipe_new" : "craft_recipe_v2_upgrade";
+  if (pool === "new_138_ge78") return "craft_recipe_new";
+  if (pool === "v2_ge78_missing_purpose") return "craft_purpose_backfill";
+  return "craft_recipe_v2_upgrade";
 }
 
 export function loadCraftClaims(claimsDir = DEFAULT_CLAIMS_DIR) {
@@ -135,7 +139,12 @@ function resolveWorkerName(argWorker) {
 function generateCraftRunId(taskType) {
   const d = new Date();
   const pad = (n) => String(n).padStart(2, "0");
-  const prefix = taskType === "craft_recipe_new" ? "craft_new" : "craft_upg";
+  const prefix =
+    taskType === "craft_recipe_new"
+      ? "craft_new"
+      : taskType === "craft_purpose_backfill"
+      ? "craft_purp"
+      : "craft_upg";
   return `${prefix}_${d.getFullYear()}${pad(d.getMonth() + 1)}${pad(d.getDate())}_${pad(d.getHours())}${pad(d.getMinutes())}${pad(d.getSeconds())}`;
 }
 
@@ -171,8 +180,10 @@ function queryPoolsFromSqlite({ sqlitePath, cacheDir, minScore = 78.0 }) {
     "    rj = json.loads(r['recipe_json'] or '{}')",
     "    dur = float(r['end_sec'] or 0) - float(r['start_sec'] or 0)",
     "    is_v2 = bool(rj.get('frame_timeline') and rj.get('effect_chain') and (rj.get('primary_tool') or (rj.get('tool_decision') or {}).get('primary_tool')))",
-    "    craft.setdefault(r['video_id'], []).append({'dur': dur, 'is_v2': is_v2, 'needs_recut': dur > 15.0})",
-    "p_gt15, p_le15, p_new = [], [], []",
+    "    ep = rj.get('expressive_purpose') or {}",
+    "    has_ep = bool(isinstance(ep, dict) and ep.get('intent_summary') and ep.get('narrative_role') and ep.get('viewer_effect') and ep.get('search_phrases') and ep.get('keywords') and ep.get('evidence'))",
+    "    craft.setdefault(r['video_id'], []).append({'dur': dur, 'is_v2': is_v2, 'needs_recut': dur > 15.0, 'has_ep': has_ep})",
+    "p_gt15, p_le15, p_new, p_v2_no_ep = [], [], [], []",
     "for vid, v in sorted(vids.items()):",
     "    if v['alen'] <= 0 or v['analysis_observation_scope'] is not None or vid not in scenes or vid not in cache_stems:",
     "        continue",
@@ -181,12 +192,15 @@ function queryPoolsFromSqlite({ sqlitePath, cacheDir, minScore = 78.0 }) {
     "        continue",
     "    if vid in craft:",
     "        cuts = craft[vid]",
-    "        if all(c['is_v2'] and not c['needs_recut'] for c in cuts): continue",
+    "        if all(c['is_v2'] and not c['needs_recut'] for c in cuts):",
+    "            if not all(c['has_ep'] for c in cuts):",
+    "                p_v2_no_ep.append({'id': vid, 'calibrated_score': float(cs), 'title': v['title']})",
+    "            continue",
     "        if any(c['needs_recut'] for c in cuts): p_gt15.append({'id': vid, 'calibrated_score': float(cs), 'title': v['title']})",
     "        else: p_le15.append({'id': vid, 'calibrated_score': float(cs), 'title': v['title']})",
     "    else:",
     "        p_new.append({'id': vid, 'calibrated_score': float(cs), 'title': v['title']})",
-    "print(json.dumps({'381_gt15s_ge78': p_gt15, '381_le15s_ge78': p_le15, 'new_138_ge78': p_new}, ensure_ascii=False))",
+    "print(json.dumps({'381_gt15s_ge78': p_gt15, '381_le15s_ge78': p_le15, 'new_138_ge78': p_new, 'v2_ge78_missing_purpose': p_v2_no_ep}, ensure_ascii=False))",
     "con.close()",
   ].join("\n");
   const out = execFileSync("python", ["-c", pyCode, sqlitePath.replace(/\\/g, "/"), cacheDir, String(minScore)], {
