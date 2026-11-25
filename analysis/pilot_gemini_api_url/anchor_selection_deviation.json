@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-25T14:40:00+09:00",
+  "preregistration_file": "analysis/pilot_gemini_api_url/validation_preregistration.json",
+  "preregistration_unmodified": true,
+  "preregistration_sha256": "10fca9c747a3534ccc16b7657223919ad5e720f7793f69ec85e0f4d65995cbef",
+  "reason": "事前登録ファイル（validation_preregistration.json）の main_50 は fit 降順→validation 降順で配列されているため、未採点 48 本の先頭 18 本をそのまま取ると <63 点帯が 0 本（既存 12 本と合わせた 30 本合計で <63 が 2 本のみ）となる。低スコア帯（<63）の偏り推定と 63 点境界の検証精度を補強するため、先頭 18 本の末尾 2 本を fit 末尾の <63 動画 2 本と差し替える（ユーザー承認済み）。差し替えで外れた 2 本は 2 つ目以降のバッチの継続アンカー先頭として使用する。",
+  "replaced_out": [
+    {
+      "video_id": "SEABn1jepkY",
+      "prereg_unscored_rank": 17,
+      "calibrated_score": 65,
+      "band": "63-82",
+      "duration_sec": 308.6,
+      "route_raw": "video_h1",
+      "disposition": "deferred_to_subsequent_batch_anchors"
+    },
+    {
+      "video_id": "-igT-XOKyEo",
+      "prereg_unscored_rank": 18,
+      "calibrated_score": 64.5,
+      "band": "63-82",
+      "duration_sec": 502.7,
+      "route_raw": "video_h1",
+      "disposition": "deferred_to_subsequent_batch_anchors"
+    }
+  ],
+  "replaced_in": [
+    {
+      "video_id": "_PO5O3QAaVM",
+      "prereg_unscored_rank": 22,
+      "calibrated_score": 62,
+      "band": "<63",
+      "near_63_pm3": true,
+      "duration_sec": 480.2,
+      "route_raw": "video_h2_escalated"
+    },
+    {
+      "video_id": "Jf9F5VBqA2A",
+      "prereg_unscored_rank": 23,
+      "calibrated_score": 59,
+      "band": "<63",
+      "near_63_pm3": false,
+      "duration_sec": 43.0,
+      "route_raw": "video_h1"
+    }
+  ],
+  "run1_anchor_18_ids": [
+    "6sX_BfDnyrg",
+    "nW2CpHcmlo4",
+    "Y_I_NOHVwzI",
+    "_Rvur-ySGyU",
+    "-TBB-K6Sk0U",
+    "-YiVSav-PZw",
+    "0kHO87Qqjpk",
+    "BEYeHsfGXJw",
+    "-1nKzOF8-_Q",
+    "Q4C1O2A-Cqg",
+    "8zxQpYYSvTM",
+    "mJk17F-vym8",
+    "jsEVOjI690Y",
+    "JokUSZnJBQU",
+    "_9cGKFO4mm8",
+    "58-kBdaXKxY",
+    "_PO5O3QAaVM",
+    "Jf9F5VBqA2A"
+  ],
+  "combined_30_summary": {
+    "existing_completed_anchors": 12,
+    "run1_new_anchors": 18,
+    "total": 30,
+    "by_band": {
+      ">=83": 11,
+      "63-82": 15,
+      "<63": 4
+    },
+    "near_83_pm3": 8,
+    "near_63_pm3": 4,
+    "run1_18_avg_duration_sec": 140.3,
+    "run1_18_total_duration_sec": 2525.1
+  }
+}

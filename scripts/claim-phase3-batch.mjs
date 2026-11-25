@@ -42,6 +42,45 @@ export const VALID_PRIORITIES = Object.freeze([
   "ALL",
 ]);
 
+export const VALID_SCORING_CHANNELS = Object.freeze([
+  "local_blind",
+  "gemini_api_url",
+]);
+
+export function validateScoringChannel(channel) {
+  if (channel === undefined || channel === null || channel === "") return null;
+  const c = String(channel);
+  if (!VALID_SCORING_CHANNELS.includes(c)) {
+    throw new Error(
+      `Invalid --scoring-channel "${c}". Allowed values: ${VALID_SCORING_CHANNELS.join(", ")}.`
+    );
+  }
+  return c;
+}
+
+export function loadSqliteDurationMap(sqlitePath = "E:\\iketeru-creative-studio\\data\\iketeru_knowledge.db") {
+  if (!fs.existsSync(sqlitePath)) return new Map();
+  try {
+    const pyCode = [
+      "import sqlite3, json, sys",
+      "conn = sqlite3.connect(f'file:{sys.argv[1]}?mode=ro', uri=True)",
+      "cur = conn.cursor()",
+      "cur.execute('SELECT video_id, MAX(end_sec) FROM scenes GROUP BY video_id')",
+      "print(json.dumps({r[0]: float(r[1]) for r in cur.fetchall() if r[1] is not None and r[1] > 0}))",
+      "conn.close()",
+    ].join("\n");
+    const out = execFileSync("python", ["-c", pyCode, sqlitePath.replace(/\\/g, "/")], {
+      encoding: "utf8",
+      timeout: 15000,
+      maxBuffer: 10 * 1024 * 1024,
+    });
+    const obj = JSON.parse(out);
+    return new Map(Object.entries(obj));
+  } catch {
+    return new Map();
+  }
+}
+
 export function validatePriority(priority) {
   const p = String(priority || "");
   if (!VALID_PRIORITIES.includes(p)) {
@@ -685,6 +724,7 @@ async function main() {
         run_id: c.data.run_id,
         worker: c.data.worker,
         priority: c.data.priority,
+        scoring_channel: c.data.scoring_channel || "local_blind",
         locked_ids: (c.data.video_ids || []).length,
       })),
       overlaps_count: check.overlaps.length,
@@ -719,6 +759,11 @@ async function main() {
     const verifyMedia = Boolean(args["verify-media"]);
     const includeRetryable = Boolean(args["include-retryable"]);
     const dryRun = Boolean(args["dry-run"]);
+    const scoringChannel = validateScoringChannel(args["scoring-channel"]);
+    const maxDurationSec = args["max-duration-sec"] ? Number(args["max-duration-sec"]) : null;
+    if (maxDurationSec !== null && (!Number.isFinite(maxDurationSec) || maxDurationSec <= 0)) {
+      throw new Error(`Invalid --max-duration-sec: ${String(args["max-duration-sec"])}`);
+    }
     const cacheDir = getCacheDir();
 
     const claims = loadAllClaims();
@@ -739,7 +784,16 @@ async function main() {
     const rows = await fetchTidbVideos();
     const byId = new Map(rows.map((r) => [String(r.id), r]));
     const unreadableSkipped = [];
+    const deferredLongIds = [];
+    const sqliteDurMap = maxDurationSec !== null ? loadSqliteDurationMap() : null;
     const passesCacheFilter = (vid) => {
+      if (maxDurationSec !== null && sqliteDurMap) {
+        const dur = sqliteDurMap.get(vid);
+        if (typeof dur === "number" && dur > maxDurationSec) {
+          deferredLongIds.push({ video_id: vid, duration_sec: dur });
+          return false;
+        }
+      }
       if (!cachedOnly) return true;
       const p = findCachedFile(vid);
       if (!p) return false;
@@ -762,7 +816,7 @@ async function main() {
 
     const chosen = candidates.slice(0, batchSize);
     if (chosen.length === 0) {
-      console.log(JSON.stringify({ message: "No matching unclaimed uncalibrated videos available for this priority/filter.", priority, non_youtube: nonYoutube, cached_only: cachedOnly, verify_media: verifyMedia, cache_dir: cacheDir, active_locked: check.totalLockedIds }, null, 2));
+      console.log(JSON.stringify({ message: "No matching unclaimed uncalibrated videos available for this priority/filter.", priority, non_youtube: nonYoutube, cached_only: cachedOnly, verify_media: verifyMedia, max_duration_sec: maxDurationSec, deferred_long_count: deferredLongIds.length, cache_dir: cacheDir, active_locked: check.totalLockedIds }, null, 2));
       return;
     }
 
@@ -779,47 +833,69 @@ async function main() {
       platformBreakdown[pKey] = (platformBreakdown[pKey] || 0) + 1;
     }
 
+    const filtersObj = { non_youtube: nonYoutube, cached_only: cachedOnly, verify_media: verifyMedia };
+    if (maxDurationSec !== null) filtersObj.max_duration_sec = maxDurationSec;
+
     const claim = {
       schema_version: 1,
       run_id: runId,
       worker,
       priority,
       batch_index: batchIndex,
-      filters: { non_youtube: nonYoutube, cached_only: cachedOnly, verify_media: verifyMedia },
+      ...(scoringChannel ? { scoring_channel: scoringChannel } : {}),
+      filters: filtersObj,
       status: "active",
       claimed_at: new Date().toISOString(),
       video_ids: chosen,
+      ...(maxDurationSec !== null ? { deferred_long_count: deferredLongIds.length } : {}),
     };
 
     if (!dryRun) {
       fs.writeFileSync(path.join(CLAIMS_DIR, `${runId}.json`), JSON.stringify(claim, null, 2) + "\n", "utf8");
       fs.writeFileSync(
         path.join(CLAIMS_DIR, `${runId}_ids.json`),
-        JSON.stringify({ run_id: runId, worker, priority, batch_index: batchIndex, video_ids: chosen }, null, 2) + "\n",
+        JSON.stringify(
+          {
+            run_id: runId,
+            worker,
+            priority,
+            batch_index: batchIndex,
+            ...(scoringChannel ? { scoring_channel: scoringChannel } : {}),
+            video_ids: chosen,
+          },
+          null,
+          2
+        ) + "\n",
         "utf8"
       );
     }
 
     const effectiveBatch = batchIndex ?? 1;
     const noDlFlag = cachedOnly ? " --no-download" : "";
+    const nextCmd =
+      scoringChannel === "gemini_api_url"
+        ? `node scripts/run-api-url-batch.mjs --run-id ${runId} --id-list analysis/claims/${runId}_ids.json --worker ${worker} --service-tier flex`
+        : `node scripts/prepare-phase3-batch.mjs --priority ${priority} --id-list analysis/claims/${runId}_ids.json --batch ${effectiveBatch} --batch-size ${chosen.length} --uncalibrated-head --run-id ${runId} --frozen-config analysis/phase2_frozen_config_v1.json${noDlFlag}`;
     console.log(JSON.stringify({
       dry_run: dryRun,
       run_id: runId,
       worker,
       priority,
       batch_index: batchIndex,
+      ...(scoringChannel ? { scoring_channel: scoringChannel } : {}),
       cache_dir: cacheDir,
-      filters: { non_youtube: nonYoutube, cached_only: cachedOnly, verify_media: verifyMedia },
+      filters: filtersObj,
       claimed_count: chosen.length,
       youtube_count: youtubeCount,
       non_youtube_count: nonYoutubeCount,
       cached_match_count: cachedMatchCount,
       unreadable_skipped_count: unreadableSkipped.length,
+      ...(maxDurationSec !== null ? { deferred_long_count: deferredLongIds.length, deferred_long_sample: deferredLongIds.slice(0, 10) } : {}),
       platform_breakdown: platformBreakdown,
       remaining_unclaimed_in_pool: candidates.length - chosen.length,
       claim_file: `analysis/claims/${runId}.json`,
       id_list_file: `analysis/claims/${runId}_ids.json`,
-      next_prepare_cmd: `node scripts/prepare-phase3-batch.mjs --priority ${priority} --id-list analysis/claims/${runId}_ids.json --batch ${effectiveBatch} --batch-size ${chosen.length} --uncalibrated-head --run-id ${runId} --frozen-config analysis/phase2_frozen_config_v1.json${noDlFlag}`,
+      next_prepare_cmd: nextCmd,
     }, null, 2));
     return;
   }

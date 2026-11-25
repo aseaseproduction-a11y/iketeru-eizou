@@ -144,11 +144,66 @@ async function dumpFreshPreApplyBackup(conn, runId, backupRoot) {
   return meta;
 }
 
+export function findAlreadyCalibratedIds(existingRows) {
+  const conflicts = [];
+  for (const row of existingRows || []) {
+    if (row && row.calibratedScore !== null && row.calibratedScore !== undefined) {
+      conflicts.push({
+        id: String(row.id),
+        calibratedScore: Number(row.calibratedScore),
+        calibrationVersion: row.calibrationVersion ?? null,
+        calibratedRoute: row.calibratedRoute ?? null,
+        calibratedRunId: row.calibratedRunId ?? null,
+      });
+    }
+  }
+  return conflicts;
+}
+
+export function validateApiUrlPayloadGate({ payload, runDir }) {
+  const isApiUrl =
+    payload?.calibration_version === "gemini_api_youtube_url_v1" ||
+    (Array.isArray(payload?.updates) &&
+      payload.updates.some((u) => u.calibratedRoute === "gemini_api_youtube_url_v1" || u.calibrationVersion === "gemini_api_youtube_url_v1"));
+  if (!isApiUrl) {
+    return { is_api_url: false, passed: true, errors: [] };
+  }
+
+  const errors = [];
+  if (payload.bias_config_approved !== true) {
+    errors.push("API URL payload requires bias_config_approved === true (user-approved bias correction)");
+  }
+
+  const anchorSet = new Set((payload.anchor_video_ids || []).map(String));
+  for (const u of payload.updates || []) {
+    if (anchorSet.has(String(u.id))) {
+      errors.push(`Anchor video "${u.id}" must NOT appear in payload.updates`);
+    }
+  }
+
+  const auditPath = path.join(runDir, "api_audit_report.json");
+  if (!fs.existsSync(auditPath)) {
+    errors.push(`Missing required API URL audit report: ${auditPath}`);
+  } else {
+    try {
+      const audit = JSON.parse(fs.readFileSync(auditPath, "utf8"));
+      if (audit.all_checks_passed !== true) {
+        errors.push(`API URL audit report did not pass all checks (all_checks_passed=${String(audit.all_checks_passed)})`);
+      }
+    } catch (err) {
+      errors.push(`Failed to parse api_audit_report.json: ${err.message}`);
+    }
+  }
+
+  return { is_api_url: true, passed: errors.length === 0, errors };
+}
+
 async function main() {
   loadDotenv();
   const runId = process.argv[2];
   const dryRun = process.argv.includes("--dry-run");
   const allowMissingSqlite = process.argv.includes("--allow-missing-sqlite");
+  const allowOverwrite = process.argv.includes("--allow-overwrite");
   const workerArg = getFlagValue(process.argv, "--worker");
   const preDBackupArg = getFlagValue(process.argv, "--pre-d-backup");
   const sqliteArg = getFlagValue(process.argv, "--sqlite");
@@ -172,6 +227,12 @@ async function main() {
   }
   if (payload.updates.length > 200) {
     throw new Error(`Refusing to write >200 rows in one batch (got ${payload.updates.length})`);
+  }
+
+  // API URL payload pre-flight gate (no-op for existing phase2_v1 payloads)
+  const apiGate = validateApiUrlPayloadGate({ payload, runDir });
+  if (!apiGate.passed) {
+    throw new Error(`API URL payload pre-flight gate failed:\n - ${apiGate.errors.join("\n - ")}`);
   }
 
   // Resolve worker and check multi-PC serialized TiDB apply lock
@@ -232,6 +293,19 @@ async function main() {
   });
 
   try {
+    // Guard against accidentally overwriting already-calibrated rows (e.g. anchor videos)
+    const targetIds = payload.updates.map((u) => String(u.id));
+    const [existingRows] = await conn.query(
+      "SELECT id, calibratedScore, calibrationVersion, calibratedRoute, calibratedRunId FROM videos WHERE id IN (?)",
+      [targetIds]
+    );
+    const overwriteConflicts = findAlreadyCalibratedIds(existingRows);
+    if (overwriteConflicts.length > 0 && !allowOverwrite) {
+      throw new Error(
+        `Refusing to overwrite ${overwriteConflicts.length} already-calibrated row(s) in TiDB (pass --allow-overwrite only if explicitly intended): ${JSON.stringify(overwriteConflicts.slice(0, 10))}`
+      );
+    }
+
     // Take a fresh local pre-apply snapshot BEFORE touching any TiDB rows
     const preApplyBackup = await dumpFreshPreApplyBackup(conn, runId, backupRoot);
     console.log(
@@ -399,7 +473,10 @@ async function main() {
   }
 }
 
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+const isMain = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+if (isMain) {
+  main().catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
+}

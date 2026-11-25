@@ -103,7 +103,7 @@ export interface Video {
   calibratedBreakdown?: Record<string, unknown> | null;
   calibrationVersion?: string | null;
   calibratedAt?: string | null;
-  calibratedRoute?: "video_h1" | "video_h2_escalated" | "contact_sheet" | null;
+  calibratedRoute?: "video_h1" | "video_h2_escalated" | "contact_sheet" | "gemini_api_youtube_url_v1" | null;
   calibratedRunId?: string | null;
   calibrationGenreBucket?: string | null;
   isProvisional?: boolean;

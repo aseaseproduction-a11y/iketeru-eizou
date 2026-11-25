@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "config_version": "api_url_bias_v1",
+  "status": "pending_approval",
+  "approved": false,
+  "approved_at": null,
+  "approved_by": null,
+  "calibration_version": "gemini_api_youtube_url_v1",
+  "calibrated_route": "gemini_api_youtube_url_v1",
+  "model": "gemini-4-neon",
+  "thinking_level": "high",
+  "service_tier": "flex",
+  "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+  "method": "constant_offset",
+  "anchor_count_target": 30,
+  "anchor_count_actual": 12,
+  "offset_subtracted": null,
+  "ci95": null,
+  "thresholds": {
+    "t_award": 83,
+    "t_low": 63
+  },
+  "note": "雛形（未承認）。初回バッチで答え合わせ用アンカー 30 本（既存 12 本＋新規 18 本）が揃った時点で平均差と 95% 信頼区間を算出し、ユーザー承認後に approved=true・offset_subtracted・ci95 を確定する。approved !== true の間は TiDB 反映ペイロードの生成および --apply は自動拒否される。"
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-11-25T14:40:00+09:00",
+  "currency": "USD",
+  "default_monthly_limit_usd": 38.0,
+  "gcp_monthly_credit_usd": 40.0,
+  "pricing_table_usd_per_1m": {
+    "standard": {
+      "input": 3.0,
+      "output_and_thought": 15.0
+    },
+    "flex": {
+      "input": 1.5,
+      "output_and_thought": 7.5
+    }
+  },
+  "monthly_totals": {
+    "2026-11": {
+      "limit_usd": 38.0,
+      "spent_usd": 2.163423,
+      "calls_count": 24,
+      "runs": [
+        {
+          "run_id": "run_20261125_125425",
+          "purpose": "pilot_10x2_standard",
+          "service_tier": "standard",
+          "calls_count": 20,
+          "cost_usd": 1.719264,
+          "recorded_at": "2026-11-25T04:07:51Z"
+        },
+        {
+          "run_id": "run_20261125_134050",
+          "purpose": "validation_50_stopped_early_standard",
+          "service_tier": "standard",
+          "calls_count": 4,
+          "cost_usd": 0.444159,
+          "recorded_at": "2026-11-25T04:43:10Z"
+        }
+      ]
+    }
+  }
+}
