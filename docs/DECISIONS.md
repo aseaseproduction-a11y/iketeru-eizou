@@ -84,11 +84,12 @@
 ### D-014 未キャッシュの Vimeo は取得しない（2026-11-25）
 - 経緯：試験の 1 本目で `login_required`（ログインしないと取得できない）。
 - 決定：ログインしない取得は中止し、試験予約 `run_20261125_113713` は解除する。認証情報や Cookie は使わない。
+- 一覧ファイル：`analysis/claims/_vimeo_login_required_list.json`（未キャッシュ・YouTube 以外の未校正 312 件〔`vimeo`: 310、`instagram`: 2〕を記録。Gemini API で直接読めるのは YouTube の URL だけなので、今のところ採点の手段がない）。
 
 ### D-015 SQLite にだけ残っている 48 行は専用スクリプトで削除（2026-11-25）
 - 経緯：TiDB から削除された 48 件が、削除を反映しない SQLite に残っていた。
 - 決定：案 (a)。`prune-sqlite-tidb-orphans.mjs` で --dry-run → 承認 → --apply（事前にバックアップ）。普段の同期（zeroDeletions）は変えない。全 PC で同じ手順を実行する。
-- 状態：--dry-run まで（--apply は未承認）。
+- 状態：chibatmute で実施済み（2026-11-25 14:38 JST、事前バックアップ `E:\iketeru_backups\sqlite_pre_prune_orphans_20261125_143831\iketeru_knowledge.db` 取得、SQLite 5,653 件＝TiDB と一致・校正済み 912 件・`craft_recipes` 1,036 件不変）。CHIBA-PC と CHIBA-PC2 は未実施。
 
 ### D-016 YouTube の再取得は見送る（2026-11-25）
 - 決定：ボット確認が続いているため、YouTube の再取得は保留する。会社の回線全体が制限されるおそれがあるため。
@@ -110,4 +111,9 @@
 - 決定：Antigravity の brain をそのまま Google ドライブに置かない（大きすぎる、偽の結果が混ざっている、秘密情報が混ざるおそれ、会話 ID を 1 台専任にするルールに反する）。
 - 共有するもの：`status_<PC>.md/json`、`handoff_<PC>_<日付>.md`（Google ドライブ）、この `DECISIONS.md`（リポジトリの `docs/`）。
 - Google ドライブには、エクスプローラーでコピーして置く（ブラウザからアップロードすると Google ドキュメントに変換され、Antigravity が読めなくなる）。
-- 監査のために残すもの：run が完了するたびに、親の会話と採点役の会話の記録を zip にまとめ、秘密情報の検査とチェックサムを付けて保管する（実装はこれから）。
+- 監査のために残すもの：run が完了するたびに、親の会話と採点役の会話の記録を zip にまとめ、秘密情報の検査とチェックサムを付けて保管する（実装：`scripts/archive-run-evidence.mjs`、`4b4ef2f2`）。
+
+### D-020 監査用 zip の親会話ログ伏せ字方針（2026-11-25）
+- 経緯：`run_20261124_080300` / `run_20261125_070347` の監査 zip 事前検査で、共通の親会話（`8eb1cf89`）に TiDB 初期設定時の接続文字列・ユーザー名・ホスト名・旧パスワード（後にローテーション済み）が残っていることが判明し、保存せず停止した。
+- 決定：`scripts/archive-run-evidence.mjs` では**親の会話の transcript だけ**メモリ上でコピーを伏せ字（`[REDACTED:<種類>]`）にし、元の brain ファイルは変更しない。**採点役の会話の transcript と `analysis/runs/<run_id>/` は監査の根拠なので一切変更しない**（そちらで秘密情報が検出された場合は保存せず停止）。`manifest.json` には伏せ字にしたファイルの元 SHA-256・伏せ字後 SHA-256・置き換え件数と種類のみ記録し、元の値は出力しない。伏せ字後に zip 全体（`manifest.json` 含む）を再検査して 0 件のときだけ保存する。
+- 根拠：`scripts/archive-run-evidence.mjs` / `scripts/archive-run-evidence.test.mjs`。`run_20261124_080300.zip`（17.76 MB、SHA-256 `f1887cc6…`）と `run_20261125_070347.zip`（17.09 MB、SHA-256 `c118907c…`）を `D:\マイドライブ\iketeru_evidence_archive\` へ保存済み（各 39 箇所伏せ字・再検査 0 件）。

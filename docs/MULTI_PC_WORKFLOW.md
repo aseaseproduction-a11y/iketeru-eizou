@@ -144,7 +144,7 @@ node scripts/archive-run-evidence.mjs <run_id> --dry-run --worker <このPC名>
 node scripts/archive-run-evidence.mjs <run_id> --worker <このPC名>
 ```
 
-- **保存前ガード（fail-closed）**: API キー、`DATABASE_URL`、`mysql://` 接続情報、秘密鍵、`.env` の秘密値が **1 件でも検出された場合**、または zip サイズが **200 MB を超える場合**は zip を保存せず終了コード 1 で停止します。停止した場合は原因を報告し、ユーザー判断を仰いでください。
+- **保存前ガード（fail-closed）と親ログ伏せ字（D-020）**: 親会話の transcript のみメモリ上でコピーを伏せ字（`[REDACTED:<種類>]`）にし、`manifest.json` に元 SHA-256・伏せ字後 SHA-256・件数と種類を記録します（元の brain ファイルは無変更）。**採点役の transcript と `analysis/runs/<run_id>/` は一切変更しません**。伏せ字後に zip 全体（`manifest.json` 含む）を再検査し、秘密情報が **1 件でも残った場合**、または zip サイズが **200 MB を超える場合**は zip を保存せず終了コード 1 で停止します。停止した場合は原因を報告し、ユーザー判断を仰いでください。
 
 ### ステップ3.5: 取得不可動画の除外リスト（`analysis/claims/_skip_list.json`）運用
 バッチ完了後に未校正のまま残る取得失敗動画が別PCで繰り返し再予約されるのを防ぐため、`analysis/claims/_skip_list.json` で除外管理します（`--status`・`--claim` の空きプール計算から自動除外）。

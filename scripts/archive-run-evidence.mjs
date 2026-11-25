@@ -2,20 +2,22 @@
 /**
  * Archive audit evidence for a completed Phase 3 calibration run into a verified ZIP file.
  *
- * Implements DECISIONS.md D-019:
+ * Implements DECISIONS.md D-019 (and parent transcript redaction policy):
  *  - Collects parent and scorer subagent conversation IDs from
  *    `analysis/runs/<run_id>/dispatch_log.jsonl` and `raw_scores.jsonl`
  *    (and resolves parent IDs referenced in subagent transcripts when not stored inline).
  *  - Collects ONLY `.system_generated/logs/transcript*.jsonl` from each conversation's
  *    Antigravity brain folder (strictly excluding media/screenshots/chunks/scratch).
- *  - Bundles those transcripts together with `analysis/runs/<run_id>/` and a `manifest.json`
- *    (file list + SHA-256, conversation IDs, created_at, worker PC).
- *  - Scans EVERY collected file for secrets (API keys, DATABASE_URL, mysql:// credentials,
- *    private keys, .env secret values) BEFORE writing any archive; aborts without saving
- *    if even a single secret is detected.
+ *  - Redacts secrets ONLY in parent conversation transcript copies (in memory; originals
+ *    on disk are never modified), replacing matches with `[REDACTED:<type>]`.
+ *    Scorer subagent transcripts and `analysis/runs/<run_id>/` are NEVER modified.
+ *  - Records `original_sha256`, `redacted_sha256`, replacement counts, and types in
+ *    `manifest.json` without ever emitting raw secret values.
+ *  - Re-scans the ENTIRE post-redaction archive payload (including `manifest.json`) for
+ *    secrets BEFORE saving; aborts without saving if even 1 finding remains.
  *  - Enforces max archive size guard (default 200 MB); aborts without saving if exceeded.
  *
- * Does NOT modify any frozen Phase 2 files or run files.
+ * Does NOT modify any frozen Phase 2 files, run files, or brain files on disk.
  */
 
 import { execFileSync } from "node:child_process";
@@ -55,56 +57,85 @@ const NON_SECRET_ENV_KEYS = new Set([
   "LC_ALL",
 ]);
 
-const PLACEHOLDER_VALUE_RE = /^(?:<[^>]+>|REDACTED|YOUR_[A-Z0-9_]+|CHANGE_ME|REPLACE_ME|DUMMY|EXAMPLE|TEST_KEY|xxx+|\*{4,}|\.{3,})$/i;
+const PLACEHOLDER_VALUE_RE =
+  /^(?:<[^>]+>|REDACTED|\[REDACTED:[^\]]+\]|YOUR_[A-Z0-9_]+|CHANGE_ME|REPLACE_ME|DUMMY|EXAMPLE|TEST_KEY|xxx+|\*{3,}|\.{3,}|password|passwd|pass|secret)$/i;
 
+/**
+ * Secret detection & redaction patterns.
+ * `mode`:
+ *  - "full": replace entire match with `[REDACTED:<name>]`
+ *  - "group2": regex has 3 capture groups (prefix, secretValue, suffix); keep prefix & suffix, replace group2
+ */
 export const SECRET_PATTERNS = Object.freeze([
   {
-    name: "mysql_connection_url",
-    re: /mysql2?:\/\/[^:\s"'`<>\\]+:[^@\s"'`<>\\]+@[^\s"'`<>\\]+/gi,
-  },
-  {
-    name: "db_connection_url_with_creds",
-    re: /(?:postgres(?:ql)?|mongodb(?:\+srv)?|rediss?):\/\/[^:\s"'`<>\\]+:[^@\s"'`<>\\]+@[^\s"'`<>\\]+/gi,
-  },
-  {
     name: "database_url_assignment",
-    re: /\b(?:DATABASE_URL|TIDB_URL)\s*[:=]\s*["']?(?:mysql2?|postgres(?:ql)?|mongodb(?:\+srv)?):\/\/[^\s"'`<>\\]+/gi,
+    mode: "group2",
+    re: /(\b(?:DATABASE_URL|TIDB_URL)\s*[:=]\s*(?:\\*["'])?)((?:mysql2?|postgres(?:ql)?|mongodb(?:\+srv)?|rediss?):\/\/[^\s"'`\\)\]]+)((?:\\*["'])?)/gi,
+  },
+  {
+    name: "mysql_connection_url",
+    mode: "full",
+    re: /mysql2?:\/\/[^\s"'`\\)\]]+/gi,
+  },
+  {
+    name: "db_connection_url",
+    mode: "full",
+    re: /(?:postgres(?:ql)?|mongodb(?:\+srv)?|rediss?):\/\/[^\s"'`\\)\]]+/gi,
+  },
+  {
+    name: "tidb_cloud_host",
+    mode: "full",
+    re: /[a-z0-9][a-z0-9.-]*\.tidbcloud\.com(?::\d+)?(?:\/[^\s"'`\\)\]]*)?/gi,
   },
   {
     name: "google_api_key",
+    mode: "full",
     re: /\bAIza[0-9A-Za-z_-]{33,}\b/g,
   },
   {
     name: "openai_api_key",
+    mode: "full",
     re: /\bsk-(?:proj-|live-|test-|svcacct-)?[A-Za-z0-9_-]{20,}\b/g,
   },
   {
     name: "anthropic_api_key",
+    mode: "full",
     re: /\bsk-ant-[A-Za-z0-9_-]{20,}\b/g,
   },
   {
     name: "github_token",
+    mode: "full",
     re: /\b(?:ghp_[A-Za-z0-9]{36}|gho_[A-Za-z0-9]{36}|ghu_[A-Za-z0-9]{36}|ghs_[A-Za-z0-9]{36}|github_pat_[A-Za-z0-9_]{22,})\b/g,
   },
   {
     name: "aws_access_key_id",
+    mode: "full",
     re: /\bAKIA[0-9A-Z]{16}\b/g,
   },
   {
     name: "slack_token",
+    mode: "full",
     re: /\bxox[baprs]-[0-9A-Za-z-]{10,}\b/g,
   },
   {
     name: "private_key_block",
-    re: /-----BEGIN (?:RSA |EC |DSA |OPENSSH |PGP )?PRIVATE KEY-----/g,
+    mode: "full",
+    re: /-----BEGIN (?:RSA |EC |DSA |OPENSSH |PGP )?PRIVATE KEY-----[\s\S]*?-----END (?:RSA |EC |DSA |OPENSSH |PGP )?PRIVATE KEY-----|-----BEGIN (?:RSA |EC |DSA |OPENSSH |PGP )?PRIVATE KEY-----/g,
   },
   {
     name: "auth_header_token",
-    re: /(?:Authorization\s*:\s*Bearer|x-goog-api-key\s*:)\s+[A-Za-z0-9._-]{20,}/gi,
+    mode: "group2",
+    re: /((?:Authorization\s*:\s*Bearer|x-goog-api-key\s*:)\s+)([A-Za-z0-9._-]{20,})()/gi,
   },
   {
     name: "secret_env_assignment",
-    re: /\b(?:GEMINI_API_KEY|OPENAI_API_KEY|ANTHROPIC_API_KEY|TIDB_PASSWORD|DB_PASSWORD|AWS_SECRET_ACCESS_KEY|GITHUB_TOKEN|GCLI_ACCESS_TOKEN|GOOGLE_API_KEY)\s*=\s*["']?([A-Za-z0-9_./+:@-]{12,})["']?/g,
+    mode: "group2",
+    re: /(\b(?:GEMINI_API_KEY|OPENAI_API_KEY|ANTHROPIC_API_KEY|TIDB_PASSWORD|DB_PASSWORD|AWS_SECRET_ACCESS_KEY|GITHUB_TOKEN|GCLI_ACCESS_TOKEN|GOOGLE_API_KEY)\s*=\s*(?:\\*["'])?)([A-Za-z0-9_./+:@-]{12,})((?:\\*["'])?)/g,
+  },
+  {
+    name: "password_var_assignment",
+    mode: "group2",
+    re: /(\$?(?:pass|passwd|password|db_pass|db_password|tidb_pass|tidb_password)\s*=\s*(?:\\*["']))([A-Za-z0-9_./+:@!#$%^&*-]{8,})((?:\\*["']))/gi,
   },
 ]);
 
@@ -209,7 +240,6 @@ function loadDotenv(repoRoot) {
     const require = createRequire(path.join(DEFAULT_REPO_ROOT, "package.json"));
     require("dotenv").config({ path: envPath, quiet: true });
   } catch {
-    // Fallback minimal parser if dotenv cannot be resolved from temp test dirs
     const parsed = parseEnvFile(envPath);
     for (const [k, v] of Object.entries(parsed)) {
       if (process.env[k] === undefined) process.env[k] = v;
@@ -220,7 +250,7 @@ function loadDotenv(repoRoot) {
 export function parseEnvFile(envPath) {
   const out = {};
   if (!fs.existsSync(envPath)) return out;
-  const raw = fs.readFileSync(envPath, "utf8");
+  const raw = fs.readFileSync(envPath, "utf8").replace(/^\uFEFF/, "");
   for (const line of raw.split(/\r?\n/)) {
     const trimmed = line.trim();
     if (!trimmed || trimmed.startsWith("#")) continue;
@@ -255,11 +285,14 @@ export function extractEnvSecretValues(envPaths) {
         seenVal.add(val);
         entries.push({ key, label: `env_value:${key}`, value: val });
       }
-      // If the env value is a connection URL with credentials, also watch its password and user:pass
+      // If the env value is a connection URL, also watch password, userinfo, username, and remote hostname
       if (/^[a-z][a-z0-9+.-]*:\/\//i.test(val)) {
         try {
           const u = new URL(val);
           const candidates = [];
+          if (u.username && u.password && u.password.length >= 4) {
+            candidates.push({ suffix: "userinfo", value: `${u.username}:${u.password}` });
+          }
           if (u.password && u.password.length >= 8) {
             candidates.push({ suffix: "password", value: u.password });
             try {
@@ -271,8 +304,15 @@ export function extractEnvSecretValues(envPaths) {
               // ignore malformed percent encoding
             }
           }
-          if (u.username && u.password && u.password.length >= 4) {
-            candidates.push({ suffix: "userinfo", value: `${u.username}:${u.password}` });
+          if (u.username && u.username.length >= 8) {
+            candidates.push({ suffix: "username", value: u.username });
+          }
+          if (
+            u.hostname &&
+            u.hostname.includes(".") &&
+            !/^(?:localhost|127\.0\.0\.1|0\.0\.0\.0|example\.com)$/i.test(u.hostname)
+          ) {
+            candidates.push({ suffix: "hostname", value: u.hostname });
           }
           for (const c of candidates) {
             if (!PLACEHOLDER_VALUE_RE.test(c.value) && !seenVal.has(c.value)) {
@@ -286,6 +326,8 @@ export function extractEnvSecretValues(envPaths) {
       }
     }
   }
+  // Sort longest values first so redaction replaces full URLs before substrings
+  entries.sort((a, b) => b.value.length - a.value.length);
   return { entries, checkedFiles };
 }
 
@@ -293,6 +335,70 @@ export function redactMatch(str) {
   const s = String(str || "");
   if (s.length <= 8) return `<redacted len=${s.length}>`;
   return `${s.slice(0, 4)}...${s.slice(-2)} (len=${s.length})`;
+}
+
+function shouldIgnorePatternMatch(pat, matchedStr, capturedVal) {
+  if (!capturedVal) return true;
+  if (capturedVal.startsWith("[REDACTED:") || matchedStr.startsWith("[REDACTED:")) return true;
+  if (pat.name === "password_var_assignment") {
+    if (capturedVal.startsWith("${") || PLACEHOLDER_VALUE_RE.test(capturedVal)) return true;
+  }
+  if (pat.name === "secret_env_assignment") {
+    if (PLACEHOLDER_VALUE_RE.test(capturedVal)) return true;
+  }
+  return false;
+}
+
+/**
+ * Redact secrets in a parent transcript string, replacing each match with `[REDACTED:<type>]`.
+ * Does NOT emit raw secret values anywhere.
+ */
+export function redactTextForSecrets(text, envSecretEntries = []) {
+  const countsByType = {};
+  let totalReplacements = 0;
+
+  const bump = (type) => {
+    countsByType[type] = (countsByType[type] || 0) + 1;
+    totalReplacements++;
+  };
+
+  let out = text;
+
+  // 1. Apply regex patterns in priority order (DATABASE_URL=... & mysql://... before smaller tokens)
+  for (const pat of SECRET_PATTERNS) {
+    pat.re.lastIndex = 0;
+    if (pat.mode === "group2") {
+      out = out.replace(pat.re, (full, prefix, val, suffix) => {
+        if (shouldIgnorePatternMatch(pat, full, val)) return full;
+        bump(pat.name);
+        return `${prefix}[REDACTED:${pat.name}]${suffix}`;
+      });
+    } else {
+      out = out.replace(pat.re, (full) => {
+        if (shouldIgnorePatternMatch(pat, full, full)) return full;
+        bump(pat.name);
+        return `[REDACTED:${pat.name}]`;
+      });
+    }
+  }
+
+  // 2. Redact any remaining literal .env secret values (sorted longest-first)
+  for (const secret of envSecretEntries) {
+    if (!secret.value || !out.includes(secret.value)) continue;
+    const parts = out.split(secret.value);
+    const count = parts.length - 1;
+    if (count > 0) {
+      countsByType[secret.label] = (countsByType[secret.label] || 0) + count;
+      totalReplacements += count;
+      out = parts.join(`[REDACTED:${secret.label}]`);
+    }
+  }
+
+  return {
+    redactedText: out,
+    totalReplacements,
+    countsByType,
+  };
 }
 
 export function scanTextForSecrets(text, zipPath, envSecretEntries = []) {
@@ -309,20 +415,13 @@ export function scanTextForSecrets(text, zipPath, envSecretEntries = []) {
       let match;
       while ((match = pat.re.exec(line)) !== null) {
         const matchedStr = match[0];
-        const capturedVal = match[1] || matchedStr;
-        if (PLACEHOLDER_VALUE_RE.test(capturedVal)) continue;
-        // Skip obvious documentation placeholders like mysql://user:pass@host
-        if (
-          (pat.name === "mysql_connection_url" || pat.name === "db_connection_url_with_creds") &&
-          /:\/\/(?:user|username|root|<[^>]+>):(?:pass|password|<[^>]+>)@(?:host|localhost|127\.0\.0\.1|example\.com)\b/i.test(matchedStr)
-        ) {
-          continue;
-        }
+        const capturedVal = pat.mode === "group2" ? match[2] : matchedStr;
+        if (shouldIgnorePatternMatch(pat, matchedStr, capturedVal)) continue;
         findings.push({
           file: zipPath,
           line: lineNum,
           rule: pat.name,
-          sample: redactMatch(matchedStr),
+          sample: redactMatch(capturedVal),
         });
         if (findings.length >= 50) return findings;
       }
@@ -346,7 +445,8 @@ export function scanTextForSecrets(text, zipPath, envSecretEntries = []) {
 export function scanFilesForSecrets(files, envSecretEntries = []) {
   const allFindings = [];
   for (const f of files) {
-    const content = fs.readFileSync(f.sourcePath, "utf8");
+    const content =
+      f.buffer !== undefined ? f.buffer.toString("utf8") : fs.readFileSync(f.sourcePath, "utf8");
     const hits = scanTextForSecrets(content, f.zipPath, envSecretEntries);
     for (const h of hits) {
       allFindings.push(h);
@@ -490,6 +590,10 @@ export function collectEvidenceFiles(runDir, brainRoot, { parentIds, subagentIds
   return { files, missingInBrain };
 }
 
+export function sha256Buffer(buf) {
+  return crypto.createHash("sha256").update(buf).digest("hex");
+}
+
 export function sha256File(filePath) {
   const hash = crypto.createHash("sha256");
   const fd = fs.openSync(filePath, "r");
@@ -553,24 +657,22 @@ export function writeZipFile(destPath, entries) {
       const crc = crc32(rawBuf);
       const compressed = zlib.deflateRawSync(rawBuf, { level: 6 });
 
-      // Use DEFLATE if smaller, otherwise STORE
       const useDeflate = compressed.length < rawBuf.length;
       const payload = useDeflate ? compressed : rawBuf;
       const method = useDeflate ? 8 : 0;
 
-      // Local File Header (30 bytes + filename)
       const localHeader = Buffer.alloc(30);
-      localHeader.writeUInt32LE(0x04034b50, 0); // signature
-      localHeader.writeUInt16LE(20, 4); // version needed to extract (2.0)
-      localHeader.writeUInt16LE(0x0800, 6); // general purpose bit flag: UTF-8
-      localHeader.writeUInt16LE(method, 8); // compression method
+      localHeader.writeUInt32LE(0x04034b50, 0);
+      localHeader.writeUInt16LE(20, 4);
+      localHeader.writeUInt16LE(0x0800, 6);
+      localHeader.writeUInt16LE(method, 8);
       localHeader.writeUInt16LE(dosTime, 10);
       localHeader.writeUInt16LE(dosDate, 12);
       localHeader.writeUInt32LE(crc, 14);
       localHeader.writeUInt32LE(payload.length, 18);
       localHeader.writeUInt32LE(rawBuf.length, 22);
       localHeader.writeUInt16LE(nameBuf.length, 26);
-      localHeader.writeUInt16LE(0, 28); // extra field length
+      localHeader.writeUInt16LE(0, 28);
 
       const localHeaderOffset = offset;
       fs.writeSync(fd, localHeader);
@@ -595,10 +697,10 @@ export function writeZipFile(destPath, entries) {
 
     for (const rec of centralRecords) {
       const cdHeader = Buffer.alloc(46);
-      cdHeader.writeUInt32LE(0x02014b50, 0); // central file header signature
-      cdHeader.writeUInt16LE(20, 4); // version made by
-      cdHeader.writeUInt16LE(20, 6); // version needed
-      cdHeader.writeUInt16LE(0x0800, 8); // UTF-8 flag
+      cdHeader.writeUInt32LE(0x02014b50, 0);
+      cdHeader.writeUInt16LE(20, 4);
+      cdHeader.writeUInt16LE(20, 6);
+      cdHeader.writeUInt16LE(0x0800, 8);
       cdHeader.writeUInt16LE(rec.method, 10);
       cdHeader.writeUInt16LE(rec.dosTime, 12);
       cdHeader.writeUInt16LE(rec.dosDate, 14);
@@ -606,11 +708,11 @@ export function writeZipFile(destPath, entries) {
       cdHeader.writeUInt32LE(rec.compressedSize, 20);
       cdHeader.writeUInt32LE(rec.uncompressedSize, 24);
       cdHeader.writeUInt16LE(rec.nameBuf.length, 28);
-      cdHeader.writeUInt16LE(0, 30); // extra length
-      cdHeader.writeUInt16LE(0, 32); // comment length
-      cdHeader.writeUInt16LE(0, 34); // disk number start
-      cdHeader.writeUInt16LE(0, 36); // internal file attributes
-      cdHeader.writeUInt32LE(0, 38); // external file attributes
+      cdHeader.writeUInt16LE(0, 30);
+      cdHeader.writeUInt16LE(0, 32);
+      cdHeader.writeUInt16LE(0, 34);
+      cdHeader.writeUInt16LE(0, 36);
+      cdHeader.writeUInt32LE(0, 38);
       cdHeader.writeUInt32LE(rec.localHeaderOffset, 42);
 
       fs.writeSync(fd, cdHeader);
@@ -618,16 +720,15 @@ export function writeZipFile(destPath, entries) {
       centralDirSize += cdHeader.length + rec.nameBuf.length;
     }
 
-    // End of Central Directory Record (22 bytes)
     const eocd = Buffer.alloc(22);
     eocd.writeUInt32LE(0x06054b50, 0);
-    eocd.writeUInt16LE(0, 4); // disk number
-    eocd.writeUInt16LE(0, 6); // disk with start of central dir
+    eocd.writeUInt16LE(0, 4);
+    eocd.writeUInt16LE(0, 6);
     eocd.writeUInt16LE(centralRecords.length, 8);
     eocd.writeUInt16LE(centralRecords.length, 10);
     eocd.writeUInt32LE(centralDirSize, 12);
     eocd.writeUInt32LE(centralDirOffset, 16);
-    eocd.writeUInt16LE(0, 20); // comment length
+    eocd.writeUInt16LE(0, 20);
 
     fs.writeSync(fd, eocd);
   } finally {
@@ -684,7 +785,7 @@ export function archiveRunEvidence(options) {
     throw new Error(`Run directory not found: ${runDir}`);
   }
 
-  // Resolve .env files to scan against
+  // Resolve .env files to scan/redact against
   const defaultEnvFiles = [
     path.join(repoRoot, ".env"),
     "E:\\iketeru-creative-studio\\.env",
@@ -703,17 +804,79 @@ export function archiveRunEvidence(options) {
   const convInfo = collectConversationIds(runDir, brainRoot, options.parentIds || []);
 
   // 2. Collect run files + transcript-only files
-  const { files, missingInBrain } = collectEvidenceFiles(runDir, brainRoot, convInfo);
+  const { files: collectedFiles, missingInBrain } = collectEvidenceFiles(runDir, brainRoot, convInfo);
 
-  const runFolderFiles = files.filter(f => f.category === "run_folder");
-  const parentTranscriptFiles = files.filter(f => f.category === "parent_transcript");
-  const subagentTranscriptFiles = files.filter(f => f.category === "subagent_transcript");
-  const totalUncompressedBytes = files.reduce((acc, f) => acc + f.sizeBytes, 0);
+  // 3. Redact ONLY parent transcripts in memory (subagent transcripts & run folder stay 100% untouched)
+  const preparedFiles = [];
+  const redactedFileReports = [];
+  let totalReplacements = 0;
+  const totalCountsByType = {};
 
-  // 3. Secret scan (ALWAYS runs in both dry-run and write mode)
-  const secretScan = scanFilesForSecrets(files, envSecretEntries);
+  for (const f of collectedFiles) {
+    if (f.category === "parent_transcript") {
+      const originalBuf = fs.readFileSync(f.sourcePath);
+      const originalSha256 = sha256Buffer(originalBuf);
+      const { redactedText, totalReplacements: repCount, countsByType } = redactTextForSecrets(
+        originalBuf.toString("utf8"),
+        envSecretEntries
+      );
+      if (repCount > 0) {
+        const redactedBuf = Buffer.from(redactedText, "utf8");
+        const redactedSha256 = sha256Buffer(redactedBuf);
+        totalReplacements += repCount;
+        for (const [k, v] of Object.entries(countsByType)) {
+          totalCountsByType[k] = (totalCountsByType[k] || 0) + v;
+        }
+        redactedFileReports.push({
+          zip_path: f.zipPath,
+          original_sha256: originalSha256,
+          redacted_sha256: redactedSha256,
+          replacement_count: repCount,
+          counts_by_type: countsByType,
+        });
+        preparedFiles.push({
+          ...f,
+          buffer: redactedBuf,
+          sizeBytes: redactedBuf.length,
+          redacted: true,
+          originalSha256,
+          redactedSha256,
+          replacementCount: repCount,
+          countsByType,
+        });
+      } else {
+        preparedFiles.push({
+          ...f,
+          redacted: false,
+          originalSha256,
+        });
+      }
+    } else {
+      // Subagent transcripts and run folder are strictly unmodified
+      preparedFiles.push({
+        ...f,
+        redacted: false,
+      });
+    }
+  }
+
+  const runFolderFiles = preparedFiles.filter(f => f.category === "run_folder");
+  const parentTranscriptFiles = preparedFiles.filter(f => f.category === "parent_transcript");
+  const subagentTranscriptFiles = preparedFiles.filter(f => f.category === "subagent_transcript");
+  const totalUncompressedBytes = preparedFiles.reduce((acc, f) => acc + f.sizeBytes, 0);
+
+  // 4. Full post-redaction secret scan across ALL archived files (parent redacted + subagent raw + run raw)
+  const secretScan = scanFilesForSecrets(preparedFiles, envSecretEntries);
 
   const destZipPath = path.join(outDir, `${runId}.zip`);
+  const redactionSummary = {
+    policy: "parent_transcript_only",
+    redacted_files_count: redactedFileReports.length,
+    total_replacements: totalReplacements,
+    counts_by_type: totalCountsByType,
+    files: redactedFileReports,
+  };
+
   const baseSummary = {
     mode: dryRun ? "dry_run" : "archive",
     run_id: runId,
@@ -726,8 +889,8 @@ export function archiveRunEvidence(options) {
       missing_in_brain: missingInBrain,
     },
     counts: {
-      total_evidence_files: files.length,
-      total_zip_entries_with_manifest: files.length + 1,
+      total_evidence_files: preparedFiles.length,
+      total_zip_entries_with_manifest: preparedFiles.length + 1,
       run_folder_files: runFolderFiles.length,
       parent_transcript_files: parentTranscriptFiles.length,
       subagent_transcript_files: subagentTranscriptFiles.length,
@@ -735,6 +898,7 @@ export function archiveRunEvidence(options) {
     total_uncompressed_bytes: totalUncompressedBytes,
     total_uncompressed_mb: Number((totalUncompressedBytes / (1024 * 1024)).toFixed(2)),
     uncompressed_exceeds_max_size: totalUncompressedBytes > maxSizeBytes,
+    redaction: redactionSummary,
     secret_scan: {
       passed: secretScan.passed,
       findings_count: secretScan.findings.length,
@@ -753,7 +917,7 @@ export function archiveRunEvidence(options) {
     };
   }
 
-  // Fail closed on secrets BEFORE creating any archive
+  // Fail closed if ANY secret remains after parent redaction (e.g. inside subagent transcript or run folder)
   if (!secretScan.passed) {
     return {
       ...baseSummary,
@@ -766,17 +930,34 @@ export function archiveRunEvidence(options) {
     throw new Error(`Destination zip already exists (use --overwrite to replace): ${destZipPath}`);
   }
 
-  // 4. Build manifest.json with per-file SHA-256
+  // 5. Build manifest.json with per-file SHA-256 and redaction metadata
   const createdAt = new Date().toISOString();
-  const manifestFiles = files.map(f => ({
-    zip_path: f.zipPath,
-    category: f.category,
-    size_bytes: f.sizeBytes,
-    sha256: sha256File(f.sourcePath),
-  }));
+  const manifestFiles = preparedFiles.map(f => {
+    if (f.redacted) {
+      return {
+        zip_path: f.zipPath,
+        category: f.category,
+        size_bytes: f.sizeBytes,
+        sha256: f.redactedSha256,
+        redacted: true,
+        original_sha256: f.originalSha256,
+        redacted_sha256: f.redactedSha256,
+        redaction_count: f.replacementCount,
+        redaction_counts_by_type: f.countsByType,
+      };
+    }
+    const hash = f.originalSha256 || sha256File(f.sourcePath);
+    return {
+      zip_path: f.zipPath,
+      category: f.category,
+      size_bytes: f.sizeBytes,
+      sha256: hash,
+      redacted: false,
+    };
+  });
 
   const manifest = {
-    schema_version: 1,
+    schema_version: 2,
     run_id: runId,
     created_at: createdAt,
     worker,
@@ -793,18 +974,37 @@ export function archiveRunEvidence(options) {
       subagent_transcript_files: subagentTranscriptFiles.length,
       total_uncompressed_bytes: totalUncompressedBytes,
     },
+    redaction: redactionSummary,
     secret_scan: {
       passed: true,
-      findings_count: 0,
+      post_redaction_findings_count: 0,
       env_files_checked: envFilesChecked.map(p => path.basename(p)),
       patterns_checked: SECRET_PATTERNS.map(p => p.name),
     },
     files: manifestFiles,
   };
 
-  const manifestBuf = Buffer.from(JSON.stringify(manifest, null, 2) + "\n", "utf8");
+  const manifestText = JSON.stringify(manifest, null, 2) + "\n";
 
-  // 5. Write zip to a local temp file first, verify size <= maxSizeBytes, then move atomically
+  // Also scan manifest.json itself to guarantee zero secrets leaked into metadata
+  const manifestHits = scanTextForSecrets(manifestText, "manifest.json", envSecretEntries);
+  if (manifestHits.length > 0) {
+    return {
+      ...baseSummary,
+      secret_scan: {
+        ...baseSummary.secret_scan,
+        passed: false,
+        findings_count: manifestHits.length,
+        findings: manifestHits,
+      },
+      saved: false,
+      blocked_reason: "secret_detected_in_manifest",
+    };
+  }
+
+  const manifestBuf = Buffer.from(manifestText, "utf8");
+
+  // 6. Write zip to a local temp file first, verify size <= maxSizeBytes, then move atomically
   const tmpZipPath = path.join(
     os.tmpdir(),
     `iketeru_evidence_${runId}_${process.pid}_${crypto.randomBytes(4).toString("hex")}.zip`
@@ -813,7 +1013,11 @@ export function archiveRunEvidence(options) {
   try {
     const zipEntries = [
       { zipPath: "manifest.json", buffer: manifestBuf, mtime: new Date(createdAt) },
-      ...files.map(f => ({ zipPath: f.zipPath, sourcePath: f.sourcePath })),
+      ...preparedFiles.map(f =>
+        f.buffer !== undefined
+          ? { zipPath: f.zipPath, buffer: f.buffer, mtime: fs.statSync(f.sourcePath).mtime }
+          : { zipPath: f.zipPath, sourcePath: f.sourcePath }
+      ),
     ];
     writeZipFile(tmpZipPath, zipEntries);
 
@@ -877,7 +1081,7 @@ function printUsage() {
 
 Options:
   --run-id <id>       Run ID (alternatively pass as first positional argument)
-  --dry-run           Inspect files, sizes, and secret scan without writing the zip
+  --dry-run           Inspect files, sizes, redaction counts, and post-redaction secret scan without writing the zip
   --worker <name>     Worker PC name (defaults to IKETERU_WORKER_NAME in .env / env)
   --out-dir <path>    Destination folder (default: ${DEFAULT_ARCHIVE_DIR})
   --brain-root <path> Antigravity brain root (default: ~/.gemini/antigravity/brain)

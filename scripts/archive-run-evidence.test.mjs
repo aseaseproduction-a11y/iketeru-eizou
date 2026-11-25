@@ -12,6 +12,7 @@ import {
   collectEvidenceFiles,
   extractEnvSecretValues,
   parseArgs,
+  redactTextForSecrets,
   scanTextForSecrets,
   sha256File,
 } from "./archive-run-evidence.mjs";
@@ -72,7 +73,7 @@ function makeFixture(t, { parentTranscriptExtra = "", sub1TranscriptExtra = "", 
   );
   fs.writeFileSync(
     path.join(brainRoot, PARENT_UUID, ".system_generated", "logs", "media", "screenshot.png"),
-    Buffer.from([0x89, 0x50, 0x4e, 0x47]),
+    Buffer.from([0x89, 0x50, 0x4e, 0x47])
   );
   fs.writeFileSync(
     path.join(brainRoot, PARENT_UUID, "scratch", "helper.mjs"),
@@ -96,7 +97,7 @@ function makeFixture(t, { parentTranscriptExtra = "", sub1TranscriptExtra = "", 
   );
   fs.writeFileSync(
     path.join(brainRoot, SUB1_UUID, ".system_generated", "logs", "media", "frame.jpg"),
-    Buffer.from([0xff, 0xd8, 0xff]),
+    Buffer.from([0xff, 0xd8, 0xff])
   );
   fs.writeFileSync(
     path.join(brainRoot, SUB1_UUID, ".system_generated", "logs", "chunks", "chunk0.txt"),
@@ -121,7 +122,6 @@ function makeFixture(t, { parentTranscriptExtra = "", sub1TranscriptExtra = "", 
 /** Minimal ZIP reader for verifying written archives without external tools. */
 function readZipEntries(zipPath) {
   const buf = fs.readFileSync(zipPath);
-  // Locate End of Central Directory (0x06054b50)
   let eocdOffset = -1;
   for (let i = buf.length - 22; i >= 0; i--) {
     if (buf.readUInt32LE(i) === 0x06054b50) {
@@ -199,14 +199,13 @@ test("collectConversationIds and collectEvidenceFiles include only transcripts a
   assert.ok(zipPaths.includes(`transcripts/subagent/${SUB1_UUID}/transcript_full.jsonl`));
   assert.ok(zipPaths.includes(`transcripts/subagent/${SUB2_UUID}/transcript.jsonl`));
 
-  // Strictly excluded
   assert.ok(!zipPaths.some(p => p.includes("screenshot.png")));
   assert.ok(!zipPaths.some(p => p.includes("frame.jpg")));
   assert.ok(!zipPaths.some(p => p.includes("scratch")));
   assert.ok(!zipPaths.some(p => p.includes("chunks")));
 });
 
-test("secret scanner catches API keys, mysql:// creds, and .env values while allowing harmless config", (t) => {
+test("secret scanner & redactor catch API keys, mysql:// creds, password vars, and .env values", (t) => {
   const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), "secret-scan-test-"));
   t.after(() => fs.rmSync(tmpDir, { recursive: true, force: true }));
   const envPath = path.join(tmpDir, ".env");
@@ -214,7 +213,7 @@ test("secret scanner catches API keys, mysql:// creds, and .env values while all
     envPath,
     [
       "IKETERU_WORKER_NAME=chibatmute",
-      "DATABASE_URL=mysql://tidb_user_abc:SuperSecretPass9876@gateway01.tidbcloud.com:4000/iketeru",
+      "DATABASE_URL=mysql://tidb_user_abc:SuperSecretPass9876@gateway01.prod.tidbcloud.com:4000/iketeru",
       "CUSTOM_SECRET_TOKEN=tok_live_9876543210abcdef",
     ].join("\n"),
     "utf8"
@@ -223,29 +222,63 @@ test("secret scanner catches API keys, mysql:// creds, and .env values while all
   const { entries } = extractEnvSecretValues([envPath]);
   assert.ok(entries.some(e => e.label === "env_value:DATABASE_URL"));
   assert.ok(entries.some(e => e.label === "env_value:DATABASE_URL.password"));
+  assert.ok(entries.some(e => e.label === "env_value:DATABASE_URL.username"));
+  assert.ok(entries.some(e => e.label === "env_value:DATABASE_URL.hostname"));
   assert.ok(!entries.some(e => e.key === "IKETERU_WORKER_NAME"));
 
-  // Clean text mentioning worker name passes
   assert.equal(scanTextForSecrets("worker=chibatmute score=82", "run/a.json", entries).length, 0);
 
-  // Detects leaked password fragment from .env DATABASE_URL
-  const pwHits = scanTextForSecrets("debug output: SuperSecretPass9876", "t.jsonl", entries);
-  assert.ok(pwHits.some(h => h.rule === "env_value:DATABASE_URL.password"));
-  assert.ok(!pwHits[0].sample.includes("SuperSecretPass9876"));
+  const sampleLog = [
+    'DATABASE_URL=mysql://tidb_user_abc:...@gateway01.prod.tidbcloud.com:4000/iketeru',
+    '$user = "tidb_user_abc"; $pass = "OldRotatedPass99"; $host = "gateway01.prod.tidbcloud.com"',
+    'key=AIzaSyA12345678901234567890123456789012',
+    'direct mysql://admin:myrealpass123@db.prod.internal:4000/app',
+  ].join("\n");
 
-  // Detects Google API key & mysql URL
-  const apiHits = scanTextForSecrets("AIzaSyA123456789012345678901234567890123", "t.jsonl", []);
-  assert.ok(apiHits.some(h => h.rule === "google_api_key"));
+  const { redactedText, totalReplacements, countsByType } = redactTextForSecrets(sampleLog, entries);
+  assert.ok(totalReplacements >= 6);
+  assert.ok(countsByType.database_url_assignment >= 1);
+  assert.ok(countsByType.password_var_assignment >= 1);
+  assert.ok(countsByType.google_api_key >= 1);
+  assert.ok(countsByType.mysql_connection_url >= 1);
 
-  const mysqlHits = scanTextForSecrets("mysql://admin:myrealpass123@db.prod.internal:4000/app", "t.jsonl", []);
-  assert.ok(mysqlHits.some(h => h.rule === "mysql_connection_url"));
+  // None of the sensitive values remain after redaction
+  assert.ok(!redactedText.includes("tidb_user_abc"));
+  assert.ok(!redactedText.includes("gateway01.prod.tidbcloud.com"));
+  assert.ok(!redactedText.includes("OldRotatedPass99"));
+  assert.ok(!redactedText.includes("AIzaSyA12345678901234567890123456789012"));
+  assert.ok(!redactedText.includes("myrealpass123"));
+  assert.ok(redactedText.includes("DATABASE_URL=[REDACTED:database_url_assignment]"));
+  assert.ok(redactedText.includes('[REDACTED:password_var_assignment]'));
+  assert.ok(redactedText.includes('[REDACTED:google_api_key]'));
+
+  // Post-redaction scan finds 0 secrets
+  assert.equal(scanTextForSecrets(redactedText, "parent.jsonl", entries).length, 0);
 });
 
-test("archiveRunEvidence dry-run does not save zip, and write mode produces verified zip with manifest SHA-256", (t) => {
-  const { repoRoot, brainRoot, outDir, runId } = makeFixture(t, {
-    envContent: "IKETERU_WORKER_NAME=chibatmute\nDATABASE_URL=mysql://u:MySecretPwd1234@tidb.example.net:4000/db\n",
+test("archiveRunEvidence redacts ONLY parent transcript, keeps subagent & run untouched, and records original/redacted SHA-256 in manifest", (t) => {
+  const secretMysql = "mysql://tidb_prod_user:MySecretPwd1234@gateway01.ap.tidbcloud.com:4000/iketeru_eizou";
+  const secretApiKey = "AIzaSyB12345678901234567890123456789012";
+  const oldPass = "OldPassValue9876";
+
+  const { repoRoot, brainRoot, outDir, runId, runDir } = makeFixture(t, {
+    parentTranscriptExtra:
+      JSON.stringify({
+        step_index: 1,
+        content: `env DATABASE_URL=${secretMysql} key=${secretApiKey} $pass = "${oldPass}"`,
+      }) + "\n",
+    envContent: `IKETERU_WORKER_NAME=chibatmute\nDATABASE_URL=${secretMysql}\n`,
   });
 
+  const parentTranscriptDiskPath = path.join(brainRoot, PARENT_UUID, ".system_generated", "logs", "transcript.jsonl");
+  const sub1TranscriptDiskPath = path.join(brainRoot, SUB1_UUID, ".system_generated", "logs", "transcript.jsonl");
+  const rawScoresDiskPath = path.join(runDir, "raw_scores.jsonl");
+
+  const origParentSha = sha256File(parentTranscriptDiskPath);
+  const origSub1Sha = sha256File(sub1TranscriptDiskPath);
+  const origRawScoresSha = sha256File(rawScoresDiskPath);
+
+  // 1. Dry-run reports redaction counts & post-redaction secret_scan.passed === true, saves nothing
   const dry = archiveRunEvidence({
     runId,
     repoRoot,
@@ -258,9 +291,12 @@ test("archiveRunEvidence dry-run does not save zip, and write mode produces veri
   assert.equal(dry.mode, "dry_run");
   assert.equal(dry.saved, false);
   assert.equal(dry.secret_scan.passed, true);
-  assert.equal(dry.counts.total_evidence_files, 8);
+  assert.equal(dry.secret_scan.findings_count, 0);
+  assert.equal(dry.redaction.redacted_files_count, 1);
+  assert.equal(dry.redaction.total_replacements, 3);
   assert.equal(fs.existsSync(dry.dest_zip_path), false);
 
+  // 2. Archive mode writes verified zip
   const res = archiveRunEvidence({
     runId,
     repoRoot,
@@ -272,28 +308,71 @@ test("archiveRunEvidence dry-run does not save zip, and write mode produces veri
   });
   assert.equal(res.saved, true);
   assert.equal(res.blocked_reason, null);
+  assert.equal(res.secret_scan.passed, true);
   assert.equal(res.zip_sha256, sha256File(res.dest_zip_path));
 
+  // Original parent file on disk MUST remain completely untouched
+  assert.equal(sha256File(parentTranscriptDiskPath), origParentSha);
+
+  // Inspect ZIP contents & manifest
   const zipEntries = readZipEntries(res.dest_zip_path);
-  assert.ok(zipEntries.has("manifest.json"));
-  const manifest = JSON.parse(zipEntries.get("manifest.json").toString("utf8"));
+  const manifestText = zipEntries.get("manifest.json").toString("utf8");
+  // Manifest MUST NOT contain any raw secret values
+  assert.ok(!manifestText.includes("tidb_prod_user"));
+  assert.ok(!manifestText.includes("MySecretPwd1234"));
+  assert.ok(!manifestText.includes(secretApiKey));
+  assert.ok(!manifestText.includes(oldPass));
+
+  const manifest = JSON.parse(manifestText);
   assert.equal(manifest.run_id, runId);
   assert.equal(manifest.worker, "chibatmute");
-  assert.deepEqual(manifest.conversation_ids.parent, [PARENT_UUID]);
-  assert.deepEqual(manifest.conversation_ids.subagent, [SUB1_UUID, SUB2_UUID]);
-  assert.equal(manifest.files.length, 8);
+  assert.equal(manifest.redaction.total_replacements, 3);
 
-  // Verify every file's content hash in the zip matches manifest.json
-  for (const mf of manifest.files) {
-    assert.ok(zipEntries.has(mf.zip_path), `Missing ${mf.zip_path} in zip`);
-    const actualSha = crypto.createHash("sha256").update(zipEntries.get(mf.zip_path)).digest("hex");
-    assert.equal(actualSha, mf.sha256, `SHA-256 mismatch for ${mf.zip_path}`);
+  const parentZipPath = `transcripts/parent/${PARENT_UUID}/transcript.jsonl`;
+  const parentArchivedContent = zipEntries.get(parentZipPath).toString("utf8");
+  // Redacted JSONL lines remain valid JSON
+  for (const line of parentArchivedContent.split(/\r?\n/).filter(Boolean)) {
+    assert.doesNotThrow(() => JSON.parse(line));
   }
+  assert.ok(!parentArchivedContent.includes("tidb_prod_user"));
+  assert.ok(!parentArchivedContent.includes("MySecretPwd1234"));
+  assert.ok(!parentArchivedContent.includes(secretApiKey));
+  assert.ok(!parentArchivedContent.includes(oldPass));
+  assert.ok(parentArchivedContent.includes("DATABASE_URL=[REDACTED:database_url_assignment]"));
+  assert.ok(parentArchivedContent.includes("[REDACTED:google_api_key]"));
+  assert.ok(parentArchivedContent.includes("[REDACTED:password_var_assignment]"));
+
+  const parentMf = manifest.files.find(f => f.zip_path === parentZipPath);
+  const actualRedactedParentSha = crypto.createHash("sha256").update(zipEntries.get(parentZipPath)).digest("hex");
+  assert.equal(parentMf.redacted, true);
+  assert.equal(parentMf.original_sha256, origParentSha);
+  assert.equal(parentMf.redacted_sha256, actualRedactedParentSha);
+  assert.equal(parentMf.sha256, actualRedactedParentSha);
+  assert.notEqual(parentMf.original_sha256, parentMf.redacted_sha256);
+  assert.equal(parentMf.redaction_count, 3);
+  assert.deepEqual(parentMf.redaction_counts_by_type, {
+    database_url_assignment: 1,
+    google_api_key: 1,
+    password_var_assignment: 1,
+  });
+
+  // Subagent transcript and run folder MUST be byte-for-byte unchanged
+  const sub1ZipPath = `transcripts/subagent/${SUB1_UUID}/transcript.jsonl`;
+  const sub1Mf = manifest.files.find(f => f.zip_path === sub1ZipPath);
+  const sub1ArchivedSha = crypto.createHash("sha256").update(zipEntries.get(sub1ZipPath)).digest("hex");
+  assert.equal(sub1Mf.redacted, false);
+  assert.equal(sub1ArchivedSha, origSub1Sha);
+
+  const rawScoresMf = manifest.files.find(f => f.zip_path === "run/raw_scores.jsonl");
+  const rawScoresArchivedSha = crypto.createHash("sha256").update(zipEntries.get("run/raw_scores.jsonl")).digest("hex");
+  assert.equal(rawScoresMf.redacted, false);
+  assert.equal(rawScoresArchivedSha, origRawScoresSha);
 });
 
-test("archiveRunEvidence aborts without saving when secret is found", (t) => {
+test("archiveRunEvidence DOES NOT redact subagent transcripts and aborts without saving if secret is in subagent log", (t) => {
   const { repoRoot, brainRoot, outDir, runId } = makeFixture(t, {
-    parentTranscriptExtra: JSON.stringify({ step_index: 1, content: "leaked key AIzaSyB123456789012345678901234567890123" }) + "\n",
+    sub1TranscriptExtra:
+      JSON.stringify({ step_index: 2, content: "leaked in subagent AIzaSyC12345678901234567890123456789012" }) + "\n",
     envContent: "IKETERU_WORKER_NAME=chibatmute\n",
   });
 
@@ -309,7 +388,8 @@ test("archiveRunEvidence aborts without saving when secret is found", (t) => {
   assert.equal(res.saved, false);
   assert.equal(res.blocked_reason, "secret_detected");
   assert.equal(res.secret_scan.passed, false);
-  assert.ok(res.secret_scan.findings_count >= 1);
+  assert.equal(res.redaction.total_replacements, 0);
+  assert.ok(res.secret_scan.findings.some(f => f.file.includes(SUB1_UUID)));
   assert.equal(fs.existsSync(res.dest_zip_path), false);
 });
 
@@ -325,7 +405,7 @@ test("archiveRunEvidence aborts without saving when zip exceeds maxSizeMb", (t) 
     outDir,
     worker: "chibatmute",
     dryRun: false,
-    maxSizeMb: 0.0001, // ~100 bytes
+    maxSizeMb: 0.0001,
     envFiles: [path.join(repoRoot, ".env")],
   });
   assert.equal(res.saved, false);
