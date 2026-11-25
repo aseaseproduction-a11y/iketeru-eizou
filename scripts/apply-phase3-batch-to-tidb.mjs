@@ -254,7 +254,8 @@ async function main() {
   if (!fs.existsSync(backupJsonlPath)) {
     throw new Error(
       `Pre-D baseline backup not found at: ${backupJsonlPath}. ` +
-        `Copy shared_pre_d_baseline/tidb_videos_backup.jsonl locally (or pass --pre-d-backup / set IKETERU_PRE_D_BACKUP_PATH) and verify SHA-256 ${backupManifest.tidb.jsonl_sha256}.`
+        `Use each PC's local copy at ${backupManifest.tidb.jsonl_path} (or pass --pre-d-backup / set IKETERU_PRE_D_BACKUP_PATH) and verify SHA-256 ${backupManifest.tidb.jsonl_sha256}. ` +
+        `When onboarding a new PC, temporarily share a copy from an existing PC and delete the temporary share after copying and verifying SHA-256.`
     );
   }
   const actualBackupSha = sha256File(backupJsonlPath);

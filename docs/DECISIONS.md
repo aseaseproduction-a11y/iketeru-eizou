@@ -52,6 +52,7 @@
 ### D-006 TiDB 反映の手順（反映ロック）（2026-11-24〜25）
 - 決定：反映ロック（`analysis/claims/_apply_lock.json`）による 1 台ずつの反映と、`IKETERU_WORKER_NAME` の必須化（chibatmute `7d6522b`）。Pre-D バックアップ（SHA-256 `17856f03…`）を各 PC の `E:\iketeru_backups\phase3_pre_d_20261123_153343\` に配置。
 - 反映済み：`run_20261124_151553`（CHIBA-PC・P1 Batch 2・200 本、`8955537`）、`run_20261125_070347`（chibatmute・135 本、`cb327ed`）→ 校正済みは計 912 件。
+- Pre-D バックアップ運用改定（2026-11-25）：全 3 台とも `E:\iketeru_backups\phase3_pre_d_20261123_153343\tidb_videos_backup.jsonl` に手元のコピーがあり SHA-256（`17856f03…`）確認済みのため、今後は共有ドライブの `shared_pre_d_baseline` を常設せず、各 PC の手元のコピーを使う。新しい PC を追加するときだけ一時的に共有し、コピーと確認が済んだら削除する。
 
 ### D-007 iketeru-creative-studio を非公開リポジトリにする（2026-11-25）
 - 決定：`aseaseproduction-a11y/iketeru-creative-studio`（private、HEAD `d1beb3d`）を作成。`.env`・`data/`・`assets/`・`outputs/`・DB は追跡しない。
@@ -127,3 +128,9 @@
   1. **API での点数付け本番 run 1（P0 58 本＋アンカー 18 本）は予約も実行もせず保留**とする（実装済みコード・設計書・Flex 事前検証結果はそのまま Git に保全）。
   2. 次の優先タスクを **「Gemini API（YouTube URL 直接渡し・Flex）によるクラフトレシピ v2 下書き生成」** に切り替える。
   3. まず設計書（`docs/API_CRAFT_RECIPE_DESIGN.md`）と 5 本 × 2 回の事前登録（`analysis/pilot_api_craft_recipe/preregistration.json`、SHA-256 `e01cc0097d1995e2ae84ec850275132445d5d58d458c2130c345c29d5a45be94`）を承認し、ローカル SQLite の一時コピー上で `plan_craft_sequence` 稼働と精度を検証してから本番展開を判断する（本番 DB 書き込み・YouTube 直接アクセスは引き続き行わない）。
+
+### D-022 クラフトレシピ作成の処理枠と対象基準（2026-11-25）
+- 決定：
+  1. 手元に動画がある分（ローカル／共有キャッシュ済み）は Antigravity の利用枠で処理する（API クレジットを消費せず、実動画から GIF/PNG/テレメトリ付きの完全版 v2 レシピを作成）。
+  2. レシピを作るのは、点数が **A-（78 点）以上**の動画だけとする。
+- 理由：キャッシュ済み動画は追加費用ゼロで完全版を作れる一方、MCP（`search_craft_recipes` / `plan_craft_sequence`）の既定対象も `A-` 以上であり、品質基準を満たす動画に作業枠を集中させるため。
