@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "run_id": "run_20261125_113713",
+  "worker": "chibatmute",
+  "priority": "P2_verified_5_genres",
+  "batch_index": 5,
+  "filters": {
+    "non_youtube": true,
+    "cached_only": false,
+    "verify_media": false
+  },
+  "status": "active",
+  "claimed_at": "2026-11-25T02:37:14.258Z",
+  "video_ids": [
+    "1041875369",
+    "1048567039",
+    "1062069953",
+    "1068014839",
+    "1069311388"
+  ]
+}
