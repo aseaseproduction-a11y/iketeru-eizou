@@ -184,11 +184,13 @@ function loadAllClaims() {
     .readdirSync(CLAIMS_DIR)
     .filter((f) => f.endsWith(".json") && !f.endsWith("_ids.json") && !f.startsWith("_"))
     .sort();
-  return files.map((f) => {
-    const full = path.join(CLAIMS_DIR, f);
-    const data = JSON.parse(fs.readFileSync(full, "utf8"));
-    return { file: f, path: full, data };
-  });
+  return files
+    .map((f) => {
+      const full = path.join(CLAIMS_DIR, f);
+      const data = JSON.parse(fs.readFileSync(full, "utf8"));
+      return { file: f, path: full, data };
+    })
+    .filter((c) => !c.data.task_type || c.data.task_type === "phase3_calibration");
 }
 
 function loadSkipList(nowMs = Date.now()) {
