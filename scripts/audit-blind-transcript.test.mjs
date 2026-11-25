@@ -5,7 +5,7 @@ import crypto from "node:crypto";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import { auditTranscript, sha256File } from "./audit-blind-transcript.mjs";
+import { auditTranscript, parseArgs, sha256File } from "./audit-blind-transcript.mjs";
 import { generateBlindIdMap, saveBlindIdMap } from "./lib/blind-id-map.mjs";
 import { renderCalibrationPrompt } from "./lib/calibration-prompt-template.mjs";
 
@@ -713,4 +713,49 @@ test("15. Expected model pinning verifies every PLANNER_RESPONSE.model and rejec
   } finally {
     fs.rmSync(dir, { recursive: true, force: true });
   }
+});
+
+test("16. parseArgs accepts '--'-prefixed video IDs (e.g. --41OGPMurU) and preserves normal args + --strict", () => {
+  const args = parseArgs([
+    "node",
+    "audit-blind-transcript.mjs",
+    "--transcript", "C:\\tmp\\transcript.jsonl",
+    "--video-id", "--41OGPMurU",
+    "--allowed-files", "E:\\iketeru_blind_eval\\run_20261125_070347\\video\\abcdef123456\\abcdef123456.mp4",
+    "--parent-id", PARENT_ID,
+    "--strict",
+  ]);
+  assert.equal(args["video-id"], "--41OGPMurU");
+  assert.equal(args["transcript"], "C:\\tmp\\transcript.jsonl");
+  assert.equal(args["parent-id"], PARENT_ID);
+  assert.equal(args["strict"], true);
+
+  const normal = parseArgs([
+    "node",
+    "audit-blind-transcript.mjs",
+    "--transcript", "t.jsonl",
+    "--video-id", VIDEO_A,
+    "--allowed-files", "a.mp4",
+  ]);
+  assert.equal(normal["video-id"], VIDEO_A);
+  assert.equal(normal["strict"], undefined);
+});
+
+test("17. parseArgs throws when VALUE_FLAGS omit their value", () => {
+  assert.throws(
+    () => parseArgs(["node", "audit-blind-transcript.mjs", "--transcript", "--video-id", VIDEO_A]),
+    /Missing value for --transcript/
+  );
+  assert.throws(
+    () => parseArgs(["node", "audit-blind-transcript.mjs", "--video-id", "--strict"]),
+    /Missing value for --video-id/
+  );
+  assert.throws(
+    () => parseArgs(["node", "audit-blind-transcript.mjs", "--video-id", "--parent-id", PARENT_ID]),
+    /Missing value for --video-id/
+  );
+  assert.throws(
+    () => parseArgs(["node", "audit-blind-transcript.mjs", "--video-id"]),
+    /Missing value for --video-id/
+  );
 });

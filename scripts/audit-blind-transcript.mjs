@@ -61,14 +61,43 @@ function decodeArgString(v) {
   return v;
 }
 
-function parseArgs(argv) {
+export const VALUE_FLAGS = Object.freeze(
+  new Set([
+    "transcript",
+    "video-id",
+    "allowed-files",
+    "parent-id",
+    "channel-name",
+    "prompt-spec",
+    "blind-map",
+    "run-manifest",
+    "expected-model",
+  ])
+);
+const KNOWN_FLAGS = new Set([...VALUE_FLAGS, "strict"]);
+const ALLOW_LEADING_DOUBLE_DASH_VALUE_FLAGS = new Set(["video-id"]);
+
+export function parseArgs(argv) {
   const args = {};
   for (let i = 2; i < argv.length; i++) {
     const a = argv[i];
     if (a.startsWith("--")) {
       const k = a.slice(2);
       const next = argv[i + 1];
-      if (!next || next.startsWith("--")) {
+      if (VALUE_FLAGS.has(k)) {
+        if (next === undefined || next === "") {
+          throw new Error(`Missing value for --${k}`);
+        }
+        if (ALLOW_LEADING_DOUBLE_DASH_VALUE_FLAGS.has(k)) {
+          if (next.startsWith("--") && KNOWN_FLAGS.has(next.slice(2))) {
+            throw new Error(`Missing value for --${k} (got flag "${next}")`);
+          }
+        } else if (next.startsWith("--")) {
+          throw new Error(`Missing value for --${k} (got flag "${next}")`);
+        }
+        args[k] = next;
+        i++;
+      } else if (!next || next.startsWith("--")) {
         args[k] = true;
       } else {
         args[k] = next;
