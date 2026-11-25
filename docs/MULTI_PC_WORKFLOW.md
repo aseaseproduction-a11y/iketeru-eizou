@@ -97,6 +97,8 @@ node scripts/verify-dispatched-prompt.mjs --run-id <run_id> --from-dispatch-log 
 
 本番 TiDB への書き込みは **同時に1台だけ** に制限するため、Git 管理の書き込みロック **`analysis/claims/_apply_lock.json`** を使用します（ロック未取得のまま `--apply` を実行すると `apply-phase3-batch-to-tidb.mjs` が即停止します）。
 
+> **承認必須ルール**: 本番反映（`--apply`）と反映ロックの取得は、必ず `--dry-run` の結果をユーザーが確認・承認してから実行する。
+
 1. **旧40列照合用の Phase 3 開始前バックアップを自PCに用意（初回のみ）**
    - 共有 Google ドライブの `iketeru_multi_pc_progress/shared_pre_d_baseline/tidb_videos_backup.jsonl`（中身は TiDB `videos` テーブルの旧40列動画メタデータのみ・認証情報や非公開データなし）を自PCローカル（例：`E:\iketeru_backups\phase3_pre_d_20261123_153343\tidb_videos_backup.jsonl`）にコピーし、SHA-256 が `17856f0338c760b2f88d415543eb6d48a7977c06e76a5c04476b0d5943446a3b` と完全一致することを確認してください（別パスに置く場合は `.env` の `IKETERU_PRE_D_BACKUP_PATH` または `--pre-d-backup` で指定）。
 2. **最新取得＆書き込みロック取得（`git push` 成功まで `--apply` しない）**
