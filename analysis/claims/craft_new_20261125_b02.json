@@ -3,7 +3,7 @@
   "task_type": "craft_recipe_new",
   "run_id": "craft_new_20261125_b02",
   "worker": "chibatmute",
-  "status": "active",
+  "status": "released",
   "target_pool": "new_138_ge78",
   "selection_seed": "phase1_new_20261125",
   "min_calibrated_score": 78,
@@ -33,6 +33,6 @@
   ],
   "claimed_at": "2026-11-25T09:55:06.963Z",
   "completed_at": null,
-  "released_at": null,
-  "release_reason": null
+  "released_at": "2026-11-25T10:09:23.600Z",
+  "release_reason": "quota_limit_hit_429_after_8_of_20_published_resets_134h42m"
 }
