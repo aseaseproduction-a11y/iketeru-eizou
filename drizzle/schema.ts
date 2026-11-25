@@ -1,4 +1,4 @@
-import { decimal, int, mediumtext, mysqlEnum, mysqlTable, text, timestamp, uniqueIndex, varchar } from "drizzle-orm/mysql-core";
+import { decimal, index, int, mediumtext, mysqlEnum, mysqlTable, text, timestamp, uniqueIndex, varchar } from "drizzle-orm/mysql-core";
 
 /**
  * Core user table backing auth flow.
@@ -76,6 +76,7 @@ export const videos = mysqlTable("videos", {
   calibratedRoute: varchar("calibratedRoute", { length: 32 }), // video_h1 | video_h2_escalated | contact_sheet
   calibratedRunId: varchar("calibratedRunId", { length: 64 }), // analysis/runs/<run_id>
   calibrationGenreBucket: varchar("calibrationGenreBucket", { length: 64 }), // CM | MV | モーション | 3DCG/アニメ | 企業映像 | unverified:<slug>
+  analysisObservationScope: varchar("analysisObservationScope", { length: 40 }), // metadata_only_unwatched | triage_boilerplate_unwatched | triage_unverified_short | missing_video_unwatched | null
   embedStatus: varchar("embedStatus", { length: 16 }).notNull().default("unknown"), // unknown | available | restricted
   embedReason: varchar("embedReason", { length: 128 }), // unavailable_private_or_deleted | unavailable_access_restricted | unavailable_embed_restricted | unavailable_page_unavailable
   embedCheckedAt: timestamp("embedCheckedAt"),
@@ -86,6 +87,35 @@ export const videos = mysqlTable("videos", {
 
 export type Video = typeof videos.$inferSelect;
 export type InsertVideo = typeof videos.$inferInsert;
+
+/**
+ * Video scenes table — timestamped scene descriptions extracted from Ch.3 timelines.
+ * Stored independently from `videos` so existing columns remain untouched.
+ */
+export const videoScenes = mysqlTable("videoScenes", {
+  id: int("id").autoincrement().primaryKey(),
+  videoId: varchar("videoId", { length: 64 }).notNull(),
+  shotIndex: int("shotIndex").notNull(),
+  startMmss: varchar("startMmss", { length: 16 }).notNull(),
+  endMmss: varchar("endMmss", { length: 16 }).notNull(),
+  startSec: decimal("startSec", { precision: 8, scale: 2 }).notNull().default("0.00"),
+  endSec: decimal("endSec", { precision: 8, scale: 2 }).notNull().default("0.00"),
+  durationSec: decimal("durationSec", { precision: 8, scale: 2 }).notNull().default("0.00"),
+  shotTitle: varchar("shotTitle", { length: 255 }).notNull().default(""),
+  description: text("description").notNull(),
+  audioText: text("audioText"),
+  keywordsJson: text("keywordsJson").notNull(),
+  searchText: text("searchText").notNull(),
+  sourceUpdatedAt: timestamp("sourceUpdatedAt"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+}, (table) => [
+  uniqueIndex("video_scenes_video_shot_unique").on(table.videoId, table.shotIndex),
+  index("video_scenes_video_id_idx").on(table.videoId),
+]);
+
+export type VideoSceneRow = typeof videoScenes.$inferSelect;
+export type InsertVideoScene = typeof videoScenes.$inferInsert;
 
 /**
  * 公開端末でも利用者ごとにお気に入りを分離するための名前付きプロフィール。

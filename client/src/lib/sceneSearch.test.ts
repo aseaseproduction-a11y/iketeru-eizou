@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { getSceneKeywordCategories, searchScenes, type SceneItem } from "./sceneSearch";
+import { filterFallbackScenes, getSceneKeywordCategories, searchScenes, type SceneItem } from "./sceneSearch";
 
 const sampleScenes: SceneItem[] = [
   {
@@ -75,5 +75,19 @@ describe("sceneSearch technique keywords & categories", () => {
 
     const focusResults = await searchScenes("フォーカス送り", 20, sampleScenes);
     expect(focusResults.map((r) => r.scene.id).sort()).toEqual(["v3-0", "v4-0"]);
+  });
+
+  it("filters fallback scenes by excludeUnwatched and scoreFilter", () => {
+    const richScenes: SceneItem[] = [
+      { ...sampleScenes[0], analysisObservationScope: null, calibratedScore: 85 },
+      { ...sampleScenes[1], analysisObservationScope: null, calibratedScore: 79 },
+      { ...sampleScenes[2], analysisObservationScope: "triage_unverified_short", calibratedScore: null, aiOverallScore: 84 },
+      { ...sampleScenes[3], analysisObservationScope: null, calibratedScore: null, aiOverallScore: 70 },
+    ];
+    expect(filterFallbackScenes(richScenes, { excludeUnwatched: true, scoreFilter: "all" }).map((s) => s.id)).toEqual(["v1-0", "v2-0", "v4-0"]);
+    expect(filterFallbackScenes(richScenes, { excludeUnwatched: false, scoreFilter: "all" }).map((s) => s.id)).toEqual(["v1-0", "v2-0", "v3-0", "v4-0"]);
+    expect(filterFallbackScenes(richScenes, { excludeUnwatched: true, scoreFilter: "calibrated_only" }).map((s) => s.id)).toEqual(["v1-0", "v2-0"]);
+    expect(filterFallbackScenes(richScenes, { excludeUnwatched: true, scoreFilter: "score_78_plus" }).map((s) => s.id)).toEqual(["v1-0", "v2-0"]);
+    expect(filterFallbackScenes(richScenes, { excludeUnwatched: true, scoreFilter: "score_83_plus" }).map((s) => s.id)).toEqual(["v1-0"]);
   });
 });

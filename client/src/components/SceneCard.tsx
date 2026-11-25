@@ -8,7 +8,7 @@
  */
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Play, Clock, Sparkles, ExternalLink, Volume2, Eye } from "lucide-react";
+import { Play, Clock, Sparkles, ExternalLink, Volume2, Eye, AlertTriangle } from "lucide-react";
 import type { SceneItem } from "@/lib/sceneSearch";
 
 interface SceneCardProps {
@@ -262,10 +262,40 @@ export default function SceneCard({ scene, index, matchedTerms = [], score, vide
       {/* Card Body */}
       <div className="p-3.5 flex flex-col flex-grow justify-between gap-2.5">
         <div>
-          {/* Video Title */}
-          <h4 className="text-xs font-semibold text-white/90 line-clamp-1 group-hover:text-cinematic-red transition-colors">
-            {scene.videoTitle}
-          </h4>
+          {/* Video Title & Score / Observation Badges */}
+          <div className="flex items-start justify-between gap-1.5">
+            <h4 className="text-xs font-semibold text-white/90 line-clamp-1 group-hover:text-cinematic-red transition-colors flex-1">
+              {scene.videoTitle}
+            </h4>
+            {typeof scene.calibratedScore === "number" ? (
+              <span
+                title={`校正済みスコア: ${scene.calibratedScore.toFixed(1)}点`}
+                className="shrink-0 rounded border border-emerald-400/35 bg-emerald-500/15 px-1.5 py-0.2 font-mono text-[9.5px] font-bold text-emerald-200"
+              >
+                校正 {scene.calibratedScore.toFixed(1)}
+              </span>
+            ) : typeof scene.aiOverallScore === "number" ? (
+              <span
+                title={`旧基準AI総合: ${scene.aiOverallScore}点`}
+                className="shrink-0 rounded border border-sky-400/25 bg-sky-500/10 px-1.5 py-0.2 font-mono text-[9.5px] font-semibold text-sky-200"
+              >
+                旧 {scene.aiOverallScore}
+              </span>
+            ) : null}
+          </div>
+
+          {scene.analysisObservationScope && (
+            <div className="mt-1">
+              <span
+                data-testid="scene-unwatched-warning"
+                className="inline-flex items-center gap-1 rounded border border-amber-400/45 bg-amber-500/15 px-1.5 py-0.5 text-[9.5px] font-semibold text-amber-200"
+                title={`未視聴・要確認タグ: ${scene.analysisObservationScope}`}
+              >
+                <AlertTriangle className="h-2.5 w-2.5 shrink-0" />
+                未視聴・要確認 ({scene.analysisObservationScope})
+              </span>
+            </div>
+          )}
 
           {/* Visual Description */}
           <p className="mt-1.5 text-xs text-white/75 leading-relaxed line-clamp-3">

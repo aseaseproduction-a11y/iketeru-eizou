@@ -38,8 +38,10 @@ app.post("/api/scheduled/ai-metadata-completion", runAiMetadataCompletion);
 app.use(
   "/api/trpc",
   (req, res, next) => {
-    if (req.method === "GET" && (req.path.includes("videos.list") || req.path.includes("videos.count"))) {
+    if (req.method === "GET" && (req.path.includes("videos.list") || req.path.includes("videos.count") || req.path.includes("scenes.search"))) {
       res.setHeader("Cache-Control", "public, s-maxage=60, stale-while-revalidate=300");
+    } else if (req.method === "GET" && req.path.includes("scenes.keywordStats")) {
+      res.setHeader("Cache-Control", "public, s-maxage=300, stale-while-revalidate=600");
     }
     next();
   },
