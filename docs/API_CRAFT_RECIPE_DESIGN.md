@@ -1,9 +1,103 @@
 # Gemini API（YouTube URL 直接渡し）によるクラフトレシピ v2 下書き生成 設計書
 
 - **作成日**: 2026-11-25（`CHIBA-PC`）
-- **位置づけ**: `docs/STATUS_OVERVIEW_20261125.md`（`ceff855`）で特定された最大ボトルネック「分析・シーンはあるがクラフトレシピがない **4,158 本**（うち YouTube **4,149 本**、未キャッシュ **4,017 本**）」を、社内回線から YouTube へ直接アクセスせず（D-016 遵守）解消するための設計書およびパイロット試験計画書。
-- **ステータス**: **設計・試験準備（事前登録）完了・API 未実行**（ユーザー承認後にパイロット 5 本 × 2 回を実施）。
-- **関連文書**: `docs/DECISIONS.md`（D-016〜D-021）、`docs/API_URL_SCORING_DESIGN.md`、`docs/STATUS_OVERVIEW_20261125.md`、`analysis/pilot_api_craft_recipe/preregistration.json`
+- **最終更新**: 2026-11-25（D-022 / D-023 の 2 段階パイプライン・Flex 夜間早朝運用・出力振り分け・Google ドライブ正本前提を反映）
+- **位置づけ**: 手元に動画がない未キャッシュ YouTube 動画について、社内回線から YouTube へ直接アクセスせず（D-016 遵守）、D-022 / D-023 の 2 段階フロー（① ブラインド採点 → ② 補正後 `A-`〔78 点〕以上のみ詳細分析＋クラフトレシピ v2 下書き一括生成）でボトルネックを解消するための設計書およびパイロット試験計画書。
+- **ステータス**: **方針（D-022 / D-023）反映済み・パイロット 5 本 × 2 回承認済み（本番 ② はアンカー 30 本到達・補正幅承認後に開始）**
+- **関連文書**: `docs/DECISIONS.md`（D-016〜D-023）、`docs/API_URL_SCORING_DESIGN.md`、`docs/STATUS_OVERVIEW_20261125.md`、`docs/CRAFT_RECIPE_DISTRIBUTION_DESIGN.md`（`chibatmute` 設計中・Google ドライブ正本方針）、`analysis/pilot_api_craft_recipe/preregistration.json`
+
+---
+
+## 0. 全体パイプラインと運用方針（D-022 / D-023 準拠）
+
+### 0-1. 処理分担・対象範囲・料金時間帯
+1. **手元動画 vs API の分担**:
+   - **手元に動画ファイルがある分**（共有キャッシュ済み動画・非 YouTube ローカル動画）は、**Antigravity の利用枠** で処理し、ローカル `ffmpeg` / `ffprobe` / `numpy` 実測（項目 `(C)` 付き完全版）を作成する。
+   - **Gemini API を使うのは、手元にない YouTube 動画だけ** とする（社内回線から YouTube へ直接アクセスしない D-016 厳守）。
+2. **点数対象とレシピ化対象**:
+   - **点数はすべての対象動画に付ける**。
+   - **クラフトレシピ化するのは、補正後の点数が `A-`（78.00 点）以上の動画だけ** とする（既存の `is_craft_eligible` および `plan_craft_sequence` の `>= A-` フィルタと完全整合）。
+3. **料金ティアと実行時間帯**:
+   - **Flex（`service_tier: "flex"`）** を採用する（事前検証 `flex_smoke_20261125_144800` にて Standard との平均差 `+0.50` 点・MAE `1.30` 点・入力トークン完全一致を確認済み）。
+   - 日中は 503 が多発するため、本番は混雑しにくい時間帯（**夜間・早朝**）に流すことを基本とし、503/429 時は `scripts/run-api-url-batch.mjs` の後回しキュールール（2 回連続で後回し・3 本連続後回しで停止・一巡後 60〜120s 間隔で 1 回再試行・402/403 即停止）を適用する。
+
+### 0-2. 2 段階 API フロー（① ブラインド採点 → ② 詳細分析＋レシピ一括生成）
+
+```mermaid
+flowchart LR
+  A["未キャッシュ YouTube 動画"] --> B["① ブラインド採点 (Flex)<br/>試験と完全同一設定<br/>(thinking=high / 解像度維持 / 全編)"]
+  B --> G{"アンカー30本到達<br/>＆補正幅承認済み?"}
+  G -- No --> H["ローカル保全のみ<br/>(② は開始しない)"]
+  G -- Yes --> C{"補正後点数 >= 78 (A-)?"}
+  C -- No --> D["点数のみ確定<br/>(レシピ生成対象外)"]
+  C -- Yes --> E["② 詳細分析＋レシピ v2<br/>(1 回の API 呼び出し, 1 fps 全編)"]
+  E --> F{"高速カット等で<br/>精密化が必要?"}
+  F -- Yes --> P2["Pass 2: 注目区間のみ<br/>高 fps (例: 4 fps, 15s) 追加観察"]
+  F -- No --> OUT["振り分け格納<br/>aiAnalysis / scenes / craft_recipes"]
+  P2 --> OUT
+```
+
+- **第 1 段階（① ブラインド採点）**:
+  - `docs/API_URL_SCORING_DESIGN.md` および事前試験 `run_20261125_125425` と **完全に同一の設定** を維持する。
+  - **禁止事項**: `thinking_level` を `high` から下げない、動画解像度を下げない、区間を切り出さない、タイトルや既存分析などのメタデータを混入させない。
+  - 答え合わせ用動画（アンカー）を混ぜ、累計 **30 本** に達した時点でバイアス補正幅（`analysis/api_url_bias_config_v1.json`）を算出・ユーザー承認する。
+- **第 2 段階（② 詳細分析＋レシピ生成）の開始ゲート**:
+  - **② を始めるのは、答え合わせ用の動画が 30 本たまって、補正の幅をユーザーが承認してから** とする（未承認の状態で本番 ② を回さない。本設計書のパイロット 5 本 × 2 回は事前承認済みの品質検証として先行実施）。
+- **第 2 段階（②）の実行方式**:
+  - 補正後 `A-`（78 点）以上の動画のみを対象に、**詳細分析とクラフトレシピ v2 下書きを 1 回の API 呼び出し（Pass 1：全編 `1 fps`）** で同時生成する。
+  - 動画全体を見たうえで、高速カットや極短遷移（`micro_transition`）など細かい区間を高い fps（例：`start_offset`/`end_offset` + `4 fps`, `content_layers: ["frames"]`）で追加観察する **Pass 2** を行ってよい。
+  - なお、すでに `watched_A` の詳細分析・`scenes` が完備している既存動画（`has_full_analysis = 1` かつ `analysis_observation_scope IS NULL`）については、既存 `aiAnalysis` / `scenes` を無断上書きせずレシピ下書きのみを生成・保全する運用も選択可能とする（新規未分析動画は詳細分析＋レシピを 1 回の呼び出しで同時生成）。
+
+### 0-3. ② のプロンプト設計・出力構造と既存スキーマへの振り分け
+
+第 2 段階（②）の本番プロンプトでは、1 回の全編視聴で **構造化 JSON** として 2 つのトップレベルブロック（`detailed_analysis` と `craft_recipe`）＋任意の `pass2_zoom_candidates` を返却させる。
+
+```json
+{
+  "schema_version": "api_stage2_analysis_and_recipe_v1",
+  "video_id": "<video_id>",
+  "source": "gemini_api_url_v1",
+  "detailed_analysis": {
+    "ch0_summary": "映像構造と演出力・技術力評価の総括（実視聴ベース）",
+    "ch1_genre_product_tone": "ジャンル・商品カテゴリ・トーンの解説",
+    "ch2_concept_target": "コンセプト・企画意図・ターゲット分析",
+    "ch3_scenes": [
+      {
+        "shot_index": 1,
+        "start_mmss": "00:00",
+        "end_mmss": "00:04",
+        "shot_title": "ショット見出し",
+        "description": "実際に視認した映像・演出・動きの具体描写"
+      }
+    ],
+    "ch4_direction_composition": "演出構成（カメラワーク・ライティング・カラー設計・構図・美術）",
+    "ch5_editing_vfx": "編集・モーショングラフィックス・VFX技術解析",
+    "ch6_sound_rhythm": "サウンド・リズム・テンポ設計（オーディオ/BGM/SE）",
+    "ch7_production_scale": "実制作の再現性・制作体制・推定リソース",
+    "ch8_practical_notes_and_anti_patterns": "制作現場での応用ポイント・注意点・アンチパターン",
+    "ch9_sales_hooks": "セールス・ビジネス活用タグと企画提案フック",
+    "client_pitch_3lines": "クライアント説明用・企画意図3行まとめ",
+    "reproduction_scale": "Tier 1 | Tier 2 | Tier 3 等"
+  },
+  "craft_recipe": {
+    "video_overview": { "estimated_fps": 30.0, "estimated_bpm": 128, "overall_cut_pace": "fast", "dominant_visual_style": "..." },
+    "cuts": [ "... クラフトレシピ v2 準拠 2〜4 カット（observed_timestamps / provenance 必須） ..." ]
+  },
+  "pass2_zoom_candidates": [
+    { "cut_index": 1, "start_offset": "0s", "end_offset": "15s", "reason": "高速カット・15f遷移の境界精密化" }
+  ]
+}
+```
+
+生成結果（Pass 2 で境界・`frame_timeline` を更新した場合は反映後の確定 JSON）は、次のルールで既存の 3 系統へ決定論的に振り分けて格納する：
+
+| 出力ブロック | 格納先 | 変換・格納ルール | 既存機能との互換性・保護ルール |
+|---|---|---|---|
+| `detailed_analysis`（`ch0`〜`ch9`＋`client_pitch_3lines`＋`ch3_scenes`）＋ `craft_recipe.cuts` の要約 | **TiDB `videos.aiAnalysis`**（`mediumtext`）→ 片方向同期で **SQLite `videos.ai_analysis` / `sections_json` / `client_pitch`** | `indexer.py` の `CHAPTER_RE`（`^## (\d+)\.\s*(.+)$`）、`SCENE_RE`（`^- #(\d{2})\s+【(\d{1,2}:\d{2})-(\d{1,2}:\d{2})】\s*([^:：\n]+?)[:：]\s*(.+)$`）、`PITCH_HEADING`（`### クライアント説明用・企画意図3行まとめ`）に完全準拠した Markdown テキストへ決定論的レンダリングし、末尾の `## 10.` にレシピ要約を付す。実視聴ゲート（`input_video_tokens >= max(1000, floor(dur*90))`）通過時は `analysis_observation_scope = NULL`（ルール 2 の実視聴扱い）。 | 既存の `parse_analysis_sections()`・`videos_fts`・`get_video_playbook`・`get_anti_patterns` が無改修で動作。**既に `watched_A` の完全分析を持つ動画は原則上書きせず保全**し、未分析／未視聴置換対象の動画にのみ反映（TiDB 書き込みは `--dry-run` → ユーザー承認 → 反映ロック手順厳守）。 |
+| `detailed_analysis.ch3_scenes[]` | **SQLite `scenes` テーブル**（および `scenes_fts`） | 上記 `aiAnalysis` の `## 3.` に `SCENE_RE` 厳密書式で埋め込むことで、`sync-tidb-to-sqlite-mirror.mjs` および `KnowledgeIndex.upsert_video()` 内の `parse_scenes(ch3_text)` が自動的に `(video_id, shot_index, start_mmss, end_mmss, start_sec, end_sec, duration_sec, shot_title, description)` へ分解・登録する。 | `aiAnalysis` を単一の正本（Single Source of Truth）とし、`scenes` との二重管理・乖離を防ぐ。`search_scenes` / `get_pacing_benchmarks` がそのまま利用可能。 |
+| `craft_recipe`（`video_overview`, `cuts[]`, `provenance`） | **レシピ JSON ファイル（Google ドライブ正本）** ＋ **各 PC の SQLite `craft_recipes` / `craft_recipes_fts`** | `normalize_cut_dict()` → `score_recipe_credibility() >= 90` → `validate_production_compliance()` を通過した v2 JSON を生成し、`provenance.source = "gemini_api_url_v1"`（Pass 2 適用時は `"gemini_api_url_v1_pass2_4fps"`）および `credibility.verification_tier = "api_url_draft_v1"` を付与。`media`（`(C)`）は空／未取得ステータスとする。 | **レシピファイルの置き場所・同期方式は、`chibatmute` が設計中の `docs/CRAFT_RECIPE_DISTRIBUTION_DESIGN.md`（Google ドライブを正本とする方針）に完全準拠する**。`CHIBA-PC-api` は同設計書で定義される Google ドライブ正本ディレクトリ・命名・バージョン規則に従ってレシピ JSON を配置し、各 PC がそこからローカル SQLite の `craft_recipes` テーブル（`upsert_craft_recipe()`）へ取り込む運用に合わせる。 |
+
+> **注記（パイロット試験と本番 ② のプロンプト関係）**: 事前登録済みのパイロット試験（`analysis/pilot_api_craft_recipe/preregistration.json`、SHA-256 `e01cc009...`）では、既存 `scenes` を作り話検査（M4）の独立した答え合わせに使うため、プロンプト・5 本・合格ラインを変更せず `craft_recipe` 生成単体で精度と `plan_craft_sequence` 稼働を検証する。パイロット合格・アンカー 30 本到達および補正幅承認後に、上記 `detailed_analysis + craft_recipe` 統合版（Stage ② 本番プロンプト）へ移行する。
 
 ---
 
@@ -264,14 +358,15 @@ SQLite 実測（`watched_A + scenes あり + craft_recipes なし` = **4,158 本
 
 ---
 
-## 6. パイロット試験の実行前にユーザーが決めること
+## 6. 承認済み事項と本番（②）前に決めること
 
-1. **パイロット 5 本 × 2 回（Flex, `1 fps`, 予算上限 \$1.20）の実行可否**: 上記の固定シード 5 本・プロンプト・合格ライン（`preregistration.json`）で実行してよいか。
-2. **高速カット枠での `4 fps` クリップ拡大（Pass 2）を初回パイロットに含めるか**:
-   - 案 A（推奨）: まず `1 fps` のみ（10 呼び出し・約 \$0.71）で実測し、高速カット動画（`jsEVOjI690Y`, `Xr032EhUDPw`）の時刻誤差が 1.0 秒を超えた場合のみ追加で Pass 2（`start_offset`/`end_offset` + `4 fps`、約 +\$0.15）を試す。
-   - 案 B: 最初から 2 本だけ `4 fps` 比較を同時実行する（合計上限 \$1.50）。
-3. **プロンプトへ既存 `scenes`（Ch.3 の大まかなタイムスタンプ一覧）を渡すか**:
-   - 今回の事前登録プロンプトでは **タイトル・ジャンル・尺など軽量メタデータのみ渡し、`scenes` 本文は渡さない**（M4 の作り話検査で既存 `scenes` を独立した答え合わせに使えるようにするため）。この方針でよいか。
-4. **本番展開時の対象優先順位と 1 本あたり呼び出し回数**（パイロット合格後に最終決定）:
-   - `technique_rating >= A-`・非制限・未キャッシュ・`<=900s`（約 2,413 本、1 回/本で約 \$201・約 5 か月）を第 1 優先とするか、4,149 本全量を対象とするか。
-   - 同時期に `docs/STATUS_OVERVIEW_20261125.md` の共有キャッシュ済み 95〜471 本（無料・完全版）の 3 台並列レシピ化とどう並行するか。
+### 6-1. パイロット試験について承認済み（2026-11-25）
+1. **パイロット 5 本 × 2 回（Flex, `1 fps`, 予算上限 \$1.20）**: 事前登録（`preregistration.json`、5 本・プロンプト・合格ライン）を変更せず実施。503/429 制御は `scripts/run-api-url-batch.mjs` と同一ルール。
+2. **Pass 2（高速カット枠の `4 fps` クリップ拡大）**: 案 A を採用。高速カット 2 本（`jsEVOjI690Y`, `Xr032EhUDPw`）で主要カット時刻誤差の中央値が 1.0 秒を超えた場合のみ、15 秒区間を `4 fps` で追加観察（追加予算上限 \$0.30）。
+3. **既存 `scenes` の非注入**: プロンプトへ既存 `scenes` は渡さず、M4（作り話検査）の答え合わせにのみ使用。
+
+### 6-2. 本番の ②（詳細分析＋レシピ一括生成）へ進む前に決めること
+1. **アンカー 30 本到達と補正幅（`analysis/api_url_bias_config_v1.json`）の承認**（D-023 開始ゲート）。
+2. **レシピファイルの正本配置・配布仕様の確定**: `chibatmute` が設計中の `docs/CRAFT_RECIPE_DISTRIBUTION_DESIGN.md`（Google ドライブ正本方針）に合わせ、保存パス・命名・SQLite 取り込み手順・重複回避ルールを揃える。
+3. **既存 `watched_A` 動画（すでに詳細分析・`scenes` 完備）への ② 適用ルール**: 既存 `aiAnalysis` / `scenes` を保持してレシピだけ生成するか、未分析動画のみ「詳細分析＋レシピ一括」プロンプトを使うかの切り分け。
+4. **本番の呼び出し回数・Pass 2 発動基準・対象優先順**: 1 本 1 回＋自動検証失敗時再試行とするか、Pass 2 の自動発動条件（例：`overall_cut_pace == "fast"` または `micro_transition` 候補あり）、および夜間・早朝バッチの実行スケジュール。
