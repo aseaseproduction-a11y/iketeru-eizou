@@ -1,0 +1,4317 @@
+{
+  "phase": "phase3_c",
+  "run_id": "run_20261124_173838",
+  "split": "P1_private_rating_batch_03",
+  "priority": "P1_private_rating",
+  "batch_index": 3,
+  "dataset_file": "analysis/runs/run_20261124_173838/batch_selection.json",
+  "dataset_sha256": "35a1dd597ba949865454e5dafd3c9bd39393ddbd55a7c94c572134c3e2c73ef2",
+  "prompt_version": "v1_baseline",
+  "expected_model": "gemini-4-neon-high",
+  "frozen_config": {
+    "config_version": "phase2_frozen_config_v1",
+    "created_at": "2026-11-23T04:11:00.000Z",
+    "t_award": 83,
+    "t_low": 63,
+    "frozen_commit": "5e42f16ace5093964f054bd1ebe44ab30b251296",
+    "frozen_commit_short": "5e42f16",
+    "pre_scoring_rule_commit": "1551c3f",
+    "expected_model": "gemini-4-neon-high",
+    "prompt_version": "v1_baseline",
+    "hybrid_router_version": "phase2_hybrid_v1",
+    "hybrid_router_rules": {
+      "spec_ref": "docs/CALIBRATION_PHASE2_DESIGN.md Section 6.2 & scripts/phase2-hybrid-router.mjs",
+      "h1_pre_route_to_video": [
+        "H1-a: genre === 'MV'",
+        "H1-b: genre === 'モーション'",
+        "H1-c: max_cuts_per_10s >= 12 (regardless of genre or integrated_lufs)"
+      ],
+      "h2_post_cs_escalation_to_video": [
+        "H2-a: |contact_sheet_score - 83| <= 3.0 OR |contact_sheet_score - 63| <= 3.0",
+        "H2-b: duration_sec >= 60.0 AND (avg_cut_interval_sec >= 15.0 OR total_cuts <= 2) AND contact_sheet_score >= 63",
+        "H2-c: (integrated_lufs === null OR integrated_lufs <= -28.0) AND contact_sheet_score >= 63"
+      ]
+    },
+    "ensemble_rule": {
+      "runs_per_mode": 2,
+      "tiebreaker_trigger": "|score_r1 - score_r2| >= 5",
+      "aggregation": "median_of_3_if_tiebreaker_else_mean_of_2"
+    },
+    "grid_truncation_disclosure": {
+      "pre_registered_grid_t_award": [
+        75,
+        84
+      ],
+      "pre_registered_grid_t_low": [
+        58,
+        68
+      ],
+      "pre_registered_go_range_t_award": [
+        81,
+        84
+      ],
+      "pre_registered_go_range_t_low": [
+        58,
+        68
+      ],
+      "pre_registered_selected_t_award": 83,
+      "pre_registered_selected_youden_j": 0.8167,
+      "extended_diagnostic_grid_t_award": [
+        75,
+        92
+      ],
+      "extended_true_go_range_t_award": [
+        81,
+        86
+      ],
+      "extended_max_youden_j_t_award": [
+        85,
+        86
+      ],
+      "extended_max_youden_j": 0.825,
+      "rationale": "Pre-registered grid stopped at T_award=84; extended diagnostic recalculation over 85..92 shows true GO range 81..86 with max Youden J=0.825 at 85..86 (outside pre-registered grid). Because 83 lies near the center of the true GO range 81..86, T_award=83 is strictly retained per pre-registration without post-hoc shifting to 85-86."
+    },
+    "holdout_protocol": {
+      "dataset_path": "analysis/phase2_holdout_v1.json",
+      "one_shot_only": true,
+      "no_post_hoc_adjustment": true,
+      "no_go_action": "Do NOT re-tune thresholds/prompts or re-run on Holdout v1. Any re-tuning requires building a brand-new unseen Holdout v2.",
+      "decision_basis": "PRIMARY_JUDGMENT_ONLY",
+      "primary_criteria": {
+        "P1_roc_auc_min": 0.9,
+        "P2_tier2_sensitivity_rule": "hits >= ceil(N_T2 * 0.80) (N_T2=24 => >=20/24 = 83.33%)",
+        "P3_pro_specificity_rule": "correct >= ceil(N_PRO * 0.84) (N_PRO=25 => >=21/25 = 84.0%)",
+        "P4_major_error_a_max": 0,
+        "S1_major_error_b_max": 0,
+        "S2_tier2_vs_low_auc_min": 0.95,
+        "S3_pro_vs_low_auc_min": 0.8,
+        "S3_mwu_one_sided_p_max": 0.05
+      },
+      "mandatory_supplementary_reports": [
+        {
+          "id": "a",
+          "key": "contamination_excluded_p1_to_p3",
+          "description": "P-1 to P-3 metrics after excluding videos where knows_work === true OR knows_award_history === true."
+        },
+        {
+          "id": "b",
+          "key": "low_exposure_recent_tier2_p2",
+          "description": "P-2 sensitivity on the 15 low-exposure / recent Tier 2 works only (award/release year 2022-2026 and view_count < 500k YouTube / < 100k Vimeo)."
+        },
+        {
+          "id": "c",
+          "key": "per_genre_false_positives",
+          "description": "Per-genre false positive list (R-PRO >= T_award and R-LOW >= T_award), explicitly flagging anime-style TV CMs."
+        }
+      ]
+    },
+    "_verified_rel_path": "analysis/phase2_frozen_config_v1.json",
+    "_verified_head_sha256": "eeeb96165666c6496ccaec80c40d48ec5dc43a207920e233144b0c62434cb225",
+    "_verified_frozen_commit_full": "5e42f16ace5093964f054bd1ebe44ab30b251296"
+  },
+  "created_at": "2026-11-24T09:01:44.389Z",
+  "blind_id_map_path": "E:\\iketeru-eizou\\analysis\\runs\\run_20261124_173838\\blind_id_map.json",
+  "blind_id_map_sha256": "bb16e2c556e1b8051f96bd48be740fdccbd7e99fbe232b252ae086df004a01f8",
+  "target_count": 73,
+  "prepared_count": 73,
+  "aborted_by_bot_check": false,
+  "runtime_failures": [],
+  "items": {
+    "9873910": {
+      "video_id": "9873910",
+      "blind_id": "c9dfa9a2a543",
+      "genre_bucket": "unverified:documentary",
+      "routing_genre": "モーション",
+      "genre_verified": false,
+      "target_status_after_calibration": "calibrated_unverified_genre",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "060c1866a0e3444ef8ffc05e2d9d2a2712c46d49e147e0cd3063dac4262b9635",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-b:genre=モーション"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 681,
+        "scdet_threshold": 10,
+        "total_cuts": 37,
+        "avg_cut_interval_sec": 18.41,
+        "max_cuts_per_10s": 8,
+        "integrated_lufs": -18,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          123,
+          133
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\c9dfa9a2a543\\c9dfa9a2a543.mp4",
+            "sha256": "8e33d5fe2c6d82f9fe3475275fb8559e8e444967b793fa9fd458b3083b205550",
+            "size_bytes": 59968169
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\c9dfa9a2a543\\c9dfa9a2a543_slow.mp4",
+            "sha256": "49f7f245cfdbf4e3d63dbab853c81803ad0de504da163ba86dc1b1c275d4095b",
+            "size_bytes": 336323
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\c9dfa9a2a543\\c9dfa9a2a543_sheet_01.jpg",
+            "sha256": "c6170ad4a07f0b51c3edbb7c9a164e0b6edeae285bc0d894a0fa6b8031dc7250",
+            "size_bytes": 184733
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\c9dfa9a2a543\\c9dfa9a2a543_sheet_02.jpg",
+            "sha256": "a2d1a1aad48445e2291ae251f5fba15ebfdbc40b9781405723a5bb8c95bf9c1a",
+            "size_bytes": 236872
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\c9dfa9a2a543\\c9dfa9a2a543_sheet_03.jpg",
+            "sha256": "4c21cb3fc5da844a5bd89c52bb0354e28cf52b765dc20f5b9c4d5deecc3b8b80",
+            "size_bytes": 182184
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\c9dfa9a2a543\\c9dfa9a2a543_sheet_dense.jpg",
+            "sha256": "1b8ed5f328a797ed341c666fe35e85b2fd9ca952e931a2ee28def25e8e22f32f",
+            "size_bytes": 256392
+          }
+        ]
+      }
+    },
+    "80381569": {
+      "video_id": "80381569",
+      "blind_id": "e7c2e92d180b",
+      "genre_bucket": "unverified:teaser-trailer",
+      "routing_genre": "unverified:teaser-trailer",
+      "genre_verified": false,
+      "target_status_after_calibration": "calibrated_unverified_genre",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "6b4cd7522f5de611f6a49c018b718bc37fd0bd81f50085592ec0cfb75561ebc1",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "contact_sheet",
+        "triggers": []
+      },
+      "metrics": {
+        "duration_sec": 77.2,
+        "scdet_threshold": 10,
+        "total_cuts": 28,
+        "avg_cut_interval_sec": 2.76,
+        "max_cuts_per_10s": 6,
+        "integrated_lufs": -13.6,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          37,
+          47
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\e7c2e92d180b\\e7c2e92d180b.mp4",
+            "sha256": "5b25ff08ad15cb82b4fb112362ba06b8e30e5ba8ca149ee46f271e1ac9830f2a",
+            "size_bytes": 8455927
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\e7c2e92d180b\\e7c2e92d180b_slow.mp4",
+            "sha256": "ea718cd35879558c5ff6e6ecef88db51413810313ab8f3f7a6d0d9baee9a629b",
+            "size_bytes": 545310
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\e7c2e92d180b\\e7c2e92d180b_sheet_01.jpg",
+            "sha256": "9cfda08928f375eb6994e86089947b33c277b95b27a5ce5ce59b48d2b6332516",
+            "size_bytes": 224824
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\e7c2e92d180b\\e7c2e92d180b_sheet_dense.jpg",
+            "sha256": "a387ee9db1127dbe76f0cf78d7fe379cafa3fa5bd5be5dcfe97e6fcd5d568ad7",
+            "size_bytes": 226822
+          }
+        ]
+      }
+    },
+    "84556572": {
+      "video_id": "84556572",
+      "blind_id": "98cc69d90073",
+      "genre_bucket": "モーション",
+      "routing_genre": "モーション",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "4870eb10c82a67a13b62ff79a9e4316a45e6e2a4cf82075af70bcfcd768ead2d",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-b:genre=モーション"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 83.1,
+        "scdet_threshold": 10,
+        "total_cuts": 0,
+        "avg_cut_interval_sec": 83.1,
+        "max_cuts_per_10s": 0,
+        "integrated_lufs": -10.8,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          36,
+          46
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\98cc69d90073\\98cc69d90073.mp4",
+            "sha256": "218ba81a84889eff0de85f69208cc001bd61fc362e29f044a7f6e00de863db06",
+            "size_bytes": 7039111
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\98cc69d90073\\98cc69d90073_slow.mp4",
+            "sha256": "132189e5728e1124d09120a275f2eb24c24a135dd62777689f1139ff465530f2",
+            "size_bytes": 1372855
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\98cc69d90073\\98cc69d90073_sheet_01.jpg",
+            "sha256": "e59c8979e5e1e2bd8f5e0cf253768d7394f809ccad6bd3332537cafabc882699",
+            "size_bytes": 202822
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\98cc69d90073\\98cc69d90073_sheet_dense.jpg",
+            "sha256": "306b742eba89b5f6c46972a3afb8f41ea6fb2dd87c2fda260379477804636e4b",
+            "size_bytes": 245340
+          }
+        ]
+      }
+    },
+    "85556391": {
+      "video_id": "85556391",
+      "blind_id": "98e82b220c05",
+      "genre_bucket": "モーション",
+      "routing_genre": "モーション",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "ccbf595e07ab5fab6d30ee180c71720744251401c6a8768fd4fad4d0c60a0c74",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-b:genre=モーション"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 116.5,
+        "scdet_threshold": 10,
+        "total_cuts": 12,
+        "avg_cut_interval_sec": 9.71,
+        "max_cuts_per_10s": 3,
+        "integrated_lufs": -15.6,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          53,
+          63
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\98e82b220c05\\98e82b220c05.mp4",
+            "sha256": "86b349df12f721a0becc910af9d91cbda7291c85b598bd1b347c0481f322f6ad",
+            "size_bytes": 5756713
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\98e82b220c05\\98e82b220c05_slow.mp4",
+            "sha256": "1c87864e823ffa53e518a6c1b7982c35d66274a5e03a981734522a5c20f1067a",
+            "size_bytes": 172501
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\98e82b220c05\\98e82b220c05_sheet_01.jpg",
+            "sha256": "4faed0125fe8f950b038c07637725caec239766b68b73e502e1a0b4e7346fc5c",
+            "size_bytes": 125344
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\98e82b220c05\\98e82b220c05_sheet_dense.jpg",
+            "sha256": "4ee83ff2eda9378a85dcf40c72221abc92a327575348b22fc419a006f5b47eec",
+            "size_bytes": 162439
+          }
+        ]
+      }
+    },
+    "86310035": {
+      "video_id": "86310035",
+      "blind_id": "cb4f76431d00",
+      "genre_bucket": "MV",
+      "routing_genre": "MV",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "30f2e0b3d8cd655d1f8979e3564fdd4538f3e05435fb53a0c1b6c2df96aee904",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-a:genre=MV",
+          "H1-c:max_cuts_per_10s=19>=12"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 206.5,
+        "scdet_threshold": 10,
+        "total_cuts": 66,
+        "avg_cut_interval_sec": 3.13,
+        "max_cuts_per_10s": 19,
+        "integrated_lufs": -11.1,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          179,
+          184
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\cb4f76431d00\\cb4f76431d00.mp4",
+            "sha256": "fd40f03759da66f477ad706f6c6995e4be4a6e61a2db6f7bb18782e6ceb57a7a",
+            "size_bytes": 17379975
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\cb4f76431d00\\cb4f76431d00_slow.mp4",
+            "sha256": "65696a9ac28f28c15054670fa32403aec17a37793d82d0e5b277a16aa7c11c0d",
+            "size_bytes": 659258
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\cb4f76431d00\\cb4f76431d00_sheet_01.jpg",
+            "sha256": "f499c4dc636a301b9a11caa79f9dccba81176c210d66bd986f6210d00b77a0fe",
+            "size_bytes": 129396
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\cb4f76431d00\\cb4f76431d00_sheet_02.jpg",
+            "sha256": "585654fba52a522d9cab25ed37739e3488f9df22f86eab15fe300880fb262a90",
+            "size_bytes": 138503
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\cb4f76431d00\\cb4f76431d00_sheet_dense.jpg",
+            "sha256": "23655f9bb06939fd875820d4a632cc9f66e8c167202b45fd45c00eadf32dab02",
+            "size_bytes": 188264
+          }
+        ]
+      }
+    },
+    "87130088": {
+      "video_id": "87130088",
+      "blind_id": "cf6f7a479817",
+      "genre_bucket": "モーション",
+      "routing_genre": "モーション",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "1974babcc10116b45d1e06e5c2393bd0cc1f2a9a008f1b6b96fc95501d02d9bd",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-b:genre=モーション"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 45.9,
+        "scdet_threshold": 10,
+        "total_cuts": 7,
+        "avg_cut_interval_sec": 6.56,
+        "max_cuts_per_10s": 4,
+        "integrated_lufs": -13.2,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          17,
+          27
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\cf6f7a479817\\cf6f7a479817.mp4",
+            "sha256": "7a700dd5a924093a91b0bc5b04fdcabb2d57c9592ac5bdd53063b3c3f24d76ab",
+            "size_bytes": 4135579
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\cf6f7a479817\\cf6f7a479817_slow.mp4",
+            "sha256": "f734167daa0d4f483bf8a9cadf04381b29d217ed5f1dd7b1da06cb273af31858",
+            "size_bytes": 719897
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\cf6f7a479817\\cf6f7a479817_sheet_01.jpg",
+            "sha256": "4ef6c58e72ce014eb086f11613d711a2461daee97b233a5edbec218c9ed82b95",
+            "size_bytes": 209681
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\cf6f7a479817\\cf6f7a479817_sheet_dense.jpg",
+            "sha256": "5555e48bece6d5ea9462564f69f3c43b4d384ec5ad5d75f48bf856a16d5efbfe",
+            "size_bytes": 225087
+          }
+        ]
+      }
+    },
+    "87993762": {
+      "video_id": "87993762",
+      "blind_id": "b1821708848c",
+      "genre_bucket": "unverified:film",
+      "routing_genre": "unverified:film",
+      "genre_verified": false,
+      "target_status_after_calibration": "calibrated_unverified_genre",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "818492961b2b2679caf26b1fb4c53efd9c71c9c8966a7936c48f4d659e2a51e4",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "contact_sheet",
+        "triggers": []
+      },
+      "metrics": {
+        "duration_sec": 180,
+        "scdet_threshold": 10,
+        "total_cuts": 3,
+        "avg_cut_interval_sec": 60,
+        "max_cuts_per_10s": 1,
+        "integrated_lufs": -17.8,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\b1821708848c\\b1821708848c.mp4",
+            "sha256": "caf3a156eca14d35f67bfc508ba6ffa4b37832b4d98d062d9cc739651c529275",
+            "size_bytes": 10495596
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\b1821708848c\\b1821708848c_sheet_01.jpg",
+            "sha256": "ead22ac7619505c2abe1fcb94f7efb4ba6eeac377555291df94707c1ae0c381c",
+            "size_bytes": 296034
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\b1821708848c\\b1821708848c_sheet_02.jpg",
+            "sha256": "4466580f445710e06319820d925011faa78857748e72e7d08d5f6aff3b931616",
+            "size_bytes": 304826
+          }
+        ]
+      }
+    },
+    "88723505": {
+      "video_id": "88723505",
+      "blind_id": "fbc706fb0c0e",
+      "genre_bucket": "MV",
+      "routing_genre": "MV",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "3d8ca46a539480d5197290f4a441ac28c8093779c4c13ae98b423df75a712385",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-a:genre=MV",
+          "H1-c:max_cuts_per_10s=27>=12"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 244,
+        "scdet_threshold": 10,
+        "total_cuts": 68,
+        "avg_cut_interval_sec": 3.59,
+        "max_cuts_per_10s": 27,
+        "integrated_lufs": -6.9,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          162,
+          167
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\fbc706fb0c0e\\fbc706fb0c0e.mp4",
+            "sha256": "03289e3cbb913f1ebf674e40ee7b5e90b55aab019ee4313c500ab60d82a12020",
+            "size_bytes": 25618419
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\fbc706fb0c0e\\fbc706fb0c0e_slow.mp4",
+            "sha256": "ddc13535d465ec988f2ef1074ea26b39c58bd242fb83f46f3b037e1c2520d8e1",
+            "size_bytes": 1983449
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\fbc706fb0c0e\\fbc706fb0c0e_sheet_01.jpg",
+            "sha256": "a8e4e49b60e7db4c48b40d7fdb71d93ac81b143b2d2a96f60d1c8897ac8d7712",
+            "size_bytes": 192684
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\fbc706fb0c0e\\fbc706fb0c0e_sheet_02.jpg",
+            "sha256": "f957ad1ef0d4164832a0cd039aa74df4b462f0f479654c7f6b7860d8f6b5c07b",
+            "size_bytes": 297880
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\fbc706fb0c0e\\fbc706fb0c0e_sheet_dense.jpg",
+            "sha256": "8775abd2466adf0d7a6e0cac4af1c29008b054c4ea2aeb6578009c157a5e15c2",
+            "size_bytes": 463317
+          }
+        ]
+      }
+    },
+    "92588637": {
+      "video_id": "92588637",
+      "blind_id": "79cfdb22fc3a",
+      "genre_bucket": "unverified:opening",
+      "routing_genre": "unverified:opening",
+      "genre_verified": false,
+      "target_status_after_calibration": "calibrated_unverified_genre",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "90434ae4b779766217d51cc6ab0e668c7c6fc78b74d33dc154883011c2921834",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-c:max_cuts_per_10s=20>=12"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 20.4,
+        "scdet_threshold": 10,
+        "total_cuts": 37,
+        "avg_cut_interval_sec": 0.55,
+        "max_cuts_per_10s": 20,
+        "integrated_lufs": -13,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          0,
+          5
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\79cfdb22fc3a\\79cfdb22fc3a.mp4",
+            "sha256": "d667a960feba6e4d0cb77579980cab2a21ef8a3d4b00d2e08904fc639209ea8a",
+            "size_bytes": 2322984
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\79cfdb22fc3a\\79cfdb22fc3a_slow.mp4",
+            "sha256": "dd6ba95b5836887123e4077bcdf671f94fd7d064bf9d5812c79ea08f3e48e32d",
+            "size_bytes": 615522
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\79cfdb22fc3a\\79cfdb22fc3a_sheet_01.jpg",
+            "sha256": "3720989dbb82ad1f1fc988be3e07d4bdc30ea514e82601243aafa5ba46aa0ccc",
+            "size_bytes": 390511
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\79cfdb22fc3a\\79cfdb22fc3a_sheet_dense.jpg",
+            "sha256": "4f2f88a870ba99cbe4b2b68ae2245d98f6bca1e39fe1d31fb1cfd01e981f8aac",
+            "size_bytes": 276852
+          }
+        ]
+      }
+    },
+    "92679978": {
+      "video_id": "92679978",
+      "blind_id": "930fab79b830",
+      "genre_bucket": "unverified:branded-movie",
+      "routing_genre": "モーション",
+      "genre_verified": false,
+      "target_status_after_calibration": "calibrated_unverified_genre",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "0de608968eaf0c904315df87d2db6c3b5ab3d097ee40008f49824f6ddbecfcfe",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-b:genre=モーション",
+          "H1-c:max_cuts_per_10s=30>=12"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 35.1,
+        "scdet_threshold": 10,
+        "total_cuts": 38,
+        "avg_cut_interval_sec": 0.92,
+        "max_cuts_per_10s": 30,
+        "integrated_lufs": -9.2,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          23,
+          28
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\930fab79b830\\930fab79b830.mp4",
+            "sha256": "e47eb6fd63c77369c59bdd9b713f3de0e42158062cfddc27ce3c50152142f2b7",
+            "size_bytes": 2377247
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\930fab79b830\\930fab79b830_slow.mp4",
+            "sha256": "317272ea00f6680370f8024125b515f2f60f43fcf2f2747b1b403327a0506cbf",
+            "size_bytes": 476633
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\930fab79b830\\930fab79b830_sheet_01.jpg",
+            "sha256": "37aa8a9f0e1a8c1304a7d66226cc9843deec78bdf4c778dfa2be32c021a1d096",
+            "size_bytes": 112428
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\930fab79b830\\930fab79b830_sheet_dense.jpg",
+            "sha256": "fe28e94eb8586f410df682d81caba1a3873f04459f1b7c913d82fa6e950d63c9",
+            "size_bytes": 114012
+          }
+        ]
+      }
+    },
+    "93201564": {
+      "video_id": "93201564",
+      "blind_id": "5d1ba0217202",
+      "genre_bucket": "unverified:concept-art",
+      "routing_genre": "unverified:concept-art",
+      "genre_verified": false,
+      "target_status_after_calibration": "calibrated_unverified_genre",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "a68577c072f5007ed0154e90e8ee8e7423dfec79e6967de747c55ba55f7f37b3",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "contact_sheet",
+        "triggers": []
+      },
+      "metrics": {
+        "duration_sec": 90.6,
+        "scdet_threshold": 10,
+        "total_cuts": 0,
+        "avg_cut_interval_sec": 90.6,
+        "max_cuts_per_10s": 0,
+        "integrated_lufs": -16.7,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\5d1ba0217202\\5d1ba0217202.mp4",
+            "sha256": "819bfdb9baa4ea52bc942d423d6d071e2fc76e426abda20502448ebbae7b3f7d",
+            "size_bytes": 6178372
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\5d1ba0217202\\5d1ba0217202_sheet_01.jpg",
+            "sha256": "ced8279e223a3ddea0cddf318ac4bf91dc2300d3c3327e7176407c7a7dc04a44",
+            "size_bytes": 375412
+          }
+        ]
+      }
+    },
+    "95929658": {
+      "video_id": "95929658",
+      "blind_id": "dbf6771327cb",
+      "genre_bucket": "CM",
+      "routing_genre": "CM",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "adb0a499f961685f541c3c77d06afee3082a302d846fdea2689d35da978cdf19",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "contact_sheet",
+        "triggers": []
+      },
+      "metrics": {
+        "duration_sec": 142.1,
+        "scdet_threshold": 10,
+        "total_cuts": 64,
+        "avg_cut_interval_sec": 2.22,
+        "max_cuts_per_10s": 11,
+        "integrated_lufs": -10.3,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          5,
+          15
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\dbf6771327cb\\dbf6771327cb.mp4",
+            "sha256": "f5a0b0cb91a8bbe6b0113a5fb09b7b80219e2815443441dd8d8259491c0873d1",
+            "size_bytes": 11484212
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\dbf6771327cb\\dbf6771327cb_slow.mp4",
+            "sha256": "ecac6b7999b21fd03f75e837d52953def7d93776c61d40e5ed0f598862c47d25",
+            "size_bytes": 673110
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\dbf6771327cb\\dbf6771327cb_sheet_01.jpg",
+            "sha256": "85e2dc8338fddb9011faef586517fd3916440a565bff7db006befcdd4061b872",
+            "size_bytes": 185074
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\dbf6771327cb\\dbf6771327cb_sheet_02.jpg",
+            "sha256": "54807e36b2ecdd5962d2a43a72f6776af6e9946d64f84c82f37fc82f99aac096",
+            "size_bytes": 201674
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\dbf6771327cb\\dbf6771327cb_sheet_dense.jpg",
+            "sha256": "00504bdb93ba811d12c7f253adf692c8077219ecc33795cd31027fd16132fd66",
+            "size_bytes": 187190
+          }
+        ]
+      }
+    },
+    "97599935": {
+      "video_id": "97599935",
+      "blind_id": "96230f07230b",
+      "genre_bucket": "MV",
+      "routing_genre": "MV",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "71f085e668ba693521537de967bf811f090785c69ddf9195bc2598927b70711b",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-a:genre=MV",
+          "H1-c:max_cuts_per_10s=13>=12"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 223.1,
+        "scdet_threshold": 10,
+        "total_cuts": 107,
+        "avg_cut_interval_sec": 2.09,
+        "max_cuts_per_10s": 13,
+        "integrated_lufs": -5.6,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          60,
+          65
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\96230f07230b\\96230f07230b.mp4",
+            "sha256": "f88520c627aed75b51f74893bc657df8b00da45946cd3a2e729a17e06e630971",
+            "size_bytes": 20128496
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\96230f07230b\\96230f07230b_slow.mp4",
+            "sha256": "69d4a81488f96bd7c94015d0328be29e067804b25ac21a5a696ef3d3d7cb0216",
+            "size_bytes": 491386
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\96230f07230b\\96230f07230b_sheet_01.jpg",
+            "sha256": "21fd4b4b1d53806c6019cf7526138252accaf1725eb47e433387a4c2101171f4",
+            "size_bytes": 226922
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\96230f07230b\\96230f07230b_sheet_02.jpg",
+            "sha256": "7f1cb52e873b9ff937e790fc34716b6b9c81653944e3b02e4a27a3c4567da009",
+            "size_bytes": 175981
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\96230f07230b\\96230f07230b_sheet_dense.jpg",
+            "sha256": "306b9c45ecfa37727f057f9c538fd357ca6b815226acdd571903deb04547f7f8",
+            "size_bytes": 246700
+          }
+        ]
+      }
+    },
+    "98834333": {
+      "video_id": "98834333",
+      "blind_id": "648be7f00896",
+      "genre_bucket": "モーション",
+      "routing_genre": "モーション",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "c189ef0b52de03714762e6258ffe4a8a8549f450a51877b1a8f7ad3b5f927e13",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-b:genre=モーション"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 16.1,
+        "scdet_threshold": 10,
+        "total_cuts": 2,
+        "avg_cut_interval_sec": 8.05,
+        "max_cuts_per_10s": 2,
+        "integrated_lufs": -14.1,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          3,
+          13
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\648be7f00896\\648be7f00896.mp4",
+            "sha256": "a60b5dbaa83b1337f76ee1fb2e6de18c033ebd041c99f094dab282103c1ce3a1",
+            "size_bytes": 1701718
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\648be7f00896\\648be7f00896_slow.mp4",
+            "sha256": "914fd415e08d2447091867d1e0be582dad6d50e66c58b5e63f3fc036ecadf1f4",
+            "size_bytes": 1464291
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\648be7f00896\\648be7f00896_sheet_01.jpg",
+            "sha256": "4d7f11d98005f9853bca8049354fd8c8d488b88729ac60168390025ea496097f",
+            "size_bytes": 170421
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\648be7f00896\\648be7f00896_sheet_dense.jpg",
+            "sha256": "6185090c3efc43f883058ec3905f7b988f301388c6bdff2f812fafffdc319d4e",
+            "size_bytes": 194448
+          }
+        ]
+      }
+    },
+    "98910710": {
+      "video_id": "98910710",
+      "blind_id": "96ff865347fd",
+      "genre_bucket": "モーション",
+      "routing_genre": "モーション",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "991e175b24b29f8f401b3ceaf9ae2a94b9afda0d99697c7c449c442c9dfc152f",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-b:genre=モーション"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 30,
+        "scdet_threshold": 10,
+        "total_cuts": 7,
+        "avg_cut_interval_sec": 4.29,
+        "max_cuts_per_10s": 4,
+        "integrated_lufs": -9.8,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          10,
+          20
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\96ff865347fd\\96ff865347fd.mp4",
+            "sha256": "886f29f6f8abb73705149b8a6a4a3a02ec81d24b533ea9b7e9b99b389d9b720f",
+            "size_bytes": 3059824
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\96ff865347fd\\96ff865347fd_slow.mp4",
+            "sha256": "c9e42b846cf8827b1920f494a9678bdd68b6dfc706b4cb9f75772912257c7094",
+            "size_bytes": 987506
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\96ff865347fd\\96ff865347fd_sheet_01.jpg",
+            "sha256": "2e99d5c980115c558cf3d92c780cc6714c94d2b6689738863b8959e89b097581",
+            "size_bytes": 458458
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\96ff865347fd\\96ff865347fd_sheet_dense.jpg",
+            "sha256": "05836651921e6ad0458f3f9be6b13764ffb23ba053fb2eed55060647c0b0b96f",
+            "size_bytes": 417759
+          }
+        ]
+      }
+    },
+    "99872019": {
+      "video_id": "99872019",
+      "blind_id": "ce3306cc30c5",
+      "genre_bucket": "unverified:film",
+      "routing_genre": "unverified:film",
+      "genre_verified": false,
+      "target_status_after_calibration": "calibrated_unverified_genre",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "e29651fc3759420e893c6c4a7de2a46817a657172b93f2abe1a4f8f836fb47fe",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "contact_sheet",
+        "triggers": []
+      },
+      "metrics": {
+        "duration_sec": 197.8,
+        "scdet_threshold": 10,
+        "total_cuts": 42,
+        "avg_cut_interval_sec": 4.71,
+        "max_cuts_per_10s": 4,
+        "integrated_lufs": -18.8,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\ce3306cc30c5\\ce3306cc30c5.mp4",
+            "sha256": "7ed191f49ec0fb7e2d118a40f6e97aaf7d886d5ba6d0cd71283e9629a3bad2dc",
+            "size_bytes": 14804785
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\ce3306cc30c5\\ce3306cc30c5_sheet_01.jpg",
+            "sha256": "8009054c4d9cc5c6414bd5ff8476dd3a4b404bf3417ffd0c13e1babb757b668a",
+            "size_bytes": 207995
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\ce3306cc30c5\\ce3306cc30c5_sheet_02.jpg",
+            "sha256": "0bcd1bf66ddd42f6b9bc3e7e68888c76af8e78e2cbceb6c26d6441241fa05240",
+            "size_bytes": 261468
+          }
+        ]
+      }
+    },
+    "99898665": {
+      "video_id": "99898665",
+      "blind_id": "59620a3bf2e6",
+      "genre_bucket": "unverified:concept-art",
+      "routing_genre": "unverified:concept-art",
+      "genre_verified": false,
+      "target_status_after_calibration": "calibrated_unverified_genre",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "a35831e2b5217439714c9c2f91e33475924c56f3164afd2f63903e722fe12128",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "contact_sheet",
+        "triggers": []
+      },
+      "metrics": {
+        "duration_sec": 105.1,
+        "scdet_threshold": 10,
+        "total_cuts": 42,
+        "avg_cut_interval_sec": 2.5,
+        "max_cuts_per_10s": 10,
+        "integrated_lufs": -22.6,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          7,
+          17
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\59620a3bf2e6\\59620a3bf2e6.mp4",
+            "sha256": "da6ecb62a5f00708375a8c016f2e6463cf81fa7d89be3935a6e9dc541ff6bf08",
+            "size_bytes": 10084633
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\59620a3bf2e6\\59620a3bf2e6_slow.mp4",
+            "sha256": "cadba72bd46f9d08937488eac930b20ffce348d91570cbb4e28c80ddcaf31470",
+            "size_bytes": 505814
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\59620a3bf2e6\\59620a3bf2e6_sheet_01.jpg",
+            "sha256": "60b666f6a73fb1985af9e333977f779bdf33bec5cd05badcca1305a578160b41",
+            "size_bytes": 427514
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\59620a3bf2e6\\59620a3bf2e6_sheet_dense.jpg",
+            "sha256": "41c9ef192f58ea87e63bc4bf7adbdbbdee6451dd84b1ac2771189a839ac5db78",
+            "size_bytes": 199053
+          }
+        ]
+      }
+    },
+    "774363499": {
+      "video_id": "774363499",
+      "blind_id": "6d6df2e528e7",
+      "genre_bucket": "CM",
+      "routing_genre": "CM",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "c6e44b411a738aae9b1e08894100ba42b5c6ab1e9bf4e3e2ad018b4dc44f359c",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "contact_sheet",
+        "triggers": []
+      },
+      "metrics": {
+        "duration_sec": 60.1,
+        "scdet_threshold": 10,
+        "total_cuts": 25,
+        "avg_cut_interval_sec": 2.4,
+        "max_cuts_per_10s": 9,
+        "integrated_lufs": -14.2,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          0,
+          10
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\6d6df2e528e7\\6d6df2e528e7.mp4",
+            "sha256": "cc6ff08a1d181a6cd06f1b191fa223d6ee0ab509a210e1ea4ba10e7561243fb7",
+            "size_bytes": 6061884
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\6d6df2e528e7\\6d6df2e528e7_slow.mp4",
+            "sha256": "ee24da3aa8bb63438c3c98f43f85c8d5a067a9ad12f7c346683cbc4851eb40e9",
+            "size_bytes": 534238
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\6d6df2e528e7\\6d6df2e528e7_sheet_01.jpg",
+            "sha256": "df47de0bf1a1476b0edde3c68806de6de1ae2b25907d6a838bd52b70a13cb6c6",
+            "size_bytes": 267322
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\6d6df2e528e7\\6d6df2e528e7_sheet_dense.jpg",
+            "sha256": "f7ed7feef6399856250ce1d012317d9b6c76ef670462bbbfe4a838977da5f0d7",
+            "size_bytes": 110816
+          }
+        ]
+      }
+    },
+    "775615428": {
+      "video_id": "775615428",
+      "blind_id": "43275aab3af3",
+      "genre_bucket": "CM",
+      "routing_genre": "CM",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "b1ffcde0b21058cff26f360699f14f784be66a2643141ea1afc58576b90d86af",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "contact_sheet",
+        "triggers": []
+      },
+      "metrics": {
+        "duration_sec": 15,
+        "scdet_threshold": 10,
+        "total_cuts": 2,
+        "avg_cut_interval_sec": 7.5,
+        "max_cuts_per_10s": 2,
+        "integrated_lufs": -14,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\43275aab3af3\\43275aab3af3.mp4",
+            "sha256": "5a486bf1d02d3626e9de8711bf679406a35228dfd75e72028ceef0c47bb0ff24",
+            "size_bytes": 1680641
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\43275aab3af3\\43275aab3af3_sheet_01.jpg",
+            "sha256": "3e39734e43e44b48e609d232e7ac33f1c72fefee806178ee46ec7011d6b6e8ab",
+            "size_bytes": 350312
+          }
+        ]
+      }
+    },
+    "778470625": {
+      "video_id": "778470625",
+      "blind_id": "539e4a0b5854",
+      "genre_bucket": "unverified:concept-art",
+      "routing_genre": "モーション",
+      "genre_verified": false,
+      "target_status_after_calibration": "calibrated_unverified_genre",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "027777544795dcaeacecfd0c8e7517007b6930de1358bbdf9c68107f08244f3e",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-b:genre=モーション",
+          "H1-c:max_cuts_per_10s=22>=12"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 83,
+        "scdet_threshold": 10,
+        "total_cuts": 99,
+        "avg_cut_interval_sec": 0.84,
+        "max_cuts_per_10s": 22,
+        "integrated_lufs": -8.9,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          1,
+          6
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\539e4a0b5854\\539e4a0b5854.mp4",
+            "sha256": "831a65206bd7c635dda7c9880e7d44bebe48bcef9f921320174190bd1d6309ff",
+            "size_bytes": 8635168
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\539e4a0b5854\\539e4a0b5854_slow.mp4",
+            "sha256": "d0a69397212d143002504034989a94f052673961e5f1e98bfeac741e1deabe32",
+            "size_bytes": 815606
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\539e4a0b5854\\539e4a0b5854_sheet_01.jpg",
+            "sha256": "81f2939d8c1332d9dee1b049296841fcc8b3ea0a77a1f7d23a704399ddd19ffa",
+            "size_bytes": 218109
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\539e4a0b5854\\539e4a0b5854_sheet_dense.jpg",
+            "sha256": "635353fcf83f16a08d0b61aa71c2617f539fc9942741635718692d6120a45060",
+            "size_bytes": 330679
+          }
+        ]
+      }
+    },
+    "778764684": {
+      "video_id": "778764684",
+      "blind_id": "7502925abb09",
+      "genre_bucket": "モーション",
+      "routing_genre": "モーション",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "5a3f6bec2124c632cd32dcdbcb7e11731927fd88eb0a46d8d52fc2fc156c20b9",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-b:genre=モーション"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 80,
+        "scdet_threshold": 10,
+        "total_cuts": 31,
+        "avg_cut_interval_sec": 2.58,
+        "max_cuts_per_10s": 7,
+        "integrated_lufs": -11.9,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          3,
+          13
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\7502925abb09\\7502925abb09.mp4",
+            "sha256": "6a1f5ea31623887c0f6f0552b5e41fab2104dbe9b65fc0ee005b64c812560146",
+            "size_bytes": 4786295
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\7502925abb09\\7502925abb09_slow.mp4",
+            "sha256": "c83069b956a68ac02950272f397c3da03e96338dcd30ffc642ba98a8efced2a8",
+            "size_bytes": 214148
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\7502925abb09\\7502925abb09_sheet_01.jpg",
+            "sha256": "d7bc258c214db4ca0690c79be5b25bfc408c9c983be9139386c539475fab4b5f",
+            "size_bytes": 153454
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\7502925abb09\\7502925abb09_sheet_dense.jpg",
+            "sha256": "2e575fa07b1043de78e3e0bac5ba81420de83b51d04f8b65a2225f14b28f1661",
+            "size_bytes": 98360
+          }
+        ]
+      }
+    },
+    "781015004": {
+      "video_id": "781015004",
+      "blind_id": "ef839d6427cb",
+      "genre_bucket": "unverified:branded-movie",
+      "routing_genre": "モーション",
+      "genre_verified": false,
+      "target_status_after_calibration": "calibrated_unverified_genre",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "44010e2174d8c763da628a51d275ffca907c0a289c285ad9ce5ac470f984820c",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-b:genre=モーション"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 67.3,
+        "scdet_threshold": 10,
+        "total_cuts": 9,
+        "avg_cut_interval_sec": 7.48,
+        "max_cuts_per_10s": 6,
+        "integrated_lufs": -9.4,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          43,
+          53
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\ef839d6427cb\\ef839d6427cb.mp4",
+            "sha256": "9f2ca0da9488c2fbbd6316c4c267a332eb849bb935263b628938d20374d30137",
+            "size_bytes": 6693505
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\ef839d6427cb\\ef839d6427cb_slow.mp4",
+            "sha256": "e495594079abcf9ee5410176fc339b1bf99401f638fcb55862be3a39977ea076",
+            "size_bytes": 1412904
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\ef839d6427cb\\ef839d6427cb_sheet_01.jpg",
+            "sha256": "0a61806a791443c853dc305b3a309bd009425b12a4aed926c711fcccf5a556a3",
+            "size_bytes": 330248
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\ef839d6427cb\\ef839d6427cb_sheet_dense.jpg",
+            "sha256": "45f46bc553104a98d4e86e7ea62e57bb2d585ac0246dd9d3c3da1750c5eb65e8",
+            "size_bytes": 462399
+          }
+        ]
+      }
+    },
+    "785226636": {
+      "video_id": "785226636",
+      "blind_id": "813cadcbcd14",
+      "genre_bucket": "CM",
+      "routing_genre": "CM",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "7ccdd5031f739a3afa81f50dbfb5c6c89b4d52faeb1fd8d3d60ca1e1d35af165",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-c:max_cuts_per_10s=28>=12"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 37.1,
+        "scdet_threshold": 10,
+        "total_cuts": 67,
+        "avg_cut_interval_sec": 0.55,
+        "max_cuts_per_10s": 28,
+        "integrated_lufs": -12.7,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          28,
+          33
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\813cadcbcd14\\813cadcbcd14.mp4",
+            "sha256": "4f871184bc97da6b9466bff5076ea20386b8b0ab3e68b7f0c37f03f9a9377577",
+            "size_bytes": 2345976
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\813cadcbcd14\\813cadcbcd14_slow.mp4",
+            "sha256": "da9ce86b1c4249a5a31538e2b91aca6df6288e451a979f7a4f28fe540f653797",
+            "size_bytes": 606768
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\813cadcbcd14\\813cadcbcd14_sheet_01.jpg",
+            "sha256": "2eeced34d84b357f76d1528bc6e2143d08a8fbcccacc34868a3b6104bb77a681",
+            "size_bytes": 146492
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\813cadcbcd14\\813cadcbcd14_sheet_dense.jpg",
+            "sha256": "0843185cac4d71966333ab73a60c7b2346f7d94e39b74ab1f31ee35f172a8a65",
+            "size_bytes": 181720
+          }
+        ]
+      }
+    },
+    "786632106": {
+      "video_id": "786632106",
+      "blind_id": "bd8dc53bfaca",
+      "genre_bucket": "企業映像",
+      "routing_genre": "企業映像",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "bf68535c310ade9874d3a99320ad060998517cf5ad7641db3c2bd9ac71150e14",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-c:max_cuts_per_10s=16>=12"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 85.7,
+        "scdet_threshold": 10,
+        "total_cuts": 21,
+        "avg_cut_interval_sec": 4.08,
+        "max_cuts_per_10s": 16,
+        "integrated_lufs": -16.1,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          69,
+          74
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\bd8dc53bfaca\\bd8dc53bfaca.mp4",
+            "sha256": "c6e2458d59e64f6de278f68dd55c5d42b690a63ad1ef4574dcc6e42be1c8bc54",
+            "size_bytes": 9123659
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\bd8dc53bfaca\\bd8dc53bfaca_slow.mp4",
+            "sha256": "fe848283017ca1e06f6b38e64b6de2e794156041e016b18e4197d169b50f9c74",
+            "size_bytes": 876589
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\bd8dc53bfaca\\bd8dc53bfaca_sheet_01.jpg",
+            "sha256": "34d6738a018eb900cfe9232ff6e88a31e4bbb916b6e2704e3bfd394b6c9db34c",
+            "size_bytes": 274892
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\bd8dc53bfaca\\bd8dc53bfaca_sheet_dense.jpg",
+            "sha256": "286cb72b48735b19ffa12cfd52c6ddb5d27430aa006b84bd09ffec67603fb863",
+            "size_bytes": 447747
+          }
+        ]
+      }
+    },
+    "787831735": {
+      "video_id": "787831735",
+      "blind_id": "23889d60349d",
+      "genre_bucket": "CM",
+      "routing_genre": "CM",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "004a9ecde24dfe114c306e677620b27aefe43478ea7db627f6d1b82db2f1d9a7",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "contact_sheet",
+        "triggers": []
+      },
+      "metrics": {
+        "duration_sec": 77.5,
+        "scdet_threshold": 10,
+        "total_cuts": 34,
+        "avg_cut_interval_sec": 2.28,
+        "max_cuts_per_10s": 9,
+        "integrated_lufs": -15.6,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          26,
+          36
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\23889d60349d\\23889d60349d.mp4",
+            "sha256": "604d72bd5469633fe19ef1ed5987d4a8935517f3c862c48fc39516321808545a",
+            "size_bytes": 7911990
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\23889d60349d\\23889d60349d_slow.mp4",
+            "sha256": "5fa71e78c57447cf66e9499e93a65b2fe79e5177441b455455af13c72d569e7e",
+            "size_bytes": 1086833
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\23889d60349d\\23889d60349d_sheet_01.jpg",
+            "sha256": "657cc81251a281db3e8df6355a51760dde5b1e7d1694c8d8cea273c8fce78e1f",
+            "size_bytes": 266173
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\23889d60349d\\23889d60349d_sheet_dense.jpg",
+            "sha256": "2a90f5ef56dff432ea8fc264799fd879d23c61494afeb662d0bf68d651feec10",
+            "size_bytes": 299811
+          }
+        ]
+      }
+    },
+    "793439493": {
+      "video_id": "793439493",
+      "blind_id": "b1c0ea612a10",
+      "genre_bucket": "unverified:concept-art",
+      "routing_genre": "モーション",
+      "genre_verified": false,
+      "target_status_after_calibration": "calibrated_unverified_genre",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "5dc0903fc31a5b3f2336e6d64ff39a26408cde9272c0f42a1e6d3cbfa3020248",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-b:genre=モーション"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 79.5,
+        "scdet_threshold": 10,
+        "total_cuts": 3,
+        "avg_cut_interval_sec": 26.5,
+        "max_cuts_per_10s": 2,
+        "integrated_lufs": -36.9,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          34,
+          44
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\b1c0ea612a10\\b1c0ea612a10.mp4",
+            "sha256": "a439faf997ac5d365ba1ab33b73cc67912d7f406e0edfab594311d1ff37e658e",
+            "size_bytes": 9190353
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\b1c0ea612a10\\b1c0ea612a10_slow.mp4",
+            "sha256": "dd5452d7a87d811c7ff24573ef49366001f8c94fda08a4bba5b7d061a84e112e",
+            "size_bytes": 1426387
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\b1c0ea612a10\\b1c0ea612a10_sheet_01.jpg",
+            "sha256": "d10f5d3fd27609f053f365ca8ef51f33951a167941c14c042bca6437fca3d8ca",
+            "size_bytes": 363000
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\b1c0ea612a10\\b1c0ea612a10_sheet_dense.jpg",
+            "sha256": "ce73fa1f4dc75fc6b93387d10603c6a8aed736a90de9faf77775ce2106a4c3cd",
+            "size_bytes": 326636
+          }
+        ]
+      }
+    },
+    "796208479": {
+      "video_id": "796208479",
+      "blind_id": "eb4097125094",
+      "genre_bucket": "MV",
+      "routing_genre": "MV",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "ecbc269b6be4a001d4cd265288ff5f56b271cdbdd56bb79f35e5096f1b724d50",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-a:genre=MV"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 71,
+        "scdet_threshold": 10,
+        "total_cuts": 15,
+        "avg_cut_interval_sec": 4.73,
+        "max_cuts_per_10s": 8,
+        "integrated_lufs": -13.8,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          36,
+          46
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\eb4097125094\\eb4097125094.mp4",
+            "sha256": "b9575fe0df470729ec9feffe04fe5ba233611c7619f0cf2c62228b268c9eeba9",
+            "size_bytes": 6890466
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\eb4097125094\\eb4097125094_slow.mp4",
+            "sha256": "00c5ded3836517b275f7278b378cd56de0ff5d020d3dda08c0c46a7beca63a5a",
+            "size_bytes": 729778
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\eb4097125094\\eb4097125094_sheet_01.jpg",
+            "sha256": "208c5d8a341b7571e18283a4a8f2636139e712a5e02e84394fc899b7b7d06548",
+            "size_bytes": 192235
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\eb4097125094\\eb4097125094_sheet_dense.jpg",
+            "sha256": "c2c43fb094b6153085e796ca53b1322dc48a394989842153de9caa03c2f90a84",
+            "size_bytes": 133083
+          }
+        ]
+      }
+    },
+    "807427543": {
+      "video_id": "807427543",
+      "blind_id": "19f4d6eef1cb",
+      "genre_bucket": "unverified:documentary",
+      "routing_genre": "unverified:documentary",
+      "genre_verified": false,
+      "target_status_after_calibration": "calibrated_unverified_genre",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "c693a770b8a9b61017c39040e05fb0f8b7fd07f64f0e10e55c5a066a42977b91",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "contact_sheet",
+        "triggers": []
+      },
+      "metrics": {
+        "duration_sec": 464.5,
+        "scdet_threshold": 10,
+        "total_cuts": 17,
+        "avg_cut_interval_sec": 27.32,
+        "max_cuts_per_10s": 2,
+        "integrated_lufs": -42.1,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\19f4d6eef1cb\\19f4d6eef1cb.mp4",
+            "sha256": "028bfc8ffd582a0844bcd8993a8d2aac602f11425c1d0017742688823ad1cb44",
+            "size_bytes": 21627944
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\19f4d6eef1cb\\19f4d6eef1cb_sheet_01.jpg",
+            "sha256": "13fabaf0bcace0658ef8d86732a158108495d9ea42034fe7ce7df9cb6c0c0823",
+            "size_bytes": 205483
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\19f4d6eef1cb\\19f4d6eef1cb_sheet_02.jpg",
+            "sha256": "4a4e8ffb42f8b4e0ddd470238b03b57e1cbad64209f387727a44c50b79e3f637",
+            "size_bytes": 193242
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\19f4d6eef1cb\\19f4d6eef1cb_sheet_03.jpg",
+            "sha256": "909e8eea1551b6e81c383243f84d1edc74c59cd8bc8226d6a92c6ace698af81a",
+            "size_bytes": 223689
+          }
+        ]
+      }
+    },
+    "807559272": {
+      "video_id": "807559272",
+      "blind_id": "5710584998f9",
+      "genre_bucket": "unverified:opening",
+      "routing_genre": "モーション",
+      "genre_verified": false,
+      "target_status_after_calibration": "calibrated_unverified_genre",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "b869d7e9e057de604df003c262613b4d62a5cedced951b546bd6c450fefba97b",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-b:genre=モーション"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 56,
+        "scdet_threshold": 10,
+        "total_cuts": 8,
+        "avg_cut_interval_sec": 7,
+        "max_cuts_per_10s": 3,
+        "integrated_lufs": -10.5,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          23,
+          33
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\5710584998f9\\5710584998f9.mp4",
+            "sha256": "501e40db882b868c407848af688b9c55c24ad5f90754e5e8ff354a60222a379c",
+            "size_bytes": 5205018
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\5710584998f9\\5710584998f9_slow.mp4",
+            "sha256": "1d0231865c33a17d8d118500af828bf5bfba9d652458b6e3b6663a1e53439076",
+            "size_bytes": 1037394
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\5710584998f9\\5710584998f9_sheet_01.jpg",
+            "sha256": "eed2202ff4523b523788cddc34406b8196829484939f37a297c8c16c033b9ef9",
+            "size_bytes": 336956
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\5710584998f9\\5710584998f9_sheet_dense.jpg",
+            "sha256": "0785f6179a0cbbde9efa893a23eb863e148ff7194a4c6de7549ce744f43a945f",
+            "size_bytes": 350749
+          }
+        ]
+      }
+    },
+    "807801469": {
+      "video_id": "807801469",
+      "blind_id": "c414d2b45b33",
+      "genre_bucket": "CM",
+      "routing_genre": "CM",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "cf3762d04c2543b8e189c3eb1155c4e0a95abc8693524e7bb3430a8faca03362",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "contact_sheet",
+        "triggers": []
+      },
+      "metrics": {
+        "duration_sec": 30,
+        "scdet_threshold": 10,
+        "total_cuts": 14,
+        "avg_cut_interval_sec": 2.14,
+        "max_cuts_per_10s": 7,
+        "integrated_lufs": -13.6,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          15,
+          25
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\c414d2b45b33\\c414d2b45b33.mp4",
+            "sha256": "2571f7e722de4e249dc7fb2dd03ba27dfc64d7d472b67daea2a97c473bed69a1",
+            "size_bytes": 2740799
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\c414d2b45b33\\c414d2b45b33_slow.mp4",
+            "sha256": "c472344505007d7f15b43b42da76fa52e37b479bcdec72a0df87660bed32fe87",
+            "size_bytes": 750516
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\c414d2b45b33\\c414d2b45b33_sheet_01.jpg",
+            "sha256": "37391399c052aa2796cb4e5fd0cf208d372b6e744e471e3cb1e11a928ac990ba",
+            "size_bytes": 206942
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\c414d2b45b33\\c414d2b45b33_sheet_dense.jpg",
+            "sha256": "7c6567bcc7dc5ee2b2b9585c29c4c6fdb339944b739343affef05e840648cc56",
+            "size_bytes": 246614
+          }
+        ]
+      }
+    },
+    "814133084": {
+      "video_id": "814133084",
+      "blind_id": "68ee91126271",
+      "genre_bucket": "企業映像",
+      "routing_genre": "企業映像",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "dea8a4ddd4ac102de5291c8ed94980dfed466021b4bc483a67ee9a6fc9228309",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-c:max_cuts_per_10s=15>=12"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 139.1,
+        "scdet_threshold": 10,
+        "total_cuts": 104,
+        "avg_cut_interval_sec": 1.34,
+        "max_cuts_per_10s": 15,
+        "integrated_lufs": -7.8,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          67,
+          72
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\68ee91126271\\68ee91126271.mp4",
+            "sha256": "461c2097d94082bd84d494225e87e683830df1450c8c757204d1ce3c20e497a3",
+            "size_bytes": 15021141
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\68ee91126271\\68ee91126271_slow.mp4",
+            "sha256": "e856484719be409c611a935e25f21cd98a18cc00df965c7c101b13d80c97d071",
+            "size_bytes": 848243
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\68ee91126271\\68ee91126271_sheet_01.jpg",
+            "sha256": "4115d71c46adbdde2ac8facebe16b88a162a4c6d17477fad32e42d605f166d88",
+            "size_bytes": 277347
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\68ee91126271\\68ee91126271_sheet_02.jpg",
+            "sha256": "b4a2a2d834115135b9920e5dd33f1739c8757d8b78442685dbcfaa986bec3b2e",
+            "size_bytes": 315166
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\68ee91126271\\68ee91126271_sheet_dense.jpg",
+            "sha256": "d7c933ebb4558dcf4dbbe49d43fb5d5e65ac115017b536a39c9482c354afa3a6",
+            "size_bytes": 412740
+          }
+        ]
+      }
+    },
+    "815582701": {
+      "video_id": "815582701",
+      "blind_id": "d941681f74df",
+      "genre_bucket": "unverified:youtube-sns",
+      "routing_genre": "unverified:youtube-sns",
+      "genre_verified": false,
+      "target_status_after_calibration": "calibrated_unverified_genre",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "cdc83c43880dcfe4b32d0e2eeb9af9f2035b72e986b00918f436ee943f09c633",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "contact_sheet",
+        "triggers": []
+      },
+      "metrics": {
+        "duration_sec": 124.9,
+        "scdet_threshold": 10,
+        "total_cuts": 12,
+        "avg_cut_interval_sec": 10.41,
+        "max_cuts_per_10s": 3,
+        "integrated_lufs": null,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\d941681f74df\\d941681f74df.mp4",
+            "sha256": "dd3c26009fc8f0b8fc107d9cbde4b6bd0387b2e92b5c14d2380bf85ea158b51f",
+            "size_bytes": 6984611
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\d941681f74df\\d941681f74df_sheet_01.jpg",
+            "sha256": "ffe818149b94fe0496b081dd88ad72fa174075e222633897418f3f3ed2aa8a1d",
+            "size_bytes": 208708
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\d941681f74df\\d941681f74df_sheet_02.jpg",
+            "sha256": "d25188a55b00a4059790886024a448962728f9337a4bf3ee100e34286fb8efdb",
+            "size_bytes": 264961
+          }
+        ]
+      }
+    },
+    "820892498": {
+      "video_id": "820892498",
+      "blind_id": "b024ef6286d7",
+      "genre_bucket": "MV",
+      "routing_genre": "MV",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "0359facd8dd77a4eb7f650b4a4a41c91e0d75bde4e858d77c9ba42975a319265",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-a:genre=MV"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 86.1,
+        "scdet_threshold": 10,
+        "total_cuts": 0,
+        "avg_cut_interval_sec": 86.1,
+        "max_cuts_per_10s": 0,
+        "integrated_lufs": -9.8,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\b024ef6286d7\\b024ef6286d7.mp4",
+            "sha256": "cd3372d3ff9cd6b74a500d39513a4ae9fc17e139a127830315b0efef06f7dc7a",
+            "size_bytes": 6711618
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\b024ef6286d7\\b024ef6286d7_sheet_01.jpg",
+            "sha256": "ca8634a2d218af0a7020fda9b20be99cce5357d2e001ac4e50c54d3f5ada7e80",
+            "size_bytes": 187790
+          }
+        ]
+      }
+    },
+    "826112035": {
+      "video_id": "826112035",
+      "blind_id": "1b1e6b23df9d",
+      "genre_bucket": "MV",
+      "routing_genre": "MV",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "528c9436359dc25fd9da3601f920f0124116142fc2d88c22ffc680c1c6bb6bfa",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-a:genre=MV",
+          "H1-c:max_cuts_per_10s=15>=12"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 215.1,
+        "scdet_threshold": 10,
+        "total_cuts": 140,
+        "avg_cut_interval_sec": 1.54,
+        "max_cuts_per_10s": 15,
+        "integrated_lufs": -6.7,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          91,
+          96
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\1b1e6b23df9d\\1b1e6b23df9d.mp4",
+            "sha256": "b65ccfca0e383abff00acf65d2f0f19037360bff5b625ca84185143fd9133c82",
+            "size_bytes": 23945162
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\1b1e6b23df9d\\1b1e6b23df9d_slow.mp4",
+            "sha256": "c17f09460aacc0a4a3acb29533bc43626ab7b39dc9b844c6fc3332d908dbfd80",
+            "size_bytes": 895689
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\1b1e6b23df9d\\1b1e6b23df9d_sheet_01.jpg",
+            "sha256": "2a077a646b59570c21d22f1e14439e72a8a189877eca60a25048969fea6f1d45",
+            "size_bytes": 245015
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\1b1e6b23df9d\\1b1e6b23df9d_sheet_02.jpg",
+            "sha256": "9c5750d7cf92a44453839554f59132629515380654c6041c18558ec1f5ce9e7f",
+            "size_bytes": 238828
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\1b1e6b23df9d\\1b1e6b23df9d_sheet_dense.jpg",
+            "sha256": "b9ca6b4b12ad6b9075b050639756303a5af2e6470b4d5dd4ba10b6f2d811f1ea",
+            "size_bytes": 276702
+          }
+        ]
+      }
+    },
+    "826580129": {
+      "video_id": "826580129",
+      "blind_id": "70ab5692671f",
+      "genre_bucket": "MV",
+      "routing_genre": "MV",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "48b2eece1be6a952706da7f93a89a6b1c9a9e8bc38fccd51b693f6590c39f9c5",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-a:genre=MV"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 305.2,
+        "scdet_threshold": 10,
+        "total_cuts": 165,
+        "avg_cut_interval_sec": 1.85,
+        "max_cuts_per_10s": 9,
+        "integrated_lufs": -9.2,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          71,
+          81
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\70ab5692671f\\70ab5692671f.mp4",
+            "sha256": "e676d67ac11ebeec58f01ffdcd86798d67bcdd583202e4820c7bdf62ebe1fa45",
+            "size_bytes": 32722149
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\70ab5692671f\\70ab5692671f_slow.mp4",
+            "sha256": "b77dca2a75cc834042d18210ce6c3dcc329df4cfcd323f83fb9c3ce1f0f3f89a",
+            "size_bytes": 1150424
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\70ab5692671f\\70ab5692671f_sheet_01.jpg",
+            "sha256": "6419dd399e179813a497d01d16870b722b2b25becfcdfc160cef292f6f39b658",
+            "size_bytes": 248733
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\70ab5692671f\\70ab5692671f_sheet_02.jpg",
+            "sha256": "30cf684fc1fbf3d7da43611fd10bdd761626b0eb93d466bb97702e8201129a8f",
+            "size_bytes": 259700
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\70ab5692671f\\70ab5692671f_sheet_03.jpg",
+            "sha256": "33d34115afad95510476716c9ac1781f64a2c2858437a36cc491fed4ae8e3fdd",
+            "size_bytes": 258342
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\70ab5692671f\\70ab5692671f_sheet_dense.jpg",
+            "sha256": "d9f04b8601b7941b03b3bf7a6409d6bf04ad34c5233fbb9fada5758567214223",
+            "size_bytes": 306615
+          }
+        ]
+      }
+    },
+    "827675053": {
+      "video_id": "827675053",
+      "blind_id": "e3031273733d",
+      "genre_bucket": "unverified:opening",
+      "routing_genre": "unverified:opening",
+      "genre_verified": false,
+      "target_status_after_calibration": "calibrated_unverified_genre",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "404db7a10679fbf02c46506baf368b2043131657a78b42d4ef6049780c986d9b",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "contact_sheet",
+        "triggers": []
+      },
+      "metrics": {
+        "duration_sec": 202.9,
+        "scdet_threshold": 10,
+        "total_cuts": 20,
+        "avg_cut_interval_sec": 10.15,
+        "max_cuts_per_10s": 4,
+        "integrated_lufs": -8.6,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\e3031273733d\\e3031273733d.mp4",
+            "sha256": "5d15a3586f1d5c66bed6544fceeee3d1a2491c34d5487ff60cd32c4dcf279b0e",
+            "size_bytes": 19210118
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\e3031273733d\\e3031273733d_sheet_01.jpg",
+            "sha256": "17c5e751d608f712138873bd5ca975ff914d37bef13b385cc8fccd77ecafd50b",
+            "size_bytes": 331449
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\e3031273733d\\e3031273733d_sheet_02.jpg",
+            "sha256": "905dead3aba35effbf39c469a389d4efd09ef7590e4ed6d0f97ea13b8e83fae5",
+            "size_bytes": 485716
+          }
+        ]
+      }
+    },
+    "831105343": {
+      "video_id": "831105343",
+      "blind_id": "f812bbe2afef",
+      "genre_bucket": "CM",
+      "routing_genre": "CM",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "9b669bf3f54a5b02a94db8f2a1da60d45dc1e2f30283eba7c57b3802028e9a44",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-c:max_cuts_per_10s=13>=12"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 88.5,
+        "scdet_threshold": 10,
+        "total_cuts": 29,
+        "avg_cut_interval_sec": 3.05,
+        "max_cuts_per_10s": 13,
+        "integrated_lufs": -8,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          74,
+          79
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\f812bbe2afef\\f812bbe2afef.mp4",
+            "sha256": "e38dd386e3aa6a345ae977a6751ac3031dad61911184409e388771a4ad2e3880",
+            "size_bytes": 10459433
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\f812bbe2afef\\f812bbe2afef_slow.mp4",
+            "sha256": "2dc6e22a8641e32a33ae13d7e177551b20bce27f6dc07d115a51ec3c77afe82f",
+            "size_bytes": 979707
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\f812bbe2afef\\f812bbe2afef_sheet_01.jpg",
+            "sha256": "671f5e107b8a6ef80c10a94e90c0a592d9f7df3c63156604c4d1283badeab0dd",
+            "size_bytes": 260465
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\f812bbe2afef\\f812bbe2afef_sheet_dense.jpg",
+            "sha256": "b250b663257f406790ba735f1ec78fc55eea2842ede6ca7ae38e9d0af5979c9b",
+            "size_bytes": 241180
+          }
+        ]
+      }
+    },
+    "842398831": {
+      "video_id": "842398831",
+      "blind_id": "18fb9003e2ea",
+      "genre_bucket": "unverified:branded-movie",
+      "routing_genre": "unverified:branded-movie",
+      "genre_verified": false,
+      "target_status_after_calibration": "calibrated_unverified_genre",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "9376cf0d6c6a9d0f3c41a37a0f7fb0a78ba1662c57aab4c655541db04b7b9552",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "contact_sheet",
+        "triggers": []
+      },
+      "metrics": {
+        "duration_sec": 82.9,
+        "scdet_threshold": 10,
+        "total_cuts": 22,
+        "avg_cut_interval_sec": 3.77,
+        "max_cuts_per_10s": 5,
+        "integrated_lufs": -32.7,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\18fb9003e2ea\\18fb9003e2ea.mp4",
+            "sha256": "63ccbeaa7865eb29ada64a7e549076205adf7cef77ae9ec0a3a3f79e1485633b",
+            "size_bytes": 9263124
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\18fb9003e2ea\\18fb9003e2ea_sheet_01.jpg",
+            "sha256": "f62af6966928440703fc855e02d8cc4151e9c0d0b827102eabad5dfd61abf103",
+            "size_bytes": 408006
+          }
+        ]
+      }
+    },
+    "843800780": {
+      "video_id": "843800780",
+      "blind_id": "a291eaf07a5a",
+      "genre_bucket": "CM",
+      "routing_genre": "CM",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "cfacf9022acaf958f6cf30c8e2e1f1cb88680b1a552b8526b2b0e3fcd269808a",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-c:max_cuts_per_10s=57>=12"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 40,
+        "scdet_threshold": 10,
+        "total_cuts": 97,
+        "avg_cut_interval_sec": 0.41,
+        "max_cuts_per_10s": 57,
+        "integrated_lufs": -14,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          21,
+          26
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\a291eaf07a5a\\a291eaf07a5a.mp4",
+            "sha256": "f812db8e22f57c28ddfa4980c572b125f96bb3a55ae56b67fdeddf0bf4befa69",
+            "size_bytes": 4178505
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\a291eaf07a5a\\a291eaf07a5a_slow.mp4",
+            "sha256": "2330e242fcce824e48dacc7e5f720ef11cbd2b91e119e581f8d59fdea7905f9a",
+            "size_bytes": 1481982
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\a291eaf07a5a\\a291eaf07a5a_sheet_01.jpg",
+            "sha256": "7b2c70c7a740d8c2a73c80f21de7a7f35ddcd5fbf8c9ee01f2c50d9267156030",
+            "size_bytes": 282311
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\a291eaf07a5a\\a291eaf07a5a_sheet_dense.jpg",
+            "sha256": "fed7d3d64b1f5eee060f89d6d36aad427f5147cf55e394895b7a986ab96dd012",
+            "size_bytes": 374477
+          }
+        ]
+      }
+    },
+    "860759127": {
+      "video_id": "860759127",
+      "blind_id": "409af05bf0b2",
+      "genre_bucket": "企業映像",
+      "routing_genre": "企業映像",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "bed256e12de3a5049fc25a0056a1de5e518d4b1a26882c5db831fb57833a66b5",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "contact_sheet",
+        "triggers": []
+      },
+      "metrics": {
+        "duration_sec": 90,
+        "scdet_threshold": 10,
+        "total_cuts": 27,
+        "avg_cut_interval_sec": 3.33,
+        "max_cuts_per_10s": 6,
+        "integrated_lufs": -14.1,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          17,
+          27
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\409af05bf0b2\\409af05bf0b2.mp4",
+            "sha256": "bdd61b76f28c625edad1e4c5c9812771893ddc783019e1e8cc9f7fe515905666",
+            "size_bytes": 8655123
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\409af05bf0b2\\409af05bf0b2_slow.mp4",
+            "sha256": "d43fc4d8d6b671578e3c808e75ce96e0777a0118dc085ec7e534975b2fbcd3ca",
+            "size_bytes": 589569
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\409af05bf0b2\\409af05bf0b2_sheet_01.jpg",
+            "sha256": "31e9f74840fa5cc6ba57d8ec6831c762d8ca9301712c565a35f17cdec9f35a8b",
+            "size_bytes": 230888
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\409af05bf0b2\\409af05bf0b2_sheet_dense.jpg",
+            "sha256": "9c86f3b17134968d99407d41bfecdcb8f442ebf80f46ad1aaa0c7102fd5c95a4",
+            "size_bytes": 207842
+          }
+        ]
+      }
+    },
+    "865516481": {
+      "video_id": "865516481",
+      "blind_id": "f906b65b8b82",
+      "genre_bucket": "MV",
+      "routing_genre": "MV",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "34ed4450f59f47c853e8ac0c1c383d81785c29573c038f477cc1cabe34b9f895",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-a:genre=MV",
+          "H1-c:max_cuts_per_10s=100>=12"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 264,
+        "scdet_threshold": 10,
+        "total_cuts": 207,
+        "avg_cut_interval_sec": 1.28,
+        "max_cuts_per_10s": 100,
+        "integrated_lufs": -14.7,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          153,
+          158
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\f906b65b8b82\\f906b65b8b82.mp4",
+            "sha256": "3197410f2b11e29504bf0d2b579a9e311f861c7cd2f86c198316f03172390bfe",
+            "size_bytes": 26778571
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\f906b65b8b82\\f906b65b8b82_slow.mp4",
+            "sha256": "563aff040f7ff0a6e62c1420ddd642c8153960cba9de2a43c0b601e3c2e3c724",
+            "size_bytes": 1706271
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\f906b65b8b82\\f906b65b8b82_sheet_01.jpg",
+            "sha256": "42d9766eefc479fe308a411eae5d115e892a6037d655055bdcfe642ad8c16dab",
+            "size_bytes": 270440
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\f906b65b8b82\\f906b65b8b82_sheet_02.jpg",
+            "sha256": "64c16cdbb8170ce3b7ad0e1a5f5864786e07f15f01e603be83e87b123da89fcf",
+            "size_bytes": 453671
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\f906b65b8b82\\f906b65b8b82_sheet_dense.jpg",
+            "sha256": "2b95be6d739b86fe423cf4f10cfcafadd947a9bd9d608ae1ba6dca3e3e86845e",
+            "size_bytes": 328227
+          }
+        ]
+      }
+    },
+    "865863249": {
+      "video_id": "865863249",
+      "blind_id": "696607868f09",
+      "genre_bucket": "unverified:opening",
+      "routing_genre": "unverified:opening",
+      "genre_verified": false,
+      "target_status_after_calibration": "calibrated_unverified_genre",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "b7efc42051ab3b38ad8c5327502d80722ddc864a5b66d786503af9d1271c25d5",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-c:max_cuts_per_10s=39>=12"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 43,
+        "scdet_threshold": 10,
+        "total_cuts": 59,
+        "avg_cut_interval_sec": 0.73,
+        "max_cuts_per_10s": 39,
+        "integrated_lufs": -9.3,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          9,
+          14
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\696607868f09\\696607868f09.mp4",
+            "sha256": "a92448f51a5e54689b01cc4c8df1d8939f76f8b96cb47c3dad6832eaeda6ec91",
+            "size_bytes": 4628883
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\696607868f09\\696607868f09_slow.mp4",
+            "sha256": "6c83da7a70e4819b8c878f663c29875b6de7326367257ba46fcc1d665341a693",
+            "size_bytes": 1682747
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\696607868f09\\696607868f09_sheet_01.jpg",
+            "sha256": "91628803dccfb04450fb3fe83317fa7e7ab9a80cd3e07515c79d4511dd938024",
+            "size_bytes": 285675
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\696607868f09\\696607868f09_sheet_dense.jpg",
+            "sha256": "6f9360df002ae8b633cf873c61c2caf0781e64b99907f8946f61ffc0d325b7eb",
+            "size_bytes": 514626
+          }
+        ]
+      }
+    },
+    "872770998": {
+      "video_id": "872770998",
+      "blind_id": "0066112c0fca",
+      "genre_bucket": "CM",
+      "routing_genre": "CM",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "404b8d7fd0e6aa9d0f882c73e9fbd3a319a24916bc9cf3452507102baed94d3d",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "contact_sheet",
+        "triggers": []
+      },
+      "metrics": {
+        "duration_sec": 15,
+        "scdet_threshold": 10,
+        "total_cuts": 3,
+        "avg_cut_interval_sec": 5,
+        "max_cuts_per_10s": 3,
+        "integrated_lufs": -17.6,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\0066112c0fca\\0066112c0fca.mp4",
+            "sha256": "d46953f978393605784fc1f1b30de8ef6f43d4dec77f617d39a003e9d5a7286e",
+            "size_bytes": 1421514
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\0066112c0fca\\0066112c0fca_sheet_01.jpg",
+            "sha256": "e7589fe138e11a7d9b8f463d5afee667d62e1e3c71554ca7df2aedcbb53b8468",
+            "size_bytes": 327081
+          }
+        ]
+      }
+    },
+    "873227804": {
+      "video_id": "873227804",
+      "blind_id": "9355c9952242",
+      "genre_bucket": "unverified:documentary",
+      "routing_genre": "unverified:documentary",
+      "genre_verified": false,
+      "target_status_after_calibration": "calibrated_unverified_genre",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "1588904e42323dfbb83c0906c9e15f8cb34028ae45b56232fb0df6eff60622d1",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "contact_sheet",
+        "triggers": []
+      },
+      "metrics": {
+        "duration_sec": 61.8,
+        "scdet_threshold": 10,
+        "total_cuts": 41,
+        "avg_cut_interval_sec": 1.51,
+        "max_cuts_per_10s": 10,
+        "integrated_lufs": -11.8,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          48,
+          58
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\9355c9952242\\9355c9952242.mp4",
+            "sha256": "dcf11606b7c2133e56af297372c398b6fc73d99ec11a4ed0a4df9a082a4c300f",
+            "size_bytes": 6869183
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\9355c9952242\\9355c9952242_slow.mp4",
+            "sha256": "05f257c18711bcdbb08a070203feb3e58efda57d87e74c26482bf7cf5b04989e",
+            "size_bytes": 885792
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\9355c9952242\\9355c9952242_sheet_01.jpg",
+            "sha256": "07f4422c0ffe5d8dbd8eef801c498c4bdcd4e8efb592835eb3a250600ad1f0fe",
+            "size_bytes": 304812
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\9355c9952242\\9355c9952242_sheet_dense.jpg",
+            "sha256": "15a8f5415cedc55e2f75672bd643c3e25cf33abea516a6fa9ca6a3013a40ec7f",
+            "size_bytes": 205052
+          }
+        ]
+      }
+    },
+    "875825150": {
+      "video_id": "875825150",
+      "blind_id": "f9c7c672f279",
+      "genre_bucket": "モーション",
+      "routing_genre": "モーション",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "b220f610d9ec902af37ee2545a176090b955685292a02392d08cc188bbc404fa",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-b:genre=モーション"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 36.8,
+        "scdet_threshold": 10,
+        "total_cuts": 14,
+        "avg_cut_interval_sec": 2.63,
+        "max_cuts_per_10s": 6,
+        "integrated_lufs": -12.1,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          4,
+          14
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\f9c7c672f279\\f9c7c672f279.mp4",
+            "sha256": "2120364d6c542d2e1d3ed08de4ef81d49729aeaadcaf26b074d04b06f772348a",
+            "size_bytes": 3636668
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\f9c7c672f279\\f9c7c672f279_slow.mp4",
+            "sha256": "1df12eec94bbb2103732bacb19713ca5a54622f53ad1fb8881aca71db8e30b75",
+            "size_bytes": 1565191
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\f9c7c672f279\\f9c7c672f279_sheet_01.jpg",
+            "sha256": "69619ffea46a25f37025daf299a6c7eaa443d72eae578499aaedfd9bf2dc2512",
+            "size_bytes": 199131
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\f9c7c672f279\\f9c7c672f279_sheet_dense.jpg",
+            "sha256": "dacfedc3eb22c914c548c8d6a7b723121e75cb8ac0528125aa77e354c386f456",
+            "size_bytes": 355290
+          }
+        ]
+      }
+    },
+    "880587651": {
+      "video_id": "880587651",
+      "blind_id": "5477bacd33a4",
+      "genre_bucket": "CM",
+      "routing_genre": "CM",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "20a3dd3ffd971c0be5b7c1af7e2ead2d58045c9b0e886fede2f24adedc663e51",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "contact_sheet",
+        "triggers": []
+      },
+      "metrics": {
+        "duration_sec": 30,
+        "scdet_threshold": 10,
+        "total_cuts": 1,
+        "avg_cut_interval_sec": 30,
+        "max_cuts_per_10s": 1,
+        "integrated_lufs": -14.4,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\5477bacd33a4\\5477bacd33a4.mp4",
+            "sha256": "87ad82a7c2e0d29567515b9d8eb314a901da10c12589cdbac56b80a4d5d8329e",
+            "size_bytes": 3131272
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\5477bacd33a4\\5477bacd33a4_sheet_01.jpg",
+            "sha256": "d270fa07baf10bace9f0eec8981d0d6c0c56d403bc6dfd0e8d9f6ece20be1db6",
+            "size_bytes": 704393
+          }
+        ]
+      }
+    },
+    "882003383": {
+      "video_id": "882003383",
+      "blind_id": "c902e8f32902",
+      "genre_bucket": "unverified:concept-art",
+      "routing_genre": "モーション",
+      "genre_verified": false,
+      "target_status_after_calibration": "calibrated_unverified_genre",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "8ddee64bbc8acf6d9d995146b8f640942a9a29a910df1c101b5f6d94b4f358ec",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-b:genre=モーション"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 20,
+        "scdet_threshold": 10,
+        "total_cuts": 5,
+        "avg_cut_interval_sec": 4,
+        "max_cuts_per_10s": 4,
+        "integrated_lufs": null,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          5,
+          15
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\c902e8f32902\\c902e8f32902.mp4",
+            "sha256": "a4b02f1e81075bf5d34e608eeb2af84b140df178268cad6f3f864d017c81bc77",
+            "size_bytes": 1258857
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\c902e8f32902\\c902e8f32902_slow.mp4",
+            "sha256": "da322b851f4d17c068126fa2e44bd39cc47ec6ea259829b30a873451832845eb",
+            "size_bytes": 626558
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\c902e8f32902\\c902e8f32902_sheet_01.jpg",
+            "sha256": "958139b2d5c2af152b97f4d7bbc6976df2dd93ca1a420398f3ab6edb797a108b",
+            "size_bytes": 421930
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\c902e8f32902\\c902e8f32902_sheet_dense.jpg",
+            "sha256": "81c605fe661844dcb5c309a8385e9b2f19d183e2b073c492ae2188504870c319",
+            "size_bytes": 406990
+          }
+        ]
+      }
+    },
+    "888604311": {
+      "video_id": "888604311",
+      "blind_id": "7845f7bb257d",
+      "genre_bucket": "CM",
+      "routing_genre": "CM",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "0ed607ed3b9bfa7bb610051be2a17ef81c97cfda0f1902b2c79678a31c965dfd",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "contact_sheet",
+        "triggers": []
+      },
+      "metrics": {
+        "duration_sec": 100.7,
+        "scdet_threshold": 10,
+        "total_cuts": 28,
+        "avg_cut_interval_sec": 3.6,
+        "max_cuts_per_10s": 8,
+        "integrated_lufs": -15.1,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          10,
+          20
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\7845f7bb257d\\7845f7bb257d.mp4",
+            "sha256": "1025aca67c8700ccf59ecdd04f20fcf8d5dd957a1657e43d585d46b0e854ef06",
+            "size_bytes": 11262582
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\7845f7bb257d\\7845f7bb257d_slow.mp4",
+            "sha256": "182a07dfa8439118bbf74b418ff3d3fa657beab336cbbce8f87394adeeaffe8a",
+            "size_bytes": 934625
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\7845f7bb257d\\7845f7bb257d_sheet_01.jpg",
+            "sha256": "91e9bd667f3d3830e7ef602a5a3c6637776289c5b96a02c81b15ab9607680d95",
+            "size_bytes": 314520
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\7845f7bb257d\\7845f7bb257d_sheet_dense.jpg",
+            "sha256": "2bfd86681f70999e1d05270dab8d7d1288ad9f99456cd848390a66317abda8be",
+            "size_bytes": 210939
+          }
+        ]
+      }
+    },
+    "889750384": {
+      "video_id": "889750384",
+      "blind_id": "1f94ec656a9d",
+      "genre_bucket": "モーション",
+      "routing_genre": "モーション",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "d0fe4da31428b15bdcbc4a15f0843811ea8d8e1ebb9d8bf5302fa984156da223",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-b:genre=モーション",
+          "H1-c:max_cuts_per_10s=18>=12"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 34.8,
+        "scdet_threshold": 10,
+        "total_cuts": 32,
+        "avg_cut_interval_sec": 1.09,
+        "max_cuts_per_10s": 18,
+        "integrated_lufs": -14.1,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          20,
+          25
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\1f94ec656a9d\\1f94ec656a9d.mp4",
+            "sha256": "98e6657d4208cbd074be30f4f891702d3aa6cb328215421f46451cc907e18e3b",
+            "size_bytes": 3305568
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\1f94ec656a9d\\1f94ec656a9d_slow.mp4",
+            "sha256": "07f55c825974f1e07e3520a0f5f5b564ee04328ef0cb28ce5daa67c30f1526de",
+            "size_bytes": 1369545
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\1f94ec656a9d\\1f94ec656a9d_sheet_01.jpg",
+            "sha256": "b0fa05cdf4a4115eee04a00120d480a76acc85ccda81ad71e7789b2ffe914f33",
+            "size_bytes": 531003
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\1f94ec656a9d\\1f94ec656a9d_sheet_dense.jpg",
+            "sha256": "e4563237e127f43dd7eff322eb7d0232605200c4a3e9148ebc8b0761a6b5c181",
+            "size_bytes": 595247
+          }
+        ]
+      }
+    },
+    "897826457": {
+      "video_id": "897826457",
+      "blind_id": "1bb3a0c41f85",
+      "genre_bucket": "unverified:opening",
+      "routing_genre": "モーション",
+      "genre_verified": false,
+      "target_status_after_calibration": "calibrated_unverified_genre",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "4f9003e52fa0d4eaf6abebc67df65ffb86b42739e00693d7264b4cfb688d56f5",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-b:genre=モーション"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 173.7,
+        "scdet_threshold": 10,
+        "total_cuts": 16,
+        "avg_cut_interval_sec": 10.86,
+        "max_cuts_per_10s": 10,
+        "integrated_lufs": -18.1,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          100,
+          110
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\1bb3a0c41f85\\1bb3a0c41f85.mp4",
+            "sha256": "0c90d68c11caeb1f5c27f2a0f9b6fc7c9d361c569c26387435f2608e40b75c80",
+            "size_bytes": 17014080
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\1bb3a0c41f85\\1bb3a0c41f85_slow.mp4",
+            "sha256": "fd8d4e77da0fe8a8627465ecef4d8125f28679f22c5cf7ae0eb908a451ac7b2d",
+            "size_bytes": 923865
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\1bb3a0c41f85\\1bb3a0c41f85_sheet_01.jpg",
+            "sha256": "31e6ec5463f8065027bd3479e8150e4c813b0e36b971cb76272ef98d8c120c6f",
+            "size_bytes": 153602
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\1bb3a0c41f85\\1bb3a0c41f85_sheet_02.jpg",
+            "sha256": "871460bc4241d614ec3939cf244fc04e5636b0580b6ffa8a86e53c8e4cb346c8",
+            "size_bytes": 158899
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\1bb3a0c41f85\\1bb3a0c41f85_sheet_dense.jpg",
+            "sha256": "a62d9f6510807c02d41144737ecd6a5b13a0141ae816e9405ad9e2d462bb71f8",
+            "size_bytes": 115557
+          }
+        ]
+      }
+    },
+    "898073746": {
+      "video_id": "898073746",
+      "blind_id": "4651a213f0d6",
+      "genre_bucket": "モーション",
+      "routing_genre": "モーション",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "d5ef1e20db7b1283f51cbfc8b1af83ad6a59163103f1055c53495cad1246743e",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-b:genre=モーション"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 24.9,
+        "scdet_threshold": 10,
+        "total_cuts": 8,
+        "avg_cut_interval_sec": 3.11,
+        "max_cuts_per_10s": 5,
+        "integrated_lufs": -20.8,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          7,
+          17
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\4651a213f0d6\\4651a213f0d6.mp4",
+            "sha256": "876706549c7c582e4a3a06bc14bf4dc800922c6b7ca456a082c2029b1055ca7c",
+            "size_bytes": 1185332
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\4651a213f0d6\\4651a213f0d6_slow.mp4",
+            "sha256": "435f1a50ed1263c9f9b7bcbc954f8aa76856b5f1c81f3b10fbc25d195f30a1b6",
+            "size_bytes": 235889
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\4651a213f0d6\\4651a213f0d6_sheet_01.jpg",
+            "sha256": "ee4309dce0c51f10f8f5ce17c89ceb797489e112b3e1baf11686001a736f8aaf",
+            "size_bytes": 99499
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\4651a213f0d6\\4651a213f0d6_sheet_dense.jpg",
+            "sha256": "439dd1fd0c5719a61ce0e6f4b25536d0222cd53357ade840666bfecd3620c24e",
+            "size_bytes": 95961
+          }
+        ]
+      }
+    },
+    "900220444": {
+      "video_id": "900220444",
+      "blind_id": "a055bc0c35fe",
+      "genre_bucket": "unverified:teaser-trailer",
+      "routing_genre": "モーション",
+      "genre_verified": false,
+      "target_status_after_calibration": "calibrated_unverified_genre",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "e6285bdb4ca9b27198ac0e0c3bc3fc8993f88aa6cffee9c92afd49757c54bf64",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-b:genre=モーション",
+          "H1-c:max_cuts_per_10s=71>=12"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 75.7,
+        "scdet_threshold": 10,
+        "total_cuts": 285,
+        "avg_cut_interval_sec": 0.27,
+        "max_cuts_per_10s": 71,
+        "integrated_lufs": -11.4,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          55,
+          60
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\a055bc0c35fe\\a055bc0c35fe.mp4",
+            "sha256": "ad8ac5944086f1aea946b3ea3a560644ceb36fcd1929f04c02c5c3cfb656d696",
+            "size_bytes": 8509916
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\a055bc0c35fe\\a055bc0c35fe_slow.mp4",
+            "sha256": "8660470cfa8441ec345432c387abf7bc189039c24327519193df137c82306acc",
+            "size_bytes": 1209849
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\a055bc0c35fe\\a055bc0c35fe_sheet_01.jpg",
+            "sha256": "796902f96cb5257f231d21aa2307938eb8d714ef3bc95a44c0e875ed596dfbd8",
+            "size_bytes": 396210
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\a055bc0c35fe\\a055bc0c35fe_sheet_dense.jpg",
+            "sha256": "c8d8a945d0a78ab8dedb8e24a0ffd78523b9feaad68b9212cdb15d7ac75912cc",
+            "size_bytes": 310378
+          }
+        ]
+      }
+    },
+    "903206574": {
+      "video_id": "903206574",
+      "blind_id": "dd8ff733927b",
+      "genre_bucket": "unverified:opening",
+      "routing_genre": "モーション",
+      "genre_verified": false,
+      "target_status_after_calibration": "calibrated_unverified_genre",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "83b320ed7e60ca8c268bc9a080a35968b258787067e86bdd199808b395c16561",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-b:genre=モーション"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 100.1,
+        "scdet_threshold": 10,
+        "total_cuts": 16,
+        "avg_cut_interval_sec": 6.26,
+        "max_cuts_per_10s": 3,
+        "integrated_lufs": -12.6,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          45,
+          55
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\dd8ff733927b\\dd8ff733927b.mp4",
+            "sha256": "f2be29c1793c491e083fc730036194de841c1f933f6cb602ecbc4a3cc48026b2",
+            "size_bytes": 9441060
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\dd8ff733927b\\dd8ff733927b_slow.mp4",
+            "sha256": "d9e9a5705d09e8ee2ea496170ade4ee3f53762a4dd00c6181dcdd3ae4241dd1f",
+            "size_bytes": 611286
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\dd8ff733927b\\dd8ff733927b_sheet_01.jpg",
+            "sha256": "7e70f8e115630e1e8fdf2bab4b3fcef216d885e68b39a7692c47d30c6005295b",
+            "size_bytes": 280922
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\dd8ff733927b\\dd8ff733927b_sheet_dense.jpg",
+            "sha256": "39cd1b705731a38d777348728f2912cc5d9f7dd591a6b61a928cf9ddddf7bac8",
+            "size_bytes": 200460
+          }
+        ]
+      }
+    },
+    "910904991": {
+      "video_id": "910904991",
+      "blind_id": "f2f0eddda8a8",
+      "genre_bucket": "MV",
+      "routing_genre": "MV",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "a6e3075243fee6c3fdaed8f83dff8634f5508479b50a7425feff09aa6556c845",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-a:genre=MV",
+          "H1-c:max_cuts_per_10s=14>=12"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 219.6,
+        "scdet_threshold": 10,
+        "total_cuts": 145,
+        "avg_cut_interval_sec": 1.51,
+        "max_cuts_per_10s": 14,
+        "integrated_lufs": -9.8,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          166,
+          171
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\f2f0eddda8a8\\f2f0eddda8a8.mp4",
+            "sha256": "3098c8cbd9e9e6643418e2d282e393a5e8ffe02687782025162646f2b6ae5ee4",
+            "size_bytes": 24195099
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\f2f0eddda8a8\\f2f0eddda8a8_slow.mp4",
+            "sha256": "31f8e538153e2a4dd25ae830121589266ef10b7fdb2182b0c93b42ab82ba432a",
+            "size_bytes": 844039
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\f2f0eddda8a8\\f2f0eddda8a8_sheet_01.jpg",
+            "sha256": "692c012908bc0d1f3cc1a5e718d0a0881c331f2089d8007fee1b10eb9d816614",
+            "size_bytes": 260566
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\f2f0eddda8a8\\f2f0eddda8a8_sheet_02.jpg",
+            "sha256": "061316438bdab221afd56e2b558167141e6834bfe154c8550be16c4dda3b9a5c",
+            "size_bytes": 257215
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\f2f0eddda8a8\\f2f0eddda8a8_sheet_dense.jpg",
+            "sha256": "0c4028e9419461fd386542d2279732000a615d545dc40f713f74f5e06dd4ae16",
+            "size_bytes": 242343
+          }
+        ]
+      }
+    },
+    "911140368": {
+      "video_id": "911140368",
+      "blind_id": "32ae01f2154a",
+      "genre_bucket": "unverified:documentary",
+      "routing_genre": "unverified:documentary",
+      "genre_verified": false,
+      "target_status_after_calibration": "calibrated_unverified_genre",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "c6803099c5b8cec42099fe1f9ad12837ea0a4c14daa64a154b4453533ae95d23",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "contact_sheet",
+        "triggers": []
+      },
+      "metrics": {
+        "duration_sec": 179.9,
+        "scdet_threshold": 10,
+        "total_cuts": 34,
+        "avg_cut_interval_sec": 5.29,
+        "max_cuts_per_10s": 8,
+        "integrated_lufs": -23.3,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          6,
+          16
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\32ae01f2154a\\32ae01f2154a.mp4",
+            "sha256": "aa33b5f437f2b0e873e311c0d7343b4b60e29384d47826a25fff444b4c13db71",
+            "size_bytes": 19757943
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\32ae01f2154a\\32ae01f2154a_slow.mp4",
+            "sha256": "a9aa71a5025664783a635dd61d72ba4b3cec756c0384246616f85f81993581ab",
+            "size_bytes": 1331256
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\32ae01f2154a\\32ae01f2154a_sheet_01.jpg",
+            "sha256": "8f5435c2d77c2577bae1a19205898c224e2199bf02ce59aab8f828d516c6ae5d",
+            "size_bytes": 419373
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\32ae01f2154a\\32ae01f2154a_sheet_02.jpg",
+            "sha256": "09011d456de7d20b0f1faffb3c43d452627eb13e81581356f18cfabe560aad53",
+            "size_bytes": 384330
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\32ae01f2154a\\32ae01f2154a_sheet_dense.jpg",
+            "sha256": "ae5fbc237771a90d5ce95ac7bfef0255f43a6b663fe3cc9315558ea12bf45da5",
+            "size_bytes": 368320
+          }
+        ]
+      }
+    },
+    "911945134": {
+      "video_id": "911945134",
+      "blind_id": "fd102708b5ff",
+      "genre_bucket": "unverified:concept-art",
+      "routing_genre": "unverified:concept-art",
+      "genre_verified": false,
+      "target_status_after_calibration": "calibrated_unverified_genre",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "96ecab79b5b9e63dc3beb1fee7e941c143c30325c4c6bd8a71a3e696cf238a9f",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "contact_sheet",
+        "triggers": []
+      },
+      "metrics": {
+        "duration_sec": 420.3,
+        "scdet_threshold": 10,
+        "total_cuts": 8,
+        "avg_cut_interval_sec": 52.54,
+        "max_cuts_per_10s": 1,
+        "integrated_lufs": -70,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\fd102708b5ff\\fd102708b5ff.mp4",
+            "sha256": "533c6ca026a0450ac7179463d99edb79e2a98bf71fb9cd07053fcdee050da779",
+            "size_bytes": 44913185
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\fd102708b5ff\\fd102708b5ff_sheet_01.jpg",
+            "sha256": "91a08f523e19f956cba33325c162e2035e963edf96ac30d36ee3541de771948a",
+            "size_bytes": 278830
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\fd102708b5ff\\fd102708b5ff_sheet_02.jpg",
+            "sha256": "4c7b2b6516ab3545850a450c4e52e3f36f5ee6ee5fa31cebd898bc64c05ee7af",
+            "size_bytes": 320595
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\fd102708b5ff\\fd102708b5ff_sheet_03.jpg",
+            "sha256": "9d10367ef8ad89b9eaa2ebf4c35c7d9d508ecf3c29dd3298eeb831aa7457f0f9",
+            "size_bytes": 292918
+          }
+        ]
+      }
+    },
+    "913977466": {
+      "video_id": "913977466",
+      "blind_id": "7554f69ffd75",
+      "genre_bucket": "CM",
+      "routing_genre": "CM",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "cb392f8eac78c03f13b6f52984996a56bfca38863dad51c54270dc45d4535256",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-c:max_cuts_per_10s=39>=12"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 75.3,
+        "scdet_threshold": 10,
+        "total_cuts": 90,
+        "avg_cut_interval_sec": 0.84,
+        "max_cuts_per_10s": 39,
+        "integrated_lufs": -9.1,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          47,
+          52
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\7554f69ffd75\\7554f69ffd75.mp4",
+            "sha256": "a0f1b8fcff2cec5e62a7fbc83014f4c88fccc741e22b551a77017b1e2b821b23",
+            "size_bytes": 8670596
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\7554f69ffd75\\7554f69ffd75_slow.mp4",
+            "sha256": "6c19e614336cab29583bff27654c97b52d16faf5d218184b32ee338836d05177",
+            "size_bytes": 1721133
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\7554f69ffd75\\7554f69ffd75_sheet_01.jpg",
+            "sha256": "94041aa22c4f7a06a011c777e03fe8e5d3c67322ae73cfbbc75f4fe2dac1b4ff",
+            "size_bytes": 367441
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\7554f69ffd75\\7554f69ffd75_sheet_dense.jpg",
+            "sha256": "e700cb9d5cb2144276f68001256615e700b98c1ccd00ae1ec165c19fb7b99cc2",
+            "size_bytes": 418399
+          }
+        ]
+      }
+    },
+    "915102164": {
+      "video_id": "915102164",
+      "blind_id": "753960c48b93",
+      "genre_bucket": "unverified:concept-art",
+      "routing_genre": "unverified:concept-art",
+      "genre_verified": false,
+      "target_status_after_calibration": "calibrated_unverified_genre",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "a09e4109a680ee677ec7b5b021249590c845bc1388099c666d31c98a382ce286",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-c:max_cuts_per_10s=24>=12"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 37.5,
+        "scdet_threshold": 10,
+        "total_cuts": 65,
+        "avg_cut_interval_sec": 0.58,
+        "max_cuts_per_10s": 24,
+        "integrated_lufs": -26.1,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          8,
+          13
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\753960c48b93\\753960c48b93.mp4",
+            "sha256": "ec6c2a9347d0ffc11358163099a4aecd02879d4da62687d8a111e01c533d61a8",
+            "size_bytes": 4534251
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\753960c48b93\\753960c48b93_slow.mp4",
+            "sha256": "7d850b1fc63abf96e47138005d66914f3c959d7b1842a6599e056ad2a3e5c930",
+            "size_bytes": 873678
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\753960c48b93\\753960c48b93_sheet_01.jpg",
+            "sha256": "069fb983686bd5cb9633a09d55414e5e59c3f2553ddbdcb71bf5caa4fdbd07a8",
+            "size_bytes": 317695
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\753960c48b93\\753960c48b93_sheet_dense.jpg",
+            "sha256": "2ddbc4ed0157772b3900d9b7728b601381020c6833354460af6abdad2a4aa87c",
+            "size_bytes": 269517
+          }
+        ]
+      }
+    },
+    "918864647": {
+      "video_id": "918864647",
+      "blind_id": "f40abc644b7a",
+      "genre_bucket": "unverified:concept-art",
+      "routing_genre": "unverified:concept-art",
+      "genre_verified": false,
+      "target_status_after_calibration": "calibrated_unverified_genre",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "23865f7f294739a45fd24af8dc6193f37629385e0401081125683a0cbef142ed",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "contact_sheet",
+        "triggers": []
+      },
+      "metrics": {
+        "duration_sec": 323.5,
+        "scdet_threshold": 10,
+        "total_cuts": 0,
+        "avg_cut_interval_sec": 323.5,
+        "max_cuts_per_10s": 0,
+        "integrated_lufs": null,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\f40abc644b7a\\f40abc644b7a.mp4",
+            "sha256": "9ce9cd8b52bbd56069d7e670dff20650a46a6f2193a45f5f05b38542089f7d33",
+            "size_bytes": 27578175
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\f40abc644b7a\\f40abc644b7a_sheet_01.jpg",
+            "sha256": "8e2a8064aec72423bf0732d2bc4b6a60d777510206ca5c0806805244c78f24fd",
+            "size_bytes": 434728
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\f40abc644b7a\\f40abc644b7a_sheet_02.jpg",
+            "sha256": "03704eb7d4420a64691fbaff510bd0ff210371a2b95113ac47d3ff1dbee1e499",
+            "size_bytes": 446897
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\f40abc644b7a\\f40abc644b7a_sheet_03.jpg",
+            "sha256": "0226cd3295406a6592460e00dd058c167d0220b366ad69b8f451cfadc6c434ff",
+            "size_bytes": 484053
+          }
+        ]
+      }
+    },
+    "922862661": {
+      "video_id": "922862661",
+      "blind_id": "54ee76462697",
+      "genre_bucket": "unverified:film",
+      "routing_genre": "unverified:film",
+      "genre_verified": false,
+      "target_status_after_calibration": "calibrated_unverified_genre",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "e4f5c4b56f76966793fa4b21a6f1f9e5ac17e16d142b3aaf69425fffdd416acb",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "contact_sheet",
+        "triggers": []
+      },
+      "metrics": {
+        "duration_sec": 174.4,
+        "scdet_threshold": 10,
+        "total_cuts": 34,
+        "avg_cut_interval_sec": 5.13,
+        "max_cuts_per_10s": 4,
+        "integrated_lufs": -15.9,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\54ee76462697\\54ee76462697.mp4",
+            "sha256": "3d224dfa0e58b478f5f7893f5bb39093a5dc423e93e7aea868cd934574f8c91f",
+            "size_bytes": 9713679
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\54ee76462697\\54ee76462697_sheet_01.jpg",
+            "sha256": "33268af9bc16087effe82195f96dde6cc3ea3fcfa361324b003938fc2225cc3e",
+            "size_bytes": 182452
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\54ee76462697\\54ee76462697_sheet_02.jpg",
+            "sha256": "c63bd41ea95998f85e6dee4311985121a05f1428f1e928711b0ff272f7648f1f",
+            "size_bytes": 129834
+          }
+        ]
+      }
+    },
+    "924892954": {
+      "video_id": "924892954",
+      "blind_id": "d3a66a8e5c5a",
+      "genre_bucket": "モーション",
+      "routing_genre": "モーション",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "0989984a380f2ae7b49e49d274280f0551aa40fa1dec3f33a2117d230972c89e",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-b:genre=モーション"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 13.5,
+        "scdet_threshold": 10,
+        "total_cuts": 1,
+        "avg_cut_interval_sec": 13.5,
+        "max_cuts_per_10s": 1,
+        "integrated_lufs": -17.6,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          1,
+          11
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\d3a66a8e5c5a\\d3a66a8e5c5a.mp4",
+            "sha256": "fd65b6f0a2e86ca8f1a2ea90b48d89b1c9aae07a3df329f6b12d95fa5f96d82d",
+            "size_bytes": 920605
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\d3a66a8e5c5a\\d3a66a8e5c5a_slow.mp4",
+            "sha256": "926e11ff2813e06e95b6088c0cc4af43872c2bea92e7a7f5371e56e27b7c33e0",
+            "size_bytes": 625584
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\d3a66a8e5c5a\\d3a66a8e5c5a_sheet_01.jpg",
+            "sha256": "65f34036b47f34f227b3ccd3e3bc62a495da97d732d686a728d4fefb8ddd74ad",
+            "size_bytes": 120032
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\d3a66a8e5c5a\\d3a66a8e5c5a_sheet_dense.jpg",
+            "sha256": "5f2ffc1e9f4c39978e9977abae6d85b4105f9419dac4b2d5f159655759866b2e",
+            "size_bytes": 129018
+          }
+        ]
+      }
+    },
+    "924893019": {
+      "video_id": "924893019",
+      "blind_id": "876b684b74b9",
+      "genre_bucket": "企業映像",
+      "routing_genre": "企業映像",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "48d75d4d5c1e79be456d659a47dd433ebfaae8179751f4af86ad17d2c2f3baff",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-c:max_cuts_per_10s=55>=12"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 97.1,
+        "scdet_threshold": 10,
+        "total_cuts": 154,
+        "avg_cut_interval_sec": 0.63,
+        "max_cuts_per_10s": 55,
+        "integrated_lufs": -14.1,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          39,
+          44
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\876b684b74b9\\876b684b74b9.mp4",
+            "sha256": "6e1c47244de2cfe566831994edd86f662dc5a84a4a4757e66d690348fa1791dc",
+            "size_bytes": 8786313
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\876b684b74b9\\876b684b74b9_slow.mp4",
+            "sha256": "317e6a82533d877943bb2a7b5c7e18c288a3ca4108075275bd6d0351dd2945c8",
+            "size_bytes": 1486700
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\876b684b74b9\\876b684b74b9_sheet_01.jpg",
+            "sha256": "dbc56d3a5f0e5cd89803d29cbdc1e937bceb877181128c45025cb80c0cae3cb1",
+            "size_bytes": 251679
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\876b684b74b9\\876b684b74b9_sheet_dense.jpg",
+            "sha256": "f2559abc0f1414359cd15dde079e4b6a3e962d4723faca6421a9dea3d9e2860d",
+            "size_bytes": 409936
+          }
+        ]
+      }
+    },
+    "934629152": {
+      "video_id": "934629152",
+      "blind_id": "0e807bab98d6",
+      "genre_bucket": "企業映像",
+      "routing_genre": "企業映像",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "5054a1d7c11da37d6b3a0dee6ffb4fc9bb0c3c8cc8f0e3985359d26dcc44892d",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-c:max_cuts_per_10s=18>=12"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 53.6,
+        "scdet_threshold": 10,
+        "total_cuts": 63,
+        "avg_cut_interval_sec": 0.85,
+        "max_cuts_per_10s": 18,
+        "integrated_lufs": -14,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          36,
+          41
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\0e807bab98d6\\0e807bab98d6.mp4",
+            "sha256": "8a32bc84b5a9d5898ce3ab9b752e93c5d1dda7f2d9a8f997475d2ab5accb52a9",
+            "size_bytes": 6204389
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\0e807bab98d6\\0e807bab98d6_slow.mp4",
+            "sha256": "df29f4ca8168a873ad949ee5a0c5415308f9c52e6f45fa7ff92e58e22af82fbf",
+            "size_bytes": 1073544
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\0e807bab98d6\\0e807bab98d6_sheet_01.jpg",
+            "sha256": "e55b94b9fb0bc70c7eb703f2452c882fa834740a07717a4bc8af0fdae09ebef6",
+            "size_bytes": 334286
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\0e807bab98d6\\0e807bab98d6_sheet_dense.jpg",
+            "sha256": "5d1e83cf42bb5f989ed2c1550cb562bc941ce4a4a34c9c360d8a636e7a20e3a8",
+            "size_bytes": 292229
+          }
+        ]
+      }
+    },
+    "936559027": {
+      "video_id": "936559027",
+      "blind_id": "832bd82576e0",
+      "genre_bucket": "unverified:opening",
+      "routing_genre": "モーション",
+      "genre_verified": false,
+      "target_status_after_calibration": "calibrated_unverified_genre",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "cd87fc65e5d795283b64f74eed009449c9c7bd152eaeb317f194f24f878c9b98",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-b:genre=モーション",
+          "H1-c:max_cuts_per_10s=33>=12"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 33,
+        "scdet_threshold": 10,
+        "total_cuts": 61,
+        "avg_cut_interval_sec": 0.54,
+        "max_cuts_per_10s": 33,
+        "integrated_lufs": -9.3,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          8,
+          13
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\832bd82576e0\\832bd82576e0.mp4",
+            "sha256": "df95d4cc124ec47092ff9ad7eed8397364fb7a3fd6942368e0fea9cfe53f74b8",
+            "size_bytes": 3556396
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\832bd82576e0\\832bd82576e0_slow.mp4",
+            "sha256": "60028047e54dbb0e6e46ba2e1d76d878e60e43cf8a349388c33cc11a497daff5",
+            "size_bytes": 749814
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\832bd82576e0\\832bd82576e0_sheet_01.jpg",
+            "sha256": "05ccfb56dbd5ee28c2262e0e3423bad1344cd33d2071b40b6f6ab9b1191b6302",
+            "size_bytes": 347594
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\832bd82576e0\\832bd82576e0_sheet_dense.jpg",
+            "sha256": "3655cec39d6b435e25cb9892a2c54b338a9ed0ada4f67755bcf32d9c0b899398",
+            "size_bytes": 314273
+          }
+        ]
+      }
+    },
+    "936975333": {
+      "video_id": "936975333",
+      "blind_id": "b8bcc92f1423",
+      "genre_bucket": "CM",
+      "routing_genre": "CM",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "0dd73840f8e3855c340db01c829c42afb0ae963a96ff5fc3ba2a3a5218389a29",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "contact_sheet",
+        "triggers": []
+      },
+      "metrics": {
+        "duration_sec": 86.8,
+        "scdet_threshold": 10,
+        "total_cuts": 15,
+        "avg_cut_interval_sec": 5.79,
+        "max_cuts_per_10s": 4,
+        "integrated_lufs": -15.6,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\b8bcc92f1423\\b8bcc92f1423.mp4",
+            "sha256": "e8197b90bee397a583c469226ffd2e677471d82b8a87be4ac1a148c2d1f0aa25",
+            "size_bytes": 7978814
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\b8bcc92f1423\\b8bcc92f1423_sheet_01.jpg",
+            "sha256": "8f55ddaed383c7722aca018587ca2eab8112a62702bf3c43557f17b8301d9f19",
+            "size_bytes": 465225
+          }
+        ]
+      }
+    },
+    "937033322": {
+      "video_id": "937033322",
+      "blind_id": "3af84dc4ead7",
+      "genre_bucket": "unverified:concept-art",
+      "routing_genre": "unverified:concept-art",
+      "genre_verified": false,
+      "target_status_after_calibration": "calibrated_unverified_genre",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "2f17ba7e0f969137782c5e15d864567b6b2b72ebac4dc7d69ba61b081c6be6f7",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "contact_sheet",
+        "triggers": []
+      },
+      "metrics": {
+        "duration_sec": 158.3,
+        "scdet_threshold": 10,
+        "total_cuts": 31,
+        "avg_cut_interval_sec": 5.11,
+        "max_cuts_per_10s": 4,
+        "integrated_lufs": -10.9,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\3af84dc4ead7\\3af84dc4ead7.mp4",
+            "sha256": "35e6aa1c5ee4f963adf59565c66152ef868bcefdeffad5e2d2e96b07cc5345fd",
+            "size_bytes": 12618427
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\3af84dc4ead7\\3af84dc4ead7_sheet_01.jpg",
+            "sha256": "150bc9614c9fbe7d8118caf1c6340ec792de14e47a9ff280d82ba37881339a3c",
+            "size_bytes": 195175
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\3af84dc4ead7\\3af84dc4ead7_sheet_02.jpg",
+            "sha256": "f86a63a8934fb3a9eb2644e817e0768bcf71b8ebca44904af179e80251b9de67",
+            "size_bytes": 227201
+          }
+        ]
+      }
+    },
+    "965829130": {
+      "video_id": "965829130",
+      "blind_id": "3b3ee86fbc47",
+      "genre_bucket": "MV",
+      "routing_genre": "MV",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "1dc20828083ab790cdade3a42233fae9f232b28b73642d4aab921d402d6f94a3",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-a:genre=MV"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 238,
+        "scdet_threshold": 10,
+        "total_cuts": 29,
+        "avg_cut_interval_sec": 8.21,
+        "max_cuts_per_10s": 7,
+        "integrated_lufs": -12.1,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          48,
+          58
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\3b3ee86fbc47\\3b3ee86fbc47.mp4",
+            "sha256": "41bffc424be52f02991bb2c260e0a783f4c1a39dc1b893bf8ff3c4fe6f21a1f0",
+            "size_bytes": 26031042
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\3b3ee86fbc47\\3b3ee86fbc47_slow.mp4",
+            "sha256": "915649cd190b63bc7700d12879b61d837b2abbf2e53f2888e3f472a941751399",
+            "size_bytes": 1157664
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\3b3ee86fbc47\\3b3ee86fbc47_sheet_01.jpg",
+            "sha256": "bb97231e6363126d5caaa604bd4e18f29441ee2d6701217165c0a6ade0699ada",
+            "size_bytes": 277687
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\3b3ee86fbc47\\3b3ee86fbc47_sheet_02.jpg",
+            "sha256": "a0f3b569b7d7b9f5c031f7e457a70985b4e47976c690e4c97976f02e99b001d4",
+            "size_bytes": 272876
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\3b3ee86fbc47\\3b3ee86fbc47_sheet_dense.jpg",
+            "sha256": "52db957cbf8ea57518f8811aff072be09b9eaeb74b9b1b69a6febc07e2647dd2",
+            "size_bytes": 138460
+          }
+        ]
+      }
+    },
+    "993382821": {
+      "video_id": "993382821",
+      "blind_id": "b494fdfbe699",
+      "genre_bucket": "CM",
+      "routing_genre": "CM",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "36a6c8db3f56d812ece7ca9c2f5b4155bec332d89cab146c5e84b9e5b9e82571",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "contact_sheet",
+        "triggers": []
+      },
+      "metrics": {
+        "duration_sec": 81,
+        "scdet_threshold": 10,
+        "total_cuts": 16,
+        "avg_cut_interval_sec": 5.06,
+        "max_cuts_per_10s": 10,
+        "integrated_lufs": -14.1,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          0,
+          10
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\b494fdfbe699\\b494fdfbe699.mp4",
+            "sha256": "aaaa156f5f62392d08a03add4aa7372182299d2d247082aa2d4eaf40355ecb38",
+            "size_bytes": 4747808
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\b494fdfbe699\\b494fdfbe699_slow.mp4",
+            "sha256": "b7e7dcd50f93a9ecbda10b9fd611dfbdbb2c4864349ac28ea0969bbf769861dd",
+            "size_bytes": 346162
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\b494fdfbe699\\b494fdfbe699_sheet_01.jpg",
+            "sha256": "79f8f4fc692e32ad4cc7d15775defc6a3cbe7e94c775ac38342eb24fc6a60508",
+            "size_bytes": 293731
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\b494fdfbe699\\b494fdfbe699_sheet_dense.jpg",
+            "sha256": "96723a2acfcb949f68781aab8f9721a3093cde11ff9af5b80b4466515ec64e60",
+            "size_bytes": 327490
+          }
+        ]
+      }
+    },
+    "998498858": {
+      "video_id": "998498858",
+      "blind_id": "95a2c4f6be97",
+      "genre_bucket": "unverified:concept-art",
+      "routing_genre": "unverified:concept-art",
+      "genre_verified": false,
+      "target_status_after_calibration": "calibrated_unverified_genre",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "8c91426f66c97df57a848779ba4da092636db9e88bfb734d81d357a0a3a441d5",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-c:max_cuts_per_10s=49>=12"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 30,
+        "scdet_threshold": 10,
+        "total_cuts": 89,
+        "avg_cut_interval_sec": 0.34,
+        "max_cuts_per_10s": 49,
+        "integrated_lufs": -8.3,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          17,
+          22
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\95a2c4f6be97\\95a2c4f6be97.mp4",
+            "sha256": "e9f8e2970034850562c817e414baeb998363b84f2914e726f944d29f6ce0736a",
+            "size_bytes": 3487991
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\95a2c4f6be97\\95a2c4f6be97_slow.mp4",
+            "sha256": "1a642d894db2851741240b849b4335728fede528e971535dc034eb296882dcfd",
+            "size_bytes": 4433711
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\95a2c4f6be97\\95a2c4f6be97_sheet_01.jpg",
+            "sha256": "1b1140771d5c1cac5d6566dc357c5992c5000bbd12919ba4b2bab0afec73326f",
+            "size_bytes": 582156
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\95a2c4f6be97\\95a2c4f6be97_sheet_dense.jpg",
+            "sha256": "18a54cf901781f201f7eb4ca11ef274c29281dece264eed85b53bedef757f135",
+            "size_bytes": 619499
+          }
+        ]
+      }
+    },
+    "notion-7422fd75cdbc635c44bbfaf4": {
+      "video_id": "notion-7422fd75cdbc635c44bbfaf4",
+      "blind_id": "3bec2a663e63",
+      "genre_bucket": "CM",
+      "routing_genre": "CM",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "79e71aa343e809ac08001e50a16cadabe60b8f01b8d797c79d470efdfbf18ab1",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "contact_sheet",
+        "triggers": []
+      },
+      "metrics": {
+        "duration_sec": 30,
+        "scdet_threshold": 10,
+        "total_cuts": 21,
+        "avg_cut_interval_sec": 1.43,
+        "max_cuts_per_10s": 9,
+        "integrated_lufs": -14,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          15,
+          25
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\3bec2a663e63\\3bec2a663e63.mp4",
+            "sha256": "18fdc861b3c1c658fa3f931e6b04302696b3c298507b91b75ee30bbd6d1c13b9",
+            "size_bytes": 34778700
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\3bec2a663e63\\3bec2a663e63_slow.mp4",
+            "sha256": "1e9527c5b38dca26c89207cc50e87e4ea3e4de986646e5a307913acdce8fe869",
+            "size_bytes": 6302529
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\3bec2a663e63\\3bec2a663e63_sheet_01.jpg",
+            "sha256": "eff419e29bac9e47b2686f0f2165e6e3f1ecf30f62d1415ed51ff0196bf18d2b",
+            "size_bytes": 271497
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\3bec2a663e63\\3bec2a663e63_sheet_dense.jpg",
+            "sha256": "d37a9afd72bb88c3b9fe3261cdebcc7934c9b6adf2f6ae96178c4294cf71e6c6",
+            "size_bytes": 262317
+          }
+        ]
+      }
+    },
+    "notion-f7e42c871b5bfe616814c4dc": {
+      "video_id": "notion-f7e42c871b5bfe616814c4dc",
+      "blind_id": "047f27785a0d",
+      "genre_bucket": "unverified:opening",
+      "routing_genre": "モーション",
+      "genre_verified": false,
+      "target_status_after_calibration": "calibrated_unverified_genre",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "18b78132c17357e92b3f671e93eea60e3a3a0bb2a333d62833a2cce7da709340",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-b:genre=モーション",
+          "H1-c:max_cuts_per_10s=28>=12"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 20.1,
+        "scdet_threshold": 10,
+        "total_cuts": 41,
+        "avg_cut_interval_sec": 0.49,
+        "max_cuts_per_10s": 28,
+        "integrated_lufs": -6.1,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          7,
+          12
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\047f27785a0d\\047f27785a0d.mp4",
+            "sha256": "dcee3e682b0b8a505d1da0ca03dc484f29fb93c2aa711ddbe55b60639706e12f",
+            "size_bytes": 2452080
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\047f27785a0d\\047f27785a0d_slow.mp4",
+            "sha256": "11b57a03f8c25ecbdddb5bf63b8a2331c1e6633d1102e5a07ac366131334cfac",
+            "size_bytes": 1645152
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\047f27785a0d\\047f27785a0d_sheet_01.jpg",
+            "sha256": "1140a5c907f23a8ba5b2a1980fce0711ee590b10f884aa5b4cc1b3b471e13402",
+            "size_bytes": 396440
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\047f27785a0d\\047f27785a0d_sheet_dense.jpg",
+            "sha256": "1f1f6eb231f3f4f400741c655cf053472cfb8a3c4ece8b70a66f92f7be7ce2d6",
+            "size_bytes": 389918
+          }
+        ]
+      }
+    },
+    "notion-a71d75e74c14001080addb42": {
+      "video_id": "notion-a71d75e74c14001080addb42",
+      "blind_id": "4f6c80e71d6c",
+      "genre_bucket": "CM",
+      "routing_genre": "CM",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "79e71aa343e809ac08001e50a16cadabe60b8f01b8d797c79d470efdfbf18ab1",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "contact_sheet",
+        "triggers": []
+      },
+      "metrics": {
+        "duration_sec": 30,
+        "scdet_threshold": 10,
+        "total_cuts": 21,
+        "avg_cut_interval_sec": 1.43,
+        "max_cuts_per_10s": 9,
+        "integrated_lufs": -14,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          15,
+          25
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\4f6c80e71d6c\\4f6c80e71d6c.mp4",
+            "sha256": "18fdc861b3c1c658fa3f931e6b04302696b3c298507b91b75ee30bbd6d1c13b9",
+            "size_bytes": 34778700
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\4f6c80e71d6c\\4f6c80e71d6c_slow.mp4",
+            "sha256": "1e9527c5b38dca26c89207cc50e87e4ea3e4de986646e5a307913acdce8fe869",
+            "size_bytes": 6302529
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\4f6c80e71d6c\\4f6c80e71d6c_sheet_01.jpg",
+            "sha256": "eff419e29bac9e47b2686f0f2165e6e3f1ecf30f62d1415ed51ff0196bf18d2b",
+            "size_bytes": 271497
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\4f6c80e71d6c\\4f6c80e71d6c_sheet_dense.jpg",
+            "sha256": "d37a9afd72bb88c3b9fe3261cdebcc7934c9b6adf2f6ae96178c4294cf71e6c6",
+            "size_bytes": 262317
+          }
+        ]
+      }
+    },
+    "notion-b433976655da19d33f2c962d": {
+      "video_id": "notion-b433976655da19d33f2c962d",
+      "blind_id": "b6dc6be8ba21",
+      "genre_bucket": "MV",
+      "routing_genre": "MV",
+      "genre_verified": true,
+      "target_status_after_calibration": "calibrated_verified",
+      "source_method": "local_cache",
+      "download_format_id": null,
+      "download_is_dash": null,
+      "source_sha256": "1846bef9c0aeaad325378c2eb376727ae74357668571a7b9ef75ff0374ca5711",
+      "metadata_stripped_verified": true,
+      "h1_pre_route": {
+        "route": "video",
+        "triggers": [
+          "H1-a:genre=MV",
+          "H1-c:max_cuts_per_10s=22>=12"
+        ]
+      },
+      "metrics": {
+        "duration_sec": 236,
+        "scdet_threshold": 10,
+        "total_cuts": 127,
+        "avg_cut_interval_sec": 1.86,
+        "max_cuts_per_10s": 22,
+        "integrated_lufs": -6.3,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          152,
+          157
+        ]
+      },
+      "staged_files": {
+        "video": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\b6dc6be8ba21\\b6dc6be8ba21.mp4",
+            "sha256": "ad3f33a42a7d4197e3461335e006be6c2ef5265ecac739f9bbfa0def8d02792a",
+            "size_bytes": 53662298
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\video\\b6dc6be8ba21\\b6dc6be8ba21_slow.mp4",
+            "sha256": "d6015474e4393507a76bb13970a985d61acd0c867db301ff0d53f9a84d3f692d",
+            "size_bytes": 4517148
+          }
+        ],
+        "contact_sheet": [
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\b6dc6be8ba21\\b6dc6be8ba21_sheet_01.jpg",
+            "sha256": "b01b7208db0b8ae569bb2e1f4c091d927e8dd4f8b9ca8d7bbe7c924c5ba66269",
+            "size_bytes": 305352
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\b6dc6be8ba21\\b6dc6be8ba21_sheet_02.jpg",
+            "sha256": "7c7538763eff919ca49f94fcc031f346f3bbb67d30764e3b7b61acf10f03b5d6",
+            "size_bytes": 252944
+          },
+          {
+            "path": "E:\\iketeru_blind_eval\\run_20261124_173838\\contact_sheet\\b6dc6be8ba21\\b6dc6be8ba21_sheet_dense.jpg",
+            "sha256": "3ab8bdb6b4da6b0c1883f1b21643dd0aa308bd212e5bc3926d94c3d73e4c7c9e",
+            "size_bytes": 546086
+          }
+        ]
+      }
+    }
+  }
+}

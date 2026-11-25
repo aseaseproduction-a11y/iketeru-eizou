@@ -1,0 +1,66 @@
+{
+  "executed_at": "2026-11-25T06:59:53.168Z",
+  "worker": "CHIBA-PC2",
+  "run_id": "run_20261124_173838",
+  "priority": "P1_private_rating",
+  "batch_index": 3,
+  "apply_lock_snapshot": {
+    "schema_version": 1,
+    "status": "locked",
+    "worker": "CHIBA-PC2",
+    "run_id": "run_20261124_173838",
+    "started_at": "2026-11-25T06:59:04.253Z",
+    "updated_at": "2026-11-25T06:59:04.253Z"
+  },
+  "pre_d_baseline_backup": {
+    "path": "E:\\iketeru_backups\\phase3_pre_d_20261123_153343\\tidb_videos_backup.jsonl",
+    "sha256": "17856f0338c760b2f88d415543eb6d48a7977c06e76a5c04476b0d5943446a3b"
+  },
+  "pre_apply_local_backup": {
+    "created_at": "2026-11-25T06:59:37.533Z",
+    "purpose": "Fresh local pre-apply TiDB snapshot before applying run_20261124_173838",
+    "run_id": "run_20261124_173838",
+    "row_count": 5653,
+    "jsonl_path": "E:\\iketeru_backups\\phase3_pre_apply_run_20261124_173838_20261125_155922\\tidb_videos_pre_apply.jsonl",
+    "jsonl_bytes": 136564528,
+    "jsonl_sha256": "e402ab5188f7c50e641291e65950eb3deec4002018004b831a82992fe2b92c6f"
+  },
+  "payload_count": 73,
+  "affected_rows": 73,
+  "tidb_rows_with_run_id": 73,
+  "tidb_calibration_status_counts": {
+    "legacy_uncalibrated": 4241,
+    "calibrated_verified": 598,
+    "calibrated_unverified_genre": 414,
+    "unscored": 400
+  },
+  "multi_pc_audit_note": "tidb_calibration_status_counts reflects cumulative calibrated rows across ALL PCs (including other PCs' completed runs); this run's integrity is verified by tidb_rows_with_run_id === payload_count and all_40_original_columns_zero_diffs === true.",
+  "max_updated_at_before": "2026-11-21T17:57:26.000Z",
+  "max_updated_at_after": "2026-11-21T17:57:26.000Z",
+  "full_row_diff_against_pre_d_backup": {
+    "rows_compared": 5653,
+    "columns_compared_per_row": 40,
+    "total_cells_compared": 226120,
+    "legacy_8_score_columns_mismatches": 0,
+    "all_40_original_columns_mismatches": 0,
+    "updated_at_row_mismatches": 0,
+    "sample_mismatches": []
+  },
+  "sqlite_check_mode": "sha256_verified",
+  "sqlite_path": "E:\\iketeru-creative-studio\\data\\iketeru_knowledge.db",
+  "sqlite_source_sha256_before": "0ea226e3c74c2498e720868bc166a3f07b813e3911306865f96877648e5900a4",
+  "sqlite_source_sha256_after": "0ea226e3c74c2498e720868bc166a3f07b813e3911306865f96877648e5900a4",
+  "sqlite_untouched": true,
+  "all_checks_passed": true,
+  "checks": {
+    "apply_lock_verified": true,
+    "pre_apply_backup_created": true,
+    "row_count_matches_5653": true,
+    "updated_rows_match_payload": true,
+    "max_updated_at_unchanged": true,
+    "legacy_8_columns_zero_diffs": true,
+    "all_40_original_columns_zero_diffs": true,
+    "updated_at_per_row_zero_diffs": true,
+    "sqlite_mirror_untouched": true
+  }
+}

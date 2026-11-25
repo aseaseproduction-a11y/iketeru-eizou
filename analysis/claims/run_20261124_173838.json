@@ -9,7 +9,7 @@
     "cached_only": true,
     "verify_media": true
   },
-  "status": "active",
+  "status": "completed",
   "claimed_at": "2026-11-24T08:39:06.055Z",
   "video_ids": [
     "774363499",
@@ -85,5 +85,6 @@
     "notion-a71d75e74c14001080addb42",
     "notion-b433976655da19d33f2c962d",
     "notion-f7e42c871b5bfe616814c4dc"
-  ]
+  ],
+  "completed_at": "2026-11-25T07:00:40.562Z"
 }

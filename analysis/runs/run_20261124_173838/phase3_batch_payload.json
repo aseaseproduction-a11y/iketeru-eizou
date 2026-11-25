@@ -1,0 +1,5217 @@
+{
+  "generated_at": "2026-11-25T06:42:51.837Z",
+  "run_id": "run_20261124_173838",
+  "priority": "P1_private_rating",
+  "batch_index": 3,
+  "calibration_version": "phase2_v1",
+  "count": 73,
+  "updates": [
+    {
+      "id": "774363499",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 88,
+      "calibratedRank": "A+",
+      "calibratedTierBand": "award_tier",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h2_escalated",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          88,
+          88
+        ],
+        "finalScore": 88,
+        "rank": "A+",
+        "tierBand": "award_tier",
+        "dimensions": {
+          "direction": 17.5,
+          "visual_craft": 18,
+          "editing_rhythm": 17,
+          "sound_integration": 17.5,
+          "originality_finish": 18
+        },
+        "h1Triggers": [],
+        "h2Triggers": [
+          "H2-a:near_t_award(85.5 within 83+/-3)"
+        ],
+        "contactSheetPreScore": 85.5,
+        "contactSheetRawScores": [
+          87,
+          84
+        ],
+        "rationales": [
+          "プリーツ生地の畝や柄・ボタンをスキー場・宇宙・ボルダリング壁へ見立てた3編構成の秀逸な演出。手作りの粘土質感と精細な布地表現の対比、レンズフレアや被写界深度の仕上げが洗練されている。軽快なジャズとモーフィングの音ハメが極めて精密で、中盤の無重力シーンで音を抜く緩急やハンガー上の間の取り方も巧み。20秒×3の反復構造ゆえ長尺のうねりは限定的だが、クラフト完成度と独創性が際立つ。",
+          "プリーツ生地の形状やドット柄をスキー場・宇宙・ボルダリング壁に見立てた3編構成が秀逸。指跡の残る粘土質感とリアルな布の対比、浅い被写界深度や光学フレアの仕上げが高水準で、2xスローでも変形のキレが際立つ。ブラスとドラムに同期した編集テンポに加え、中盤の無重力パートで音響と緩急を大きく変える設計も巧み。3本連結による構成反復はあるが、独自性と完成度は国内外の一線級を大きく上回る。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 60.1,
+          "scdet_threshold": 10,
+          "total_cuts": 25,
+          "avg_cut_interval_sec": 2.4,
+          "max_cuts_per_10s": 9,
+          "integrated_lufs": -14.2,
+          "slowmo_applied": true,
+          "slowmo_factor": "2x",
+          "slowmo_window_sec": [
+            0,
+            10
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "ee64839a-c157-4699-8b2a-ab2215b2e092",
+          "00a1b81a-411a-429c-b938-e3be07ccc280"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.825Z",
+      "calibratedRoute": "video_h2_escalated",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "CM"
+    },
+    {
+      "id": "775615428",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 84,
+      "calibratedRank": "A",
+      "calibratedTierBand": "award_tier",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h2_escalated",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          85,
+          83
+        ],
+        "finalScore": 84,
+        "rank": "A",
+        "tierBand": "award_tier",
+        "dimensions": {
+          "direction": 17.5,
+          "visual_craft": 17,
+          "editing_rhythm": 16,
+          "sound_integration": 17,
+          "originality_finish": 16.5
+        },
+        "h1Triggers": [],
+        "h2Triggers": [
+          "H2-a:near_t_award(83.5 within 83+/-3)"
+        ],
+        "contactSheetPreScore": 83.5,
+        "contactSheetRawScores": [
+          85,
+          82
+        ],
+        "rationales": [
+          "商品から広大な岬と海へ引き切る10秒の連続移動撮影で『おしみなく、自然。』を直感的に体現。定型を排した3カット（10s/2s/3s）の潔さと、煌めく水滴テクスチャから静謐な商品カットへの緩急が秀逸。視界の開放に同期するピアノと弦の高揚、透明感あるNAの間合い、繊細なタイポグラフィと低彩度の自然光グレーディングまで高次元で統一された上位プロ品質。",
+          "冒頭10秒を単一の連続引き撮影に委ね、草上の化粧水が大自然の岬へ溶け込むスケール展開が見事。抑えた自然光とフィルム調グレーディング、余白を活かした縦組みタイポ・細罫レイアウトが高い完成度を生む。視界の広がりに同期する弦楽のうねりと静謐なNAも的確で、15秒を3カット（広大→水粒→商品）の対比で端正に結ぶ上質なミニマル演出。構成は王道だが仕上げの精度が高い。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 15,
+          "scdet_threshold": 10,
+          "total_cuts": 2,
+          "avg_cut_interval_sec": 7.5,
+          "max_cuts_per_10s": 2,
+          "integrated_lufs": -14,
+          "slowmo_applied": false,
+          "slowmo_factor": null,
+          "slowmo_window_sec": null
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "07b4e53e-220c-4181-a7fa-54e22df070f7",
+          "b2238bad-17a7-4078-a626-62652f9e4471"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.835Z",
+      "calibratedRoute": "video_h2_escalated",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "CM"
+    },
+    {
+      "id": "778470625",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedScore": 72,
+      "calibratedRank": "B",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          72,
+          72
+        ],
+        "finalScore": 72,
+        "rank": "B",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 14,
+          "visual_craft": 15,
+          "editing_rhythm": 16,
+          "sound_integration": 14,
+          "originality_finish": 13
+        },
+        "h1Triggers": [
+          "H1-b:genre=モーション",
+          "H1-c:max_cuts_per_10s=22>=12"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "冒頭1〜6秒の高密度フラッシュとビート同期の編集テンポ、粒子感ある2D抽象表現やグリッド主体のタイポ設計に確かな商業センスがある。一方、中盤以降は作風の異なる断片が単一BGM上で羅列され、素朴な3Dや粗い合成など品質差が目立つ。専用SE不在による音響統合の単調さと、BEAYTIFULやFLUCTUATUATION等の頻出する英字スペルミスが仕上げの完成度を下げている。",
+          "冒頭の高密度カットや中盤のタイポ・コラージュ表現、楽曲ビートに沿った編集リズムに光るセンスがある。一方、構成全体では中盤以降の凡庸な3D表現や粗い合成など作品間の品質差が目立ち、SE不在で音響統合はBGM依存。さらに「FLUCTUATUATION」「BEAYTIFUL」等の目立つ誤字や唐突な幕切れなど最終仕上げの甘さが商業上位水準への到達を阻んでいる。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 83,
+          "scdet_threshold": 10,
+          "total_cuts": 99,
+          "avg_cut_interval_sec": 0.84,
+          "max_cuts_per_10s": 22,
+          "integrated_lufs": -8.9,
+          "slowmo_applied": true,
+          "slowmo_factor": "4x",
+          "slowmo_window_sec": [
+            1,
+            6
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "b9dea216-cd9b-4f44-8385-56787d122c45",
+          "674fb5a1-ca1d-4f17-9b9d-5c07be4a9fc3"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.835Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "unverified:concept-art"
+    },
+    {
+      "id": "778764684",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 88.5,
+      "calibratedRank": "A+",
+      "calibratedTierBand": "award_tier",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          90,
+          87
+        ],
+        "finalScore": 88.5,
+        "rank": "A+",
+        "tierBand": "award_tier",
+        "dimensions": {
+          "direction": 17.5,
+          "visual_craft": 17.5,
+          "editing_rhythm": 18,
+          "sound_integration": 18.5,
+          "originality_finish": 17
+        },
+        "h1Triggers": [
+          "H1-b:genre=モーション"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "ベジェ曲線・角丸・余分な線の除去・漢字の「口」構造抽出・4ウェイト変化など、日本語書体の造形特性を的確なモーションへ昇華した演出構成が卓越。2Dミニマル表現の中で緻密なイージングと視線誘導を維持し、濁点やパーツ落下へのSE同期から「ハーモニー」での声楽展開へ至る音響統合が極めて高水準。日本語書体ならではの造形解釈を洗練されたクラフトで貫いた国際上位水準の秀作。",
+          "書体設計の意図をナレーション無しで体感させる秀逸なキネティックタイポグラフィ。ベジェ曲線による角丸設計、不要な装飾の削ぎ落とし、漢字の「口」構造の抽出、4ウェイトのモーフィングなど、日本語書体特有の造形を明快な視覚表現に昇華している。モノクロ＋最小限の緑の配色が端正で、濁点や文字変化に精密同期したSEとボーカル入り電子音楽の緩急が映像に心地よい躍動感と余韻を与えている。"
+        ],
+        "postCheck": {
+          "knowsWork": true,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 80,
+          "scdet_threshold": 10,
+          "total_cuts": 31,
+          "avg_cut_interval_sec": 2.58,
+          "max_cuts_per_10s": 7,
+          "integrated_lufs": -11.9,
+          "slowmo_applied": true,
+          "slowmo_factor": "2x",
+          "slowmo_window_sec": [
+            3,
+            13
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "16578595-32bf-4c2c-9733-9bfc60c5b5d5",
+          "867a8013-db25-437a-80e5-20a7f4091a59"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.835Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "モーション"
+    },
+    {
+      "id": "781015004",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedScore": 82.5,
+      "calibratedRank": "A",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          82,
+          83
+        ],
+        "finalScore": 82.5,
+        "rank": "A",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 16,
+          "visual_craft": 18,
+          "editing_rhythm": 16,
+          "sound_integration": 15.5,
+          "originality_finish": 17
+        },
+        "h1Triggers": [
+          "H1-b:genre=モーション"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "単体メタボールの静かな導入からサビで祝祭的なコラージュ世界へ展開し、パノラマ俯瞰とロゴ抜き文字で締める構成が明快。リソグラフ調の粒子シェーディングと4色基調の配色設計、有機マスクを用いた2.5D/3D構成は上位プロ品質。楽曲展開との構造同期は良好だが、前半の単調さと個別の動作SEの薄さ、ループ主体の動きが上位帯への伸び代。",
+          "濃紺の単体メタボールから色彩豊かなリソグラフ調3Dの祝祭コラージュへと展開する構成が明快。限定色と粒子感あるシェーディング、2Dマスクと3D空間の重層設計、0:52のワイプ転換など美術・ルックの完成度が極めて高い。楽曲の展開と連動した緩急やロゴ切れのレコード音も好印象。一方、序盤の展開はやや緩慢でSEの細かな肉付けやクライマックス時の白文字視認性には改善余地がある。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 67.3,
+          "scdet_threshold": 10,
+          "total_cuts": 9,
+          "avg_cut_interval_sec": 7.48,
+          "max_cuts_per_10s": 6,
+          "integrated_lufs": -9.4,
+          "slowmo_applied": true,
+          "slowmo_factor": "2x",
+          "slowmo_window_sec": [
+            43,
+            53
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "db0d46ae-b1b9-43a4-80c4-510b4c6c257e",
+          "1760d454-1c98-4db4-af24-42e1903b690a"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.835Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "unverified:branded-movie"
+    },
+    {
+      "id": "785226636",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 79,
+      "calibratedRank": "A-",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          79,
+          79
+        ],
+        "finalScore": 79,
+        "rank": "A-",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 16,
+          "visual_craft": 15,
+          "editing_rhythm": 17,
+          "sound_integration": 16,
+          "originality_finish": 15
+        },
+        "h1Triggers": [
+          "H1-c:max_cuts_per_10s=28>=12"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "実写UGC・アニメIP・2Dグラフィックスを縦型に統合した高密度モンタージュ。平均0.55秒のカットを韻を踏むナレーションとビートに同期させ、「ネタとシャリ」の緩急や「可能性」連打部の固定タイポ＋ハーフトーン枠切替など編集設計が秀逸。反面、既存映像と画質差のあるスマホ素材への依存が大きく、撮影・照明や独自造形の映像クラフト面は中上位水準に留まる。",
+          "TikTok系UGC・アニメ・eスポーツ等の異種素材を、縦型SNS文脈に最適化して統合した高密度モンタージュ。平均0.55秒の速いカット割りに音楽・韻を踏むナレーションを精密に同期し、「可能性」の中央固定タイポから余白を活かした白抜きカットへの緩急設計が秀逸。素材由来の画質差をポップな枠やタイポ設計で巧みに統制する一方、既存素材中心の構成と既視感のあるグラフィック意匠が独自性の上限となる。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 37.1,
+          "scdet_threshold": 10,
+          "total_cuts": 67,
+          "avg_cut_interval_sec": 0.55,
+          "max_cuts_per_10s": 28,
+          "integrated_lufs": -12.7,
+          "slowmo_applied": true,
+          "slowmo_factor": "4x",
+          "slowmo_window_sec": [
+            28,
+            33
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "ba26688c-d6a3-46c0-baf3-75bb0072c49e",
+          "864dc2bc-e624-4f14-904d-3aa12b714c84"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.835Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "CM"
+    },
+    {
+      "id": "786632106",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 69.5,
+      "calibratedRank": "B",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          70,
+          69
+        ],
+        "finalScore": 69.5,
+        "rank": "B",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 14,
+          "visual_craft": 14.5,
+          "editing_rhythm": 14,
+          "sound_integration": 14,
+          "originality_finish": 13
+        },
+        "h1Triggers": [
+          "H1-c:max_cuts_per_10s=16>=12"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "「彩る」主題を絵具ストロークで貫く堅実な企業ビジョン映像。前半のモノクロ人物と果実・絵具のコラージュ表現は洗練され、ナレーションとBGMの進行・抑揚も整合している。一方、中盤の4項目提示は静止テキスト中心で単調になりやすく、終盤の高密度区間（69-74秒）は汎用ストック動画と静止画の早回しに依存し色調統一や映像的連繋を欠く。商業品質として整っているが、独自性・仕上げは標準域。",
+          "『塗り替え・彩る』を筆跡モチーフで一貫させた堅実な企業ビジョン映像。前半のモノクロ人物とフルーツのコラージュや筆跡ワイプ、明瞭なナレーションとBGMの同期は標準的な商業水準を満たす。一方、中盤の理念提示が単調で、終盤はストック動画から静止画の高速連打へ移行し色調統一や構図連携も弱い。全体として定型的な企業VPの枠を出ず、独自性や仕上げの強度に課題が残る。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 85.7,
+          "scdet_threshold": 10,
+          "total_cuts": 21,
+          "avg_cut_interval_sec": 4.08,
+          "max_cuts_per_10s": 16,
+          "integrated_lufs": -16.1,
+          "slowmo_applied": true,
+          "slowmo_factor": "4x",
+          "slowmo_window_sec": [
+            69,
+            74
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "3308f43c-d638-40cd-8f82-9bf09bd37e51",
+          "8880b9d2-667d-4a85-861f-80378583260d"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.835Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "企業映像"
+    },
+    {
+      "id": "787831735",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 80,
+      "calibratedRank": "A-",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h2_escalated",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          80,
+          80
+        ],
+        "finalScore": 80,
+        "rank": "A-",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 16,
+          "visual_craft": 16,
+          "editing_rhythm": 16,
+          "sound_integration": 17,
+          "originality_finish": 15
+        },
+        "h1Triggers": [],
+        "h2Triggers": [
+          "H2-a:near_t_award(81 within 83+/-3)"
+        ],
+        "contactSheetPreScore": 81,
+        "contactSheetRawScores": [
+          80,
+          82
+        ],
+        "rationales": [
+          "沖縄のストリート文化と伝統の龍舞、アリーナを接続し、アパレル訴求を自然に織り込んだ完成度の高いブランド映像。ナイトコートや龍舞の陰影ある照明設計と一貫したシネマティックなグレーディング、中盤の緩急とピアノでの引き、終盤の無音ドリブルへの落とし込みなど音響・編集の統合度が高い。一方、構成自体は王道なライフスタイル・ルックブック型に留まり、演出上の飛躍は控えめ。",
+          "沖縄のバスケ・ストリート文化と伝統の龍舞、アリーナをアパレル訴求に統合した堅実なブランド映像。夜コートから昼・龍舞→龍柄Tのモチーフ繋ぎ、ピアノ独奏とアリーナ対比、無音ドリブルの余韻まで緩急と音響設計（実音挿入含む）が巧み。シネマティックな色彩と安定した撮影品質を備える一方、構成自体は定番ルックブック型でタイポ演出も簡素なため、良質な商業プロ水準と評価。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 77.5,
+          "scdet_threshold": 10,
+          "total_cuts": 34,
+          "avg_cut_interval_sec": 2.28,
+          "max_cuts_per_10s": 9,
+          "integrated_lufs": -15.6,
+          "slowmo_applied": true,
+          "slowmo_factor": "2x",
+          "slowmo_window_sec": [
+            26,
+            36
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "52d6de91-483d-4fad-9586-c4f64c1c2461",
+          "06a1a0a7-6091-43a9-8b0c-c6cb1f27fec1"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.835Z",
+      "calibratedRoute": "video_h2_escalated",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "CM"
+    },
+    {
+      "id": "793439493",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedScore": 71,
+      "calibratedRank": "B",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          69,
+          73
+        ],
+        "finalScore": 71,
+        "rank": "B",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 14.5,
+          "visual_craft": 17,
+          "editing_rhythm": 13.5,
+          "sound_integration": 10,
+          "originality_finish": 16
+        },
+        "h1Triggers": [
+          "H1-b:genre=モーション"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "365日分の統一配色モーション作品群を一枚の壁面で魅せる展示美術と各ループの造形・撮影露出は非常に高品質で記憶に残る。一方、映像作品としては単調なカット割りで緩急や時系列的構成に乏しく、音声は-36.9 LUFSの微弱な環境音のみで音響設計・統合が欠如。冒頭と末尾の低コントラストな赤文字テロップも仕上げの粗さとなり、展示記録の域を出ない。",
+          "青空間に橙・水色基調の365日分モーショングラフィックスを並べた展示記録映像。各ループの造形精度と統一配色、寄りと引きを交えた安定したカメラワークが見どころ。一方、記録映像的な構成で感情曲線の起伏は乏しく、月順も散発的。実測-36.9 LUFSと極めて小さい環境音主体の音響は映像との積極的統合を欠き、冒頭・末尾の暗い赤文字タイトルも視認性・仕上げに粗さが残る。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 79.5,
+          "scdet_threshold": 10,
+          "total_cuts": 3,
+          "avg_cut_interval_sec": 26.5,
+          "max_cuts_per_10s": 2,
+          "integrated_lufs": -36.9,
+          "slowmo_applied": true,
+          "slowmo_factor": "2x",
+          "slowmo_window_sec": [
+            34,
+            44
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "15fda5e2-b145-4d6b-9b67-88c55382e00a",
+          "46333bef-01d3-4386-9710-8cf21b6b1041"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.835Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "unverified:concept-art"
+    },
+    {
+      "id": "796208479",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 81,
+      "calibratedRank": "A-",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          81,
+          81
+        ],
+        "finalScore": 81,
+        "rank": "A-",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 16,
+          "visual_craft": 16,
+          "editing_rhythm": 17,
+          "sound_integration": 16,
+          "originality_finish": 16
+        },
+        "h1Triggers": [
+          "H1-a:genre=MV"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "ティール単色の統一美術と2D/3D融合カメラワークで、深夜の孤独から電波・深海へダイブし23:59→23:58へ回帰する円環構成を端正に描く。PC画面の歌詞引きやロープから部屋の透視線へ繋ぐマッチカット、ドロップ前の黒味と音ハメ編集が巧み。一方、人物作画の簡素さや冒頭QR表記の被り、抽象区間の密度不足に伸び代を残す良作。",
+          "青緑モノトーンと粒子質感で統一された2.5D/3D空間のカメラワークと、シームレスなマッチカットが高水準。潜水服や扉の比喩、タイポがPC画面へ収束する転換、ドロップの音ハメ編集が冴え、23:59→23:58の円環構成も巧み。一方、人物作画の簡素さや既視感ある邦楽MV文法、冒頭・終盤の常駐クレジット/QR配置が純粋な没入感をやや抑えている。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 71,
+          "scdet_threshold": 10,
+          "total_cuts": 15,
+          "avg_cut_interval_sec": 4.73,
+          "max_cuts_per_10s": 8,
+          "integrated_lufs": -13.8,
+          "slowmo_applied": true,
+          "slowmo_factor": "2x",
+          "slowmo_window_sec": [
+            36,
+            46
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "371e88eb-5530-492d-91af-09efaa68404a",
+          "7877651c-7f4f-467b-823f-38059a6437c5"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "MV"
+    },
+    {
+      "id": "80381569",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedScore": 79,
+      "calibratedRank": "A-",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "contact_sheet",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          80,
+          78
+        ],
+        "finalScore": 79,
+        "rank": "A-",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 16,
+          "visual_craft": 17,
+          "editing_rhythm": 15.5,
+          "sound_integration": 15,
+          "originality_finish": 15.5
+        },
+        "h1Triggers": [],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "モノクロ撮影の階調設計、自然光と浅い被写界深度による叙情的な構図、鋳造の火花と感情表現を対比させる演出が高水準。28カット（平均2.76秒）で泣き芝居や遠景に間を持たせた緩急も堅実。一方、中盤の英語説明テロップが溶湯の白飛びと重なり視認性を損ねる点は仕上げの減点。音響は非聴取のため-13.6LUFSと視覚テンポから中立推定。",
+          "地方工芸の人間ドラマを質感豊かなモノクロ撮影で描く短編予告。自然光の陰影、土手や川沿いの構図、鋳造の強い明暗対比など撮影クラフトは高水準。平均2.76秒の緩急あるカット割りで感情の起伏を的確に伝える一方、英語説明テロップが白飛び部分と重なり視認性が落ちる仕上げの惜しさと定型的な予告構成が減点要素。音声は非聴取のため実測-13.6LUFSと視覚テンポから中立推定。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": true
+        },
+        "metrics": {
+          "duration_sec": 77.2,
+          "scdet_threshold": 10,
+          "total_cuts": 28,
+          "avg_cut_interval_sec": 2.76,
+          "max_cuts_per_10s": 6,
+          "integrated_lufs": -13.6,
+          "slowmo_applied": true,
+          "slowmo_factor": "2x",
+          "slowmo_window_sec": [
+            37,
+            47
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "101aab28-3e47-4d07-8f83-5432b10e42de",
+          "5a04d1db-344d-4285-9998-3ff4870cc5fd"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "contact_sheet",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "unverified:teaser-trailer"
+    },
+    {
+      "id": "807427543",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedScore": 75.5,
+      "calibratedRank": "B+",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h2_escalated",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          76,
+          75
+        ],
+        "finalScore": 75.5,
+        "rank": "B+",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 16,
+          "visual_craft": 15.5,
+          "editing_rhythm": 14,
+          "sound_integration": 13,
+          "originality_finish": 17
+        },
+        "h1Triggers": [],
+        "h2Triggers": [
+          "H2-b:static_long_video(dur=464.5s,avgInt=27.3s,cuts=17)",
+          "H2-c:low_or_null_lufs(-42.1)"
+        ],
+        "contactSheetPreScore": 75,
+        "contactSheetRawScores": [
+          74,
+          76
+        ],
+        "rationales": [
+          "モニター映像から実機の中継、さらにARの不可視関門へと段階的に種明かしする構成と、物理的挙動の独自性・静謐な建築的撮影が秀逸。実時間性を担保する長回しや分割比較も目的合理的だが、約7分45秒の尺に対して単調な展開が続き、白地上の細字字幕の視認性低下や-42.1LUFSの極小音量・未整音な環境音など映像仕上げ面の粗さが惜しい。",
+          "CG風映像→展示モニター→実機生中継と段階的に種明かしする構成と、後半のiPad ARによる不可視の関門の提示が秀逸。建築的な構図や繊細な色調、実在感を担保する長回しと環境音・箱の衝突音の静謐な同期も作品意図に合致する。一方、約7分45秒の尺に対し固定画角中心で緩急に乏しく、明背景上の細字字幕の視認性不足および-42.1 LUFSと極端に低い音量仕上げが映像クラフト面の課題。"
+        ],
+        "postCheck": {
+          "knowsWork": true,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 464.5,
+          "scdet_threshold": 10,
+          "total_cuts": 17,
+          "avg_cut_interval_sec": 27.32,
+          "max_cuts_per_10s": 2,
+          "integrated_lufs": -42.1,
+          "slowmo_applied": false,
+          "slowmo_factor": null,
+          "slowmo_window_sec": null
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "8b88e89d-f89a-4f87-9b7d-bdc2573b35ec",
+          "2ae9b432-6f85-4353-b18e-9a4344074cdf"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h2_escalated",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "unverified:documentary"
+    },
+    {
+      "id": "807559272",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedScore": 88,
+      "calibratedRank": "A+",
+      "calibratedTierBand": "award_tier",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          89,
+          87
+        ],
+        "finalScore": 88,
+        "rank": "A+",
+        "tierBand": "award_tier",
+        "dimensions": {
+          "direction": 17.5,
+          "visual_craft": 17.5,
+          "editing_rhythm": 17,
+          "sound_integration": 18,
+          "originality_finish": 18
+        },
+        "h1Triggers": [
+          "H1-b:genre=モーション"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "無機質なミント色のアイソメ線画で描く無人の駅から、粒子感ある半透明・極彩色の異形キャラ群が溢れ出し未来都市へ広がる構成が秀逸。無人の前半と群衆の後半の対比、アイソメと一点透視の緩急、駅の環境音・アナウンスからブラス主体楽曲へ展開し発車音で締める音像設計が高次元で融合。キャラ動作自体は簡潔だが、緻密な美術・質感処理・音ハメ編集により極めて高い完成度と独自性を達成。",
+          "無人のミント系線画の駅空間から、半透明グラデーションと粒子感を持つ多彩な空想的キャラクター群が溢れ巨大ハブへ拡張する構成が秀逸。前半の無人カットと後半の群像の対比が明快で、時計や駅環境音からファンク〜ブラスへの音楽展開、電車窓ワイプや通過音の余韻まで音画統合も極めて高い。個別動作は簡潔な2Dループ主体ながら、独自の美術設計と高密度な仕上げが記憶に残る。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 56,
+          "scdet_threshold": 10,
+          "total_cuts": 8,
+          "avg_cut_interval_sec": 7,
+          "max_cuts_per_10s": 3,
+          "integrated_lufs": -10.5,
+          "slowmo_applied": true,
+          "slowmo_factor": "2x",
+          "slowmo_window_sec": [
+            23,
+            33
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "d6ca104b-c28d-4390-af0b-cd50531bbdda",
+          "e882240a-7c35-4849-a135-f875fac8e34e"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "unverified:opening"
+    },
+    {
+      "id": "807801469",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 85.5,
+      "calibratedRank": "A+",
+      "calibratedTierBand": "award_tier",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h2_escalated",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          86,
+          85
+        ],
+        "finalScore": 85.5,
+        "rank": "A+",
+        "tierBand": "award_tier",
+        "dimensions": {
+          "direction": 17,
+          "visual_craft": 18,
+          "editing_rhythm": 17,
+          "sound_integration": 16.5,
+          "originality_finish": 17
+        },
+        "h1Triggers": [],
+        "h2Triggers": [
+          "H2-a:near_t_award(83 within 83+/-3)"
+        ],
+        "contactSheetPreScore": 83,
+        "contactSheetRawScores": [
+          83,
+          83
+        ],
+        "rationales": [
+          "打ち放しコンクリートと斜光、グレー地に黄色の差し色という端正な美術設計に対し、極細の製図線モーションを折り目や身体回転へ精密に同期させ、平面から立体へと展開する衣服構造を無言語で明快に伝達。中盤の折り目マッチカットから19秒の引きの静寂、ロゴを横切る退場まで緩急と余白の制御が秀逸で、乾いた打音主体のミニマル音響も映像の幾何学的美学と高度に融合している。",
+          "折り畳める構造服の特性を、打ち放しコンクリートの格子・斜光・極細の設計図ラインで一貫表現した完成度の高いファッション映像。中盤の細部カット連打から引き画の静寂、畳み込みとロゴ消し歩き去りまで緩急と構成が極めて明快。色彩設計（灰青＋黄差し色）と光の造形も秀逸。ミニマルな電子音はリズム同期が心地よいが、布擦れ等の生音SEがあればさらに没入感が増した。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 30,
+          "scdet_threshold": 10,
+          "total_cuts": 14,
+          "avg_cut_interval_sec": 2.14,
+          "max_cuts_per_10s": 7,
+          "integrated_lufs": -13.6,
+          "slowmo_applied": true,
+          "slowmo_factor": "2x",
+          "slowmo_window_sec": [
+            15,
+            25
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "bd5a6804-8292-456f-9fe9-714e9f13b4f7",
+          "dddb13f7-2c92-4d84-8f86-b8d0fff7e184"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h2_escalated",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "CM"
+    },
+    {
+      "id": "814133084",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 82,
+      "calibratedRank": "A",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          82,
+          82
+        ],
+        "finalScore": 82,
+        "rank": "A",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 16,
+          "visual_craft": 17,
+          "editing_rhythm": 17,
+          "sound_integration": 16,
+          "originality_finish": 16
+        },
+        "h1Triggers": [
+          "H1-c:max_cuts_per_10s=15>=12"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "商業CMやモーショングラフィックスを高精度に束ねたリール。KATEのマスク演出、抽象3D・布表現、CROWNのタイポ、TORAYの色彩転換やNHK線画など視覚クラフトと仕上げが一貫して高水準で、楽曲ブレイクに同期した音ハメ編集も巧み。一方、総集編ゆえ物語的深度は限定的で、終盤前のCM羅列にやや性急さが残り、冒頭以外のSE設計も控えめ。",
+          "実写・3D・2D・タイポを横断する高水準な商業モーションデザインのリール。KATEの鋭いマスク転換や抽象3Dの滑らかなマッチカット、CROWNやTORAYの洗練されたグラフィック構成、終盤の光の演出が際立つ。平均1.34秒の緻密なビート同期と緩急設計も巧みだが、多様な一般TVCMの集成ゆえ一部に定型表現が混ざり、単一楽曲依存の音設計も踏まえ上位プロ水準と評価。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 139.1,
+          "scdet_threshold": 10,
+          "total_cuts": 104,
+          "avg_cut_interval_sec": 1.34,
+          "max_cuts_per_10s": 15,
+          "integrated_lufs": -7.8,
+          "slowmo_applied": true,
+          "slowmo_factor": "4x",
+          "slowmo_window_sec": [
+            67,
+            72
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "f89c4029-8258-4b2d-a19b-bba8310d1f60",
+          "1c6bd8f1-eb77-4986-89fb-36d0a45303ba"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "企業映像"
+    },
+    {
+      "id": "815582701",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedScore": 71.5,
+      "calibratedRank": "B",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h2_escalated",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          70,
+          73
+        ],
+        "finalScore": 71.5,
+        "rank": "B",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 16,
+          "visual_craft": 17,
+          "editing_rhythm": 12.5,
+          "sound_integration": 9,
+          "originality_finish": 17
+        },
+        "h1Triggers": [],
+        "h2Triggers": [
+          "H2-c:low_or_null_lufs(null)"
+        ],
+        "contactSheetPreScore": 74.5,
+        "contactSheetRawScores": [
+          75,
+          74
+        ],
+        "rationales": [
+          "全編固定カメラによる11種のルックブック・シネマグラフ集。階段の多重足元、照明切替での2WAY表現、波紋やトタンの木漏れ日、斜面を落ちる砂、宙に浮く巾着など、端正な構図・質感設計と静謐なシュール表現、自然な合成技術が高水準。一方、各約10秒の均一な羅列構成で全体のリズムや感情曲線が平板な点、および完全無音で音響統合が欠如する点が映像作品としての到達度を制限している。",
+          "固定カメラの端正な構図と質感対比に加え、階段の脚蓄積合成、照明点滅の2way切替、水溜りの影演出、浮遊回転ポーチなど知的でクリーンな視覚表現・VFXが高水準。一方、約10秒のループを単調に連結した構成で長尺の緩急や感情曲線が乏しく、無音（音声無し）のため質感と響き合う音響統合も欠く。独自の美意識は際立つが映像構成・音響面を踏まえB+評価。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 124.9,
+          "scdet_threshold": 10,
+          "total_cuts": 12,
+          "avg_cut_interval_sec": 10.41,
+          "max_cuts_per_10s": 3,
+          "integrated_lufs": null,
+          "slowmo_applied": false,
+          "slowmo_factor": null,
+          "slowmo_window_sec": null
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "bd13401d-5073-4579-bc39-5562e5947b8e",
+          "1de3adca-077c-4d78-ac43-f40b78cfcdf1"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h2_escalated",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "unverified:youtube-sns"
+    },
+    {
+      "id": "820892498",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 82,
+      "calibratedRank": "A",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          82,
+          82
+        ],
+        "finalScore": 82,
+        "rank": "A",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 16,
+          "visual_craft": 17,
+          "editing_rhythm": 15,
+          "sound_integration": 17.5,
+          "originality_finish": 16.5
+        },
+        "h1Triggers": [
+          "H1-a:genre=MV"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "日差しの陰影が落ちる静謐な壁面を固定カメラで捉え、油彩調の3Dソフトボディ彫刻が浮遊・衝突する抽象映像。重厚な筆致リボンや繊細な線条が、ピアノとボーカル・電子音の緩急や打音に精密に同期し、高い視聴覚統合と独自の質感表現を達成している。終盤の凝縮と開放の構成も明快だが、86秒間ワンカットかつ背景の陰影変化がないため、中盤の展開にやや反復感が残る。",
+          "窓辺の植物影という静謐な単一固定背景に、絵画質感のソフトボディ立体と立体筆致・細線を対置した高完成度の視聴覚モーショングラフィックス。音の質感（コーラスやパッド＝筆致、打音＝貫通する細線）と動きの同期精度が極めて高く、柔体の衝突変形や色彩設計も秀逸。一方、86秒間ワンカット固定ゆえ中盤にやや反復感があり、構成の変化幅に惜しさが残る。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 86.1,
+          "scdet_threshold": 10,
+          "total_cuts": 0,
+          "avg_cut_interval_sec": 86.1,
+          "max_cuts_per_10s": 0,
+          "integrated_lufs": -9.8,
+          "slowmo_applied": false,
+          "slowmo_factor": null,
+          "slowmo_window_sec": null
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "2d0c5227-db17-45e6-8abe-da085499fa01",
+          "278973be-6e90-4a24-b233-b8fcd052e32b"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "MV"
+    },
+    {
+      "id": "826112035",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 73.5,
+      "calibratedRank": "B+",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          74,
+          73
+        ],
+        "finalScore": 73.5,
+        "rank": "B+",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 14.5,
+          "visual_craft": 15.5,
+          "editing_rhythm": 15,
+          "sound_integration": 15,
+          "originality_finish": 13.5
+        },
+        "h1Triggers": [
+          "H1-a:genre=MV",
+          "H1-c:max_cuts_per_10s=15>=12"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "吊り椅子と影、水面＋光条、傾斜室など商業MVとして充実したセット美術と安定した照明・音ハメ編集が強み。91〜96秒のラップ帯でも昼夜プールのマッチカットなど緩急の工夫がある。一方、惑星・流星や反転都市のVFX合成の馴染みや反転フラッシュに粗さが残り、SF系アイドルMVの定型構成の域を出ないためB+評価。",
+          "吊り下げ椅子の影演出や水辺のビーム照明、透過パネル迷宮などスタジオ美術・照明の実行力は堅実で、楽曲展開に沿った多セットのダンス編集も小気味よい。一方、海辺の惑星や隕石、逆さ都市などVFX合成の馴染みに甘さが残り、91-96秒のプール切替グリッチや定型コード背景など細部の仕上げが惜しい。既存SF調MVの定型踏襲が強く、物語的一貫性と独自性に課題が残る。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 215.1,
+          "scdet_threshold": 10,
+          "total_cuts": 140,
+          "avg_cut_interval_sec": 1.54,
+          "max_cuts_per_10s": 15,
+          "integrated_lufs": -6.7,
+          "slowmo_applied": true,
+          "slowmo_factor": "4x",
+          "slowmo_window_sec": [
+            91,
+            96
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "7ca72591-d8bb-4caa-a286-9bd07ad51cdf",
+          "14295f92-c5a4-4e16-8132-b04e4bd99532"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "MV"
+    },
+    {
+      "id": "826580129",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 70,
+      "calibratedRank": "B",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          70,
+          70
+        ],
+        "finalScore": 70,
+        "rank": "B",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 14,
+          "visual_craft": 15,
+          "editing_rhythm": 14,
+          "sound_integration": 14,
+          "originality_finish": 13
+        },
+        "h1Triggers": [
+          "H1-a:genre=MV"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "白基調の屋根裏・階段ステージ・水中水槽の複数セットを統一感ある低彩度トーンでまとめた堅実な商業MV。屋根裏の強い窓光と影の設計、浴槽から水中落下へ繋ぐ転調部、終盤の衣装切替マッチカットは手堅い。一方、星空背景の人工感や羽・階段等の定型モチーフへの依存が強く、5分尺に対する構成の反復感も残る。音と編集の同期は正確だが、表現の独自性・演出的飛躍は標準域に留まる。",
+          "白基調の屋根裏・柱廊・階段セットと水中撮影を組み合わせた堅実な商業MV。屋根裏の硬質な窓光や浴槽から水中への繋ぎ（3:30前後）、水面へ手を伸ばす終幕には演出意図と撮影技術の確かな水準がある。一方、天使の羽根や星空背景の階段セットは書き割り感と定型的なアイドルMV演出に留まり、5分尺の後半は反復感が強い。音ハメ・編集は的確だが独自性・音響設計の飛躍は限定的。"
+        ],
+        "postCheck": {
+          "knowsWork": true,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 305.2,
+          "scdet_threshold": 10,
+          "total_cuts": 165,
+          "avg_cut_interval_sec": 1.85,
+          "max_cuts_per_10s": 9,
+          "integrated_lufs": -9.2,
+          "slowmo_applied": true,
+          "slowmo_factor": "2x",
+          "slowmo_window_sec": [
+            71,
+            81
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "73304ceb-ae83-43d5-9a28-d6639f304da3",
+          "8f7ee4a9-28df-4f2a-8f23-19d04cdff921"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "MV"
+    },
+    {
+      "id": "827675053",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedScore": 78,
+      "calibratedRank": "A-",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "contact_sheet",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          78,
+          78
+        ],
+        "finalScore": 78,
+        "rank": "A-",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 16,
+          "visual_craft": 17,
+          "editing_rhythm": 14,
+          "sound_integration": 14,
+          "originality_finish": 17
+        },
+        "h1Triggers": [],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "前半は制作過程の解説スライド、後半に手帳コラージュと手描き水彩のED本編を収めた構成。滲みインクや水彩紙スキャン、実写振付に基づく水彩シルエットのダンスなどアナログ主体の美術・独自性が高い。一方、前半スライドの装飾不足や文字被り、単純な白背景切替が全体の編集リズムと仕上げをやや抑えている。音声は静止画のため非聴取だが、-8.6 LUFSと音ハメ振付の記述・視覚的緩急から中立推定した。",
+          "前半は手描き水彩・滲みインク・実写ダンス参照等の工程解説スライド、後半がED本編という構成。本編は手帖コラージュと実紙水彩スキャンによる四季〜月日の描写と滑らかなダンス作画が独創的で完成度が高い。一方、前半の黒背景スライドや素朴な字幕・白画面切替が映像全体の一体感とテンポを抑えている。音声未聴取のため-8.6 LUFSと振付・視覚テンポから中立推定。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 202.9,
+          "scdet_threshold": 10,
+          "total_cuts": 20,
+          "avg_cut_interval_sec": 10.15,
+          "max_cuts_per_10s": 4,
+          "integrated_lufs": -8.6,
+          "slowmo_applied": false,
+          "slowmo_factor": null,
+          "slowmo_window_sec": null
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "51450f2a-0117-4c93-9891-efedf8a38940",
+          "7e280615-7da5-4d06-91e4-dcdf755bd35f"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "contact_sheet",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "unverified:opening"
+    },
+    {
+      "id": "831105343",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 90,
+      "calibratedRank": "S-",
+      "calibratedTierBand": "award_tier",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          90,
+          90
+        ],
+        "finalScore": 90,
+        "rank": "S-",
+        "tierBand": "award_tier",
+        "dimensions": {
+          "direction": 18,
+          "visual_craft": 17.5,
+          "editing_rhythm": 18,
+          "sound_integration": 19,
+          "originality_finish": 17.5
+        },
+        "h1Triggers": [
+          "H1-c:max_cuts_per_10s=13>=12"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "4色のグラフィックな道が中央円形広場へ合流する空間設計と、浮かぶプリーツ服が跳躍に合わせ瞬時に着替わる精緻なVFX・振付がブランド特性を完璧に体現。各エリア固有の楽器編成（打楽器・ベース・金管・ピアノ）がビッグバンドへ統合されドラムソロの高速カットへ雪崩れ込む音像同期と緩急制御が秀逸。ハイキーな美術・衣装の質感描写も高水準だが、白ホリ基調の商業的枠組み内である点を踏まえS-評価。",
+          "平置きから立体化する服の特性を空中早替えVFXとダンスで体現。打楽器・ベース・管楽器・ピアノの4領域が中央広場でビッグバンドに合流する音像・空間構成が秀逸。序盤の長回しから終盤の布ワイプと高密度モンタージュへの緩急、プリーツの揺らぎを捉えた撮影も高水準だが、CG背景造形はやや簡素。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 88.5,
+          "scdet_threshold": 10,
+          "total_cuts": 29,
+          "avg_cut_interval_sec": 3.05,
+          "max_cuts_per_10s": 13,
+          "integrated_lufs": -8,
+          "slowmo_applied": true,
+          "slowmo_factor": "4x",
+          "slowmo_window_sec": [
+            74,
+            79
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "a58a66a4-3814-4ac2-8505-059b55bb3c60",
+          "3d6e58fe-1efe-4f6a-82a3-8ccacf3ff0e4"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "CM"
+    },
+    {
+      "id": "842398831",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedScore": 76.5,
+      "calibratedRank": "B+",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h2_escalated",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          76,
+          77
+        ],
+        "finalScore": 76.5,
+        "rank": "B+",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 15,
+          "visual_craft": 16,
+          "editing_rhythm": 14.5,
+          "sound_integration": 16,
+          "originality_finish": 15
+        },
+        "h1Triggers": [],
+        "h2Triggers": [
+          "H2-c:low_or_null_lufs(-32.7)"
+        ],
+        "contactSheetPreScore": 77,
+        "contactSheetRawScores": [
+          76,
+          78
+        ],
+        "rationales": [
+          "空撮から外観・室内・周辺自然へと導く空間構成と、BGMを排し川音・風鈴・囲炉裏の爆ぜる音など環境音のみで没入感を作る音響設計が端正。囲炉裏の明暗対比や洗練された内装撮影の質感も高い一方、全編3〜4秒前後の均質なスローカットが続き緩急に乏しく、構成は上質な宿・観光PVの定型内に留まる。全体音圧も-32.7 LUFSと低めだが、静謐なクラフトの完成度は堅実。",
+          "空撮から古民家内部、再び集落全景へ戻る端正な空間構成と、BGMを排し鳥の声・風鈴・囲炉裏・水音で紡ぐ環境音設計が静謐な没入感を生んでいる。対称構図や障子光と暖色の対比、落ち着いたグレーディングなど撮影・仕上げの完成度は高い。一方、カット尺と緩やかな移動撮影が全編で均質なため緩急や感情の起伏に乏しく、高級宿紹介映像の定型域にとどまる点と低音圧(-32.7LUFS)を鑑み採点した。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 82.9,
+          "scdet_threshold": 10,
+          "total_cuts": 22,
+          "avg_cut_interval_sec": 3.77,
+          "max_cuts_per_10s": 5,
+          "integrated_lufs": -32.7,
+          "slowmo_applied": false,
+          "slowmo_factor": null,
+          "slowmo_window_sec": null
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "106d3550-c291-4022-ba68-5dc83c50b025",
+          "56f3fdd6-73f3-47a9-ae01-985b8545e212"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h2_escalated",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "unverified:branded-movie"
+    },
+    {
+      "id": "843800780",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 89,
+      "calibratedRank": "A+",
+      "calibratedTierBand": "award_tier",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          90,
+          88
+        ],
+        "finalScore": 89,
+        "rank": "A+",
+        "tierBand": "award_tier",
+        "dimensions": {
+          "direction": 18,
+          "visual_craft": 17.5,
+          "editing_rhythm": 18.5,
+          "sound_integration": 17,
+          "originality_finish": 18
+        },
+        "h1Triggers": [
+          "H1-c:max_cuts_per_10s=57>=12"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "色鮮やかな端切れが舞い、解れて糸となり、織り上げられてデニムジャケットへ昇華する再生工程を言語ゼロで鮮やかに描く。布目の質感・綻びた糸・被写界深度を活かした渦の立体感、微細な色糸が混ざる織地の遷移まで美術・質感設計が極めて精緻。97カットの緩急あるストップモーション的リズムとファンキーな楽曲の同期も心地よく、ブランドの世界観と製品価値を40秒に凝縮した国際水準の秀作。",
+          "色鮮やかな端切れの躍動から解繊・糸紡ぎ・織り上げを経てデニムジャケットへ至るアップサイクル工程を、言語に頼らず触覚的なコマ撮り表現で40秒に凝縮。0:21-26の渦・飛散の密集カットから0:27の一本の糸へ落とす緩急設計と、織り目の緻密な移行が秀逸。ファンキーな音楽とのリズム同期も高精度だが、布の質感を引き立てるフォーリー音響面にもう一歩伸び代がありA+評価。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 40,
+          "scdet_threshold": 10,
+          "total_cuts": 97,
+          "avg_cut_interval_sec": 0.41,
+          "max_cuts_per_10s": 57,
+          "integrated_lufs": -14,
+          "slowmo_applied": true,
+          "slowmo_factor": "4x",
+          "slowmo_window_sec": [
+            21,
+            26
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "d2fc5a14-cea0-435c-bc3f-24e37988186e",
+          "8d2f84e6-b3d5-4d15-baf5-4c48d9d6a1e0"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "CM"
+    },
+    {
+      "id": "84556572",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 73,
+      "calibratedRank": "B+",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "median_of_3",
+        "rawScores": [
+          75,
+          70,
+          73
+        ],
+        "finalScore": 73,
+        "rank": "B+",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 15.33,
+          "visual_craft": 13.67,
+          "editing_rhythm": 15.67,
+          "sound_integration": 14.67,
+          "originality_finish": 13.33
+        },
+        "h1Triggers": [
+          "H1-b:genre=モーション"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "黒→白→極彩色→白へと展開する三幕構成と、点・線・立体の連続モーフィングでカットを割らずに楽曲の抑揚へ同期させた演出設計が堅実。前半のミニマルな幾何学比喩や中盤のトンネル崩壊遷移は見どころだが、高彩度レインボー表現の色設計がやや粗く、終盤にかけて日本語字幕や中央固定タイポの視認性・コントラストが低下する点、SE不在で音楽頼みの音響構成が上位水準に一歩届かない。",
+          "黒背景のミニマルな点・線から白転、3Dの虹色トンネル・リボン・集中線へと連続モーフィングで展開し、静→爆音→静の楽曲起伏と噛み合う構成力は堅実。一方、中盤以降の原色レインボー配色と平面的な質感は時代感があり、派手な背景上で中央英語・下部日本語字幕の視認性が大きく低下。SE不在と中央固定の単調な文字組も仕上げの粗さとして残り、標準的な商業企業映像水準に留まる。",
+          "黒→白→極彩色の3幕構成と、点から線・立体・空間へ展開するシームレスなモーフィング演出が明確。静かなギターから轟音への楽曲展開に40秒付近のトンネル展開と破砕が心地よく同期し、緩急のあるリズムを生む。一方、文字配置が中央固定で単調なうえ、後半の原色背景上で日本語字幕の視認性が低下。色彩設計の粗さやSE不在、定型的なコピーが仕上げの到達度を制限している。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 83.1,
+          "scdet_threshold": 10,
+          "total_cuts": 0,
+          "avg_cut_interval_sec": 83.1,
+          "max_cuts_per_10s": 0,
+          "integrated_lufs": -10.8,
+          "slowmo_applied": true,
+          "slowmo_factor": "2x",
+          "slowmo_window_sec": [
+            36,
+            46
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "1a5fd98d-e3f7-4fc6-8573-83bbbb82f0d8",
+          "3c30bae2-e5e3-462c-91e9-eea14dd9acac",
+          "60b69014-0129-4801-9520-650e4b789f91"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "モーション"
+    },
+    {
+      "id": "85556391",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 77.5,
+      "calibratedRank": "A-",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          78,
+          77
+        ],
+        "finalScore": 77.5,
+        "rank": "A-",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 16,
+          "visual_craft": 15,
+          "editing_rhythm": 16,
+          "sound_integration": 15.5,
+          "originality_finish": 15
+        },
+        "h1Triggers": [
+          "H1-b:genre=モーション"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "フラット2DによるSaaS解説映像。綱渡りの猫や伝書鳩装置、画面裏からの反転UI視点、頭マッサージャー等、機知に富む比喩で障害対応を明快に可視化。滑らかな遷移と小気味よいSE同期がテンポを支え完成度が高い。一方、定番の課題解決構成やループ感の強いBGM、単純な幾何学造形により、表現の革新性や視覚的奥行きは良質な商業水準にとどまる。",
+          "SaaS解説の王道構成に、綱渡りの猫や伝書鳩、頭マッサージ＋コーヒーなどの機知に富む視覚比喩と画面越しの人物モチーフを織り込み、飽きさせない演出に仕上がっている。ステータス表示から5要素へ繋ぐマッチトランジションや軽快なSE同期も丁寧。一方、フラット図形中心の簡素なキャラクター表現や定番のBGM・尺感は定型の域を出ず、堅実かつ見どころのある上位商業品質と評価。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 116.5,
+          "scdet_threshold": 10,
+          "total_cuts": 12,
+          "avg_cut_interval_sec": 9.71,
+          "max_cuts_per_10s": 3,
+          "integrated_lufs": -15.6,
+          "slowmo_applied": true,
+          "slowmo_factor": "2x",
+          "slowmo_window_sec": [
+            53,
+            63
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "d2639365-aa9a-419c-b0f0-29f40ba822e3",
+          "ab4926b6-baba-42a4-9f23-5081dc29746e"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "モーション"
+    },
+    {
+      "id": "860759127",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 83,
+      "calibratedRank": "A",
+      "calibratedTierBand": "award_tier",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h2_escalated",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          84,
+          82
+        ],
+        "finalScore": 83,
+        "rank": "A",
+        "tierBand": "award_tier",
+        "dimensions": {
+          "direction": 16.5,
+          "visual_craft": 16,
+          "editing_rhythm": 16.5,
+          "sound_integration": 17,
+          "originality_finish": 17
+        },
+        "h1Triggers": [],
+        "h2Triggers": [
+          "H2-a:near_t_award(82 within 83+/-3)"
+        ],
+        "contactSheetPreScore": 82,
+        "contactSheetRawScores": [
+          82,
+          82
+        ],
+        "rationales": [
+          "鼻提灯が電球に灯る奇抜な着想を軸に、香料の多面的価値を無言劇で描く構成が秀逸。瓶越しの人物や花から眼鏡へのマッチディゾルブ、粒子感のある2Dグラフィックによる衣装・背景切替が軽快で、嗅覚フォーリーと楽曲・SEの精密な同期も高い完成度を示す。一方、ホリゾント主体のミニマル演出と三段構成の反復、宇宙合成のやや平面的な質感は伸び代があるが、終盤のコピー回収まで一貫した上位プロ品質。",
+          "『鼻で企む』の概念を、鼻から電球が灯る独創的VFXと粒子感のあるモーショングラフィックスで可視化した上位プロ品質のブランド映像。瓶や眼鏡、花を活かしたマッチディゾルブ、嗅覚動作を刻むリズムと音楽・SEの緊密な同期（-14.1 LUFS）が優れる。一方、単調なホリゾント主体の中盤反復や宇宙CG・終盤社員カットの定型感からA+未満に留まる。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 90,
+          "scdet_threshold": 10,
+          "total_cuts": 27,
+          "avg_cut_interval_sec": 3.33,
+          "max_cuts_per_10s": 6,
+          "integrated_lufs": -14.1,
+          "slowmo_applied": true,
+          "slowmo_factor": "2x",
+          "slowmo_window_sec": [
+            17,
+            27
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "dbb1820a-c3ae-47c3-b532-2b45039d840b",
+          "047835c7-8f4a-4d85-b344-d9da505498cf"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h2_escalated",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "企業映像"
+    },
+    {
+      "id": "86310035",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 83,
+      "calibratedRank": "A",
+      "calibratedTierBand": "award_tier",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          81,
+          85
+        ],
+        "finalScore": 83,
+        "rank": "A",
+        "tierBand": "award_tier",
+        "dimensions": {
+          "direction": 16.5,
+          "visual_craft": 16,
+          "editing_rhythm": 16.5,
+          "sound_integration": 17.5,
+          "originality_finish": 16.5
+        },
+        "h1Triggers": [
+          "H1-a:genre=MV",
+          "H1-c:max_cuts_per_10s=19>=12"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "緻密な真鍮製計測機械が電子音のレイヤーに連動して組み上がり、白い胸像の生成・歪み・破砕と金液噴出へ至る4幕構成が明快。音響と機械動作・編集緩急の同期精度は高く、2:18の暗転ドロップや終盤の多角度スロー破砕も効果的。一方、序盤の単調さ、硬質なCG胸像の質感や流体・破片表現の時代感、終盤カットの反復と額の汎用フレアが仕上げの伸びを抑えている。",
+          "精密機械の構築から有機体の発生、頭部への変容、衝撃変形、金色流体が弾ける破砕と再結合までを黒・真鍮・白の抑制された美意識で貫く構成力と、打音・揺らぎに緻密に同期した音響統合が出色。緩急ある編集（静かな寄りと終盤の高速切替）も効いている。一方、スロー確認時の破片や流体の単調さ、終盤カットの反復、末尾の光芒演出にやや既製感が残る。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 206.5,
+          "scdet_threshold": 10,
+          "total_cuts": 66,
+          "avg_cut_interval_sec": 3.13,
+          "max_cuts_per_10s": 19,
+          "integrated_lufs": -11.1,
+          "slowmo_applied": true,
+          "slowmo_factor": "4x",
+          "slowmo_window_sec": [
+            179,
+            184
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "b2e6ab64-4b45-4d0f-a8db-e05b27aca2fb",
+          "2d54bcee-f286-44ea-aa00-76725c683026"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "MV"
+    },
+    {
+      "id": "865516481",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 83.5,
+      "calibratedRank": "A",
+      "calibratedTierBand": "award_tier",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          82,
+          85
+        ],
+        "finalScore": 83.5,
+        "rank": "A",
+        "tierBand": "award_tier",
+        "dimensions": {
+          "direction": 17,
+          "visual_craft": 15.5,
+          "editing_rhythm": 17,
+          "sound_integration": 17.5,
+          "originality_finish": 16.5
+        },
+        "h1Triggers": [
+          "H1-a:genre=MV",
+          "H1-c:max_cuts_per_10s=100>=12"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "中央の小窓に現実の川辺・IME風歌詞を据え、全画面へ溢れ出すグリッチ・3D・厚塗り絵画調・モノクロ流体・2D液体作画を対比させた構成と音響同期が秀逸。153-158秒の高密度フラッシュも中央窓を軸に「夢」文字群や流体で緻密に制御され、末尾の実写夕景と風音への着地も巧み。一方、前半ドロップの過度な破綻や後半白テロップの視認性不足、一部セクションの冗長さが仕上げ面の課題。",
+          "中央の小窓に夕景の実写記憶を据え、ピクセルソート・3D渦・厚塗り油彩・流体作画等へ拡張収縮させる構成と音響同期が秀逸。高密度区間も小窓を軸に『夢』文字群や波紋合成で秩序を保ち、静寂と轟音の緩急や自然音への着地が強い余韻を生む。一方、中盤の白文字視認性や一部単調な持続区間、序盤2D要素の仕上げに若干の粗さが残る。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 264,
+          "scdet_threshold": 10,
+          "total_cuts": 207,
+          "avg_cut_interval_sec": 1.28,
+          "max_cuts_per_10s": 100,
+          "integrated_lufs": -14.7,
+          "slowmo_applied": true,
+          "slowmo_factor": "4x",
+          "slowmo_window_sec": [
+            153,
+            158
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "c45456de-0da5-4fcb-8da4-0936d976c821",
+          "c1750780-d2ed-461f-8a06-8db87eab28b1"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "MV"
+    },
+    {
+      "id": "865863249",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedScore": 78.5,
+      "calibratedRank": "A-",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          78,
+          79
+        ],
+        "finalScore": 78.5,
+        "rank": "A-",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 16,
+          "visual_craft": 15,
+          "editing_rhythm": 16.5,
+          "sound_integration": 16,
+          "originality_finish": 15
+        },
+        "h1Triggers": [
+          "H1-c:max_cuts_per_10s=39>=12"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "静寂の導入から00:08のドロップで赤黒白のコラージュ＆キネティック・タイポへ雪崩れ込む構成と音ハメ編集が非常に快活。スキャンライン髑髏やキャスト紹介、100人から1組への視覚化など2Dモーショングラフィックスの設計力が高い一方、00:31以降のローポリ3D仮面や白発光テロップは質感・配色統一感で中盤に比べ粗さが残り、独自性も既視感ある意匠の範疇に留まるためA-評価。",
+          "赤黒白の鋭い2Dタイポグラフィとコラージュ演出、43秒で緩急をつけた音ハメ編集（冒頭の静から高密度モンタージュ、芸人100人から1組を残す視覚化まで）がプロ品質で機能している。特に9〜14秒の質感レイヤーとワイプ連動は巧み。一方、冒頭や終盤31〜38秒のローポリ仮面・グロー文字等の3D表現は質感や仕上げがやや粗く、全体の統一感と独自性で一段伸び切らないためA-評価。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 43,
+          "scdet_threshold": 10,
+          "total_cuts": 59,
+          "avg_cut_interval_sec": 0.73,
+          "max_cuts_per_10s": 39,
+          "integrated_lufs": -9.3,
+          "slowmo_applied": true,
+          "slowmo_factor": "4x",
+          "slowmo_window_sec": [
+            9,
+            14
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "4a5d354f-64fb-4460-ab27-fc204f47a3c7",
+          "d31ce1cd-1375-4be1-97a9-99c2ef2bfb97"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "unverified:opening"
+    },
+    {
+      "id": "87130088",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 84.5,
+      "calibratedRank": "A",
+      "calibratedTierBand": "award_tier",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          85,
+          84
+        ],
+        "finalScore": 84.5,
+        "rank": "A",
+        "tierBand": "award_tier",
+        "dimensions": {
+          "direction": 17,
+          "visual_craft": 17,
+          "editing_rhythm": 17.5,
+          "sound_integration": 17,
+          "originality_finish": 16
+        },
+        "h1Triggers": [
+          "H1-b:genre=モーション"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "ミッドセンチュリー調の切り絵コラージュと実写アーカイブ写真を調和させ、企業の技術史を軽妙に描く高完成度モーション作。エレベーターから月面着陸、ちぎり紙の砂嵐経由でCRTから現代4Kテレビへ2.5D反転する連続トランジションが秀逸。無表情から笑顔へ転じるロゴ変身や音ハメSE・VOの間合いも的確。表現形式自体は王道だが、細部の意匠統一と編集リズムが極めて高いプロ品質を支える。",
+          "ミッドセンチュリー調の切り絵コラージュと実写アーカイブの融合が秀逸。エレベーターからロケット、月面の足跡タイポ、破り紙のノイズを経て現代リビングへ回転展開する連続トランジションが滑らかで、歴史から4K TVへ繋ぐ構成も明快。レトロな音楽・効果音と軽快な語りの同期も高水準。様式自体は王道だが、細部の質感やロゴ変形まで高い完成度を誇る上位プロ品質。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 45.9,
+          "scdet_threshold": 10,
+          "total_cuts": 7,
+          "avg_cut_interval_sec": 6.56,
+          "max_cuts_per_10s": 4,
+          "integrated_lufs": -13.2,
+          "slowmo_applied": true,
+          "slowmo_factor": "2x",
+          "slowmo_window_sec": [
+            17,
+            27
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "35fd9d8c-f71c-4533-a8a0-aafda0f94afd",
+          "bc4529a6-34c4-4b1d-9cae-b3daf8efa2ca"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "モーション"
+    },
+    {
+      "id": "872770998",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 79,
+      "calibratedRank": "A-",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h2_escalated",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          79,
+          79
+        ],
+        "finalScore": 79,
+        "rank": "A-",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 16,
+          "visual_craft": 17,
+          "editing_rhythm": 15,
+          "sound_integration": 15,
+          "originality_finish": 16
+        },
+        "h1Triggers": [],
+        "h2Triggers": [
+          "H2-a:near_t_award(81.5 within 83+/-3)"
+        ],
+        "contactSheetPreScore": 81.5,
+        "contactSheetRawScores": [
+          80,
+          83
+        ],
+        "rationales": [
+          "段ボールの断面や質感を活かしたミニチュア世界の3DCG美術と、積まれたAmazon箱の影がテント・扇風機・花束へ変わる光影ギミックが秀逸。15秒・全4カットの簡潔な構成で季節の変わり目を直感的に訴求し、引きのカメラ設計や温かなライティングの完成度も高い。一方、編集展開や音響設計は王道の商業CM表現に収まっており、終盤のセール表記も含め堅実で良質なプロ水準に仕上げている。",
+          "段ボール質感のミニチュア世界と、Amazon箱からテント・扇風機・花束など中身の影が伸びる視覚ギミックが秀逸。柔らかな自然光と段ボール断面の緻密な3DCG表現、統一感のある配色が高い完成度を生む。15秒で季節商材を明快に見せる構成とテンポは堅実だが、編集の緩急や質感に寄り添うSE設計は標準的であり、販促CMとして良質なプロ水準。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 15,
+          "scdet_threshold": 10,
+          "total_cuts": 3,
+          "avg_cut_interval_sec": 5,
+          "max_cuts_per_10s": 3,
+          "integrated_lufs": -17.6,
+          "slowmo_applied": false,
+          "slowmo_factor": null,
+          "slowmo_window_sec": null
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "4e476b14-4ff4-49b0-8061-a6634d82aa04",
+          "ddd8dccf-04ec-4431-979f-a2815dd3fdb0"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h2_escalated",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "CM"
+    },
+    {
+      "id": "873227804",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedScore": 75,
+      "calibratedRank": "B+",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "contact_sheet",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          76,
+          74
+        ],
+        "finalScore": 75,
+        "rank": "B+",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 15,
+          "visual_craft": 15.5,
+          "editing_rhythm": 16,
+          "sound_integration": 14,
+          "originality_finish": 14.5
+        },
+        "h1Triggers": [],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "ワークショップの制作・撮影から上映会・拍手までを62秒で描く良質な記録映像。子どもの目線に合わせたローアングルや前ボケ、暗所でのプロジェクター発光〜シルエット〜笑顔への48-58秒の編集構成（10カット/10秒）が巧み。一方、冒頭タイトルは素朴で企画構成もイベント記録の定型域。音声非聴取のため-11.8LUFSと軽快な視覚テンポから中立推定。",
+          "制作から上映会・拍手までを61.8秒で描く堅実な記録構成。草むらの恐竜撮影や前景ボケ、暗室でのプロジェクター光に照らされた笑顔など撮影・色調が自然で心地よく、平均1.51秒の軽快なテンポと48-58秒の上映山場の組み立てが巧み。一方、冒頭タイトル処理や構成自体は記録映像の定型域。音声は非聴取のため-11.8 LUFSと視覚テンポから中立推定。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 61.8,
+          "scdet_threshold": 10,
+          "total_cuts": 41,
+          "avg_cut_interval_sec": 1.51,
+          "max_cuts_per_10s": 10,
+          "integrated_lufs": -11.8,
+          "slowmo_applied": true,
+          "slowmo_factor": "2x",
+          "slowmo_window_sec": [
+            48,
+            58
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "b25d9619-46ec-451c-ba5b-f3491c6537da",
+          "08cf110b-5b87-483b-a0cf-de102523f28e"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "contact_sheet",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "unverified:documentary"
+    },
+    {
+      "id": "875825150",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 81,
+      "calibratedRank": "A-",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          80,
+          82
+        ],
+        "finalScore": 81,
+        "rank": "A-",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 16,
+          "visual_craft": 16.5,
+          "editing_rhythm": 17,
+          "sound_integration": 16,
+          "originality_finish": 15.5
+        },
+        "h1Triggers": [
+          "H1-b:genre=モーション"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "2Dコラージュ・3D迷路・宇宙表現など異テイストを球体や手の動作を軸とした緻密なマッチカットで繋ぐ編集設計が優秀。音楽の緩急と英語ナレーション、繊細なSEの統合度も高く、プロ品質の完成度を備える。一方、プリズムや迷路などエージェンシー映像として既視感のある定型構成に留まる点と、明背景上の白字幕やエンドクレジットが光線と重なり視認性を損ねる仕上げ面の甘さが上位帯への到達を阻む。",
+          "光の屈折3Dから2Dセル手描き・コラージュ・立体迷路・宇宙空間・ロゴへと多彩な表現をシームレスなマッチカットで繋ぐモーショングラフィックス。4〜14秒の質感転換とカメラワークの精度が高く、中盤の宇宙区間での静寂と終盤の爆発的な緩急、楽曲・VO・SEの同期も堅実。表現モチーフ自体は現代的モーショングラフィックスの王道圏内だが、高水準な仕上げと技術的強度を備えた上位プロ品質。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 36.8,
+          "scdet_threshold": 10,
+          "total_cuts": 14,
+          "avg_cut_interval_sec": 2.63,
+          "max_cuts_per_10s": 6,
+          "integrated_lufs": -12.1,
+          "slowmo_applied": true,
+          "slowmo_factor": "2x",
+          "slowmo_window_sec": [
+            4,
+            14
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "73875383-17cd-4f11-baab-8f039131225d",
+          "4a4177dc-1364-4d06-80c6-17f361daabbb"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "モーション"
+    },
+    {
+      "id": "87993762",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedScore": 67,
+      "calibratedRank": "B-",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h2_escalated",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          67,
+          67
+        ],
+        "finalScore": 67,
+        "rank": "B-",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 14.5,
+          "visual_craft": 13,
+          "editing_rhythm": 12,
+          "sound_integration": 14,
+          "originality_finish": 13.5
+        },
+        "h1Triggers": [],
+        "h2Triggers": [
+          "H2-a:near_t_low(65.5 within 63+/-3)",
+          "H2-b:static_long_video(dur=180s,avgInt=60s,cuts=3)"
+        ],
+        "contactSheetPreScore": 65.5,
+        "contactSheetRawScores": [
+          65,
+          66
+        ],
+        "rationales": [
+          "定点ワンショットの舞台的構図と台詞なしのパントマイムで、雨のバス停の異変と意表を突くオチまで明快に描く短編3DCG。暗転時の街灯と青い光のライティング演出や、雨音と虫の声の切替による音響ギャグは効果的。一方、3分間固定の引き画ゆえ中盤の登場・清掃パートの間延び感が否めず、キャラクターアニメーションの硬さや簡易なシェーディング、素朴すぎるタイトル書体など仕上げの粗さが残る。",
+          "固定カメラのバス停を舞台に、青い光の玉が引き起こす異変を無言劇で描く短編3DCG。個性ある造形や暗転時の目・街灯照明の演出、ジャンプカットによる瞬間移動とオチの収束は巧みで、雨音や虫の声の切替など音響設計も機能的。一方、歩行等のアニメーションの硬さや質感がインディ水準に留まり、清掃員登場以降の展開の冗長さや簡易なタイトル処理に仕上げの粗さが残る。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 180,
+          "scdet_threshold": 10,
+          "total_cuts": 3,
+          "avg_cut_interval_sec": 60,
+          "max_cuts_per_10s": 1,
+          "integrated_lufs": -17.8,
+          "slowmo_applied": false,
+          "slowmo_factor": null,
+          "slowmo_window_sec": null
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "74fd4515-2289-4a29-8819-2ae743635497",
+          "c9dff54e-02ea-48aa-995a-4af31e7a2728"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h2_escalated",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "unverified:film"
+    },
+    {
+      "id": "880587651",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 77.5,
+      "calibratedRank": "A-",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "contact_sheet",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          78,
+          77
+        ],
+        "finalScore": 77.5,
+        "rank": "A-",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 16,
+          "visual_craft": 17,
+          "editing_rhythm": 14,
+          "sound_integration": 14,
+          "originality_finish": 16.5
+        },
+        "h1Triggers": [],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "湾曲ビジョンと隣接面を連動させ、白地からボタニカル庭園、空色マスクによる屋上への立体溢出、ロゴ着地へと展開する30秒構成が明快。アールヌーヴォー調CGの質感と裸眼3D設計は高水準だが、映像自体は曇天の定点1カット記録で撮影・編集面の表現幅は限定的。音声は非聴取のため実測-14.4 LUFSと視覚テンポから中立推定。",
+          "曲面大型ビジョンと右下サブ画面を連動させた3DアナモルフィックDOOHの定点30秒記録。白地ロゴから植物意匠の増殖、色彩変化、曇天に溶け込む空同化処理で屋上庭園が飛び出す錯視演出までCG完成度と構成力が高い。一方、完全固定の単一カットのため編集緩急は内部アニメーション依存に留まる。音声非聴取につき-14.4 LUFSと視覚テンポから中立推定。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 30,
+          "scdet_threshold": 10,
+          "total_cuts": 1,
+          "avg_cut_interval_sec": 30,
+          "max_cuts_per_10s": 1,
+          "integrated_lufs": -14.4,
+          "slowmo_applied": false,
+          "slowmo_factor": null,
+          "slowmo_window_sec": null
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "1825ba9f-8f51-495b-aa67-52dac46c77e1",
+          "fbd1c736-d480-4e20-99b1-aa8544fcd4ca"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "contact_sheet",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "CM"
+    },
+    {
+      "id": "882003383",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedScore": 73,
+      "calibratedRank": "B+",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "median_of_3",
+        "rawScores": [
+          73,
+          68,
+          75
+        ],
+        "finalScore": 73,
+        "rank": "B+",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 14.67,
+          "visual_craft": 15.67,
+          "editing_rhythm": 15,
+          "sound_integration": 10.67,
+          "originality_finish": 16
+        },
+        "h1Triggers": [
+          "H1-b:genre=モーション"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "幾何学と有機的筆致の2系統のカタカナが線幅変化と白黒反転で文字と抽象模様を行き来するタイポグラフィの独自性が高い。単面から複数面・横長へ展開し動きを繋ぐ構成も明快。一方、背景は静止写真モックアップで反射や環境光の馴染みが乏しく平板、約3秒均等のカット割りもやや単調。無音（音声トラック無し）のため音響統合は抑えた評価。",
+          "幾何学書体と手書き風書体の線幅膨張による図地反転は造形・発想ともに洗練され、単面から複数柱・横長サイネージへの展開設計も明快。一方、背景は全て静止画モックアップで通行人も停止し、画面合成の光馴染みや環境反射が乏しく映像的な仕上げは定型的。無音（音声トラック無し）のため音響統合は視覚リズムのみの評価にとどまる。",
+          "幾何学ブロックと有機的ストロークの2系統で「モーション／グラフィックス」を極限まで膨張・抽象化するキネティック・タイポグラフィの造形力と独創性が高い。単面→2面→駅柱→横長4列への展開や14→15秒の連続マッチカットも巧み。一方、全編が静止写真モックアップ合成（背景人物も完全静止）で環境光やカメラ表現がなく、無音である点が映像クラフトとしての到達度を制限している。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 20,
+          "scdet_threshold": 10,
+          "total_cuts": 5,
+          "avg_cut_interval_sec": 4,
+          "max_cuts_per_10s": 4,
+          "integrated_lufs": null,
+          "slowmo_applied": true,
+          "slowmo_factor": "2x",
+          "slowmo_window_sec": [
+            5,
+            15
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "27872beb-66ef-4c99-809a-ece03f0a46f6",
+          "70cfd86c-e530-4066-aacb-9fc1e10ce28e",
+          "18c0a6cb-790b-4e9d-be9a-52552d441da5"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "unverified:concept-art"
+    },
+    {
+      "id": "88723505",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 82,
+      "calibratedRank": "A",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "median_of_3",
+        "rawScores": [
+          82,
+          88,
+          81
+        ],
+        "finalScore": 82,
+        "rank": "A",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 17.33,
+          "visual_craft": 15.67,
+          "editing_rhythm": 17,
+          "sound_integration": 16.67,
+          "originality_finish": 17
+        },
+        "h1Triggers": [
+          "H1-a:genre=MV",
+          "H1-c:max_cuts_per_10s=27>=12"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "SNSの言葉を幾何学フォントで東京の建築へシームレスにモーフィングさせ、中盤の静寂からギターソロで文字化け・逆行崩壊させる構造設計と音ハメ編集が非常に巧み。高密度区間も中央被写体を軸に破綻なく見せる。一方、人物は簡易なフラットベクター表現で質感・立体感に乏しく、終盤のカラーバーやノイズ処理もやや定型的なためA評価。",
+          "SNSの言葉と東京の都市建築を幾何学タイポグラフィでシームレスにモーフィングさせ、後半の文字化け・グリッチと全場面逆行モンタージュで『言葉の崩壊』を構造的に描き切る構成力が秀逸。162〜167秒の高密度区間も多層ベクターと逆再生が破綻なく統合され、楽曲の静動・歪み音色との同期も緻密。ミニマルなデフォルメ人物の描写密度に上限はあるが、独自性と編集リズムが高水準の秀作。",
+          "都市建築や日常風景がSNS文言へシームレスに変形し、終盤で文字化けへ崩壊するコンセプトの一貫性と構成力が秀逸。中盤の静寂からギター炸裂に合わせた高密度グリッチ（過去場面の逆順回想含む）への緩急と音楽同期も的確。一方、フラットな人物作画・歩行アニメの簡素さやカラーバー・赤ノイズ等の合成処理にやや粗さが残り、総合クラフトは上位良作水準。"
+        ],
+        "postCheck": {
+          "knowsWork": true,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 244,
+          "scdet_threshold": 10,
+          "total_cuts": 68,
+          "avg_cut_interval_sec": 3.59,
+          "max_cuts_per_10s": 27,
+          "integrated_lufs": -6.9,
+          "slowmo_applied": true,
+          "slowmo_factor": "4x",
+          "slowmo_window_sec": [
+            162,
+            167
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "6fad254a-e323-4e39-8f1d-e76dfb160742",
+          "955f0a9a-2086-4008-9d80-e5e541dd5e27",
+          "ecd1afac-b9cb-44d1-947b-3dad8f60e043"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "MV"
+    },
+    {
+      "id": "888604311",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 85,
+      "calibratedRank": "A",
+      "calibratedTierBand": "award_tier",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h2_escalated",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          85,
+          85
+        ],
+        "finalScore": 85,
+        "rank": "A",
+        "tierBand": "award_tier",
+        "dimensions": {
+          "direction": 17,
+          "visual_craft": 17.5,
+          "editing_rhythm": 17,
+          "sound_integration": 17.5,
+          "originality_finish": 16
+        },
+        "h1Triggers": [],
+        "h2Triggers": [
+          "H2-a:near_t_award(83 within 83+/-3)"
+        ],
+        "contactSheetPreScore": 83,
+        "contactSheetRawScores": [
+          82,
+          84
+        ],
+        "rationales": [
+          "レトロな美術・衣装と暖色主体のフィルム調グレーディングが高完成度。目覚まし時計の喜劇的導入からファンク調の支度・パーティ、静寂の告白と羽毛舞うキス、赤幕『The End』からの8mm風エピローグへ緩急自在に構成。多言語の自然な掛け合いと音ハメ・劇伴の統合も巧みで、王道ロマコメ調ながら細部の仕上げが際立つ上位プロ品質。",
+          "クラシカルな美術・暖色基調の照明と、10〜20秒の目覚まし時計からリップ音でビートへ繋ぐ編集・音響設計が秀逸。静寂のソファ場面から羽根舞うキスと「The End」幕引き、さらに4:3フィルム調の開封エピローグへ転調する構成力と緩急が高い完成度を生む。レトロ映画調の文脈自体は既視感もあるが、多言語の自然な空気感と音・絵の緻密な統合が際立つ上位プロ品質のブランド映像。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 100.7,
+          "scdet_threshold": 10,
+          "total_cuts": 28,
+          "avg_cut_interval_sec": 3.6,
+          "max_cuts_per_10s": 8,
+          "integrated_lufs": -15.1,
+          "slowmo_applied": true,
+          "slowmo_factor": "2x",
+          "slowmo_window_sec": [
+            10,
+            20
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "b8c56891-6c41-4d72-89f4-71e87412d0b9",
+          "2f141786-19d1-465f-b55d-a57392878c3a"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h2_escalated",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "CM"
+    },
+    {
+      "id": "889750384",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 72.5,
+      "calibratedRank": "B+",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          72,
+          73
+        ],
+        "finalScore": 72.5,
+        "rank": "B+",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 15,
+          "visual_craft": 13,
+          "editing_rhythm": 15,
+          "sound_integration": 16,
+          "originality_finish": 13.5
+        },
+        "h1Triggers": [
+          "H1-b:genre=モーション",
+          "H1-c:max_cuts_per_10s=18>=12"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "『SPY×FAMILY』ネタの掛け合いから終盤の高速フラッシュバックとシリアスなコピーへ転換する構成・緩急が明快で、声優演技・ジャズ風BGM・SEの同期も高水準。一方、映像クラフト自体は漫画コマの2D配置と色収差・グロー等の定番AEエフェクト主体の定型PVフォーマットに留まり、末尾のテキスト画面も簡素。アイデアと音のキレは光るが、映像表現の独自性・造形密度は標準的商業水準。",
+          "他作パロディの掴みから23秒付近の高速フラッシュカットでシリアスなタグラインへ急転させる構成と、ジャズ調BGM・声優演技・SEの統合が秀逸。ミント基調の配色統一や表情コラージュの緩急も商業品質として堅実だが、映像自体は静止コマの2Dスライドや定型的な放射ブラー・色収差・パーティクル演出に留まり、作画や立体表現のクラフト深度は標準的なWeb漫画PV水準。"
+        ],
+        "postCheck": {
+          "knowsWork": true,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 34.8,
+          "scdet_threshold": 10,
+          "total_cuts": 32,
+          "avg_cut_interval_sec": 1.09,
+          "max_cuts_per_10s": 18,
+          "integrated_lufs": -14.1,
+          "slowmo_applied": true,
+          "slowmo_factor": "4x",
+          "slowmo_window_sec": [
+            20,
+            25
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "a7a42e90-630b-4e65-8f84-2f1df8fc7c62",
+          "345b5a7e-7a81-4f68-821c-12c81c2042e6"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "モーション"
+    },
+    {
+      "id": "897826457",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedScore": 83,
+      "calibratedRank": "A",
+      "calibratedTierBand": "award_tier",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          84,
+          82
+        ],
+        "finalScore": 83,
+        "rank": "A",
+        "tierBand": "award_tier",
+        "dimensions": {
+          "direction": 17,
+          "visual_craft": 17.5,
+          "editing_rhythm": 16,
+          "sound_integration": 15.5,
+          "originality_finish": 17
+        },
+        "h1Triggers": [
+          "H1-b:genre=モーション"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "円と縁、光と時間を軸に、緻密な単色幾何学と繊細なグレイン質感で詩的世界を構築した上位プロ水準のモーショングラフィックス。軌道や日食、構成主義的グリッドを繋ぐ滑らかなモーフ遷移と落ち着いたナレーション・アンビエント音楽の調和が高い完成度を生む。一方、1:18前後の極彩色転換の唐突さや、約3分を通じた中速テンポの均質さ、細部SEの控えめさがS帯到達への余白となっている。",
+          "「円／縁」と光の100年を、点・軌道・食・幾何構成へと滑らかにモーフ展開する構成力と洗練されたグラフィック設計が秀逸。微細な粒子感や網点、中盤の青赤ブレイク、100〜110秒の虹彩収束から光点追従への緩急も高品質。一方、約3分を通じた瞑想的テンポの均一さと、映像変化に呼応するSE・音響ダイナミクスの控えめさが伸び代。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 173.7,
+          "scdet_threshold": 10,
+          "total_cuts": 16,
+          "avg_cut_interval_sec": 10.86,
+          "max_cuts_per_10s": 10,
+          "integrated_lufs": -18.1,
+          "slowmo_applied": true,
+          "slowmo_factor": "2x",
+          "slowmo_window_sec": [
+            100,
+            110
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "3ccf4090-beed-4bc5-9eb5-d160895746ab",
+          "4e2d1c7c-fc72-498c-b8d7-a531e8cbf850"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "unverified:opening"
+    },
+    {
+      "id": "898073746",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 83,
+      "calibratedRank": "A",
+      "calibratedTierBand": "award_tier",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "median_of_3",
+        "rawScores": [
+          85,
+          80,
+          83
+        ],
+        "finalScore": 83,
+        "rank": "A",
+        "tierBand": "award_tier",
+        "dimensions": {
+          "direction": 16.67,
+          "visual_craft": 17.33,
+          "editing_rhythm": 16,
+          "sound_integration": 16.33,
+          "originality_finish": 16.33
+        },
+        "h1Triggers": [
+          "H1-b:genre=モーション"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "室内花瓶の綿毛が折り紙状の鳥へ変容し雪景色や雲海を旅して再び綿毛へ還る円環構成が秀逸。ガッシュ調の豊かな筆致と洗練された色彩設計、ひさしへの影落ちや窓ガラスの反射、近景での翼の立体表現など美術・照明の完成度が極めて高い。穏やかな8カット構成と運動方向の連続性、繊細な室内楽と風切り音の同調も品格ある余韻を生む。背景は静止画基調で規模は簡潔ながら上位プロ品質。",
+          "綿毛が折紙状の鳥へ変容し雪原や渓谷を経て再び綿毛へ還る円環構成が詩的で、ブランド露出も抑制的。手描きガッシュ調の色彩設計や窓反射・日除けの影、鳥の遠近パースなど2D作画の細部描写が秀逸。静的な背景主体ながら8カットの緩急と飛行導線が滑らかで、縦型画面の余白設計も美しい。音声は直接聴取できなかったため実測-20.8 LUFSの静謐な音量感と視覚テンポから中立推定。",
+          "綿毛が折り紙状の鳥へ変容し各地を巡り再び綿毛へ還る首尾一貫した詩的構成が秀逸。ガッシュ調の柔らかな筆致と洗練された色彩設計、日除けの鳥影や窓の映り込みなど繊細な光表現が高い美術完成度を支える。25秒・8カットの緩急ある編集と、羽ばたきSEや弦楽の高揚が映像の広がりと調和。背景の動きや作画密度は抑制的だが、ブランドの造形美を比喩的に昇華した上質なアニメーション。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 24.9,
+          "scdet_threshold": 10,
+          "total_cuts": 8,
+          "avg_cut_interval_sec": 3.11,
+          "max_cuts_per_10s": 5,
+          "integrated_lufs": -20.8,
+          "slowmo_applied": true,
+          "slowmo_factor": "2x",
+          "slowmo_window_sec": [
+            7,
+            17
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "ecb6fc4f-4389-4c4a-b26b-1e8ea8399f49",
+          "4e538994-ab7c-4447-9817-b512b3c4e7e2",
+          "808330e1-5ec8-4d0a-8d5d-db2b33af9b7a"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "モーション"
+    },
+    {
+      "id": "900220444",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedScore": 85.5,
+      "calibratedRank": "A+",
+      "calibratedTierBand": "award_tier",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          86,
+          85
+        ],
+        "finalScore": 85.5,
+        "rank": "A+",
+        "tierBand": "award_tier",
+        "dimensions": {
+          "direction": 16,
+          "visual_craft": 18,
+          "editing_rhythm": 18,
+          "sound_integration": 16,
+          "originality_finish": 17.5
+        },
+        "h1Triggers": [
+          "H1-b:genre=モーション",
+          "H1-c:max_cuts_per_10s=71>=12"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "リソグラフ調の網点・版ズレ・トンボや実写の紙切りアニメ、キネティックタイポなど多彩な技法を高水準で融合したリール。楽曲に同期した緻密なリズムと0:42の黒抜きでの緩急、終盤の詩的な絵画調パートへの構成力が秀逸。リール形式ゆえの物語統合や個別SEの余地は残るが、際立つ質感設計と独自の造形美が一線級を大きく超える完成度に達している。",
+          "リソグラフ調の印刷質感やトンボ、切り絵コマ撮り、キネティックタイポ等を自在に横断する高密度なグラフィック設計が秀逸。平均0.27秒の高速カットを楽曲構成へ緻密に同期し、0:42の黒抜き休符や終盤の絵画的飛翔で緩急と余韻を創出。スロー確認でも描画精度が高い。一方、リール構成ゆえの物語的統合の限界とSE非併用（BGM依存）により最上位には僅かに及ばない。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 75.7,
+          "scdet_threshold": 10,
+          "total_cuts": 285,
+          "avg_cut_interval_sec": 0.27,
+          "max_cuts_per_10s": 71,
+          "integrated_lufs": -11.4,
+          "slowmo_applied": true,
+          "slowmo_factor": "4x",
+          "slowmo_window_sec": [
+            55,
+            60
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "8f767f53-91aa-40a8-982e-f0f8bb9c77eb",
+          "18948ef7-8f6c-4c1a-b587-e21447fdeb02"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "unverified:teaser-trailer"
+    },
+    {
+      "id": "903206574",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedScore": 86,
+      "calibratedRank": "A+",
+      "calibratedTierBand": "award_tier",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          85,
+          87
+        ],
+        "finalScore": 86,
+        "rank": "A+",
+        "tierBand": "award_tier",
+        "dimensions": {
+          "direction": 17,
+          "visual_craft": 18,
+          "editing_rhythm": 16.5,
+          "sound_integration": 17.5,
+          "originality_finish": 17
+        },
+        "h1Triggers": [
+          "H1-b:genre=モーション"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "ハングル子音着想の3キャラをファー・グミ・チューブの対照的な質感と丁寧なライティング、流体表現で仕上げた高品質3Dブランディングパッケージ。数字や文字へシームレスに変形する演出と、音ハメ・フォーリー・サウンドロゴの統合度が高い。100秒通覧ではバンパー集特有の反復感があるものの、造形・アニメーション・仕上げの完成度は上位プロ水準。",
+          "韓国キッズTVのブランドID・年齢表記バンパー集。ファー・グミ・ゴム質感の緻密な3Dルックデブと流体・屈折表現、柔らかなライティングが高水準。中央キャラが7/12/15/Allへ滑らかに変形し遊具や坂道となる構成力と、数秒でオチる小粋な演出が秀逸。跳ねるビートと触覚的SEの音ハメも精密。一方、既視感のある3D潮流内での表現とリール構成上の反復があり、S帯一歩手前のA+評価とした。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 100.1,
+          "scdet_threshold": 10,
+          "total_cuts": 16,
+          "avg_cut_interval_sec": 6.26,
+          "max_cuts_per_10s": 3,
+          "integrated_lufs": -12.6,
+          "slowmo_applied": true,
+          "slowmo_factor": "2x",
+          "slowmo_window_sec": [
+            45,
+            55
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "55314436-01fe-4969-a5ec-7ba4af4a0685",
+          "74317152-3d75-4bd7-9096-e8ef19aca7a7"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "unverified:opening"
+    },
+    {
+      "id": "910904991",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 80.5,
+      "calibratedRank": "A-",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          80,
+          81
+        ],
+        "finalScore": 80.5,
+        "rank": "A-",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 16.5,
+          "visual_craft": 17,
+          "editing_rhythm": 16,
+          "sound_integration": 15.5,
+          "originality_finish": 15.5
+        },
+        "h1Triggers": [
+          "H1-a:genre=MV",
+          "H1-c:max_cuts_per_10s=14>=12"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "補色設計と美術・照明の完成度が高い商業MV。雪だるまとの日常から白銀の部屋でのフラッシュカット転換を経て少女の記憶へと回収する対比構成が明快で、冒頭・終盤の環境音の間合いやビート同期も堅実。一方、夕焼け雪原の背景合成や終盤に浮遊する巨大雪玉CGの馴染みに軽さが残り、演出文法も王道フォーマットの域を出ないため上位プロ水準の良作止まりとした。",
+          "雪だるまが少女へ変身する幻想譚を軸に、レトロな居間・冷蔵庫の明暗対比・ネオンのモーテル・白雪の部屋など多彩な美術と計算された照明・配色が高水準。マクロ描写や166秒付近のフラッシュ演出、各エピソードの回収と静寂な余韻も巧み。一方、夕景雪原の合成感や浮遊球体のCG質感、既存アイドルMVの定型に収まる構成が独自性面で一歩譲る。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 219.6,
+          "scdet_threshold": 10,
+          "total_cuts": 145,
+          "avg_cut_interval_sec": 1.51,
+          "max_cuts_per_10s": 14,
+          "integrated_lufs": -9.8,
+          "slowmo_applied": true,
+          "slowmo_factor": "4x",
+          "slowmo_window_sec": [
+            166,
+            171
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "2ff8590e-6b48-4ea1-bbb8-797ac0e64c04",
+          "bf8602d2-9805-4cec-8113-2fc6c1af9c4d"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "MV"
+    },
+    {
+      "id": "911140368",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedScore": 68.5,
+      "calibratedRank": "B",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "contact_sheet",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          69,
+          68
+        ],
+        "finalScore": 68.5,
+        "rank": "B",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 14,
+          "visual_craft": 14.5,
+          "editing_rhythm": 13,
+          "sound_integration": 14,
+          "originality_finish": 13
+        },
+        "h1Triggers": [],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "導入の暖色ボケと8カット/10秒の軽快なモンタージュから、本編のプロジェクションマッピングを落ち着いたカット割りで記録する堅実な商業イベント映像。暗所露出や多角度の撮影品質は良好だが、本編は定点気味の反復が多く、左端の建物見切れや極細タイトルの視認性不足など仕上げに定型さが残る。音響は非聴取のため-23.3LUFSと視覚的緩急から中立推定。",
+          "冒頭10秒の高密度ボケ映像で祝祭感を演出し、以降は複数固定カメラでプロジェクションマッピングを記録する標準的な商業イベント映像。高コントラストな夜間露光管理は堅実だが、画面左端に建物が映り込む構図や背景の明かりに埋もれる細い白テロップの視認性、中盤以降の単調なカット割りに凡庸さが残る。音声非聴取のため音響は実測-23.3LUFSと視覚テンポから中立推定。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 179.9,
+          "scdet_threshold": 10,
+          "total_cuts": 34,
+          "avg_cut_interval_sec": 5.29,
+          "max_cuts_per_10s": 8,
+          "integrated_lufs": -23.3,
+          "slowmo_applied": true,
+          "slowmo_factor": "2x",
+          "slowmo_window_sec": [
+            6,
+            16
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "718ecb9e-7592-4884-99a8-bafdbd9726e3",
+          "3dece0de-251d-45dc-b304-75c65f4f634a"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "contact_sheet",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "unverified:documentary"
+    },
+    {
+      "id": "911945134",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedScore": 68,
+      "calibratedRank": "B",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h2_escalated",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          68,
+          68
+        ],
+        "finalScore": 68,
+        "rank": "B",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 15,
+          "visual_craft": 17,
+          "editing_rhythm": 12.5,
+          "sound_integration": 7,
+          "originality_finish": 16.5
+        },
+        "h1Triggers": [],
+        "h2Triggers": [
+          "H2-b:static_long_video(dur=420.3s,avgInt=52.5s,cuts=8)",
+          "H2-c:low_or_null_lufs(-70)"
+        ],
+        "contactSheetPreScore": 73.5,
+        "contactSheetRawScores": [
+          73,
+          74
+        ],
+        "rationales": [
+          "3面スクリーンの展示記録映像。垂直スリット状の光の筋から波・山並み、雨煙る岩礁へと移ろう水墨画的モノクロ映像表現と、人物シルエットや斜め浅被写界深度の展示撮影の視覚完成度は高い。一方、全編約7分で8カットのみの固定撮影中心の構成は静的で緩急に乏しく、実測-70LUFSの完全無音により音響統合の評価が大きく下がる。美術的独自性は際立つが映像作品としての総合到達度は標準域に留まる。",
+          "3面ディスプレイのメディアアート展示記録。垂直の光の幕から波涛や水墨画的な岩場が立ち現れる映像表現は質感・階調・独創性ともに高水準で、人物シルエットによる空間スケール提示も巧み。一方、420秒・8カットの固定記録中心で後半は変化が緩慢になりやすく、全編無音(-70LUFS)のため音響統合の評価が大きく伸びず、映像作品単体としての緩急や没入感に課題を残す。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 420.3,
+          "scdet_threshold": 10,
+          "total_cuts": 8,
+          "avg_cut_interval_sec": 52.54,
+          "max_cuts_per_10s": 1,
+          "integrated_lufs": -70,
+          "slowmo_applied": false,
+          "slowmo_factor": null,
+          "slowmo_window_sec": null
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "84e6b96b-96da-411c-9b1f-c24b8cbbeb06",
+          "d0322e2d-2876-48aa-ab29-fdcbdaa8fe4d"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h2_escalated",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "unverified:concept-art"
+    },
+    {
+      "id": "913977466",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 82.5,
+      "calibratedRank": "A",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          83,
+          82
+        ],
+        "finalScore": 82.5,
+        "rank": "A",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 16,
+          "visual_craft": 17,
+          "editing_rhythm": 17.5,
+          "sound_integration": 16,
+          "originality_finish": 16
+        },
+        "h1Triggers": [
+          "H1-c:max_cuts_per_10s=39>=12"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "ログイン画面から笑顔のBSODへ収束するUI額縁で統一した秀逸なデモリール。漫画モーション、渋谷OOH連動、4xスローでも破綻しない高密度タイポグラフィ、CG合成、コスメ系モーショングラフィックスまで幅広い視覚クラフトが高水準。楽曲ブレイクに渋谷夜景を当て緩急を作る編集設計と音ハメも極めて的確。一方、単一BGM主体の音響と作品集形式ゆえの物語的制約によりA評価とした。",
+          "OSログイン画面からBSOD風オチで挟む構成が巧みなモーションデザイン主体のショーリール。タイポグラフィ・2.5D漫画演出・CG合成・渋谷屋外ビジョンなど商業一線級の幅広い視覚クラフトと、緩急ある楽曲展開に沿った高精度な音ハメ編集が強み。47-52秒の高速区間も文字設計とエフェクト合成の精度が高い。一方、オムニバス形式ゆえの一貫物語性の制約とSEレイヤーの少なさで上位A帯とした。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 75.3,
+          "scdet_threshold": 10,
+          "total_cuts": 90,
+          "avg_cut_interval_sec": 0.84,
+          "max_cuts_per_10s": 39,
+          "integrated_lufs": -9.1,
+          "slowmo_applied": true,
+          "slowmo_factor": "4x",
+          "slowmo_window_sec": [
+            47,
+            52
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "13bd0a00-f91b-41eb-b572-e6b3c8b3e243",
+          "6962b246-705b-441e-b6c7-17b790a9a5fe"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "CM"
+    },
+    {
+      "id": "915102164",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedScore": 71.5,
+      "calibratedRank": "B",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          72,
+          71
+        ],
+        "finalScore": 71.5,
+        "rank": "B",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 15.5,
+          "visual_craft": 12.5,
+          "editing_rhythm": 16.5,
+          "sound_integration": 12,
+          "originality_finish": 15
+        },
+        "h1Triggers": [
+          "H1-c:max_cuts_per_10s=24>=12"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "各地の道路標識を形状・色・記号（青看→車線→矢印→横断→黄警戒→赤規制）で緻密に形態マッチカットする編集構成と8-13秒の高密度連打が秀逸。一方、スマホ実写の未グレーディング質感や回転補正時の黒縁露出（0:23,0:28-29,0:36等）など仕上げの粗さが惜しい。音声非聴取のため音響は実測-26.1LUFSと視覚テンポから中立推定。",
+          "日本各地の道路標識を大量採集し、矢印・ピクトグラム・色彩の連想連鎖で繋ぐマッチカット構成と着眼点は秀逸。特に車線矢印の増減や青丸から黄菱形・赤禁止標識への移行など編集の工夫が光る。一方、位置・回転補正によるフレーム端の黒縁漏れが複数カットに残り、パースや露出も未統一。音響も街の環境音を淡々と敷くのみで高速編集との連動が弱く、アイデアの強さに対し仕上げ精度に課題が残る。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 37.5,
+          "scdet_threshold": 10,
+          "total_cuts": 65,
+          "avg_cut_interval_sec": 0.58,
+          "max_cuts_per_10s": 24,
+          "integrated_lufs": -26.1,
+          "slowmo_applied": true,
+          "slowmo_factor": "4x",
+          "slowmo_window_sec": [
+            8,
+            13
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "84eafa0f-d95b-4948-9741-aa9add5efe17",
+          "61e91f97-bf08-4470-8c5f-8bc57b5fc85b"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "unverified:concept-art"
+    },
+    {
+      "id": "918864647",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedScore": 63,
+      "calibratedRank": "B-",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h2_escalated",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "median_of_3",
+        "rawScores": [
+          68,
+          63,
+          63
+        ],
+        "finalScore": 63,
+        "rank": "B-",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 14.33,
+          "visual_craft": 15.33,
+          "editing_rhythm": 11.67,
+          "sound_integration": 8,
+          "originality_finish": 15.33
+        },
+        "h1Triggers": [],
+        "h2Triggers": [
+          "H2-b:static_long_video(dur=323.5s,avgInt=323.5s,cuts=0)",
+          "H2-c:low_or_null_lufs(null)"
+        ],
+        "contactSheetPreScore": 71.5,
+        "contactSheetRawScores": [
+          73,
+          70
+        ],
+        "rationales": [
+          "波打ち際の実写に時間軸変位を連続適用し、地層状から垂直の絵画的紋様、水平線を経て波へ還る変化は詩的で色彩・質感の精度も高い。一方、冒頭の展示室接近から0:22のディゾルブでテレビ枠ごと約5分間固定撮影する展示記録的構成は没入感を削ぎ、完全無音で音響統合も欠く。長尺の緩慢さも残り、核心表現は優れるが映像作品としての総合仕上げは標準水準。",
+          "ギャラリー壁面のモニターに映る波が、スリットスキャン的な時間変位で水平から垂直の絵画的地層へと連続変容する独自性と色彩・質感表現は秀逸。一方、映像作品としては配線が見える手持ち接近や0:22の拙いディゾルブ、額縁残しの5分固定画角、無音（音声トラック無し）による音響統合の欠如など記録映像的な粗さが目立ち、構成・仕上げ面で評価が伸び悩んだ。",
+          "展示モニター上の波を時間軸変位で地層・絵画的抽象へと変容させる表現は独創的で光彩・質感も美しい。一方、映像作品としては導入の手持ち接近時の傾きや壁配線、0:22の粗いディゾルブ、以後5分間ベゼル込みの固定画面が続く構成の冗長さ、および完全無音（音声トラック無し）による音響統合の欠如が大きく、展示記録としての仕上げ・編集面に課題が残る。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 323.5,
+          "scdet_threshold": 10,
+          "total_cuts": 0,
+          "avg_cut_interval_sec": 323.5,
+          "max_cuts_per_10s": 0,
+          "integrated_lufs": null,
+          "slowmo_applied": false,
+          "slowmo_factor": null,
+          "slowmo_window_sec": null
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "c8977196-955e-4b3a-a169-dce518049ac9",
+          "024f103e-0350-4bb1-98ae-e73276a94ef6",
+          "fb3b82b8-c373-4072-8c65-4042134e25ca"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h2_escalated",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "unverified:concept-art"
+    },
+    {
+      "id": "922862661",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedScore": 79.5,
+      "calibratedRank": "A-",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "contact_sheet",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          79,
+          80
+        ],
+        "finalScore": 79.5,
+        "rank": "A-",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 16,
+          "visual_craft": 18,
+          "editing_rhythm": 15,
+          "sound_integration": 15,
+          "originality_finish": 15.5
+        },
+        "h1Triggers": [],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "光の教会を題材とした3DCG建築映像。コンクリートや木材の質感、自然光とハレーション、被写界深度やカラグレは実写と見紛う高水準。断片描写から終盤の正面十字架へ至る構成も堅実だが、単一空間ゆえの反復と既存ArchViz様式の踏襲で独自性は限定的。音声は非聴取のため-15.9LUFSと平均5.13秒の緩やかなテンポから中立推定。",
+          "安藤忠雄『光の教会』の3D建築映像。打ち放しコンクリートや木製ベンチの質感、斜光と反射の描写、シネマスコープ構図とグレーディングの完成度が非常に高い。断片から光の移ろいと十字架の正面構図へ収束する構成も端正だが、単一空間の反復や王道アーキビズ文法ゆえの独創性・編集緩急の控えめさが上限を抑える。音声非聴取のため-15.9 LUFSと平均5.13秒の視覚テンポから中立推定。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 174.4,
+          "scdet_threshold": 10,
+          "total_cuts": 34,
+          "avg_cut_interval_sec": 5.13,
+          "max_cuts_per_10s": 4,
+          "integrated_lufs": -15.9,
+          "slowmo_applied": false,
+          "slowmo_factor": null,
+          "slowmo_window_sec": null
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "2f6112c9-1810-4ccb-9a4f-f0e4bd64fd65",
+          "66b18f2a-cd9e-45bf-9f09-2d140dd799e3"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "contact_sheet",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "unverified:film"
+    },
+    {
+      "id": "924892954",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 84,
+      "calibratedRank": "A",
+      "calibratedTierBand": "award_tier",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          84,
+          84
+        ],
+        "finalScore": 84,
+        "rank": "A",
+        "tierBand": "award_tier",
+        "dimensions": {
+          "direction": 17,
+          "visual_craft": 16.5,
+          "editing_rhythm": 17,
+          "sound_integration": 17,
+          "originality_finish": 16.5
+        },
+        "h1Triggers": [
+          "H1-b:genre=モーション"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "絡まった極彩色の紐が解け、軽快に宙を舞って赤い「！」へ収束する単一ショット設計が秀逸。「解けるヒト、飛べるヒト。」のコピーを構造ごと視覚化する演出の明快さと、奥行きのある陰影・滑らかな緩急設計が高水準。さらに声とパーカッションを用いた独自性の高い音響が動きの弾力や決めのタイミングと密接に同期し、13.5秒の短尺ながら記憶に残る上位プロ品質のモーショングラフィックスに仕上がっている。",
+          "絡まった3Dチューブが先端の点に引かれて解け、軽快に飛翔し赤い感嘆符へ収束するワンショット構成が『解けるヒト、飛べるヒト。』のコピーを直感的に体現。滑らかな立体陰影とグラデーション制御、緩急豊かなイージングと視線誘導、跳ねるボーカルシンセ音響との緻密な同期が秀逸。語彙は王道だが、13.5秒に高い構成力と仕上げ精度を凝縮した上位プロ品質。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 13.5,
+          "scdet_threshold": 10,
+          "total_cuts": 1,
+          "avg_cut_interval_sec": 13.5,
+          "max_cuts_per_10s": 1,
+          "integrated_lufs": -17.6,
+          "slowmo_applied": true,
+          "slowmo_factor": "2x",
+          "slowmo_window_sec": [
+            1,
+            11
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "54b0a98a-22ef-4dd5-87cb-1b0ce86f5f87",
+          "920e0bb0-fe1b-420f-a311-818e64df6702"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "モーション"
+    },
+    {
+      "id": "924893019",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 84,
+      "calibratedRank": "A",
+      "calibratedTierBand": "award_tier",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "median_of_3",
+        "rawScores": [
+          82,
+          88,
+          84
+        ],
+        "finalScore": 84,
+        "rank": "A",
+        "tierBand": "award_tier",
+        "dimensions": {
+          "direction": 17.33,
+          "visual_craft": 16,
+          "editing_rhythm": 17.67,
+          "sound_integration": 17.33,
+          "originality_finish": 16.33
+        },
+        "h1Triggers": [
+          "H1-c:max_cuts_per_10s=55>=12"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "対立命題の反復で100年の葛藤を描き、紅白の円対比を100周年ロゴへ回収する構成が巧み。時代を跨ぐ集合写真や動作のマッチカット、緩急ある4段構成の音楽・歓声・描画SEの同期が極めて高水準。一方、写真全面の鉛筆風フィルタ処理は画一的で細部が潰れる場面もあり、2Dコラージュ表現の枠内に留まるため造形面は抑制評価とした。",
+          "臙脂と白の配色、100年分の写真を統一するモノクロ鉛筆調加工、手描き線アニメで周年映像の定型を打破。二項対立コピーと実試合の歓声・多段階楽曲が緊密に連動し感情曲線を描く。高密度区間での年代・男女を跨ぐマッチカットや赤白円のフラッシュが末尾ロゴへ回収される構成・編集の精度が極めて高い。一方、全編が2D静止画加工とタイポ中心で鉛筆調フィルタの均一さも残るため、総合A+と評価。",
+          "臙脂と白の厳格な配色に、100年分の写真を統一質感でコラージュし、二律背反の問いが「100」の円形ロゴへ帰結する構成が見事。スロー確認でも集合写真や歓喜の精密なマッチカットと図形フラッシュが際立ち、弦・ピアノからロック・応援チャントへ展開する音響と手描き線の同期も高水準。反面、静止画の均一なハッチ加工は細部が潰れがちで映像表現の広がりに上限がある。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 97.1,
+          "scdet_threshold": 10,
+          "total_cuts": 154,
+          "avg_cut_interval_sec": 0.63,
+          "max_cuts_per_10s": 55,
+          "integrated_lufs": -14.1,
+          "slowmo_applied": true,
+          "slowmo_factor": "4x",
+          "slowmo_window_sec": [
+            39,
+            44
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "c31ac275-d4e0-4ca4-980c-bde349bd339c",
+          "f1f8397a-3608-4f5c-bd16-541766a6f01b",
+          "71dbc145-a8c8-41e3-acd9-e6ec78dcd053"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "企業映像"
+    },
+    {
+      "id": "92588637",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedScore": 76,
+      "calibratedRank": "B+",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          74,
+          78
+        ],
+        "finalScore": 76,
+        "rank": "B+",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 15.5,
+          "visual_craft": 14.5,
+          "editing_rhythm": 16.5,
+          "sound_integration": 15.5,
+          "originality_finish": 14
+        },
+        "h1Triggers": [
+          "H1-c:max_cuts_per_10s=20>=12"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "20秒の枠内で変顔連打フック→出演者紹介→学校小物→分割顔コラージュ→タイトルコールと明快な起承転結を構築。楽曲ビートと3秒付近の溜めに合わせた高密度編集と2D煙演出の勢いは秀逸で、番組の青春感とよく噛み合う。一方、切り抜き人物のライティングは平坦で、出演者テロップや背景装飾・ロゴ周りのデザイン仕上げは標準的なTVバラエティの定型域に留まり、視覚的な洗練度で一段伸び悩む。",
+          "20秒間に37カットを中央構図の顔マッチカットと多彩なワイプ・顔分割コラージュ・2D作画エフェクトで繋ぐ編集リズムが秀逸。楽曲『STAY GOLD』のビートや歌詞連動タイポ、0:03の溜めや中盤の学園カットによる緩急設計も的確で、番組の青春感と出演者紹介を破綻なく凝縮している。一方、生徒の切抜き照明ムラやテレビ標準寄りのタイポ処理にやや粗さが残り、総合A-評価とした。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 20.4,
+          "scdet_threshold": 10,
+          "total_cuts": 37,
+          "avg_cut_interval_sec": 0.55,
+          "max_cuts_per_10s": 20,
+          "integrated_lufs": -13,
+          "slowmo_applied": true,
+          "slowmo_factor": "4x",
+          "slowmo_window_sec": [
+            0,
+            5
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "c4d926f0-6652-49c3-8b7b-748798bf0ea2",
+          "92451ad9-e70f-4a4c-a00b-96959a069d56"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "unverified:opening"
+    },
+    {
+      "id": "92679978",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedScore": 86.5,
+      "calibratedRank": "A+",
+      "calibratedTierBand": "award_tier",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          88,
+          85
+        ],
+        "finalScore": 86.5,
+        "rank": "A+",
+        "tierBand": "award_tier",
+        "dimensions": {
+          "direction": 16.5,
+          "visual_craft": 17.5,
+          "editing_rhythm": 18,
+          "sound_integration": 18,
+          "originality_finish": 16.5
+        },
+        "h1Triggers": [
+          "H1-b:genre=モーション",
+          "H1-c:max_cuts_per_10s=30>=12"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "2Dベクターと2.5D幾何学、繊細なグレインを融合させた高密度モーショングラフィックス。色彩設計と余白の制御が洗練され、4倍スローでも破綻しない手描き風のスメア表現やグリッチ転換など細部の作画精度が極めて高い。中盤の明滅加速から末尾の静止ロゴ＋歓声への緩急と、全カットに呼応する電子音響のシンクロが見事。一方、文字配置の可読性や物語的奥行きは軽妙なアイデントの域に留まる。",
+          "極小記号から高密度な図形・文字へ緩急豊かに展開するモーショングラフィックス。4倍スローで確認できる回転円盤のスメアや配色反転、粒子質感など2.5Dクラフトが高水準。映像挙動に完全同期する打撃・グリッチ系SEが音楽的グルーヴを生み、歓声オチも秀逸。一方「COMMISSIONED」等のタイポ可読性の低さと、抽象アイデントゆえの概念的深度の限界が惜しい。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 35.1,
+          "scdet_threshold": 10,
+          "total_cuts": 38,
+          "avg_cut_interval_sec": 0.92,
+          "max_cuts_per_10s": 30,
+          "integrated_lufs": -9.2,
+          "slowmo_applied": true,
+          "slowmo_factor": "4x",
+          "slowmo_window_sec": [
+            23,
+            28
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "0b534031-d9f1-4f61-8f89-831cae7bef8f",
+          "fb24e3b9-539c-4d2b-9646-fcee9ede1ccf"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "unverified:branded-movie"
+    },
+    {
+      "id": "93201564",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedScore": 65.5,
+      "calibratedRank": "B-",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h2_escalated",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          65,
+          66
+        ],
+        "finalScore": 65.5,
+        "rank": "B-",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 13,
+          "visual_craft": 12,
+          "editing_rhythm": 11,
+          "sound_integration": 15.5,
+          "originality_finish": 14
+        },
+        "h1Triggers": [],
+        "h2Triggers": [
+          "H2-a:near_t_low(64 within 63+/-3)",
+          "H2-b:static_long_video(dur=90.6s,avgInt=90.6s,cuts=0)"
+        ],
+        "contactSheetPreScore": 64,
+        "contactSheetRawScores": [
+          64,
+          64
+        ],
+        "rationales": [
+          "日用品を鳴らす装置の独自性と物理的な打音・音色変化のグルーヴ、OP/EDの洗練されたライングラフィックと色彩美術は魅力的。一方、映像クラフト面は90秒完全固定のワンショットかつ簡易的な室内光撮影に留まり、各オブジェの微細な振動や発音の瞬間を捉える寄り・カット割り・照明設計が欠如している。フレーム端の整理も甘く、良質なアイデアと音を映像演出・編集で引き上げきれていない簡易デモ水準に止まる。",
+          "日用品を鳴らすフィジカルシーケンサーの音響設計と段階的な音の重層化、冒頭・末尾のミニマルなグラフィックは魅力的。一方、映像は環境光任せの固定ワンカット記録にとどまり、照明・構図・見切れ処理が粗く、肝心の物理振動や発音元と音の視覚的シンクロも引き画のため伝わりにくい。90秒間カメラ変化がなく視覚的リズムも単調で、優れた発想を映像クラフトとして引き上げきれていない。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 90.6,
+          "scdet_threshold": 10,
+          "total_cuts": 0,
+          "avg_cut_interval_sec": 90.6,
+          "max_cuts_per_10s": 0,
+          "integrated_lufs": -16.7,
+          "slowmo_applied": false,
+          "slowmo_factor": null,
+          "slowmo_window_sec": null
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "63f14e13-a058-4e07-800d-d438f825d4f2",
+          "058153f6-a430-446c-983b-801bc4c05130"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h2_escalated",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "unverified:concept-art"
+    },
+    {
+      "id": "934629152",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 72,
+      "calibratedRank": "B",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          70,
+          74
+        ],
+        "finalScore": 72,
+        "rank": "B",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 14.5,
+          "visual_craft": 15.5,
+          "editing_rhythm": 15,
+          "sound_integration": 13.5,
+          "originality_finish": 13.5
+        },
+        "h1Triggers": [
+          "H1-c:max_cuts_per_10s=18>=12"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "制作会社の商業ショーリール。Nikon CGや実写グレーディング、漫画PV・MVなど収録素材の商業品質と0.85秒平均の軽快なテンポ・後半への高揚感は堅実。一方、各案件を順番にハードカットで繋ぐ定型構成で統一的演出に乏しく、単一BGM頼みでシリアス・暗調カットと音調が乖離。さらに左下クレジットが元映像の字幕と複数箇所で重なるなど仕上げの詰めに甘さが残る。",
+          "制作会社のショーリール。冒頭の自然実写から絞り羽根CGで開く導入や、実写MV・3DCG・水中モーション等、個別案件の撮影・VFX水準は高い。一方、本編は案件別の均等なブロック羅列でクロス編集やSE設計に乏しく、軽快なBGMとシリアス系カットのトーン乖離も目立つ。さらに左下クレジットが元映像の字幕と複数箇所で重複しており、ショーリールとしての仕上げの詰めに課題が残る。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 53.6,
+          "scdet_threshold": 10,
+          "total_cuts": 63,
+          "avg_cut_interval_sec": 0.85,
+          "max_cuts_per_10s": 18,
+          "integrated_lufs": -14,
+          "slowmo_applied": true,
+          "slowmo_factor": "4x",
+          "slowmo_window_sec": [
+            36,
+            41
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "451701f4-e79d-4313-b326-f1894222d27a",
+          "fc5f80ef-8266-4eff-bbc5-9920fab8778e"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "企業映像"
+    },
+    {
+      "id": "936559027",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedScore": 82.5,
+      "calibratedRank": "A",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          82,
+          83
+        ],
+        "finalScore": 82.5,
+        "rank": "A",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 16,
+          "visual_craft": 17,
+          "editing_rhythm": 17.5,
+          "sound_integration": 16.5,
+          "originality_finish": 15.5
+        },
+        "h1Triggers": [
+          "H1-b:genre=モーション",
+          "H1-c:max_cuts_per_10s=33>=12"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "蛍光ライム・黒・白を基調とした幾何学図形の反転やガイド線の連動が極めて精緻で、高密度区間でも破綻しないモーフィングとビート同期が光る上位プロのモーショングラフィックス。中盤の3Dワイヤーフレーム転換や終盤のロゴ構築まで構成も明快だが、0:21以降の多色展開でやや雑然とする箇所や、現代的幾何学表現の定型内に収まる点、SEより楽曲主導の音響設計を踏まえ、A水準と評価。",
+          "蛍光黄緑と黒白を基調とした幾何学モーショングラフィックス。8〜13秒の4倍スローでも精密に繋がる図形反転・モーフィングと、33秒61カットを的確に音ハメする編集リズムが極めて高い。中盤の3Dワイヤーフレームによる緩急や色彩転換の構成も巧み。一方、近年のカンファレンス映像の定型域に収まる独自性、左下ロゴの一時的な視認性低下、独立SE層の控えめさから最上位には一歩譲る。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 33,
+          "scdet_threshold": 10,
+          "total_cuts": 61,
+          "avg_cut_interval_sec": 0.54,
+          "max_cuts_per_10s": 33,
+          "integrated_lufs": -9.3,
+          "slowmo_applied": true,
+          "slowmo_factor": "4x",
+          "slowmo_window_sec": [
+            8,
+            13
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "c86c9615-05b8-45db-a6aa-78dc4072275a",
+          "1ec8fada-f15d-48f0-a748-24a13a894658"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "unverified:opening"
+    },
+    {
+      "id": "936975333",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 54,
+      "calibratedRank": "C",
+      "calibratedTierBand": "low_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h2_escalated",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "median_of_3",
+        "rawScores": [
+          53,
+          59,
+          54
+        ],
+        "finalScore": 54,
+        "rank": "C",
+        "tierBand": "low_band",
+        "dimensions": {
+          "direction": 10.67,
+          "visual_craft": 12.33,
+          "editing_rhythm": 10.33,
+          "sound_integration": 9.67,
+          "originality_finish": 12.33
+        },
+        "h1Triggers": [],
+        "h2Triggers": [
+          "H2-a:near_t_low(64 within 63+/-3)"
+        ],
+        "contactSheetPreScore": 64,
+        "contactSheetRawScores": [
+          58,
+          64,
+          65
+        ],
+        "rationales": [
+          "巨大3D猫の3ビジョン連動という被写体企画の独自性とCG自体は魅力的だが、本映像は曇天の街頭から撮影した未整音・無補正の記録動画に留まる。黒背景の標準白文字テロップ、歩行者の簡易ぼかし、環境音や街宣音がぶつ切りになる音声編集、同一DJシーンの過度な反復、終盤に無関係な後続広告を約8秒残して唐突に終わる構成など、映像作品としての演出・編集・仕上げに基礎的な不足が目立つ。",
+          "3ビジョンを跨ぐ肉眼3D猫のCG品質と企画の着想、LEDを破綻なく捉えた撮影は良好。一方、映像作品としては黒背景に素朴な白文字のタイトルや未グレーディングの曇天実写、後半で同一DJシーンを別画角で反復する単調な編集、選挙演説等の街頭騒音が混入しカット毎に急変する未整音の現地音声など、簡易記録動画の粗さが目立つ。連動の面白さを伝える構成・仕上げの磨き込みに課題が残る。",
+          "3ビジョン連動の3D猫CG自体は商業品質で愛嬌があるが、本映像は記録動画の域を出ない。黒背景・素の白文字タイトル、未グレーディングの街頭撮影、選挙音声や雑音が混入する未整音の同録、同一DJシーンを繰り返す冗長な編集、唐突な終端など、基礎的な演出・構成・音響・仕上げに明確な不足がある。"
+        ],
+        "postCheck": {
+          "knowsWork": true,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 86.8,
+          "scdet_threshold": 10,
+          "total_cuts": 15,
+          "avg_cut_interval_sec": 5.79,
+          "max_cuts_per_10s": 4,
+          "integrated_lufs": -15.6,
+          "slowmo_applied": false,
+          "slowmo_factor": null,
+          "slowmo_window_sec": null
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "8afc1fcd-713e-4bc3-b8f3-0fe388ef8b5e",
+          "2b95bfab-94c2-4502-af02-005535accc79",
+          "50b500a3-d75c-41c8-bb6b-e6bdc66f03ae"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h2_escalated",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "CM"
+    },
+    {
+      "id": "937033322",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedScore": 68,
+      "calibratedRank": "B",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "contact_sheet",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          67,
+          69
+        ],
+        "finalScore": 68,
+        "rank": "B",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 14,
+          "visual_craft": 13,
+          "editing_rhythm": 13,
+          "sound_integration": 13.5,
+          "originality_finish": 14.5
+        },
+        "h1Triggers": [],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "白ギャラリーの実写・能舞台風セット・無塗装3DCG・屋外を交錯させ、現実と虚構の崩壊を描く独自性の高い構成。造形物や能舞台の明暗対比、平均5.1秒の緩やかなカット設計に意図がある一方、手描き風字幕の視認性不足や終盤CGの粗さが仕上げ面の課題。音声非聴取のため-10.9 LUFSと視覚テンポから中立推定。",
+          "白壁ギャラリー・能舞台・頭部ロボット・無着色CGを交差させ現実と虚構を描く独創的な構成と、能舞台照明や俯瞰路上のCG描写に見どころがある。一方、白抜き文字の視認性や終盤公園の粗いCG造形など仕上げにムラが残り、前半の構図もやや単調。平均5.1秒の緩やかな編集で対比を作る。音声非聴取のため-10.9LUFSと視覚テンポから音響は中立推定。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 158.3,
+          "scdet_threshold": 10,
+          "total_cuts": 31,
+          "avg_cut_interval_sec": 5.11,
+          "max_cuts_per_10s": 4,
+          "integrated_lufs": -10.9,
+          "slowmo_applied": false,
+          "slowmo_factor": null,
+          "slowmo_window_sec": null
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "a904e10d-fdca-46bf-809f-780d473d7afb",
+          "660ec18c-5108-440f-98c1-7dc40b8d9470"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "contact_sheet",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "unverified:concept-art"
+    },
+    {
+      "id": "95929658",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 79.5,
+      "calibratedRank": "A-",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h2_escalated",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          80,
+          79
+        ],
+        "finalScore": 79.5,
+        "rank": "A-",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 16,
+          "visual_craft": 16,
+          "editing_rhythm": 16.5,
+          "sound_integration": 16,
+          "originality_finish": 15
+        },
+        "h1Triggers": [],
+        "h2Triggers": [
+          "H2-a:near_t_award(82.5 within 83+/-3)"
+        ],
+        "contactSheetPreScore": 82.5,
+        "contactSheetRawScores": [
+          82,
+          83
+        ],
+        "rationales": [
+          "白黒とカラー衣装の実写モデルを三角形マスクで精密に同期・合成するIDを核に、3Dファセットロゴや雑誌調タイポで全パッケージを高度に統一。ビート同期した軽快な編集と音響設計の完成度が高い一方、幾何学モチーフは王道の枠内で、3D質感や表現の独創性はもう一歩伸び代がある。",
+          "多面体ロゴを核に、実写モデルと幾何学マスク、赤青黒の配色、エディトリアルなタイポを全編成要素へ一貫展開した完成度の高い放送リブランド。ID A/Bのモノクロ×カラー切替やカット割りのキレ、音響・SEの同期精度が優れる。一方、立体表現や三角形モチーフは既存トレンドの範疇で、終盤クリップの反復構成にやや既視感が残る。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 142.1,
+          "scdet_threshold": 10,
+          "total_cuts": 64,
+          "avg_cut_interval_sec": 2.22,
+          "max_cuts_per_10s": 11,
+          "integrated_lufs": -10.3,
+          "slowmo_applied": true,
+          "slowmo_factor": "2x",
+          "slowmo_window_sec": [
+            5,
+            15
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "8837b056-fac0-41df-9f29-0cb23724e757",
+          "768bbbeb-4194-4979-8927-ac1b3bb86fcd"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h2_escalated",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "CM"
+    },
+    {
+      "id": "965829130",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 84.5,
+      "calibratedRank": "A",
+      "calibratedTierBand": "award_tier",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          86,
+          83
+        ],
+        "finalScore": 84.5,
+        "rank": "A",
+        "tierBand": "award_tier",
+        "dimensions": {
+          "direction": 17,
+          "visual_craft": 17.5,
+          "editing_rhythm": 16.5,
+          "sound_integration": 17,
+          "originality_finish": 16.5
+        },
+        "h1Triggers": [
+          "H1-a:genre=MV"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "白い球体を軸に結晶・苔・木製シーケンサー・真鍮・布など多彩な質感世界を巡り、終盤で全要素が一つの動的彫刻へ統合される構成力と3DCGクラフトが秀逸。連続的なカメラ演出と音ハメの同期精度も高い。一方、終盤前のデジタル演出部や微細フォーリー面には僅かな余白があり、A+と評価。",
+          "白い球体を主役に多彩な質感世界を巡り、終盤に全モチーフを白銀空間へ統合する交響的構成が秀逸。水晶の屈折、苔岩、布のソフトボディ、真鍮や回転シーケンサーの3Dルックデブと色彩対比が高水準で、音響の音色変化とも好統合。一方、中盤の一部切替の唐突さや終盤デジタル区間（2:47〜3:02）の既視感・質感差が惜しく、上位プロ品質のA評価とした。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 238,
+          "scdet_threshold": 10,
+          "total_cuts": 29,
+          "avg_cut_interval_sec": 8.21,
+          "max_cuts_per_10s": 7,
+          "integrated_lufs": -12.1,
+          "slowmo_applied": true,
+          "slowmo_factor": "2x",
+          "slowmo_window_sec": [
+            48,
+            58
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "da4bb1fd-9a24-4b44-aa0f-04513ec30dab",
+          "5c49dce6-0f33-4ed0-b713-11e2634e70ed"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "MV"
+    },
+    {
+      "id": "97599935",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 84.5,
+      "calibratedRank": "A",
+      "calibratedTierBand": "award_tier",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          84,
+          85
+        ],
+        "finalScore": 84.5,
+        "rank": "A",
+        "tierBand": "award_tier",
+        "dimensions": {
+          "direction": 17,
+          "visual_craft": 16.5,
+          "editing_rhythm": 17,
+          "sound_integration": 16.5,
+          "originality_finish": 17.5
+        },
+        "h1Triggers": [
+          "H1-a:genre=MV",
+          "H1-c:max_cuts_per_10s=13>=12"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "水色単色背景の定点構成に、演奏の断片・男女の無表情な反復動作・自作キネティック装置を織り交ぜ、楽曲の狂気と緩急を鮮やかに視覚化。ビーカーのインク混合や自動描画機の軌跡蓄積など美術と編集のリズム設計が秀逸。単一照明・固定カメラ主体で撮影の奥行きや反復カットの制約はあるが、独創的な世界観と音ハメの精度が際立つ。",
+          "ミント青背景と固定カメラの徹底したミニマル設計に、実制作のキネティック造形と男女のシュールな身体表現を融合。色彩統制と音ハメ編集の緩急（間奏のインク拡散や扇風機転倒からの静寂と再爆発）が秀逸で、スピログラフや白鳥への糸巻き等、進行に伴う小道具の変化も巧み。カメラワークや照明は簡素な定置構成だが、美術造形と独自世界観の完成度が際立つ上位プロ作。"
+        ],
+        "postCheck": {
+          "knowsWork": true,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 223.1,
+          "scdet_threshold": 10,
+          "total_cuts": 107,
+          "avg_cut_interval_sec": 2.09,
+          "max_cuts_per_10s": 13,
+          "integrated_lufs": -5.6,
+          "slowmo_applied": true,
+          "slowmo_factor": "4x",
+          "slowmo_window_sec": [
+            60,
+            65
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "3687fb8a-62fc-48f6-b7ec-0822deaf0536",
+          "1254d46f-7cf1-4466-8de6-b086211801e6"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "MV"
+    },
+    {
+      "id": "9873910",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedScore": 78,
+      "calibratedRank": "A-",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "median_of_3",
+        "rawScores": [
+          80,
+          75,
+          78
+        ],
+        "finalScore": 78,
+        "rank": "A-",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 16.67,
+          "visual_craft": 14,
+          "editing_rhythm": 15.33,
+          "sound_integration": 15.67,
+          "originality_finish": 16
+        },
+        "h1Triggers": [
+          "H1-b:genre=モーション"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "11分超を8章の色彩設計と統一ピクトグラムで貫く構成力が秀逸。淡々とした語りと音楽・SEの対比で、ユーモアから飢餓・自殺の深刻さへ感情曲線を巧みに導き、全アイコン収束の終盤も鮮やか。一方、2Dベクターの関節表現やイージングは素朴で、章間の定型ページめくり遷移や一部誇張表現に時代的な粗さも残るが、総じて完成度の高い良作。",
+          "統一されたピクトグラム設計と明暗反転の風刺構成で11分を牽引。食べ残しと飢餓の反復比喩や終盤の落下音・無音処理など演出と間の設計が印象的。一方、スロー確認でも動きは直線的な基本キーフレーム中心で、原色ベタ塗りや定型ページめくりの反復、ストック音源的な質感に粗さが残る。構成力と視覚比喩は秀でるが、モーションと仕上げのクラフト密度は堅実な商業・インディーズ上位水準に留まる。",
+          "軽快なピクトグラムと淡々とした語りの対比で日本の明暗を風刺する11分間の構成力が秀逸。統一アイコン群が終盤に俯瞰集合し日本列島へ収束する演出や、章ごとのBGM・SEによる緩急設計が感情曲線を的確に牽引する。一方、動作は単純なキーフレーム中心で、定型的なページめくり遷移や原色寄りの配色、ストック感のあるSE質感などアニメーション技術と仕上げの洗練度には限界がある。"
+        ],
+        "postCheck": {
+          "knowsWork": true,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 681,
+          "scdet_threshold": 10,
+          "total_cuts": 37,
+          "avg_cut_interval_sec": 18.41,
+          "max_cuts_per_10s": 8,
+          "integrated_lufs": -18,
+          "slowmo_applied": true,
+          "slowmo_factor": "2x",
+          "slowmo_window_sec": [
+            123,
+            133
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "aa5e3744-284d-42af-9676-8f73e79f0dc4",
+          "ddd67145-849e-4520-a36f-ea8f5e05a48e",
+          "1eb2aec1-efb5-4d1c-91c1-dacbfc023e82"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "unverified:documentary"
+    },
+    {
+      "id": "98834333",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 54.5,
+      "calibratedRank": "C",
+      "calibratedTierBand": "low_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          55,
+          54
+        ],
+        "finalScore": 54.5,
+        "rank": "C",
+        "tierBand": "low_band",
+        "dimensions": {
+          "direction": 12,
+          "visual_craft": 10.5,
+          "editing_rhythm": 12,
+          "sound_integration": 10,
+          "originality_finish": 10
+        },
+        "h1Triggers": [
+          "H1-b:genre=モーション"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "15秒キャラCMの基本構成とBGM・台詞のテンポは機能しているが、映像は1枚の静止画のパン・ズームと汎用粒子・過剰なライトリークに依存した定型処理に留まる。文字設計もコントラスト不足で統一感に欠け、低解像度や透かし、日本語表記・声優クレジットと乖離した吹替音声の馴染みの粗さなど技術・仕上げ面の課題が大きい。",
+          "15秒のキャラ告知CMとして冒頭シルエットから告知への構成と基本テンポは成立しているが、本編は1枚絵のパン・ズームと汎用ボケ粒子・過剰なライトリークに終始し映像表現が単調。低解像度やテロップの視認性・設計の粗さに加え、残響のあるスペイン語吹替音声がBGMと馴染まず画面上の日本語声優クレジットとも齟齬を生じており、音響統合と仕上げ精度に大きな課題がある。"
+        ],
+        "postCheck": {
+          "knowsWork": true,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 16.1,
+          "scdet_threshold": 10,
+          "total_cuts": 2,
+          "avg_cut_interval_sec": 8.05,
+          "max_cuts_per_10s": 2,
+          "integrated_lufs": -14.1,
+          "slowmo_applied": true,
+          "slowmo_factor": "2x",
+          "slowmo_window_sec": [
+            3,
+            13
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "ee3df60d-f5fa-42c8-a53c-e7de539e7828",
+          "c8696d5c-9227-41b1-88d6-19606df74b82"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "モーション"
+    },
+    {
+      "id": "98910710",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 80.5,
+      "calibratedRank": "A-",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          79,
+          82
+        ],
+        "finalScore": 80.5,
+        "rank": "A-",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 15.5,
+          "visual_craft": 17,
+          "editing_rhythm": 16.5,
+          "sound_integration": 16,
+          "originality_finish": 15.5
+        },
+        "h1Triggers": [
+          "H1-b:genre=モーション"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "黒・赤・黄と生成りの構成主義的グラフィックに和欧タイポ、鍵盤・レコード溝・演奏者シルエットを織り込んだ高密度な2Dキネティック設計が秀逸。生ジャズのリズムと波紋パルス・画面回転の同期、余白設計による8組の出演者名視認性、レコード盤面へ収束するロゴ処理も巧み。一方、全編フラットな2D構造と均一な反復構成により、演出の起伏や表現革新性はやや限定的。",
+          "黒・赤・黄・生成りの4色に絞った構成主義的グラフィックと、レコード溝・鍵盤モチーフ・日英タイポの緻密な設計が際立つ。回転や水平移動を駆使した連続カメラワークがジャズ演奏の躍動と小気味よく同期し、密集レイアウト下でも余白設計により出演者名の視認性を高く保っている。中盤のラインナップ紹介は同型のリズムが反復するものの、全体を通じたデザイン精度と音ハメの完成度は上位プロ水準。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 30,
+          "scdet_threshold": 10,
+          "total_cuts": 7,
+          "avg_cut_interval_sec": 4.29,
+          "max_cuts_per_10s": 4,
+          "integrated_lufs": -9.8,
+          "slowmo_applied": true,
+          "slowmo_factor": "2x",
+          "slowmo_window_sec": [
+            10,
+            20
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "f45d4c2f-706b-4987-9160-d2917789d9df",
+          "e0795ad8-e54b-4c85-abd9-2d65f5e36e8b"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "モーション"
+    },
+    {
+      "id": "993382821",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 73,
+      "calibratedRank": "B+",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "contact_sheet",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          73,
+          73
+        ],
+        "finalScore": 73,
+        "rank": "B+",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 15,
+          "visual_craft": 15,
+          "editing_rhythm": 14,
+          "sound_integration": 14,
+          "originality_finish": 15
+        },
+        "h1Triggers": [],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "SNS・PC画面UIモチーフで全編を統一した化粧品のハウツー映像。冒頭10秒の複数ウィンドウ展開やタイポ演出が軽快で、実写の目元撮影とテロップ・Before/After・4種比較まで視認性と仕上げが堅実。中盤は同一構図が続き表現自体は定型的だが、商業プロ品質として安定感がある。音声非聴取のため-14.1LUFSと視覚テンポから中立推定。",
+          "パステルピンクのブラウザ/SNS風UIで統一した二重メイク講座映像。冒頭10秒のウィンドウ連続出現とタイポ演出は軽快で、清潔感あるマクロ撮影・Before/After比較・4商品整理まで商業品質として堅実。一方、本編中盤は固定枠内の説明的展開が中心で視覚的変化や独自性は限定的。音声非聴取のため音響は実測-14.1 LUFSと視覚的テンポから中立推定。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 81,
+          "scdet_threshold": 10,
+          "total_cuts": 16,
+          "avg_cut_interval_sec": 5.06,
+          "max_cuts_per_10s": 10,
+          "integrated_lufs": -14.1,
+          "slowmo_applied": true,
+          "slowmo_factor": "2x",
+          "slowmo_window_sec": [
+            0,
+            10
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "c8243882-c82c-4a28-a4eb-ba3edbd091b4",
+          "e0da9634-a22f-45b6-bd99-e1461697d2f8"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "contact_sheet",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "CM"
+    },
+    {
+      "id": "998498858",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedScore": 80,
+      "calibratedRank": "A-",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          79,
+          81
+        ],
+        "finalScore": 80,
+        "rank": "A-",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 15.5,
+          "visual_craft": 15.5,
+          "editing_rhythm": 17,
+          "sound_integration": 17,
+          "originality_finish": 15
+        },
+        "h1Triggers": [
+          "H1-c:max_cuts_per_10s=49>=12"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "フォトグラメトリや点群とグリッチを融合した有機×デジタルの造形が鮮烈。花のメッシュ分割や、弦楽×電子ビートの高揚に同期した後半の高速編集・音ハメの推進力は高水準。一方、3D植物の質感・照明の粗さ、終盤のストロボやデータモッシュの反復感、無関係なHTMLや既製Cコードを流用した細部の仕上げの甘さが上位到達を阻む。",
+          "植物の3Dスキャン・点群とグリッチ/コードを対置し、弦楽×電子ビートに高密度な編集（89カット）を同期させた実験的AV作品。前半の花のワイヤーフレーム分割や点群樹木の高揚感、4倍スローで確認できる閾値反転等のフレーム単位の音ハメは秀逸。一方、中盤CGの質感の粗さや汎用HTML/Cコードの流用が細部の仕上げと独自性を抑えている。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 30,
+          "scdet_threshold": 10,
+          "total_cuts": 89,
+          "avg_cut_interval_sec": 0.34,
+          "max_cuts_per_10s": 49,
+          "integrated_lufs": -8.3,
+          "slowmo_applied": true,
+          "slowmo_factor": "4x",
+          "slowmo_window_sec": [
+            17,
+            22
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "224166cc-d679-4db8-8d8c-412a42e2df4a",
+          "3b24053e-3cca-49fd-ba68-ae7c844bca7e"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "unverified:concept-art"
+    },
+    {
+      "id": "99872019",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedScore": 64.5,
+      "calibratedRank": "B-",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h2_escalated",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          65,
+          64
+        ],
+        "finalScore": 64.5,
+        "rank": "B-",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 14,
+          "visual_craft": 11.5,
+          "editing_rhythm": 13,
+          "sound_integration": 13.5,
+          "originality_finish": 12.5
+        },
+        "h1Triggers": [],
+        "h2Triggers": [
+          "H2-a:near_t_low(62.5 within 63+/-3)"
+        ],
+        "contactSheetPreScore": 62.5,
+        "contactSheetRawScores": [
+          64,
+          61
+        ],
+        "rationales": [
+          "皮肉な会話劇と役者の自然な間合い、屋外でも明瞭な台詞収録と音楽を排した乾いた音響設計は好印象。一方、映像演出は定点の切り返し中心で視覚的展開に乏しく、黒浮きの強い平坦なグレーディングや汎用ライトリーク演出、小道具アップに映り込むLorem ipsumなど仕上げの粗さが目立つ。企画・演技頼みのインディーズ短編水準。",
+          "皮肉な風刺脚本と俳優の自然な間の取り方は巧みで、会話劇から水溜まりのオチまで一貫性がある。一方、映像面は3分間の大半が単調な切り返しに終始し、曇天無照明に黒浮きの強い褪色グレーディング、定型的なライトリーク遷移など低予算感が目立つ。バインダー接写にLorem Ipsumが残る仕上げの甘さやカット間の環境音段差もあり、着想の良さを映像クラフトが引き上げきれていない。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 197.8,
+          "scdet_threshold": 10,
+          "total_cuts": 42,
+          "avg_cut_interval_sec": 4.71,
+          "max_cuts_per_10s": 4,
+          "integrated_lufs": -18.8,
+          "slowmo_applied": false,
+          "slowmo_factor": null,
+          "slowmo_window_sec": null
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "de8e630d-c370-4471-bfb7-5a6da6bf8995",
+          "36402471-105f-443f-af1f-c81b8a86c8d4"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h2_escalated",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "unverified:film"
+    },
+    {
+      "id": "99898665",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedScore": 88,
+      "calibratedRank": "A+",
+      "calibratedTierBand": "award_tier",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "contact_sheet",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          89,
+          87
+        ],
+        "finalScore": 88,
+        "rank": "A+",
+        "tierBand": "award_tier",
+        "dimensions": {
+          "direction": 18.5,
+          "visual_craft": 17,
+          "editing_rhythm": 18,
+          "sound_integration": 16,
+          "originality_finish": 18.5
+        },
+        "h1Triggers": [],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "黒背景マクロ撮影で葉・花・石・木・金属等への1滴の水しぶきを捉え、1×1から数百万滴の超多分割グリッドへ指数的に増殖させ、実景の雨林タイトルへ解放後、非対称REMIXを経て冒頭のカタツムリへ回帰する構成が秀逸。細密な撮影・タイポ・緩急設計も高水準。音声非聴取のため実測-22.6LUFSの広いダイナミクスと視覚的リズムから中立推定。",
+          "黒背景マクロ撮影で多様な素材への水滴落下を捉え、1×1から指数的に画面分割を増殖させ雨音の本質へ収束、森林の実写タイトルを経てREMIXと冒頭の蝸牛へ回帰する構成・独創性が秀逸。均質な照明設計と滴数カウンター等の細部仕上げも緻密で、緩急と視覚的リズムが際立つ。音声非聴取だが、-22.6 LUFSの広いダイナミックレンジと水滴同期・REMIX構成から高い音像統合を中立推定。"
+        ],
+        "postCheck": {
+          "knowsWork": true,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 105.1,
+          "scdet_threshold": 10,
+          "total_cuts": 42,
+          "avg_cut_interval_sec": 2.5,
+          "max_cuts_per_10s": 10,
+          "integrated_lufs": -22.6,
+          "slowmo_applied": true,
+          "slowmo_factor": "2x",
+          "slowmo_window_sec": [
+            7,
+            17
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "cbf53f12-5ccb-4f62-b3cc-339d0f73de47",
+          "e8e40959-70f7-47db-a06b-5d8a485902dc"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "contact_sheet",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "unverified:concept-art"
+    },
+    {
+      "id": "notion-7422fd75cdbc635c44bbfaf4",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 70,
+      "calibratedRank": "B",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "contact_sheet",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          70,
+          70
+        ],
+        "finalScore": 70,
+        "rank": "B",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 14,
+          "visual_craft": 15,
+          "editing_rhythm": 14,
+          "sound_integration": 14,
+          "originality_finish": 13
+        },
+        "h1Triggers": [],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "生活者の日常から保守・受付・顧客対話へ繋ぐ王道の企業CM構成。自然光を活かした冒頭の柔らかな撮影や浅い被写界深度、引き→寄りの堅実なカット割り（平均1.43秒）など商業品質は安定している。一方、会議や笑顔のポートレート連続など定型表現の域を出ず独自性は限定的。音声非聴取のため音響は-14.0 LUFSと視覚テンポから中立推定。",
+          "暮らしの笑顔→支える社員→寄り添うカットへと繋ぐ手堅い30秒企業CM構成。自然光を活かした柔らかい照明や浅い被写界深度、温かな肌色の撮影・グレーディングは商業品質として安定し、21カットのテンポと後半の連打も明快。一方、表現自体は極めて定型的で独自性に乏しく、終盤コピーの顔被りも惜しい。音声非聴取のため音響は-14.0LUFSと視覚テンポから中立推定。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 30,
+          "scdet_threshold": 10,
+          "total_cuts": 21,
+          "avg_cut_interval_sec": 1.43,
+          "max_cuts_per_10s": 9,
+          "integrated_lufs": -14,
+          "slowmo_applied": true,
+          "slowmo_factor": "2x",
+          "slowmo_window_sec": [
+            15,
+            25
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "dcf4f8e2-d633-4613-914c-fbdd19d4a603",
+          "a667a915-6a53-4385-b7dd-07cd562ab6d4"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "contact_sheet",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "CM"
+    },
+    {
+      "id": "notion-a71d75e74c14001080addb42",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 70,
+      "calibratedRank": "B",
+      "calibratedTierBand": "pro_band",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "contact_sheet",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          70,
+          70
+        ],
+        "finalScore": 70,
+        "rank": "B",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 14,
+          "visual_craft": 15,
+          "editing_rhythm": 14.5,
+          "sound_integration": 14,
+          "originality_finish": 12.5
+        },
+        "h1Triggers": [],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "生活の温もり→現場・コールセンターの業務→オーナー対話とペア笑顔カット連打へ繋ぐ王道の30秒企業CM構成。自然光を活かした撮影や浅い被写界深度、21カット（平均1.43秒）のサイズ変化と目線繋ぎは堅実な商業品質。一方、定型構成で独自性に乏しく、終盤の白文字コピーが人物顔付近に重なる設計も凡庸。音声非聴取のため実測-14.0LUFSと視覚テンポから中立推定。",
+          "生活者の日常から社員の現場対応、オーナーとの対話、寄り添うツーショット群とCIへ繋ぐ王道30秒企業CM。自然光基調の柔らかな撮影と広角→寄り（手元・笑顔）の堅実なカット割り（平均1.43秒）で商業品質は安定。一方、構成・表現は極めて定型で終盤テロップも人物顔面と干渉し独自性は限定的。音声非聴取のため音響は実測-14.0LUFSと視覚テンポから中立推定。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 30,
+          "scdet_threshold": 10,
+          "total_cuts": 21,
+          "avg_cut_interval_sec": 1.43,
+          "max_cuts_per_10s": 9,
+          "integrated_lufs": -14,
+          "slowmo_applied": true,
+          "slowmo_factor": "2x",
+          "slowmo_window_sec": [
+            15,
+            25
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "53aaf2fe-3051-4a38-bea7-d8163f11183c",
+          "816ad44e-7f89-4294-9fba-f3a013a39b4d"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "contact_sheet",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "CM"
+    },
+    {
+      "id": "notion-b433976655da19d33f2c962d",
+      "calibrationStatus": "calibrated_verified",
+      "calibratedScore": 87,
+      "calibratedRank": "A+",
+      "calibratedTierBand": "award_tier",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          87,
+          87
+        ],
+        "finalScore": 87,
+        "rank": "A+",
+        "tierBand": "award_tier",
+        "dimensions": {
+          "direction": 18,
+          "visual_craft": 17,
+          "editing_rhythm": 18,
+          "sound_integration": 17,
+          "originality_finish": 17
+        },
+        "h1Triggers": [
+          "H1-a:genre=MV",
+          "H1-c:max_cuts_per_10s=22>=12"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "「サイダーの海」を軸に青緑と桃・黄の限定配色で全編を統率。3DトゥーンCG（水中教室やグラス等）と既存アニメの網点・線画合成が高度に融合し、ペダル踏みや図形マッチカット、終盤の波音など音楽・歌詞と密接に同期した緩急編集が感情曲線を描き切る。高密度サビ（152-157s）の飛沫演出で一部視認性が落ちる点とCGの簡素さは僅かに残るが、約4分を完走する卓越した構成と仕上げ品質。",
+          "「サイダーの海」を核に、泡・氷・レモン・2色のストロー・水没教室・ブランコの反復モチーフで孤独から救済・乾杯へ至る感情曲線を約4分間一貫設計。3DトゥーンCG、2Dモーション、網点二色処理、流体合成を高密度に融合し、音ハメと静動の緩急も極めて精密。高密度区間(152-157s)は光の重畳で一部視認性が飽和し3D質感に僅かな粗さも残るが、構想と実行力は突出。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 236,
+          "scdet_threshold": 10,
+          "total_cuts": 127,
+          "avg_cut_interval_sec": 1.86,
+          "max_cuts_per_10s": 22,
+          "integrated_lufs": -6.3,
+          "slowmo_applied": true,
+          "slowmo_factor": "4x",
+          "slowmo_window_sec": [
+            152,
+            157
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "e445eca6-1ef9-4fc4-a485-f40191065edd",
+          "d307c189-faa4-4728-a1d4-ae1f57b7263f"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "MV"
+    },
+    {
+      "id": "notion-f7e42c871b5bfe616814c4dc",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedScore": 83,
+      "calibratedRank": "A",
+      "calibratedTierBand": "award_tier",
+      "calibratedBreakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261124_173838",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          84,
+          82
+        ],
+        "finalScore": 83,
+        "rank": "A",
+        "tierBand": "award_tier",
+        "dimensions": {
+          "direction": 16,
+          "visual_craft": 16.5,
+          "editing_rhythm": 18,
+          "sound_integration": 17,
+          "originality_finish": 15.5
+        },
+        "h1Triggers": [
+          "H1-b:genre=モーション",
+          "H1-c:max_cuts_per_10s=28>=12"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "赤・黒・白・金属銀の統一配色と3D棘王冠モチーフを軸に、超高速ラップへフレーム単位で完全同期させた高密度キネティック・タイポグラフィ。スリット展開や回転・歪みなど図形的トランジションのキレと、「You wanna battle?」の間合いから倍速連打・最終タイトルへ収束する緩急設計が極めて優秀。一方、既存MV文法に沿う表現が多く最速部で可読性が潰れる点からA評価とした。",
+          "赤・黒・白＋金属質グラデの厳格な色彩統制と棘王冠モチーフの反復で20秒を一貫設計。平均0.49秒の高速カットやスリットスキャン・3D王冠・回転組版を高速ラップの韻律へ精密同期させ、白画面の「You wanna battle?」で緩急も確保。編集リズムと音ハメが強みだが、表現語法は国内リリックMVの定型域に留まり、一部過密部の視認性低下や終盤英字組版の平易さが惜しい。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 20.1,
+          "scdet_threshold": 10,
+          "total_cuts": 41,
+          "avg_cut_interval_sec": 0.49,
+          "max_cuts_per_10s": 28,
+          "integrated_lufs": -6.1,
+          "slowmo_applied": true,
+          "slowmo_factor": "4x",
+          "slowmo_window_sec": [
+            7,
+            12
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "7b072e2d-83f5-432a-aed6-260884e31555",
+          "ff147c4a-17e0-4196-a3e0-70954373d5f7"
+        ]
+      },
+      "calibrationVersion": "phase2_v1",
+      "calibratedAt": "2026-11-25T06:42:51.836Z",
+      "calibratedRoute": "video_h1",
+      "calibratedRunId": "run_20261124_173838",
+      "calibrationGenreBucket": "unverified:opening"
+    }
+  ]
+}
