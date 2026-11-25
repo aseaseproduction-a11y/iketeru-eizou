@@ -1,19 +1,38 @@
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { auditTranscript } from "./audit-blind-transcript.mjs";
 
 const REPO_ROOT = "E:\\iketeru-eizou";
 const BRAIN_ROOT = process.env.ANTIGRAVITY_BRAIN_ROOT || path.join(os.homedir(), ".gemini", "antigravity", "brain");
 
-function parseArgs(argv) {
+export const VALUE_FLAGS = Object.freeze(
+  new Set(["run-id", "video-id", "mode", "attempt", "subagent-id", "parent-id"])
+);
+export const ALLOW_LEADING_DOUBLE_DASH_VALUE_FLAGS = Object.freeze(new Set(["video-id"]));
+
+export function parseArgs(argv) {
   const args = {};
   for (let i = 2; i < argv.length; i++) {
     const a = argv[i];
     if (a.startsWith("--")) {
       const k = a.slice(2);
       const next = argv[i + 1];
-      if (!next || next.startsWith("--")) {
+      if (VALUE_FLAGS.has(k)) {
+        if (next === undefined || next === "") {
+          throw new Error(`Missing value for --${k}`);
+        }
+        if (ALLOW_LEADING_DOUBLE_DASH_VALUE_FLAGS.has(k)) {
+          if (next.startsWith("--") && VALUE_FLAGS.has(next.slice(2))) {
+            throw new Error(`Missing value for --${k} (got flag "${next}")`);
+          }
+        } else if (next.startsWith("--")) {
+          throw new Error(`Missing value for --${k} (got flag "${next}")`);
+        }
+        args[k] = next;
+        i++;
+      } else if (!next || next.startsWith("--")) {
         args[k] = true;
       } else {
         args[k] = next;
@@ -176,4 +195,12 @@ function main() {
   if (!record.audit_valid) process.exit(1);
 }
 
-main();
+const isMain = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+if (isMain) {
+  try {
+    main();
+  } catch (err) {
+    console.error(err.message || err);
+    process.exit(2);
+  }
+}
