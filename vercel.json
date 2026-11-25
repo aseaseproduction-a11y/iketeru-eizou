@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "ignoreCommand": "if [ -n \"$VERCEL_GIT_PREVIOUS_SHA\" ] && git cat-file -e \"$VERCEL_GIT_PREVIOUS_SHA^{commit}\" 2>/dev/null; then git diff --quiet \"$VERCEL_GIT_PREVIOUS_SHA\" HEAD -- . ':(exclude)docs' ':(exclude)analysis' ':(exclude)scripts'; else exit 1; fi",
   "buildCommand": "vite build && esbuild server/_core/vercelHandler.ts --platform=node --packages=external --bundle --format=esm --outfile=api/index.mjs",
   "outputDirectory": "dist/public",
   "functions": {
