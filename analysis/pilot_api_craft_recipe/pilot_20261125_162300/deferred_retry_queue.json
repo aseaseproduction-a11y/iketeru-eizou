@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "run_id": "pilot_20261125_162300",
-  "updated_at": "2026-11-25T07:42:47.307Z",
+  "updated_at": "2026-11-25T08:07:03.333Z",
   "remaining_count": 3,
   "deferred_calls": [
     {
@@ -23,7 +23,7 @@
       "attempt": 2
     }
   ],
-  "congestion_events_count": 6,
+  "congestion_events_count": 7,
   "congestion_events": [
     {
       "timestamp": "2026-11-25T07:24:02.876Z",
@@ -71,6 +71,14 @@
       "try_index": 2,
       "phase": "initial_try2_deferred",
       "video_id": "Xr032EhUDPw",
+      "attempt": 2
+    },
+    {
+      "timestamp": "2026-11-25T08:07:03.319Z",
+      "code": "503",
+      "try_index": 1,
+      "phase": "deferred_pass",
+      "video_id": "FcIFvzP8-mg",
       "attempt": 2
     }
   ]

@@ -663,9 +663,11 @@ async function main() {
       }
     }
   }
+  let initialCongestionEvents = [];
   if (resume && fs.existsSync(deferredPath)) {
     const dqDoc = JSON.parse(fs.readFileSync(deferredPath, "utf8"));
     initialDeferredQueue = Array.isArray(dqDoc.deferred_calls) ? dqDoc.deferred_calls : [];
+    initialCongestionEvents = Array.isArray(dqDoc.congestion_events) ? dqDoc.congestion_events : [];
   }
 
   // Note: runBatchOrchestrator runs attempt 1 & 2 when fixedAttempts === 2.
@@ -678,7 +680,7 @@ async function main() {
   }
 
   let consecutiveJsonErrors = 0;
-  const allCongestionEvents = [];
+  const allCongestionEvents = [...initialCongestionEvents];
 
   const orch = await runBatchOrchestrator({
     queue,

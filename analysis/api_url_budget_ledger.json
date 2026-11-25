@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-25T07:42:47.309Z",
+  "updated_at": "2026-11-25T08:15:25.212Z",
   "currency": "USD",
   "default_monthly_limit_usd": 38,
   "gcp_monthly_credit_usd": 40,
@@ -17,9 +17,9 @@
   "monthly_totals": {
     "2026-11": {
       "limit_usd": 38,
-      "spent_usd": 2.764393,
-      "calls_count": 37,
-      "congestion_failure_count": 18,
+      "spent_usd": 2.821579,
+      "calls_count": 38,
+      "congestion_failure_count": 19,
       "runs": [
         {
           "run_id": "run_20261125_125425",
@@ -70,16 +70,27 @@
           "service_tier": "flex",
           "calls_count": 3,
           "cost_usd": 0.207638,
-          "congestion_failure_count": 6,
+          "congestion_failure_count": 7,
           "congestion_timestamps": [
             "2026-11-25T07:24:02.876Z",
             "2026-11-25T07:24:46.273Z",
             "2026-11-25T07:29:26.769Z",
             "2026-11-25T07:31:25.425Z",
             "2026-11-25T07:41:45.685Z",
-            "2026-11-25T07:42:47.256Z"
+            "2026-11-25T07:42:47.256Z",
+            "2026-11-25T08:07:03.319Z"
           ],
-          "recorded_at": "2026-11-25T07:42:47.309Z"
+          "recorded_at": "2026-11-25T08:07:03.334Z"
+        },
+        {
+          "run_id": "supplemental_pass2_xr032_0110_0117",
+          "purpose": "supplemental_pass2_xr032_0110_0117_4fps",
+          "service_tier": "flex",
+          "calls_count": 1,
+          "cost_usd": 0.057186,
+          "congestion_failure_count": 0,
+          "congestion_timestamps": [],
+          "recorded_at": "2026-11-25T08:15:25.211Z"
         }
       ]
     }
