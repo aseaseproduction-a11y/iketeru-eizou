@@ -16,7 +16,7 @@ import { drizzle } from "drizzle-orm/mysql2";
 import mysql from "mysql2/promise";
 
 // drizzle/schema.ts
-import { int, mediumtext, mysqlEnum, mysqlTable, text, timestamp, uniqueIndex, varchar } from "drizzle-orm/mysql-core";
+import { decimal, int, mediumtext, mysqlEnum, mysqlTable, text, timestamp, uniqueIndex, varchar } from "drizzle-orm/mysql-core";
 var users = mysqlTable("users", {
   /**
    * Surrogate primary key. Auto-incremented numeric value managed by the database.
@@ -95,6 +95,28 @@ var videos = mysqlTable("videos", {
   // JSON: 5観点x20点ルーブリック内訳
   aiAnalysis: mediumtext("aiAnalysis"),
   // Notion AI分析結果
+  calibrationStatus: varchar("calibrationStatus", { length: 32 }),
+  // legacy_uncalibrated | unscored | calibrated_verified | calibrated_unverified_genre
+  calibratedScore: decimal("calibratedScore", { precision: 5, scale: 2 }),
+  // Phase 2 校正済み総合スコア (0.00-100.00)
+  calibratedRank: varchar("calibratedRank", { length: 8 }),
+  // S+..D
+  calibratedTierBand: varchar("calibratedTierBand", { length: 24 }),
+  // award_tier | pro_band | low_band
+  calibratedBreakdown: mediumtext("calibratedBreakdown"),
+  // JSON: 2+1各回点数・5観点内訳・監査証跡
+  calibrationVersion: varchar("calibrationVersion", { length: 32 }),
+  // 'phase2_v1'
+  calibratedAt: timestamp("calibratedAt"),
+  // 校正完了日時 (UTC)
+  calibratedRoute: varchar("calibratedRoute", { length: 32 }),
+  // video_h1 | video_h2_escalated | contact_sheet
+  calibratedRunId: varchar("calibratedRunId", { length: 64 }),
+  // analysis/runs/<run_id>
+  calibrationGenreBucket: varchar("calibrationGenreBucket", { length: 64 }),
+  // CM | MV | モーション | 3DCG/アニメ | 企業映像 | unverified:<slug>
+  analysisObservationScope: varchar("analysisObservationScope", { length: 40 }),
+  // metadata_only_unwatched | triage_boilerplate_unwatched | triage_unverified_short | missing_video_unwatched | null
   embedStatus: varchar("embedStatus", { length: 16 }).notNull().default("unknown"),
   // unknown | available | restricted
   embedReason: varchar("embedReason", { length: 128 }),
@@ -658,24 +680,43 @@ async function getAllVideoListItems() {
     aiOverallScore: videos.aiOverallScore,
     aiDirectionScore: videos.aiDirectionScore,
     aiTechniqueScore: videos.aiTechniqueScore,
+    calibrationStatus: videos.calibrationStatus,
+    calibratedScore: videos.calibratedScore,
+    calibratedRank: videos.calibratedRank,
+    calibratedTierBand: videos.calibratedTierBand,
+    calibrationVersion: videos.calibrationVersion,
+    calibratedAt: videos.calibratedAt,
+    calibratedRoute: videos.calibratedRoute,
+    calibratedRunId: videos.calibratedRunId,
+    calibrationGenreBucket: videos.calibrationGenreBucket,
+    analysisObservationScope: videos.analysisObservationScope,
     embedStatus: videos.embedStatus,
     embedReason: videos.embedReason,
     embedCheckedAt: videos.embedCheckedAt,
     addedDate: videos.addedDate,
     createdAt: videos.createdAt,
-    updatedAt: videos.updatedAt
+    updatedAt: videos.updatedAt,
+    isProvisional: sql`CASE WHEN ${videos.aiScoreBreakdown} LIKE '%"analysisStatus":"provisional"%' OR ${videos.aiScoreBreakdown} LIKE '%"isProvisional":true%' THEN 1 ELSE 0 END`,
+    gradeBoundary: sql`CASE WHEN ${videos.aiScoreBreakdown} LIKE '%"gradeBoundary":true%' THEN 1 ELSE 0 END`,
+    visualVerificationStatus: sql`CASE WHEN ${videos.aiScoreBreakdown} LIKE '%"visualVerificationStatus":"log_verified"%' THEN 'log_verified' WHEN ${videos.aiScoreBreakdown} LIKE '%"visualVerificationStatus":"unverifiable_no_log"%' THEN 'unverifiable_no_log' WHEN ${videos.aiScoreBreakdown} LIKE '%"visualVerificationStatus":"unverified_pending"%' THEN 'unverified_pending' WHEN ${videos.aiScoreBreakdown} LIKE '%"visualVerificationStatus":"invalidated_no_visual"%' THEN 'invalidated_no_visual' ELSE 'not_audited' END`
   }).from(videos).orderBy(desc(videos.createdAt));
   return rows.map((row) => {
+    const { isProvisional, gradeBoundary, visualVerificationStatus, ...rest } = row;
     const video = parseVideoRow({
-      ...row,
+      ...rest,
       aiAnalysis: null,
       aiScoreBreakdown: null,
+      calibratedBreakdown: null,
       metadataClassificationAudit: null
     });
     return {
       ...video,
+      isProvisional: Boolean(isProvisional),
+      gradeBoundary: Boolean(gradeBoundary),
+      visualVerificationStatus: visualVerificationStatus || "not_audited",
       aiAnalysis: "",
       aiScoreBreakdown: void 0,
+      calibratedBreakdown: void 0,
       metadataClassificationAudit: void 0
     };
   });
@@ -876,11 +917,42 @@ function parseVideoRow(row) {
     aiTechniqueScore: row.aiTechniqueScore ?? null,
     aiScoreBreakdown: safeParseJson(row.aiScoreBreakdown, void 0),
     aiAnalysis: row.aiAnalysis ?? "",
+    calibrationStatus: row.calibrationStatus ?? (row.aiOverallScore !== null || row.aiOverallRating ? "legacy_uncalibrated" : "unscored"),
+    calibratedScore: row.calibratedScore !== null && row.calibratedScore !== void 0 ? Number(row.calibratedScore) : null,
+    calibratedRank: row.calibratedRank ?? null,
+    calibratedTierBand: row.calibratedTierBand ?? null,
+    calibratedBreakdown: safeParseJson(row.calibratedBreakdown, void 0),
+    calibrationVersion: row.calibrationVersion ?? null,
+    calibratedAt: row.calibratedAt ? row.calibratedAt.toISOString() : null,
+    calibratedRoute: row.calibratedRoute ?? null,
+    calibratedRunId: row.calibratedRunId ?? null,
+    calibrationGenreBucket: row.calibrationGenreBucket ?? null,
+    analysisObservationScope: row.analysisObservationScope ?? null,
+    isProvisional: isProvisionalFromBreakdown(row.aiScoreBreakdown),
+    gradeBoundary: isGradeBoundaryFromBreakdown(row.aiScoreBreakdown),
+    visualVerificationStatus: getVisualVerificationStatus(row.aiScoreBreakdown),
     embedStatus: row.embedStatus ?? "unknown",
     embedReason: row.embedReason ?? "",
     embedCheckedAt: row.embedCheckedAt?.toISOString() ?? "",
     addedDate: row.addedDate ?? ""
   };
+}
+function isProvisionalFromBreakdown(aiScoreBreakdown) {
+  const bd = safeParseJson(aiScoreBreakdown, null);
+  if (!bd) return false;
+  return bd.analysisStatus === "provisional" || bd.isProvisional === true;
+}
+function isGradeBoundaryFromBreakdown(aiScoreBreakdown) {
+  const bd = safeParseJson(aiScoreBreakdown, null);
+  return bd?.gradeBoundary === true;
+}
+function getVisualVerificationStatus(aiScoreBreakdown) {
+  const bd = safeParseJson(aiScoreBreakdown, null);
+  const v = bd?.visualVerificationStatus;
+  if (v === "log_verified" || v === "unverifiable_no_log" || v === "unverified_pending" || v === "invalidated_no_visual") {
+    return v;
+  }
+  return "not_audited";
 }
 function safeParseJson(str, fallback) {
   if (!str) return fallback;
@@ -1157,6 +1229,86 @@ var SDKServer = class {
 };
 var sdk = new SDKServer();
 
+// server/_core/trpc.ts
+import { initTRPC, TRPCError } from "@trpc/server";
+import { timingSafeEqual } from "node:crypto";
+import superjson from "superjson";
+var t = initTRPC.context().create({
+  transformer: superjson
+});
+var router = t.router;
+var publicProcedure = t.procedure;
+var ADMIN_WRITE_ERR_MSG = "ADMIN_KEY_REQUIRED: \u7BA1\u7406\u8005\u307E\u305F\u306F @atsu-maru.co.jp \u30A2\u30AB\u30A6\u30F3\u30C8\u3067\u306E\u30ED\u30B0\u30A4\u30F3\u304C\u5FC5\u8981\u3067\u3059";
+var ALLOWED_EDITOR_EMAIL_DOMAIN = "@atsu-maru.co.jp";
+function isAllowedEditorUser(user) {
+  if (!user) return false;
+  if (user.role === "admin") return true;
+  const email = (user.email ?? "").trim().toLowerCase();
+  return email.length > ALLOWED_EDITOR_EMAIL_DOMAIN.length && email.endsWith(ALLOWED_EDITOR_EMAIL_DOMAIN);
+}
+function extractAdminToken(req) {
+  const headerKey = req.headers["x-admin-api-key"];
+  if (typeof headerKey === "string" && headerKey.trim()) {
+    return headerKey.trim();
+  }
+  const authHeader = req.headers.authorization;
+  if (typeof authHeader === "string" && authHeader.toLowerCase().startsWith("bearer ")) {
+    return authHeader.slice(7).trim();
+  }
+  return "";
+}
+function safeTokenMatch(provided, expected) {
+  if (!provided || !expected) return false;
+  const a = Buffer.from(provided, "utf8");
+  const b = Buffer.from(expected, "utf8");
+  if (a.length !== b.length) return false;
+  return timingSafeEqual(a, b);
+}
+var writeProtectedProcedure = t.procedure.use(
+  t.middleware(async (opts) => {
+    const { ctx, next } = opts;
+    if (isAllowedEditorUser(ctx.user)) {
+      return next();
+    }
+    const expectedKey = (process.env.ADMIN_API_KEY ?? "").trim();
+    const providedKey = extractAdminToken(ctx.req);
+    if (expectedKey && safeTokenMatch(providedKey, expectedKey)) {
+      return next();
+    }
+    throw new TRPCError({
+      code: "UNAUTHORIZED",
+      message: ADMIN_WRITE_ERR_MSG
+    });
+  })
+);
+var requireUser = t.middleware(async (opts) => {
+  const { ctx, next } = opts;
+  if (!ctx.user) {
+    throw new TRPCError({ code: "UNAUTHORIZED", message: UNAUTHED_ERR_MSG });
+  }
+  return next({
+    ctx: {
+      ...ctx,
+      user: ctx.user
+    }
+  });
+});
+var protectedProcedure = t.procedure.use(requireUser);
+var adminProcedure = t.procedure.use(
+  t.middleware(async (opts) => {
+    const { ctx, next } = opts;
+    if (!ctx.user || ctx.user.role !== "admin") {
+      throw new TRPCError({ code: "FORBIDDEN", message: NOT_ADMIN_ERR_MSG });
+    }
+    return next({
+      ctx: {
+        ...ctx,
+        user: ctx.user
+      }
+    });
+  })
+);
+
 // server/_core/oauth.ts
 function getQueryParam(req, key) {
   const value = req.query[key];
@@ -1175,6 +1327,15 @@ function registerOAuthRoutes(app2) {
       const userInfo = await sdk.getUserInfo(tokenResponse.accessToken);
       if (!userInfo.openId) {
         res.status(400).json({ error: "openId missing from user info" });
+        return;
+      }
+      const email = (userInfo.email ?? "").trim().toLowerCase();
+      const isOwner = Boolean(ENV.ownerOpenId && userInfo.openId === ENV.ownerOpenId);
+      const isAllowedDomain = email.length > ALLOWED_EDITOR_EMAIL_DOMAIN.length && email.endsWith(ALLOWED_EDITOR_EMAIL_DOMAIN);
+      if (!isOwner && !isAllowedDomain) {
+        res.status(403).json({
+          error: "ACCESS_DENIED: \u7BA1\u7406\u8005\u307E\u305F\u306F @atsu-maru.co.jp \u30A2\u30AB\u30A6\u30F3\u30C8\u306E\u307F\u30ED\u30B0\u30A4\u30F3\u3067\u304D\u307E\u3059\u3002"
+        });
         return;
       }
       await upsertUser({
@@ -1202,7 +1363,7 @@ function registerOAuthRoutes(app2) {
 import { z } from "zod";
 
 // server/_core/notification.ts
-import { TRPCError } from "@trpc/server";
+import { TRPCError as TRPCError2 } from "@trpc/server";
 var TITLE_MAX_LENGTH = 1200;
 var CONTENT_MAX_LENGTH = 2e4;
 var trimValue = (value) => value.trim();
@@ -1216,13 +1377,13 @@ var buildEndpointUrl = (baseUrl) => {
 };
 var validatePayload = (input) => {
   if (!isNonEmptyString2(input.title)) {
-    throw new TRPCError({
+    throw new TRPCError2({
       code: "BAD_REQUEST",
       message: "Notification title is required."
     });
   }
   if (!isNonEmptyString2(input.content)) {
-    throw new TRPCError({
+    throw new TRPCError2({
       code: "BAD_REQUEST",
       message: "Notification content is required."
     });
@@ -1230,13 +1391,13 @@ var validatePayload = (input) => {
   const title = trimValue(input.title);
   const content = trimValue(input.content);
   if (title.length > TITLE_MAX_LENGTH) {
-    throw new TRPCError({
+    throw new TRPCError2({
       code: "BAD_REQUEST",
       message: `Notification title must be at most ${TITLE_MAX_LENGTH} characters.`
     });
   }
   if (content.length > CONTENT_MAX_LENGTH) {
-    throw new TRPCError({
+    throw new TRPCError2({
       code: "BAD_REQUEST",
       message: `Notification content must be at most ${CONTENT_MAX_LENGTH} characters.`
     });
@@ -1246,13 +1407,13 @@ var validatePayload = (input) => {
 async function notifyOwner(payload) {
   const { title, content } = validatePayload(payload);
   if (!ENV.forgeApiUrl) {
-    throw new TRPCError({
+    throw new TRPCError2({
       code: "INTERNAL_SERVER_ERROR",
       message: "Notification service URL is not configured."
     });
   }
   if (!ENV.forgeApiKey) {
-    throw new TRPCError({
+    throw new TRPCError2({
       code: "INTERNAL_SERVER_ERROR",
       message: "Notification service API key is not configured."
     });
@@ -1283,42 +1444,6 @@ async function notifyOwner(payload) {
   }
 }
 
-// server/_core/trpc.ts
-import { initTRPC, TRPCError as TRPCError2 } from "@trpc/server";
-import superjson from "superjson";
-var t = initTRPC.context().create({
-  transformer: superjson
-});
-var router = t.router;
-var publicProcedure = t.procedure;
-var requireUser = t.middleware(async (opts) => {
-  const { ctx, next } = opts;
-  if (!ctx.user) {
-    throw new TRPCError2({ code: "UNAUTHORIZED", message: UNAUTHED_ERR_MSG });
-  }
-  return next({
-    ctx: {
-      ...ctx,
-      user: ctx.user
-    }
-  });
-});
-var protectedProcedure = t.procedure.use(requireUser);
-var adminProcedure = t.procedure.use(
-  t.middleware(async (opts) => {
-    const { ctx, next } = opts;
-    if (!ctx.user || ctx.user.role !== "admin") {
-      throw new TRPCError2({ code: "FORBIDDEN", message: NOT_ADMIN_ERR_MSG });
-    }
-    return next({
-      ctx: {
-        ...ctx,
-        user: ctx.user
-      }
-    });
-  })
-);
-
 // server/_core/systemRouter.ts
 var systemRouter = router({
   health: publicProcedure.input(
@@ -1343,6 +1468,33 @@ var systemRouter = router({
 
 // server/externalMediaMetadata.ts
 var USER_AGENT = "Mozilla/5.0 (compatible; IketeruVideoCollection/1.0; metadata preview)";
+var ALLOWED_DOMAINS = {
+  x: ["x.com", "twitter.com", "mobile.twitter.com"],
+  tiktok: ["tiktok.com", "www.tiktok.com", "vm.tiktok.com", "vt.tiktok.com", "m.tiktok.com"],
+  instagram: ["instagram.com", "www.instagram.com"],
+  vimeo: ["vimeo.com", "www.vimeo.com", "player.vimeo.com"]
+};
+function assertAllowedExternalMediaUrl(platform, rawUrl) {
+  let parsed;
+  try {
+    parsed = new URL(rawUrl);
+  } catch {
+    throw new Error("\u4E0D\u6B63\u306AURL\u5F62\u5F0F\u3067\u3059");
+  }
+  if (parsed.protocol !== "https:") {
+    throw new Error("HTTPS\u4EE5\u5916\u306EURL\u306F\u8A31\u53EF\u3055\u308C\u3066\u3044\u307E\u305B\u3093");
+  }
+  const host = parsed.hostname.toLowerCase();
+  if (host === "localhost" || /^127\./.test(host) || /^10\./.test(host) || /^192\.168\./.test(host) || /^169\.254\./.test(host) || /^172\.(1[6-9]|2\d|3[0-1])\./.test(host) || host.includes(":") || /^\d+\.\d+\.\d+\.\d+$/.test(host)) {
+    throw new Error("\u30D7\u30E9\u30A4\u30D9\u30FC\u30C8IP\u307E\u305F\u306F\u30ED\u30FC\u30AB\u30EB\u30DB\u30B9\u30C8\u3078\u306E\u30A2\u30AF\u30BB\u30B9\u306F\u7981\u6B62\u3055\u308C\u3066\u3044\u307E\u3059");
+  }
+  const allowed = ALLOWED_DOMAINS[platform] ?? [];
+  const isAllowed = allowed.some((domain) => host === domain || host.endsWith(`.${domain}`));
+  if (!isAllowed) {
+    throw new Error(`\u8A31\u53EF\u3055\u308C\u3066\u3044\u306A\u3044\u30C9\u30E1\u30A4\u30F3\u3067\u3059 (${host})`);
+  }
+  return parsed;
+}
 function decodeHtml(value) {
   return value.replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#39;|&apos;/g, "'").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
 }
@@ -1356,11 +1508,30 @@ function metaContent(html, key) {
   }
   return "";
 }
-async function fetchOpenGraph(url) {
-  const response = await fetch(url, {
+async function fetchOpenGraph(platform, url) {
+  const safeUrl = assertAllowedExternalMediaUrl(platform, url);
+  const response = await fetch(safeUrl.toString(), {
     headers: { "User-Agent": USER_AGENT, Accept: "text/html,application/xhtml+xml" },
+    redirect: "manual",
     signal: AbortSignal.timeout(8e3)
   });
+  if (response.status >= 300 && response.status < 400) {
+    const loc = response.headers.get("location");
+    if (!loc) throw new Error("\u30EA\u30C0\u30A4\u30EC\u30AF\u30C8\u5148\u304C\u4E0D\u660E\u3067\u3059");
+    const nextUrl = assertAllowedExternalMediaUrl(platform, new URL(loc, safeUrl).toString());
+    const redirected = await fetch(nextUrl.toString(), {
+      headers: { "User-Agent": USER_AGENT, Accept: "text/html,application/xhtml+xml" },
+      redirect: "error",
+      signal: AbortSignal.timeout(8e3)
+    });
+    if (!redirected.ok) throw new Error(`\u516C\u958B\u30DA\u30FC\u30B8\u53D6\u5F97\u30A8\u30E9\u30FC (${redirected.status})`);
+    const html2 = (await redirected.text()).slice(0, 2e6);
+    return {
+      title: metaContent(html2, "og:title") || metaContent(html2, "twitter:title"),
+      thumbnail: metaContent(html2, "og:image") || metaContent(html2, "twitter:image"),
+      channelTitle: metaContent(html2, "og:site_name")
+    };
+  }
   if (!response.ok) throw new Error(`\u516C\u958B\u30DA\u30FC\u30B8\u53D6\u5F97\u30A8\u30E9\u30FC (${response.status})`);
   const html = (await response.text()).slice(0, 2e6);
   return {
@@ -1374,8 +1545,9 @@ function empty(reason) {
 }
 async function fetchExternalMediaMetadata(input) {
   try {
+    const safeUrl = assertAllowedExternalMediaUrl(input.platform, input.url).toString();
     if (input.platform === "tiktok") {
-      const response = await fetch(`https://www.tiktok.com/oembed?url=${encodeURIComponent(input.url)}`, {
+      const response = await fetch(`https://www.tiktok.com/oembed?url=${encodeURIComponent(safeUrl)}`, {
         headers: { "User-Agent": USER_AGENT },
         signal: AbortSignal.timeout(8e3)
       });
@@ -1393,13 +1565,13 @@ async function fetchExternalMediaMetadata(input) {
       }
     }
     if (input.platform === "x") {
-      const response = await fetch(`https://publish.twitter.com/oembed?omit_script=1&url=${encodeURIComponent(input.url)}`, {
+      const response = await fetch(`https://publish.twitter.com/oembed?omit_script=1&url=${encodeURIComponent(safeUrl)}`, {
         headers: { "User-Agent": USER_AGENT },
         signal: AbortSignal.timeout(8e3)
       });
       const oembed2 = response.ok ? await response.json() : {};
       try {
-        const openGraph2 = await fetchOpenGraph(input.url);
+        const openGraph2 = await fetchOpenGraph("x", safeUrl);
         if (openGraph2.title || openGraph2.thumbnail || oembed2.author_name) {
           return {
             title: openGraph2.title,
@@ -1413,7 +1585,7 @@ async function fetchExternalMediaMetadata(input) {
         if (oembed2.author_name) return { title: "", thumbnail: "", channelTitle: oembed2.author_name.trim(), source: "X oEmbed", available: true };
       }
     }
-    const openGraph = await fetchOpenGraph(input.url);
+    const openGraph = await fetchOpenGraph(input.platform, safeUrl);
     if (openGraph.title || openGraph.thumbnail || openGraph.channelTitle) {
       return { ...openGraph, source: "\u516C\u958B\u30DA\u30FC\u30B8\u306EOpen Graph", available: true };
     }
@@ -1858,7 +2030,7 @@ var appRouter = router({
       if (!profile) throw new TRPCError3({ code: "NOT_FOUND", message: "\u5229\u7528\u8005\u30D7\u30ED\u30D5\u30A3\u30FC\u30EB\u304C\u898B\u3064\u304B\u308A\u307E\u305B\u3093" });
       return getFavoriteProfileItems(input.profileId);
     }),
-    createProfile: publicProcedure.input(z2.object({ displayName: favoriteProfileNameSchema })).mutation(async ({ input }) => {
+    createProfile: writeProtectedProcedure.input(z2.object({ displayName: favoriteProfileNameSchema })).mutation(async ({ input }) => {
       const normalizedName = normalizeFavoriteProfileName(input.displayName);
       const existing = await getFavoriteProfileByNormalizedName(normalizedName);
       if (existing) throw new TRPCError3({ code: "CONFLICT", message: "\u540C\u3058\u5229\u7528\u8005\u540D\u304C\u3059\u3067\u306B\u3042\u308A\u307E\u3059" });
@@ -1866,7 +2038,7 @@ var appRouter = router({
       if (!profile) throw new TRPCError3({ code: "INTERNAL_SERVER_ERROR", message: "\u5229\u7528\u8005\u30D7\u30ED\u30D5\u30A3\u30FC\u30EB\u3092\u4F5C\u6210\u3067\u304D\u307E\u305B\u3093\u3067\u3057\u305F" });
       return profile;
     }),
-    renameProfile: publicProcedure.input(z2.object({ profileId: favoriteProfileIdSchema, displayName: favoriteProfileNameSchema })).mutation(async ({ input }) => {
+    renameProfile: writeProtectedProcedure.input(z2.object({ profileId: favoriteProfileIdSchema, displayName: favoriteProfileNameSchema })).mutation(async ({ input }) => {
       const profile = await getFavoriteProfileById(input.profileId);
       if (!profile) throw new TRPCError3({ code: "NOT_FOUND", message: "\u5229\u7528\u8005\u30D7\u30ED\u30D5\u30A3\u30FC\u30EB\u304C\u898B\u3064\u304B\u308A\u307E\u305B\u3093" });
       const normalizedName = normalizeFavoriteProfileName(input.displayName);
@@ -1876,21 +2048,21 @@ var appRouter = router({
       if (!renamed) throw new TRPCError3({ code: "INTERNAL_SERVER_ERROR", message: "\u5229\u7528\u8005\u30D7\u30ED\u30D5\u30A3\u30FC\u30EB\u3092\u5909\u66F4\u3067\u304D\u307E\u305B\u3093\u3067\u3057\u305F" });
       return renamed;
     }),
-    deleteProfile: publicProcedure.input(z2.object({ profileId: favoriteProfileIdSchema })).mutation(async ({ input }) => {
+    deleteProfile: writeProtectedProcedure.input(z2.object({ profileId: favoriteProfileIdSchema })).mutation(async ({ input }) => {
       await deleteFavoriteProfile(input.profileId);
       return { success: true };
     }),
-    toggleVideo: publicProcedure.input(z2.object({ profileId: favoriteProfileIdSchema, videoId: z2.string().trim().min(1).max(64) })).mutation(async ({ input }) => {
+    toggleVideo: writeProtectedProcedure.input(z2.object({ profileId: favoriteProfileIdSchema, videoId: z2.string().trim().min(1).max(64) })).mutation(async ({ input }) => {
       const profile = await getFavoriteProfileById(input.profileId);
       if (!profile) throw new TRPCError3({ code: "NOT_FOUND", message: "\u5229\u7528\u8005\u30D7\u30ED\u30D5\u30A3\u30FC\u30EB\u304C\u898B\u3064\u304B\u308A\u307E\u305B\u3093" });
       return toggleFavoriteProfileVideo(input.profileId, input.videoId);
     }),
-    toggleCreator: publicProcedure.input(z2.object({ profileId: favoriteProfileIdSchema, creatorName: z2.string().trim().min(1).max(160) })).mutation(async ({ input }) => {
+    toggleCreator: writeProtectedProcedure.input(z2.object({ profileId: favoriteProfileIdSchema, creatorName: z2.string().trim().min(1).max(160) })).mutation(async ({ input }) => {
       const profile = await getFavoriteProfileById(input.profileId);
       if (!profile) throw new TRPCError3({ code: "NOT_FOUND", message: "\u5229\u7528\u8005\u30D7\u30ED\u30D5\u30A3\u30FC\u30EB\u304C\u898B\u3064\u304B\u308A\u307E\u305B\u3093" });
       return toggleFavoriteProfileCreator(input.profileId, input.creatorName);
     }),
-    migrateLegacy: publicProcedure.input(z2.object({
+    migrateLegacy: writeProtectedProcedure.input(z2.object({
       profileId: favoriteProfileIdSchema,
       videoIds: z2.array(z2.string().trim().min(1).max(64)).max(5e3),
       creatorNames: z2.array(z2.string().trim().min(1).max(160)).max(5e3)
@@ -1909,11 +2081,11 @@ var appRouter = router({
     count: publicProcedure.query(async () => {
       return await getVideoCount();
     }),
-    previewExternalMedia: publicProcedure.input(z2.object({
+    previewExternalMedia: writeProtectedProcedure.input(z2.object({
       platform: z2.enum(["x", "tiktok", "instagram", "vimeo"]),
       url: z2.string().url()
     })).mutation(async ({ input }) => fetchExternalMediaMetadata(input)),
-    create: publicProcedure.input(videoWriteSchema.extend({ id: z2.string().trim().min(1).max(64) })).mutation(async ({ input }) => {
+    create: writeProtectedProcedure.input(videoWriteSchema.extend({ id: z2.string().trim().min(1).max(64) })).mutation(async ({ input }) => {
       const { id, ...values } = input;
       const existing = await getVideoById(id);
       if (existing) {
@@ -1927,15 +2099,15 @@ var appRouter = router({
       const enriched = await enrichMetadataAfterWrite(id, values);
       return enriched ?? created;
     }),
-    update: publicProcedure.input(videoWriteSchema.extend({ id: z2.string().trim().min(1).max(64) })).mutation(async ({ input }) => {
+    update: writeProtectedProcedure.input(videoWriteSchema.extend({ id: z2.string().trim().min(1).max(64) })).mutation(async ({ input }) => {
       const { id, ...values } = input;
       const updated = await updateVideo(id, toVideoRecord(values));
       if (!updated) return updated;
       const enriched = await enrichMetadataAfterWrite(id, values);
       return enriched ?? updated;
     }),
-    recordEmbedStatus: publicProcedure.input(z2.object({ id: z2.string().trim().min(1).max(64), status: z2.enum(["available", "restricted"]) })).mutation(async ({ input }) => updateEmbedStatus(input.id, input.status)),
-    delete: publicProcedure.input(z2.object({ id: z2.string().trim().min(1).max(64) })).mutation(async ({ input }) => {
+    recordEmbedStatus: writeProtectedProcedure.input(z2.object({ id: z2.string().trim().min(1).max(64), status: z2.enum(["available", "restricted"]) })).mutation(async ({ input }) => updateEmbedStatus(input.id, input.status)),
+    delete: writeProtectedProcedure.input(z2.object({ id: z2.string().trim().min(1).max(64) })).mutation(async ({ input }) => {
       await deleteVideo(input.id);
       return { success: true };
     })

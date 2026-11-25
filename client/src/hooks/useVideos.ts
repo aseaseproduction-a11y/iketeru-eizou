@@ -250,6 +250,7 @@ export function parseSearchQuery(raw: string): ParsedQuery {
 
 export function getVideoSearchText(video: Video): string {
   return [
+    video.id,
     video.title,
     video.channelTitle || "",
     ...video.allTags,

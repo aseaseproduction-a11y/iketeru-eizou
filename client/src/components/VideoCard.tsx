@@ -6,10 +6,11 @@
  */
 import { useState, useCallback, useRef } from "react";
 import { motion } from "framer-motion";
-import { Play, Film, Bookmark, StickyNote, AlertCircle, User } from "lucide-react";
+import { Play, Film, Bookmark, StickyNote, AlertCircle, AlertTriangle, User } from "lucide-react";
 import type { Video, VideoSource } from "@/lib/types";
 import { SOURCE_COLORS } from "@/lib/types";
 import { formatEmbedRecheckAt, isEmbedStatusRecheckDue } from "@/lib/embedStatus";
+import { getAnalysisObservationScopeWarning } from "@shared/analysisObservationScope";
 
 interface VideoCardProps {
   video: Video;
@@ -131,6 +132,9 @@ export default function VideoCard({ video, index, isFavorite = false, hasNote = 
     : "";
   const embedRecheckDue = isEmbedStatusRecheckDue(video.embedStatus, video.embedCheckedAt);
   const embedRecheckAt = formatEmbedRecheckAt(video.embedCheckedAt);
+  const observationWarning = getAnalysisObservationScopeWarning(video.analysisObservationScope, {
+    hasCalibratedScore: hasCalibrated,
+  });
 
   const getTagColor = (tag: string) => {
     if (video.genres.some((g) => g.name === tag)) return "bg-cinematic-red/70 text-white";
@@ -290,6 +294,23 @@ export default function VideoCard({ video, index, isFavorite = false, hasNote = 
             <User className="h-3 w-3 text-amber-400/70 shrink-0" />
             <span className="truncate">{mainCreator}</span>
           </p>
+        )}
+        {observationWarning && (
+          <div className="mt-1.5 flex items-center gap-1">
+            <span
+              data-testid="unwatched-warning-badge"
+              data-observation-scope={observationWarning.scope}
+              title={observationWarning.description}
+              className={`inline-flex items-center gap-1 rounded-sm border px-1.5 py-0.5 text-[9.5px] font-semibold leading-tight ${
+                observationWarning.severity === "high"
+                  ? "border-amber-400/50 bg-amber-500/15 text-amber-200"
+                  : "border-yellow-400/40 bg-yellow-500/10 text-yellow-200"
+              }`}
+            >
+              <AlertTriangle className="h-2.5 w-2.5 shrink-0" aria-hidden="true" />
+              <span>{observationWarning.badgeLabel}</span>
+            </span>
+          </div>
         )}
         {(hasCalibrated || aiRatings.length > 0 || isLegacyUncalibrated) && (
           <div className="mt-1.5 flex flex-wrap items-center gap-1" aria-label="AI評価">

@@ -88,4 +88,30 @@ describe("parseVideoRow", () => {
     expect(listItem.metadataClassificationAudit).toBeUndefined();
     expect(video.aiAnalysis).toBe("長い分析本文");
   });
+
+  it("preserves analysisObservationScope when present and defaults to null", () => {
+    const baseRow = {
+      id: "obs-test",
+      platform: "vimeo",
+      title: "Observation scope test",
+      thumbnail: null,
+      videoUrl: "https://vimeo.com/776884130",
+      embedUrl: null,
+      source: "manual",
+      sourceLabel: "手動追加",
+      channelId: null,
+      channelTitle: null,
+      genres: "[]", products: "[]", directions: "[]", tones: "[]", allTags: "[]",
+      purposes: "[]", expressions: "[]", toneEmotions: "[]", toneVisuals: "[]", toneTechniques: "[]", productions: "[]", awards: "[]",
+      curationNote: null, metadataClassificationAudit: null,
+      privateRating: null, aiOverallRating: null, aiDirectionRating: null, aiTechniqueRating: null,
+      aiAnalysis: "メタデータのみ一次記録", embedStatus: "unknown", embedReason: null, embedCheckedAt: null,
+      addedDate: "2026-11-19", createdAt: new Date(), updatedAt: new Date(),
+    };
+    const tagged = parseVideoRow({ ...baseRow, analysisObservationScope: "metadata_only_unwatched" } as never);
+    const untagged = parseVideoRow({ ...baseRow, analysisObservationScope: null } as never);
+
+    expect(tagged.analysisObservationScope).toBe("metadata_only_unwatched");
+    expect(untagged.analysisObservationScope).toBeNull();
+  });
 });

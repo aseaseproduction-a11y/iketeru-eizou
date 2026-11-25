@@ -76,6 +76,7 @@ export const videos = mysqlTable("videos", {
   calibratedRoute: varchar("calibratedRoute", { length: 32 }), // video_h1 | video_h2_escalated | contact_sheet
   calibratedRunId: varchar("calibratedRunId", { length: 64 }), // analysis/runs/<run_id>
   calibrationGenreBucket: varchar("calibrationGenreBucket", { length: 64 }), // CM | MV | モーション | 3DCG/アニメ | 企業映像 | unverified:<slug>
+  analysisObservationScope: varchar("analysisObservationScope", { length: 40 }), // metadata_only_unwatched | triage_boilerplate_unwatched | triage_unverified_short | missing_video_unwatched | null
   embedStatus: varchar("embedStatus", { length: 16 }).notNull().default("unknown"), // unknown | available | restricted
   embedReason: varchar("embedReason", { length: 128 }), // unavailable_private_or_deleted | unavailable_access_restricted | unavailable_embed_restricted | unavailable_page_unavailable
   embedCheckedAt: timestamp("embedCheckedAt"),
