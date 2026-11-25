@@ -9,7 +9,7 @@
     "cached_only": false,
     "verify_media": false
   },
-  "status": "active",
+  "status": "released",
   "claimed_at": "2026-11-25T02:37:14.258Z",
   "video_ids": [
     "1041875369",
@@ -17,5 +17,7 @@
     "1062069953",
     "1068014839",
     "1069311388"
-  ]
+  ],
+  "released_at": "2026-11-25T02:52:05.190Z",
+  "release_reason": "vimeo_login_required_abort"
 }

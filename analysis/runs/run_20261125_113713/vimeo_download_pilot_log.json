@@ -1,0 +1,20 @@
+{
+  "run_id": "run_20261125_113713",
+  "tested_at": "2026-11-25T02:38:08.152Z",
+  "target_count": 5,
+  "attempted": 1,
+  "succeeded": 0,
+  "failed": 1,
+  "aborted": true,
+  "results": [
+    {
+      "index": 1,
+      "video_id": "1041875369",
+      "url": "https://vimeo.com/1041875369",
+      "status": "failed_abort",
+      "wait_before_sec": 0,
+      "download_elapsed_sec": 4.91,
+      "error": "ERROR: [vimeo] 1041875369: The web client only works when logged-in. Use --cookies, --cookies-from-browser, --username and --password, --netrc-cmd, or --netrc (vimeo) to provide account credentials. See https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp for how to manually pass cookies Command failed: yt-dlp --js-runtimes node -f 18/best[height<=480][ext=mp4]/bestvideo[heigh"
+    }
+  ]
+}
