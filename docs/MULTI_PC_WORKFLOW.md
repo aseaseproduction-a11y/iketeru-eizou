@@ -132,6 +132,20 @@ git push
 - 他PCの進捗に不備・注意点を見つけた場合は、他PCのファイルを直接直さず、**自PCの `status_<ワーカー名>.md` に「他PC向けのお知らせ」として記載**してください（コード修正は Git で行い、`push` 前に `git pull --rebase` を実行）。
 - **厳禁事項**: 共有の Google ドライブには、**技法辞典の OCR 生データ（`E:\技術書_index\ocr_private`）や社外秘ファイルを一切置かないこと**。
 
+### ステップ3.9: 完了した run の監査記録を zip 保管（D-019）
+run が完了したら、**その run を実行した PC 上で** `scripts/archive-run-evidence.mjs` を実行し、`analysis/runs/<run_id>/` と親・採点役の会話ログ（`.system_generated/logs/transcript*.jsonl` のみ。スクリーンショット・`media/`・`chunks/`・`scratch/` は除外）を `manifest.json`（ファイル一覧・SHA-256・会話 ID・作成日時・ワーカー名）付きで zip 保管します。
+
+```powershell
+# 1. まず --dry-run でファイル数・合計サイズ・秘密情報検査（0件）を確認
+#    （Google ドライブが G:\ の PC は --out-dir "G:\マイドライブ\iketeru_evidence_archive" または .env の IKETERU_EVIDENCE_ARCHIVE_DIR を指定）
+node scripts/archive-run-evidence.mjs <run_id> --dry-run --worker <このPC名>
+
+# 2. 秘密情報 0 件・200MB 以下を確認できたら保存し、出力された zip_sha256 を記録
+node scripts/archive-run-evidence.mjs <run_id> --worker <このPC名>
+```
+
+- **保存前ガード（fail-closed）**: API キー、`DATABASE_URL`、`mysql://` 接続情報、秘密鍵、`.env` の秘密値が **1 件でも検出された場合**、または zip サイズが **200 MB を超える場合**は zip を保存せず終了コード 1 で停止します。停止した場合は原因を報告し、ユーザー判断を仰いでください。
+
 ### ステップ3.5: 取得不可動画の除外リスト（`analysis/claims/_skip_list.json`）運用
 バッチ完了後に未校正のまま残る取得失敗動画が別PCで繰り返し再予約されるのを防ぐため、`analysis/claims/_skip_list.json` で除外管理します（`--status`・`--claim` の空きプール計算から自動除外）。
 
