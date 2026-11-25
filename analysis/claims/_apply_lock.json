@@ -1,12 +1,8 @@
 {
   "schema_version": 1,
-  "status": "unlocked",
-  "worker": null,
-  "run_id": null,
-  "started_at": null,
-  "last_worker": "CHIBA-PC",
-  "last_run_id": "run_20261125_113041",
-  "last_started_at": "2026-11-25T06:25:46.962Z",
-  "released_at": "2026-11-25T06:26:48.855Z",
-  "released_by": "CHIBA-PC"
+  "status": "locked",
+  "worker": "CHIBA-PC2",
+  "run_id": "run_20261124_173838",
+  "started_at": "2026-11-25T06:59:04.253Z",
+  "updated_at": "2026-11-25T06:59:04.253Z"
 }
