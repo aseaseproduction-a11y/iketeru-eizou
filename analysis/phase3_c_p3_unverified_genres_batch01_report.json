@@ -1,0 +1,1369 @@
+{
+  "generated_at": "2026-11-25T03:08:08.708Z",
+  "phase": "phase3_c",
+  "run_id": "run_20261125_113041",
+  "priority": "P3_unverified_genres",
+  "batch_index": 1,
+  "frozen_config": {
+    "config_version": "phase2_frozen_config_v1",
+    "t_award": 83,
+    "t_low": 63,
+    "expected_model": "gemini-4-neon-high",
+    "prompt_version": "v1_baseline",
+    "hybrid_router_version": "phase2_hybrid_v1",
+    "frozen_commit": "5e42f16ace5093964f054bd1ebe44ab30b251296"
+  },
+  "execution_stats": {
+    "target_count": 14,
+    "prepared_count": 13,
+    "finalized_count": 13,
+    "runtime_failures_count": 1,
+    "valid_subagent_runs": 35,
+    "valid_video_runs": 27,
+    "valid_cs_runs": 8,
+    "invalid_subagent_runs": 0,
+    "strict_audit_pass_rate": 100,
+    "model_match_rate_pct": 100,
+    "tiebreakers_triggered_final_mode": 1,
+    "by_route": {
+      "video_h1": 9,
+      "video_h2_escalated": 4
+    },
+    "by_calibration_status": {
+      "calibrated_unverified_genre": 13
+    },
+    "knows_work_count": 5,
+    "knows_award_history_count": 0,
+    "total_first_post_read_input_tokens": 568791,
+    "total_first_post_read_effective_tokens": 896209
+  },
+  "score_distribution": {
+    "calibrated_mean": 78.88,
+    "calibrated_median": 79.5,
+    "calibrated_min": 58.5,
+    "calibrated_max": 92,
+    "by_tier_band": {
+      "award_tier": 5,
+      "pro_band": 7,
+      "low_band": 1
+    },
+    "by_rank": {
+      "A-": 3,
+      "S-": 2,
+      "A+": 3,
+      "B+": 2,
+      "C+": 1,
+      "B-": 2
+    },
+    "legacy_comparison": {
+      "videos_with_legacy_score": 13,
+      "legacy_mean": 80.62,
+      "legacy_median": 80,
+      "calibrated_mean_on_legacy_subset": 78.88,
+      "delta_mean_calibrated_minus_legacy": -1.73,
+      "delta_median_calibrated_minus_legacy": -1,
+      "increased_count": 4,
+      "unchanged_count": 0,
+      "decreased_count": 9
+    }
+  },
+  "private_rating_reference_comparison": {
+    "disclaimer": "参考情報のみ（Phase 3 承認条件4）。ユーザーの privateRating（個人的な好み・保存理由）と Phase 2 凍結校正スコア（客観クラフト到達度）の傾向比較であり、採点基準や閾値（T_award=83, T_low=63）の変更には使用しない。",
+    "diagnostic_rough_match_rule": "S: >=83 / A: >=78 / B: 63..82.99 / C: <73",
+    "overall_by_private_rating": {
+      "(none)": {
+        "count": 13,
+        "calibrated_mean": 78.88,
+        "calibrated_median": 79.5,
+        "calibrated_min": 58.5,
+        "calibrated_max": 92,
+        "award_tier_gte_83_count": 5,
+        "award_tier_gte_83_pct": 38.5,
+        "pro_band_63_to_82_99_count": 7,
+        "low_band_lt_63_count": 1,
+        "legacy_count": 13,
+        "legacy_mean": 80.62,
+        "mean_delta_calibrated_minus_legacy": -1.73
+      }
+    },
+    "per_genre_comparison": [
+      {
+        "genre_bucket": "unverified:film",
+        "genre_verified": false,
+        "count": 3,
+        "calibrated_mean": 84.67,
+        "calibrated_median": 85.5,
+        "award_tier_count": 2,
+        "rough_concordance_count": 0,
+        "rough_divergence_count": 3,
+        "rough_divergence_rate_pct": 100,
+        "by_private_rating": {
+          "(none)": {
+            "n": 3,
+            "mean": 84.67,
+            "median": 85.5
+          }
+        },
+        "s_below_83_count": 0,
+        "a_below_78_count": 0,
+        "b_gte_83_count": 0
+      },
+      {
+        "genre_bucket": "unverified:opening",
+        "genre_verified": false,
+        "count": 2,
+        "calibrated_mean": 85.5,
+        "calibrated_median": 85.5,
+        "award_tier_count": 1,
+        "rough_concordance_count": 0,
+        "rough_divergence_count": 2,
+        "rough_divergence_rate_pct": 100,
+        "by_private_rating": {
+          "(none)": {
+            "n": 2,
+            "mean": 85.5,
+            "median": 85.5
+          }
+        },
+        "s_below_83_count": 0,
+        "a_below_78_count": 0,
+        "b_gte_83_count": 0
+      },
+      {
+        "genre_bucket": "unverified:branded-movie",
+        "genre_verified": false,
+        "count": 2,
+        "calibrated_mean": 82.5,
+        "calibrated_median": 82.5,
+        "award_tier_count": 1,
+        "rough_concordance_count": 0,
+        "rough_divergence_count": 2,
+        "rough_divergence_rate_pct": 100,
+        "by_private_rating": {
+          "(none)": {
+            "n": 2,
+            "mean": 82.5,
+            "median": 82.5
+          }
+        },
+        "s_below_83_count": 0,
+        "a_below_78_count": 0,
+        "b_gte_83_count": 0
+      },
+      {
+        "genre_bucket": "unverified:concept-art",
+        "genre_verified": false,
+        "count": 2,
+        "calibrated_mean": 62,
+        "calibrated_median": 62,
+        "award_tier_count": 0,
+        "rough_concordance_count": 0,
+        "rough_divergence_count": 2,
+        "rough_divergence_rate_pct": 100,
+        "by_private_rating": {
+          "(none)": {
+            "n": 2,
+            "mean": 62,
+            "median": 62
+          }
+        },
+        "s_below_83_count": 0,
+        "a_below_78_count": 0,
+        "b_gte_83_count": 0
+      },
+      {
+        "genre_bucket": "unverified:making",
+        "genre_verified": false,
+        "count": 1,
+        "calibrated_mean": 74,
+        "calibrated_median": 74,
+        "award_tier_count": 0,
+        "rough_concordance_count": 0,
+        "rough_divergence_count": 1,
+        "rough_divergence_rate_pct": 100,
+        "by_private_rating": {
+          "(none)": {
+            "n": 1,
+            "mean": 74,
+            "median": 74
+          }
+        },
+        "s_below_83_count": 0,
+        "a_below_78_count": 0,
+        "b_gte_83_count": 0
+      },
+      {
+        "genre_bucket": "unverified:event-live",
+        "genre_verified": false,
+        "count": 1,
+        "calibrated_mean": 67,
+        "calibrated_median": 67,
+        "award_tier_count": 0,
+        "rough_concordance_count": 0,
+        "rough_divergence_count": 1,
+        "rough_divergence_rate_pct": 100,
+        "by_private_rating": {
+          "(none)": {
+            "n": 1,
+            "mean": 67,
+            "median": 67
+          }
+        },
+        "s_below_83_count": 0,
+        "a_below_78_count": 0,
+        "b_gte_83_count": 0
+      },
+      {
+        "genre_bucket": "unverified:documentary",
+        "genre_verified": false,
+        "count": 1,
+        "calibrated_mean": 92,
+        "calibrated_median": 92,
+        "award_tier_count": 1,
+        "rough_concordance_count": 0,
+        "rough_divergence_count": 1,
+        "rough_divergence_rate_pct": 100,
+        "by_private_rating": {
+          "(none)": {
+            "n": 1,
+            "mean": 92,
+            "median": 92
+          }
+        },
+        "s_below_83_count": 0,
+        "a_below_78_count": 0,
+        "b_gte_83_count": 0
+      },
+      {
+        "genre_bucket": "unverified:youtube-sns",
+        "genre_verified": false,
+        "count": 1,
+        "calibrated_mean": 78.5,
+        "calibrated_median": 78.5,
+        "award_tier_count": 0,
+        "rough_concordance_count": 0,
+        "rough_divergence_count": 1,
+        "rough_divergence_rate_pct": 100,
+        "by_private_rating": {
+          "(none)": {
+            "n": 1,
+            "mean": 78.5,
+            "median": 78.5
+          }
+        },
+        "s_below_83_count": 0,
+        "a_below_78_count": 0,
+        "b_gte_83_count": 0
+      }
+    ],
+    "notable_divergences": {
+      "private_S_below_83": [],
+      "private_B_or_C_gte_83": [],
+      "private_A_below_73": []
+    }
+  },
+  "records": [
+    {
+      "video_id": "1117240355",
+      "blind_id": "58ee5d7a6ad3",
+      "title": "オープニング映像  モーショングラフィックス   OFFF Montréal Main Titles by Will MacNeil",
+      "platform": "vimeo",
+      "private_rating": null,
+      "legacy_overall_score": 89,
+      "legacy_overall_rating": "A+",
+      "genre_verified": false,
+      "calibration_genre_bucket": "unverified:opening",
+      "calibration_status": "calibrated_unverified_genre",
+      "calibrated_score": 80,
+      "calibrated_rank": "A-",
+      "calibrated_tier_band": "pro_band",
+      "calibrated_route": "video_h1",
+      "calibrated_at": "2026-11-25T03:08:08.707Z",
+      "final_ensemble_rule": "mean_of_2",
+      "final_raw_scores": [
+        81,
+        79
+      ],
+      "cs_pre_score": null,
+      "knows_work": false,
+      "knows_award_history": false,
+      "calibrated_breakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261125_113041",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          81,
+          79
+        ],
+        "finalScore": 80,
+        "rank": "A-",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 16,
+          "visual_craft": 15.5,
+          "editing_rhythm": 16,
+          "sound_integration": 17,
+          "originality_finish": 15.5
+        },
+        "h1Triggers": [
+          "H1-b:genre=モーション"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "水彩紙に滲む墨線から色帯延伸、3D粒子、ドット行列、数値群、フラクタル樹へと展開する構成が秀逸。冒頭のアナログ質感と終盤の開花を垂直線モチーフで繋ぎ、ギターから弦楽・合唱へ昇華する音響統合（-13.3 LUFS）が感情曲線を引き上げる。一方、中盤のクレジット提示はやや羅列的で、タイポの簡素さや高密度区間のフラットな粒子表現に伸び代が残る。",
+          "一本の墨線が紙面で分光滲みする実写導入から、スリットスキャン、粒子群、データグリッド、フラクタルへと展開する構成力と緩急が秀逸。アコースティックからオーケストラ・合唱へ高まる音響統合も極めて高精度。一方、中盤の粒子表現やLシステム樹木など一部ジェネラティブ映像に平面的・既視感ある質感と、保守的なタイポ処理が残り、最上位帯には一歩及ばず。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 140.3,
+          "scdet_threshold": 10,
+          "total_cuts": 22,
+          "avg_cut_interval_sec": 6.38,
+          "max_cuts_per_10s": 9,
+          "integrated_lufs": -13.3,
+          "slowmo_applied": true,
+          "slowmo_factor": "2x",
+          "slowmo_window_sec": [
+            54,
+            64
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "d40172a5-44ea-4d2f-b171-d18b868be99d",
+          "22e53e2d-7d78-40e8-8dc1-2ab9bda6540d"
+        ]
+      }
+    },
+    {
+      "video_id": "1119375393",
+      "blind_id": "e2b00147bd52",
+      "title": "オープニング映像  モーショングラフィックス   OFFFMX 2025 Main Titles by XK Studio",
+      "platform": "vimeo",
+      "private_rating": null,
+      "legacy_overall_score": 96,
+      "legacy_overall_rating": "S",
+      "genre_verified": false,
+      "calibration_genre_bucket": "unverified:opening",
+      "calibration_status": "calibrated_unverified_genre",
+      "calibrated_score": 91,
+      "calibrated_rank": "S-",
+      "calibrated_tier_band": "award_tier",
+      "calibrated_route": "video_h1",
+      "calibrated_at": "2026-11-25T03:08:08.708Z",
+      "final_ensemble_rule": "mean_of_2",
+      "final_raw_scores": [
+        91,
+        91
+      ],
+      "cs_pre_score": null,
+      "knows_work": false,
+      "knows_award_history": false,
+      "calibrated_breakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261125_113041",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          91,
+          91
+        ],
+        "finalScore": 91,
+        "rank": "S-",
+        "tierBand": "award_tier",
+        "dimensions": {
+          "direction": 18,
+          "visual_craft": 19,
+          "editing_rhythm": 17,
+          "sound_integration": 19,
+          "originality_finish": 18
+        },
+        "h1Triggers": [
+          "H1-b:genre=モーション"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "『手』を統一モチーフに、荘厳なモノリス導入から多彩な質感の3D物理シミュレーション群（煙・軟体・ガラス・布・植物等）、ユーモラスなオチまで貫く構成力が秀逸。各素材の物理挙動に緻密に同期したフォーリーと音楽の緩急が映像の触覚性を極限まで高めている。一方、中盤のテロップは一部視認性が弱く終盤の暗転も長めだが、国際上位水準の圧倒的な3D・音響クラフト。",
+          "「手」を統一モチーフに、荘厳なSF的序章から多彩な3DCG質感表現の連打、ユーモラスな終章へ繋ぐ構成が秀逸。ガラス・雲・煙・膨張体・布等の高度な物理シミュレーションとライティング、各質感に呼応するフォーリー音響と緩急あるリズムが国際上位水準の完成度を実現。タイポ統合は簡素で一部繋ぎに定型感もあるが、総合クラフト強度が際立つ。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 99.1,
+          "scdet_threshold": 10,
+          "total_cuts": 20,
+          "avg_cut_interval_sec": 4.96,
+          "max_cuts_per_10s": 5,
+          "integrated_lufs": -10.2,
+          "slowmo_applied": true,
+          "slowmo_factor": "2x",
+          "slowmo_window_sec": [
+            44,
+            54
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "a8cdfcf9-7fca-4a88-a6a7-638572cf4891",
+          "4f4b00f2-fb9c-4c31-8fd1-c022c0e7c338"
+        ]
+      }
+    },
+    {
+      "video_id": "1151511255",
+      "blind_id": "c7d8ccc9379c",
+      "title": "映画 / ドラマ / ショートフィルム  生成AI   ETHEREA",
+      "platform": "vimeo",
+      "private_rating": null,
+      "legacy_overall_score": 77,
+      "legacy_overall_rating": null,
+      "genre_verified": false,
+      "calibration_genre_bucket": "unverified:film",
+      "calibration_status": "calibrated_unverified_genre",
+      "calibrated_score": 85.5,
+      "calibrated_rank": "A+",
+      "calibrated_tier_band": "award_tier",
+      "calibrated_route": "video_h2_escalated",
+      "calibrated_at": "2026-11-25T03:08:08.708Z",
+      "final_ensemble_rule": "mean_of_2",
+      "final_raw_scores": [
+        85,
+        86
+      ],
+      "cs_pre_score": 83,
+      "knows_work": true,
+      "knows_award_history": false,
+      "calibrated_breakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261125_113041",
+        "route": "video_h2_escalated",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          85,
+          86
+        ],
+        "finalScore": 85.5,
+        "rank": "A+",
+        "tierBand": "award_tier",
+        "dimensions": {
+          "direction": 17,
+          "visual_craft": 17,
+          "editing_rhythm": 16,
+          "sound_integration": 18,
+          "originality_finish": 17.5
+        },
+        "h1Triggers": [],
+        "h2Triggers": [
+          "H2-a:near_t_award(83 within 83+/-3)"
+        ],
+        "contactSheetPreScore": 83,
+        "contactSheetRawScores": [
+          83,
+          83
+        ],
+        "rationales": [
+          "実写ダンスの振付を雲の造形へと変換し、夜明け・青空・雷嵐・夕暮れの気象変化に感情曲線を重ねた無言劇。合唱と弦を軸にした音響設計や色彩・ライティングの完成度が極めて高く、嵐のクライマックスから夕陽で手を離す終幕まで余韻を残す。一方、中盤は構図変化が少なく視認性が揺らぐ場面があり、生成系特有の輪郭や手指の変形・雲の揺らぎも散見されるため最上位クラフトには一歩譲る。",
+          "実写ダンスを雲の変容へ昇華した詩的短編。夜明けから昼、雷鳴の嵐、夕暮れへと移ろう光と色彩設計が感情曲線と鮮やかに同期し、幻想的なコーラスと環境音が高い没入感を生む。雲の不定形さを逆手に取った表現は独創的でエンドロールの実写開示も秀逸。一方、中盤の構図・テンポの緩みや局所的な手指・輪郭の破綻など形状制御の限界も散見されるが、全体として高い演出力と仕上げ品質を誇る。"
+        ],
+        "postCheck": {
+          "knowsWork": true,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 214.5,
+          "scdet_threshold": 10,
+          "total_cuts": 19,
+          "avg_cut_interval_sec": 11.29,
+          "max_cuts_per_10s": 5,
+          "integrated_lufs": -16.3,
+          "slowmo_applied": false,
+          "slowmo_factor": null,
+          "slowmo_window_sec": null
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "d77e57b7-fabb-4a84-8132-7872367976cc",
+          "f594c04b-450a-417f-b314-4fb97fe9bb01"
+        ]
+      }
+    },
+    {
+      "video_id": "1151598827",
+      "blind_id": "1593b1b3730b",
+      "title": "メイキング / Behind The Scenes   ETHEREA Behind The Scenes",
+      "platform": "vimeo",
+      "private_rating": null,
+      "legacy_overall_score": 75,
+      "legacy_overall_rating": null,
+      "genre_verified": false,
+      "calibration_genre_bucket": "unverified:making",
+      "calibration_status": "calibrated_unverified_genre",
+      "calibrated_score": 74,
+      "calibrated_rank": "B+",
+      "calibrated_tier_band": "pro_band",
+      "calibrated_route": "video_h1",
+      "calibrated_at": "2026-11-25T03:08:08.708Z",
+      "final_ensemble_rule": "mean_of_2",
+      "final_raw_scores": [
+        75,
+        73
+      ],
+      "cs_pre_score": null,
+      "knows_work": true,
+      "knows_award_history": false,
+      "calibrated_breakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261125_113041",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          75,
+          73
+        ],
+        "finalScore": 74,
+        "rank": "B+",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 15,
+          "visual_craft": 15,
+          "editing_rhythm": 15.5,
+          "sound_integration": 14.5,
+          "originality_finish": 14
+        },
+        "h1Triggers": [
+          "H1-c:max_cuts_per_10s=29>=12"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "実写ダンスと深度・線画マップ、独自学習拡散モデルを統合し雲の造形へ変換するVFX工程は独創的かつ高品質で、ワイプ比較や緩急ある編集・壮大な音楽構成も効果的。一方、メイキング映像としては縦動画やWebカメラ素材、簡易な黒帯テロップが混在し、0:07の定義字幕の誤植（percieve/after）や1:34の機密透かし残存など仕上げ面の粗さが明確な減点要因。",
+          "パレイドリアと拡散モデルの対比から実写ダンス×深度マップによる雲生成工程を明快に辿る構成が秀逸。33〜38秒のルック開発高速カットから選択グリッドへの移行や終盤の音楽高揚に合わせた分割比較編集も心地よい。一方、0:07の定義文誤植（percieve/after）や1:34の透かし残存、素朴な黒帯テロップ、粗いスマホ・Web会議素材、SE不足が仕上げ品質を押し下げている。"
+        ],
+        "postCheck": {
+          "knowsWork": true,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 110,
+          "scdet_threshold": 10,
+          "total_cuts": 100,
+          "avg_cut_interval_sec": 1.1,
+          "max_cuts_per_10s": 29,
+          "integrated_lufs": -22.9,
+          "slowmo_applied": true,
+          "slowmo_factor": "4x",
+          "slowmo_window_sec": [
+            33,
+            38
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "f07bed8f-a41d-45b9-b4e1-27c0891635ac",
+          "33d40d7f-3d90-4475-b1bf-4adc6fc23419"
+        ]
+      }
+    },
+    {
+      "video_id": "1154070144",
+      "blind_id": "a93df48d27db",
+      "title": "ブランデッドムービー  スポーツ / 健康 / フィットネス   The Sound of Japan | The North Face",
+      "platform": "vimeo",
+      "private_rating": null,
+      "legacy_overall_score": 88,
+      "legacy_overall_rating": "A+",
+      "genre_verified": false,
+      "calibration_genre_bucket": "unverified:branded-movie",
+      "calibration_status": "calibrated_unverified_genre",
+      "calibrated_score": 89,
+      "calibrated_rank": "A+",
+      "calibrated_tier_band": "award_tier",
+      "calibrated_route": "video_h1",
+      "calibrated_at": "2026-11-25T03:08:08.708Z",
+      "final_ensemble_rule": "mean_of_2",
+      "final_raw_scores": [
+        89,
+        89
+      ],
+      "cs_pre_score": null,
+      "knows_work": false,
+      "knows_award_history": false,
+      "calibrated_breakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261125_113041",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          89,
+          89
+        ],
+        "finalScore": 89,
+        "rank": "A+",
+        "tierBand": "award_tier",
+        "dimensions": {
+          "direction": 17.5,
+          "visual_craft": 17.5,
+          "editing_rhythm": 18,
+          "sound_integration": 19,
+          "originality_finish": 17
+        },
+        "h1Triggers": [
+          "H1-c:max_cuts_per_10s=13>=12"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "日本の環境音・生活音（発車音、ビーコン、除雪、鈴・柏手、乾杯等）を楽曲化し、滑走と日常を繋ぐ音像統合が秀逸。高密度区間の赤色モチーフ連鎖や4:3フィルムとデジタルの混在、ネオン街と赤・青・紫照明のナイト滑走の色彩呼応など、編集リズムと撮影美術の完成度が高い。後半の滑走パートはやや単調になる局面もあるが、7分間を通じて一貫した演出強度を保つ高到達作。",
+          "日本の環境音（ビーコン・箒・柏手・乾杯・車内放送等）を楽曲のビートへと昇華し映像と緻密に同期させた音響統合が圧巻。16mmとデジタルの混在、赤青紫の照明を用いた夜間滑走の粒子表現、185-190秒の色彩・ウィップパン連鎖など撮影・編集の完成度も極めて高い。中盤後半の日中滑走に若干の冗長さはあるが、都市と雪山を音とリズムで結ぶ構成力と仕上げ品質は一線級を大きく超える。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 427.3,
+          "scdet_threshold": 10,
+          "total_cuts": 179,
+          "avg_cut_interval_sec": 2.39,
+          "max_cuts_per_10s": 13,
+          "integrated_lufs": -18.8,
+          "slowmo_applied": true,
+          "slowmo_factor": "4x",
+          "slowmo_window_sec": [
+            185,
+            190
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "95c002f7-84e2-44ab-915e-ebbc016e0f6c",
+          "2044304f-7a5d-4b7a-b7e8-90dfb95d13f1"
+        ]
+      }
+    },
+    {
+      "video_id": "145927299",
+      "blind_id": "6c05e426cd2c",
+      "title": "Testing DJI OSMO ~ Times Square NY",
+      "platform": "vimeo",
+      "private_rating": null,
+      "legacy_overall_score": 69,
+      "legacy_overall_rating": "B",
+      "genre_verified": false,
+      "calibration_genre_bucket": "unverified:concept-art",
+      "calibration_status": "calibrated_unverified_genre",
+      "calibrated_score": 58.5,
+      "calibrated_rank": "C+",
+      "calibrated_tier_band": "low_band",
+      "calibrated_route": "video_h1",
+      "calibrated_at": "2026-11-25T03:08:08.708Z",
+      "final_ensemble_rule": "mean_of_2",
+      "final_raw_scores": [
+        58,
+        59
+      ],
+      "cs_pre_score": null,
+      "knows_work": false,
+      "knows_award_history": false,
+      "calibrated_breakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261125_113041",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          58,
+          59
+        ],
+        "finalScore": 58.5,
+        "rank": "C+",
+        "tierBand": "low_band",
+        "dimensions": {
+          "direction": 11,
+          "visual_craft": 11.5,
+          "editing_rhythm": 13,
+          "sound_integration": 13,
+          "originality_finish": 10
+        },
+        "h1Triggers": [
+          "H1-c:max_cuts_per_10s=15>=12"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "DJI Osmoのテスト撮影として夕景から夜のNY、地下鉄までを繋ぐ構成。音ハメの摩天楼リビールや地下鉄構内への高速カット割り(155-160秒)、終盤の電車走行音への移行は一定の効果がある。一方、黒を過度に浮かせた濁った色調、唐突なカラーバー演出、暗所ノイズや顔面の露出不足、背後を追う単調な歩行カットの冗長さが目立ち、映像表現・仕上げの両面で商業水準には課題が残る。",
+          "DJI Osmoの機材テスト兼街歩き映像。夕景から夜のタイムズスクエア、地下鉄へと至る流れや、155〜160秒の駅構内ジャンプカット、終盤の実音電車と柔らかなピンボケ処理は雰囲気づくりとして機能。一方、3分超の尺に対し背後追従カットが冗長で演出設計が希薄。暗部の浮き過ぎたLUTや暗所画質の粗さ、定型的なカラーバー系オーバーレイが質感を損ねており、個人制作の範疇に留まる。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 193.1,
+          "scdet_threshold": 10,
+          "total_cuts": 52,
+          "avg_cut_interval_sec": 3.71,
+          "max_cuts_per_10s": 15,
+          "integrated_lufs": -9.1,
+          "slowmo_applied": true,
+          "slowmo_factor": "4x",
+          "slowmo_window_sec": [
+            155,
+            160
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "fe926290-4e6d-4256-829a-ed2dccb27b17",
+          "b77ea884-0efa-4471-977e-34613fd1350b"
+        ]
+      }
+    },
+    {
+      "video_id": "26784202",
+      "blind_id": "24ef027d65f1",
+      "title": "Laughs",
+      "platform": "vimeo",
+      "private_rating": null,
+      "legacy_overall_score": 80,
+      "legacy_overall_rating": "A-",
+      "genre_verified": false,
+      "calibration_genre_bucket": "unverified:film",
+      "calibration_status": "calibrated_unverified_genre",
+      "calibrated_score": 79.5,
+      "calibrated_rank": "A-",
+      "calibrated_tier_band": "pro_band",
+      "calibrated_route": "video_h1",
+      "calibrated_at": "2026-11-25T03:08:08.708Z",
+      "final_ensemble_rule": "mean_of_2",
+      "final_raw_scores": [
+        78,
+        81
+      ],
+      "cs_pre_score": null,
+      "knows_work": true,
+      "knows_award_history": false,
+      "calibrated_breakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261125_113041",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          78,
+          81
+        ],
+        "finalScore": 79.5,
+        "rank": "A-",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 17,
+          "visual_craft": 12,
+          "editing_rhythm": 16.5,
+          "sound_integration": 17,
+          "originality_finish": 17
+        },
+        "h1Triggers": [
+          "H1-c:max_cuts_per_10s=17>=12"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "乳児から高齢者へ年齢順に笑顔と笑い声を繋ぐファウンドフッテージ構成が秀逸。粗雑なUGC素材を角丸CRT枠とVHS質感で統一する工夫はあるが、撮影・美術面は素材依存で視覚クラフトは限定的。一方、約100カットの雑多な笑い声を音楽と滑らかに統合し、中盤の高速カットから終盤の老人の笑い・咳込み・砂嵐暗転へ落とす編集と音響設計の完成度が高い。",
+          "乳児から高齢者へ年齢順に笑う人々のファウンドフッテージを99カット繋ぎ、老人の咳と砂嵐で人生の儚さを突く構成・演出が秀逸。VHS/CRT風フレームで雑多な低画質素材を統一しつつ、原撮影クラフトの不在が視覚面の限界。笑い声の声質変化と軽快なBGMを重ね、終盤で音を引く音響設計と緩急ある編集リズムが感情曲線を強く牽引している。"
+        ],
+        "postCheck": {
+          "knowsWork": true,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 129.6,
+          "scdet_threshold": 10,
+          "total_cuts": 99,
+          "avg_cut_interval_sec": 1.31,
+          "max_cuts_per_10s": 17,
+          "integrated_lufs": -7.7,
+          "slowmo_applied": true,
+          "slowmo_factor": "4x",
+          "slowmo_window_sec": [
+            83,
+            88
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "62a6d78c-bb53-461e-bd61-2ebddf691223",
+          "4d24fdbb-d37a-438c-9afc-24410e76bf6d"
+        ]
+      }
+    },
+    {
+      "video_id": "31479392",
+      "blind_id": "369c02a103cb",
+      "title": "BroadcastAR Augmented Reality for National Geographic Channel / UPC",
+      "platform": "vimeo",
+      "private_rating": null,
+      "legacy_overall_score": 74,
+      "legacy_overall_rating": "B+",
+      "genre_verified": false,
+      "calibration_genre_bucket": "unverified:event-live",
+      "calibration_status": "calibrated_unverified_genre",
+      "calibrated_score": 67,
+      "calibrated_rank": "B-",
+      "calibrated_tier_band": "pro_band",
+      "calibrated_route": "video_h2_escalated",
+      "calibrated_at": "2026-11-25T03:08:08.708Z",
+      "final_ensemble_rule": "mean_of_2",
+      "final_raw_scores": [
+        68,
+        66
+      ],
+      "cs_pre_score": 64.5,
+      "knows_work": true,
+      "knows_award_history": false,
+      "calibrated_breakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261125_113041",
+        "route": "video_h2_escalated",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          68,
+          66
+        ],
+        "finalScore": 67,
+        "rank": "B-",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 14,
+          "visual_craft": 12.5,
+          "editing_rhythm": 13,
+          "sound_integration": 13.5,
+          "originality_finish": 14
+        },
+        "h1Triggers": [],
+        "h2Triggers": [
+          "H2-a:near_t_low(64.5 within 63+/-3)"
+        ],
+        "contactSheetPreScore": 64.5,
+        "contactSheetRawScores": [
+          65,
+          64
+        ],
+        "rationales": [
+          "設営タイムラプスから観客の驚き、AR体験の連続提示、宇宙飛行士と子ども達の締めへ至る構成は明快で好感が高い。音楽と恐竜・雷・無線SEの同期も機能している。一方、映像クラフト面では環境光任せの記録撮影、LED画面のモアレや露出処理、素朴な白文字タイトルに留まり、約3分の尺で俯瞰ARとリアクションの反復がやや冗長。施策の面白さに支えられた標準的な商業イベント記録水準。",
+          "設営タイムラプスから来場者の反応で引き、AR映像を明かす構成と自然な人物描写は好印象。一方で約3分の尺に対し反応とARの反復が多くテンポが単調。無装飾な文字カード、LED画面の強いモアレ、無調整な館内照明、群衆の生音欠如など仕上げの粗さが目立つ。体験企画の独自性と温かみはあるが、映像クラフトとしては実用的な記録映像の水準に留まる。"
+        ],
+        "postCheck": {
+          "knowsWork": true,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 174.3,
+          "scdet_threshold": 10,
+          "total_cuts": 44,
+          "avg_cut_interval_sec": 3.96,
+          "max_cuts_per_10s": 7,
+          "integrated_lufs": -15.3,
+          "slowmo_applied": true,
+          "slowmo_factor": "2x",
+          "slowmo_window_sec": [
+            4,
+            14
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "ca0fbfc2-ca24-4631-8c1e-2c9a04310f94",
+          "cde2ef87-459c-48ac-9358-ece094751213"
+        ]
+      }
+    },
+    {
+      "video_id": "391434825",
+      "blind_id": "820d249d92ac",
+      "title": "Visual ASMR",
+      "platform": "vimeo",
+      "private_rating": null,
+      "legacy_overall_score": 81,
+      "legacy_overall_rating": null,
+      "genre_verified": false,
+      "calibration_genre_bucket": "unverified:film",
+      "calibration_status": "calibrated_unverified_genre",
+      "calibrated_score": 89,
+      "calibrated_rank": "A+",
+      "calibrated_tier_band": "award_tier",
+      "calibrated_route": "video_h1",
+      "calibrated_at": "2026-11-25T03:08:08.708Z",
+      "final_ensemble_rule": "mean_of_2",
+      "final_raw_scores": [
+        88,
+        90
+      ],
+      "cs_pre_score": null,
+      "knows_work": false,
+      "knows_award_history": false,
+      "calibrated_breakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261125_113041",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          88,
+          90
+        ],
+        "finalScore": 89,
+        "rank": "A+",
+        "tierBand": "award_tier",
+        "dimensions": {
+          "direction": 17,
+          "visual_craft": 18.5,
+          "editing_rhythm": 17.5,
+          "sound_integration": 19,
+          "originality_finish": 17
+        },
+        "h1Triggers": [
+          "H1-b:genre=モーション"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "4種の素材世界（苔・青軟体・菌糸様組織・紅水晶）の物理シミュレーションを極端なマクロから静謐な遠景モニュメントへ解放する構成が秀逸。微細毛や屈折、軟体皺まで描き切る高精細CGと、素材固有の微細フォーリーを音楽の緩急に完璧同期させた音響設計が圧倒的。遠景の一部に既存の3Dデザイン的定型感はあるが、編集の緩急と仕上げ精度が極めて高い。",
+          "4種の異なる質感（砂と苔、多孔岩と青い軟体球、流木と繊毛状組織、黒曜石と紅水晶）の極端なマクロCGシミュレーションを緻密なクロス編集で加速させ、終盤の静謐なワイド引き画で彫刻的風景へと昇華する構成が秀逸。微細な産毛や屈折、浅い被写界深度のルックデブ、触覚的フォーリーと音楽の膨張が一体化した音響設計が国際上位水準。抽象的な素材研究の枠内ではあるが仕上げ精度は極めて高い。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 68.4,
+          "scdet_threshold": 10,
+          "total_cuts": 37,
+          "avg_cut_interval_sec": 1.85,
+          "max_cuts_per_10s": 10,
+          "integrated_lufs": -13.2,
+          "slowmo_applied": true,
+          "slowmo_factor": "2x",
+          "slowmo_window_sec": [
+            30,
+            40
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "1c9e9da4-0389-4b99-9048-9ff97dbfac14",
+          "1c1ad010-a084-4fc6-a8ed-b5f492ea9b98"
+        ]
+      }
+    },
+    {
+      "video_id": "49963573",
+      "blind_id": "6a092af30702",
+      "title": "OGASAWARA experience in TOKYO",
+      "platform": "vimeo",
+      "private_rating": null,
+      "legacy_overall_score": 74,
+      "legacy_overall_rating": null,
+      "genre_verified": false,
+      "calibration_genre_bucket": "unverified:concept-art",
+      "calibration_status": "calibrated_unverified_genre",
+      "calibrated_score": 65.5,
+      "calibrated_rank": "B-",
+      "calibrated_tier_band": "pro_band",
+      "calibrated_route": "video_h2_escalated",
+      "calibrated_at": "2026-11-25T03:08:08.708Z",
+      "final_ensemble_rule": "mean_of_2",
+      "final_raw_scores": [
+        66,
+        65
+      ],
+      "cs_pre_score": 64.5,
+      "knows_work": false,
+      "knows_award_history": false,
+      "calibrated_breakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261125_113041",
+        "route": "video_h2_escalated",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          66,
+          65
+        ],
+        "finalScore": 65.5,
+        "rank": "B-",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 13,
+          "visual_craft": 12.5,
+          "editing_rhythm": 13,
+          "sound_integration": 15,
+          "originality_finish": 12
+        },
+        "h1Triggers": [],
+        "h2Triggers": [
+          "H2-a:near_t_low(64.5 within 63+/-3)"
+        ],
+        "contactSheetPreScore": 64.5,
+        "contactSheetRawScores": [
+          64,
+          65
+        ],
+        "rationales": [
+          "音に反応する3面投影展示と生演奏の連動性、蓮沼執太やHIFANA+IZPONの音響が現場の魅力を伝える。一方、冒頭約30秒の無音黒画面テキスト、明部と重なり視認性を欠く白字幕、英語誤植（ILLSTRATOR等）、同一カットの重複使用（1:35と2:56）、ライブ部の手ブレ・ピント甘さなど映像制作・仕上げ面の粗さが目立ち、記録映像の域を出ない。",
+          "3面投影展示の体験と生演奏の臨場感を素直に記録し、音響や打楽器に連動する映像表現に魅力がある。一方、冒頭約28秒の無音と長文画面、明るい背景で視認性が落ちる白文字、英字誤記（Fanfastic/ILLSTRATOR）、ライブ時のピン甘や機材映り込みなど仕上げの粗さが目立つ。編集も273秒とやや冗長で、記録映像として実用域だが演出・完成度は凡庸。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 272.9,
+          "scdet_threshold": 10,
+          "total_cuts": 43,
+          "avg_cut_interval_sec": 6.35,
+          "max_cuts_per_10s": 6,
+          "integrated_lufs": -21,
+          "slowmo_applied": true,
+          "slowmo_factor": "2x",
+          "slowmo_window_sec": [
+            190,
+            200
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "354bdb18-c886-41bc-8b50-ae1afb526a38",
+          "029d220d-df6a-4df9-a642-d0c2647eec48"
+        ]
+      }
+    },
+    {
+      "video_id": "97090992",
+      "blind_id": "f8b9ca7ba6cb",
+      "title": "《Live2D 2014》 Distance",
+      "platform": "vimeo",
+      "private_rating": null,
+      "legacy_overall_score": 81,
+      "legacy_overall_rating": "A-",
+      "genre_verified": false,
+      "calibration_genre_bucket": "unverified:branded-movie",
+      "calibration_status": "calibrated_unverified_genre",
+      "calibrated_score": 76,
+      "calibrated_rank": "B+",
+      "calibrated_tier_band": "pro_band",
+      "calibrated_route": "video_h2_escalated",
+      "calibrated_at": "2026-11-25T03:08:08.708Z",
+      "final_ensemble_rule": "median_of_3",
+      "final_raw_scores": [
+        76,
+        70,
+        76
+      ],
+      "cs_pre_score": 78,
+      "knows_work": false,
+      "knows_award_history": false,
+      "calibrated_breakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261125_113041",
+        "route": "video_h2_escalated",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "median_of_3",
+        "rawScores": [
+          76,
+          70,
+          76
+        ],
+        "finalScore": 76,
+        "rank": "B+",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 15.67,
+          "visual_craft": 14.33,
+          "editing_rhythm": 14.67,
+          "sound_integration": 14.67,
+          "originality_finish": 14.67
+        },
+        "h1Triggers": [],
+        "h2Triggers": [
+          "H2-b:static_long_video(dur=140.2s,avgInt=17.5s,cuts=8)"
+        ],
+        "contactSheetPreScore": 78,
+        "contactSheetRawScores": [
+          79,
+          77
+        ],
+        "rationales": [
+          "モノクロ調のLive2DとAE合成で描く無声短編。冒頭と結末の机の構図対比や、白背景が画用紙へ転じ鉛筆で種明かしする演出構成が巧みで、ピアノ・弦の楽曲も感情曲線に精緻に同期する。一方、中盤モンタージュは白フェード多用で単調さが残り、Live2D特有の平面的な動きの硬さや人物作画の素朴さ、SE・環境音の不在がクラフト到達点の上限を決めている。",
+          "Live2Dとモノクロ画調で父娘の記憶を描き、終盤の鉛筆画と写真立てで切ない現実を明かす構成と前後の机カット対比は巧み。紙吹雪や風船の上昇による場面転換、ボケや水面反射のコンポジットも丁寧。一方、中盤モンタージュは白フェードと正面中景が単調で、作画の素朴さとLive2D特有の硬さが残る。楽曲の感情同期は良好だがSE・環境音皆無で没入感に課題。",
+          "モノクロ調とLive2Dの2.5D演出で父娘の記憶と喪失・距離を描く短編。舞う原稿や風船から夕景への繋ぎ、伸ばした手が鉛筆画へ移り紙質感が浮かぶ終盤の転換、繊細なピアノと弦の感情同期に見どころがある。一方、中盤モンタージュの白フェード反復、Live2D特有の関節挙動の硬さ、環境音・効果音の不在、定型的な感涙構造が到達点を抑えており、堅実な見どころを備えたB+評価とした。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 140.2,
+          "scdet_threshold": 10,
+          "total_cuts": 8,
+          "avg_cut_interval_sec": 17.52,
+          "max_cuts_per_10s": 3,
+          "integrated_lufs": -23,
+          "slowmo_applied": false,
+          "slowmo_factor": null,
+          "slowmo_window_sec": null
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "15125d77-6b6e-4dbc-952e-e30d019948f7",
+          "cdbe8d05-ec61-4d02-a7aa-bf503afcde22",
+          "07e9f899-6cfa-4a78-9f2b-2b78700332fe"
+        ]
+      }
+    },
+    {
+      "video_id": "external-1vuy67w",
+      "blind_id": "b666062e25a9",
+      "title": "M-1グランプリ2022×ウルフルズ「暴れだす V」 - ニコニコ動画",
+      "platform": "external",
+      "private_rating": null,
+      "legacy_overall_score": 85,
+      "legacy_overall_rating": "A",
+      "genre_verified": false,
+      "calibration_genre_bucket": "unverified:documentary",
+      "calibration_status": "calibrated_unverified_genre",
+      "calibrated_score": 92,
+      "calibrated_rank": "S-",
+      "calibrated_tier_band": "award_tier",
+      "calibrated_route": "video_h1",
+      "calibrated_at": "2026-11-25T03:08:08.708Z",
+      "final_ensemble_rule": "mean_of_2",
+      "final_raw_scores": [
+        92,
+        92
+      ],
+      "cs_pre_score": null,
+      "knows_work": true,
+      "knows_award_history": false,
+      "calibrated_breakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261125_113041",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          92,
+          92
+        ],
+        "finalScore": 92,
+        "rank": "S-",
+        "tierBand": "award_tier",
+        "dimensions": {
+          "direction": 19,
+          "visual_craft": 17,
+          "editing_rhythm": 19,
+          "sound_integration": 19,
+          "originality_finish": 18
+        },
+        "h1Triggers": [
+          "H1-c:max_cuts_per_10s=42>=12"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "モノクロ導入から歴代王者を凝縮した高密度ミックスドメディア動画（24-29秒）、暗部を生かした舞台袖撮影と生々しい密着取材の対比、決勝発表の明暗、絵画的クライマックスから自虐的オチまで感情曲線と構成力が傑出。楽曲歌詞と台詞・歓声の統合や緩急自在な編集リズムも極めて高水準だが、記録系インタビュー部の映像質感に素朴さが残る分を加味しS-評価。",
+          "モノクロの静謐な導入から歴代王者のネタをコラージュ・ペイント等で畳み掛ける超高速モーショングラフィックス（24〜29秒）への転換が圧巻。陰影豊かな舞台袖撮影と生々しいインタビュー、楽曲歌詞と落選・進出の明暗を精密に織り上げる4分間の構成・編集・音響統合力は極めて高水準。終盤のペイント演出と哀愁ある笑いで締めるオチまで隙がなく、複数分野で際立つ秀作。"
+        ],
+        "postCheck": {
+          "knowsWork": true,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 240,
+          "scdet_threshold": 10,
+          "total_cuts": 194,
+          "avg_cut_interval_sec": 1.24,
+          "max_cuts_per_10s": 42,
+          "integrated_lufs": -15.4,
+          "slowmo_applied": true,
+          "slowmo_factor": "4x",
+          "slowmo_window_sec": [
+            24,
+            29
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "b7c951d8-0aa8-450a-925a-a0ea5d8f839c",
+          "b0307543-4506-4e61-a5e7-27e0084923c2"
+        ]
+      }
+    },
+    {
+      "video_id": "instagram-DYOAFMVAAHM",
+      "blind_id": "baf60c64fdc1",
+      "title": "BEAMSといったら、ファッション？",
+      "platform": "instagram",
+      "private_rating": null,
+      "legacy_overall_score": 79,
+      "legacy_overall_rating": "A-",
+      "genre_verified": false,
+      "calibration_genre_bucket": "unverified:youtube-sns",
+      "calibration_status": "calibrated_unverified_genre",
+      "calibrated_score": 78.5,
+      "calibrated_rank": "A-",
+      "calibrated_tier_band": "pro_band",
+      "calibrated_route": "video_h1",
+      "calibrated_at": "2026-11-25T03:08:08.708Z",
+      "final_ensemble_rule": "mean_of_2",
+      "final_raw_scores": [
+        78,
+        79
+      ],
+      "cs_pre_score": null,
+      "knows_work": false,
+      "knows_award_history": false,
+      "calibrated_breakdown": {
+        "version": "phase2_v1",
+        "runId": "run_20261125_113041",
+        "route": "video_h1",
+        "model": "gemini-4-neon-high",
+        "thresholds": {
+          "tAward": 83,
+          "tLow": 63
+        },
+        "ensembleRule": "mean_of_2",
+        "rawScores": [
+          78,
+          79
+        ],
+        "finalScore": 78.5,
+        "rank": "A-",
+        "tierBand": "pro_band",
+        "dimensions": {
+          "direction": 15.5,
+          "visual_craft": 16,
+          "editing_rhythm": 16,
+          "sound_integration": 15.5,
+          "originality_finish": 15.5
+        },
+        "h1Triggers": [
+          "H1-b:genre=モーション"
+        ],
+        "h2Triggers": [],
+        "contactSheetPreScore": null,
+        "contactSheetRawScores": null,
+        "rationales": [
+          "明朝体タイポ・ピクセル漢字・単色3D小物をオレンジ方眼と生成り背景で統合したアートディレクションが端正。タイピング音と浮遊感あるアンビエントBGMが00:08の転換や00:21の縦ブラーフラッシュ、終盤の4秒間の読了余白まで心地よい緩急を生む。一方、3D造形や質感表現は比較的シンプルで、カット転換時の専用SEも控えめなため、洗練された良質プロ水準に留まる。",
+          "明朝体タイポとドット漢字、オレンジ単色調の3Dプロップを統合したアートディレクションが洗練されている。タイピング音とカーソルの厳密な同期、0:08のグロウ転換や0:22の縦ブラー・フラッシュによる緩急、終盤の余韻あるコード着地まで構成と音響の一体度が高い。一方、3D造形や動き自体は比較的簡潔で、現代的SNSモーショングラフィックスの定型内にとどまるためA-評価。"
+        ],
+        "postCheck": {
+          "knowsWork": false,
+          "knowsAwardHistory": false,
+          "awardBadgeVisibleInVideo": false
+        },
+        "metrics": {
+          "duration_sec": 30.1,
+          "scdet_threshold": 10,
+          "total_cuts": 15,
+          "avg_cut_interval_sec": 2.01,
+          "max_cuts_per_10s": 9,
+          "integrated_lufs": -14.1,
+          "slowmo_applied": true,
+          "slowmo_factor": "2x",
+          "slowmo_window_sec": [
+            13,
+            23
+          ]
+        },
+        "auditPassed": true,
+        "subagentIds": [
+          "7a8cbe89-6aba-4c46-9fa3-40145734b81d",
+          "a69c5448-e93f-40a0-9472-550c1cd5b0a0"
+        ]
+      }
+    }
+  ]
+}

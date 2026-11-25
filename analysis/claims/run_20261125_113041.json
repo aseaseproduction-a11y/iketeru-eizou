@@ -9,7 +9,7 @@
     "cached_only": true,
     "verify_media": true
   },
-  "status": "active",
+  "status": "completed",
   "claimed_at": "2026-11-25T02:30:48.319Z",
   "prepared_count": 13,
   "failed_count": 1,
@@ -28,5 +28,6 @@
     "97090992",
     "external-1vuy67w",
     "instagram-DYOAFMVAAHM"
-  ]
+  ],
+  "completed_at": "2026-11-25T06:26:48.950Z"
 }
