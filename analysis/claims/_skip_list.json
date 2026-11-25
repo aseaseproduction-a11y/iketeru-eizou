@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-11-25T02:46:30.000Z",
+  "entries": [
+    {
+      "video_id": "1202148916",
+      "category": "not_a_standalone_work",
+      "reason": "not_a_standalone_work（2.1 秒・音声トラックなしの UI ループ素材）",
+      "checked_at": "2026-11-25T02:46:30.000Z",
+      "checked_by": "CHIBA-PC",
+      "source_run_id": "run_20261125_113041",
+      "retry_policy": "permanent",
+      "retry_count": 0,
+      "retry_after": null
+    }
+  ]
+}
