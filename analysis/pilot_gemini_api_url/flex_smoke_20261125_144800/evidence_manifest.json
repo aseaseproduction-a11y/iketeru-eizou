@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "run_id": "flex_smoke_20261125_144800",
+  "worker": "CHIBA-PC-api",
+  "generated_at": "2026-11-25T06:48:06.385Z",
+  "evidence_root": "E:\\iketeru_api_url_logs\\flex_smoke_20261125_144800",
+  "calls_dir": "E:\\iketeru_api_url_logs\\flex_smoke_20261125_144800\\calls",
+  "archive_compatible_with": "scripts/archive-run-evidence.mjs",
+  "summary": {
+    "file_count": 10,
+    "total_bytes": 242416,
+    "secret_scan_passed": true
+  },
+  "files": [
+    {
+      "rel_path": "calls/001_CWnqX41JHuM_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\flex_smoke_20261125_144800\\calls\\001_CWnqX41JHuM_r1.json",
+      "video_id": "CWnqX41JHuM",
+      "attempt": 1,
+      "call_index": 1,
+      "size_bytes": 22156,
+      "sha256": "310783a3aff72f7b94f1776419d46006bd7a5eee63d53c9c4fe0f44001dc4ea5"
+    },
+    {
+      "rel_path": "calls/002_CWnqX41JHuM_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\flex_smoke_20261125_144800\\calls\\002_CWnqX41JHuM_r2.json",
+      "video_id": "CWnqX41JHuM",
+      "attempt": 2,
+      "call_index": 2,
+      "size_bytes": 28082,
+      "sha256": "e4584cee22340ca144d24a0ad967dc6ebb81c42adff6ed0002d942918af24979"
+    },
+    {
+      "rel_path": "calls/003_-K2c-HL9cIA_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\flex_smoke_20261125_144800\\calls\\003_-K2c-HL9cIA_r1.json",
+      "video_id": "-K2c-HL9cIA",
+      "attempt": 1,
+      "call_index": 3,
+      "size_bytes": 22888,
+      "sha256": "4b1701bac109a4c56076fe015c85b7aeea33e36b186b2977eb082968ef9c87cd"
+    },
+    {
+      "rel_path": "calls/004_-K2c-HL9cIA_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\flex_smoke_20261125_144800\\calls\\004_-K2c-HL9cIA_r2.json",
+      "video_id": "-K2c-HL9cIA",
+      "attempt": 2,
+      "call_index": 4,
+      "size_bytes": 22035,
+      "sha256": "ebb558bc39e294e6e1c9374a9a5e2a5c0f62e8e8688d07c1fdedada0aadce925"
+    },
+    {
+      "rel_path": "calls/005__H-Y1ZhWYIE_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\flex_smoke_20261125_144800\\calls\\005__H-Y1ZhWYIE_r1.json",
+      "video_id": "_H-Y1ZhWYIE",
+      "attempt": 1,
+      "call_index": 5,
+      "size_bytes": 21107,
+      "sha256": "9ca10c875f637a4ee03d384d1bd9c96748ce4589c0ce2985516371bf164dbc5f"
+    },
+    {
+      "rel_path": "calls/006__H-Y1ZhWYIE_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\flex_smoke_20261125_144800\\calls\\006__H-Y1ZhWYIE_r2.json",
+      "video_id": "_H-Y1ZhWYIE",
+      "attempt": 2,
+      "call_index": 6,
+      "size_bytes": 22461,
+      "sha256": "cd49cd353b3cacedfe868de7325093889410e7c88f041bd240ef016f5fa8111f"
+    },
+    {
+      "rel_path": "calls/007_12jPI4V5dJ0_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\flex_smoke_20261125_144800\\calls\\007_12jPI4V5dJ0_r1.json",
+      "video_id": "12jPI4V5dJ0",
+      "attempt": 1,
+      "call_index": 7,
+      "size_bytes": 21133,
+      "sha256": "c331d617458248cb0d23f9288ea5dcd1dbe502a72f6a1d48e8f8677643fc256a"
+    },
+    {
+      "rel_path": "calls/008_12jPI4V5dJ0_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\flex_smoke_20261125_144800\\calls\\008_12jPI4V5dJ0_r2.json",
+      "video_id": "12jPI4V5dJ0",
+      "attempt": 2,
+      "call_index": 8,
+      "size_bytes": 20019,
+      "sha256": "c88636adbe2ea7442f9fe16b067ecaa21d4986941528a2e3a51e00a1ef9020e5"
+    },
+    {
+      "rel_path": "calls/009_QA9PLeM0EUs_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\flex_smoke_20261125_144800\\calls\\009_QA9PLeM0EUs_r1.json",
+      "video_id": "QA9PLeM0EUs",
+      "attempt": 1,
+      "call_index": 9,
+      "size_bytes": 33054,
+      "sha256": "bee0ba0de62df5d0a003696b55f9582edb34093f5e80e590322e830cc185f11c"
+    },
+    {
+      "rel_path": "calls/010_QA9PLeM0EUs_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\flex_smoke_20261125_144800\\calls\\010_QA9PLeM0EUs_r2.json",
+      "video_id": "QA9PLeM0EUs",
+      "attempt": 2,
+      "call_index": 10,
+      "size_bytes": 29481,
+      "sha256": "b2b07b79534c42ce10789faec7b4b8d1efee0075626f0cad970ecce142fea9ae"
+    }
+  ]
+}

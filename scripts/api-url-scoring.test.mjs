@@ -6,14 +6,19 @@ import path from "node:path";
 
 import {
   CANONICAL_PROMPT_SHA256,
-  RETRY_BACKOFF_SECONDS,
+  DEFERRED_PASS_MAX_SEC,
+  DEFERRED_PASS_MIN_SEC,
+  INITIAL_RETRY_MAX_SEC,
+  INITIAL_RETRY_MIN_SEC,
+  MAX_CONSECUTIVE_DEFERRED_VIDEOS,
   aggregate2Plus1Scores,
   calcCallCostUsd,
   checkBudgetGuard,
   classifyApiError,
   executeWithRetry,
-  getRetryDelaySec,
+  runBatchOrchestrator,
   sha256Text,
+  updateLedger,
 } from "./run-api-url-batch.mjs";
 import { auditApiUrlRun, auditCallRecord, parseTimestampToSec } from "./audit-api-url-run.mjs";
 import { buildApiUrlTidbPayload, estimateConstantOffsetWithCI95 } from "./evaluate-api-url-batch.mjs";
@@ -130,38 +135,61 @@ test("checkBudgetGuard blocks monthly cap ($38), run cap, and max requests", () 
   );
 });
 
-// 2. Flex 503/429 retry logic & 402/403 immediate stop
-test("executeWithRetry retries 503/429 with backoff including >=10m waits and stops immediately on 402/403", async () => {
-  assert.deepEqual(RETRY_BACKOFF_SECONDS, [60, 180, 600, 900, 1200]);
-  assert.equal(getRetryDelaySec(2, () => 0), 600);
-  assert.equal(getRetryDelaySec(2, () => 0.999), 615);
+// 2. Flex 503/429 single-retry + defer logic & 402/403 immediate stop
+test("executeWithRetry waits 30-60s once on 503/429, defers on 2nd consecutive 503/429, and stops immediately on 402/403", async () => {
+  assert.equal(INITIAL_RETRY_MIN_SEC, 30);
+  assert.equal(INITIAL_RETRY_MAX_SEC, 60);
+  assert.equal(DEFERRED_PASS_MIN_SEC, 60);
+  assert.equal(DEFERRED_PASS_MAX_SEC, 120);
+  assert.equal(MAX_CONSECUTIVE_DEFERRED_VIDEOS, 3);
 
-  // 503 -> 429 -> 503 -> success on 4th attempt (3 retries, including 600s wait)
+  // 1st 503 -> wait 30-60s -> 2nd try succeeds
   const sleptMs = [];
   let attemptIdx = 0;
   const resOk = await executeWithRetry(
     async () => {
       attemptIdx++;
       if (attemptIdx === 1) return { exitCode: 1, stderr: "HTTP 503 SERVICE_UNAVAILABLE", stdout: "", respObj: null };
-      if (attemptIdx === 2) return { exitCode: 1, stderr: "HTTP 429 RESOURCE_EXHAUSTED", stdout: "", respObj: null };
-      if (attemptIdx === 3) return { exitCode: 1, stderr: "503 overloaded", stdout: "", respObj: null };
       return { exitCode: 0, stderr: "", stdout: "{}", respObj: { status: "completed" } };
     },
-    { sleepFn: async (ms) => sleptMs.push(ms), rng: () => 0 }
+    { mode: "initial", sleepFn: async (ms) => sleptMs.push(ms), rng: () => 0.5 }
   );
   assert.equal(resOk.classification.kind, "ok");
-  assert.equal(resOk.retries_used, 3);
-  assert.deepEqual(sleptMs, [60_000, 180_000, 600_000]);
+  assert.equal(resOk.classification.deferred, false);
+  assert.equal(resOk.retries_used, 1);
+  assert.equal(sleptMs.length, 1);
+  assert.ok(sleptMs[0] >= 30_000 && sleptMs[0] <= 60_000);
+  assert.equal(resOk.congestion_events.length, 1);
 
-  // Exhausting all 5 retries marks exhausted=true
-  const sleptAll = [];
-  const resEx = await executeWithRetry(
-    async () => ({ exitCode: 1, stderr: "HTTP 503 SERVICE_UNAVAILABLE", stdout: "", respObj: null }),
-    { sleepFn: async (ms) => sleptAll.push(ms), rng: () => 0 }
+  // 2 consecutive 503/429 -> immediately defers without extra wait
+  const sleptDef = [];
+  let callsDef = 0;
+  const resDef = await executeWithRetry(
+    async () => {
+      callsDef++;
+      return { exitCode: 1, stderr: callsDef === 1 ? "HTTP 503 SERVICE_UNAVAILABLE" : "HTTP 429 RESOURCE_EXHAUSTED", stdout: "", respObj: null };
+    },
+    { mode: "initial", sleepFn: async (ms) => sleptDef.push(ms), rng: () => 0 }
   );
-  assert.equal(resEx.classification.exhausted, true);
-  assert.equal(resEx.retries_used, 5);
-  assert.deepEqual(sleptAll, [60_000, 180_000, 600_000, 900_000, 1_200_000]);
+  assert.equal(callsDef, 2);
+  assert.equal(resDef.classification.kind, "retryable_congestion");
+  assert.equal(resDef.classification.deferred, true);
+  assert.equal(resDef.retries_used, 1);
+  assert.deepEqual(sleptDef, [30_000]);
+  assert.equal(resDef.congestion_events.length, 2);
+
+  // deferred_pass mode: 1 try only, zero sleep on 503
+  let callsPass = 0;
+  const resPass = await executeWithRetry(
+    async () => {
+      callsPass++;
+      return { exitCode: 1, stderr: "HTTP 503 SERVICE_UNAVAILABLE", stdout: "", respObj: null };
+    },
+    { mode: "deferred_pass", sleepFn: async () => { throw new Error("must not retry inside deferred_pass"); } }
+  );
+  assert.equal(callsPass, 1);
+  assert.equal(resPass.classification.deferred, true);
+  assert.equal(resPass.retries_used, 0);
 
   // 402 and 403 do NOT retry
   for (const errText of ["HTTP 402 PAYMENT_REQUIRED", "HTTP 403 PERMISSION_DENIED"]) {
@@ -175,9 +203,205 @@ test("executeWithRetry retries 503/429 with backoff including >=10m waits and st
     );
     assert.equal(calls, 1);
     assert.equal(resFatal.classification.kind, "fatal_stop");
+    assert.equal(resFatal.classification.deferred, false);
   }
   assert.equal(classifyApiError(1, "402 billing", null).code, "402");
   assert.equal(classifyApiError(1, "403 forbidden", null).code, "403");
+});
+
+// 2b. Deferred-queue orchestrator rules (all 5 scenarios + Rule 7 ledger)
+test("runBatchOrchestrator: 503x2 defers call and advances to next video, then retries after full pass", async () => {
+  const queue = [
+    { video_id: "v1", role: "target", ref_duration_sec: 60 },
+    { video_id: "v2", role: "target", ref_duration_sec: 60 },
+  ];
+  const sleptMs = [];
+  const res = await runBatchOrchestrator({
+    queue,
+    sleepFn: async (ms) => sleptMs.push(ms),
+    rng: () => 0.5,
+    runAttemptFn: async ({ item, attempt, phase }) => {
+      // v1 r1 hits 503x2 during initial pass -> deferred; v2 runs next; then post-pass retries v1 r1 & r2
+      if (item.video_id === "v1" && phase === "initial") {
+        return { status: "deferred", congestionEvents: [{ code: "503", timestamp: "2026-11-25T06:00:00Z" }] };
+      }
+      return { status: "ok", score: item.video_id === "v1" ? 80 : 74 };
+    },
+  });
+  assert.equal(res.stopped_early, false);
+  assert.equal(res.deferred_queue.length, 0);
+  // v1 r1 deferred -> immediately moved to v2 r1, v2 r2 -> then post-pass v1 r1, v1 r2
+  assert.deepEqual(
+    res.execution_order.map((x) => `${x.phase}:${x.video_id}:r${x.attempt}`),
+    [
+      "initial:v1:r1",
+      "initial:v2:r1",
+      "initial:v2:r2",
+      "post_pass_deferred:v1:r1",
+      "post_pass_deferred:v1:r2",
+    ]
+  );
+  // 1-2 minute sleep occurred between the two post-pass deferred calls
+  assert.equal(sleptMs.length, 1);
+  assert.ok(sleptMs[0] >= 60_000 && sleptMs[0] <= 120_000);
+  assert.equal(res.videos.every((v) => v.complete), true);
+});
+
+test("runBatchOrchestrator: preserves succeeded r1 and defers ONLY failed r2", async () => {
+  const queue = [
+    { video_id: "v1", role: "target", ref_duration_sec: 60 },
+    { video_id: "v2", role: "target", ref_duration_sec: 60 },
+  ];
+  const res = await runBatchOrchestrator({
+    queue,
+    sleepFn: async () => {},
+    runAttemptFn: async ({ item, attempt, phase }) => {
+      if (item.video_id === "v1" && attempt === 1) return { status: "ok", score: 82 };
+      if (item.video_id === "v1" && attempt === 2 && phase === "initial") {
+        return { status: "deferred", congestionEvents: [{ code: "503", timestamp: "2026-11-25T06:01:00Z" }] };
+      }
+      if (item.video_id === "v1" && attempt === 2 && phase === "deferred_pass") {
+        return { status: "ok", score: 84 };
+      }
+      return { status: "ok", score: 70 };
+    },
+  });
+  assert.equal(res.stopped_early, false);
+  assert.deepEqual(
+    res.execution_order.map((x) => `${x.phase}:${x.video_id}:r${x.attempt}`),
+    [
+      "initial:v1:r1",
+      "initial:v1:r2",
+      "initial:v2:r1",
+      "initial:v2:r2",
+      "post_pass_deferred:v1:r2",
+    ]
+  );
+  const v1 = res.videos.find((v) => v.video_id === "v1");
+  assert.deepEqual(v1.raw_scores, [82, 84]);
+  assert.equal(v1.api_raw_final_score, 83);
+  assert.equal(v1.complete, true);
+});
+
+test("runBatchOrchestrator: 3 consecutive deferred videos stops run while preserving succeeded results & deferred queue", async () => {
+  const queue = [
+    { video_id: "v1", role: "target", ref_duration_sec: 60 },
+    { video_id: "v2", role: "target", ref_duration_sec: 60 },
+    { video_id: "v3", role: "target", ref_duration_sec: 60 },
+    { video_id: "v4", role: "target", ref_duration_sec: 60 },
+    { video_id: "v5", role: "target", ref_duration_sec: 60 },
+  ];
+  const res = await runBatchOrchestrator({
+    queue,
+    sleepFn: async () => {},
+    runAttemptFn: async ({ item, attempt }) => {
+      if (item.video_id === "v1") return { status: "ok", score: 88 };
+      if (item.video_id === "v2" && attempt === 1) return { status: "ok", score: 75 };
+      // v2 r2, v3 r1, v4 r1 all deferred -> 3 consecutive videos deferred! v5 must NOT run.
+      return { status: "deferred", congestionEvents: [{ code: "503", timestamp: "2026-11-25T06:02:00Z" }] };
+    },
+  });
+  assert.equal(res.stopped_early, true);
+  assert.equal(res.stop_reason, "3_consecutive_videos_deferred_flex_congestion");
+  // v5 was never called
+  assert.equal(res.execution_order.some((x) => x.video_id === "v5"), false);
+  // v1 succeeded completely; v2 preserved r1=75 and deferred only r2
+  const v1 = res.videos.find((v) => v.video_id === "v1");
+  const v2 = res.videos.find((v) => v.video_id === "v2");
+  assert.equal(v1.complete, true);
+  assert.deepEqual(v1.raw_scores, [88, 88]);
+  assert.deepEqual(v2.raw_scores, [75]);
+  assert.deepEqual(
+    res.deferred_queue.map((d) => `${d.video_id}:r${d.attempt}`),
+    ["v2:r2", "v3:r1", "v3:r2", "v4:r1", "v4:r2"]
+  );
+});
+
+test("runBatchOrchestrator: post-pass deferred retry stops immediately on 503 and preserves remaining queue", async () => {
+  const queue = [
+    { video_id: "v1", role: "target", ref_duration_sec: 60 },
+    { video_id: "v2", role: "target", ref_duration_sec: 60 },
+    { video_id: "v3", role: "target", ref_duration_sec: 60 },
+  ];
+  const sleptMs = [];
+  const res = await runBatchOrchestrator({
+    queue,
+    sleepFn: async (ms) => sleptMs.push(ms),
+    rng: () => 0,
+    runAttemptFn: async ({ item, attempt, phase }) => {
+      if (phase === "initial") {
+        if (item.video_id === "v1" && attempt === 2) return { status: "deferred" };
+        if (item.video_id === "v2" && attempt === 2) return { status: "deferred" };
+        return { status: "ok", score: 78 };
+      }
+      // Post-pass: v1 r2 succeeds, then v2 r2 hits 503 -> must STOP and keep v2 r2 in deferred_queue
+      if (item.video_id === "v1" && attempt === 2) return { status: "ok", score: 80 };
+      return { status: "deferred", congestionEvents: [{ code: "503", timestamp: "2026-11-25T06:10:00Z" }] };
+    },
+  });
+  assert.equal(res.stopped_early, true);
+  assert.match(res.stop_reason, /^deferred_retry_pass_congestion/);
+  assert.deepEqual(sleptMs, [60_000]);
+  assert.equal(res.videos.find((v) => v.video_id === "v1").complete, true);
+  assert.equal(res.videos.find((v) => v.video_id === "v3").complete, true);
+  assert.deepEqual(res.deferred_queue.map((d) => `${d.video_id}:r${d.attempt}`), ["v2:r2"]);
+});
+
+test("runBatchOrchestrator: --resume processes initialDeferredQueue FIRST before remaining normal-queue videos", async () => {
+  const queue = [
+    { video_id: "v1", role: "target", ref_duration_sec: 60 },
+    { video_id: "v2", role: "target", ref_duration_sec: 60 },
+    { video_id: "v3", role: "target", ref_duration_sec: 60 },
+  ];
+  const initialCompleted = new Map([
+    ["v1", new Map([[1, 80], [2, 82]])],
+    ["v2", new Map([[1, 74]])],
+  ]);
+  const initialDeferred = [{ video_id: "v2", role: "target", ref_duration_sec: 60, attempt: 2 }];
+
+  const res = await runBatchOrchestrator({
+    queue,
+    initialCompletedScores: initialCompleted,
+    initialDeferredQueue: initialDeferred,
+    sleepFn: async () => {},
+    runAttemptFn: async () => ({ status: "ok", score: 76 }),
+  });
+  assert.equal(res.stopped_early, false);
+  assert.equal(res.deferred_queue.length, 0);
+  // v2 r2 (deferred) MUST execute BEFORE v3 r1 & v3 r2 (normal queue); v1 is skipped (already done)
+  assert.deepEqual(
+    res.execution_order.map((x) => `${x.phase}:${x.video_id}:r${x.attempt}`),
+    [
+      "resume_deferred_first:v2:r2",
+      "initial:v3:r1",
+      "initial:v3:r2",
+    ]
+  );
+  assert.equal(res.videos.every((v) => v.complete), true);
+});
+
+test("updateLedger records ONLY succeeded call costs and stores 503/429 counts & timestamps with $0 cost", () => {
+  const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), "iketeru-ledger-"));
+  try {
+    const ledgerPath = path.join(tmpDir, "ledger.json");
+    updateLedger(ledgerPath, "2026-11", {
+      run_id: "run_test_1",
+      purpose: "test",
+      service_tier: "flex",
+      calls_count: 2,
+      cost_usd: 0.08,
+      congestion_failure_count: 3,
+      congestion_timestamps: ["2026-11-25T06:00:00Z", "2026-11-25T06:01:00Z", "2026-11-25T06:02:00Z"],
+      recorded_at: "2026-11-25T06:05:00Z",
+    });
+    const saved = JSON.parse(fs.readFileSync(ledgerPath, "utf8"));
+    assert.equal(saved.monthly_totals["2026-11"].spent_usd, 0.08);
+    assert.equal(saved.monthly_totals["2026-11"].calls_count, 2);
+    assert.equal(saved.monthly_totals["2026-11"].congestion_failure_count, 3);
+    assert.equal(saved.monthly_totals["2026-11"].runs[0].congestion_timestamps.length, 3);
+  } finally {
+    fs.rmSync(tmpDir, { recursive: true, force: true });
+  }
 });
 
 // 3. 2+1 ensemble aggregation

@@ -2,14 +2,23 @@
 /**
  * Production runner for Gemini API direct YouTube URL blind scoring (Flex tier by default).
  *
- * Design: docs/API_URL_SCORING_DESIGN.md
+ * Design: docs/API_URL_SCORING_DESIGN.md (revised 2026-11-25 for deferred-queue 503/429 handling)
  * Strict guarantees:
  *  - Identical prompt, model (gemini-4-neon), thinking_level (high), and JSON schema to
  *    run_20261125_125425/run_config.json (asserted via prompt SHA-256).
- *  - Default service_tier="flex" (50% off Standard), 900s per-call timeout, exponential backoff
- *    with jitter on 503/429 (60s, 180s, 600s, 900s, 1200s; max 5 retries).
- *  - Hard stops on 402/403, 2 consecutive 5-retry failures, 2 consecutive JSON errors,
- *    video tokens < max(1000, duration_sec * 90), monthly ledger cap ($38), run cap, or max requests.
+ *  - Default service_tier="flex" (50% off Standard), 900s per-call timeout.
+ *  - 503/429 deferred-queue policy:
+ *      1) On 1st 503/429 in normal pass, wait 30-60s random then retry once.
+ *         If 503/429 occurs twice in a row on a call, defer ONLY the failed call(s) to
+ *         deferred_retry_queue.json and move on to the next video immediately.
+ *      2) Never discard succeeded attempts (e.g., if r1 succeeds and r2 hits 503x2, keep r1 and defer only r2).
+ *      3) If 3 consecutive videos are deferred due to 503/429, treat as global Flex congestion and stop run
+ *         (preserving all succeeded results and deferred_retry_queue.json).
+ *      4) After finishing one full pass over all videos, retry deferred_retry_queue items once each with
+ *         60-120s (1-2 min) interval between calls. If any call still hits 503/429, stop run and save remaining queue.
+ *      5) 402/403 always stop immediately with zero retries.
+ *      6) Budget ledger records ONLY succeeded call costs; 503/429 failures record counts & timestamps only.
+ *      7) --resume processes deferred_retry_queue.json FIRST before remaining normal-queue videos.
  *  - 2+1 ensemble rule: 2 independent calls per video; if |r1 - r2| >= 5, run 3rd call and take median.
  *  - Full raw responses saved outside Git at E:\iketeru_api_url_logs\<run_id>\calls\ with
  *    evidence_manifest.json (paths, byte sizes, SHA-256) in analysis/runs/<run_id>/ for
@@ -45,9 +54,14 @@ export const DEFAULT_LOGS_ROOT = "E:\\iketeru_api_url_logs";
 export const DEFAULT_MONTHLY_LIMIT_USD = 38.0;
 export const DEFAULT_RUN_BUDGET_USD = 10.0;
 export const DEFAULT_MAX_DURATION_SEC = 900;
-export const DEFAULT_TIMEOUT_MS = 900_000; // 15 minutes (>= 10 min Flex recommendation)
+export const DEFAULT_TIMEOUT_MS = 900_000; // 15 minutes (unchanged)
 export const DEFAULT_SLEEP_MS = 4000;
-export const RETRY_BACKOFF_SECONDS = Object.freeze([60, 180, 600, 900, 1200]);
+
+export const INITIAL_RETRY_MIN_SEC = 30;
+export const INITIAL_RETRY_MAX_SEC = 60;
+export const DEFERRED_PASS_MIN_SEC = 60;
+export const DEFERRED_PASS_MAX_SEC = 120;
+export const MAX_CONSECUTIVE_DEFERRED_VIDEOS = 3;
 
 export const PRICING_USD_PER_1M = Object.freeze({
   standard: { input: 3.0, output_and_thought: 15.0 },
@@ -122,12 +136,11 @@ export function calcCallCostUsd(usage, serviceTier = "flex") {
 export function estimateCallCostUsd(durationSec, serviceTier = "flex") {
   const d = typeof durationSec === "number" && Number.isFinite(durationSec) && durationSec > 0 ? durationSec : 180;
   const stdEst = 0.0473 + 0.0003135 * d;
-  return serviceTier === "flex" ? Math.round(stdEst * 0.5 * 1_000_000) / 1_000_000 : Math.round(stdEst * 1_000_000) / 1_000_000;
+  return serviceTier === "flex"
+    ? Math.round(stdEst * 0.5 * 1_000_000) / 1_000_000
+    : Math.round(stdEst * 1_000_000) / 1_000_000;
 }
 
-/**
- * Pure budget guard evaluated BEFORE every API call.
- */
 export function checkBudgetGuard({
   monthlySpentUsd,
   monthlyLimitUsd = DEFAULT_MONTHLY_LIMIT_USD,
@@ -155,10 +168,6 @@ export function checkBudgetGuard({
   return { allowed: true, reason: null };
 }
 
-/**
- * Classify HTTP/API error into fatal stop (402/403), retryable Flex congestion (503/429),
- * per-video unreadable, or other error.
- */
 export function classifyApiError(exitCode, errText, respObj) {
   const hay = `${errText || ""} ${JSON.stringify(respObj?.error || "")} ${respObj?.status || ""}`;
   if (/\b402\b|PAYMENT_REQUIRED|insufficient.*balance|billing/i.test(hay)) {
@@ -173,7 +182,10 @@ export function classifyApiError(exitCode, errText, respObj) {
   if (/\b429\b|RESOURCE_EXHAUSTED|RATE_LIMIT|TOO_MANY_REQUESTS/i.test(hay)) {
     return { kind: "retryable_congestion", code: "429", retryable: true };
   }
-  if (exitCode !== 0 && /\b400\b|\b404\b|INVALID_ARGUMENT|NOT_FOUND|unavailable|private|cannot.*(fetch|access|read)/i.test(hay)) {
+  if (
+    exitCode !== 0 &&
+    /\b400\b|\b404\b|INVALID_ARGUMENT|NOT_FOUND|unavailable|private|cannot.*(fetch|access|read)/i.test(hay)
+  ) {
     return { kind: "video_unreadable", code: "400/404", retryable: false };
   }
   if (exitCode === 0 && respObj?.status === "completed") {
@@ -182,51 +194,68 @@ export function classifyApiError(exitCode, errText, respObj) {
   return { kind: "other_error", code: String(exitCode), retryable: false };
 }
 
-/**
- * Compute retry delay (seconds) for attempt index retryIdx (0..4) with deterministic/injectable jitter.
- */
-export function getRetryDelaySec(retryIdx, rng = Math.random) {
-  if (retryIdx < 0 || retryIdx >= RETRY_BACKOFF_SECONDS.length) return null;
-  const base = RETRY_BACKOFF_SECONDS[retryIdx];
-  const jitter = Math.floor(rng() * 16); // 0..15s jitter
-  return base + jitter;
+export function randomBetweenSec(minSec, maxSec, rng = Math.random) {
+  return minSec + Math.floor(rng() * (maxSec - minSec + 1));
 }
 
 /**
- * Execute an API call with Flex 503/429 exponential backoff retry (injectable sleep & rng for unit tests).
+ * Normal-pass single call execution:
+ * - On 1st 503/429: sleep 30-60s random, then retry once.
+ * - On 2nd consecutive 503/429: immediately return deferred=true (no further wait).
+ * - On 402/403: immediately return fatal_stop (0 retries).
  */
-export async function executeWithRetry(invokeFn, { maxRetries = RETRY_BACKOFF_SECONDS.length, sleepFn, rng = Math.random } = {}) {
+export async function executeWithRetry(
+  invokeFn,
+  {
+    mode = "initial", // "initial" (1 retry after 30-60s, then defer) | "deferred_pass" (1 try only, fail stops run)
+    sleepFn,
+    rng = Math.random,
+    nowFn = () => new Date().toISOString(),
+  } = {}
+) {
   const sleepImpl = sleepFn || ((ms) => new Promise((r) => setTimeout(r, ms)));
   const retryHistory = [];
-  for (let retryIdx = 0; retryIdx <= maxRetries; retryIdx++) {
-    const res = await invokeFn(retryIdx);
+  const congestionEvents = [];
+  const maxRetries = mode === "deferred_pass" ? 0 : 1;
+
+  for (let tryIdx = 0; tryIdx <= maxRetries; tryIdx++) {
+    const res = await invokeFn(tryIdx);
     const cls = classifyApiError(res.exitCode, `${res.stderr || ""} ${res.stdout || ""}`, res.respObj);
     if (cls.kind === "retryable_congestion") {
-      if (retryIdx < maxRetries) {
-        const delaySec = getRetryDelaySec(retryIdx, rng);
-        retryHistory.push({ retry: retryIdx + 1, code: cls.code, delay_sec: delaySec });
+      const event = {
+        timestamp: nowFn(),
+        code: cls.code,
+        try_index: tryIdx + 1,
+        phase: mode === "deferred_pass" ? "deferred_pass" : tryIdx === 0 ? "initial_try1" : "initial_try2_deferred",
+      };
+      congestionEvents.push(event);
+
+      if (tryIdx < maxRetries) {
+        const delaySec = randomBetweenSec(INITIAL_RETRY_MIN_SEC, INITIAL_RETRY_MAX_SEC, rng);
+        retryHistory.push({ retry: tryIdx + 1, code: cls.code, delay_sec: delaySec, timestamp: event.timestamp });
         await sleepImpl(delaySec * 1000);
         continue;
       }
+
       return {
         ...res,
-        classification: { ...cls, exhausted: true },
+        classification: { ...cls, deferred: true },
         retries_used: retryHistory.length,
         retry_history: retryHistory,
+        congestion_events: congestionEvents,
       };
     }
+
     return {
       ...res,
-      classification: cls,
+      classification: { ...cls, deferred: false },
       retries_used: retryHistory.length,
       retry_history: retryHistory,
+      congestion_events: congestionEvents,
     };
   }
 }
 
-/**
- * Frozen Phase 2 2+1 ensemble aggregation.
- */
 export function aggregate2Plus1Scores(scores) {
   if (!Array.isArray(scores) || scores.length < 2) {
     return { status: "insufficient", needs_3rd: false, final_score: null, ensemble_rule: "insufficient" };
@@ -260,6 +289,242 @@ export function aggregate2Plus1Scores(scores) {
     final_score: sorted3[1],
     ensemble_rule: "median_of_3",
   };
+}
+
+/**
+ * Pure, testable batch scheduler implementing all 8 Flex 503/429 deferred-queue rules:
+ *  - When resuming with initialDeferredQueue non-empty, processes deferred queue FIRST.
+ *  - Normal pass: for each video, runs missing attempts (r1, r2, and r3 if |r1-r2|>=5).
+ *    If an attempt hits 503/429 twice -> preserves succeeded attempts, defers only failed/remaining attempts.
+ *    If 3 consecutive videos are deferred -> stops immediately ("3_consecutive_videos_deferred_flex_congestion").
+ *  - After normal pass completes, retries deferred queue once each with 60-120s wait between calls.
+ *    If ANY call in deferred pass hits 503/429 -> stops immediately ("deferred_retry_pass_congestion"),
+ *    keeping failed + remaining items in deferredQueue.
+ *  - On 402/403 or fatal stop -> stops immediately.
+ */
+export async function runBatchOrchestrator({
+  queue,
+  initialCompletedScores = new Map(), // Map<video_id, Map<attempt, number>>
+  initialDeferredQueue = [], // [{ video_id, role, ref_duration_sec, attempt }]
+  fixedAttempts = null,
+  runAttemptFn, // async ({ item, attempt, phase }) => { status: "ok"|"deferred"|"fatal_stop"|"error"|"budget_stop", score?, stopReason?, congestionEvents? }
+  sleepFn = async () => {},
+  rng = Math.random,
+  maxConsecutiveDeferredVideos = MAX_CONSECUTIVE_DEFERRED_VIDEOS,
+}) {
+  const scoresByVid = new Map();
+  for (const [vid, m] of initialCompletedScores.entries()) {
+    scoresByVid.set(vid, new Map(m));
+  }
+  const itemById = new Map(queue.map((q) => [q.video_id, q]));
+  const getScoresMap = (vid) => {
+    if (!scoresByVid.has(vid)) scoresByVid.set(vid, new Map());
+    return scoresByVid.get(vid);
+  };
+
+  let stoppedEarly = false;
+  let stopReason = null;
+  const executionOrder = [];
+  const allCongestionEvents = [];
+  let deferredQueue = [];
+  const deferredKeys = new Set();
+
+  function enqueueDeferred(entry) {
+    const key = `${entry.video_id}::${entry.attempt}`;
+    if (deferredKeys.has(key)) return;
+    deferredKeys.add(key);
+    deferredQueue.push({
+      video_id: entry.video_id,
+      role: entry.role,
+      ref_duration_sec: entry.ref_duration_sec ?? null,
+      attempt: entry.attempt,
+    });
+  }
+
+  async function processDeferredPass(entries, phaseLabel) {
+    const remaining = [];
+    let executedInPass = 0;
+    for (let idx = 0; idx < entries.length; idx++) {
+      const entry = entries[idx];
+      const sm = getScoresMap(entry.video_id);
+      if (sm.has(entry.attempt)) continue;
+
+      if (executedInPass > 0) {
+        const waitSec = randomBetweenSec(DEFERRED_PASS_MIN_SEC, DEFERRED_PASS_MAX_SEC, rng);
+        await sleepFn(waitSec * 1000);
+      }
+      executedInPass++;
+
+      const item = itemById.get(entry.video_id) || {
+        video_id: entry.video_id,
+        role: entry.role || "target",
+        ref_duration_sec: entry.ref_duration_sec ?? null,
+      };
+      executionOrder.push({ phase: phaseLabel, video_id: entry.video_id, attempt: entry.attempt });
+      const res = await runAttemptFn({ item, attempt: entry.attempt, phase: "deferred_pass" });
+      if (res.congestionEvents) allCongestionEvents.push(...res.congestionEvents);
+
+      if (res.status === "ok") {
+        sm.set(entry.attempt, res.score);
+        // If r1 & r2 now complete and |r1-r2|>=5 (and not fixedAttempts), also queue/run r3 in this pass
+        if (!fixedAttempts && sm.has(1) && sm.has(2) && !sm.has(3)) {
+          const agg = aggregate2Plus1Scores([sm.get(1), sm.get(2)]);
+          if (agg.needs_3rd) {
+            entries.splice(idx + 1, 0, {
+              video_id: entry.video_id,
+              role: item.role,
+              ref_duration_sec: item.ref_duration_sec,
+              attempt: 3,
+            });
+          }
+        }
+        continue;
+      }
+
+      // 503/429 in deferred pass OR fatal/budget stop -> preserve this and all remaining items and STOP run
+      remaining.push(entry, ...entries.slice(idx + 1));
+      stoppedEarly = true;
+      stopReason =
+        res.status === "deferred"
+          ? `deferred_retry_pass_congestion (${entry.video_id} r${entry.attempt})`
+          : res.stopReason || `${phaseLabel}_${res.status}`;
+      return remaining;
+    }
+    return remaining;
+  }
+
+  // Phase 0 (when --resume has leftover deferred queue): process deferred queue FIRST
+  if (initialDeferredQueue.length > 0) {
+    const leftover = await processDeferredPass([...initialDeferredQueue], "resume_deferred_first");
+    if (stoppedEarly) {
+      deferredQueue = leftover;
+      return buildResult();
+    }
+  }
+
+  // Phase 1: Normal pass over all videos in queue
+  let consecutiveDeferredVideos = 0;
+
+  for (const item of queue) {
+    if (stoppedEarly) break;
+    const sm = getScoresMap(item.video_id);
+    let videoDeferredThisPass = false;
+
+    // Attempt 1
+    if (!sm.has(1)) {
+      executionOrder.push({ phase: "initial", video_id: item.video_id, attempt: 1 });
+      const r1 = await runAttemptFn({ item, attempt: 1, phase: "initial" });
+      if (r1.congestionEvents) allCongestionEvents.push(...r1.congestionEvents);
+      if (r1.status === "ok") {
+        sm.set(1, r1.score);
+      } else if (r1.status === "deferred") {
+        videoDeferredThisPass = true;
+        enqueueDeferred({ ...item, attempt: 1 });
+        if (!sm.has(2)) enqueueDeferred({ ...item, attempt: 2 });
+      } else if (r1.status === "fatal_stop" || r1.status === "budget_stop") {
+        stoppedEarly = true;
+        stopReason = r1.stopReason || r1.status;
+        break;
+      } else {
+        continue;
+      }
+    }
+
+    // Attempt 2 (only if attempt 1 succeeded and not already done)
+    if (!videoDeferredThisPass && !sm.has(2)) {
+      executionOrder.push({ phase: "initial", video_id: item.video_id, attempt: 2 });
+      const r2 = await runAttemptFn({ item, attempt: 2, phase: "initial" });
+      if (r2.congestionEvents) allCongestionEvents.push(...r2.congestionEvents);
+      if (r2.status === "ok") {
+        sm.set(2, r2.score);
+      } else if (r2.status === "deferred") {
+        videoDeferredThisPass = true;
+        // Preserve succeeded r1! Only defer failed r2.
+        enqueueDeferred({ ...item, attempt: 2 });
+      } else if (r2.status === "fatal_stop" || r2.status === "budget_stop") {
+        stoppedEarly = true;
+        stopReason = r2.stopReason || r2.status;
+        break;
+      } else {
+        continue;
+      }
+    }
+
+    // Attempt 3 tiebreaker (if r1 & r2 succeeded and |r1-r2|>=5 and not fixedAttempts)
+    if (!videoDeferredThisPass && !fixedAttempts && sm.has(1) && sm.has(2) && !sm.has(3)) {
+      const agg = aggregate2Plus1Scores([sm.get(1), sm.get(2)]);
+      if (agg.needs_3rd) {
+        executionOrder.push({ phase: "initial", video_id: item.video_id, attempt: 3 });
+        const r3 = await runAttemptFn({ item, attempt: 3, phase: "initial" });
+        if (r3.congestionEvents) allCongestionEvents.push(...r3.congestionEvents);
+        if (r3.status === "ok") {
+          sm.set(3, r3.score);
+        } else if (r3.status === "deferred") {
+          videoDeferredThisPass = true;
+          enqueueDeferred({ ...item, attempt: 3 });
+        } else if (r3.status === "fatal_stop" || r3.status === "budget_stop") {
+          stoppedEarly = true;
+          stopReason = r3.stopReason || r3.status;
+          break;
+        }
+      }
+    }
+
+    if (videoDeferredThisPass) {
+      consecutiveDeferredVideos++;
+      if (consecutiveDeferredVideos >= maxConsecutiveDeferredVideos) {
+        stoppedEarly = true;
+        stopReason = `${maxConsecutiveDeferredVideos}_consecutive_videos_deferred_flex_congestion`;
+        break;
+      }
+    } else {
+      consecutiveDeferredVideos = 0;
+    }
+  }
+
+  // Phase 2: After full pass over all videos, retry deferred queue once each (60-120s interval)
+  if (!stoppedEarly && deferredQueue.length > 0) {
+    const remaining = await processDeferredPass([...deferredQueue], "post_pass_deferred");
+    deferredQueue = remaining;
+  }
+
+  return buildResult();
+
+  function buildResult() {
+    const videos = [];
+    for (const item of queue) {
+      const sm = getScoresMap(item.video_id);
+      const rawScores = [1, 2, 3].filter((a) => sm.has(a)).map((a) => sm.get(a));
+      let agg = aggregate2Plus1Scores(rawScores);
+      if (fixedAttempts === 2 && rawScores.length === 2 && agg.needs_3rd) {
+        agg = {
+          status: "complete",
+          needs_3rd: false,
+          diff_12: agg.diff_12,
+          final_score: Math.round(((rawScores[0] + rawScores[1]) / 2) * 100) / 100,
+          ensemble_rule: "fixed_2_mean",
+        };
+      }
+      videos.push({
+        video_id: item.video_id,
+        role: item.role,
+        attempts_completed: [1, 2, 3].filter((a) => sm.has(a)),
+        raw_scores: rawScores,
+        diff_12: agg.diff_12 ?? null,
+        api_raw_final_score: agg.final_score,
+        ensemble_rule: agg.ensemble_rule,
+        complete: agg.status === "complete",
+      });
+    }
+    return {
+      stopped_early: stoppedEarly,
+      stop_reason: stopReason,
+      deferred_queue: deferredQueue,
+      congestion_events: allCongestionEvents,
+      execution_order: executionOrder,
+      videos,
+    };
+  }
 }
 
 export function extractModelText(resp) {
@@ -473,9 +738,8 @@ function parseArgs(argv) {
     if (a.startsWith("--")) {
       const k = a.slice(2);
       const next = argv[i + 1];
-      if (!next || next.startsWith("--")) {
-        args[k] = true;
-      } else {
+      if (!next || next.startsWith("--")) args[k] = true;
+      else {
         args[k] = next;
         i++;
       }
@@ -499,25 +763,28 @@ function loadLedger(ledgerPath) {
   return JSON.parse(fs.readFileSync(ledgerPath, "utf8"));
 }
 
-function updateLedger(ledgerPath, monthKey, runEntry) {
+/**
+ * Rule 7: Ledger records ONLY succeeded call costs; 503/429 failures record count & timestamps only.
+ */
+export function updateLedger(ledgerPath, monthKey, runEntry) {
   const ledger = loadLedger(ledgerPath);
   if (!ledger.monthly_totals[monthKey]) {
     ledger.monthly_totals[monthKey] = {
       limit_usd: ledger.default_monthly_limit_usd ?? DEFAULT_MONTHLY_LIMIT_USD,
       spent_usd: 0,
       calls_count: 0,
+      congestion_failure_count: 0,
       runs: [],
     };
   }
   const m = ledger.monthly_totals[monthKey];
   const existingIdx = m.runs.findIndex((r) => r.run_id === runEntry.run_id);
-  if (existingIdx >= 0) {
-    m.runs[existingIdx] = runEntry;
-  } else {
-    m.runs.push(runEntry);
-  }
+  if (existingIdx >= 0) m.runs[existingIdx] = runEntry;
+  else m.runs.push(runEntry);
+
   m.spent_usd = Math.round(m.runs.reduce((a, r) => a + (r.cost_usd || 0), 0) * 1_000_000) / 1_000_000;
   m.calls_count = m.runs.reduce((a, r) => a + (r.calls_count || 0), 0);
+  m.congestion_failure_count = m.runs.reduce((a, r) => a + (r.congestion_failure_count || 0), 0);
   ledger.updated_at = new Date().toISOString();
   fs.writeFileSync(ledgerPath, JSON.stringify(ledger, null, 2) + "\n", "utf8");
   return ledger;
@@ -539,12 +806,21 @@ function writeEvidenceManifest({ runDir, runId, worker, logsRunDir, callEntries 
     },
     files: callEntries,
   };
-  fs.writeFileSync(
-    path.join(runDir, "evidence_manifest.json"),
-    JSON.stringify(manifest, null, 2) + "\n",
-    "utf8"
-  );
+  fs.writeFileSync(path.join(runDir, "evidence_manifest.json"), JSON.stringify(manifest, null, 2) + "\n", "utf8");
   return manifest;
+}
+
+function saveDeferredQueue(runDir, runId, deferredQueue, congestionEvents) {
+  const out = {
+    schema_version: 1,
+    run_id: runId,
+    updated_at: new Date().toISOString(),
+    remaining_count: deferredQueue.length,
+    deferred_calls: deferredQueue,
+    congestion_events_count: congestionEvents.length,
+    congestion_events: congestionEvents,
+  };
+  fs.writeFileSync(path.join(runDir, "deferred_retry_queue.json"), JSON.stringify(out, null, 2) + "\n", "utf8");
 }
 
 async function main() {
@@ -590,12 +866,11 @@ async function main() {
 
   const model = canonicalCfg.model;
   const thinkingLevel = canonicalCfg.thinking_level;
-  const bodyObj = {
+  const bodyJson = JSON.stringify({
     generation_config: { thinking_level: thinkingLevel },
     service_tier: serviceTier,
     store: false,
-  };
-  const bodyJson = JSON.stringify(bodyObj);
+  });
 
   const loadIds = (p) => {
     if (!p) return [];
@@ -607,7 +882,6 @@ async function main() {
   const anchorIds = loadIds(anchorListPath);
   const anchorSet = new Set(anchorIds);
 
-  // Merge target + anchor items (dedup, marking role clearly)
   const sqliteDurs = loadSqliteDurationMap();
   const queue = [];
   const deferredLong = [];
@@ -642,34 +916,19 @@ async function main() {
   const monthlyLimitUsd = monthlyLimitOverride ?? monthEntry.limit_usd;
   const baseMonthlySpentUsd = Number(monthEntry.spent_usd || 0);
 
-  const estCalls = queue.length * (fixedAttempts || 2.05);
-  const estTotalCostUsd =
-    Math.round(
-      queue.reduce((a, q) => a + estimateCallCostUsd(q.ref_duration_sec, serviceTier) * (fixedAttempts || 2.05), 0) *
-        10000
-    ) / 10000;
-
   const cliExe = resolveCliPath();
   const cliVersion = execFileSync(cliExe, ["--version"], { encoding: "utf8" }).trim();
 
   if (dryRun) {
+    const estTotalCostUsd =
+      Math.round(
+        queue.reduce((a, q) => a + estimateCallCostUsd(q.ref_duration_sec, serviceTier) * (fixedAttempts || 2.05), 0) *
+          10000
+      ) / 10000;
     const sampleUrl = queue[0]?.youtube_url || "https://www.youtube.com/watch?v=HRJr0tAASjI";
     const dryOut = execFileSync(
       cliExe,
-      [
-        "generate",
-        promptText,
-        "-m",
-        model,
-        "-i",
-        sampleUrl,
-        "--stream=false",
-        "--body",
-        bodyJson,
-        "--dry-run",
-        "-o",
-        "json",
-      ],
+      ["generate", promptText, "-m", model, "-i", sampleUrl, "--stream=false", "--body", bodyJson, "--dry-run", "-o", "json"],
       { encoding: "utf8" }
     );
     console.log(
@@ -687,7 +946,6 @@ async function main() {
           anchor_count: queue.filter((q) => q.role === "anchor").length,
           deferred_long_count: deferredLong.length,
           max_requests: maxRequests,
-          estimated_calls: Math.round(estCalls),
           estimated_cost_usd: estTotalCostUsd,
           monthly_budget_status: {
             month: monthKey,
@@ -712,7 +970,7 @@ async function main() {
   fs.mkdirSync(callsDir, { recursive: true });
 
   const runConfig = {
-    schema_version: 1,
+    schema_version: 2,
     run_id: runId,
     worker,
     purpose,
@@ -725,8 +983,17 @@ async function main() {
     stream: false,
     concurrency: 1,
     timeout_ms: DEFAULT_TIMEOUT_MS,
-    retry_backoff_seconds: RETRY_BACKOFF_SECONDS,
-    ensemble_rule: fixedAttempts ? `fixed_${fixedAttempts}_calls` : "2+1 (3rd call if |r1 - r2| >= 5, median of 3 else mean of 2)",
+    congestion_policy: {
+      initial_retry_wait_sec: [INITIAL_RETRY_MIN_SEC, INITIAL_RETRY_MAX_SEC],
+      defer_after_consecutive_503_429: 2,
+      stop_after_consecutive_deferred_videos: MAX_CONSECUTIVE_DEFERRED_VIDEOS,
+      deferred_pass_interval_sec: [DEFERRED_PASS_MIN_SEC, DEFERRED_PASS_MAX_SEC],
+      deferred_pass_tries: 1,
+      resume_prioritizes_deferred_queue: true,
+    },
+    ensemble_rule: fixedAttempts
+      ? `fixed_${fixedAttempts}_calls`
+      : "2+1 (3rd call if |r1 - r2| >= 5, median of 3 else mean of 2)",
     pricing_usd_per_1m: PRICING_USD_PER_1M[serviceTier],
     budget_guards: {
       month: monthKey,
@@ -748,12 +1015,15 @@ async function main() {
     "utf8"
   );
 
-  // Resume support: load existing calls_log.jsonl if --resume
+  // Resume state loading
   const logPath = path.join(runDir, "calls_log.jsonl");
-  const completedByKey = new Map();
+  const deferredPath = path.join(runDir, "deferred_retry_queue.json");
+  const initialCompletedScores = new Map();
+  let initialDeferredQueue = [];
   const callSummaries = [];
   const evidenceEntries = [];
   let requestCount = 0;
+  let succeededCallsCount = 0;
   let runSpentUsd = 0;
 
   if (resume && fs.existsSync(logPath)) {
@@ -761,319 +1031,273 @@ async function main() {
       const rec = JSON.parse(line);
       callSummaries.push(rec);
       requestCount = Math.max(requestCount, rec.call_index || 0);
-      runSpentUsd = Math.round((runSpentUsd + (rec.call_cost_usd || 0)) * 1_000_000) / 1_000_000;
       if (rec.parse_ok && rec.exit_code === 0) {
-        completedByKey.set(`${rec.video_id}::${rec.attempt}`, rec);
-      }
-      if (rec.evidence_file && fs.existsSync(rec.evidence_file)) {
-        evidenceEntries.push({
-          rel_path: `calls/${path.basename(rec.evidence_file)}`,
-          abs_path: rec.evidence_file,
-          video_id: rec.video_id,
-          attempt: rec.attempt,
-          call_index: rec.call_index,
-          size_bytes: fs.statSync(rec.evidence_file).size,
-          sha256: rec.evidence_sha256 || sha256File(rec.evidence_file),
-        });
+        succeededCallsCount++;
+        runSpentUsd = Math.round((runSpentUsd + (rec.call_cost_usd || 0)) * 1_000_000) / 1_000_000;
+        if (!initialCompletedScores.has(rec.video_id)) initialCompletedScores.set(rec.video_id, new Map());
+        initialCompletedScores.get(rec.video_id).set(rec.attempt, rec.api_score);
+        if (rec.evidence_file && fs.existsSync(rec.evidence_file)) {
+          evidenceEntries.push({
+            rel_path: `calls/${path.basename(rec.evidence_file)}`,
+            abs_path: rec.evidence_file,
+            video_id: rec.video_id,
+            attempt: rec.attempt,
+            call_index: rec.call_index,
+            size_bytes: fs.statSync(rec.evidence_file).size,
+            sha256: rec.evidence_sha256 || sha256File(rec.evidence_file),
+          });
+        }
       }
     }
   }
-
-  console.log(`=== Starting API URL Batch: ${runId} (tier=${serviceTier}, worker=${worker}) ===`);
-  console.log(`Run dir (Git): ${runDir}`);
-  console.log(`Raw logs dir (Local): ${callsDir}`);
-  console.log(`Queue: ${queue.length} videos (target=${runConfig.target_video_ids.length}, anchor=${runConfig.anchor_video_ids.length}, deferred_long=${deferredLong.length})`);
+  if (resume && fs.existsSync(deferredPath)) {
+    const dqDoc = JSON.parse(fs.readFileSync(deferredPath, "utf8"));
+    initialDeferredQueue = Array.isArray(dqDoc.deferred_calls) ? dqDoc.deferred_calls : [];
+  }
 
   let consecutiveJsonErrors = 0;
-  let consecutiveExhaustedRetries = 0;
-  let stoppedEarly = false;
-  let stopReason = null;
-  const videoSummaries = [];
+  const allCongestionEvents = [];
 
-  async function runOneCall(item, attempt) {
-    const existing = completedByKey.get(`${item.video_id}::${attempt}`);
-    if (existing) {
-      return { halted: false, ok: true, resumed: true, score: existing.api_score, summary: existing };
-    }
+  const orch = await runBatchOrchestrator({
+    queue,
+    initialCompletedScores,
+    initialDeferredQueue,
+    fixedAttempts,
+    sleepFn: (ms) => new Promise((r) => setTimeout(r, ms)),
+    runAttemptFn: async ({ item, attempt, phase }) => {
+      const estNext = estimateCallCostUsd(item.ref_duration_sec, serviceTier);
+      const guard = checkBudgetGuard({
+        monthlySpentUsd: baseMonthlySpentUsd + runSpentUsd,
+        monthlyLimitUsd,
+        runSpentUsd,
+        runLimitUsd: runBudgetUsd,
+        estimatedNextCallUsd: estNext,
+        requestCount,
+        maxRequests,
+      });
+      if (!guard.allowed) {
+        console.error(`[STOP] ${guard.reason}`);
+        return { status: "budget_stop", stopReason: guard.reason };
+      }
 
-    const estNext = estimateCallCostUsd(item.ref_duration_sec, serviceTier);
-    const guard = checkBudgetGuard({
-      monthlySpentUsd: baseMonthlySpentUsd + runSpentUsd,
-      monthlyLimitUsd,
-      runSpentUsd,
-      runLimitUsd: runBudgetUsd,
-      estimatedNextCallUsd: estNext,
-      requestCount,
-      maxRequests,
-    });
-    if (!guard.allowed) {
-      stoppedEarly = true;
-      stopReason = guard.reason;
-      console.error(`[STOP] ${stopReason}`);
-      return { halted: true };
-    }
+      if (requestCount > 0 && phase === "initial") {
+        await new Promise((r) => setTimeout(r, DEFAULT_SLEEP_MS));
+      }
 
-    if (requestCount > 0) {
-      await new Promise((r) => setTimeout(r, DEFAULT_SLEEP_MS));
-    }
+      requestCount++;
+      const callIdxStr = String(requestCount).padStart(3, "0");
+      const startedAt = new Date().toISOString();
+      const t0 = Date.now();
 
-    requestCount++;
-    const callIdxStr = String(requestCount).padStart(3, "0");
-    const startedAt = new Date().toISOString();
-    const t0 = Date.now();
-
-    const execResult = await executeWithRetry(async (retryIdx) => {
-      let stdoutStr = "";
-      let stderrStr = "";
-      let exitCode = 0;
-      try {
-        stdoutStr = execFileSync(
-          cliExe,
-          [
-            "generate",
-            promptText,
-            "-m",
-            model,
-            "-i",
-            item.youtube_url,
-            "--stream=false",
-            "--body",
-            bodyJson,
-            "-o",
-            "json",
-          ],
-          {
-            encoding: "utf8",
-            timeout: DEFAULT_TIMEOUT_MS,
-            maxBuffer: 20 * 1024 * 1024,
-            env: { ...process.env, GEMINI_API_KEY: apiKey },
+      const execResult = await executeWithRetry(
+        async () => {
+          let stdoutStr = "";
+          let stderrStr = "";
+          let exitCode = 0;
+          try {
+            stdoutStr = execFileSync(
+              cliExe,
+              ["generate", promptText, "-m", model, "-i", item.youtube_url, "--stream=false", "--body", bodyJson, "-o", "json"],
+              {
+                encoding: "utf8",
+                timeout: DEFAULT_TIMEOUT_MS,
+                maxBuffer: 20 * 1024 * 1024,
+                env: { ...process.env, GEMINI_API_KEY: apiKey },
+              }
+            );
+          } catch (err) {
+            exitCode = typeof err.status === "number" ? err.status : 1;
+            stdoutStr = err.stdout ? String(err.stdout) : "";
+            stderrStr = err.stderr ? String(err.stderr) : String(err.message || err);
           }
-        );
-      } catch (err) {
-        exitCode = typeof err.status === "number" ? err.status : 1;
-        stdoutStr = err.stdout ? String(err.stdout) : "";
-        stderrStr = err.stderr ? String(err.stderr) : String(err.message || err);
+          const safeStdout = redactSecret(stdoutStr, apiKey);
+          const safeStderr = redactSecret(stderrStr, apiKey);
+          let respObj = null;
+          try {
+            respObj = JSON.parse(safeStdout);
+          } catch {
+            respObj = null;
+          }
+          return { exitCode, stdout: safeStdout, stderr: safeStderr, respObj };
+        },
+        { mode: phase === "deferred_pass" ? "deferred_pass" : "initial" }
+      );
+
+      const elapsedSec = Math.round(((Date.now() - t0) / 1000) * 100) / 100;
+      const finishedAt = new Date().toISOString();
+      const { exitCode, stdout: safeStdout, stderr: safeStderr, respObj, classification, retries_used, retry_history, congestion_events } = execResult;
+
+      const taggedCongestion = (congestion_events || []).map((e) => ({
+        ...e,
+        video_id: item.video_id,
+        attempt,
+      }));
+      allCongestionEvents.push(...taggedCongestion);
+
+      const usage = extractUsageBreakdown(respObj, item.ref_duration_sec);
+      const modelText = extractModelText(respObj);
+      const parsedRes = parseAndValidateScoreJson(modelText);
+
+      // Rule 7: Only succeeded calls count toward cost ledger
+      const callSucceeded = exitCode === 0 && parsedRes.ok && !usage.suspect_video_not_processed;
+      const cost = callSucceeded ? calcCallCostUsd(usage, serviceTier) : { input_cost_usd: 0, output_thought_cost_usd: 0, call_cost_usd: 0 };
+      if (callSucceeded) {
+        succeededCallsCount++;
+        runSpentUsd = Math.round((runSpentUsd + cost.call_cost_usd) * 1_000_000) / 1_000_000;
       }
-      const safeStdout = redactSecret(stdoutStr, apiKey);
-      const safeStderr = redactSecret(stderrStr, apiKey);
-      let respObj = null;
-      try {
-        respObj = JSON.parse(safeStdout);
-      } catch {
-        respObj = null;
-      }
-      if (retryIdx > 0) {
-        console.log(`  [retry #${retryIdx}] ${item.video_id} r${attempt} exit=${exitCode} status=${respObj?.status || "err"}`);
-      }
-      return { exitCode, stdout: safeStdout, stderr: safeStderr, respObj };
-    });
 
-    const elapsedSec = Math.round(((Date.now() - t0) / 1000) * 100) / 100;
-    const finishedAt = new Date().toISOString();
-    const { exitCode, stdout: safeStdout, stderr: safeStderr, respObj, classification, retries_used, retry_history } = execResult;
-
-    const usage = extractUsageBreakdown(respObj, item.ref_duration_sec);
-    const cost = calcCallCostUsd(usage, serviceTier);
-    runSpentUsd = Math.round((runSpentUsd + cost.call_cost_usd) * 1_000_000) / 1_000_000;
-
-    const modelText = extractModelText(respObj);
-    const parsedRes = parseAndValidateScoreJson(modelText);
-
-    const callFileName = `${callIdxStr}_${item.video_id}_r${attempt}.json`;
-    const callFilePath = path.join(callsDir, callFileName);
-    const callRecord = {
-      call_index: requestCount,
-      run_id: runId,
-      worker,
-      video_id: item.video_id,
-      role: item.role,
-      ref_duration_sec: item.ref_duration_sec,
-      attempt,
-      started_at: startedAt,
-      finished_at: finishedAt,
-      elapsed_sec: elapsedSec,
-      retries_used,
-      retry_history,
-      request: {
-        model,
-        thinking_level: thinkingLevel,
-        service_tier: serviceTier,
-        store: false,
-        stream: false,
-        youtube_url: item.youtube_url,
-        prompt_sha256: promptSha256,
-      },
-      exit_code: exitCode,
-      api_status: respObj?.status || null,
-      response_model: respObj?.model || null,
-      response_service_tier: respObj?.service_tier || null,
-      interaction_id: respObj?.id || null,
-      classification,
-      usage_breakdown: usage,
-      usage_raw: usage.raw,
-      cost: {
-        ...cost,
-        run_cumulative_cost_usd: runSpentUsd,
-        month_cumulative_cost_usd: Math.round((baseMonthlySpentUsd + runSpentUsd) * 1_000_000) / 1_000_000,
-      },
-      parse_ok: parsedRes.ok,
-      parse_error: parsedRes.error,
-      parsed_json: parsedRes.parsed,
-      extracted_text: modelText,
-      stderr: safeStderr || null,
-      raw_response: respObj ?? safeStdout,
-    };
-
-    const callStr = redactSecret(JSON.stringify(callRecord, null, 2) + "\n", apiKey);
-    fs.writeFileSync(callFilePath, callStr, "utf8");
-    const callSha = sha256Text(callStr);
-    const callBytes = Buffer.byteLength(callStr, "utf8");
-    evidenceEntries.push({
-      rel_path: `calls/${callFileName}`,
-      abs_path: callFilePath,
-      video_id: item.video_id,
-      attempt,
-      call_index: requestCount,
-      size_bytes: callBytes,
-      sha256: callSha,
-    });
-
-    const summaryLine = {
-      call_index: requestCount,
-      video_id: item.video_id,
-      role: item.role,
-      attempt,
-      service_tier: serviceTier,
-      api_score: parsedRes.ok ? parsedRes.parsed.total_score : null,
-      api_rank: parsedRes.ok ? parsedRes.parsed.rank : null,
-      api_knows_work: parsedRes.ok ? parsedRes.parsed.post_check.knows_work : null,
-      elapsed_sec: elapsedSec,
-      retries_used,
-      total_input_tokens: usage.total_input_tokens,
-      input_text_tokens: usage.input_text_tokens,
-      input_video_tokens: usage.input_video_tokens,
-      total_output_tokens: usage.total_output_tokens,
-      total_thought_tokens: usage.total_thought_tokens,
-      suspect_video_not_processed: usage.suspect_video_not_processed,
-      call_cost_usd: cost.call_cost_usd,
-      run_cumulative_cost_usd: runSpentUsd,
-      parse_ok: parsedRes.ok,
-      parse_error: parsedRes.error,
-      exit_code: exitCode,
-      classification_kind: classification.kind,
-      evidence_file: callFilePath,
-      evidence_sha256: callSha,
-    };
-    callSummaries.push(summaryLine);
-    fs.appendFileSync(logPath, redactSecret(JSON.stringify(summaryLine) + "\n", apiKey), "utf8");
-    writeEvidenceManifest({ runDir, runId, worker, logsRunDir, callEntries: evidenceEntries });
-
-    console.log(
-      `[${callIdxStr}] (${item.role}) ${item.video_id} r${attempt} | api=${summaryLine.api_score ?? "ERR"} (${summaryLine.api_rank ?? "-"}) | retries=${retries_used} | in=${usage.total_input_tokens} (txt=${usage.input_text_tokens}, vid=${usage.input_video_tokens}) out=${usage.total_output_tokens} th=${usage.total_thought_tokens} | $${cost.call_cost_usd.toFixed(4)} (run $${runSpentUsd.toFixed(4)}) | ${elapsedSec}s`
-    );
-
-    if (classification.kind === "fatal_stop") {
-      stoppedEarly = true;
-      stopReason = `fatal_http_${classification.code}`;
-      console.error(`[STOP] ${stopReason}`);
-      return { halted: true };
-    }
-    if (classification.exhausted) {
-      consecutiveExhaustedRetries++;
-      if (consecutiveExhaustedRetries >= 2) {
-        stoppedEarly = true;
-        stopReason = `2_consecutive_exhausted_flex_retries (${classification.code})`;
-        console.error(`[STOP] ${stopReason}`);
-        return { halted: true };
-      }
-      return { halted: false, ok: false, retryExhausted: true };
-    } else {
-      consecutiveExhaustedRetries = 0;
-    }
-
-    if (exitCode === 0 && usage.suspect_video_not_processed) {
-      stoppedEarly = true;
-      stopReason = `suspect_video_not_processed (${item.video_id} r${attempt}: video_tokens=${usage.input_video_tokens} < ${usage.min_required_video_tokens})`;
-      console.error(`[STOP] ${stopReason}`);
-      return { halted: true };
-    }
-
-    if (exitCode !== 0 || !parsedRes.ok) {
-      consecutiveJsonErrors++;
-      if (consecutiveJsonErrors >= 2) {
-        stoppedEarly = true;
-        stopReason = `2_consecutive_json_or_call_errors (last=${parsedRes.error || "exit_" + exitCode})`;
-        console.error(`[STOP] ${stopReason}`);
-        return { halted: true };
-      }
-      return { halted: false, ok: false, jsonError: true };
-    }
-
-    consecutiveJsonErrors = 0;
-    return { halted: false, ok: true, score: parsedRes.parsed.total_score, summary: summaryLine };
-  }
-
-  for (const item of queue) {
-    if (stoppedEarly) break;
-    const r1 = await runOneCall(item, 1);
-    if (r1.halted) break;
-    if (!r1.ok) continue;
-
-    const r2 = await runOneCall(item, 2);
-    if (r2.halted) break;
-    if (!r2.ok) continue;
-
-    const scores = [r1.score, r2.score];
-    let agg = aggregate2Plus1Scores(scores);
-    if (!fixedAttempts && agg.needs_3rd) {
-      console.log(`[TIEBREAKER] ${item.video_id}: r1=${scores[0]}, r2=${scores[1]} (diff=${agg.diff_12} >= 5) -> r3`);
-      const r3 = await runOneCall(item, 3);
-      if (r3.halted) break;
-      if (r3.ok) {
-        scores.push(r3.score);
-        agg = aggregate2Plus1Scores(scores);
-      }
-    } else if (fixedAttempts === 2 && agg.needs_3rd) {
-      agg = {
-        status: "complete",
-        needs_3rd: false,
-        diff_12: agg.diff_12,
-        final_score: Math.round(((scores[0] + scores[1]) / 2) * 100) / 100,
-        ensemble_rule: "fixed_2_mean",
+      const callFileName = `${callIdxStr}_${item.video_id}_r${attempt}.json`;
+      const callFilePath = path.join(callsDir, callFileName);
+      const callRecord = {
+        call_index: requestCount,
+        run_id: runId,
+        worker,
+        phase,
+        video_id: item.video_id,
+        role: item.role,
+        ref_duration_sec: item.ref_duration_sec,
+        attempt,
+        started_at: startedAt,
+        finished_at: finishedAt,
+        elapsed_sec: elapsedSec,
+        retries_used,
+        retry_history,
+        congestion_events: taggedCongestion,
+        request: {
+          model,
+          thinking_level: thinkingLevel,
+          service_tier: serviceTier,
+          store: false,
+          stream: false,
+          youtube_url: item.youtube_url,
+          prompt_sha256: promptSha256,
+        },
+        exit_code: exitCode,
+        api_status: respObj?.status || null,
+        response_model: respObj?.model || null,
+        response_service_tier: respObj?.service_tier || null,
+        interaction_id: respObj?.id || null,
+        classification,
+        usage_breakdown: usage,
+        usage_raw: usage.raw,
+        cost: {
+          ...cost,
+          run_cumulative_cost_usd: runSpentUsd,
+          month_cumulative_cost_usd: Math.round((baseMonthlySpentUsd + runSpentUsd) * 1_000_000) / 1_000_000,
+        },
+        parse_ok: parsedRes.ok,
+        parse_error: parsedRes.error,
+        parsed_json: parsedRes.parsed,
+        extracted_text: modelText,
+        stderr: safeStderr || null,
+        raw_response: respObj ?? safeStdout,
       };
-    }
 
-    videoSummaries.push({
-      video_id: item.video_id,
-      role: item.role,
-      raw_scores: scores,
-      diff_12: agg.diff_12,
-      api_raw_final_score: agg.final_score,
-      ensemble_rule: agg.ensemble_rule,
-    });
-  }
+      const callStr = redactSecret(JSON.stringify(callRecord, null, 2) + "\n", apiKey);
+      fs.writeFileSync(callFilePath, callStr, "utf8");
+      const callSha = sha256Text(callStr);
+      const callBytes = Buffer.byteLength(callStr, "utf8");
+      if (callSucceeded) {
+        evidenceEntries.push({
+          rel_path: `calls/${callFileName}`,
+          abs_path: callFilePath,
+          video_id: item.video_id,
+          attempt,
+          call_index: requestCount,
+          size_bytes: callBytes,
+          sha256: callSha,
+        });
+      }
 
+      const summaryLine = {
+        call_index: requestCount,
+        phase,
+        video_id: item.video_id,
+        role: item.role,
+        attempt,
+        service_tier: serviceTier,
+        api_score: parsedRes.ok ? parsedRes.parsed.total_score : null,
+        api_rank: parsedRes.ok ? parsedRes.parsed.rank : null,
+        api_knows_work: parsedRes.ok ? parsedRes.parsed.post_check.knows_work : null,
+        elapsed_sec: elapsedSec,
+        retries_used,
+        congestion_count: taggedCongestion.length,
+        total_input_tokens: usage.total_input_tokens,
+        input_text_tokens: usage.input_text_tokens,
+        input_video_tokens: usage.input_video_tokens,
+        total_output_tokens: usage.total_output_tokens,
+        total_thought_tokens: usage.total_thought_tokens,
+        suspect_video_not_processed: usage.suspect_video_not_processed,
+        call_cost_usd: cost.call_cost_usd,
+        run_cumulative_cost_usd: runSpentUsd,
+        parse_ok: parsedRes.ok,
+        parse_error: parsedRes.error,
+        exit_code: exitCode,
+        classification_kind: classification.kind,
+        deferred: Boolean(classification.deferred),
+        evidence_file: callFilePath,
+        evidence_sha256: callSha,
+      };
+      callSummaries.push(summaryLine);
+      fs.appendFileSync(logPath, redactSecret(JSON.stringify(summaryLine) + "\n", apiKey), "utf8");
+      writeEvidenceManifest({ runDir, runId, worker, logsRunDir, callEntries: evidenceEntries });
+
+      if (classification.kind === "fatal_stop") {
+        return { status: "fatal_stop", stopReason: `fatal_http_${classification.code}`, congestionEvents: taggedCongestion };
+      }
+      if (classification.deferred) {
+        return { status: "deferred", congestionEvents: taggedCongestion };
+      }
+      if (exitCode === 0 && usage.suspect_video_not_processed) {
+        return {
+          status: "fatal_stop",
+          stopReason: `suspect_video_not_processed (${item.video_id} r${attempt}: video_tokens=${usage.input_video_tokens} < ${usage.min_required_video_tokens})`,
+          congestionEvents: taggedCongestion,
+        };
+      }
+      if (exitCode !== 0 || !parsedRes.ok) {
+        consecutiveJsonErrors++;
+        if (consecutiveJsonErrors >= 2) {
+          return {
+            status: "fatal_stop",
+            stopReason: `2_consecutive_json_or_call_errors (last=${parsedRes.error || "exit_" + exitCode})`,
+            congestionEvents: taggedCongestion,
+          };
+        }
+        return { status: "error", congestionEvents: taggedCongestion };
+      }
+
+      consecutiveJsonErrors = 0;
+      return { status: "ok", score: parsedRes.parsed.total_score, congestionEvents: taggedCongestion };
+    },
+  });
+
+  saveDeferredQueue(runDir, runId, orch.deferred_queue, allCongestionEvents);
   writeEvidenceManifest({ runDir, runId, worker, logsRunDir, callEntries: evidenceEntries });
 
   const runSummary = {
-    schema_version: 1,
+    schema_version: 2,
     run_id: runId,
     worker,
     purpose,
     service_tier: serviceTier,
     finished_at: new Date().toISOString(),
     total_requests: requestCount,
-    total_retries: callSummaries.reduce((a, c) => a + (c.retries_used || 0), 0),
-    videos_completed: videoSummaries.length,
-    targets_completed: videoSummaries.filter((v) => v.role === "target").length,
-    anchors_completed: videoSummaries.filter((v) => v.role === "anchor").length,
-    tiebreakers_triggered: videoSummaries.filter((v) => v.ensemble_rule === "median_of_3").length,
-    stopped_early: stoppedEarly,
-    stop_reason: stopReason,
+    succeeded_calls: succeededCallsCount,
+    congestion_failure_count: allCongestionEvents.length,
+    congestion_events: allCongestionEvents,
+    deferred_remaining_count: orch.deferred_queue.length,
+    videos_completed: orch.videos.filter((v) => v.complete).length,
+    targets_completed: orch.videos.filter((v) => v.complete && v.role === "target").length,
+    anchors_completed: orch.videos.filter((v) => v.complete && v.role === "anchor").length,
+    tiebreakers_triggered: orch.videos.filter((v) => v.ensemble_rule === "median_of_3").length,
+    stopped_early: orch.stopped_early,
+    stop_reason: orch.stop_reason,
     run_cost_usd: runSpentUsd,
     evidence_manifest: "evidence_manifest.json",
+    deferred_queue_file: "deferred_retry_queue.json",
     evidence_logs_dir: logsRunDir,
-    videos: videoSummaries,
+    videos: orch.videos,
   };
   fs.writeFileSync(
     path.join(runDir, "run_summary.json"),
@@ -1081,13 +1305,15 @@ async function main() {
     "utf8"
   );
 
-  if (!noLedgerUpdate && requestCount > 0) {
+  if (!noLedgerUpdate && (succeededCallsCount > 0 || allCongestionEvents.length > 0)) {
     updateLedger(ledgerPath, monthKey, {
       run_id: runId,
       purpose,
       service_tier: serviceTier,
-      calls_count: callSummaries.length,
+      calls_count: succeededCallsCount,
       cost_usd: runSpentUsd,
+      congestion_failure_count: allCongestionEvents.length,
+      congestion_timestamps: allCongestionEvents.map((e) => e.timestamp),
       recorded_at: new Date().toISOString(),
     });
   }
@@ -1098,12 +1324,12 @@ async function main() {
       {
         run_id: runId,
         service_tier: serviceTier,
-        total_requests: requestCount,
-        total_retries: runSummary.total_retries,
+        succeeded_calls: succeededCallsCount,
+        congestion_failure_count: allCongestionEvents.length,
+        deferred_remaining_count: orch.deferred_queue.length,
         videos_completed: runSummary.videos_completed,
-        tiebreakers_triggered: runSummary.tiebreakers_triggered,
-        stopped_early: stoppedEarly,
-        stop_reason: stopReason,
+        stopped_early: orch.stopped_early,
+        stop_reason: orch.stop_reason,
         run_cost_usd: runSpentUsd,
       },
       null,

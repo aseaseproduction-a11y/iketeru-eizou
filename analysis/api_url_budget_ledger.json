@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-25T14:40:00+09:00",
+  "updated_at": "2026-11-25T06:48:06.389Z",
   "currency": "USD",
-  "default_monthly_limit_usd": 38.0,
-  "gcp_monthly_credit_usd": 40.0,
+  "default_monthly_limit_usd": 38,
+  "gcp_monthly_credit_usd": 40,
   "pricing_table_usd_per_1m": {
     "standard": {
-      "input": 3.0,
-      "output_and_thought": 15.0
+      "input": 3,
+      "output_and_thought": 15
     },
     "flex": {
       "input": 1.5,
@@ -16,9 +16,10 @@
   },
   "monthly_totals": {
     "2026-11": {
-      "limit_usd": 38.0,
-      "spent_usd": 2.163423,
-      "calls_count": 24,
+      "limit_usd": 38,
+      "spent_usd": 2.556755,
+      "calls_count": 34,
+      "congestion_failure_count": 12,
       "runs": [
         {
           "run_id": "run_20261125_125425",
@@ -26,6 +27,8 @@
           "service_tier": "standard",
           "calls_count": 20,
           "cost_usd": 1.719264,
+          "congestion_failure_count": 0,
+          "congestion_timestamps": [],
           "recorded_at": "2026-11-25T04:07:51Z"
         },
         {
@@ -34,7 +37,32 @@
           "service_tier": "standard",
           "calls_count": 4,
           "cost_usd": 0.444159,
+          "congestion_failure_count": 0,
+          "congestion_timestamps": [],
           "recorded_at": "2026-11-25T04:43:10Z"
+        },
+        {
+          "run_id": "flex_smoke_20261125_144800",
+          "purpose": "flex_smoke_5x2",
+          "service_tier": "flex",
+          "calls_count": 10,
+          "cost_usd": 0.393332,
+          "congestion_failure_count": 12,
+          "congestion_timestamps": [
+            "2026-11-25T05:47:45.348Z",
+            "2026-11-25T05:49:41.165Z",
+            "2026-11-25T05:53:09.036Z",
+            "2026-11-25T05:54:10.036Z",
+            "2026-11-25T05:57:12.036Z",
+            "2026-11-25T06:07:26.036Z",
+            "2026-11-25T06:25:05.228Z",
+            "2026-11-25T06:27:02.420Z",
+            "2026-11-25T06:28:10.420Z",
+            "2026-11-25T06:31:13.420Z",
+            "2026-11-25T06:42:09.310Z",
+            "2026-11-25T06:45:14.075Z"
+          ],
+          "recorded_at": "2026-11-25T06:48:06.387Z"
         }
       ]
     }

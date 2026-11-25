@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "run_id": "flex_smoke_20261125_144800",
+  "worker": "CHIBA-PC-api",
+  "purpose": "flex_smoke_5x2",
+  "service_tier": "flex",
+  "finished_at": "2026-11-25T06:48:06.386Z",
+  "total_requests": 10,
+  "total_retries": 12,
+  "videos_completed": 5,
+  "targets_completed": 0,
+  "anchors_completed": 5,
+  "tiebreakers_triggered": 0,
+  "stopped_early": false,
+  "stop_reason": null,
+  "run_cost_usd": 0.393332,
+  "evidence_manifest": "evidence_manifest.json",
+  "evidence_logs_dir": "E:\\iketeru_api_url_logs\\flex_smoke_20261125_144800",
+  "videos": [
+    {
+      "video_id": "CWnqX41JHuM",
+      "role": "anchor",
+      "raw_scores": [
+        95,
+        95
+      ],
+      "diff_12": 0,
+      "api_raw_final_score": 95,
+      "ensemble_rule": "mean_of_2"
+    },
+    {
+      "video_id": "-K2c-HL9cIA",
+      "role": "anchor",
+      "raw_scores": [
+        89,
+        89
+      ],
+      "diff_12": 0,
+      "api_raw_final_score": 89,
+      "ensemble_rule": "mean_of_2"
+    },
+    {
+      "video_id": "_H-Y1ZhWYIE",
+      "role": "anchor",
+      "raw_scores": [
+        75,
+        75
+      ],
+      "diff_12": 0,
+      "api_raw_final_score": 75,
+      "ensemble_rule": "mean_of_2"
+    },
+    {
+      "video_id": "12jPI4V5dJ0",
+      "role": "anchor",
+      "raw_scores": [
+        69,
+        68
+      ],
+      "diff_12": 1,
+      "api_raw_final_score": 68.5,
+      "ensemble_rule": "mean_of_2"
+    },
+    {
+      "video_id": "QA9PLeM0EUs",
+      "role": "anchor",
+      "raw_scores": [
+        61,
+        63
+      ],
+      "diff_12": 2,
+      "api_raw_final_score": 62,
+      "ensemble_rule": "mean_of_2"
+    }
+  ]
+}

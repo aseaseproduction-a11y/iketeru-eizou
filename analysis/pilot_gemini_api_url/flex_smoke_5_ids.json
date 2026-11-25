@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-11-25T14:47:00+09:00",
+  "purpose": "Flex vs Standard equivalence smoke test (5 videos x 2 calls, budget <= $0.60)",
+  "source": "analysis/pilot_gemini_api_url/anchor_12_summary.json",
+  "video_ids": [
+    "CWnqX41JHuM",
+    "-K2c-HL9cIA",
+    "_H-Y1ZhWYIE",
+    "12jPI4V5dJ0",
+    "QA9PLeM0EUs"
+  ]
+}
