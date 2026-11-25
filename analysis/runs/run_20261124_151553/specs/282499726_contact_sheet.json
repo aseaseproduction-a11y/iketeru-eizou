@@ -1,0 +1,20 @@
+{
+  "version": "v1_baseline",
+  "runId": "run_20261124_151553",
+  "blindId": "47e197ff5067",
+  "mode": "contact_sheet",
+  "assignedFiles": [
+    "E:\\iketeru_blind_eval\\run_20261124_151553\\contact_sheet\\47e197ff5067\\47e197ff5067_sheet_01.jpg"
+  ],
+  "metrics": {
+    "duration_sec": 17,
+    "scdet_threshold": 10,
+    "total_cuts": 1,
+    "avg_cut_interval_sec": 17,
+    "max_cuts_per_10s": 1,
+    "integrated_lufs": -9.4,
+    "slowmo_applied": false,
+    "slowmo_factor": null,
+    "slowmo_window_sec": null
+  }
+}

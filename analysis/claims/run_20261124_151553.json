@@ -8,7 +8,7 @@
     "non_youtube": true,
     "cached_only": true
   },
-  "status": "active",
+  "status": "completed",
   "claimed_at": "2026-11-24T06:15:54.689Z",
   "video_ids": [
     "263507921",
@@ -211,5 +211,6 @@
     "765557374",
     "77192740",
     "77417938"
-  ]
+  ],
+  "completed_at": "2026-11-25T01:47:48.329Z"
 }
