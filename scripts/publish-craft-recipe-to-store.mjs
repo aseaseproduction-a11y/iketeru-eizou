@@ -368,6 +368,11 @@ function parseArgs(argv) {
   for (let i = 2; i < argv.length; i++) {
     const a = argv[i];
     if (a.startsWith("--")) {
+      const eq = a.indexOf("=");
+      if (eq !== -1) {
+        args[a.slice(2, eq)] = a.slice(eq + 1);
+        continue;
+      }
       const k = a.slice(2);
       const next = argv[i + 1];
       if (!next || next.startsWith("--")) args[k] = true;
