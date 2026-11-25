@@ -3,7 +3,7 @@
   "task_type": "craft_purpose_backfill",
   "run_id": "craft_purp_20261125_v2ge78_17",
   "worker": "chibatmute",
-  "status": "active",
+  "status": "completed",
   "target_pool": "v2_ge78_missing_purpose",
   "selection_seed": null,
   "min_calibrated_score": 78,
@@ -29,7 +29,7 @@
     "UR6UOPshuLM"
   ],
   "claimed_at": "2026-11-25T08:47:53.950Z",
-  "completed_at": null,
+  "completed_at": "2026-11-25T09:00:22.453Z",
   "released_at": null,
   "release_reason": null
 }
