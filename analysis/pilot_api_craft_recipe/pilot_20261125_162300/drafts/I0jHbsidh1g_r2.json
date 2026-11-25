@@ -1,0 +1,873 @@
+{
+  "schema_version": "craft_recipe_api_draft_v1",
+  "video_id": "I0jHbsidh1g",
+  "source": "gemini_api_url_v1",
+  "video_overview": {
+    "estimated_fps": 24,
+    "estimated_bpm": 124,
+    "overall_cut_pace": "fast",
+    "dominant_visual_style": "白地ベースの高コントラスト手描きモノクロ線画に、赤矢印と淡黄色の猫目のみを挿し色にしたポップ＆シュールな2DアニメーションMV。"
+  },
+  "cuts": [
+    {
+      "cut_index": 1,
+      "title": "監視カメラUI枠内の扉ギミックとブラシ調タイトル出現",
+      "category": "kinetic_typography",
+      "start_mmss": "00:01",
+      "end_mmss": "00:12",
+      "start_sec": 1,
+      "end_sec": 12.5,
+      "fps": 24,
+      "primary_tool": "After Effects",
+      "software_stack": [
+        "After Effects",
+        "Illustrator",
+        "Photoshop"
+      ],
+      "tool_selection_rationale": "手描き線画アニメーションとベクター/編集可能テキスト、CRT走査線・歪みUIを非破壊でビート同期合成できるためAE主体が最適。",
+      "plugins_used": [
+        "Posterize Time",
+        "Turbulent Displace",
+        "ntsc-rs-ae",
+        "Motion 4"
+      ],
+      "color_palette_hex": {
+        "base": "#F5F5F3",
+        "primary": "#0C0C0C",
+        "accent": "#E8354D"
+      },
+      "easing_and_timing": {
+        "bpm": 124,
+        "ease_curve": "0/85->0/15 (Expo Out)",
+        "hold_frames": 6,
+        "posterize_fps": 12,
+        "notes": "キャラと手描き扉は2コマ打ち(12fps相当)、走査線バーは24fpsで連続移動（推定）。",
+        "source": "api_estimated",
+        "verified": false
+      },
+      "layer_stack": [
+        "L1 (Bottom): 白背景平面 (#F5F5F3)",
+        "L2: 黒猫アニメーション連番素材 (Photoshop手描き / 12fps)",
+        "L3: 扉開閉シェイプ＆マスクレイヤー",
+        "L4: 編集可能クレジットテキスト (MUSIC EVE / MV IAN ZHANG RESH / LAZY CAT) + 赤矢印ベクター (Illustrator)",
+        "L5: 監視カメラUI枠 (コーナーブラケット・CAM 01〜03編集可能テキスト・横走査線バー)",
+        "L6 (Top): 全体調整レイヤー (Optics Compensation / ntsc-rs-ae)",
+        "[Audio - BGM Track] イントロのローファイ・フィルター済みBGM（独立トラック）",
+        "[Audio - SE Track] 扉開閉・カメラ切替ノイズSE（独立トラック）"
+      ],
+      "recreation_flow": [
+        "1. 1920x1080/24fpsコンプに白背景とコーナー枠・CAM番号テキストを配置し、Optics CompensationでCRT丸みを付与。",
+        "2. 黒猫連番と扉開閉を12fps(Posterize Time)で配置し、扉オープンに同期してマットでクレジット文字を出現させる。",
+        "3. 00:04.5と00:07.5でCAM 01→02→03へハードカットし、00:11.5でLAZY CATと赤矢印をExpo Outで中央に叩き込む。"
+      ],
+      "frame_timeline": [
+        {
+          "frame": 0,
+          "time_offset_sec": 0,
+          "event": "CAM 01表示・左下に黒猫待機",
+          "params": {
+            "cam_label": "CAM 01",
+            "opacity": 100
+          }
+        },
+        {
+          "frame": 72,
+          "time_offset_sec": 3,
+          "event": "右側扉が開きMUSIC EVEと赤矢印出現",
+          "params": {
+            "mask_expansion": 100,
+            "scale": 100
+          }
+        },
+        {
+          "frame": 144,
+          "time_offset_sec": 6,
+          "event": "CAM 02左側扉からMV IAN ZHANG RESH出現",
+          "params": {
+            "cam_label": "CAM 02"
+          }
+        },
+        {
+          "frame": 252,
+          "time_offset_sec": 10.5,
+          "event": "CAM 03で黒猫が虫へジャンプ、LAZY CATタイトル出現",
+          "params": {
+            "scale": 105,
+            "hold_frames": 18
+          }
+        }
+      ],
+      "effect_chain": [
+        {
+          "order": 1,
+          "tool": "After Effects",
+          "plugin": "Posterize Time",
+          "match_name": "ADBE Posterize Time",
+          "fallback_match_name": "ADBE Posterize Time",
+          "params": {
+            "frame_rate": 12
+          },
+          "keyframed_frames": []
+        },
+        {
+          "order": 2,
+          "tool": "After Effects",
+          "plugin": "Turbulent Displace",
+          "match_name": "ADBE Turbulent Displace",
+          "fallback_match_name": "ADBE Turbulent Displace",
+          "params": {
+            "amount": 4,
+            "size": 18,
+            "evolution_step": "posterized"
+          },
+          "keyframed_frames": [
+            0,
+            276
+          ]
+        },
+        {
+          "order": 3,
+          "tool": "After Effects",
+          "plugin": "ntsc-rs-ae",
+          "match_name": "ntsc-rs-ae",
+          "fallback_match_name": "ADBE Optics Compensation",
+          "params": {
+            "scanline_intensity": 0.15,
+            "curvature": 18
+          },
+          "keyframed_frames": []
+        }
+      ],
+      "ae_blueprint": {
+        "schema_version": 2,
+        "source": "api_estimated",
+        "width": 1920,
+        "height": 1080,
+        "fps": 24,
+        "duration_sec": 11.5,
+        "bg_color": "#F5F5F3",
+        "film_finish": false,
+        "layers": [
+          {
+            "type": "kinetic_typo_animator",
+            "name": "CAM_Label_Text",
+            "text": "CAM 01",
+            "font_size": 42,
+            "color": "#0C0C0C",
+            "start_frame": 0,
+            "duration_frames": 276,
+            "easing": [
+              0,
+              0,
+              1,
+              1
+            ]
+          },
+          {
+            "type": "kinetic_typo_animator",
+            "name": "Title_LAZYCAT",
+            "text": "LAZY CAT",
+            "font_size": 160,
+            "color": "#0C0C0C",
+            "start_frame": 252,
+            "duration_frames": 24,
+            "easing": [
+              0,
+              85,
+              0,
+              15
+            ]
+          }
+        ]
+      },
+      "transition_bridge": {
+        "source": "api_estimated",
+        "entrance_vector": "hard_cut_from_black",
+        "exit_vector": "hard_cut_to_black",
+        "match_cue": "intro_drop_silence",
+        "sfx_lead_in_frames": -1,
+        "recommended_sfx": "camera_shutter_click"
+      },
+      "anti_ai_slop_notes": "手描き線をボイルさせる微細な12fps変位と、滑らかな24fps走査線の速度差が本物のモーショングラフィックス感を生む。",
+      "audio_sync_cues": "イントロのベース入りとビート区切りに合わせてCAM 01→02→03とLAZY CAT出現を同期。",
+      "observed_timestamps": [
+        {
+          "timestamp": "00:03.5",
+          "visual_evidence": "CAM 01右側の手描き扉が開きMUSIC EVEと赤矢印が表示"
+        },
+        {
+          "timestamp": "00:06.5",
+          "visual_evidence": "CAM 02左側の扉内にMV IAN ZHANG RESHが表示"
+        },
+        {
+          "timestamp": "00:12.0",
+          "visual_evidence": "CAM 03中央にLAZY CATと太い赤矢印アンダーラインが出現"
+        }
+      ],
+      "provenance": {
+        "source": "gemini_api_url_v1",
+        "visual_observation_basis": "youtube_url_video_stream",
+        "media_telemetry_status": "missing_requires_local_video",
+        "model": "gemini-4-neon",
+        "thinking_level": "high",
+        "service_tier": "standard",
+        "video_processing": {
+          "type": "static",
+          "fps": 1,
+          "content_layers": [
+            "frames",
+            "audio"
+          ],
+          "resolution": "low"
+        },
+        "input_video_tokens": 15750,
+        "pilot_attempt": 2,
+        "field_provenance": {
+          "semantic_craft_fields": "api_observed",
+          "timestamps_and_duration": "api_estimated_1fps",
+          "fps_and_frames": "api_estimated",
+          "color_palette_hex": "api_estimated",
+          "easing_and_timing": "api_estimated",
+          "media_and_telemetry": "missing"
+        }
+      },
+      "media": {
+        "available": false,
+        "status": "missing_requires_local_video",
+        "telemetry": {
+          "available": false
+        }
+      }
+    },
+    {
+      "cut_index": 2,
+      "title": "CAM17接写から3x3監視モニター群への高速ズームアウト演出",
+      "category": "3d_camera",
+      "start_mmss": "01:28",
+      "end_mmss": "01:33",
+      "start_sec": 88.5,
+      "end_sec": 93.5,
+      "fps": 24,
+      "primary_tool": "After Effects",
+      "software_stack": [
+        "After Effects",
+        "Photoshop"
+      ],
+      "tool_selection_rationale": "9面のプリコンプを3D空間または親子付けグリッドに並べ、1台のカメラZ移動で一気通貫ズームアウトするのがAEで最も軽量かつ編集性が高い。",
+      "plugins_used": [
+        "Posterize Time",
+        "Motion 4",
+        "Flow"
+      ],
+      "color_palette_hex": {
+        "base": "#0A0A0A",
+        "primary": "#F4F4F2",
+        "accent": "#E8354D"
+      },
+      "easing_and_timing": {
+        "bpm": 124,
+        "ease_curve": "0/90->0/10 (Expo Out)",
+        "hold_frames": 3,
+        "posterize_fps": 12,
+        "notes": "カメラZズームアウトは急加速・急減速のExpo Outで着地、各画面内のアニメは12fps（推定）。",
+        "source": "api_estimated",
+        "verified": false
+      },
+      "layer_stack": [
+        "L1 (Bottom): 漆黒背景平面 (#0A0A0A / モニターベゼル兼用)",
+        "L2: 3x3監視モニター用プリコンプ群 (CAM 11〜13, 16〜18, 21〜23 / 各3Dレイヤー配置)",
+        "L3: 各モニター内の編集可能CAM番号テキスト・コーナー枠・走査線オーバーレイ",
+        "L4: 3Dカメラレイヤー + ヌルコントローラー (Zズームアウト)",
+        "L5 (Top): 調整レイヤー (Optics Compensationで魚眼/CRT湾曲)",
+        "[Audio - BGM Track] サビ後半のアップテンポBGM（独立トラック）",
+        "[Audio - SE Track] ズームアウト時の空気切り音SE（独立トラック）"
+      ],
+      "recreation_flow": [
+        "1. CAM 11〜23の9つの個別プリコンプを作成し、中央(CAM 17)を基準に3x3グリッドへ均等配置する。",
+        "2. 3DカメラをCAM 17にフルフレーム密着させ、01:30.5付近のビートで一気に後方へZズームアウトする。",
+        "3. 最上位の調整レイヤーにOptics Compensation(Reverse Lens Distortion)を掛け、外周モニターを立体的に湾曲させる。"
+      ],
+      "frame_timeline": [
+        {
+          "frame": 0,
+          "time_offset_sec": 0,
+          "event": "CAM 17フル画面で眼鏡少女がカメラを覗き込む",
+          "params": {
+            "camera_z": -1000
+          }
+        },
+        {
+          "frame": 48,
+          "time_offset_sec": 2,
+          "event": "ビート同期でカメラが高速ズームアウト開始",
+          "params": {
+            "camera_z": -2800
+          }
+        },
+        {
+          "frame": 60,
+          "time_offset_sec": 2.5,
+          "event": "3x3グリッド全体が収まり9画面が同時稼働",
+          "params": {
+            "camera_z": -3400,
+            "hold_frames": 60
+          }
+        }
+      ],
+      "effect_chain": [
+        {
+          "order": 1,
+          "tool": "After Effects",
+          "plugin": "Optics Compensation",
+          "match_name": "ADBE Optics Compensation",
+          "fallback_match_name": "ADBE Optics Compensation",
+          "params": {
+            "fov": 55,
+            "reverse_lens_distortion": true
+          },
+          "keyframed_frames": [
+            48,
+            60
+          ]
+        },
+        {
+          "order": 2,
+          "tool": "After Effects",
+          "plugin": "Posterize Time",
+          "match_name": "ADBE Posterize Time",
+          "fallback_match_name": "ADBE Posterize Time",
+          "params": {
+            "frame_rate": 12
+          },
+          "keyframed_frames": []
+        }
+      ],
+      "ae_blueprint": {
+        "schema_version": 2,
+        "source": "api_estimated",
+        "width": 1920,
+        "height": 1080,
+        "fps": 24,
+        "duration_sec": 5,
+        "bg_color": "#0A0A0A",
+        "film_finish": false,
+        "layers": [
+          {
+            "type": "kinetic_typo_animator",
+            "name": "CAM17_HUD_Label",
+            "text": "CAM 17",
+            "font_size": 40,
+            "color": "#0C0C0C",
+            "start_frame": 0,
+            "duration_frames": 120,
+            "easing": [
+              0,
+              90,
+              0,
+              10
+            ]
+          }
+        ]
+      },
+      "transition_bridge": {
+        "source": "api_estimated",
+        "entrance_vector": "hard_cut_match",
+        "exit_vector": "hard_cut_to_closeup",
+        "match_cue": "chorus_phrase_accent",
+        "sfx_lead_in_frames": -2,
+        "recommended_sfx": "zoom_whoosh_short"
+      },
+      "anti_ai_slop_notes": "グリッドの各モニター枠を手描き風の不均等な黒ベゼルにし、外周のみレンズ湾曲させることで監視室の実在感を出している。",
+      "audio_sync_cues": "サビ後半のボーカルアクセントに連動してCAM 17から9画面全体へ一気に引き、リズムに合わせて各モニター内の動きが循環。",
+      "observed_timestamps": [
+        {
+          "timestamp": "01:29.5",
+          "visual_evidence": "CAM 17枠内で赤矢印の少女がカメラ目線でアップ表示"
+        },
+        {
+          "timestamp": "01:31.5",
+          "visual_evidence": "CAM 11〜23の3x3モニター群が黒ベゼル付きで同時稼働"
+        }
+      ],
+      "provenance": {
+        "source": "gemini_api_url_v1",
+        "visual_observation_basis": "youtube_url_video_stream",
+        "media_telemetry_status": "missing_requires_local_video",
+        "model": "gemini-4-neon",
+        "thinking_level": "high",
+        "service_tier": "standard",
+        "video_processing": {
+          "type": "static",
+          "fps": 1,
+          "content_layers": [
+            "frames",
+            "audio"
+          ],
+          "resolution": "low"
+        },
+        "input_video_tokens": 15750,
+        "pilot_attempt": 2,
+        "field_provenance": {
+          "semantic_craft_fields": "api_observed",
+          "timestamps_and_duration": "api_estimated_1fps",
+          "fps_and_frames": "api_estimated",
+          "color_palette_hex": "api_estimated",
+          "easing_and_timing": "api_estimated",
+          "media_and_telemetry": "missing"
+        }
+      },
+      "media": {
+        "available": false,
+        "status": "missing_requires_local_video",
+        "telemetry": {
+          "available": false
+        }
+      }
+    },
+    {
+      "cut_index": 3,
+      "title": "白黒反転モノクロ間奏の踏切ストロボ・円形マスク・速度線パース合成",
+      "category": "motion_graphics",
+      "start_mmss": "01:41",
+      "end_mmss": "01:49",
+      "start_sec": 101,
+      "end_sec": 109.5,
+      "fps": 24,
+      "primary_tool": "After Effects",
+      "software_stack": [
+        "After Effects",
+        "Photoshop"
+      ],
+      "tool_selection_rationale": "黒地・白線の高コントラスト反転素材を、シェイプマスク・リピーター・放射状速度線と高速カット割りで統合するにはAEのコンポジット機能が最適。",
+      "plugins_used": [
+        "Posterize Time",
+        "Deep Glow",
+        "Turbulent Displace"
+      ],
+      "color_palette_hex": {
+        "base": "#000000",
+        "primary": "#FFFFFF",
+        "accent": "#DCDCDC"
+      },
+      "easing_and_timing": {
+        "bpm": 124,
+        "ease_curve": "0/80->0/20 (Quint Out)",
+        "hold_frames": 2,
+        "posterize_fps": 12,
+        "notes": "踏切窓と街灯スピード線は24fpsで高速通過、キャラクター線画は12fpsで静止感を演出（推定）。",
+        "source": "api_estimated",
+        "verified": false
+      },
+      "layer_stack": [
+        "L1 (Bottom): 完全黒背景 (#000000)",
+        "L2: 高速通過する白矩形群（電車窓シェイプ/リピーター）および放射状スピード線レイヤー",
+        "L3: 白線反転キャラクター連番（踏切・街角・横断歩道・横顔）",
+        "L4: 円形スポットライト用アルファマット（01:42のグラフィティ壁カット）",
+        "L5: 髪の毛から右上へ流れる星型アウトラインパーティクル",
+        "L6 (Top): 微弱グロウ調整レイヤー (Deep Glow)",
+        "[Audio - BGM Track] エレクトロシンセ主体の間奏BGM（独立トラック）",
+        "[Audio - SE Track] 電車通過・スパーク・風切りアクセントSE（独立トラック）"
+      ],
+      "recreation_flow": [
+        "1. 黒背景上に白角丸矩形のリピーターを高速横移動させ、手前に踏切と少女シルエットを重ねる。",
+        "2. 円形シェイプマットでスポットライト風カットを挟み、横断歩道カットでは中心消失点から放射状の白線ストリークを生成する。",
+        "3. 01:48で横顔少女の髪端から星形ベクターを右上方向へ斜めドリフトさせ、01:50の白目アップへ繋ぐ。"
+      ],
+      "frame_timeline": [
+        {
+          "frame": 0,
+          "time_offset_sec": 0,
+          "event": "踏切シルエット背面を白電車窓が高速通過",
+          "params": {
+            "train_x_speed": -3200
+          }
+        },
+        {
+          "frame": 36,
+          "time_offset_sec": 1.5,
+          "event": "円形スポットライト内に少女と黒猫＋グラフィティ出現",
+          "params": {
+            "circle_scale": 100
+          }
+        },
+        {
+          "frame": 144,
+          "time_offset_sec": 6,
+          "event": "横断歩道で左右から白い光跡スピード線が疾走",
+          "params": {
+            "radial_streak_opacity": 100
+          }
+        },
+        {
+          "frame": 180,
+          "time_offset_sec": 7.5,
+          "event": "少女の髪が白い星型アウトラインへ分解して流れる",
+          "params": {
+            "star_drift_angle": -35
+          }
+        }
+      ],
+      "effect_chain": [
+        {
+          "order": 1,
+          "tool": "After Effects",
+          "plugin": "Deep Glow",
+          "match_name": "Deep Glow",
+          "fallback_match_name": "ADBE Glo2",
+          "params": {
+            "radius": 32,
+            "exposure": 0.18
+          },
+          "keyframed_frames": [
+            0,
+            144,
+            180
+          ]
+        },
+        {
+          "order": 2,
+          "tool": "After Effects",
+          "plugin": "Turbulent Displace",
+          "match_name": "ADBE Turbulent Displace",
+          "fallback_match_name": "ADBE Turbulent Displace",
+          "params": {
+            "amount": 6,
+            "size": 24
+          },
+          "keyframed_frames": [
+            0,
+            204
+          ]
+        }
+      ],
+      "ae_blueprint": {
+        "schema_version": 2,
+        "source": "api_estimated",
+        "width": 1920,
+        "height": 1080,
+        "fps": 24,
+        "duration_sec": 8.5,
+        "bg_color": "#000000",
+        "film_finish": false,
+        "layers": [
+          {
+            "type": "shape_repeater",
+            "name": "Train_Window_Strobe",
+            "color": "#FFFFFF",
+            "start_frame": 0,
+            "duration_frames": 36,
+            "easing": [
+              0,
+              0,
+              1,
+              1
+            ]
+          },
+          {
+            "type": "radial_speedlines",
+            "name": "Crosswalk_Traffic_Streaks",
+            "color": "#FFFFFF",
+            "start_frame": 132,
+            "duration_frames": 48,
+            "easing": [
+              0,
+              80,
+              0,
+              20
+            ]
+          }
+        ]
+      },
+      "transition_bridge": {
+        "source": "api_estimated",
+        "entrance_vector": "hard_cut_from_sparks",
+        "exit_vector": "flash_invert_to_white",
+        "match_cue": "bridge_synth_build",
+        "sfx_lead_in_frames": -2,
+        "recommended_sfx": "riser_white_noise"
+      },
+      "anti_ai_slop_notes": "全編の白地から黒地へ完全反転し、赤矢印の色情報すら排して2階調モノクロに徹することで間奏の没入感を極大化している。",
+      "audio_sync_cues": "間奏の4つ打ちキックとシンセアルペジオの拍頭ごとに踏切→街角→車窓→横断歩道→星髪へ切替。",
+      "observed_timestamps": [
+        {
+          "timestamp": "01:41.0",
+          "visual_evidence": "黒背景の踏切前で白い電車窓が高速に横切るシルエットカット"
+        },
+        {
+          "timestamp": "01:47.0",
+          "visual_evidence": "夜の横断歩道に立つ少女と猫の周囲を白い光跡線が放射状に疾走"
+        },
+        {
+          "timestamp": "01:48.5",
+          "visual_evidence": "横顔の少女の髪が白い星型輪郭にほどけて右上へ流れる"
+        }
+      ],
+      "provenance": {
+        "source": "gemini_api_url_v1",
+        "visual_observation_basis": "youtube_url_video_stream",
+        "media_telemetry_status": "missing_requires_local_video",
+        "model": "gemini-4-neon",
+        "thinking_level": "high",
+        "service_tier": "standard",
+        "video_processing": {
+          "type": "static",
+          "fps": 1,
+          "content_layers": [
+            "frames",
+            "audio"
+          ],
+          "resolution": "low"
+        },
+        "input_video_tokens": 15750,
+        "pilot_attempt": 2,
+        "field_provenance": {
+          "semantic_craft_fields": "api_observed",
+          "timestamps_and_duration": "api_estimated_1fps",
+          "fps_and_frames": "api_estimated",
+          "color_palette_hex": "api_estimated",
+          "easing_and_timing": "api_estimated",
+          "media_and_telemetry": "missing"
+        }
+      },
+      "media": {
+        "available": false,
+        "status": "missing_requires_local_video",
+        "telemetry": {
+          "available": false
+        }
+      }
+    },
+    {
+      "cut_index": 4,
+      "title": "アウトロ3x3監視画面のビート同期CRT電源オフ順次収束",
+      "category": "micro_fx_glitch",
+      "start_mmss": "02:30",
+      "end_mmss": "02:33",
+      "start_sec": 150.5,
+      "end_sec": 153,
+      "fps": 24,
+      "primary_tool": "After Effects",
+      "software_stack": [
+        "After Effects"
+      ],
+      "tool_selection_rationale": "複数モニターのYスケール圧縮によるCRT電源オフ表現とビート単位のスタガー制御はAEのトランスフォームとエクスプレッションで厳密再現できる。",
+      "plugins_used": [
+        "Deep Glow",
+        "Motion 4",
+        "BadTV_x64"
+      ],
+      "color_palette_hex": {
+        "base": "#000000",
+        "primary": "#F5F5F3",
+        "accent": "#E8354D"
+      },
+      "easing_and_timing": {
+        "bpm": 124,
+        "ease_curve": "0/95->0/5 (Expo In-Out)",
+        "hold_frames": 2,
+        "posterize_fps": null,
+        "notes": "各画面の電源オフは2〜3フレームでY軸を100%→2%→0%へ極短収縮させ残光感を出す（推定）。",
+        "source": "api_estimated",
+        "verified": false
+      },
+      "layer_stack": [
+        "L1 (Bottom): 完全黒背景 (#000000)",
+        "L2: 3x3監視モニタープリコンプ群 (外周CAM 11〜16, 18〜23 / 順次CRTオフ)",
+        "L3: 中央CAM 17プリコンプ（少女と黒猫が手を振る・最後に電源オフ）",
+        "L4: 編集可能CAM番号ラベル群 (CAM 11〜23)",
+        "L5 (Top): CRT収束フラッシュ用グロウ調整レイヤー (Deep Glow)",
+        "[Audio - BGM Track] アウトロ終止ビート（独立トラック）",
+        "[Audio - SE Track] ブラウン管電源オフ・高周波消灯SE（独立トラック）"
+      ],
+      "recreation_flow": [
+        "1. 3x3モニター配列を配置し、外周画面のアンカーポイントを各画面中央に設定する。",
+        "2. 02:31.2から8分音符刻みで外周画面のScale Yを100%→3%（白線化）→Scale X 0%の順で2〜4フレーム内に順次消灯させる。",
+        "3. 最後に残った中央CAM 17を楽曲最終拍で水平一本の白線へ収束させ、完全ブラックアウトへ着地させる。"
+      ],
+      "frame_timeline": [
+        {
+          "frame": 0,
+          "time_offset_sec": 0,
+          "event": "3x3全モニター点灯、中央CAM 17に少女と黒猫",
+          "params": {
+            "active_screens": 9
+          }
+        },
+        {
+          "frame": 24,
+          "time_offset_sec": 1,
+          "event": "外周モニターが順次CRT横線に潰れて消灯",
+          "params": {
+            "active_screens": 2,
+            "scale_y": 3
+          }
+        },
+        {
+          "frame": 48,
+          "time_offset_sec": 2,
+          "event": "中央CAM 17が水平白線へ収縮し完全暗転",
+          "params": {
+            "active_screens": 0,
+            "opacity": 0
+          }
+        }
+      ],
+      "effect_chain": [
+        {
+          "order": 1,
+          "tool": "After Effects",
+          "plugin": "Deep Glow",
+          "match_name": "Deep Glow",
+          "fallback_match_name": "ADBE Glo2",
+          "params": {
+            "radius": 40,
+            "exposure": 0.35
+          },
+          "keyframed_frames": [
+            24,
+            46,
+            52
+          ]
+        },
+        {
+          "order": 2,
+          "tool": "After Effects",
+          "plugin": "BadTV_x64",
+          "match_name": "BadTV_x64",
+          "fallback_match_name": "ADBE Venetian Blinds",
+          "params": {
+            "scanline_roll": 0.1,
+            "static_noise": 0.08
+          },
+          "keyframed_frames": [
+            0,
+            48
+          ]
+        }
+      ],
+      "ae_blueprint": {
+        "schema_version": 2,
+        "source": "api_estimated",
+        "width": 1920,
+        "height": 1080,
+        "fps": 24,
+        "duration_sec": 2.5,
+        "bg_color": "#000000",
+        "film_finish": false,
+        "layers": [
+          {
+            "type": "crt_collapse_group",
+            "name": "Outer_Monitors_Shutdown",
+            "start_frame": 16,
+            "duration_frames": 24,
+            "easing": [
+              0,
+              95,
+              0,
+              5
+            ]
+          },
+          {
+            "type": "crt_collapse_single",
+            "name": "CAM17_Final_Shutdown",
+            "start_frame": 42,
+            "duration_frames": 10,
+            "easing": [
+              0,
+              95,
+              0,
+              5
+            ]
+          }
+        ]
+      },
+      "transition_bridge": {
+        "source": "api_estimated",
+        "entrance_vector": "hard_cut_from_montage",
+        "exit_vector": "crt_horizontal_collapse_to_black",
+        "match_cue": "outro_final_hit",
+        "sfx_lead_in_frames": -1,
+        "recommended_sfx": "crt_tv_power_off"
+      },
+      "anti_ai_slop_notes": "全画面一斉ではなく外周→上下→中央CAM 17の順で微妙にタイミングをずらし、水平白線の1フレーム残光を残すことで小気味よい余韻を作る。",
+      "audio_sync_cues": "アウトロの連続するドラム・シンセ終止音に合わせて外周画面が次々と消え、最終ヒットで中央画面が完全消灯。",
+      "observed_timestamps": [
+        {
+          "timestamp": "02:31.0",
+          "visual_evidence": "9分割モニター群の中央CAM 17に少女と黒猫が表示"
+        },
+        {
+          "timestamp": "02:32.0",
+          "visual_evidence": "右側のモニターが水平の白い細い線に潰れて消灯する瞬間"
+        },
+        {
+          "timestamp": "02:32.8",
+          "visual_evidence": "最後に残った中央画面も消灯し完全黒画面へ終了"
+        }
+      ],
+      "provenance": {
+        "source": "gemini_api_url_v1",
+        "visual_observation_basis": "youtube_url_video_stream",
+        "media_telemetry_status": "missing_requires_local_video",
+        "model": "gemini-4-neon",
+        "thinking_level": "high",
+        "service_tier": "standard",
+        "video_processing": {
+          "type": "static",
+          "fps": 1,
+          "content_layers": [
+            "frames",
+            "audio"
+          ],
+          "resolution": "low"
+        },
+        "input_video_tokens": 15750,
+        "pilot_attempt": 2,
+        "field_provenance": {
+          "semantic_craft_fields": "api_observed",
+          "timestamps_and_duration": "api_estimated_1fps",
+          "fps_and_frames": "api_estimated",
+          "color_palette_hex": "api_estimated",
+          "easing_and_timing": "api_estimated",
+          "media_and_telemetry": "missing"
+        }
+      },
+      "media": {
+        "available": false,
+        "status": "missing_requires_local_video",
+        "telemetry": {
+          "available": false
+        }
+      }
+    }
+  ],
+  "title": "lazy cat  – Eve MV",
+  "technique_rating": "A",
+  "provenance": {
+    "source": "gemini_api_url_v1",
+    "model": "gemini-4-neon",
+    "thinking_level": "high",
+    "service_tier": "standard",
+    "video_processing": {
+      "type": "static",
+      "fps": 1,
+      "content_layers": [
+        "frames",
+        "audio"
+      ],
+      "resolution": "low"
+    },
+    "visual_observation_basis": "youtube_url_video_stream",
+    "input_video_tokens": 15750,
+    "media_telemetry_status": "missing_requires_local_video",
+    "pilot_attempt": 2,
+    "field_provenance": {
+      "semantic_craft_fields": "api_observed",
+      "timestamps_and_duration": "api_estimated_1fps",
+      "fps_and_frames": "api_estimated",
+      "color_palette_hex": "api_estimated",
+      "easing_and_timing": "api_estimated",
+      "media_and_telemetry": "missing"
+    }
+  }
+}

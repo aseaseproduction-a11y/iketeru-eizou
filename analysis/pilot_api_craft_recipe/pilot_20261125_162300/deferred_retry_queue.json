@@ -1,28 +1,9 @@
 {
   "schema_version": 1,
   "run_id": "pilot_20261125_162300",
-  "updated_at": "2026-11-25T08:07:03.333Z",
-  "remaining_count": 3,
-  "deferred_calls": [
-    {
-      "video_id": "FcIFvzP8-mg",
-      "role": "stratum_1_short_cm",
-      "ref_duration_sec": 14,
-      "attempt": 2
-    },
-    {
-      "video_id": "jsEVOjI690Y",
-      "role": "stratum_2_fast_cut_motion_or_glitch",
-      "ref_duration_sec": 15,
-      "attempt": 2
-    },
-    {
-      "video_id": "Xr032EhUDPw",
-      "role": "stratum_3_mid_non_mv_opening_or_branded",
-      "ref_duration_sec": 90,
-      "attempt": 2
-    }
-  ],
+  "updated_at": "2026-11-25T09:22:35.066Z",
+  "remaining_count": 0,
+  "deferred_calls": [],
   "congestion_events_count": 7,
   "congestion_events": [
     {

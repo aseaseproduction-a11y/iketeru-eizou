@@ -4,12 +4,12 @@
   "mode": "pass1_1fps",
   "worker": "CHIBA-PC-api",
   "purpose": "pilot_craft_recipe_5x2_1fps",
-  "service_tier": "flex",
+  "service_tier": "standard",
   "prereg_lf_sha256": "e01cc0097d1995e2ae84ec850275132445d5d58d458c2130c345c29d5a45be94",
   "prompt_sha256": "1c088bb9ff08365d4054dc682f2e5134857181f517c7be1fade208fd8213b0d3",
-  "finished_at": "2026-11-25T08:07:03.334Z",
-  "total_requests": 7,
-  "succeeded_calls": 3,
+  "finished_at": "2026-11-25T09:22:35.068Z",
+  "total_requests": 14,
+  "succeeded_calls": 10,
   "planned_calls": 10,
   "congestion_failure_count": 7,
   "congestion_events": [
@@ -70,11 +70,11 @@
       "attempt": 2
     }
   ],
-  "deferred_remaining_count": 3,
-  "videos_completed": 0,
-  "stopped_early": true,
-  "stop_reason": "deferred_retry_pass_congestion (FcIFvzP8-mg r2)",
-  "run_cost_usd": 0.207638,
+  "deferred_remaining_count": 0,
+  "videos_completed": 5,
+  "stopped_early": false,
+  "stop_reason": null,
+  "run_cost_usd": 1.530374,
   "evidence_manifest": "evidence_manifest.json",
   "deferred_queue_file": "deferred_retry_queue.json",
   "evidence_logs_dir": "E:\\iketeru_api_url_logs\\pilot_craft_recipe_pilot_20261125_162300",
@@ -83,37 +83,46 @@
       "video_id": "FcIFvzP8-mg",
       "role": "stratum_1_short_cm",
       "attempts_completed": [
-        1
+        1,
+        2
       ],
-      "complete": false
+      "complete": true
     },
     {
       "video_id": "jsEVOjI690Y",
       "role": "stratum_2_fast_cut_motion_or_glitch",
       "attempts_completed": [
-        1
+        1,
+        2
       ],
-      "complete": false
+      "complete": true
     },
     {
       "video_id": "Xr032EhUDPw",
       "role": "stratum_3_mid_non_mv_opening_or_branded",
       "attempts_completed": [
-        1
+        1,
+        2
       ],
-      "complete": false
+      "complete": true
     },
     {
       "video_id": "I0jHbsidh1g",
       "role": "stratum_4_mid_mv",
-      "attempts_completed": [],
-      "complete": false
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "complete": true
     },
     {
       "video_id": "kqj7b59D85Y",
       "role": "stratum_5_long_multi_cut_mv",
-      "attempts_completed": [],
-      "complete": false
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "complete": true
     }
   ]
 }

@@ -1,26 +1,48 @@
 {
   "run_dir": "E:\\iketeru-eizou\\analysis\\pilot_api_craft_recipe\\pilot_20261125_162300",
   "summary": {
-    "M1_pass_calls": "3/10",
-    "M1_pass": false,
-    "M2_pass_calls": "3/10",
-    "M2_pass": false,
-    "M3_time_matched_major_union": "5/10",
-    "M3_time_recall_ratio": 0.5,
-    "M5_median_boundary_err_sec": 0.0,
-    "M5_median_midpoint_err_sec": 0.1,
+    "M1_pass_calls": "10/10",
+    "M1_pass": true,
+    "M2_pass_calls": "10/10",
+    "M2_pass": true,
+    "M3_time_matched_major_union": "7/10",
+    "M3_time_recall_ratio": 0.7,
+    "M5_median_boundary_err_sec": 0.1,
+    "M5_median_midpoint_err_sec": 0.5,
     "M5_fast_cut_boundary_medians_sec": {
       "jsEVOjI690Y": 0.0,
       "Xr032EhUDPw": 0.0
     },
     "M5_fast_cut_combined_median_sec": 0.0,
     "M5_pass2_triggered": false,
-    "M5_micro_transition_median_mid_err_sec": 0.916,
+    "M5_micro_transition_median_mid_err_sec": 0.333,
     "M6_pass": false,
     "M6_prod_sqlite_untouched": true,
-    "M7_avg_tool_agreement": null,
-    "M7_avg_category_agreement": null,
-    "M7_avg_best_iou": null
+    "M7_avg_tool_agreement": 0.8833,
+    "M7_avg_category_agreement": 0.55,
+    "M7_avg_best_iou": 0.8123
+  },
+  "summary_excluding_kqj7b59D85Y": {
+    "videos_included": [
+      "FcIFvzP8-mg",
+      "jsEVOjI690Y",
+      "Xr032EhUDPw",
+      "I0jHbsidh1g"
+    ],
+    "excluded_video_id": "kqj7b59D85Y",
+    "exclusion_reason": "chibatmute visual audit flagged existing SQLite analysis/scenes as partially different (hallucination / order inversion)",
+    "M1_pass_calls": "8/8",
+    "M1_pass": true,
+    "M2_pass_calls": "8/8",
+    "M2_pass": true,
+    "M3_time_matched_major_union": "6/8",
+    "M3_time_recall_ratio": 0.75,
+    "M5_median_boundary_err_sec": 0.0,
+    "M5_median_midpoint_err_sec": 0.3,
+    "M6_pass": true,
+    "M7_avg_tool_agreement": 0.8542,
+    "M7_avg_category_agreement": 0.5625,
+    "M7_avg_best_iou": 0.8534
   },
   "M1_details": {
     "FcIFvzP8-mg_r1": {
@@ -60,9 +82,39 @@
       ]
     },
     "FcIFvzP8-mg_r2": {
-      "pass": false,
-      "reasons": [
-        "missing_draft_file"
+      "pass": true,
+      "reasons": [],
+      "cut_reports": [
+        {
+          "cut_index": 1,
+          "title": "3Dアイリスシャッター連動の刃状スライス・キネティックタイポ展開",
+          "category": "kinetic_typography",
+          "duration_sec": 3.8,
+          "credibility_score": 100,
+          "credibility_flags": [],
+          "pass": true,
+          "reasons": []
+        },
+        {
+          "cut_index": 2,
+          "title": "上部ソフトライティング背景と高可読性タイポグラフィの静的ホールド",
+          "category": "graphic_design",
+          "duration_sec": 5.7,
+          "credibility_score": 100,
+          "credibility_flags": [],
+          "pass": true,
+          "reasons": []
+        },
+        {
+          "cut_index": 3,
+          "title": "白色ブレード連動シャッター収束からロゴ・黒背景エンドカードへの完結遷移",
+          "category": "transition",
+          "duration_sec": 4.5,
+          "credibility_score": 100,
+          "credibility_flags": [],
+          "pass": true,
+          "reasons": []
+        }
       ]
     },
     "jsEVOjI690Y_r1": {
@@ -102,9 +154,49 @@
       ]
     },
     "jsEVOjI690Y_r2": {
-      "pass": false,
-      "reasons": [
-        "missing_draft_file"
+      "pass": true,
+      "reasons": [],
+      "cut_reports": [
+        {
+          "cut_index": 1,
+          "title": "ダークUIプログレスバーからネオンフラッシュへの急展開遷移",
+          "category": "ui_motion",
+          "duration_sec": 2.0,
+          "credibility_score": 100,
+          "credibility_flags": [],
+          "pass": true,
+          "reasons": []
+        },
+        {
+          "cut_index": 2,
+          "title": "Blender製3Dプリミティブと2Dベクターが交差する高彩度横スクロール",
+          "category": "motion_graphics",
+          "duration_sec": 8.0,
+          "credibility_score": 100,
+          "credibility_flags": [],
+          "pass": true,
+          "reasons": []
+        },
+        {
+          "cut_index": 3,
+          "title": "残り1秒プログレスバーから数値86%への高速ズームイン遷移",
+          "category": "ui_motion",
+          "duration_sec": 3.0,
+          "credibility_score": 100,
+          "credibility_flags": [],
+          "pass": true,
+          "reasons": []
+        },
+        {
+          "cut_index": 4,
+          "title": "グラデーション「東京」×「VIDEOGRAPHERS」ロゴのダイナミック着地",
+          "category": "kinetic_typography",
+          "duration_sec": 2.0,
+          "credibility_score": 100,
+          "credibility_flags": [],
+          "pass": true,
+          "reasons": []
+        }
       ]
     },
     "Xr032EhUDPw_r1": {
@@ -154,33 +246,233 @@
       ]
     },
     "Xr032EhUDPw_r2": {
-      "pass": false,
-      "reasons": [
-        "missing_draft_file"
+      "pass": true,
+      "reasons": [],
+      "cut_reports": [
+        {
+          "cut_index": 1,
+          "title": "逆さまの赤黒都市空間180度カメラロールと黒い日食の開眼導入",
+          "category": "3d_camera",
+          "duration_sec": 9.0,
+          "credibility_score": 100,
+          "credibility_flags": [],
+          "pass": true,
+          "reasons": []
+        },
+        {
+          "cut_index": 2,
+          "title": "赤色発光の幾何学破砕ライン越しに展開する高速キャラ連続フラッシュ",
+          "category": "vfx_composite",
+          "duration_sec": 3.0,
+          "credibility_score": 100,
+          "credibility_flags": [],
+          "pass": true,
+          "reasons": []
+        },
+        {
+          "cut_index": 3,
+          "title": "モノクロ3D建築背景から深紅ブラー・日食へ急転換するタイトルロゴ演出",
+          "category": "motion_graphics",
+          "duration_sec": 4.0,
+          "credibility_score": 100,
+          "credibility_flags": [],
+          "pass": true,
+          "reasons": []
+        },
+        {
+          "cut_index": 4,
+          "title": "漆黒空間の単色ネオン・リムライトによるキャラクター連続ポーズ切替",
+          "category": "lighting_lookdev",
+          "duration_sec": 4.0,
+          "credibility_score": 100,
+          "credibility_flags": [],
+          "pass": true,
+          "reasons": []
+        }
       ]
     },
     "I0jHbsidh1g_r1": {
-      "pass": false,
-      "reasons": [
-        "missing_draft_file"
+      "pass": true,
+      "reasons": [],
+      "cut_reports": [
+        {
+          "cut_index": 1,
+          "title": "監視カメラCRT枠と手描き小窓によるクレジット・タイトル展開",
+          "category": "ui_motion",
+          "duration_sec": 11.5,
+          "credibility_score": 100,
+          "credibility_flags": [],
+          "pass": true,
+          "reasons": []
+        },
+        {
+          "cut_index": 2,
+          "title": "単一監視モニタから3x3マルチウォールへの3DカメラZ軸引き演出",
+          "category": "3d_camera",
+          "duration_sec": 5.0,
+          "credibility_score": 100,
+          "credibility_flags": [],
+          "pass": true,
+          "reasons": []
+        },
+        {
+          "cut_index": 3,
+          "title": "黒白反転ネガ空間の踏切ストロボ・光跡パース・星雲モーフィング連打",
+          "category": "motion_graphics",
+          "duration_sec": 8.0,
+          "credibility_score": 100,
+          "credibility_flags": [],
+          "pass": true,
+          "reasons": []
+        },
+        {
+          "cut_index": 4,
+          "title": "3x3監視モニタ群の順次消灯とCRT水平ライン収束シャットダウン",
+          "category": "transition",
+          "duration_sec": 3.0,
+          "credibility_score": 100,
+          "credibility_flags": [],
+          "pass": true,
+          "reasons": []
+        }
       ]
     },
     "I0jHbsidh1g_r2": {
-      "pass": false,
-      "reasons": [
-        "missing_draft_file"
+      "pass": true,
+      "reasons": [],
+      "cut_reports": [
+        {
+          "cut_index": 1,
+          "title": "監視カメラUI枠内の扉ギミックとブラシ調タイトル出現",
+          "category": "kinetic_typography",
+          "duration_sec": 11.5,
+          "credibility_score": 100,
+          "credibility_flags": [],
+          "pass": true,
+          "reasons": []
+        },
+        {
+          "cut_index": 2,
+          "title": "CAM17接写から3x3監視モニター群への高速ズームアウト演出",
+          "category": "3d_camera",
+          "duration_sec": 5.0,
+          "credibility_score": 100,
+          "credibility_flags": [],
+          "pass": true,
+          "reasons": []
+        },
+        {
+          "cut_index": 3,
+          "title": "白黒反転モノクロ間奏の踏切ストロボ・円形マスク・速度線パース合成",
+          "category": "motion_graphics",
+          "duration_sec": 8.5,
+          "credibility_score": 100,
+          "credibility_flags": [],
+          "pass": true,
+          "reasons": []
+        },
+        {
+          "cut_index": 4,
+          "title": "アウトロ3x3監視画面のビート同期CRT電源オフ順次収束",
+          "category": "micro_fx_glitch",
+          "duration_sec": 2.5,
+          "credibility_score": 100,
+          "credibility_flags": [],
+          "pass": true,
+          "reasons": []
+        }
       ]
     },
     "kqj7b59D85Y_r1": {
-      "pass": false,
-      "reasons": [
-        "missing_draft_file"
+      "pass": true,
+      "reasons": [],
+      "cut_reports": [
+        {
+          "cut_index": 1,
+          "title": "SNSチャット風UIのビート同期スクロール＆縦長マスク絞り込み遷移",
+          "category": "ui_motion",
+          "duration_sec": 8.0,
+          "credibility_score": 100,
+          "credibility_flags": [],
+          "pass": true,
+          "reasons": []
+        },
+        {
+          "cut_index": 2,
+          "title": "3分割縦長パネルの1→2→3列クローン増殖・音ハメダンス構成",
+          "category": "motion_graphics",
+          "duration_sec": 11.0,
+          "credibility_score": 100,
+          "credibility_flags": [],
+          "pass": true,
+          "reasons": []
+        },
+        {
+          "cut_index": 3,
+          "title": "中央縦長パネル内の魚図鑑高速スライドショー＆巨大魚オチ演出",
+          "category": "graphic_design",
+          "duration_sec": 6.0,
+          "credibility_score": 100,
+          "credibility_flags": [],
+          "pass": true,
+          "reasons": []
+        },
+        {
+          "cut_index": 4,
+          "title": "16:9全画面解放・前景ミク＆テトと背景ネルの奥行きレイヤー合成ダンス",
+          "category": "vfx_composite",
+          "duration_sec": 9.0,
+          "credibility_score": 100,
+          "credibility_flags": [],
+          "pass": true,
+          "reasons": []
+        }
       ]
     },
     "kqj7b59D85Y_r2": {
-      "pass": false,
-      "reasons": [
-        "missing_draft_file"
+      "pass": true,
+      "reasons": [],
+      "cut_reports": [
+        {
+          "cut_index": 1,
+          "title": "チャットUI風吹き出しの縦スクロール連投と3分割黒帯ワイプ導入",
+          "category": "ui_motion",
+          "duration_sec": 8.0,
+          "credibility_score": 100,
+          "credibility_flags": [],
+          "pass": true,
+          "reasons": []
+        },
+        {
+          "cut_index": 2,
+          "title": "縦3分割マスク切替と2〜3体クローン増殖による音ハメダンス構成",
+          "category": "motion_graphics",
+          "duration_sec": 11.0,
+          "credibility_score": 100,
+          "credibility_flags": [],
+          "pass": true,
+          "reasons": []
+        },
+        {
+          "cut_index": 3,
+          "title": "暗転パネル内の発光ネオンサングラスと枠越え巨大カジキ出現演出",
+          "category": "lighting_lookdev",
+          "duration_sec": 8.0,
+          "credibility_score": 100,
+          "credibility_flags": [],
+          "pass": true,
+          "reasons": []
+        },
+        {
+          "cut_index": 4,
+          "title": "前後レイヤー階層と不透明度差分で魅せるミク・テト合流3人ダンス",
+          "category": "motion_graphics",
+          "duration_sec": 10.0,
+          "credibility_score": 100,
+          "credibility_flags": [],
+          "pass": true,
+          "reasons": []
+        }
       ]
     }
   },
@@ -195,10 +487,13 @@
       "timestamp_issues": []
     },
     "FcIFvzP8-mg_r2": {
-      "pass": false,
-      "reasons": [
-        "missing_draft_file"
-      ]
+      "pass": true,
+      "input_video_tokens": 1410,
+      "min_required_video_tokens": 1260,
+      "tokens_per_sec": 100.71,
+      "tokens_ok": true,
+      "observed_timestamps_count": 8,
+      "timestamp_issues": []
     },
     "jsEVOjI690Y_r1": {
       "pass": true,
@@ -210,10 +505,13 @@
       "timestamp_issues": []
     },
     "jsEVOjI690Y_r2": {
-      "pass": false,
-      "reasons": [
-        "missing_draft_file"
-      ]
+      "pass": true,
+      "input_video_tokens": 1525,
+      "min_required_video_tokens": 1350,
+      "tokens_per_sec": 101.67,
+      "tokens_ok": true,
+      "observed_timestamps_count": 9,
+      "timestamp_issues": []
     },
     "Xr032EhUDPw_r1": {
       "pass": true,
@@ -225,34 +523,49 @@
       "timestamp_issues": []
     },
     "Xr032EhUDPw_r2": {
-      "pass": false,
-      "reasons": [
-        "missing_draft_file"
-      ]
+      "pass": true,
+      "input_video_tokens": 9101,
+      "min_required_video_tokens": 8100,
+      "tokens_per_sec": 101.12,
+      "tokens_ok": true,
+      "observed_timestamps_count": 12,
+      "timestamp_issues": []
     },
     "I0jHbsidh1g_r1": {
-      "pass": false,
-      "reasons": [
-        "missing_draft_file"
-      ]
+      "pass": true,
+      "input_video_tokens": 15750,
+      "min_required_video_tokens": 14040,
+      "tokens_per_sec": 100.96,
+      "tokens_ok": true,
+      "observed_timestamps_count": 12,
+      "timestamp_issues": []
     },
     "I0jHbsidh1g_r2": {
-      "pass": false,
-      "reasons": [
-        "missing_draft_file"
-      ]
+      "pass": true,
+      "input_video_tokens": 15750,
+      "min_required_video_tokens": 14040,
+      "tokens_per_sec": 100.96,
+      "tokens_ok": true,
+      "observed_timestamps_count": 11,
+      "timestamp_issues": []
     },
     "kqj7b59D85Y_r1": {
-      "pass": false,
-      "reasons": [
-        "missing_draft_file"
-      ]
+      "pass": true,
+      "input_video_tokens": 21000,
+      "min_required_video_tokens": 18720,
+      "tokens_per_sec": 100.96,
+      "tokens_ok": true,
+      "observed_timestamps_count": 12,
+      "timestamp_issues": []
     },
     "kqj7b59D85Y_r2": {
-      "pass": false,
-      "reasons": [
-        "missing_draft_file"
-      ]
+      "pass": true,
+      "input_video_tokens": 21000,
+      "min_required_video_tokens": 18720,
+      "tokens_per_sec": 100.96,
+      "tokens_ok": true,
+      "observed_timestamps_count": 12,
+      "timestamp_issues": []
     }
   },
   "M3_M5_details": {
@@ -306,8 +619,50 @@
         }
       ],
       "major_matches_r2": [
-        null,
-        null
+        {
+          "ref_cut_index": 1,
+          "ref_title": "機械式カメラ絞りアイリス開閉シンク＆キネティック文字分断モーフィング",
+          "ref_granularity": "technique_unit",
+          "ref_category": "kinetic_typography",
+          "ref_primary_tool": "Blender",
+          "ref_start_sec": 0.0,
+          "ref_end_sec": 4.0,
+          "api_cut_index": 1,
+          "api_title": "3Dアイリスシャッター連動の刃状スライス・キネティックタイポ展開",
+          "api_category": "kinetic_typography",
+          "api_primary_tool": "After Effects",
+          "api_start_sec": 0.0,
+          "api_end_sec": 3.8,
+          "iou": 0.95,
+          "start_err_sec": 0.0,
+          "end_err_sec": 0.2,
+          "boundary_mean_err_sec": 0.1,
+          "midpoint_err_sec": 0.1,
+          "time_matched": true,
+          "category_match": true
+        },
+        {
+          "ref_cut_index": 2,
+          "ref_title": "ブラッシュドダークメタルステートメント固定＆星型絞りAppleマーク回収",
+          "ref_granularity": "complex_composite",
+          "ref_category": "motion_graphics",
+          "ref_primary_tool": "After Effects",
+          "ref_start_sec": 5.0,
+          "ref_end_sec": 14.0,
+          "api_cut_index": 3,
+          "api_title": "白色ブレード連動シャッター収束からロゴ・黒背景エンドカードへの完結遷移",
+          "api_category": "transition",
+          "api_primary_tool": "After Effects",
+          "api_start_sec": 9.5,
+          "api_end_sec": 14.0,
+          "iou": 0.5,
+          "start_err_sec": 4.5,
+          "end_err_sec": 0.0,
+          "boundary_mean_err_sec": 2.25,
+          "midpoint_err_sec": 2.25,
+          "time_matched": true,
+          "category_match": false
+        }
       ],
       "major_matches_union": [
         {
@@ -319,9 +674,9 @@
           "ref_start_sec": 0.0,
           "ref_end_sec": 4.0,
           "api_cut_index": 1,
-          "api_title": "3Dマットブラック絞りシャッター開閉と連動する白タイポ連続切替",
-          "api_category": "motion_graphics",
-          "api_primary_tool": "Blender",
+          "api_title": "3Dアイリスシャッター連動の刃状スライス・キネティックタイポ展開",
+          "api_category": "kinetic_typography",
+          "api_primary_tool": "After Effects",
           "api_start_sec": 0.0,
           "api_end_sec": 3.8,
           "iou": 0.95,
@@ -330,7 +685,7 @@
           "boundary_mean_err_sec": 0.1,
           "midpoint_err_sec": 0.1,
           "time_matched": true,
-          "category_match": false
+          "category_match": true
         },
         {
           "ref_cut_index": 2,
@@ -340,17 +695,17 @@
           "ref_primary_tool": "After Effects",
           "ref_start_sec": 5.0,
           "ref_end_sec": 14.0,
-          "api_cut_index": 2,
-          "api_title": "上部スポット暗背景上の4行メッセージ・クリーンタイポ表示ホールド",
-          "api_category": "kinetic_typography",
+          "api_cut_index": 3,
+          "api_title": "白色ブレード連動シャッター収束からロゴ・黒背景エンドカードへの完結遷移",
+          "api_category": "transition",
           "api_primary_tool": "After Effects",
-          "api_start_sec": 3.8,
-          "api_end_sec": 9.8,
-          "iou": 0.4706,
-          "start_err_sec": 1.2,
-          "end_err_sec": 4.2,
-          "boundary_mean_err_sec": 2.7,
-          "midpoint_err_sec": 2.7,
+          "api_start_sec": 9.5,
+          "api_end_sec": 14.0,
+          "iou": 0.5,
+          "start_err_sec": 4.5,
+          "end_err_sec": 0.0,
+          "boundary_mean_err_sec": 2.25,
+          "midpoint_err_sec": 2.25,
           "time_matched": true,
           "category_match": false
         }
@@ -407,8 +762,50 @@
         }
       ],
       "major_matches_r2": [
-        null,
-        null
+        {
+          "ref_cut_index": 1,
+          "ref_title": "レンダー待機プログレスバーからの白・シアン・ライム放射フラッシュ突入",
+          "ref_granularity": "technique_unit",
+          "ref_category": "micro_fx_glitch",
+          "ref_primary_tool": "After Effects",
+          "ref_start_sec": 0.0,
+          "ref_end_sec": 3.0,
+          "api_cut_index": 1,
+          "api_title": "ダークUIプログレスバーからネオンフラッシュへの急展開遷移",
+          "api_category": "ui_motion",
+          "api_primary_tool": "After Effects",
+          "api_start_sec": 0.0,
+          "api_end_sec": 2.0,
+          "iou": 0.6667,
+          "start_err_sec": 0.0,
+          "end_err_sec": 1.0,
+          "boundary_mean_err_sec": 0.5,
+          "midpoint_err_sec": 0.5,
+          "time_matched": true,
+          "category_match": false
+        },
+        {
+          "ref_cut_index": 3,
+          "ref_title": "「残り時間1秒・86%」復帰とライム極太タイポ〜VGTロゴ着地",
+          "ref_granularity": "technique_unit",
+          "ref_category": "kinetic_typography",
+          "ref_primary_tool": "After Effects",
+          "ref_start_sec": 10.0,
+          "ref_end_sec": 15.0,
+          "api_cut_index": 3,
+          "api_title": "残り1秒プログレスバーから数値86%への高速ズームイン遷移",
+          "api_category": "ui_motion",
+          "api_primary_tool": "After Effects",
+          "api_start_sec": 10.0,
+          "api_end_sec": 13.0,
+          "iou": 0.6,
+          "start_err_sec": 0.0,
+          "end_err_sec": 2.0,
+          "boundary_mean_err_sec": 1.0,
+          "midpoint_err_sec": 1.0,
+          "time_matched": true,
+          "category_match": false
+        }
       ],
       "major_matches_union": [
         {
@@ -509,7 +906,28 @@
         }
       ],
       "major_matches_r2": [
-        null
+        {
+          "ref_cut_index": 2,
+          "ref_title": "黒体爆発ワイプ→黄金縁取り『呪術廻戦 死滅回游 前編』ロゴ＆赤煙侵食",
+          "ref_granularity": "technique_unit",
+          "ref_category": "kinetic_typography",
+          "ref_primary_tool": "Blender",
+          "ref_start_sec": 34.0,
+          "ref_end_sec": 38.0,
+          "api_cut_index": 3,
+          "api_title": "モノクロ3D建築背景から深紅ブラー・日食へ急転換するタイトルロゴ演出",
+          "api_category": "motion_graphics",
+          "api_primary_tool": "After Effects",
+          "api_start_sec": 34.0,
+          "api_end_sec": 38.0,
+          "iou": 1.0,
+          "start_err_sec": 0.0,
+          "end_err_sec": 0.0,
+          "boundary_mean_err_sec": 0.0,
+          "midpoint_err_sec": 0.0,
+          "time_matched": true,
+          "category_match": false
+        }
       ],
       "major_matches_union": [
         {
@@ -565,17 +983,80 @@
       "existing_v2_micro_count": 1,
       "major_matches_r1": [
         null,
-        null,
+        {
+          "ref_cut_index": 2,
+          "ref_title": "3×3監視カメラグリッド（CAM 11-19）から漆黒反転バースト＆UNDER BLUE転換",
+          "ref_granularity": "technique_unit",
+          "ref_category": "motion_graphics",
+          "ref_primary_tool": "After Effects",
+          "ref_start_sec": 91.0,
+          "ref_end_sec": 95.0,
+          "api_cut_index": 2,
+          "api_title": "単一監視モニタから3x3マルチウォールへの3DカメラZ軸引き演出",
+          "api_category": "3d_camera",
+          "api_primary_tool": "After Effects",
+          "api_start_sec": 89.0,
+          "api_end_sec": 94.0,
+          "iou": 0.5,
+          "start_err_sec": 2.0,
+          "end_err_sec": 1.0,
+          "boundary_mean_err_sec": 1.5,
+          "midpoint_err_sec": 1.5,
+          "time_matched": true,
+          "category_match": false
+        },
         null
       ],
       "major_matches_r2": [
         null,
-        null,
+        {
+          "ref_cut_index": 2,
+          "ref_title": "3×3監視カメラグリッド（CAM 11-19）から漆黒反転バースト＆UNDER BLUE転換",
+          "ref_granularity": "technique_unit",
+          "ref_category": "motion_graphics",
+          "ref_primary_tool": "After Effects",
+          "ref_start_sec": 91.0,
+          "ref_end_sec": 95.0,
+          "api_cut_index": 2,
+          "api_title": "CAM17接写から3x3監視モニター群への高速ズームアウト演出",
+          "api_category": "3d_camera",
+          "api_primary_tool": "After Effects",
+          "api_start_sec": 88.5,
+          "api_end_sec": 93.5,
+          "iou": 0.3846,
+          "start_err_sec": 2.5,
+          "end_err_sec": 1.5,
+          "boundary_mean_err_sec": 2.0,
+          "midpoint_err_sec": 2.0,
+          "time_matched": true,
+          "category_match": false
+        },
         null
       ],
       "major_matches_union": [
         null,
-        null,
+        {
+          "ref_cut_index": 2,
+          "ref_title": "3×3監視カメラグリッド（CAM 11-19）から漆黒反転バースト＆UNDER BLUE転換",
+          "ref_granularity": "technique_unit",
+          "ref_category": "motion_graphics",
+          "ref_primary_tool": "After Effects",
+          "ref_start_sec": 91.0,
+          "ref_end_sec": 95.0,
+          "api_cut_index": 2,
+          "api_title": "単一監視モニタから3x3マルチウォールへの3DカメラZ軸引き演出",
+          "api_category": "3d_camera",
+          "api_primary_tool": "After Effects",
+          "api_start_sec": 89.0,
+          "api_end_sec": 94.0,
+          "iou": 0.5,
+          "start_err_sec": 2.0,
+          "end_err_sec": 1.0,
+          "boundary_mean_err_sec": 1.5,
+          "midpoint_err_sec": 1.5,
+          "time_matched": true,
+          "category_match": false
+        },
         null
       ],
       "micro_matches_union": [
@@ -586,19 +1067,103 @@
       "existing_v2_major_count": 2,
       "existing_v2_micro_count": 1,
       "major_matches_r1": [
-        null,
+        {
+          "ref_cut_index": 1,
+          "ref_title": "黒ネガティブスペース内の1→3分割縦長スマホパネル同期ダンス＆BPM135コマ打ち",
+          "ref_granularity": "technique_unit",
+          "ref_category": "motion_graphics",
+          "ref_primary_tool": "After Effects",
+          "ref_start_sec": 62.0,
+          "ref_end_sec": 65.5,
+          "api_cut_index": 2,
+          "api_title": "3分割縦長パネルの1→2→3列クローン増殖・音ハメダンス構成",
+          "api_category": "motion_graphics",
+          "api_primary_tool": "After Effects",
+          "api_start_sec": 59.0,
+          "api_end_sec": 70.0,
+          "iou": 0.3182,
+          "start_err_sec": 3.0,
+          "end_err_sec": 4.5,
+          "boundary_mean_err_sec": 3.75,
+          "midpoint_err_sec": 0.75,
+          "time_matched": true,
+          "category_match": true
+        },
         null
       ],
       "major_matches_r2": [
-        null,
+        {
+          "ref_cut_index": 1,
+          "ref_title": "黒ネガティブスペース内の1→3分割縦長スマホパネル同期ダンス＆BPM135コマ打ち",
+          "ref_granularity": "technique_unit",
+          "ref_category": "motion_graphics",
+          "ref_primary_tool": "After Effects",
+          "ref_start_sec": 62.0,
+          "ref_end_sec": 65.5,
+          "api_cut_index": 2,
+          "api_title": "縦3分割マスク切替と2〜3体クローン増殖による音ハメダンス構成",
+          "api_category": "motion_graphics",
+          "api_primary_tool": "After Effects",
+          "api_start_sec": 57.0,
+          "api_end_sec": 68.0,
+          "iou": 0.3182,
+          "start_err_sec": 5.0,
+          "end_err_sec": 2.5,
+          "boundary_mean_err_sec": 3.75,
+          "midpoint_err_sec": 1.25,
+          "time_matched": true,
+          "category_match": true
+        },
         null
       ],
       "major_matches_union": [
-        null,
+        {
+          "ref_cut_index": 1,
+          "ref_title": "黒ネガティブスペース内の1→3分割縦長スマホパネル同期ダンス＆BPM135コマ打ち",
+          "ref_granularity": "technique_unit",
+          "ref_category": "motion_graphics",
+          "ref_primary_tool": "After Effects",
+          "ref_start_sec": 62.0,
+          "ref_end_sec": 65.5,
+          "api_cut_index": 2,
+          "api_title": "3分割縦長パネルの1→2→3列クローン増殖・音ハメダンス構成",
+          "api_category": "motion_graphics",
+          "api_primary_tool": "After Effects",
+          "api_start_sec": 59.0,
+          "api_end_sec": 70.0,
+          "iou": 0.3182,
+          "start_err_sec": 3.0,
+          "end_err_sec": 4.5,
+          "boundary_mean_err_sec": 3.75,
+          "midpoint_err_sec": 0.75,
+          "time_matched": true,
+          "category_match": true
+        },
         null
       ],
       "micro_matches_union": [
-        null
+        {
+          "ref_cut_index": 3,
+          "ref_title": "【15fマイクロ遷移】黒ネガティブスペース内の1→3分割縦長スマホパネル同期ダ・高速スナップ＆マッチカットスパイク切替",
+          "ref_granularity": "micro_transition",
+          "ref_category": "transition",
+          "ref_primary_tool": "After Effects",
+          "ref_start_sec": 64.083,
+          "ref_end_sec": 64.583,
+          "api_cut_index": 2,
+          "api_title": "3分割縦長パネルの1→2→3列クローン増殖・音ハメダンス構成",
+          "api_category": "motion_graphics",
+          "api_primary_tool": "After Effects",
+          "api_start_sec": 59.0,
+          "api_end_sec": 70.0,
+          "iou": 0.0455,
+          "start_err_sec": 5.083,
+          "end_err_sec": 5.417,
+          "boundary_mean_err_sec": 5.25,
+          "midpoint_err_sec": 0.167,
+          "time_matched": true,
+          "category_match": false
+        }
       ]
     }
   },
@@ -736,6 +1301,161 @@
           {
             "timestamp": "00:12.0",
             "visual_evidence": "完全な黒背景中央に白テキスト「There's more to iPhone」が表示"
+          }
+        ],
+        "overlapping_sqlite_scenes": [
+          {
+            "shot_index": 6,
+            "range": "00:08-00:10",
+            "shot_title": "全文読解のための静止キープ時間",
+            "description": "一切の余計な動きやカメラ揺れを排し、約5秒間にわたって4行メッセージの完全な可読時間を確保する。"
+          },
+          {
+            "shot_index": 7,
+            "range": "00:11-00:12",
+            "shot_title": "星型絞り羽根の「Extra」からマークへのロック閉鎖",
+            "description": "再び円形アイリスに戻り、多角形の羽根が星型（鋸歯状）に開いた中心の「Extra」の文字を飲み込むように羽根が締まって純白のAppleロゴへと戻る。"
+          },
+          {
+            "shot_index": 8,
+            "range": "00:12-00:14",
+            "shot_title": "純黒エンド「There's more to iPhone」",
+            "description": "金属の質感とリングが消えて完全な#000000の無空間になり、小ぶりな白の「There's more to iPhone」が2秒間余韻を残して終了する。"
+          }
+        ]
+      },
+      {
+        "attempt": 2,
+        "cut_index": 1,
+        "range": "00:00-00:04 (0.0-3.8s)",
+        "title": "3Dアイリスシャッター連動の刃状スライス・キネティックタイポ展開",
+        "category": "kinetic_typography",
+        "primary_tool": "After Effects",
+        "matches_existing_v2": true,
+        "observed_timestamps": [
+          {
+            "timestamp": "00:00",
+            "visual_evidence": "ダークな円形シャッター中央に白いAppleロゴが表示"
+          },
+          {
+            "timestamp": "00:01",
+            "visual_evidence": "シャッター羽根の切れ目に沿って「Extra」の文字が断片的に出現"
+          },
+          {
+            "timestamp": "00:03",
+            "visual_evidence": "羽根マスクの回転切片を伴い「of security」へ切替"
+          }
+        ],
+        "overlapping_sqlite_scenes": [
+          {
+            "shot_index": 1,
+            "range": "00:00-00:01",
+            "shot_title": "暗い金属空間の絞りリングとロゴ提示",
+            "description": "ほのかに上端が光る黒〜チャコールグレーの金属背景の中央に、10〜12枚の絞り羽根からなる黒い円形アイリスが現れ、中心に白いロゴが灯る。"
+          },
+          {
+            "shot_index": 2,
+            "range": "00:01-00:02",
+            "shot_title": "絞り羽根回転連動の「Extra」スライス変形",
+            "description": "絞り羽根が動く角度に合わせて「Extra」の文字が放射状に細かく分割・オフセットされながら、幾何学的な切れ込みを伴って現れる。"
+          },
+          {
+            "shot_index": 3,
+            "range": "00:02-00:03",
+            "shot_title": "「layers」への機械的モーフィング",
+            "description": "アイリス羽根の噛み合わせが一段切り替わるリズムに合わせ、中央の文字が「layers」へと分割片を噛み合わせながら再構築される。"
+          },
+          {
+            "shot_index": 4,
+            "range": "00:03-00:04",
+            "shot_title": "「of security」断片収束とシャッター解放",
+            "description": "羽根の縁に沿って「of security」がスライス状に出現・整列した直後、画面は一気に開けた4行テキストのステージへと切り替わる。"
+          },
+          {
+            "shot_index": 5,
+            "range": "00:05-00:07",
+            "shot_title": "4行ステートメントの安定配置",
+            "description": "ダークメタル背景の中央に「Stolen Device Protection / adds extra layers of security / for your Apple Account if your / iPhone is lost or taken.」の4行が美しくロックされる。"
+          }
+        ]
+      },
+      {
+        "attempt": 2,
+        "cut_index": 2,
+        "range": "00:04-00:09 (3.8-9.5s)",
+        "title": "上部ソフトライティング背景と高可読性タイポグラフィの静的ホールド",
+        "category": "graphic_design",
+        "primary_tool": "After Effects",
+        "matches_existing_v2": true,
+        "observed_timestamps": [
+          {
+            "timestamp": "00:04",
+            "visual_evidence": "暗色グラデーション背景に4行の白文字説明文がハードカットで表示"
+          },
+          {
+            "timestamp": "00:07",
+            "visual_evidence": "同一レイアウトのまま静止ホールドを維持し可読性を確保"
+          }
+        ],
+        "overlapping_sqlite_scenes": [
+          {
+            "shot_index": 2,
+            "range": "00:01-00:02",
+            "shot_title": "絞り羽根回転連動の「Extra」スライス変形",
+            "description": "絞り羽根が動く角度に合わせて「Extra」の文字が放射状に細かく分割・オフセットされながら、幾何学的な切れ込みを伴って現れる。"
+          },
+          {
+            "shot_index": 3,
+            "range": "00:02-00:03",
+            "shot_title": "「layers」への機械的モーフィング",
+            "description": "アイリス羽根の噛み合わせが一段切り替わるリズムに合わせ、中央の文字が「layers」へと分割片を噛み合わせながら再構築される。"
+          },
+          {
+            "shot_index": 4,
+            "range": "00:03-00:04",
+            "shot_title": "「of security」断片収束とシャッター解放",
+            "description": "羽根の縁に沿って「of security」がスライス状に出現・整列した直後、画面は一気に開けた4行テキストのステージへと切り替わる。"
+          },
+          {
+            "shot_index": 5,
+            "range": "00:05-00:07",
+            "shot_title": "4行ステートメントの安定配置",
+            "description": "ダークメタル背景の中央に「Stolen Device Protection / adds extra layers of security / for your Apple Account if your / iPhone is lost or taken.」の4行が美しくロックされる。"
+          },
+          {
+            "shot_index": 6,
+            "range": "00:08-00:10",
+            "shot_title": "全文読解のための静止キープ時間",
+            "description": "一切の余計な動きやカメラ揺れを排し、約5秒間にわたって4行メッセージの完全な可読時間を確保する。"
+          },
+          {
+            "shot_index": 7,
+            "range": "00:11-00:12",
+            "shot_title": "星型絞り羽根の「Extra」からマークへのロック閉鎖",
+            "description": "再び円形アイリスに戻り、多角形の羽根が星型（鋸歯状）に開いた中心の「Extra」の文字を飲み込むように羽根が締まって純白のAppleロゴへと戻る。"
+          }
+        ]
+      },
+      {
+        "attempt": 2,
+        "cut_index": 3,
+        "range": "00:09-00:14 (9.5-14.0s)",
+        "title": "白色ブレード連動シャッター収束からロゴ・黒背景エンドカードへの完結遷移",
+        "category": "transition",
+        "primary_tool": "After Effects",
+        "matches_existing_v2": true,
+        "observed_timestamps": [
+          {
+            "timestamp": "00:10",
+            "visual_evidence": "白い鋭角ブレードの輪の中央に「Extra」が表示"
+          },
+          {
+            "timestamp": "00:11",
+            "visual_evidence": "シャッターが閉まり中央に白いAppleロゴのみが浮き上がる"
+          },
+          {
+            "timestamp": "00:12",
+            "visual_evidence": "純黒背景の中央に「There's more to iPhone」が表示"
           }
         ],
         "overlapping_sqlite_scenes": [
@@ -915,6 +1635,190 @@
             "description": "画面を覆う黄緑の巨大文字が一瞬フラッシュした直後、白文字「VIDEO GRAPHERS TOKYO」とグラデーション斜線入り「東京」ロゴが中央にロックアップして締める。"
           }
         ]
+      },
+      {
+        "attempt": 2,
+        "cut_index": 1,
+        "range": "00:00-00:02 (0.0-2.0s)",
+        "title": "ダークUIプログレスバーからネオンフラッシュへの急展開遷移",
+        "category": "ui_motion",
+        "primary_tool": "After Effects",
+        "matches_existing_v2": true,
+        "observed_timestamps": [
+          {
+            "timestamp": "00:00",
+            "visual_evidence": "ダーク背景に「残り時間：15秒」「67%」と青いプログレスバー"
+          },
+          {
+            "timestamp": "00:01",
+            "visual_evidence": "白飛び背景にシアン・ライム・青のジグザグ図形が拡散"
+          }
+        ],
+        "overlapping_sqlite_scenes": [
+          {
+            "shot_index": 1,
+            "range": "00:00-00:01",
+            "shot_title": "書き出しUI導入「残り時間",
+            "description": "15秒 / 67%」: ダークグレー背景の中央に細身の青いプログレスバーだけが静かに伸び、これから起こる化学反応への溜めを作る。"
+          },
+          {
+            "shot_index": 2,
+            "range": "00:01-00:02",
+            "shot_title": "シアン・ライムの幾何学フラッシュ爆発",
+            "description": "プログレスバーの先端が閃光を放ち、黄色と青緑の鋭角ポリゴンと放射ボケが画面一杯に炸裂して別次元へ突入する。"
+          },
+          {
+            "shot_index": 3,
+            "range": "00:03-00:04",
+            "shot_title": "スカイシアン空間展開と3D立体群の出現",
+            "description": "鮮やかな水色空間に雪山実写を投影した多面体、オレンジ円柱、金属トーラス結び目、緑ピラミッド、マゼンタ階段、花形シェイプが一斉に躍り出る。"
+          }
+        ]
+      },
+      {
+        "attempt": 2,
+        "cut_index": 2,
+        "range": "00:02-00:10 (2.0-10.0s)",
+        "title": "Blender製3Dプリミティブと2Dベクターが交差する高彩度横スクロール",
+        "category": "motion_graphics",
+        "primary_tool": "After Effects",
+        "matches_existing_v2": true,
+        "observed_timestamps": [
+          {
+            "timestamp": "00:02",
+            "visual_evidence": "シアン背景にオレンジ円柱、銀の結び目、ピンクの階段線、UIスライダー"
+          },
+          {
+            "timestamp": "00:05",
+            "visual_evidence": "山岳写真入りの多面体、緑の円錐、黄色い布、水しぶき形状が左へ移動"
+          },
+          {
+            "timestamp": "00:09",
+            "visual_evidence": "右下に桜写真を切り抜いた花形マスクとピンクの線画が登場し白転"
+          }
+        ],
+        "overlapping_sqlite_scenes": [
+          {
+            "shot_index": 1,
+            "range": "00:00-00:01",
+            "shot_title": "書き出しUI導入「残り時間",
+            "description": "15秒 / 67%」: ダークグレー背景の中央に細身の青いプログレスバーだけが静かに伸び、これから起こる化学反応への溜めを作る。"
+          },
+          {
+            "shot_index": 2,
+            "range": "00:01-00:02",
+            "shot_title": "シアン・ライムの幾何学フラッシュ爆発",
+            "description": "プログレスバーの先端が閃光を放ち、黄色と青緑の鋭角ポリゴンと放射ボケが画面一杯に炸裂して別次元へ突入する。"
+          },
+          {
+            "shot_index": 3,
+            "range": "00:03-00:04",
+            "shot_title": "スカイシアン空間展開と3D立体群の出現",
+            "description": "鮮やかな水色空間に雪山実写を投影した多面体、オレンジ円柱、金属トーラス結び目、緑ピラミッド、マゼンタ階段、花形シェイプが一斉に躍り出る。"
+          },
+          {
+            "shot_index": 4,
+            "range": "00:05-00:06",
+            "shot_title": "正弦波ライン・スライダーUI・実写矩形インサート",
+            "description": "背景を横切る波形ラインと下部スライダー玉に連動し、青やピンクのキューブ・多面体が弾みながらミニ実写窓が横へ滑る。"
+          },
+          {
+            "shot_index": 5,
+            "range": "00:07-00:08",
+            "shot_title": "イエローリボン交差と衝突スパーク",
+            "description": "画面右下から伸びる黄色いリボンと回転するオレンジ球体が衝突して白いスパークを散らし、右上に砂・岩肌テクスチャの球体が膨らむ。"
+          },
+          {
+            "shot_index": 6,
+            "range": "00:09-00:10",
+            "shot_title": "桜の花型アルファマットと純白ホワイトアウト",
+            "description": "マゼンタの花型太枠内に桜の実写映像が開花し、多要素のシナジーが最高潮に達した瞬間、画面全体が純白へ飛び切る。"
+          },
+          {
+            "shot_index": 7,
+            "range": "00:11-00:12",
+            "shot_title": "UI復帰「残り時間",
+            "description": "1秒 / 82%→86%」ズーム: 白飛び明けに再びダークUIのバーへ戻り、82%から86%へグッとカメラが寄り切ることでフィナーレの推進力を生む。"
+          }
+        ]
+      },
+      {
+        "attempt": 2,
+        "cut_index": 3,
+        "range": "00:10-00:13 (10.0-13.0s)",
+        "title": "残り1秒プログレスバーから数値86%への高速ズームイン遷移",
+        "category": "ui_motion",
+        "primary_tool": "After Effects",
+        "matches_existing_v2": true,
+        "observed_timestamps": [
+          {
+            "timestamp": "00:11",
+            "visual_evidence": "ダーク背景に「残り時間：1秒」「82%」の青いプログレスバー"
+          },
+          {
+            "timestamp": "00:12",
+            "visual_evidence": "バー右端と「86%」のテキストが大きくクローズアップ"
+          }
+        ],
+        "overlapping_sqlite_scenes": [
+          {
+            "shot_index": 5,
+            "range": "00:07-00:08",
+            "shot_title": "イエローリボン交差と衝突スパーク",
+            "description": "画面右下から伸びる黄色いリボンと回転するオレンジ球体が衝突して白いスパークを散らし、右上に砂・岩肌テクスチャの球体が膨らむ。"
+          },
+          {
+            "shot_index": 6,
+            "range": "00:09-00:10",
+            "shot_title": "桜の花型アルファマットと純白ホワイトアウト",
+            "description": "マゼンタの花型太枠内に桜の実写映像が開花し、多要素のシナジーが最高潮に達した瞬間、画面全体が純白へ飛び切る。"
+          },
+          {
+            "shot_index": 7,
+            "range": "00:11-00:12",
+            "shot_title": "UI復帰「残り時間",
+            "description": "1秒 / 82%→86%」ズーム: 白飛び明けに再びダークUIのバーへ戻り、82%から86%へグッとカメラが寄り切ることでフィナーレの推進力を生む。"
+          },
+          {
+            "shot_index": 8,
+            "range": "00:13-00:15",
+            "shot_title": "極太ライム日本語タイポとVGT東京ロゴ着地",
+            "description": "画面を覆う黄緑の巨大文字が一瞬フラッシュした直後、白文字「VIDEO GRAPHERS TOKYO」とグラデーション斜線入り「東京」ロゴが中央にロックアップして締める。"
+          }
+        ]
+      },
+      {
+        "attempt": 2,
+        "cut_index": 4,
+        "range": "00:13-00:15 (13.0-15.0s)",
+        "title": "グラデーション「東京」×「VIDEOGRAPHERS」ロゴのダイナミック着地",
+        "category": "kinetic_typography",
+        "primary_tool": "After Effects",
+        "matches_existing_v2": true,
+        "observed_timestamps": [
+          {
+            "timestamp": "00:13",
+            "visual_evidence": "黒背景に黄〜緑グラデーションの太い文字パーツが画面いっぱいに拡大表示"
+          },
+          {
+            "timestamp": "00:14",
+            "visual_evidence": "中央に「VIDEO GRAPHERS」「東京」「ビデオグラファーズトーキョー」ロゴが整列着地"
+          }
+        ],
+        "overlapping_sqlite_scenes": [
+          {
+            "shot_index": 7,
+            "range": "00:11-00:12",
+            "shot_title": "UI復帰「残り時間",
+            "description": "1秒 / 82%→86%」ズーム: 白飛び明けに再びダークUIのバーへ戻り、82%から86%へグッとカメラが寄り切ることでフィナーレの推進力を生む。"
+          },
+          {
+            "shot_index": 8,
+            "range": "00:13-00:15",
+            "shot_title": "極太ライム日本語タイポとVGT東京ロゴ着地",
+            "description": "画面を覆う黄緑の巨大文字が一瞬フラッシュした直後、白文字「VIDEO GRAPHERS TOKYO」とグラデーション斜線入り「東京」ロゴが中央にロックアップして締める。"
+          }
+        ]
       }
     ],
     "Xr032EhUDPw": [
@@ -1053,10 +1957,682 @@
             "description": "水辺の光の粒、深紅の闇に掲げられた掌、赤黒の脳内紋様を持つ人物を経て、障子と板張りの和室道場で白黒装束の剣士たちが密集し刃を交える凄絶な殺陣へ突入する。"
           }
         ]
+      },
+      {
+        "attempt": 2,
+        "cut_index": 1,
+        "range": "00:00-00:09 (0.0-9.0s)",
+        "title": "逆さまの赤黒都市空間180度カメラロールと黒い日食の開眼導入",
+        "category": "3d_camera",
+        "primary_tool": "Blender",
+        "matches_existing_v2": true,
+        "observed_timestamps": [
+          {
+            "timestamp": "00:00",
+            "visual_evidence": "上下反転した赤いビル群の中央に赤いコロナを纏う黒い円が浮かぶ"
+          },
+          {
+            "timestamp": "00:04",
+            "visual_evidence": "逆さまの虎杖の背中が画面に入り都市ごと回転し始める"
+          },
+          {
+            "timestamp": "00:09",
+            "visual_evidence": "正立した虎杖の頭上に黒い円が重なり中央に目が開く"
+          }
+        ],
+        "overlapping_sqlite_scenes": [
+          {
+            "shot_index": 1,
+            "range": "00:00-00:11",
+            "shot_title": "血紅の摩天楼渓谷に浮かぶ黒体太陽の「眼」と伏せる虎杖",
+            "description": "真っ赤なビル群がそびえ立つ渓谷の奥に黒い日食状の円環が現れ、倒れ込みあるいは見上げる虎杖悠仁の頭上でその円が巨大な一つの「眼」へと開眼する。"
+          },
+          {
+            "shot_index": 2,
+            "range": "00:11-00:22",
+            "shot_title": "3DCG都市俯瞰ダイブと伏黒恵・赤い結界陣",
+            "description": "紅蓮の爆煙が街を呑み込んだ直後、カメラは夕陽のオレンジに染まる精密な3DCGのビル街を真上から急降下し、鋭い眼光を放つ伏黒恵と赤い幾何学術式陣の虎杖へ繋ぐ。"
+          }
+        ]
+      },
+      {
+        "attempt": 2,
+        "cut_index": 2,
+        "range": "00:27-00:30 (27.0-30.0s)",
+        "title": "赤色発光の幾何学破砕ライン越しに展開する高速キャラ連続フラッシュ",
+        "category": "vfx_composite",
+        "primary_tool": "After Effects",
+        "matches_existing_v2": false,
+        "observed_timestamps": [
+          {
+            "timestamp": "00:27",
+            "visual_evidence": "赤い放射状ラインの中心に拳を突き出す九十九由基"
+          },
+          {
+            "timestamp": "00:28",
+            "visual_evidence": "赤い破砕ライン越しに咆哮するパンダへ瞬時切替"
+          },
+          {
+            "timestamp": "00:29",
+            "visual_evidence": "横一文字の刃と垂直赤ラインに挟まれた禪院真希から虎杖へ連続切替"
+          }
+        ],
+        "overlapping_sqlite_scenes": [
+          {
+            "shot_index": 3,
+            "range": "00:22-00:34",
+            "shot_title": "暗夜道路の孤立光と真希の赤黒インパクト一閃・九十九の都市俯瞰",
+            "description": "街灯1本だけに照らされた暗い道路に立つ孤独な人影から、赤と黒の衝撃線の中で大刀を振り抜く禪院真希、そして高層ビル屋上から街を見下ろす九十九由基へと展開する。"
+          }
+        ]
+      },
+      {
+        "attempt": 2,
+        "cut_index": 3,
+        "range": "00:34-00:38 (34.0-38.0s)",
+        "title": "モノクロ3D建築背景から深紅ブラー・日食へ急転換するタイトルロゴ演出",
+        "category": "motion_graphics",
+        "primary_tool": "After Effects",
+        "matches_existing_v2": true,
+        "observed_timestamps": [
+          {
+            "timestamp": "00:34",
+            "visual_evidence": "モノクロの細密ビル群の上に「呪術廻戦」のタイトルロゴが表示"
+          },
+          {
+            "timestamp": "00:35",
+            "visual_evidence": "下部に「死滅回游 前編」の白文字副題が加わる"
+          },
+          {
+            "timestamp": "00:38",
+            "visual_evidence": "背景が赤色ブラーへ変化し、ロゴ上に赤い日食と落下爆弾シルエットが出現"
+          }
+        ],
+        "overlapping_sqlite_scenes": [
+          {
+            "shot_index": 3,
+            "range": "00:22-00:34",
+            "shot_title": "暗夜道路の孤立光と真希の赤黒インパクト一閃・九十九の都市俯瞰",
+            "description": "街灯1本だけに照らされた暗い道路に立つ孤独な人影から、赤と黒の衝撃線の中で大刀を振り抜く禪院真希、そして高層ビル屋上から街を見下ろす九十九由基へと展開する。"
+          },
+          {
+            "shot_index": 4,
+            "range": "00:34-00:45",
+            "shot_title": "黄金の「呪術廻戦 死滅回游 前編」ロゴと天元・幾何学都市塊",
+            "description": "廃墟都市を背に黄金縁取りのタイトルロゴが赤黒い光の霞と共に現れたあと、純白空間の天元と漆黒の宙に浮かぶ立方体状の都市塊が静謐に示される。"
+          }
+        ]
+      },
+      {
+        "attempt": 2,
+        "cut_index": 4,
+        "range": "01:02-01:06 (62.0-66.0s)",
+        "title": "漆黒空間の単色ネオン・リムライトによるキャラクター連続ポーズ切替",
+        "category": "lighting_lookdev",
+        "primary_tool": "After Effects",
+        "matches_existing_v2": false,
+        "observed_timestamps": [
+          {
+            "timestamp": "01:02",
+            "visual_evidence": "漆黒背景の中央で水色の光に照らされた乙骨が手を合わせる"
+          },
+          {
+            "timestamp": "01:03",
+            "visual_evidence": "紫の強い発光エッジを纏った伏黒が正面へ手を突き出す"
+          },
+          {
+            "timestamp": "01:05",
+            "visual_evidence": "紫の軌道を描く真希から01:06の黄色リムライトの直哉立ち姿へ遷移"
+          }
+        ],
+        "overlapping_sqlite_scenes": [
+          {
+            "shot_index": 6,
+            "range": "00:57-01:08",
+            "shot_title": "真っ黄色のジムで拳を突き上げる髙羽・虎杖と黒闇の楽巌寺・黄金百足",
+            "description": "画面が一気に鮮やかなレモンイエローのトレーニングジムへ転じ、半分裸スーツの髙羽史彦が虎杖・伏黒と拳を掲げた直後、漆黒の中でエレキギターを弾く楽巌寺と黄金の百足呪霊が闇を裂く。"
+          },
+          {
+            "shot_index": 7,
+            "range": "01:08-01:19",
+            "shot_title": "水面反射・血の掌・天元脳裏から禅院家道場での高速剣戟乱舞へ",
+            "description": "水辺の光の粒、深紅の闇に掲げられた掌、赤黒の脳内紋様を持つ人物を経て、障子と板張りの和室道場で白黒装束の剣士たちが密集し刃を交える凄絶な殺陣へ突入する。"
+          }
+        ]
       }
     ],
-    "I0jHbsidh1g": [],
-    "kqj7b59D85Y": []
+    "I0jHbsidh1g": [
+      {
+        "attempt": 1,
+        "cut_index": 1,
+        "range": "00:01-00:12.5 (1.0-12.5s)",
+        "title": "監視カメラCRT枠と手描き小窓によるクレジット・タイトル展開",
+        "category": "ui_motion",
+        "primary_tool": "After Effects",
+        "matches_existing_v2": false,
+        "observed_timestamps": [
+          {
+            "timestamp": "00:03.0",
+            "visual_evidence": "CAM 01右側で手描き窓が開き「MUSIC EVE」と赤矢印が出現"
+          },
+          {
+            "timestamp": "00:06.5",
+            "visual_evidence": "CAM 02左側で窓が開き「MV IAN ZHANG RESH」を表示"
+          },
+          {
+            "timestamp": "00:12.0",
+            "visual_evidence": "CAM 03の黒猫ジャンプ直後に全面「LAZYCAT」ロゴが展開"
+          }
+        ],
+        "overlapping_sqlite_scenes": [
+          {
+            "shot_index": 1,
+            "range": "00:00-00:13",
+            "shot_title": "監視カメラ導入",
+            "description": "CAM 01〜03の中で黒猫が転がり、『MV IAN ZHANG / RESH』と赤矢印ロゴが躍る。"
+          },
+          {
+            "shot_index": 2,
+            "range": "00:13-00:26",
+            "shot_title": "無気力な日常ギャグ",
+            "description": "頭に赤矢印が刺さる少女がバレーボール、紙飛行機ゴミ箱、漫画コマ割りソファ寝そべりを軽快に繋ぐ。"
+          }
+        ]
+      },
+      {
+        "attempt": 1,
+        "cut_index": 2,
+        "range": "01:29-01:34 (89.0-94.0s)",
+        "title": "単一監視モニタから3x3マルチウォールへの3DカメラZ軸引き演出",
+        "category": "3d_camera",
+        "primary_tool": "After Effects",
+        "matches_existing_v2": true,
+        "observed_timestamps": [
+          {
+            "timestamp": "01:29.5",
+            "visual_evidence": "CAM 17単体フレーム内で少女のアップと薄い走査線を表示"
+          },
+          {
+            "timestamp": "01:31.5",
+            "visual_evidence": "カメラ後退によりCAM 11〜23の3x3監視モニタ群が黒ベゼル付きで展開"
+          },
+          {
+            "timestamp": "01:33.5",
+            "visual_evidence": "9画面すべてで異なる手描きループアニメが同時動作"
+          }
+        ],
+        "overlapping_sqlite_scenes": [
+          {
+            "shot_index": 5,
+            "range": "01:18-01:31",
+            "shot_title": "クレーンゲームと巨大パラボラ",
+            "description": "ぬいぐるみ満載のクレーンゲームから、巨大アレシボ型パラボラ望遠鏡を登る極端なスケール転換を見せる。"
+          },
+          {
+            "shot_index": 6,
+            "range": "01:31-01:50",
+            "shot_title": "3×3 CAMグリッドから漆黒反転へ",
+            "description": "CAM 11〜19グリッドからサムズアップ瞬間に白黒完全反転。白スパークが弾け、円形スポットに『UNDER BLUE』落書き、夜車窓、星空ヘアが続く。"
+          }
+        ]
+      },
+      {
+        "attempt": 1,
+        "cut_index": 3,
+        "range": "01:41-01:49 (101.0-109.0s)",
+        "title": "黒白反転ネガ空間の踏切ストロボ・光跡パース・星雲モーフィング連打",
+        "category": "motion_graphics",
+        "primary_tool": "After Effects",
+        "matches_existing_v2": false,
+        "observed_timestamps": [
+          {
+            "timestamp": "01:41.5",
+            "visual_evidence": "黒地白線に反転し、踏切の背後を白い列車窓が高速通過"
+          },
+          {
+            "timestamp": "01:47.0",
+            "visual_evidence": "横断歩道上の少女と黒猫の左右を白い光跡ラインがパース状に疾走"
+          },
+          {
+            "timestamp": "01:48.5",
+            "visual_evidence": "少女の髪が白い星輪郭へ分解し流れ星と共に右上へ伸びる"
+          }
+        ],
+        "overlapping_sqlite_scenes": [
+          {
+            "shot_index": 6,
+            "range": "01:31-01:50",
+            "shot_title": "3×3 CAMグリッドから漆黒反転へ",
+            "description": "CAM 11〜19グリッドからサムズアップ瞬間に白黒完全反転。白スパークが弾け、円形スポットに『UNDER BLUE』落書き、夜車窓、星空ヘアが続く。"
+          },
+          {
+            "shot_index": 7,
+            "range": "01:50-02:23",
+            "shot_title": "白空間帰還とボードサーフィン",
+            "description": "弾むボールや交差点俯瞰、窓辺を経て、遠近楕円トンネルから白空間ボードサーフィンの疾走作画へ突入する。"
+          }
+        ]
+      },
+      {
+        "attempt": 1,
+        "cut_index": 4,
+        "range": "02:30.5-02:33.5 (150.5-153.5s)",
+        "title": "3x3監視モニタ群の順次消灯とCRT水平ライン収束シャットダウン",
+        "category": "transition",
+        "primary_tool": "After Effects",
+        "matches_existing_v2": false,
+        "observed_timestamps": [
+          {
+            "timestamp": "02:31.0",
+            "visual_evidence": "3x3監視モニタ群へ回帰し中央CAM 17に少女と黒猫を表示"
+          },
+          {
+            "timestamp": "02:32.0",
+            "visual_evidence": "外周モニタが順次消灯し右側が細い白水平ラインへ収縮"
+          },
+          {
+            "timestamp": "02:32.8",
+            "visual_evidence": "中央画面も消滅して完全な黒画面へ遷移"
+          }
+        ],
+        "overlapping_sqlite_scenes": [
+          {
+            "shot_index": 8,
+            "range": "02:23-02:36",
+            "shot_title": "脱力オチと通知272回収",
+            "description": "床の大の字、横倒しCRTの『GAME OVER』、通知『272』へ増えたポストで粋に締める。"
+          }
+        ]
+      },
+      {
+        "attempt": 2,
+        "cut_index": 1,
+        "range": "00:01-00:12 (1.0-12.5s)",
+        "title": "監視カメラUI枠内の扉ギミックとブラシ調タイトル出現",
+        "category": "kinetic_typography",
+        "primary_tool": "After Effects",
+        "matches_existing_v2": false,
+        "observed_timestamps": [
+          {
+            "timestamp": "00:03.5",
+            "visual_evidence": "CAM 01右側の手描き扉が開きMUSIC EVEと赤矢印が表示"
+          },
+          {
+            "timestamp": "00:06.5",
+            "visual_evidence": "CAM 02左側の扉内にMV IAN ZHANG RESHが表示"
+          },
+          {
+            "timestamp": "00:12.0",
+            "visual_evidence": "CAM 03中央にLAZY CATと太い赤矢印アンダーラインが出現"
+          }
+        ],
+        "overlapping_sqlite_scenes": [
+          {
+            "shot_index": 1,
+            "range": "00:00-00:13",
+            "shot_title": "監視カメラ導入",
+            "description": "CAM 01〜03の中で黒猫が転がり、『MV IAN ZHANG / RESH』と赤矢印ロゴが躍る。"
+          },
+          {
+            "shot_index": 2,
+            "range": "00:13-00:26",
+            "shot_title": "無気力な日常ギャグ",
+            "description": "頭に赤矢印が刺さる少女がバレーボール、紙飛行機ゴミ箱、漫画コマ割りソファ寝そべりを軽快に繋ぐ。"
+          }
+        ]
+      },
+      {
+        "attempt": 2,
+        "cut_index": 2,
+        "range": "01:28-01:33 (88.5-93.5s)",
+        "title": "CAM17接写から3x3監視モニター群への高速ズームアウト演出",
+        "category": "3d_camera",
+        "primary_tool": "After Effects",
+        "matches_existing_v2": true,
+        "observed_timestamps": [
+          {
+            "timestamp": "01:29.5",
+            "visual_evidence": "CAM 17枠内で赤矢印の少女がカメラ目線でアップ表示"
+          },
+          {
+            "timestamp": "01:31.5",
+            "visual_evidence": "CAM 11〜23の3x3モニター群が黒ベゼル付きで同時稼働"
+          }
+        ],
+        "overlapping_sqlite_scenes": [
+          {
+            "shot_index": 5,
+            "range": "01:18-01:31",
+            "shot_title": "クレーンゲームと巨大パラボラ",
+            "description": "ぬいぐるみ満載のクレーンゲームから、巨大アレシボ型パラボラ望遠鏡を登る極端なスケール転換を見せる。"
+          },
+          {
+            "shot_index": 6,
+            "range": "01:31-01:50",
+            "shot_title": "3×3 CAMグリッドから漆黒反転へ",
+            "description": "CAM 11〜19グリッドからサムズアップ瞬間に白黒完全反転。白スパークが弾け、円形スポットに『UNDER BLUE』落書き、夜車窓、星空ヘアが続く。"
+          }
+        ]
+      },
+      {
+        "attempt": 2,
+        "cut_index": 3,
+        "range": "01:41-01:49 (101.0-109.5s)",
+        "title": "白黒反転モノクロ間奏の踏切ストロボ・円形マスク・速度線パース合成",
+        "category": "motion_graphics",
+        "primary_tool": "After Effects",
+        "matches_existing_v2": false,
+        "observed_timestamps": [
+          {
+            "timestamp": "01:41.0",
+            "visual_evidence": "黒背景の踏切前で白い電車窓が高速に横切るシルエットカット"
+          },
+          {
+            "timestamp": "01:47.0",
+            "visual_evidence": "夜の横断歩道に立つ少女と猫の周囲を白い光跡線が放射状に疾走"
+          },
+          {
+            "timestamp": "01:48.5",
+            "visual_evidence": "横顔の少女の髪が白い星型輪郭にほどけて右上へ流れる"
+          }
+        ],
+        "overlapping_sqlite_scenes": [
+          {
+            "shot_index": 6,
+            "range": "01:31-01:50",
+            "shot_title": "3×3 CAMグリッドから漆黒反転へ",
+            "description": "CAM 11〜19グリッドからサムズアップ瞬間に白黒完全反転。白スパークが弾け、円形スポットに『UNDER BLUE』落書き、夜車窓、星空ヘアが続く。"
+          },
+          {
+            "shot_index": 7,
+            "range": "01:50-02:23",
+            "shot_title": "白空間帰還とボードサーフィン",
+            "description": "弾むボールや交差点俯瞰、窓辺を経て、遠近楕円トンネルから白空間ボードサーフィンの疾走作画へ突入する。"
+          }
+        ]
+      },
+      {
+        "attempt": 2,
+        "cut_index": 4,
+        "range": "02:30-02:33 (150.5-153.0s)",
+        "title": "アウトロ3x3監視画面のビート同期CRT電源オフ順次収束",
+        "category": "micro_fx_glitch",
+        "primary_tool": "After Effects",
+        "matches_existing_v2": false,
+        "observed_timestamps": [
+          {
+            "timestamp": "02:31.0",
+            "visual_evidence": "9分割モニター群の中央CAM 17に少女と黒猫が表示"
+          },
+          {
+            "timestamp": "02:32.0",
+            "visual_evidence": "右側のモニターが水平の白い細い線に潰れて消灯する瞬間"
+          },
+          {
+            "timestamp": "02:32.8",
+            "visual_evidence": "最後に残った中央画面も消灯し完全黒画面へ終了"
+          }
+        ],
+        "overlapping_sqlite_scenes": [
+          {
+            "shot_index": 8,
+            "range": "02:23-02:36",
+            "shot_title": "脱力オチと通知272回収",
+            "description": "床の大の字、横倒しCRTの『GAME OVER』、通知『272』へ増えたポストで粋に締める。"
+          }
+        ]
+      }
+    ],
+    "kqj7b59D85Y": [
+      {
+        "attempt": 1,
+        "cut_index": 1,
+        "range": "00:06-00:14 (6.0-14.0s)",
+        "title": "SNSチャット風UIのビート同期スクロール＆縦長マスク絞り込み遷移",
+        "category": "ui_motion",
+        "primary_tool": "After Effects",
+        "matches_existing_v2": false,
+        "observed_timestamps": [
+          {
+            "timestamp": "00:07",
+            "visual_evidence": "ピンク背景上で吹き出しが上送りされ、右側に青い魚のスタンプが2つ縦並びで表示"
+          },
+          {
+            "timestamp": "00:11",
+            "visual_evidence": "左列に「ざこのざこ攻撃」の白吹き出しがリズムに合わせて出現"
+          },
+          {
+            "timestamp": "00:13.5",
+            "visual_evidence": "「効かないよw」「ざぁ」表示と同時に左右から黒帯が迫り中央縦長画角へ絞り込み"
+          }
+        ],
+        "overlapping_sqlite_scenes": [
+          {
+            "shot_index": 1,
+            "range": "00:00-00:22",
+            "shot_title": "パステルピンク全面のチャット吹き出し連打と机上の亞北ネル",
+            "description": "ピンク一色の無地画面にメッセンジャー風の白い吹き出し（「ざこ」「ざこざこ」「くだらない存在」「あわれだね」）が積み上がり、右端の細縦パネルに机に頬杖をついた亞北ネルが現れる。"
+          }
+        ]
+      },
+      {
+        "attempt": 1,
+        "cut_index": 2,
+        "range": "00:59-01:10 (59.0-70.0s)",
+        "title": "3分割縦長パネルの1→2→3列クローン増殖・音ハメダンス構成",
+        "category": "motion_graphics",
+        "primary_tool": "After Effects",
+        "matches_existing_v2": true,
+        "observed_timestamps": [
+          {
+            "timestamp": "00:59",
+            "visual_evidence": "黒背景の中央パネルのみピンクで開き、亞北ネルが口元に手を当ててウィンク"
+          },
+          {
+            "timestamp": "01:03",
+            "visual_evidence": "左と中央の2列が同時表示され、2体のネルが同期ポーズで笑うカット"
+          },
+          {
+            "timestamp": "01:07",
+            "visual_evidence": "3列すべてが点灯し、3体のネルが一斉にリズムダンスを展開"
+          }
+        ],
+        "overlapping_sqlite_scenes": [
+          {
+            "shot_index": 3,
+            "range": "00:49-01:16",
+            "shot_title": "釣り竿カットの明暗転換とチビキャラ煽りダンスループ",
+            "description": "横顔の釣り竿シーンから一気に画面が暗転（闇落ちライト）し、スマホを握る影のネルを経て、明るいピンク背景で左右に足を跳ねさせる中毒性の高いサビダンスが始まる。"
+          }
+        ]
+      },
+      {
+        "attempt": 1,
+        "cut_index": 3,
+        "range": "01:55-02:01 (115.0-121.0s)",
+        "title": "中央縦長パネル内の魚図鑑高速スライドショー＆巨大魚オチ演出",
+        "category": "graphic_design",
+        "primary_tool": "After Effects",
+        "matches_existing_v2": false,
+        "observed_timestamps": [
+          {
+            "timestamp": "01:55",
+            "visual_evidence": "中央ピンクパネルに「たなご」「最大10cmに達する」のミニマルな図鑑レイアウトを表示"
+          },
+          {
+            "timestamp": "01:58",
+            "visual_evidence": "細長い「くるめさより」のイラストと説明テキストへ拍同期で切替"
+          },
+          {
+            "timestamp": "02:00",
+            "visual_evidence": "「ゴライアス・タイガーフィッシュ」の大きな魚イラストがパネル幅いっぱいに登場"
+          }
+        ],
+        "overlapping_sqlite_scenes": [
+          {
+            "shot_index": 5,
+            "range": "01:47-02:14",
+            "shot_title": "ピクセルサングラスと小魚（いわし9.5cm）vs 巨大カジキ（459.9cm）",
+            "description": "緑色のデジタル風サングラスをかけてスマホを構えるパネルに続き、釣り上げた「いわし 9.5cm」に対して体長を超える巨大な「かじき 459.9cm（新記録！）」が画面を突き破るギャグが炸裂する。"
+          }
+        ]
+      },
+      {
+        "attempt": 1,
+        "cut_index": 4,
+        "range": "02:19-02:28 (139.0-148.0s)",
+        "title": "16:9全画面解放・前景ミク＆テトと背景ネルの奥行きレイヤー合成ダンス",
+        "category": "vfx_composite",
+        "primary_tool": "After Effects",
+        "matches_existing_v2": false,
+        "observed_timestamps": [
+          {
+            "timestamp": "02:19",
+            "visual_evidence": "全画面ピンク背景で右前景に初音ミク、背後に半透明ぼかし状の亞北ネルが座る構図"
+          },
+          {
+            "timestamp": "02:23",
+            "visual_evidence": "左側に重音テトが現れ、中央のミクと前後レイヤーを交差させてダンス"
+          },
+          {
+            "timestamp": "02:28",
+            "visual_evidence": "ミク・ネル・テトの3人が画面横一列に並び、同じ振り付けでキメポーズ"
+          }
+        ],
+        "overlapping_sqlite_scenes": [
+          {
+            "shot_index": 6,
+            "range": "02:15-02:38",
+            "shot_title": "初音ミク＆重音テト参戦のフルワイド群舞と背後体育座り",
+            "description": "パネルの枠が全面ピンクへ解放され、初音ミク（左右）と重音テト（中央）が楽しげに踊る背後で、主人公のネルだけが隅っこで体育座りしてふてくされるという絶妙なメタオチが入る。"
+          }
+        ]
+      },
+      {
+        "attempt": 2,
+        "cut_index": 1,
+        "range": "00:06-00:14 (6.0-14.0s)",
+        "title": "チャットUI風吹き出しの縦スクロール連投と3分割黒帯ワイプ導入",
+        "category": "ui_motion",
+        "primary_tool": "After Effects",
+        "matches_existing_v2": false,
+        "observed_timestamps": [
+          {
+            "timestamp": "00:07",
+            "visual_evidence": "右寄せの水色魚風スタンプが縦に2つ連続表示される"
+          },
+          {
+            "timestamp": "00:10",
+            "visual_evidence": "左寄せ白吹き出し「ざこ」「ざこざこ」「ざこのざこ攻撃」が積まれる"
+          },
+          {
+            "timestamp": "00:14",
+            "visual_evidence": "左右から黒帯が迫り中央の縦長1/3フレームに切り替わる"
+          }
+        ],
+        "overlapping_sqlite_scenes": [
+          {
+            "shot_index": 1,
+            "range": "00:00-00:22",
+            "shot_title": "パステルピンク全面のチャット吹き出し連打と机上の亞北ネル",
+            "description": "ピンク一色の無地画面にメッセンジャー風の白い吹き出し（「ざこ」「ざこざこ」「くだらない存在」「あわれだね」）が積み上がり、右端の細縦パネルに机に頬杖をついた亞北ネルが現れる。"
+          }
+        ]
+      },
+      {
+        "attempt": 2,
+        "cut_index": 2,
+        "range": "00:57-01:08 (57.0-68.0s)",
+        "title": "縦3分割マスク切替と2〜3体クローン増殖による音ハメダンス構成",
+        "category": "motion_graphics",
+        "primary_tool": "After Effects",
+        "matches_existing_v2": true,
+        "observed_timestamps": [
+          {
+            "timestamp": "00:57",
+            "visual_evidence": "左1/3列のみピンク背景で亞北ネルがポーズ、右2/3は黒"
+          },
+          {
+            "timestamp": "01:02",
+            "visual_evidence": "左列と中央列に同一ダンスポーズのキャラが2体並列表示"
+          },
+          {
+            "timestamp": "01:07",
+            "visual_evidence": "左・中・右の全3列に3体のキャラが同時表示される"
+          }
+        ],
+        "overlapping_sqlite_scenes": [
+          {
+            "shot_index": 3,
+            "range": "00:49-01:16",
+            "shot_title": "釣り竿カットの明暗転換とチビキャラ煽りダンスループ",
+            "description": "横顔の釣り竿シーンから一気に画面が暗転（闇落ちライト）し、スマホを握る影のネルを経て、明るいピンク背景で左右に足を跳ねさせる中毒性の高いサビダンスが始まる。"
+          }
+        ]
+      },
+      {
+        "attempt": 2,
+        "cut_index": 3,
+        "range": "02:01-02:09 (121.0-129.0s)",
+        "title": "暗転パネル内の発光ネオンサングラスと枠越え巨大カジキ出現演出",
+        "category": "lighting_lookdev",
+        "primary_tool": "After Effects",
+        "matches_existing_v2": false,
+        "observed_timestamps": [
+          {
+            "timestamp": "02:03",
+            "visual_evidence": "左列が暗転し緑のシャッターシェイドのみ明るく発光して浮き上がる"
+          },
+          {
+            "timestamp": "02:05",
+            "visual_evidence": "中央列が開き釣り糸に吊られた「いわし 9.5cm」が表示される"
+          },
+          {
+            "timestamp": "02:07",
+            "visual_evidence": "右列に「かじき 459.9cm 新記録!」が列境界を跨ぐサイズで出現"
+          }
+        ],
+        "overlapping_sqlite_scenes": [
+          {
+            "shot_index": 5,
+            "range": "01:47-02:14",
+            "shot_title": "ピクセルサングラスと小魚（いわし9.5cm）vs 巨大カジキ（459.9cm）",
+            "description": "緑色のデジタル風サングラスをかけてスマホを構えるパネルに続き、釣り上げた「いわし 9.5cm」に対して体長を超える巨大な「かじき 459.9cm（新記録！）」が画面を突き破るギャグが炸裂する。"
+          }
+        ]
+      },
+      {
+        "attempt": 2,
+        "cut_index": 4,
+        "range": "02:19-02:29 (139.0-149.0s)",
+        "title": "前後レイヤー階層と不透明度差分で魅せるミク・テト合流3人ダンス",
+        "category": "motion_graphics",
+        "primary_tool": "After Effects",
+        "matches_existing_v2": false,
+        "observed_timestamps": [
+          {
+            "timestamp": "02:19",
+            "visual_evidence": "全面ピンク背景で前景の初音ミクが踊り、後景に淡いトーンの亞北ネルが座る"
+          },
+          {
+            "timestamp": "02:23",
+            "visual_evidence": "左奥に重音テトが登場し、ミクと前後階層を保ったまま配置が変化する"
+          },
+          {
+            "timestamp": "02:28",
+            "visual_evidence": "ミク・ネル・テトの3人が前景横一列に揃い同じポーズで踊る"
+          }
+        ],
+        "overlapping_sqlite_scenes": [
+          {
+            "shot_index": 6,
+            "range": "02:15-02:38",
+            "shot_title": "初音ミク＆重音テト参戦のフルワイド群舞と背後体育座り",
+            "description": "パネルの枠が全面ピンクへ解放され、初音ミク（左右）と重音テト（中央）が楽しげに踊る背後で、主人公のネルだけが隅っこで体育座りしてふてくされるという絶妙なメタオチが入る。"
+          }
+        ]
+      }
+    ]
   },
   "M6_details": {
     "pass": false,
@@ -1124,14 +2700,82 @@
         "style_profile_ok": true
       },
       "I0jHbsidh1g": {
-        "pass": false,
-        "error": "missing_draft"
+        "pass": true,
+        "upserted_cuts": 4,
+        "retrieved_cuts": 4,
+        "found_in_v2_search": true,
+        "targeted_search_hits": 1,
+        "reference_candidates_count": 8,
+        "in_reference_candidates": true,
+        "plan_cuts_count": 6,
+        "plan_includes_this_video": true,
+        "locked_palette_hex": {
+          "base": "#F4F5F2",
+          "primary": "#0C0C0C",
+          "accent": "#E8384F"
+        },
+        "has_palette": true,
+        "has_ae_blueprint_layers": true,
+        "has_transition_bridge": true,
+        "style_profile_ok": true
       },
       "kqj7b59D85Y": {
         "pass": false,
-        "error": "missing_draft"
+        "upserted_cuts": 4,
+        "retrieved_cuts": 0,
+        "found_in_v2_search": false,
+        "targeted_search_hits": 50,
+        "reference_candidates_count": 8,
+        "in_reference_candidates": false,
+        "plan_cuts_count": 6,
+        "plan_includes_this_video": false,
+        "locked_palette_hex": {
+          "base": "#181818",
+          "primary": "#585858",
+          "accent": "#685878"
+        },
+        "has_palette": true,
+        "has_ae_blueprint_layers": true,
+        "has_transition_bridge": true,
+        "style_profile_ok": true
       }
     }
   },
-  "M7_details": {}
+  "M7_details": {
+    "FcIFvzP8-mg": {
+      "r1_cuts": 3,
+      "r2_cuts": 3,
+      "tool_agreement": 0.6667,
+      "category_agreement": 0.3333,
+      "mean_best_iou": 0.9611
+    },
+    "jsEVOjI690Y": {
+      "r1_cuts": 3,
+      "r2_cuts": 4,
+      "tool_agreement": 1.0,
+      "category_agreement": 0.6667,
+      "mean_best_iou": 0.8667
+    },
+    "Xr032EhUDPw": {
+      "r1_cuts": 4,
+      "r2_cuts": 4,
+      "tool_agreement": 0.75,
+      "category_agreement": 0.75,
+      "mean_best_iou": 0.6875
+    },
+    "I0jHbsidh1g": {
+      "r1_cuts": 4,
+      "r2_cuts": 4,
+      "tool_agreement": 1.0,
+      "category_agreement": 0.5,
+      "mean_best_iou": 0.8982
+    },
+    "kqj7b59D85Y": {
+      "r1_cuts": 4,
+      "r2_cuts": 4,
+      "tool_agreement": 1.0,
+      "category_agreement": 0.5,
+      "mean_best_iou": 0.6481
+    }
+  }
 }

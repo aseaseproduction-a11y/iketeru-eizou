@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-25T18:07:00+09:00",
+  "run_id": "pilot_20261125_162300",
+  "preregistration_file": "analysis/pilot_api_craft_recipe/preregistration.json",
+  "preregistration_unmodified": true,
+  "preregistration_lf_sha256": "e01cc0097d1995e2ae84ec850275132445d5d58d458c2130c345c29d5a45be94",
+  "deviation_type": "service_tier_switch_flex_to_standard",
+  "reason": "日中（16:23〜17:07 JST）の Flex 混雑により 503 が 7 回発生し 3/10 コールで安全停止したため、ユーザー承認のうえ残り 7 コール（calls 4..10 に相当する再試行・未実行分）を Standard ティアへ切り替えて完走させる。モデル（gemini-4-neon）・thinking_level（high）・プロンプト（SHA-256 1c088bb9...）・動画 5 本・1 fps 設定・合格ラインは事前登録から一切変更しない。",
+  "calls_completed_on_flex": [
+    { "video_id": "FcIFvzP8-mg", "attempt": 1, "cost_usd": 0.059225 },
+    { "video_id": "jsEVOjI690Y", "attempt": 1, "cost_usd": 0.066625 },
+    { "video_id": "Xr032EhUDPw", "attempt": 1, "cost_usd": 0.081788 }
+  ],
+  "remaining_calls_switched_to_standard": [
+    { "video_id": "FcIFvzP8-mg", "attempt": 2 },
+    { "video_id": "jsEVOjI690Y", "attempt": 2 },
+    { "video_id": "Xr032EhUDPw", "attempt": 2 },
+    { "video_id": "I0jHbsidh1g", "attempt": 1 },
+    { "video_id": "I0jHbsidh1g", "attempt": 2 },
+    { "video_id": "kqj7b59D85Y", "attempt": 1 },
+    { "video_id": "kqj7b59D85Y", "attempt": 2 }
+  ],
+  "run_budget_cap_usd_before": 1.2,
+  "run_budget_cap_usd_after": 1.5,
+  "flex_equivalence_basis": "flex_smoke_20261125_144800 にて Flex と Standard の入力動画トークン完全一致・平均差 +0.50 点を確認済み。"
+}

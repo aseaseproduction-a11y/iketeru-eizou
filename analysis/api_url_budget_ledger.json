@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-25T08:15:25.212Z",
+  "updated_at": "2026-11-25T09:24:23.777Z",
   "currency": "USD",
   "default_monthly_limit_usd": 38,
   "gcp_monthly_credit_usd": 40,
@@ -17,8 +17,8 @@
   "monthly_totals": {
     "2026-11": {
       "limit_usd": 38,
-      "spent_usd": 2.821579,
-      "calls_count": 38,
+      "spent_usd": 4.273717,
+      "calls_count": 47,
       "congestion_failure_count": 19,
       "runs": [
         {
@@ -67,9 +67,9 @@
         {
           "run_id": "pilot_20261125_162300",
           "purpose": "pilot_craft_recipe_5x2_1fps",
-          "service_tier": "flex",
-          "calls_count": 3,
-          "cost_usd": 0.207638,
+          "service_tier": "standard",
+          "calls_count": 10,
+          "cost_usd": 1.530374,
           "congestion_failure_count": 7,
           "congestion_timestamps": [
             "2026-11-25T07:24:02.876Z",
@@ -80,7 +80,7 @@
             "2026-11-25T07:42:47.256Z",
             "2026-11-25T08:07:03.319Z"
           ],
-          "recorded_at": "2026-11-25T08:07:03.334Z"
+          "recorded_at": "2026-11-25T09:22:35.069Z"
         },
         {
           "run_id": "supplemental_pass2_xr032_0110_0117",
@@ -91,6 +91,16 @@
           "congestion_failure_count": 0,
           "congestion_timestamps": [],
           "recorded_at": "2026-11-25T08:15:25.211Z"
+        },
+        {
+          "run_id": "restricted_probe_20261125_180700",
+          "purpose": "probe_p0_restricted_2_standard",
+          "service_tier": "standard",
+          "calls_count": 2,
+          "cost_usd": 0.129402,
+          "congestion_failure_count": 0,
+          "congestion_timestamps": [],
+          "recorded_at": "2026-11-25T09:24:23.775Z"
         }
       ]
     }

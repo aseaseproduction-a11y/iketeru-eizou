@@ -2,12 +2,12 @@
   "schema_version": 1,
   "run_id": "pilot_20261125_162300",
   "worker": "CHIBA-PC-api",
-  "generated_at": "2026-11-25T08:07:03.333Z",
+  "generated_at": "2026-11-25T09:22:35.067Z",
   "evidence_root": "E:\\iketeru_api_url_logs\\pilot_craft_recipe_pilot_20261125_162300",
   "calls_dir": "E:\\iketeru_api_url_logs\\pilot_craft_recipe_pilot_20261125_162300\\calls",
   "summary": {
-    "file_count": 3,
-    "total_bytes": 231676,
+    "file_count": 10,
+    "total_bytes": 848180,
     "secret_scan_passed": true
   },
   "files": [
@@ -37,6 +37,69 @@
       "call_index": 5,
       "size_bytes": 86981,
       "sha256": "3631079b12eae4038c8064f786388687e6055bcdbc02425080680a30ebbcd224"
+    },
+    {
+      "rel_path": "calls/008_FcIFvzP8-mg_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\pilot_craft_recipe_pilot_20261125_162300\\calls\\008_FcIFvzP8-mg_r2.json",
+      "video_id": "FcIFvzP8-mg",
+      "attempt": 2,
+      "call_index": 8,
+      "size_bytes": 63252,
+      "sha256": "03a61428424c9d275fd33e48885aef809c16b3722a8904118516e0f8edbe4fcf"
+    },
+    {
+      "rel_path": "calls/009_jsEVOjI690Y_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\pilot_craft_recipe_pilot_20261125_162300\\calls\\009_jsEVOjI690Y_r2.json",
+      "video_id": "jsEVOjI690Y",
+      "attempt": 2,
+      "call_index": 9,
+      "size_bytes": 76583,
+      "sha256": "c6994adf0852dbb3eed185b7260ffcf6741148a58b3828a17f6629e17cb5deb3"
+    },
+    {
+      "rel_path": "calls/010_Xr032EhUDPw_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\pilot_craft_recipe_pilot_20261125_162300\\calls\\010_Xr032EhUDPw_r2.json",
+      "video_id": "Xr032EhUDPw",
+      "attempt": 2,
+      "call_index": 10,
+      "size_bytes": 92621,
+      "sha256": "1d8c8a5cab5b3c20a949188f9b6772675b836a89e3ddf17584804f7797c03f58"
+    },
+    {
+      "rel_path": "calls/011_I0jHbsidh1g_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\pilot_craft_recipe_pilot_20261125_162300\\calls\\011_I0jHbsidh1g_r1.json",
+      "video_id": "I0jHbsidh1g",
+      "attempt": 1,
+      "call_index": 11,
+      "size_bytes": 96876,
+      "sha256": "ce012783322be2903248f3bc2165922d824a30f5df110da2533854f2608e10cd"
+    },
+    {
+      "rel_path": "calls/012_I0jHbsidh1g_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\pilot_craft_recipe_pilot_20261125_162300\\calls\\012_I0jHbsidh1g_r2.json",
+      "video_id": "I0jHbsidh1g",
+      "attempt": 2,
+      "call_index": 12,
+      "size_bytes": 92614,
+      "sha256": "ebba6cb903bf59ff5d4335000e2cfa809c5aadd59f95b9741c8b76c6dda8fd0c"
+    },
+    {
+      "rel_path": "calls/013_kqj7b59D85Y_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\pilot_craft_recipe_pilot_20261125_162300\\calls\\013_kqj7b59D85Y_r1.json",
+      "video_id": "kqj7b59D85Y",
+      "attempt": 1,
+      "call_index": 13,
+      "size_bytes": 99285,
+      "sha256": "2beb67d8c15ac701d02c47e1f0e605b0c48e9100a1e3cfabc5c7b9107aea5586"
+    },
+    {
+      "rel_path": "calls/014_kqj7b59D85Y_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\pilot_craft_recipe_pilot_20261125_162300\\calls\\014_kqj7b59D85Y_r2.json",
+      "video_id": "kqj7b59D85Y",
+      "attempt": 2,
+      "call_index": 14,
+      "size_bytes": 95273,
+      "sha256": "806ff111334cf8803dd649a2745e59af211f70870d363ca5591ec267abadf318"
     }
   ]
 }

@@ -593,6 +593,44 @@ def main() -> None:
     fast_cut_combined = fast_cut_major_boundary_errs["jsEVOjI690Y"] + fast_cut_major_boundary_errs["Xr032EhUDPw"]
     fast_cut_combined_median = round(statistics.median(fast_cut_combined), 3) if fast_cut_combined else None
 
+    # Supplemental 4-video summary excluding kqj7b59D85Y (whose existing SQLite analysis/scenes were flagged
+    # "partially different" by chibatmute's visual audit). Preregistered 5-video summary above is unchanged.
+    vids_ex_kqj = [v for v in video_ids if v != "kqj7b59D85Y"]
+    m1_ex = sum(1 for v in vids_ex_kqj for a in (1, 2) if m1_calls.get(f"{v}_r{a}", {}).get("pass"))
+    m2_ex = sum(1 for v in vids_ex_kqj for a in (1, 2) if m2_calls.get(f"{v}_r{a}", {}).get("pass"))
+    total_major_ex = sum(len(gt[v]["existing_v2_major"]) for v in vids_ex_kqj)
+    matched_major_ex = sum(
+        sum(1 for m in m3_m5_by_vid[v]["major_matches_union"] if m and m["time_matched"])
+        for v in vids_ex_kqj
+    )
+    errs_ex_boundary = []
+    errs_ex_mid = []
+    for v in vids_ex_kqj:
+        for m in m3_m5_by_vid[v]["major_matches_union"]:
+            if m and m["time_matched"]:
+                errs_ex_boundary.extend([m["start_err_sec"], m["end_err_sec"]])
+                errs_ex_mid.append(m["midpoint_err_sec"])
+    m6_ex_pass = all(m6_res["per_video"].get(v, {}).get("pass") for v in vids_ex_kqj) and m6_res["prod_sqlite_untouched"]
+    m7_ex = [m7_by_vid[v] for v in vids_ex_kqj if v in m7_by_vid]
+
+    summary_excluding_kqj7b59D85Y = {
+        "videos_included": vids_ex_kqj,
+        "excluded_video_id": "kqj7b59D85Y",
+        "exclusion_reason": "chibatmute visual audit flagged existing SQLite analysis/scenes as partially different (hallucination / order inversion)",
+        "M1_pass_calls": f"{m1_ex}/{len(vids_ex_kqj)*2}",
+        "M1_pass": m1_ex == len(vids_ex_kqj) * 2,
+        "M2_pass_calls": f"{m2_ex}/{len(vids_ex_kqj)*2}",
+        "M2_pass": m2_ex == len(vids_ex_kqj) * 2,
+        "M3_time_matched_major_union": f"{matched_major_ex}/{total_major_ex}",
+        "M3_time_recall_ratio": round(matched_major_ex / total_major_ex, 4) if total_major_ex else None,
+        "M5_median_boundary_err_sec": round(statistics.median(errs_ex_boundary), 3) if errs_ex_boundary else None,
+        "M5_median_midpoint_err_sec": round(statistics.median(errs_ex_mid), 3) if errs_ex_mid else None,
+        "M6_pass": m6_ex_pass,
+        "M7_avg_tool_agreement": round(statistics.mean(x["tool_agreement"] for x in m7_ex), 4) if m7_ex else None,
+        "M7_avg_category_agreement": round(statistics.mean(x["category_agreement"] for x in m7_ex), 4) if m7_ex else None,
+        "M7_avg_best_iou": round(statistics.mean(x["mean_best_iou"] for x in m7_ex), 4) if m7_ex else None,
+    }
+
     report = {
         "run_dir": str(run_dir),
         "summary": {
@@ -631,6 +669,7 @@ def main() -> None:
             if m7_by_vid
             else None,
         },
+        "summary_excluding_kqj7b59D85Y": summary_excluding_kqj7b59D85Y,
         "M1_details": m1_calls,
         "M2_details": m2_calls,
         "M3_M5_details": m3_m5_by_vid,
