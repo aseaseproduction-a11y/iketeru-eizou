@@ -84,6 +84,15 @@ git push
 ### ステップ3: 予約したIDリストで動画準備〜採点〜TiDB反映（書き込みロック必須）
 `--claim` が出力する `next_prepare_cmd` を使って `prepare-phase3-batch.mjs` を実行します（凍結設定は不変・YouTubeログイン不要・ボット確認で即停止）。
 
+#### 採点割り当て直後のプロンプト完全一致チェック（必須運用）
+1. **会話履歴の自動要約（compaction）後**: 採点用プロンプトを記憶から組み立て直さず、必ず `renderCalibrationPrompt(spec)` の出力（例: `node scripts/verify-dispatched-prompt.mjs --run-id <run_id> --video-id <id> --mode <video|contact_sheet> --print-prompt` または一括書き出しファイル）を読み直してから転記する。
+2. **割り当て直後の即時照合（完了待ち不要）**: `invoke_subagent` で採点役を割り当てて `dispatch_log.jsonl` に追記した**直後**に、採点完了を待たず `verify-dispatched-prompt.mjs` で各採点役の会話ログ先頭プロンプトを `renderCalibrationPrompt(spec)` と完全一致照合する：
+```powershell
+# 直近 N 件の割り当てを即時照合（単体指定は --video-id / --mode / --subagent-id）
+node scripts/verify-dispatched-prompt.mjs --run-id <run_id> --from-dispatch-log --last 24
+```
+3. **不一致時の対応**: `failed > 0` が出た採点役の結果は使わず（完了を待たず）、`renderCalibrationPrompt(spec)` の出力を読み直して**すぐ割り当て直す**。
+
 本番 TiDB への書き込みは **同時に1台だけ** に制限するため、Git 管理の書き込みロック **`analysis/claims/_apply_lock.json`** を使用します（ロック未取得のまま `--apply` を実行すると `apply-phase3-batch-to-tidb.mjs` が即停止します）。
 
 1. **旧40列照合用の Phase 3 開始前バックアップを自PCに用意（初回のみ）**
