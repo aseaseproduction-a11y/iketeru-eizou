@@ -60,6 +60,7 @@ node scripts/claim-phase3-batch.mjs --claim --worker <このPC名> --priority AL
     IKETERU_BLIND_ROOT=E:\iketeru_blind_eval
     ```
 - `claim-phase3-batch.mjs`:
+  - `--priority <値>`: 指定できる優先度名は **`P0_craft_recipes`、`P1_private_rating`、`P2_verified_5_genres`、`P3_unverified_genres`、`ALL`** の 5 つのみ（それ以外の名称はエラーで即停止）。**P3 の正式名は複数形の `P3_unverified_genres`**（単数形 `P3_unverified_genre` はエラー）。
   - `--cached-only`: キャッシュに存在する動画のみ候補にする。
   - `--non-youtube`: YouTube 以外（Vimeo 等）のみ候補にする。
   - `--verify-media`: `--cached-only` 時に `ffprobe` で実際に読めるファイルか検証する（未指定時はサイズ > 0 判定のみ）。

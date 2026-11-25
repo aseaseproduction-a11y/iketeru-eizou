@@ -21,6 +21,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
+import { classifyVideoForCalibration } from "./dryrun-phase3-calibration-rollout.mjs";
 import { isBotCheckError } from "./prepare-phase2-run.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -32,6 +33,24 @@ const PRIMARY_WORKER = "chibatmute";
 const DEFAULT_RETRY_COOLDOWN_DAYS = 7;
 const DEFAULT_CACHE_DIR = "D:\\マイドライブ\\iketeru_videos";
 const MAX_BATCH_SIZE = 200;
+
+export const VALID_PRIORITIES = Object.freeze([
+  "P0_craft_recipes",
+  "P1_private_rating",
+  "P2_verified_5_genres",
+  "P3_unverified_genres",
+  "ALL",
+]);
+
+export function validatePriority(priority) {
+  const p = String(priority || "");
+  if (!VALID_PRIORITIES.includes(p)) {
+    throw new Error(
+      `Invalid --priority "${p}". Allowed values: ${VALID_PRIORITIES.join(", ")}.`
+    );
+  }
+  return p;
+}
 
 let _dotenvLoaded = false;
 function loadEnvOnce() {
@@ -217,7 +236,9 @@ async function fetchTidbVideos() {
   });
   try {
     const [rows] = await conn.query(`
-      SELECT id, platform, videoUrl, genres, privateRating, calibratedScore, calibrationStatus
+      SELECT id, platform, videoUrl, genres, purposes, expressions, directions,
+             privateRating, aiOverallScore, aiOverallRating, embedStatus,
+             calibratedScore, calibrationStatus
       FROM videos
       ORDER BY id ASC
     `);
@@ -227,10 +248,64 @@ async function fetchTidbVideos() {
   }
 }
 
-function isYoutubeRow(row) {
+export function isYoutubeRow(row) {
   if (String(row.platform || "").toLowerCase() === "youtube") return true;
   const u = row.videoUrl || "";
   return typeof u === "string" && (u.includes("youtube.com") || u.includes("youtu.be"));
+}
+
+export function selectClaimCandidates({
+  rows,
+  priority,
+  ownerById = new Map(),
+  excludedSkipIds = new Set(),
+  nonYoutube = false,
+  p0TargetIds = null,
+  passesCacheFilter = () => true,
+}) {
+  const validPriority = validatePriority(priority);
+  const byId = new Map(rows.map((r) => [String(r.id), r]));
+  const candidates = [];
+  const matchesPlatform = (r) => (nonYoutube ? !isYoutubeRow(r) : isYoutubeRow(r));
+
+  if (validPriority === "P0_craft_recipes") {
+    const ids = (p0TargetIds || []).map(String);
+    for (const vid of ids) {
+      const r = byId.get(vid);
+      if (!r || r.calibratedScore != null || ownerById.has(vid) || excludedSkipIds.has(vid)) continue;
+      if (!matchesPlatform(r)) continue;
+      if (!passesCacheFilter(vid)) continue;
+      candidates.push(vid);
+    }
+  } else if (validPriority === "P1_private_rating") {
+    for (const r of rows) {
+      const vid = String(r.id);
+      if (r.privateRating == null || r.calibratedScore != null || ownerById.has(vid) || excludedSkipIds.has(vid)) continue;
+      if (!matchesPlatform(r)) continue;
+      if (!passesCacheFilter(vid)) continue;
+      candidates.push(vid);
+    }
+  } else if (validPriority === "P2_verified_5_genres" || validPriority === "P3_unverified_genres") {
+    for (const r of rows) {
+      const vid = String(r.id);
+      if (r.calibratedScore != null || ownerById.has(vid) || excludedSkipIds.has(vid)) continue;
+      if (!matchesPlatform(r)) continue;
+      const cls = classifyVideoForCalibration(r);
+      if (cls.priority_tier !== validPriority) continue;
+      if (!passesCacheFilter(vid)) continue;
+      candidates.push(vid);
+    }
+  } else if (validPriority === "ALL") {
+    for (const r of rows) {
+      const vid = String(r.id);
+      if (r.calibratedScore != null || ownerById.has(vid) || excludedSkipIds.has(vid)) continue;
+      if (!matchesPlatform(r)) continue;
+      if (!passesCacheFilter(vid)) continue;
+      candidates.push(vid);
+    }
+  }
+
+  return candidates;
 }
 
 async function main() {
@@ -634,7 +709,7 @@ async function main() {
   // 5. Create a new disjoint claim for a machine
   if (args["claim"]) {
     const worker = resolveWorkerName(args["worker"]);
-    const priority = String(args["priority"] || "P1_private_rating");
+    const priority = validatePriority(args["priority"] || "P1_private_rating");
     const batchSize = Math.max(1, Math.min(MAX_BATCH_SIZE, parseInt(args["batch-size"] || "200", 10)));
     const batchIndex = args["batch-index"] ? parseInt(args["batch-index"], 10) : null;
     const runId = String(args["run-id"] || generateRunId());
@@ -654,11 +729,16 @@ async function main() {
     const skip = loadSkipList();
     const excludedSkipIds = includeRetryable ? skip.permanentIds : skip.activeSkippedIds;
 
+    let p0TargetIds = null;
+    if (priority === "P0_craft_recipes") {
+      const targetPath = idListPath || path.join(REPO_ROOT, "analysis", "phase3_craft_recipes_target_ids.json");
+      const doc = JSON.parse(fs.readFileSync(targetPath, "utf8"));
+      p0TargetIds = (Array.isArray(doc) ? doc : doc.video_ids || []).map(String);
+    }
+
     const rows = await fetchTidbVideos();
     const byId = new Map(rows.map((r) => [String(r.id), r]));
-    const candidates = [];
     const unreadableSkipped = [];
-    const matchesPlatform = (r) => (nonYoutube ? !isYoutubeRow(r) : isYoutubeRow(r));
     const passesCacheFilter = (vid) => {
       if (!cachedOnly) return true;
       const p = findCachedFile(vid);
@@ -670,34 +750,15 @@ async function main() {
       return true;
     };
 
-    if (priority === "P0_craft_recipes") {
-      const targetPath = idListPath || path.join(REPO_ROOT, "analysis", "phase3_craft_recipes_target_ids.json");
-      const doc = JSON.parse(fs.readFileSync(targetPath, "utf8"));
-      const ids = (Array.isArray(doc) ? doc : doc.video_ids || []).map(String);
-      for (const vid of ids) {
-        const r = byId.get(vid);
-        if (!r || r.calibratedScore != null || check.ownerById.has(vid) || excludedSkipIds.has(vid)) continue;
-        if (!matchesPlatform(r)) continue;
-        if (!passesCacheFilter(vid)) continue;
-        candidates.push(vid);
-      }
-    } else if (priority === "P1_private_rating") {
-      for (const r of rows) {
-        const vid = String(r.id);
-        if (r.privateRating == null || r.calibratedScore != null || check.ownerById.has(vid) || excludedSkipIds.has(vid)) continue;
-        if (!matchesPlatform(r)) continue;
-        if (!passesCacheFilter(vid)) continue;
-        candidates.push(vid);
-      }
-    } else {
-      for (const r of rows) {
-        const vid = String(r.id);
-        if (r.calibratedScore != null || check.ownerById.has(vid) || excludedSkipIds.has(vid)) continue;
-        if (!matchesPlatform(r)) continue;
-        if (!passesCacheFilter(vid)) continue;
-        candidates.push(vid);
-      }
-    }
+    const candidates = selectClaimCandidates({
+      rows,
+      priority,
+      ownerById: check.ownerById,
+      excludedSkipIds,
+      nonYoutube,
+      p0TargetIds,
+      passesCacheFilter,
+    });
 
     const chosen = candidates.slice(0, batchSize);
     if (chosen.length === 0) {
@@ -770,13 +831,16 @@ async function main() {
   node scripts/claim-phase3-batch.mjs --acquire-apply-lock <run_id> [--worker <name>]
   node scripts/claim-phase3-batch.mjs --release-apply-lock <run_id> [--worker <name>]
   node scripts/claim-phase3-batch.mjs --register-run <run_id> [--worker <name>]
-  node scripts/claim-phase3-batch.mjs --claim --worker <name> --priority <P0_craft_recipes|P1_private_rating|ALL> [--batch-size 200] [--batch-index <N>] [--non-youtube] [--cached-only] [--verify-media] [--include-retryable] [--dry-run]
+  node scripts/claim-phase3-batch.mjs --claim --worker <name> --priority <P0_craft_recipes|P1_private_rating|P2_verified_5_genres|P3_unverified_genres|ALL> [--batch-size 200] [--batch-index <N>] [--non-youtube] [--cached-only] [--verify-media] [--include-retryable] [--dry-run]
   node scripts/claim-phase3-batch.mjs --complete <run_id>
   node scripts/claim-phase3-batch.mjs --release --run-id <run_id> [--reason <text>]
   node scripts/claim-phase3-batch.mjs --add-skip-from-run <run_id> [--worker <name>] [--include-format-failures] [--cooldown-days 7]`);
 }
 
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+const isMain = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+if (isMain) {
+  main().catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
+}
