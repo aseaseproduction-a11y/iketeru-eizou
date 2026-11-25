@@ -3,7 +3,7 @@
   "task_type": "craft_recipe_v2_upgrade",
   "run_id": "craft_upg_20261126_b03",
   "worker": "chibatmute",
-  "status": "active",
+  "status": "completed",
   "target_pool": "381_gt15s_ge78",
   "selection_seed": "phase1_upg_20261126",
   "min_calibrated_score": 78,
@@ -32,7 +32,7 @@
     "313084145"
   ],
   "claimed_at": "2026-11-25T21:59:56.876Z",
-  "completed_at": null,
+  "completed_at": "2026-11-25T22:35:26.549Z",
   "released_at": null,
   "release_reason": null
 }
