@@ -97,10 +97,14 @@ async function main() {
     .split(",")
     .map((s) => s.trim())
     .filter(Boolean);
+  const clearProvisionalIds = String(args["clear-provisional-ids"] || "")
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean);
   const replaceAnalysisMap = parseReplaceAnalysisArg(args["replace-analysis"]);
-  const allTargetIds = [...new Set([...restoreIds, ...replaceAnalysisMap.keys()])];
+  const allTargetIds = [...new Set([...restoreIds, ...clearProvisionalIds, ...replaceAnalysisMap.keys()])];
   if (allTargetIds.length === 0) {
-    throw new Error("Specify --restore-visual-ids and/or --replace-analysis");
+    throw new Error("Specify --restore-visual-ids, --clear-provisional-ids, and/or --replace-analysis");
   }
 
   const preDManifest = JSON.parse(fs.readFileSync(PRE_D_MANIFEST_PATH, "utf8"));
@@ -200,6 +204,73 @@ async function main() {
         invalidatedNoVisual: nextBd.invalidatedNoVisual,
       },
       matches_server_db_sql_like: afterStr.includes('"visualVerificationStatus":"log_verified"'),
+    });
+  }
+
+  for (const vid of clearProvisionalIds) {
+    const row = liveById.get(vid);
+    if (!row) throw new Error(`Video ID not found in TiDB: ${vid}`);
+    const beforeStr = serializeTidbCellValue(row.aiScoreBreakdown);
+    let bd = {};
+    try {
+      bd = beforeStr ? JSON.parse(beforeStr) : {};
+    } catch {
+      bd = {};
+    }
+    const nextBd = {
+      ...bd,
+      analysisStatus: "full_analysis",
+      isProvisional: false,
+      visualVerificationStatus: "log_verified",
+      invalidatedNoVisual: false,
+      visualChecked: true,
+      analysisVerdict: "full_analysis_remade",
+      restoredByAudit: {
+        decision_id: "D-024",
+        verdict: "remade_full_analysis_video_observed",
+        verified_by_worker: worker,
+        verified_model: "gemini-4-neon-high",
+        previous_analysisStatus: bd.analysisStatus ?? null,
+        previous_isProvisional: bd.isProvisional ?? null,
+        previous_visualVerificationStatus: bd.visualVerificationStatus ?? null,
+      },
+    };
+    const afterStr = JSON.stringify(nextBd);
+    const entry = {
+      video_id: vid,
+      column: "aiScoreBreakdown",
+      after_sha256: sha256TidbCellValue(afterStr),
+      reason: "Clear provisional flag after full 0-10 chapter video-observed analysis remake (analysisStatus=full_analysis, isProvisional=false, visualVerificationStatus=log_verified)",
+      decision_id: "D-024",
+      approved_at: null,
+      status: "pending_approval",
+    };
+    plannedOverrides.push(entry);
+    const m = simulatedMutations.get(vid) || {};
+    m.aiScoreBreakdown = afterStr;
+    simulatedMutations.set(vid, m);
+    plannedDetails.push({
+      video_id: vid,
+      title: row.title,
+      column: "aiScoreBreakdown",
+      before_sha256: sha256TidbCellValue(beforeStr),
+      after_sha256: entry.after_sha256,
+      before_flags: {
+        analysisStatus: bd.analysisStatus ?? null,
+        isProvisional: bd.isProvisional ?? null,
+        visualVerificationStatus: bd.visualVerificationStatus ?? null,
+        invalidatedNoVisual: bd.invalidatedNoVisual ?? null,
+      },
+      after_flags: {
+        analysisStatus: nextBd.analysisStatus,
+        isProvisional: nextBd.isProvisional,
+        visualVerificationStatus: nextBd.visualVerificationStatus,
+        invalidatedNoVisual: nextBd.invalidatedNoVisual,
+      },
+      matches_server_db_sql_like:
+        afterStr.includes('"visualVerificationStatus":"log_verified"') &&
+        !afterStr.includes('"analysisStatus":"provisional"') &&
+        !afterStr.includes('"isProvisional":true'),
     });
   }
 
