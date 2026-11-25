@@ -155,7 +155,17 @@ git push
 他のPCが TiDB に新しいバッチを反映したら、自分のPCでも以下を実行するだけで MCP（`search_references` / `plan_craft_sequence` 等）に最新点数が反映されます：
 ```powershell
 cd E:\iketeru-eizou
-node scripts/sync-tidb-to-sqlite-mirror.mjs --sqlite E:\iketeru-creative-studio\data\iketeru_knowledge.db
+node scripts/sync-tidb-to-sqlite-mirror.mjs --sqlite-path E:\iketeru-creative-studio\data\iketeru_knowledge.db
+```
+
+#### SQLite のみに残留した「TiDB 削除済み行」の整理（明示実行・`sync` とは分離）
+通常の `sync-tidb-to-sqlite-mirror.mjs` は安全のため `zeroDeletions`（削除しない）設計を維持しています。過去に TiDB から削除された孤立行（例: 旧 SQLite 引き継ぎ PC の 48 行）を他 PC でも同じ手順で整理する場合は、専用スクリプト `scripts/prune-sqlite-tidb-orphans.mjs` を使います（`craft_recipes` から 1 件でも参照があれば自動停止・TiDB は読み取り専用）：
+```powershell
+# 1. まず --dry-run で削除対象 ID・紐づく scenes 行数・craft_recipes 参照数 (=0) を確認
+node scripts/prune-sqlite-tidb-orphans.mjs --dry-run --sqlite-path E:\iketeru-creative-studio\data\iketeru_knowledge.db
+
+# 2. 承認後のみ --apply を実行（事前バックアップを自動保存し、videos / videos_fts / scenes / scenes_fts を1トランザクションで削除）
+node scripts/prune-sqlite-tidb-orphans.mjs --apply --sqlite-path E:\iketeru-creative-studio\data\iketeru_knowledge.db
 ```
 
 ---
