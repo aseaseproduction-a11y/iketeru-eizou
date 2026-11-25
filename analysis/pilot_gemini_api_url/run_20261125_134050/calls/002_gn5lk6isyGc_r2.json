@@ -1,0 +1,153 @@
+{
+  "call_index": 2,
+  "slot_order": 1,
+  "split": "fit",
+  "video_id": "gn5lk6isyGc",
+  "substituted_from": null,
+  "attempt": 2,
+  "started_at": "2026-11-25T04:41:24.155Z",
+  "finished_at": "2026-11-25T04:41:49.994Z",
+  "elapsed_sec": 25.84,
+  "request": {
+    "model": "gemini-4-neon",
+    "thinking_level": "high",
+    "store": false,
+    "stream": false,
+    "service_tier": "standard",
+    "youtube_url": "https://www.youtube.com/watch?v=gn5lk6isyGc",
+    "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8"
+  },
+  "exit_code": 0,
+  "api_status": "completed",
+  "interaction_id": null,
+  "fatal_http_code": null,
+  "video_unreadable": false,
+  "usage_breakdown": {
+    "total_input_tokens": 7593,
+    "input_text_tokens": 1522,
+    "input_video_tokens": 6071,
+    "input_audio_tokens": 0,
+    "input_other_tokens": 0,
+    "total_output_tokens": 510,
+    "total_thought_tokens": 1897,
+    "total_tokens": 10000,
+    "suspect_video_not_processed": false,
+    "video_tokens_per_sec": 101.01
+  },
+  "usage_raw": {
+    "total_tokens": 10000,
+    "total_input_tokens": 7593,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 1522
+      },
+      {
+        "modality": "video",
+        "tokens": 6071
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 510,
+    "output_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 510
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1897,
+    "initial_input_tokens": 7593
+  },
+  "cost": {
+    "input_cost_usd": 0.022779,
+    "output_thought_cost_usd": 0.036105,
+    "call_cost_usd": 0.058884,
+    "cumulative_cost_usd": 0.116658
+  },
+  "parse_ok": true,
+  "parse_error": null,
+  "scores_sum_mismatch": false,
+  "parsed_json": {
+    "scores": {
+      "direction": 19,
+      "visual_craft": 20,
+      "editing_rhythm": 19,
+      "sound_integration": 19,
+      "originality_finish": 19
+    },
+    "total_score": 96,
+    "rank": "S",
+    "brief_rationale": "閉塞感のある薄暗い廊下から波打つ床を駆け抜け、藤のトンネルを経て講堂での再会・青空へと至る圧倒的な感情曲線を描き切る。大掛かりな物理美術と高度なカメラワークを融合させたシームレスなワンカット風演出は圧巻で、楽曲のビルドアップと映像の解放感が完璧に同期している。生々しい手触りと細部まで妥協のないライティング、シズル描写まで全要素が国際最上位水準に達した傑作。",
+    "timestamped_observations": [
+      {
+        "timestamp": "00:13",
+        "observation": "学校の廊下の床と壁全体が波のように大きくうねり出し、その不安定な波の上を制服姿の少女がカメラに向かって軽やかに駆け抜ける。"
+      },
+      {
+        "timestamp": "00:25",
+        "observation": "突き当たりのガラス扉を少女が押し開けると視界が一気に開け、満開の紫色の藤の花が垂れ下がるトンネルの中を花びらを浴びながら疾走する。"
+      },
+      {
+        "timestamp": "00:39",
+        "observation": "講堂の青い巨大なカーテンの前で二人の少女が跳び上がるように手を取り合って笑顔で回転し、楽曲がサビのピークを迎えると同時にカーテンが開いて光が差し込む。"
+      }
+    ],
+    "post_check": {
+      "knows_work": true,
+      "knows_award_history": true,
+      "award_badge_visible_in_video": false,
+      "post_check_note": "大塚製薬ポカリスエットの著名なCM作品であり、国内外の広告賞受賞歴があることを知っているが、採点は動画内の映像・音響クラフトの観察のみに基づいて行った。"
+    }
+  },
+  "extracted_text": "```json\n{\n  \"scores\": {\n    \"direction\": 19,\n    \"visual_craft\": 20,\n    \"editing_rhythm\": 19,\n    \"sound_integration\": 19,\n    \"originality_finish\": 19\n  },\n  \"total_score\": 96,\n  \"rank\": \"S\",\n  \"brief_rationale\": \"閉塞感のある薄暗い廊下から波打つ床を駆け抜け、藤のトンネルを経て講堂での再会・青空へと至る圧倒的な感情曲線を描き切る。大掛かりな物理美術と高度なカメラワークを融合させたシームレスなワンカット風演出は圧巻で、楽曲のビルドアップと映像の解放感が完璧に同期している。生々しい手触りと細部まで妥協のないライティング、シズル描写まで全要素が国際最上位水準に達した傑作。\",\n  \"timestamped_observations\": [\n    {\n      \"timestamp\": \"00:13\",\n      \"observation\": \"学校の廊下の床と壁全体が波のように大きくうねり出し、その不安定な波の上を制服姿の少女がカメラに向かって軽やかに駆け抜ける。\"\n    },\n    {\n      \"timestamp\": \"00:25\",\n      \"observation\": \"突き当たりのガラス扉を少女が押し開けると視界が一気に開け、満開の紫色の藤の花が垂れ下がるトンネルの中を花びらを浴びながら疾走する。\"\n    },\n    {\n      \"timestamp\": \"00:39\",\n      \"observation\": \"講堂の青い巨大なカーテンの前で二人の少女が跳び上がるように手を取り合って笑顔で回転し、楽曲がサビのピークを迎えると同時にカーテンが開いて光が差し込む。\"\n    }\n  ],\n  \"post_check\": {\n    \"knows_work\": true,\n    \"knows_award_history\": true,\n    \"award_badge_visible_in_video\": false,\n    \"post_check_note\": \"大塚製薬ポカリスエットの著名なCM作品であり、国内外の広告賞受賞歴があることを知っているが、採点は動画内の映像・音響クラフトの観察のみに基づいて行った。\"\n  }\n}\n```",
+  "stderr": null,
+  "raw_response": {
+    "status": "completed",
+    "usage": {
+      "total_tokens": 10000,
+      "total_input_tokens": 7593,
+      "input_tokens_by_modality": [
+        {
+          "modality": "text",
+          "tokens": 1522
+        },
+        {
+          "modality": "video",
+          "tokens": 6071
+        }
+      ],
+      "total_cached_tokens": 0,
+      "total_output_tokens": 510,
+      "output_tokens_by_modality": [
+        {
+          "modality": "text",
+          "tokens": 510
+        }
+      ],
+      "total_tool_use_tokens": 0,
+      "total_thought_tokens": 1897,
+      "initial_input_tokens": 7593
+    },
+    "created": "2026-11-25T04:42:00Z",
+    "updated": "2026-11-25T04:42:00Z",
+    "service_tier": "standard",
+    "steps": [
+      {
+        "signature": "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",
+        "type": "thought"
+      },
+      {
+        "content": [
+          {
+            "text": "```json\n{\n  \"scores\": {\n    \"direction\": 19,\n    \"visual_craft\": 20,\n    \"editing_rhythm\": 19,\n    \"sound_integration\": 19,\n    \"originality_finish\": 19\n  },\n  \"total_score\": 96,\n  \"rank\": \"S\",\n  \"brief_rationale\": \"閉塞感のある薄暗い廊下から波打つ床を駆け抜け、藤のトンネルを経て講堂での再会・青空へと至る圧倒的な感情曲線を描き切る。大掛かりな物理美術と高度なカメラワークを融合させたシームレスなワンカット風演出は圧巻で、楽曲のビルドアップと映像の解放感が完璧に同期している。生々しい手触りと細部まで妥協のないライティング、シズル描写まで全要素が国際最上位水準に達した傑作。\",\n  \"timestamped_observations\": [\n    {\n      \"timestamp\": \"00:13\",\n      \"observation\": \"学校の廊下の床と壁全体が波のように大きくうねり出し、その不安定な波の上を制服姿の少女がカメラに向かって軽やかに駆け抜ける。\"\n    },\n    {\n      \"timestamp\": \"00:25\",\n      \"observation\": \"突き当たりのガラス扉を少女が押し開けると視界が一気に開け、満開の紫色の藤の花が垂れ下がるトンネルの中を花びらを浴びながら疾走する。\"\n    },\n    {\n      \"timestamp\": \"00:39\",\n      \"observation\": \"講堂の青い巨大なカーテンの前で二人の少女が跳び上がるように手を取り合って笑顔で回転し、楽曲がサビのピークを迎えると同時にカーテンが開いて光が差し込む。\"\n    }\n  ],\n  \"post_check\": {\n    \"knows_work\": true,\n    \"knows_award_history\": true,\n    \"award_badge_visible_in_video\": false,\n    \"post_check_note\": \"大塚製薬ポカリスエットの著名なCM作品であり、国内外の広告賞受賞歴があることを知っているが、採点は動画内の映像・音響クラフトの観察のみに基づいて行った。\"\n  }\n}\n```",
+            "type": "text"
+          }
+        ],
+        "type": "model_output"
+      }
+    ],
+    "object": "interaction",
+    "model": "gemini-4-neon"
+  }
+}

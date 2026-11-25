@@ -1,0 +1,454 @@
+{
+  "generated_at": "2026-11-25T03:39:07.357Z",
+  "selection_method": {
+    "algorithm": "deterministic stratified sampling with Mulberry32 PRNG seeded from SHA-256(seed_string)",
+    "seed_string": "iketeru-gemini-api-url-pilot-20261125-v1",
+    "seed_uint32": 2348585811,
+    "pool_filter": "calibratedScore IS NOT NULL AND platform='youtube' AND duration_sec <= 360 AND oEmbed HTTP 200",
+    "eligible_pool_size": 371
+  },
+  "counts": {
+    "total": 10,
+    "by_band": {
+      ">=83": 4,
+      "63-82": 4,
+      "<63": 2
+    },
+    "mid_boundary_within_3pt": 2,
+    "by_route_group": {
+      "video": 7,
+      "contact_sheet": 3
+    },
+    "by_knows_work": {
+      "true": 4,
+      "false": 6
+    },
+    "total_duration_sec": 1236.1,
+    "avg_duration_sec": 123.6,
+    "estimated_20_calls_cost_usd_rough": 1.72
+  },
+  "selected": [
+    {
+      "slot": ">=83 (1/3: contact_sheet)",
+      "video_id": "CWnqX41JHuM",
+      "youtube_url": "https://www.youtube.com/watch?v=CWnqX41JHuM",
+      "calibrated_score": 92.5,
+      "calibrated_rank": "S",
+      "band": ">=83",
+      "calibrated_tier_band": "award_tier",
+      "route_raw": "contact_sheet",
+      "route_group": "contact_sheet",
+      "knows_work": true,
+      "duration_sec": 179.6,
+      "calibration_status": "calibrated_unverified_genre",
+      "calibrated_run_id": "run_20261123_221100",
+      "embed_status": "available",
+      "metrics": {
+        "duration_sec": 179.6,
+        "scdet_threshold": 10,
+        "total_cuts": 23,
+        "avg_cut_interval_sec": 7.81,
+        "max_cuts_per_10s": 4,
+        "integrated_lufs": -13.2,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "baseline_raw_scores": [
+        93,
+        92
+      ],
+      "baseline_dimensions": {
+        "direction": 19,
+        "visual_craft": 19.5,
+        "editing_rhythm": 18,
+        "sound_integration": 17,
+        "originality_finish": 19
+      },
+      "oembed_http_status": 200,
+      "sqlite_scenes_count": 8
+    },
+    {
+      "slot": ">=83 (3/3: video, knows_work=false)",
+      "video_id": "qwYhKlY4Tx0",
+      "youtube_url": "https://www.youtube.com/watch?v=qwYhKlY4Tx0",
+      "calibrated_score": 92,
+      "calibrated_rank": "S-",
+      "band": ">=83",
+      "calibrated_tier_band": "award_tier",
+      "route_raw": "video_h1",
+      "route_group": "video",
+      "knows_work": false,
+      "duration_sec": 266.9,
+      "calibration_status": "calibrated_verified",
+      "calibrated_run_id": "run_20261124_080300",
+      "embed_status": "available",
+      "metrics": {
+        "duration_sec": 266.9,
+        "scdet_threshold": 10,
+        "total_cuts": 173,
+        "avg_cut_interval_sec": 1.54,
+        "max_cuts_per_10s": 17,
+        "integrated_lufs": -8.4,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          187,
+          192
+        ]
+      },
+      "baseline_raw_scores": [
+        93,
+        91
+      ],
+      "baseline_dimensions": {
+        "direction": 18.5,
+        "visual_craft": 19,
+        "editing_rhythm": 18,
+        "sound_integration": 18,
+        "originality_finish": 18.5
+      },
+      "oembed_http_status": 200,
+      "sqlite_scenes_count": 8
+    },
+    {
+      "slot": "free (1/1: knows_work=true)",
+      "video_id": "0Wmwc8u98lI",
+      "youtube_url": "https://www.youtube.com/watch?v=0Wmwc8u98lI",
+      "calibrated_score": 89.5,
+      "calibrated_rank": "S-",
+      "band": ">=83",
+      "calibrated_tier_band": "award_tier",
+      "route_raw": "video_h1",
+      "route_group": "video",
+      "knows_work": true,
+      "duration_sec": 323.7,
+      "calibration_status": "calibrated_verified",
+      "calibrated_run_id": "run_20261124_080300",
+      "embed_status": "unknown",
+      "metrics": {
+        "duration_sec": 323.7,
+        "scdet_threshold": 10,
+        "total_cuts": 1,
+        "avg_cut_interval_sec": 323.7,
+        "max_cuts_per_10s": 1,
+        "integrated_lufs": -11.2,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          156,
+          166
+        ]
+      },
+      "baseline_raw_scores": [
+        90,
+        89
+      ],
+      "baseline_dimensions": {
+        "direction": 17.5,
+        "visual_craft": 19,
+        "editing_rhythm": 17,
+        "sound_integration": 17,
+        "originality_finish": 19
+      },
+      "oembed_http_status": 200,
+      "sqlite_scenes_count": 8
+    },
+    {
+      "slot": ">=83 (2/3: video, knows_work=true)",
+      "video_id": "-K2c-HL9cIA",
+      "youtube_url": "https://www.youtube.com/watch?v=-K2c-HL9cIA",
+      "calibrated_score": 84,
+      "calibrated_rank": "A",
+      "band": ">=83",
+      "calibrated_tier_band": "award_tier",
+      "route_raw": "video_h2_escalated",
+      "route_group": "video",
+      "knows_work": true,
+      "duration_sec": 30.1,
+      "calibration_status": "calibrated_verified",
+      "calibrated_run_id": "run_20261125_070347",
+      "embed_status": "available",
+      "metrics": {
+        "duration_sec": 30.1,
+        "scdet_threshold": 10,
+        "total_cuts": 6,
+        "avg_cut_interval_sec": 5.02,
+        "max_cuts_per_10s": 5,
+        "integrated_lufs": -14,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "baseline_raw_scores": [
+        86,
+        82
+      ],
+      "baseline_dimensions": {
+        "direction": 17,
+        "visual_craft": 17.5,
+        "editing_rhythm": 16.5,
+        "sound_integration": 16.5,
+        "originality_finish": 16.5
+      },
+      "oembed_http_status": 200,
+      "sqlite_scenes_count": 8
+    },
+    {
+      "slot": "63-82 (2/4: boundary 83 -3..-0.01)",
+      "video_id": "_O0h2WqEFjo",
+      "youtube_url": "https://www.youtube.com/watch?v=_O0h2WqEFjo",
+      "calibrated_score": 81,
+      "calibrated_rank": "A-",
+      "band": "63-82",
+      "calibrated_tier_band": "pro_band",
+      "route_raw": "video_h1",
+      "route_group": "video",
+      "knows_work": true,
+      "duration_sec": 180,
+      "calibration_status": "calibrated_verified",
+      "calibrated_run_id": "run_20261125_070347",
+      "embed_status": "available",
+      "metrics": {
+        "duration_sec": 180,
+        "scdet_threshold": 10,
+        "total_cuts": 358,
+        "avg_cut_interval_sec": 0.5,
+        "max_cuts_per_10s": 67,
+        "integrated_lufs": -7.9,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          45,
+          50
+        ]
+      },
+      "baseline_raw_scores": [
+        80,
+        82
+      ],
+      "baseline_dimensions": {
+        "direction": 16.5,
+        "visual_craft": 15,
+        "editing_rhythm": 17,
+        "sound_integration": 16.5,
+        "originality_finish": 16
+      },
+      "oembed_http_status": 200,
+      "sqlite_scenes_count": 8
+    },
+    {
+      "slot": "63-82 (4/4: interior, video)",
+      "video_id": "_H-Y1ZhWYIE",
+      "youtube_url": "https://www.youtube.com/watch?v=_H-Y1ZhWYIE",
+      "calibrated_score": 75.5,
+      "calibrated_rank": "B+",
+      "band": "63-82",
+      "calibrated_tier_band": "pro_band",
+      "route_raw": "video_h1",
+      "route_group": "video",
+      "knows_work": false,
+      "duration_sec": 30.1,
+      "calibration_status": "calibrated_verified",
+      "calibrated_run_id": "run_20261124_080300",
+      "embed_status": "available",
+      "metrics": {
+        "duration_sec": 30.1,
+        "scdet_threshold": 10,
+        "total_cuts": 45,
+        "avg_cut_interval_sec": 0.67,
+        "max_cuts_per_10s": 21,
+        "integrated_lufs": -24.1,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          16,
+          21
+        ]
+      },
+      "baseline_raw_scores": [
+        76,
+        75
+      ],
+      "baseline_dimensions": {
+        "direction": 15,
+        "visual_craft": 15,
+        "editing_rhythm": 16,
+        "sound_integration": 15.5,
+        "originality_finish": 14
+      },
+      "oembed_http_status": 200,
+      "sqlite_scenes_count": 8
+    },
+    {
+      "slot": "63-82 (3/4: interior, contact_sheet)",
+      "video_id": "1lG3spbvbqI",
+      "youtube_url": "https://www.youtube.com/watch?v=1lG3spbvbqI",
+      "calibrated_score": 70,
+      "calibrated_rank": "B",
+      "band": "63-82",
+      "calibrated_tier_band": "pro_band",
+      "route_raw": "contact_sheet",
+      "route_group": "contact_sheet",
+      "knows_work": false,
+      "duration_sec": 15,
+      "calibration_status": "calibrated_verified",
+      "calibrated_run_id": "run_20261123_221100",
+      "embed_status": "available",
+      "metrics": {
+        "duration_sec": 15,
+        "scdet_threshold": 10,
+        "total_cuts": 9,
+        "avg_cut_interval_sec": 1.67,
+        "max_cuts_per_10s": 9,
+        "integrated_lufs": -15.1,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          3,
+          13
+        ]
+      },
+      "baseline_raw_scores": [
+        70,
+        70
+      ],
+      "baseline_dimensions": {
+        "direction": 14,
+        "visual_craft": 14,
+        "editing_rhythm": 15,
+        "sound_integration": 14,
+        "originality_finish": 13
+      },
+      "oembed_http_status": 200,
+      "sqlite_scenes_count": 8
+    },
+    {
+      "slot": "63-82 (1/4: boundary 63 +0..3)",
+      "video_id": "12jPI4V5dJ0",
+      "youtube_url": "https://www.youtube.com/watch?v=12jPI4V5dJ0",
+      "calibrated_score": 66,
+      "calibrated_rank": "B-",
+      "band": "63-82",
+      "calibrated_tier_band": "pro_band",
+      "route_raw": "video_h2_escalated",
+      "route_group": "video",
+      "knows_work": false,
+      "duration_sec": 32,
+      "calibration_status": "calibrated_verified",
+      "calibrated_run_id": "run_20261123_221100",
+      "embed_status": "unknown",
+      "metrics": {
+        "duration_sec": 32,
+        "scdet_threshold": 10,
+        "total_cuts": 6,
+        "avg_cut_interval_sec": 5.33,
+        "max_cuts_per_10s": 3,
+        "integrated_lufs": -15.1,
+        "slowmo_applied": false,
+        "slowmo_factor": null,
+        "slowmo_window_sec": null
+      },
+      "baseline_raw_scores": [
+        66,
+        66
+      ],
+      "baseline_dimensions": {
+        "direction": 14,
+        "visual_craft": 13,
+        "editing_rhythm": 14,
+        "sound_integration": 13,
+        "originality_finish": 12
+      },
+      "oembed_http_status": 200,
+      "sqlite_scenes_count": 3
+    },
+    {
+      "slot": "<63 (2/2: video)",
+      "video_id": "QA9PLeM0EUs",
+      "youtube_url": "https://www.youtube.com/watch?v=QA9PLeM0EUs",
+      "calibrated_score": 59,
+      "calibrated_rank": "C+",
+      "band": "<63",
+      "calibrated_tier_band": "low_band",
+      "route_raw": "video_h1",
+      "route_group": "video",
+      "knows_work": false,
+      "duration_sec": 127,
+      "calibration_status": "calibrated_unverified_genre",
+      "calibrated_run_id": "run_20261124_080300",
+      "embed_status": "unknown",
+      "metrics": {
+        "duration_sec": 127,
+        "scdet_threshold": 10,
+        "total_cuts": 44,
+        "avg_cut_interval_sec": 2.89,
+        "max_cuts_per_10s": 13,
+        "integrated_lufs": -13.3,
+        "slowmo_applied": true,
+        "slowmo_factor": "4x",
+        "slowmo_window_sec": [
+          11,
+          16
+        ]
+      },
+      "baseline_raw_scores": [
+        54,
+        59,
+        60
+      ],
+      "baseline_dimensions": {
+        "direction": 11.67,
+        "visual_craft": 13.33,
+        "editing_rhythm": 11.67,
+        "sound_integration": 9.67,
+        "originality_finish": 11.33
+      },
+      "oembed_http_status": 200,
+      "sqlite_scenes_count": 5
+    },
+    {
+      "slot": "<63 (1/2: contact_sheet)",
+      "video_id": "_q9xyoz4j0k",
+      "youtube_url": "https://www.youtube.com/watch?v=_q9xyoz4j0k",
+      "calibrated_score": 51.5,
+      "calibrated_rank": "C",
+      "band": "<63",
+      "calibrated_tier_band": "low_band",
+      "route_raw": "contact_sheet",
+      "route_group": "contact_sheet",
+      "knows_work": false,
+      "duration_sec": 51.7,
+      "calibration_status": "calibrated_unverified_genre",
+      "calibrated_run_id": "run_20261125_070347",
+      "embed_status": "unknown",
+      "metrics": {
+        "duration_sec": 51.7,
+        "scdet_threshold": 10,
+        "total_cuts": 15,
+        "avg_cut_interval_sec": 3.45,
+        "max_cuts_per_10s": 10,
+        "integrated_lufs": -16.2,
+        "slowmo_applied": true,
+        "slowmo_factor": "2x",
+        "slowmo_window_sec": [
+          7,
+          17
+        ]
+      },
+      "baseline_raw_scores": [
+        52,
+        51
+      ],
+      "baseline_dimensions": {
+        "direction": 10.5,
+        "visual_craft": 10,
+        "editing_rhythm": 10.5,
+        "sound_integration": 11.5,
+        "originality_finish": 9
+      },
+      "oembed_http_status": 200,
+      "sqlite_scenes_count": 8
+    }
+  ]
+}

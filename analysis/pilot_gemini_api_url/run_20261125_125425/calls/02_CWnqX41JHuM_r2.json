@@ -1,0 +1,149 @@
+{
+  "call_index": 2,
+  "video_index": 1,
+  "video_id": "CWnqX41JHuM",
+  "attempt": 2,
+  "started_at": "2026-11-25T03:55:05.321Z",
+  "finished_at": "2026-11-25T03:55:46.506Z",
+  "elapsed_sec": 41.19,
+  "request": {
+    "model": "gemini-4-neon",
+    "thinking_level": "high",
+    "store": false,
+    "stream": false,
+    "youtube_url": "https://www.youtube.com/watch?v=CWnqX41JHuM",
+    "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8"
+  },
+  "exit_code": 0,
+  "api_status": "completed",
+  "interaction_id": null,
+  "fatal_http_code": null,
+  "usage_breakdown": {
+    "total_input_tokens": 20174,
+    "input_text_tokens": 2000,
+    "input_video_tokens": 18174,
+    "input_audio_tokens": 0,
+    "input_other_tokens": 0,
+    "total_output_tokens": 536,
+    "total_thought_tokens": 2508,
+    "total_tokens": 23218,
+    "suspect_video_not_processed": false,
+    "video_tokens_per_sec": 101.19
+  },
+  "usage_raw": {
+    "total_tokens": 23218,
+    "total_input_tokens": 20174,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 2000
+      },
+      {
+        "modality": "video",
+        "tokens": 18174
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 536,
+    "output_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 536
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 2508,
+    "initial_input_tokens": 20174
+  },
+  "cost": {
+    "input_cost_usd": 0.060522,
+    "output_thought_cost_usd": 0.04566,
+    "call_cost_usd": 0.106182,
+    "cumulative_cost_usd": 0.205119
+  },
+  "parse_ok": true,
+  "parse_error": null,
+  "scores_sum_mismatch": false,
+  "parsed_json": {
+    "scores": {
+      "direction": 19,
+      "visual_craft": 20,
+      "editing_rhythm": 18,
+      "sound_integration": 19,
+      "originality_finish": 20
+    },
+    "total_score": 96,
+    "rank": "S",
+    "brief_rationale": "絵画的な筆致と圧倒的な描き込みによる手描きアニメーションの極致。セリフを排し、視線や微細な表情変化、異形と人間の対峙をミニマル音楽の緻密な拍動に乗せて紡ぐ演出・編集構成が極めて高度。背景の意匠から群衆一人ひとりの顔に至るまで妥協のない造形力と独自の世界観が融合し、強烈な余韻と記憶残留力を生み出している。",
+    "timestamped_observations": [
+      {
+        "timestamp": "00:32",
+        "observation": "ピンク色の花々と巨大な昆虫様の生物を背に、白いシャツと黄色の短パン姿の少女があぐらをかいて座っており、背後の触角がマリンバ等のミニマル音楽の拍動に合わせて緩やかに揺れている。"
+      },
+      {
+        "timestamp": "01:14",
+        "observation": "赤や黄の緻密な柄の壁紙が連なる奥行きのある廊下の最奥から、フクロウや蛾を思わせる白い異形の生物が滑るように高速でカメラへ接近し、直後に顔の極端なクローズアップへ切り替わる。"
+      },
+      {
+        "timestamp": "01:55",
+        "observation": "星空の下、白髪で身体に文様のある人型の存在の背面ショット越しに、白く広がる丘一面に密集してこちらを見つめる膨大な数の人間たちが一人ひとり異なる表情で緻密に描き込まれて映し出される。"
+      }
+    ],
+    "post_check": {
+      "knows_work": true,
+      "knows_award_history": true,
+      "award_badge_visible_in_video": false,
+      "post_check_note": "動画内のタイトルおよびクレジットから玉川真吾氏による自主制作アニメーション『PUPARIA』と認識したが、採点は動画本編の映像・音響クラフトの観察のみに基づいて独立して行った。"
+    }
+  },
+  "extracted_text": "{\n  \"scores\": {\n    \"direction\": 19,\n    \"visual_craft\": 20,\n    \"editing_rhythm\": 18,\n    \"sound_integration\": 19,\n    \"originality_finish\": 20\n  },\n  \"total_score\": 96,\n  \"rank\": \"S\",\n  \"brief_rationale\": \"絵画的な筆致と圧倒的な描き込みによる手描きアニメーションの極致。セリフを排し、視線や微細な表情変化、異形と人間の対峙をミニマル音楽の緻密な拍動に乗せて紡ぐ演出・編集構成が極めて高度。背景の意匠から群衆一人ひとりの顔に至るまで妥協のない造形力と独自の世界観が融合し、強烈な余韻と記憶残留力を生み出している。\",\n  \"timestamped_observations\": [\n    {\n      \"timestamp\": \"00:32\",\n      \"observation\": \"ピンク色の花々と巨大な昆虫様の生物を背に、白いシャツと黄色の短パン姿の少女があぐらをかいて座っており、背後の触角がマリンバ等のミニマル音楽の拍動に合わせて緩やかに揺れている。\"\n    },\n    {\n      \"timestamp\": \"01:14\",\n      \"observation\": \"赤や黄の緻密な柄の壁紙が連なる奥行きのある廊下の最奥から、フクロウや蛾を思わせる白い異形の生物が滑るように高速でカメラへ接近し、直後に顔の極端なクローズアップへ切り替わる。\"\n    },\n    {\n      \"timestamp\": \"01:55\",\n      \"observation\": \"星空の下、白髪で身体に文様のある人型の存在の背面ショット越しに、白く広がる丘一面に密集してこちらを見つめる膨大な数の人間たちが一人ひとり異なる表情で緻密に描き込まれて映し出される。\"\n    }\n  ],\n  \"post_check\": {\n    \"knows_work\": true,\n    \"knows_award_history\": true,\n    \"award_badge_visible_in_video\": false,\n    \"post_check_note\": \"動画内のタイトルおよびクレジットから玉川真吾氏による自主制作アニメーション『PUPARIA』と認識したが、採点は動画本編の映像・音響クラフトの観察のみに基づいて独立して行った。\"\n  }\n}",
+  "stderr": null,
+  "raw_response": {
+    "status": "completed",
+    "usage": {
+      "total_tokens": 23218,
+      "total_input_tokens": 20174,
+      "input_tokens_by_modality": [
+        {
+          "modality": "text",
+          "tokens": 2000
+        },
+        {
+          "modality": "video",
+          "tokens": 18174
+        }
+      ],
+      "total_cached_tokens": 0,
+      "total_output_tokens": 536,
+      "output_tokens_by_modality": [
+        {
+          "modality": "text",
+          "tokens": 536
+        }
+      ],
+      "total_tool_use_tokens": 0,
+      "total_thought_tokens": 2508,
+      "initial_input_tokens": 20174
+    },
+    "created": "2026-11-25T03:55:57Z",
+    "updated": "2026-11-25T03:55:57Z",
+    "service_tier": "standard",
+    "steps": [
+      {
+        "signature": "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",
+        "type": "thought"
+      },
+      {
+        "content": [
+          {
+            "text": "{\n  \"scores\": {\n    \"direction\": 19,\n    \"visual_craft\": 20,\n    \"editing_rhythm\": 18,\n    \"sound_integration\": 19,\n    \"originality_finish\": 20\n  },\n  \"total_score\": 96,\n  \"rank\": \"S\",\n  \"brief_rationale\": \"絵画的な筆致と圧倒的な描き込みによる手描きアニメーションの極致。セリフを排し、視線や微細な表情変化、異形と人間の対峙をミニマル音楽の緻密な拍動に乗せて紡ぐ演出・編集構成が極めて高度。背景の意匠から群衆一人ひとりの顔に至るまで妥協のない造形力と独自の世界観が融合し、強烈な余韻と記憶残留力を生み出している。\",\n  \"timestamped_observations\": [\n    {\n      \"timestamp\": \"00:32\",\n      \"observation\": \"ピンク色の花々と巨大な昆虫様の生物を背に、白いシャツと黄色の短パン姿の少女があぐらをかいて座っており、背後の触角がマリンバ等のミニマル音楽の拍動に合わせて緩やかに揺れている。\"\n    },\n    {\n      \"timestamp\": \"01:14\",\n      \"observation\": \"赤や黄の緻密な柄の壁紙が連なる奥行きのある廊下の最奥から、フクロウや蛾を思わせる白い異形の生物が滑るように高速でカメラへ接近し、直後に顔の極端なクローズアップへ切り替わる。\"\n    },\n    {\n      \"timestamp\": \"01:55\",\n      \"observation\": \"星空の下、白髪で身体に文様のある人型の存在の背面ショット越しに、白く広がる丘一面に密集してこちらを見つめる膨大な数の人間たちが一人ひとり異なる表情で緻密に描き込まれて映し出される。\"\n    }\n  ],\n  \"post_check\": {\n    \"knows_work\": true,\n    \"knows_award_history\": true,\n    \"award_badge_visible_in_video\": false,\n    \"post_check_note\": \"動画内のタイトルおよびクレジットから玉川真吾氏による自主制作アニメーション『PUPARIA』と認識したが、採点は動画本編の映像・音響クラフトの観察のみに基づいて独立して行った。\"\n  }\n}",
+            "type": "text"
+          }
+        ],
+        "type": "model_output"
+      }
+    ],
+    "object": "interaction",
+    "model": "gemini-4-neon"
+  }
+}

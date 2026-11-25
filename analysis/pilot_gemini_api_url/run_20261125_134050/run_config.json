@@ -1,0 +1,33 @@
+{
+  "run_id": "run_20261125_134050",
+  "started_at": "2026-11-25T04:40:50.482Z",
+  "preregistration_path": "analysis/pilot_gemini_api_url/validation_preregistration.json",
+  "preregistration_sha256": "10fca9c747a3534ccc16b7657223919ad5e720f7793f69ec85e0f4d65995cbef",
+  "identical_config_source": "analysis/pilot_gemini_api_url/run_20261125_125425/run_config.json",
+  "cli_version": "gemini-api 0.5.0\nBuilt: 2026-11-20T00:48:16Z",
+  "model": "gemini-4-neon",
+  "thinking_level": "high",
+  "store": false,
+  "stream": false,
+  "service_tier": "standard",
+  "ensemble_rule": "2+1 (3rd call if |r1 - r2| >= 5, median of 3 else mean of 2)",
+  "sleep_between_calls_ms": 3000,
+  "pricing_usd_per_1m": {
+    "input": 3,
+    "output_and_thought": 15
+  },
+  "stop_conditions": {
+    "budget_max_usd": 15,
+    "stop_cost_usd": 13,
+    "max_requests": 130,
+    "stop_http_codes": [
+      402,
+      403,
+      429
+    ],
+    "max_consecutive_json_errors": 2,
+    "stop_on_video_tokens_lt_1000": true
+  },
+  "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+  "prompt_text": "[PILOT_GEMINI_API_URL_BLIND_EVAL | v1_baseline_url]\n\nあなたは映像制作・演出の専門審査員です。添付されたこの YouTube URL の動画のみを観察（映像・音声の両方を視聴）し、映像クラフトの到達度を0〜100点で独立採点してください。\n\n## 厳守事項（違反時は採点無効）\n- 添付されたこの YouTube URL の動画のみを最初から最後まで視聴・観察したうえで採点してください。\n- 外部のWeb検索や周辺メタデータ（タイトル・チャンネル名・概要欄・再生数・コメント等）に頼らず、動画内の映像と音声のクラフト実行力のみに基づいて独立採点してください。\n- 実際に動画を見て採点したことを示すため、動画内の異なるタイミングにおける「時刻つきの具体的な観察（映像・カット・動作・文字・音など）」を3つ必ず出力 JSON に含めてください。\n\n## 対象動画\n添付されているこの YouTube URL の動画（映像＋音声）を観察対象とします。\n\n## 採点ルーブリック（100点満点・クラフト実行力優先）\n以下の5項目を各0〜20点で採点し、合計点（0〜100の整数）と対応ランクを決定してください。アイデア単体ではなく、映像としての実行・クラフト（purpose-driven craft）が物語や感情をどれだけ引き上げているかを厳格に評価します。\n1. `direction` (0-20): 演出設計・構成力・感情曲線・意図の一貫性\n2. `visual_craft` (0-20): 撮影・ライティング・美術・構図・カラグレーディング・VFX/CG/アニメーションの完成度\n3. `editing_rhythm` (0-20): 編集テンポ・カット割り・緩急・トランジション・視覚的リズム\n4. `sound_integration` (0-20): 音響・音楽・SE・間合いと映像の統合度（※静止画方式で音声非聴取の場合は実測LUFSと視覚的テンポから中立推定し、根拠欄に明記）\n5. `originality_finish` (0-20): 表現の独自性・記憶残留力・細部の仕上げ品質（定型・量産的ショートカットは厳しく減点）\n\n### 点数帯とランク対応表（審査基準）\n- `S+` (97-100): 歴史的・世界最高峰の映像クラフト到達点。全要素が極めて高次元で融合\n- `S`  (93-96): 国際最上位水準の傑作。圧倒的な演出・技術・完成度\n- `S-` (90-92): 国際上位水準の秀作。複数分野で際立つクラフト強度\n- `A+` (86-89): 国内外の一線級プロ水準を大きく超える高到達作\n- `A`  (82-85): 明確な技術的・演出的強みを持つ上位プロ品質\n- `A-` (78-81): 確かな工夫と完成度を備えた良質なプロ作品\n- `B+` (73-77): 商業品質として堅実で一部に見どころがある水準\n- `B`  (68-72): 標準的な商業・企業映像品質（大きな欠点はないが特筆点も限定的）\n- `B-` (63-67): 実用レベルだが演出・構成・仕上げのいずれかに粗さ・凡庸さが残る\n- `C+` (57-62): 意図は伝わるが映像表現・技術面で課題が目立つ\n- `C`  (51-56): 基礎的な撮影・編集・デザインに明確な不足がある\n- `C-` (45-50): 品質・視認性・構成の破綻が大きい\n- `D`  (0-44): 重大な技術的・演出的欠陥があり商業水準に大きく未達\n\n## 出力形式（厳守・JSON のみ）\n説明文や前置きは一切書かず、以下の形式の有効な JSON オブジェクトのみを返してください。点数確定後、同じ JSON 内に必ず「時刻つきの具体的な観察3つ（`timestamped_observations`）」と末尾の自己申告（`post_check`）を含めてください。\n```json\n{\n  \"scores\": {\n    \"direction\": 0,\n    \"visual_craft\": 0,\n    \"editing_rhythm\": 0,\n    \"sound_integration\": 0,\n    \"originality_finish\": 0\n  },\n  \"total_score\": 0,\n  \"rank\": \"B\",\n  \"brief_rationale\": \"200文字以内で視覚・構成・技術上の根拠を記述\",\n  \"timestamped_observations\": [\n    { \"timestamp\": \"00:05\", \"observation\": \"その時刻に実際に映っている映像・動き・構図・音などの具体的な観察\" },\n    { \"timestamp\": \"00:20\", \"observation\": \"別の時刻における具体的な観察\" },\n    { \"timestamp\": \"00:45\", \"observation\": \"さらに別の時刻における具体的な観察\" }\n  ],\n  \"post_check\": {\n    \"knows_work\": false,\n    \"knows_award_history\": false,\n    \"award_badge_visible_in_video\": false,\n    \"post_check_note\": \"該当がある場合は簡潔に理由を記述（なければ空文字）\"\n  }\n}\n```"
+}

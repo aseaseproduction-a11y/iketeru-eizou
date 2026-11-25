@@ -1,0 +1,149 @@
+{
+  "call_index": 3,
+  "video_index": 2,
+  "video_id": "qwYhKlY4Tx0",
+  "attempt": 1,
+  "started_at": "2026-11-25T03:55:51.521Z",
+  "finished_at": "2026-11-25T03:56:32.769Z",
+  "elapsed_sec": 41.25,
+  "request": {
+    "model": "gemini-4-neon",
+    "thinking_level": "high",
+    "store": false,
+    "stream": false,
+    "youtube_url": "https://www.youtube.com/watch?v=qwYhKlY4Tx0",
+    "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8"
+  },
+  "exit_code": 0,
+  "api_status": "completed",
+  "interaction_id": null,
+  "fatal_http_code": null,
+  "usage_breakdown": {
+    "total_input_tokens": 29316,
+    "input_text_tokens": 2348,
+    "input_video_tokens": 26968,
+    "input_audio_tokens": 0,
+    "input_other_tokens": 0,
+    "total_output_tokens": 560,
+    "total_thought_tokens": 2310,
+    "total_tokens": 32186,
+    "suspect_video_not_processed": false,
+    "video_tokens_per_sec": 101.04
+  },
+  "usage_raw": {
+    "total_tokens": 32186,
+    "total_input_tokens": 29316,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 2348
+      },
+      {
+        "modality": "video",
+        "tokens": 26968
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 560,
+    "output_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 560
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 2310,
+    "initial_input_tokens": 29316
+  },
+  "cost": {
+    "input_cost_usd": 0.087948,
+    "output_thought_cost_usd": 0.04305,
+    "call_cost_usd": 0.130998,
+    "cumulative_cost_usd": 0.336117
+  },
+  "parse_ok": true,
+  "parse_error": null,
+  "scores_sum_mismatch": false,
+  "parsed_json": {
+    "scores": {
+      "direction": 18,
+      "visual_craft": 19,
+      "editing_rhythm": 18,
+      "sound_integration": 18,
+      "originality_finish": 18
+    },
+    "total_score": 91,
+    "rank": "S-",
+    "brief_rationale": "現代の女子高生・過去を生きる和装の女性・象徴的な緑髪の少女という3層を、足元や指差し等の巧みなマッチカットで統合した秀逸な構成。緻密な背景美術と、荒い鉛筆線や水彩のにじみを活かした躍動的な手描き作画の対比が圧倒的で、サビでの花びらの爆発や旋回ダンスなど楽曲の抑揚と完璧に同期している。静寂と風の音で余韻を残す満開の桜の結末まで、全編にわたり極めて高いアニメーション・クラフトが貫かれている。",
+    "timestamped_observations": [
+      {
+        "timestamp": "00:21",
+        "observation": "三つ編みに赤いマフラー姿の女子高生が木造の無人駅待合室に入り、椅子に腰掛けて白い息を吐いた後、備え付けの「駅舎文庫」の本棚に目を留めて本を手に取る。"
+      },
+      {
+        "timestamp": "01:53",
+        "observation": "駅で本を読む女子高生の前に白ワンピースの緑髪の少女が現れ、草履やブーツ、パンプスなど異なる時代・人物の足元のカットを楽曲のリズムに合わせてテンポよく繋ぎながら線路の先を指差す。"
+      },
+      {
+        "timestamp": "03:04",
+        "observation": "楽曲終盤の盛り上がりに合わせ、白ワンピースの少女が荒々しい主線と淡い水彩風の色面を活かしたダイナミックなカメラワークと作画で桜吹雪の中を旋回するように舞う。"
+      }
+    ],
+    "post_check": {
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "post_check_note": "動画末尾のエンドロールにYOASOBI・藍にいな等のクレジット表記を確認したが、外部知識や受賞歴には依拠せず本編の映像・音声のみで採点した。"
+    }
+  },
+  "extracted_text": "```json\n{\n  \"scores\": {\n    \"direction\": 18,\n    \"visual_craft\": 19,\n    \"editing_rhythm\": 18,\n    \"sound_integration\": 18,\n    \"originality_finish\": 18\n  },\n  \"total_score\": 91,\n  \"rank\": \"S-\",\n  \"brief_rationale\": \"現代の女子高生・過去を生きる和装の女性・象徴的な緑髪の少女という3層を、足元や指差し等の巧みなマッチカットで統合した秀逸な構成。緻密な背景美術と、荒い鉛筆線や水彩のにじみを活かした躍動的な手描き作画の対比が圧倒的で、サビでの花びらの爆発や旋回ダンスなど楽曲の抑揚と完璧に同期している。静寂と風の音で余韻を残す満開の桜の結末まで、全編にわたり極めて高いアニメーション・クラフトが貫かれている。\",\n  \"timestamped_observations\": [\n    {\n      \"timestamp\": \"00:21\",\n      \"observation\": \"三つ編みに赤いマフラー姿の女子高生が木造の無人駅待合室に入り、椅子に腰掛けて白い息を吐いた後、備え付けの「駅舎文庫」の本棚に目を留めて本を手に取る。\"\n    },\n    {\n      \"timestamp\": \"01:53\",\n      \"observation\": \"駅で本を読む女子高生の前に白ワンピースの緑髪の少女が現れ、草履やブーツ、パンプスなど異なる時代・人物の足元のカットを楽曲のリズムに合わせてテンポよく繋ぎながら線路の先を指差す。\"\n    },\n    {\n      \"timestamp\": \"03:04\",\n      \"observation\": \"楽曲終盤の盛り上がりに合わせ、白ワンピースの少女が荒々しい主線と淡い水彩風の色面を活かしたダイナミックなカメラワークと作画で桜吹雪の中を旋回するように舞う。\"\n    }\n  ],\n  \"post_check\": {\n    \"knows_work\": false,\n    \"knows_award_history\": false,\n    \"award_badge_visible_in_video\": false,\n    \"post_check_note\": \"動画末尾のエンドロールにYOASOBI・藍にいな等のクレジット表記を確認したが、外部知識や受賞歴には依拠せず本編の映像・音声のみで採点した。\"\n  }\n}\n```",
+  "stderr": null,
+  "raw_response": {
+    "status": "completed",
+    "usage": {
+      "total_tokens": 32186,
+      "total_input_tokens": 29316,
+      "input_tokens_by_modality": [
+        {
+          "modality": "text",
+          "tokens": 2348
+        },
+        {
+          "modality": "video",
+          "tokens": 26968
+        }
+      ],
+      "total_cached_tokens": 0,
+      "total_output_tokens": 560,
+      "output_tokens_by_modality": [
+        {
+          "modality": "text",
+          "tokens": 560
+        }
+      ],
+      "total_tool_use_tokens": 0,
+      "total_thought_tokens": 2310,
+      "initial_input_tokens": 29316
+    },
+    "created": "2026-11-25T03:56:43Z",
+    "updated": "2026-11-25T03:56:43Z",
+    "service_tier": "standard",
+    "steps": [
+      {
+        "signature": "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",
+        "type": "thought"
+      },
+      {
+        "content": [
+          {
+            "text": "```json\n{\n  \"scores\": {\n    \"direction\": 18,\n    \"visual_craft\": 19,\n    \"editing_rhythm\": 18,\n    \"sound_integration\": 18,\n    \"originality_finish\": 18\n  },\n  \"total_score\": 91,\n  \"rank\": \"S-\",\n  \"brief_rationale\": \"現代の女子高生・過去を生きる和装の女性・象徴的な緑髪の少女という3層を、足元や指差し等の巧みなマッチカットで統合した秀逸な構成。緻密な背景美術と、荒い鉛筆線や水彩のにじみを活かした躍動的な手描き作画の対比が圧倒的で、サビでの花びらの爆発や旋回ダンスなど楽曲の抑揚と完璧に同期している。静寂と風の音で余韻を残す満開の桜の結末まで、全編にわたり極めて高いアニメーション・クラフトが貫かれている。\",\n  \"timestamped_observations\": [\n    {\n      \"timestamp\": \"00:21\",\n      \"observation\": \"三つ編みに赤いマフラー姿の女子高生が木造の無人駅待合室に入り、椅子に腰掛けて白い息を吐いた後、備え付けの「駅舎文庫」の本棚に目を留めて本を手に取る。\"\n    },\n    {\n      \"timestamp\": \"01:53\",\n      \"observation\": \"駅で本を読む女子高生の前に白ワンピースの緑髪の少女が現れ、草履やブーツ、パンプスなど異なる時代・人物の足元のカットを楽曲のリズムに合わせてテンポよく繋ぎながら線路の先を指差す。\"\n    },\n    {\n      \"timestamp\": \"03:04\",\n      \"observation\": \"楽曲終盤の盛り上がりに合わせ、白ワンピースの少女が荒々しい主線と淡い水彩風の色面を活かしたダイナミックなカメラワークと作画で桜吹雪の中を旋回するように舞う。\"\n    }\n  ],\n  \"post_check\": {\n    \"knows_work\": false,\n    \"knows_award_history\": false,\n    \"award_badge_visible_in_video\": false,\n    \"post_check_note\": \"動画末尾のエンドロールにYOASOBI・藍にいな等のクレジット表記を確認したが、外部知識や受賞歴には依拠せず本編の映像・音声のみで採点した。\"\n  }\n}\n```",
+            "type": "text"
+          }
+        ],
+        "type": "model_output"
+      }
+    ],
+    "object": "interaction",
+    "model": "gemini-4-neon"
+  }
+}

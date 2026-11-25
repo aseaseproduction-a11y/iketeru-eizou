@@ -1,0 +1,149 @@
+{
+  "call_index": 4,
+  "video_index": 2,
+  "video_id": "qwYhKlY4Tx0",
+  "attempt": 2,
+  "started_at": "2026-11-25T03:56:37.822Z",
+  "finished_at": "2026-11-25T03:57:18.360Z",
+  "elapsed_sec": 40.54,
+  "request": {
+    "model": "gemini-4-neon",
+    "thinking_level": "high",
+    "store": false,
+    "stream": false,
+    "youtube_url": "https://www.youtube.com/watch?v=qwYhKlY4Tx0",
+    "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8"
+  },
+  "exit_code": 0,
+  "api_status": "completed",
+  "interaction_id": null,
+  "fatal_http_code": null,
+  "usage_breakdown": {
+    "total_input_tokens": 29316,
+    "input_text_tokens": 2348,
+    "input_video_tokens": 26968,
+    "input_audio_tokens": 0,
+    "input_other_tokens": 0,
+    "total_output_tokens": 499,
+    "total_thought_tokens": 2205,
+    "total_tokens": 32020,
+    "suspect_video_not_processed": false,
+    "video_tokens_per_sec": 101.04
+  },
+  "usage_raw": {
+    "total_tokens": 32020,
+    "total_input_tokens": 29316,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 2348
+      },
+      {
+        "modality": "video",
+        "tokens": 26968
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 499,
+    "output_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 499
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 2205,
+    "initial_input_tokens": 29316
+  },
+  "cost": {
+    "input_cost_usd": 0.087948,
+    "output_thought_cost_usd": 0.04056,
+    "call_cost_usd": 0.128508,
+    "cumulative_cost_usd": 0.464625
+  },
+  "parse_ok": true,
+  "parse_error": null,
+  "scores_sum_mismatch": false,
+  "parsed_json": {
+    "scores": {
+      "direction": 18,
+      "visual_craft": 19,
+      "editing_rhythm": 18,
+      "sound_integration": 18,
+      "originality_finish": 18
+    },
+    "total_score": 91,
+    "rank": "S-",
+    "brief_rationale": "現代の少女、過去の女性の記憶、象徴的な緑髪の存在の三層を繊細に交差させた構成力が高い。水彩調の背景美術と、サビで一気に解放されるラフな筆致の作画（舞踏・回転カメラワーク）の対比が圧倒的。足元や花びらを軸にしたマッチカットと楽曲の緩急の同期も見事で、冬の停滞から満開の桜へと至る感情曲線を高い独自性と仕上げ品質で描き切っている。",
+    "timestamped_observations": [
+      {
+        "timestamp": "00:28",
+        "observation": "冬の無人駅舎の待合室で、赤いマフラーを巻いた三つ編みの少女が「駅舎文庫」と書かれた本棚の前にしゃがみ込み、一冊の本に指を伸ばして手に取る静かなカット。"
+      },
+      {
+        "timestamp": "01:57",
+        "observation": "緑髪の人物が画面横へまっすぐ指を差し、その先に伸びる単線の線路と山並みへとカットが繋がり、本を読んでいた少女が顔を上げて表情を変える演出。"
+      },
+      {
+        "timestamp": "03:05",
+        "observation": "終盤サビの高揚に合わせて、ラフな線画タッチとピンクの花びらが舞う中、白いドレスの緑髪の人物が回転しながら踊るダイナミックな手描き作画シークエンス。"
+      }
+    ],
+    "post_check": {
+      "knows_work": false,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "post_check_note": "動画末尾のクレジット画面でYOASOBIの楽曲および制作陣の記載を確認した。"
+    }
+  },
+  "extracted_text": "```json\n{\n  \"scores\": {\n    \"direction\": 18,\n    \"visual_craft\": 19,\n    \"editing_rhythm\": 18,\n    \"sound_integration\": 18,\n    \"originality_finish\": 18\n  },\n  \"total_score\": 91,\n  \"rank\": \"S-\",\n  \"brief_rationale\": \"現代の少女、過去の女性の記憶、象徴的な緑髪の存在の三層を繊細に交差させた構成力が高い。水彩調の背景美術と、サビで一気に解放されるラフな筆致の作画（舞踏・回転カメラワーク）の対比が圧倒的。足元や花びらを軸にしたマッチカットと楽曲の緩急の同期も見事で、冬の停滞から満開の桜へと至る感情曲線を高い独自性と仕上げ品質で描き切っている。\",\n  \"timestamped_observations\": [\n    {\n      \"timestamp\": \"00:28\",\n      \"observation\": \"冬の無人駅舎の待合室で、赤いマフラーを巻いた三つ編みの少女が「駅舎文庫」と書かれた本棚の前にしゃがみ込み、一冊の本に指を伸ばして手に取る静かなカット。\"\n    },\n    {\n      \"timestamp\": \"01:57\",\n      \"observation\": \"緑髪の人物が画面横へまっすぐ指を差し、その先に伸びる単線の線路と山並みへとカットが繋がり、本を読んでいた少女が顔を上げて表情を変える演出。\"\n    },\n    {\n      \"timestamp\": \"03:05\",\n      \"observation\": \"終盤サビの高揚に合わせて、ラフな線画タッチとピンクの花びらが舞う中、白いドレスの緑髪の人物が回転しながら踊るダイナミックな手描き作画シークエンス。\"\n    }\n  ],\n  \"post_check\": {\n    \"knows_work\": false,\n    \"knows_award_history\": false,\n    \"award_badge_visible_in_video\": false,\n    \"post_check_note\": \"動画末尾のクレジット画面でYOASOBIの楽曲および制作陣の記載を確認した。\"\n  }\n}\n```",
+  "stderr": null,
+  "raw_response": {
+    "status": "completed",
+    "usage": {
+      "total_tokens": 32020,
+      "total_input_tokens": 29316,
+      "input_tokens_by_modality": [
+        {
+          "modality": "text",
+          "tokens": 2348
+        },
+        {
+          "modality": "video",
+          "tokens": 26968
+        }
+      ],
+      "total_cached_tokens": 0,
+      "total_output_tokens": 499,
+      "output_tokens_by_modality": [
+        {
+          "modality": "text",
+          "tokens": 499
+        }
+      ],
+      "total_tool_use_tokens": 0,
+      "total_thought_tokens": 2205,
+      "initial_input_tokens": 29316
+    },
+    "created": "2026-11-25T03:57:29Z",
+    "updated": "2026-11-25T03:57:29Z",
+    "service_tier": "standard",
+    "steps": [
+      {
+        "signature": "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",
+        "type": "thought"
+      },
+      {
+        "content": [
+          {
+            "text": "```json\n{\n  \"scores\": {\n    \"direction\": 18,\n    \"visual_craft\": 19,\n    \"editing_rhythm\": 18,\n    \"sound_integration\": 18,\n    \"originality_finish\": 18\n  },\n  \"total_score\": 91,\n  \"rank\": \"S-\",\n  \"brief_rationale\": \"現代の少女、過去の女性の記憶、象徴的な緑髪の存在の三層を繊細に交差させた構成力が高い。水彩調の背景美術と、サビで一気に解放されるラフな筆致の作画（舞踏・回転カメラワーク）の対比が圧倒的。足元や花びらを軸にしたマッチカットと楽曲の緩急の同期も見事で、冬の停滞から満開の桜へと至る感情曲線を高い独自性と仕上げ品質で描き切っている。\",\n  \"timestamped_observations\": [\n    {\n      \"timestamp\": \"00:28\",\n      \"observation\": \"冬の無人駅舎の待合室で、赤いマフラーを巻いた三つ編みの少女が「駅舎文庫」と書かれた本棚の前にしゃがみ込み、一冊の本に指を伸ばして手に取る静かなカット。\"\n    },\n    {\n      \"timestamp\": \"01:57\",\n      \"observation\": \"緑髪の人物が画面横へまっすぐ指を差し、その先に伸びる単線の線路と山並みへとカットが繋がり、本を読んでいた少女が顔を上げて表情を変える演出。\"\n    },\n    {\n      \"timestamp\": \"03:05\",\n      \"observation\": \"終盤サビの高揚に合わせて、ラフな線画タッチとピンクの花びらが舞う中、白いドレスの緑髪の人物が回転しながら踊るダイナミックな手描き作画シークエンス。\"\n    }\n  ],\n  \"post_check\": {\n    \"knows_work\": false,\n    \"knows_award_history\": false,\n    \"award_badge_visible_in_video\": false,\n    \"post_check_note\": \"動画末尾のクレジット画面でYOASOBIの楽曲および制作陣の記載を確認した。\"\n  }\n}\n```",
+            "type": "text"
+          }
+        ],
+        "type": "model_output"
+      }
+    ],
+    "object": "interaction",
+    "model": "gemini-4-neon"
+  }
+}

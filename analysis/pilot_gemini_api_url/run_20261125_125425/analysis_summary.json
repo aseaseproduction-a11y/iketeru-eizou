@@ -1,0 +1,1061 @@
+{
+  "run_id": "run_20261125_125425",
+  "generated_at": "2026-11-25T04:09:47.174Z",
+  "overall": {
+    "n": 10,
+    "mae": 2.4,
+    "mean_signed_error": 2.2,
+    "max_abs_error": 6,
+    "band_match_count": 9,
+    "band_match_pct": 90,
+    "mean_r1_r2_diff": 2,
+    "r1_r2_lt5_count": 10,
+    "r1_r2_lt5_pct": 100
+  },
+  "by_route_group": {
+    "video": {
+      "n": 7,
+      "mae": 2.5,
+      "mean_signed_error": 2.21,
+      "max_abs_error": 6,
+      "band_match_count": 6,
+      "band_match_pct": 85.7,
+      "mean_r1_r2_diff": 2.43,
+      "r1_r2_lt5_count": 7,
+      "r1_r2_lt5_pct": 100
+    },
+    "contact_sheet": {
+      "n": 3,
+      "mae": 2.17,
+      "mean_signed_error": 2.17,
+      "max_abs_error": 3.5,
+      "band_match_count": 3,
+      "band_match_pct": 100,
+      "mean_r1_r2_diff": 1,
+      "r1_r2_lt5_count": 3,
+      "r1_r2_lt5_pct": 100
+    }
+  },
+  "by_band": {
+    ">=83": {
+      "n": 4,
+      "mae": 2.38,
+      "mean_signed_error": 1.88,
+      "max_abs_error": 4,
+      "band_match_count": 4,
+      "band_match_pct": 100,
+      "mean_r1_r2_diff": 0.75,
+      "r1_r2_lt5_count": 4,
+      "r1_r2_lt5_pct": 100
+    },
+    "63-82": {
+      "n": 4,
+      "mae": 2.38,
+      "mean_signed_error": 2.38,
+      "max_abs_error": 6,
+      "band_match_count": 3,
+      "band_match_pct": 75,
+      "mean_r1_r2_diff": 3,
+      "r1_r2_lt5_count": 4,
+      "r1_r2_lt5_pct": 100
+    },
+    "<63": {
+      "n": 2,
+      "mae": 2.5,
+      "mean_signed_error": 2.5,
+      "max_abs_error": 3,
+      "band_match_count": 2,
+      "band_match_pct": 100,
+      "mean_r1_r2_diff": 2.5,
+      "r1_r2_lt5_count": 2,
+      "r1_r2_lt5_pct": 100
+    }
+  },
+  "by_knows_work": {
+    "api_knows_work_true_rate_videos_pct": 30,
+    "api_knows_work_true_rate_calls_pct": 30,
+    "by_api_knows_work": {
+      "true": {
+        "n": 3,
+        "mae": 2.83,
+        "mean_signed_error": 2.83,
+        "max_abs_error": 4,
+        "band_match_count": 3,
+        "band_match_pct": 100,
+        "mean_r1_r2_diff": 1,
+        "r1_r2_lt5_count": 3,
+        "r1_r2_lt5_pct": 100
+      },
+      "false": {
+        "n": 7,
+        "mae": 2.21,
+        "mean_signed_error": 1.93,
+        "max_abs_error": 6,
+        "band_match_count": 6,
+        "band_match_pct": 85.7,
+        "mean_r1_r2_diff": 2.43,
+        "r1_r2_lt5_count": 7,
+        "r1_r2_lt5_pct": 100
+      }
+    },
+    "by_base_knows_work": {
+      "true": {
+        "n": 4,
+        "mae": 3.63,
+        "mean_signed_error": 3.63,
+        "max_abs_error": 6,
+        "band_match_count": 3,
+        "band_match_pct": 75,
+        "mean_r1_r2_diff": 1.75,
+        "r1_r2_lt5_count": 4,
+        "r1_r2_lt5_pct": 100
+      },
+      "false": {
+        "n": 6,
+        "mae": 1.58,
+        "mean_signed_error": 1.25,
+        "max_abs_error": 3,
+        "band_match_count": 6,
+        "band_match_pct": 100,
+        "mean_r1_r2_diff": 2.17,
+        "r1_r2_lt5_count": 6,
+        "r1_r2_lt5_pct": 100
+      }
+    }
+  },
+  "dimension_mean_diffs": {
+    "direction": 0.23,
+    "visual_craft": 0.52,
+    "editing_rhythm": 0.48,
+    "sound_integration": 0.73,
+    "originality_finish": 0.37
+  },
+  "cost_and_latency": {
+    "total_calls": 20,
+    "total_cost_usd": 1.719264,
+    "cost_per_video_2calls_usd": 0.1719,
+    "cost_per_call_usd": 0.086,
+    "total_api_time_sec": 710.19,
+    "avg_time_per_call_sec": 35.51,
+    "avg_time_per_video_2calls_sec": 71.02,
+    "suspect_video_calls_lt1000": 0
+  },
+  "token_duration_model": {
+    "weighted_video_tokens_per_sec": 100.23,
+    "per_video_tok_per_sec_min": 95.05,
+    "per_video_tok_per_sec_max": 101.67,
+    "linear_fit_video_tokens": {
+      "slope": 100.498,
+      "intercept": -33.2
+    },
+    "linear_fit_text_tokens": {
+      "slope": 3.997,
+      "intercept": 1281.9
+    },
+    "avg_output_tokens_per_call": 513.5,
+    "avg_thought_tokens_per_call": 2384.3,
+    "avg_output_plus_thought_tokens_per_call": 2897.8
+  },
+  "per_video": [
+    {
+      "video_id": "CWnqX41JHuM",
+      "duration_sec": 179.6,
+      "route_raw": "contact_sheet",
+      "route_group": "contact_sheet",
+      "base_score": 92.5,
+      "base_rank": "S",
+      "base_band": ">=83",
+      "base_knows_work": true,
+      "api_r1_score": 96,
+      "api_r2_score": 96,
+      "api_mean_score": 96,
+      "api_band": ">=83",
+      "band_match": true,
+      "diff_mean_minus_base": 3.5,
+      "abs_error": 3.5,
+      "r1_r2_abs_diff": 0,
+      "r1_r2_lt5": true,
+      "api_knows_work_r1": true,
+      "api_knows_work_r2": true,
+      "api_knows_work_any": true,
+      "post_check_notes": [
+        "玉川真吾監督の自主制作アニメーション『PUPARIA』として作品および映画祭入選等の評価を認知しているが、採点は動画内の視聴観察のみに基づいて独立評価した。",
+        "動画内のタイトルおよびクレジットから玉川真吾氏による自主制作アニメーション『PUPARIA』と認識したが、採点は動画本編の映像・音響クラフトの観察のみに基づいて独立して行った。"
+      ],
+      "usage": {
+        "r1": {
+          "total_input_tokens": 20174,
+          "input_text_tokens": 2000,
+          "input_video_tokens": 18174,
+          "input_audio_tokens": 0,
+          "input_other_tokens": 0,
+          "total_output_tokens": 546,
+          "total_thought_tokens": 2015,
+          "total_tokens": 22735,
+          "suspect_video_not_processed": false,
+          "video_tokens_per_sec": 101.19
+        },
+        "r2": {
+          "total_input_tokens": 20174,
+          "input_text_tokens": 2000,
+          "input_video_tokens": 18174,
+          "input_audio_tokens": 0,
+          "input_other_tokens": 0,
+          "total_output_tokens": 536,
+          "total_thought_tokens": 2508,
+          "total_tokens": 23218,
+          "suspect_video_not_processed": false,
+          "video_tokens_per_sec": 101.19
+        },
+        "video_tokens_same_across_runs": true,
+        "input_video_tokens": 18174,
+        "input_text_tokens": 2000,
+        "video_tokens_per_sec": 101.19,
+        "avg_output_tokens": 541,
+        "avg_thought_tokens": 2261.5
+      },
+      "cost_2_calls_usd": 0.205119,
+      "cost_per_call_usd": 0.10256,
+      "time_2_calls_sec": 76.1,
+      "time_per_call_sec": 38.05,
+      "dim_comparison": {
+        "direction": {
+          "base": 19,
+          "api_mean": 19,
+          "diff": 0
+        },
+        "visual_craft": {
+          "base": 19.5,
+          "api_mean": 20,
+          "diff": 0.5
+        },
+        "editing_rhythm": {
+          "base": 18,
+          "api_mean": 18.5,
+          "diff": 0.5
+        },
+        "sound_integration": {
+          "base": 17,
+          "api_mean": 18.5,
+          "diff": 1.5
+        },
+        "originality_finish": {
+          "base": 19,
+          "api_mean": 20,
+          "diff": 1
+        }
+      },
+      "sum_mismatch_any": false
+    },
+    {
+      "video_id": "qwYhKlY4Tx0",
+      "duration_sec": 266.9,
+      "route_raw": "video_h1",
+      "route_group": "video",
+      "base_score": 92,
+      "base_rank": "S-",
+      "base_band": ">=83",
+      "base_knows_work": false,
+      "api_r1_score": 91,
+      "api_r2_score": 91,
+      "api_mean_score": 91,
+      "api_band": ">=83",
+      "band_match": true,
+      "diff_mean_minus_base": -1,
+      "abs_error": 1,
+      "r1_r2_abs_diff": 0,
+      "r1_r2_lt5": true,
+      "api_knows_work_r1": false,
+      "api_knows_work_r2": false,
+      "api_knows_work_any": false,
+      "post_check_notes": [
+        "動画末尾のエンドロールにYOASOBI・藍にいな等のクレジット表記を確認したが、外部知識や受賞歴には依拠せず本編の映像・音声のみで採点した。",
+        "動画末尾のクレジット画面でYOASOBIの楽曲および制作陣の記載を確認した。"
+      ],
+      "usage": {
+        "r1": {
+          "total_input_tokens": 29316,
+          "input_text_tokens": 2348,
+          "input_video_tokens": 26968,
+          "input_audio_tokens": 0,
+          "input_other_tokens": 0,
+          "total_output_tokens": 560,
+          "total_thought_tokens": 2310,
+          "total_tokens": 32186,
+          "suspect_video_not_processed": false,
+          "video_tokens_per_sec": 101.04
+        },
+        "r2": {
+          "total_input_tokens": 29316,
+          "input_text_tokens": 2348,
+          "input_video_tokens": 26968,
+          "input_audio_tokens": 0,
+          "input_other_tokens": 0,
+          "total_output_tokens": 499,
+          "total_thought_tokens": 2205,
+          "total_tokens": 32020,
+          "suspect_video_not_processed": false,
+          "video_tokens_per_sec": 101.04
+        },
+        "video_tokens_same_across_runs": true,
+        "input_video_tokens": 26968,
+        "input_text_tokens": 2348,
+        "video_tokens_per_sec": 101.04,
+        "avg_output_tokens": 529.5,
+        "avg_thought_tokens": 2257.5
+      },
+      "cost_2_calls_usd": 0.259506,
+      "cost_per_call_usd": 0.129753,
+      "time_2_calls_sec": 81.79,
+      "time_per_call_sec": 40.9,
+      "dim_comparison": {
+        "direction": {
+          "base": 18.5,
+          "api_mean": 18,
+          "diff": -0.5
+        },
+        "visual_craft": {
+          "base": 19,
+          "api_mean": 19,
+          "diff": 0
+        },
+        "editing_rhythm": {
+          "base": 18,
+          "api_mean": 18,
+          "diff": 0
+        },
+        "sound_integration": {
+          "base": 18,
+          "api_mean": 18,
+          "diff": 0
+        },
+        "originality_finish": {
+          "base": 18.5,
+          "api_mean": 18,
+          "diff": -0.5
+        }
+      },
+      "sum_mismatch_any": false
+    },
+    {
+      "video_id": "0Wmwc8u98lI",
+      "duration_sec": 323.7,
+      "route_raw": "video_h1",
+      "route_group": "video",
+      "base_score": 89.5,
+      "base_rank": "S-",
+      "base_band": ">=83",
+      "base_knows_work": true,
+      "api_r1_score": 95,
+      "api_r2_score": 92,
+      "api_mean_score": 93.5,
+      "api_band": ">=83",
+      "band_match": true,
+      "diff_mean_minus_base": 4,
+      "abs_error": 4,
+      "r1_r2_abs_diff": 3,
+      "r1_r2_lt5": true,
+      "api_knows_work_r1": true,
+      "api_knows_work_r2": true,
+      "api_knows_work_any": true,
+      "post_check_notes": [
+        "映像末尾のエンブレム等からも東京2020大会の公式動くピクトグラム作品として既知だが、採点は映像と音響のクラフト実行力のみに基づいて実施した。",
+        "末尾にTOKYO 2020のロゴが表示され、東京2020大会の公式動くスポーツピクトグラムとして著名な作品であることは認識しているが、映像と音のクラフト要素のみに基づき独立採点した。"
+      ],
+      "usage": {
+        "r1": {
+          "total_input_tokens": 35296,
+          "input_text_tokens": 2576,
+          "input_video_tokens": 32720,
+          "input_audio_tokens": 0,
+          "input_other_tokens": 0,
+          "total_output_tokens": 540,
+          "total_thought_tokens": 1850,
+          "total_tokens": 37686,
+          "suspect_video_not_processed": false,
+          "video_tokens_per_sec": 101.08
+        },
+        "r2": {
+          "total_input_tokens": 35296,
+          "input_text_tokens": 2576,
+          "input_video_tokens": 32720,
+          "input_audio_tokens": 0,
+          "input_other_tokens": 0,
+          "total_output_tokens": 566,
+          "total_thought_tokens": 2672,
+          "total_tokens": 38534,
+          "suspect_video_not_processed": false,
+          "video_tokens_per_sec": 101.08
+        },
+        "video_tokens_same_across_runs": true,
+        "input_video_tokens": 32720,
+        "input_text_tokens": 2576,
+        "video_tokens_per_sec": 101.08,
+        "avg_output_tokens": 553,
+        "avg_thought_tokens": 2261
+      },
+      "cost_2_calls_usd": 0.296196,
+      "cost_per_call_usd": 0.148098,
+      "time_2_calls_sec": 73.12,
+      "time_per_call_sec": 36.56,
+      "dim_comparison": {
+        "direction": {
+          "base": 17.5,
+          "api_mean": 18.5,
+          "diff": 1
+        },
+        "visual_craft": {
+          "base": 19,
+          "api_mean": 19.5,
+          "diff": 0.5
+        },
+        "editing_rhythm": {
+          "base": 17,
+          "api_mean": 18,
+          "diff": 1
+        },
+        "sound_integration": {
+          "base": 17,
+          "api_mean": 18,
+          "diff": 1
+        },
+        "originality_finish": {
+          "base": 19,
+          "api_mean": 19.5,
+          "diff": 0.5
+        }
+      },
+      "sum_mismatch_any": false
+    },
+    {
+      "video_id": "-K2c-HL9cIA",
+      "duration_sec": 30.1,
+      "route_raw": "video_h2_escalated",
+      "route_group": "video",
+      "base_score": 84,
+      "base_rank": "A",
+      "base_band": ">=83",
+      "base_knows_work": true,
+      "api_r1_score": 85,
+      "api_r2_score": 85,
+      "api_mean_score": 85,
+      "api_band": ">=83",
+      "band_match": true,
+      "diff_mean_minus_base": 1,
+      "abs_error": 1,
+      "r1_r2_abs_diff": 0,
+      "r1_r2_lt5": true,
+      "api_knows_work_r1": true,
+      "api_knows_work_r2": true,
+      "api_knows_work_any": true,
+      "post_check_notes": [
+        "動画内のロゴおよび楽曲表記からJERAの企業CMとして認識したが、受賞歴は不知であり動画内にも受賞バッジの表示はない。",
+        "動画内のロゴ・クレジットからJERAの企業CM（楽曲：藤井風「満ちてゆく」）と認識できるが、受賞歴の知識はなく本編の映像・音声のみから独立採点した。"
+      ],
+      "usage": {
+        "r1": {
+          "total_input_tokens": 4441,
+          "input_text_tokens": 1402,
+          "input_video_tokens": 3039,
+          "input_audio_tokens": 0,
+          "input_other_tokens": 0,
+          "total_output_tokens": 509,
+          "total_thought_tokens": 2092,
+          "total_tokens": 7042,
+          "suspect_video_not_processed": false,
+          "video_tokens_per_sec": 100.96
+        },
+        "r2": {
+          "total_input_tokens": 4441,
+          "input_text_tokens": 1402,
+          "input_video_tokens": 3039,
+          "input_audio_tokens": 0,
+          "input_other_tokens": 0,
+          "total_output_tokens": 495,
+          "total_thought_tokens": 2324,
+          "total_tokens": 7260,
+          "suspect_video_not_processed": false,
+          "video_tokens_per_sec": 100.96
+        },
+        "video_tokens_same_across_runs": true,
+        "input_video_tokens": 3039,
+        "input_text_tokens": 1402,
+        "video_tokens_per_sec": 100.96,
+        "avg_output_tokens": 502,
+        "avg_thought_tokens": 2208
+      },
+      "cost_2_calls_usd": 0.107946,
+      "cost_per_call_usd": 0.053973,
+      "time_2_calls_sec": 59.86,
+      "time_per_call_sec": 29.93,
+      "dim_comparison": {
+        "direction": {
+          "base": 17,
+          "api_mean": 17,
+          "diff": 0
+        },
+        "visual_craft": {
+          "base": 17.5,
+          "api_mean": 17.5,
+          "diff": 0
+        },
+        "editing_rhythm": {
+          "base": 16.5,
+          "api_mean": 17,
+          "diff": 0.5
+        },
+        "sound_integration": {
+          "base": 16.5,
+          "api_mean": 17.5,
+          "diff": 1
+        },
+        "originality_finish": {
+          "base": 16.5,
+          "api_mean": 16,
+          "diff": -0.5
+        }
+      },
+      "sum_mismatch_any": false
+    },
+    {
+      "video_id": "_O0h2WqEFjo",
+      "duration_sec": 180,
+      "route_raw": "video_h1",
+      "route_group": "video",
+      "base_score": 81,
+      "base_rank": "A-",
+      "base_band": "63-82",
+      "base_knows_work": true,
+      "api_r1_score": 89,
+      "api_r2_score": 85,
+      "api_mean_score": 87,
+      "api_band": ">=83",
+      "band_match": false,
+      "diff_mean_minus_base": 6,
+      "abs_error": 6,
+      "r1_r2_abs_diff": 4,
+      "r1_r2_lt5": true,
+      "api_knows_work_r1": false,
+      "api_knows_work_r2": false,
+      "api_knows_work_any": false,
+      "post_check_notes": [
+        "",
+        ""
+      ],
+      "usage": {
+        "r1": {
+          "total_input_tokens": 19111,
+          "input_text_tokens": 2002,
+          "input_video_tokens": 17109,
+          "input_audio_tokens": 0,
+          "input_other_tokens": 0,
+          "total_output_tokens": 506,
+          "total_thought_tokens": 2656,
+          "total_tokens": 22273,
+          "suspect_video_not_processed": false,
+          "video_tokens_per_sec": 95.05
+        },
+        "r2": {
+          "total_input_tokens": 19111,
+          "input_text_tokens": 2002,
+          "input_video_tokens": 17109,
+          "input_audio_tokens": 0,
+          "input_other_tokens": 0,
+          "total_output_tokens": 519,
+          "total_thought_tokens": 2813,
+          "total_tokens": 22443,
+          "suspect_video_not_processed": false,
+          "video_tokens_per_sec": 95.05
+        },
+        "video_tokens_same_across_runs": true,
+        "input_video_tokens": 17109,
+        "input_text_tokens": 2002,
+        "video_tokens_per_sec": 95.05,
+        "avg_output_tokens": 512.5,
+        "avg_thought_tokens": 2734.5
+      },
+      "cost_2_calls_usd": 0.212076,
+      "cost_per_call_usd": 0.106038,
+      "time_2_calls_sec": 83.03,
+      "time_per_call_sec": 41.52,
+      "dim_comparison": {
+        "direction": {
+          "base": 16.5,
+          "api_mean": 17.5,
+          "diff": 1
+        },
+        "visual_craft": {
+          "base": 15,
+          "api_mean": 16.5,
+          "diff": 1.5
+        },
+        "editing_rhythm": {
+          "base": 17,
+          "api_mean": 17.5,
+          "diff": 0.5
+        },
+        "sound_integration": {
+          "base": 16.5,
+          "api_mean": 18,
+          "diff": 1.5
+        },
+        "originality_finish": {
+          "base": 16,
+          "api_mean": 17.5,
+          "diff": 1.5
+        }
+      },
+      "sum_mismatch_any": false
+    },
+    {
+      "video_id": "_H-Y1ZhWYIE",
+      "duration_sec": 30.1,
+      "route_raw": "video_h1",
+      "route_group": "video",
+      "base_score": 75.5,
+      "base_rank": "B+",
+      "base_band": "63-82",
+      "base_knows_work": false,
+      "api_r1_score": 77,
+      "api_r2_score": 75,
+      "api_mean_score": 76,
+      "api_band": "63-82",
+      "band_match": true,
+      "diff_mean_minus_base": 0.5,
+      "abs_error": 0.5,
+      "r1_r2_abs_diff": 2,
+      "r1_r2_lt5": true,
+      "api_knows_work_r1": false,
+      "api_knows_work_r2": false,
+      "api_knows_work_any": false,
+      "post_check_notes": [
+        "",
+        ""
+      ],
+      "usage": {
+        "r1": {
+          "total_input_tokens": 4441,
+          "input_text_tokens": 1402,
+          "input_video_tokens": 3039,
+          "input_audio_tokens": 0,
+          "input_other_tokens": 0,
+          "total_output_tokens": 522,
+          "total_thought_tokens": 3663,
+          "total_tokens": 8626,
+          "suspect_video_not_processed": false,
+          "video_tokens_per_sec": 100.96
+        },
+        "r2": {
+          "total_input_tokens": 4441,
+          "input_text_tokens": 1402,
+          "input_video_tokens": 3039,
+          "input_audio_tokens": 0,
+          "input_other_tokens": 0,
+          "total_output_tokens": 512,
+          "total_thought_tokens": 2229,
+          "total_tokens": 7182,
+          "suspect_video_not_processed": false,
+          "video_tokens_per_sec": 100.96
+        },
+        "video_tokens_same_across_runs": true,
+        "input_video_tokens": 3039,
+        "input_text_tokens": 1402,
+        "video_tokens_per_sec": 100.96,
+        "avg_output_tokens": 517,
+        "avg_thought_tokens": 2946
+      },
+      "cost_2_calls_usd": 0.130536,
+      "cost_per_call_usd": 0.065268,
+      "time_2_calls_sec": 76.46,
+      "time_per_call_sec": 38.23,
+      "dim_comparison": {
+        "direction": {
+          "base": 15,
+          "api_mean": 15,
+          "diff": 0
+        },
+        "visual_craft": {
+          "base": 15,
+          "api_mean": 15.5,
+          "diff": 0.5
+        },
+        "editing_rhythm": {
+          "base": 16,
+          "api_mean": 16,
+          "diff": 0
+        },
+        "sound_integration": {
+          "base": 15.5,
+          "api_mean": 15.5,
+          "diff": 0
+        },
+        "originality_finish": {
+          "base": 14,
+          "api_mean": 14,
+          "diff": 0
+        }
+      },
+      "sum_mismatch_any": false
+    },
+    {
+      "video_id": "1lG3spbvbqI",
+      "duration_sec": 15,
+      "route_raw": "contact_sheet",
+      "route_group": "contact_sheet",
+      "base_score": 70,
+      "base_rank": "B",
+      "base_band": "63-82",
+      "base_knows_work": false,
+      "api_r1_score": 70,
+      "api_r2_score": 72,
+      "api_mean_score": 71,
+      "api_band": "63-82",
+      "band_match": true,
+      "diff_mean_minus_base": 1,
+      "abs_error": 1,
+      "r1_r2_abs_diff": 2,
+      "r1_r2_lt5": true,
+      "api_knows_work_r1": false,
+      "api_knows_work_r2": false,
+      "api_knows_work_any": false,
+      "post_check_notes": [
+        "",
+        ""
+      ],
+      "usage": {
+        "r1": {
+          "total_input_tokens": 2867,
+          "input_text_tokens": 1342,
+          "input_video_tokens": 1525,
+          "input_audio_tokens": 0,
+          "input_other_tokens": 0,
+          "total_output_tokens": 514,
+          "total_thought_tokens": 2065,
+          "total_tokens": 5446,
+          "suspect_video_not_processed": false,
+          "video_tokens_per_sec": 101.67
+        },
+        "r2": {
+          "total_input_tokens": 2867,
+          "input_text_tokens": 1342,
+          "input_video_tokens": 1525,
+          "input_audio_tokens": 0,
+          "input_other_tokens": 0,
+          "total_output_tokens": 518,
+          "total_thought_tokens": 2222,
+          "total_tokens": 5607,
+          "suspect_video_not_processed": false,
+          "video_tokens_per_sec": 101.67
+        },
+        "video_tokens_same_across_runs": true,
+        "input_video_tokens": 1525,
+        "input_text_tokens": 1342,
+        "video_tokens_per_sec": 101.67,
+        "avg_output_tokens": 516,
+        "avg_thought_tokens": 2143.5
+      },
+      "cost_2_calls_usd": 0.096987,
+      "cost_per_call_usd": 0.048494,
+      "time_2_calls_sec": 59.65,
+      "time_per_call_sec": 29.83,
+      "dim_comparison": {
+        "direction": {
+          "base": 14,
+          "api_mean": 14,
+          "diff": 0
+        },
+        "visual_craft": {
+          "base": 14,
+          "api_mean": 14.5,
+          "diff": 0.5
+        },
+        "editing_rhythm": {
+          "base": 15,
+          "api_mean": 15,
+          "diff": 0
+        },
+        "sound_integration": {
+          "base": 14,
+          "api_mean": 14.5,
+          "diff": 0.5
+        },
+        "originality_finish": {
+          "base": 13,
+          "api_mean": 13,
+          "diff": 0
+        }
+      },
+      "sum_mismatch_any": false
+    },
+    {
+      "video_id": "12jPI4V5dJ0",
+      "duration_sec": 32,
+      "route_raw": "video_h2_escalated",
+      "route_group": "video",
+      "base_score": 66,
+      "base_rank": "B-",
+      "base_band": "63-82",
+      "base_knows_work": false,
+      "api_r1_score": 66,
+      "api_r2_score": 70,
+      "api_mean_score": 68,
+      "api_band": "63-82",
+      "band_match": true,
+      "diff_mean_minus_base": 2,
+      "abs_error": 2,
+      "r1_r2_abs_diff": 4,
+      "r1_r2_lt5": true,
+      "api_knows_work_r1": false,
+      "api_knows_work_r2": false,
+      "api_knows_work_any": false,
+      "post_check_notes": [
+        "",
+        ""
+      ],
+      "usage": {
+        "r1": {
+          "total_input_tokens": 4651,
+          "input_text_tokens": 1410,
+          "input_video_tokens": 3241,
+          "input_audio_tokens": 0,
+          "input_other_tokens": 0,
+          "total_output_tokens": 497,
+          "total_thought_tokens": 3187,
+          "total_tokens": 8335,
+          "suspect_video_not_processed": false,
+          "video_tokens_per_sec": 101.28
+        },
+        "r2": {
+          "total_input_tokens": 4651,
+          "input_text_tokens": 1410,
+          "input_video_tokens": 3241,
+          "input_audio_tokens": 0,
+          "input_other_tokens": 0,
+          "total_output_tokens": 495,
+          "total_thought_tokens": 1496,
+          "total_tokens": 6642,
+          "suspect_video_not_processed": false,
+          "video_tokens_per_sec": 101.28
+        },
+        "video_tokens_same_across_runs": true,
+        "input_video_tokens": 3241,
+        "input_text_tokens": 1410,
+        "video_tokens_per_sec": 101.28,
+        "avg_output_tokens": 496,
+        "avg_thought_tokens": 2341.5
+      },
+      "cost_2_calls_usd": 0.113031,
+      "cost_per_call_usd": 0.056516,
+      "time_2_calls_sec": 59.55,
+      "time_per_call_sec": 29.78,
+      "dim_comparison": {
+        "direction": {
+          "base": 14,
+          "api_mean": 14,
+          "diff": 0
+        },
+        "visual_craft": {
+          "base": 13,
+          "api_mean": 13.5,
+          "diff": 0.5
+        },
+        "editing_rhythm": {
+          "base": 14,
+          "api_mean": 14.5,
+          "diff": 0.5
+        },
+        "sound_integration": {
+          "base": 13,
+          "api_mean": 13.5,
+          "diff": 0.5
+        },
+        "originality_finish": {
+          "base": 12,
+          "api_mean": 12.5,
+          "diff": 0.5
+        }
+      },
+      "sum_mismatch_any": false
+    },
+    {
+      "video_id": "QA9PLeM0EUs",
+      "duration_sec": 127,
+      "route_raw": "video_h1",
+      "route_group": "video",
+      "base_score": 59,
+      "base_rank": "C+",
+      "base_band": "<63",
+      "base_knows_work": false,
+      "api_r1_score": 60,
+      "api_r2_score": 64,
+      "api_mean_score": 62,
+      "api_band": "<63",
+      "band_match": true,
+      "diff_mean_minus_base": 3,
+      "abs_error": 3,
+      "r1_r2_abs_diff": 4,
+      "r1_r2_lt5": true,
+      "api_knows_work_r1": false,
+      "api_knows_work_r2": false,
+      "api_knows_work_any": false,
+      "post_check_notes": [
+        "",
+        ""
+      ],
+      "usage": {
+        "r1": {
+          "total_input_tokens": 14623,
+          "input_text_tokens": 1790,
+          "input_video_tokens": 12833,
+          "input_audio_tokens": 0,
+          "input_other_tokens": 0,
+          "total_output_tokens": 484,
+          "total_thought_tokens": 2777,
+          "total_tokens": 17884,
+          "suspect_video_not_processed": false,
+          "video_tokens_per_sec": 101.05
+        },
+        "r2": {
+          "total_input_tokens": 14623,
+          "input_text_tokens": 1790,
+          "input_video_tokens": 12833,
+          "input_audio_tokens": 0,
+          "input_other_tokens": 0,
+          "total_output_tokens": 486,
+          "total_thought_tokens": 2445,
+          "total_tokens": 17554,
+          "suspect_video_not_processed": false,
+          "video_tokens_per_sec": 101.05
+        },
+        "video_tokens_same_across_runs": true,
+        "input_video_tokens": 12833,
+        "input_text_tokens": 1790,
+        "video_tokens_per_sec": 101.05,
+        "avg_output_tokens": 485,
+        "avg_thought_tokens": 2611
+      },
+      "cost_2_calls_usd": 0.180618,
+      "cost_per_call_usd": 0.090309,
+      "time_2_calls_sec": 82.53,
+      "time_per_call_sec": 41.27,
+      "dim_comparison": {
+        "direction": {
+          "base": 11.67,
+          "api_mean": 12,
+          "diff": 0.33
+        },
+        "visual_craft": {
+          "base": 13.33,
+          "api_mean": 14.5,
+          "diff": 1.17
+        },
+        "editing_rhythm": {
+          "base": 11.67,
+          "api_mean": 12.5,
+          "diff": 0.83
+        },
+        "sound_integration": {
+          "base": 9.67,
+          "api_mean": 10.5,
+          "diff": 0.83
+        },
+        "originality_finish": {
+          "base": 11.33,
+          "api_mean": 12.5,
+          "diff": 1.17
+        }
+      },
+      "sum_mismatch_any": false
+    },
+    {
+      "video_id": "_q9xyoz4j0k",
+      "duration_sec": 51.7,
+      "route_raw": "contact_sheet",
+      "route_group": "contact_sheet",
+      "base_score": 51.5,
+      "base_rank": "C",
+      "base_band": "<63",
+      "base_knows_work": false,
+      "api_r1_score": 54,
+      "api_r2_score": 53,
+      "api_mean_score": 53.5,
+      "api_band": "<63",
+      "band_match": true,
+      "diff_mean_minus_base": 2,
+      "abs_error": 2,
+      "r1_r2_abs_diff": 1,
+      "r1_r2_lt5": true,
+      "api_knows_work_r1": false,
+      "api_knows_work_r2": false,
+      "api_knows_work_any": false,
+      "post_check_notes": [
+        "",
+        ""
+      ],
+      "usage": {
+        "r1": {
+          "total_input_tokens": 6734,
+          "input_text_tokens": 1488,
+          "input_video_tokens": 5246,
+          "input_audio_tokens": 0,
+          "input_other_tokens": 0,
+          "total_output_tokens": 472,
+          "total_thought_tokens": 2211,
+          "total_tokens": 9417,
+          "suspect_video_not_processed": false,
+          "video_tokens_per_sec": 101.47
+        },
+        "r2": {
+          "total_input_tokens": 6734,
+          "input_text_tokens": 1488,
+          "input_video_tokens": 5246,
+          "input_audio_tokens": 0,
+          "input_other_tokens": 0,
+          "total_output_tokens": 494,
+          "total_thought_tokens": 1946,
+          "total_tokens": 9174,
+          "suspect_video_not_processed": false,
+          "video_tokens_per_sec": 101.47
+        },
+        "video_tokens_same_across_runs": true,
+        "input_video_tokens": 5246,
+        "input_text_tokens": 1488,
+        "video_tokens_per_sec": 101.47,
+        "avg_output_tokens": 483,
+        "avg_thought_tokens": 2078.5
+      },
+      "cost_2_calls_usd": 0.117249,
+      "cost_per_call_usd": 0.058625,
+      "time_2_calls_sec": 58.1,
+      "time_per_call_sec": 29.05,
+      "dim_comparison": {
+        "direction": {
+          "base": 10.5,
+          "api_mean": 11,
+          "diff": 0.5
+        },
+        "visual_craft": {
+          "base": 10,
+          "api_mean": 10,
+          "diff": 0
+        },
+        "editing_rhythm": {
+          "base": 10.5,
+          "api_mean": 11.5,
+          "diff": 1
+        },
+        "sound_integration": {
+          "base": 11.5,
+          "api_mean": 12,
+          "diff": 0.5
+        },
+        "originality_finish": {
+          "base": 9,
+          "api_mean": 9,
+          "diff": 0
+        }
+      },
+      "sum_mismatch_any": false
+    }
+  ]
+}

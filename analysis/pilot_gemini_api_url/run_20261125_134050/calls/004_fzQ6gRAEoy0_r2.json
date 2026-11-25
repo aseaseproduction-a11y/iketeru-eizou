@@ -1,0 +1,153 @@
+{
+  "call_index": 4,
+  "slot_order": 2,
+  "split": "fit",
+  "video_id": "fzQ6gRAEoy0",
+  "substituted_from": null,
+  "attempt": 2,
+  "started_at": "2026-11-25T04:42:30.268Z",
+  "finished_at": "2026-11-25T04:43:09.573Z",
+  "elapsed_sec": 39.31,
+  "request": {
+    "model": "gemini-4-neon",
+    "thinking_level": "high",
+    "store": false,
+    "stream": false,
+    "service_tier": "standard",
+    "youtube_url": "https://www.youtube.com/watch?v=fzQ6gRAEoy0",
+    "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8"
+  },
+  "exit_code": 0,
+  "api_status": "completed",
+  "interaction_id": null,
+  "fatal_http_code": null,
+  "video_unreadable": false,
+  "usage_breakdown": {
+    "total_input_tokens": 39731,
+    "input_text_tokens": 2746,
+    "input_video_tokens": 36985,
+    "input_audio_tokens": 0,
+    "input_other_tokens": 0,
+    "total_output_tokens": 509,
+    "total_thought_tokens": 3204,
+    "total_tokens": 43444,
+    "suspect_video_not_processed": false,
+    "video_tokens_per_sec": 100.94
+  },
+  "usage_raw": {
+    "total_tokens": 43444,
+    "total_input_tokens": 39731,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 2746
+      },
+      {
+        "modality": "video",
+        "tokens": 36985
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 509,
+    "output_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 509
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 3204,
+    "initial_input_tokens": 39731
+  },
+  "cost": {
+    "input_cost_usd": 0.119193,
+    "output_thought_cost_usd": 0.055695,
+    "call_cost_usd": 0.174888,
+    "cumulative_cost_usd": 0.444159
+  },
+  "parse_ok": true,
+  "parse_error": null,
+  "scores_sum_mismatch": false,
+  "parsed_json": {
+    "scores": {
+      "direction": 19,
+      "visual_craft": 19,
+      "editing_rhythm": 19,
+      "sound_integration": 19,
+      "originality_finish": 18
+    },
+    "total_score": 94,
+    "rank": "S",
+    "brief_rationale": "仮想世界を描く日常から記憶の覚醒、宇宙船内の現実へと反転させる構成と感情曲線が秀逸。繊細なキャラ芝居、多彩な美術背景、ブロック生成VFXと色彩設計が高次元で融合している。楽曲の緩急やピアノ転調に完璧に呼応する編集リズムと、環境音・台詞・音楽の統合も緻密で、短時間で深い余韻を残す傑作。",
+    "timestamped_observations": [
+      {
+        "timestamp": "00:46",
+        "observation": "少女がベッド上でタブレット画面を開くと「メッセージはありません。No messages in 2539 days」と表示され、静かな室内音と吐息の後、黒画面に白文字で「shelter.」のタイトルが表示される。"
+      },
+      {
+        "timestamp": "01:18",
+        "observation": "楽曲のビートに合わせ、少女がタブレットで描いた空間が無数の石ブロックの粒子として空中から組み上がり、巨大な遺跡の塔が形成される3DCGと2D作画の複合演出が展開される。"
+      },
+      {
+        "timestamp": "05:31",
+        "observation": "ピアノの余韻から静かな宇宙空間の環境音へ移り変わり、青い計器光に照らされた宇宙船のシートで、クマのぬいぐるみと共にケーブルに繋がれて眠る少女の頬に一筋の涙が流れる。"
+      }
+    ],
+    "post_check": {
+      "knows_work": true,
+      "knows_award_history": false,
+      "award_badge_visible_in_video": false,
+      "post_check_note": "Porter Robinson & Madeonの楽曲によるアニメーション短編MV『Shelter』として既知だが、外部情報に頼らず動画内の映像・音響クラフトのみで独立採点した。"
+    }
+  },
+  "extracted_text": "{\n  \"scores\": {\n    \"direction\": 19,\n    \"visual_craft\": 19,\n    \"editing_rhythm\": 19,\n    \"sound_integration\": 19,\n    \"originality_finish\": 18\n  },\n  \"total_score\": 94,\n  \"rank\": \"S\",\n  \"brief_rationale\": \"仮想世界を描く日常から記憶の覚醒、宇宙船内の現実へと反転させる構成と感情曲線が秀逸。繊細なキャラ芝居、多彩な美術背景、ブロック生成VFXと色彩設計が高次元で融合している。楽曲の緩急やピアノ転調に完璧に呼応する編集リズムと、環境音・台詞・音楽の統合も緻密で、短時間で深い余韻を残す傑作。\",\n  \"timestamped_observations\": [\n    {\n      \"timestamp\": \"00:46\",\n      \"observation\": \"少女がベッド上でタブレット画面を開くと「メッセージはありません。No messages in 2539 days」と表示され、静かな室内音と吐息の後、黒画面に白文字で「shelter.」のタイトルが表示される。\"\n    },\n    {\n      \"timestamp\": \"01:18\",\n      \"observation\": \"楽曲のビートに合わせ、少女がタブレットで描いた空間が無数の石ブロックの粒子として空中から組み上がり、巨大な遺跡の塔が形成される3DCGと2D作画の複合演出が展開される。\"\n    },\n    {\n      \"timestamp\": \"05:31\",\n      \"observation\": \"ピアノの余韻から静かな宇宙空間の環境音へ移り変わり、青い計器光に照らされた宇宙船のシートで、クマのぬいぐるみと共にケーブルに繋がれて眠る少女の頬に一筋の涙が流れる。\"\n    }\n  ],\n  \"post_check\": {\n    \"knows_work\": true,\n    \"knows_award_history\": false,\n    \"award_badge_visible_in_video\": false,\n    \"post_check_note\": \"Porter Robinson & Madeonの楽曲によるアニメーション短編MV『Shelter』として既知だが、外部情報に頼らず動画内の映像・音響クラフトのみで独立採点した。\"\n  }\n}",
+  "stderr": null,
+  "raw_response": {
+    "status": "completed",
+    "usage": {
+      "total_tokens": 43444,
+      "total_input_tokens": 39731,
+      "input_tokens_by_modality": [
+        {
+          "modality": "text",
+          "tokens": 2746
+        },
+        {
+          "modality": "video",
+          "tokens": 36985
+        }
+      ],
+      "total_cached_tokens": 0,
+      "total_output_tokens": 509,
+      "output_tokens_by_modality": [
+        {
+          "modality": "text",
+          "tokens": 509
+        }
+      ],
+      "total_tool_use_tokens": 0,
+      "total_thought_tokens": 3204,
+      "initial_input_tokens": 39731
+    },
+    "created": "2026-11-25T04:43:20Z",
+    "updated": "2026-11-25T04:43:20Z",
+    "service_tier": "standard",
+    "steps": [
+      {
+        "signature": "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",
+        "type": "thought"
+      },
+      {
+        "content": [
+          {
+            "text": "{\n  \"scores\": {\n    \"direction\": 19,\n    \"visual_craft\": 19,\n    \"editing_rhythm\": 19,\n    \"sound_integration\": 19,\n    \"originality_finish\": 18\n  },\n  \"total_score\": 94,\n  \"rank\": \"S\",\n  \"brief_rationale\": \"仮想世界を描く日常から記憶の覚醒、宇宙船内の現実へと反転させる構成と感情曲線が秀逸。繊細なキャラ芝居、多彩な美術背景、ブロック生成VFXと色彩設計が高次元で融合している。楽曲の緩急やピアノ転調に完璧に呼応する編集リズムと、環境音・台詞・音楽の統合も緻密で、短時間で深い余韻を残す傑作。\",\n  \"timestamped_observations\": [\n    {\n      \"timestamp\": \"00:46\",\n      \"observation\": \"少女がベッド上でタブレット画面を開くと「メッセージはありません。No messages in 2539 days」と表示され、静かな室内音と吐息の後、黒画面に白文字で「shelter.」のタイトルが表示される。\"\n    },\n    {\n      \"timestamp\": \"01:18\",\n      \"observation\": \"楽曲のビートに合わせ、少女がタブレットで描いた空間が無数の石ブロックの粒子として空中から組み上がり、巨大な遺跡の塔が形成される3DCGと2D作画の複合演出が展開される。\"\n    },\n    {\n      \"timestamp\": \"05:31\",\n      \"observation\": \"ピアノの余韻から静かな宇宙空間の環境音へ移り変わり、青い計器光に照らされた宇宙船のシートで、クマのぬいぐるみと共にケーブルに繋がれて眠る少女の頬に一筋の涙が流れる。\"\n    }\n  ],\n  \"post_check\": {\n    \"knows_work\": true,\n    \"knows_award_history\": false,\n    \"award_badge_visible_in_video\": false,\n    \"post_check_note\": \"Porter Robinson & Madeonの楽曲によるアニメーション短編MV『Shelter』として既知だが、外部情報に頼らず動画内の映像・音響クラフトのみで独立採点した。\"\n  }\n}",
+            "type": "text"
+          }
+        ],
+        "type": "model_output"
+      }
+    ],
+    "object": "interaction",
+    "model": "gemini-4-neon"
+  }
+}

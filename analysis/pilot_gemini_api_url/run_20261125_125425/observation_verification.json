@@ -1,0 +1,75 @@
+{
+  "run_id": "run_20261125_125425",
+  "verified_at": "2026-11-25T13:10:00+09:00",
+  "sqlite_source": "E:\\iketeru-creative-studio\\data\\iketeru_knowledge.db (table: scenes, read-only)",
+  "summary": {
+    "total_videos": 10,
+    "total_observations": 60,
+    "match_count": 10,
+    "mostly_match_count": 0,
+    "mismatch_count": 0,
+    "suspect_hallucination_or_unwatched": false
+  },
+  "per_video": [
+    {
+      "video_id": "CWnqX41JHuM",
+      "verdict": "一致",
+      "sqlite_scenes_count": 8,
+      "notes": "r1(00:35/01:15/01:55), r2(00:32/01:14/01:55) いずれもピンク花と少女・巨大昆虫触角、魚眼廊下とフクロウ/蛾異形、夜空下の白髪青紋様と群衆パノラマがSQLite scenesの各時間帯と完全一致。"
+    },
+    {
+      "video_id": "qwYhKlY4Tx0",
+      "verdict": "一致",
+      "sqlite_scenes_count": 8,
+      "notes": "r1(00:21/01:53/03:04), r2(00:28/01:57/03:05) いずれも赤マフラー三つ編み少女の駅舎文庫、緑髪人物の指差しと線路、終盤サビの桜吹雪旋回ダンスがSQLite scenesと完全一致。"
+    },
+    {
+      "video_id": "0Wmwc8u98lI",
+      "verdict": "一致",
+      "sqlite_scenes_count": 8,
+      "notes": "r1・r2(00:03/01:57/05:16) いずれも冒頭黒背景3枠 appear/static/disappear、柔道ピクトグラム投げ静止、終盤パラ競技一斉グリッド→エンブレムがSQLite scenesと完全一致。"
+    },
+    {
+      "video_id": "-K2c-HL9cIA",
+      "verdict": "一致",
+      "sqlite_scenes_count": 8,
+      "notes": "r1・r2(00:08/00:17/00:23) いずれもコンビニ・居酒屋の消灯、渋谷スクランブル俯瞰の消灯、車上の丸い光と『この星の光をクリーンエネルギーで。』コピーがSQLite scenesと完全一致。"
+    },
+    {
+      "video_id": "_O0h2WqEFjo",
+      "verdict": "一致",
+      "sqlite_scenes_count": 8,
+      "notes": "r1(00:25/01:01/02:35), r2(00:21/01:00/02:35) いずれも学習机と銀髪少女・紙くず、モノクロ3分割縦ピクセルソート、机上の赤いリンゴと背後アナリティクス画面がSQLite scenesと一致。"
+    },
+    {
+      "video_id": "_H-Y1ZhWYIE",
+      "verdict": "一致",
+      "sqlite_scenes_count": 8,
+      "notes": "r1(00:08/00:18/00:23), r2(00:05/00:15/00:22) いずれも2005-2024・20周年、岸/小深田/田中/浅村選手とコピー、雪山頂上『いただき！』斜線と黄色輪郭線投手がSQLite scenesと完全一致。"
+    },
+    {
+      "video_id": "1lG3spbvbqI",
+      "verdict": "一致",
+      "sqlite_scenes_count": 8,
+      "notes": "r1(00:01/00:06/00:10), r2(00:01/00:05/00:09) いずれもNYK LINE運搬船空撮、コンテナターミナルと機関室ライト点検・大型モニター、赤白社旗多重露光→真俯瞰船→赤二本線ワイプがSQLite scenesと完全一致。"
+    },
+    {
+      "video_id": "12jPI4V5dJ0",
+      "verdict": "一致",
+      "sqlite_scenes_count": 3,
+      "notes": "r1(00:02/00:10/00:26), r2(00:09/00:14/00:26) いずれも領収書課題、5アイコンのカード集約、PCご利用明細書、青い拳の納得ジェスチャー→決算カードコピーがSQLite scenesと完全一致。"
+    },
+    {
+      "video_id": "QA9PLeM0EUs",
+      "verdict": "一致",
+      "sqlite_scenes_count": 5,
+      "notes": "r1(00:05/00:44/01:23), r2(00:05/00:45/01:51) いずれも風洞スクーター煙流体、ミルク流体、透過歯列インプラント埋入、縦画面の関節AI広告がSQLite scenesと完全一致。"
+    },
+    {
+      "video_id": "_q9xyoz4j0k",
+      "verdict": "一致",
+      "sqlite_scenes_count": 8,
+      "notes": "r1(00:05/00:21/00:40), r2(00:05/00:21/00:43) いずれも金色巻物『namaste BHARAT』、光るギフトボックスからの景品群、シンガポール街並み背景のUniverCellロゴ・Chambers & Community PartnersリストがSQLite scenesと完全一致。"
+    }
+  ]
+}
