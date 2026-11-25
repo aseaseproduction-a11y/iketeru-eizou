@@ -1,0 +1,24 @@
+{
+  "version": "v1_baseline",
+  "runId": "run_20261125_070347",
+  "blindId": "76dc1106c10d",
+  "mode": "video",
+  "assignedFiles": [
+    "E:\\iketeru_blind_eval\\run_20261125_070347\\video\\76dc1106c10d\\76dc1106c10d.mp4",
+    "E:\\iketeru_blind_eval\\run_20261125_070347\\video\\76dc1106c10d\\76dc1106c10d_slow.mp4"
+  ],
+  "metrics": {
+    "duration_sec": 292.4,
+    "scdet_threshold": 10,
+    "total_cuts": 367,
+    "avg_cut_interval_sec": 0.8,
+    "max_cuts_per_10s": 25,
+    "integrated_lufs": -6.3,
+    "slowmo_applied": true,
+    "slowmo_factor": "4x",
+    "slowmo_window_sec": [
+      66,
+      71
+    ]
+  }
+}

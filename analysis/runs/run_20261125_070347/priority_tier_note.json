@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "run_id": "run_20261125_070347",
+  "recorded_at": "2026-11-25T11:16:15+09:00",
+  "recorded_by": "chibatmute",
+  "report_file": "analysis/phase3_c_p2_verified_5_genres_batch03_report.json",
+  "payload_file": "analysis/runs/run_20261125_070347/phase3_batch_payload.json",
+  "total_videos": 135,
+  "priority_tier_breakdown": {
+    "P2_verified_5_genres": 96,
+    "P3_unverified_genres": 39
+  },
+  "calibration_status_breakdown": {
+    "calibrated_verified": 96,
+    "calibrated_unverified_genre": 39
+  },
+  "calibration_genre_bucket_breakdown": {
+    "MV": 61,
+    "CM": 18,
+    "モーション": 10,
+    "企業映像": 7,
+    "unverified:concept-art": 10,
+    "unverified:opening": 7,
+    "unverified:teaser-trailer": 4,
+    "unverified:youtube-sns": 4,
+    "unverified:making": 2,
+    "unverified:documentary": 2,
+    "unverified:film": 2,
+    "unverified:branded-movie": 2,
+    "unverified:how-to": 2,
+    "unverified:showreel": 2,
+    "unverified:empty": 1,
+    "unverified:event-live": 1
+  },
+  "mixing_cause": {
+    "summary": "run_20261125_070347 was originally claimed with --priority P2_remaining (commit 79249b51), which fell into the unfiltered else (ALL) branch of scripts/claim-phase3-batch.mjs and included 39 P3_unverified_genres videos alongside 96 P2_verified_5_genres videos. Commit eb1cd90b subsequently renamed only the priority label to P2_verified_5_genres without re-filtering the ID list.",
+    "original_claim_commit": "79249b51",
+    "label_rename_commit": "eb1cd90b",
+    "data_integrity_note": "prepare-phase3-batch.mjs and evaluate-phase3-batch.mjs classify each video individually via classifyVideoForCalibration(), so all 135 rows in phase3_batch_payload.json and TiDB carry accurate calibrationStatus (96 calibrated_verified, 39 calibrated_unverified_genre) and calibrationGenreBucket values. The existing report and payload files were intentionally left unmodified."
+  },
+  "claim_script_fix_commit": "175b0e35700b267c76b558e4ff03e8bfc1b06968"
+}

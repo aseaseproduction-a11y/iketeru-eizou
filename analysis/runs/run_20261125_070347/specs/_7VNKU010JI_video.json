@@ -1,0 +1,20 @@
+{
+  "version": "v1_baseline",
+  "runId": "run_20261125_070347",
+  "blindId": "d370c82758e5",
+  "mode": "video",
+  "assignedFiles": [
+    "E:\\iketeru_blind_eval\\run_20261125_070347\\video\\d370c82758e5\\d370c82758e5.mp4"
+  ],
+  "metrics": {
+    "duration_sec": 15.1,
+    "scdet_threshold": 10,
+    "total_cuts": 5,
+    "avg_cut_interval_sec": 3.02,
+    "max_cuts_per_10s": 3,
+    "integrated_lufs": -13.5,
+    "slowmo_applied": false,
+    "slowmo_factor": null,
+    "slowmo_window_sec": null
+  }
+}
