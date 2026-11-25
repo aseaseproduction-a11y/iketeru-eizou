@@ -160,3 +160,24 @@ test("sync-craft-recipes-to-sqlite dry-run, fail-closed on .gdoc/broken JSON, an
     fs.rmSync(td, { recursive: true, force: true });
   }
 });
+
+test("G4 image telop check ignores media.start_png filenames while catching real PNG telop instructions", () => {
+  const td = fs.mkdtempSync(path.join(os.tmpdir(), "craft-g4-test-"));
+  try {
+    const staging = path.join(td, "vidG4");
+    makeValidStagedVideo(staging, "vidG4");
+    const rPath = path.join(staging, "recipe.json");
+    const doc = JSON.parse(fs.readFileSync(rPath, "utf8"));
+    doc.cuts[0].anti_ai_slop_notes = "テロップは編集可能なAEテキストレイヤーで組むこと。";
+    fs.writeFileSync(rPath, JSON.stringify(doc, null, 2), "utf8");
+    const ok = validateRecipeGates({ videoId: "vidG4", stagingDir: staging, videoDurationSec: 30, calibratedScore: 84.0 });
+    assert.equal(ok.gates.G4_production_compliance.passed, true);
+
+    doc.cuts[0].anti_ai_slop_notes = "PNG画像でテロップを書き出して貼る。";
+    fs.writeFileSync(rPath, JSON.stringify(doc, null, 2), "utf8");
+    const ng = validateRecipeGates({ videoId: "vidG4", stagingDir: staging, videoDurationSec: 30, calibratedScore: 84.0 });
+    assert.equal(ng.gates.G4_production_compliance.passed, false);
+  } finally {
+    fs.rmSync(td, { recursive: true, force: true });
+  }
+});

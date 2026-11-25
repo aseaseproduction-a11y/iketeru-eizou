@@ -16,7 +16,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const GEN_AI_VIDEO_RE = /\b(runway|kling|veo|sora|pika|luma|gen-3|hailuo)\b/i;
-const IMAGE_TELOP_RE = /(画像生成.*テロップ|テロップ.*画像生成|png.*テロップ|テロップ.*png)/i;
+const IMAGE_TELOP_RE = /(画像生成[^"\n]{0,24}テロップ|テロップ[^"\n]{0,24}画像生成|png[^"\n]{0,24}テロップ|テロップ[^"\n]{0,24}png)/i;
 
 export function sha256File(filePath) {
   const hash = crypto.createHash("sha256");
@@ -116,8 +116,9 @@ export function validateRecipeGates({
       gates.G3_credibility_score.errors.push(`${prefix}: credibility_score ${credScore} < ${minCredibilityScore}`);
     }
 
-    // G4: production standards
-    const blob = JSON.stringify(c);
+    // G4: production standards (exclude media paths & derived credibility to avoid start_png + "テロップ" false positives)
+    const { media: _ignoredMedia, credibility: _ignoredCred, ...policyFields } = c;
+    const blob = JSON.stringify(policyFields);
     if (GEN_AI_VIDEO_RE.test(blob)) {
       gates.G4_production_compliance.errors.push(`${prefix}: mentions banned gen-AI video tool`);
     }
