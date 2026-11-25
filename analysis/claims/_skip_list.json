@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-25T02:46:30.000Z",
+  "updated_at": "2026-11-25T02:51:00.000Z",
   "entries": [
     {
       "video_id": "1202148916",
@@ -12,6 +12,28 @@
       "retry_policy": "permanent",
       "retry_count": 0,
       "retry_after": null
+    },
+    {
+      "video_id": "jfNr2Gju2Mk",
+      "category": "unavailable",
+      "reason": "ERROR: [youtube] jfNr2Gju2Mk: This video is not available",
+      "checked_at": "2026-11-25T02:51:00.000Z",
+      "checked_by": "chibatmute",
+      "source_run_id": "run_20261124_080300",
+      "retry_policy": "permanent",
+      "retry_count": 0,
+      "retry_after": null
+    },
+    {
+      "video_id": "wRXAEZ0RKCw",
+      "category": "decode_corrupted_local_file",
+      "reason": "[h264 @ 000001d9063417c0] Invalid NAL unit size (1245184 > 47292). [h264 @ 000001d9063417c0] missing picture in access unit with size 47296 [h264 @ 000001d9063417c0] Invalid NAL unit size (1245184 > 47292). [h264 @ 00000 (local cache renamed to wRXAEZ0RKCw.mp4.corrupted; re-download when YouTube acquisition resumes)",
+      "checked_at": "2026-11-25T02:51:00.000Z",
+      "checked_by": "chibatmute",
+      "source_run_id": "run_20261124_080300",
+      "retry_policy": "retry_once",
+      "retry_count": 0,
+      "retry_after": "2026-12-02T02:51:00.000Z"
     }
   ]
 }
