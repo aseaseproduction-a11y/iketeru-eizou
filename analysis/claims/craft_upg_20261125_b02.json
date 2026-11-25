@@ -3,7 +3,7 @@
   "task_type": "craft_recipe_v2_upgrade",
   "run_id": "craft_upg_20261125_b02",
   "worker": "chibatmute",
-  "status": "active",
+  "status": "released",
   "target_pool": "381_gt15s_ge78",
   "selection_seed": "phase1_upg_20261125",
   "min_calibrated_score": 78,
@@ -33,6 +33,6 @@
   ],
   "claimed_at": "2026-11-25T12:33:15.656Z",
   "completed_at": null,
-  "released_at": null,
-  "release_reason": null
+  "released_at": "2026-11-25T21:15:14.476Z",
+  "release_reason": "unprocessed_429_5_after_10m_retry_resets_1h16m58s_5_published"
 }
