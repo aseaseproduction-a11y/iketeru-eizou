@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "run_id": "pilot_20261125_162300",
+  "worker": "CHIBA-PC-api",
+  "generated_at": "2026-11-25T07:42:47.307Z",
+  "evidence_root": "E:\\iketeru_api_url_logs\\pilot_craft_recipe_pilot_20261125_162300",
+  "calls_dir": "E:\\iketeru_api_url_logs\\pilot_craft_recipe_pilot_20261125_162300\\calls",
+  "summary": {
+    "file_count": 3,
+    "total_bytes": 231676,
+    "secret_scan_passed": true
+  },
+  "files": [
+    {
+      "rel_path": "calls/001_FcIFvzP8-mg_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\pilot_craft_recipe_pilot_20261125_162300\\calls\\001_FcIFvzP8-mg_r1.json",
+      "video_id": "FcIFvzP8-mg",
+      "attempt": 1,
+      "call_index": 1,
+      "size_bytes": 68907,
+      "sha256": "98f95f8d4b01440185f583c6b005741fbaaf96c322b801a80d745074a55e8dcc"
+    },
+    {
+      "rel_path": "calls/003_jsEVOjI690Y_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\pilot_craft_recipe_pilot_20261125_162300\\calls\\003_jsEVOjI690Y_r1.json",
+      "video_id": "jsEVOjI690Y",
+      "attempt": 1,
+      "call_index": 3,
+      "size_bytes": 75788,
+      "sha256": "dd882f03d0e6163c9b1bb51b54bd51d34208e41dcc31c6556db0e526814b539e"
+    },
+    {
+      "rel_path": "calls/005_Xr032EhUDPw_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\pilot_craft_recipe_pilot_20261125_162300\\calls\\005_Xr032EhUDPw_r1.json",
+      "video_id": "Xr032EhUDPw",
+      "attempt": 1,
+      "call_index": 5,
+      "size_bytes": 86981,
+      "sha256": "3631079b12eae4038c8064f786388687e6055bcdbc02425080680a30ebbcd224"
+    }
+  ]
+}

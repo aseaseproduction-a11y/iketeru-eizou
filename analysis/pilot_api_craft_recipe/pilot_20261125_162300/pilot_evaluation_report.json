@@ -1,0 +1,1137 @@
+{
+  "run_dir": "E:\\iketeru-eizou\\analysis\\pilot_api_craft_recipe\\pilot_20261125_162300",
+  "summary": {
+    "M1_pass_calls": "3/10",
+    "M1_pass": false,
+    "M2_pass_calls": "3/10",
+    "M2_pass": false,
+    "M3_time_matched_major_union": "5/10",
+    "M3_time_recall_ratio": 0.5,
+    "M5_median_boundary_err_sec": 0.0,
+    "M5_median_midpoint_err_sec": 0.1,
+    "M5_fast_cut_boundary_medians_sec": {
+      "jsEVOjI690Y": 0.0,
+      "Xr032EhUDPw": 0.0
+    },
+    "M5_fast_cut_combined_median_sec": 0.0,
+    "M5_pass2_triggered": false,
+    "M5_micro_transition_median_mid_err_sec": 0.916,
+    "M6_pass": false,
+    "M6_prod_sqlite_untouched": true,
+    "M7_avg_tool_agreement": null,
+    "M7_avg_category_agreement": null,
+    "M7_avg_best_iou": null
+  },
+  "M1_details": {
+    "FcIFvzP8-mg_r1": {
+      "pass": true,
+      "reasons": [],
+      "cut_reports": [
+        {
+          "cut_index": 1,
+          "title": "3Dマットブラック絞りシャッター開閉と連動する白タイポ連続切替",
+          "category": "motion_graphics",
+          "duration_sec": 3.8,
+          "credibility_score": 100,
+          "credibility_flags": [],
+          "pass": true,
+          "reasons": []
+        },
+        {
+          "cut_index": 2,
+          "title": "上部スポット暗背景上の4行メッセージ・クリーンタイポ表示ホールド",
+          "category": "kinetic_typography",
+          "duration_sec": 6.0,
+          "credibility_score": 100,
+          "credibility_flags": [],
+          "pass": true,
+          "reasons": []
+        },
+        {
+          "cut_index": 3,
+          "title": "絞りシャッター高速収束によるAppleロゴ定着と黒背景エンドタグライン切替",
+          "category": "transition",
+          "duration_sec": 4.2,
+          "credibility_score": 100,
+          "credibility_flags": [],
+          "pass": true,
+          "reasons": []
+        }
+      ]
+    },
+    "FcIFvzP8-mg_r2": {
+      "pass": false,
+      "reasons": [
+        "missing_draft_file"
+      ]
+    },
+    "jsEVOjI690Y_r1": {
+      "pass": true,
+      "reasons": [],
+      "cut_reports": [
+        {
+          "cut_index": 1,
+          "title": "ローディングUIからジグザグ図形の白飛びフラッシュで展開する導入",
+          "category": "ui_motion",
+          "duration_sec": 2.0,
+          "credibility_score": 100,
+          "credibility_flags": [],
+          "pass": true,
+          "reasons": []
+        },
+        {
+          "cut_index": 2,
+          "title": "Ae×Blenderの3D造形・クロス・実写マスクが横スクロール連動する複合コラージュ",
+          "category": "motion_graphics",
+          "duration_sec": 8.0,
+          "credibility_score": 100,
+          "credibility_flags": [],
+          "pass": true,
+          "reasons": []
+        },
+        {
+          "cut_index": 3,
+          "title": "進捗バーへの急ズームからグラデーション漢字「東京」ロゴへ着地するエンディング",
+          "category": "kinetic_typography",
+          "duration_sec": 5.0,
+          "credibility_score": 100,
+          "credibility_flags": [],
+          "pass": true,
+          "reasons": []
+        }
+      ]
+    },
+    "jsEVOjI690Y_r2": {
+      "pass": false,
+      "reasons": [
+        "missing_draft_file"
+      ]
+    },
+    "Xr032EhUDPw_r1": {
+      "pass": true,
+      "reasons": [],
+      "cut_reports": [
+        {
+          "cut_index": 1,
+          "title": "赤黒2トーン都市の180度ロール回転カメラと日食開眼ルックデブ",
+          "category": "3d_camera",
+          "duration_sec": 9.0,
+          "credibility_score": 100,
+          "credibility_flags": [],
+          "pass": true,
+          "reasons": []
+        },
+        {
+          "cut_index": 2,
+          "title": "赤黒ハイコントラスト放射状ラインと高速キャラ切替フラッシュ",
+          "category": "vfx_composite",
+          "duration_sec": 4.0,
+          "credibility_score": 100,
+          "credibility_flags": [],
+          "pass": true,
+          "reasons": []
+        },
+        {
+          "cut_index": 3,
+          "title": "ハーフトーン崩壊都市の3D背景から赤ブラーへ急転するタイトル演出",
+          "category": "motion_graphics",
+          "duration_sec": 4.0,
+          "credibility_score": 100,
+          "credibility_flags": [],
+          "pass": true,
+          "reasons": []
+        },
+        {
+          "cut_index": 4,
+          "title": "矩形マスク・コラージュと枠線構成による高速キャラクター紹介",
+          "category": "graphic_design",
+          "duration_sec": 3.0,
+          "credibility_score": 100,
+          "credibility_flags": [],
+          "pass": true,
+          "reasons": []
+        }
+      ]
+    },
+    "Xr032EhUDPw_r2": {
+      "pass": false,
+      "reasons": [
+        "missing_draft_file"
+      ]
+    },
+    "I0jHbsidh1g_r1": {
+      "pass": false,
+      "reasons": [
+        "missing_draft_file"
+      ]
+    },
+    "I0jHbsidh1g_r2": {
+      "pass": false,
+      "reasons": [
+        "missing_draft_file"
+      ]
+    },
+    "kqj7b59D85Y_r1": {
+      "pass": false,
+      "reasons": [
+        "missing_draft_file"
+      ]
+    },
+    "kqj7b59D85Y_r2": {
+      "pass": false,
+      "reasons": [
+        "missing_draft_file"
+      ]
+    }
+  },
+  "M2_details": {
+    "FcIFvzP8-mg_r1": {
+      "pass": true,
+      "input_video_tokens": 1410,
+      "min_required_video_tokens": 1260,
+      "tokens_per_sec": 100.71,
+      "tokens_ok": true,
+      "observed_timestamps_count": 8,
+      "timestamp_issues": []
+    },
+    "FcIFvzP8-mg_r2": {
+      "pass": false,
+      "reasons": [
+        "missing_draft_file"
+      ]
+    },
+    "jsEVOjI690Y_r1": {
+      "pass": true,
+      "input_video_tokens": 1525,
+      "min_required_video_tokens": 1350,
+      "tokens_per_sec": 101.67,
+      "tokens_ok": true,
+      "observed_timestamps_count": 8,
+      "timestamp_issues": []
+    },
+    "jsEVOjI690Y_r2": {
+      "pass": false,
+      "reasons": [
+        "missing_draft_file"
+      ]
+    },
+    "Xr032EhUDPw_r1": {
+      "pass": true,
+      "input_video_tokens": 9101,
+      "min_required_video_tokens": 8100,
+      "tokens_per_sec": 101.12,
+      "tokens_ok": true,
+      "observed_timestamps_count": 12,
+      "timestamp_issues": []
+    },
+    "Xr032EhUDPw_r2": {
+      "pass": false,
+      "reasons": [
+        "missing_draft_file"
+      ]
+    },
+    "I0jHbsidh1g_r1": {
+      "pass": false,
+      "reasons": [
+        "missing_draft_file"
+      ]
+    },
+    "I0jHbsidh1g_r2": {
+      "pass": false,
+      "reasons": [
+        "missing_draft_file"
+      ]
+    },
+    "kqj7b59D85Y_r1": {
+      "pass": false,
+      "reasons": [
+        "missing_draft_file"
+      ]
+    },
+    "kqj7b59D85Y_r2": {
+      "pass": false,
+      "reasons": [
+        "missing_draft_file"
+      ]
+    }
+  },
+  "M3_M5_details": {
+    "FcIFvzP8-mg": {
+      "existing_v2_major_count": 2,
+      "existing_v2_micro_count": 0,
+      "major_matches_r1": [
+        {
+          "ref_cut_index": 1,
+          "ref_title": "機械式カメラ絞りアイリス開閉シンク＆キネティック文字分断モーフィング",
+          "ref_granularity": "technique_unit",
+          "ref_category": "kinetic_typography",
+          "ref_primary_tool": "Blender",
+          "ref_start_sec": 0.0,
+          "ref_end_sec": 4.0,
+          "api_cut_index": 1,
+          "api_title": "3Dマットブラック絞りシャッター開閉と連動する白タイポ連続切替",
+          "api_category": "motion_graphics",
+          "api_primary_tool": "Blender",
+          "api_start_sec": 0.0,
+          "api_end_sec": 3.8,
+          "iou": 0.95,
+          "start_err_sec": 0.0,
+          "end_err_sec": 0.2,
+          "boundary_mean_err_sec": 0.1,
+          "midpoint_err_sec": 0.1,
+          "time_matched": true,
+          "category_match": false
+        },
+        {
+          "ref_cut_index": 2,
+          "ref_title": "ブラッシュドダークメタルステートメント固定＆星型絞りAppleマーク回収",
+          "ref_granularity": "complex_composite",
+          "ref_category": "motion_graphics",
+          "ref_primary_tool": "After Effects",
+          "ref_start_sec": 5.0,
+          "ref_end_sec": 14.0,
+          "api_cut_index": 2,
+          "api_title": "上部スポット暗背景上の4行メッセージ・クリーンタイポ表示ホールド",
+          "api_category": "kinetic_typography",
+          "api_primary_tool": "After Effects",
+          "api_start_sec": 3.8,
+          "api_end_sec": 9.8,
+          "iou": 0.4706,
+          "start_err_sec": 1.2,
+          "end_err_sec": 4.2,
+          "boundary_mean_err_sec": 2.7,
+          "midpoint_err_sec": 2.7,
+          "time_matched": true,
+          "category_match": false
+        }
+      ],
+      "major_matches_r2": [
+        null,
+        null
+      ],
+      "major_matches_union": [
+        {
+          "ref_cut_index": 1,
+          "ref_title": "機械式カメラ絞りアイリス開閉シンク＆キネティック文字分断モーフィング",
+          "ref_granularity": "technique_unit",
+          "ref_category": "kinetic_typography",
+          "ref_primary_tool": "Blender",
+          "ref_start_sec": 0.0,
+          "ref_end_sec": 4.0,
+          "api_cut_index": 1,
+          "api_title": "3Dマットブラック絞りシャッター開閉と連動する白タイポ連続切替",
+          "api_category": "motion_graphics",
+          "api_primary_tool": "Blender",
+          "api_start_sec": 0.0,
+          "api_end_sec": 3.8,
+          "iou": 0.95,
+          "start_err_sec": 0.0,
+          "end_err_sec": 0.2,
+          "boundary_mean_err_sec": 0.1,
+          "midpoint_err_sec": 0.1,
+          "time_matched": true,
+          "category_match": false
+        },
+        {
+          "ref_cut_index": 2,
+          "ref_title": "ブラッシュドダークメタルステートメント固定＆星型絞りAppleマーク回収",
+          "ref_granularity": "complex_composite",
+          "ref_category": "motion_graphics",
+          "ref_primary_tool": "After Effects",
+          "ref_start_sec": 5.0,
+          "ref_end_sec": 14.0,
+          "api_cut_index": 2,
+          "api_title": "上部スポット暗背景上の4行メッセージ・クリーンタイポ表示ホールド",
+          "api_category": "kinetic_typography",
+          "api_primary_tool": "After Effects",
+          "api_start_sec": 3.8,
+          "api_end_sec": 9.8,
+          "iou": 0.4706,
+          "start_err_sec": 1.2,
+          "end_err_sec": 4.2,
+          "boundary_mean_err_sec": 2.7,
+          "midpoint_err_sec": 2.7,
+          "time_matched": true,
+          "category_match": false
+        }
+      ],
+      "micro_matches_union": []
+    },
+    "jsEVOjI690Y": {
+      "existing_v2_major_count": 2,
+      "existing_v2_micro_count": 1,
+      "major_matches_r1": [
+        {
+          "ref_cut_index": 1,
+          "ref_title": "レンダー待機プログレスバーからの白・シアン・ライム放射フラッシュ突入",
+          "ref_granularity": "technique_unit",
+          "ref_category": "micro_fx_glitch",
+          "ref_primary_tool": "After Effects",
+          "ref_start_sec": 0.0,
+          "ref_end_sec": 3.0,
+          "api_cut_index": 1,
+          "api_title": "ローディングUIからジグザグ図形の白飛びフラッシュで展開する導入",
+          "api_category": "ui_motion",
+          "api_primary_tool": "After Effects",
+          "api_start_sec": 0.0,
+          "api_end_sec": 2.0,
+          "iou": 0.6667,
+          "start_err_sec": 0.0,
+          "end_err_sec": 1.0,
+          "boundary_mean_err_sec": 0.5,
+          "midpoint_err_sec": 0.5,
+          "time_matched": true,
+          "category_match": false
+        },
+        {
+          "ref_cut_index": 3,
+          "ref_title": "「残り時間1秒・86%」復帰とライム極太タイポ〜VGTロゴ着地",
+          "ref_granularity": "technique_unit",
+          "ref_category": "kinetic_typography",
+          "ref_primary_tool": "After Effects",
+          "ref_start_sec": 10.0,
+          "ref_end_sec": 15.0,
+          "api_cut_index": 3,
+          "api_title": "進捗バーへの急ズームからグラデーション漢字「東京」ロゴへ着地するエンディング",
+          "api_category": "kinetic_typography",
+          "api_primary_tool": "After Effects",
+          "api_start_sec": 10.0,
+          "api_end_sec": 15.0,
+          "iou": 1.0,
+          "start_err_sec": 0.0,
+          "end_err_sec": 0.0,
+          "boundary_mean_err_sec": 0.0,
+          "midpoint_err_sec": 0.0,
+          "time_matched": true,
+          "category_match": true
+        }
+      ],
+      "major_matches_r2": [
+        null,
+        null
+      ],
+      "major_matches_union": [
+        {
+          "ref_cut_index": 1,
+          "ref_title": "レンダー待機プログレスバーからの白・シアン・ライム放射フラッシュ突入",
+          "ref_granularity": "technique_unit",
+          "ref_category": "micro_fx_glitch",
+          "ref_primary_tool": "After Effects",
+          "ref_start_sec": 0.0,
+          "ref_end_sec": 3.0,
+          "api_cut_index": 1,
+          "api_title": "ローディングUIからジグザグ図形の白飛びフラッシュで展開する導入",
+          "api_category": "ui_motion",
+          "api_primary_tool": "After Effects",
+          "api_start_sec": 0.0,
+          "api_end_sec": 2.0,
+          "iou": 0.6667,
+          "start_err_sec": 0.0,
+          "end_err_sec": 1.0,
+          "boundary_mean_err_sec": 0.5,
+          "midpoint_err_sec": 0.5,
+          "time_matched": true,
+          "category_match": false
+        },
+        {
+          "ref_cut_index": 3,
+          "ref_title": "「残り時間1秒・86%」復帰とライム極太タイポ〜VGTロゴ着地",
+          "ref_granularity": "technique_unit",
+          "ref_category": "kinetic_typography",
+          "ref_primary_tool": "After Effects",
+          "ref_start_sec": 10.0,
+          "ref_end_sec": 15.0,
+          "api_cut_index": 3,
+          "api_title": "進捗バーへの急ズームからグラデーション漢字「東京」ロゴへ着地するエンディング",
+          "api_category": "kinetic_typography",
+          "api_primary_tool": "After Effects",
+          "api_start_sec": 10.0,
+          "api_end_sec": 15.0,
+          "iou": 1.0,
+          "start_err_sec": 0.0,
+          "end_err_sec": 0.0,
+          "boundary_mean_err_sec": 0.0,
+          "midpoint_err_sec": 0.0,
+          "time_matched": true,
+          "category_match": true
+        }
+      ],
+      "micro_matches_union": [
+        {
+          "ref_cut_index": 4,
+          "ref_title": "【15fマイクロ遷移】レンダー待機プログレスバーからの白・シアン・ライム放射フ・RGB色収差・瞬間フラッシュスパイク切替",
+          "ref_granularity": "micro_transition",
+          "ref_category": "micro_fx_glitch",
+          "ref_primary_tool": "After Effects",
+          "ref_start_sec": 1.083,
+          "ref_end_sec": 1.583,
+          "api_cut_index": 1,
+          "api_title": "ローディングUIからジグザグ図形の白飛びフラッシュで展開する導入",
+          "api_category": "ui_motion",
+          "api_primary_tool": "After Effects",
+          "api_start_sec": 0.0,
+          "api_end_sec": 2.0,
+          "iou": 0.25,
+          "start_err_sec": 1.083,
+          "end_err_sec": 0.417,
+          "boundary_mean_err_sec": 0.75,
+          "midpoint_err_sec": 0.333,
+          "time_matched": true,
+          "category_match": false
+        }
+      ]
+    },
+    "Xr032EhUDPw": {
+      "existing_v2_major_count": 1,
+      "existing_v2_micro_count": 1,
+      "major_matches_r1": [
+        {
+          "ref_cut_index": 2,
+          "ref_title": "黒体爆発ワイプ→黄金縁取り『呪術廻戦 死滅回游 前編』ロゴ＆赤煙侵食",
+          "ref_granularity": "technique_unit",
+          "ref_category": "kinetic_typography",
+          "ref_primary_tool": "Blender",
+          "ref_start_sec": 34.0,
+          "ref_end_sec": 38.0,
+          "api_cut_index": 3,
+          "api_title": "ハーフトーン崩壊都市の3D背景から赤ブラーへ急転するタイトル演出",
+          "api_category": "motion_graphics",
+          "api_primary_tool": "After Effects",
+          "api_start_sec": 34.0,
+          "api_end_sec": 38.0,
+          "iou": 1.0,
+          "start_err_sec": 0.0,
+          "end_err_sec": 0.0,
+          "boundary_mean_err_sec": 0.0,
+          "midpoint_err_sec": 0.0,
+          "time_matched": true,
+          "category_match": false
+        }
+      ],
+      "major_matches_r2": [
+        null
+      ],
+      "major_matches_union": [
+        {
+          "ref_cut_index": 2,
+          "ref_title": "黒体爆発ワイプ→黄金縁取り『呪術廻戦 死滅回游 前編』ロゴ＆赤煙侵食",
+          "ref_granularity": "technique_unit",
+          "ref_category": "kinetic_typography",
+          "ref_primary_tool": "Blender",
+          "ref_start_sec": 34.0,
+          "ref_end_sec": 38.0,
+          "api_cut_index": 3,
+          "api_title": "ハーフトーン崩壊都市の3D背景から赤ブラーへ急転するタイトル演出",
+          "api_category": "motion_graphics",
+          "api_primary_tool": "After Effects",
+          "api_start_sec": 34.0,
+          "api_end_sec": 38.0,
+          "iou": 1.0,
+          "start_err_sec": 0.0,
+          "end_err_sec": 0.0,
+          "boundary_mean_err_sec": 0.0,
+          "midpoint_err_sec": 0.0,
+          "time_matched": true,
+          "category_match": false
+        }
+      ],
+      "micro_matches_union": [
+        {
+          "ref_cut_index": 4,
+          "ref_title": "【15fマイクロ遷移】黒体爆発ワイプ→黄金縁取り『呪術廻戦 死滅回游 前編』ロ・高速スナップ＆マッチカットスパイク切替",
+          "ref_granularity": "micro_transition",
+          "ref_category": "transition",
+          "ref_primary_tool": "After Effects",
+          "ref_start_sec": 34.25,
+          "ref_end_sec": 34.75,
+          "api_cut_index": 3,
+          "api_title": "ハーフトーン崩壊都市の3D背景から赤ブラーへ急転するタイトル演出",
+          "api_category": "motion_graphics",
+          "api_primary_tool": "After Effects",
+          "api_start_sec": 34.0,
+          "api_end_sec": 38.0,
+          "iou": 0.125,
+          "start_err_sec": 0.25,
+          "end_err_sec": 3.25,
+          "boundary_mean_err_sec": 1.75,
+          "midpoint_err_sec": 1.5,
+          "time_matched": true,
+          "category_match": false
+        }
+      ]
+    },
+    "I0jHbsidh1g": {
+      "existing_v2_major_count": 3,
+      "existing_v2_micro_count": 1,
+      "major_matches_r1": [
+        null,
+        null,
+        null
+      ],
+      "major_matches_r2": [
+        null,
+        null,
+        null
+      ],
+      "major_matches_union": [
+        null,
+        null,
+        null
+      ],
+      "micro_matches_union": [
+        null
+      ]
+    },
+    "kqj7b59D85Y": {
+      "existing_v2_major_count": 2,
+      "existing_v2_micro_count": 1,
+      "major_matches_r1": [
+        null,
+        null
+      ],
+      "major_matches_r2": [
+        null,
+        null
+      ],
+      "major_matches_union": [
+        null,
+        null
+      ],
+      "micro_matches_union": [
+        null
+      ]
+    }
+  },
+  "M4_api_cuts_vs_sqlite_scenes": {
+    "FcIFvzP8-mg": [
+      {
+        "attempt": 1,
+        "cut_index": 1,
+        "range": "00:00-00:04 (0.0-3.8s)",
+        "title": "3Dマットブラック絞りシャッター開閉と連動する白タイポ連続切替",
+        "category": "motion_graphics",
+        "primary_tool": "Blender",
+        "matches_existing_v2": true,
+        "observed_timestamps": [
+          {
+            "timestamp": "00:00.0",
+            "visual_evidence": "閉じたマットブラック絞りシャッター中央に白いAppleロゴ"
+          },
+          {
+            "timestamp": "00:01.0",
+            "visual_evidence": "回転する絞り羽根の内側で白い「Extra」がマスク切抜き表示"
+          },
+          {
+            "timestamp": "00:02.0",
+            "visual_evidence": "羽根の開閉リズムに合わせて「layers」へ切替"
+          }
+        ],
+        "overlapping_sqlite_scenes": [
+          {
+            "shot_index": 1,
+            "range": "00:00-00:01",
+            "shot_title": "暗い金属空間の絞りリングとロゴ提示",
+            "description": "ほのかに上端が光る黒〜チャコールグレーの金属背景の中央に、10〜12枚の絞り羽根からなる黒い円形アイリスが現れ、中心に白いロゴが灯る。"
+          },
+          {
+            "shot_index": 2,
+            "range": "00:01-00:02",
+            "shot_title": "絞り羽根回転連動の「Extra」スライス変形",
+            "description": "絞り羽根が動く角度に合わせて「Extra」の文字が放射状に細かく分割・オフセットされながら、幾何学的な切れ込みを伴って現れる。"
+          },
+          {
+            "shot_index": 3,
+            "range": "00:02-00:03",
+            "shot_title": "「layers」への機械的モーフィング",
+            "description": "アイリス羽根の噛み合わせが一段切り替わるリズムに合わせ、中央の文字が「layers」へと分割片を噛み合わせながら再構築される。"
+          },
+          {
+            "shot_index": 4,
+            "range": "00:03-00:04",
+            "shot_title": "「of security」断片収束とシャッター解放",
+            "description": "羽根の縁に沿って「of security」がスライス状に出現・整列した直後、画面は一気に開けた4行テキストのステージへと切り替わる。"
+          },
+          {
+            "shot_index": 5,
+            "range": "00:05-00:07",
+            "shot_title": "4行ステートメントの安定配置",
+            "description": "ダークメタル背景の中央に「Stolen Device Protection / adds extra layers of security / for your Apple Account if your / iPhone is lost or taken.」の4行が美しくロックされる。"
+          }
+        ]
+      },
+      {
+        "attempt": 1,
+        "cut_index": 2,
+        "range": "00:04-00:10 (3.8-9.8s)",
+        "title": "上部スポット暗背景上の4行メッセージ・クリーンタイポ表示ホールド",
+        "category": "kinetic_typography",
+        "primary_tool": "After Effects",
+        "matches_existing_v2": true,
+        "observed_timestamps": [
+          {
+            "timestamp": "00:04.0",
+            "visual_evidence": "上部照明グラデーション背景に4行の白テキスト全文が出現"
+          },
+          {
+            "timestamp": "00:07.0",
+            "visual_evidence": "装飾や揺れを排した完全中央揃えの静置ホールド状態"
+          }
+        ],
+        "overlapping_sqlite_scenes": [
+          {
+            "shot_index": 2,
+            "range": "00:01-00:02",
+            "shot_title": "絞り羽根回転連動の「Extra」スライス変形",
+            "description": "絞り羽根が動く角度に合わせて「Extra」の文字が放射状に細かく分割・オフセットされながら、幾何学的な切れ込みを伴って現れる。"
+          },
+          {
+            "shot_index": 3,
+            "range": "00:02-00:03",
+            "shot_title": "「layers」への機械的モーフィング",
+            "description": "アイリス羽根の噛み合わせが一段切り替わるリズムに合わせ、中央の文字が「layers」へと分割片を噛み合わせながら再構築される。"
+          },
+          {
+            "shot_index": 4,
+            "range": "00:03-00:04",
+            "shot_title": "「of security」断片収束とシャッター解放",
+            "description": "羽根の縁に沿って「of security」がスライス状に出現・整列した直後、画面は一気に開けた4行テキストのステージへと切り替わる。"
+          },
+          {
+            "shot_index": 5,
+            "range": "00:05-00:07",
+            "shot_title": "4行ステートメントの安定配置",
+            "description": "ダークメタル背景の中央に「Stolen Device Protection / adds extra layers of security / for your Apple Account if your / iPhone is lost or taken.」の4行が美しくロックされる。"
+          },
+          {
+            "shot_index": 6,
+            "range": "00:08-00:10",
+            "shot_title": "全文読解のための静止キープ時間",
+            "description": "一切の余計な動きやカメラ揺れを排し、約5秒間にわたって4行メッセージの完全な可読時間を確保する。"
+          },
+          {
+            "shot_index": 7,
+            "range": "00:11-00:12",
+            "shot_title": "星型絞り羽根の「Extra」からマークへのロック閉鎖",
+            "description": "再び円形アイリスに戻り、多角形の羽根が星型（鋸歯状）に開いた中心の「Extra」の文字を飲み込むように羽根が締まって純白のAppleロゴへと戻る。"
+          }
+        ]
+      },
+      {
+        "attempt": 1,
+        "cut_index": 3,
+        "range": "00:10-00:14 (9.8-14.0s)",
+        "title": "絞りシャッター高速収束によるAppleロゴ定着と黒背景エンドタグライン切替",
+        "category": "transition",
+        "primary_tool": "After Effects",
+        "matches_existing_v2": true,
+        "observed_timestamps": [
+          {
+            "timestamp": "00:10.0",
+            "visual_evidence": "絞り羽根の星型シルエットに囲まれた白文字「Extra」"
+          },
+          {
+            "timestamp": "00:11.0",
+            "visual_evidence": "閉じたマットブラック絞り中央に白Appleロゴが復帰"
+          },
+          {
+            "timestamp": "00:12.0",
+            "visual_evidence": "完全な黒背景中央に白テキスト「There's more to iPhone」が表示"
+          }
+        ],
+        "overlapping_sqlite_scenes": [
+          {
+            "shot_index": 6,
+            "range": "00:08-00:10",
+            "shot_title": "全文読解のための静止キープ時間",
+            "description": "一切の余計な動きやカメラ揺れを排し、約5秒間にわたって4行メッセージの完全な可読時間を確保する。"
+          },
+          {
+            "shot_index": 7,
+            "range": "00:11-00:12",
+            "shot_title": "星型絞り羽根の「Extra」からマークへのロック閉鎖",
+            "description": "再び円形アイリスに戻り、多角形の羽根が星型（鋸歯状）に開いた中心の「Extra」の文字を飲み込むように羽根が締まって純白のAppleロゴへと戻る。"
+          },
+          {
+            "shot_index": 8,
+            "range": "00:12-00:14",
+            "shot_title": "純黒エンド「There's more to iPhone」",
+            "description": "金属の質感とリングが消えて完全な#000000の無空間になり、小ぶりな白の「There's more to iPhone」が2秒間余韻を残して終了する。"
+          }
+        ]
+      }
+    ],
+    "jsEVOjI690Y": [
+      {
+        "attempt": 1,
+        "cut_index": 1,
+        "range": "00:00-00:02 (0.0-2.0s)",
+        "title": "ローディングUIからジグザグ図形の白飛びフラッシュで展開する導入",
+        "category": "ui_motion",
+        "primary_tool": "After Effects",
+        "matches_existing_v2": true,
+        "observed_timestamps": [
+          {
+            "timestamp": "00:00",
+            "visual_evidence": "暗い背景上に「残り時間：15秒」、青い進捗バー、「67%」のUI表示"
+          },
+          {
+            "timestamp": "00:01",
+            "visual_evidence": "シアン・青・黄緑のギザギザ図形が放射状に広がる白飛びフラッシュ"
+          }
+        ],
+        "overlapping_sqlite_scenes": [
+          {
+            "shot_index": 1,
+            "range": "00:00-00:01",
+            "shot_title": "書き出しUI導入「残り時間",
+            "description": "15秒 / 67%」: ダークグレー背景の中央に細身の青いプログレスバーだけが静かに伸び、これから起こる化学反応への溜めを作る。"
+          },
+          {
+            "shot_index": 2,
+            "range": "00:01-00:02",
+            "shot_title": "シアン・ライムの幾何学フラッシュ爆発",
+            "description": "プログレスバーの先端が閃光を放ち、黄色と青緑の鋭角ポリゴンと放射ボケが画面一杯に炸裂して別次元へ突入する。"
+          },
+          {
+            "shot_index": 3,
+            "range": "00:03-00:04",
+            "shot_title": "スカイシアン空間展開と3D立体群の出現",
+            "description": "鮮やかな水色空間に雪山実写を投影した多面体、オレンジ円柱、金属トーラス結び目、緑ピラミッド、マゼンタ階段、花形シェイプが一斉に躍り出る。"
+          }
+        ]
+      },
+      {
+        "attempt": 1,
+        "cut_index": 2,
+        "range": "00:02-00:10 (2.0-10.0s)",
+        "title": "Ae×Blenderの3D造形・クロス・実写マスクが横スクロール連動する複合コラージュ",
+        "category": "motion_graphics",
+        "primary_tool": "After Effects",
+        "matches_existing_v2": true,
+        "observed_timestamps": [
+          {
+            "timestamp": "00:02",
+            "visual_evidence": "オレンジ円柱・金属トーラスノット・山脈をマスクした多面体・ピンク階段シェイプの横スクロール"
+          },
+          {
+            "timestamp": "00:05",
+            "visual_evidence": "揺らぐ黄色い布、石から赤系へ質感が変わる多角形、回転する緑の円錐、上部の波線"
+          },
+          {
+            "timestamp": "00:09",
+            "visual_evidence": "桜写真のクローバー型マスク、飛び散る多数の球体、画面右下から広がる白い発光球"
+          }
+        ],
+        "overlapping_sqlite_scenes": [
+          {
+            "shot_index": 1,
+            "range": "00:00-00:01",
+            "shot_title": "書き出しUI導入「残り時間",
+            "description": "15秒 / 67%」: ダークグレー背景の中央に細身の青いプログレスバーだけが静かに伸び、これから起こる化学反応への溜めを作る。"
+          },
+          {
+            "shot_index": 2,
+            "range": "00:01-00:02",
+            "shot_title": "シアン・ライムの幾何学フラッシュ爆発",
+            "description": "プログレスバーの先端が閃光を放ち、黄色と青緑の鋭角ポリゴンと放射ボケが画面一杯に炸裂して別次元へ突入する。"
+          },
+          {
+            "shot_index": 3,
+            "range": "00:03-00:04",
+            "shot_title": "スカイシアン空間展開と3D立体群の出現",
+            "description": "鮮やかな水色空間に雪山実写を投影した多面体、オレンジ円柱、金属トーラス結び目、緑ピラミッド、マゼンタ階段、花形シェイプが一斉に躍り出る。"
+          },
+          {
+            "shot_index": 4,
+            "range": "00:05-00:06",
+            "shot_title": "正弦波ライン・スライダーUI・実写矩形インサート",
+            "description": "背景を横切る波形ラインと下部スライダー玉に連動し、青やピンクのキューブ・多面体が弾みながらミニ実写窓が横へ滑る。"
+          },
+          {
+            "shot_index": 5,
+            "range": "00:07-00:08",
+            "shot_title": "イエローリボン交差と衝突スパーク",
+            "description": "画面右下から伸びる黄色いリボンと回転するオレンジ球体が衝突して白いスパークを散らし、右上に砂・岩肌テクスチャの球体が膨らむ。"
+          },
+          {
+            "shot_index": 6,
+            "range": "00:09-00:10",
+            "shot_title": "桜の花型アルファマットと純白ホワイトアウト",
+            "description": "マゼンタの花型太枠内に桜の実写映像が開花し、多要素のシナジーが最高潮に達した瞬間、画面全体が純白へ飛び切る。"
+          },
+          {
+            "shot_index": 7,
+            "range": "00:11-00:12",
+            "shot_title": "UI復帰「残り時間",
+            "description": "1秒 / 82%→86%」ズーム: 白飛び明けに再びダークUIのバーへ戻り、82%から86%へグッとカメラが寄り切ることでフィナーレの推進力を生む。"
+          }
+        ]
+      },
+      {
+        "attempt": 1,
+        "cut_index": 3,
+        "range": "00:10-00:15 (10.0-15.0s)",
+        "title": "進捗バーへの急ズームからグラデーション漢字「東京」ロゴへ着地するエンディング",
+        "category": "kinetic_typography",
+        "primary_tool": "After Effects",
+        "matches_existing_v2": true,
+        "observed_timestamps": [
+          {
+            "timestamp": "00:11",
+            "visual_evidence": "暗い背景上に「残り時間：1秒」、進捗バー、「82%」のUI表示"
+          },
+          {
+            "timestamp": "00:12",
+            "visual_evidence": "青い進捗バー先端と「86%」へ大きくズームインした画面"
+          },
+          {
+            "timestamp": "00:14",
+            "visual_evidence": "黄〜青グラデの「東京」と白文字「VIDEO GRAPHERS」「ビデオグラファーズトーキョー」ロゴの完成形"
+          }
+        ],
+        "overlapping_sqlite_scenes": [
+          {
+            "shot_index": 5,
+            "range": "00:07-00:08",
+            "shot_title": "イエローリボン交差と衝突スパーク",
+            "description": "画面右下から伸びる黄色いリボンと回転するオレンジ球体が衝突して白いスパークを散らし、右上に砂・岩肌テクスチャの球体が膨らむ。"
+          },
+          {
+            "shot_index": 6,
+            "range": "00:09-00:10",
+            "shot_title": "桜の花型アルファマットと純白ホワイトアウト",
+            "description": "マゼンタの花型太枠内に桜の実写映像が開花し、多要素のシナジーが最高潮に達した瞬間、画面全体が純白へ飛び切る。"
+          },
+          {
+            "shot_index": 7,
+            "range": "00:11-00:12",
+            "shot_title": "UI復帰「残り時間",
+            "description": "1秒 / 82%→86%」ズーム: 白飛び明けに再びダークUIのバーへ戻り、82%から86%へグッとカメラが寄り切ることでフィナーレの推進力を生む。"
+          },
+          {
+            "shot_index": 8,
+            "range": "00:13-00:15",
+            "shot_title": "極太ライム日本語タイポとVGT東京ロゴ着地",
+            "description": "画面を覆う黄緑の巨大文字が一瞬フラッシュした直後、白文字「VIDEO GRAPHERS TOKYO」とグラデーション斜線入り「東京」ロゴが中央にロックアップして締める。"
+          }
+        ]
+      }
+    ],
+    "Xr032EhUDPw": [
+      {
+        "attempt": 1,
+        "cut_index": 1,
+        "range": "00:00-00:09 (0.0-9.0s)",
+        "title": "赤黒2トーン都市の180度ロール回転カメラと日食開眼ルックデブ",
+        "category": "3d_camera",
+        "primary_tool": "Blender",
+        "matches_existing_v2": true,
+        "observed_timestamps": [
+          {
+            "timestamp": "00:00",
+            "visual_evidence": "上下反転した赤黒ビル街の中央に黒い球体と赤い発光リング"
+          },
+          {
+            "timestamp": "00:05",
+            "visual_evidence": "虎杖の背面が画面に入りながら都市全体が回転"
+          },
+          {
+            "timestamp": "00:09",
+            "visual_evidence": "画面が正立し黒い球体の中に白い輪郭の目が開く"
+          }
+        ],
+        "overlapping_sqlite_scenes": [
+          {
+            "shot_index": 1,
+            "range": "00:00-00:11",
+            "shot_title": "血紅の摩天楼渓谷に浮かぶ黒体太陽の「眼」と伏せる虎杖",
+            "description": "真っ赤なビル群がそびえ立つ渓谷の奥に黒い日食状の円環が現れ、倒れ込みあるいは見上げる虎杖悠仁の頭上でその円が巨大な一つの「眼」へと開眼する。"
+          },
+          {
+            "shot_index": 2,
+            "range": "00:11-00:22",
+            "shot_title": "3DCG都市俯瞰ダイブと伏黒恵・赤い結界陣",
+            "description": "紅蓮の爆煙が街を呑み込んだ直後、カメラは夕陽のオレンジに染まる精密な3DCGのビル街を真上から急降下し、鋭い眼光を放つ伏黒恵と赤い幾何学術式陣の虎杖へ繋ぐ。"
+          }
+        ]
+      },
+      {
+        "attempt": 1,
+        "cut_index": 2,
+        "range": "00:26-00:30 (26.0-30.0s)",
+        "title": "赤黒ハイコントラスト放射状ラインと高速キャラ切替フラッシュ",
+        "category": "vfx_composite",
+        "primary_tool": "After Effects",
+        "matches_existing_v2": false,
+        "observed_timestamps": [
+          {
+            "timestamp": "00:27",
+            "visual_evidence": "九十九由基が赤い放射状ラインの中心に拳を突き出す"
+          },
+          {
+            "timestamp": "00:28",
+            "visual_evidence": "パンダから真希の刀構えへ赤黒トーンのまま連続切替"
+          },
+          {
+            "timestamp": "00:30",
+            "visual_evidence": "虎杖悠仁が赤い閃光を背に画面手前へ手を伸ばす"
+          }
+        ],
+        "overlapping_sqlite_scenes": [
+          {
+            "shot_index": 3,
+            "range": "00:22-00:34",
+            "shot_title": "暗夜道路の孤立光と真希の赤黒インパクト一閃・九十九の都市俯瞰",
+            "description": "街灯1本だけに照らされた暗い道路に立つ孤独な人影から、赤と黒の衝撃線の中で大刀を振り抜く禪院真希、そして高層ビル屋上から街を見下ろす九十九由基へと展開する。"
+          }
+        ]
+      },
+      {
+        "attempt": 1,
+        "cut_index": 3,
+        "range": "00:34-00:38 (34.0-38.0s)",
+        "title": "ハーフトーン崩壊都市の3D背景から赤ブラーへ急転するタイトル演出",
+        "category": "motion_graphics",
+        "primary_tool": "After Effects",
+        "matches_existing_v2": true,
+        "observed_timestamps": [
+          {
+            "timestamp": "00:34",
+            "visual_evidence": "モノクロ網点のビル群の上に黄色枠の「呪術廻戦」ロゴが出現"
+          },
+          {
+            "timestamp": "00:35",
+            "visual_evidence": "ロゴ下部に白文字の「死滅回游 前編」が表示される"
+          },
+          {
+            "timestamp": "00:37",
+            "visual_evidence": "背景が赤いブラーに切り替わり日食リングと落下爆弾が重なる"
+          }
+        ],
+        "overlapping_sqlite_scenes": [
+          {
+            "shot_index": 3,
+            "range": "00:22-00:34",
+            "shot_title": "暗夜道路の孤立光と真希の赤黒インパクト一閃・九十九の都市俯瞰",
+            "description": "街灯1本だけに照らされた暗い道路に立つ孤独な人影から、赤と黒の衝撃線の中で大刀を振り抜く禪院真希、そして高層ビル屋上から街を見下ろす九十九由基へと展開する。"
+          },
+          {
+            "shot_index": 4,
+            "range": "00:34-00:45",
+            "shot_title": "黄金の「呪術廻戦 死滅回游 前編」ロゴと天元・幾何学都市塊",
+            "description": "廃墟都市を背に黄金縁取りのタイトルロゴが赤黒い光の霞と共に現れたあと、純白空間の天元と漆黒の宙に浮かぶ立方体状の都市塊が静謐に示される。"
+          }
+        ]
+      },
+      {
+        "attempt": 1,
+        "cut_index": 4,
+        "range": "01:12-01:15 (72.0-75.0s)",
+        "title": "矩形マスク・コラージュと枠線構成による高速キャラクター紹介",
+        "category": "graphic_design",
+        "primary_tool": "After Effects",
+        "matches_existing_v2": false,
+        "observed_timestamps": [
+          {
+            "timestamp": "01:12",
+            "visual_evidence": "白背景に赤の植物や金属質感・時計などの多層コラージュ矩形が重なる"
+          },
+          {
+            "timestamp": "01:13",
+            "visual_evidence": "極細枠線背景の石流龍の目元に横長の赤い帯状ウィンドウが横切る"
+          },
+          {
+            "timestamp": "01:15",
+            "visual_evidence": "細い枠線と黒影を背負った乙骨憂太が刀を構える"
+          }
+        ],
+        "overlapping_sqlite_scenes": [
+          {
+            "shot_index": 7,
+            "range": "01:08-01:19",
+            "shot_title": "水面反射・血の掌・天元脳裏から禅院家道場での高速剣戟乱舞へ",
+            "description": "水辺の光の粒、深紅の闇に掲げられた掌、赤黒の脳内紋様を持つ人物を経て、障子と板張りの和室道場で白黒装束の剣士たちが密集し刃を交える凄絶な殺陣へ突入する。"
+          }
+        ]
+      }
+    ],
+    "I0jHbsidh1g": [],
+    "kqj7b59D85Y": []
+  },
+  "M6_details": {
+    "pass": false,
+    "prod_sqlite_untouched": true,
+    "prod_sqlite_sha256": "10b4fc6949def6111efd2b395bf4ba8e15e97d46258d3d2934270f54c9bf5e13",
+    "per_video": {
+      "FcIFvzP8-mg": {
+        "pass": true,
+        "upserted_cuts": 3,
+        "retrieved_cuts": 3,
+        "found_in_v2_search": true,
+        "targeted_search_hits": 1,
+        "reference_candidates_count": 8,
+        "in_reference_candidates": true,
+        "plan_cuts_count": 6,
+        "plan_includes_this_video": true,
+        "locked_palette_hex": {
+          "base": "#111115",
+          "primary": "#26262C",
+          "accent": "#FFFFFF"
+        },
+        "has_palette": true,
+        "has_ae_blueprint_layers": true,
+        "has_transition_bridge": true,
+        "style_profile_ok": true
+      },
+      "jsEVOjI690Y": {
+        "pass": true,
+        "upserted_cuts": 3,
+        "retrieved_cuts": 3,
+        "found_in_v2_search": true,
+        "targeted_search_hits": 1,
+        "reference_candidates_count": 8,
+        "in_reference_candidates": true,
+        "plan_cuts_count": 6,
+        "plan_includes_this_video": true,
+        "locked_palette_hex": {
+          "base": "#1A1A1A",
+          "primary": "#4A90E2",
+          "accent": "#A6FF00"
+        },
+        "has_palette": true,
+        "has_ae_blueprint_layers": true,
+        "has_transition_bridge": true,
+        "style_profile_ok": true
+      },
+      "Xr032EhUDPw": {
+        "pass": true,
+        "upserted_cuts": 4,
+        "retrieved_cuts": 4,
+        "found_in_v2_search": true,
+        "targeted_search_hits": 1,
+        "reference_candidates_count": 8,
+        "in_reference_candidates": true,
+        "plan_cuts_count": 6,
+        "plan_includes_this_video": true,
+        "locked_palette_hex": {
+          "base": "#0A0708",
+          "primary": "#E51E14",
+          "accent": "#FF4824"
+        },
+        "has_palette": true,
+        "has_ae_blueprint_layers": true,
+        "has_transition_bridge": true,
+        "style_profile_ok": true
+      },
+      "I0jHbsidh1g": {
+        "pass": false,
+        "error": "missing_draft"
+      },
+      "kqj7b59D85Y": {
+        "pass": false,
+        "error": "missing_draft"
+      }
+    }
+  },
+  "M7_details": {}
+}

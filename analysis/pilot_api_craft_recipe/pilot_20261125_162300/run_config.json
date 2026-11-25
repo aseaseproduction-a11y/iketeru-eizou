@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "run_id": "pilot_20261125_162300",
+  "mode": "pass1_1fps",
+  "worker": "CHIBA-PC-api",
+  "purpose": "pilot_craft_recipe_5x2_1fps",
+  "started_at": "2026-11-25T07:22:43.412Z",
+  "cli_version": "gemini-api 0.5.0\nBuilt: 2026-11-20T00:48:16Z",
+  "prereg_path": "analysis/pilot_api_craft_recipe/preregistration.json",
+  "prereg_lf_sha256": "e01cc0097d1995e2ae84ec850275132445d5d58d458c2130c345c29d5a45be94",
+  "prompt_sha256": "1c088bb9ff08365d4054dc682f2e5134857181f517c7be1fade208fd8213b0d3",
+  "model": "gemini-4-neon",
+  "thinking_level": "high",
+  "service_tier": "flex",
+  "store": false,
+  "stream": false,
+  "concurrency": 1,
+  "timeout_ms": 900000,
+  "attempts_per_video": 2,
+  "congestion_policy": {
+    "initial_retry_wait_sec": [
+      30,
+      60
+    ],
+    "defer_after_consecutive_503_429": 2,
+    "stop_after_consecutive_deferred_videos": 3,
+    "deferred_pass_interval_sec": [
+      60,
+      120
+    ],
+    "deferred_pass_tries": 1,
+    "resume_prioritizes_deferred_queue": true
+  },
+  "pricing_usd_per_1m": {
+    "input": 1.5,
+    "output_and_thought": 7.5
+  },
+  "budget_guards": {
+    "month": "2026-11",
+    "monthly_limit_usd": 38,
+    "run_budget_usd": 1.2,
+    "max_requests": 25
+  },
+  "evidence_logs_dir": "E:\\iketeru_api_url_logs\\pilot_craft_recipe_pilot_20261125_162300",
+  "videos": [
+    {
+      "video_id": "FcIFvzP8-mg",
+      "role": "stratum_1_short_cm",
+      "ref_duration_sec": 14,
+      "full_duration_sec": 14,
+      "video_processing": {
+        "type": "static",
+        "fps": 1,
+        "content_layers": [
+          "frames",
+          "audio"
+        ]
+      },
+      "resolution": "low"
+    },
+    {
+      "video_id": "jsEVOjI690Y",
+      "role": "stratum_2_fast_cut_motion_or_glitch",
+      "ref_duration_sec": 15,
+      "full_duration_sec": 15,
+      "video_processing": {
+        "type": "static",
+        "fps": 1,
+        "content_layers": [
+          "frames",
+          "audio"
+        ]
+      },
+      "resolution": "low"
+    },
+    {
+      "video_id": "Xr032EhUDPw",
+      "role": "stratum_3_mid_non_mv_opening_or_branded",
+      "ref_duration_sec": 90,
+      "full_duration_sec": 90,
+      "video_processing": {
+        "type": "static",
+        "fps": 1,
+        "content_layers": [
+          "frames",
+          "audio"
+        ]
+      },
+      "resolution": "low"
+    },
+    {
+      "video_id": "I0jHbsidh1g",
+      "role": "stratum_4_mid_mv",
+      "ref_duration_sec": 156,
+      "full_duration_sec": 156,
+      "video_processing": {
+        "type": "static",
+        "fps": 1,
+        "content_layers": [
+          "frames",
+          "audio"
+        ]
+      },
+      "resolution": "low"
+    },
+    {
+      "video_id": "kqj7b59D85Y",
+      "role": "stratum_5_long_multi_cut_mv",
+      "ref_duration_sec": 208,
+      "full_duration_sec": 208,
+      "video_processing": {
+        "type": "static",
+        "fps": 1,
+        "content_layers": [
+          "frames",
+          "audio"
+        ]
+      },
+      "resolution": "low"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-25T06:48:06.389Z",
+  "updated_at": "2026-11-25T07:42:47.309Z",
   "currency": "USD",
   "default_monthly_limit_usd": 38,
   "gcp_monthly_credit_usd": 40,
@@ -17,9 +17,9 @@
   "monthly_totals": {
     "2026-11": {
       "limit_usd": 38,
-      "spent_usd": 2.556755,
-      "calls_count": 34,
-      "congestion_failure_count": 12,
+      "spent_usd": 2.764393,
+      "calls_count": 37,
+      "congestion_failure_count": 18,
       "runs": [
         {
           "run_id": "run_20261125_125425",
@@ -63,6 +63,23 @@
             "2026-11-25T06:45:14.075Z"
           ],
           "recorded_at": "2026-11-25T06:48:06.387Z"
+        },
+        {
+          "run_id": "pilot_20261125_162300",
+          "purpose": "pilot_craft_recipe_5x2_1fps",
+          "service_tier": "flex",
+          "calls_count": 3,
+          "cost_usd": 0.207638,
+          "congestion_failure_count": 6,
+          "congestion_timestamps": [
+            "2026-11-25T07:24:02.876Z",
+            "2026-11-25T07:24:46.273Z",
+            "2026-11-25T07:29:26.769Z",
+            "2026-11-25T07:31:25.425Z",
+            "2026-11-25T07:41:45.685Z",
+            "2026-11-25T07:42:47.256Z"
+          ],
+          "recorded_at": "2026-11-25T07:42:47.309Z"
         }
       ]
     }
