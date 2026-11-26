@@ -173,7 +173,12 @@
      - 動画 1 本ごとに単一トランザクションで (a) 旧 `aiAnalysis` を `videoAnalysisHistory` へ退避、(b) `videos` の 4 列を更新（`updatedAt` は保持）、(c) ローカル SQLite の該当 `video_id` 分の `scenes` / `scenes_fts` を入れ替える。
      - Pre-D 元 40 カラム監査は、`aiAnalysis` の差分が「v3 正本 manifest に存在し本文 SHA-256 が完全一致」する場合のみ許可し、その他の差分・不一致はすべて失敗とする。
      - **運用段階**：DDL 適用および **最初の 20 本の TiDB 書き込みは千葉さんの明示承認後に実行**し、21 本目以降は全ゲート通過分のみ自動書き込みを許可する。
-- 根拠：`D:\マイドライブ\iketeru_analysis_v3\_docs\PILOT_V3_REPORT.md`、`docs/prompts/analysis_prompt_v3_1.md`、`docs/prompts/audit_prompt_v1.md`、`docs/sql/proposed_v3_analysis_ddl.sql`、`scripts/apply-reanalysis-v3-to-tidb.mjs`、`scripts/approved-tidb-overrides.mjs`、`scripts/claim-craft-batch.mjs`。
+  5. **分析プロンプト `v3.2` の位置づけ（`v3.1` との差分）**：
+     - `docs/prompts/analysis_prompt_v3_2.md`（SHA-256 `e42b47b50400f23de0a5d84566338a3f6580149149c0ca8367dfdc487aff89b2`）は、`v3.1`（`48b5d140…`）と**出力フォーマット（第 0〜10 章＋クライアント3行まとめ、Ch.3 シーン書式、バッククォート禁止）を完全互換**のまま、実測精度を高める 2 点を追加した改訂版とする：
+       1. **無音区間の実測根拠化（`silencedetect` 導入）**：入力 JSON に `ffmpeg silencedetect` の実測結果を含め、「黒画面や暗転を無音と決めつけない。無音と書くのは `silencedetect` で無音と確認できた区間だけにする」を必須ルール化。
+       2. **長回しの誤断定防止**：`scdet` のカットが少ない長い区間では、マスクやホイップ等の柔らかいつなぎがないかを目で確かめ、確かめられないときは「長回し」と断定しないルールを追加。
+     - DB 上の `videos.analysisVersion` は `v3` パイロット・`v3.1`・`v3.2` のいずれも `'v3'` とし、プロンプト版の判別は `videos.analysisPromptSha256`（`v3`: `a53083e1…`、`v3.1`: `48b5d140…`、`v3.2`: `e42b47b5…`）で行う。既存合格済みの `v3` / `v3.1` 分析はそのまま有効とし、今後の新規生成では `v3.2`（`silencedetect` 入力付き）を標準とする。
+- 根拠：`D:\マイドライブ\iketeru_analysis_v3\_docs\PILOT_V3_REPORT.md`、`docs/prompts/analysis_prompt_v3_1.md`、`docs/prompts/analysis_prompt_v3_2.md`、`docs/prompts/audit_prompt_v1.md`、`docs/sql/proposed_v3_analysis_ddl.sql`、`scripts/apply-reanalysis-v3-to-tidb.mjs`、`scripts/approved-tidb-overrides.mjs`、`scripts/claim-craft-batch.mjs`、`analysis/claims/v3_apply_pilot20_20261126.json`。
 
 ### D-027 YouTube 動画ダウンロードの運用ルール（2026-11-26）
 - 決定：
