@@ -31,6 +31,8 @@ export const VALID_CRAFT_TASK_TYPES = Object.freeze([
   "craft_recipe_v2_upgrade",
   "craft_recipe_new",
   "craft_purpose_backfill",
+  "reanalysis_v3",
+  "craft_v2_with_v3",
 ]);
 
 export const VALID_CRAFT_POOLS = Object.freeze([
@@ -38,6 +40,8 @@ export const VALID_CRAFT_POOLS = Object.freeze([
   "381_le15s_ge78",
   "new_138_ge78",
   "v2_ge78_missing_purpose",
+  "craft_v2_with_v3_ge78",
+  "reanalysis_v3_ge78",
   "custom",
 ]);
 
@@ -60,6 +64,8 @@ export function validateCraftPool(pool) {
 export function defaultTaskTypeForPool(pool) {
   if (pool === "new_138_ge78") return "craft_recipe_new";
   if (pool === "v2_ge78_missing_purpose") return "craft_purpose_backfill";
+  if (pool === "craft_v2_with_v3_ge78") return "craft_v2_with_v3";
+  if (pool === "reanalysis_v3_ge78") return "reanalysis_v3";
   return "craft_recipe_v2_upgrade";
 }
 
@@ -144,6 +150,10 @@ function generateCraftRunId(taskType) {
       ? "craft_new"
       : taskType === "craft_purpose_backfill"
       ? "craft_purp"
+      : taskType === "reanalysis_v3"
+      ? "reana_v3"
+      : taskType === "craft_v2_with_v3"
+      ? "craft_v3"
       : "craft_upg";
   return `${prefix}_${d.getFullYear()}${pad(d.getMonth() + 1)}${pad(d.getDate())}_${pad(d.getHours())}${pad(d.getMinutes())}${pad(d.getSeconds())}`;
 }
@@ -166,11 +176,21 @@ function parseArgs(argv) {
   return args;
 }
 
-function queryPoolsFromSqlite({ sqlitePath, cacheDir, minScore = 78.0 }) {
+function queryPoolsFromSqlite({ sqlitePath, cacheDir, minScore = 78.0, run1PreviewPath = null, v3StoreDir = null }) {
+  const defaultRun1 = path.join(REPO_ROOT, "analysis", "runs", "run1_p0_20261126_100930", "p0_58_bias_preview.json");
+  const r1Path = run1PreviewPath || (fs.existsSync(defaultRun1) ? defaultRun1 : "");
+  const v3Dir = v3StoreDir || process.env.IKETERU_ANALYSIS_V3_DIR || "D:\\マイドライブ\\iketeru_analysis_v3";
   const pyCode = [
     "import sqlite3, json, pathlib, sys",
-    "db, cache_dir, min_score = sys.argv[1], pathlib.Path(sys.argv[2]), float(sys.argv[3])",
+    "db, cache_dir, min_score, r1_path, v3_dir = sys.argv[1], pathlib.Path(sys.argv[2]), float(sys.argv[3]), sys.argv[4], pathlib.Path(sys.argv[5])",
     "cache_stems = {p.stem for p in cache_dir.iterdir() if p.is_file() and p.stat().st_size > 0 and not p.name.endswith('.corrupted')} if cache_dir.exists() else set()",
+    "v3_done = {d.name for d in v3_dir.iterdir() if d.is_dir() and not d.name.startswith('_') and (d / 'manifest.json').exists() and (d / 'analysis_v3.md').exists()} if v3_dir.exists() else set()",
+    "run1_ge78 = {}",
+    "if r1_path and pathlib.Path(r1_path).exists():",
+    "    r1 = json.loads(pathlib.Path(r1_path).read_text(encoding='utf-8'))",
+    "    for t in r1.get('targets') or []:",
+    "        if t.get('eligible_ge78_corrected_median') is True:",
+    "            run1_ge78[str(t['video_id'])] = float(t.get('corrected_score_median_offset') or t.get('raw_api_score') or 78.0)",
     "con = sqlite3.connect(f'file:{db}?mode=ro', uri=True)",
     "con.row_factory = sqlite3.Row",
     "vids = {r['id']: dict(r) for r in con.execute('SELECT id, platform, title, calibrated_score, technique_rating, analysis_observation_scope, LENGTH(TRIM(COALESCE(ai_analysis, \"\"))) AS alen FROM videos').fetchall()}",
@@ -183,30 +203,44 @@ function queryPoolsFromSqlite({ sqlitePath, cacheDir, minScore = 78.0 }) {
     "    ep = rj.get('expressive_purpose') or {}",
     "    has_ep = bool(isinstance(ep, dict) and ep.get('intent_summary') and ep.get('narrative_role') and ep.get('viewer_effect') and ep.get('search_phrases') and ep.get('keywords') and ep.get('evidence'))",
     "    craft.setdefault(r['video_id'], []).append({'dur': dur, 'is_v2': is_v2, 'needs_recut': dur > 15.0, 'has_ep': has_ep})",
-    "p_gt15, p_le15, p_new, p_v2_no_ep = [], [], [], []",
+    "p_gt15, p_le15, p_new, p_v2_no_ep, p_v2_with_v3, p_reana_v3 = [], [], [], [], [], []",
     "for vid, v in sorted(vids.items()):",
-    "    if v['alen'] <= 0 or v['analysis_observation_scope'] is not None or vid not in scenes or vid not in cache_stems:",
+    "    if v['analysis_observation_scope'] is not None or vid not in cache_stems:",
     "        continue",
     "    cs = v['calibrated_score']",
-    "    if cs is None or float(cs) < min_score:",
+    "    eff_score = float(cs) if cs is not None else run1_ge78.get(vid)",
+    "    if eff_score is None or eff_score < min_score:",
+    "        continue",
+    "    has_full_v2 = False",
+    "    has_full_ep = False",
+    "    if vid in craft:",
+    "        cuts = craft[vid]",
+    "        has_full_v2 = all(c['is_v2'] and not c['needs_recut'] for c in cuts)",
+    "        has_full_ep = all(c['has_ep'] for c in cuts)",
+    "    if not has_full_v2:",
+    "        p_v2_with_v3.append({'id': vid, 'calibrated_score': eff_score, 'title': v['title'], 'from_run1': cs is None and vid in run1_ge78})",
+    "    if vid not in v3_done:",
+    "        p_reana_v3.append({'id': vid, 'calibrated_score': eff_score, 'title': v['title']})",
+    "    if v['alen'] <= 0 or vid not in scenes or cs is None or float(cs) < min_score:",
     "        continue",
     "    if vid in craft:",
     "        cuts = craft[vid]",
-    "        if all(c['is_v2'] and not c['needs_recut'] for c in cuts):",
-    "            if not all(c['has_ep'] for c in cuts):",
+    "        if has_full_v2:",
+    "            if not has_full_ep:",
     "                p_v2_no_ep.append({'id': vid, 'calibrated_score': float(cs), 'title': v['title']})",
     "            continue",
     "        if any(c['needs_recut'] for c in cuts): p_gt15.append({'id': vid, 'calibrated_score': float(cs), 'title': v['title']})",
     "        else: p_le15.append({'id': vid, 'calibrated_score': float(cs), 'title': v['title']})",
     "    else:",
     "        p_new.append({'id': vid, 'calibrated_score': float(cs), 'title': v['title']})",
-    "print(json.dumps({'381_gt15s_ge78': p_gt15, '381_le15s_ge78': p_le15, 'new_138_ge78': p_new, 'v2_ge78_missing_purpose': p_v2_no_ep}, ensure_ascii=False))",
+    "print(json.dumps({'381_gt15s_ge78': p_gt15, '381_le15s_ge78': p_le15, 'new_138_ge78': p_new, 'v2_ge78_missing_purpose': p_v2_no_ep, 'craft_v2_with_v3_ge78': p_v2_with_v3, 'reanalysis_v3_ge78': p_reana_v3}, ensure_ascii=False))",
     "con.close()",
   ].join("\n");
-  const out = execFileSync("python", ["-c", pyCode, sqlitePath.replace(/\\/g, "/"), cacheDir, String(minScore)], {
+  const out = execFileSync("python", ["-c", pyCode, sqlitePath.replace(/\\/g, "/"), cacheDir, String(minScore), r1Path.replace(/\\/g, "/"), v3Dir.replace(/\\/g, "/")], {
     encoding: "utf8",
     timeout: 30000,
     maxBuffer: 20 * 1024 * 1024,
+    env: { ...process.env, PYTHONUTF8: "1" },
   });
   return JSON.parse(out);
 }
@@ -250,6 +284,50 @@ function main() {
     doc.release_reason = String(args.reason || "manual_release");
     fs.writeFileSync(claimPath, JSON.stringify(doc, null, 2) + "\n", "utf8");
     console.log(JSON.stringify({ released: runId, status: doc.status, release_reason: doc.release_reason }, null, 2));
+    return;
+  }
+
+  if (args["import-v3-assignment"]) {
+    const srcPath = path.resolve(String(args["import-v3-assignment"]));
+    if (!fs.existsSync(srcPath)) throw new Error(`Assignment file not found: ${srcPath}`);
+    const src = JSON.parse(fs.readFileSync(srcPath, "utf8"));
+    const worker = String(args.worker || src.pc || "").trim();
+    if (!worker) throw new Error("--import-v3-assignment requires worker name (in file.pc or --worker)");
+    const rawIds = [...new Set((src.video_ids || []).map((x) => String(x).trim()).filter(Boolean))];
+    if (rawIds.length === 0) throw new Error(`No video_ids in ${srcPath}`);
+    const runId = args["run-id"]
+      ? String(args["run-id"])
+      : `reana_v3_${worker.toLowerCase().replace(/[^a-z0-9]+/g, "_")}_${String(src.priority_tier || "p1").toLowerCase()}_20261126`;
+    const claims = loadCraftClaims(claimsDir);
+    const otherClaims = claims.filter((c) => c.data.run_id !== runId);
+    const verified = verifyActiveCraftClaims(otherClaims);
+    const conflicts = rawIds.filter((vid) => verified.ownerById.has(vid)).map((vid) => ({ video_id: vid, existing_run: verified.ownerById.get(vid) }));
+    if (conflicts.length > 0) {
+      throw new Error(`Cannot import v3 assignment: ${conflicts.length} overlap(s) with existing active claims: ${JSON.stringify(conflicts.slice(0, 10))}`);
+    }
+    const doc = {
+      schema_version: 2,
+      task_type: "reanalysis_v3",
+      run_id: runId,
+      worker,
+      status: "active",
+      target_pool: "reanalysis_v3_ge78",
+      priority_tier: src.priority_tier || null,
+      imported_from: path.basename(srcPath),
+      active_prompt_sha256: src.active_prompt_sha256 || null,
+      batch_size: rawIds.length,
+      video_ids: rawIds,
+      claimed_at: src.created_at || new Date().toISOString(),
+      completed_at: null,
+      released_at: null,
+      release_reason: null,
+    };
+    fs.mkdirSync(claimsDir, { recursive: true });
+    const claimPath = path.join(claimsDir, `${runId}.json`);
+    const idsPath = path.join(claimsDir, `${runId}_ids.json`);
+    fs.writeFileSync(claimPath, JSON.stringify(doc, null, 2) + "\n", "utf8");
+    fs.writeFileSync(idsPath, JSON.stringify(rawIds, null, 2) + "\n", "utf8");
+    console.log(JSON.stringify({ imported: true, run_id: runId, worker, count: rawIds.length, claim_path: claimPath, ids_path: idsPath }, null, 2));
     return;
   }
 

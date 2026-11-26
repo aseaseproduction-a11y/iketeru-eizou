@@ -15,14 +15,34 @@ import {
 } from "./claim-craft-batch.mjs";
 
 test("claim-craft-batch validates task types, pools, and default task_type mapping", () => {
-  assert.deepEqual(VALID_CRAFT_TASK_TYPES, ["craft_recipe_v2_upgrade", "craft_recipe_new", "craft_purpose_backfill"]);
-  assert.deepEqual(VALID_CRAFT_POOLS, ["381_gt15s_ge78", "381_le15s_ge78", "new_138_ge78", "v2_ge78_missing_purpose", "custom"]);
+  assert.deepEqual(VALID_CRAFT_TASK_TYPES, [
+    "craft_recipe_v2_upgrade",
+    "craft_recipe_new",
+    "craft_purpose_backfill",
+    "reanalysis_v3",
+    "craft_v2_with_v3",
+  ]);
+  assert.deepEqual(VALID_CRAFT_POOLS, [
+    "381_gt15s_ge78",
+    "381_le15s_ge78",
+    "new_138_ge78",
+    "v2_ge78_missing_purpose",
+    "craft_v2_with_v3_ge78",
+    "reanalysis_v3_ge78",
+    "custom",
+  ]);
   assert.equal(validateCraftTaskType("craft_recipe_v2_upgrade"), "craft_recipe_v2_upgrade");
   assert.equal(validateCraftTaskType("craft_purpose_backfill"), "craft_purpose_backfill");
+  assert.equal(validateCraftTaskType("reanalysis_v3"), "reanalysis_v3");
+  assert.equal(validateCraftTaskType("craft_v2_with_v3"), "craft_v2_with_v3");
   assert.equal(validateCraftPool("381_gt15s_ge78"), "381_gt15s_ge78");
   assert.equal(validateCraftPool("v2_ge78_missing_purpose"), "v2_ge78_missing_purpose");
+  assert.equal(validateCraftPool("craft_v2_with_v3_ge78"), "craft_v2_with_v3_ge78");
+  assert.equal(validateCraftPool("reanalysis_v3_ge78"), "reanalysis_v3_ge78");
   assert.equal(defaultTaskTypeForPool("new_138_ge78"), "craft_recipe_new");
   assert.equal(defaultTaskTypeForPool("v2_ge78_missing_purpose"), "craft_purpose_backfill");
+  assert.equal(defaultTaskTypeForPool("craft_v2_with_v3_ge78"), "craft_v2_with_v3");
+  assert.equal(defaultTaskTypeForPool("reanalysis_v3_ge78"), "reanalysis_v3");
   assert.equal(defaultTaskTypeForPool("381_gt15s_ge78"), "craft_recipe_v2_upgrade");
   assert.throws(() => validateCraftTaskType("unknown_type"));
   assert.throws(() => validateCraftPool("unknown_pool"));
