@@ -25,7 +25,9 @@ import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
 import {
   DEFAULT_APPROVED_OVERRIDES_PATH,
+  DEFAULT_V3_STORE_DIR,
   auditOriginalColumnsAgainstPreD,
+  loadV3CanonicalManifestMap,
   serializeTidbCellValue,
   sha256TidbCellValue,
 } from "./approved-tidb-overrides.mjs";
@@ -331,7 +333,10 @@ async function main() {
     return mut ? { ...row, ...mut } : row;
   });
 
-  // 1. Audit WITH the 3 planned overrides active (simulating post-approval) -> MUST PASS
+  // Load verified v3 canonical manifest so already-applied v3 aiAnalysis updates pass Pre-D 40-col audit (D-026)
+  const v3Manifest = loadV3CanonicalManifestMap(args["v3-store-dir"] || DEFAULT_V3_STORE_DIR);
+
+  // 1. Audit WITH the planned overrides + v3 manifest active (simulating post-approval) -> MUST PASS
   const simApprovedMap = new Map(plannedOverrides.map((e) => [`${e.video_id}::${e.column}`, { ...e, status: "approved", approved_at: "SIMULATED_DRY_RUN" }]));
   const auditWithApproved = auditOriginalColumnsAgainstPreD({
     liveRows: simulatedLiveRows,
@@ -339,15 +344,17 @@ async function main() {
     originalColumns,
     legacyScoreColumns: LEGACY_SCORE_COLUMNS,
     approvedOverrideMap: simApprovedMap,
+    v3ManifestMap: v3Manifest.valid_map,
   });
 
-  // 2. Audit WITHOUT overrides (strict current state) -> MUST FAIL with exact count = plannedOverrides.length
+  // 2. Audit WITHOUT overrides (strict current state, still allowing verified v3 manifest) -> MUST FAIL on unapproved overrides
   const auditWithoutApproved = auditOriginalColumnsAgainstPreD({
     liveRows: simulatedLiveRows,
     backupMap,
     originalColumns,
     legacyScoreColumns: LEGACY_SCORE_COLUMNS,
     approvedOverrideMap: new Map(),
+    v3ManifestMap: v3Manifest.valid_map,
   });
 
   // 3. Negative audit test: tamper 1 unlisted column on first target -> MUST FAIL
@@ -360,6 +367,7 @@ async function main() {
     originalColumns,
     legacyScoreColumns: LEGACY_SCORE_COLUMNS,
     approvedOverrideMap: simApprovedMap,
+    v3ManifestMap: v3Manifest.valid_map,
   });
 
   console.log(

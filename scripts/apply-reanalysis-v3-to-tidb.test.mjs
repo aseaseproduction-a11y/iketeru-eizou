@@ -195,3 +195,43 @@ test("validateRecipeGates supports gemini_api_url_v1 track ONLY with explicit al
     fs.rmSync(td, { recursive: true, force: true });
   }
 });
+
+test("apply-phase3-batch-to-tidb and restore-verified-excluded-status wire loadV3CanonicalManifestMap into Pre-D audit", () => {
+  const phase3Src = fs.readFileSync(new URL("./apply-phase3-batch-to-tidb.mjs", import.meta.url), "utf8");
+  const restoreSrc = fs.readFileSync(new URL("./restore-verified-excluded-status.mjs", import.meta.url), "utf8");
+  assert.match(phase3Src, /loadV3CanonicalManifestMap/);
+  assert.match(phase3Src, /v3ManifestMap:\s*v3Manifest\.valid_map/);
+  assert.match(restoreSrc, /loadV3CanonicalManifestMap/);
+  assert.match(restoreSrc, /v3ManifestMap:\s*v3Manifest\.valid_map/);
+
+  // Functional coexistence test: approved override on vid1 + v3 manifest aiAnalysis on vid2 BOTH pass Pre-D audit
+  const newBd1 = '{"visualVerificationStatus":"log_verified"}';
+  const newAna2 = "## 0. 総括\nv3本文";
+  const backupMap = new Map([
+    ["vid1", { id: "vid1", aiScoreBreakdown: "old_bd", aiAnalysis: "old1", updatedAt: "2026-11-20T00:00:00.000Z" }],
+    ["vid2", { id: "vid2", aiScoreBreakdown: "old_bd2", aiAnalysis: "old2", updatedAt: "2026-11-20T00:00:00.000Z" }],
+  ]);
+  const approvedMap = new Map([
+    [
+      "vid1::aiScoreBreakdown",
+      { video_id: "vid1", column: "aiScoreBreakdown", after_sha256: sha256TidbCellValue(newBd1), decision_id: "D-024", approved_at: "2026-11-26T00:00:00Z", status: "approved" },
+    ],
+  ]);
+  const v3Map = new Map([
+    ["vid2", { video_id: "vid2", analysis_content_sha256: sha256TidbCellValue(newAna2), mechanical_passed: true }],
+  ]);
+  const res = auditOriginalColumnsAgainstPreD({
+    liveRows: [
+      { id: "vid1", aiScoreBreakdown: newBd1, aiAnalysis: "old1", updatedAt: "2026-11-20T00:00:00.000Z" },
+      { id: "vid2", aiScoreBreakdown: "old_bd2", aiAnalysis: newAna2, updatedAt: "2026-11-20T00:00:00.000Z" },
+    ],
+    backupMap,
+    originalColumns: ["id", "aiScoreBreakdown", "aiAnalysis", "updatedAt"],
+    legacyScoreColumns: new Set(["aiScoreBreakdown", "aiAnalysis"]),
+    approvedOverrideMap: approvedMap,
+    v3ManifestMap: v3Map,
+  });
+  assert.equal(res.passed, true);
+  assert.equal(res.approved_overrides_matched_count, 1);
+  assert.equal(res.v3_manifest_matched_count, 1);
+});
