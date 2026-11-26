@@ -690,10 +690,11 @@ export default function Home() {
                         onChange={(e) => setSceneScoreFilter(e.target.value as SceneScoreFilter)}
                         className="rounded-lg border border-white/15 bg-black/50 px-2.5 py-1.5 text-xs text-white outline-none focus:border-amber-400/60"
                       >
-                        <option value="all">すべての動画</option>
+                        <option value="all">すべての動画（校正済み＋未校正）</option>
                         <option value="calibrated_only">校正済みのみ</option>
-                        <option value="score_78_plus">78点（A-）以上</option>
-                        <option value="score_83_plus">83点（受賞水準）以上</option>
+                        <option value="score_78_plus">校正 78点（A-）以上</option>
+                        <option value="score_83_plus">校正 83点（受賞水準）以上</option>
+                        <option value="uncalibrated_only">未校正のみ</option>
                       </select>
                     </label>
                     <label className="inline-flex items-center gap-2 text-xs text-white/80 cursor-pointer select-none">

@@ -141,12 +141,17 @@ var videoScenes = mysqlTable("videoScenes", {
   audioText: text("audioText"),
   keywordsJson: text("keywordsJson").notNull(),
   searchText: text("searchText").notNull(),
+  sceneSha256: varchar("sceneSha256", { length: 64 }),
+  analysisVersion: varchar("analysisVersion", { length: 16 }).notNull().default("legacy"),
+  analysisGeneratedAt: timestamp("analysisGeneratedAt"),
   sourceUpdatedAt: timestamp("sourceUpdatedAt"),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull()
 }, (table) => [
   uniqueIndex("video_scenes_video_shot_unique").on(table.videoId, table.shotIndex),
-  index("video_scenes_video_id_idx").on(table.videoId)
+  index("video_scenes_video_id_idx").on(table.videoId),
+  index("video_scenes_video_time_idx").on(table.videoId, table.startSec),
+  index("video_scenes_version_idx").on(table.analysisVersion)
 ]);
 var favoriteProfiles = mysqlTable("favoriteProfiles", {
   id: varchar("id", { length: 64 }).primaryKey(),
@@ -958,6 +963,7 @@ async function getAllVideoListItems() {
     calibratedRoute: videos.calibratedRoute,
     calibratedRunId: videos.calibratedRunId,
     calibrationGenreBucket: videos.calibrationGenreBucket,
+    analysisObservationScope: videos.analysisObservationScope,
     embedStatus: videos.embedStatus,
     embedReason: videos.embedReason,
     embedCheckedAt: videos.embedCheckedAt,
@@ -1254,9 +1260,11 @@ function buildVideoSceneFilterWhere(params) {
   if (scoreFilter === "calibrated_only") {
     clauses.push("v.calibratedScore IS NOT NULL");
   } else if (scoreFilter === "score_78_plus") {
-    clauses.push("COALESCE(v.calibratedScore, v.aiOverallScore, -1) >= 78");
+    clauses.push("v.calibratedScore IS NOT NULL AND v.calibratedScore >= 78");
   } else if (scoreFilter === "score_83_plus") {
-    clauses.push("COALESCE(v.calibratedScore, v.aiOverallScore, -1) >= 83");
+    clauses.push("v.calibratedScore IS NOT NULL AND v.calibratedScore >= 83");
+  } else if (scoreFilter === "uncalibrated_only") {
+    clauses.push("v.calibratedScore IS NULL");
   }
   const words = parseQueryWords(params.query ?? "").slice(0, 5);
   const wordGroups = words.map((w) => getSynonymsForWord(w).slice(0, 12)).filter((g) => g.length > 0);
@@ -1345,7 +1353,7 @@ async function searchVideoScenes(params) {
        FROM videoScenes s
        INNER JOIN videos v ON v.id = s.videoId
        WHERE ${whereSql}
-       ORDER BY COALESCE(v.calibratedScore, v.aiOverallScore, -1) DESC, s.id ASC
+       ORDER BY (v.calibratedScore IS NOT NULL) DESC, COALESCE(v.calibratedScore, -1) DESC, s.id ASC
        LIMIT ? OFFSET ?`,
       [...whereParams, limit, offset]
     );
@@ -2673,14 +2681,14 @@ var appRouter = router({
         limit: z2.number().int().min(1).max(80).default(40),
         offset: z2.number().int().min(0).max(5e3).default(0),
         excludeUnwatched: z2.boolean().default(true),
-        scoreFilter: z2.enum(["all", "calibrated_only", "score_78_plus", "score_83_plus"]).default("all")
+        scoreFilter: z2.enum(["all", "calibrated_only", "score_78_plus", "score_83_plus", "uncalibrated_only"]).default("all")
       })
     ).query(async ({ input }) => searchVideoScenes(input)),
     /** Keyword preset counts aggregated from TiDB videoScenes (safe fallback when table is absent). */
     keywordStats: publicProcedure.input(
       z2.object({
         excludeUnwatched: z2.boolean().default(true),
-        scoreFilter: z2.enum(["all", "calibrated_only", "score_78_plus", "score_83_plus"]).default("all")
+        scoreFilter: z2.enum(["all", "calibrated_only", "score_78_plus", "score_83_plus", "uncalibrated_only"]).default("all")
       }).optional()
     ).query(
       async ({ input }) => getVideoSceneKeywordStats({

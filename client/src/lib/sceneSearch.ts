@@ -7,6 +7,7 @@ import type { Video } from "./types";
 import fallbackScenes from "./scenes_index.json";
 import {
   getSynonymsForWord,
+  matchesSceneScoreFilter,
   parseQueryWords,
   SCENE_CATEGORY_DEFINITIONS,
   SCENE_STOP_WORDS,
@@ -74,12 +75,7 @@ export function filterFallbackScenes(
         return false;
       }
       const cal = typeof scene.calibratedScore === "number" ? scene.calibratedScore : null;
-      const legacy = typeof scene.aiOverallScore === "number" ? scene.aiOverallScore : null;
-      const eff = cal ?? legacy ?? -1;
-      if (scoreFilter === "calibrated_only") return cal !== null;
-      if (scoreFilter === "score_78_plus") return eff >= 78;
-      if (scoreFilter === "score_83_plus") return eff >= 83;
-      return true;
+      return matchesSceneScoreFilter(cal, scoreFilter);
     });
 }
 

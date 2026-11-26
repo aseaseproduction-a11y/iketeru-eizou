@@ -17,10 +17,15 @@ CREATE TABLE IF NOT EXISTS `videoScenes` (
   `audioText` text,
   `keywordsJson` text NOT NULL,
   `searchText` text NOT NULL,
+  `sceneSha256` varchar(64) DEFAULT NULL,
+  `analysisVersion` varchar(16) NOT NULL DEFAULT 'legacy',
+  `analysisGeneratedAt` timestamp NULL DEFAULT NULL,
   `sourceUpdatedAt` timestamp NULL DEFAULT NULL,
   `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `video_scenes_video_shot_unique` (`videoId`, `shotIndex`),
-  KEY `video_scenes_video_id_idx` (`videoId`)
+  KEY `video_scenes_video_id_idx` (`videoId`),
+  KEY `video_scenes_video_time_idx` (`videoId`, `startSec`),
+  KEY `video_scenes_version_idx` (`analysisVersion`)
 );

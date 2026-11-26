@@ -274,14 +274,19 @@ export default function SceneCard({ scene, index, matchedTerms = [], score, vide
               >
                 校正 {scene.calibratedScore.toFixed(1)}
               </span>
-            ) : typeof scene.aiOverallScore === "number" ? (
+            ) : (
               <span
-                title={`旧基準AI総合: ${scene.aiOverallScore}点`}
-                className="shrink-0 rounded border border-sky-400/25 bg-sky-500/10 px-1.5 py-0.2 font-mono text-[9.5px] font-semibold text-sky-200"
+                data-testid="scene-uncalibrated-badge"
+                title={
+                  typeof scene.aiOverallScore === "number"
+                    ? `未校正（旧基準AI参考値: ${scene.aiOverallScore}点・点数絞り込み対象外）`
+                    : "未校正（点数絞り込み対象外）"
+                }
+                className="shrink-0 rounded border border-white/20 bg-white/8 px-1.5 py-0.2 font-mono text-[9.5px] font-medium text-white/65"
               >
-                旧 {scene.aiOverallScore}
+                未校正
               </span>
-            ) : null}
+            )}
           </div>
 
           {scene.analysisObservationScope && (

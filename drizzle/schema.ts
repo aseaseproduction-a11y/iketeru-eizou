@@ -106,12 +106,17 @@ export const videoScenes = mysqlTable("videoScenes", {
   audioText: text("audioText"),
   keywordsJson: text("keywordsJson").notNull(),
   searchText: text("searchText").notNull(),
+  sceneSha256: varchar("sceneSha256", { length: 64 }),
+  analysisVersion: varchar("analysisVersion", { length: 16 }).notNull().default("legacy"),
+  analysisGeneratedAt: timestamp("analysisGeneratedAt"),
   sourceUpdatedAt: timestamp("sourceUpdatedAt"),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
 }, (table) => [
   uniqueIndex("video_scenes_video_shot_unique").on(table.videoId, table.shotIndex),
   index("video_scenes_video_id_idx").on(table.videoId),
+  index("video_scenes_video_time_idx").on(table.videoId, table.startSec),
+  index("video_scenes_version_idx").on(table.analysisVersion),
 ]);
 
 export type VideoSceneRow = typeof videoScenes.$inferSelect;

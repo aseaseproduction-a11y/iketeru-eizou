@@ -182,6 +182,7 @@ export async function getAllVideoListItems() {
       calibratedRoute: videos.calibratedRoute,
       calibratedRunId: videos.calibratedRunId,
       calibrationGenreBucket: videos.calibrationGenreBucket,
+      analysisObservationScope: videos.analysisObservationScope,
       embedStatus: videos.embedStatus,
       embedReason: videos.embedReason,
       embedCheckedAt: videos.embedCheckedAt,
@@ -594,9 +595,11 @@ export function buildVideoSceneFilterWhere(params: {
   if (scoreFilter === "calibrated_only") {
     clauses.push("v.calibratedScore IS NOT NULL");
   } else if (scoreFilter === "score_78_plus") {
-    clauses.push("COALESCE(v.calibratedScore, v.aiOverallScore, -1) >= 78");
+    clauses.push("v.calibratedScore IS NOT NULL AND v.calibratedScore >= 78");
   } else if (scoreFilter === "score_83_plus") {
-    clauses.push("COALESCE(v.calibratedScore, v.aiOverallScore, -1) >= 83");
+    clauses.push("v.calibratedScore IS NOT NULL AND v.calibratedScore >= 83");
+  } else if (scoreFilter === "uncalibrated_only") {
+    clauses.push("v.calibratedScore IS NULL");
   }
 
   const words = parseQueryWords(params.query ?? "").slice(0, 5);
@@ -701,7 +704,7 @@ export async function searchVideoScenes(params: {
        FROM videoScenes s
        INNER JOIN videos v ON v.id = s.videoId
        WHERE ${whereSql}
-       ORDER BY COALESCE(v.calibratedScore, v.aiOverallScore, -1) DESC, s.id ASC
+       ORDER BY (v.calibratedScore IS NOT NULL) DESC, COALESCE(v.calibratedScore, -1) DESC, s.id ASC
        LIMIT ? OFFSET ?`,
       [...whereParams, limit, offset],
     )) as unknown as [Array<Record<string, unknown>>];

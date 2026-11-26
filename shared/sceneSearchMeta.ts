@@ -7,7 +7,43 @@ export type SceneScoreFilter =
   | "all"
   | "calibrated_only"
   | "score_78_plus"
-  | "score_83_plus";
+  | "score_83_plus"
+  | "uncalibrated_only";
+
+export type CalibratedScoreBand =
+  | "score_83_plus"
+  | "score_78_to_82"
+  | "score_below_78"
+  | "uncalibrated";
+
+/**
+ * Classify a video/scene strictly by its calibrated score (NEVER falls back to legacy aiOverallScore).
+ */
+export function classifyCalibratedScoreBand(
+  calibratedScore: number | null | undefined,
+): CalibratedScoreBand {
+  if (typeof calibratedScore !== "number" || !Number.isFinite(calibratedScore)) {
+    return "uncalibrated";
+  }
+  if (calibratedScore >= 83) return "score_83_plus";
+  if (calibratedScore >= 78) return "score_78_to_82";
+  return "score_below_78";
+}
+
+/**
+ * Filter strictly by calibrated score so legacy uncalibrated scores never leak into 78+/83+ bands.
+ */
+export function matchesSceneScoreFilter(
+  calibratedScore: number | null | undefined,
+  scoreFilter: SceneScoreFilter = "all",
+): boolean {
+  const hasCalibrated = typeof calibratedScore === "number" && Number.isFinite(calibratedScore);
+  if (scoreFilter === "calibrated_only") return hasCalibrated;
+  if (scoreFilter === "score_78_plus") return hasCalibrated && calibratedScore >= 78;
+  if (scoreFilter === "score_83_plus") return hasCalibrated && calibratedScore >= 83;
+  if (scoreFilter === "uncalibrated_only") return !hasCalibrated;
+  return true;
+}
 
 export interface KeywordCategory {
   id: string;
@@ -184,6 +220,13 @@ export function extractSceneKeywords(
   let ktm: RegExpExecArray | null;
   while ((ktm = kataRegex.exec(`${shotTitle} ${description}`)) !== null) {
     const val = ktm[0].replace(/^[・ー]+|[・]+$/g, "");
+    if (val.length >= 3 && !SCENE_STOP_WORDS.has(val)) matched.add(val);
+  }
+
+  const engRegex = /\b[A-Za-z][A-Za-z0-9+.\-]{2,18}\b/g;
+  let enm: RegExpExecArray | null;
+  while ((enm = engRegex.exec(`${shotTitle} ${description}`)) !== null) {
+    const val = enm[0].trim();
     if (val.length >= 3 && !SCENE_STOP_WORDS.has(val)) matched.add(val);
   }
 

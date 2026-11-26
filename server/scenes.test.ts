@@ -14,14 +14,16 @@ describe("videoScenes search API & missing-table fallback", () => {
     expect(isMissingVideoScenesTableError(new Error("Connection timeout"))).toBe(false);
   });
 
-  it("builds SQL WHERE filters for excludeUnwatched, scoreFilter, and synonym AND queries", () => {
+  it("builds SQL WHERE filters strictly on calibratedScore without leaking legacy aiOverallScore", () => {
     const def = buildVideoSceneFilterWhere({
       query: "マッチカット 夜",
       excludeUnwatched: true,
       scoreFilter: "score_78_plus",
     });
     expect(def.whereSql).toContain("v.analysisObservationScope IS NULL");
-    expect(def.whereSql).toContain("COALESCE(v.calibratedScore, v.aiOverallScore, -1) >= 78");
+    expect(def.whereSql).toContain("v.calibratedScore IS NOT NULL AND v.calibratedScore >= 78");
+    expect(def.whereSql).not.toContain("aiOverallScore");
+    expect(def.whereSql).not.toContain("COALESCE");
     expect(def.wordGroups.length).toBe(2);
     expect(def.whereParams.some((p) => String(p).includes("match cut"))).toBe(true);
 
@@ -34,7 +36,11 @@ describe("videoScenes search API & missing-table fallback", () => {
     expect(includeUnwatched.whereSql).toContain("v.calibratedScore IS NOT NULL");
 
     const score83 = buildVideoSceneFilterWhere({ scoreFilter: "score_83_plus" });
-    expect(score83.whereSql).toContain(">= 83");
+    expect(score83.whereSql).toContain("v.calibratedScore IS NOT NULL AND v.calibratedScore >= 83");
+    expect(score83.whereSql).not.toContain("aiOverallScore");
+
+    const uncalibrated = buildVideoSceneFilterWhere({ scoreFilter: "uncalibrated_only" });
+    expect(uncalibrated.whereSql).toContain("v.calibratedScore IS NULL");
   });
 
   it("returns available: false without throwing when videoScenes table does not exist in TiDB", async () => {

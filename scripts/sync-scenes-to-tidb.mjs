@@ -2,25 +2,29 @@
 /**
  * Sync timestamped scenes from local SQLite (`scenes` table) -> TiDB (`videoScenes` table).
  *
+ * Unified single-source sync script (merged from feature/scenes-tidb-api & docs/site-cut-search-design).
+ *
  * Safety & Idempotency Guarantees:
  *  - Default mode (`--dry-run` or omitting `--apply`): STRICTLY READ-ONLY (`SELECT` / `SHOW TABLES` only).
- *    NEVER creates tables or writes rows to TiDB.
- *  - `--apply` mode:
- *      1. Requires active write lock in `analysis/claims/_apply_lock.json`
- *         with `status === "locked"`, `run_id === "sync_video_scenes_to_tidb"`,
- *         and `worker === resolveWorkerName(...)` (NO OS hostname fallback).
- *      2. Fails closed if ANY SQLite `scenes.video_id` does not exist in TiDB `videos`.
- *      3. Creates `videoScenes` idempotently via `drizzle/create_video_scenes.sql`.
- *      4. Upserts in chunks of 500 rows (`INSERT ... ON DUPLICATE KEY UPDATE`),
- *         so re-running produces the exact same DB state.
- *      5. Post-apply verifies TiDB `videos` COUNT(*) & MAX(updatedAt) unchanged,
- *         and `videoScenes` row/video counts match expected totals.
+ *    NEVER creates tables, writes rows, or deletes rows in TiDB.
+ *  - Calibrated-only score breakdown: strictly uses `calibratedScore` (NEVER mixes legacy `aiOverallScore`
+ *    into 78+ / 83+ bands), and reconciles band totals against calibrated total.
+ *  - Stale scene detection (re-segmented videos):
+ *      - In `--dry-run`: computes per-video list & counts of scenes present in TiDB `videoScenes`
+ *        that no longer exist in SQLite `scenes`.
+ *      - Deletion NEVER happens during plain `--apply`. It happens ONLY when `--apply --prune-stale`
+ *        is explicitly passed AND active lock is verified, and ALWAYS takes a per-video JSONL backup
+ *        with SHA-256 verification BEFORE deleting that video's stale shotIndex rows.
+ *  - Existing scenes are inserted with `analysisVersion = 'legacy'`, `analysisGeneratedAt = NULL`
+ *    (matching chibatmute's v3 write schema).
+ *  - NEVER alters, updates, or deletes the existing TiDB `videos` table.
  *
  * Usage:
- *   node scripts/sync-scenes-to-tidb.mjs --dry-run [--worker <name>] [--sqlite-path <path>]
- *   node scripts/sync-scenes-to-tidb.mjs --apply --worker <name> [--sqlite-path <path>] [--chunk-size 500]
+ *   node scripts/sync-scenes-to-tidb.mjs --dry-run [--worker <name>] [--sqlite-path <path>] [--report-out <path>]
+ *   node scripts/sync-scenes-to-tidb.mjs --apply --worker <name> [--prune-stale] [--backup-dir <dir>]
  */
 
+import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
@@ -32,6 +36,7 @@ export const REPO_ROOT = path.resolve(__dirname, "..");
 export const DDL_SQL_PATH = path.join(REPO_ROOT, "drizzle", "create_video_scenes.sql");
 export const APPLY_LOCK_PATH = path.join(REPO_ROOT, "analysis", "claims", "_apply_lock.json");
 export const DEFAULT_SQLITE_PATH = "E:\\iketeru-creative-studio\\data\\iketeru_knowledge.db";
+export const DEFAULT_BACKUP_ROOT = "E:\\iketeru_backups";
 export const LOCK_RUN_ID = "sync_video_scenes_to_tidb";
 export const DEFAULT_CHUNK_SIZE = 500;
 const TIDB_FREE_TIER_BYTES = 5 * 1024 * 1024 * 1024; // 5 GiB
@@ -73,12 +78,23 @@ const SEED_WORDS = [
   "合唱", "ウィスパーボイス", "フューチャーベース", "ベースミュージック", "ボカロ", "VTuber",
 ];
 
+function sha256Text(str) {
+  return crypto.createHash("sha256").update(str, "utf8").digest("hex");
+}
+
+function sanitizeFilename(videoId) {
+  return String(videoId).replace(/[^A-Za-z0-9._-]/g, "_");
+}
+
 export function parseArgs(argv) {
   const opts = {
     apply: false,
     dryRun: true,
+    pruneStale: false,
+    excludeUnwatched: false,
     worker: null,
     sqlitePath: DEFAULT_SQLITE_PATH,
+    backupDir: null,
     chunkSize: DEFAULT_CHUNK_SIZE,
     reportOut: null,
   };
@@ -90,12 +106,19 @@ export function parseArgs(argv) {
     } else if (a === "--dry-run") {
       opts.dryRun = true;
       opts.apply = false;
+    } else if (a === "--prune-stale") {
+      opts.pruneStale = true;
+    } else if (a === "--exclude-unwatched") {
+      opts.excludeUnwatched = true;
     } else if (a === "--worker") {
       if (!argv[i + 1] || argv[i + 1].startsWith("--")) throw new Error("--worker requires a value");
       opts.worker = argv[++i];
     } else if (a === "--sqlite-path") {
       if (!argv[i + 1] || argv[i + 1].startsWith("--")) throw new Error("--sqlite-path requires a value");
       opts.sqlitePath = argv[++i];
+    } else if (a === "--backup-dir") {
+      if (!argv[i + 1] || argv[i + 1].startsWith("--")) throw new Error("--backup-dir requires a value");
+      opts.backupDir = argv[++i];
     } else if (a === "--chunk-size") {
       const n = Number(argv[++i]);
       if (!Number.isInteger(n) || n < 1 || n > 2000) throw new Error("--chunk-size must be an integer 1..2000");
@@ -127,14 +150,21 @@ export function extractKeywords(shotTitle, description, audioText = "") {
     const val = m[0].replace(/^[・ー]+|[・]+$/g, "");
     if (val.length >= 3 && !STOP_WORDS.has(val)) matched.add(val);
   }
+  const engRegex = /\b[A-Za-z][A-Za-z0-9+.\-]{2,18}\b/g;
+  while ((m = engRegex.exec(`${shotTitle || ""} ${description || ""}`)) !== null) {
+    const val = m[0].trim();
+    if (val.length >= 3 && !STOP_WORDS.has(val)) matched.add(val);
+  }
   for (const seed of SEED_WORDS) {
     if (lower.includes(seed.toLowerCase())) matched.add(seed);
   }
   return Array.from(matched).slice(0, 14);
 }
 
-export function normalizeSceneRecord(raw, videoTitle = "") {
-  const shotTitle = String(raw.shot_title || "").trim().slice(0, 255);
+export function normalizeSceneRecord(raw, videoTitle = "", options = {}) {
+  const rawTitle = String(raw.shot_title || "").trim();
+  const titleTruncated = rawTitle.length > 255;
+  const shotTitle = rawTitle.slice(0, 255);
   const description = String(raw.description || "").trim();
   const audioText = raw.audio_text ? String(raw.audio_text).trim() : null;
   const keywords = extractKeywords(shotTitle, description, audioText || "");
@@ -151,12 +181,28 @@ export function normalizeSceneRecord(raw, videoTitle = "") {
   const durationSec = Number.isFinite(Number(raw.duration_sec))
     ? Number(Number(raw.duration_sec).toFixed(2))
     : Math.max(0, Number((endSec - startSec).toFixed(2)));
+  const startMmss = String(raw.start_mmss || "00:00").slice(0, 16);
+  const endMmss = String(raw.end_mmss || "00:00").slice(0, 16);
+  const analysisVersion = options.analysisVersion === "v3" ? "v3" : "legacy";
+  const analysisGeneratedAt = options.analysisGeneratedAt ?? null;
+  const sceneSha256 = sha256Text(
+    JSON.stringify([
+      String(raw.video_id),
+      Number(raw.shot_index),
+      startMmss,
+      endMmss,
+      shotTitle,
+      description,
+      audioText,
+      analysisVersion,
+    ]),
+  );
 
   return {
     videoId: String(raw.video_id),
     shotIndex: Number(raw.shot_index),
-    startMmss: String(raw.start_mmss || "00:00").slice(0, 16),
-    endMmss: String(raw.end_mmss || "00:00").slice(0, 16),
+    startMmss,
+    endMmss,
     startSec,
     endSec,
     durationSec,
@@ -165,6 +211,225 @@ export function normalizeSceneRecord(raw, videoTitle = "") {
     audioText,
     keywordsJson,
     searchText,
+    sceneSha256,
+    analysisVersion,
+    analysisGeneratedAt,
+    _titleTruncated: titleTruncated,
+  };
+}
+
+/**
+ * Strictly classify scene score counts using calibratedScore ONLY (never mixes legacy aiOverallScore).
+ * Verifies that mutually exclusive calibrated bands sum exactly to calibratedTotal,
+ * and calibratedTotal + uncalibratedTotal === totalScenes.
+ */
+export function buildScoreBreakdownAndReconcile(recordsWithVideoMeta) {
+  let unwatchedScopeScenes = 0;
+  const unwatchedVideoIds = new Set();
+
+  let calibratedScore83PlusScenes = 0;
+  let calibratedScore78To82Scenes = 0;
+  let calibratedScoreBelow78Scenes = 0;
+  let uncalibratedScenes = 0;
+
+  // Diagnostic: how many uncalibrated scenes had legacy aiOverallScore >= 78 / 83 (previously leaked!)
+  let legacyUncalibrated78PlusExcluded = 0;
+  let legacyUncalibrated83PlusExcluded = 0;
+
+  for (const item of recordsWithVideoMeta) {
+    const vid = String(item.videoId);
+    if (item.analysisObservationScope) {
+      unwatchedVideoIds.add(vid);
+      unwatchedScopeScenes++;
+    }
+    const cal = item.calibratedScore != null && Number.isFinite(Number(item.calibratedScore))
+      ? Number(item.calibratedScore)
+      : null;
+    const legacy = item.aiOverallScore != null && Number.isFinite(Number(item.aiOverallScore))
+      ? Number(item.aiOverallScore)
+      : null;
+
+    if (cal === null) {
+      uncalibratedScenes++;
+      if (legacy !== null && legacy >= 78) legacyUncalibrated78PlusExcluded++;
+      if (legacy !== null && legacy >= 83) legacyUncalibrated83PlusExcluded++;
+    } else if (cal >= 83) {
+      calibratedScore83PlusScenes++;
+    } else if (cal >= 78) {
+      calibratedScore78To82Scenes++;
+    } else {
+      calibratedScoreBelow78Scenes++;
+    }
+  }
+
+  const totalScenes = recordsWithVideoMeta.length;
+  const calibratedVideoScenes =
+    calibratedScore83PlusScenes + calibratedScore78To82Scenes + calibratedScoreBelow78Scenes;
+  const score78PlusCalibratedScenes = calibratedScore83PlusScenes + calibratedScore78To82Scenes;
+  const score83PlusCalibratedScenes = calibratedScore83PlusScenes;
+
+  return {
+    unwatchedScopeVideos: unwatchedVideoIds.size,
+    unwatchedScopeScenes,
+    watchedScenesDefaultVisible: totalScenes - unwatchedScopeScenes,
+    calibratedVideoScenes,
+    calibratedBands: {
+      score83Plus: calibratedScore83PlusScenes,
+      score78To82: calibratedScore78To82Scenes,
+      scoreBelow78: calibratedScoreBelow78Scenes,
+    },
+    score78PlusScenes: score78PlusCalibratedScenes,
+    score83PlusScenes: score83PlusCalibratedScenes,
+    uncalibratedScenes,
+    legacyUncalibratedExcludedFromScoreFilters: {
+      legacy78PlusExcluded: legacyUncalibrated78PlusExcluded,
+      legacy83PlusExcluded: legacyUncalibrated83PlusExcluded,
+    },
+    scoreBandReconciliation: {
+      calibratedTotal: calibratedVideoScenes,
+      sumOfCalibratedBands:
+        calibratedScore83PlusScenes + calibratedScore78To82Scenes + calibratedScoreBelow78Scenes,
+      calibratedBandsMatch:
+        calibratedScore83PlusScenes + calibratedScore78To82Scenes + calibratedScoreBelow78Scenes ===
+        calibratedVideoScenes,
+      score78PlusLeqCalibrated: score78PlusCalibratedScenes <= calibratedVideoScenes,
+      calibratedPlusUncalibrated: calibratedVideoScenes + uncalibratedScenes,
+      totalScenes,
+      allScenesMatch: calibratedVideoScenes + uncalibratedScenes === totalScenes,
+    },
+  };
+}
+
+/**
+ * Detect scenes that exist in TiDB `videoScenes` but no longer exist in the source SQLite dataset
+ * (e.g. after re-segmentation reduced a video's shot count or replaced its shot indices).
+ */
+export function computeStaleScenes(tidbSceneRows, sourceSceneRows) {
+  const sourceKeys = new Set();
+  for (const s of sourceSceneRows) {
+    const vid = String(s.videoId ?? s.video_id);
+    const idx = Number(s.shotIndex ?? s.shot_index);
+    sourceKeys.add(`${vid}\u0000${idx}`);
+  }
+
+  const byVideo = new Map();
+  let staleScenesCount = 0;
+
+  for (const row of tidbSceneRows) {
+    const vid = String(row.videoId ?? row.video_id);
+    const idx = Number(row.shotIndex ?? row.shot_index);
+    if (!sourceKeys.has(`${vid}\u0000${idx}`)) {
+      staleScenesCount++;
+      let entry = byVideo.get(vid);
+      if (!entry) {
+        entry = { videoId: vid, staleCount: 0, staleShotIndices: [], scenes: [] };
+        byVideo.set(vid, entry);
+      }
+      entry.staleCount++;
+      entry.staleShotIndices.push(idx);
+      entry.scenes.push({
+        shotIndex: idx,
+        startMmss: String(row.startMmss ?? row.start_mmss ?? ""),
+        endMmss: String(row.endMmss ?? row.end_mmss ?? ""),
+        shotTitle: String(row.shotTitle ?? row.shot_title ?? ""),
+      });
+    }
+  }
+
+  const staleByVideo = Array.from(byVideo.values())
+    .map((entry) => ({
+      ...entry,
+      staleShotIndices: entry.staleShotIndices.sort((a, b) => a - b),
+      scenes: entry.scenes.sort((a, b) => a.shotIndex - b.shotIndex),
+    }))
+    .sort((a, b) => a.videoId.localeCompare(b.videoId));
+
+  return {
+    staleVideosCount: staleByVideo.length,
+    staleScenesCount,
+    staleByVideo,
+  };
+}
+
+/**
+ * Safely prune stale scenes one video at a time AFTER writing & verifying a per-video JSONL backup.
+ * NEVER runs unless `--apply --prune-stale` is explicitly specified.
+ */
+export async function pruneStaleScenesPerVideo({ conn, staleByVideo, backupDir }) {
+  if (!staleByVideo || staleByVideo.length === 0) {
+    return {
+      prunedVideosCount: 0,
+      prunedScenesCount: 0,
+      backupDir: null,
+      manifestPath: null,
+      videos: [],
+    };
+  }
+  if (!backupDir) {
+    throw new Error("backupDir is required before pruning stale scenes");
+  }
+
+  fs.mkdirSync(backupDir, { recursive: true });
+  const results = [];
+  let totalDeleted = 0;
+
+  for (const entry of staleByVideo) {
+    const videoId = String(entry.videoId);
+    const staleIndices = Array.from(
+      new Set(entry.staleShotIndices.map((n) => Number(n)).filter((n) => Number.isInteger(n))),
+    ).sort((a, b) => a - b);
+    if (staleIndices.length === 0) continue;
+
+    // 1. Read ALL current TiDB rows for this video and write per-video JSONL backup first
+    const [currentRows] = await conn.query(
+      "SELECT * FROM `videoScenes` WHERE `videoId` = ? ORDER BY `shotIndex` ASC",
+      [videoId],
+    );
+    const backupContent = currentRows.map((r) => JSON.stringify(r)).join("\n") + (currentRows.length ? "\n" : "");
+    const backupFile = path.join(backupDir, `${sanitizeFilename(videoId)}.jsonl`);
+    fs.writeFileSync(backupFile, backupContent, "utf8");
+
+    // 2. Verify backup file was persisted and matches SHA-256 before any DELETE
+    const readBack = fs.readFileSync(backupFile, "utf8");
+    const backupSha256 = sha256Text(readBack);
+    if (readBack !== backupContent || (currentRows.length > 0 && readBack.length === 0)) {
+      throw new Error(`Backup verification failed for videoId=${videoId}; aborting prune before DELETE`);
+    }
+
+    // 3. Delete ONLY this video's stale shotIndices
+    const placeholders = staleIndices.map(() => "?").join(", ");
+    const [delResult] = await conn.query(
+      `DELETE FROM \`videoScenes\` WHERE \`videoId\` = ? AND \`shotIndex\` IN (${placeholders})`,
+      [videoId, ...staleIndices],
+    );
+    const affectedRows = Number(delResult?.affectedRows ?? staleIndices.length);
+    totalDeleted += affectedRows;
+
+    results.push({
+      videoId,
+      backedUpRowCount: currentRows.length,
+      backupFile,
+      backupSha256,
+      deletedShotIndices: staleIndices,
+      affectedRows,
+    });
+  }
+
+  const manifestPath = path.join(backupDir, "manifest.json");
+  const manifest = {
+    createdAtUtc: new Date().toISOString(),
+    prunedVideosCount: results.length,
+    prunedScenesCount: totalDeleted,
+    videos: results,
+  };
+  fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2) + "\n", "utf8");
+
+  return {
+    prunedVideosCount: results.length,
+    prunedScenesCount: totalDeleted,
+    backupDir,
+    manifestPath,
+    videos: results,
   };
 }
 
@@ -182,14 +447,15 @@ export function chunkArray(items, chunkSize = DEFAULT_CHUNK_SIZE) {
 export function buildUpsertBatchSql(rows) {
   if (!rows.length) throw new Error("Cannot build upsert SQL for empty batch");
   const placeholders = rows
-    .map(() => "(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")
+    .map(() => "(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")
     .join(",\n");
   const sql = `
 INSERT INTO \`videoScenes\` (
   \`videoId\`, \`shotIndex\`, \`startMmss\`, \`endMmss\`,
   \`startSec\`, \`endSec\`, \`durationSec\`,
   \`shotTitle\`, \`description\`, \`audioText\`,
-  \`keywordsJson\`, \`searchText\`, \`sourceUpdatedAt\`
+  \`keywordsJson\`, \`searchText\`, \`sceneSha256\`,
+  \`analysisVersion\`, \`analysisGeneratedAt\`, \`sourceUpdatedAt\`
 ) VALUES
 ${placeholders}
 ON DUPLICATE KEY UPDATE
@@ -203,6 +469,9 @@ ON DUPLICATE KEY UPDATE
   \`audioText\` = VALUES(\`audioText\`),
   \`keywordsJson\` = VALUES(\`keywordsJson\`),
   \`searchText\` = VALUES(\`searchText\`),
+  \`sceneSha256\` = VALUES(\`sceneSha256\`),
+  \`analysisVersion\` = VALUES(\`analysisVersion\`),
+  \`analysisGeneratedAt\` = VALUES(\`analysisGeneratedAt\`),
   \`sourceUpdatedAt\` = VALUES(\`sourceUpdatedAt\`)
 `.trim();
   const now = new Date();
@@ -221,6 +490,9 @@ ON DUPLICATE KEY UPDATE
       r.audioText,
       r.keywordsJson,
       r.searchText,
+      r.sceneSha256 ?? null,
+      r.analysisVersion ?? "legacy",
+      r.analysisGeneratedAt ?? null,
       now,
     );
   }
@@ -230,7 +502,7 @@ ON DUPLICATE KEY UPDATE
 export function verifyApplyLock(lockObj, expectedWorker, expectedRunId = LOCK_RUN_ID) {
   if (!expectedWorker || !String(expectedWorker).trim()) {
     throw new Error(
-      "Worker name is required: pass --worker <name> or set IKETERU_WORKER_NAME. (OS hostname fallback is disabled.)"
+      "Worker name is required: pass --worker <name> or set IKETERU_WORKER_NAME. (OS hostname fallback is disabled.)",
     );
   }
   const ok =
@@ -242,7 +514,7 @@ export function verifyApplyLock(lockObj, expectedWorker, expectedRunId = LOCK_RU
     throw new Error(
       `Refusing to write to TiDB without active write lock! Expected status="locked", worker="${expectedWorker}", run_id="${expectedRunId}", ` +
         `found=${JSON.stringify({ status: lockObj?.status ?? null, worker: lockObj?.worker ?? null, run_id: lockObj?.run_id ?? null })}. ` +
-        `Acquire and push lock first: node scripts/claim-phase3-batch.mjs --acquire-apply-lock ${expectedRunId} --worker ${expectedWorker}`
+        `Acquire and push lock first: node scripts/claim-phase3-batch.mjs --acquire-apply-lock ${expectedRunId} --worker ${expectedWorker}`,
     );
   }
   return true;
@@ -260,11 +532,13 @@ export function estimateStorageBytes(normalizedRows) {
       Buffer.byteLength(r.audioText || "", "utf8") +
       Buffer.byteLength(r.keywordsJson, "utf8") +
       Buffer.byteLength(r.searchText, "utf8") +
+      Buffer.byteLength(r.sceneSha256 || "", "utf8") +
+      Buffer.byteLength(r.analysisVersion || "legacy", "utf8") +
       64; // fixed numeric/timestamp/row overhead
   }
-  // TiDB row + 2 secondary/unique indexes overhead factor (~1.35x)
+  // TiDB row + 3 secondary/unique indexes overhead factor
   const estimatedDataBytes = Math.round(rawTextBytes * 1.15);
-  const estimatedIndexBytes = Math.round(normalizedRows.length * 140);
+  const estimatedIndexBytes = Math.round(normalizedRows.length * 160);
   const estimatedTotalBytes = estimatedDataBytes + estimatedIndexBytes;
   return {
     rawTextBytes,
@@ -316,6 +590,10 @@ function loadApplyLock() {
   return JSON.parse(fs.readFileSync(APPLY_LOCK_PATH, "utf8"));
 }
 
+function formatUtcTimestampCompact(date = new Date()) {
+  return date.toISOString().replace(/[-:]/g, "").replace(/\..+$/, "").replace("T", "_");
+}
+
 async function main() {
   const opts = parseArgs(process.argv.slice(2));
   const require = createRequire(path.join(REPO_ROOT, "package.json"));
@@ -355,9 +633,14 @@ async function main() {
     const [tableCheck] = await conn.query("SHOW TABLES LIKE 'videoScenes'");
     const tableExists = tableCheck.length > 0;
     let existingSceneCount = 0;
+    let existingTidbSceneRows = [];
     if (tableExists) {
       const [cntRows] = await conn.query("SELECT COUNT(*) AS cnt FROM videoScenes");
       existingSceneCount = Number(cntRows[0].cnt);
+      const [tidbRows] = await conn.query(
+        "SELECT videoId, shotIndex, startMmss, endMmss, shotTitle FROM videoScenes ORDER BY videoId ASC, shotIndex ASC",
+      );
+      existingTidbSceneRows = tidbRows;
     }
 
     const [tidbVideoRows] = await conn.query(`
@@ -370,12 +653,9 @@ async function main() {
     // Check referential integrity (fail-closed)
     const missingVideoIds = new Set();
     const normalizedRows = [];
+    const metaForBreakdown = [];
     const distinctVideoIds = new Set();
-    const unwatchedVideoIds = new Set();
-    let unwatchedSceneCount = 0;
-    let calibratedSceneCount = 0;
-    let score78PlusSceneCount = 0;
-    let score83PlusSceneCount = 0;
+    let shotTitleTruncatedGt255 = 0;
 
     for (const raw of rawScenes) {
       const vid = String(raw.video_id);
@@ -384,36 +664,51 @@ async function main() {
         missingVideoIds.add(vid);
         continue;
       }
-      distinctVideoIds.add(vid);
-      if (v.analysisObservationScope) {
-        unwatchedVideoIds.add(vid);
-        unwatchedSceneCount++;
+      if (opts.excludeUnwatched && v.analysisObservationScope) {
+        continue;
       }
-      const cal = v.calibratedScore != null ? Number(v.calibratedScore) : null;
-      const legacy = v.aiOverallScore != null ? Number(v.aiOverallScore) : null;
-      const eff = cal ?? legacy ?? -1;
-      if (cal != null) calibratedSceneCount++;
-      if (eff >= 78) score78PlusSceneCount++;
-      if (eff >= 83) score83PlusSceneCount++;
+      distinctVideoIds.add(vid);
+      metaForBreakdown.push({
+        videoId: vid,
+        analysisObservationScope: v.analysisObservationScope ?? null,
+        calibratedScore: v.calibratedScore != null ? Number(v.calibratedScore) : null,
+        aiOverallScore: v.aiOverallScore != null ? Number(v.aiOverallScore) : null,
+      });
 
-      normalizedRows.push(normalizeSceneRecord(raw, v.title || ""));
+      const normalized = normalizeSceneRecord(raw, v.title || "", {
+        analysisVersion: "legacy",
+        analysisGeneratedAt: null,
+      });
+      if (normalized._titleTruncated) shotTitleTruncatedGt255++;
+      normalizedRows.push(normalized);
     }
 
     if (missingVideoIds.size > 0) {
       throw new Error(
-        `Integrity failure: ${missingVideoIds.size} SQLite scene video_ids do not exist in TiDB videos: ${Array.from(missingVideoIds).slice(0, 10).join(", ")}`
+        `Integrity failure: ${missingVideoIds.size} SQLite scene video_ids do not exist in TiDB videos: ${Array.from(missingVideoIds).slice(0, 10).join(", ")}`,
       );
     }
 
+    const breakdown = buildScoreBreakdownAndReconcile(metaForBreakdown);
+    const staleAnalysis = tableExists
+      ? { tableExists: true, ...computeStaleScenes(existingTidbSceneRows, normalizedRows) }
+      : { tableExists: false, staleVideosCount: 0, staleScenesCount: 0, staleByVideo: [] };
+
     const chunks = chunkArray(normalizedRows, opts.chunkSize);
     const sizeEstimate = estimateStorageBytes(normalizedRows);
+    const sampleRecords = normalizedRows.slice(0, 2).map(({ _titleTruncated, ...rest }) => rest);
 
     const report = {
       generatedAtUtc: new Date().toISOString(),
       mode: opts.dryRun ? "dry_run" : "apply",
+      pruneStaleRequested: opts.pruneStale,
+      excludeUnwatched: opts.excludeUnwatched,
       worker: worker || null,
       lockRunId: LOCK_RUN_ID,
       sqlitePath: opts.sqlitePath,
+      tidbDdlExecuted: false,
+      tidbWritesExecuted: 0,
+      existingVideosTableTouched: false,
       plannedTable: {
         tableName: "videoScenes",
         ddlPath: path.relative(REPO_ROOT, DDL_SQL_PATH).replace(/\\/g, "/"),
@@ -425,19 +720,16 @@ async function main() {
         totalScenesToUpsert: normalizedRows.length,
         distinctVideosToUpsert: distinctVideoIds.size,
         missingVideoIdsInTiDB: missingVideoIds.size,
+        shotTitleTruncatedGt255,
+        defaultAnalysisVersion: "legacy",
         chunkSize: opts.chunkSize,
         totalBatches: chunks.length,
         idempotentStrategy: "INSERT INTO videoScenes ... ON DUPLICATE KEY UPDATE (keyed by UNIQUE(videoId, shotIndex))",
-        breakdown: {
-          unwatchedScopeVideos: unwatchedVideoIds.size,
-          unwatchedScopeScenes: unwatchedSceneCount,
-          watchedScenesDefaultVisible: normalizedRows.length - unwatchedSceneCount,
-          calibratedVideoScenes: calibratedSceneCount,
-          score78PlusScenes: score78PlusSceneCount,
-          score83PlusScenes: score83PlusSceneCount,
-        },
+        breakdown,
         sizeEstimate,
+        sampleRecords,
       },
+      staleScenesAnalysis: staleAnalysis,
       tidbVideosIntegrity: {
         pre: tidbVideosPre,
         post: null,
@@ -457,7 +749,6 @@ async function main() {
       report.tidbVideosIntegrity.unchanged =
         report.tidbVideosIntegrity.pre.count === report.tidbVideosIntegrity.post.count &&
         report.tidbVideosIntegrity.pre.maxUpdatedAt === report.tidbVideosIntegrity.post.maxUpdatedAt;
-      report.tidbWritesExecuted = 0;
 
       if (opts.reportOut) {
         fs.mkdirSync(path.dirname(opts.reportOut), { recursive: true });
@@ -469,15 +760,30 @@ async function main() {
 
     // --apply mode (requires active lock verified above)
     await conn.query(ddlSql);
+    report.tidbDdlExecuted = true;
+
     let batchesExecuted = 0;
     for (const batch of chunks) {
       const { sql, params } = buildUpsertBatchSql(batch);
       await conn.query(sql, params);
       batchesExecuted++;
     }
+    report.tidbWritesExecuted = normalizedRows.length;
+
+    let pruneResult = null;
+    if (opts.pruneStale && staleAnalysis.staleScenesCount > 0) {
+      const backupDir =
+        opts.backupDir ||
+        path.join(DEFAULT_BACKUP_ROOT, `video_scenes_pre_prune_${formatUtcTimestampCompact()}`);
+      pruneResult = await pruneStaleScenesPerVideo({
+        conn,
+        staleByVideo: staleAnalysis.staleByVideo,
+        backupDir,
+      });
+    }
 
     const [postScenesRows] = await conn.query(
-      "SELECT COUNT(*) AS cnt, COUNT(DISTINCT videoId) AS vcnt FROM videoScenes"
+      "SELECT COUNT(*) AS cnt, COUNT(DISTINCT videoId) AS vcnt FROM videoScenes",
     );
     const [postMetaRows] = await conn.query("SELECT COUNT(*) AS cnt, MAX(updatedAt) AS max_upd FROM videos");
     report.tidbVideosIntegrity.post = {
@@ -492,6 +798,7 @@ async function main() {
       report.tidbVideosIntegrity.pre.maxUpdatedAt === report.tidbVideosIntegrity.post.maxUpdatedAt;
     report.applyResult = {
       batchesExecuted,
+      pruneResult,
       postVideoScenesCount: Number(postScenesRows[0].cnt),
       postDistinctVideoCount: Number(postScenesRows[0].vcnt),
       countsMatchExpected:
