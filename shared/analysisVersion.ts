@@ -10,7 +10,7 @@
 export type AnalysisVersion = "legacy" | "v3";
 
 export const LEGACY_ANALYSIS_LABEL = "旧分析・時刻は目安";
-export const V3_ANALYSIS_LABEL = "v3 実測照合済";
+export const V3_ANALYSIS_LABEL = "分析 v3";
 
 export function normalizeAnalysisVersion(value: unknown): AnalysisVersion {
   return value === "v3" ? "v3" : "legacy";

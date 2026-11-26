@@ -27,6 +27,6 @@ describe("analysisVersion helpers", () => {
     expect(isV3AnalysisVersion(null)).toBe(false);
 
     expect(LEGACY_ANALYSIS_LABEL).toBe("旧分析・時刻は目安");
-    expect(V3_ANALYSIS_LABEL).toBe("v3 実測照合済");
+    expect(V3_ANALYSIS_LABEL).toBe("分析 v3");
   });
 });

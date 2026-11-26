@@ -72,7 +72,7 @@ describe("analysisVersion UI rendering (legacy vs v3)", () => {
     expect(v3Html).not.toContain("旧分析・時刻は目安");
     expect(v3Html).not.toContain('data-testid="analysis-legacy-notice"');
     expect(v3Html).toContain('data-testid="analysis-v3-badge"');
-    expect(v3Html).toContain("v3 実測照合済");
+    expect(v3Html).toContain("分析 v3");
   });
 
   it("renders '旧分析・時刻は目安' on VideoCard for legacy and hides it for v3", () => {
@@ -93,7 +93,7 @@ describe("analysisVersion UI rendering (legacy vs v3)", () => {
     expect(v3Html).not.toContain('data-testid="video-legacy-analysis-badge"');
     expect(v3Html).not.toContain("旧分析・時刻は目安");
     expect(v3Html).toContain('data-testid="video-v3-analysis-badge"');
-    expect(v3Html).toContain("v3 実測照合済");
+    expect(v3Html).toContain("分析 v3");
   });
 
   it("renders '旧分析・時刻は目安' on SceneCard for legacy and removes it automatically for v3", () => {

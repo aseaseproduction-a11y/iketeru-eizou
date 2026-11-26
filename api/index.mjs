@@ -163,12 +163,12 @@ var videoAnalysisHistory = mysqlTable("videoAnalysisHistory", {
   id: int("id").autoincrement().primaryKey(),
   videoId: varchar("videoId", { length: 64 }).notNull(),
   analysisVersion: varchar("analysisVersion", { length: 16 }).notNull(),
-  aiAnalysis: mediumtext("aiAnalysis").notNull(),
+  aiAnalysis: mediumtext("aiAnalysis"),
   contentSha256: varchar("contentSha256", { length: 64 }).notNull(),
   promptSha256: varchar("promptSha256", { length: 64 }),
   generatedAt: timestamp("generatedAt"),
   archivedAt: timestamp("archivedAt").defaultNow().notNull(),
-  archivedBy: varchar("archivedBy", { length: 64 })
+  archivedBy: varchar("archivedBy", { length: 64 }).notNull()
 }, (table) => [
   index("video_analysis_history_video_id_idx").on(table.videoId, table.archivedAt),
   index("video_analysis_history_version_idx").on(table.analysisVersion)

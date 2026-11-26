@@ -12,16 +12,17 @@ ALTER TABLE `videos`
   ADD COLUMN IF NOT EXISTS `analysisPromptSha256` varchar(64) NULL DEFAULT NULL;
 
 -- 2. Archive table preserving previous `aiAnalysis` snapshots before v3 replacement
+-- Aligned with docs/sql/proposed_v3_analysis_ddl.sql (D-026 / chibatmute).
 CREATE TABLE IF NOT EXISTS `videoAnalysisHistory` (
   `id` int AUTO_INCREMENT NOT NULL,
   `videoId` varchar(64) NOT NULL,
   `analysisVersion` varchar(16) NOT NULL,
-  `aiAnalysis` mediumtext NOT NULL,
+  `aiAnalysis` mediumtext NULL,
   `contentSha256` varchar(64) NOT NULL,
   `promptSha256` varchar(64) NULL DEFAULT NULL,
   `generatedAt` timestamp NULL DEFAULT NULL,
   `archivedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `archivedBy` varchar(64) NULL DEFAULT NULL,
+  `archivedBy` varchar(64) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `video_analysis_history_video_id_idx` (`videoId`, `archivedAt`),
   KEY `video_analysis_history_version_idx` (`analysisVersion`)
