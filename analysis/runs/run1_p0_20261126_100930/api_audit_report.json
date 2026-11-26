@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "audited_at": "2026-11-26T03:15:59.339Z",
+  "run_id": "run1_p0_20261126_100930",
+  "all_checks_passed": true,
+  "checks": {
+    "prompt_sha256_match": true,
+    "model_and_tier_match": true,
+    "output_json_valid": true,
+    "video_tokens_threshold": true,
+    "observations_within_duration": true,
+    "raw_response_and_no_secrets": true,
+    "ensemble_and_anchor_separation": true
+  },
+  "total_calls": 153,
+  "failed_calls_count": 0,
+  "run_errors": [],
+  "failed_calls": []
+}

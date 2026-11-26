@@ -398,3 +398,24 @@ TiDB に `analysisObservationScope` 列は既に存在するため DDL 不要。
 | **3** | **既存レシピ 358 本の v2 化 ＆ 15 秒超 196 本の細分化再カット**（ローカルキャッシュあり 319 本を最優先） | キャッシュ有 **~300 本**（全体 **358 本**） | **費用ゼロ（ローカルキャッシュ＋Antigravity 3 台分担）** ※未キャッシュ 60 本は API 併用可 | 3 台並列（計 100〜150 本/日）で **約 2.5〜3.5 日**（まず 15 秒超 196 本に絞れば **約 1.5〜2 日**） | **動画生成への効果最大**。`frame_timeline`・`effect_chain`・`ae_blueprint.layers` が揃い AE/コード生成の再現精度が劇的に向上 |
 | **4** | **未校正 62 本のうち YouTube 58 本の校正済み採点**（`_skip_list` 2 本・Vimeo 2 本除く） | **58 本**（有効見込み 32 本前後＋`restricted` 28 本） | **Gemini API（YouTube URL・Flex）**（D-018 設計書承認後） | API 費用 **約 \$2.5〜\$5**（58 本×2 回×Flex \$0.043 目安）／実行 **1〜2 時間** | 381 本の校正カバー率を 83.7% → 最大 **98.9%**（377/381 本）へ引き上げ |
 | **5** | **シーン密度が疎な 39 本・0 秒丸め 6 本の Ch.3 再分解**＋重複候補 1 本の確認 | **45 本＋1 本** | キャッシュ有は **費用ゼロ（ローカル再分解）**／重複 1 本は **手作業 5 分** | 約 **0.5 日**（`search_scenes` とペーシング基準の精度底上げ） | `search_scenes` と `get_pacing_benchmarks` の細かさ・正確さを改善 |
+
+---
+
+### 8-5. 優先 1（381 本の費用ゼロ修復）実施結果と未修復一覧（2026-11-25 追記）
+
+`chibatmute` にて事前バックアップ（`E:\iketeru_backups\pre_craft_381_repair_20261125_162052\`）取得のうえ、既存メディア上書き 0 件でローカル修復を実施し、再点検で以下を確認した（`SQLite integrity_check = ok`、`sqlite_disk_drift = 0`、`pc_abs_paths = 0`）：
+
+- **`recipe.json` 未出力（115 本）**: **115 / 115 本再出力完了（残欠け 0 本）**。
+- **欠損画像 `cut_XX_end.png`（43 本）**: キャッシュ MP4 あり **32 / 32 本を EOF クランプ付き `ffmpeg` で再生成完了（キャッシュ有の残欠け 0 本）**。
+- **テレメトリ欠損（53 本 / 104 カット）**: キャッシュ MP4 あり **39 / 39 本（77 カット）をローカル MP4 から再計測完了（キャッシュ有の残欠け 0 本）**。
+
+#### 未修復（動画がないため）— 決定事項によりこのまま保全（GIF からの近似計測は行わない）
+
+YouTube 直接取得保留（D-016）およびローカルキャッシュ MP4 不在（1 本は `.corrupted` 破損ファイル）のため、以下の 21 本は MP4 実測・終端フレーム再生成を行わず未修復のまま記録する（将来 MP4 を入手した際、または API 経由で再構築する際に解消）：
+
+- **画像 `cut_XX_end.png` 欠損・未修復（動画がないため：11 本）**:
+  - 画像欠損のみ（7 本）: `2nGPUtId7vM`, `U-FuKvu5RV0`, `drPEdug9fZk`, `xnWku2LSI1o`, `z4r3l2aAdrg`, `zFvChQ6dSdk`, `zyktN7x_DSQ`
+  - 画像＋テレメトリ両方欠損（4 本）: `W_yKEhESgUI`, `tpWIK6D-yVM`, `w8QgUN09cqk`, `xtpEqWX-KuI`
+- **テレメトリ欠損・未修復（動画がないため：14 本 / 27 カット）**:
+  - 上記重複 4 本: `W_yKEhESgUI`, `tpWIK6D-yVM`, `w8QgUN09cqk`, `xtpEqWX-KuI`
+  - テレメトリ欠損のみ（10 本）: `EzEFCikg4tk`, `ITfpkCiJIEY`, `V8FGju_xYjo`, `YH2qyPanqK4`, `efXqozK4A40`, `qe29NgNqJZw`, `wRXAEZ0RKCw`（破損キャッシュ `.corrupted`）, `wx_H_pxbwdE`, `x7mSpHbqOGs`, `yRv-MikY3d0`

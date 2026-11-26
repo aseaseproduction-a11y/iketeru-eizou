@@ -1,7 +1,7 @@
 # クラフトレシピ正本配置・3 台並列分担・DB 同期 設計書
 
 - **作成日**: 2026-11-25（`chibatmute`）
-- **ステータス**: **設計完了・実装未着手**（ユーザー承認後に実装・移行・3 台分担を実行）
+- **ステータス**: **承認済み・実装中**（2026-11-25 承認：ドライブ名 `マイドライブ\iketeru_craft_recipes\`・`IKETERU_RECIPE_STORE_DIR`・439 本移行・対象 2 は案 A〔`calibratedScore` 優先〕。TiDB `craftRecipes` テーブルは後続フェーズ、フェーズ 2 はフェーズ 1 完了後に判断）
 - **関連文書**: `docs/DECISIONS.md`（D-006, D-015, D-016, D-019, D-021, D-022）、`docs/MULTI_PC_WORKFLOW.md`、`docs/STATUS_OVERVIEW_20261125.md`、`docs/API_CRAFT_RECIPE_DESIGN.md`
 
 ---

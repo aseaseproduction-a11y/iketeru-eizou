@@ -1,0 +1,1317 @@
+{
+  "schema_version": 2,
+  "run_id": "run1_p0_20261126_100930",
+  "worker": "CHIBA-PC-api",
+  "purpose": "run1_p0_58_plus_18_anchors_manual",
+  "service_tier": "standard",
+  "calls_by_service_tier": {
+    "flex": 6,
+    "standard": 147
+  },
+  "cost_by_service_tier": {
+    "flex": 0.392922,
+    "standard": 13.989258
+  },
+  "finished_at": "2026-11-26T03:14:01.184Z",
+  "total_requests": 158,
+  "succeeded_calls": 153,
+  "congestion_failure_count": 8,
+  "congestion_events": [
+    {
+      "timestamp": "2026-11-26T01:09:44.621Z",
+      "code": "503",
+      "try_index": 1,
+      "phase": "initial_try1",
+      "video_id": "OUQ6NV9r2Lk",
+      "attempt": 1
+    },
+    {
+      "timestamp": "2026-11-26T01:16:13.549Z",
+      "code": "503",
+      "try_index": 1,
+      "phase": "initial_try1",
+      "video_id": "dWvAJMYdTFI",
+      "attempt": 1
+    },
+    {
+      "timestamp": "2026-11-26T01:17:11.425Z",
+      "code": "503",
+      "try_index": 2,
+      "phase": "initial_try2_deferred",
+      "video_id": "dWvAJMYdTFI",
+      "attempt": 1
+    },
+    {
+      "timestamp": "2026-11-26T01:17:26.781Z",
+      "code": "503",
+      "try_index": 1,
+      "phase": "initial_try1",
+      "video_id": "drPEdug9fZk",
+      "attempt": 1
+    },
+    {
+      "timestamp": "2026-11-26T01:18:25.436Z",
+      "code": "503",
+      "try_index": 2,
+      "phase": "initial_try2_deferred",
+      "video_id": "drPEdug9fZk",
+      "attempt": 1
+    },
+    {
+      "timestamp": "2026-11-26T01:18:47.655Z",
+      "code": "503",
+      "try_index": 1,
+      "phase": "initial_try1",
+      "video_id": "eEiMPYiNZAo",
+      "attempt": 1
+    },
+    {
+      "timestamp": "2026-11-26T01:19:29.674Z",
+      "code": "503",
+      "try_index": 2,
+      "phase": "initial_try2_deferred",
+      "video_id": "eEiMPYiNZAo",
+      "attempt": 1
+    },
+    {
+      "timestamp": "2026-11-26T02:43:29.189Z",
+      "code": "503",
+      "try_index": 1,
+      "phase": "initial_try1",
+      "video_id": "z02-yCIHPCY",
+      "attempt": 2
+    }
+  ],
+  "deferred_remaining_count": 0,
+  "videos_completed": 76,
+  "targets_completed": 58,
+  "anchors_completed": 18,
+  "tiebreakers_triggered": 1,
+  "stopped_early": false,
+  "stop_reason": null,
+  "max_observed_call_cost_usd": 0.22419,
+  "run_cost_usd": 14.38218,
+  "evidence_manifest": "evidence_manifest.json",
+  "deferred_queue_file": "deferred_retry_queue.json",
+  "evidence_logs_dir": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930",
+  "videos": [
+    {
+      "video_id": "OUQ6NV9r2Lk",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        93,
+        91
+      ],
+      "diff_12": 2,
+      "api_raw_final_score": 92,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "RFYP-tY6xOg",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        89,
+        89
+      ],
+      "diff_12": 0,
+      "api_raw_final_score": 89,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "U-FuKvu5RV0",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        82,
+        80
+      ],
+      "diff_12": 2,
+      "api_raw_final_score": 81,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "dWvAJMYdTFI",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        82,
+        79
+      ],
+      "diff_12": 3,
+      "api_raw_final_score": 80.5,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "drPEdug9fZk",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        81,
+        81
+      ],
+      "diff_12": 0,
+      "api_raw_final_score": 81,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "eEiMPYiNZAo",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        76,
+        79
+      ],
+      "diff_12": 3,
+      "api_raw_final_score": 77.5,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "efXqozK4A40",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        85,
+        85
+      ],
+      "diff_12": 0,
+      "api_raw_final_score": 85,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "iK725ck2NIk",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        88,
+        87
+      ],
+      "diff_12": 1,
+      "api_raw_final_score": 87.5,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "mI9MSQGlbH0",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        83,
+        82
+      ],
+      "diff_12": 1,
+      "api_raw_final_score": 82.5,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "qe29NgNqJZw",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        80,
+        77
+      ],
+      "diff_12": 3,
+      "api_raw_final_score": 78.5,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "rolo_BHlDmQ",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        83,
+        85
+      ],
+      "diff_12": 2,
+      "api_raw_final_score": 84,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "tk9mbNFEKZw",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        73,
+        70
+      ],
+      "diff_12": 3,
+      "api_raw_final_score": 71.5,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "vpyeQeTDGFA",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        97,
+        98
+      ],
+      "diff_12": 1,
+      "api_raw_final_score": 97.5,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "w8QgUN09cqk",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        76,
+        80
+      ],
+      "diff_12": 4,
+      "api_raw_final_score": 78,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "x6_mbnsh6VU",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        95,
+        94
+      ],
+      "diff_12": 1,
+      "api_raw_final_score": 94.5,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "x7mSpHbqOGs",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        70,
+        69
+      ],
+      "diff_12": 1,
+      "api_raw_final_score": 69.5,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "xRU1XXHIpIc",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        93,
+        94
+      ],
+      "diff_12": 1,
+      "api_raw_final_score": 93.5,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "xnWku2LSI1o",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        63,
+        63
+      ],
+      "diff_12": 0,
+      "api_raw_final_score": 63,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "xw5u-NoA3Ec",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        83,
+        82
+      ],
+      "diff_12": 1,
+      "api_raw_final_score": 82.5,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "yRv-MikY3d0",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        82,
+        82
+      ],
+      "diff_12": 0,
+      "api_raw_final_score": 82,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "yTASHD-MWwE",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        74,
+        70
+      ],
+      "diff_12": 4,
+      "api_raw_final_score": 72,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "yVX34hPLKtI",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        92,
+        92
+      ],
+      "diff_12": 0,
+      "api_raw_final_score": 92,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "yow8PBNcINU",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        90,
+        91
+      ],
+      "diff_12": 1,
+      "api_raw_final_score": 90.5,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "yu3YGphrBbI",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        94,
+        92
+      ],
+      "diff_12": 2,
+      "api_raw_final_score": 93,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "z4r3l2aAdrg",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        74,
+        74
+      ],
+      "diff_12": 0,
+      "api_raw_final_score": 74,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "zFvChQ6dSdk",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        90,
+        90
+      ],
+      "diff_12": 0,
+      "api_raw_final_score": 90,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "zJtsfgrJiWE",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        87,
+        89
+      ],
+      "diff_12": 2,
+      "api_raw_final_score": 88,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "zP5fTB_MAXU",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        88,
+        88
+      ],
+      "diff_12": 0,
+      "api_raw_final_score": 88,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "zRJS0P1GwC4",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        92,
+        94
+      ],
+      "diff_12": 2,
+      "api_raw_final_score": 93,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "zSPMR9UdKuI",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        85,
+        85
+      ],
+      "diff_12": 0,
+      "api_raw_final_score": 85,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "2nGPUtId7vM",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        80,
+        76
+      ],
+      "diff_12": 4,
+      "api_raw_final_score": 78,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "D6flbP5cO_4",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        71,
+        71
+      ],
+      "diff_12": 0,
+      "api_raw_final_score": 71,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "EzEFCikg4tk",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        84,
+        82
+      ],
+      "diff_12": 2,
+      "api_raw_final_score": 83,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "ICs3wEegMgw",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        83,
+        83
+      ],
+      "diff_12": 0,
+      "api_raw_final_score": 83,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "ITfpkCiJIEY",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        85,
+        86
+      ],
+      "diff_12": 1,
+      "api_raw_final_score": 85.5,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "M7pWj2hq_f8",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2,
+        3
+      ],
+      "raw_scores": [
+        78,
+        83,
+        76
+      ],
+      "diff_12": 5,
+      "api_raw_final_score": 78,
+      "ensemble_rule": "median_of_3",
+      "complete": true
+    },
+    {
+      "video_id": "SWzfm9PED6s",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        89,
+        89
+      ],
+      "diff_12": 0,
+      "api_raw_final_score": 89,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "UccHEifTIo4",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        70,
+        70
+      ],
+      "diff_12": 0,
+      "api_raw_final_score": 70,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "V8FGju_xYjo",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        79,
+        82
+      ],
+      "diff_12": 3,
+      "api_raw_final_score": 80.5,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "W_yKEhESgUI",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        82,
+        83
+      ],
+      "diff_12": 1,
+      "api_raw_final_score": 82.5,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "YH2qyPanqK4",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        75,
+        75
+      ],
+      "diff_12": 0,
+      "api_raw_final_score": 75,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "_OUWtPhDQpk",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        94,
+        94
+      ],
+      "diff_12": 0,
+      "api_raw_final_score": 94,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "dsXcE8jvESw",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        70,
+        69
+      ],
+      "diff_12": 1,
+      "api_raw_final_score": 69.5,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "fvbEnWLRo1s",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        96,
+        96
+      ],
+      "diff_12": 0,
+      "api_raw_final_score": 96,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "gpBFiG_hSFs",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        70,
+        70
+      ],
+      "diff_12": 0,
+      "api_raw_final_score": 70,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "kw7D7Il13_k",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        91,
+        89
+      ],
+      "diff_12": 2,
+      "api_raw_final_score": 90,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "lB3mij3gmVo",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        86,
+        85
+      ],
+      "diff_12": 1,
+      "api_raw_final_score": 85.5,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "oXRPnu9nBpc",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        82,
+        83
+      ],
+      "diff_12": 1,
+      "api_raw_final_score": 82.5,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "rON_9zSnU2k",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        75,
+        75
+      ],
+      "diff_12": 0,
+      "api_raw_final_score": 75,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "t5jPgM_VKZo",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        85,
+        82
+      ],
+      "diff_12": 3,
+      "api_raw_final_score": 83.5,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "tpWIK6D-yVM",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        81,
+        80
+      ],
+      "diff_12": 1,
+      "api_raw_final_score": 80.5,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "vS6wzjpCvec",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        95,
+        95
+      ],
+      "diff_12": 0,
+      "api_raw_final_score": 95,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "wx_H_pxbwdE",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        77,
+        78
+      ],
+      "diff_12": 1,
+      "api_raw_final_score": 77.5,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "xpn5Ax2pz14",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        87,
+        87
+      ],
+      "diff_12": 0,
+      "api_raw_final_score": 87,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "xtpEqWX-KuI",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        85,
+        83
+      ],
+      "diff_12": 2,
+      "api_raw_final_score": 84,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "z02-yCIHPCY",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        88,
+        89
+      ],
+      "diff_12": 1,
+      "api_raw_final_score": 88.5,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "zPDMm7XUpkI",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        78,
+        79
+      ],
+      "diff_12": 1,
+      "api_raw_final_score": 78.5,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "zyktN7x_DSQ",
+      "role": "target",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        77,
+        77
+      ],
+      "diff_12": 0,
+      "api_raw_final_score": 77,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "6sX_BfDnyrg",
+      "role": "anchor",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        90,
+        91
+      ],
+      "diff_12": 1,
+      "api_raw_final_score": 90.5,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "nW2CpHcmlo4",
+      "role": "anchor",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        88,
+        89
+      ],
+      "diff_12": 1,
+      "api_raw_final_score": 88.5,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "Y_I_NOHVwzI",
+      "role": "anchor",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        89,
+        89
+      ],
+      "diff_12": 0,
+      "api_raw_final_score": 89,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "_Rvur-ySGyU",
+      "role": "anchor",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        85,
+        85
+      ],
+      "diff_12": 0,
+      "api_raw_final_score": 85,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "-TBB-K6Sk0U",
+      "role": "anchor",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        85,
+        84
+      ],
+      "diff_12": 1,
+      "api_raw_final_score": 84.5,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "-YiVSav-PZw",
+      "role": "anchor",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        85,
+        85
+      ],
+      "diff_12": 0,
+      "api_raw_final_score": 85,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "0kHO87Qqjpk",
+      "role": "anchor",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        87,
+        89
+      ],
+      "diff_12": 2,
+      "api_raw_final_score": 88,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "BEYeHsfGXJw",
+      "role": "anchor",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        84,
+        84
+      ],
+      "diff_12": 0,
+      "api_raw_final_score": 84,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "-1nKzOF8-_Q",
+      "role": "anchor",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        82,
+        84
+      ],
+      "diff_12": 2,
+      "api_raw_final_score": 83,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "Q4C1O2A-Cqg",
+      "role": "anchor",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        78,
+        75
+      ],
+      "diff_12": 3,
+      "api_raw_final_score": 76.5,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "8zxQpYYSvTM",
+      "role": "anchor",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        83,
+        85
+      ],
+      "diff_12": 2,
+      "api_raw_final_score": 84,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "mJk17F-vym8",
+      "role": "anchor",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        70,
+        69
+      ],
+      "diff_12": 1,
+      "api_raw_final_score": 69.5,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "jsEVOjI690Y",
+      "role": "anchor",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        79,
+        82
+      ],
+      "diff_12": 3,
+      "api_raw_final_score": 80.5,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "JokUSZnJBQU",
+      "role": "anchor",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        74,
+        73
+      ],
+      "diff_12": 1,
+      "api_raw_final_score": 73.5,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "_9cGKFO4mm8",
+      "role": "anchor",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        69,
+        69
+      ],
+      "diff_12": 0,
+      "api_raw_final_score": 69,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "58-kBdaXKxY",
+      "role": "anchor",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        68,
+        69
+      ],
+      "diff_12": 1,
+      "api_raw_final_score": 68.5,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "_PO5O3QAaVM",
+      "role": "anchor",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        68,
+        68
+      ],
+      "diff_12": 0,
+      "api_raw_final_score": 68,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    },
+    {
+      "video_id": "Jf9F5VBqA2A",
+      "role": "anchor",
+      "attempts_completed": [
+        1,
+        2
+      ],
+      "raw_scores": [
+        58,
+        59
+      ],
+      "diff_12": 1,
+      "api_raw_final_score": 58.5,
+      "ensemble_rule": "mean_of_2",
+      "complete": true
+    }
+  ]
+}

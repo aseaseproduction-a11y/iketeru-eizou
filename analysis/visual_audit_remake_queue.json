@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "decision_id": "D-024",
+  "created_at": "2026-11-25T17:45:00+09:00",
+  "policy": "Visual audit (2026-11-25) classified 14 of 15 cached excluded videos as '一部違う'. 2 videos (1018644295, Gwgo9GS4mVM) have already been remade in pilot5 (pending TiDB approval); the remaining 12 videos are queued here for full analysis remake rather than left permanently excluded.",
+  "already_remade_pending_tidb_approval": [
+    "1018644295",
+    "Gwgo9GS4mVM"
+  ],
+  "queue": [
+    {
+      "priority": 1,
+      "video_id": "403212163",
+      "title": "HBO Watchmen",
+      "audit_verdict": "一部違う",
+      "status": "queued",
+      "summary_of_discrepancies": "02:16 glass reflection misidentified as red suspension bridge; 03:56 diner vs father's apartment; 02:20 comic shop vs hotel convention; 04:24 match cut vs dissolve."
+    },
+    {
+      "priority": 2,
+      "video_id": "5CfITO98wMc",
+      "title": "Netflix",
+      "audit_verdict": "一部違う",
+      "status": "queued",
+      "summary_of_discrepancies": "Missed 30s CM + 13.3s silent endcard structure causing 3-9s Ch.3/Ch.10 shift; ST5 character misidentified; missed 00:24-00:26 multi-logo flash."
+    },
+    {
+      "priority": 3,
+      "video_id": "5Duje_sZko8",
+      "title": "Imagine Dragons feat. Ado",
+      "audit_verdict": "一部違う",
+      "status": "queued",
+      "summary_of_discrepancies": "Hallucinated blue beach behind flames (actually text on blue CRT); #07 shifted 8-10s early."
+    },
+    {
+      "priority": 4,
+      "video_id": "6o-eJBG9G0c",
+      "title": "Ready Steady",
+      "audit_verdict": "一部違う",
+      "status": "queued",
+      "summary_of_discrepancies": "C-melody sunset and final chorus cold-tone confused; hallucinated blue crystal scatter at outro; missed 01:25-01:41 vocal chop; BPM mismatch."
+    },
+    {
+      "priority": 5,
+      "video_id": "6sX_BfDnyrg",
+      "title": "Apple TV",
+      "audit_verdict": "一部違う",
+      "status": "queued",
+      "summary_of_discrepancies": "Events shifted 1-1.5s late in 5.06s video; audio peak and volume dB mismatch."
+    },
+    {
+      "priority": 6,
+      "video_id": "BnTJ_BEM_9U",
+      "title": "主人公になろう！",
+      "audit_verdict": "一部違う",
+      "status": "queued",
+      "summary_of_discrepancies": "#01 opening 00:00 misdescribed as golf turf (actually 01:25-01:29); sans-serif title called Mincho; #08 typo timing & lighting error."
+    },
+    {
+      "priority": 7,
+      "video_id": "EHYX4mtY5so",
+      "title": "ヨナガオルケスタ",
+      "audit_verdict": "一部違う",
+      "status": "queued",
+      "summary_of_discrepancies": "Shortened analysis with shifted Ch.3 (gallery 02:24-02:39 vs 01:55-02:35; missed rap, final chorus, curtain close); Ch.6 dB-only."
+    },
+    {
+      "priority": 8,
+      "video_id": "KA2KEzbXQlQ",
+      "title": "花王 Osolo",
+      "audit_verdict": "一部違う",
+      "status": "queued",
+      "summary_of_discrepancies": "#01-#03 & Cut 1 shifted 4-9s late; daughter writing with pencil misdescribed as reading; missed English dialogue and strings."
+    },
+    {
+      "priority": 9,
+      "video_id": "LIlZCmETvsY",
+      "title": "新宝島",
+      "audit_verdict": "一部違う",
+      "status": "queued",
+      "summary_of_discrepancies": "Falsely claims 4:3 pillarbox on full 16:9 video; triangular stage rotation, member identities, dancer expressions, and 5-color stairs misdescribed."
+    },
+    {
+      "priority": 10,
+      "video_id": "QvW61K2s0tA",
+      "title": "OK Go",
+      "audit_verdict": "一部違う",
+      "status": "queued",
+      "summary_of_discrepancies": "Mid-video chapters shifted 10-20s early; ending misdescribed as flipbook (actually reverse + perspective alignment); missed crew audio & blast SFX."
+    },
+    {
+      "priority": 11,
+      "video_id": "axQmWplSlXw",
+      "title": "ILLIT",
+      "audit_verdict": "一部違う",
+      "status": "queued",
+      "summary_of_discrepancies": "Cave member IROHA misidentified as MOKA; giant eagle misdescribed as wings; telephone receiver called earphone jack; Japanese lines omitted."
+    },
+    {
+      "priority": 12,
+      "video_id": "kqj7b59D85Y",
+      "title": "雑魚",
+      "audit_verdict": "一部違う",
+      "status": "queued",
+      "summary_of_discrepancies": "Hallucinated 4-split close-ups & 'あはん' cut-in (actual 3-split & 'ざんねーん'); #01/#03/#06 layout/order errors; missed '変態' cut-ins."
+    }
+  ]
+}

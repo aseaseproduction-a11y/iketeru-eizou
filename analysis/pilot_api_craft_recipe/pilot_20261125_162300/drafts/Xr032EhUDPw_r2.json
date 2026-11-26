@@ -1,0 +1,872 @@
+{
+  "schema_version": "craft_recipe_api_draft_v1",
+  "video_id": "Xr032EhUDPw",
+  "source": "gemini_api_url_v1",
+  "video_overview": {
+    "estimated_fps": 24,
+    "estimated_bpm": 172,
+    "overall_cut_pace": "fast",
+    "dominant_visual_style": "赤黒の極端な二値化・ハイコントラスト演出、ダイナミックな3Dカメラワーク、名画調コラージュ、漆黒背景のネオンリムライトを高速ビートで畳み掛けるスタイリッシュなアニメOP。"
+  },
+  "cuts": [
+    {
+      "cut_index": 1,
+      "title": "逆さまの赤黒都市空間180度カメラロールと黒い日食の開眼導入",
+      "category": "3d_camera",
+      "start_mmss": "00:00",
+      "end_mmss": "00:09",
+      "start_sec": 0,
+      "end_sec": 9,
+      "fps": 24,
+      "primary_tool": "Blender",
+      "software_stack": [
+        "Blender",
+        "After Effects"
+      ],
+      "tool_selection_rationale": "街路樹やビル群の奥行きパースを保った滑らかな180度ロール移動はBlenderの3D空間が最適。赤黒ポスタライズとグロー仕上げをAfter Effectsで非破壊統合する。",
+      "plugins_used": [
+        "Deep Glow",
+        "Turbulent Displace",
+        "Posterize Time"
+      ],
+      "color_palette_hex": {
+        "base": "#0A0909",
+        "primary": "#E61B0E",
+        "accent": "#FF471A"
+      },
+      "easing_and_timing": {
+        "bpm": 172,
+        "ease_curve": "0/30->0/75 (Ease In-Out Roll)",
+        "hold_frames": 6,
+        "posterize_fps": 12,
+        "notes": "カメラロールは24fpsで滑らかに動かしつつ、キャラ作画と炎揺らぎは12fps相当でアニメ調を維持（推定）。",
+        "source": "api_estimated",
+        "verified": false
+      },
+      "layer_stack": [
+        "L1 (Bottom): 漆黒背景および中央の黒い日食シェイプ（赤色コロナ発光）",
+        "L2: Blenderレンダリング済みの都市街路・電柱・街路樹3Dパス（赤黒トゥーンシェーダー）",
+        "L3: 前景キャラクター（虎杖悠仁）の2D作画シーケンス（2値化赤黒マスク）",
+        "L4: 中央黒い円内に出現する手描き開眼アニメーションレイヤー",
+        "L5 (Top): Deep Glow・周辺減光・微細フィルムグレイン調整レイヤー",
+        "[Audio - BGM Track] イントロのギターリフ＆コーラス（独立トラック）",
+        "[Audio - SE Track] 低音ドローンおよび開眼時の微細インパクトSE（独立トラック）"
+      ],
+      "recreation_flow": [
+        "1. Blenderでビル街路と街路樹を配置し、Z軸180度回転しながら前進するカメラアニメを作成し白黒トゥーンパスで書き出す。",
+        "2. After Effectsでトライトーン（黒・真紅・朱色）を適用し、中央に赤いコロナ（Turbulent Displace＋Deep Glow）を持つ黒円を配置する。",
+        "3. 00:03から前景キャラ素材をカメラ回転に同期してインさせ、00:08で正立着地と同時に黒円内へ目の作画をフェードインさせる。"
+      ],
+      "frame_timeline": [
+        {
+          "frame": 0,
+          "time_offset_sec": 0,
+          "event": "上下反転した赤い都市空間と中央の黒い日食から前進開始",
+          "params": {
+            "camera_z_rot": 180
+          }
+        },
+        {
+          "frame": 72,
+          "time_offset_sec": 3,
+          "event": "左端から逆さまの虎杖の背中がインし、Z軸ロール開始",
+          "params": {
+            "camera_z_rot": 175
+          }
+        },
+        {
+          "frame": 192,
+          "time_offset_sec": 8,
+          "event": "カメラが正立付近へ着地し、虎杖の頭部と日食が重なる",
+          "params": {
+            "camera_z_rot": 5
+          }
+        },
+        {
+          "frame": 216,
+          "time_offset_sec": 9,
+          "event": "正立完了し黒い日食中央に赤い輪郭の目が開く",
+          "params": {
+            "camera_z_rot": 0,
+            "eye_opacity": 100
+          }
+        }
+      ],
+      "effect_chain": [
+        {
+          "order": 1,
+          "tool": "After Effects",
+          "plugin": "Turbulent Displace",
+          "match_name": "ADBE Turbulent Displace",
+          "fallback_match_name": "ADBE Turbulent Displace",
+          "params": {
+            "amount": 28,
+            "size": 45,
+            "evolution_speed": 180
+          },
+          "keyframed_frames": [
+            0,
+            216
+          ]
+        },
+        {
+          "order": 2,
+          "tool": "After Effects",
+          "plugin": "Deep Glow",
+          "match_name": "Deep Glow",
+          "fallback_match_name": "ADBE Glo2",
+          "params": {
+            "radius": 85,
+            "exposure": 0.45,
+            "tint": "#FF2A00"
+          },
+          "keyframed_frames": [
+            0,
+            192,
+            216
+          ]
+        }
+      ],
+      "ae_blueprint": {
+        "schema_version": 2,
+        "source": "api_estimated",
+        "width": 1920,
+        "height": 1080,
+        "fps": 24,
+        "duration_sec": 9,
+        "bg_color": "#0A0909",
+        "film_finish": true,
+        "layers": [
+          {
+            "type": "shape_eclipse_corona",
+            "name": "Black_Eclipse_Core",
+            "color": "#050505",
+            "glow_color": "#E61B0E",
+            "start_frame": 0,
+            "duration_frames": 216,
+            "easing": [
+              0,
+              30,
+              0,
+              75
+            ]
+          },
+          {
+            "type": "footage_3d_pass",
+            "name": "Blender_City_Roll_Pass",
+            "start_frame": 0,
+            "duration_frames": 216,
+            "easing": [
+              0,
+              30,
+              0,
+              75
+            ]
+          }
+        ]
+      },
+      "transition_bridge": {
+        "source": "api_estimated",
+        "entrance_vector": "hard_open_fade",
+        "exit_vector": "hard_cut_flash",
+        "match_cue": "guitar_build_to_switch_click",
+        "sfx_lead_in_frames": -2,
+        "recommended_sfx": "sub_bass_swell_cut"
+      },
+      "anti_ai_slop_notes": "影を純黒に潰しつつ街灯と日食周囲のみ色収差気味に滲ませ、ロール速度に緩急をつけることでチープな単純回転を回避。",
+      "audio_sync_cues": "ギターリフの反復に合わせてロールが加速し、イントロ終了直前のキメで開眼を同期。",
+      "observed_timestamps": [
+        {
+          "timestamp": "00:00",
+          "visual_evidence": "上下反転した赤いビル群の中央に赤いコロナを纏う黒い円が浮かぶ"
+        },
+        {
+          "timestamp": "00:04",
+          "visual_evidence": "逆さまの虎杖の背中が画面に入り都市ごと回転し始める"
+        },
+        {
+          "timestamp": "00:09",
+          "visual_evidence": "正立した虎杖の頭上に黒い円が重なり中央に目が開く"
+        }
+      ],
+      "provenance": {
+        "source": "gemini_api_url_v1",
+        "visual_observation_basis": "youtube_url_video_stream",
+        "media_telemetry_status": "missing_requires_local_video",
+        "model": "gemini-4-neon",
+        "thinking_level": "high",
+        "service_tier": "standard",
+        "video_processing": {
+          "type": "static",
+          "fps": 1,
+          "content_layers": [
+            "frames",
+            "audio"
+          ],
+          "resolution": "low"
+        },
+        "input_video_tokens": 9101,
+        "pilot_attempt": 2,
+        "field_provenance": {
+          "semantic_craft_fields": "api_observed",
+          "timestamps_and_duration": "api_estimated_1fps",
+          "fps_and_frames": "api_estimated",
+          "color_palette_hex": "api_estimated",
+          "easing_and_timing": "api_estimated",
+          "media_and_telemetry": "missing"
+        }
+      },
+      "media": {
+        "available": false,
+        "status": "missing_requires_local_video",
+        "telemetry": {
+          "available": false
+        }
+      }
+    },
+    {
+      "cut_index": 2,
+      "title": "赤色発光の幾何学破砕ライン越しに展開する高速キャラ連続フラッシュ",
+      "category": "vfx_composite",
+      "start_mmss": "00:27",
+      "end_mmss": "00:30",
+      "start_sec": 27,
+      "end_sec": 30,
+      "fps": 24,
+      "primary_tool": "After Effects",
+      "software_stack": [
+        "After Effects",
+        "Illustrator"
+      ],
+      "tool_selection_rationale": "鋭角な破砕ラインのベクター設計はIllustratorが高速かつ正確で、AE上でマスク連動とグロー・高速カット切替をビート管理しやすい。",
+      "plugins_used": [
+        "Deep Glow",
+        "Saber",
+        "F's ChromaticAberration"
+      ],
+      "color_palette_hex": {
+        "base": "#070303",
+        "primary": "#FF0B1E",
+        "accent": "#FFE6C7"
+      },
+      "easing_and_timing": {
+        "bpm": 172,
+        "ease_curve": "0/90->0/10 (Expo Out Snap)",
+        "hold_frames": 3,
+        "posterize_fps": null,
+        "notes": "約10〜14フレーム間隔でキャラを瞬時切替し、各カット頭に拡大スナップと赤フラッシュを乗せる（推定）。",
+        "source": "api_estimated",
+        "verified": false
+      },
+      "layer_stack": [
+        "L1 (Bottom): 純黒背景レイヤー",
+        "L2: 赤黒ツートンにカラーマッピングした各キャラ作画（九十九・パンダ・真希・虎杖）",
+        "L3: Illustrator作成の放射状破砕ベクターライン（Saberまたはシェイプ＋Deep Glow）",
+        "L4 (Top): 切替フレーム限定の露出フラッシュ・微細色収差調整レイヤー",
+        "[Audio - BGM Track] サビ後半の疾走ドラム＆ボーカル（独立トラック）",
+        "[Audio - SE Track] ガラス破砕・斬撃ヒットアクセントSE（独立トラック）"
+      ],
+      "recreation_flow": [
+        "1. 放射状に割れる鋭角ガラス片風のラインをIllustratorで複数パターン作成し、AEへシェイプ変換して配置する。",
+        "2. キャラ素材にトライトーン（黒・深紅・明るい肌/白）を適用し、ビートに合わせて10〜14f単位でハードカット配置する。",
+        "3. 前景の破砕ラインにDeep Glow（強めの赤）を掛け、切替瞬間に2fだけスケール106%→100%のパンチを加える。"
+      ],
+      "frame_timeline": [
+        {
+          "frame": 0,
+          "time_offset_sec": 0,
+          "event": "九十九由基のパンチと放射状赤色破砕ラインが出現",
+          "params": {
+            "scale": 108,
+            "glow_exposure": 0.6
+          }
+        },
+        {
+          "frame": 24,
+          "time_offset_sec": 1,
+          "event": "パンダの咆哮カットへ瞬時切替、破砕パターン反転",
+          "params": {
+            "scale": 106,
+            "glow_exposure": 0.55
+          }
+        },
+        {
+          "frame": 48,
+          "time_offset_sec": 2,
+          "event": "刃を構える禪院真希へ切替、垂直方向の赤ラインが交差",
+          "params": {
+            "scale": 105,
+            "glow_exposure": 0.65
+          }
+        },
+        {
+          "frame": 72,
+          "time_offset_sec": 3,
+          "event": "両手を広げる虎杖へ切替、赤破砕が画面外へ抜ける",
+          "params": {
+            "scale": 100,
+            "glow_exposure": 0.5
+          }
+        }
+      ],
+      "effect_chain": [
+        {
+          "order": 1,
+          "tool": "After Effects",
+          "plugin": "Deep Glow",
+          "match_name": "Deep Glow",
+          "fallback_match_name": "ADBE Glo2",
+          "params": {
+            "radius": 55,
+            "exposure": 0.55,
+            "tint": "#FF0B1E"
+          },
+          "keyframed_frames": [
+            0,
+            24,
+            48,
+            72
+          ]
+        },
+        {
+          "order": 2,
+          "tool": "After Effects",
+          "plugin": "F's ChromaticAberration",
+          "match_name": "F's ChromaticAberration",
+          "fallback_match_name": "ADBE Shift Channels",
+          "params": {
+            "shift_r": 4,
+            "shift_b": -4
+          },
+          "keyframed_frames": [
+            0,
+            24,
+            48
+          ]
+        }
+      ],
+      "ae_blueprint": {
+        "schema_version": 2,
+        "source": "api_estimated",
+        "width": 1920,
+        "height": 1080,
+        "fps": 24,
+        "duration_sec": 3,
+        "bg_color": "#070303",
+        "film_finish": false,
+        "layers": [
+          {
+            "type": "vector_shatter_overlay",
+            "name": "Red_Shatter_Lines",
+            "color": "#FF0B1E",
+            "start_frame": 0,
+            "duration_frames": 72,
+            "easing": [
+              0,
+              90,
+              0,
+              10
+            ]
+          }
+        ]
+      },
+      "transition_bridge": {
+        "source": "api_estimated",
+        "entrance_vector": "impact_flash_cut",
+        "exit_vector": "hard_cut_daylight",
+        "match_cue": "snare_hit_cut_cadence",
+        "sfx_lead_in_frames": -1,
+        "recommended_sfx": "sharp_glass_slice"
+      },
+      "anti_ai_slop_notes": "破砕ラインの消失点をキャラの拳・武器・視線に毎カット手動合わせすることで、単なるオーバーレイ素材っぽさを払拭。",
+      "audio_sync_cues": "サビ後半の力強いボーカルフレーズとドラムの強拍ごとにキャラを同期切替。",
+      "observed_timestamps": [
+        {
+          "timestamp": "00:27",
+          "visual_evidence": "赤い放射状ラインの中心に拳を突き出す九十九由基"
+        },
+        {
+          "timestamp": "00:28",
+          "visual_evidence": "赤い破砕ライン越しに咆哮するパンダへ瞬時切替"
+        },
+        {
+          "timestamp": "00:29",
+          "visual_evidence": "横一文字の刃と垂直赤ラインに挟まれた禪院真希から虎杖へ連続切替"
+        }
+      ],
+      "provenance": {
+        "source": "gemini_api_url_v1",
+        "visual_observation_basis": "youtube_url_video_stream",
+        "media_telemetry_status": "missing_requires_local_video",
+        "model": "gemini-4-neon",
+        "thinking_level": "high",
+        "service_tier": "standard",
+        "video_processing": {
+          "type": "static",
+          "fps": 1,
+          "content_layers": [
+            "frames",
+            "audio"
+          ],
+          "resolution": "low"
+        },
+        "input_video_tokens": 9101,
+        "pilot_attempt": 2,
+        "field_provenance": {
+          "semantic_craft_fields": "api_observed",
+          "timestamps_and_duration": "api_estimated_1fps",
+          "fps_and_frames": "api_estimated",
+          "color_palette_hex": "api_estimated",
+          "easing_and_timing": "api_estimated",
+          "media_and_telemetry": "missing"
+        }
+      },
+      "media": {
+        "available": false,
+        "status": "missing_requires_local_video",
+        "telemetry": {
+          "available": false
+        }
+      }
+    },
+    {
+      "cut_index": 3,
+      "title": "モノクロ3D建築背景から深紅ブラー・日食へ急転換するタイトルロゴ演出",
+      "category": "motion_graphics",
+      "start_mmss": "00:34",
+      "end_mmss": "00:38",
+      "start_sec": 34,
+      "end_sec": 38,
+      "fps": 24,
+      "primary_tool": "After Effects",
+      "software_stack": [
+        "After Effects",
+        "Blender",
+        "Illustrator"
+      ],
+      "tool_selection_rationale": "繊細な建築グリッド背景はBlender、編集可能なタイトルロゴアウトラインはIllustrator、劇的な赤背景転換とグロー演出はAfter Effectsが最善。",
+      "plugins_used": [
+        "Deep Glow",
+        "Motion 4",
+        "KikakuDiffusion"
+      ],
+      "color_palette_hex": {
+        "base": "#0C0C0E",
+        "primary": "#F4EBBE",
+        "accent": "#B81414"
+      },
+      "easing_and_timing": {
+        "bpm": 172,
+        "ease_curve": "0/80->0/20 (Cubic Out)",
+        "hold_frames": 18,
+        "posterize_fps": null,
+        "notes": "メインロゴ表示後に副題「死滅回游 前編」が1拍遅れて定着し、00:37以降で赤ブラー背景へ滑らかに溶解転換（推定）。",
+        "source": "api_estimated",
+        "verified": false
+      },
+      "layer_stack": [
+        "L1 (Bottom): モノクロ高コントラスト3D都市背景パス（Blender書き出し）",
+        "L2: 00:37からクロスディゾルブする深紅の放射状ブラー背景",
+        "L3: 「呪」の左上に出現する赤い日食リングと落下爆弾シルエットシェイプ",
+        "L4: 編集可能なメインタイトルベクター（Illustrator/AEシェイプ）および副題テキストレイヤー「死滅回游 前編」",
+        "L5 (Top): 微細グローおよびフィルムディフュージョン調整レイヤー",
+        "[Audio - BGM Track] サビ明けブレイク〜静かなBメロ導入（独立トラック）",
+        "[Audio - SE Track] タイトル定着ヒット＆低音リバーブ尾引きSE（独立トラック）"
+      ],
+      "recreation_flow": [
+        "1. Blenderで細密な高層ビル群を白黒エッジ強調シェーダーでレンダリングし、緩やかなドリーバックを付与する。",
+        "2. タイトルロゴ（AIベクター）と編集可能テキストレイヤー「死滅回游 前編」を中央配置し、わずかな淡黄色アウトラインとドロップシャドウを与える。",
+        "3. 00:37で背景を赤黒のモーションブラーテクスチャへディゾルブし、ロゴ上に赤い日食円と斜め落下する爆弾シルエットを出現させる。"
+      ],
+      "frame_timeline": [
+        {
+          "frame": 0,
+          "time_offset_sec": 0,
+          "event": "モノクロ都市背景上に「呪術廻戦」ロゴが全画面幅で出現",
+          "params": {
+            "logo_scale": 104,
+            "sub_opacity": 0
+          }
+        },
+        {
+          "frame": 24,
+          "time_offset_sec": 1,
+          "event": "副題「死滅回游 前編」がフェードインしビル群が後退",
+          "params": {
+            "logo_scale": 100,
+            "sub_opacity": 100
+          }
+        },
+        {
+          "frame": 72,
+          "time_offset_sec": 3,
+          "event": "モノクロ背景が赤黒いブラー空間へ転換開始",
+          "params": {
+            "red_bg_opacity": 60
+          }
+        },
+        {
+          "frame": 96,
+          "time_offset_sec": 4,
+          "event": "深紅ブラー背景に完全移行し赤い日食と爆弾シルエットが点灯",
+          "params": {
+            "red_bg_opacity": 100,
+            "eclipse_opacity": 100
+          }
+        }
+      ],
+      "effect_chain": [
+        {
+          "order": 1,
+          "tool": "After Effects",
+          "plugin": "Deep Glow",
+          "match_name": "Deep Glow",
+          "fallback_match_name": "ADBE Glo2",
+          "params": {
+            "radius": 40,
+            "exposure": 0.25
+          },
+          "keyframed_frames": [
+            0,
+            72,
+            96
+          ]
+        },
+        {
+          "order": 2,
+          "tool": "After Effects",
+          "plugin": "KikakuDiffusion",
+          "match_name": "KikakuDiffusion",
+          "fallback_match_name": "ADBE Gaussian Blur 2",
+          "params": {
+            "strength": 18,
+            "threshold": 70
+          },
+          "keyframed_frames": [
+            72,
+            96
+          ]
+        }
+      ],
+      "ae_blueprint": {
+        "schema_version": 2,
+        "source": "api_estimated",
+        "width": 1920,
+        "height": 1080,
+        "fps": 24,
+        "duration_sec": 4,
+        "bg_color": "#0C0C0E",
+        "film_finish": true,
+        "layers": [
+          {
+            "type": "kinetic_typo_animator",
+            "name": "Subtitle_Editable_Text",
+            "text": "死滅回游 前編",
+            "font_size": 64,
+            "color": "#F4EBBE",
+            "start_frame": 20,
+            "duration_frames": 76,
+            "easing": [
+              0,
+              80,
+              0,
+              20
+            ]
+          }
+        ]
+      },
+      "transition_bridge": {
+        "source": "api_estimated",
+        "entrance_vector": "vertical_pan_cut",
+        "exit_vector": "hard_cut_white_bg",
+        "match_cue": "chorus_drop_to_verse_vocal",
+        "sfx_lead_in_frames": -3,
+        "recommended_sfx": "cinematic_low_boom"
+      },
+      "anti_ai_slop_notes": "白黒の硬質な建築線画から有機的な深紅ブラーへ質感を反転させ、ロゴ自体は淡いクリーム色の輪郭で可読性を確保。",
+      "audio_sync_cues": "サビ終わりのブレイクでロゴを提示し、Bメロボーカルの入りに合わせて赤背景へ色転換。",
+      "observed_timestamps": [
+        {
+          "timestamp": "00:34",
+          "visual_evidence": "モノクロの細密ビル群の上に「呪術廻戦」のタイトルロゴが表示"
+        },
+        {
+          "timestamp": "00:35",
+          "visual_evidence": "下部に「死滅回游 前編」の白文字副題が加わる"
+        },
+        {
+          "timestamp": "00:38",
+          "visual_evidence": "背景が赤色ブラーへ変化し、ロゴ上に赤い日食と落下爆弾シルエットが出現"
+        }
+      ],
+      "provenance": {
+        "source": "gemini_api_url_v1",
+        "visual_observation_basis": "youtube_url_video_stream",
+        "media_telemetry_status": "missing_requires_local_video",
+        "model": "gemini-4-neon",
+        "thinking_level": "high",
+        "service_tier": "standard",
+        "video_processing": {
+          "type": "static",
+          "fps": 1,
+          "content_layers": [
+            "frames",
+            "audio"
+          ],
+          "resolution": "low"
+        },
+        "input_video_tokens": 9101,
+        "pilot_attempt": 2,
+        "field_provenance": {
+          "semantic_craft_fields": "api_observed",
+          "timestamps_and_duration": "api_estimated_1fps",
+          "fps_and_frames": "api_estimated",
+          "color_palette_hex": "api_estimated",
+          "easing_and_timing": "api_estimated",
+          "media_and_telemetry": "missing"
+        }
+      },
+      "media": {
+        "available": false,
+        "status": "missing_requires_local_video",
+        "telemetry": {
+          "available": false
+        }
+      }
+    },
+    {
+      "cut_index": 4,
+      "title": "漆黒空間の単色ネオン・リムライトによるキャラクター連続ポーズ切替",
+      "category": "lighting_lookdev",
+      "start_mmss": "01:02",
+      "end_mmss": "01:06",
+      "start_sec": 62,
+      "end_sec": 66,
+      "fps": 24,
+      "primary_tool": "After Effects",
+      "software_stack": [
+        "After Effects",
+        "Photoshop"
+      ],
+      "tool_selection_rationale": "キャラごとのリムライト色分離とエッジ発光・ブラー合成を非破壊調整レイヤーで高速イテレーションできるAfter Effectsが最適。",
+      "plugins_used": [
+        "Deep Glow",
+        "KikakuGlow",
+        "ChibaStroke"
+      ],
+      "color_palette_hex": {
+        "base": "#020203",
+        "primary": "#5CF2E8",
+        "accent": "#9A3DFF"
+      },
+      "easing_and_timing": {
+        "bpm": 172,
+        "ease_curve": "0/85->0/15 (Expo Out)",
+        "hold_frames": 2,
+        "posterize_fps": 12,
+        "notes": "キャラの動きの頂点で別キャラ（水色→紫→シアン→紫→黄）へ約0.8秒ピッチでマッチカット接続（推定）。",
+        "source": "api_estimated",
+        "verified": false
+      },
+      "layer_stack": [
+        "L1 (Bottom): 完全黒（#020203）ソリッド背景",
+        "L2: キャラ別リムライト・エッジ着色済み作画シーケンス（乙骨・伏黒・日車・真希・直哉）",
+        "L3: エッジ抽出マスクに乗せた単色ネオングロー（シアン／パープル／イエロー）",
+        "L4 (Top): 全体コントラスト引き締め・微細ブルーム調整レイヤー",
+        "[Audio - BGM Track] ラスサビ前ビルドアップ＆シャウト（独立トラック）",
+        "[Audio - SE Track] 動作スイング・エネルギーチャージSE（独立トラック）"
+      ],
+      "recreation_flow": [
+        "1. キャラ作画を黒背景へ抜き、PhotoshopまたはAEのトライトーン／レベル補正で暗部を黒へ潰しハイライトのみ単色着色する。",
+        "2. キャラのシルエット外周からChibaStrokeやエッジ検出でリムライト用マスクを生成し、Deep Glowでネオン発光させる。",
+        "3. 中央構図を保ったまま腕の振りや姿勢の勢いを繋ぐマッチカットで5キャラを連続配置し、終盤の直哉で引き構図へ抜く。"
+      ],
+      "frame_timeline": [
+        {
+          "frame": 0,
+          "time_offset_sec": 0,
+          "event": "水色リムライトの乙骨憂太が胸前で手を構える",
+          "params": {
+            "rim_hue": "cyan_white",
+            "glow_exposure": 0.45
+          }
+        },
+        {
+          "frame": 24,
+          "time_offset_sec": 1,
+          "event": "紫ネオンの伏黒恵が影絵の印を結ぶポーズへ切替",
+          "params": {
+            "rim_hue": "purple",
+            "glow_exposure": 0.55
+          }
+        },
+        {
+          "frame": 48,
+          "time_offset_sec": 2,
+          "event": "シアン発光の人物が回転し、続く紫リムライトの真希が腕を広げる",
+          "params": {
+            "rim_hue": "teal_to_purple",
+            "glow_exposure": 0.6
+          }
+        },
+        {
+          "frame": 96,
+          "time_offset_sec": 4,
+          "event": "黄色リムライトの禪院直哉の全身立ち姿へ収束",
+          "params": {
+            "rim_hue": "yellow",
+            "glow_exposure": 0.4
+          }
+        }
+      ],
+      "effect_chain": [
+        {
+          "order": 1,
+          "tool": "After Effects",
+          "plugin": "Deep Glow",
+          "match_name": "Deep Glow",
+          "fallback_match_name": "ADBE Glo2",
+          "params": {
+            "radius": 70,
+            "exposure": 0.5,
+            "chromatic_aberration": 15
+          },
+          "keyframed_frames": [
+            0,
+            24,
+            48,
+            96
+          ]
+        },
+        {
+          "order": 2,
+          "tool": "After Effects",
+          "plugin": "KikakuGlow",
+          "match_name": "KikakuGlow",
+          "fallback_match_name": "ADBE Glo2",
+          "params": {
+            "threshold": 65,
+            "intensity": 0.35
+          },
+          "keyframed_frames": [
+            0,
+            48,
+            96
+          ]
+        }
+      ],
+      "ae_blueprint": {
+        "schema_version": 2,
+        "source": "api_estimated",
+        "width": 1920,
+        "height": 1080,
+        "fps": 24,
+        "duration_sec": 4,
+        "bg_color": "#020203",
+        "film_finish": true,
+        "layers": [
+          {
+            "type": "character_rimlight_sequence",
+            "name": "Neon_Rim_Characters",
+            "color": "#5CF2E8",
+            "start_frame": 0,
+            "duration_frames": 96,
+            "easing": [
+              0,
+              85,
+              0,
+              15
+            ]
+          }
+        ]
+      },
+      "transition_bridge": {
+        "source": "api_estimated",
+        "entrance_vector": "hard_cut_blackout",
+        "exit_vector": "laser_beam_city_cut",
+        "match_cue": "vocal_scream_climax",
+        "sfx_lead_in_frames": -2,
+        "recommended_sfx": "whoosh_energy_pulse"
+      },
+      "anti_ai_slop_notes": "全エッジを均一に光らせず、光源方向を意識した片側リムライトと完全な黒潰しを組み合わせることで立体感とアニメ作画のキレを両立。",
+      "audio_sync_cues": "ラスサビ直前の連呼フレーズに合わせて1人ずつ色を切り替え、ロングシャウトのピークで全身ショットへ着地。",
+      "observed_timestamps": [
+        {
+          "timestamp": "01:02",
+          "visual_evidence": "漆黒背景の中央で水色の光に照らされた乙骨が手を合わせる"
+        },
+        {
+          "timestamp": "01:03",
+          "visual_evidence": "紫の強い発光エッジを纏った伏黒が正面へ手を突き出す"
+        },
+        {
+          "timestamp": "01:05",
+          "visual_evidence": "紫の軌道を描く真希から01:06の黄色リムライトの直哉立ち姿へ遷移"
+        }
+      ],
+      "provenance": {
+        "source": "gemini_api_url_v1",
+        "visual_observation_basis": "youtube_url_video_stream",
+        "media_telemetry_status": "missing_requires_local_video",
+        "model": "gemini-4-neon",
+        "thinking_level": "high",
+        "service_tier": "standard",
+        "video_processing": {
+          "type": "static",
+          "fps": 1,
+          "content_layers": [
+            "frames",
+            "audio"
+          ],
+          "resolution": "low"
+        },
+        "input_video_tokens": 9101,
+        "pilot_attempt": 2,
+        "field_provenance": {
+          "semantic_craft_fields": "api_observed",
+          "timestamps_and_duration": "api_estimated_1fps",
+          "fps_and_frames": "api_estimated",
+          "color_palette_hex": "api_estimated",
+          "easing_and_timing": "api_estimated",
+          "media_and_telemetry": "missing"
+        }
+      },
+      "media": {
+        "available": false,
+        "status": "missing_requires_local_video",
+        "telemetry": {
+          "available": false
+        }
+      }
+    }
+  ],
+  "title": "TVアニメ『呪術廻戦』第3期「死滅回游 前編」ノンクレジットOPムービー／OPテーマ：King Gnu「AIZO」｜毎週木曜深夜0時26分（24時26分）～MBS/TBS系28局にて放送中!!",
+  "technique_rating": "S",
+  "provenance": {
+    "source": "gemini_api_url_v1",
+    "model": "gemini-4-neon",
+    "thinking_level": "high",
+    "service_tier": "standard",
+    "video_processing": {
+      "type": "static",
+      "fps": 1,
+      "content_layers": [
+        "frames",
+        "audio"
+      ],
+      "resolution": "low"
+    },
+    "visual_observation_basis": "youtube_url_video_stream",
+    "input_video_tokens": 9101,
+    "media_telemetry_status": "missing_requires_local_video",
+    "pilot_attempt": 2,
+    "field_provenance": {
+      "semantic_craft_fields": "api_observed",
+      "timestamps_and_duration": "api_estimated_1fps",
+      "fps_and_frames": "api_estimated",
+      "color_palette_hex": "api_estimated",
+      "easing_and_timing": "api_estimated",
+      "media_and_telemetry": "missing"
+    }
+  }
+}

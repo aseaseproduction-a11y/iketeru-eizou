@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-25T06:48:06.389Z",
+  "updated_at": "2026-11-26T03:14:01.188Z",
   "currency": "USD",
   "default_monthly_limit_usd": 38,
   "gcp_monthly_credit_usd": 40,
@@ -17,9 +17,9 @@
   "monthly_totals": {
     "2026-11": {
       "limit_usd": 38,
-      "spent_usd": 2.556755,
-      "calls_count": 34,
-      "congestion_failure_count": 12,
+      "spent_usd": 18.655897,
+      "calls_count": 200,
+      "congestion_failure_count": 27,
       "runs": [
         {
           "run_id": "run_20261125_125425",
@@ -63,6 +63,71 @@
             "2026-11-25T06:45:14.075Z"
           ],
           "recorded_at": "2026-11-25T06:48:06.387Z"
+        },
+        {
+          "run_id": "pilot_20261125_162300",
+          "purpose": "pilot_craft_recipe_5x2_1fps",
+          "service_tier": "standard",
+          "calls_count": 10,
+          "cost_usd": 1.530374,
+          "congestion_failure_count": 7,
+          "congestion_timestamps": [
+            "2026-11-25T07:24:02.876Z",
+            "2026-11-25T07:24:46.273Z",
+            "2026-11-25T07:29:26.769Z",
+            "2026-11-25T07:31:25.425Z",
+            "2026-11-25T07:41:45.685Z",
+            "2026-11-25T07:42:47.256Z",
+            "2026-11-25T08:07:03.319Z"
+          ],
+          "recorded_at": "2026-11-25T09:22:35.069Z"
+        },
+        {
+          "run_id": "supplemental_pass2_xr032_0110_0117",
+          "purpose": "supplemental_pass2_xr032_0110_0117_4fps",
+          "service_tier": "flex",
+          "calls_count": 1,
+          "cost_usd": 0.057186,
+          "congestion_failure_count": 0,
+          "congestion_timestamps": [],
+          "recorded_at": "2026-11-25T08:15:25.211Z"
+        },
+        {
+          "run_id": "restricted_probe_20261125_180700",
+          "purpose": "probe_p0_restricted_2_standard",
+          "service_tier": "standard",
+          "calls_count": 2,
+          "cost_usd": 0.129402,
+          "congestion_failure_count": 0,
+          "congestion_timestamps": [],
+          "recorded_at": "2026-11-25T09:24:23.775Z"
+        },
+        {
+          "run_id": "run1_p0_20261126_100930",
+          "purpose": "run1_p0_58_plus_18_anchors_manual",
+          "service_tier": "mixed_flex_standard",
+          "calls_by_service_tier": {
+            "flex": 6,
+            "standard": 147
+          },
+          "cost_by_service_tier": {
+            "flex": 0.392922,
+            "standard": 13.989258
+          },
+          "calls_count": 153,
+          "cost_usd": 14.38218,
+          "congestion_failure_count": 8,
+          "congestion_timestamps": [
+            "2026-11-26T01:09:44.621Z",
+            "2026-11-26T01:16:13.549Z",
+            "2026-11-26T01:17:11.425Z",
+            "2026-11-26T01:17:26.781Z",
+            "2026-11-26T01:18:25.436Z",
+            "2026-11-26T01:18:47.655Z",
+            "2026-11-26T01:19:29.674Z",
+            "2026-11-26T02:43:29.189Z"
+          ],
+          "recorded_at": "2026-11-26T03:14:01.185Z"
         }
       ]
     }

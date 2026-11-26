@@ -1,0 +1,23 @@
+{
+  "schema_version": 2,
+  "task_type": "craft_recipe_v2_upgrade",
+  "run_id": "craft_upg_20261125_pilot5",
+  "worker": "chibatmute",
+  "status": "completed",
+  "target_pool": "custom",
+  "selection_seed": null,
+  "min_calibrated_score": 78,
+  "require_local_cache": true,
+  "batch_size": 5,
+  "video_ids": [
+    "1018644295",
+    "Gwgo9GS4mVM",
+    "60058660",
+    "TYLKPb9ciw0",
+    "UR6UOPshuLM"
+  ],
+  "claimed_at": "2026-11-25T07:50:08.397Z",
+  "completed_at": "2026-11-25T08:06:55.238Z",
+  "released_at": null,
+  "release_reason": null
+}

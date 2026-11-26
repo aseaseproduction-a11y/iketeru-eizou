@@ -1,0 +1,674 @@
+{
+  "schema_version": "craft_recipe_api_draft_v1",
+  "video_id": "jsEVOjI690Y",
+  "source": "gemini_api_url_v1",
+  "video_overview": {
+    "estimated_fps": 30,
+    "estimated_bpm": 130,
+    "overall_cut_pace": "fast",
+    "dominant_visual_style": "ミニマルなダークUI画面から一転し、Blender製3Dオブジェクト・実写マスク・2Dシェイプがシアン背景上を横スクロールするポップな複合モーショングラフィックス。"
+  },
+  "cuts": [
+    {
+      "cut_index": 1,
+      "title": "ローディングUIからジグザグ図形の白飛びフラッシュで展開する導入",
+      "category": "ui_motion",
+      "start_mmss": "00:00",
+      "end_mmss": "00:02",
+      "start_sec": 0,
+      "end_sec": 2,
+      "fps": 30,
+      "primary_tool": "After Effects",
+      "software_stack": [
+        "After Effects",
+        "Illustrator"
+      ],
+      "tool_selection_rationale": "UI進捗バーの数値連動とシェイプ爆発トランジションを非破壊かつ高精度なイージングで制御できるため。",
+      "plugins_used": [
+        "Deep Glow",
+        "Motion 4"
+      ],
+      "color_palette_hex": {
+        "base": "#1A1A1A",
+        "primary": "#4A90E2",
+        "accent": "#A6FF00"
+      },
+      "easing_and_timing": {
+        "bpm": 130,
+        "ease_curve": "0/90->0/10 (Expo InOut)",
+        "hold_frames": 6,
+        "posterize_fps": null,
+        "notes": "静止に近いUI表示から一瞬で加速・白飛びするメリハリのあるタイミング（推定）。",
+        "source": "api_estimated",
+        "verified": false
+      },
+      "layer_stack": [
+        "L1 (Bottom): ダークグレー単色背景レイヤー (#1A1A1A)",
+        "L2: 角丸シェイプによるプログレスバー背景・ブルー進捗バー",
+        "L3: 編集可能テキストレイヤー（「残り時間：15秒」「67%」）",
+        "L4: シアン〜ライムグリーンのジグザグ幾何学シェイプ群",
+        "L5 (Top): 露出ブースト＋Deep Glowによるホワイトフラッシュ調整レイヤー",
+        "[Audio - BGM Track] イントロ無音〜ビートイン直前の立ち上がり",
+        "[Audio - SE Track] 切替インパクト・ライザーSE（独立トラック）"
+      ],
+      "recreation_flow": [
+        "1. ダークグレー背景にシェイプで進捗バーを作成し、AEテキストレイヤーで秒数・%を配置。",
+        "2. 00:00.8付近から中央発散のジグザグシェイプをスケール展開。",
+        "3. 調整レイヤーの露出とDeep Glowを急上昇させ、白飛びから次カットへ抜ける。"
+      ],
+      "frame_timeline": [
+        {
+          "frame": 0,
+          "time_offset_sec": 0,
+          "event": "ダークUI画面に「残り時間：15秒」「67%」を表示",
+          "params": {
+            "progress": 67,
+            "exposure": 0
+          }
+        },
+        {
+          "frame": 30,
+          "time_offset_sec": 1,
+          "event": "ジグザグ図形と強発光による白飛びフラッシュ",
+          "params": {
+            "scale": 140,
+            "exposure": 3.5
+          }
+        },
+        {
+          "frame": 60,
+          "time_offset_sec": 2,
+          "event": "白飛び解除しシアン背景の3D空間へ接続",
+          "params": {
+            "exposure": 0
+          }
+        }
+      ],
+      "effect_chain": [
+        {
+          "order": 1,
+          "tool": "After Effects",
+          "plugin": "Deep Glow",
+          "match_name": "Deep Glow",
+          "fallback_match_name": "ADBE Glo2",
+          "params": {
+            "radius": 180,
+            "exposure": 2.2
+          },
+          "keyframed_frames": [
+            24,
+            32,
+            48
+          ]
+        }
+      ],
+      "ae_blueprint": {
+        "schema_version": 2,
+        "source": "api_estimated",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30,
+        "duration_sec": 2,
+        "bg_color": "#1A1A1A",
+        "film_finish": false,
+        "layers": [
+          {
+            "type": "kinetic_typo_animator",
+            "name": "UI_Remaining_Time",
+            "text": "残り時間：15秒",
+            "font_size": 34,
+            "color": "#E5E7EB",
+            "start_frame": 0,
+            "duration_frames": 30,
+            "easing": [
+              0,
+              90,
+              0,
+              10
+            ]
+          },
+          {
+            "type": "kinetic_typo_animator",
+            "name": "UI_Percent_Text",
+            "text": "67%",
+            "font_size": 36,
+            "color": "#E5E7EB",
+            "start_frame": 0,
+            "duration_frames": 30,
+            "easing": [
+              0,
+              90,
+              0,
+              10
+            ]
+          }
+        ]
+      },
+      "transition_bridge": {
+        "source": "api_estimated",
+        "entrance_vector": "hard_cut_in",
+        "exit_vector": "radial_flash_zoom_in",
+        "match_cue": "beat_drop_impact",
+        "sfx_lead_in_frames": -3,
+        "recommended_sfx": "digital_flash_whoosh"
+      },
+      "anti_ai_slop_notes": "UIの余白とフォントウェイトを実機OS風に抑えることで、直後の高彩度フラッシュとの落差を最大化している。",
+      "audio_sync_cues": "00:01のフラッシュ頂点と同時に軽快な電子ビートとシンセが立ち上がる。",
+      "observed_timestamps": [
+        {
+          "timestamp": "00:00",
+          "visual_evidence": "暗い背景上に「残り時間：15秒」、青い進捗バー、「67%」のUI表示"
+        },
+        {
+          "timestamp": "00:01",
+          "visual_evidence": "シアン・青・黄緑のギザギザ図形が放射状に広がる白飛びフラッシュ"
+        }
+      ],
+      "provenance": {
+        "source": "gemini_api_url_v1",
+        "visual_observation_basis": "youtube_url_video_stream",
+        "media_telemetry_status": "missing_requires_local_video",
+        "model": "gemini-4-neon",
+        "thinking_level": "high",
+        "service_tier": "flex",
+        "video_processing": {
+          "type": "static",
+          "fps": 1,
+          "content_layers": [
+            "frames",
+            "audio"
+          ],
+          "resolution": "low"
+        },
+        "input_video_tokens": 1525,
+        "pilot_attempt": 1,
+        "field_provenance": {
+          "semantic_craft_fields": "api_observed",
+          "timestamps_and_duration": "api_estimated_1fps",
+          "fps_and_frames": "api_estimated",
+          "color_palette_hex": "api_estimated",
+          "easing_and_timing": "api_estimated",
+          "media_and_telemetry": "missing"
+        }
+      },
+      "media": {
+        "available": false,
+        "status": "missing_requires_local_video",
+        "telemetry": {
+          "available": false
+        }
+      }
+    },
+    {
+      "cut_index": 2,
+      "title": "Ae×Blenderの3D造形・クロス・実写マスクが横スクロール連動する複合コラージュ",
+      "category": "motion_graphics",
+      "start_mmss": "00:02",
+      "end_mmss": "00:10",
+      "start_sec": 2,
+      "end_sec": 10,
+      "fps": 30,
+      "primary_tool": "After Effects",
+      "software_stack": [
+        "After Effects",
+        "Blender",
+        "Illustrator"
+      ],
+      "tool_selection_rationale": "金属トーラス・円柱・布シミュレーションはBlenderで透過レンダリングし、AEで実写マスク・2Dシェイプとパララックス合成するのが最善。",
+      "plugins_used": [
+        "Deep Glow",
+        "Overlord",
+        "Motion 4"
+      ],
+      "color_palette_hex": {
+        "base": "#2AD2FF",
+        "primary": "#FF6A1A",
+        "accent": "#FF2E93"
+      },
+      "easing_and_timing": {
+        "bpm": 130,
+        "ease_curve": "Linear scroll + 0/85->0/15 (Local bounce)",
+        "hold_frames": 0,
+        "posterize_fps": null,
+        "notes": "全体は一定速度で左へ流れつつ、各オブジェクトがビートに合わせて回転・質感切替・拡縮する（推定）。",
+        "source": "api_estimated",
+        "verified": false
+      },
+      "layer_stack": [
+        "L1 (Bottom): シアン〜ブルーの流体グラデーション背景（タービュレント＋ブラー）",
+        "L2: 遠景パララックス用2Dベクター装飾（波線・スライダーUI・ピンク階段・横帯ライン）",
+        "L3: 実写映像トラックマット群（山脈多面体・森林矩形・桜のクローバー型マスク）",
+        "L4: Blender透過連番素材（オレンジ円柱・金属トーラスノット・緑円錐・黄色クロス・飛散球体）",
+        "L5: アクセント発光シェイプ（00:06のスパーク線・00:09の巨大白色発光球）",
+        "L6 (Top): Deep Glow・色彩強調の全体調整レイヤー",
+        "[Audio - BGM Track] ポップなエレクトロビート＆シンセリフ（独立トラック）",
+        "[Audio - SE Track] オブジェクト出現・弾け・ホワイトアウト用シンセSE（独立トラック）"
+      ],
+      "recreation_flow": [
+        "1. Blenderで円柱・トーラスノット・円錐・クロスシミュレーション・球体群を個別に透過PNG/EXR出力。",
+        "2. IllustratorからOverlordで階段・波線・クローバー枠等の2DベクターをAEへ転送。",
+        "3. AEで横長コンプまたは親ヌルを作成し、Z深度差をつけたパララックス左スクロールを設定。",
+        "4. 実写素材（山・森・桜）を幾何学シェイプでトラックマット合成し、ビート同期のアニメーションを付与。",
+        "5. 00:08〜00:10で右下の白発光球を画面全体へ拡大し、ホワイトアウト遷移を作る。"
+      ],
+      "frame_timeline": [
+        {
+          "frame": 0,
+          "time_offset_sec": 0,
+          "event": "オレンジ円柱・山脈多面体・金属トーラスノットが左へスクロール開始",
+          "params": {
+            "scroll_x": 0
+          }
+        },
+        {
+          "frame": 90,
+          "time_offset_sec": 3,
+          "event": "黄色クロス揺らぎ・六角形のテクスチャ切替・緑円錐回転",
+          "params": {
+            "scroll_x": -1200,
+            "cloth_fold": 1
+          }
+        },
+        {
+          "frame": 180,
+          "time_offset_sec": 6,
+          "event": "桜クローバーマスクと飛散する球体群が登場",
+          "params": {
+            "scroll_x": -2400
+          }
+        },
+        {
+          "frame": 240,
+          "time_offset_sec": 8,
+          "event": "右下の白色発光球が全画面へ拡大しホワイトアウト",
+          "params": {
+            "white_sphere_scale": 600
+          }
+        }
+      ],
+      "effect_chain": [
+        {
+          "order": 1,
+          "tool": "After Effects",
+          "plugin": "Deep Glow",
+          "match_name": "Deep Glow",
+          "fallback_match_name": "ADBE Glo2",
+          "params": {
+            "radius": 90,
+            "exposure": 0.35
+          },
+          "keyframed_frames": [
+            0,
+            120,
+            225,
+            240
+          ]
+        },
+        {
+          "order": 2,
+          "tool": "After Effects",
+          "plugin": "Turbulent Displace",
+          "match_name": "ADBE Turbulent Displace",
+          "fallback_match_name": "ADBE Turbulent Displace",
+          "params": {
+            "amount": 40,
+            "size": 120
+          },
+          "keyframed_frames": [
+            0,
+            240
+          ]
+        }
+      ],
+      "ae_blueprint": {
+        "schema_version": 2,
+        "source": "api_estimated",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30,
+        "duration_sec": 8,
+        "bg_color": "#2AD2FF",
+        "film_finish": false,
+        "layers": [
+          {
+            "type": "null_controller",
+            "name": "Master_Horizontal_Scroll",
+            "text": "",
+            "font_size": 0,
+            "color": "#FFFFFF",
+            "start_frame": 0,
+            "duration_frames": 240,
+            "easing": [
+              0,
+              0,
+              100,
+              100
+            ]
+          },
+          {
+            "type": "shape_track_matte",
+            "name": "Sakura_Clover_Mask",
+            "text": "",
+            "font_size": 0,
+            "color": "#FF2E93",
+            "start_frame": 170,
+            "duration_frames": 70,
+            "easing": [
+              0,
+              85,
+              0,
+              15
+            ]
+          }
+        ]
+      },
+      "transition_bridge": {
+        "source": "api_estimated",
+        "entrance_vector": "radial_flash_zoom_in",
+        "exit_vector": "white_sphere_bloom_wipe",
+        "match_cue": "continuous_horizontal_flow",
+        "sfx_lead_in_frames": -4,
+        "recommended_sfx": "bright_bloom_swell"
+      },
+      "anti_ai_slop_notes": "リアルな3D質感（金属・石・布）、写真素材、フラットな2Dベクターの異素材を同一の明るい光環境と均等な余白設計でまとめている点。",
+      "audio_sync_cues": "ビートの4分・8分音符に合わせて多角形のテクスチャ反転、スパーク線（00:06）、球体の飛散（00:07〜00:08）が連動。",
+      "observed_timestamps": [
+        {
+          "timestamp": "00:02",
+          "visual_evidence": "オレンジ円柱・金属トーラスノット・山脈をマスクした多面体・ピンク階段シェイプの横スクロール"
+        },
+        {
+          "timestamp": "00:05",
+          "visual_evidence": "揺らぐ黄色い布、石から赤系へ質感が変わる多角形、回転する緑の円錐、上部の波線"
+        },
+        {
+          "timestamp": "00:09",
+          "visual_evidence": "桜写真のクローバー型マスク、飛び散る多数の球体、画面右下から広がる白い発光球"
+        }
+      ],
+      "provenance": {
+        "source": "gemini_api_url_v1",
+        "visual_observation_basis": "youtube_url_video_stream",
+        "media_telemetry_status": "missing_requires_local_video",
+        "model": "gemini-4-neon",
+        "thinking_level": "high",
+        "service_tier": "flex",
+        "video_processing": {
+          "type": "static",
+          "fps": 1,
+          "content_layers": [
+            "frames",
+            "audio"
+          ],
+          "resolution": "low"
+        },
+        "input_video_tokens": 1525,
+        "pilot_attempt": 1,
+        "field_provenance": {
+          "semantic_craft_fields": "api_observed",
+          "timestamps_and_duration": "api_estimated_1fps",
+          "fps_and_frames": "api_estimated",
+          "color_palette_hex": "api_estimated",
+          "easing_and_timing": "api_estimated",
+          "media_and_telemetry": "missing"
+        }
+      },
+      "media": {
+        "available": false,
+        "status": "missing_requires_local_video",
+        "telemetry": {
+          "available": false
+        }
+      }
+    },
+    {
+      "cut_index": 3,
+      "title": "進捗バーへの急ズームからグラデーション漢字「東京」ロゴへ着地するエンディング",
+      "category": "kinetic_typography",
+      "start_mmss": "00:10",
+      "end_mmss": "00:15",
+      "start_sec": 10,
+      "end_sec": 15,
+      "fps": 30,
+      "primary_tool": "After Effects",
+      "software_stack": [
+        "After Effects",
+        "Illustrator"
+      ],
+      "tool_selection_rationale": "UIテキストの拡大トランジションと、Illustrator製ベクターロゴの精密なストローク・グラデーション演出をAEで一貫制御できるため。",
+      "plugins_used": [
+        "Overlord",
+        "Flow",
+        "Deep Glow"
+      ],
+      "color_palette_hex": {
+        "base": "#1C1C1C",
+        "primary": "#FFFFFF",
+        "accent": "#E8FF14"
+      },
+      "easing_and_timing": {
+        "bpm": 130,
+        "ease_curve": "0/92->0/8 (Quint Out)",
+        "hold_frames": 24,
+        "posterize_fps": null,
+        "notes": "82%→86%への急ズーム後、巨大漢字の引きモーションで一気にロゴ全体へ収束・ホールド（推定）。",
+        "source": "api_estimated",
+        "verified": false
+      },
+      "layer_stack": [
+        "L1 (Bottom): ダークチャコール背景レイヤー (#1C1C1C)",
+        "L2: 進捗バーUIコンプ（「残り時間：1秒」「82%→86%」編集可能テキスト＋バー）",
+        "L3: グラデーション「東京」ベクターロゴ（.ai / シェイプレイヤー、黄〜緑〜青）",
+        "L4: 編集可能テキスト・ベクターロゴ（「VIDEO GRAPHERS」「ビデオグラファーズトーキョー」）",
+        "L5 (Top): 微細なグロー・コントラスト仕上げ調整レイヤー",
+        "[Audio - BGM Track] エンディングアウトロ〜ラストヒット（独立トラック）",
+        "[Audio - SE Track] ズームスウッシュ・ロゴ着地ヒットSE（独立トラック）"
+      ],
+      "recreation_flow": [
+        "1. 冒頭と同一構造のUIコンプを複製し、「残り時間：1秒」「82%→86%」へ数値更新。",
+        "2. カメラまたは親ヌルで「86%」付近へ急激にズームインしてカット切替。",
+        "3. Illustratorで設計した「東京」と「VIDEO GRAPHERS」のベクターをOverlord経由でAEへ配置。",
+        "4. 00:13に超クローズアップの黄緑「東京」画線から一気にズームアウトし、白ロゴと日本語サブタイトルを00:14で着地させる。"
+      ],
+      "frame_timeline": [
+        {
+          "frame": 0,
+          "time_offset_sec": 0,
+          "event": "ホワイトアウト解除、「残り時間：1秒」「82%」のUI表示",
+          "params": {
+            "scale": 100,
+            "progress": 82
+          }
+        },
+        {
+          "frame": 60,
+          "time_offset_sec": 2,
+          "event": "進捗バー右端と「86%」へ急拡大ズームイン",
+          "params": {
+            "scale": 280,
+            "progress": 86
+          }
+        },
+        {
+          "frame": 90,
+          "time_offset_sec": 3,
+          "event": "黄〜緑グラデーションの巨大な「東京」ストロークが画面を覆う",
+          "params": {
+            "logo_scale": 420
+          }
+        },
+        {
+          "frame": 120,
+          "time_offset_sec": 4,
+          "event": "「VIDEO GRAPHERS / 東京 / ビデオグラファーズトーキョー」ロゴ全体へ着地",
+          "params": {
+            "logo_scale": 100
+          }
+        }
+      ],
+      "effect_chain": [
+        {
+          "order": 1,
+          "tool": "After Effects",
+          "plugin": "4-Color Gradient",
+          "match_name": "ADBE 4ColorGradient",
+          "fallback_match_name": "ADBE Ramp",
+          "params": {
+            "color1": "#E8FF14",
+            "color2": "#38EF7D",
+            "color3": "#00D2FF",
+            "color4": "#1D4ED8"
+          },
+          "keyframed_frames": [
+            90,
+            120
+          ]
+        },
+        {
+          "order": 2,
+          "tool": "After Effects",
+          "plugin": "Deep Glow",
+          "match_name": "Deep Glow",
+          "fallback_match_name": "ADBE Glo2",
+          "params": {
+            "radius": 45,
+            "exposure": 0.15
+          },
+          "keyframed_frames": [
+            90,
+            120
+          ]
+        }
+      ],
+      "ae_blueprint": {
+        "schema_version": 2,
+        "source": "api_estimated",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30,
+        "duration_sec": 5,
+        "bg_color": "#1C1C1C",
+        "film_finish": false,
+        "layers": [
+          {
+            "type": "kinetic_typo_animator",
+            "name": "UI_Remaining_1s",
+            "text": "残り時間：1秒",
+            "font_size": 34,
+            "color": "#E5E7EB",
+            "start_frame": 0,
+            "duration_frames": 75,
+            "easing": [
+              0,
+              92,
+              0,
+              8
+            ]
+          },
+          {
+            "type": "kinetic_typo_animator",
+            "name": "Logo_Sub_JP",
+            "text": "ビデオグラファーズトーキョー",
+            "font_size": 36,
+            "color": "#FFFFFF",
+            "start_frame": 105,
+            "duration_frames": 45,
+            "easing": [
+              0,
+              92,
+              0,
+              8
+            ]
+          }
+        ]
+      },
+      "transition_bridge": {
+        "source": "api_estimated",
+        "entrance_vector": "white_bloom_fade_out",
+        "exit_vector": "clean_hold_end",
+        "match_cue": "zoom_in_to_zoom_out_inversion",
+        "sfx_lead_in_frames": -2,
+        "recommended_sfx": "snappy_zoom_impact"
+      },
+      "anti_ai_slop_notes": "冒頭のダークUIへ回帰する構成的フックと、ズームイン（UI）からズームアウト（ロゴ）へのベクトル反転による気持ちよい着地。",
+      "audio_sync_cues": "00:12のズームと00:13〜00:14のロゴ引き着地がBGMの締めフレーズと最終ビートに正確に一致。",
+      "observed_timestamps": [
+        {
+          "timestamp": "00:11",
+          "visual_evidence": "暗い背景上に「残り時間：1秒」、進捗バー、「82%」のUI表示"
+        },
+        {
+          "timestamp": "00:12",
+          "visual_evidence": "青い進捗バー先端と「86%」へ大きくズームインした画面"
+        },
+        {
+          "timestamp": "00:14",
+          "visual_evidence": "黄〜青グラデの「東京」と白文字「VIDEO GRAPHERS」「ビデオグラファーズトーキョー」ロゴの完成形"
+        }
+      ],
+      "provenance": {
+        "source": "gemini_api_url_v1",
+        "visual_observation_basis": "youtube_url_video_stream",
+        "media_telemetry_status": "missing_requires_local_video",
+        "model": "gemini-4-neon",
+        "thinking_level": "high",
+        "service_tier": "flex",
+        "video_processing": {
+          "type": "static",
+          "fps": 1,
+          "content_layers": [
+            "frames",
+            "audio"
+          ],
+          "resolution": "low"
+        },
+        "input_video_tokens": 1525,
+        "pilot_attempt": 1,
+        "field_provenance": {
+          "semantic_craft_fields": "api_observed",
+          "timestamps_and_duration": "api_estimated_1fps",
+          "fps_and_frames": "api_estimated",
+          "color_palette_hex": "api_estimated",
+          "easing_and_timing": "api_estimated",
+          "media_and_telemetry": "missing"
+        }
+      },
+      "media": {
+        "available": false,
+        "status": "missing_requires_local_video",
+        "telemetry": {
+          "available": false
+        }
+      }
+    }
+  ],
+  "title": "【Ae × Blender】ポップな表現は「地道な実験」から生まれる。モーショングラフィックス制作の裏側と試行錯誤｜hama",
+  "technique_rating": "A+",
+  "provenance": {
+    "source": "gemini_api_url_v1",
+    "model": "gemini-4-neon",
+    "thinking_level": "high",
+    "service_tier": "flex",
+    "video_processing": {
+      "type": "static",
+      "fps": 1,
+      "content_layers": [
+        "frames",
+        "audio"
+      ],
+      "resolution": "low"
+    },
+    "visual_observation_basis": "youtube_url_video_stream",
+    "input_video_tokens": 1525,
+    "media_telemetry_status": "missing_requires_local_video",
+    "pilot_attempt": 1,
+    "field_provenance": {
+      "semantic_craft_fields": "api_observed",
+      "timestamps_and_duration": "api_estimated_1fps",
+      "fps_and_frames": "api_estimated",
+      "color_palette_hex": "api_estimated",
+      "easing_and_timing": "api_estimated",
+      "media_and_telemetry": "missing"
+    }
+  }
+}

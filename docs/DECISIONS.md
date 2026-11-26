@@ -145,3 +145,39 @@
   4. **料金ティアと実行時間帯**：料金は **Flex**（`service_tier: "flex"`）を使う（Flex 事前検証 `flex_smoke_20261125_144800` で Standard との差は平均 `+0.50` 点、誤差の平均〔MAE〕`1.30` 点だったため）。503 が多いため、本番は混雑しにくい時間帯（**夜間・早朝**）に流すことを基本とする。
   5. **② の開始条件**：② を始めるのは、答え合わせ用の動画（アンカー）が **30 本** たまって、補正の幅（`analysis/api_url_bias_config_v1.json`）を承認してからとする。
 - 根拠：`docs/API_CRAFT_RECIPE_DESIGN.md`、`docs/API_URL_SCORING_DESIGN.md`、`flex_smoke_20261125_144800`、`analysis/pilot_api_craft_recipe/preregistration.json`。
+
+### D-024 クラフトレシピへのカット単位「目的（expressive_purpose）」追加・単一語彙ファイル化と、TiDB 元 40 カラム「承認済み変更リスト」方式（2026-11-25）
+- 決定：
+  1. **カット単位の目的スキーマ（`expressive_purpose`）**：各カットに `expressive_purpose` ブロックを追加する。必須キーは `intent_summary`（1〜2文）、`viewer_effect`（2〜4語）、`narrative_role`（固定 9 種：`掴み` / `世界観提示` / `転換` / `情報提示` / `盛り上げ` / `感情強調` / `緩急の抜き` / `ブランド回収` / `締め`）、`best_for`（`purposes` / `genres` / `industries` / `media_formats` / `duration_fit` 各 1〜3 語）、`avoid_when`（1〜3件）、**`search_phrases`（自然文検索用の言い換え文 3〜6 個）**、**`keywords`（サイトのチップ表示用の短い語 2〜10 文字程度・5〜10 個）**、`evidence`（必須 1 件以上・`timestamp_sec` はカットの `[start_sec, end_sec]` 範囲内を機械検証）、`provenance`（`video_observed` / `text_derived` / `api_interpreted`）。
+  2. **単一の統制語彙ファイル**：全選択肢は `shared/expressivePurposeVocab.json` を正本とし、`publish-craft-recipe-to-store.mjs`（G8）、`iketeru-creative-studio`（`craft_recipes.py`、ローカルコピーを持つ場合は一致を自動テストで検証）、およびサイト側のすべてが同ファイルを参照する。
+  3. **既存 v2・credibility の非破壊維持と検索統合**：既存の `is_v2` 判定および `credibility_score` は変更せず、別フラグ `has_expressive_purpose` とゲート `G8_expressive_purpose` を追加する。SQLite `craft_recipes_fts` に `purpose_text` 列を追加し、自然文・短いキーワードの双方で検索可能にする。フェーズ 1 の v2 化プロンプトに `expressive_purpose` を組み込み、1 回の作業で同時生成する。既 v2 への後付けは `claim-craft-batch.mjs` の新種別 `craft_purpose_backfill` で 3 台分担する。
+  4. **TiDB 元 40 カラム更新の「承認済み変更リスト」方式**：除外復帰（`O1DQObWYYLQ` の `aiScoreBreakdown`）や分析差し替え（`1018644295` / `Gwgo9GS4mVM` の `aiAnalysis`）のように元 40 カラムを更新する必要がある場合、新カラムは追加せず `analysis/approved_tidb_overrides.json` に 1 件ごとに `video_id`・`column`・変更後の値の `after_sha256`・`reason`・`decision_id`・`approved_at` を記録する。`apply-phase3-batch-to-tidb.mjs` 等の Pre-D 監査は、リストに完全一致する差分のみ許可し、リストにない差分や SHA-256 不一致は従来どおり失敗にする。
+  5. **除外動画点検で「一部違う」だった残り 12 本の扱い**：据え置きにせず、作り直し順番待ちキュー（`analysis/visual_audit_remake_queue.json`）で管理する。
+- 根拠：`shared/expressivePurposeVocab.json`、`docs/prompts/craft_v2_with_purpose_prompt.md`、`scripts/publish-craft-recipe-to-store.mjs`、`scripts/approved-tidb-overrides.mjs`、`analysis/approved_tidb_overrides.json`、`analysis/visual_audit_remake_queue.json`。
+
+### D-025 編集品質の基準 iketeru-edit-qc を新設（2026-11-26）
+- 決定：動画編集の品質基準（守りのルール）を iketeru-edit-qc とする。正本は マイドライブ/iketeru_edit_qc。更新は正本で行い、iketeru-creative-studio の skills/ へはコピーで反映する。
+- 理由：AI編集の同じ失敗（カット位置・テロップ・インサート・オーバーレイ欠落・自己申告PASS）が版ごとに繰り返されたため。
+- 根拠：マイドライブ/iketeru_edit_qc/CHANGELOG.md v1.0
+
+### D-026 分析 v3 の採用と TiDB 書き込みルール・v3＋レシピ v2 同時生成（2026-11-26）
+- 決定：
+  1. **分析 v3 の正式採用**：旧分析 30 本の目視点検で「合っている」が 0/30 本だった一方、CHIBA-PC の分析 v3 パイロット（`ffmpeg scdet` 実測カット位置＋実映像・音声確認）は 9/10 本合格・幻覚 0 件・時刻ずれ中央値 0.00 秒を達成したため、分析 v3（現行プロンプト `docs/prompts/analysis_prompt_v3_1.md`、監査プロンプト `docs/prompts/audit_prompt_v1.md`、正本 `D:\マイドライブ\iketeru_analysis_v3\`）を正式採用する。
+  2. **1 回視聴での同時生成 (`craft_v2_with_v3`)**：手元に動画がある 78 点以上の未 v2 化動画（Run 1 で 78 点以上となったダウンロード済み 39 本を含む）は、利用枠の二重消費を防ぐため `craft_v2_with_v3`（分析 v3＋クラフトレシピ v2＋`expressive_purpose`）を 1 回の視聴で同時に生成する。予約管理は `claim-craft-batch.mjs` の `reanalysis_v3` / `craft_v2_with_v3` で統一し、1 バッチの 10% を別サブエージェントで `audit_prompt_v1.md` により独立点検する。
+  3. **スキーマ拡張（CHIBA-PC2 と共通定義・DDL 実行は承認後）**：
+     - `videos`：`analysisVersion`（`'legacy'` / `'v3'`、既定 `'legacy'`）、`analysisGeneratedAt`（日時、NULL 可）、`analysisPromptSha256`（64 文字、NULL 可、v3 と v3.1 の判別に使用）。
+     - `videoAnalysisHistory`：`id`（自動採番）、`videoId`、`analysisVersion`、`aiAnalysis`（`MEDIUMTEXT`）、`contentSha256`、`promptSha256`、`generatedAt`、`archivedAt`、`archivedBy`。
+     - `videoScenes`（CHIBA-PC2 実装後に連携）：`analysisVersion`、`analysisGeneratedAt` を追加。
+  4. **TiDB 書き込みプロトコル (`scripts/apply-reanalysis-v3-to-tidb.mjs`)**：
+     - `_apply_lock.json` ロック必須。正本 `manifest.json` の SHA-256 一致かつ機械チェック合格の動画のみ対象。
+     - 動画 1 本ごとに単一トランザクションで (a) 旧 `aiAnalysis` を `videoAnalysisHistory` へ退避、(b) `videos` の 4 列を更新（`updatedAt` は保持）、(c) ローカル SQLite の該当 `video_id` 分の `scenes` / `scenes_fts` を入れ替える。
+     - Pre-D 元 40 カラム監査は、`aiAnalysis` の差分が「v3 正本 manifest に存在し本文 SHA-256 が完全一致」する場合のみ許可し、その他の差分・不一致はすべて失敗とする。
+     - **運用段階**：DDL 適用および **最初の 20 本の TiDB 書き込みは千葉さんの明示承認後に実行**し、21 本目以降は全ゲート通過分のみ自動書き込みを許可する。
+- 根拠：`D:\マイドライブ\iketeru_analysis_v3\_docs\PILOT_V3_REPORT.md`、`docs/prompts/analysis_prompt_v3_1.md`、`docs/prompts/audit_prompt_v1.md`、`docs/sql/proposed_v3_analysis_ddl.sql`、`scripts/apply-reanalysis-v3-to-tidb.mjs`、`scripts/approved-tidb-overrides.mjs`、`scripts/claim-craft-batch.mjs`。
+
+### D-027 YouTube 動画ダウンロードの運用ルール（2026-11-26）
+- 決定：
+  1. **実施 PC の 1 台限定**：YouTube 動画のダウンロードは `CHIBA-PC` の 1 台のみで実施する（`chibatmute` / `CHIBA-PC2` からの YouTube 直接アクセス禁止は D-014 / D-016 のまま継続）。
+  2. **専用アカウント Cookie・日次上限・停止条件**：YouTube 専用アカウントの Cookie を用い、`CHIBA-PC` の定期実行（`E:\iketeru_downloader\run_daily.cmd`）で 1 日あたりの上限（初期 150 本 → 2 日連続異常なしで 200 本 → さらに 2 日で 300 本、停止条件該当時は即停止し翌日から 1 段下げ・最低 100 本）および停止条件（`bot_check` 検知等）付きで運用し、実績を `status_downloader.md` に記録する。
+  3. **API ルートの位置づけ**：Gemini API URL ルート（`gemini_api_youtube_url_v1` / `gemini_api_url_v1`）は、ダウンロードできなかった動画（非公開・制限・取得不可等）の補完専用とする。
+- 根拠：`D:\マイドライブ\iketeru_multi_pc_progress\status_downloader.md`、D-014、D-016。

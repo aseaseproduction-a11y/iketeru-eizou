@@ -1,0 +1,276 @@
+{
+  "schema_version": "craft_recipe_api_pass2_4fps_v1",
+  "video_id": "Xr032EhUDPw",
+  "clip_window": {
+    "start_sec": 70,
+    "end_sec": 77,
+    "fps": 4
+  },
+  "refined_cuts": [
+    {
+      "cut_index": 4,
+      "title": "矩形マスク・コラージュと枠線構成による高速キャラクター紹介",
+      "category": "graphic_design",
+      "start_mmss": "01:12",
+      "end_mmss": "01:16",
+      "start_sec": 72,
+      "end_sec": 76.5,
+      "fps": 30,
+      "frame_timeline": [
+        {
+          "frame": 0,
+          "time_offset_sec": 0,
+          "event": "カット開始・白枠黒背景＋昆虫モチーフグラフィック表示",
+          "params": {
+            "border_color": "#FFFFFF",
+            "bg_color": "#000000",
+            "collage_layers": 0,
+            "invert": false
+          }
+        },
+        {
+          "frame": 8,
+          "time_offset_sec": 0.25,
+          "event": "矩形コラージュ3要素ポップイン（中央シダ柄＋銀ノイズ正方形、右上モノクロ帯、左下青い文字盤）",
+          "params": {
+            "collage_layers": 3,
+            "pop_in_interpolation": "hold"
+          }
+        },
+        {
+          "frame": 15,
+          "time_offset_sec": 0.5,
+          "event": "全体ネガポジ色反転＋左下・右中段に矩形コラージュ2要素追加",
+          "params": {
+            "invert": true,
+            "collage_layers": 5
+          }
+        },
+        {
+          "frame": 30,
+          "time_offset_sec": 1,
+          "event": "2人目キャラクターへ切替（白い細線グリッド枠＋異素材矩形コラージュ5枚配置）",
+          "params": {
+            "wireframe_grid_opacity": 1,
+            "collage_layers": 5
+          }
+        },
+        {
+          "frame": 38,
+          "time_offset_sec": 1.25,
+          "event": "右上グリッド線上に白・水色の小矩形パネル2枚ポップイン",
+          "params": {
+            "accent_squares": 2,
+            "collage_layers": 7
+          }
+        },
+        {
+          "frame": 45,
+          "time_offset_sec": 1.5,
+          "event": "3人目キャラクターへ切替（暗色背景＋細線矩形グリッド＋水平線グラデーション）",
+          "params": {
+            "wireframe_grid_opacity": 0.8,
+            "collage_layers": 0
+          }
+        },
+        {
+          "frame": 53,
+          "time_offset_sec": 1.75,
+          "event": "左上枠内に目グラフィック出現・右下グリッド交点に白色フレア発光",
+          "params": {
+            "lens_flare_intensity": 1,
+            "collage_layers": 1
+          }
+        },
+        {
+          "frame": 60,
+          "time_offset_sec": 2,
+          "event": "顔中央に三角プリズム＋虹色分光ビーム出現、左下色彩スプラッター＆右上手のシルエット矩形ポップイン",
+          "params": {
+            "prism_refraction": true,
+            "spectrum_angle_deg": -35,
+            "collage_layers": 3
+          }
+        },
+        {
+          "frame": 75,
+          "time_offset_sec": 2.5,
+          "event": "4人目キャラクターへ切替（放射状白灰ストライプ背景＋赤線画＋額の白色坐像）",
+          "params": {
+            "radial_stripes": true,
+            "top_panel_red": false,
+            "collage_layers": 0
+          }
+        },
+        {
+          "frame": 83,
+          "time_offset_sec": 2.75,
+          "event": "上半分背景が深紅グラフィックへ切替（左に金太陽と烏、右に黒シルエット、額の坐像が赤＋金光背に変化）",
+          "params": {
+            "top_panel_red": true,
+            "collage_layers": 2
+          }
+        },
+        {
+          "frame": 90,
+          "time_offset_sec": 3,
+          "event": "右下へ赤橙風景・金色模様の矩形コラージュ2枚追加ポップイン",
+          "params": {
+            "collage_layers": 4
+          }
+        },
+        {
+          "frame": 98,
+          "time_offset_sec": 3.25,
+          "event": "5人目キャラクターへ切替（刀を構える人物＋背後シルエット＋外周の細い白枠線）",
+          "params": {
+            "outer_frame_stroke": true,
+            "collage_layers": 0
+          }
+        },
+        {
+          "frame": 105,
+          "time_offset_sec": 3.5,
+          "event": "右側に指輪に触れる手元の矩形インセット映像ポップイン",
+          "params": {
+            "collage_layers": 1
+          }
+        },
+        {
+          "frame": 113,
+          "time_offset_sec": 3.75,
+          "event": "左上に暗い部屋の椅子と鉢植えの矩形インセットポップイン",
+          "params": {
+            "collage_layers": 2
+          }
+        },
+        {
+          "frame": 120,
+          "time_offset_sec": 4,
+          "event": "下中央にRGB色収差付きの人物2人インセット矩形ポップイン",
+          "params": {
+            "chromatic_aberration_px": 4,
+            "collage_layers": 3
+          }
+        },
+        {
+          "frame": 128,
+          "time_offset_sec": 4.25,
+          "event": "左側インセット上に赤白緑の帯状グラフィックと白シルエットのコラージュ追加",
+          "params": {
+            "collage_layers": 5
+          }
+        },
+        {
+          "frame": 135,
+          "time_offset_sec": 4.5,
+          "event": "カット終了（青空集中線背景の次シーンへハードカット）",
+          "params": {
+            "transition_out": "hard_cut"
+          }
+        }
+      ],
+      "observed_timestamps": [
+        {
+          "timestamp": "01:12.0",
+          "visual_evidence": "01:11.750の赤背景の手のシルエットからハードカットし、白枠・黒背景の中央にオレンジと赤の昆虫モチーフグラフィックが表示される"
+        },
+        {
+          "timestamp": "01:12.25",
+          "visual_evidence": "中央に銀ノイズ正方形と赤いシダ模様の矩形、右上に白黒シルエット帯、左下に青い時計文字盤の矩形コラージュが一斉に重なる"
+        },
+        {
+          "timestamp": "01:12.5",
+          "visual_evidence": "昆虫モチーフがシアン系へ、中央シダが黒地に水色・マゼンタへ色反転し、左下と右側に新たな矩形グラフィック2枚が追加される"
+        },
+        {
+          "timestamp": "01:13.0",
+          "visual_evidence": "リーゼントの人物へ切り替わり、背景の細い白い矩形グリッド線と緑・紫・溶岩・青手などの矩形コラージュ5枚が配置される"
+        },
+        {
+          "timestamp": "01:13.25",
+          "visual_evidence": "右上の細線グリッド上に白と淡青の小さな正方形2枚が追加出現する"
+        },
+        {
+          "timestamp": "01:13.5",
+          "visual_evidence": "紫髪で黄色イヤリングの女性へ切り替わり、暗背景に細い白の矩形グリッド線のみが引かれている"
+        },
+        {
+          "timestamp": "01:13.75",
+          "visual_evidence": "左上矩形内に目元が浮かび上がり、右下グリッド交点に白い星形フレアが点灯する"
+        },
+        {
+          "timestamp": "01:14.0",
+          "visual_evidence": "顔中央の三角プリズムを通過して白い光線が虹色へ分光し、左下の極彩色スプラッター矩形と右上の手のシルエット矩形が出現する"
+        },
+        {
+          "timestamp": "01:14.5",
+          "visual_evidence": "放射状の白灰ストライプ背景に赤線画の老人と額の白い坐像グラフィックへ切り替わる"
+        },
+        {
+          "timestamp": "01:14.75",
+          "visual_evidence": "上半分が深紅ベース（左に金の太陽と黒い烏、右に黒シルエット）へ変化し、額の坐像も赤と金の光背付きへ切り替わる"
+        },
+        {
+          "timestamp": "01:15.0",
+          "visual_evidence": "右下に赤橙の風景矩形と金色の幾何学模様矩形の2枚が追加ポップインする"
+        },
+        {
+          "timestamp": "01:15.25",
+          "visual_evidence": "刀を構える少年と背後の巨大な黒シルエットへ切り替わり、画面外周に細い白枠線が描かれる"
+        },
+        {
+          "timestamp": "01:15.5",
+          "visual_evidence": "右側に指輪に触れる両手の矩形インセットが出現する"
+        },
+        {
+          "timestamp": "01:15.75",
+          "visual_evidence": "左上に暗い部屋の椅子と植木鉢の矩形インセットが追加出現する"
+        },
+        {
+          "timestamp": "01:16.0",
+          "visual_evidence": "下中央に色収差のある人物2人が手をつなぐ矩形インセットが追加出現する"
+        },
+        {
+          "timestamp": "01:16.25",
+          "visual_evidence": "左側インセット上に赤白緑の帯状カットアウトと白シルエットが重畳される"
+        },
+        {
+          "timestamp": "01:16.5",
+          "visual_evidence": "矩形コラージュ構成が終了し、青空と白い集中線背景の複数人カットへハードカットする"
+        }
+      ],
+      "timing_change_note": "Pass 1（1 fps）では72秒〜75秒と推定していたが、4 fpsで確認した結果、開始は01:11.750の手のシルエットからのハードカット直後の72.00秒で一致した一方、75.25秒〜76.25秒の5人目（白枠線＋0.25秒刻みの矩形インセット連続ポップイン）まで同一のグラフィックデザイン構成が連続しており、76.50秒で青空集中線の別カットへ明確に切り替わるため、終了時刻を75.00秒から76.50秒へ延長した。"
+    }
+  ],
+  "title": "TVアニメ『呪術廻戦』第3期「死滅回游 前編」ノンクレジットOPムービー／OPテーマ：King Gnu「AIZO」｜毎週木曜深夜0時26分（24時26分）～MBS/TBS系28局にて放送中!!",
+  "technique_rating": "S",
+  "provenance": {
+    "source": "gemini_api_url_v1_pass2_4fps",
+    "model": "gemini-4-neon",
+    "thinking_level": "high",
+    "service_tier": "flex",
+    "video_processing": {
+      "type": "static",
+      "start_offset": "70s",
+      "end_offset": "77s",
+      "fps": 4,
+      "content_layers": [
+        "frames"
+      ],
+      "resolution": "low"
+    },
+    "visual_observation_basis": "youtube_url_video_stream",
+    "input_video_tokens": 2100,
+    "media_telemetry_status": "missing_requires_local_video",
+    "pilot_attempt": 1,
+    "field_provenance": {
+      "semantic_craft_fields": "api_observed",
+      "timestamps_and_duration": "api_estimated_4fps_pass2",
+      "fps_and_frames": "api_estimated",
+      "color_palette_hex": "api_estimated",
+      "easing_and_timing": "api_estimated",
+      "media_and_telemetry": "missing"
+    }
+  }
+}

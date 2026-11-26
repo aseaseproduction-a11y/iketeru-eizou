@@ -1,0 +1,4374 @@
+{
+  "run_id": "run1_p0_20261126_100930",
+  "targets_count": 58,
+  "anchors_count": 18,
+  "targets": [
+    {
+      "video_id": "OUQ6NV9r2Lk",
+      "raw_api_score": 92,
+      "raw_scores": [
+        93,
+        91
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "MV",
+      "dimensions": {
+        "direction": 18,
+        "visual_craft": 18.5,
+        "editing_rhythm": 18,
+        "sound_integration": 18.5,
+        "originality_finish": 19
+      },
+      "rationales": [
+        "悪夢的シュールさとブラックユーモアを貫く卓越した演出設計と美術・撮影の完成度が際立つ。煙から鍋の湯気への繋ぎや楽曲のビートに噛み合う緻密な編集、照明と色彩設計の統一感が高い。目覚まし時計の停止で音楽を断ち切り、静謐な監視室のエピローグへ転じる構成と繊細な環境音・フォーリー設計も秀逸で、MVの枠を超えた短編映画的クラフト強度を誇る。",
+        "悪夢的シュールさと緻密な映画的クラフトが融合した秀作。タバコの煙から鍋の湯気への滑らかな転換や、不穏な寒色ルックと実践的な美術造形が異様な世界観に強い実在感を与えている。楽曲の緩急と編集・音響設計が高度に連動し、楽曲後の長尺エピローグで監視室というメタ構造へ着地させる構成力と独創性も際立つ。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:20",
+            "observation": "暗がりの寝室で緑がかった金髪の坊主頭の青年が起き上がり、タバコに火をつけて煙を吐き出すと、画面を満たした煙がそのまま野菜と共に青年の顔が煮込まれる大鍋の湯気へとシームレスに転換する。"
+          },
+          {
+            "timestamp": "01:58",
+            "observation": "薄暗い廊下で食器を手にした老夫婦とシェフに追われた青年が、サングラスをかけた強面の男に行く手を阻まれ、ポケットから「GongBu Korea」と印字されたIDカードを取り出して見せることで通過を許される。"
+          },
+          {
+            "timestamp": "03:40",
+            "observation": "暗闇の中で登場人物たちと巨大な恐竜の頭部が乱舞するクライマックスの中、ダルメシアン柄の着ぐるみ姿の人物が這い寄って目覚まし時計を差し出し、青年がそれを叩いて止めた瞬間に楽曲が断ち切られ、明け方の住宅街の静寂へ切り替わる。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:20",
+            "observation": "暗闇の寝室で緑がかった金髪の青年が起き上がってタバコに火をつけ、立ち上る煙が画面を覆った後、大量の野菜と共に青年の頭部が鍋で煮込まれるカットへ滑らかに繋がる。"
+          },
+          {
+            "timestamp": "01:15",
+            "observation": "食卓の下でダルメシアン柄の着ぐるみを着た人物が金属製の犬用ボウルを前に四つん這いになり、鍋の中の青年の頭からむしられた髪がボウルに落とされると激しく頬張る。"
+          },
+          {
+            "timestamp": "04:25",
+            "observation": "楽曲終了後のエピローグで、青暗い監視室のブラウン管モニターに「GongBu Korea」のロゴが浮かび上がり、続けて白衣を着た長髪の男がヘッドホンを装着して監視業務を始める。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 43934,
+        "inputTextTokens": 3020,
+        "avgOutputTokens": 539,
+        "avgThoughtTokens": 3136.5,
+        "totalCostUsd": 0.195995
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "RFYP-tY6xOg",
+      "raw_api_score": 89,
+      "raw_scores": [
+        89,
+        89
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "MV",
+      "dimensions": {
+        "direction": 18,
+        "visual_craft": 18,
+        "editing_rhythm": 18,
+        "sound_integration": 17,
+        "originality_finish": 18
+      },
+      "rationales": [
+        "絵巻物、切り絵コラージュ、コマ割り演出、4分割の武術ダンスなど多彩な視覚手法を洗練されたポップな色彩で統一した高密度な演出が秀逸。楽曲のビートと精密に同期するトランジションや滑らかな作画、夜間の叙情カットによる緩急の設計も見事。末尾の番宣パートで余韻がやや切れる点を踏まえても、極めて高いクラフト完成度を誇る。",
+        "冒頭の銅鑼から巻物・水墨画・切り絵コラージュ・分割演武・万華鏡と多彩な手法を疾走感あふれるビートに完璧に同期させた高密度なアニメーション表現が圧巻。パステル調と中華色を重ねた現代的な色彩設計や、本倒しから居間へ繋ぐ巧みなトランジション、夜のあかねで一瞬落とす緩急など演出の技量が際立つ。末尾の番宣連結を除けば、作画・編集・音ハメの全てが一線級を大きく超える高到達作。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:08",
+            "observation": "タイトルロゴの上を帯状の絵巻物が幾重にも交差しながら広がり、巻物内にキャラクターの表情や変身の連作アニメーションを展開させた後、そのまま水墨画風の山岳背景へシームレスに移行する。"
+          },
+          {
+            "timestamp": "00:54",
+            "observation": "画面を縦4分割し、紫・赤・青・黄の鮮やかな背景の上で4人のキャラクターが楽曲のビートに合わせてシンクロした武術の型・ダンスを披露し、直後に枠を跨いで干渉し合う漫画コマ割り演出へ切り替わる。"
+          },
+          {
+            "timestamp": "01:04",
+            "observation": "テンポの速いギャグやアクションの連続から一転し、青い夜景とカラフルな玉ボケの光に包まれた水辺で、白いワンピース姿の少女が静かに横顔を映す叙情的なカットで明確な緩急を作っている。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:07",
+            "observation": "青空に浮かぶ赤い文字と黄色い数字のタイトルロゴの前後を、キャラクターの顔が連続して描かれた複数の巻物が立体的にうねりながら次々と通り抜けていく。"
+          },
+          {
+            "timestamp": "00:48",
+            "observation": "画面が水色と黄色の2分割になり、赤い中華服の少年と青いワンピースの少女がアップテンポな楽曲のリズムに合わせてキレのあるカンフーの型をシンクロして演じる。"
+          },
+          {
+            "timestamp": "01:04",
+            "observation": "目まぐるしい展開から一転し、夜の水辺に白いワンピース姿の少女が静かに座り、背景にカラフルな光の玉が浮かび上がる抒情的なカットで視覚的な緩急が生まれている。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": true,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          true,
+          true
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 10617,
+        "inputTextTokens": 1702,
+        "avgOutputTokens": 535,
+        "avgThoughtTokens": 2327,
+        "totalCostUsd": 0.079887
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "U-FuKvu5RV0",
+      "raw_api_score": 81,
+      "raw_scores": [
+        82,
+        80
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "MV",
+      "dimensions": {
+        "direction": 16,
+        "visual_craft": 16.5,
+        "editing_rhythm": 17,
+        "sound_integration": 17,
+        "originality_finish": 14.5
+      },
+      "rationales": [
+        "1枚絵のパーツアニメーション、洗練されたタイポグラフィ、3DCG空間を高次元に融合させた上位プロ品質のリリックMV。モノクロ線画の日常、極彩色の夢、廃墟の現実を色彩と画面比率で対比する構成力と、ロックサウンドに精密に同期する音ハメ・カメラワークが強み。反面、メインイラストの反復使用や、時計・標識・机・グリッチなど現代のネット音楽MV特有の定型モチーフへの依存が独自性の伸び代となっている。",
+        "一枚絵の2.5D演出に3DCGと洗練されたタイポグラフィを融合させた完成度の高いリリックMV。モノクロ線画や4分割パネル、廃墟の3D空間など楽曲の緩急に緻密に同期した編集リズムが光る。一方、浮遊する机や時計といった定型モチーフやサビ構成の反復が目立ち、独自性の面で伸び代を残す。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:21",
+            "observation": "黒背景のタイトル表示直後にシネスコから全画面へ切り替わり、花束を抱えたセーラー服の少女が登場。サビの力強いボーカルとバンドサウンドに合わせ、舞う花々や道路標識にダイナミックなカメラワークと文字演出が重なる。"
+          },
+          {
+            "timestamp": "01:05",
+            "observation": "モノクロ線画パートから一転して青い光の3D空間へ移行。中央で回転する目覚まし時計の周囲を大量の学校の机と椅子が渦巻くように浮遊し、奥行きと浮遊感のあるCG表現が展開される。"
+          },
+          {
+            "timestamp": "02:11",
+            "observation": "崩壊した廃墟の都市と水面の3D背景の中に少女が立ち、歌詞「幻のようだった」に続いて画面を埋め尽くす大量の「消えて」のタイポグラフィと激しいグリッチ演出へ畳み掛け、直後に無音・暗転へ落とす。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:32",
+            "observation": "画面が「07」から「10」の番号付き縦長4分割パネルで構成され、花束を抱えるセーラー服の少女や街並みの断片が並ぶ中、手前に鮮やかな花々が舞い「未完成の色彩 乗せて」のタイポグラフィがサビのビートに同期して現れる。"
+          },
+          {
+            "timestamp": "01:05",
+            "observation": "青白い光が渦巻く空間の中で無数の3Dの学校の机と椅子が放射状に浮遊・回転し、画面中央で黒縁の目覚まし時計が大きく回転しながら奥へと沈み込むCGカットが、歪んだボーカルと疾走感のあるサウンドに合わせて展開される。"
+          },
+          {
+            "timestamp": "02:12",
+            "observation": "彩度を落とした水没廃墟ビル群と道路標識の3D空間に花束を抱えた少女が立ち、「幻のようだった」の文字の直後、激しいグリッチ演出とドラムの連打に乗せて「消えて」という文字が画面全面を埋め尽くす。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 19509,
+        "inputTextTokens": 2054,
+        "avgOutputTokens": 527,
+        "avgThoughtTokens": 2963,
+        "totalCostUsd": 0.11704
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "dWvAJMYdTFI",
+      "raw_api_score": 80.5,
+      "raw_scores": [
+        82,
+        79
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "モーション",
+      "dimensions": {
+        "direction": 16,
+        "visual_craft": 16.5,
+        "editing_rhythm": 15.5,
+        "sound_integration": 16,
+        "originality_finish": 16.5
+      },
+      "rationales": [
+        "絵巻調の高密度な動物・妖怪イラストと軽快なエレクトロポップを掛け合わせた、祝祭感あふれるSC開業CM。パーツ単位の丁寧な2Dモーションや龍を活かした場面転換により、原画の魅力を損なわず賑わいを表現している。手法自体はオーソドックスなイラストアニメの範疇だが、京都の伝統とサブカルチャーの融合という企画意図を美術・音楽・構成で一貫して体現した上位プロ品質の一作。",
+        "京都の伝統的な絵巻物・百鬼夜行テイストと現代的なサブカル要素を融合させたアートディレクションが秀逸で、祝祭感と記憶残留力が高い。軽快なエレクトロ系BGMとのコントラストも企画意図に合致している。一方、動き自体は簡易的なループ・パーツアニメが中心で、中盤のカット割りやテロップのタイポグラフィ処理は標準的な商業CMの枠内に留まっており、映像技法としてのさらなる立体感や緩急の工夫があれば一段上を目指せる。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:04",
+            "observation": "「Takashimaya S.C.」のロゴが入ったビルの左上に緑色の龍がうねりながら現れ、屋上の赤い旗がはためく。「この秋、京都高島屋に」の字幕と明るいナレーションが重なる。"
+          },
+          {
+            "timestamp": "00:19",
+            "observation": "建物の前で着物姿の猫たちが扇子やうちわを掲げて踊るカットの前面を、緑色の龍が左から右へ横切り場面転換となる。画面右下に「♪ in the blue shirt / Cast Off」のクレジットが表示される。"
+          },
+          {
+            "timestamp": "00:25",
+            "observation": "建物全景と多数の動物キャラクターを背に、前景で2匹の招き猫が手を揺らし、中央上部に「京都高島屋S.C. 10.17 tue.開業!!」、右上に「T8 OPEN!!」が表示され、音楽のキメとともに締まる。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:01",
+            "observation": "中央の黄色い「千客万来」の札から和風の雲が左右に開け、京都高島屋S.C.の建物イラストと鶴・鳳凰・風船を持つ象などの動物群像が現れ、軽快なポップトラックと女性ナレーションが始まる。"
+          },
+          {
+            "timestamp": "00:10",
+            "observation": "密に描き込まれた群像イラスト上をカメラが移動し、着物姿の猫やスマホを見る猫、だるま等が小刻みなリミテッドアニメーションで動き、下部に赤字白縁で「51の個性が集う」と表示される。"
+          },
+          {
+            "timestamp": "00:19",
+            "observation": "建物の前で着物姿の猫たちが扇子やうちわを持って踊るカットの手前を、緑色の龍が左から右へ画面いっぱいに横切ることで、次の群像シーンへのダイナミックなトランジションとして機能している。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 3039,
+        "inputTextTokens": 1402,
+        "avgOutputTokens": 521.5,
+        "avgThoughtTokens": 2119,
+        "totalCostUsd": 0.105861
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "drPEdug9fZk",
+      "raw_api_score": 81,
+      "raw_scores": [
+        81,
+        81
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "MV",
+      "dimensions": {
+        "direction": 16,
+        "visual_craft": 17,
+        "editing_rhythm": 15.5,
+        "sound_integration": 17,
+        "originality_finish": 15.5
+      },
+      "rationales": [
+        "宇宙・流体・屈折・星屑を軸とした高精細な3DCGの質感とライティングが秀逸。中盤の結晶への映り込みを伏線に、ラスサビで一枚絵を鮮やかに解放する感情設計と楽曲との親和性も高い。一方、大半が抽象的な流体表現の長回しで構成され、終盤も静止画ベースのエフェクト演出に留まるため、視覚的展開の多様性や編集リズムの緩急にはやや単調さが残る。総じて質感と構成美に優れた良質なプロ作品。",
+        "宇宙や液体を想起させる抽象3DCGと高度な光学コンポジットにより、楽曲の繊細さと壮大さを一貫した美学で表現。サビ前の間合いや「灯った」での暗転、結晶内の伏線を経て最終サビでイラストを全開にする構成は感情設計が巧み。一方で大半が抽象表現、クライマックスも一枚絵の演出主体に留まるため、展開幅と独自性には一定の限界があるが、総じて完成度の高いプロ品質。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:05",
+            "observation": "暗闇に紫や橙色の光の帯と無数の白い粒子が舞う中、筆記体のタイトルロゴ「Aster」と制作クレジットが浮かび上がり、ストリングスのイントロが響く。"
+          },
+          {
+            "timestamp": "02:10",
+            "observation": "画面中央に黒い球体と眩い白い光輪が出現し、「それはクレーター」の歌詞に合わせて無数の星屑と光の軌道が周囲を旋回する。"
+          },
+          {
+            "timestamp": "03:18",
+            "observation": "それまでの抽象CGから一転し、青い花を抱えて目を閉じる少女のイラストが画面全体に現れ、強いレンズフレアと光の粒子が重なりラスサビの頂点を作る。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:05",
+            "observation": "漆黒の空間を紫や赤みを帯びた光の帯と無数の白い粒子が漂う中、中央に筆記体の白いタイトル「Aster」とクレジットが表示され、繊細なストリングスの旋律が響いている。"
+          },
+          {
+            "timestamp": "02:10",
+            "observation": "楽曲の盛り上がりに合わせ、画面中央に黒くぽっかりと空いた球体と周囲を強く発光しながら周回する光のリングが映し出され、下部に「それはクレーター ぽっかり愛しい」の字幕が表示される。"
+          },
+          {
+            "timestamp": "03:16",
+            "observation": "最終サビの開放的な展開と同時に抽象CGから一転し、目を閉じて胸元で青い花を抱える人物のイラストが画面いっぱいに現れ、強い光彩とレンズフレア、舞い散る光の粒子が重なる。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 26269,
+        "inputTextTokens": 2322,
+        "avgOutputTokens": 487,
+        "avgThoughtTokens": 2385,
+        "totalCostUsd": 0.257706
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "eEiMPYiNZAo",
+      "raw_api_score": 77.5,
+      "raw_scores": [
+        76,
+        79
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "MV",
+      "dimensions": {
+        "direction": 15,
+        "visual_craft": 15.5,
+        "editing_rhythm": 16,
+        "sound_integration": 16.5,
+        "originality_finish": 14.5
+      },
+      "rationales": [
+        "青灰色基調の終末的な世界観と、走査線やグリッチを絡めたタイポグラフィ設計が楽曲の疾走感と高い精度で同期している。サビでの瓦礫CGと文字演出の緩急は堅実な商業水準にある一方、後半にかけて森の人物カットやサビ構成の反復が目立ち、リリックMVの定型手法に留まる点が惜しまれる。",
+        "寒色・暗調の統一された世界観と、グリッチや明朝体タイポグラフィを駆使した高密度なリリック演出が楽曲の緩急・歌声と緻密に同期している。静かなフィルム調パートへの切り替えやサビの瓦礫CGと光の演出は完成度が高い一方、後半での3D森カットや背景素材の反復使用が目立ち、映像単体での物語的発展や表現の独自性には伸び代が残る。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:12",
+            "observation": "暗く青緑がかった雲と山稜の映像に走査線ノイズが重なり、中央に「FROM APOCALYPSE / アポカリプスより」の装飾的なタイトルロゴが表示され、疾走感のあるシンセビートと同期する。"
+          },
+          {
+            "timestamp": "00:44",
+            "observation": "白いブーツで暗い草地を踏みしめる足元のカットから、発光する粒子が漂う夜の針葉樹林に立つ少女のシルエットへと繋がり、静かな曲調に合わせて白の明朝体で歌詞が浮かび上がる。"
+          },
+          {
+            "timestamp": "01:09",
+            "observation": "「ねぇここで撃ち抜いて」の力強い歌唱に合わせ、暗闇から光条が差し込み瓦礫が舞うCG背景上で、ピクセル状のグリッチ装飾を伴うキネティック・タイポグラフィが激しく展開する。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:46",
+            "observation": "暗い針葉樹の森の中で少女のシルエットが立ち尽くす引きの3DCGカット。白い光の粒子が画面を横切る中、中央に明朝体の歌詞が横書きで順に表示される。"
+          },
+          {
+            "timestamp": "01:03",
+            "observation": "サビの激しいビートと歌声に同期し、暗い瓦礫や煙が舞う背景上に青緑色の巨大な「苦」の文字がフラッシュし、ピクセル調のグリッチを伴って歌詞と英文表記が展開する。"
+          },
+          {
+            "timestamp": "02:04",
+            "observation": "楽曲の静かな展開に合わせて縦のフィルム傷とノイズを帯びたモノクロ調の枠内映像へ転換。崩れたコンクリートブロックや瓦礫が散乱する地面の映像に歌詞が重ねられる。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": true,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          true,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 21104,
+        "inputTextTokens": 2116,
+        "avgOutputTokens": 498,
+        "avgThoughtTokens": 2872.5,
+        "totalCostUsd": 0.240435
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "efXqozK4A40",
+      "raw_api_score": 85,
+      "raw_scores": [
+        85,
+        85
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "MV",
+      "dimensions": {
+        "direction": 17,
+        "visual_craft": 16,
+        "editing_rhythm": 17,
+        "sound_integration": 18,
+        "originality_finish": 17
+      },
+      "rationales": [
+        "前半2分間をあえて白背景・立ち絵と反転縦書き歌詞のミニマル構成で抑制し、2:00以降に大量のブラウン管とグリッチ、単眼化アニメが炸裂する二部構成の演出設計が秀逸。激しい電子ビートや無音のタメに対する映像・タイポグラフィの同期精度も極めて高い。前半の静的な作りが後半の爆発力を引き立てる前振りとして機能しており、最後に白背景へ回帰する円環構造が強烈な余韻を残す上位プロ水準のMV。",
+        "前半約2分をあえて白背景の静止画主体と反転縦書き歌詞に抑え、2:00の暗転を境にブラウン管群・グリッチ・高速タイポグラフィ・単眼化へと豹変させる構造的対比が極めて鮮烈。高速ブレイクビーツと映像・文字の同期精度も抜群で、ラストに再び無垢な白背景へ回帰する円環構成が強い余韻を残す。前半の画的静けさはあるが、演出意図と音響統合の完成度が際立つ秀逸なMVクラフト。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:23",
+            "observation": "白背景の中央に赤いドレス姿で黒い飴を持つキャラクターのイラストが登場し、激しい電子ビートの入りに合わせて映像がリズムを刻むように展開される。"
+          },
+          {
+            "timestamp": "02:02",
+            "observation": "白背景から一転して暗闇に大量のブラウン管テレビが並ぶ空間へ転換し、キャラクターの表情が鋭く歪むとともに「プシ」の文字が白く波打つように変形する。"
+          },
+          {
+            "timestamp": "02:55",
+            "observation": "一瞬の無音ブレイクを経て、キャラクターの顔面が白く光る巨大な単眼へと異形化し、背景のモニター群やピクセル調のタイポグラフィが激しいビートと完全に同期して明滅する。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:35",
+            "observation": "白背景の中央に赤いドレス姿で黒い飴を持つキャラクターのイラストが固定配置され、左右に反転させた「Artworks / hakyu」のクレジットが激しいブレイクビーツに合わせて切り替わる。"
+          },
+          {
+            "timestamp": "02:02",
+            "observation": "画面が一転して暗転し、背後に無数のブラウン管テレビが敷き詰められ、中央のキャラクターの表情が冷徹に豹変するとともに背後の「プシ」の文字が白く発光して歪む。"
+          },
+          {
+            "timestamp": "02:55",
+            "observation": "一瞬の無音と「今私の右手に触れた」の文字カットを挟み、キャラクターの顔面が溶け出す巨大な白い単眼へと変貌し、背後のテレビ画面群が明滅しながら高速のタイポグラフィが展開される。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": true,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          true,
+          true
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 25371,
+        "inputTextTokens": 2286,
+        "avgOutputTokens": 532.5,
+        "avgThoughtTokens": 1998.5,
+        "totalCostUsd": 0.241872
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "iK725ck2NIk",
+      "raw_api_score": 87.5,
+      "raw_scores": [
+        88,
+        87
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "MV",
+      "dimensions": {
+        "direction": 17,
+        "visual_craft": 18,
+        "editing_rhythm": 17.5,
+        "sound_integration": 18,
+        "originality_finish": 17
+      },
+      "rationales": [
+        "「Kinetic」の主題を物理的なモアレ美術パネル、万華鏡ミラー、スリットスキャンという光学・時間軸表現で一貫して具現化した高到達なMV。カメラ移動で活性化する美術設計と、ファンクのグルーヴやブラスのキメに精密に同期したカット割り・トランジションが際立つ。中盤以降の視覚的エスカレーションも巧みで、定型に陥らない高いクラフト完成度を誇る。",
+        "キネティック・アート（モアレ縞）の物理セットを軸に、万華鏡・スリットスキャン・縦分割など全ての視覚効果を『光学的運動』という単一コンセプトで統一した高密度なクラフトが際立つ。カメラ移動で生じる物理的なモアレの揺らぎと緻密な照明設計、ホーンやギターソロに的確に同期する編集リズムにより、演奏MVとして高い視覚的快楽と完成度を実現している。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:15",
+            "observation": "赤・青・白・黒の縦縞スリットが生むモアレ模様を背景に、タイトルロゴ「Kroi Kinetic feat. INCOGNITO」が縞模様のタイポグラフィで表示され、イントロから本編のグルーヴへ切り替わる。"
+          },
+          {
+            "timestamp": "01:37",
+            "observation": "緑髪のボーカル兼ギタリストを中心に画面中央の縦枠が左右へ押し広がるトランジションが入り、巨大な曲面スリット美術パネルに囲まれて演奏するバンド全員の対称構図が現れる。"
+          },
+          {
+            "timestamp": "02:30",
+            "observation": "真っ黒な背景の前で踊る2人のダンサーにスリットスキャン（時間差の引き伸ばし）効果が施され、腕や身体の軌跡がリボンのように横方向へうねり伸びるキネティックな表現が展開される。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:15",
+            "observation": "赤・青・白・黒の縦縞によるモアレ模様の背景に、同じく縞模様のタイポグラフィで「Kroi Kinetic feat. INCOGNITO」のタイトルが表示され、ビートの立ち上がりと同時に青迷彩柄の服を着たベーシストの演奏カットへ切り替わる。"
+          },
+          {
+            "timestamp": "01:55",
+            "observation": "緑髪にサングラス姿のボーカルが歌うカットが、三角形の万華鏡（カレイドスコープ）状に多重反射され、背景のストライプと相まって幾何学的に回転・増殖する演出が展開される。"
+          },
+          {
+            "timestamp": "02:30",
+            "observation": "真っ暗な空間で踊る2人の女性ダンサーの動きに対し、スリットスキャン（時間差残像）処理が施され、両腕や身体が流体のように長く引き伸ばされる表現がファンクのビートと同期して描かれる。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 20294,
+        "inputTextTokens": 2084,
+        "avgOutputTokens": 501.5,
+        "avgThoughtTokens": 2523.5,
+        "totalCostUsd": 0.225018
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "mI9MSQGlbH0",
+      "raw_api_score": 82.5,
+      "raw_scores": [
+        83,
+        82
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "モーション",
+      "dimensions": {
+        "direction": 17,
+        "visual_craft": 16.5,
+        "editing_rhythm": 17,
+        "sound_integration": 16,
+        "originality_finish": 16
+      },
+      "rationales": [
+        "電車の車窓をフレームとし、ピクセルアートと多重スクロールで鉄道以外の多角事業をシームレスに巡る構成が秀逸。冒頭のタイプ音とチャイムからアップテンポな楽曲へ繋ぐ緩急や、昼・夜・夕と変化する色彩設計、窓柱を活かしたトランジションのテンポ感が極めて心地よい。情報量の多いボーカル曲が画面文字とわずかに競合する面はあるが、細部まで描き込まれた美術とコンセプトの一貫性が高く、記憶に残る上位プロ品質の企業CM。",
+        "鉄道の車窓という統一フレームを用い、ドット絵と横スライドで多角事業をテンポ良く見せる構成が極めて明快。昼・夜・夕景と切り替わる鮮やかな色彩設計や、バス・航空機・ビル建設など細部のピクセルアニメーションも丁寧で完成度が高い。チャイム音から軽快な楽曲へ繋がる音響設計も世界観と好相性で、最後に車内から駅前へ抜ける解放感ある着地まで、30秒に企業の未来像を鮮やかに凝縮した上位プロ品質の映像作品。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:04",
+            "observation": "ドット絵で描かれた電車内の右下に緑パーカーの女性が座り、吊り革が揺れる中、車窓にベトナムの川沿いの街並みと国旗が広がり「5万人が住める街。」の文字がモザイクから現れる。"
+          },
+          {
+            "timestamp": "00:13",
+            "observation": "車窓の風景が夕暮れのタイへ滑らかに移行し、寺院やホテル看板を背景にトゥクトゥクと象が通過。画面上部の電光掲示板に「つぎは、タイ。」と表示され、軽快な楽曲が続く。"
+          },
+          {
+            "timestamp": "00:26",
+            "observation": "車内視点から街路の引きの画へ切り替わり、西鉄福岡(天神)駅ビル前を連節バスが走る様子に「つぎは、あなたのほしい明日。」のコピーと落ち着いた男性ナレーションが重なる。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:02",
+            "observation": "青背景のタイピング文字から車内チャイム風のSEとともにドット絵の電車内へ切り替わり、左上の電光掲示板に「つぎは、ベトナム。」と表示され、揺れるつり革の奥に川沿いの街並みが見える。"
+          },
+          {
+            "timestamp": "00:13",
+            "observation": "夕焼け色のタイの風景へ横スライドし、「微笑みを増やすホテル。」の文字のもと、手前をトゥクトゥクが走って奥を象が歩き、寺院やホテル群が緻密なドット絵で描かれている。"
+          },
+          {
+            "timestamp": "00:22",
+            "observation": "晴天の天神の街並みに切り替わり、「新しいランドマークビル。」の文字とともに高層ビルが下からせり上がるアニメーションが入り、手前の道路を路線バスが通過していく。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 3039,
+        "inputTextTokens": 1402,
+        "avgOutputTokens": 521,
+        "avgThoughtTokens": 1990,
+        "totalCostUsd": 0.101976
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "qe29NgNqJZw",
+      "raw_api_score": 78.5,
+      "raw_scores": [
+        80,
+        77
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "MV",
+      "dimensions": {
+        "direction": 16,
+        "visual_craft": 13,
+        "editing_rhythm": 16.5,
+        "sound_integration": 17.5,
+        "originality_finish": 15.5
+      },
+      "rationales": [
+        "ミニマルな線画と単色背景の省力作画ながら、音楽と映像の極めて高い同期性とキレのある編集リズムが際立つ。冒頭の素材開示から、DJの過剰な煽り、富士山ニュース速報パロディ、穴への墜落と立場逆転まで、タイトル『the Hole』に回収されるシュールな構成力と緩急設計が秀逸。美術や作画密度の限界はあるが、音と連動した視覚的ユーモアと独自の演出力で高い完成度に達している。",
+        "白背景に簡素な2D線画というミニマルな美術設計ながら、高速ビートへの緻密な音ハメと緩急ある編集リズムが光る。DJプレイの○×比較や富士山上空の実写ニュース風パロディ、人型の穴を軸にした落ちの反復など、独自のユーモアと構成力で最後まで飽きさせない。一方、作画密度や背景・質感の作り込みは個人制作的なラフさに留まり、視覚クラフトの総合的到達度としては堅実な中上位水準と評価した。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:12",
+            "observation": "黒背景に「Lyrics」と「Samples」のテキスト一覧が表示され、楽曲に使用する音声サンプルファイル名や回数が機械的な合成音声のリズムに合わせて提示される。"
+          },
+          {
+            "timestamp": "01:40",
+            "observation": "白背景の左右に配置された大型スピーカーの中央で、黒キャップと白パーカー姿の水色髪のキャラクターが横向きになり、ビートに合わせてリズミカルにステップダンスを踊る。"
+          },
+          {
+            "timestamp": "02:04",
+            "observation": "左上に「9:06」、右上に「日本上空 大気圏外より正体不明の飛来物か」のテロップがあるニュース速報風画面に切り替わり、富士山上空を落下する人物が拡大枠で映され、左下ワイプで水色髪のキャラが驚く。"
+          }
+        ],
+        [
+          {
+            "timestamp": "01:35",
+            "observation": "画面を左右に2分割し、左側にサングラス姿でオレンジ色のエフェクトと共にDJプレイするキャラクターと緑のチェックマーク、右側に暗転した先ほどの動作と赤いバツ印を並べて比較するコミカルなカットが挿入される。"
+          },
+          {
+            "timestamp": "02:03",
+            "observation": "左上に「9:06」、左下に驚く水色髪キャラクターのワイプを配置し、中央に富士山上空を飛ぶ謎の物体をズームで捉えた実写ニュース風映像と「日本上空 大気圏外より 正体不明の飛来物か」のテロップが表示される。"
+          },
+          {
+            "timestamp": "02:35",
+            "observation": "DJブース横の地面に空いた人型の黒い穴からオレンジ色の光の柱が立ち上り、楽曲のビルドアップに合わせて光柱と驚いて拳を握りしめる水色髪キャラクターのカットバックが徐々に加速していく。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": true,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          true
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 23853,
+        "inputTextTokens": 2226,
+        "avgOutputTokens": 532.5,
+        "avgThoughtTokens": 2675,
+        "totalCostUsd": 0.252699
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "rolo_BHlDmQ",
+      "raw_api_score": 84,
+      "raw_scores": [
+        83,
+        85
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "MV",
+      "dimensions": {
+        "direction": 17,
+        "visual_craft": 15.5,
+        "editing_rhythm": 18,
+        "sound_integration": 17.5,
+        "originality_finish": 16
+      },
+      "rationales": [
+        "白い額縁状の空間と色彩反転を軸に、高速な楽曲へ完璧に同期するキネティック・タイポグラフィと鋭いカット割りが際立つ。3Dモデルの質感や物理挙動自体は標準的だが、俯瞰回転や分割画面、扇子舞、間奏のメタ表記など構成の緩急とグラフィック設計の完成度が高く、視覚的リズムと記憶残留力を高水準で両立している。",
+        "額縁状のフレームと椅子、色反転の境界線を軸に「虚構と実像」を一貫して描く構成力が見事。高BPM楽曲に吸い付くようなタイポグラフィとカット割りのリズム精度は極めて高く、扇子を用いた舞踊や二分割演出も巧み。3Dモデルの質感や挙動はシンプルだが、グラフィック設計と編集のキレで上位プロ水準の完成度に引き上げている。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:37",
+            "observation": "テーブル上に紫色のトランク型レコードプレーヤーが現れ、速いリズムと歌唱に合わせてレコード盤や仮面、手のオブジェが次々と配置・散乱する演出が入る。"
+          },
+          {
+            "timestamp": "01:26",
+            "observation": "中央に「（間奏 約 13 秒）」と表示され、明暗や色調が反転する入れ子状のフレーム内を、キャラクターが歩いて椅子に座る動作を軽快に反復する。"
+          },
+          {
+            "timestamp": "02:30",
+            "observation": "画面を左右に二分割し、左側の暗色面に「ノム 舞う 約 26 秒」と表記しつつ、右側の白空間で扇子を持ったキャラクターが疾走感あるギターソロに合わせて舞う。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:42",
+            "observation": "白い机の左に置かれたレコードプレイヤーから複数のレコード盤が飛び出し、画面全体が紫と黄色の反転配色へ切り替わりながら高速な歌唱に同期して歌詞が表示される。"
+          },
+          {
+            "timestamp": "00:52",
+            "observation": "画面が左右に二分割され、左が暗色のネガ反転・右がグレー基調の通常色という境界線をまたいでキャラクターが椅子を背に歩き、多重の矩形フレームが連続して動く。"
+          },
+          {
+            "timestamp": "02:35",
+            "observation": "左面に「ノム 舞う 約26秒」の文字を配した紫背景、右面に白背景を置いた二分割構図で、扇子を手にしたキャラクターが残像を伴いながら舞う間奏パートが展開される。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": true,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          true,
+          true
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 20619,
+        "inputTextTokens": 2098,
+        "avgOutputTokens": 508.5,
+        "avgThoughtTokens": 2164.5,
+        "totalCostUsd": 0.216492
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "tk9mbNFEKZw",
+      "raw_api_score": 71.5,
+      "raw_scores": [
+        73,
+        70
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "企業映像",
+      "dimensions": {
+        "direction": 14,
+        "visual_craft": 13.5,
+        "editing_rhythm": 15.5,
+        "sound_integration": 15,
+        "originality_finish": 13.5
+      },
+      "rationales": [
+        "モノクロから鮮やかな青・ネオングリーンへの色彩転換と、ビートや効果音に緻密に同期したキネティック・タイポグラフィの編集テンポが良好で、企業PRとして高い推進力がある。一方、グリッチ表現や握手・オフィス等のインサート素材は定型的な印象が残り、グラフ画面の視認性にもやや改善余地がある。商業品質として堅実な仕上がり。",
+        "モノクロの課題提起から青基調の変革へと展開する明快な構成と、BGM・グリッチSEに同期したキネティックタイポグラフィの疾走感は商業水準として堅実。一方、実写素材の質感や統一感はストック的であり、棒グラフ等の情報視認性にもやや粗さが残る。青×グリッチ×斜め分割という表現手法も近年のIT系採用動画の定型に近く、強い独自性には至っていない。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:12",
+            "observation": "モノクロ映像と青い背景の転換を経て、東京タワーを含む都市の夜景から朝焼けへ移り変わるフルカラーのタイムラプス映像に「歴史が動いた。」の白文字が重なり、電子音のビートが力強く展開する。"
+          },
+          {
+            "timestamp": "00:19",
+            "observation": "鮮やかな青一色の背景に「50年間」の文字が大きく表示された後、横に裂けるようなエフェクトと鋭い効果音とともに「変わらなかった業界が」のテロップがテンポよく出現する。"
+          },
+          {
+            "timestamp": "00:33",
+            "observation": "モノクロの都市景観を背面に、5.2億から1100億(予想)へと右肩上がりに伸びる青い棒グラフがアニメーション表示され、「多くの壁を乗り越え 成長してきた」の文字が重なる。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:09",
+            "observation": "モノクロで街を歩く人々の足元の映像に「しかし 2022年」の文字が重なり、ビートの高まりに合わせて鮮やかな青の帯とカラー映像へ切り替わる。"
+          },
+          {
+            "timestamp": "00:23",
+            "observation": "画面を斜めに裂く蛍光グリーンと青の境界線やデジタルグリッチを背に、「この挑戦は、まだ誰もやっていない。」の太字タイポグラフィが強く打ち出される。"
+          },
+          {
+            "timestamp": "00:33",
+            "observation": "モノクロの都市景観を背景に「多くの壁を乗り越え成長してきた」の文字と、5.2億から1100億(予想)へ伸びる青い棒グラフがSEに合わせて表示される。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 5061,
+        "inputTextTokens": 1482,
+        "avgOutputTokens": 477.5,
+        "avgThoughtTokens": 2397.5,
+        "totalCostUsd": 0.125508
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "vpyeQeTDGFA",
+      "raw_api_score": 97.5,
+      "raw_scores": [
+        97,
+        98
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "CM",
+      "dimensions": {
+        "direction": 19.5,
+        "visual_craft": 20,
+        "editing_rhythm": 19,
+        "sound_integration": 19,
+        "originality_finish": 20
+      },
+      "rationales": [
+        "数千枚の手描きイラストと設計図、多様な紙素材を実写の手で操るストップモーションの極致。原付自転車からF1、ロボット、ジェット機まで技術革新の歩みを途切れぬ物理的トランジションで繋ぎ、紙の擦過音と実車エンジン音等を緻密に融合した音響設計も圧巻。クラフト実行力そのものが「手仕事と夢」の主題を完璧に体現している。",
+        "膨大な手描きイラストと多様な紙素材、実写の手を組み合わせた驚異的なストップモーション。紙をめくる・折る・破る物理動作をすべてシームレスな場面転換へ昇華し、小型エンジンから二輪、F1、ASIMO、ジェット機、NSXまでブランドの軌跡を一貫した高揚感で描く。紙の擦過音とエンジン音等を精緻に融合した音響設計も圧巻で、アナログクラフトの到達点と言える完成度。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:22",
+            "observation": "赤いスポーツバイクが描かれた紙が四方に開いてパーツが分解され、中央に残ったエンジンだけが切り抜かれて次の青い紙の水面とボートへと落下・接続する。"
+          },
+          {
+            "timestamp": "00:58",
+            "observation": "俯瞰視点のF1マシンがピットインし、四方から伸びた複数の実写の手が紙製のタイヤを素早く交換する動作に、インパクトレンチの甲高い効果音が正確に同期している。"
+          },
+          {
+            "timestamp": "01:43",
+            "observation": "青い背景紙の上をパラシュート付きの紙製エンジンが降下して赤いスポーツカーのリアハッチへ収まり、力強いエンジン音とともに荒野の道路を奥行きある紙の重ね合わせで疾走する。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:22",
+            "observation": "赤いスポーツバイクのイラストが描かれた紙が左右に展開され、車体が前後輪やカウル、中央のエンジンへとパーツごとに分解されるコマ撮り表現と金属音。"
+          },
+          {
+            "timestamp": "00:58",
+            "observation": "F1マシンのピット作業場面で四方から複数の手が画面に入り、紙のタイヤを素早く差し替えると同時にマシンが別世代のモデルへ切り替わる演出とインパクトレンチのSE。"
+          },
+          {
+            "timestamp": "01:50",
+            "observation": "砂漠の一本道が描かれた紙が複数の手によって格子状に次々とめくられ、裏側から赤い「HONDA」ロゴと「The Power of Dreams」の文字が組み上がる展開。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": true,
+        "knowsAwardHistory": true,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          true,
+          true
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 12235,
+        "inputTextTokens": 1766,
+        "avgOutputTokens": 505.5,
+        "avgThoughtTokens": 2114,
+        "totalCostUsd": 0.162591
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "w8QgUN09cqk",
+      "raw_api_score": 78,
+      "raw_scores": [
+        76,
+        80
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "企業映像",
+      "dimensions": {
+        "direction": 16,
+        "visual_craft": 16.5,
+        "editing_rhythm": 15.5,
+        "sound_integration": 15.5,
+        "originality_finish": 14.5
+      },
+      "rationales": [
+        "オフィス内に白ホリを設置し、11名の社員を統一構図と朝〜夜の時間帯推移で繋ぐ演出設計が堅実。クールな色調やストロボ光・逆光シルエットの撮影・照明技術、素の笑顔を引き出す演出は高い商業品質を示す。一方、中盤は同一フォーマットの反復や定型的なグリッチ演出がやや単調で、表現の独自性には伸び代が残る。",
+        "オフィス内に撮影用背景紙を据え、昼から夜への光の変化を織り込みながら11名の個性を描く構成が秀逸。クールな寒色系グレーディングとスポットライトの対比、目のクローズアップや素の笑顔を交えた軽快な編集、グルーヴィーな音楽から静寂へ落とす音響設計まで商業クラフトの完成度が高い。中盤の反復感はあるが、終盤のシルエット演出で企業ブランド映像として見事に着地している。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:10",
+            "observation": "ガラス張りのオフィス内に設置された、企業パーパスが印字された白い背景紙の前に、異なる服装の社員の後ろ姿がベースのビートに合わせて連続的に切り替わって立つマッチカット。"
+          },
+          {
+            "timestamp": "01:58",
+            "observation": "黒のタートルネックと眼鏡姿の男性社員が背景紙の前に正面から映され、窓際カウンターでノートPCを操作する横顔や自然な笑顔が青みがかったクールトーンで挿入される。"
+          },
+          {
+            "timestamp": "03:10",
+            "observation": "夜の暗いオフィスでスポットライトが当たる背景紙（ONE PERSON ONE PURPOSEと印字）の前に逆光シルエットの人物が歩いて立ち止まり、閃光音とともに「あなたです。」の字幕が現れる。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:10",
+            "observation": "ガラス張りのオフィス内に設置された白い背景紙の前に後ろ姿の人物が次々と入れ替わるジャンプカットが入り、左右のストロボ機材を含めた撮影空間全体がベース音のリズムに合わせて提示される。"
+          },
+          {
+            "timestamp": "01:51",
+            "observation": "白いジャケットを着た女性が背景紙の前で両手を口元に添えてお茶目な表情を見せ、直後にデジタルノイズ風のグリッチトランジションを挟んで黒背景に白文字のパーパス表示へと切り替わる。"
+          },
+          {
+            "timestamp": "03:10",
+            "observation": "夜景が見える暗いオフィスでスポットライトに照らされた背景紙の前にシルエットの人物が歩み寄り、音楽が冒頭と同じミニマルなベースラインに戻って「あなたです。」のコピーへ繋いでいる。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 21808,
+        "inputTextTokens": 2144,
+        "avgOutputTokens": 475.5,
+        "avgThoughtTokens": 2615.5,
+        "totalCostUsd": 0.236442
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "x6_mbnsh6VU",
+      "raw_api_score": 94.5,
+      "raw_scores": [
+        95,
+        94
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "MV",
+      "dimensions": {
+        "direction": 19,
+        "visual_craft": 19,
+        "editing_rhythm": 18.5,
+        "sound_integration": 19,
+        "originality_finish": 19
+      },
+      "rationales": [
+        "16mmフィルムの重厚な質感と抑制された色彩設計のもと、2034年の男子校を舞台に暴力的な青春とディストピア的想像力を鋭利に描出。冒頭の動作音からビートを立ち上げる音響統合、中盤の攻撃的なモンタージュと後半の嵐のようにうねる集団コレオグラフィ長回しの極端な緩急が圧巻。静止する個人と狂気的に同期する群衆の対比が強烈な余韻を残す、国際最上位水準の映像クラフト。",
+        "16mmフィルムの重厚な質感と英国寄宿学校の閉塞感を背景に、6G機器から薬物を精製する異様な近未来設定と集団の狂気を描き切った傑作。緩急自在なモンタージュと静寂の演出が冴え、終盤の校舎前での圧巻の同期群舞と中央で静止する主人公の対比が強烈なカタルシスと記憶残留力を生み出している。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:18",
+            "observation": "体育館の床に仰向けでびっしりと横たわる大勢の制服姿の生徒たちが、中央を歩く白シャツの主人公の周囲で一斉に手足をばたつかせ、そのリズミカルな擦過音と打撃音が楽曲のビートへと接続されていく俯瞰ショット。"
+          },
+          {
+            "timestamp": "02:01",
+            "observation": "通信塔から取り外して持ち帰った「6G」と記されたパーツを理科室で分解し、金属部品を削り取ってバーナーで熱し、ガラス器具で液体を抽出する近未来ディストピア的なモンタージュ。"
+          },
+          {
+            "timestamp": "04:45",
+            "observation": "校舎前のひな壇に整列した大勢の黒ブレザー姿の生徒たちが、中央でタバコを吸いながら微動だにしない主人公を取り囲み、強風に煽られるように激しく波打つ高精度な集団コレオグラフィを長回しで見せるクライマックス。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:16",
+            "observation": "体育館の床に仰向けで並ぶ多数の制服姿の生徒たちの間を主人公が歩き抜け、生徒が一斉に体を痙攣させ床を叩く動きと打撃音が同期して楽曲へ導入される俯瞰ショット。"
+          },
+          {
+            "timestamp": "02:01",
+            "observation": "鉄塔から奪った「6G」と記された通信機器を理科室で解体し、削り出した金属片をバーナーで加熱・精製する場面が16mmフィルム特有の粒子感と冷たい色調で描かれる。"
+          },
+          {
+            "timestamp": "04:40",
+            "observation": "校舎正面の雛壇で白シャツに血痕をつけた主人公が中央で煙草を吸い静止し、周囲の黒ブレザーの生徒集団が波打つように激しく同期して踊る圧巻の群舞シークエンス。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": true,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          true,
+          true
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 45950,
+        "inputTextTokens": 3100,
+        "avgOutputTokens": 559,
+        "avgThoughtTokens": 2089.5,
+        "totalCostUsd": 0.373755
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "x7mSpHbqOGs",
+      "raw_api_score": 69.5,
+      "raw_scores": [
+        70,
+        69
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "CM",
+      "dimensions": {
+        "direction": 14,
+        "visual_craft": 13,
+        "editing_rhythm": 15.5,
+        "sound_integration": 15,
+        "originality_finish": 12
+      },
+      "rationales": [
+        "パーカッシブな楽曲とSEに同期したテンポの良い編集と、中盤のブレイクによる緩急設計は商業映像として堅実。一方、社会課題の提示から畳み掛ける構成は企業採用動画の定型にとどまり、実写カットもストック素材的な質感のバラつきが目立つ。カラフルな三角形のモチーフはコンセプトと合致するが、中盤のタイポグラフィ設計に洗練の余地があり、全体として標準的な商業品質の域を出ない。",
+        "社会課題の提示から若手の挑戦へと繋ぐ王道構成で、パーカッションやブレイクを活かした音響連動と編集テンポは商業品質として堅実。一方、実写素材の多くが汎用的なストック映像的トーンで色調統一に弱さがあり、三角形モチーフやタイポグラフィの設計も定型的。手堅くまとまっているが、表現の独自性や細部のデザイン強度には伸びしろが残る。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:07",
+            "observation": "高架道路を走る白い乗用車の俯瞰ショットに、車両の前後からシアン色のセンサー波が広がるCGアニメーションが合成され、リズムに合わせて切り替わる。"
+          },
+          {
+            "timestamp": "00:31",
+            "observation": "軽快なパーカッションビートが重い低音インパクトとともに一旦途切れ、黒背景の中央に白文字で「キミのつくりたい未来は、何だ。」と静かに提示される。"
+          },
+          {
+            "timestamp": "00:51",
+            "observation": "冒頭と同じカラフルな三角形のパターンが画面全面を覆い、ロック調に盛り上がるBGMに乗せて中央に「ジブンの色を、つらぬけ。」「STAY TRUE TO YOUR COLORS.」が表示される。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:07",
+            "observation": "上空からの俯瞰映像で道路を走る白い車の前後に水色のセンサー波紋CGが重なり、ハンドクラップ混じりのパーカッションビートに合わせて自動運転の文脈を提示している。"
+          },
+          {
+            "timestamp": "00:31",
+            "observation": "社会課題の提示パートが終わり、黒背景に白文字で「キミのつくりたい未来は、何だ。」と表示されると同時に、低音のインパクト音とともに音楽が一瞬ブレイクして緩急をつけている。"
+          },
+          {
+            "timestamp": "00:45",
+            "observation": "「富士通をつかってやる、それくらいの方がおもしろい。」という白文字の背後で黄・赤・水色などの背景色が高速にフラッシュし、ギターサウンドの高揚感とともに終盤のクライマックスへ繋いでいる。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 6683,
+        "inputTextTokens": 1546,
+        "avgOutputTokens": 474,
+        "avgThoughtTokens": 2007.5,
+        "totalCostUsd": 0.123819
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "xRU1XXHIpIc",
+      "raw_api_score": 93.5,
+      "raw_scores": [
+        93,
+        94
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "MV",
+      "dimensions": {
+        "direction": 19,
+        "visual_craft": 19.5,
+        "editing_rhythm": 18,
+        "sound_integration": 18,
+        "originality_finish": 19
+      },
+      "rationales": [
+        "刺繍の字幕、断面ミニチュア建築、モーションコントロールを駆使した照明転換、ケーキ製の扉など、手触りのある実写クラフトが圧倒的。魔法を失った少女が不安の象徴たるモンスターを飲み込み力を取り戻す物語を、緻密な美術・音響設計と緩急ある編集で独創的に昇華しており、国際最上位水準の完成度を誇る。",
+        "刺繍・実写ミニチュア・着ぐるみ・フードアートを融合させた独創的かつ高密度なクラフトが圧巻。魔法の喪失から不安（グミベア）を食べて乗り越える物語を、断面図セットや巨大な顔とミニチュアのスケール対比、照明転換、シームレスなカメラワークで鮮やかに可視化。冒頭のリアルな環境音から楽曲への移行、扉や収集車がケーキだったという視覚的オチまで演出・美術・編集が極めて高次元で統合された傑作。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:14",
+            "observation": "夜の路上で、大量の魔法のステッキやコンパクトが青いゴミ収集車の荷台に積み込まれ、警告灯が点滅する中でプラスチックのぶつかる音と警告音が響くカット。"
+          },
+          {
+            "timestamp": "00:38",
+            "observation": "色分けされた部屋の断面セットをカメラが垂直に下降し、配管と骨のある地層を抜けた先に、5体の毛むくじゃらのモンスターが食卓を囲む地下空間が現れるワンカット風の展開。"
+          },
+          {
+            "timestamp": "02:51",
+            "observation": "扉のノブを握って引くと、ドア全体がクリームとスポンジのケーキのように柔らかく崩れ落ち、直後に少女が指のクリームを口にして囁く演出。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:11",
+            "observation": "夜の街でゴミ収集車の荷台に山積みになった魔法少女のステッキやコンパクトの玩具に、作業員が次々と玩具を投げ込み、機械音と警告音が鳴り響いている。"
+          },
+          {
+            "timestamp": "01:30",
+            "observation": "ドールハウス状の部屋の奥にビーズ装飾を施した少女の巨大な顔があり、壁の穴から伸びた大きな手が小さなグミベアをつまんで食べると、暗い室内の照明が一気に明るく切り替わる。"
+          },
+          {
+            "timestamp": "02:51",
+            "observation": "部屋の扉の鍵を開けようとドアノブを握ると、扉自体がスポンジとクリームのケーキのように崩れ落ち、続くカットで少女がそれを口にしてセリフを語る。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": true,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          true,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 20913,
+        "inputTextTokens": 2162,
+        "avgOutputTokens": 486,
+        "avgThoughtTokens": 2592,
+        "totalCostUsd": 0.23079
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "xnWku2LSI1o",
+      "raw_api_score": 63,
+      "raw_scores": [
+        63,
+        63
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_unverified_genre",
+      "calibration_genre_bucket": "unverified:youtube-sns",
+      "dimensions": {
+        "direction": 13.5,
+        "visual_craft": 12,
+        "editing_rhythm": 14,
+        "sound_integration": 12.5,
+        "originality_finish": 11
+      },
+      "rationales": [
+        "フックから課題・解決策・結果へ繋ぐ縦型解説の構成とテンポは堅実で、音声・BGMの整理も聴きやすい実用レベル。一方、撮影・照明は簡易的な室内収録に留まり、インサートされるコラージュ風グラフィックや引用カード、字幕設計はいずれも量産的なSNSビジネス解説の定型フォーマットの域を出ず、映像クラフトとしての独自性や仕上げの強度に凡庸さが残る。",
+        "ビジネス解説系ショート動画としてフックから結論までの構成とテンポは明快で実用水準にある。一方、トーク撮影の照明・美術は平面的で音声にも室内反響が残り、引用カードやコラージュ素材を多用した量産的な定型フォーマットの域を出ないため、映像クラフトの独自性や仕上げ精度には凡庸さが残る。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:05",
+            "observation": "フィルムコマ風の枠内に古いVicksのCM映像が収まり、男性のカットから少女がパッケージの粒を口に入れる映像へ切り替わりつつ、画面下部に白太字の英語字幕が表示されている。"
+          },
+          {
+            "timestamp": "00:25",
+            "observation": "青い背景に十字グリッドを配したグラフィック上に記事引用テキストが表示され、「ALLOPATHIC DRUG」の部分が黒くハイライトされるアニメーションとともに解説音声が続く。"
+          },
+          {
+            "timestamp": "00:46",
+            "observation": "上下2分割画面となり、上部に「Ahem」へ赤い取り消し線を引いて下に「KHICH KHICH」と示したVicksのキャンペーン画像、下部に身振りを交えて話す黒トップスの女性が映っている。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:02",
+            "observation": "レトロなフィルム枠内にVicksの旧CM映像が映り、トゲ状のキャラクターと商品パッケージ、ヒンディー語字幕に合わせて当時のジングル音声が流れる。"
+          },
+          {
+            "timestamp": "00:20",
+            "observation": "黄色の背景に複数のメガホンが浮かび、紫色のシェブロン柄の袖をつけた3本の拳が突き上がるコラージュ風のモーショングラフィックスで抗議運動を表現している。"
+          },
+          {
+            "timestamp": "00:46",
+            "observation": "上半分に旧キャンペーン画像（「Ahem Bug」に赤い打ち消し線と「KHICH KHICH」の赤文字）、下半分に身振りを交えて語る女性を配置した上下2分割構成になっている。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 5952,
+        "inputTextTokens": 1516,
+        "avgOutputTokens": 456,
+        "avgThoughtTokens": 1903,
+        "totalCostUsd": 0.115578
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "xw5u-NoA3Ec",
+      "raw_api_score": 82.5,
+      "raw_scores": [
+        83,
+        82
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "モーション",
+      "dimensions": {
+        "direction": 16.5,
+        "visual_craft": 17,
+        "editing_rhythm": 17,
+        "sound_integration": 16.5,
+        "originality_finish": 15.5
+      },
+      "rationales": [
+        "温かみのあるミニチュア風3DCGで日常の開封体験を描き、パック開封を起点に華やかなVFX空間へ移行、大当たりで椅子からひっくり返るコミカルな結末へ繋ぐ円環構成が秀逸。ニットや光の質感描写、通常色から色違いへ切り替わる演出、ビートとSEの同期精度など商業クラフトは非常に高い。中盤のカード紹介はTCG告知の定型フォーマット内だが、全体の緩急と仕上げの完成度が傑出している。",
+        "温かみのある質感豊かな3DCGの日常空間と、爆発的な光と色彩で魅せるVFXカード演出の対比が見事。パック開封のスワイプ動作を起点に、ビートとSEが完全同期した疾走感ある編集リズムで高揚感を一気に引き上げ、色違い変化の視覚的快感も的確に表現している。最後に椅子ごとひっくり返るコミカルなオチまで構成に隙がなく、商業PVとして極めて完成度が高い上位プロ品質の作品。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:08",
+            "observation": "部屋のデスク前で少年がスマホ画面上のパック上部を指で右にスワイプして開封すると、上昇音から開封SEと共に虹色の光と星が部屋中に溢れ出す。"
+          },
+          {
+            "timestamp": "00:17",
+            "observation": "紫色のメガゲンガーexのカードにカラフルなペイント状エフェクトが絡みつき、フラッシュと共に色違いの白いメガゲンガーexへと瞬時に変化してホログラムが輝く。"
+          },
+          {
+            "timestamp": "00:48",
+            "observation": "カードをめくり終えた少年が驚喜のあまり椅子ごと後ろにひっくり返って両足が宙に上がり、宙に浮いたスマホが回転しながら白いメガゲンガーexのカードを見せつける。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:08",
+            "observation": "レトロなCRTパソコンが置かれた温かい光の部屋で、少年がスマホ画面上のパック上部を指でスワイプして開封し、ライザー音から一気に眩い光と星のエフェクトが部屋全体に広がって画面内へ引き込まれる。"
+          },
+          {
+            "timestamp": "00:17",
+            "observation": "疾走感のあるエレクトロBGMとカラフルなペイント状エフェクトの中で、メガゲンガーexのカードがフラッシュとともに白く輝く色違いバージョンへ変化し、ホログラムの反射を強調するダイナミックなカメラワークで魅せる。"
+          },
+          {
+            "timestamp": "00:48",
+            "observation": "テンポよくカードをめくった後、少年が喜びのあまり椅子ごと後ろにひっくり返って黒い靴下の足を宙に投げ出し、同時にスマホが回転して色違いメガゲンガーexのカードが光り輝くオチに繋がる。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 5667,
+        "inputTextTokens": 1506,
+        "avgOutputTokens": 490.5,
+        "avgThoughtTokens": 1912.5,
+        "totalCostUsd": 0.115128
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "yRv-MikY3d0",
+      "raw_api_score": 82,
+      "raw_scores": [
+        82,
+        82
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "CM",
+      "dimensions": {
+        "direction": 17,
+        "visual_craft": 16.5,
+        "editing_rhythm": 17,
+        "sound_integration": 16.5,
+        "originality_finish": 15
+      },
+      "rationales": [
+        "朝の目覚めから就寝までの一日を、マンション内を回遊する擬似ワンカット構成で軽快に描いた秀作。壁ワイプによるシームレスな衣装・時間帯転換と、朝・昼・夕・夜の丁寧なライティング設計が空間の魅力と心地よい動線を直感的に伝える。生活音と楽曲の統合や振付のテンポ感も高水準。表現手法自体は定番の枠内だが、不動産CMとしての機能性と情緒的価値を高次元で両立させた上位プロ品質。",
+        "狭いマンション空間をワンカット風の滑らかなカメラワークと壁面ワイプ等の隠しカットで繋ぎ、朝の目覚めから誕生日パーティー、就寝までの1日を軽快なダンス調で描いた完成度の高い作品。時刻変化に応じた照明設計や衣装とインテリアの色彩調和、音楽と動作の同期が非常に巧み。表現手法自体は王道ながら、空間の連続性と丁寧な演出クラフトが居住体験の心地よさを的確に伝えている。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:07",
+            "observation": "ベッドから起きた女性が両手でカーテンを大きく開け放ち、手書き風の「ザ・パークハビオ」のタイトルが消えると同時に、アコースティックギターとクラップの軽快な音楽が始まる。"
+          },
+          {
+            "timestamp": "00:49",
+            "observation": "青いシースルートップスとデニム姿になった女性が、白い壁と観葉植物のあるリビングでスティック掃除機を手に持ち、音楽に合わせて腕を広げながらミュージカル風に踊る。"
+          },
+          {
+            "timestamp": "01:13",
+            "observation": "オレンジ色のブラウスに着替えた女性が、ソファ周辺に集まった友人3人の拍手と歓声に囲まれながら、「Happy Birthday」のプレートが乗ったケーキのろうそくを笑顔で吹き消す。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:07",
+            "observation": "ベッドから起き上がった女性が窓辺へ移動してカーテンを両手で勢いよく開き、鳥のさえずりの環境音から軽快なギター楽曲へと切り替わるタイミングで大きく背伸びをする。"
+          },
+          {
+            "timestamp": "00:49",
+            "observation": "シアー素材の青いトップスとデニムに着替えた女性が、白いコードレス掃除機を手にリビングを踊るように動き回り、ジンバルによる滑らかなカメラワークが空間の広がりを見せながら追従する。"
+          },
+          {
+            "timestamp": "01:14",
+            "observation": "オレンジ色のブラウスを着た女性が、温かみのある夜の照明になったリビングで友人たちの拍手に囲まれ、プレート付きのバースデーケーキのろうそくを笑顔で吹き消す。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 11531,
+        "inputTextTokens": 1738,
+        "avgOutputTokens": 473.5,
+        "avgThoughtTokens": 2064,
+        "totalCostUsd": 0.155739
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "yTASHD-MWwE",
+      "raw_api_score": 72,
+      "raw_scores": [
+        74,
+        70
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "MV",
+      "dimensions": {
+        "direction": 14,
+        "visual_craft": 14,
+        "editing_rhythm": 15,
+        "sound_integration": 15.5,
+        "originality_finish": 13.5
+      },
+      "rationales": [
+        "Y2K・レトロクラブ調の色彩設計とドット加工、音楽プレイヤー風UIなど統一感あるグラフィックが心地よい。特にラップパートのモノクロ切替やビートに噛み合うキネティック・タイポグラフィは完成度が高く、音と映像の統合度に優れる。一方、約6分の長尺に対し静止画ベースのキャラ素材と構図の反復が多く、後半の演出的な飛躍や独自性には限界が見えるため、堅実な商業水準のB+評価とした。",
+        "原曲の時代感に寄り添うY2K・レトロUI調の統一された美術設計と、ラップパートでフロウに的確に同期するキネティックタイポグラフィの編集リズムが光る。一方、約6分の尺に対しキャラクターは数枚の静止画とエフェクト揺れの反復に留まり、後半の単調さや定型的なリリックMVの枠を超えられていない点が惜しまれる。商業水準の丁寧な仕上がりだが独自性と突破力は限定的。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:22",
+            "observation": "夜の街並みに網点・ドット加工を施した背景の上へ、再生ボタンや上下のオーディオスペクトラムを備えた音楽プレイヤー風UIと「come again」のタイトル文字を配置し、2ステップ調のビートに連動させている。"
+          },
+          {
+            "timestamp": "01:46",
+            "observation": "ラップパートに入り画面が青紫と白のモノクロ調へ一変し、フィルムノイズやグリッチ演出の中で「From the 滑走路」「bow!」といった歌詞タイポグラフィがフロウに同期して鋭く切り替わる。"
+          },
+          {
+            "timestamp": "05:41",
+            "observation": "アウトロでは夜の都市交差点を走る車の映像にドット調のエフェクトを重ね、中央にMC・MIX・Illust・Movieのクレジットを表示しながら静かに余韻を残して終了する。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:19",
+            "observation": "ぼかした都市夜景とハーフトーン加工を背景に音楽プレイヤー風の再生UIと上下のオーディオスペクトラムが表示され、中央に「come again」、下部に曲名テロップが流れながら軽快な2ステップのビートが刻まれる。"
+          },
+          {
+            "timestamp": "01:45",
+            "observation": "ラップパートに入り画面が青紫のモノクロ調へ切り替わり、手前に手を伸ばす金髪キャラクターの静止画上で「From the 滑走路」「bow!」等の文字がラップのフロウに同期して激しく伸縮・回転する。"
+          },
+          {
+            "timestamp": "02:55",
+            "observation": "2番のサビ導入部で2人のキャラクターが正面寄りに並んだ別カットのイラストへ移行し、ピンクのグリッド背景と星形エフェクトの中で「君より他の素敵な人と」の歌詞がビートに合わせて左右に配置される。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 35654,
+        "inputTextTokens": 2692,
+        "avgOutputTokens": 497,
+        "avgThoughtTokens": 2997.5,
+        "totalCostUsd": 0.334911
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "yVX34hPLKtI",
+      "raw_api_score": 92,
+      "raw_scores": [
+        92,
+        92
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "MV",
+      "dimensions": {
+        "direction": 18,
+        "visual_craft": 19,
+        "editing_rhythm": 19,
+        "sound_integration": 18,
+        "originality_finish": 18
+      },
+      "rationales": [
+        "夜の東京での実写タクシー劇から、巨大パンダに呑み込まれて異空間・宇宙へと飛躍する圧巻のハイブリッドMV。実写撮影、高密度3DCG、2Dアニメ、アナログ質感を驚異的な速度と滑らかなトランジションで融合させている。会話劇やスイッチ暗転による緩急の設計、歌詞やSEと視覚モチーフの緻密な同期も見事で、ポップアートとラグジュアリーの美学を極限まで高めた国際上位水準の映像クラフト。",
+        "東京の夜を走るタクシーからスーパーフラットな仮想空間、パリの上空、宇宙空間へとシームレスに展開する構成力が圧巻。実写・3DCG・2Dアニメ・パーティクル表現を高密度に融合し、照明馴染みやスピードランプ、音ハメSEの精度も極めて高い。中盤の白背景空間は情報過多な瞬間もあるが、視覚的快楽と独自世界観を極限まで昇華した国際上位水準の秀作。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:24",
+            "observation": "花柄ラッピングのタクシー車内で、運転手が「兄ちゃんどこまで？」と尋ね、後部座席の白いダウン姿の男性が「銀座までお願いします」と応答。運転手が光る歯を見せて急発進する一連の会話と効果音の入りが映画的に設計されている。"
+          },
+          {
+            "timestamp": "01:05",
+            "observation": "夜のビル街に出現した巨大なパンダが虹色に発光する長い舌を伸ばし、花柄のタクシーがその上を猛スピードで駆け上がって口の中へと飛び込み、白いモノグラム柄の異空間へシームレスに遷移する。"
+          },
+          {
+            "timestamp": "02:24",
+            "observation": "暗い空間でパンダが壁のスイッチを切り、一瞬の暗転と音のブレイクを挟んだ後、巨大な虹色の花の中央から2Dアニメのキャラクターが飛び出し、実写の花の被り物をした男性のダンスパートへと鮮やかに切り替わる。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:16",
+            "observation": "「加古川理容室」の看板前で待つ白いジャケット姿の人物のもとに、カラフルな花のイラストと花型ホイールで装飾された黒いタクシーがスキール音とともに急停車する。"
+          },
+          {
+            "timestamp": "01:05",
+            "observation": "夜のビル街に出現した巨大なパンダ型キャラクターが口から虹色の舌を道路のように伸ばし、タクシーがその上を疾走して口の中へと飛び込んでいく。"
+          },
+          {
+            "timestamp": "02:24",
+            "observation": "暗闇でパンダ型キャラクターが壁のスイッチを切る音とともに映像とビートが一瞬暗転し、続いて花のかぶりものをした人物が登場する宇宙空間の展開へと移行する。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 21381,
+        "inputTextTokens": 2154,
+        "avgOutputTokens": 494.5,
+        "avgThoughtTokens": 2273.5,
+        "totalCostUsd": 0.22425
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "yow8PBNcINU",
+      "raw_api_score": 90.5,
+      "raw_scores": [
+        90,
+        91
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "CM",
+      "dimensions": {
+        "direction": 18,
+        "visual_craft": 19,
+        "editing_rhythm": 18,
+        "sound_integration": 18,
+        "originality_finish": 17.5
+      },
+      "rationales": [
+        "挫折から小さな気づきを経て前向きな決意へ至る感情曲線を、バトンや光の変化など一貫したモチーフで巧みに構成。印象派的な背景美術と陰影・逆光・花火の照り返し等の緻密なライティング設計が際立つ。静謐なピアノと息遣い・環境音の間合い、緩急あるモンタージュ編集が高い次元で融合し、商材訴求を物語へ自然に溶け込ませた秀作。",
+        "劇場映画水準の光表現・撮影処理と繊細なキャラクター芝居が圧倒的。バトン落下の挫折から学習での小さな気づきが日常全般へ波及し、体育祭のハチマキと朝の学習机を結ぶ構成が極めて巧み。ピアノ主体の劇伴や環境音・吐息の演出も感情曲線と見事に同期し、広告色を排した高い芸術性と仕上げ品質を実現している。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:07",
+            "observation": "校庭のリレー練習で受け渡しに失敗し、砂の地面に転がった黄色いバトンを俯瞰で捉えたカット。柔らかい自然光の陰影と、主人公の謝罪の声や周囲の環境音が丁寧に重ねられている。"
+          },
+          {
+            "timestamp": "00:38",
+            "observation": "夜の海辺で手持ち花火の強いオレンジ光が少女と少年の顔を照らし出すクローズアップ。深い藍色の夜空との強い明暗対比と、火花が散る繊細なSE・穏やかな語り口が印象的。"
+          },
+          {
+            "timestamp": "01:22",
+            "observation": "体育祭の会場で白い体操服姿の少女が黄色いハチマキを後頭部で力強く結び直す後ろ姿のカット。周囲の喧騒とピアノ伴奏の高まりに合わせ、次の決意の表情へとリズム良く繋いでいる。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:07",
+            "observation": "グラウンドの土の上に落ちた黄色いバトンがクローズアップされ、直後のカットでファミレスの赤いボックス席に座る男女の会話シーンへと切り替わる。"
+          },
+          {
+            "timestamp": "00:34",
+            "observation": "夜の海辺で手持ち花火を囲む場面。花火の強い暖色の光が人物の頬や指先をドラマチックに照らし、暗い夜空との明暗対比と粒子感ある撮影処理が際立っている。"
+          },
+          {
+            "timestamp": "01:21",
+            "observation": "体育祭の喧騒の中、少女が後ろ姿で黄色いハチマキを強く結び直す。続くカットで深呼吸をして目を開き、「私の番だ」という台詞とともに朝の光が差し込む自宅での勉強シーンへ繋がる。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": true,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          true,
+          true
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 12112,
+        "inputTextTokens": 1760,
+        "avgOutputTokens": 523.5,
+        "avgThoughtTokens": 2415,
+        "totalCostUsd": 0.171387
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "yu3YGphrBbI",
+      "raw_api_score": 93,
+      "raw_scores": [
+        94,
+        92
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "MV",
+      "dimensions": {
+        "direction": 18.5,
+        "visual_craft": 18,
+        "editing_rhythm": 19,
+        "sound_integration": 19.5,
+        "originality_finish": 18
+      },
+      "rationales": [
+        "DAWのUI要素と強迫観念的な通知ウィンドウを電子音楽の全音素へ極限まで精密同期させた傑作。単なる波形ビジュアライザーを超え、創作の完璧主義と日常タスクの過負荷がパニックへ膨張し、最後に1つのWAVファイルへ収束する構成美が秀逸。コードベースの鮮やかな色彩設計、緻密なグリッド構成、緩急自在のリズム制御が高次元で融合し、オーディオビジュアル表現として国際最上位の到達度を示す。",
+        "DAWとOSのUIを模したジェネレーティブな映像言語で、制作の強迫観念と日常の不安を鮮やかに視覚化。ビートや波形に完全同期する圧倒的な編集リズムと音響統合力、警告ダイアログの連鎖から1つのWAVファイルへ収束する構成美が際立つ国際水準のオーディオビジュアル秀作。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:03",
+            "observation": "黒背景の左側に波形ウィンドウ「FX_BASS_516」が電子音に合わせて伸縮し、右側に黄色「HAT_PERC_118」や赤色「KICK_KICK_968」の小ウィンドウがビートと正確に同期して明滅している。"
+          },
+          {
+            "timestamp": "02:14",
+            "observation": "重厚なドローンとノイズのクレッシェンドに合わせ、「CRASH REPORT」や「I NEED TO DO LAUNDRY」などのカラフルな警告ダイアログ群と無数の小さな矩形が画面を覆い尽くすように雪崩のように積み重なっている。"
+          },
+          {
+            "timestamp": "04:19",
+            "observation": "画面上の膨大なUI群がカラフルな縦スリットから1本のシアン色のステレオ波形へと圧縮された直後、黒背景の中央に音声ファイルアイコンと「OBSESSIVE_COMPULSIVE_ORDER.WAV」の文字のみが浮かび上がる。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:05",
+            "observation": "黒背景に横長の青い波形ブロック（FX_BASS_910）と右端のピンクの波形（SNARE_PERC_410）が表示され、直後のビートインに同期して画面が多色の波形やパーセンテージ表示の矩形群へ一気に分割される。"
+          },
+          {
+            "timestamp": "02:14",
+            "observation": "緊張感を高めるビルドアップに合わせて、CRASH REPORTやI NEED TO DO LAUNDRYなどの通知・警告ダイアログが画面全体に幾重にも積み重なり、無数の小さな色付き矩形が飛び交う過負荷のピークを作る。"
+          },
+          {
+            "timestamp": "04:19",
+            "observation": "画面を埋め尽くした多色の縦バーが1本のシアン色のステレオ波形へ圧縮された直後、黒背景の中央に白いファイルアイコンとOBSESSIVE_COMPULSIVE_ORDER.WAVの文字が表示され、楽曲が静かに収束する。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 27983,
+        "inputTextTokens": 2390,
+        "avgOutputTokens": 506,
+        "avgThoughtTokens": 2168.5,
+        "totalCostUsd": 0.262473
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "z4r3l2aAdrg",
+      "raw_api_score": 74,
+      "raw_scores": [
+        74,
+        74
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "MV",
+      "dimensions": {
+        "direction": 14,
+        "visual_craft": 15.5,
+        "editing_rhythm": 15.5,
+        "sound_integration": 15.5,
+        "originality_finish": 13.5
+      },
+      "rationales": [
+        "一枚絵を軸に3Dのガラス片・鎖・幾何学空間とキネティックタイポグラフィを緻密に組み合わせた高品位なリリックMV。楽曲の緩急に応じた3D空間のタメ演出や色彩切替、音ハメの精度は商業水準として堅実で見応えがある。一方、静止イラスト中心の設計に加え、1・2番およびラスサビで映像テンプレートの反復が目立つ点や、既存の定番MV文法に収まる独創性の限界が上位評価への課題となる。",
+        "疾走感あるロック曲に同期した鋭い編集テンポと、黒・白・赤・黄で統一された洗練されたタイポグラフィ設計が堅実な商業品質を実現。サビ前の3D空間（ネオン三角錐やアクリルパネル）による緩急演出も効果的。一方、一枚絵への依存度が高く、1・2番およびラスサビの構成が同一パターンの反復に留まる点や、現代リリックMVの定型表現の枠内である点が独自性と到達度の天井を作っている。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:52",
+            "observation": "暗いコンクリートの3D空間の床に白い発光チューブで組まれた三角形オブジェクトが配置され、1番サビ前の静かなタメに合わせて明滅や黄色・青の反転フラッシュへ展開する。"
+          },
+          {
+            "timestamp": "01:20",
+            "observation": "サビ後半で画面が白・黒・赤のハイコントラストなグラフィック調へ切り替わり、手前に手を伸ばすキャラクターの背後に市松模様と帯状の歌詞が左右へ高速スクロールする。"
+          },
+          {
+            "timestamp": "02:01",
+            "observation": "2番サビ前で暗い壁面に掲示された2枚のアクリルパネル風イラストのうち左側へカメラが寄り、激しい色収差とイエロー・ブルーのフラッシュトランジションでサビへ突入する。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:52",
+            "observation": "暗い3D空間の中央で白く発光する三角錐状のライトと背後の立方体・球体が映し出され、楽曲の静寂に合わせて画面が反転・フラッシュしながらサビへ移行する。"
+          },
+          {
+            "timestamp": "01:20",
+            "observation": "赤・白・黒のチェッカー模様の帯と筆跡テクスチャが画面を横切る背景の中、手を前に伸ばす少女のイラストがハイコントラストなグラフィック調で表示され、帯に沿って歌詞が流れる。"
+          },
+          {
+            "timestamp": "02:01",
+            "observation": "暗い壁面に展示されたメインビジュアル入りの透明アクリルパネル2枚にカメラが寄っていき、強い色収差グリッチと黄・青のフラッシュを挟んで2番サビへ突入する。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 24753,
+        "inputTextTokens": 2262,
+        "avgOutputTokens": 489,
+        "avgThoughtTokens": 2350,
+        "totalCostUsd": 0.24726
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "zFvChQ6dSdk",
+      "raw_api_score": 90,
+      "raw_scores": [
+        90,
+        90
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_unverified_genre",
+      "calibration_genre_bucket": "unverified:branded-movie",
+      "dimensions": {
+        "direction": 18,
+        "visual_craft": 19,
+        "editing_rhythm": 18,
+        "sound_integration": 18,
+        "originality_finish": 17
+      },
+      "rationales": [
+        "静謐な導入から軽快な日常描写、一転して不穏な反転と怒涛の戦闘クライマックスへと展開する緩急自在の構成力が見事。高密度な3Dセルルックと2D作画・タイポグラフィを融合させた美術・VFXの完成度が極めて高く、多ジャンルを横断する楽曲と精密に同期した編集リズムが、台詞なしで強い感情曲線と世界観の没入感を生み出している。",
+        "荒廃した戦場、活気ある日常、反転する崩壊への感情曲線を、楽曲のジャンル転調と精緻なカット割りで描き切る高到達作。3Dと2Dを融合した豊かなライティング、洗練されたUI風グラフィック、高コントラストなインパクトフレーム、静と動の緩急を活かした音響統合まで全工程のクラフト密度が極めて高い。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:35",
+            "observation": "旗を掲げた空のカットから画面が切り替わり、「ROSCAELIFER」の装飾的なタイポグラフィと青いUIグリッド、白髪女性のオッドアイを別枠で抜いたグラフィック演出が展開され、楽曲もファンキーなリズムへ転換する。"
+          },
+          {
+            "timestamp": "01:15",
+            "observation": "青空の下にあった時計塔の針が高速回転すると同時に画面が赤黒く変色し、街全体が上下反転して不穏な赤い閃光に包まれ、音楽もソウルフルなボーカル中心のスロー展開へと一気に落とされる。"
+          },
+          {
+            "timestamp": "01:43",
+            "observation": "爆発と炎が上がる夜の市街地を白い鳩が縫うように急上昇し、光線や爆炎をすり抜けた直後にカメラが回り込んで発光する翼を持つピンク髪の女性へと変身する滑らかなトランジションが描かれる。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:36",
+            "observation": "白背景に「ROSCAELIFER」のタイポグラフィとUI風グラフィックが重なり、白髪・オッドアイの女性の横顔と目元のクローズアップが画面分割で映し出され、楽曲が軽快なリズムへと切り替わる。"
+          },
+          {
+            "timestamp": "01:15",
+            "observation": "青空の下で映っていた時計台のような環状装置が赤く染まり、街の構図が上下反転して夜間の赤い閃光と爆発・花火が交錯する不穏な光景へ一転する。"
+          },
+          {
+            "timestamp": "01:41",
+            "observation": "炎上する市街地での高速戦闘カットの連続から白黒の高コントラストなインパクトフレームが閃き、その後白い鳩がレーザーの中を上昇して光の翼を持つピンク髪のキャラクターへと変貌する。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 13415,
+        "inputTextTokens": 1846,
+        "avgOutputTokens": 501,
+        "avgThoughtTokens": 2406,
+        "totalCostUsd": 0.178776
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "zJtsfgrJiWE",
+      "raw_api_score": 88,
+      "raw_scores": [
+        87,
+        89
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "MV",
+      "dimensions": {
+        "direction": 17.5,
+        "visual_craft": 18,
+        "editing_rhythm": 18,
+        "sound_integration": 17.5,
+        "originality_finish": 17
+      },
+      "rationales": [
+        "漫画原画の網点や質感を活かしつつ、氷上の軌跡ラインや2.5Dアニメーションを高度に融合させた完成度の高いPV。モノローグによる静の幕開けから、楽曲ビートと緻密に同期した滑走の疾走感、終盤の椅子の山を登る象徴的メタファーへの収束まで演出設計が一貫している。寒暖の色彩設計やタイポグラフィ、SEと声の統合度も秀逸で、原画素材の制約を超えた強い感情曲線を描き切っている。",
+        "漫画原画のレイヤー分解・網点処理と繊細な光彩設計により、静止画素材に高い立体感と運動量を与えている。氷上の滑走痕の曲線や椅子の山といった視覚モチーフが導入から終盤へ見事に回収され、緩急ある編集と楽曲・SE・独白の緻密な同期が感情曲線を力強く牽引する高到達なモーショングラフィックス作品。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:14",
+            "observation": "少女の首元のチョーカーから両目のアップへ寄るカット。静かなナレーションに合わせて氷上のブレード軌跡のような白い曲線が画面を横切り、瞳に光が宿る繊細な動きが描かれる。"
+          },
+          {
+            "timestamp": "01:10",
+            "observation": "サビ突入部でスケート靴のブレードが氷を蹴る描写から、大きく開かれた手のイラストと「この指先 この角度」の文字へ切り替わり、ビートに同期して跳躍や回転カットが畳み掛けられる。"
+          },
+          {
+            "timestamp": "02:16",
+            "observation": "終盤のクライマックスで、積み上げられた無数の椅子の上に座る少女のもとへもう一人の少女が手を伸ばして登っていく象徴的なカットが、周囲を舞う白い氷の軌跡エフェクトと共に展開される。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:01",
+            "observation": "強い逆光と被写界深度表現の中で上着を脱ぐ少女の後ろ姿が漫画の線画と網点のまま立体的に動き出し、静かなモノローグと氷を削るエッジ音に合わせて光の軌跡が画面を走る。"
+          },
+          {
+            "timestamp": "01:05",
+            "observation": "高く積み上がった椅子の頂点に座る少女の周囲を白い滑走痕のような曲線が幾何学的に取り囲み、01:10以降は青背景に伸びる指先のクローズアップとタイポグラフィが楽曲のビートに鋭く同期して切り替わる。"
+          },
+          {
+            "timestamp": "02:16",
+            "observation": "終盤のクライマックスで椅子の山をもう一人の少女が駆け上がって頂点の少女へ手を伸ばす対比構図が回収され、02:27で滑走痕の線が対称の紋様へ収束すると同時に音楽が止み、再び静かな独白へと着地する。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": true,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          true
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 17081,
+        "inputTextTokens": 1958,
+        "avgOutputTokens": 549.5,
+        "avgThoughtTokens": 2304.5,
+        "totalCostUsd": 0.199854
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "zP5fTB_MAXU",
+      "raw_api_score": 88,
+      "raw_scores": [
+        88,
+        88
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_unverified_genre",
+      "calibration_genre_bucket": "unverified:teaser-trailer",
+      "dimensions": {
+        "direction": 17,
+        "visual_craft": 18,
+        "editing_rhythm": 18,
+        "sound_integration": 18,
+        "originality_finish": 17
+      },
+      "rationales": [
+        "実写・複数スタイルのアニメ・VFX・ライブ映像を「一つ目／同心円」のモチーフで貫き統合した高水準な予告編。静的な会話と屋上の詩的な間合いから、00:20以降に楽曲ビートへ完全同期する高速モンタージュへ転じる緩急と音響設計が見事。実写の陰影や作画・合成の完成度も一線級で、異種表現を破綻なく繋ぐ視覚的グルーヴと記憶残留力が際立つ。",
+        "実写ドラマ、複数作家の2D/3Dアニメ、ライブ映像、都市VFXという異種表現を『一つ目・同心円』のモチーフと疾走感ある楽曲で高密度に統合。ファミレスの静かな会話から屋上バイオリン、無音の溜めを経てサビで爆発する緩急設計と、スマホ画面から赤い目玉へ繋ぐ等の緻密なマッチカットが秀逸。各パートの撮影・美術・作画の単体品質も極めて高く、音響と編集が一体となった圧巻のクラフト到達度を示す。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:13",
+            "observation": "青空を背景に逆光で浮かび上がる屋上で、白い制服の二人の少女が向かい合ってバイオリンを弾く中景カットから、アンテナの立つ屋上全体を捉えた遠景カットへと軽快なギターリフに乗せて展開する。"
+          },
+          {
+            "timestamp": "00:34",
+            "observation": "ファミレスで少女が手にするスマートフォンの画面内にピンクと黒の同心円状の目玉が映し出され、直後に画面全体が赤いパーティクルで描かれた巨大な目玉へとシームレスにトランジションする。"
+          },
+          {
+            "timestamp": "00:46",
+            "observation": "クレーンが見える曇天を背に目を閉じていた少女が、「1、2」の掛け声に合わせて正面を見据えて目を開き、白地に黒シルエットの横顔カットを経てピンクの同心円とタイトルロゴへ収束する。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:13",
+            "observation": "青空を背景に建物の屋上で制服姿の少女二人が向かい合ってバイオリンを弾く逆光ショットが映り、続いてアンテナが立つ屋上全体の引きの構図へと切り替わる。"
+          },
+          {
+            "timestamp": "00:34",
+            "observation": "ファミレスで少女が持つスマートフォンの画面にピンク色に光る同心円状の目玉が映り、直後に画面全体を占める赤い粒子状の目玉グラフィックへとマッチカットで展開する。"
+          },
+          {
+            "timestamp": "00:46",
+            "observation": "背景に赤いクレーンが見える屋外で少女が閉じていた目を見開くクローズアップの後、白背景に黒シルエットの表現を経てピンク色の同心円上に「Adam by Eve」のロゴが出現し、囁く声とともに静かに締める。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": true,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          true,
+          true
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 7187,
+        "inputTextTokens": 1566,
+        "avgOutputTokens": 538.5,
+        "avgThoughtTokens": 2560.5,
+        "totalCostUsd": 0.145488
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "zRJS0P1GwC4",
+      "raw_api_score": 93,
+      "raw_scores": [
+        92,
+        94
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_unverified_genre",
+      "calibration_genre_bucket": "unverified:teaser-trailer",
+      "dimensions": {
+        "direction": 19,
+        "visual_craft": 18.5,
+        "editing_rhythm": 18,
+        "sound_integration": 19,
+        "originality_finish": 18.5
+      },
+      "rationales": [
+        "原作漫画とカラーイラストの繊細な筆致を損なわず、モーションコミック・2.5D立体表現・本格作画を高度に融合させた圧巻の映像。白黒コマからカラー宇宙空間への移行や、原点の別れから40年の軌跡・新章予告までを感情曲線に沿って繋ぐ構成力、壮大なオーケストラと効果音の統合が極めて高水準。終盤の近作紹介パートはやや定型的な演出に留まるものの、全体として国際上位水準のクラフト強度を誇る。",
+        "原作漫画とカラーイラストの筆致や質感を損なわず、3DCGや立体的なカメラワークで命を吹き込んだ圧巻の映像美。誕生から40年の軌跡、連続変身を経て新章発表へ至る構成と感情曲線が極めて巧みで、壮大なオーケストラ楽曲やSEとの同期精度も国際最上位水準。既存アニメの切り貼りに頼らない表現の独自性と細部の仕上げ品質が傑出している。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "01:22",
+            "observation": "惑星ベジータから発射される丸型ポッドの白黒漫画コマが、01:24にかけてシームレスにフルカラーかつ星々が流れるアニメーションへと変化し、壮大なオーケストラの盛り上がりへ繋がる。"
+          },
+          {
+            "timestamp": "01:40",
+            "observation": "「CAPSULE 9」のバイクに乗るブルマと幼少期の悟空のカラーイラストが、原作のタッチを保ったまま立体的な回り込みカメラワークと背景のパララックスで滑らかに動き出す。"
+          },
+          {
+            "timestamp": "04:03",
+            "observation": "地球を背に宇宙空間へ上昇する悟空が、界王拳・超サイヤ人・ゴッド・ブルー・身勝手の極意へと連続変身し、鋭いオーラ音と光の粒子を伴って画面外へ飛び抜ける。"
+          }
+        ],
+        [
+          {
+            "timestamp": "01:23",
+            "observation": "モノクロの漫画コマで描かれていた丸型ポッドが惑星から飛び立つ瞬間、船体と背景がシームレスにフルカラーの宇宙空間アニメーションへと切り替わり、弦楽・金管の盛り上がりと共に40周年記念ロゴへ繋がる。"
+          },
+          {
+            "timestamp": "01:40",
+            "observation": "原画の線のタッチと彩色を保ったまま、ブルマと幼少期の悟空が乗るカプセル9号のバイクが疾走するシーンを、後方から側面・前方へと回り込む立体的なカメラワークとモーションで滑らかに描画している。"
+          },
+          {
+            "timestamp": "04:02",
+            "observation": "地球を背に宇宙へ飛び出した悟空が、カメラに向かって飛翔しながら界王拳、超サイヤ人、ゴッド、ブルー、身勝手の極意へと連続変身し、オーラの色彩変化と重厚なSE・劇伴が完全に同期して視覚的クライマックスを作る。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": true,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          true
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 31604,
+        "inputTextTokens": 2532,
+        "avgOutputTokens": 529.5,
+        "avgThoughtTokens": 2772.5,
+        "totalCostUsd": 0.303876
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "zSPMR9UdKuI",
+      "raw_api_score": 85,
+      "raw_scores": [
+        85,
+        85
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "MV",
+      "dimensions": {
+        "direction": 16,
+        "visual_craft": 17,
+        "editing_rhythm": 18,
+        "sound_integration": 18,
+        "originality_finish": 16
+      },
+      "rationales": [
+        "カジノを主題とした2D/3DハイブリッドのモーショングラフィックスMV。高速なビートやボーカルに緻密に同期する編集リズムと音響統合が極めて高水準。日本語パートの緩急や、サックスソロで用語解説と螺旋状の3Dサイコロを絡めた間奏演出も秀逸。一方、2番やサビ後半で同一モーションテンプレートの反復が目立ち、終盤の視覚的飛躍が限定的だった点を踏まえA評価とした。",
+        "カジノモチーフで全編を貫いた高密度なキネティック・タイポグラフィMV。トランプやルーレット、スロット、3Dダイスをコラージュ調の文字組みと融合させ、ビートやサックスソロに精密同期させた編集テンポと音響統合が秀逸。間奏の用語解説や日本語パートでの緩急も巧みだが、2番以降の演出レイアウトに反復が見られるため上位プロ品質のA評価とした。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:46",
+            "observation": "黒背景に深緑と赤の幾何学図形やスターバーストが展開し、「WE'RE PLAYING to believe it」などの英字タイポグラフィが縦横に配置・変形しながら高速なボーカルとビートに緻密に同期している。"
+          },
+          {
+            "timestamp": "01:25",
+            "observation": "赤黒のダークなトーンに画面が切り替わり、黒いジグザグの太い帯がリズムに合わせて画面をうねり横切る中、「勝って、泣いて、飲んで、咲いて、」の白い明朝体テキストが大きく切り替わる。"
+          },
+          {
+            "timestamp": "02:02",
+            "observation": "サックスソロの間奏にて、画面左の「Gambling」の文字と右側の英語解説文の間で、縦に積み上がった多数の3Dサイコロが螺旋状にねじれながら回転し、赤いルーレット盤を背景に立体的な動きを見せている。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:25",
+            "observation": "木目調テーブルの周囲にトランプが散らばる俯瞰構図の中央に「NO WAY TO TURN AROUND」の白いセリフ体タイポグラフィが現れ、赤い帯バナーが画面端を横切りながら展開する。"
+          },
+          {
+            "timestamp": "01:28",
+            "observation": "深い赤色に染められたルーレットとキャラクターイラストの背景を太い黒い折れ線が横断し、「飲んで、咲いて、」の日本語歌詞と「(02)」の番号がリズムに合わせて切り替わる。"
+          },
+          {
+            "timestamp": "01:44",
+            "observation": "中央のスロットマシンで「777」が揃った直後にサックスソロへ突入し、赤い「jackpot」のタイポグラフィとともにカジノチップや緑の星型図形が放射状に広がる。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 21004,
+        "inputTextTokens": 2112,
+        "avgOutputTokens": 500,
+        "avgThoughtTokens": 2267,
+        "totalCostUsd": 0.221706
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "2nGPUtId7vM",
+      "raw_api_score": 78,
+      "raw_scores": [
+        80,
+        76
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "企業映像",
+      "dimensions": {
+        "direction": 15.5,
+        "visual_craft": 16,
+        "editing_rhythm": 16.5,
+        "sound_integration": 15.5,
+        "originality_finish": 14.5
+      },
+      "rationales": [
+        "朝日から群衆の行進まで3分間の感情曲線を巧みに設計した高水準な企業ブランド映像。シネマティックな逆光撮影や統一感のあるグレーディング、ドローン俯瞰の連続カットなど視覚的クラフトが安定している。音楽の静と動に同期した編集テンポとナレーションの間合いも優秀で推進力がある。一方、多様な人々と未来技術を描く王道アンセム構成ゆえの既視感が残り、表現の独自性では伸びしろがある。",
+        "高水準な撮影・照明・カラグレーディングと、緩急の効いた編集リズムにより、3分間の企業ブランド映像として心地よい感情曲線を実現。俯瞰から人物の視線・手の繋ぎへ繋ぐ視覚的韻律も巧みである。一方、多様な人々や先端技術を羅列し大団円へ収束させる構成は企業アンセムの定型に留まり、英語歌唱と日本語ナレーションの重なりや一部素材感の混在も惜しく、表現の独自性では伸び悩む。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:38",
+            "observation": "広場や畑、港湾コンテナなどを真上から捉えたドローン俯瞰ショットが連続し、続いて様々な人物が空を見上げる顔のアップのモンタージュへとテンポよく繋がる。"
+          },
+          {
+            "timestamp": "01:41",
+            "observation": "夜の屋上テント前で、アルミホイル製のとんがり帽子をかぶった少年と少女が笑顔でじゃれ合い、天体望遠鏡で星空を覗き込む温かい家族のカットが静かなギター伴奏とともに映る。"
+          },
+          {
+            "timestamp": "02:25",
+            "observation": "夕陽を背にした砂浜・砂丘を大勢の多様な人々が歩いていく俯瞰映像の上に、白文字で「おもしろいほうの未来へ。」のコピーと力強いロック調のサビが重なる。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:46",
+            "observation": "農家の男性、若者、白いヘルメットとカメラを持った作業員、少女、眼鏡の男性らが順に空を見上げるクローズアップが連続し、00:51以降の鮮やかな色彩やスカイダイビングのカットへ楽曲の盛り上がりと共に接続される。"
+          },
+          {
+            "timestamp": "01:41",
+            "observation": "夜景を背景にテントのある場所で、アルミホイル製のとんがり帽子をかぶった少年が笑顔で少女の頭にも同じ帽子を乗せ、その後01:45にかけて望遠鏡で星空を眺める温かな光景が映る。"
+          },
+          {
+            "timestamp": "01:59",
+            "observation": "グラウンドで白い煙と火花を上げながら進む自転車に乗った赤いジャケット姿の人物と、周囲をキックボードや駆け足で追う人々を横移動で捉え、続く正面ショットで高揚感ある笑顔を見せている。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 18382,
+        "inputTextTokens": 2008,
+        "avgOutputTokens": 500.5,
+        "avgThoughtTokens": 2273,
+        "totalCostUsd": 0.205545
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "D6flbP5cO_4",
+      "raw_api_score": 71,
+      "raw_scores": [
+        71,
+        71
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_unverified_genre",
+      "calibration_genre_bucket": "unverified:empty",
+      "dimensions": {
+        "direction": 14,
+        "visual_craft": 15,
+        "editing_rhythm": 14.5,
+        "sound_integration": 14.5,
+        "originality_finish": 13
+      },
+      "rationales": [
+        "モノクロ線画にブランドカラーのピンクを差し色とした統一感あるデザインと、明快な課題提示・事例紹介の構成が堅実なサービス紹介動画。図形ワイプやリズミカルなSEでテンポよく見せる編集力は良好だが、演出構造やイラストアニメーション表現自体は企業説明映像として定型的な範囲に留まる。ナレーションの抑揚もやや平坦で、大きな破綻はないものの独自性や表現の深みは標準的な商業品質に収まっている。",
+        "白黒の線画にマゼンタ1色を差し色とした統一感あるデザインと、明快な課題解決型の構成が堅実に機能している。スマホ操作音や歓声などSEと動きの同期も丁寧で、企業サービス紹介として安定した商業品質を備える。一方、イラスト調のケース紹介やトランジションは定型的な解説動画の枠内に収まっており、表現の独自性や映像的な飛躍は限定的である。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:22",
+            "observation": "男性が抱えていた複数のIDや鍵のアイコンカードが宙に浮いて中央のピンクの「+ID」ロゴに一つに集約され、直後に「Bow!」の描き文字とともに笑顔へ切り替わる。"
+          },
+          {
+            "timestamp": "00:49",
+            "observation": "「+ID GOODS SITE」を表示したスマホ画面上でペンライトやTシャツの項目を右から伸びた指がタップし、ピンクの横帯ワイプで会場の受け取り窓口シーンへ移行する。"
+          },
+          {
+            "timestamp": "01:15",
+            "observation": "ギターを演奏する長髪アーティストのイラストから「ライブ」「バースデー特典」「グッズ」と書かれた羽根つき封筒が3通飛び出し、スマホを見るBさんのもとへ届く動きに軽快なSEが重なる。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:21",
+            "observation": "男性が両腕に抱えていた大量の鍵アイコンとIDカードが浮かび上がって中央に集約され、マゼンタ色の「+ID」の四角いロゴへとひとつに統合される動きが軽快なSEとともに描かれている。"
+          },
+          {
+            "timestamp": "00:40",
+            "observation": "「Aさんのおはなし」の場面で、マゼンタ色のバッグを肩にかけた女性が三日月と星の浮かぶ夜空や街並みの背景を横切って走るアニメーションが展開され、続けて腕時計を見ながらペンライトを思い浮かべるカットへ繋がる。"
+          },
+          {
+            "timestamp": "01:15",
+            "observation": "「Bさんのおはなし」の場面で、ギターを弾くアーティストのイラストから「ライブ」「バースデー特典」「グッズ」と書かれた羽根つきの封筒が飛び出し、ボーダー柄のシャツを着てスマホを見る人物のもとへ届く演出になっている。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 10215,
+        "inputTextTokens": 1686,
+        "avgOutputTokens": 495.5,
+        "avgThoughtTokens": 2373,
+        "totalCostUsd": 0.157461
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "EzEFCikg4tk",
+      "raw_api_score": 83,
+      "raw_scores": [
+        84,
+        82
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "企業映像",
+      "dimensions": {
+        "direction": 16.5,
+        "visual_craft": 15.5,
+        "editing_rhythm": 18,
+        "sound_integration": 17,
+        "originality_finish": 16
+      },
+      "rationales": [
+        "モノクロの日常からビビッドな影のアニメが飛び出す鮮烈なブリッジを軸に、膨大な異種フッテージを破綻なく束ねた上位プロ品質のショーリール。特にロックからトラップ、ブレイクビーツへと展開する楽曲と完璧に同期した編集リズム、01:38のブレイクから終盤の高速インターカットへ至る緩急設計が際立つ。ショーリールという王道フォーマットの枠内ながら、構成力と視覚的統一感、細部の仕上げ精度が極めて高い。",
+        "採用向け事例集という定型構造に対し、モノクロの現実からネオン色の影が飛び出すアニメ演出を軸に据え、一貫した感情曲線と高い視覚的統一感を実現した上位プロ品質。章ごとにロック・トラップ・ブレイクビーツ調へと展開する音楽と、異ジャンルの過去CM素材を違和感なく繋ぐ高速カット割りの同期精度が極めて高い。実写の大半が既製素材の構成であるため映像設計の独自性には上限があるが、編集と音響のクラフト強度が際立つ。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:05",
+            "observation": "モノクロで描かれた説明会風のパイプ椅子に座る人々の列から、一人の影が蛍光ピンクと緑の輪郭線で床を伸びて起き上がる2Dアニメーションが展開され、パーカッシブなビートが徐々にビルドアップしていく。"
+          },
+          {
+            "timestamp": "01:07",
+            "observation": "俯瞰の会議テーブルから4人の影が赤・緑・ピンク・黄のネオンカラーで四方に弾ける「夢中になる体験を。」のカットを契機に、音楽がトラップ調のビートへ大胆に転調し、プラモデル風の赤い郵便ポストの実写カットへと繋がる。"
+          },
+          {
+            "timestamp": "01:38",
+            "observation": "屋外球場のスタンドに立つ白いシャツの男性の横顔で楽曲が鋭いインパクト音とともに一瞬ブレイクし、白背景の縦書き文字「さぁ、」「次は、」を経て、黄色背景に4人のカラフルな影が伸びる「きみの番。」へと加速する。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:05",
+            "observation": "モノクロで描かれたパイプ椅子に並ぶスーツ姿の列から、ひとりだけ鮮やかなピンクに蛍光グリーンの輪郭を持つ影が床へ伸び、腕を掲げるように躍動するアニメーションが打楽器のビートに合わせて描かれる。"
+          },
+          {
+            "timestamp": "01:08",
+            "observation": "音楽がトラップ調のビートへ切り替わった直後、赤い郵便ポストや緑の公衆電話がプラモデルのランナー枠に組み込まれた立体造形の映像が、ビートの刻みに同期して歯切れよくカット割りされる。"
+          },
+          {
+            "timestamp": "01:41",
+            "observation": "「きみの番。」の縦書き文字とともに横一列に並ぶモノクロ人物の足元からカラフルな影が伸び、直後から実写・アニメ素材とネオン色のシルエットが激しいドラムに合わせて高速で交互にフラッシュ編集される。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 11927,
+        "inputTextTokens": 1754,
+        "avgOutputTokens": 527.5,
+        "avgThoughtTokens": 2595,
+        "totalCostUsd": 0.175761
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "ICs3wEegMgw",
+      "raw_api_score": 83,
+      "raw_scores": [
+        83,
+        83
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "MV",
+      "dimensions": {
+        "direction": 17,
+        "visual_craft": 16,
+        "editing_rhythm": 17,
+        "sound_integration": 17,
+        "originality_finish": 16
+      },
+      "rationales": [
+        "赤と青の二項対立と融合を軸に、絵画的質感の流体表現と連続モーフィングで楽曲のサイケデリックな世界観を高密度に構築。手や舞踊、植物、臓器、天体へと展開する構成力と、グルーヴに緻密に同期した緩急あるリズム設計が秀逸。一方、中盤の生成的な変容やグリッチ表現にやや粗さと既視感が残るものの、全体として強い独自性と視覚的強度を備えた上位プロ品質の仕上がり。",
+        "赤と青の対比を軸に、細胞や人体、植物、宇宙へと連続変容する構成が楽曲のサイケデリックなグルーヴと見事に融合。滑らかなモーフィングと緩急あるリズム設計により高い没入感を生んでいる。一部で補間や変容特有の輪郭の滲みや粗さが見られるものの、絵画的な質感の統一感と独創的な演出意図が一貫しており、完成度の高い上位プロ品質の映像表現に仕上がっている。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:32",
+            "observation": "赤と青の絵具のような液体で形作られた左右の手が画面中央へ向かって近づき、指先を伸ばして触れ合おうとする構図から、直後に赤青の渦へと一気に吸い込まれる。"
+          },
+          {
+            "timestamp": "01:55",
+            "observation": "画面中央に紫と黄色の斑模様を持つ巨大な瞳が配置され、その周囲を赤と青の人型シルエットが放射状に取り囲み、ビートに合わせて回転しながら瞳孔へと吸い込まれていく。"
+          },
+          {
+            "timestamp": "02:58",
+            "observation": "赤と青で対になった腎臓のような臓器モチーフが画面中央で脈打ち、血管が張り巡らされた後、中央に目が現れて花弁へと開き、さらにクラゲ状の姿へと連続的にモーフィングする。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:34",
+            "observation": "画面左右から伸びた赤と青の液体状の手が中央で指先を近づけ、直後に色彩の渦巻きトランジションを経て、向かい合う人型の横顔へと連続的に変容する。"
+          },
+          {
+            "timestamp": "01:54",
+            "observation": "中央の大きな虹彩と黒い瞳孔の周囲を赤と青の小さな人型が放射状に囲み、ビートの展開に合わせてそれらが渦を巻きながら瞳の奥へと吸い込まれていく。"
+          },
+          {
+            "timestamp": "03:25",
+            "observation": "赤と青に分かれた球体を核として、複数の細い軌道線と赤・青の小粒子が立体的に周回する天体・原子模型のような構図が現れ、終盤の収束を視覚化している。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 22037,
+        "inputTextTokens": 2154,
+        "avgOutputTokens": 489.5,
+        "avgThoughtTokens": 2602,
+        "totalCostUsd": 0.237891
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "ITfpkCiJIEY",
+      "raw_api_score": 85.5,
+      "raw_scores": [
+        85,
+        86
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "MV",
+      "dimensions": {
+        "direction": 17,
+        "visual_craft": 16.5,
+        "editing_rhythm": 18,
+        "sound_integration": 18,
+        "originality_finish": 16
+      },
+      "rationales": [
+        "前半を青・黒基調に抑え、中盤のドロップ（01:14）から白背景と多色グラデーションへ解放する色彩設計と構成力が秀逸。2D/3D幾何学シェイプのキレのあるイージングと、高速な楽曲ビートに精密に同期した編集テンポが極めて高い一体感を生む。前半のX字や三角形のモチーフを後半で明転・変奏して回収する演出も巧みで、細部まで高精度に仕上げられた上位プロ水準作。",
+        "青と無彩色に絞った前半から、中盤ドロップで多色3D空間へ解放する色彩設計と構成が秀逸。幾何学的な2D/3Dモーションの鋭いイージングと、ビートやブレイクにフレーム単位で同期する音ハメの精度が極めて高く、視覚的快感に富む。質感はミニマルながら、モチーフの反復と変奏、シームレスなトランジションの連続性、終盤のタイポグラフィへの着地まで破綻のない高い完成度を誇る。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:26",
+            "observation": "カウントダウン音声（3, 2, 1）に合わせて暗い画面中央の十字の隙間が閉じて開いた直後、黒背景の中央に白い輪郭線を持つ青い多角形が出現し、激しいビートドロップの高速カットへと突入する。"
+          },
+          {
+            "timestamp": "01:14",
+            "observation": "前半の紺・青・黒基調から一転し、楽曲のサビ的な解放に合わせて青・黄・ピンクの彩度を帯びた立方体や多面体が中央から放射状に飛び出し、背景も白〜薄グレーへ明転して視覚的なカタルシスを生む。"
+          },
+          {
+            "timestamp": "02:25",
+            "observation": "青と白の四角形と直線による高速な切り替えを経て、白背景上に散らばった青い点と細い直線が結合し、「凛として純情」という繊細な幾何学タイポグラフィを形成して静かにフェードアウトする。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:25",
+            "observation": "カウントダウン音声に合わせ、暗い背景中央の小さな十字から画面を覆う4つの黒い面が開き、鮮やかな青い多角形が拡大して激しいドロップへと突入する。"
+          },
+          {
+            "timestamp": "01:14",
+            "observation": "前半の青と無彩色のみの配色から一転し、青・黄・マゼンタなどのグラデーションを持つ3Dキューブや多面体が奥から放射状に飛び出し、背景も明るい白系へと転換する。"
+          },
+          {
+            "timestamp": "02:25",
+            "observation": "白背景の中央に散らばった青いドットと細い線が収束し、幾何学的なラインで構成された「凛として純情」の文字が浮かび上がって静かにフェードアウトする。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 15046,
+        "inputTextTokens": 1876,
+        "avgOutputTokens": 508.5,
+        "avgThoughtTokens": 2803,
+        "totalCostUsd": 0.200877
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "M7pWj2hq_f8",
+      "raw_api_score": 78,
+      "raw_scores": [
+        78,
+        83,
+        76
+      ],
+      "ensemble_rule": "median_of_3",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "CM",
+      "dimensions": {
+        "direction": 16.33,
+        "visual_craft": 16,
+        "editing_rhythm": 16,
+        "sound_integration": 14.67,
+        "originality_finish": 16
+      },
+      "rationales": [
+        "伸縮・疎水・軽量の3機能をティッシュ・傘・紙吹雪に見立て、実写ギミックで示した後にパズルのようにウェアへ戻す一貫した構成が秀逸。黒背景のライティングで生地の質感や水滴・浮遊感を的確に捉え、ビートに乗せた編集テンポも心地よい。一方、布をはめ込む瞬間の切り替え処理の素朴さや、やや汎用的なテロップデザインなど細部の仕上げにもう一段の洗練余地が残る。",
+        "ティッシュ・傘・紙吹雪という日常物の見立てから、素材の伸縮性・疎水性・軽量性を直感的に示す構成力が高い。黒背景に透過光やスローモーションを活かしたスタジオ撮影と、欠損部へ生地を嵌め込むシームレスな演出が心地よいリズムを生んでいる。クールなBGMとSEの同期も良好。テロップ処理はやや簡素だが、機能訴求を洗練された映像体験へ昇華させた上位プロ品質の作品。",
+        "ティッシュ・傘・紙吹雪という身近な比喩で「伸縮性・疎水性・軽さ」を実写で直感的に見せ、欠けたパーツをはめてウェアを完成させる3段構成が明快で巧み。黒背景のスタジオ照明やハイスピード撮影も堅実だが、テロップやアイコンのタイポグラフィ処理はやや簡素で、生地の質感や水滴・風を感じさせる効果音（フォーリー）が薄くBGM依存に留まる点が惜しい。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:04",
+            "observation": "黒背景に置かれた黒い箱から白い布を右手が上へ引き上げ、ティッシュのように見えながら縦に大きく伸びていく映像に「これはティッシュではなく」のテロップとリズミカルなビートが重なる。"
+          },
+          {
+            "timestamp": "00:24",
+            "observation": "中央が三角形にくり抜かれた黒い半袖ウェアに対し、両手で三角形の布地をはめ込むとカット切り替えで一枚の黒いTシャツへとシームレスに完成し、「このウェアは」の文字が表示される。"
+          },
+          {
+            "timestamp": "00:35",
+            "observation": "金網から風で舞い上がった白い四角い布片がスローモーションで宙を漂い、画面下部に差し出された手のひらへふわりと着地する様子に「とても軽い生地」のテロップが重なる。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:05",
+            "observation": "黒い箱から引き上げた白い布がティッシュのように切れず長く伸び、透過光で生地の質感と伸縮性を際立たせながら「次世代の高機能生地です。」の白文字が表示される。"
+          },
+          {
+            "timestamp": "00:24",
+            "observation": "中央が三角形にくり抜かれた黒いシャツの欠損部へ、両手で傘に見立てた三角形の生地をはめ込むと、ビートに合わせて継ぎ目のない1枚のウェアへとシームレスに変化する。"
+          },
+          {
+            "timestamp": "00:38",
+            "observation": "正方形の布片が並んだ白いウェアの右下の空き枠へ、紙吹雪のように舞った1枚を指で嵌め込むと、即座に滑らかなシャツへ切り替わり軽さを視覚化する。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:05",
+            "observation": "黒背景の黒いティッシュケースから白い生地を片手で高く引き上げ、大きく伸縮する様子を正面から捉えつつ、上部に「次世代の高機能生地です。」の白テロップが表示される。"
+          },
+          {
+            "timestamp": "00:25",
+            "observation": "俯瞰で映された左袖に2本白線のある黒Tシャツ中央の三角形の空白に、両手で生地パーツをはめ込み、切れ目のない1枚のウェアへとシームレスに変化させる。"
+          },
+          {
+            "timestamp": "00:36",
+            "observation": "網の上から風で紙吹雪のように舞い上がった小さな白い正方形の生地の1片が、スローモーションで下から差し出された手のひらにふわりと舞い降りる。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 3,
+        "inputVideoTokens": 5267,
+        "inputTextTokens": 1490,
+        "avgOutputTokens": 484.3,
+        "avgThoughtTokens": 2225.7,
+        "totalCostUsd": 0.182763
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "SWzfm9PED6s",
+      "raw_api_score": 89,
+      "raw_scores": [
+        89,
+        89
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "MV",
+      "dimensions": {
+        "direction": 18,
+        "visual_craft": 18,
+        "editing_rhythm": 18,
+        "sound_integration": 18,
+        "originality_finish": 17
+      },
+      "rationales": [
+        "「鏡」を軸に幼少・思春期・現在を繋ぐ演出構成が秀逸。2Dアニメの幻想世界と冷めた現実の対比を、色彩設計や頭を撫でる仕草などの鋭いマッチカットで描き出し、台詞なしで深い感情曲線を形成している。実写と2Dの合成ダンスや、終盤に3世代の自分が手を取り回るカタルシスまで、撮影・編集・音響の統合度が極めて高い完成度を誇る。",
+        "『鏡』や『手』の反復モチーフを軸に、実写の現代的な孤独とクラシック調2Dアニメの理想を対比させた構成力が秀逸。3世代の視点を繋ぐ的確なマッチカット、実写とアニメが自然に融合する高水準なVFX・撮影・色彩設計、楽曲の緩急や歌詞と完全に呼応する編集が、王子の救済ではなく過去の自己受容へ至る感情曲線を力強く描き切っている。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:32",
+            "observation": "水色のドレスで姿見に微笑む幼少期の少女から、オーケストラ演奏がバンド楽曲へ切り替わる瞬間に、スーパーの鏡の前でグレーのパーカー姿のまま虚ろな表情で立つ大人の女性へマッチカットする。"
+          },
+          {
+            "timestamp": "01:55",
+            "observation": "紫色の照明の店内で男性に頭を撫でられて微笑む大人の女性から、同じ手の位置と動きで父親に頭を撫でられる幼少期の少女へと繋がり、直後に両親が乳児の方へ向かう様子を少女が寂しげに見つめる。"
+          },
+          {
+            "timestamp": "02:52",
+            "observation": "2Dアニメーションの宮殿の中庭で、水色のドレスを着た実写の女性とアニメの王子が手を取り合ってワルツを踊り、画面手前を赤・青・黄のアニメの小鳥たちが横切る実写・2D合成カットが描かれる。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:31",
+            "observation": "水色のドレスを着て鏡に映る自分へ微笑む幼い少女のカットから、オーケストラがバンドサウンドへ切り替わると同時に、スーパーの鏡に映る疲弊した表情の成人女性（パーカー姿）へマッチカットで転換する。"
+          },
+          {
+            "timestamp": "02:46",
+            "observation": "暗闇へ落下した主人公が実写のドレス姿のまま2Dアニメーションの舞踏会場に降り立ち、クラシック調のアニメで描かれた白服の王子から手を差し伸べられて実写とアニメの合成で共に踊り始める。"
+          },
+          {
+            "timestamp": "03:50",
+            "observation": "ワンルームの部屋の中で水色のドレスを纏った幼少期・中高生期・現在の3人の主人公が手を取り合って輪になって回り、周囲をアニメの小鳥や舞踏会の情景を含む帯状のエフェクトと紙吹雪が立体的に旋回する。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 29390,
+        "inputTextTokens": 2444,
+        "avgOutputTokens": 511,
+        "avgThoughtTokens": 3030.5,
+        "totalCostUsd": 0.297249
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "UccHEifTIo4",
+      "raw_api_score": 70,
+      "raw_scores": [
+        70,
+        70
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "CM",
+      "dimensions": {
+        "direction": 14,
+        "visual_craft": 13.5,
+        "editing_rhythm": 15,
+        "sound_integration": 14.5,
+        "originality_finish": 13
+      },
+      "rationales": [
+        "軽快なビートとナレーションに同期したキネティック・タイポグラフィとテンポの良いカット割りが堅実な商業品質を支えている。一方、ストック素材的な実写群ややや違和感の残るクジラの合成カット、抽象的な企業スローガンの羅列など、金融系CMの定型表現の域を出ず独自性や映像表現の統一感には物足りなさが残る。",
+        "キネティック・タイポグラフィと疾走感のあるBGM・SEを同期させた編集リズムは軽快で、IPO告知としての高揚感を的確に演出している。一方、実写やCGカットにはストック素材的な質感のばらつきが見られ、抽象的なコピーと文字演出を連打する構成も金融・IT系CMの定型フォーマットの域を出ない。商業品質としての仕上げは堅実だが、独自の視覚表現や撮影クラフトの深みに欠けるため標準水準と評価した。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:06",
+            "observation": "花火が上がる白い室内空間にクジラが浮かぶCG/生成風のカットから、設計図面と英字タイポグラフィが重なるトランジションへ素早く切り替わる。"
+          },
+          {
+            "timestamp": "00:10",
+            "observation": "芝生の上のピンク色のヨガマットで犬を隣にして片手を伸ばす女性のショットに、細い白線と画面分割のグラフィックが重なり「多彩な暮らしを。」のコピーへ繋がる。"
+          },
+          {
+            "timestamp": "00:20",
+            "observation": "雲間から昇る朝日の背景に右上がりの矢印ラインが走り、「さあ、新しいワクワクへ。」の白文字が力強いBGMの盛り上がりとナレーションに合わせて表示される。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:06",
+            "observation": "白いホール状の空間に巨大なクジラが浮遊し背後に花火が打ち上がる映像が挿入され、直後に設計図風のグラフィックとタイポグラフィへテンポよく切り替わる。"
+          },
+          {
+            "timestamp": "00:10",
+            "observation": "屋外の芝生で犬の横でヨガをする女性のショットに白いライン状のフレーム演出が重なり、リズムに合わせて「多彩な暮らしを。」のコピーが提示される。"
+          },
+          {
+            "timestamp": "00:22",
+            "observation": "朝日が差す都市上空の映像を背景にBGMがピークを迎え、「SBI 新生銀行」のロゴと「12月17日(水) 東京証券取引所に上場予定。」の告知が表示される。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 3039,
+        "inputTextTokens": 1402,
+        "avgOutputTokens": 464,
+        "avgThoughtTokens": 1933,
+        "totalCostUsd": 0.098556
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "V8FGju_xYjo",
+      "raw_api_score": 80.5,
+      "raw_scores": [
+        79,
+        82
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_unverified_genre",
+      "calibration_genre_bucket": "unverified:opening",
+      "dimensions": {
+        "direction": 16,
+        "visual_craft": 16.5,
+        "editing_rhythm": 16,
+        "sound_integration": 16.5,
+        "originality_finish": 15.5
+      },
+      "rationales": [
+        "白地を基調に有機的なメタボールと幾何学ラインを組み合わせ、『生命的な変化』を一貫して表現した端正なモーショングラフィックス。人口減少を砂時計と人型で示す比喩や、流体からロゴへ収束する造形・音響同期が巧み。一方、下部テキストと背景の統合や全体構成はイベント映像の定石に沿っており、突出した革新性よりも洗練されたプロ品質が強み。",
+        "白背景に暖色系の有機的メタボールと極細のネットワーク線を組み合わせた洗練されたアートディレクションが秀逸。冒頭のブレイクから終盤のロゴへの流体モーフィングまで、電子音楽のビートと緩急が見事に統合されている。中盤の表現にやや反復感があり字幕デザインも実務的だが、企業イベント映像の定型を超えた上位プロ品質のモーショングラフィックスに仕上がっている。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:08",
+            "observation": "白背景の中央でオレンジからピンクのグラデーションを帯びた流体状の塊が花のように広がり、細かな粒子を伴いながら小さな点へと収束していく。"
+          },
+          {
+            "timestamp": "00:25",
+            "observation": "画面右側にマゼンタ色の砂時計状の図形が現れ、内部を白い線画の人型シルエットが流れ落ちる演出に「人口減少」のテキストが重なる。"
+          },
+          {
+            "timestamp": "00:59",
+            "observation": "画面左右から集まったピンクと紫の液体状の塊がパーカッションの盛り上がりと呼応して凝縮し、「FUTURE of WORK JAPAN2018」のロゴへとモーフィングする。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:08",
+            "observation": "白背景の中央に集まった無数の微細なパーティクルがオレンジ〜ピンクの有機的な塊になり、花弁のように開いて弾けた直後、一つの小さな円に収束するとともにパーカッション系の電子音がピタリと止まる。"
+          },
+          {
+            "timestamp": "00:25",
+            "observation": "画面右側にマゼンタ色の砂時計型の図形が現れ、その内側を白いラインで描かれた人型アイコンの群れが上から下へと流れ落ちる動きで「人口減少」を表現している。"
+          },
+          {
+            "timestamp": "00:59",
+            "observation": "画面の左右から集まって融合したオレンジ〜紫のグラデーションの液体ブロブが、サウンドのビルドアップの頂点で「FUTURE of WORK JAPAN 2018」のロゴへと滑らかにモーフィングし、黒単色へ定着する。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 7585,
+        "inputTextTokens": 1582,
+        "avgOutputTokens": 469.5,
+        "avgThoughtTokens": 2242,
+        "totalCostUsd": 0.136347
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "W_yKEhESgUI",
+      "raw_api_score": 82.5,
+      "raw_scores": [
+        82,
+        83
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "CM",
+      "dimensions": {
+        "direction": 16,
+        "visual_craft": 17,
+        "editing_rhythm": 17,
+        "sound_integration": 16.5,
+        "originality_finish": 16
+      },
+      "rationales": [
+        "伝統的なスナック菓子を多様な若者の個性賛歌と高感度なストリート表現で再定義した上位プロ品質のブランド映像。広角の躍動的な撮影や鮮やかな色彩設計に加え、スナックと生野菜・チキンの豪快な咀嚼を小気味よく繋ぐ編集と音響が秀逸。菓子型ピアスなど細部の遊び心も効いており、定型的な群像劇フォーマットを確かなクラフト力で記憶に残る仕上がりへ引き上げている。",
+        "老舗スナックをファッション×ストリート文化へ鮮やかに再解釈した上位プロ品質。躍動的な広角撮影と鮮やかな色彩設計、スナックと生野菜や肉の咀嚼を繋ぐキレのある編集とSE統合が秀逸。スナック型ピアス等の美術も記憶に残る。一方、個性を謳うナレーション構成自体は現代CMの定型に近く、物語設計の独自性ではあと一歩の余地を残す。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:06",
+            "observation": "夕暮れ時の黄色いトラス橋の上で、多様なファッションの若者たちが逆光の中を踊りながら前進し、重厚なブラス主体の音楽とシンクロするワイドショット。"
+          },
+          {
+            "timestamp": "00:15",
+            "observation": "歩道橋の金網前でサッポロポテトを食べた男性が、次の瞬間に鋭い咀嚼音とともに生のピーマンへ豪快にかぶりつくカットへ切り替わる。"
+          },
+          {
+            "timestamp": "00:41",
+            "observation": "狭い路地裏で緑の服を着た口髭の男性が、赤いパプリカに続いて生の人参をかじるアップショットが連続し、商品の野菜素材を視覚的に印象づける。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:15",
+            "observation": "歩道橋で踊っていた男性がサッポロポテトを食べる動作から、生のピーマンをかじるアップショットへ瞬時に切り替わり、鋭い咀嚼SEが響く。"
+          },
+          {
+            "timestamp": "00:41",
+            "observation": "逆光の狭い路地裏を歩く緑色の服の男性が、赤いトマトに続いて生の人参をそのまま勢いよくかじるカットがテンポよく挿入される。"
+          },
+          {
+            "timestamp": "01:19",
+            "observation": "高揚していたオーケストラ調の音楽が急に止み、街の環境音の中で車に乗った出演者たちが歓声を上げる中央に黄色い「サッポロポテト」のロゴが表示される。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 8578,
+        "inputTextTokens": 1620,
+        "avgOutputTokens": 462,
+        "avgThoughtTokens": 2204,
+        "totalCostUsd": 0.141168
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "YH2qyPanqK4",
+      "raw_api_score": 75,
+      "raw_scores": [
+        75,
+        75
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "CM",
+      "dimensions": {
+        "direction": 15,
+        "visual_craft": 15,
+        "editing_rhythm": 16,
+        "sound_integration": 15,
+        "originality_finish": 14
+      },
+      "rationales": [
+        "ドットを用いた軽快なモーションと、彩度を抑えた現代的な撮影・グレーディングが洗練されている。中盤までのオフカメラ語りから、終盤のカメラ目線と速いカット割りへ移行しピアノの昂揚と同期させる編集設計が巧み。採用インタビュー・モンタージュという定型の枠内ではあるが、全体の仕上げ品質は高い。",
+        "多様な社員の言葉をピアノとストリングスの高揚に合わせて繋ぐ王道の採用映像。前半のオフカメラ目線から後半の正面目線へ切り替える演出と加速する編集テンポが感情曲線を手堅く作り、清潔感のあるカラグレーディングや立体的なドットのモーショングラフィックスも完成度が高い。一方、企業インタビュー映像の定型フォーマットの域を出ず、場所ごとの音声質感のばらつきや表現の独自性不足により商業良作水準に留まる。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:06",
+            "observation": "白背景に赤・青・緑・黄・紫などのカラフルなドットが奥行きを持って弾け飛び、軽快なピアノの音色に合わせて「PLAY RECRUIT」のロゴ文字を形成するモーショングラフィックスが展開される。"
+          },
+          {
+            "timestamp": "00:24",
+            "observation": "タクシー後部座席で窓からの自然光を受けた女性がオフカメラ方向へ「日常を作る」と語るカットから、高層階の窓際で白シャツの男性が語るカットへとテンポよく繋がる。"
+          },
+          {
+            "timestamp": "00:46",
+            "observation": "ピアノの盛り上がりと呼応し、街頭やオフィスに立つ複数の出演者がカメラ目線で「いい感じに」「カオスな瞬間」「頑張って良かったな」と約1秒刻みで畳み掛け、白背景のエンディングアニメへ移行する。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:06",
+            "observation": "白背景に赤・青・緑・黄などのカラフルなドットが奥から手前へ飛来するモーショングラフィックスの中、中央に「PLAY RECRUIT」の黒文字ロゴが形成され、軽やかなピアノの和音が響く。"
+          },
+          {
+            "timestamp": "00:24",
+            "observation": "タクシーの後部座席に座る女性がシートベルトを着用した状態でオフカメラ目線で「日常を作る」と語り、直後に高層ビルの窓際で白シャツの男性が語るカットへテンポよく切り替わる。"
+          },
+          {
+            "timestamp": "00:46",
+            "observation": "屋外の路上で白のブラウスを着た女性が正面のカメラ目線で笑顔を見せながら「いい感じに」と語り、後半にかけてオフカメラから正面目線へ移行した連続カットがストリングス入りの音楽と共に加速する。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 6258,
+        "inputTextTokens": 1528,
+        "avgOutputTokens": 484,
+        "avgThoughtTokens": 1937.5,
+        "totalCostUsd": 0.119361
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "_OUWtPhDQpk",
+      "raw_api_score": 94,
+      "raw_scores": [
+        94,
+        94
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "MV",
+      "dimensions": {
+        "direction": 19,
+        "visual_craft": 19,
+        "editing_rhythm": 19,
+        "sound_integration": 18,
+        "originality_finish": 19
+      },
+      "rationales": [
+        "人類の宇宙開発史や科学史（数式、リンゴ、ゴールデンレコード等）とゲームの開拓の旅路を、距離カウンターが無限大に達する演出で接続した構成が極めて秀逸。緩急自在な編集リズムと音楽のシンクロ、2D作画の圧倒的運動量・色彩設計・立体的なカメラワークが高次元で融合しており、商業アニメPVの枠を超えた国際最上位水準のクラフト到達度を示す。",
+        "人類の宇宙開発史と科学史のオマージュを旅と開拓のテーマへ昇華した構成力が圧巻。距離カウンターが無限大へ至る演出設計と、多様な作画タッチや大胆なカメラワークを破綻なく融合させた2Dアニメーションの密度は国際最上位水準。バイザーから瞳、アンモナイトから銀河へ繋ぐ緻密なマッチカットと、楽曲の緩急に完璧に同期した編集テンポが、プロモーションの枠を超えた高い芸術性と強烈な余韻を生み出している。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:18",
+            "observation": "画面中央で距離（km）のカウンターが高速で増え続ける中、レトロなフィルム調の質感で描かれたロケットが噴煙を上げて上昇し、静謐なピアノの旋律とともに人類の宇宙開発の軌跡がモンタージュされる。"
+          },
+          {
+            "timestamp": "01:48",
+            "observation": "赤いリンゴを掴む手元から赤いマントを翻す人物へと展開し、光のプリズムや数式、軌道線が空間を交錯するダイナミックな作画とオーケストラの高揚に合わせ、中央の数値が連続する「9」へと加速する。"
+          },
+          {
+            "timestamp": "02:00",
+            "observation": "「THE SOUNDS OF EARTH」と刻まれたゴールデンレコードを背景に時代ごとの人々が空を指さすカットから、中央の記号が無限大（∞）へ変化し、列車が円環を描いてサビのクライマックスへ突入する。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:26",
+            "observation": "距離カウンターが急速に増え続ける中、宇宙飛行士のバイザーに映る地球と光条から、帽子を被った車掌キャラクターの瞳へとシームレスにマッチカットし、直後にブラス調のアップテンポな楽曲へと切り替わる。"
+          },
+          {
+            "timestamp": "01:41",
+            "observation": "荘厳なオーケストラの間奏に合わせて、暗闇に敷き詰められたアンモナイトの螺旋模様が、殻を抱えて見上げる白髪の人物を中心とした巨大な渦巻銀河の構図へと滑らかに変化していく。"
+          },
+          {
+            "timestamp": "02:00",
+            "observation": "画面を横切る距離カウンターが「9」の羅列で飽和した後、「THE SOUNDS OF EARTH」と刻まれた金色のレコード盤を背に5人の人物が並ぶカットを経て、中央の「∞」記号と旋回する列車へ繋がる。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 17593,
+        "inputTextTokens": 1978,
+        "avgOutputTokens": 533.5,
+        "avgThoughtTokens": 2183.5,
+        "totalCostUsd": 0.198936
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "dsXcE8jvESw",
+      "raw_api_score": 69.5,
+      "raw_scores": [
+        70,
+        69
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "CM",
+      "dimensions": {
+        "direction": 14,
+        "visual_craft": 13.5,
+        "editing_rhythm": 15,
+        "sound_integration": 14,
+        "originality_finish": 13
+      },
+      "rationales": [
+        "スポーツ選手のスイング動作をモーショングラフィックスや場面転換の推進力に活用し、15秒の尺で断熱・耐震・省エネ基準といった機能訴求をテンポよくまとめた堅実な商業CM。俯瞰スイングや間取り図との合成など一定の視覚的工夫は見られるが、演出構成・合成の質感・デザイン面はいずれも標準的な企業CMフォーマットの範疇に収まっており、表現上の強い独自性や突出したクラフトの到達点には至っていない。",
+        "プロ野球選手のスイング動作とモーショングラフィックスを組み合わせ、15秒で住宅性能の刷新を明快に伝える堅実な商業CM。俯瞰スイングや間取り線画との合成、打撃SEに同期させた軽快な編集テンポは的確だが、切り抜き合成の質感やタイポグラフィ・配色の洗練度は標準域にとどまり、演出構成も定型的な枠内。大きな破綻はないが、クラフト面の独自性・到達度は一般的な企業映像水準。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:00",
+            "observation": "黒背景の中央でユニフォーム姿の近藤健介選手がバットをカメラ正面に向けて構え、手前に青と白の「昭和建設」のロゴが表示され、ロック調のBGMが始まる。"
+          },
+          {
+            "timestamp": "00:04",
+            "observation": "鮮やかな黄色背景に白い極太の「W断熱工法」の文字が並び、中央に俯瞰撮影された選手のバッティングスイングの切り抜き映像が打撃音とともに動く。"
+          },
+          {
+            "timestamp": "00:08",
+            "observation": "赤背景に白い線画の住宅間取り図が配置され、スイングする選手の切り抜き映像が3体横並びで動きながら「長期優良住宅」「省令準耐火構造」「GX ZEH省エネ基準」のテキストが表示される。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:00",
+            "observation": "黒背景にユニフォーム姿の近藤健介選手がバットをカメラ正面へ向けて構え、中央に青白の「昭和建設」ロゴが表示される導入カットに、ロック調のギターリフが重なる。"
+          },
+          {
+            "timestamp": "00:04",
+            "observation": "黄色背景と大きな白文字の「W断熱工法」の中央に、真上から俯瞰撮影した選手のスイング切り抜きと軌道ラインを合成し、打撃SEと「断熱性アップ」のナレーションが入る。"
+          },
+          {
+            "timestamp": "00:08",
+            "observation": "赤背景に住宅の間取り線画を敷き、構えからスイング、フォロースルーまでの3体の選手映像を横並びに配置し、下部に「長期優良住宅」「省令準耐火構造」「GX ZEH省エネ基準」を表示する。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 1525,
+        "inputTextTokens": 1342,
+        "avgOutputTokens": 494,
+        "avgThoughtTokens": 1553,
+        "totalCostUsd": 0.078612
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "fvbEnWLRo1s",
+      "raw_api_score": 96,
+      "raw_scores": [
+        96,
+        96
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_unverified_genre",
+      "calibration_genre_bucket": "unverified:film",
+      "dimensions": {
+        "direction": 19,
+        "visual_craft": 20,
+        "editing_rhythm": 19,
+        "sound_integration": 19,
+        "originality_finish": 19
+      },
+      "rationales": [
+        "写真的リアリズムと大胆な色彩・グラフィック意匠を融合させた圧倒的ビジュアルクラフト。複数の義体（シェル）を瞬時に切り替える編集や、繊細なピアノと重厚なSE・詩の朗読が織りなす音響設計が、存在論的な虚無感と激しい戦闘を高次元で統合している。国際最上位水準の演出と仕上げを誇る傑作。",
+        "絵画的筆致とグラフィックデザイン、写実的質感を融合させた圧倒的美術と、緻密な義体生成マクロ描写や高速戦闘など最高水準のCGクラフトを誇る。シェルの連続切替編集で記憶喪失と死生観を鮮烈に描き、『オジマンディアス』の朗読とピアノ旋律・生々しい音響設計が映像と見事に統合。短編映画として国際最上位水準の完成度に達している。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "01:15",
+            "observation": "長い吊り橋の上で宇宙服姿の人物のブーツが床からふわりと浮き上がり、直後に身体が赤紫の粒子状・流体状に激しく破裂・霧散する異変の描写。不穏な低音と電子音が緊迫感を煽る。"
+          },
+          {
+            "timestamp": "02:45",
+            "observation": "色鮮やかなモニターに囲まれたブースの椅子に座る人物が、仕草や会話の途中で次々と異なる衣装・外見の義体へと滑らかに切り替わるモンタージュ編集。"
+          },
+          {
+            "timestamp": "05:33",
+            "observation": "水辺の草むらに潜むフード姿の狙撃手の光学迷彩が虹色のグリッチのように解け、水滴の跳ねる音とともにスコープ越しの照準で別のランナーを捉える緊張感あふれるカット。"
+          }
+        ],
+        [
+          {
+            "timestamp": "01:20",
+            "observation": "画面中央に「9 16 2893」の縦書き表示が重なり、無数の極細繊維や配線が高速で編み上げられて眼球や顔面を形成する義体プリントのマクロ映像が、有機的かつ機械的なSEと共に展開される。"
+          },
+          {
+            "timestamp": "02:45",
+            "observation": "縦長モニターに囲まれた椅子に座る人物が、会話の最中にカットごとに異なる髪色・衣装・顔面グラフィックのシェルへ瞬間的に切り替わる編集で、繰り返される死と自己の揺らぎを表現している。"
+          },
+          {
+            "timestamp": "05:32",
+            "observation": "水辺の草むらに潜む狙撃手の極彩色の光学迷彩が解け、スコープ越しに音楽チップを耳に当ててハミングする標的を捉える。繊細なピアノ旋律と水音、引き金にかかる指のアップが強い緊張感を生む。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": true,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          true,
+          true
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 47154,
+        "inputTextTokens": 3376,
+        "avgOutputTokens": 534.5,
+        "avgThoughtTokens": 1989,
+        "totalCostUsd": 0.378885
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "gpBFiG_hSFs",
+      "raw_api_score": 70,
+      "raw_scores": [
+        70,
+        70
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "モーション",
+      "dimensions": {
+        "direction": 14,
+        "visual_craft": 14,
+        "editing_rhythm": 15,
+        "sound_integration": 14,
+        "originality_finish": 13
+      },
+      "rationales": [
+        "オレンジとブルーグレーに絞った統一感ある配色と、斜めワイプやズームを活用した滑らかなトランジションにより、太陽光発電の歴史からAI・蓄電池の未来像までを明快に整理した堅実な企業インフォグラフィック。ナレーションやSEの同期も丁寧で視認性は高い一方、フラットデザインの表現や構成は標準的な企業PRの定型内に留まり、視覚的独自性や強い記憶残留力の面では特筆点が限定的である。",
+        "課題提起から実績、未来像までを整理した王道の企業インフォグラフィック。水色・オレンジ・濃紺の統一配色と明快なフラットデザイン、SEを伴う軽快なトランジションにより情報伝達力は高い。特にNo.1実績の連続展開やAI制御の図解はリズム良く見やすい。一方、造形や演出手法は定型的な商業モーショングラフィックスの範疇に留まり、表現の独自性や記憶残留力では特筆点に欠ける標準的プロ品質。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:10",
+            "observation": "白衣を着た複数の研究者が並ぶ画面で「他社が諦めるなか」というナレーションに合わせ、周囲の研究者たちがフェードアウトして消え、中央で顕微鏡を覗く2人にズームインする演出。"
+          },
+          {
+            "timestamp": "00:36",
+            "observation": "眼鏡をかけた研究員がホワイトボードの横に立ち、指し棒で「信頼性」の文字を強調した後、ボードが縦に回転して裏返り「これから」の文字へと切り替わるトランジション。"
+          },
+          {
+            "timestamp": "01:02",
+            "observation": "家の断面イラストの中央に蓄電池とAIのアイコンが配置され、照明・テレビ・エアコン・冷蔵庫の周囲で電力割合のパーセンテージ数値がリアルタイムに増減する動きと軽快なBGMの展開。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:10",
+            "observation": "周囲の白衣の研究者たちが次々とフェードアウトして消える中、中央で顕微鏡をのぞく2人だけが残ってクローズアップされ、他社が諦める中での研究継続を視覚化している。"
+          },
+          {
+            "timestamp": "00:25",
+            "observation": "濃紺からオレンジへの斜めワイプに続いてトラックと月桂冠のアイコンが現れ、「2016年度 国内出荷量 No.1」の表記とともに軽快な効果音で実績をテンポよく提示している。"
+          },
+          {
+            "timestamp": "01:02",
+            "observation": "家の断面図の中央に蓄電池とAIのアイコンが配置され、照明・PC・エアコン・冷蔵庫の消費割合を示すパーセンテージ数値と波形グラフがリアルタイムに変動するアニメーションが描かれている。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 8091,
+        "inputTextTokens": 1602,
+        "avgOutputTokens": 492,
+        "avgThoughtTokens": 1624,
+        "totalCostUsd": 0.121638
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "kw7D7Il13_k",
+      "raw_api_score": 90,
+      "raw_scores": [
+        91,
+        89
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_unverified_genre",
+      "calibration_genre_bucket": "unverified:youtube-sns",
+      "dimensions": {
+        "direction": 18,
+        "visual_craft": 16.5,
+        "editing_rhythm": 19,
+        "sound_integration": 18.5,
+        "originality_finish": 18
+      },
+      "rationales": [
+        "縦型画面の制約を逆手に取った画面分割・黒帯演出と、楽曲の高速なビート・歌詞に完璧に同期する編集リズムが卓越。ビビッドなピンクと黒を基調とした明快な色彩設計、シンプルながらキレのある表情芝居、終盤のスプリング遊具とドーナツの穴へと回収する巧みなミスディレクション演出により、強い記憶残留力を獲得している。リミテッド作画ながら全編に意図が行き届いた高完成度なショートアニメ表現。",
+        "縦型画角を最大限に活かした空間演出と、高BPM楽曲への圧倒的な音ハメ・編集リズムが際立つ高到達作。ピンクと黒を基調としたミニマルでポップな2D作画に、表情芝居のキレやミスディレクションを効かせた構成力が融合し、極めて強い記憶残留力を生んでいる。背景美術等の情報量は抑えつつも、モーショングラフィックス的な画面分割や緩急の設計が洗練されており、短尺映像としてのクラフト完成度は極めて高い。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:07",
+            "observation": "3段の赤い箱に体を入れたバニーガール姿のキャラクターの胴体部分に剣が横から貫通し、目をぎゅっと瞑るマジックショー風のコミカルな動きが軽快なテンポで描かれる。"
+          },
+          {
+            "timestamp": "00:27",
+            "observation": "横線入りの背景で「0082139 RABBIT HOLE」と書かれたボードを掲げるマグショット風のカットと、手錠でポールに繋がれたカットがサビの高速ビートに同期して交互に切り替わる。"
+          },
+          {
+            "timestamp": "00:57",
+            "observation": "激しい揺れと目まぐるしいアングル切り替えの直後に引きの構図へ転じ、ピンク色のうさぎ型スプリング遊具にまたがって無邪気に揺れている姿が明かされ、直後にドーナツの穴越しに覗き込む画へ繋がる。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:07",
+            "observation": "白背景の中央で3段に積まれた赤い箱に身体を収めたバニー姿のキャラクターが、中央の箱を横にずらされて剣を貫通されるマジック風のカットで、両目を閉じて顔をしかめるコミカルな動きを見せる。"
+          },
+          {
+            "timestamp": "00:27",
+            "observation": "ビビッドなピンク背景にマグショット風の横線が引かれた画面内で、キャラクターが「0082139 RABBIT HOLE」と記されたプレートを抱え、リズムに合わせてポールに手錠で繋がれたカットと高速に切り替わる。"
+          },
+          {
+            "timestamp": "00:57",
+            "observation": "画面枠が激しく切り替わる連打の直後に引きの構図へ転じ、キャラクターがピンク色のウサギ型スプリング遊具にまたがって揺れているオチが明かされ、直後にドーナツの穴越しに覗く演出で終わる。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": true,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          true,
+          true
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 6069,
+        "inputTextTokens": 1522,
+        "avgOutputTokens": 553.5,
+        "avgThoughtTokens": 1839,
+        "totalCostUsd": 0.117321
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "lB3mij3gmVo",
+      "raw_api_score": 85.5,
+      "raw_scores": [
+        86,
+        85
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "MV",
+      "dimensions": {
+        "direction": 17,
+        "visual_craft": 18,
+        "editing_rhythm": 17,
+        "sound_integration": 17,
+        "originality_finish": 16.5
+      },
+      "rationales": [
+        "冷たい青から温かな琥珀色へと推移する色彩設計が、内面の変化という物語を鮮やかに牽引。2D作画と様式化された3DCG建築、モノクロ画やワイヤーフレーム表現を高い統合力で融合させている。サビの無重力空間や魚眼パース、球体ワイプによる歩行から疾走への転換など、音楽の緩急と緻密に連動した演出・編集の完成度が極めて高い。",
+        "寒色の青から暖色の琥珀色へ移行する色彩設計と、2D作画と3D空間を自然に融合させた美術・ライティングが高水準。逆さ都市や無重力空間、幾何学ワイヤーフレームを楽曲の緩急と緻密に同期させ、内省から解放への感情曲線を明快に描く。球体ワイプで歩行から疾走へ転じる終盤の演出も秀逸だが、サビ中盤に静止・ループ依存が見られる点を踏まえ上位プロ品質のA評価とした。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:51",
+            "observation": "ワイヤーフレームの網目表現と青い瞳のクロースアップを経てサビへ突入し、上下逆さまに配置された青基調の都市建築の中を白髪の少女が浮遊していく。"
+          },
+          {
+            "timestamp": "01:30",
+            "observation": "黒背景上で白いワイヤーフレームの立方体や幾何学曲面がボーカルのリズムに合わせて高速変形し、続いてオレンジ色の光輪が少女の瞳に映り込むカットへ接続される。"
+          },
+          {
+            "timestamp": "02:58",
+            "observation": "冒頭の冷色から一転して橙色の陽光が差し込む街並みを複数の少女が横移動で歩き、03:11に手前を横切る黒い球体のワイプをきっかけに疾走へと転じてクレジットが流れる。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:05",
+            "observation": "青い光に包まれたレトロフューチャーな室内へカメラが前進し、吊り下げられた球体照明の奥で格子窓の前に立つ白髪の少女と、窓外に広がる都市および浮遊する黒い球体を捉えている。"
+          },
+          {
+            "timestamp": "01:30",
+            "observation": "軽快なリズムとボーカルに合わせ、黒背景上の白線ワイヤーフレームで描かれた立方体が格子、トーラス、渦巻く曲線、球体へと連続的に変形する幾何学アニメーションが展開される。"
+          },
+          {
+            "timestamp": "03:11",
+            "observation": "夕焼けのオレンジと青に染まった街を歩く少女の横スクロール映像を、画面手前を横切る巨大な黒い球体でワイプし、そのまま勢いよく走る動作へとシームレスに繋げてスタッフクレジットを表示する。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": true,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          true,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 20900,
+        "inputTextTokens": 2108,
+        "avgOutputTokens": 499,
+        "avgThoughtTokens": 2733.5,
+        "totalCostUsd": 0.235023
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "oXRPnu9nBpc",
+      "raw_api_score": 82.5,
+      "raw_scores": [
+        82,
+        83
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "CM",
+      "dimensions": {
+        "direction": 16,
+        "visual_craft": 17,
+        "editing_rhythm": 16,
+        "sound_integration": 18,
+        "originality_finish": 15.5
+      },
+      "rationales": [
+        "1973年から現代までのDJカルチャー史を15秒×5編の縦型映像で描く。時代ごとの美術・照明・グレーディングの作り分けが高水準で、特に針落としやクラブのドア開閉に伴う音漏れなど、音響と映像の精緻な統合が際立つ。一方、全編で同一エンディングを反復する構成や、白背景に黄文字を配した視認性の低いテロップ処理など細部に課題が残り、上位プロ品質のA評価とした。",
+        "DJカルチャーの変遷を1973年から現代まで5つの時代（各15秒）で描くブランド映像。時代ごとの美術・照明・色彩設計（暖色フィルム調、ネオン、自然光、ブレを活かしたナイトシーン等）と縦型俯瞰構図の完成度が高い。特にドア開閉による音の抜けや針音など音響と映像の統合が秀逸。連作形式ゆえロゴ挿入による分断はあるものの、プロダクトと文化を丁寧に繋ぐ上位プロ品質のクラフトが光る。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:05",
+            "observation": "俯瞰構図で並べられた2台のシルバーのターンテーブルをDJが両手で操作し、「Two SL-1100s created an endless groove,」の黄色文字が表示される中、ブレイクビーツが鳴り響く。"
+          },
+          {
+            "timestamp": "00:40",
+            "observation": "ブラインド越しの自然光が差すデスク上のSL-1200MK2のレコード盤に手がそっと針を落とすと、外の環境音から一転してノイズを挟みグルーヴ感のある音楽が流れ出す。"
+          },
+          {
+            "timestamp": "00:48",
+            "observation": "ポスターが貼られたクラブ入口の黒いドアが開いた瞬間に紫色の照明と大音量の重低音が溢れ出し、客が入店してドアが閉まると音がこもる音響演出が施されている。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:05",
+            "observation": "俯瞰構図で2台のターンテーブル（SL-1100）とミキサーが並び、赤いライン入りの袖のDJがレコードを切り替えながらブレイクビーツを途切れさせずに繋ぐ動きと、黄色文字のテロップが暖色系のレトロな質感で描かれている。"
+          },
+          {
+            "timestamp": "00:35",
+            "observation": "1979年のパートで、SL-1200MK2の説明書が置かれた窓辺の机から実機へパンし、街の環境音の中で操作ボタンのクリック音や針を落とすノイズを挟んでメロウな楽曲へ自然に移行する緻密な音設計が見られる。"
+          },
+          {
+            "timestamp": "00:47",
+            "observation": "1990sのクラブ入口でポスターの貼られた黒いドアが開く瞬間に、紫色の照明とともに店内の音楽がこもった重低音から一気にクリアに広がる音響処理が行われ、続く残像感を伴うDJの手元カットへ繋がる。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 7587,
+        "inputTextTokens": 1582,
+        "avgOutputTokens": 523.5,
+        "avgThoughtTokens": 2221,
+        "totalCostUsd": 0.137349
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "rON_9zSnU2k",
+      "raw_api_score": 75,
+      "raw_scores": [
+        75,
+        75
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "モーション",
+      "dimensions": {
+        "direction": 15,
+        "visual_craft": 15,
+        "editing_rhythm": 16,
+        "sound_integration": 15,
+        "originality_finish": 14
+      },
+      "rationales": [
+        "幾何学モチーフとキネティック・タイポグラフィを軸に、30秒で企業理念を明快に伝える堅実なモーショングラフィックス作品。微細なテクスチャ感や鮮やかな色彩設計、軽快なBGMとテンポ良いトランジションの同期が心地よいリズムを生んでいる。表現手法自体は企業CMの王道圏内にとどまり、終盤の動物イラストとのテイスト差も若干残るが、商業品質として高い完成度を備えている。",
+        "軽快なジャズファンク調の音楽と明快なナレーションに合わせ、キネティックタイポグラフィと幾何学図形をテンポ良く繋いだ堅実な商業モーショングラフィックス。紙質の微細なテクスチャや色彩設計、ビートに同期した滑らかなトランジションにプロの仕上げが光る。一方、図形や文字を用いた視覚比喩自体は企業CMとして定型の範疇に留まり、表現の独自性や細かなSE設計には伸び代がある。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:08",
+            "observation": "水色の背景に白い菱形の土台からオレンジ色のアイソメトリックなビルが立ち上がり、周囲に小さな色片が弾けながら「オフィスは、ただの場所でしょうか？」の文字が表示される。"
+          },
+          {
+            "timestamp": "00:17",
+            "observation": "ピンクの背景上で4つの小さな立方体が円軌道を描き、カラフルな破線の輪の中に「文化が誕生する。」が現れた直後、色付きの帯が画面奥から手前へ勢いよく飛び出すトランジションへ繋がる。"
+          },
+          {
+            "timestamp": "00:26",
+            "observation": "カラフルな幾何学模様の帯が上下に開いて「COLORFUL WORK PROJECT 三井のオフィス」のロゴが現れ、下部にゾウやクマ、キリンなどの動物たちが並ぶイラストが表示される。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:09",
+            "observation": "水色背景の中央で白い菱形の土台からオレンジ色のオフィスビルがアイソメトリックに立ち上がり、左右に「オフィスは、」「ただの場所でしょうか？」の文字と点線装飾が表示される。"
+          },
+          {
+            "timestamp": "00:18",
+            "observation": "ピンク色のテクスチャ背景上で、多色の点線リングに沿って赤・白・青の小さな立方体が円軌道を描き、「文化が誕生する。」の文字から直後の放射状バースト演出へと繋がる。"
+          },
+          {
+            "timestamp": "00:26",
+            "observation": "幾何学ブロックの帯が上下に開くトランジションの後、白背景に「COLORFUL WORK PROJECT 三井のオフィス」の文字と、象・熊・キリンなどの動物イラストが横一列に並んで表示される。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 3039,
+        "inputTextTokens": 1402,
+        "avgOutputTokens": 486,
+        "avgThoughtTokens": 2182.5,
+        "totalCostUsd": 0.106701
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "t5jPgM_VKZo",
+      "raw_api_score": 83.5,
+      "raw_scores": [
+        85,
+        82
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "MV",
+      "dimensions": {
+        "direction": 16.5,
+        "visual_craft": 16.5,
+        "editing_rhythm": 17,
+        "sound_integration": 17.5,
+        "originality_finish": 16
+      },
+      "rationales": [
+        "ピアノ鍵盤を軸に、A/Bメロの暗闇とスポットライトからサビのパステル空間へ一気に開ける感情設計が秀逸。2Dキャラと線画演出、手描き風キネティックタイポグラフィ、3D空間の鍵盤トンネルや虹のカメラワークが高密度に融合している。音ハメと疾走感ある編集リズムが楽曲の魅力を強く引き上げる一方、一部文字の過密さやリミテッド作画の制約はあるが、総合的なアートディレクションと仕上げの完成度は上位プロ品質。",
+        "ピアノ鍵盤を螺旋や同心円の空間装置・ビジュアライザーへ昇華させ、楽曲と映像を高度に同期させた構成力が光る。Aメロの暗色とスポットライト調からサビの極彩色な虹と花畑の3D空間へ一気に開ける緩急、手描き質感のキネティックタイポグラフィの躍動感も秀逸。作画自体は省力的な演出や反復に頼る面もあるが、緻密なモーショングラフィックスと音ハメの精度で商業MVとして高い完成度に達している。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:08",
+            "observation": "黒い星空の背景に幾重ものピアノ鍵盤が渦巻くように回転し、ピアノの連打音に合わせてピンクと水色の「みみめめMIMI」のロゴが中央に浮かび上がる。"
+          },
+          {
+            "timestamp": "00:33",
+            "observation": "暗闇に差し込むスポットライトの中、小さな王冠と羽状の耳飾りをつけた少女の横顔が映り、「強がり 意地っ張り」などのカラフルな歌詞文字と星が勢いよく流れ出す。"
+          },
+          {
+            "timestamp": "01:22",
+            "observation": "ミントグリーン基調の明るい空間で、同心円状に並ぶピアノ鍵盤のトンネルをカメラが奥へと突き抜けながら、花や手描き質感の歌詞文字が立体的に飛び交う。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:08",
+            "observation": "黒背景に星が瞬く中、螺旋状に重なるピアノ鍵盤のリングが奥行きを持って回転し、ピアノの連打音に合わせて中央にピンクと水色のグラデーションで「みみめめMIMI」のロゴが現れる。"
+          },
+          {
+            "timestamp": "00:54",
+            "observation": "サビ突入と同時に背景が淡い緑と虹、ピンクの雲、花々が舞う明るい空間へ一変し、円形のピアノ鍵盤を背負った少女の横顔に手描き質感の「Mr.Darling」「Miss U ダーリン」の文字が重なる。"
+          },
+          {
+            "timestamp": "01:23",
+            "observation": "サビ後半、奥へ吸い込まれるようなカメラワークの中で同心円状のピアノ鍵盤リングが楽曲のビートに呼応してイコライザーのように伸縮し、周囲を花びらや歌詞の文字が螺旋状に飛び交う。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": true,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          true,
+          true
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 11231,
+        "inputTextTokens": 1726,
+        "avgOutputTokens": 551.5,
+        "avgThoughtTokens": 2484,
+        "totalCostUsd": 0.168807
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "tpWIK6D-yVM",
+      "raw_api_score": 80.5,
+      "raw_scores": [
+        81,
+        80
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "MV",
+      "dimensions": {
+        "direction": 15.5,
+        "visual_craft": 16,
+        "editing_rhythm": 17,
+        "sound_integration": 17,
+        "originality_finish": 15
+      },
+      "rationales": [
+        "パステル調の配色とクラゲ・都市モチーフで統一された高密度なリリックMV。楽曲の疾走感に完全同期するキネティック・タイポグラフィ、グリッド分割、3D文字の落下、Cメロの黒背景線画への緩急設計など編集と音ハメの精度が高い。一方、1番と2番での構成テンプレートの反復や、限定的なキャラクター差分に依存する作画表現は定型的な範疇に留まり、良質なプロ品質と評価した。",
+        "キレのあるモーショングラフィックスと楽曲への高度な音ハメが光る完成度の高いリリックMV。3Dの折り畳みタイポや黒背景に線画街並みを配したCメロ、終盤のラフ線画演出など緩急と視覚的フックが巧み。一方、キャラクターの動きは限定的で、2番以降の構成に1番のテンプレート流用が目立つ点や、現行の国内リリックMV文法の枠内に収まる点で伸びしろを残す。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:15",
+            "observation": "ピンク基調の分割グリッド内にキャラクターのバストアップを配置し、「私最強無敵のガール」「夢と希望で胸が光る」の文字がビートに合わせてテンポよくスライドインする。"
+          },
+          {
+            "timestamp": "00:50",
+            "observation": "白背景にキャラクターの淡い透過イラストを敷き、紫色の立体的な3D文字ブロックが画面内を回転・落下する中、「描き続けていれば」から「誰かのことを」へ歌詞が切り替わる。"
+          },
+          {
+            "timestamp": "02:14",
+            "observation": "曲調が静まる場面で一転して黒背景に線画のビル群と泡が漂う構図となり、中央に縦書きで「でも強くなんてないよ」が浮かび上がった後、02:26の多角形パターンの炸裂でラスサビへ展開する。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:46",
+            "observation": "白背景にキャラクターを薄く配置し、「ただのラクガキだと馬鹿にされても」の縦書き文字と並行して、紫色の立体的な文字・帯状パーツが3D空間で折り畳まれるように回転・展開する。"
+          },
+          {
+            "timestamp": "01:13",
+            "observation": "幾何学パターンのトランジションから一転して深い紺色の画面に切り替わり、発光する「深海を」の文字が浮かび上がった直後、パステル調の街並みと星空のサビ画面へ一気に開放される。"
+          },
+          {
+            "timestamp": "02:17",
+            "observation": "伴奏が落ちるCメロに合わせ、黒背景にネオン調の細い線画で描かれた夜の街並みと泡を背景に、「夜の片隅で震えていた」の文字が中央に縦組みで表示され、楽曲の感情的な緩急を際立たせている。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": true,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          true,
+          true
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 19792,
+        "inputTextTokens": 2064,
+        "avgOutputTokens": 550,
+        "avgThoughtTokens": 2360,
+        "totalCostUsd": 0.218436
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "vS6wzjpCvec",
+      "raw_api_score": 95,
+      "raw_scores": [
+        95,
+        95
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "MV",
+      "dimensions": {
+        "direction": 19,
+        "visual_craft": 18,
+        "editing_rhythm": 19,
+        "sound_integration": 19.5,
+        "originality_finish": 19.5
+      },
+      "rationales": [
+        "全編ワンカットの長回しと物理的なタイポグラフィ演出を極限まで高めた傑作。遠近法を利用した立体文字の配置、回転棒、パラパラ漫画、PC画面、水槽、パタパタ装置など多彩なギミックをカメラワークのみでシームレスに繋ぎ、楽曲のビートと歌詞を完璧に同期させている。冒頭と末尾がループする構成も含め、アナログの労力と緻密な設計が圧倒的な視覚体験と記憶残留力を生み出している。",
+        "全編ワンカットかつ冒頭へシームレスに繋がるループ構造で、立体文字の回転、遠近法を用いたタイポグラフィ、パラパラ漫画、機械式パネルなど多様なアナログ仕掛けを楽曲と精密同期させた傑作。カメラワークによる画面内編集のリズムと空間設計の精度が圧倒的で、実空間の物理クラフトが音楽の疾走感と高揚感を極限まで引き上げている。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:48",
+            "observation": "夜の屋外通路を歩くボーカルが、棒に取り付けられた立体文字「ひとり見上げた月は」を楽曲のリズムに合わせて手元で回転させ、カメラ正面に向ける。"
+          },
+          {
+            "timestamp": "01:36",
+            "observation": "ガラス張りの屋内通路で、マイクスタンドにバラバラに設置された白い文字オブジェが、移動するカメラの視点と一致した瞬間に「僕らは今うねりの中を」と整列して読める。"
+          },
+          {
+            "timestamp": "02:20",
+            "observation": "女性メンバーが高速でめくるパラパラ漫画のページ上で、歩く人物のシルエットと「あの話」などの歌詞が連続的に動き、直後に隣のノートPC画面へカメラがパンする。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:46",
+            "observation": "夜の屋外通路を歩く青ジャケット・ピンクのタートルネック姿の男性が、沿道に立つスタンド上の切り文字を歌唱タイミングに合わせて次々と回転させながら進んでいく。"
+          },
+          {
+            "timestamp": "01:36",
+            "observation": "ガラス張りの屋内回廊で、奥行き方向にずらして設置された白い文字オブジェが、カメラが横移動する一瞬の視点でのみ「僕らは今うねりの中を」と正確に整列して視認できる。"
+          },
+          {
+            "timestamp": "03:06",
+            "observation": "手前の台上で「僕らは今うねりの中を」の文字パネルが順番にせり上がる仕掛けの奥から、ボーカルが駆け寄って顔を覗かせ、そのまま滑らかにミニチュアの街並みへとカメラが横移動する。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": true,
+        "knowsAwardHistory": true,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          true,
+          true
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 29188,
+        "inputTextTokens": 2436,
+        "avgOutputTokens": 520,
+        "avgThoughtTokens": 1999,
+        "totalCostUsd": 0.265314
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "wx_H_pxbwdE",
+      "raw_api_score": 77.5,
+      "raw_scores": [
+        77,
+        78
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "企業映像",
+      "dimensions": {
+        "direction": 16,
+        "visual_craft": 15,
+        "editing_rhythm": 15,
+        "sound_integration": 15.5,
+        "originality_finish": 16
+      },
+      "rationales": [
+        "「デザイナーとは何か」を問い直す導入から終盤のタイピング書き換えまで一貫した構成力がある。ブランドカラーの青や楕円ワイプ、デザインツール風の装飾・図解が映像全体に統一感を与え、2カメラ撮影と軽快なSE・BGMで長尺でも見やすい。一方、中盤はインタビュー中心の反復構造になりやすく、リモート取材映像の画質・音質差も残るため、堅実で工夫のある商業品質と評価した。",
+        "デザイン会社らしいUIモチーフ（バウンディングボックス、タイピングSE、角丸マスク）とブランドカラーの青を全編に一貫させた高完成度の企業映像。2カメ撮影と明快な図解モーション、先入観を覆す構成設計が巧み。一方、約8分半の長尺で中盤のテンポがやや反復的な点と、クライアント側のリモート録画素材による画質・質感の落差が惜しいが、細部の仕上げと音響統合に優れた良質なプロ水準に達している。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:16",
+            "observation": "都市のビル群とオフィス外観の映像上に、デザインツールのバウンディングボックスとカーソル操作を模したアニメーションで「Goodpatchのデザイナーって、デザイナー?」のタイトルがタイピング音とともに描画される。"
+          },
+          {
+            "timestamp": "00:42",
+            "observation": "背景をぼかしたオフィス映像の上に、青から白のグラデーションによる菱形5層（「戦略」「要件」「構造」「骨格」「表層」）が積み上がる図解が表示され、UXデザイナーとUIデザイナー／エンジニアの役割分担が示される。"
+          },
+          {
+            "timestamp": "08:35",
+            "observation": "青背景の中央に「あなたのやりたいことは」とタイプされた白文字がバックスペース音とともに消去・書き換えられて「あなたのしていることはデザインかもしれない」へ変化し、白背景へ反転してロゴで締めくくられる。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:17",
+            "observation": "オフィス周辺のビル群の映像上に表示された「Goodpatchのデザイナーって、デザイナー？」のテキストにデザインツール風のバウンディングボックスとカーソルが重なり、軽快なクリック音とともにカットが切り替わる。"
+          },
+          {
+            "timestamp": "00:42",
+            "observation": "オフィス背景をぼかした画面上に、青のグラデーションのひし形を「戦略・要件・構造・骨格・表層」の5層に積み上げたモーショングラフィックスが展開され、UXデザイナーとUIデザイナー／エンジニアの役割分担を視覚化している。"
+          },
+          {
+            "timestamp": "08:36",
+            "observation": "青背景にタイピング音に合わせて「あなたのやりたいことは」と文字が出現した後、バックスペースのように消去されて「あなたのしていることはデザインかもしれない」へ書き換わり、白背景へ反転して企業ロゴで締める。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 52937,
+        "inputTextTokens": 3378,
+        "avgOutputTokens": 499.5,
+        "avgThoughtTokens": 2619.5,
+        "totalCostUsd": 0.43146
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "xpn5Ax2pz14",
+      "raw_api_score": 87,
+      "raw_scores": [
+        87,
+        87
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "CM",
+      "dimensions": {
+        "direction": 17,
+        "visual_craft": 18,
+        "editing_rhythm": 18,
+        "sound_integration": 18,
+        "originality_finish": 16
+      },
+      "rationales": [
+        "抑圧から破壊、解放へと向かう明快な感情曲線を、シネマティックな撮影・照明設計と緻密なカラグレーディングで高密度に映像化。鎖の切断やテレビ破壊を起点に爆発する編集テンポとロック楽曲・SEの同期が極めて高水準。多様なフォントで変化するタイポグラフィもコンセプトと合致する。表現モチーフには王道感も残るが、細部まで抜かりない仕上げと高いエネルギーでブランドの世界観を力強く体現した秀作。",
+        "前半の抑圧的な暗部演出から鎖やブラウン管破壊を転機に解放へ転じる構成が明快。ネオン照明やハイスピード撮影、多彩なフォントが切り替わるタイポグラフィなど高い撮影・美術・編集精度を備え、重厚なSEからロック楽曲へ雪崩れ込む音響統合も極めて効果的。反抗モチーフに既視感はあるものの、一線級の商業クラフト強度を誇る。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:07",
+            "observation": "緑色のライティングが施された檻の中に立つ人物と赤い衣装の女性のカットが交錯し、「NO MORE 偽り」のタイポグラフィとともに「偽りはいらない」のナレーションが入る。"
+          },
+          {
+            "timestamp": "00:24",
+            "observation": "黒背景にクローズアップされた金属の鎖が激しい金属音とともに引きちぎられ、直後の00:27で人物がハンマーを振り下ろし積み上がったテレビを叩き壊す。"
+          },
+          {
+            "timestamp": "00:52",
+            "observation": "ロック楽曲のクライマックスに合わせて多様な人々が解放的に動く高速モンタージュが展開され、画面中央の「NO MORE RULES.」の文字がカットごとに異なるフォントと色で変化する。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:05",
+            "observation": "雨滴のついた青緑色に光る公衆電話ボックス内で、メタリックなジャケットを着た人物がガラスに寄りかかり、低いビートと囁き声・日本語ナレーションが重なる。"
+          },
+          {
+            "timestamp": "00:27",
+            "observation": "画面中央に「自分を縛る、ルールを壊せ。」の白文字が重なる中、積み上げられたブラウン管テレビをハンマーで振り抜いて破壊するカットが激しい打撃音とともに挿入される。"
+          },
+          {
+            "timestamp": "00:53",
+            "observation": "ロック楽曲のクライマックスに合わせて、黄色いニットで両手を広げて笑う人物や書類を宙に撒く人物などの高速カットに、書体や色が次々変化する「NO MORE RULES.」の文字が重なる。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 6073,
+        "inputTextTokens": 1522,
+        "avgOutputTokens": 477.5,
+        "avgThoughtTokens": 2181.5,
+        "totalCostUsd": 0.12534
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "xtpEqWX-KuI",
+      "raw_api_score": 84,
+      "raw_scores": [
+        85,
+        83
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "CM",
+      "dimensions": {
+        "direction": 17,
+        "visual_craft": 16.5,
+        "editing_rhythm": 17.5,
+        "sound_integration": 17,
+        "originality_finish": 16
+      },
+      "rationales": [
+        "「めっちゃ」の反復と部活の泥臭く滑稽な日常描写を軸に、高い共感性と疾走感を生む秀逸な構成。監督のモノマネへ繋ぐ小気味よいカット割りや、現在（寒色・静）と過去（暖色・動）の明確なルック対比、環境音と音楽・語りの緻密な統合が光る。終盤の白文字コピーの視認性にやや惜しさはあるが、演出・編集・撮影の完成度は極めて高い上位プロ品質。",
+        "「めっちゃ」の反復構造を軸に、泥臭く等身大な高校サッカー部の日常をテンポ良く積み上げ、現在の社会人と代表戦への想いへ鮮やかに繋ぐ構成力が秀逸。過去パートの温かく粒子感のある色彩と現代のクリアな光の対比、ユニフォームからネクタイへのモチーフ連携など編集・撮影の精度が高い。生々しい環境音と自然な語りの音響統合も高水準で、王道の青春題材を細部のリアリティで際立たせた上位プロ品質の仕上がり。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:15",
+            "observation": "グラウンドでサングラスと黒いキャップ姿の監督が「判断、判断！」と叫ぶカットから、直後に教室で部員が同じ声と仕草で監督のモノマネをして周囲が爆笑するカットへとテンポよく繋がれている。"
+          },
+          {
+            "timestamp": "00:44",
+            "observation": "学校の廊下を歩く女子生徒たちの背後で、白いシャツ姿の男子部員たちが大げさにポーズを決めたりおどけた動きをして見せる、部活生らしいコミカルな場面が捉えられている。"
+          },
+          {
+            "timestamp": "01:33",
+            "observation": "回想で日本代表ユニフォームの襟元を整えていたカットと対比するように、現在の主人公が清潔な光の中で白いワイシャツと青いネクタイの襟元を正す静かなクローズアップへと切り替わる。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:22",
+            "observation": "食堂のカウンターに白シャツ姿の部員4人が横並びで座り、茶碗のご飯や料理を勢いよくかき込む引きのカット。「めっちゃ食って」というナレーションとともに、活気ある食事の雰囲気がテンポ良く描かれる。"
+          },
+          {
+            "timestamp": "00:44",
+            "observation": "学校の廊下を歩く女子生徒たちの横で、男子部員が気取って見栄を切ろうとした直後に派手に転倒する場面。軽快なBGMとコミカルな動きで、等身大な青春の微笑ましい一面を印象づけている。"
+          },
+          {
+            "timestamp": "01:33",
+            "observation": "高校時代に日本代表ユニフォームを着て胸元を正し拍手するカットから、現代の主人公が白シャツにネクタイを締めて正面を見据えるクローズアップへと切り替わり、色調の対比とともに過去と現在が接続される。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 11625,
+        "inputTextTokens": 1742,
+        "avgOutputTokens": 512.5,
+        "avgThoughtTokens": 2596,
+        "totalCostUsd": 0.173457
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "z02-yCIHPCY",
+      "raw_api_score": 88.5,
+      "raw_scores": [
+        88,
+        89
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "CM",
+      "dimensions": {
+        "direction": 17,
+        "visual_craft": 19,
+        "editing_rhythm": 16.5,
+        "sound_integration": 18,
+        "originality_finish": 18
+      },
+      "rationales": [
+        "緻密なストップモーション人形とミニチュア美術、夕景ライティングによる圧倒的な質感設計が光る15秒。1カット固定の抑制された構成の中で、背景にエミューが横切る絶妙な間合いとBGMを排した虫の音・含み笑いの音響設計が、オフビートなユーモアを完成させている。細部まで破綻のない高水準なクラフト。",
+        "15秒・固定ワンカットという極限まで要素を削ぎ落とした構成ながら、フェルトや布地の質感が際立つ超高精細なストップモーション美術と夕暮れの映画的ライティングが圧倒的。BGMを排し環境音と絶妙な「間」だけでシュールなユーモアを成立させた演出・音響設計は、短尺CMのクラフトとして極めて高い到達度を示す。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:02",
+            "observation": "画面右前景に丸眼鏡と緑のチェック柄ベストを着て大きな黒トリュフと杖を持ったストップモーションの豚が立ち、鼻先に土をつけたまま落ち着いた声で「Oberon is better on a better mobile network.」と語る。夕方の柔らかな光とミニチュア木立が奥行きを作っている。"
+          },
+          {
+            "timestamp": "00:06",
+            "observation": "画面左奥の木立の間からストップモーションのエミューが歩いて現れ、芝生の小道の中央付近で立ち止まり周囲を見渡す。BGMを排し、虫の鳴き声などの環境音と豚の微細な動きだけでシュールな間合いを構築している。"
+          },
+          {
+            "timestamp": "00:12",
+            "observation": "豚が「Indeed.」と一言発して小さく含み笑いをした直後、画面中央やや左に赤橙色の「T」のロゴが表示される。ロゴ出現後も背景のエミューや豚の細かな動きと環境音が持続し、手触りのある世界観を保ったまま終わる。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:02",
+            "observation": "眼鏡と緑のチェック柄ベストを着て杖と大きな黒トリュフを持った豚のパペットが画面右側に立ち、夕暮れの並木道を背に落ち着いた声でナレーションを語る。"
+          },
+          {
+            "timestamp": "00:06",
+            "observation": "背景左側の木立の奥から大型の鳥（エミュー）のパペットがひょこひょこと歩いて現れ、画面中央奥で立ち止まってこちらへ首を向ける。"
+          },
+          {
+            "timestamp": "00:12",
+            "observation": "「Indeed」という低い相槌と含み笑いの直後、虫の鳴き声が響く中で画面中央に立体的な赤橙色の「T」ロゴマークがフェードインする。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": true,
+        "knowsAwardHistory": true,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          true,
+          true
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 1525,
+        "inputTextTokens": 1342,
+        "avgOutputTokens": 531,
+        "avgThoughtTokens": 1961,
+        "totalCostUsd": 0.091962
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "zPDMm7XUpkI",
+      "raw_api_score": 78.5,
+      "raw_scores": [
+        78,
+        79
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "企業映像",
+      "dimensions": {
+        "direction": 16,
+        "visual_craft": 15,
+        "editing_rhythm": 17,
+        "sound_integration": 15,
+        "originality_finish": 15.5
+      },
+      "rationales": [
+        "「点と線」「つづく（…）」というモチーフを、幾何学グラフィック、製図、細胞分裂、書籍の三点リーダー、建築空間へと一貫して繋ぐ構成力と、BGMのビートに同期した軽快な編集リズムが光る。実写とアニメーションのマッチカットも巧み。一方、終盤の宇宙背景とロゴ演出は前半の洗練されたミニマル表現に対し質感の浮きが見られ、音響もBGM主導で多層性に欠ける点が惜しい。",
+        "「点と線」「三点リーダー（つづく）」という明快な視覚モチーフを軸に、モーショングラフィックス・製図・細胞分裂・講評会・建築模型・実建築を軽快なビートと的確なマッチカットで繋ぐ構成力が光る。特に書籍の「…」を拾う演出やラストの余韻は秀逸。一方、音響はBGM主体で環境音やSEの立体感が控えめな点や、終盤の宇宙背景カットの質感統一にやや惜しさが残るものの、全体として洗練された良質なプロ作品に仕上がっている。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:08",
+            "observation": "冒頭の点と線のアニメーションから切り替わり、黒い服を着た女性が製図用紙上の点同士を透明な定規とペンで結んで線を引く実写カットが映る。"
+          },
+          {
+            "timestamp": "00:19",
+            "observation": "モノクロの顕微鏡映像で丸い細胞が2つ、さらに複数へと分裂するカットから、白背景に黒い円が分裂・拡散するモーショングラフィックスへ滑らかに接続される。"
+          },
+          {
+            "timestamp": "00:42",
+            "observation": "両手で開いた本の縦書きの文章にある「反対…無茶」の三点リーダー部分にクローズアップし、直後の建築模型や図面・パースの連続カットへとテンポよく展開する。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:08",
+            "observation": "白い紙に打たれた点の上で、黒い服を着た人物が透明な定規とペンを使って直線を引き、冒頭のドットと線のモーショングラフィックスから実写の製図作業へとシームレスにつながる。"
+          },
+          {
+            "timestamp": "00:24",
+            "observation": "建築模型が並ぶ講評会会場で緑色のベストを着た学生がプレゼンする実写映像の上に、カラフルなドットと黒い線のネットワーク図が重ねられ、人のつながりを可視化している。"
+          },
+          {
+            "timestamp": "00:42",
+            "observation": "見開きの書籍のページへ寄っていき、縦書きの「反対…無茶」というテキストの三点リーダー「…」へズームアップして、本編の「つづく」というモチーフと響き合わせている。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 6475,
+        "inputTextTokens": 1538,
+        "avgOutputTokens": 495.5,
+        "avgThoughtTokens": 2045.5,
+        "totalCostUsd": 0.124308
+      },
+      "interaction_ids": []
+    },
+    {
+      "video_id": "zyktN7x_DSQ",
+      "raw_api_score": 77,
+      "raw_scores": [
+        77,
+        77
+      ],
+      "ensemble_rule": "mean_of_2",
+      "model": "gemini-4-neon",
+      "model_version": "gemini-4-neon",
+      "thinking_level": "high",
+      "service_tier": "standard",
+      "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+      "calibration_status": "calibrated_verified",
+      "calibration_genre_bucket": "MV",
+      "dimensions": {
+        "direction": 15,
+        "visual_craft": 14.5,
+        "editing_rhythm": 17,
+        "sound_integration": 16,
+        "originality_finish": 14.5
+      },
+      "rationales": [
+        "和風とVHS風UIを融合させた2D/3DハイブリッドMV。和楽器調EDMのビートに対するカット割り、4分割パネル、カメラ揺れ、グリッチ演出の同期精度が高く、メロンを観客や巨大ドームに見立てた発想も印象的。一方、キャラクターの動きは簡易ループ中心で後半に同素材の反復も目立ち、3D背景の質感もやや簡素なため、編集リズムと音ハメの強みを軸にB+水準と評価した。",
+        "和楽器調EDMのビートに完璧に同期した編集テンポと、2Dデフォルメ・3D背景・VHS風UIを融合させた遊び心ある構成が光る。メロンを観客や巨大ドームに見立てたユーモアと、サビの照明演出や分割画面のキレは高水準。一方、中盤以降のカット再利用や限定的なアニメーションループが目立ち、細部の造形や仕上げの密度には課題が残る。"
+      ],
+      "timestamped_observations": [
+        [
+          {
+            "timestamp": "00:35",
+            "observation": "背後に「MIYABI」のネオン文字と降りてくるミラーボールを配したクラブステージで、DJブースのデフォルメキャラの前に大量の3Dメロンが観客のようにビートに合わせて跳ねる。"
+          },
+          {
+            "timestamp": "01:05",
+            "observation": "「28 MIN T45」「REC」「AUTO DATE」のビデオカメラ風UI越しに、夜間の街並みの奥に巨大な発光メロン型ドームがグリッチノイズを伴って点滅する緩急のブレイクダウン。"
+          },
+          {
+            "timestamp": "01:32",
+            "observation": "「F5.2」「REC」表示とデータ列が並ぶグリッドUIの中央で、回転する3Dメロンが閃光とリズムのキメに合わせて複数切れにスライスされる。"
+          }
+        ],
+        [
+          {
+            "timestamp": "00:20",
+            "observation": "画面が4分割され、上段2コマが減色した静止画状態になる中、右下のコマでヘッドホンを着けたデフォルメキャラがDJ卓を操作する動きが電子音のビートに合わせて切り替わる。"
+          },
+          {
+            "timestamp": "00:38",
+            "observation": "降下する巨大なミラーボールと「MIYABI」のネオン文字を背にDJプレイをするキャラの前で、無数の3Dメロンが観客のように激しいクラブ照明の下でビートに合わせて跳ね続けている。"
+          },
+          {
+            "timestamp": "01:33",
+            "observation": "「F5.2」「REC」や計器テキストのHUD表示に囲まれた中央の3Dメロンが回転しながら、ピンクと青の閃光エフェクトを伴って複数の断片に切り裂かれる。"
+          }
+        ]
+      ],
+      "post_check": {
+        "knowsWork": false,
+        "knowsAwardHistory": false,
+        "awardBadgeVisibleInVideo": false,
+        "perRunKnowsWork": [
+          false,
+          false
+        ]
+      },
+      "usage_summary": {
+        "callsCount": 2,
+        "inputVideoTokens": 13441,
+        "inputTextTokens": 1814,
+        "avgOutputTokens": 491.5,
+        "avgThoughtTokens": 3922.5,
+        "totalCostUsd": 0.22395
+      },
+      "interaction_ids": []
+    }
+  ]
+}

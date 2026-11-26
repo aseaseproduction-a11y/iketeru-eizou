@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "supplemental_note": "Outside preregistration.json. Neither preregistration.json nor pilot_20261125_162300/pilot_evaluation_report.json was modified.",
+  "video_id": "Xr032EhUDPw",
+  "clip_window_sec": [
+    70.0,
+    77.0
+  ],
+  "video_processing": {
+    "type": "static",
+    "start_offset": "70s",
+    "end_offset": "77s",
+    "fps": 4,
+    "content_layers": [
+      "frames"
+    ],
+    "resolution": "low"
+  },
+  "local_contact_sheet_path": "E:\\iketeru_api_url_logs\\pilot_craft_recipe_pilot_20261125_162300\\xr032_0110_0117_4fps_contact_sheet.jpg",
+  "api_execution": {
+    "status": "ok",
+    "congestion_503_count": 0,
+    "elapsed_sec": 391.86,
+    "input_text_tokens": 919,
+    "input_video_tokens": 2100,
+    "video_tokens_per_frame_28f": 75.0,
+    "total_output_tokens": 2792,
+    "total_thought_tokens": 4229,
+    "cost_usd": 0.057186,
+    "budget_cap_usd": 0.15
+  },
+  "cut4_macro_boundary_comparison": {
+    "scdet_ground_truth_sec": [
+      72.03,
+      76.49
+    ],
+    "scdet_midpoint_sec": 74.26,
+    "pass1_1fps_sec": [
+      72.0,
+      75.0
+    ],
+    "pass1_start_err_sec": 0.03,
+    "pass1_end_err_sec": 1.49,
+    "pass1_midpoint_err_sec": 0.76,
+    "pass2_4fps_sec": [
+      72.0,
+      76.5
+    ],
+    "pass2_start_err_sec": 0.03,
+    "pass2_end_err_sec": 0.01,
+    "pass2_midpoint_err_sec": 0.01
+  },
+  "embedded_micro_transitions_comparison": {
+    "caveat": "Preregistered 1fps micro_transition median center error (0.916s) was measured on existing SQLite 0.5s cuts (jsEVOjI690Y 1.083-1.583s [0.333s] & Xr032EhUDPw 34.25-34.75s [1.500s]). Here Pass 2 (4fps) is evaluated against ffmpeg scdet sub-cuts (0.29-0.63s) inside the requested 01:10-01:17 window.",
+    "scdet_sub_intervals": [
+      {
+        "label": "insect_base_to_invert",
+        "gt_sec": [
+          72.03,
+          72.53
+        ],
+        "gt_dur_sec": 0.5,
+        "pass2_sec": [
+          72.0,
+          72.5
+        ],
+        "center_err_sec": 0.03
+      },
+      {
+        "label": "insect_invert_to_ryu",
+        "gt_sec": [
+          72.53,
+          72.91
+        ],
+        "gt_dur_sec": 0.38,
+        "pass2_sec": [
+          72.5,
+          73.0
+        ],
+        "center_err_sec": 0.03
+      },
+      {
+        "label": "ryu_to_uro",
+        "gt_sec": [
+          72.91,
+          73.45
+        ],
+        "gt_dur_sec": 0.54,
+        "pass2_sec": [
+          73.0,
+          73.5
+        ],
+        "center_err_sec": 0.07
+      },
+      {
+        "label": "tengen_white_to_red",
+        "gt_sec": [
+          74.45,
+          74.74
+        ],
+        "gt_dur_sec": 0.29,
+        "pass2_sec": [
+          74.5,
+          74.75
+        ],
+        "center_err_sec": 0.03
+      },
+      {
+        "label": "tengen_red_to_yuta",
+        "gt_sec": [
+          74.74,
+          75.37
+        ],
+        "gt_dur_sec": 0.63,
+        "pass2_sec": [
+          74.75,
+          75.25
+        ],
+        "center_err_sec": 0.055
+      }
+    ],
+    "pass2_4fps_median_center_err_sec": 0.03,
+    "pass2_4fps_max_center_err_sec": 0.07,
+    "scdet_8_boundaries_median_err_sec": 0.04
+  }
+}

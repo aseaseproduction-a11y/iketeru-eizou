@@ -15,6 +15,7 @@ import {
   calcCallCostUsd,
   checkBudgetGuard,
   classifyApiError,
+  determineRunExitCode,
   executeWithRetry,
   runBatchOrchestrator,
   sha256Text,
@@ -133,6 +134,37 @@ test("checkBudgetGuard blocks monthly cap ($38), run cap, and max requests", () 
     checkBudgetGuard({ monthlySpentUsd: 2.16, monthlyLimitUsd: 38.0, runSpentUsd: 0.2, runLimitUsd: 0.6, estimatedNextCallUsd: 0.05, requestCount: 4, maxRequests: 15 }).allowed,
     true
   );
+  // Observed max * 1.2 guard: est=$0.178 fits ($1.2927+0.178=$1.4707 <= $1.50),
+  // but maxObserved=$0.2452 * 1.2 = $0.29424 -> $1.2927 + $0.29424 = $1.5869 > $1.50 -> MUST block!
+  const obsBlock = checkBudgetGuard({
+    monthlySpentUsd: 4.0,
+    monthlyLimitUsd: 38.0,
+    runSpentUsd: 1.2927,
+    runLimitUsd: 1.5,
+    estimatedNextCallUsd: 0.178,
+    maxObservedCallCostUsd: 0.2452,
+    requestCount: 9,
+    maxRequests: 20,
+  });
+  assert.equal(obsBlock.allowed, false);
+  assert.match(obsBlock.reason, /run_budget_cap_exceeded/);
+  assert.match(obsBlock.reason, /obs_max_x1\.2=0\.2942/);
+
+  // Monthly spending cap in 429 response MUST classify as fatal_stop (402, 0 retries)
+  const capCls = classifyApiError(
+    1,
+    '{"error":{"code":"too_many_requests","message":"Your project has exceeded its monthly spending cap."},"status_code":429}',
+    null
+  );
+  assert.equal(capCls.kind, "fatal_stop");
+  assert.equal(capCls.code, "402");
+  assert.equal(capCls.retryable, false);
+
+  // Runner exit codes for wrapper reliability
+  assert.equal(determineRunExitCode({ stopped_early: false, stop_reason: null }), 0);
+  assert.equal(determineRunExitCode({ stopped_early: true, stop_reason: "fatal_http_402" }), 1);
+  assert.equal(determineRunExitCode({ stopped_early: true, stop_reason: "3_consecutive_deferred_videos" }), 3);
+  assert.equal(determineRunExitCode({ stopped_early: true, stop_reason: "run_budget_cap_exceeded (...)" }), 4);
 });
 
 // 2. Flex 503/429 single-retry + defer logic & 402/403 immediate stop
@@ -586,9 +618,13 @@ test("auditCallRecord & auditApiUrlRun verify all 7 automated audit checks", () 
   badJson.extracted_text = JSON.stringify(badJson.parsed_json);
   assert.equal(auditCallRecord(badJson).checks.output_json_valid, false);
 
-  // Check 4 FAIL: video tokens < duration * 90
-  const lowVidTok = makeValidCallRecord({ durationSec: 60, videoTokens: 5399 });
+  // Check 4 FAIL: video tokens < duration * 80 (still allows ~15-20% SQLite scenes duration slack)
+  const lowVidTok = makeValidCallRecord({ durationSec: 60, videoTokens: 4799 });
   assert.equal(auditCallRecord(lowVidTok, { knownDurationSec: 60 }).checks.video_tokens_threshold, false);
+  const scenesSlackVidTok = makeValidCallRecord({ durationSec: 524, videoTokens: 47154 });
+  assert.equal(auditCallRecord(scenesSlackVidTok, { knownDurationSec: 524 }).checks.video_tokens_threshold, true);
+  const shortIdentVidTok = makeValidCallRecord({ durationSec: 5, videoTokens: 515 });
+  assert.equal(auditCallRecord(shortIdentVidTok, { knownDurationSec: 5 }).checks.video_tokens_threshold, true);
 
   // Check 5 FAIL: observation timestamp exceeds duration + 5s
   const badTs = makeValidCallRecord({ durationSec: 60 });
