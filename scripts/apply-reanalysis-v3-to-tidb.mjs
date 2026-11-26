@@ -23,8 +23,8 @@
  *    changes & SQLite scene replacement counts, and runs simulated post-apply Pre-D 40-column audit + negative controls.
  *
  * Usage:
- *   node scripts/apply-reanalysis-v3-to-tidb.mjs --dry-run [--limit 20] [--ids id1,id2] [--v3-store-dir <dir>]
- *   node scripts/apply-reanalysis-v3-to-tidb.mjs --apply --run-id <id> --worker <w> [--limit 20 | --ids ...]
+ *   node scripts/apply-reanalysis-v3-to-tidb.mjs --dry-run [--list <json> | --limit 20 | --ids id1,id2] [--v3-store-dir <dir>]
+ *   node scripts/apply-reanalysis-v3-to-tidb.mjs --apply --run-id <id> --worker <w> [--list <json> | --limit 20 | --ids ...]
  *   node scripts/apply-reanalysis-v3-to-tidb.mjs --print-ddl
  */
 
@@ -272,11 +272,112 @@ async function dumpFreshTidbBackup(conn, runId, backupRoot) {
   return { path: outPath, rows: rows.length, sha256: sha256File(outPath) };
 }
 
+export function loadPinnedV3ApplyList(listPath) {
+  const absPath = path.isAbsolute(listPath) ? listPath : path.resolve(REPO_ROOT, listPath);
+  if (!fs.existsSync(absPath)) {
+    throw new Error(`Pinned v3 apply list not found: ${absPath}`);
+  }
+  const raw = fs.readFileSync(absPath);
+  const listSha256 = crypto.createHash("sha256").update(raw).digest("hex");
+  const doc = JSON.parse(raw.toString("utf8"));
+  const entries = Array.isArray(doc.entries) ? doc.entries : Array.isArray(doc.videos) ? doc.videos : null;
+  if (!entries || entries.length === 0) {
+    throw new Error(`Pinned v3 apply list has no entries: ${absPath}`);
+  }
+  const seen = new Set();
+  const normalized = [];
+  for (let i = 0; i < entries.length; i++) {
+    const item = entries[i];
+    if (!item || typeof item !== "object") {
+      throw new Error(`Pinned v3 apply list entry[${i}] is not an object`);
+    }
+    const vid = String(item.video_id || "").trim();
+    const promptVersion = String(item.prompt_version || "").trim();
+    const promptTemplateSha256 = String(item.prompt_template_sha256 || "").trim().toLowerCase();
+    const analysisV3Sha256 = String(item.analysis_v3_sha256 || "").trim().toLowerCase();
+    if (!vid) throw new Error(`Pinned v3 apply list entry[${i}] missing video_id`);
+    if (seen.has(vid)) throw new Error(`Pinned v3 apply list has duplicate video_id "${vid}"`);
+    seen.add(vid);
+    if (!promptVersion) throw new Error(`Pinned v3 apply list entry "${vid}" missing prompt_version`);
+    if (!/^[0-9a-f]{64}$/.test(promptTemplateSha256)) {
+      throw new Error(`Pinned v3 apply list entry "${vid}" has invalid prompt_template_sha256 "${promptTemplateSha256}"`);
+    }
+    if (!/^[0-9a-f]{64}$/.test(analysisV3Sha256)) {
+      throw new Error(`Pinned v3 apply list entry "${vid}" has invalid analysis_v3_sha256 "${analysisV3Sha256}"`);
+    }
+    normalized.push({
+      video_id: vid,
+      prompt_version: promptVersion,
+      prompt_template_sha256: promptTemplateSha256,
+      analysis_v3_sha256: analysisV3Sha256,
+    });
+  }
+  return {
+    path: absPath,
+    sha256: listSha256,
+    list_id: doc.list_id || path.basename(absPath),
+    status: doc.status || null,
+    entries: normalized,
+  };
+}
+
+export function selectV3Entries({ v3Loaded, listPath = null, explicitIds = null, limit = 20, storeDir = "" }) {
+  if (listPath && explicitIds && explicitIds.length > 0) {
+    throw new Error("Cannot combine --list with --ids; specify only one.");
+  }
+  if (listPath) {
+    const pinned = loadPinnedV3ApplyList(listPath);
+    const selectedEntries = [];
+    for (const req of pinned.entries) {
+      if (!v3Loaded.valid_map.has(req.video_id)) {
+        throw new Error(
+          `Pinned video_id "${req.video_id}" from ${pinned.path} is not a verified passing v3 entry in ${storeDir || v3Loaded.store_dir}`
+        );
+      }
+      const actual = v3Loaded.valid_map.get(req.video_id);
+      const actualFileSha = String(actual.analysis_file_sha256 || "").toLowerCase();
+      if (actualFileSha !== req.analysis_v3_sha256) {
+        throw new Error(
+          `Pinned analysis_v3.md SHA-256 mismatch for "${req.video_id}": pinned=${req.analysis_v3_sha256}, actual=${actualFileSha}`
+        );
+      }
+      const actualPromptSha = String(actual.prompt_template_sha256 || "").toLowerCase();
+      if (actualPromptSha !== req.prompt_template_sha256) {
+        throw new Error(
+          `Pinned prompt_template_sha256 mismatch for "${req.video_id}": pinned=${req.prompt_template_sha256}, actual=${actualPromptSha}`
+        );
+      }
+      const actualPromptVersion = String(actual.prompt_version || actual.manifest_analysis_version || "").trim();
+      if (actualPromptVersion !== req.prompt_version) {
+        throw new Error(
+          `Pinned prompt_version mismatch for "${req.video_id}": pinned=${req.prompt_version}, actual=${actualPromptVersion}`
+        );
+      }
+      selectedEntries.push(actual);
+    }
+    return { selectedEntries, pinned };
+  }
+
+  let selectedEntries = [];
+  if (explicitIds && explicitIds.length > 0) {
+    for (const vid of explicitIds) {
+      if (!v3Loaded.valid_map.has(vid)) {
+        throw new Error(`Requested video_id "${vid}" is not a verified passing v3 entry in ${storeDir || v3Loaded.store_dir}`);
+      }
+      selectedEntries.push(v3Loaded.valid_map.get(vid));
+    }
+  } else {
+    selectedEntries = Array.from(v3Loaded.valid_map.values()).slice(0, limit);
+  }
+  return { selectedEntries, pinned: null };
+}
+
 export async function runReanalysisV3Apply(opts) {
   const dryRun = Boolean(opts.dryRun);
   const storeDir = opts.storeDir || DEFAULT_V3_STORE_DIR;
   const limit = Number(opts.limit || 20);
   const explicitIds = opts.ids ? opts.ids.map(String) : null;
+  const listPath = opts.listPath || null;
   const runId = opts.runId || `v3_apply_${localTimestampStamp()}`;
 
   const v3Loaded = loadV3CanonicalManifestMap(storeDir);
@@ -284,17 +385,13 @@ export async function runReanalysisV3Apply(opts) {
     throw new Error(`v3 canonical store directory not found: ${storeDir}`);
   }
 
-  let selectedEntries = [];
-  if (explicitIds && explicitIds.length > 0) {
-    for (const vid of explicitIds) {
-      if (!v3Loaded.valid_map.has(vid)) {
-        throw new Error(`Requested video_id "${vid}" is not a verified passing v3 entry in ${storeDir}`);
-      }
-      selectedEntries.push(v3Loaded.valid_map.get(vid));
-    }
-  } else {
-    selectedEntries = Array.from(v3Loaded.valid_map.values()).slice(0, limit);
-  }
+  const { selectedEntries, pinned } = selectV3Entries({
+    v3Loaded,
+    listPath,
+    explicitIds,
+    limit,
+    storeDir,
+  });
 
   if (selectedEntries.length === 0) {
     throw new Error(`No verified passing v3 entries found in ${storeDir}`);
@@ -371,6 +468,10 @@ export async function runReanalysisV3Apply(opts) {
         tidb_videos_columns_updated: ["aiAnalysis", "analysisVersion", "analysisGeneratedAt", "analysisPromptSha256"],
         old_analysis_version: cur.analysisVersion || "legacy",
         new_analysis_version: "v3",
+        prompt_version: e.prompt_version || e.manifest_analysis_version || "v3",
+        audit_performed: Boolean(e.audit_performed),
+        audit_verdict: e.audit_verdict ?? null,
+        created_by_pc: e.created_by_pc || null,
         old_aiAnalysis_chars: oldAna ? String(oldAna).length : 0,
         new_aiAnalysis_chars: e.analysis_text.length,
         old_aiAnalysis_sha256: sha256TidbCellValue(oldAna),
@@ -433,6 +534,10 @@ export async function runReanalysisV3Apply(opts) {
         v3_store_rejected_count: v3Loaded.rejected.length,
         v3_store_rejected_sample: v3Loaded.rejected.slice(0, 5),
         selected_count: selectedEntries.length,
+        pinned_list_path: pinned ? pinned.path : null,
+        pinned_list_id: pinned ? pinned.list_id : null,
+        pinned_list_sha256: pinned ? pinned.sha256 : null,
+        pinned_list_verified_count: pinned ? selectedEntries.length : null,
         apply_lock_status: lock.status,
         pre_d_backup_sha256_verified: actualBackupSha,
         ddl_readiness: ddlStatus,
@@ -534,6 +639,9 @@ export async function runReanalysisV3Apply(opts) {
       mode: "apply",
       run_id: runId,
       worker,
+      pinned_list_path: pinned ? pinned.path : null,
+      pinned_list_id: pinned ? pinned.list_id : null,
+      pinned_list_sha256: pinned ? pinned.sha256 : null,
       applied_count: applied.length,
       tidb_backup: tidbBackup,
       sqlite_backup: sqliteBackupPath,
@@ -571,6 +679,7 @@ if (isMain) {
       dryRun,
       limit: args.limit ? Number(args.limit) : 20,
       ids,
+      listPath: args.list || args["target-list"] || null,
       storeDir: args["v3-store-dir"] || DEFAULT_V3_STORE_DIR,
       worker: args.worker || null,
       runId: args["run-id"] || null,

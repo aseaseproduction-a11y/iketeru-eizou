@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "list_id": "v3_apply_pilot20_20261126",
+  "decision_id": "D-026",
+  "status": "pending_approval",
+  "created_at": "2026-11-26T22:13:00+09:00",
+  "created_by_pc": "chibatmute",
+  "description": "Pinned first 20 verified Analysis v3 videos for initial TiDB --apply approval (D-026). Fixed by video_id + prompt_version + prompt_template_sha256 + analysis_v3_sha256 so canonical store additions do not shift selection.",
+  "count": 20,
+  "version_breakdown": {
+    "v3": 2,
+    "v3.1": 16,
+    "v3.2": 2
+  },
+  "manifest_audited_count": 6,
+  "entries": [
+    {
+      "video_id": "-1nKzOF8-_Q",
+      "title": "『映画ちいかわ 人魚の島のひみつ』TVCMいつまでも篇【大ヒット上映中】",
+      "prompt_version": "v3",
+      "prompt_template_sha256": "a53083e103d3114e72f5d60d321a0644b0daf603830ad033b74ed5b2ee0083fe",
+      "analysis_v3_sha256": "7e0833d16d545f783f482de7af26f992619e8261a0615fea0c4286b4ba60fb25",
+      "audit_performed": true,
+      "audit_verdict": "合っている",
+      "created_by_pc": "CHIBA-PC",
+      "created_at": "2026-11-26T14:29:37+09:00"
+    },
+    {
+      "video_id": "-Dm-7u930DI",
+      "title": "『少年とガンダム｜機動戦士ガンダム50周年 -Road to 50- プロローグムービー』",
+      "prompt_version": "v3.1",
+      "prompt_template_sha256": "48b5d140122f691050b73bf7a16d1551176c3d46ae31c8b6d77a39357224a0df",
+      "analysis_v3_sha256": "46043f078579c35b4aecc4d863bed010c2894e89b57589aa842507c99e752ec0",
+      "audit_performed": false,
+      "audit_verdict": null,
+      "created_by_pc": "CHIBA-PC",
+      "created_at": "2026-11-26T16:09:40+09:00"
+    },
+    {
+      "video_id": "-Nsrg3eVBBw",
+      "title": "サントリー生ビール『あゆみさんと祭り』篇 60秒 河合優実",
+      "prompt_version": "v3.1",
+      "prompt_template_sha256": "48b5d140122f691050b73bf7a16d1551176c3d46ae31c8b6d77a39357224a0df",
+      "analysis_v3_sha256": "59ef931056ed31590bb94b6b0b80ec0e4a7c526b3e9b83a636cbce0e0a010fdb",
+      "audit_performed": false,
+      "audit_verdict": null,
+      "created_by_pc": "CHIBA-PC",
+      "created_at": "2026-11-26T19:10:32+09:00"
+    },
+    {
+      "video_id": "-Sb4wxbHh-4",
+      "title": "『ONE PIECE』106巻 公式テーマソング「未来島 ~Future Island~」PV",
+      "prompt_version": "v3.2",
+      "prompt_template_sha256": "e42b47b50400f23de0a5d84566338a3f6580149149c0ca8367dfdc487aff89b2",
+      "analysis_v3_sha256": "309a3fbfc8a558c5440e71b5c06ce70a14ca11a7c3d1d55c4b9d30a216c1cdbe",
+      "audit_performed": false,
+      "audit_verdict": null,
+      "created_by_pc": "CHIBA-PC",
+      "created_at": "2026-11-26T19:56:00+09:00"
+    },
+    {
+      "video_id": "-fYxwC8wJsk",
+      "title": "『落下音』本予告【4月3日（金）公開】",
+      "prompt_version": "v3.1",
+      "prompt_template_sha256": "48b5d140122f691050b73bf7a16d1551176c3d46ae31c8b6d77a39357224a0df",
+      "analysis_v3_sha256": "9296f7901a1672a5d681bd42534a277da380956c677f886de88012b3d8d2c229",
+      "audit_performed": false,
+      "audit_verdict": null,
+      "created_by_pc": "CHIBA-PC",
+      "created_at": "2026-11-26T17:31:59+09:00"
+    },
+    {
+      "video_id": "-wb2PAx6aEs",
+      "title": "米津玄師 - さよーならまたいつか！ Kenshi Yonezu - Sayonara, Mata Itsuka !",
+      "prompt_version": "v3.2",
+      "prompt_template_sha256": "e42b47b50400f23de0a5d84566338a3f6580149149c0ca8367dfdc487aff89b2",
+      "analysis_v3_sha256": "c5947087767380ce12e5e4564b071e47d00e733d0edf66937b3a3218cb1ce1d4",
+      "audit_performed": true,
+      "audit_verdict": "合っている",
+      "created_by_pc": "CHIBA-PC",
+      "created_at": "2026-11-26T19:22:29+09:00"
+    },
+    {
+      "video_id": "03iKTXFKFFU",
+      "title": "KizunaAI『かもね』Official Music Video",
+      "prompt_version": "v3.1",
+      "prompt_template_sha256": "48b5d140122f691050b73bf7a16d1551176c3d46ae31c8b6d77a39357224a0df",
+      "analysis_v3_sha256": "5d5ae166fe5aaa1fc2e41802ea37917b3f74ee737317592029c4abd1281a7d06",
+      "audit_performed": false,
+      "audit_verdict": null,
+      "created_by_pc": "CHIBA-PC",
+      "created_at": "2026-11-26T16:35:22+09:00"
+    },
+    {
+      "video_id": "08TGBLLK8RE",
+      "title": "Anime Series Gachiakuta 2nd Cour Non-credit Ending Video／kar",
+      "prompt_version": "v3.1",
+      "prompt_template_sha256": "48b5d140122f691050b73bf7a16d1551176c3d46ae31c8b6d77a39357224a0df",
+      "analysis_v3_sha256": "c1c5cfd0bb523f007d47be3d6475c059d7afc6fb7ecfa7f4d1b8e35c04610d33",
+      "audit_performed": false,
+      "audit_verdict": null,
+      "created_by_pc": "CHIBA-PC",
+      "created_at": "2026-11-26T16:35:22+09:00"
+    },
+    {
+      "video_id": "09PfPoj8LAk",
+      "title": "【MV】朔雀 | SAK - サイレント・プリズム (Prod. Pa's Lam System)",
+      "prompt_version": "v3",
+      "prompt_template_sha256": "a53083e103d3114e72f5d60d321a0644b0daf603830ad033b74ed5b2ee0083fe",
+      "analysis_v3_sha256": "ae68c8ecdfbfd98aa155804ebf2e6884bfde8bacca5622f6fe4e5e18b7151e43",
+      "audit_performed": true,
+      "audit_verdict": "合っている",
+      "created_by_pc": "CHIBA-PC",
+      "created_at": "2026-11-26T14:29:37+09:00"
+    },
+    {
+      "video_id": "0S43IwBF0uM",
+      "title": "The Chemical Brothers - Star Guitar",
+      "prompt_version": "v3.1",
+      "prompt_template_sha256": "48b5d140122f691050b73bf7a16d1551176c3d46ae31c8b6d77a39357224a0df",
+      "analysis_v3_sha256": "2b0e9eca1bd2c54ebb5b51a11ab6c2cc56b7e0ac2a494e6f7036c81d1ef54f9f",
+      "audit_performed": false,
+      "audit_verdict": null,
+      "created_by_pc": "CHIBA-PC",
+      "created_at": "2026-11-26T15:05:31+09:00"
+    },
+    {
+      "video_id": "0Wmwc8u98lI",
+      "title": "The Tokyo 2020 Kinetic Sports Pictograms",
+      "prompt_version": "v3.1",
+      "prompt_template_sha256": "48b5d140122f691050b73bf7a16d1551176c3d46ae31c8b6d77a39357224a0df",
+      "analysis_v3_sha256": "db3b8cb8eaac8cf93e74df7f5ca2706784b2979071c6b176eaa26bbe9545b5b5",
+      "audit_performed": true,
+      "audit_verdict": "合っている",
+      "created_by_pc": "CHIBA-PC",
+      "created_at": "2026-11-26T17:00:39+09:00"
+    },
+    {
+      "video_id": "1018644295",
+      "title": "Odd",
+      "prompt_version": "v3.1",
+      "prompt_template_sha256": "48b5d140122f691050b73bf7a16d1551176c3d46ae31c8b6d77a39357224a0df",
+      "analysis_v3_sha256": "ee9f4e5c208aac399796e7aa51b548e98f2b53b38f55faac79cb348fbd329934",
+      "audit_performed": false,
+      "audit_verdict": null,
+      "created_by_pc": "CHIBA-PC",
+      "created_at": "2026-11-26T15:05:31+09:00"
+    },
+    {
+      "video_id": "1032202784",
+      "title": "Node Fest 2024",
+      "prompt_version": "v3.1",
+      "prompt_template_sha256": "48b5d140122f691050b73bf7a16d1551176c3d46ae31c8b6d77a39357224a0df",
+      "analysis_v3_sha256": "1c0fa154ef454bb19f0b5d5e7c22e65133267a60651e06b9964f22bfa6e1b34e",
+      "audit_performed": false,
+      "audit_verdict": null,
+      "created_by_pc": "CHIBA-PC",
+      "created_at": "2026-11-26T16:09:40+09:00"
+    },
+    {
+      "video_id": "1064466748",
+      "title": "FutureProof '25 - Conference Opening Title Sequence",
+      "prompt_version": "v3.1",
+      "prompt_template_sha256": "48b5d140122f691050b73bf7a16d1551176c3d46ae31c8b6d77a39357224a0df",
+      "analysis_v3_sha256": "9ad590a0fbfeb15f18979d5a60fc4249e23a563334277651147585c89a7e6e63",
+      "audit_performed": false,
+      "audit_verdict": null,
+      "created_by_pc": "CHIBA-PC",
+      "created_at": "2026-11-26T17:31:59+09:00"
+    },
+    {
+      "video_id": "107330133",
+      "title": "NO SHIKO_deronderonderon",
+      "prompt_version": "v3.1",
+      "prompt_template_sha256": "48b5d140122f691050b73bf7a16d1551176c3d46ae31c8b6d77a39357224a0df",
+      "analysis_v3_sha256": "eee8da534a49fe02c8c1f753d838b15c8c5489249ffe480156d084c19097621e",
+      "audit_performed": false,
+      "audit_verdict": null,
+      "created_by_pc": "chibatmute",
+      "created_at": "2026-11-26T17:32:10+09:00"
+    },
+    {
+      "video_id": "1081049586",
+      "title": "PRIME",
+      "prompt_version": "v3.1",
+      "prompt_template_sha256": "48b5d140122f691050b73bf7a16d1551176c3d46ae31c8b6d77a39357224a0df",
+      "analysis_v3_sha256": "43398e60f039730320e303c54cae1660ea8743c0a3268e0829fdc20eae3efce9",
+      "audit_performed": false,
+      "audit_verdict": null,
+      "created_by_pc": "CHIBA-PC",
+      "created_at": "2026-11-26T17:31:59+09:00"
+    },
+    {
+      "video_id": "1119375393",
+      "title": "オープニング映像  モーショングラフィックス   OFFFMX 2025 Main Titles by XK Studi",
+      "prompt_version": "v3.1",
+      "prompt_template_sha256": "48b5d140122f691050b73bf7a16d1551176c3d46ae31c8b6d77a39357224a0df",
+      "analysis_v3_sha256": "86359e3b1ec04abe0028b82c09b25cdb03edbd2a9b34213bbcc2f8f0097eac22",
+      "audit_performed": false,
+      "audit_verdict": null,
+      "created_by_pc": "CHIBA-PC",
+      "created_at": "2026-11-26T16:09:40+09:00"
+    },
+    {
+      "video_id": "1154070144",
+      "title": "ブランデッドムービー  スポーツ / 健康 / フィットネス   The Sound of Japan | The No",
+      "prompt_version": "v3.1",
+      "prompt_template_sha256": "48b5d140122f691050b73bf7a16d1551176c3d46ae31c8b6d77a39357224a0df",
+      "analysis_v3_sha256": "561e2c33a35d01035a943f0ccb213c21559be55790f3b1b8d974eae0de32c0d3",
+      "audit_performed": true,
+      "audit_verdict": "合っている",
+      "created_by_pc": "CHIBA-PC",
+      "created_at": "2026-11-26T17:00:39+09:00"
+    },
+    {
+      "video_id": "1155088773",
+      "title": "ブランデッドムービー  精密機器 / 家具 / 電化製品   CONTACT by Anecdote",
+      "prompt_version": "v3.1",
+      "prompt_template_sha256": "48b5d140122f691050b73bf7a16d1551176c3d46ae31c8b6d77a39357224a0df",
+      "analysis_v3_sha256": "3f01aff05598821c296e4ae42ca45639aa5cb10601d73cfd988fe1877dba639d",
+      "audit_performed": true,
+      "audit_verdict": "合っている",
+      "created_by_pc": "CHIBA-PC",
+      "created_at": "2026-11-26T16:35:22+09:00"
+    },
+    {
+      "video_id": "1179837107",
+      "title": "POP OUT CITY by PLATEAU",
+      "prompt_version": "v3.1",
+      "prompt_template_sha256": "48b5d140122f691050b73bf7a16d1551176c3d46ae31c8b6d77a39357224a0df",
+      "analysis_v3_sha256": "8d0a461732db921096b4f32123117c68833d72077ac4ac7e7296f562dbc9a2f1",
+      "audit_performed": false,
+      "audit_verdict": null,
+      "created_by_pc": "CHIBA-PC",
+      "created_at": "2026-11-26T19:10:32+09:00"
+    }
+  ]
+}
