@@ -1,12 +1,8 @@
 {
   "schema_version": 1,
-  "status": "unlocked",
-  "worker": null,
-  "run_id": null,
-  "started_at": null,
-  "last_worker": "CHIBA-PC2",
-  "last_run_id": "sync_video_scenes_to_tidb",
-  "last_started_at": "2026-11-26T09:04:17.046Z",
-  "released_at": "2026-11-26T09:08:27.370Z",
-  "released_by": "CHIBA-PC2"
+  "status": "locked",
+  "worker": "chibatmute",
+  "run_id": "v3_apply_pilot20_20261126",
+  "started_at": "2026-11-26T14:03:20.000Z",
+  "updated_at": "2026-11-26T14:03:20.000Z"
 }
