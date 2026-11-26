@@ -159,3 +159,25 @@
 - 決定：動画編集の品質基準（守りのルール）を iketeru-edit-qc とする。正本は マイドライブ/iketeru_edit_qc。更新は正本で行い、iketeru-creative-studio の skills/ へはコピーで反映する。
 - 理由：AI編集の同じ失敗（カット位置・テロップ・インサート・オーバーレイ欠落・自己申告PASS）が版ごとに繰り返されたため。
 - 根拠：マイドライブ/iketeru_edit_qc/CHANGELOG.md v1.0
+
+### D-026 分析 v3 の採用と TiDB 書き込みルール・v3＋レシピ v2 同時生成（2026-11-26）
+- 決定：
+  1. **分析 v3 の正式採用**：旧分析 30 本の目視点検で「合っている」が 0/30 本だった一方、CHIBA-PC の分析 v3 パイロット（`ffmpeg scdet` 実測カット位置＋実映像・音声確認）は 9/10 本合格・幻覚 0 件・時刻ずれ中央値 0.00 秒を達成したため、分析 v3（現行プロンプト `docs/prompts/analysis_prompt_v3_1.md`、監査プロンプト `docs/prompts/audit_prompt_v1.md`、正本 `D:\マイドライブ\iketeru_analysis_v3\`）を正式採用する。
+  2. **1 回視聴での同時生成 (`craft_v2_with_v3`)**：手元に動画がある 78 点以上の未 v2 化動画（Run 1 で 78 点以上となったダウンロード済み 39 本を含む）は、利用枠の二重消費を防ぐため `craft_v2_with_v3`（分析 v3＋クラフトレシピ v2＋`expressive_purpose`）を 1 回の視聴で同時に生成する。予約管理は `claim-craft-batch.mjs` の `reanalysis_v3` / `craft_v2_with_v3` で統一し、1 バッチの 10% を別サブエージェントで `audit_prompt_v1.md` により独立点検する。
+  3. **スキーマ拡張（CHIBA-PC2 と共通定義・DDL 実行は承認後）**：
+     - `videos`：`analysisVersion`（`'legacy'` / `'v3'`、既定 `'legacy'`）、`analysisGeneratedAt`（日時、NULL 可）、`analysisPromptSha256`（64 文字、NULL 可、v3 と v3.1 の判別に使用）。
+     - `videoAnalysisHistory`：`id`（自動採番）、`videoId`、`analysisVersion`、`aiAnalysis`（`MEDIUMTEXT`）、`contentSha256`、`promptSha256`、`generatedAt`、`archivedAt`、`archivedBy`。
+     - `videoScenes`（CHIBA-PC2 実装後に連携）：`analysisVersion`、`analysisGeneratedAt` を追加。
+  4. **TiDB 書き込みプロトコル (`scripts/apply-reanalysis-v3-to-tidb.mjs`)**：
+     - `_apply_lock.json` ロック必須。正本 `manifest.json` の SHA-256 一致かつ機械チェック合格の動画のみ対象。
+     - 動画 1 本ごとに単一トランザクションで (a) 旧 `aiAnalysis` を `videoAnalysisHistory` へ退避、(b) `videos` の 4 列を更新（`updatedAt` は保持）、(c) ローカル SQLite の該当 `video_id` 分の `scenes` / `scenes_fts` を入れ替える。
+     - Pre-D 元 40 カラム監査は、`aiAnalysis` の差分が「v3 正本 manifest に存在し本文 SHA-256 が完全一致」する場合のみ許可し、その他の差分・不一致はすべて失敗とする。
+     - **運用段階**：DDL 適用および **最初の 20 本の TiDB 書き込みは千葉さんの明示承認後に実行**し、21 本目以降は全ゲート通過分のみ自動書き込みを許可する。
+- 根拠：`D:\マイドライブ\iketeru_analysis_v3\_docs\PILOT_V3_REPORT.md`、`docs/prompts/analysis_prompt_v3_1.md`、`docs/prompts/audit_prompt_v1.md`、`docs/sql/proposed_v3_analysis_ddl.sql`、`scripts/apply-reanalysis-v3-to-tidb.mjs`、`scripts/approved-tidb-overrides.mjs`、`scripts/claim-craft-batch.mjs`。
+
+### D-027 YouTube 動画ダウンロードの運用ルール（2026-11-26）
+- 決定：
+  1. **実施 PC の 1 台限定**：YouTube 動画のダウンロードは `CHIBA-PC` の 1 台のみで実施する（`chibatmute` / `CHIBA-PC2` からの YouTube 直接アクセス禁止は D-014 / D-016 のまま継続）。
+  2. **専用アカウント Cookie・日次上限・停止条件**：YouTube 専用アカウントの Cookie を用い、`CHIBA-PC` の定期実行（`E:\iketeru_downloader\run_daily.cmd`）で 1 日あたりの上限（初期 150 本 → 2 日連続異常なしで 200 本 → さらに 2 日で 300 本、停止条件該当時は即停止し翌日から 1 段下げ・最低 100 本）および停止条件（`bot_check` 検知等）付きで運用し、実績を `status_downloader.md` に記録する。
+  3. **API ルートの位置づけ**：Gemini API URL ルート（`gemini_api_youtube_url_v1` / `gemini_api_url_v1`）は、ダウンロードできなかった動画（非公開・制限・取得不可等）の補完専用とする。
+- 根拠：`D:\マイドライブ\iketeru_multi_pc_progress\status_downloader.md`、D-014、D-016。
