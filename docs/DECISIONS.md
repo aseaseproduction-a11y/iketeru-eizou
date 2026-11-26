@@ -154,3 +154,8 @@
   4. **TiDB 元 40 カラム更新の「承認済み変更リスト」方式**：除外復帰（`O1DQObWYYLQ` の `aiScoreBreakdown`）や分析差し替え（`1018644295` / `Gwgo9GS4mVM` の `aiAnalysis`）のように元 40 カラムを更新する必要がある場合、新カラムは追加せず `analysis/approved_tidb_overrides.json` に 1 件ごとに `video_id`・`column`・変更後の値の `after_sha256`・`reason`・`decision_id`・`approved_at` を記録する。`apply-phase3-batch-to-tidb.mjs` 等の Pre-D 監査は、リストに完全一致する差分のみ許可し、リストにない差分や SHA-256 不一致は従来どおり失敗にする。
   5. **除外動画点検で「一部違う」だった残り 12 本の扱い**：据え置きにせず、作り直し順番待ちキュー（`analysis/visual_audit_remake_queue.json`）で管理する。
 - 根拠：`shared/expressivePurposeVocab.json`、`docs/prompts/craft_v2_with_purpose_prompt.md`、`scripts/publish-craft-recipe-to-store.mjs`、`scripts/approved-tidb-overrides.mjs`、`analysis/approved_tidb_overrides.json`、`analysis/visual_audit_remake_queue.json`。
+
+### D-025 編集品質の基準 iketeru-edit-qc を新設（2026-11-26）
+- 決定：動画編集の品質基準（守りのルール）を iketeru-edit-qc とする。正本は マイドライブ/iketeru_edit_qc。更新は正本で行い、iketeru-creative-studio の skills/ へはコピーで反映する。
+- 理由：AI編集の同じ失敗（カット位置・テロップ・インサート・オーバーレイ欠落・自己申告PASS）が版ごとに繰り返されたため。
+- 根拠：マイドライブ/iketeru_edit_qc/CHANGELOG.md v1.0
