@@ -85,12 +85,153 @@ export function loadApprovedTidbOverrides(filePath = DEFAULT_APPROVED_OVERRIDES_
   return { exists: true, file_path: filePath, entries: list, active_map: activeMap };
 }
 
+export const DEFAULT_V3_STORE_DIR =
+  process.env.IKETERU_ANALYSIS_V3_DIR || "D:\\マイドライブ\\iketeru_analysis_v3";
+
+function sha256Buffer(buf) {
+  return crypto.createHash("sha256").update(buf).digest("hex");
+}
+
+/**
+ * Load verified Analysis v3 entries from canonical store (`iketeru_analysis_v3/`).
+ * Supports both root `manifest.json` (if present with `entries`/`videos`) and
+ * per-video `<video_id>/manifest.json` folders.
+ *
+ * Returns only entries whose `analysis_v3.md` SHA-256 matches `manifest.json` AND
+ * whose `mechanical_check.json` passed all mechanical checks.
+ */
+export function loadV3CanonicalManifestMap(storeDir = DEFAULT_V3_STORE_DIR) {
+  const validMap = new Map();
+  const rejected = [];
+  if (!storeDir || !fs.existsSync(storeDir)) {
+    return { exists: false, store_dir: storeDir, valid_map: validMap, rejected };
+  }
+
+  const candidateIds = [];
+  const rootManifestPath = path.join(storeDir, "manifest.json");
+  if (fs.existsSync(rootManifestPath)) {
+    try {
+      const rootDoc = JSON.parse(fs.readFileSync(rootManifestPath, "utf8"));
+      const list = Array.isArray(rootDoc.videos)
+        ? rootDoc.videos
+        : Array.isArray(rootDoc.entries)
+        ? rootDoc.entries
+        : rootDoc.videos && typeof rootDoc.videos === "object"
+        ? Object.keys(rootDoc.videos)
+        : [];
+      for (const item of list) {
+        const vid = typeof item === "string" ? item : String(item?.video_id || "");
+        if (vid) candidateIds.push(vid);
+      }
+    } catch (err) {
+      rejected.push({ video_id: "*", reason: `root_manifest_parse_error: ${err.message}` });
+    }
+  }
+
+  if (candidateIds.length === 0) {
+    for (const ent of fs.readdirSync(storeDir, { withFileTypes: true })) {
+      if (ent.isDirectory() && !ent.name.startsWith("_")) {
+        candidateIds.push(ent.name);
+      }
+    }
+    candidateIds.sort();
+  }
+
+  for (const vid of candidateIds) {
+    const dir = path.join(storeDir, vid);
+    const mPath = path.join(dir, "manifest.json");
+    const aPath = path.join(dir, "analysis_v3.md");
+    const cPath = path.join(dir, "mechanical_check.json");
+    if (!fs.existsSync(mPath) || !fs.existsSync(aPath) || !fs.existsSync(cPath)) {
+      rejected.push({ video_id: vid, reason: "missing_required_v3_files" });
+      continue;
+    }
+    try {
+      const manifest = JSON.parse(fs.readFileSync(mPath, "utf8"));
+      const check = JSON.parse(fs.readFileSync(cPath, "utf8"));
+      if (String(manifest.video_id || "") !== vid) {
+        rejected.push({ video_id: vid, reason: "manifest_video_id_mismatch" });
+        continue;
+      }
+      const analysisBuf = fs.readFileSync(aPath);
+      const analysisText = analysisBuf.toString("utf8");
+      const actualAnalysisSha = sha256Buffer(analysisBuf);
+      const expectedAnalysisSha = String(manifest.files?.["analysis_v3.md"]?.sha256 || "").toLowerCase();
+      const expectedAnalysisBytes = manifest.files?.["analysis_v3.md"]?.bytes;
+      if (!expectedAnalysisSha || actualAnalysisSha !== expectedAnalysisSha) {
+        rejected.push({
+          video_id: vid,
+          reason: "analysis_v3_sha256_mismatch",
+          expected: expectedAnalysisSha,
+          actual: actualAnalysisSha,
+        });
+        continue;
+      }
+      if (typeof expectedAnalysisBytes === "number" && analysisBuf.length !== expectedAnalysisBytes) {
+        rejected.push({
+          video_id: vid,
+          reason: "analysis_v3_bytes_mismatch",
+          expected: expectedAnalysisBytes,
+          actual: analysisBuf.length,
+        });
+        continue;
+      }
+      const checkBuf = fs.readFileSync(cPath);
+      const actualCheckSha = sha256Buffer(checkBuf);
+      const expectedCheckSha = String(manifest.files?.["mechanical_check.json"]?.sha256 || "").toLowerCase();
+      if (expectedCheckSha && actualCheckSha !== expectedCheckSha) {
+        rejected.push({ video_id: vid, reason: "mechanical_check_sha256_mismatch" });
+        continue;
+      }
+      const mech = check.mechanical || {};
+      const ta = check.transcript_audit || {};
+      if (mech.all_passed !== true) {
+        rejected.push({ video_id: vid, reason: "mechanical_check_not_passed", fail_reasons: mech.fail_reasons || [] });
+        continue;
+      }
+      if (ta.ok !== true) {
+        rejected.push({ video_id: vid, reason: "transcript_audit_not_ok" });
+        continue;
+      }
+      if (check.prompt_sha256_verified === false) {
+        rejected.push({ video_id: vid, reason: "prompt_sha256_not_verified" });
+        continue;
+      }
+      const contentSha256 = sha256TidbCellValue(analysisText);
+      validMap.set(vid, {
+        video_id: vid,
+        dir,
+        analysis_path: aPath,
+        manifest_path: mPath,
+        check_path: cPath,
+        analysis_text: analysisText,
+        analysis_file_sha256: actualAnalysisSha,
+        analysis_content_sha256: contentSha256,
+        analysis_bytes: analysisBuf.length,
+        manifest_analysis_version: String(manifest.analysis_version || "v3"),
+        db_analysis_version: "v3",
+        prompt_template_sha256: manifest.prompt_template_sha256 ? String(manifest.prompt_template_sha256) : null,
+        created_at: manifest.created_at ? String(manifest.created_at) : null,
+        created_by_pc: manifest.created_by_pc ? String(manifest.created_by_pc) : null,
+        scenes_count: Number(mech.scenes_count || 0),
+        chapters_count: Number(mech.chapters_count || 0),
+        mechanical_passed: true,
+      });
+    } catch (err) {
+      rejected.push({ video_id: vid, reason: `parse_error: ${err.message}` });
+    }
+  }
+
+  return { exists: true, store_dir: storeDir, valid_map: validMap, rejected };
+}
+
 export function auditOriginalColumnsAgainstPreD({
   liveRows,
   backupMap,
   originalColumns,
   legacyScoreColumns = new Set(),
   approvedOverrideMap = new Map(),
+  v3ManifestMap = new Map(),
 }) {
   let rowsCompared = 0;
   let totalCellsCompared = 0;
@@ -98,6 +239,7 @@ export function auditOriginalColumnsAgainstPreD({
   let legacyScoreColMismatches = 0;
   let updatedAtMismatches = 0;
   const approvedMatches = [];
+  const v3ManifestMatches = [];
   const sampleMismatches = [];
 
   for (const row of liveRows) {
@@ -129,6 +271,35 @@ export function auditOriginalColumnsAgainstPreD({
           });
           continue;
         }
+        if (col === "aiAnalysis" && v3ManifestMap && v3ManifestMap.has(String(row.id))) {
+          const v3Entry = v3ManifestMap.get(String(row.id));
+          const expectedV3Sha = String(
+            v3Entry.analysis_content_sha256 || v3Entry.analysis_file_sha256 || v3Entry.sha256 || ""
+          ).toLowerCase();
+          if (v3Entry.mechanical_passed === true && expectedV3Sha && liveSha.toLowerCase() === expectedV3Sha) {
+            v3ManifestMatches.push({
+              video_id: String(row.id),
+              column: col,
+              after_sha256: liveSha,
+              prompt_template_sha256: v3Entry.prompt_template_sha256 || null,
+              analysis_version: "v3",
+            });
+            continue;
+          }
+          anyOriginalColMismatches++;
+          if (legacyScoreColumns.has(col)) legacyScoreColMismatches++;
+          if (sampleMismatches.length < 10) {
+            sampleMismatches.push({
+              id: row.id,
+              col,
+              reason: "v3_manifest_sha256_mismatch",
+              expected_v3_sha256: expectedV3Sha || null,
+              live_sha256: liveSha,
+              backup_sha256: sha256TidbCellValue(bakVal),
+            });
+          }
+          continue;
+        }
         anyOriginalColMismatches++;
         if (legacyScoreColumns.has(col)) legacyScoreColMismatches++;
         if (col === "updatedAt") updatedAtMismatches++;
@@ -152,6 +323,8 @@ export function auditOriginalColumnsAgainstPreD({
     total_cells_compared: totalCellsCompared,
     approved_overrides_matched_count: approvedMatches.length,
     approved_overrides_matched: approvedMatches,
+    v3_manifest_matched_count: v3ManifestMatches.length,
+    v3_manifest_matched: v3ManifestMatches,
     legacy_8_score_columns_mismatches: legacyScoreColMismatches,
     all_40_original_columns_mismatches: anyOriginalColMismatches,
     updated_at_row_mismatches: updatedAtMismatches,

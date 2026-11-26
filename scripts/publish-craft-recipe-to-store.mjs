@@ -138,6 +138,7 @@ export function validateRecipeGates({
   minCredibilityScore = 90,
   minCalibratedScore = 78.0,
   requirePurpose = false,
+  allowApiRecipe = false,
 }) {
   const gates = {
     G1_schema_and_v2: { passed: true, errors: [] },
@@ -177,6 +178,12 @@ export function validateRecipeGates({
   const topProv = doc.provenance || {};
   if (!topProv.source || !topProv.worker || !topProv.run_id || !topProv.model) {
     gates.G6_paths_and_provenance.errors.push("Missing required top-level provenance fields (source, worker, run_id, model)");
+  }
+  const isApiRecipe = String(topProv.source || "") === "gemini_api_url_v1";
+  if (isApiRecipe && !allowApiRecipe) {
+    gates.G6_paths_and_provenance.errors.push(
+      'provenance.source="gemini_api_url_v1" requires explicit --allow-api-recipe flag (reserved for videos without local MP4)'
+    );
   }
 
   for (const c of cuts) {
@@ -223,30 +230,49 @@ export function validateRecipeGates({
       gates.G4_production_compliance.errors.push(`${prefix}: mentions banned image telop`);
     }
 
-    // G5: media files & telemetry
+    // G5: media files & telemetry (API-sourced recipes without local MP4 use explicit gemini_api_url_v1 track)
     const media = c.media || {};
-    for (const mk of ["gif_path", "strip_path", "start_png", "mid_png", "end_png"]) {
-      const rel = String(media[mk] || "");
-      if (!rel) {
-        gates.G5_media_and_telemetry.errors.push(`${prefix}: missing media.${mk}`);
-        continue;
+    if (isApiRecipe && allowApiRecipe) {
+      const tel = media.telemetry || {};
+      if (tel.available !== false || tel.unavailable_reason !== "no_local_video_api_url_v1") {
+        gates.G5_media_and_telemetry.errors.push(
+          `${prefix}: API recipe (gemini_api_url_v1) must set media.telemetry.available=false and unavailable_reason="no_local_video_api_url_v1"`
+        );
       }
-      if (path.isAbsolute(rel) || /^[A-Za-z]:/.test(rel)) {
-        gates.G6_paths_and_provenance.errors.push(`${prefix}: PC-dependent absolute path in media.${mk}: ${rel}`);
+      if (String(c.provenance?.source || "") !== "gemini_api_url_v1") {
+        gates.G6_paths_and_provenance.errors.push(
+          `${prefix}: API recipe cut must declare provenance.source="gemini_api_url_v1"`
+        );
       }
-      const fname = path.basename(rel);
-      const stagedFile = path.join(stagingDir, fname);
-      if (!fs.existsSync(stagedFile) || fs.statSync(stagedFile).size <= 0) {
-        gates.G5_media_and_telemetry.errors.push(`${prefix}: staged media file missing or empty: ${fname}`);
+    } else {
+      for (const mk of ["gif_path", "strip_path", "start_png", "mid_png", "end_png"]) {
+        const rel = String(media[mk] || "");
+        if (!rel) {
+          gates.G5_media_and_telemetry.errors.push(`${prefix}: missing media.${mk}`);
+          continue;
+        }
+        if (path.isAbsolute(rel) || /^[A-Za-z]:/.test(rel)) {
+          gates.G6_paths_and_provenance.errors.push(`${prefix}: PC-dependent absolute path in media.${mk}: ${rel}`);
+        }
+        const fname = path.basename(rel);
+        const stagedFile = path.join(stagingDir, fname);
+        if (!fs.existsSync(stagedFile) || fs.statSync(stagedFile).size <= 0) {
+          gates.G5_media_and_telemetry.errors.push(`${prefix}: staged media file missing or empty: ${fname}`);
+        }
       }
-    }
-    if (media.telemetry?.available !== true) {
-      gates.G5_media_and_telemetry.errors.push(`${prefix}: media.telemetry.available is not true`);
+      if (media.telemetry?.available !== true) {
+        gates.G5_media_and_telemetry.errors.push(`${prefix}: media.telemetry.available is not true`);
+      }
     }
 
     // G8: expressive_purpose (D-024) — always validated when present; required when requirePurpose=true
     if (requirePurpose || c.expressive_purpose !== undefined) {
       gates.G8_expressive_purpose.errors.push(...validateExpressivePurposeCut(c, prefix));
+      if (isApiRecipe && allowApiRecipe && c.expressive_purpose && c.expressive_purpose.provenance !== "api_interpreted") {
+        gates.G8_expressive_purpose.errors.push(
+          `${prefix}: API recipe (gemini_api_url_v1) must use expressive_purpose.provenance="api_interpreted"`
+        );
+      }
     }
   }
 
@@ -405,6 +431,7 @@ if (isMain) {
         calibratedScore: args["calibrated-score"] ? Number(args["calibrated-score"]) : null,
         observationScope: args["observation-scope"] || null,
         requirePurpose: Boolean(args["require-purpose"]),
+        allowApiRecipe: Boolean(args["allow-api-recipe"]),
       },
     });
     console.log(JSON.stringify(res, null, 2));
