@@ -818,7 +818,14 @@ export default function VideoModal({
                           </div>
                         </div>
                       )}
-                      {video.aiAnalysis && <AiAnalysisReport analysis={video.aiAnalysis} />}
+                      {video.aiAnalysis && (
+                        <AiAnalysisReport
+                          analysis={video.aiAnalysis}
+                          analysisVersion={video.analysisVersion}
+                          analysisGeneratedAt={video.analysisGeneratedAt}
+                          analysisPromptSha256={video.analysisPromptSha256}
+                        />
+                      )}
                     </div>
                   )}
                 </div>

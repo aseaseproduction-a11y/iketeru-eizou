@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { parseVideoRow } from "./db";
+import { isMissingAnalysisVersionColumnError, parseVideoRow } from "./db";
 
 describe("parseVideoRow", () => {
   it("exposes Notion metadata and AI evaluation fields", () => {
@@ -87,5 +87,42 @@ describe("parseVideoRow", () => {
     expect(listItem.aiAnalysis).toBe("");
     expect(listItem.metadataClassificationAudit).toBeUndefined();
     expect(video.aiAnalysis).toBe("長い分析本文");
+    expect(video.analysisVersion).toBe("legacy");
+    expect(video.analysisGeneratedAt).toBeNull();
+    expect(video.analysisPromptSha256).toBeNull();
+  });
+
+  it("maps v3 analysisVersion, analysisGeneratedAt, analysisPromptSha256 and detects missing-column errors safely", () => {
+    const generatedAt = new Date("2026-11-26T05:29:37.000Z");
+    const v3Video = parseVideoRow({
+      id: "v3-video",
+      platform: "youtube",
+      title: "V3 analyzed video",
+      thumbnail: null,
+      videoUrl: "https://www.youtube.com/watch?v=RgkoXU4BlOE",
+      embedUrl: null,
+      source: "vook",
+      sourceLabel: null,
+      channelId: null,
+      channelTitle: null,
+      genres: "[]", products: "[]", directions: "[]", tones: "[]", allTags: "[]",
+      purposes: "[]", expressions: "[]", toneEmotions: "[]", toneVisuals: "[]", toneTechniques: "[]", productions: "[]", awards: "[]",
+      curationNote: null, metadataClassificationAudit: null,
+      privateRating: null, aiOverallRating: null, aiDirectionRating: null, aiTechniqueRating: null,
+      aiAnalysis: "v3 analysis",
+      analysisVersion: "v3",
+      analysisGeneratedAt: generatedAt,
+      analysisPromptSha256: "a53083e103d3114e72f5d60d321a0644b0daf603830ad033b74ed5b2ee0083fe",
+      embedStatus: "available", embedReason: null, embedCheckedAt: null,
+      addedDate: "2026-11-26", createdAt: new Date(), updatedAt: new Date(),
+    } as never);
+
+    expect(v3Video.analysisVersion).toBe("v3");
+    expect(v3Video.analysisGeneratedAt).toBe("2026-11-26T05:29:37.000Z");
+    expect(v3Video.analysisPromptSha256).toBe("a53083e103d3114e72f5d60d321a0644b0daf603830ad033b74ed5b2ee0083fe");
+
+    expect(isMissingAnalysisVersionColumnError({ code: "ER_BAD_FIELD_ERROR", errno: 1054, message: "Unknown column 'analysisVersion' in 'field list'" })).toBe(true);
+    expect(isMissingAnalysisVersionColumnError({ cause: { errno: 1054, message: "Unknown column 'analysisPromptSha256' in 'field list'" } })).toBe(true);
+    expect(isMissingAnalysisVersionColumnError(new Error("Unknown column 'otherCol' in 'field list'"))).toBe(false);
   });
 });

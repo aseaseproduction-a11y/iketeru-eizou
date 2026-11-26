@@ -41,6 +41,12 @@ describe("videoScenes search API & missing-table fallback", () => {
 
     const uncalibrated = buildVideoSceneFilterWhere({ scoreFilter: "uncalibrated_only" });
     expect(uncalibrated.whereSql).toContain("v.calibratedScore IS NULL");
+
+    const v3Only = buildVideoSceneFilterWhere({ excludeLegacyAnalysis: true });
+    expect(v3Only.whereSql).toContain("s.analysisVersion = 'v3'");
+
+    const withLegacy = buildVideoSceneFilterWhere({ excludeLegacyAnalysis: false });
+    expect(withLegacy.whereSql).not.toContain("s.analysisVersion = 'v3'");
   });
 
   it("returns available: false without throwing when videoScenes table does not exist in TiDB", async () => {
@@ -93,6 +99,8 @@ describe("videoScenes search API & missing-table fallback", () => {
               description: "円形窓から月へグラフィックマッチで切り替わる。",
               audioText: "キック音ハメ",
               keywordsJson: '["マッチカット","音ハメ"]',
+              analysisVersion: "v3",
+              analysisGeneratedAt: new Date("2026-11-26T05:29:37.000Z"),
               videoTitle: "Test MV",
               platform: "youtube",
               thumbnail: null,
@@ -124,6 +132,8 @@ describe("videoScenes search API & missing-table fallback", () => {
     expect(res.items).toHaveLength(1);
     expect(res.items[0].scene.id).toBe("vid1_s03");
     expect(res.items[0].scene.calibratedScore).toBe(88.5);
+    expect(res.items[0].scene.analysisVersion).toBe("v3");
+    expect(res.items[0].scene.analysisGeneratedAt).toBe("2026-11-26T05:29:37.000Z");
     expect(res.items[0].matchedTerms).toContain("マッチカット");
   });
 });

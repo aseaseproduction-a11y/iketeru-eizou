@@ -107,4 +107,19 @@ describe("sceneSearch technique keywords & categories", () => {
     const band78To82Count = calibratedOnly.filter((s) => (s.calibratedScore ?? 0) >= 78 && (s.calibratedScore ?? 0) < 83).length;
     expect(score83Plus.length + band78To82Count + below78Count).toBe(calibratedOnly.length);
   });
+
+  it("filters out legacy scenes when excludeLegacyAnalysis is true", () => {
+    const versionedScenes: SceneItem[] = [
+      { ...sampleScenes[0], analysisVersion: "v3", analysisGeneratedAt: "2026-11-26T05:29:37.000Z" },
+      { ...sampleScenes[1], analysisVersion: "legacy", analysisGeneratedAt: null },
+      { ...sampleScenes[2] }, // undefined defaults to legacy
+    ];
+
+    expect(filterFallbackScenes(versionedScenes, { excludeLegacyAnalysis: false }).map((s) => s.id)).toEqual([
+      "v1-0", "v2-0", "v3-0",
+    ]);
+    expect(filterFallbackScenes(versionedScenes, { excludeLegacyAnalysis: true }).map((s) => s.id)).toEqual([
+      "v1-0",
+    ]);
+  });
 });

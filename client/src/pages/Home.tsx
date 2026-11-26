@@ -136,6 +136,7 @@ export default function Home() {
   const [sceneQuery, setSceneQuery] = useState("");
   const [debouncedSceneQuery, setDebouncedSceneQuery] = useState("");
   const [sceneExcludeUnwatched, setSceneExcludeUnwatched] = useState<boolean>(true);
+  const [sceneExcludeLegacyAnalysis, setSceneExcludeLegacyAnalysis] = useState<boolean>(false);
   const [sceneScoreFilter, setSceneScoreFilter] = useState<SceneScoreFilter>("all");
   const [scenePageLimit, setScenePageLimit] = useState<number>(40);
   const [fallbackSceneResults, setFallbackSceneResults] = useState<SceneSearchResult[]>([]);
@@ -156,7 +157,7 @@ export default function Home() {
   // Reset pagination when filter toggles change
   useEffect(() => {
     setScenePageLimit(40);
-  }, [sceneExcludeUnwatched, sceneScoreFilter]);
+  }, [sceneExcludeUnwatched, sceneExcludeLegacyAnalysis, sceneScoreFilter]);
 
   // TiDB scenes API queries (gracefully fall back to static scenes_index.json when table is not created yet)
   const shouldQueryScenesApi = viewMode === "scenes" || Boolean(filters.search.trim());
@@ -166,6 +167,7 @@ export default function Home() {
       limit: scenePageLimit,
       offset: 0,
       excludeUnwatched: sceneExcludeUnwatched,
+      excludeLegacyAnalysis: sceneExcludeLegacyAnalysis,
       scoreFilter: sceneScoreFilter,
     },
     {
@@ -178,6 +180,7 @@ export default function Home() {
   const { data: apiSceneKeywordStats } = trpc.scenes.keywordStats.useQuery(
     {
       excludeUnwatched: sceneExcludeUnwatched,
+      excludeLegacyAnalysis: sceneExcludeLegacyAnalysis,
       scoreFilter: sceneScoreFilter,
     },
     {
@@ -202,9 +205,10 @@ export default function Home() {
       filterFallbackScenes(allScenes, {
         videosById,
         excludeUnwatched: sceneExcludeUnwatched,
+        excludeLegacyAnalysis: sceneExcludeLegacyAnalysis,
         scoreFilter: sceneScoreFilter,
       }),
-    [allScenes, videosById, sceneExcludeUnwatched, sceneScoreFilter],
+    [allScenes, videosById, sceneExcludeUnwatched, sceneExcludeLegacyAnalysis, sceneScoreFilter],
   );
 
   const sceneResults: SceneSearchResult[] = useMemo(() => {
@@ -705,6 +709,16 @@ export default function Home() {
                         className="h-3.5 w-3.5 rounded border-white/25 bg-black/50 accent-amber-400"
                       />
                       <span>見ずに作られた動画を除外（既定ON）</span>
+                    </label>
+                    <label className="inline-flex items-center gap-2 text-xs text-white/80 cursor-pointer select-none">
+                      <input
+                        type="checkbox"
+                        aria-label="旧分析を除く"
+                        checked={sceneExcludeLegacyAnalysis}
+                        onChange={(e) => setSceneExcludeLegacyAnalysis(e.target.checked)}
+                        className="h-3.5 w-3.5 rounded border-white/25 bg-black/50 accent-emerald-400"
+                      />
+                      <span>旧分析を除く（v3のみ表示）</span>
                     </label>
                   </div>
 

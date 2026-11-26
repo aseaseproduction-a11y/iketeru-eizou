@@ -4,12 +4,17 @@
  * Thumbnail fallback chain: maxresdefault → sddefault → hqdefault → placeholder
  * Features: favorite badge, note indicator, external click handler
  */
-import { useState, useCallback, useRef } from "react";
+import React, { useState, useCallback, useRef } from "react";
 import { motion } from "framer-motion";
 import { Play, Film, Bookmark, StickyNote, AlertCircle, User } from "lucide-react";
 import type { Video, VideoSource } from "@/lib/types";
 import { SOURCE_COLORS } from "@/lib/types";
 import { formatEmbedRecheckAt, isEmbedStatusRecheckDue } from "@/lib/embedStatus";
+import {
+  isLegacyAnalysisVersion,
+  LEGACY_ANALYSIS_LABEL,
+  V3_ANALYSIS_LABEL,
+} from "@shared/analysisVersion";
 
 interface VideoCardProps {
   video: Video;
@@ -291,6 +296,29 @@ export default function VideoCard({ video, index, isFavorite = false, hasNote = 
             <span className="truncate">{mainCreator}</span>
           </p>
         )}
+        <div className="mt-1 flex flex-wrap items-center gap-1">
+          {isLegacyAnalysisVersion(video.analysisVersion) ? (
+            <span
+              data-testid="video-legacy-analysis-badge"
+              title="旧方式の分析です（実映像照合済みの v3 へ順次更新中）"
+              className="inline-flex items-center rounded-sm border border-amber-400/40 bg-amber-950/80 px-1.5 py-0.5 text-[8.5px] font-semibold text-amber-300"
+            >
+              {LEGACY_ANALYSIS_LABEL}
+            </span>
+          ) : (
+            <span
+              data-testid="video-v3-analysis-badge"
+              title={
+                video.analysisGeneratedAt
+                  ? `${V3_ANALYSIS_LABEL}（生成: ${video.analysisGeneratedAt.slice(0, 10)}）`
+                  : V3_ANALYSIS_LABEL
+              }
+              className="inline-flex items-center rounded-sm border border-emerald-400/35 bg-emerald-500/15 px-1.5 py-0.5 text-[8.5px] font-semibold text-emerald-200"
+            >
+              {V3_ANALYSIS_LABEL}
+            </span>
+          )}
+        </div>
         {(hasCalibrated || aiRatings.length > 0 || isLegacyUncalibrated) && (
           <div className="mt-1.5 flex flex-wrap items-center gap-1" aria-label="AI評価">
             {hasCalibrated && (

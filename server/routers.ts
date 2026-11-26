@@ -340,6 +340,7 @@ export const appRouter = router({
           limit: z.number().int().min(1).max(80).default(40),
           offset: z.number().int().min(0).max(5000).default(0),
           excludeUnwatched: z.boolean().default(true),
+          excludeLegacyAnalysis: z.boolean().default(false),
           scoreFilter: z.enum(["all", "calibrated_only", "score_78_plus", "score_83_plus", "uncalibrated_only"]).default("all"),
         }),
       )
@@ -351,6 +352,7 @@ export const appRouter = router({
         z
           .object({
             excludeUnwatched: z.boolean().default(true),
+            excludeLegacyAnalysis: z.boolean().default(false),
             scoreFilter: z.enum(["all", "calibrated_only", "score_78_plus", "score_83_plus", "uncalibrated_only"]).default("all"),
           })
           .optional(),
@@ -358,6 +360,7 @@ export const appRouter = router({
       .query(async ({ input }) =>
         getVideoSceneKeywordStats({
           excludeUnwatched: input?.excludeUnwatched ?? true,
+          excludeLegacyAnalysis: input?.excludeLegacyAnalysis ?? false,
           scoreFilter: input?.scoreFilter ?? "all",
         }),
       ),

@@ -77,6 +77,9 @@ export const videos = mysqlTable("videos", {
   calibratedRunId: varchar("calibratedRunId", { length: 64 }), // analysis/runs/<run_id>
   calibrationGenreBucket: varchar("calibrationGenreBucket", { length: 64 }), // CM | MV | モーション | 3DCG/アニメ | 企業映像 | unverified:<slug>
   analysisObservationScope: varchar("analysisObservationScope", { length: 40 }), // metadata_only_unwatched | triage_boilerplate_unwatched | triage_unverified_short | missing_video_unwatched | null
+  analysisVersion: varchar("analysisVersion", { length: 16 }).notNull().default("legacy"), // 'legacy' | 'v3'
+  analysisGeneratedAt: timestamp("analysisGeneratedAt"), // v3 生成完了日時 (UTC)。legacy は NULL
+  analysisPromptSha256: varchar("analysisPromptSha256", { length: 64 }), // プロンプト SHA-256（v3 / v3.1 の識別用）
   embedStatus: varchar("embedStatus", { length: 16 }).notNull().default("unknown"), // unknown | available | restricted
   embedReason: varchar("embedReason", { length: 128 }), // unavailable_private_or_deleted | unavailable_access_restricted | unavailable_embed_restricted | unavailable_page_unavailable
   embedCheckedAt: timestamp("embedCheckedAt"),
@@ -121,6 +124,28 @@ export const videoScenes = mysqlTable("videoScenes", {
 
 export type VideoSceneRow = typeof videoScenes.$inferSelect;
 export type InsertVideoScene = typeof videoScenes.$inferInsert;
+
+/**
+ * Archive history of previous `videos.aiAnalysis` snapshots preserved before v3 replacement.
+ * Aligned with chibatmute's write script schema (`drizzle/add_analysis_version.sql`).
+ */
+export const videoAnalysisHistory = mysqlTable("videoAnalysisHistory", {
+  id: int("id").autoincrement().primaryKey(),
+  videoId: varchar("videoId", { length: 64 }).notNull(),
+  analysisVersion: varchar("analysisVersion", { length: 16 }).notNull(),
+  aiAnalysis: mediumtext("aiAnalysis").notNull(),
+  contentSha256: varchar("contentSha256", { length: 64 }).notNull(),
+  promptSha256: varchar("promptSha256", { length: 64 }),
+  generatedAt: timestamp("generatedAt"),
+  archivedAt: timestamp("archivedAt").defaultNow().notNull(),
+  archivedBy: varchar("archivedBy", { length: 64 }),
+}, (table) => [
+  index("video_analysis_history_video_id_idx").on(table.videoId, table.archivedAt),
+  index("video_analysis_history_version_idx").on(table.analysisVersion),
+]);
+
+export type VideoAnalysisHistoryRow = typeof videoAnalysisHistory.$inferSelect;
+export type InsertVideoAnalysisHistory = typeof videoAnalysisHistory.$inferInsert;
 
 /**
  * 公開端末でも利用者ごとにお気に入りを分離するための名前付きプロフィール。

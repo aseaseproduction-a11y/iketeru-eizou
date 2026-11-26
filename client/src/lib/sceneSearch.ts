@@ -14,6 +14,11 @@ import {
   type KeywordCategory,
   type SceneScoreFilter,
 } from "@shared/sceneSearchMeta";
+import {
+  isV3AnalysisVersion,
+  normalizeAnalysisVersion,
+  type AnalysisVersion,
+} from "@shared/analysisVersion";
 
 export { getSynonymsForWord, parseQueryWords, type KeywordCategory, type SceneScoreFilter };
 
@@ -31,6 +36,8 @@ export interface SceneItem {
   keywords: string[];
   thumbnailUrl: string;
   analysisObservationScope?: string | null;
+  analysisVersion?: AnalysisVersion;
+  analysisGeneratedAt?: string | null;
   calibratedScore?: number | null;
   calibratedRank?: string | null;
   aiOverallScore?: number | null;
@@ -48,22 +55,35 @@ export function filterFallbackScenes(
   options: {
     videosById?: Map<string, Video>;
     excludeUnwatched?: boolean;
+    excludeLegacyAnalysis?: boolean;
     scoreFilter?: SceneScoreFilter;
   },
 ): SceneItem[] {
   const excludeUnwatched = options.excludeUnwatched ?? true;
+  const excludeLegacyAnalysis = options.excludeLegacyAnalysis ?? false;
   const scoreFilter = options.scoreFilter ?? "all";
   const videosById = options.videosById;
 
   return scenes
     .map((scene) => {
       const video = videosById?.get(scene.videoId);
-      if (!video) return scene;
+      const resolvedAnalysisVersion = normalizeAnalysisVersion(
+        scene.analysisVersion ?? video?.analysisVersion,
+      );
+      if (!video) {
+        return {
+          ...scene,
+          analysisVersion: resolvedAnalysisVersion,
+          analysisGeneratedAt: scene.analysisGeneratedAt ?? null,
+        };
+      }
       return {
         ...scene,
         analysisObservationScope:
           scene.analysisObservationScope ??
           ((video as Video & { analysisObservationScope?: string | null }).analysisObservationScope ?? null),
+        analysisVersion: resolvedAnalysisVersion,
+        analysisGeneratedAt: scene.analysisGeneratedAt ?? video.analysisGeneratedAt ?? null,
         calibratedScore: scene.calibratedScore ?? video.calibratedScore ?? null,
         calibratedRank: scene.calibratedRank ?? video.calibratedRank ?? null,
         aiOverallScore: scene.aiOverallScore ?? video.aiOverallScore ?? null,
@@ -72,6 +92,9 @@ export function filterFallbackScenes(
     })
     .filter((scene) => {
       if (excludeUnwatched && scene.analysisObservationScope) {
+        return false;
+      }
+      if (excludeLegacyAnalysis && !isV3AnalysisVersion(scene.analysisVersion)) {
         return false;
       }
       const cal = typeof scene.calibratedScore === "number" ? scene.calibratedScore : null;
