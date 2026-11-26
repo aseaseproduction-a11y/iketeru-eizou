@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "run_id": "pilot_20261125_162300",
+  "updated_at": "2026-11-25T09:22:35.066Z",
+  "remaining_count": 0,
+  "deferred_calls": [],
+  "congestion_events_count": 7,
+  "congestion_events": [
+    {
+      "timestamp": "2026-11-25T07:24:02.876Z",
+      "code": "503",
+      "try_index": 1,
+      "phase": "initial_try1",
+      "video_id": "FcIFvzP8-mg",
+      "attempt": 2
+    },
+    {
+      "timestamp": "2026-11-25T07:24:46.273Z",
+      "code": "503",
+      "try_index": 2,
+      "phase": "initial_try2_deferred",
+      "video_id": "FcIFvzP8-mg",
+      "attempt": 2
+    },
+    {
+      "timestamp": "2026-11-25T07:29:26.769Z",
+      "code": "503",
+      "try_index": 1,
+      "phase": "initial_try1",
+      "video_id": "jsEVOjI690Y",
+      "attempt": 2
+    },
+    {
+      "timestamp": "2026-11-25T07:31:25.425Z",
+      "code": "503",
+      "try_index": 2,
+      "phase": "initial_try2_deferred",
+      "video_id": "jsEVOjI690Y",
+      "attempt": 2
+    },
+    {
+      "timestamp": "2026-11-25T07:41:45.685Z",
+      "code": "503",
+      "try_index": 1,
+      "phase": "initial_try1",
+      "video_id": "Xr032EhUDPw",
+      "attempt": 2
+    },
+    {
+      "timestamp": "2026-11-25T07:42:47.256Z",
+      "code": "503",
+      "try_index": 2,
+      "phase": "initial_try2_deferred",
+      "video_id": "Xr032EhUDPw",
+      "attempt": 2
+    },
+    {
+      "timestamp": "2026-11-25T08:07:03.319Z",
+      "code": "503",
+      "try_index": 1,
+      "phase": "deferred_pass",
+      "video_id": "FcIFvzP8-mg",
+      "attempt": 2
+    }
+  ]
+}

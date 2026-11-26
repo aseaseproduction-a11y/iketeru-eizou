@@ -1,0 +1,634 @@
+{
+  "schema_version": "craft_recipe_api_draft_v1",
+  "video_id": "FcIFvzP8-mg",
+  "source": "gemini_api_url_v1",
+  "video_overview": {
+    "estimated_fps": 30,
+    "estimated_bpm": 124,
+    "overall_cut_pace": "fast",
+    "dominant_visual_style": "上部スポット照明のマットブラック絞りシャッターと、白サンセリフ文字の精密なマスク連動によるミニマル・ハイテク演出。"
+  },
+  "cuts": [
+    {
+      "cut_index": 1,
+      "title": "3Dマットブラック絞りシャッター開閉と連動する白タイポ連続切替",
+      "category": "motion_graphics",
+      "start_mmss": "00:00",
+      "end_mmss": "00:04",
+      "start_sec": 0,
+      "end_sec": 3.8,
+      "fps": 30,
+      "primary_tool": "Blender",
+      "software_stack": [
+        "Blender",
+        "After Effects"
+      ],
+      "tool_selection_rationale": "複数枚羽根の立体的な重なり・面取りリングの微細な陰影はBlenderで物理レンダリングし、文字切替とマスク合成はAfter Effectsで非破壊制御するのが最適。",
+      "plugins_used": [
+        "Motion 4"
+      ],
+      "color_palette_hex": {
+        "base": "#111115",
+        "primary": "#26262C",
+        "accent": "#FFFFFF"
+      },
+      "easing_and_timing": {
+        "bpm": 124,
+        "ease_curve": "0/85->0/15 (Expo Out)",
+        "hold_frames": 3,
+        "posterize_fps": null,
+        "notes": "羽根開閉のピークで短いホールドを挟み、機械的な歯切れを強調（推定）。",
+        "source": "api_estimated",
+        "verified": false
+      },
+      "layer_stack": [
+        "L1 (Bottom): Blender製マットブラック背景・上部ソフト照明パス",
+        "L2: 3D絞りシャッター本体（外周ベゼル・回転羽根パス）",
+        "L3: 羽根開閉用トラックマット（Blender Cryptomatte / Alphaパス）",
+        "L4: 編集可能AEテキストレイヤー群（Appleロゴ / Extra / layers / of security）",
+        "L5 (Top): 全体コントラスト・微細ビネット調整レイヤー",
+        "[Audio - BGM Track] 低域パルス・ミニマルビート（独立トラック）",
+        "[Audio - SE Track] メカニカル絞り開閉・ギアクリックSE（独立トラック）"
+      ],
+      "recreation_flow": [
+        "1. Blenderで円形ベゼルと複数枚の重なり合う絞り羽根をモデリングし、上部エリアライトで繊細なグラデーション陰影を設定。",
+        "2. 羽根の回転開閉アニメーションをSEリズムに合わせてキーフレーム化し、本体パスと開口部マットパスを書き出す。",
+        "3. After Effectsで各単語の編集可能テキストを配置し、開口部マットでクリッピングしつつ羽根の閉鎖瞬間に単語を切り替える。"
+      ],
+      "frame_timeline": [
+        {
+          "frame": 0,
+          "time_offset_sec": 0,
+          "event": "閉じた絞り中央に白Appleロゴ表示",
+          "params": {
+            "shutter_open": 15,
+            "opacity": 100
+          }
+        },
+        {
+          "frame": 28,
+          "time_offset_sec": 0.93,
+          "event": "羽根が回転開閉し「Extra」をクリッピング表示",
+          "params": {
+            "shutter_open": 55,
+            "rotation": 24
+          }
+        },
+        {
+          "frame": 60,
+          "time_offset_sec": 2,
+          "event": "次の開閉周期で「layers」へ切替",
+          "params": {
+            "shutter_open": 62,
+            "rotation": 48
+          }
+        },
+        {
+          "frame": 90,
+          "time_offset_sec": 3,
+          "event": "「of security」表示後に全開へ移行",
+          "params": {
+            "shutter_open": 75,
+            "rotation": 72
+          }
+        }
+      ],
+      "effect_chain": [
+        {
+          "order": 1,
+          "tool": "After Effects",
+          "plugin": "Set Matte",
+          "match_name": "ADBE Set Matte3",
+          "fallback_match_name": "ADBE Set Matte3",
+          "params": {
+            "use_for_matte": "Luminance",
+            "invert_matte": false
+          },
+          "keyframed_frames": [
+            0,
+            28,
+            60,
+            90
+          ]
+        },
+        {
+          "order": 2,
+          "tool": "After Effects",
+          "plugin": "Motion 4",
+          "match_name": "Motion 4",
+          "fallback_match_name": "ADBE Transform",
+          "params": {
+            "scale_punch": 104
+          },
+          "keyframed_frames": [
+            28,
+            60,
+            90
+          ]
+        }
+      ],
+      "ae_blueprint": {
+        "schema_version": 2,
+        "source": "api_estimated",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30,
+        "duration_sec": 3.8,
+        "bg_color": "#111115",
+        "film_finish": false,
+        "layers": [
+          {
+            "type": "kinetic_typo_animator",
+            "name": "Shutter_Word_Extra",
+            "text": "Extra",
+            "font_size": 120,
+            "color": "#FFFFFF",
+            "start_frame": 24,
+            "duration_frames": 30,
+            "easing": [
+              0,
+              85,
+              0,
+              15
+            ]
+          },
+          {
+            "type": "kinetic_typo_animator",
+            "name": "Shutter_Word_Layers",
+            "text": "layers",
+            "font_size": 120,
+            "color": "#FFFFFF",
+            "start_frame": 54,
+            "duration_frames": 30,
+            "easing": [
+              0,
+              85,
+              0,
+              15
+            ]
+          },
+          {
+            "type": "kinetic_typo_animator",
+            "name": "Shutter_Word_Security",
+            "text": "of security",
+            "font_size": 108,
+            "color": "#FFFFFF",
+            "start_frame": 84,
+            "duration_frames": 30,
+            "easing": [
+              0,
+              85,
+              0,
+              15
+            ]
+          }
+        ]
+      },
+      "transition_bridge": {
+        "source": "api_estimated",
+        "entrance_vector": "static_center_reveal",
+        "exit_vector": "iris_expand_full",
+        "match_cue": "shutter_audio_hit",
+        "sfx_lead_in_frames": -2,
+        "recommended_sfx": "mechanical_iris_click"
+      },
+      "anti_ai_slop_notes": "羽根エッジの微細なハイライトと文字を切る幾何学的マスク精度を一致させ、過度なグローを排すことで工業製品らしい硬質感を維持。",
+      "audio_sync_cues": "00:00.8・00:01.8・00:02.8付近の鋭いメカニカル開閉SEに合わせて文字切替と羽根回転を厳密同期。",
+      "observed_timestamps": [
+        {
+          "timestamp": "00:00.0",
+          "visual_evidence": "閉じたマットブラック絞りシャッター中央に白いAppleロゴ"
+        },
+        {
+          "timestamp": "00:01.0",
+          "visual_evidence": "回転する絞り羽根の内側で白い「Extra」がマスク切抜き表示"
+        },
+        {
+          "timestamp": "00:02.0",
+          "visual_evidence": "羽根の開閉リズムに合わせて「layers」へ切替"
+        }
+      ],
+      "provenance": {
+        "source": "gemini_api_url_v1",
+        "visual_observation_basis": "youtube_url_video_stream",
+        "media_telemetry_status": "missing_requires_local_video",
+        "model": "gemini-4-neon",
+        "thinking_level": "high",
+        "service_tier": "flex",
+        "video_processing": {
+          "type": "static",
+          "fps": 1,
+          "content_layers": [
+            "frames",
+            "audio"
+          ],
+          "resolution": "low"
+        },
+        "input_video_tokens": 1410,
+        "pilot_attempt": 1,
+        "field_provenance": {
+          "semantic_craft_fields": "api_observed",
+          "timestamps_and_duration": "api_estimated_1fps",
+          "fps_and_frames": "api_estimated",
+          "color_palette_hex": "api_estimated",
+          "easing_and_timing": "api_estimated",
+          "media_and_telemetry": "missing"
+        }
+      },
+      "media": {
+        "available": false,
+        "status": "missing_requires_local_video",
+        "telemetry": {
+          "available": false
+        }
+      }
+    },
+    {
+      "cut_index": 2,
+      "title": "上部スポット暗背景上の4行メッセージ・クリーンタイポ表示ホールド",
+      "category": "kinetic_typography",
+      "start_mmss": "00:04",
+      "end_mmss": "00:10",
+      "start_sec": 3.8,
+      "end_sec": 9.8,
+      "fps": 30,
+      "primary_tool": "After Effects",
+      "software_stack": [
+        "After Effects"
+      ],
+      "tool_selection_rationale": "SF Pro系タイポグラフィの精密なカーニング・行間調整と上部放射グラデーション背景の制御はAfter Effects単体で完結。",
+      "plugins_used": [
+        "Flow"
+      ],
+      "color_palette_hex": {
+        "base": "#0B0B0E",
+        "primary": "#3A3942",
+        "accent": "#F5F5F7"
+      },
+      "easing_and_timing": {
+        "bpm": 124,
+        "ease_curve": "0/90->0/10 (Quint Out)",
+        "hold_frames": 165,
+        "posterize_fps": null,
+        "notes": "素早い展開後に約5.5秒間の完全静置ホールドを取り、長文の視認性を最優先（推定）。",
+        "source": "api_estimated",
+        "verified": false
+      },
+      "layer_stack": [
+        "L1 (Bottom): 暗色ソリッド＋上部中央放射グラデーション（Gradient Ramp）",
+        "L2: 編集可能AEテキストレイヤー（4行中央揃えメッセージ）",
+        "L3 (Top): 微細ディザリング・バンディング防止ノイズ調整レイヤー",
+        "[Audio - BGM Track] パーカッシブな電子リズムビート（独立トラック）",
+        "[Audio - SE Track] 展開時のスウッシュ・ビートインパクトSE（独立トラック）"
+      ],
+      "recreation_flow": [
+        "1. 上部中央から柔らかく落ちる暗灰色〜黒の放射グラデーション背景を16bpc以上で作成しバンディングを防ぐ。",
+        "2. タイトなトラッキングと均一な行間で4行メッセージの編集可能テキストを画面中央に配置。",
+        "3. 前カットのシャッター全開に合わせて瞬間的にスケール・不透明度で定着させ、リズムに合わせて視認ホールドを維持する。"
+      ],
+      "frame_timeline": [
+        {
+          "frame": 0,
+          "time_offset_sec": 0,
+          "event": "シャッター解除と同時に4行テキストが中央定着",
+          "params": {
+            "opacity": 100,
+            "scale": 100
+          }
+        },
+        {
+          "frame": 90,
+          "time_offset_sec": 3,
+          "event": "可読性維持の静置ホールド継続",
+          "params": {
+            "opacity": 100
+          }
+        },
+        {
+          "frame": 180,
+          "time_offset_sec": 6,
+          "event": "次カットの絞り急閉鎖へ直結",
+          "params": {
+            "opacity": 100
+          }
+        }
+      ],
+      "effect_chain": [
+        {
+          "order": 1,
+          "tool": "After Effects",
+          "plugin": "Gradient Ramp",
+          "match_name": "ADBE Ramp",
+          "fallback_match_name": "ADBE Ramp",
+          "params": {
+            "ramp_shape": "Radial",
+            "start_color": "#3A3942",
+            "end_color": "#0B0B0E"
+          },
+          "keyframed_frames": [
+            0
+          ]
+        },
+        {
+          "order": 2,
+          "tool": "After Effects",
+          "plugin": "Noise",
+          "match_name": "ADBE Noise2",
+          "fallback_match_name": "ADBE Noise2",
+          "params": {
+            "amount": 0.8,
+            "use_color_noise": false
+          },
+          "keyframed_frames": [
+            0
+          ]
+        }
+      ],
+      "ae_blueprint": {
+        "schema_version": 2,
+        "source": "api_estimated",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30,
+        "duration_sec": 6,
+        "bg_color": "#0B0B0E",
+        "film_finish": false,
+        "layers": [
+          {
+            "type": "kinetic_typo_animator",
+            "name": "Main_Message_4Lines",
+            "text": "Stolen Device Protection\nadds extra layers of security\nfor your Apple Account if your\niPhone is lost or taken.",
+            "font_size": 74,
+            "color": "#F5F5F7",
+            "start_frame": 0,
+            "duration_frames": 180,
+            "easing": [
+              0,
+              90,
+              0,
+              10
+            ]
+          }
+        ]
+      },
+      "transition_bridge": {
+        "source": "api_estimated",
+        "entrance_vector": "iris_expand_full",
+        "exit_vector": "iris_snap_close",
+        "match_cue": "beat_phrase_end",
+        "sfx_lead_in_frames": -1,
+        "recommended_sfx": "sub_bass_impact"
+      },
+      "anti_ai_slop_notes": "不要な文字アニメーションを一切入れず、正確な負のトラッキングと暗部グラデーションの階調だけでブランド品格を担保。",
+      "audio_sync_cues": "00:04.0のインパクト音でテキストが立ち上がり、00:09.8のフレーズ末尾まで電子パーカッション上で静置。",
+      "observed_timestamps": [
+        {
+          "timestamp": "00:04.0",
+          "visual_evidence": "上部照明グラデーション背景に4行の白テキスト全文が出現"
+        },
+        {
+          "timestamp": "00:07.0",
+          "visual_evidence": "装飾や揺れを排した完全中央揃えの静置ホールド状態"
+        }
+      ],
+      "provenance": {
+        "source": "gemini_api_url_v1",
+        "visual_observation_basis": "youtube_url_video_stream",
+        "media_telemetry_status": "missing_requires_local_video",
+        "model": "gemini-4-neon",
+        "thinking_level": "high",
+        "service_tier": "flex",
+        "video_processing": {
+          "type": "static",
+          "fps": 1,
+          "content_layers": [
+            "frames",
+            "audio"
+          ],
+          "resolution": "low"
+        },
+        "input_video_tokens": 1410,
+        "pilot_attempt": 1,
+        "field_provenance": {
+          "semantic_craft_fields": "api_observed",
+          "timestamps_and_duration": "api_estimated_1fps",
+          "fps_and_frames": "api_estimated",
+          "color_palette_hex": "api_estimated",
+          "easing_and_timing": "api_estimated",
+          "media_and_telemetry": "missing"
+        }
+      },
+      "media": {
+        "available": false,
+        "status": "missing_requires_local_video",
+        "telemetry": {
+          "available": false
+        }
+      }
+    },
+    {
+      "cut_index": 3,
+      "title": "絞りシャッター高速収束によるAppleロゴ定着と黒背景エンドタグライン切替",
+      "category": "transition",
+      "start_mmss": "00:10",
+      "end_mmss": "00:14",
+      "start_sec": 9.8,
+      "end_sec": 14,
+      "fps": 30,
+      "primary_tool": "After Effects",
+      "software_stack": [
+        "After Effects",
+        "Blender"
+      ],
+      "tool_selection_rationale": "Blender製シャッター高速収束パスをAfter Effectsでタイミング編集し、純黒タグラインへのハードカットを音ハメ制御するのが最適。",
+      "plugins_used": [
+        "Motion 4"
+      ],
+      "color_palette_hex": {
+        "base": "#000000",
+        "primary": "#1A1A20",
+        "accent": "#FFFFFF"
+      },
+      "easing_and_timing": {
+        "bpm": 124,
+        "ease_curve": "0/92->0/8 (Expo Out)",
+        "hold_frames": 70,
+        "posterize_fps": null,
+        "notes": "高速な絞り収束後にAppleロゴを一瞬見せてから純黒エンドカードへハードカット（推定）。",
+        "source": "api_estimated",
+        "verified": false
+      },
+      "layer_stack": [
+        "L1 (Bottom): 純黒ソリッド（#000000）および3D絞りシャッター収束パス",
+        "L2: 絞り内「Extra」マスクテキスト＆中央白Appleロゴ（ベクターシェイプ）",
+        "L3 (Top): エンドカード編集可能AEテキスト（There's more to iPhone）",
+        "[Audio - BGM Track] 最終ビートブレイク（独立トラック）",
+        "[Audio - SE Track] 高速シャッターロック音・最終クリックヒットSE（独立トラック）"
+      ],
+      "recreation_flow": [
+        "1. Blenderで出力した絞り羽根の高速閉鎖アニメーションを配置し、瞬間的に「Extra」から星型開口を経て中央Appleロゴへ収束させる。",
+        "2. 00:11.6付近のSEヒットに合わせ、照明付きシャッター画面から純黒背景（#000000）へフレーム単位でハードカット。",
+        "3. 中央に編集可能な白テキスト「There's more to iPhone」を小ぶりなサイズで配置し、尺末まで静置する。"
+      ],
+      "frame_timeline": [
+        {
+          "frame": 0,
+          "time_offset_sec": 0,
+          "event": "絞り羽根が再登場し「Extra」を放射状にクリッピング",
+          "params": {
+            "shutter_open": 45
+          }
+        },
+        {
+          "frame": 36,
+          "time_offset_sec": 1.2,
+          "event": "羽根が閉鎖位置へ収束し白Appleロゴが鮮明に着地",
+          "params": {
+            "shutter_open": 15,
+            "opacity": 100
+          }
+        },
+        {
+          "frame": 54,
+          "time_offset_sec": 1.8,
+          "event": "純黒背景「There's more to iPhone」へハードカット",
+          "params": {
+            "bg_luma": 0,
+            "opacity": 100
+          }
+        }
+      ],
+      "effect_chain": [
+        {
+          "order": 1,
+          "tool": "After Effects",
+          "plugin": "Set Matte",
+          "match_name": "ADBE Set Matte3",
+          "fallback_match_name": "ADBE Set Matte3",
+          "params": {
+            "use_for_matte": "Alpha",
+            "invert_matte": false
+          },
+          "keyframed_frames": [
+            0,
+            36
+          ]
+        }
+      ],
+      "ae_blueprint": {
+        "schema_version": 2,
+        "source": "api_estimated",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30,
+        "duration_sec": 4.2,
+        "bg_color": "#000000",
+        "film_finish": false,
+        "layers": [
+          {
+            "type": "kinetic_typo_animator",
+            "name": "End_Tagline_Text",
+            "text": "There's more to iPhone",
+            "font_size": 46,
+            "color": "#FFFFFF",
+            "start_frame": 54,
+            "duration_frames": 72,
+            "easing": [
+              0,
+              92,
+              0,
+              8
+            ]
+          }
+        ]
+      },
+      "transition_bridge": {
+        "source": "api_estimated",
+        "entrance_vector": "iris_snap_close",
+        "exit_vector": "hard_cut_black_hold",
+        "match_cue": "lock_click_transient",
+        "sfx_lead_in_frames": -1,
+        "recommended_sfx": "metallic_lock_snap"
+      },
+      "anti_ai_slop_notes": "エンドカードへの移行に安易なディゾルブを使わず、純黒への硬質なハードカットと余白設計で洗練された読後感を演出。",
+      "audio_sync_cues": "00:10.0の鋭い絞り閉鎖SEと、00:11.6付近のハードカット＆00:12.6付近の最終インパクト音に同期。",
+      "observed_timestamps": [
+        {
+          "timestamp": "00:10.0",
+          "visual_evidence": "絞り羽根の星型シルエットに囲まれた白文字「Extra」"
+        },
+        {
+          "timestamp": "00:11.0",
+          "visual_evidence": "閉じたマットブラック絞り中央に白Appleロゴが復帰"
+        },
+        {
+          "timestamp": "00:12.0",
+          "visual_evidence": "完全な黒背景中央に白テキスト「There's more to iPhone」が表示"
+        }
+      ],
+      "provenance": {
+        "source": "gemini_api_url_v1",
+        "visual_observation_basis": "youtube_url_video_stream",
+        "media_telemetry_status": "missing_requires_local_video",
+        "model": "gemini-4-neon",
+        "thinking_level": "high",
+        "service_tier": "flex",
+        "video_processing": {
+          "type": "static",
+          "fps": 1,
+          "content_layers": [
+            "frames",
+            "audio"
+          ],
+          "resolution": "low"
+        },
+        "input_video_tokens": 1410,
+        "pilot_attempt": 1,
+        "field_provenance": {
+          "semantic_craft_fields": "api_observed",
+          "timestamps_and_duration": "api_estimated_1fps",
+          "fps_and_frames": "api_estimated",
+          "color_palette_hex": "api_estimated",
+          "easing_and_timing": "api_estimated",
+          "media_and_telemetry": "missing"
+        }
+      },
+      "media": {
+        "available": false,
+        "status": "missing_requires_local_video",
+        "telemetry": {
+          "available": false
+        }
+      }
+    }
+  ],
+  "title": "Web CM  IT / 通信 / ネットサービス   iPhone | Stolen Device Protection | Apple",
+  "technique_rating": "A",
+  "provenance": {
+    "source": "gemini_api_url_v1",
+    "model": "gemini-4-neon",
+    "thinking_level": "high",
+    "service_tier": "flex",
+    "video_processing": {
+      "type": "static",
+      "fps": 1,
+      "content_layers": [
+        "frames",
+        "audio"
+      ],
+      "resolution": "low"
+    },
+    "visual_observation_basis": "youtube_url_video_stream",
+    "input_video_tokens": 1410,
+    "media_telemetry_status": "missing_requires_local_video",
+    "pilot_attempt": 1,
+    "field_provenance": {
+      "semantic_craft_fields": "api_observed",
+      "timestamps_and_duration": "api_estimated_1fps",
+      "fps_and_frames": "api_estimated",
+      "color_palette_hex": "api_estimated",
+      "easing_and_timing": "api_estimated",
+      "media_and_telemetry": "missing"
+    }
+  }
+}

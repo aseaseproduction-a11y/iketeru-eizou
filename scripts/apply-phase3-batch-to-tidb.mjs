@@ -26,6 +26,11 @@ import fs from "node:fs";
 import path from "node:path";
 import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
+import {
+  DEFAULT_APPROVED_OVERRIDES_PATH,
+  auditOriginalColumnsAgainstPreD,
+  loadApprovedTidbOverrides,
+} from "./approved-tidb-overrides.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, "..");
@@ -208,6 +213,8 @@ async function main() {
   const preDBackupArg = getFlagValue(process.argv, "--pre-d-backup");
   const sqliteArg = getFlagValue(process.argv, "--sqlite");
   const backupDirArg = getFlagValue(process.argv, "--backup-dir");
+  const approvedOverridesArg = getFlagValue(process.argv, "--approved-overrides");
+  const approvedOverrides = loadApprovedTidbOverrides(approvedOverridesArg || DEFAULT_APPROVED_OVERRIDES_PATH);
 
   if (!runId || runId.startsWith("--")) {
     console.error(
@@ -379,34 +386,20 @@ async function main() {
     const colSelect = originalColumns.map((c) => `\`${c}\``).join(", ");
     const [liveRows] = await conn.query(`SELECT ${colSelect} FROM videos ORDER BY id ASC`);
 
-    let rowsCompared = 0;
-    let totalCellsCompared = 0;
-    let anyOriginalColMismatches = 0;
-    let legacyScoreColMismatches = 0;
-    let updatedAtMismatches = 0;
-    const sampleMismatches = [];
+    const preDAudit = auditOriginalColumnsAgainstPreD({
+      liveRows,
+      backupMap,
+      originalColumns,
+      legacyScoreColumns: LEGACY_SCORE_COLUMNS,
+      approvedOverrideMap: approvedOverrides.active_map,
+    });
 
-    for (const row of liveRows) {
-      const b = backupMap.get(row.id);
-      if (!b) {
-        anyOriginalColMismatches++;
-        continue;
-      }
-      rowsCompared++;
-      for (const col of originalColumns) {
-        totalCellsCompared++;
-        const liveVal = serializeValue(row[col]);
-        const bakVal = b[col];
-        if (liveVal !== bakVal) {
-          anyOriginalColMismatches++;
-          if (LEGACY_SCORE_COLUMNS.has(col)) legacyScoreColMismatches++;
-          if (col === "updatedAt") updatedAtMismatches++;
-          if (sampleMismatches.length < 10) {
-            sampleMismatches.push({ id: row.id, col, backup: bakVal, live: liveVal });
-          }
-        }
-      }
-    }
+    const rowsCompared = preDAudit.rows_compared;
+    const totalCellsCompared = preDAudit.total_cells_compared;
+    const anyOriginalColMismatches = preDAudit.all_40_original_columns_mismatches;
+    const legacyScoreColMismatches = preDAudit.legacy_8_score_columns_mismatches;
+    const updatedAtMismatches = preDAudit.updated_at_row_mismatches;
+    const sampleMismatches = preDAudit.sample_mismatches;
 
     const sqliteShaAfter = sqliteExists ? sha256File(sqlitePath) : null;
     const sqliteUntouched = sqliteExists ? sqliteShaAfter === sqliteShaBefore : true;
@@ -447,6 +440,9 @@ async function main() {
         rows_compared: rowsCompared,
         columns_compared_per_row: originalColumns.length,
         total_cells_compared: totalCellsCompared,
+        approved_overrides_file: approvedOverrides.file_path,
+        approved_overrides_matched_count: preDAudit.approved_overrides_matched_count,
+        approved_overrides_matched: preDAudit.approved_overrides_matched,
         legacy_8_score_columns_mismatches: legacyScoreColMismatches,
         all_40_original_columns_mismatches: anyOriginalColMismatches,
         updated_at_row_mismatches: updatedAtMismatches,

@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "run_id": "supplemental_pass2_xr032_0110_0117",
+  "worker": "CHIBA-PC-api",
+  "generated_at": "2026-11-25T08:15:25.210Z",
+  "evidence_root": "E:\\iketeru_api_url_logs\\pilot_craft_recipe_supplemental_pass2_xr032_0110_0117",
+  "calls_dir": "E:\\iketeru_api_url_logs\\pilot_craft_recipe_supplemental_pass2_xr032_0110_0117\\calls",
+  "summary": {
+    "file_count": 1,
+    "total_bytes": 53748,
+    "secret_scan_passed": true
+  },
+  "files": [
+    {
+      "rel_path": "calls/001_Xr032EhUDPw_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\pilot_craft_recipe_supplemental_pass2_xr032_0110_0117\\calls\\001_Xr032EhUDPw_r1.json",
+      "video_id": "Xr032EhUDPw",
+      "attempt": 1,
+      "call_index": 1,
+      "size_bytes": 53748,
+      "sha256": "1b28605a5f1ca5e441550f10d43a6aec27e163c24fedb67212b5c3a3c4e53644"
+    }
+  ]
+}

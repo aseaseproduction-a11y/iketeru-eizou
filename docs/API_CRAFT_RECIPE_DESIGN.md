@@ -1,10 +1,10 @@
 # Gemini API（YouTube URL 直接渡し）によるクラフトレシピ v2 下書き生成 設計書
 
 - **作成日**: 2026-11-25（`CHIBA-PC`）
-- **最終更新**: 2026-11-25（D-022 / D-023 の 2 段階パイプライン・Flex 夜間早朝運用・出力振り分け・Google ドライブ正本前提を反映）
-- **位置づけ**: 手元に動画がない未キャッシュ YouTube 動画について、社内回線から YouTube へ直接アクセスせず（D-016 遵守）、D-022 / D-023 の 2 段階フロー（① ブラインド採点 → ② 補正後 `A-`〔78 点〕以上のみ詳細分析＋クラフトレシピ v2 下書き一括生成）でボトルネックを解消するための設計書およびパイロット試験計画書。
-- **ステータス**: **方針（D-022 / D-023）反映済み・パイロット 5 本 × 2 回承認済み（本番 ② はアンカー 30 本到達・補正幅承認後に開始）**
-- **関連文書**: `docs/DECISIONS.md`（D-016〜D-023）、`docs/API_URL_SCORING_DESIGN.md`、`docs/STATUS_OVERVIEW_20261125.md`、`docs/CRAFT_RECIPE_DISTRIBUTION_DESIGN.md`（`chibatmute` 設計中・Google ドライブ正本方針）、`analysis/pilot_api_craft_recipe/preregistration.json`
+- **最終更新**: 2026-11-25（パイロット 5 本 × 2 回完了・D-024 `expressive_purpose` 目的欄スキーマ＆コスト増試算・本番 ② 確定運用ルールを反映）
+- **位置づけ**: 手元に動画がない未キャッシュ YouTube 動画について、社内回線から YouTube へ直接アクセスせず（D-016 遵守）、D-022 / D-023 / D-024 の 2 段階フロー（① ブラインド採点 → ② 補正後 `A-`〔78 点〕以上のみ詳細分析＋目的欄 `expressive_purpose` 付きクラフトレシピ v2 下書き一括生成）でボトルネックを解消するための設計書およびパイロット試験結果書。
+- **ステータス**: **パイロット 5 本 × 2 回完了・本番 ② 仕様確定（設計書反映済み・本番 ② はアンカー 30 本到達および補正幅承認後に開始）**
+- **関連文書**: `docs/DECISIONS.md`（D-016〜D-024）、`shared/expressivePurposeVocab.json`（D-024 単一語彙正本）、`docs/prompts/craft_v2_with_purpose_prompt.md`、`docs/API_URL_SCORING_DESIGN.md`、`docs/STATUS_OVERVIEW_20261125.md`、`docs/CRAFT_RECIPE_DISTRIBUTION_DESIGN.md`（`chibatmute` 設計中・Google ドライブ正本方針）、`analysis/pilot_api_craft_recipe/preregistration.json`
 
 ---
 
@@ -43,10 +43,10 @@ flowchart LR
   - 答え合わせ用動画（アンカー）を混ぜ、累計 **30 本** に達した時点でバイアス補正幅（`analysis/api_url_bias_config_v1.json`）を算出・ユーザー承認する。
 - **第 2 段階（② 詳細分析＋レシピ生成）の開始ゲート**:
   - **② を始めるのは、答え合わせ用の動画が 30 本たまって、補正の幅をユーザーが承認してから** とする（未承認の状態で本番 ② を回さない。本設計書のパイロット 5 本 × 2 回は事前承認済みの品質検証として先行実施）。
-- **第 2 段階（②）の実行方式**:
-  - 補正後 `A-`（78 点）以上の動画のみを対象に、**詳細分析とクラフトレシピ v2 下書きを 1 回の API 呼び出し（Pass 1：全編 `1 fps`）** で同時生成する。
-  - 動画全体を見たうえで、高速カットや極短遷移（`micro_transition`）など細かい区間を高い fps（例：`start_offset`/`end_offset` + `4 fps`, `content_layers: ["frames"]`）で追加観察する **Pass 2** を行ってよい。
-  - なお、すでに `watched_A` の詳細分析・`scenes` が完備している既存動画（`has_full_analysis = 1` かつ `analysis_observation_scope IS NULL`）については、既存 `aiAnalysis` / `scenes` を無断上書きせずレシピ下書きのみを生成・保全する運用も選択可能とする（新規未分析動画は詳細分析＋レシピを 1 回の呼び出しで同時生成）。
+- **第 2 段階（②）の確定実行方式（2026-11-25 承認済み）**:
+  - **呼び出し回数**: 補正後 `A-`（78 点）以上の動画のみを対象に、**1 本 1 回**（r2 なし）の API 呼び出し（Pass 1：全編 `1 fps`）で生成する。JSON パース・スキーマ検証・語彙バリデーション（`shared/expressivePurposeVocab.json`）・制作基準チェックに失敗した場合のみ **最大 1 回まで再試行** する。
+  - **既存 `watched_A` 分析の保護**: すでに `watched_A` の詳細分析・`scenes` が完備している既存動画（`has_full_analysis = 1` かつ `analysis_observation_scope IS NULL`）については、**既存 `aiAnalysis` / `scenes` を上書きせず保全** し、② ではクラフトレシピ v2 下書き（`expressive_purpose` 含む）生成＋既存 `scenes` との照合（M4 作り話チェック）のみを行う。未分析／未視聴置換対象の新規動画のみ、`detailed_analysis + craft_recipe` 一括生成プロンプトを使用する。
+  - **Pass 2（4 fps 区間切り出し）の限定運用**: 動画全体を見たうえで高速カットや極短遷移（`overall_cut_pace == "fast"` または `micro_transition` 候補あり）を持つ動画に限定し、**1 本あたり最大 1 区間**（例：10〜15 秒、`start_offset`/`end_offset` + `4 fps`, `content_layers: ["frames"]`）だけ追加観察して境界・`frame_timeline` を精密化する（全本には適用しない）。
 
 ### 0-3. ② のプロンプト設計・出力構造と既存スキーマへの振り分け
 
@@ -81,13 +81,59 @@ flowchart LR
   },
   "craft_recipe": {
     "video_overview": { "estimated_fps": 30.0, "estimated_bpm": 128, "overall_cut_pace": "fast", "dominant_visual_style": "..." },
-    "cuts": [ "... クラフトレシピ v2 準拠 2〜4 カット（observed_timestamps / provenance 必須） ..." ]
+    "cuts": [
+      {
+        "cut_index": 1,
+        "title": "... クラフトレシピ v2 準拠（observed_timestamps / provenance 必須） ...",
+        "expressive_purpose": {
+          "intent_summary": "このカットで視聴者に何を感じさせ・何を伝えるかの狙いを 1 文（40〜120 文字目安）で記述",
+          "viewer_effect": ["緊張感・サスペンス", "没入感"],
+          "narrative_role": "掴み",
+          "best_for": {
+            "purposes": ["注目獲得・フック"],
+            "genres": ["opening", "web-cm"],
+            "industries": ["it-tech"],
+            "media_formats": ["16:9横長"],
+            "duration_fit": ["15秒CM"]
+          },
+          "avoid_when": ["長文説明を落ち着いて読ませたい教育動画"],
+          "search_phrases": [
+            "冒頭3秒で一気に引き込むタイポ演出",
+            "硬質なシャッター開閉で情報へ繋ぐフック",
+            "黒背景の高コントラスト導入カット"
+          ],
+          "keywords": ["導入フック", "アイリス開閉", "硬質タイポ", "高コントラスト", "音ハメ切替"],
+          "evidence": [
+            { "timestamp_sec": 1.0, "visual_or_audio_cue": "絞り羽根の回転音と同時に白文字が放射状スライスで出現" }
+          ],
+          "provenance": "api_interpreted"
+        }
+      }
+    ]
   },
   "pass2_zoom_candidates": [
-    { "cut_index": 1, "start_offset": "0s", "end_offset": "15s", "reason": "高速カット・15f遷移の境界精密化" }
+    { "cut_index": 1, "start_offset": "0s", "end_offset": "15s", "reason": "高速カット・15f遷移の境界精密化（※本番②は最大1区間まで）" }
   ]
 }
 ```
+
+#### `expressive_purpose`（目的欄）の語彙・検証仕様（D-024 準拠）
+
+本番 ② で各カットに必須出力する `expressive_purpose` は、**`shared/expressivePurposeVocab.json`（`schema_version: "expressive_purpose_v1"`, D-024）を単一語彙正本（Single Source of Truth）** として厳密に揃える（プロンプト雛形は `docs/prompts/craft_v2_with_purpose_prompt.md` を参照）：
+
+| 項目名 | 型・件数制約 | 語彙制約・意味 |
+|---|---|---|
+| `intent_summary` | `string`（1 文・40〜120 文字目安） | カット単位検索結果にそのまま表示する「このカットの狙い」1 文要約。 |
+| `viewer_effect` | `string[]`（2〜4 個） | 既存 `toneEmotions` 24 語＋認知効果 6 語（`没入感`, `視線誘導`, `視認性向上`, `記憶定着`, `期待感`, `余韻`）の **計 30 語固定語彙** から選択。 |
+| `narrative_role` | `string`（1 個） | **9 語固定列挙**（`掴み`, `世界観提示`, `転換`, `情報提示`, `盛り上げ`, `感情強調`, `緩急の抜き`, `ブランド回収`, `締め`）。 |
+| `best_for` | `object`（5 キー各 1〜3 個） | `purposes`（13 語）・`genres`（15 語）・`industries`（20 語）・`media_formats`（6 語）・`duration_fit`（5 語）。すべて `shared/expressivePurposeVocab.json` の正規値と完全一致。 |
+| `avoid_when` | `string[]`（1〜3 文） | この技法を使うと逆効果になる文脈・注意条件。 |
+| `search_phrases` | `string[]`（3〜6 文） | Twelve Labs 風の自然文検索を想定した検索用言い換えフレーズ。 |
+| `keywords` | `string[]`（5〜10 語、各 2〜10 文字） | 検索結果カードにチップ表示する短いキーワード。 |
+| `evidence` | `object[]`（1 件以上） | `{ timestamp_sec, visual_or_audio_cue }`。`timestamp_sec` は当該カットの `[start_sec, end_sec]` 範囲内必須。 |
+| `provenance` | `string` | API 生成下書きは **`"api_interpreted"`** 固定（手元実映像観察 `"video_observed"`・既存テキスト由来 `"text_derived"` と識別）。 |
+
+- **自動バリデーション**: ② の生成直後に `shared/expressivePurposeVocab.json` との語彙一致・件数範囲・`evidence[].timestamp_sec` 範囲を機械検証し、1 項目でも違反があれば **最大 1 回のみ自動再試行** する（再試行でも通らなければ隔離ログへ保全し DB 未反映）。
 
 生成結果（Pass 2 で境界・`frame_timeline` を更新した場合は反映後の確定 JSON）は、次のルールで既存の 3 系統へ決定論的に振り分けて格納する：
 
@@ -308,6 +354,24 @@ Gemini API 公式ドキュメント（`gemini-api-guides/video-understanding.md`
 | **M6** | `plan_craft_sequence` 読み込み・稼働検証 | **100%（5/5 本）** | 必須 | **本番 DB には一切書き込まず、ローカル SQLite の一時コピーに対して** `upsert_craft_recipe()` → `search_craft_recipes(v2_only=True)` → `get_craft_recipe()` → `build_macro_sequence_plan()` → `extract_style_profile()` を実行し、例外ゼロ・パレット/ブループリント正常返却を確認。 |
 | **M7** | r1 / r2 間の安定性（参考） | 報告（目安 75% 以上） | 参考 | 同一動画 2 回実行間の `primary_tool`・`category` 一致率およびカット時間区間の重なり（IoU）。 |
 
+### 4-3. パイロット試験 5 本 × 2 回 最終結果（2026-11-25 完了）
+
+- **実行ログ**: `analysis/pilot_api_craft_recipe/pilot_20261125_162300/`（事前登録ファイル `preregistration.json` は無変更、LF SHA-256 `e01cc009...` 一致）。日中 Flex の 503 連続により 3/10 完了後、承認を得て残り 7 回を Standard 料金へ切替（逸脱記録 `service_tier_deviation.json` 作成）。Standard 7 回は **503 ゼロ** で完走、10 回合計実費 **\$1.530374**。
+- **実測トークン（10 回平均・平均 `3.70` カット/回）**: 入力合計 `12,850.2 tok`（動画 `9,757.2 tok`, `100.7〜101.7 tok/s`）、出力 **`6,655.1 tok`**（`1,798.7 tok/カット`）、思考 **`2,361.6 tok`**、出力＋思考合計 **`9,016.7 tok`**。
+- **`kqj7b59D85Y` についての補足**: `chibatmute` の実映像点検により既存分析・シーンが「一部違う」判定かつ SQLite 側 `score_breakdown_json` が `invalidated_no_visual` 指定となっていたため、事前登録どおりの 5 本集計と `kqj7b59D85Y` 除外 4 本集計を併記する。API 独自カット全 16 件は SQLite `scenes` およびローカル動画コンタクトシート（`Xr032EhUDPw`, `I0jHbsidh1g`, `kqj7b59D85Y`）で **16/16（100%）実在確認済み**。
+
+| 指標 | 合格ライン | 5 本含む（事前登録） | `kqj7b59D85Y` 除く 4 本（補足） | 備考 |
+|---|---|---|---|---|
+| **M1** 形式・制作基準 | 100% | **10/10 (100%) PASS** | **8/8 (100%) PASS** | 全 37 カット `credibility_score = 100`、違反ゼロ |
+| **M2** 実視聴トークン＆時刻 | 100% | **10/10 (100%) PASS** | **8/8 (100%) PASS** | 全 10 回 `>= 90 tok/s`、全時刻範囲内 |
+| **M3** 既存 v2 主要技法再現率 | >= 70% | **7/10 (70.0%) PASS** | **6/8 (75.0%) PASS** | `FcIFvzP8-mg` 2/2, `jsEVOjI690Y` 2/2, `Xr032EhUDPw` 1/1, `I0jHbsidh1g` 1/3, `kqj7b59D85Y` 1/2 |
+| **M4** API 独自抽出実在確認 | >= 90% | **16/16 (100%) PASS** | **10/10 (100%) PASS** | ローカル動画コンタクトシート実視確認込みで作り話ゼロ |
+| **M5** 主要カット時刻誤差中央値 | <= 1.0s | **境界 0.10s / 中点 0.50s PASS** | **境界 0.00s / 中点 0.30s PASS** | 高速カット枠 2 本中央値 `0.00s`（Pass 2 自動発動なし） |
+| **M6** `plan_craft_sequence` 稼働 | 100% | **4/5 (80%) FAIL** | **4/4 (100%) PASS** | `kqj7b59D85Y` は動画側 `invalidated_no_visual` フラグにより仕様通り除外（`exclude_provisional=False` では 4/4 カット正常読込確認済み・本番 SQLite 無変更確認済み） |
+| **M7** r1/r2 安定性（参考） | 目安 >=75% | Tool **88.3%** / Cat **55.0%** / IoU **81.2%** | Tool **85.4%** / Cat **56.3%** / IoU **85.3%** | カット位置・ツール選定は高安定。カテゴリ揺れは v2 基準内 |
+
+- **Pass 2（4 fps クリップ拡大）補足実測（`Xr032EhUDPw` 70–77s, `frames` のみ, Flex \$0.057186）**: Cut#4 終了誤差が `1.49s → 0.01s`、内部の 0.3–0.6s 高速サブカット群の中点誤差中央値が **`0.030s`（1 フレーム未満）** まで改善することを確認済み。
+
 ---
 
 ## 5. 費用の見積もり（実測トークン単価ベース）
@@ -354,19 +418,41 @@ SQLite 実測（`watched_A + scenes あり + craft_recipes なし` = **4,158 本
   1. 本番を **1 本 2 回** 実行する場合は上記表の **ちょうど 2 倍**（4,149 本で **\$743.90 / 18.6 か月**、技術 `A-` 以上・非制限 2,541 本で **\$439.66 / 11.0 か月**）。点数付けと異なりクラフトレシピは構造化テキスト下書きのため、パイロット 5 本 × 2 回で安定性（M7）を確認できれば、本番は **1 本 1 回＋自動検証失敗時のみ再試行** での運用を推奨する。
   2. 15 分超の 105 本（全 4,149 本の 2.5%）だけで動画総秒数の 23.8%（約 \$39）を占めるため、点数付け設計と同様に **`<=900s` 先攻・`>900s` 後回し** が効率的。
   3. 共有キャッシュ済み 132 本（うち `A-` 以上 93 本）は手元動画から完全版（`(C)` 付き）を無料で作成できるため、API は未キャッシュ YouTube に集中できる。
-  4. 2 パス拡大（`4 fps × 15s`）を**高速カット動画（全体の約 25% 想定）だけに限定適用**すれば、2,541 本全体で **+\$19.8（+9%）** に抑えられる。
+  4. 2 パス拡大（`4 fps × 15s`）を**高速カット動画（全体の約 25% 想定）だけに限定適用（1 本最大 1 区間）**すれば、2,541 本全体で **+\$19.8（+9%）** に抑えられる。
+
+### 5-4. パイロット実測補正と `expressive_purpose`（目的欄）追加によるトークン・費用増の見積もり
+
+パイロット 10 回の実測（平均 `3.70` カット/本、出力 `6,655.1 tok`〔`1,798.7 tok/カット`〕＋思考 `2,361.6 tok` ＝ 合計 **`9,016.7 tok/本`**、事前仮定 `7,000 tok` 比 `+28.8%`）を踏まえ、本番 ② に `expressive_purpose`（D-024 / `shared/expressivePurposeVocab.json`）を追加した際の増分を以下に見積もる：
+
+1. **1 カットあたり `expressive_purpose` JSON 出力増分**:
+   - `intent_summary`（45–75 tok）＋ `viewer_effect`（15–25 tok）＋ `narrative_role`（約 10 tok）＋ `best_for` 5 配列（60–110 tok）＋ `avoid_when` 1–3 文（40–80 tok）＋ `search_phrases` 3–6 文（80–160 tok）＋ `keywords` 5–10 語（30–50 tok）＋ `evidence` 1–2 件（40–80 tok）＋ JSON キー構造（50–70 tok）＝ **約 370〜660 output tok / カット**（基準 **500 output tok / カット**）。
+2. **1 本あたり合計増分（3〜4 カット・パイロット平均 `3.70` カット/本）**:
+   - **出力トークン増**: **+1,370〜+2,440 tok/本**（基準 **+1,850 tok/本**）
+   - **思考トークン増**（固定語彙照合・意図要約）: **+300〜+600 tok/本**（基準 **+450 tok/本**）
+   - **出力＋思考合計増分**: **+1,670〜+3,040 tok/本**（基準 **+2,300 tok/本**、実測ベース `9,017 tok` に対し **+25.5%**）
+   - **プロンプト入力増**（`shared/expressivePurposeVocab.json` の正規語彙一覧を埋め込み）: 約 **+1,200 input tok/本**（Flex 入力 \$1.50/1M → **+\$0.0018/本**）
+3. **Flex 単価での費用増（\$1.50/1M in, \$7.50/1M out+thought）**:
+
+| 試算単位 | パイロット実測ベース（目的欄なし, 9,017 tok） | `expressive_purpose` 増分〔レンジ〕 | **目的欄あり合計（Flex, 1 回/本）** | 増加率 |
+|---|---:|---:|---:|---:|
+| **1 本あたり（平均 192s 動画）** | \$0.102 | **+\$0.0191**〔+\$0.0143〜+\$0.0246〕 | **\$0.121 / 本** | **+18.7%** |
+| **推奨優先母数（`A-` 以上・非制限 2,541 本）** | \$258.3 | **+\$48.4**〔+\$36.4〜+\$62.5〕 | **\$306.7**（月 \$38 換算 **8.1 か月**） | **+18.7%** |
+| **同上＋高速カット 25% に Pass 2（最大 1 区間）** | \$278.1 | **+\$48.4**（Pass 2 はフレームのみ・目的欄不要） | **\$326.5**（月 \$38 換算 **8.6 か月**） | **+17.4%** |
+
+- ※ なお、未分析動画向けに `detailed_analysis`（Ch.0〜Ch.9）も同時生成するケースでは、さらに出力＋思考が約 +3,000〜4,500 tok（Flex 約 +\$0.023〜\$0.034/本）増える。既存 `watched_A` 動画（2,541 本の大半）は既存分析を保護してレシピ＋`expressive_purpose` のみ生成するため、上記の **\$0.121/本** がそのまま適用される。
 
 ---
 
-## 6. 承認済み事項と本番（②）前に決めること
+## 6. 承認済み事項と本番（②）開始前チェックリスト
 
-### 6-1. パイロット試験について承認済み（2026-11-25）
-1. **パイロット 5 本 × 2 回（Flex, `1 fps`, 予算上限 \$1.20）**: 事前登録（`preregistration.json`、5 本・プロンプト・合格ライン）を変更せず実施。503/429 制御は `scripts/run-api-url-batch.mjs` と同一ルール。
-2. **Pass 2（高速カット枠の `4 fps` クリップ拡大）**: 案 A を採用。高速カット 2 本（`jsEVOjI690Y`, `Xr032EhUDPw`）で主要カット時刻誤差の中央値が 1.0 秒を超えた場合のみ、15 秒区間を `4 fps` で追加観察（追加予算上限 \$0.30）。
-3. **既存 `scenes` の非注入**: プロンプトへ既存 `scenes` は渡さず、M4（作り話検査）の答え合わせにのみ使用。
+### 6-1. 承認・確定済み事項（2026-11-25 確定）
+1. **パイロット 5 本 × 2 回（完了）**: `pilot_20261125_162300` にて M1・M2・M3・M4・M5（および `kqj7b59D85Y` 除く 4 本の M6）の合格、および `Xr032EhUDPw` での Pass 2（4 fps クリップ拡大）有効性を確認済み。
+2. **本番 ② の `expressive_purpose` 必須化（D-024 準拠）**: 各カットに `shared/expressivePurposeVocab.json` 準拠の `expressive_purpose`（`provenance: "api_interpreted"`）を同時出力し、カット単位検索・絞り込みの正本データとする。
+3. **既存 `watched_A` 分析の保護**: すでに `watched_A` の詳細分析・`scenes` を持つ動画は上書きせず保全し、② ではレシピ下書き生成＋既存 `scenes` との照合（M4 チェック）のみ行う。未分析／未視聴置換対象の動画にのみ `detailed_analysis + craft_recipe` 一括プロンプトを適用する。
+4. **本番 ② の呼び出し回数**: **1 本 1 回**（r2 なし）とし、JSON パース・スキーマ・語彙・制作基準のいずれかに失敗した場合のみ **最大 1 回まで再試行** する。
+5. **Pass 2（4 fps クリップ拡大）の制限**: 高速カット・極短遷移を持つ動画のみを対象とし、**1 本あたり最大 1 区間**（`content_layers: ["frames"]`）に限定して実施する。
 
-### 6-2. 本番の ②（詳細分析＋レシピ一括生成）へ進む前に決めること
-1. **アンカー 30 本到達と補正幅（`analysis/api_url_bias_config_v1.json`）の承認**（D-023 開始ゲート）。
-2. **レシピファイルの正本配置・配布仕様の確定**: `chibatmute` が設計中の `docs/CRAFT_RECIPE_DISTRIBUTION_DESIGN.md`（Google ドライブ正本方針）に合わせ、保存パス・命名・SQLite 取り込み手順・重複回避ルールを揃える。
-3. **既存 `watched_A` 動画（すでに詳細分析・`scenes` 完備）への ② 適用ルール**: 既存 `aiAnalysis` / `scenes` を保持してレシピだけ生成するか、未分析動画のみ「詳細分析＋レシピ一括」プロンプトを使うかの切り分け。
-4. **本番の呼び出し回数・Pass 2 発動基準・対象優先順**: 1 本 1 回＋自動検証失敗時再試行とするか、Pass 2 の自動発動条件（例：`overall_cut_pace == "fast"` または `micro_transition` 候補あり）、および夜間・早朝バッチの実行スケジュール。
+### 6-2. 本番の ② を開始する前に必要なゲート（未解除・待機中）
+1. **アンカー 30 本到達と補正幅（`analysis/api_url_bias_config_v1.json`）のユーザー承認**（D-023 開始ゲート：Run 1 夜間バッチ完了後に算出・承認）。
+2. **レシピファイルの正本配置・配布仕様の最終突合**: `chibatmute` の `docs/CRAFT_RECIPE_DISTRIBUTION_DESIGN.md`（Google ドライブ正本方針）に合わせ、保存パス・命名・SQLite 取り込み手順を揃える。
+3. **本番 ② ランナー実装・`expressive_purpose` 自動バリデータ実装**: 上記ゲート承認後に着手する（本更新時点では未実装・未実行）。

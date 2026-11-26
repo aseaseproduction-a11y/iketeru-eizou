@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "run_id": "run1_p0_20261126_100930",
+  "recorded_at": "2026-11-26T10:19:45+09:00",
+  "original_service_tier": "flex",
+  "switched_service_tier": "standard",
+  "authorization": "User instruction 2026-11-26 09:44 JST: if Flex stops due to 3 consecutive deferred videos congestion guard, resume remaining and deferred calls on Standard with combined Flex+Standard cap $16.00.",
+  "flex_phase_summary": {
+    "started_at_jst": "2026-11-26 10:09:37 +09:00",
+    "ended_at_jst": "2026-11-26 10:19:29 +09:00",
+    "succeeded_calls": 6,
+    "videos_completed": 3,
+    "completed_video_ids": ["OUQ6NV9r2Lk", "RFYP-tY6xOg", "U-FuKvu5RV0"],
+    "congestion_failure_count": 7,
+    "deferred_calls_count": 6,
+    "deferred_video_ids": ["dWvAJMYdTFI", "drPEdug9fZk", "eEiMPYiNZAo"],
+    "stop_reason": "3_consecutive_videos_deferred_flex_congestion",
+    "flex_cost_usd": 0.392922
+  },
+  "standard_resume_budget_cap_combined_usd": 16.0
+}

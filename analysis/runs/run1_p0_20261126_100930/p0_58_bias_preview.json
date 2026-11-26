@@ -1,0 +1,1393 @@
+{
+  "generated_at": "2026-11-26T03:16:43.164Z",
+  "run_id": "run1_p0_20261126_100930",
+  "bias_config_approved": false,
+  "proposed_offset_mean": 2.67,
+  "proposed_offset_median": 2.25,
+  "total_targets": 58,
+  "raw_mean": 82.85,
+  "corrected_mean": 80.18,
+  "ge78_count_raw": 44,
+  "ge78_count_corrected_mean_offset": 36,
+  "ge78_count_corrected_median_offset": 39,
+  "ge83_count_raw": 29,
+  "ge83_count_corrected_mean_offset": 20,
+  "lt63_count_raw": 0,
+  "lt63_count_corrected_mean_offset": 1,
+  "dropped_below_78_after_correction": [
+    {
+      "video_id": "dWvAJMYdTFI",
+      "raw": 80.5,
+      "corrected": 77.83,
+      "title": "2023年9月27日(水)京都高島屋S.C.開業スペシャルムービー"
+    },
+    {
+      "video_id": "tpWIK6D-yVM",
+      "raw": 80.5,
+      "corrected": 77.83,
+      "title": "JELEE『最強ガール』Music Video"
+    },
+    {
+      "video_id": "V8FGju_xYjo",
+      "raw": 80.5,
+      "corrected": 77.83,
+      "title": "「Future of Work Japan 2018」オープニングムービー（Cr"
+    },
+    {
+      "video_id": "qe29NgNqJZw",
+      "raw": 78.5,
+      "corrected": 75.83,
+      "title": "the Hole / 足立レイ"
+    },
+    {
+      "video_id": "zPDMm7XUpkI",
+      "raw": 78.5,
+      "corrected": 75.83,
+      "title": "日本大学理工学部建築学科ブランドムービー “建築はつづく。未来がはじまる。”ve"
+    },
+    {
+      "video_id": "2nGPUtId7vM",
+      "raw": 78,
+      "corrected": 75.33,
+      "title": "KDDIブランドメッセージ"
+    },
+    {
+      "video_id": "M7pWj2hq_f8",
+      "raw": 78,
+      "corrected": 75.33,
+      "title": "株式会社ハーレージャパン Phantom ポリプロピレンウェア 機能検証動画"
+    },
+    {
+      "video_id": "w8QgUN09cqk",
+      "raw": 78,
+      "corrected": 75.33,
+      "title": "パーパスムービー2023「ONE PERSON ONE PURPOSE」"
+    }
+  ],
+  "targets": [
+    {
+      "video_id": "vpyeQeTDGFA",
+      "title": "Honda \"Paper\" by PES | Emmy Nominated Commercial",
+      "embed_status": "available",
+      "embed_reason": null,
+      "genres": [
+        "tv-cm",
+        "web-cm",
+        "branded-movie"
+      ],
+      "raw_scores": [
+        97,
+        98
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 97.5,
+      "raw_rank": "S+",
+      "corrected_score_mean_offset": 94.83,
+      "corrected_rank_mean_offset": "S",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": true,
+      "corrected_score_median_offset": 95.25,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "fvbEnWLRo1s",
+      "title": "Marathon | Reveal Cinematic Short",
+      "embed_status": "restricted",
+      "embed_reason": "unavailable_embed_restricted",
+      "genres": [
+        "film",
+        "branded-movie"
+      ],
+      "raw_scores": [
+        96,
+        96
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 96,
+      "raw_rank": "S",
+      "corrected_score_mean_offset": 93.33,
+      "corrected_rank_mean_offset": "S",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": true,
+      "corrected_score_median_offset": 93.75,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "vS6wzjpCvec",
+      "title": "サカナクション - アルクアラウンド（MUSIC VIDEO） -BEST ALBUM「魚図鑑」(3/28release)-",
+      "embed_status": "restricted",
+      "embed_reason": "unavailable_embed_restricted",
+      "genres": [
+        "mv"
+      ],
+      "raw_scores": [
+        95,
+        95
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 95,
+      "raw_rank": "S",
+      "corrected_score_mean_offset": 92.33,
+      "corrected_rank_mean_offset": "S-",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": true,
+      "corrected_score_median_offset": 92.75,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "x6_mbnsh6VU",
+      "title": "GENER8ION - STORM starring Yung Lean",
+      "embed_status": "available",
+      "embed_reason": null,
+      "genres": [
+        "mv",
+        "film"
+      ],
+      "raw_scores": [
+        95,
+        94
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 94.5,
+      "raw_rank": "S",
+      "corrected_score_mean_offset": 91.83,
+      "corrected_rank_mean_offset": "S-",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": true,
+      "corrected_score_median_offset": 92.25,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "_OUWtPhDQpk",
+      "title": "Honkai: Star Rail Two-Year Anniversary Special Animation: On the Journey",
+      "embed_status": "restricted",
+      "embed_reason": "unavailable_embed_restricted",
+      "genres": [
+        "mv",
+        "opening",
+        "film"
+      ],
+      "raw_scores": [
+        94,
+        94
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 94,
+      "raw_rank": "S",
+      "corrected_score_mean_offset": 91.33,
+      "corrected_rank_mean_offset": "S-",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": true,
+      "corrected_score_median_offset": 91.75,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "xRU1XXHIpIc",
+      "title": "ILLIT (아일릿) 'bomb' Brand Film (little monster MV)",
+      "embed_status": "available",
+      "embed_reason": null,
+      "genres": [
+        "mv",
+        "branded-movie"
+      ],
+      "raw_scores": [
+        93,
+        94
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 93.5,
+      "raw_rank": "S",
+      "corrected_score_mean_offset": 90.83,
+      "corrected_rank_mean_offset": "S-",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": true,
+      "corrected_score_median_offset": 91.25,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "yu3YGphrBbI",
+      "title": "Max Cooper - Obsessive Compulsive Order (Official Video by Ksawery Komputery)",
+      "embed_status": "unknown",
+      "embed_reason": null,
+      "genres": [
+        "mv"
+      ],
+      "raw_scores": [
+        94,
+        92
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 93,
+      "raw_rank": "S",
+      "corrected_score_mean_offset": 90.33,
+      "corrected_rank_mean_offset": "S-",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": true,
+      "corrected_score_median_offset": 90.75,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "zRJS0P1GwC4",
+      "title": "『DRAGON BALL』40周年記念スペシャル映像",
+      "embed_status": "available",
+      "embed_reason": null,
+      "genres": [
+        "teaser-trailer",
+        "branded-movie"
+      ],
+      "raw_scores": [
+        92,
+        94
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 93,
+      "raw_rank": "S",
+      "corrected_score_mean_offset": 90.33,
+      "corrected_rank_mean_offset": "S-",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": true,
+      "corrected_score_median_offset": 90.75,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "OUQ6NV9r2Lk",
+      "title": "Balming Tiger - Keep On (Official Video)",
+      "embed_status": "unknown",
+      "embed_reason": null,
+      "genres": [
+        "mv",
+        "film"
+      ],
+      "raw_scores": [
+        93,
+        91
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 92,
+      "raw_rank": "S-",
+      "corrected_score_mean_offset": 89.33,
+      "corrected_rank_mean_offset": "A+",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": true,
+      "corrected_score_median_offset": 89.75,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "yVX34hPLKtI",
+      "title": "MV  合成 / VFX / 3DCG   LV MURAKAMI (Official Music Video) - MNNK Bro. (Takashi Murakami & JP THE WAVY)",
+      "embed_status": "available",
+      "embed_reason": null,
+      "genres": [
+        "mv",
+        "branded-movie"
+      ],
+      "raw_scores": [
+        92,
+        92
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 92,
+      "raw_rank": "S-",
+      "corrected_score_mean_offset": 89.33,
+      "corrected_rank_mean_offset": "A+",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": true,
+      "corrected_score_median_offset": 89.75,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "yow8PBNcINU",
+      "title": "Ｚ会グループ × loundraw × FLAT STUDIO　応援ムービー『いつかの私より』",
+      "embed_status": "available",
+      "embed_reason": null,
+      "genres": [
+        "branded-movie",
+        "web-cm"
+      ],
+      "raw_scores": [
+        90,
+        91
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 90.5,
+      "raw_rank": "S-",
+      "corrected_score_mean_offset": 87.83,
+      "corrected_rank_mean_offset": "A+",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": true,
+      "corrected_score_median_offset": 88.25,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "kw7D7Il13_k",
+      "title": "Pure Pure (not)",
+      "embed_status": "restricted",
+      "embed_reason": "unavailable_private_or_deleted",
+      "genres": [
+        "youtube-sns",
+        "mv"
+      ],
+      "raw_scores": [
+        91,
+        89
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 90,
+      "raw_rank": "S-",
+      "corrected_score_mean_offset": 87.33,
+      "corrected_rank_mean_offset": "A+",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": true,
+      "corrected_score_median_offset": 87.75,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "zFvChQ6dSdk",
+      "title": "2周年記念テーマソングMV「預言」｜ゼンレスゾーンゼロ",
+      "embed_status": "available",
+      "embed_reason": null,
+      "genres": [
+        "branded-movie",
+        "mv",
+        "opening"
+      ],
+      "raw_scores": [
+        90,
+        90
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 90,
+      "raw_rank": "S-",
+      "corrected_score_mean_offset": 87.33,
+      "corrected_rank_mean_offset": "A+",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": true,
+      "corrected_score_median_offset": 87.75,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "RFYP-tY6xOg",
+      "title": "TVアニメ「らんま1/2」 ノンクレジットオープニング｜ano「許婚っきゅん」 ／ \"Ranma1/2\" Opening Movie",
+      "embed_status": "available",
+      "embed_reason": null,
+      "genres": [
+        "mv"
+      ],
+      "raw_scores": [
+        89,
+        89
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 89,
+      "raw_rank": "A+",
+      "corrected_score_mean_offset": 86.33,
+      "corrected_rank_mean_offset": "A+",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": true,
+      "corrected_score_median_offset": 86.75,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "SWzfm9PED6s",
+      "title": "Mrs. GREEN APPLE「シンデレラ」Official Music Video",
+      "embed_status": "restricted",
+      "embed_reason": "unavailable_embed_restricted",
+      "genres": [
+        "mv",
+        "film"
+      ],
+      "raw_scores": [
+        89,
+        89
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 89,
+      "raw_rank": "A+",
+      "corrected_score_mean_offset": 86.33,
+      "corrected_rank_mean_offset": "A+",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": true,
+      "corrected_score_median_offset": 86.75,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "z02-yCIHPCY",
+      "title": "TV CM  IT / 通信 / ネットサービス   Telstra | Oberon is better on a better mobile network",
+      "embed_status": "restricted",
+      "embed_reason": "unavailable_private_or_deleted",
+      "genres": [
+        "tv-cm",
+        "web-cm"
+      ],
+      "raw_scores": [
+        88,
+        89
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 88.5,
+      "raw_rank": "A+",
+      "corrected_score_mean_offset": 85.83,
+      "corrected_rank_mean_offset": "A+",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": true,
+      "corrected_score_median_offset": 86.25,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "zJtsfgrJiWE",
+      "title": "漫画『メダリスト』× HANA『Cold Night』｜スペシャル MV",
+      "embed_status": "available",
+      "embed_reason": null,
+      "genres": [
+        "mv"
+      ],
+      "raw_scores": [
+        87,
+        89
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 88,
+      "raw_rank": "A+",
+      "corrected_score_mean_offset": 85.33,
+      "corrected_rank_mean_offset": "A",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": true,
+      "corrected_score_median_offset": 85.75,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "zP5fTB_MAXU",
+      "title": "『Adam by Eve: A Live in Animation』予告編 - Netflix",
+      "embed_status": "available",
+      "embed_reason": null,
+      "genres": [
+        "teaser-trailer",
+        "film",
+        "mv"
+      ],
+      "raw_scores": [
+        88,
+        88
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 88,
+      "raw_rank": "A+",
+      "corrected_score_mean_offset": 85.33,
+      "corrected_rank_mean_offset": "A",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": true,
+      "corrected_score_median_offset": 85.75,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "iK725ck2NIk",
+      "title": "#Kroi - Kinetic feat. INCOGNITO [Official Video]",
+      "embed_status": "available",
+      "embed_reason": null,
+      "genres": [
+        "mv"
+      ],
+      "raw_scores": [
+        88,
+        87
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 87.5,
+      "raw_rank": "A+",
+      "corrected_score_mean_offset": 84.83,
+      "corrected_rank_mean_offset": "A",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": true,
+      "corrected_score_median_offset": 85.25,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "xpn5Ax2pz14",
+      "title": "KETE 2022 Brand Movie No More Rules",
+      "embed_status": "restricted",
+      "embed_reason": "unavailable_embed_restricted",
+      "genres": [
+        "branded-movie",
+        "web-cm"
+      ],
+      "raw_scores": [
+        87,
+        87
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 87,
+      "raw_rank": "A+",
+      "corrected_score_mean_offset": 84.33,
+      "corrected_rank_mean_offset": "A",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": true,
+      "corrected_score_median_offset": 84.75,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "ITfpkCiJIEY",
+      "title": "BOF:ET | 凛として純情 / Ino(chronoize) feat. 柳瀬マサキ",
+      "embed_status": "restricted",
+      "embed_reason": "unavailable_embed_restricted",
+      "genres": [
+        "mv",
+        "concept-art"
+      ],
+      "raw_scores": [
+        85,
+        86
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 85.5,
+      "raw_rank": "A+",
+      "corrected_score_mean_offset": 82.83,
+      "corrected_rank_mean_offset": "A",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": true,
+      "corrected_score_median_offset": 83.25,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "lB3mij3gmVo",
+      "title": "DUSTCELL - 表情差分 / Different Expression",
+      "embed_status": "restricted",
+      "embed_reason": "unavailable_embed_restricted",
+      "genres": [
+        "mv"
+      ],
+      "raw_scores": [
+        86,
+        85
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 85.5,
+      "raw_rank": "A+",
+      "corrected_score_mean_offset": 82.83,
+      "corrected_rank_mean_offset": "A",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": true,
+      "corrected_score_median_offset": 83.25,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "efXqozK4A40",
+      "title": "プシ / r-906 feat.初音ミク",
+      "embed_status": "available",
+      "embed_reason": null,
+      "genres": [
+        "mv",
+        "concept-art"
+      ],
+      "raw_scores": [
+        85,
+        85
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 85,
+      "raw_rank": "A",
+      "corrected_score_mean_offset": 82.33,
+      "corrected_rank_mean_offset": "A",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": true,
+      "corrected_score_median_offset": 82.75,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "zSPMR9UdKuI",
+      "title": "GAMBLER'S FALLACY (ft. Kasane Teto)",
+      "embed_status": "available",
+      "embed_reason": null,
+      "genres": [
+        "mv",
+        "concept-art"
+      ],
+      "raw_scores": [
+        85,
+        85
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 85,
+      "raw_rank": "A",
+      "corrected_score_mean_offset": 82.33,
+      "corrected_rank_mean_offset": "A",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": true,
+      "corrected_score_median_offset": 82.75,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "rolo_BHlDmQ",
+      "title": "リコレクションエンドロウル by 燦鳥ノム【歌ってみた】",
+      "embed_status": "available",
+      "embed_reason": null,
+      "genres": [
+        "mv"
+      ],
+      "raw_scores": [
+        83,
+        85
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 84,
+      "raw_rank": "A",
+      "corrected_score_mean_offset": 81.33,
+      "corrected_rank_mean_offset": "A-",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": true,
+      "corrected_score_median_offset": 81.75,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "xtpEqWX-KuI",
+      "title": "日本代表応援ムービー「俺たち、めっちゃ」",
+      "embed_status": "restricted",
+      "embed_reason": "unavailable_private_or_deleted",
+      "genres": [
+        "branded-movie",
+        "web-cm"
+      ],
+      "raw_scores": [
+        85,
+        83
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 84,
+      "raw_rank": "A",
+      "corrected_score_mean_offset": 81.33,
+      "corrected_rank_mean_offset": "A-",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": true,
+      "corrected_score_median_offset": 81.75,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "t5jPgM_VKZo",
+      "title": "みみめめMIMI「Mr. Darling」MV",
+      "embed_status": "restricted",
+      "embed_reason": "unavailable_embed_restricted",
+      "genres": [
+        "mv",
+        "concept-art"
+      ],
+      "raw_scores": [
+        85,
+        82
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 83.5,
+      "raw_rank": "A",
+      "corrected_score_mean_offset": 80.83,
+      "corrected_rank_mean_offset": "A-",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": true,
+      "corrected_score_median_offset": 81.25,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "EzEFCikg4tk",
+      "title": "【博報堂／博報堂ＤＹメディアパートナーズ 】答えは、きみの中にある。",
+      "embed_status": "restricted",
+      "embed_reason": "unavailable_private_or_deleted",
+      "genres": [
+        "corporate",
+        "branded-movie"
+      ],
+      "raw_scores": [
+        84,
+        82
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 83,
+      "raw_rank": "A",
+      "corrected_score_mean_offset": 80.33,
+      "corrected_rank_mean_offset": "A-",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": true,
+      "corrected_score_median_offset": 80.75,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "ICs3wEegMgw",
+      "title": "Tempalay \"ふぉ\" (Official Music Video)",
+      "embed_status": "restricted",
+      "embed_reason": "unavailable_embed_restricted",
+      "genres": [
+        "mv",
+        "youtube-sns"
+      ],
+      "raw_scores": [
+        83,
+        83
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 83,
+      "raw_rank": "A",
+      "corrected_score_mean_offset": 80.33,
+      "corrected_rank_mean_offset": "A-",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": true,
+      "corrected_score_median_offset": 80.75,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "mI9MSQGlbH0",
+      "title": "TV CM  交通 / 物流 / 産業素材   西鉄企業イメージCM「つぎは、あなたのほしい明日」 30s",
+      "embed_status": "available",
+      "embed_reason": null,
+      "genres": [
+        "tv-cm",
+        "web-cm"
+      ],
+      "raw_scores": [
+        83,
+        82
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 82.5,
+      "raw_rank": "A",
+      "corrected_score_mean_offset": 79.83,
+      "corrected_rank_mean_offset": "A-",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": true,
+      "corrected_score_median_offset": 80.25,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "oXRPnu9nBpc",
+      "title": "Panasonic Technics Turntable History Movie #1~#5",
+      "embed_status": "restricted",
+      "embed_reason": "unavailable_private_or_deleted",
+      "genres": [
+        "branded-movie",
+        "web-cm"
+      ],
+      "raw_scores": [
+        82,
+        83
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 82.5,
+      "raw_rank": "A",
+      "corrected_score_mean_offset": 79.83,
+      "corrected_rank_mean_offset": "A-",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": true,
+      "corrected_score_median_offset": 80.25,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "W_yKEhESgUI",
+      "title": "SAPPORO poteto \"新個性\"/calbee",
+      "embed_status": "restricted",
+      "embed_reason": "unavailable_private_or_deleted",
+      "genres": [
+        "web-cm",
+        "branded-movie",
+        "concept-art"
+      ],
+      "raw_scores": [
+        82,
+        83
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 82.5,
+      "raw_rank": "A",
+      "corrected_score_mean_offset": 79.83,
+      "corrected_rank_mean_offset": "A-",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": true,
+      "corrected_score_median_offset": 80.25,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "xw5u-NoA3Ec",
+      "title": "【公式】『ポケポケ』テーマ拡張パック「シャイニングメガ」",
+      "embed_status": "available",
+      "embed_reason": null,
+      "genres": [
+        "web-cm",
+        "branded-movie"
+      ],
+      "raw_scores": [
+        83,
+        82
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 82.5,
+      "raw_rank": "A",
+      "corrected_score_mean_offset": 79.83,
+      "corrected_rank_mean_offset": "A-",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": true,
+      "corrected_score_median_offset": 80.25,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "yRv-MikY3d0",
+      "title": "「その瞬間に、心がはずむ。」ザ・パークハビオ コンセプトムービー｜三菱地所レジデンス",
+      "embed_status": "available",
+      "embed_reason": null,
+      "genres": [
+        "branded-movie",
+        "web-cm"
+      ],
+      "raw_scores": [
+        82,
+        82
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 82,
+      "raw_rank": "A",
+      "corrected_score_mean_offset": 79.33,
+      "corrected_rank_mean_offset": "A-",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": true,
+      "corrected_score_median_offset": 79.75,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "drPEdug9fZk",
+      "title": "明透 - Aster / ASU - Aster",
+      "embed_status": "available",
+      "embed_reason": null,
+      "genres": [
+        "mv"
+      ],
+      "raw_scores": [
+        81,
+        81
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 81,
+      "raw_rank": "A-",
+      "corrected_score_mean_offset": 78.33,
+      "corrected_rank_mean_offset": "A-",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": true,
+      "corrected_score_median_offset": 78.75,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "U-FuKvu5RV0",
+      "title": "Imy - Dreamscape (feat. 藍月なくる) Music Video",
+      "embed_status": "available",
+      "embed_reason": null,
+      "genres": [
+        "mv"
+      ],
+      "raw_scores": [
+        82,
+        80
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 81,
+      "raw_rank": "A-",
+      "corrected_score_mean_offset": 78.33,
+      "corrected_rank_mean_offset": "A-",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": true,
+      "corrected_score_median_offset": 78.75,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "dWvAJMYdTFI",
+      "title": "2023年9月27日(水)京都高島屋S.C.開業スペシャルムービー",
+      "embed_status": "unknown",
+      "embed_reason": null,
+      "genres": [
+        "web-cm",
+        "teaser-trailer"
+      ],
+      "raw_scores": [
+        82,
+        79
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 80.5,
+      "raw_rank": "A-",
+      "corrected_score_mean_offset": 77.83,
+      "corrected_rank_mean_offset": "A-",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": false,
+      "corrected_score_median_offset": 78.25,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "tpWIK6D-yVM",
+      "title": "JELEE『最強ガール』Music Video",
+      "embed_status": "restricted",
+      "embed_reason": "unavailable_embed_restricted",
+      "genres": [
+        "mv"
+      ],
+      "raw_scores": [
+        81,
+        80
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 80.5,
+      "raw_rank": "A-",
+      "corrected_score_mean_offset": 77.83,
+      "corrected_rank_mean_offset": "A-",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": false,
+      "corrected_score_median_offset": 78.25,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "V8FGju_xYjo",
+      "title": "「Future of Work Japan 2018」オープニングムービー（Crevo制作実績）",
+      "embed_status": "restricted",
+      "embed_reason": "unavailable_private_or_deleted",
+      "genres": [
+        "opening",
+        "event-live"
+      ],
+      "raw_scores": [
+        79,
+        82
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 80.5,
+      "raw_rank": "A-",
+      "corrected_score_mean_offset": 77.83,
+      "corrected_rank_mean_offset": "A-",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": false,
+      "corrected_score_median_offset": 78.25,
+      "eligible_ge78_corrected_median": true
+    },
+    {
+      "video_id": "qe29NgNqJZw",
+      "title": "the Hole / 足立レイ",
+      "embed_status": "available",
+      "embed_reason": null,
+      "genres": [
+        "mv",
+        "concept-art"
+      ],
+      "raw_scores": [
+        80,
+        77
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 78.5,
+      "raw_rank": "A-",
+      "corrected_score_mean_offset": 75.83,
+      "corrected_rank_mean_offset": "B+",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": false,
+      "corrected_score_median_offset": 76.25,
+      "eligible_ge78_corrected_median": false
+    },
+    {
+      "video_id": "zPDMm7XUpkI",
+      "title": "日本大学理工学部建築学科ブランドムービー “建築はつづく。未来がはじまる。”ver.2",
+      "embed_status": "restricted",
+      "embed_reason": "unavailable_embed_restricted",
+      "genres": [
+        "branded-movie",
+        "corporate"
+      ],
+      "raw_scores": [
+        78,
+        79
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 78.5,
+      "raw_rank": "A-",
+      "corrected_score_mean_offset": 75.83,
+      "corrected_rank_mean_offset": "B+",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": false,
+      "corrected_score_median_offset": 76.25,
+      "eligible_ge78_corrected_median": false
+    },
+    {
+      "video_id": "2nGPUtId7vM",
+      "title": "KDDIブランドメッセージ",
+      "embed_status": "restricted",
+      "embed_reason": "unavailable_private_or_deleted",
+      "genres": [
+        "branded-movie",
+        "corporate"
+      ],
+      "raw_scores": [
+        80,
+        76
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 78,
+      "raw_rank": "A-",
+      "corrected_score_mean_offset": 75.33,
+      "corrected_rank_mean_offset": "B+",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": false,
+      "corrected_score_median_offset": 75.75,
+      "eligible_ge78_corrected_median": false
+    },
+    {
+      "video_id": "M7pWj2hq_f8",
+      "title": "株式会社ハーレージャパン Phantom ポリプロピレンウェア 機能検証動画",
+      "embed_status": "restricted",
+      "embed_reason": "unavailable_private_or_deleted",
+      "genres": [
+        "web-cm"
+      ],
+      "raw_scores": [
+        78,
+        83,
+        76
+      ],
+      "ensemble_rule": "median_of_3",
+      "raw_api_score": 78,
+      "raw_rank": "A-",
+      "corrected_score_mean_offset": 75.33,
+      "corrected_rank_mean_offset": "B+",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": false,
+      "corrected_score_median_offset": 75.75,
+      "eligible_ge78_corrected_median": false
+    },
+    {
+      "video_id": "w8QgUN09cqk",
+      "title": "パーパスムービー2023「ONE PERSON ONE PURPOSE」",
+      "embed_status": "available",
+      "embed_reason": null,
+      "genres": [
+        "corporate",
+        "branded-movie",
+        "documentary"
+      ],
+      "raw_scores": [
+        76,
+        80
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 78,
+      "raw_rank": "A-",
+      "corrected_score_mean_offset": 75.33,
+      "corrected_rank_mean_offset": "B+",
+      "eligible_ge78_raw": true,
+      "eligible_ge78_corrected_mean": false,
+      "corrected_score_median_offset": 75.75,
+      "eligible_ge78_corrected_median": false
+    },
+    {
+      "video_id": "eEiMPYiNZAo",
+      "title": "花譜 # 145「アポカリプスより」【オリジナルMV】",
+      "embed_status": "available",
+      "embed_reason": null,
+      "genres": [
+        "mv"
+      ],
+      "raw_scores": [
+        76,
+        79
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 77.5,
+      "raw_rank": "A-",
+      "corrected_score_mean_offset": 74.83,
+      "corrected_rank_mean_offset": "B+",
+      "eligible_ge78_raw": false,
+      "eligible_ge78_corrected_mean": false,
+      "corrected_score_median_offset": 75.25,
+      "eligible_ge78_corrected_median": false
+    },
+    {
+      "video_id": "wx_H_pxbwdE",
+      "title": "あなたのやりたいことはデザインかもしれない ｜Goodpatch",
+      "embed_status": "restricted",
+      "embed_reason": "unavailable_private_or_deleted",
+      "genres": [
+        "corporate",
+        "documentary",
+        "branded-movie"
+      ],
+      "raw_scores": [
+        77,
+        78
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 77.5,
+      "raw_rank": "A-",
+      "corrected_score_mean_offset": 74.83,
+      "corrected_rank_mean_offset": "B+",
+      "eligible_ge78_raw": false,
+      "eligible_ge78_corrected_mean": false,
+      "corrected_score_median_offset": 75.25,
+      "eligible_ge78_corrected_median": false
+    },
+    {
+      "video_id": "zyktN7x_DSQ",
+      "title": "【ゼンゼロ】パリピ雅",
+      "embed_status": "restricted",
+      "embed_reason": "unavailable_embed_restricted",
+      "genres": [
+        "mv"
+      ],
+      "raw_scores": [
+        77,
+        77
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 77,
+      "raw_rank": "B+",
+      "corrected_score_mean_offset": 74.33,
+      "corrected_rank_mean_offset": "B+",
+      "eligible_ge78_raw": false,
+      "eligible_ge78_corrected_mean": false,
+      "corrected_score_median_offset": 74.75,
+      "eligible_ge78_corrected_median": false
+    },
+    {
+      "video_id": "rON_9zSnU2k",
+      "title": "三井のオフィス",
+      "embed_status": "restricted",
+      "embed_reason": "unavailable_private_or_deleted",
+      "genres": [
+        "tv-cm",
+        "corporate"
+      ],
+      "raw_scores": [
+        75,
+        75
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 75,
+      "raw_rank": "B+",
+      "corrected_score_mean_offset": 72.33,
+      "corrected_rank_mean_offset": "B",
+      "eligible_ge78_raw": false,
+      "eligible_ge78_corrected_mean": false,
+      "corrected_score_median_offset": 72.75,
+      "eligible_ge78_corrected_median": false
+    },
+    {
+      "video_id": "YH2qyPanqK4",
+      "title": "【リクルート新卒採用】コンセプトムービー『PLAY RECRUIT, PLAY OPPORTUNITIES.』(Short Ver.)",
+      "embed_status": "restricted",
+      "embed_reason": "unavailable_private_or_deleted",
+      "genres": [
+        "branded-movie",
+        "web-cm"
+      ],
+      "raw_scores": [
+        75,
+        75
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 75,
+      "raw_rank": "B+",
+      "corrected_score_mean_offset": 72.33,
+      "corrected_rank_mean_offset": "B",
+      "eligible_ge78_raw": false,
+      "eligible_ge78_corrected_mean": false,
+      "corrected_score_median_offset": 72.75,
+      "eligible_ge78_corrected_median": false
+    },
+    {
+      "video_id": "z4r3l2aAdrg",
+      "title": "BrokenDaybreak / 七篠さよ -Music Video -",
+      "embed_status": "available",
+      "embed_reason": null,
+      "genres": [
+        "mv"
+      ],
+      "raw_scores": [
+        74,
+        74
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 74,
+      "raw_rank": "B+",
+      "corrected_score_mean_offset": 71.33,
+      "corrected_rank_mean_offset": "B",
+      "eligible_ge78_raw": false,
+      "eligible_ge78_corrected_mean": false,
+      "corrected_score_median_offset": 71.75,
+      "eligible_ge78_corrected_median": false
+    },
+    {
+      "video_id": "yTASHD-MWwE",
+      "title": "come again - m-flo (Cover) / KMNZ LITA × TINA",
+      "embed_status": "available",
+      "embed_reason": null,
+      "genres": [
+        "mv"
+      ],
+      "raw_scores": [
+        74,
+        70
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 72,
+      "raw_rank": "B",
+      "corrected_score_mean_offset": 69.33,
+      "corrected_rank_mean_offset": "B",
+      "eligible_ge78_raw": false,
+      "eligible_ge78_corrected_mean": false,
+      "corrected_score_median_offset": 69.75,
+      "eligible_ge78_corrected_median": false
+    },
+    {
+      "video_id": "tk9mbNFEKZw",
+      "title": "採用動画制作サービス｜動画制作・映像制作のLOCUS",
+      "embed_status": "unknown",
+      "embed_reason": null,
+      "genres": [
+        "corporate",
+        "teaser-trailer"
+      ],
+      "raw_scores": [
+        73,
+        70
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 71.5,
+      "raw_rank": "B",
+      "corrected_score_mean_offset": 68.83,
+      "corrected_rank_mean_offset": "B",
+      "eligible_ge78_raw": false,
+      "eligible_ge78_corrected_mean": false,
+      "corrected_score_median_offset": 69.25,
+      "eligible_ge78_corrected_median": false
+    },
+    {
+      "video_id": "D6flbP5cO_4",
+      "title": "【＋ID(プラスID）】プラスでイイこと。＋ID",
+      "embed_status": "restricted",
+      "embed_reason": "unavailable_private_or_deleted",
+      "genres": [
+        "(none)"
+      ],
+      "raw_scores": [
+        71,
+        71
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 71,
+      "raw_rank": "B",
+      "corrected_score_mean_offset": 68.33,
+      "corrected_rank_mean_offset": "B",
+      "eligible_ge78_raw": false,
+      "eligible_ge78_corrected_mean": false,
+      "corrected_score_median_offset": 68.75,
+      "eligible_ge78_corrected_median": false
+    },
+    {
+      "video_id": "gpBFiG_hSFs",
+      "title": "京セラソーラー｜80秒で分かる太陽光発電システム",
+      "embed_status": "restricted",
+      "embed_reason": "unavailable_private_or_deleted",
+      "genres": [
+        "web-cm"
+      ],
+      "raw_scores": [
+        70,
+        70
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 70,
+      "raw_rank": "B",
+      "corrected_score_mean_offset": 67.33,
+      "corrected_rank_mean_offset": "B-",
+      "eligible_ge78_raw": false,
+      "eligible_ge78_corrected_mean": false,
+      "corrected_score_median_offset": 67.75,
+      "eligible_ge78_corrected_median": false
+    },
+    {
+      "video_id": "UccHEifTIo4",
+      "title": "TV CM  企業 / 商品VP / コンテスト作品   TVCM「新しいワクワクヘ」篇　30秒",
+      "embed_status": "restricted",
+      "embed_reason": "unavailable_private_or_deleted",
+      "genres": [
+        "tv-cm",
+        "corporate"
+      ],
+      "raw_scores": [
+        70,
+        70
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 70,
+      "raw_rank": "B",
+      "corrected_score_mean_offset": 67.33,
+      "corrected_rank_mean_offset": "B-",
+      "eligible_ge78_raw": false,
+      "eligible_ge78_corrected_mean": false,
+      "corrected_score_median_offset": 67.75,
+      "eligible_ge78_corrected_median": false
+    },
+    {
+      "video_id": "dsXcE8jvESw",
+      "title": "【昭和建設】2026年CM　モーショングラフィックス編｜近藤健介選手　栗原陵矢選手出演",
+      "embed_status": "restricted",
+      "embed_reason": "unavailable_embed_restricted",
+      "genres": [
+        "tv-cm"
+      ],
+      "raw_scores": [
+        70,
+        69
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 69.5,
+      "raw_rank": "B",
+      "corrected_score_mean_offset": 66.83,
+      "corrected_rank_mean_offset": "B-",
+      "eligible_ge78_raw": false,
+      "eligible_ge78_corrected_mean": false,
+      "corrected_score_median_offset": 67.25,
+      "eligible_ge78_corrected_median": false
+    },
+    {
+      "video_id": "x7mSpHbqOGs",
+      "title": "FUJITSU RECRUIT",
+      "embed_status": "available",
+      "embed_reason": null,
+      "genres": [
+        "branded-movie",
+        "web-cm"
+      ],
+      "raw_scores": [
+        70,
+        69
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 69.5,
+      "raw_rank": "B",
+      "corrected_score_mean_offset": 66.83,
+      "corrected_rank_mean_offset": "B-",
+      "eligible_ge78_raw": false,
+      "eligible_ge78_corrected_mean": false,
+      "corrected_score_median_offset": 67.25,
+      "eligible_ge78_corrected_median": false
+    },
+    {
+      "video_id": "xnWku2LSI1o",
+      "title": "🇮🇳 India got this iconic ad because of JAPAN!",
+      "embed_status": "available",
+      "embed_reason": null,
+      "genres": [
+        "youtube-sns",
+        "how-to"
+      ],
+      "raw_scores": [
+        63,
+        63
+      ],
+      "ensemble_rule": "mean_of_2",
+      "raw_api_score": 63,
+      "raw_rank": "B-",
+      "corrected_score_mean_offset": 60.33,
+      "corrected_rank_mean_offset": "C+",
+      "eligible_ge78_raw": false,
+      "eligible_ge78_corrected_mean": false,
+      "corrected_score_median_offset": 60.75,
+      "eligible_ge78_corrected_median": false
+    }
+  ]
+}

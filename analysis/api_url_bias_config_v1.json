@@ -1,24 +1,1197 @@
 {
   "schema_version": 1,
-  "config_version": "api_url_bias_v1",
-  "status": "pending_approval",
+  "config_version": "api_url_bias_v1_draft",
+  "status": "pending_user_approval",
   "approved": false,
   "approved_at": null,
   "approved_by": null,
-  "calibration_version": "gemini_api_youtube_url_v1",
-  "calibrated_route": "gemini_api_youtube_url_v1",
-  "model": "gemini-4-neon",
-  "thinking_level": "high",
-  "service_tier": "flex",
-  "prompt_sha256": "dd74e99d719942bcb3dcdceffcdfbad38aacfc23eaba9b84d7cd2b4b88c2a4c8",
+  "generated_at": "2026-11-26T03:16:43.112Z",
   "method": "constant_offset",
-  "anchor_count_target": 30,
-  "anchor_count_actual": 12,
-  "offset_subtracted": null,
-  "ci95": null,
+  "offset_subtracted": 2.67,
+  "offset_candidates": {
+    "mean_30_anchors": 2.667,
+    "median_30_anchors": 2.25,
+    "recommended_rounded": 2.67
+  },
+  "ci95": [
+    1.686,
+    3.648
+  ],
   "thresholds": {
     "t_award": 83,
-    "t_low": 63
+    "t_low": 63,
+    "stage2_craft_recipe_min": 78
   },
-  "note": "雛形（未承認）。初回バッチで答え合わせ用アンカー 30 本（既存 12 本＋新規 18 本）が揃った時点で平均差と 95% 信頼区間を算出し、ユーザー承認後に approved=true・offset_subtracted・ci95 を確定する。approved !== true の間は TiDB 反映ペイロードの生成および --apply は自動拒否される。"
+  "anchor_count_actual": 30,
+  "anchor_sources": {
+    "existing_12": [
+      "run_20261125_125425",
+      "run_20261125_134050"
+    ],
+    "run1_18": [
+      "run1_p0_20261126_100930"
+    ]
+  },
+  "overall_30_stats": {
+    "n": 30,
+    "mean_diff": 2.667,
+    "median_diff": 2.25,
+    "sd": 2.627,
+    "se": 0.48,
+    "ci95": [
+      1.686,
+      3.648
+    ],
+    "q1": 1.125,
+    "q3": 4,
+    "iqr": 2.875,
+    "min_diff": -4.5,
+    "max_diff": 7.5,
+    "raw_mae": 3.1,
+    "corrected_mae_at_mean": 2.01,
+    "corrected_mae_at_median": 2,
+    "raw_band_match_pct": 76.7,
+    "corrected_band_match_pct_mean": 80,
+    "corrected_band_match_pct_median": 80
+  },
+  "cohort_comparison": {
+    "existing_12": {
+      "n": 12,
+      "mean_diff": 2.167,
+      "median_diff": 2,
+      "sd": 1.813,
+      "se": 0.523,
+      "ci95": [
+        1.015,
+        3.319
+      ],
+      "q1": 1,
+      "q3": 3.125,
+      "iqr": 2.125,
+      "min_diff": -1,
+      "max_diff": 6,
+      "raw_mae": 2.33,
+      "corrected_mae_at_mean": 1.31,
+      "corrected_mae_at_median": 1.25,
+      "raw_band_match_pct": 91.7,
+      "corrected_band_match_pct_mean": 83.3,
+      "corrected_band_match_pct_median": 91.7
+    },
+    "run1_18": {
+      "n": 18,
+      "mean_diff": 3,
+      "median_diff": 3,
+      "sd": 3.058,
+      "se": 0.721,
+      "ci95": [
+        1.479,
+        4.521
+      ],
+      "q1": 1.5,
+      "q3": 5.75,
+      "iqr": 4.25,
+      "min_diff": -4.5,
+      "max_diff": 7.5,
+      "raw_mae": 3.61,
+      "corrected_mae_at_mean": 2.33,
+      "corrected_mae_at_median": 2.33,
+      "raw_band_match_pct": 66.7,
+      "corrected_band_match_pct_mean": 77.8,
+      "corrected_band_match_pct_median": 77.8
+    }
+  },
+  "by_baseline_band": {
+    "award_tier": {
+      "n": 11,
+      "mean_diff": 2.045,
+      "median_diff": 2,
+      "sd": 1.635,
+      "se": 0.493,
+      "ci95": [
+        0.961,
+        3.13
+      ],
+      "q1": 1.25,
+      "q3": 2.75,
+      "iqr": 1.5,
+      "min_diff": -1,
+      "max_diff": 5,
+      "raw_mae": 2.23,
+      "corrected_mae_at_mean": 1.44,
+      "corrected_mae_at_median": 1.14,
+      "raw_band_match_pct": 100,
+      "corrected_band_match_pct_mean": 72.7,
+      "corrected_band_match_pct_median": 90.9
+    },
+    "pro_band": {
+      "n": 15,
+      "mean_diff": 3.133,
+      "median_diff": 3,
+      "sd": 3.21,
+      "se": 0.829,
+      "ci95": [
+        1.31,
+        4.957
+      ],
+      "q1": 1.5,
+      "q3": 6,
+      "iqr": 4.5,
+      "min_diff": -4.5,
+      "max_diff": 7.5,
+      "raw_mae": 3.8,
+      "corrected_mae_at_mean": 2.47,
+      "corrected_mae_at_median": 2.4,
+      "raw_band_match_pct": 60,
+      "corrected_band_match_pct_mean": 86.7,
+      "corrected_band_match_pct_median": 86.7
+    },
+    "low_band": {
+      "n": 4,
+      "mean_diff": 2.625,
+      "median_diff": 2.5,
+      "sd": 2.689,
+      "se": 1.344,
+      "ci95": [
+        -0.333,
+        5.583
+      ],
+      "q1": 1.375,
+      "q3": 3.75,
+      "iqr": 2.375,
+      "min_diff": -0.5,
+      "max_diff": 6,
+      "raw_mae": 2.88,
+      "corrected_mae_at_mean": 1.88,
+      "corrected_mae_at_median": 1.88,
+      "raw_band_match_pct": 75,
+      "corrected_band_match_pct_mean": 75,
+      "corrected_band_match_pct_median": 75
+    }
+  },
+  "by_genre": {
+    "web-cm": {
+      "n": 9,
+      "mean_diff": 2.389,
+      "median_diff": 2.5,
+      "sd": 3.11,
+      "se": 1.037,
+      "ci95": [
+        0.108,
+        4.67
+      ],
+      "q1": 2,
+      "q3": 3,
+      "iqr": 1,
+      "min_diff": -4.5,
+      "max_diff": 7.5,
+      "raw_mae": 3.39,
+      "corrected_mae_at_mean": 1.8,
+      "corrected_mae_at_median": 1.78,
+      "raw_band_match_pct": 66.7,
+      "corrected_band_match_pct_mean": 100,
+      "corrected_band_match_pct_median": 100
+    },
+    "branded-movie": {
+      "n": 8,
+      "mean_diff": 1.563,
+      "median_diff": 2.5,
+      "sd": 2.909,
+      "se": 1.028,
+      "ci95": [
+        -0.7,
+        3.825
+      ],
+      "q1": 0.625,
+      "q3": 3.625,
+      "iqr": 3,
+      "min_diff": -4.5,
+      "max_diff": 4,
+      "raw_mae": 2.81,
+      "corrected_mae_at_mean": 2.06,
+      "corrected_mae_at_median": 2.06,
+      "raw_band_match_pct": 87.5,
+      "corrected_band_match_pct_mean": 87.5,
+      "corrected_band_match_pct_median": 87.5
+    },
+    "mv": {
+      "n": 8,
+      "mean_diff": 2.875,
+      "median_diff": 2,
+      "sd": 2.518,
+      "se": 0.89,
+      "ci95": [
+        0.917,
+        4.833
+      ],
+      "q1": 1.5,
+      "q3": 5.25,
+      "iqr": 3.75,
+      "min_diff": -1,
+      "max_diff": 6,
+      "raw_mae": 3.13,
+      "corrected_mae_at_mean": 2.04,
+      "corrected_mae_at_median": 1.88,
+      "raw_band_match_pct": 75,
+      "corrected_band_match_pct_mean": 50,
+      "corrected_band_match_pct_median": 62.5
+    },
+    "teaser-trailer": {
+      "n": 8,
+      "mean_diff": 3.25,
+      "median_diff": 2.25,
+      "sd": 3.128,
+      "se": 1.106,
+      "ci95": [
+        0.817,
+        5.683
+      ],
+      "q1": 0.875,
+      "q3": 6.25,
+      "iqr": 5.375,
+      "min_diff": -0.5,
+      "max_diff": 7.5,
+      "raw_mae": 3.38,
+      "corrected_mae_at_mean": 2.54,
+      "corrected_mae_at_median": 2.5,
+      "raw_band_match_pct": 62.5,
+      "corrected_band_match_pct_mean": 100,
+      "corrected_band_match_pct_median": 100
+    },
+    "tv-cm": {
+      "n": 7,
+      "mean_diff": 2.5,
+      "median_diff": 2,
+      "sd": 1.979,
+      "se": 0.748,
+      "ci95": [
+        0.854,
+        4.146
+      ],
+      "q1": 1,
+      "q3": 3.5,
+      "iqr": 2.5,
+      "min_diff": 0.5,
+      "max_diff": 6,
+      "raw_mae": 2.5,
+      "corrected_mae_at_mean": 1.6,
+      "corrected_mae_at_median": 1.5,
+      "raw_band_match_pct": 71.4,
+      "corrected_band_match_pct_mean": 85.7,
+      "corrected_band_match_pct_median": 100
+    },
+    "concept-art": {
+      "n": 3,
+      "mean_diff": 4.167,
+      "median_diff": 6,
+      "sd": 4.072,
+      "se": 2.351,
+      "ci95": [
+        -1.006,
+        9.339
+      ],
+      "q1": 2.75,
+      "q3": 6.5,
+      "iqr": 3.75,
+      "min_diff": -0.5,
+      "max_diff": 7,
+      "raw_mae": 4.5,
+      "corrected_mae_at_mean": 3.61,
+      "corrected_mae_at_median": 2.5,
+      "raw_band_match_pct": 66.7,
+      "corrected_band_match_pct_mean": 66.7,
+      "corrected_band_match_pct_median": 100
+    },
+    "corporate": {
+      "n": 3,
+      "mean_diff": 2.167,
+      "median_diff": 1.5,
+      "sd": 1.607,
+      "se": 0.928,
+      "ci95": [
+        0.125,
+        4.208
+      ],
+      "q1": 1.25,
+      "q3": 2.75,
+      "iqr": 1.5,
+      "min_diff": 1,
+      "max_diff": 4,
+      "raw_mae": 2.17,
+      "corrected_mae_at_mean": 1.39,
+      "corrected_mae_at_median": 1,
+      "raw_band_match_pct": 100,
+      "corrected_band_match_pct_mean": 66.7,
+      "corrected_band_match_pct_median": 100
+    },
+    "opening": {
+      "n": 3,
+      "mean_diff": 3.333,
+      "median_diff": 2,
+      "sd": 3.215,
+      "se": 1.856,
+      "ci95": [
+        -0.75,
+        7.416
+      ],
+      "q1": 1.5,
+      "q3": 4.5,
+      "iqr": 3,
+      "min_diff": 1,
+      "max_diff": 7,
+      "raw_mae": 3.33,
+      "corrected_mae_at_mean": 2.22,
+      "corrected_mae_at_median": 2,
+      "raw_band_match_pct": 100,
+      "corrected_band_match_pct_mean": 100,
+      "corrected_band_match_pct_median": 100
+    },
+    "youtube-sns": {
+      "n": 3,
+      "mean_diff": 4.5,
+      "median_diff": 6,
+      "sd": 2.598,
+      "se": 1.5,
+      "ci95": [
+        1.2,
+        7.8
+      ],
+      "q1": 3.75,
+      "q3": 6,
+      "iqr": 2.25,
+      "min_diff": 1.5,
+      "max_diff": 6,
+      "raw_mae": 4.5,
+      "corrected_mae_at_mean": 2.61,
+      "corrected_mae_at_median": 1.5,
+      "raw_band_match_pct": 33.3,
+      "corrected_band_match_pct_mean": 0,
+      "corrected_band_match_pct_median": 66.7
+    },
+    "documentary": {
+      "n": 2,
+      "mean_diff": 4.75,
+      "median_diff": 4.75,
+      "sd": 1.768,
+      "se": 1.25,
+      "ci95": [
+        2,
+        7.5
+      ],
+      "q1": 4.125,
+      "q3": 5.375,
+      "iqr": 1.25,
+      "min_diff": 3.5,
+      "max_diff": 6,
+      "raw_mae": 4.75,
+      "corrected_mae_at_mean": 2.08,
+      "corrected_mae_at_median": 1.25,
+      "raw_band_match_pct": 50,
+      "corrected_band_match_pct_mean": 50,
+      "corrected_band_match_pct_median": 50
+    },
+    "event-live": {
+      "n": 2,
+      "mean_diff": 0.75,
+      "median_diff": 0.75,
+      "sd": 1.768,
+      "se": 1.25,
+      "ci95": [
+        -2,
+        3.5
+      ],
+      "q1": 0.125,
+      "q3": 1.375,
+      "iqr": 1.25,
+      "min_diff": -0.5,
+      "max_diff": 2,
+      "raw_mae": 1.25,
+      "corrected_mae_at_mean": 1.92,
+      "corrected_mae_at_median": 1.25,
+      "raw_band_match_pct": 100,
+      "corrected_band_match_pct_mean": 100,
+      "corrected_band_match_pct_median": 100
+    },
+    "film": {
+      "n": 2,
+      "mean_diff": 2.75,
+      "median_diff": 2.75,
+      "sd": 1.061,
+      "se": 0.75,
+      "ci95": [
+        1.1,
+        4.4
+      ],
+      "q1": 2.375,
+      "q3": 3.125,
+      "iqr": 0.75,
+      "min_diff": 2,
+      "max_diff": 3.5,
+      "raw_mae": 2.75,
+      "corrected_mae_at_mean": 0.75,
+      "corrected_mae_at_median": 0.75,
+      "raw_band_match_pct": 100,
+      "corrected_band_match_pct_mean": 100,
+      "corrected_band_match_pct_median": 100
+    },
+    "making": {
+      "n": 1,
+      "mean_diff": 3,
+      "median_diff": 3,
+      "sd": 0,
+      "se": 0,
+      "ci95": null,
+      "q1": 3,
+      "q3": 3,
+      "iqr": 0,
+      "min_diff": 3,
+      "max_diff": 3,
+      "raw_mae": 3,
+      "corrected_mae_at_mean": 0.33,
+      "corrected_mae_at_median": 0,
+      "raw_band_match_pct": 100,
+      "corrected_band_match_pct_mean": 100,
+      "corrected_band_match_pct_median": 100
+    },
+    "showreel": {
+      "n": 1,
+      "mean_diff": 3,
+      "median_diff": 3,
+      "sd": 0,
+      "se": 0,
+      "ci95": null,
+      "q1": 3,
+      "q3": 3,
+      "iqr": 0,
+      "min_diff": 3,
+      "max_diff": 3,
+      "raw_mae": 3,
+      "corrected_mae_at_mean": 0.33,
+      "corrected_mae_at_median": 0,
+      "raw_band_match_pct": 100,
+      "corrected_band_match_pct_mean": 100,
+      "corrected_band_match_pct_median": 100
+    }
+  },
+  "by_calibration_genre_bucket": {
+    "CM": {
+      "n": 11,
+      "mean_diff": 2.318,
+      "median_diff": 2,
+      "sd": 3.125,
+      "se": 0.942,
+      "ci95": [
+        0.246,
+        4.391
+      ],
+      "q1": 1,
+      "q3": 3.5,
+      "iqr": 2.5,
+      "min_diff": -4.5,
+      "max_diff": 7.5,
+      "raw_mae": 3.14,
+      "corrected_mae_at_mean": 2.2,
+      "corrected_mae_at_median": 2.14,
+      "raw_band_match_pct": 72.7,
+      "corrected_band_match_pct_mean": 90.9,
+      "corrected_band_match_pct_median": 100
+    },
+    "MV": {
+      "n": 6,
+      "mean_diff": 3.25,
+      "median_diff": 3.5,
+      "sd": 2.859,
+      "se": 1.167,
+      "ci95": [
+        0.682,
+        5.818
+      ],
+      "q1": 1.625,
+      "q3": 5.75,
+      "iqr": 4.125,
+      "min_diff": -1,
+      "max_diff": 6,
+      "raw_mae": 3.58,
+      "corrected_mae_at_mean": 2.42,
+      "corrected_mae_at_median": 2.42,
+      "raw_band_match_pct": 66.7,
+      "corrected_band_match_pct_mean": 50,
+      "corrected_band_match_pct_median": 50
+    },
+    "unverified:opening": {
+      "n": 3,
+      "mean_diff": 3.333,
+      "median_diff": 2,
+      "sd": 3.215,
+      "se": 1.856,
+      "ci95": [
+        -0.75,
+        7.416
+      ],
+      "q1": 1.5,
+      "q3": 4.5,
+      "iqr": 3,
+      "min_diff": 1,
+      "max_diff": 7,
+      "raw_mae": 3.33,
+      "corrected_mae_at_mean": 2.22,
+      "corrected_mae_at_median": 2,
+      "raw_band_match_pct": 100,
+      "corrected_band_match_pct_mean": 100,
+      "corrected_band_match_pct_median": 100
+    },
+    "unverified:branded-movie": {
+      "n": 2,
+      "mean_diff": 1.5,
+      "median_diff": 1.5,
+      "sd": 2.828,
+      "se": 2,
+      "ci95": [
+        -2.9,
+        5.9
+      ],
+      "q1": 0.5,
+      "q3": 2.5,
+      "iqr": 2,
+      "min_diff": -0.5,
+      "max_diff": 3.5,
+      "raw_mae": 2,
+      "corrected_mae_at_mean": 2,
+      "corrected_mae_at_median": 2,
+      "raw_band_match_pct": 100,
+      "corrected_band_match_pct_mean": 100,
+      "corrected_band_match_pct_median": 100
+    },
+    "unverified:teaser-trailer": {
+      "n": 2,
+      "mean_diff": 1,
+      "median_diff": 1,
+      "sd": 2.121,
+      "se": 1.5,
+      "ci95": [
+        -2.3,
+        4.3
+      ],
+      "q1": 0.25,
+      "q3": 1.75,
+      "iqr": 1.5,
+      "min_diff": -0.5,
+      "max_diff": 2.5,
+      "raw_mae": 1.5,
+      "corrected_mae_at_mean": 1.67,
+      "corrected_mae_at_median": 1.5,
+      "raw_band_match_pct": 50,
+      "corrected_band_match_pct_mean": 100,
+      "corrected_band_match_pct_median": 50
+    },
+    "モーション": {
+      "n": 2,
+      "mean_diff": 2.75,
+      "median_diff": 2.75,
+      "sd": 1.768,
+      "se": 1.25,
+      "ci95": [
+        0,
+        5.5
+      ],
+      "q1": 2.125,
+      "q3": 3.375,
+      "iqr": 1.25,
+      "min_diff": 1.5,
+      "max_diff": 4,
+      "raw_mae": 2.75,
+      "corrected_mae_at_mean": 1.25,
+      "corrected_mae_at_median": 1.25,
+      "raw_band_match_pct": 100,
+      "corrected_band_match_pct_mean": 50,
+      "corrected_band_match_pct_median": 50
+    },
+    "unverified:documentary": {
+      "n": 1,
+      "mean_diff": 6,
+      "median_diff": 6,
+      "sd": 0,
+      "se": 0,
+      "ci95": null,
+      "q1": 6,
+      "q3": 6,
+      "iqr": 0,
+      "min_diff": 6,
+      "max_diff": 6,
+      "raw_mae": 6,
+      "corrected_mae_at_mean": 3.33,
+      "corrected_mae_at_median": 0,
+      "raw_band_match_pct": 0,
+      "corrected_band_match_pct_mean": 0,
+      "corrected_band_match_pct_median": 100
+    },
+    "unverified:event-live": {
+      "n": 1,
+      "mean_diff": 2,
+      "median_diff": 2,
+      "sd": 0,
+      "se": 0,
+      "ci95": null,
+      "q1": 2,
+      "q3": 2,
+      "iqr": 0,
+      "min_diff": 2,
+      "max_diff": 2,
+      "raw_mae": 2,
+      "corrected_mae_at_mean": 0.67,
+      "corrected_mae_at_median": 0,
+      "raw_band_match_pct": 100,
+      "corrected_band_match_pct_mean": 100,
+      "corrected_band_match_pct_median": 100
+    },
+    "unverified:film": {
+      "n": 1,
+      "mean_diff": 3.5,
+      "median_diff": 3.5,
+      "sd": 0,
+      "se": 0,
+      "ci95": null,
+      "q1": 3.5,
+      "q3": 3.5,
+      "iqr": 0,
+      "min_diff": 3.5,
+      "max_diff": 3.5,
+      "raw_mae": 3.5,
+      "corrected_mae_at_mean": 0.83,
+      "corrected_mae_at_median": 0,
+      "raw_band_match_pct": 100,
+      "corrected_band_match_pct_mean": 100,
+      "corrected_band_match_pct_median": 100
+    },
+    "unverified:showreel": {
+      "n": 1,
+      "mean_diff": 3,
+      "median_diff": 3,
+      "sd": 0,
+      "se": 0,
+      "ci95": null,
+      "q1": 3,
+      "q3": 3,
+      "iqr": 0,
+      "min_diff": 3,
+      "max_diff": 3,
+      "raw_mae": 3,
+      "corrected_mae_at_mean": 0.33,
+      "corrected_mae_at_median": 0,
+      "raw_band_match_pct": 100,
+      "corrected_band_match_pct_mean": 100,
+      "corrected_band_match_pct_median": 100
+    }
+  },
+  "anchors_30": [
+    {
+      "video_id": "CWnqX41JHuM",
+      "cohort": "existing_12",
+      "source_run": "run_20261125_125425",
+      "baseline_score": 92.5,
+      "api_score": 96,
+      "diff": 3.5,
+      "title": "PUPARIA",
+      "genres": [
+        "film"
+      ],
+      "primary_genre": "film",
+      "calibration_genre_bucket": "unverified:film",
+      "calibrated_route": "contact_sheet",
+      "baseline_band": "award_tier"
+    },
+    {
+      "video_id": "qwYhKlY4Tx0",
+      "cohort": "existing_12",
+      "source_run": "run_20261125_125425",
+      "baseline_score": 92,
+      "api_score": 91,
+      "diff": -1,
+      "title": "YOASOBI「咲き誇れ」Official Music Video / NHK連続テレビ小説『ブラッサム』主題歌",
+      "genres": [
+        "mv"
+      ],
+      "primary_genre": "mv",
+      "calibration_genre_bucket": "MV",
+      "calibrated_route": "video_h1",
+      "baseline_band": "award_tier"
+    },
+    {
+      "video_id": "0Wmwc8u98lI",
+      "cohort": "existing_12",
+      "source_run": "run_20261125_125425",
+      "baseline_score": 89.5,
+      "api_score": 93.5,
+      "diff": 4,
+      "title": "The Tokyo 2020 Kinetic Sports Pictograms",
+      "genres": [
+        "corporate",
+        "branded-movie"
+      ],
+      "primary_genre": "corporate",
+      "calibration_genre_bucket": "モーション",
+      "calibrated_route": "video_h1",
+      "baseline_band": "award_tier"
+    },
+    {
+      "video_id": "-K2c-HL9cIA",
+      "cohort": "existing_12",
+      "source_run": "run_20261125_125425",
+      "baseline_score": 84,
+      "api_score": 85,
+      "diff": 1,
+      "title": "TV CM  日用品 / 防犯 / 警備   「灯そう。みんなで。」30秒編",
+      "genres": [
+        "tv-cm",
+        "branded-movie"
+      ],
+      "primary_genre": "tv-cm",
+      "calibration_genre_bucket": "CM",
+      "calibrated_route": "video_h2_escalated",
+      "baseline_band": "award_tier"
+    },
+    {
+      "video_id": "_O0h2WqEFjo",
+      "cohort": "existing_12",
+      "source_run": "run_20261125_125425",
+      "baseline_score": 81,
+      "api_score": 87,
+      "diff": 6,
+      "title": "あなたにはなれない - 可不･結月ゆかり",
+      "genres": [
+        "mv",
+        "youtube-sns"
+      ],
+      "primary_genre": "mv",
+      "calibration_genre_bucket": "MV",
+      "calibrated_route": "video_h1",
+      "baseline_band": "pro_band"
+    },
+    {
+      "video_id": "_H-Y1ZhWYIE",
+      "cohort": "existing_12",
+      "source_run": "run_20261125_125425",
+      "baseline_score": 75.5,
+      "api_score": 76,
+      "diff": 0.5,
+      "title": "【CM公開!!】2024シーズン、まもなく開幕!!",
+      "genres": [
+        "tv-cm",
+        "teaser-trailer"
+      ],
+      "primary_genre": "tv-cm",
+      "calibration_genre_bucket": "CM",
+      "calibrated_route": "video_h1",
+      "baseline_band": "pro_band"
+    },
+    {
+      "video_id": "1lG3spbvbqI",
+      "cohort": "existing_12",
+      "source_run": "run_20261125_125425",
+      "baseline_score": 70,
+      "api_score": 71,
+      "diff": 1,
+      "title": "2026年 日本郵船グループ新CM 15秒「海運で、未来を拓く。」",
+      "genres": [
+        "tv-cm",
+        "corporate"
+      ],
+      "primary_genre": "tv-cm",
+      "calibration_genre_bucket": "CM",
+      "calibrated_route": "contact_sheet",
+      "baseline_band": "pro_band"
+    },
+    {
+      "video_id": "12jPI4V5dJ0",
+      "cohort": "existing_12",
+      "source_run": "run_20261125_125425",
+      "baseline_score": 66,
+      "api_score": 68,
+      "diff": 2,
+      "title": "「なるほど使える、経営にビジネス・カード」（決算篇）",
+      "genres": [
+        "web-cm"
+      ],
+      "primary_genre": "web-cm",
+      "calibration_genre_bucket": "CM",
+      "calibrated_route": "video_h2_escalated",
+      "baseline_band": "pro_band"
+    },
+    {
+      "video_id": "QA9PLeM0EUs",
+      "cohort": "existing_12",
+      "source_run": "run_20261125_125425",
+      "baseline_score": 59,
+      "api_score": 62,
+      "diff": 3,
+      "title": "CG Generalist Showreel || 3D Animation, CGI & VFX — Vahagn CG",
+      "genres": [
+        "showreel",
+        "web-cm"
+      ],
+      "primary_genre": "showreel",
+      "calibration_genre_bucket": "unverified:showreel",
+      "calibrated_route": "video_h1",
+      "baseline_band": "low_band"
+    },
+    {
+      "video_id": "_q9xyoz4j0k",
+      "cohort": "existing_12",
+      "source_run": "run_20261125_125425",
+      "baseline_score": 51.5,
+      "api_score": 53.5,
+      "diff": 2,
+      "title": "Event Invitation Video | Event Intro Video | Exhibition Promotional Video",
+      "genres": [
+        "event-live",
+        "teaser-trailer",
+        "web-cm"
+      ],
+      "primary_genre": "event-live",
+      "calibration_genre_bucket": "unverified:event-live",
+      "calibrated_route": "contact_sheet",
+      "baseline_band": "low_band"
+    },
+    {
+      "video_id": "gn5lk6isyGc",
+      "cohort": "existing_12",
+      "source_run": "run_20261125_134050",
+      "baseline_score": 94,
+      "api_score": 96,
+      "diff": 2,
+      "title": "ポカリスエット 2021年 新CM「でも君が見えた」篇",
+      "genres": [
+        "tv-cm",
+        "web-cm",
+        "branded-movie"
+      ],
+      "primary_genre": "tv-cm",
+      "calibration_genre_bucket": "CM",
+      "calibrated_route": "contact_sheet",
+      "baseline_band": "award_tier"
+    },
+    {
+      "video_id": "fzQ6gRAEoy0",
+      "cohort": "existing_12",
+      "source_run": "run_20261125_134050",
+      "baseline_score": 92.5,
+      "api_score": 94.5,
+      "diff": 2,
+      "title": "Porter Robinson & Madeon - Shelter (公式ビデオ) (A-1 Pictures & Crunchyrollによるショートフィルム)",
+      "genres": [
+        "mv",
+        "film"
+      ],
+      "primary_genre": "mv",
+      "calibration_genre_bucket": "MV",
+      "calibrated_route": "video_h1",
+      "baseline_band": "award_tier"
+    },
+    {
+      "video_id": "6sX_BfDnyrg",
+      "cohort": "run1_18",
+      "source_run": "run1_p0_20261126_100930",
+      "baseline_score": 89.5,
+      "api_score": 90.5,
+      "diff": 1,
+      "title": "オープニング映像  IT / 通信 / ネットサービス   This is just the beginning.",
+      "genres": [
+        "opening",
+        "teaser-trailer"
+      ],
+      "primary_genre": "opening",
+      "calibration_genre_bucket": "unverified:opening",
+      "calibrated_route": "video_h1",
+      "baseline_band": "award_tier"
+    },
+    {
+      "video_id": "nW2CpHcmlo4",
+      "cohort": "run1_18",
+      "source_run": "run1_p0_20261126_100930",
+      "baseline_score": 86.5,
+      "api_score": 88.5,
+      "diff": 2,
+      "title": "TVアニメ『日本三國』ノンクレジットオープニング映像｜キタニタツヤ「火種」",
+      "genres": [
+        "opening",
+        "mv"
+      ],
+      "primary_genre": "opening",
+      "calibration_genre_bucket": "unverified:opening",
+      "calibrated_route": "video_h1",
+      "baseline_band": "award_tier"
+    },
+    {
+      "video_id": "Y_I_NOHVwzI",
+      "cohort": "run1_18",
+      "source_run": "run1_p0_20261126_100930",
+      "baseline_score": 84,
+      "api_score": 89,
+      "diff": 5,
+      "title": "初星学園 「メタモルフォーゼ」Official Music Video (HATSUBOSHI GAKUEN - Metamorphose)",
+      "genres": [
+        "mv"
+      ],
+      "primary_genre": "mv",
+      "calibration_genre_bucket": "MV",
+      "calibrated_route": "video_h1",
+      "baseline_band": "award_tier"
+    },
+    {
+      "video_id": "_Rvur-ySGyU",
+      "cohort": "run1_18",
+      "source_run": "run1_p0_20261126_100930",
+      "baseline_score": 83.5,
+      "api_score": 85,
+      "diff": 1.5,
+      "title": "Nihe - REEL 2022【Motion Graphics】",
+      "genres": [
+        "corporate",
+        "mv"
+      ],
+      "primary_genre": "corporate",
+      "calibration_genre_bucket": "モーション",
+      "calibrated_route": "video_h1",
+      "baseline_band": "award_tier"
+    },
+    {
+      "video_id": "-TBB-K6Sk0U",
+      "cohort": "run1_18",
+      "source_run": "run1_p0_20261126_100930",
+      "baseline_score": 83,
+      "api_score": 84.5,
+      "diff": 1.5,
+      "title": "水曜日のカンパネラ『見ざる聞かざる言わざる』MV",
+      "genres": [
+        "mv",
+        "youtube-sns"
+      ],
+      "primary_genre": "mv",
+      "calibration_genre_bucket": "MV",
+      "calibrated_route": "video_h1",
+      "baseline_band": "award_tier"
+    },
+    {
+      "video_id": "-YiVSav-PZw",
+      "cohort": "run1_18",
+      "source_run": "run1_p0_20261126_100930",
+      "baseline_score": 82.5,
+      "api_score": 85,
+      "diff": 2.5,
+      "title": "【COSMOS】田村隆平が描く、鮮烈SFヒューマンドラマ!!【★55万部突破！記念PV★】",
+      "genres": [
+        "teaser-trailer",
+        "web-cm"
+      ],
+      "primary_genre": "teaser-trailer",
+      "calibration_genre_bucket": "unverified:teaser-trailer",
+      "calibrated_route": "video_h1",
+      "baseline_band": "pro_band"
+    },
+    {
+      "video_id": "0kHO87Qqjpk",
+      "cohort": "run1_18",
+      "source_run": "run1_p0_20261126_100930",
+      "baseline_score": 82,
+      "api_score": 88,
+      "diff": 6,
+      "title": "化け物のサーカス｜BUGLOG_002",
+      "genres": [
+        "mv",
+        "concept-art"
+      ],
+      "primary_genre": "mv",
+      "calibration_genre_bucket": "MV",
+      "calibrated_route": "video_h1",
+      "baseline_band": "pro_band"
+    },
+    {
+      "video_id": "BEYeHsfGXJw",
+      "cohort": "run1_18",
+      "source_run": "run1_p0_20261126_100930",
+      "baseline_score": 80,
+      "api_score": 84,
+      "diff": 4,
+      "title": "TV CM  Web CM   10周年スペシャルムービー「次のエピソードへ」90秒 | Netflix Japan",
+      "genres": [
+        "tv-cm",
+        "web-cm",
+        "branded-movie"
+      ],
+      "primary_genre": "tv-cm",
+      "calibration_genre_bucket": "CM",
+      "calibrated_route": "video_h1",
+      "baseline_band": "pro_band"
+    },
+    {
+      "video_id": "-1nKzOF8-_Q",
+      "cohort": "run1_18",
+      "source_run": "run1_p0_20261126_100930",
+      "baseline_score": 77,
+      "api_score": 83,
+      "diff": 6,
+      "title": "『映画ちいかわ 人魚の島のひみつ』TVCMいつまでも篇【大ヒット上映中】",
+      "genres": [
+        "tv-cm",
+        "teaser-trailer"
+      ],
+      "primary_genre": "tv-cm",
+      "calibration_genre_bucket": "CM",
+      "calibrated_route": "contact_sheet",
+      "baseline_band": "pro_band"
+    },
+    {
+      "video_id": "Q4C1O2A-Cqg",
+      "cohort": "run1_18",
+      "source_run": "run1_p0_20261126_100930",
+      "baseline_score": 77,
+      "api_score": 76.5,
+      "diff": -0.5,
+      "title": "ULTIMA BRAND MOVIE",
+      "genres": [
+        "branded-movie",
+        "concept-art"
+      ],
+      "primary_genre": "branded-movie",
+      "calibration_genre_bucket": "unverified:branded-movie",
+      "calibrated_route": "contact_sheet",
+      "baseline_band": "pro_band"
+    },
+    {
+      "video_id": "8zxQpYYSvTM",
+      "cohort": "run1_18",
+      "source_run": "run1_p0_20261126_100930",
+      "baseline_score": 76.5,
+      "api_score": 84,
+      "diff": 7.5,
+      "title": "Web CM  自動車 / バイク   Cybertruck Rave",
+      "genres": [
+        "web-cm",
+        "teaser-trailer"
+      ],
+      "primary_genre": "web-cm",
+      "calibration_genre_bucket": "CM",
+      "calibrated_route": "contact_sheet",
+      "baseline_band": "pro_band"
+    },
+    {
+      "video_id": "mJk17F-vym8",
+      "cohort": "run1_18",
+      "source_run": "run1_p0_20261126_100930",
+      "baseline_score": 74,
+      "api_score": 69.5,
+      "diff": -4.5,
+      "title": "まくら株式会社 ブランデッドムービー「やわらかい関係」アニメーション",
+      "genres": [
+        "branded-movie",
+        "web-cm"
+      ],
+      "primary_genre": "branded-movie",
+      "calibration_genre_bucket": "CM",
+      "calibrated_route": "video_h2_escalated",
+      "baseline_band": "pro_band"
+    },
+    {
+      "video_id": "jsEVOjI690Y",
+      "cohort": "run1_18",
+      "source_run": "run1_p0_20261126_100930",
+      "baseline_score": 73.5,
+      "api_score": 80.5,
+      "diff": 7,
+      "title": "【Ae × Blender】ポップな表現は「地道な実験」から生まれる。モーショングラフィックス制作の裏側と試行錯誤｜hama",
+      "genres": [
+        "opening",
+        "teaser-trailer",
+        "concept-art"
+      ],
+      "primary_genre": "opening",
+      "calibration_genre_bucket": "unverified:opening",
+      "calibrated_route": "contact_sheet",
+      "baseline_band": "pro_band"
+    },
+    {
+      "video_id": "JokUSZnJBQU",
+      "cohort": "run1_18",
+      "source_run": "run1_p0_20261126_100930",
+      "baseline_score": 70,
+      "api_score": 73.5,
+      "diff": 3.5,
+      "title": "TRICERA proto",
+      "genres": [
+        "branded-movie",
+        "documentary"
+      ],
+      "primary_genre": "branded-movie",
+      "calibration_genre_bucket": "unverified:branded-movie",
+      "calibrated_route": "contact_sheet",
+      "baseline_band": "pro_band"
+    },
+    {
+      "video_id": "_9cGKFO4mm8",
+      "cohort": "run1_18",
+      "source_run": "run1_p0_20261126_100930",
+      "baseline_score": 66,
+      "api_score": 69,
+      "diff": 3,
+      "title": "乃木坂46 山下美月、チョコラタイムで心も体もキレイに！？　“弟役”細田佳央太とユニークなやり取りも　『チョコラBB』新CM",
+      "genres": [
+        "tv-cm",
+        "making"
+      ],
+      "primary_genre": "tv-cm",
+      "calibration_genre_bucket": "CM",
+      "calibrated_route": "video_h2_escalated",
+      "baseline_band": "pro_band"
+    },
+    {
+      "video_id": "58-kBdaXKxY",
+      "cohort": "run1_18",
+      "source_run": "run1_p0_20261126_100930",
+      "baseline_score": 65.5,
+      "api_score": 68.5,
+      "diff": 3,
+      "title": "KUUMA STYRO promotion movie",
+      "genres": [
+        "web-cm",
+        "branded-movie"
+      ],
+      "primary_genre": "web-cm",
+      "calibration_genre_bucket": "CM",
+      "calibrated_route": "video_h1",
+      "baseline_band": "pro_band"
+    },
+    {
+      "video_id": "_PO5O3QAaVM",
+      "cohort": "run1_18",
+      "source_run": "run1_p0_20261126_100930",
+      "baseline_score": 62,
+      "api_score": 68,
+      "diff": 6,
+      "title": "企業のエイプリルフール動画に変化　実写に見えるAI動画や半年かけた実写作品も（2026年04月02日）",
+      "genres": [
+        "documentary",
+        "youtube-sns"
+      ],
+      "primary_genre": "documentary",
+      "calibration_genre_bucket": "unverified:documentary",
+      "calibrated_route": "video_h2_escalated",
+      "baseline_band": "low_band"
+    },
+    {
+      "video_id": "Jf9F5VBqA2A",
+      "cohort": "run1_18",
+      "source_run": "run1_p0_20261126_100930",
+      "baseline_score": 59,
+      "api_score": 58.5,
+      "diff": -0.5,
+      "title": "AKIHABARA E-GST 2019 official trailer",
+      "genres": [
+        "teaser-trailer",
+        "event-live"
+      ],
+      "primary_genre": "teaser-trailer",
+      "calibration_genre_bucket": "unverified:teaser-trailer",
+      "calibrated_route": "video_h1",
+      "baseline_band": "low_band"
+    }
+  ]
 }

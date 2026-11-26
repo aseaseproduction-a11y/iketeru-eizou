@@ -1,0 +1,887 @@
+{
+  "schema_version": "craft_recipe_api_draft_v1",
+  "video_id": "kqj7b59D85Y",
+  "source": "gemini_api_url_v1",
+  "video_overview": {
+    "estimated_fps": 30,
+    "estimated_bpm": 133,
+    "overall_cut_pace": "fast",
+    "dominant_visual_style": "パステルピンクと黒の3分割縦長パネルを基調に、太線2Dキャラのコマ打ちダンスとSNS風UI・図鑑風タイポを高速音ハメするポップなモーショングラフィックスMV。"
+  },
+  "cuts": [
+    {
+      "cut_index": 1,
+      "title": "SNSチャット風UIのビート同期スクロール＆縦長マスク絞り込み遷移",
+      "category": "ui_motion",
+      "start_mmss": "00:06",
+      "end_mmss": "00:14",
+      "start_sec": 6,
+      "end_sec": 14,
+      "fps": 30,
+      "primary_tool": "After Effects",
+      "software_stack": [
+        "After Effects",
+        "Illustrator"
+      ],
+      "tool_selection_rationale": "編集可能なチャットテキスト・自動伸縮吹き出し・縦帯マスク制御を一括で音ハメ管理するためAE＋AIが最適。",
+      "plugins_used": [
+        "TextBox2",
+        "Motion 4",
+        "Flow"
+      ],
+      "color_palette_hex": {
+        "base": "#FFD1E3",
+        "primary": "#FFFFFF",
+        "accent": "#231815"
+      },
+      "easing_and_timing": {
+        "bpm": 133,
+        "ease_curve": "0/85->0/15 (Expo Out)",
+        "hold_frames": 2,
+        "posterize_fps": null,
+        "notes": "吹き出し追加ごとに親ヌルをY軸上方向へ俊敏に押し上げ、着地を鋭く止めるUIイージング（推定）。",
+        "source": "api_estimated",
+        "verified": false
+      },
+      "layer_stack": [
+        "L1 (Bottom): パステルピンク単色背景シェイプ (#FFD1E3)",
+        "L2: チャット全体制御用Null（Y位置キーフレーム）",
+        "L3: 吹き出しシェイプ群＋編集可能テキストレイヤー群（TextBox2連動）＋魚スタンプ(.ai)",
+        "L4 (Top): 左右黒帯シャッターマット（00:13以降で画面中央1/3へ絞り込み）",
+        "[Audio - BGM Track] イントロBGM（独立トラック）",
+        "[Audio - SE Track] 通知ポップ・画面切替アクセントSE（独立トラック）"
+      ],
+      "recreation_flow": [
+        "1. 1920x1080のパステルピンク背景上にNullを作成し、チャット項目を親子付け。",
+        "2. 吹き出しは編集可能テキスト＋TextBox2で角丸＋尻尾シェイプを構築し、魚スタンプはAIベクターで配置。",
+        "3. 歌詞ビートに合わせて各メッセージを表示し、同時にNullのY座標を上へイーズ移動。",
+        "4. 00:13から左右の黒ソリッドを中央幅1/3までスライドインさせ、次カットの縦長レイアウトへ繋ぐ。"
+      ],
+      "frame_timeline": [
+        {
+          "frame": 0,
+          "time_offset_sec": 0,
+          "event": "「あわれだね」上スクロール開始",
+          "params": {
+            "null_y_delta": -110
+          }
+        },
+        {
+          "frame": 30,
+          "time_offset_sec": 1,
+          "event": "右側魚スタンプ2点連続ポップイン",
+          "params": {
+            "scale": 100
+          }
+        },
+        {
+          "frame": 150,
+          "time_offset_sec": 5,
+          "event": "「ざこのざこ攻撃」吹き出し追加",
+          "params": {
+            "null_y_delta": -100
+          }
+        },
+        {
+          "frame": 210,
+          "time_offset_sec": 7,
+          "event": "左右黒帯スライドイン開始",
+          "params": {
+            "bar_width_px": 640
+          }
+        },
+        {
+          "frame": 240,
+          "time_offset_sec": 8,
+          "event": "中央縦長フレーム完成・カットアウト",
+          "params": {
+            "hold_frames": 2
+          }
+        }
+      ],
+      "effect_chain": [
+        {
+          "order": 1,
+          "tool": "After Effects",
+          "plugin": "TextBox2",
+          "match_name": "TextBox2",
+          "fallback_match_name": "ADBE Vector Graphic - Fill",
+          "params": {
+            "padding": 24,
+            "roundness": 28
+          },
+          "keyframed_frames": [
+            0,
+            150
+          ]
+        }
+      ],
+      "ae_blueprint": {
+        "schema_version": 2,
+        "source": "api_estimated",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30,
+        "duration_sec": 8,
+        "bg_color": "#FFD1E3",
+        "film_finish": false,
+        "layers": [
+          {
+            "type": "kinetic_typo_animator",
+            "name": "Chat_Bubble_Text_01",
+            "text": "ざこのざこ攻撃",
+            "font_size": 36,
+            "color": "#231815",
+            "start_frame": 150,
+            "duration_frames": 90,
+            "easing": [
+              0,
+              85,
+              0,
+              15
+            ]
+          },
+          {
+            "type": "kinetic_typo_animator",
+            "name": "Chat_Bubble_Text_02",
+            "text": "効かないよw",
+            "font_size": 36,
+            "color": "#231815",
+            "start_frame": 205,
+            "duration_frames": 35,
+            "easing": [
+              0,
+              85,
+              0,
+              15
+            ]
+          }
+        ]
+      },
+      "transition_bridge": {
+        "source": "api_estimated",
+        "entrance_vector": "scroll_up_continuous",
+        "exit_vector": "pillarbox_squeeze_center",
+        "match_cue": "beat_momentum_continuity",
+        "sfx_lead_in_frames": -2,
+        "recommended_sfx": "ui_pop_crisp"
+      },
+      "anti_ai_slop_notes": "文字を画像化せず角丸比率と余白を全吹き出しで統一し、スタンプ表示時にわずかなスケールオーバーシュートを入れることで本物のスマホUI感を演出。",
+      "audio_sync_cues": "キックおよびボーカルフレーズ頭（約0.45秒間隔）に合わせて各吹き出し出現とスクロールを厳密に同期。",
+      "observed_timestamps": [
+        {
+          "timestamp": "00:07",
+          "visual_evidence": "ピンク背景上で吹き出しが上送りされ、右側に青い魚のスタンプが2つ縦並びで表示"
+        },
+        {
+          "timestamp": "00:11",
+          "visual_evidence": "左列に「ざこのざこ攻撃」の白吹き出しがリズムに合わせて出現"
+        },
+        {
+          "timestamp": "00:13.5",
+          "visual_evidence": "「効かないよw」「ざぁ」表示と同時に左右から黒帯が迫り中央縦長画角へ絞り込み"
+        }
+      ],
+      "provenance": {
+        "source": "gemini_api_url_v1",
+        "visual_observation_basis": "youtube_url_video_stream",
+        "media_telemetry_status": "missing_requires_local_video",
+        "model": "gemini-4-neon",
+        "thinking_level": "high",
+        "service_tier": "standard",
+        "video_processing": {
+          "type": "static",
+          "fps": 1,
+          "content_layers": [
+            "frames",
+            "audio"
+          ],
+          "resolution": "low"
+        },
+        "input_video_tokens": 21000,
+        "pilot_attempt": 1,
+        "field_provenance": {
+          "semantic_craft_fields": "api_observed",
+          "timestamps_and_duration": "api_estimated_1fps",
+          "fps_and_frames": "api_estimated",
+          "color_palette_hex": "api_estimated",
+          "easing_and_timing": "api_estimated",
+          "media_and_telemetry": "missing"
+        }
+      },
+      "media": {
+        "available": false,
+        "status": "missing_requires_local_video",
+        "telemetry": {
+          "available": false
+        }
+      }
+    },
+    {
+      "cut_index": 2,
+      "title": "3分割縦長パネルの1→2→3列クローン増殖・音ハメダンス構成",
+      "category": "motion_graphics",
+      "start_mmss": "00:59",
+      "end_mmss": "01:10",
+      "start_sec": 59,
+      "end_sec": 70,
+      "fps": 30,
+      "primary_tool": "After Effects",
+      "software_stack": [
+        "After Effects",
+        "Photoshop"
+      ],
+      "tool_selection_rationale": "キャラ連番/レイヤー分けPSDを1つのプリコンプにまとめ、3列マスクとホールド切替で量産制御するAEワークフローが最速・非破壊。",
+      "plugins_used": [
+        "Posterize Time",
+        "Motion 4"
+      ],
+      "color_palette_hex": {
+        "base": "#000000",
+        "primary": "#FFD1E3",
+        "accent": "#F7538C"
+      },
+      "easing_and_timing": {
+        "bpm": 133,
+        "ease_curve": "Hold Keyframe (Step)",
+        "hold_frames": 6,
+        "posterize_fps": 10,
+        "notes": "パネルON/OFFとポーズ差替えは完全なホールド切替で拍に直結させ、キレのあるリミテッドアニメ調を強調（推定）。",
+        "source": "api_estimated",
+        "verified": false
+      },
+      "layer_stack": [
+        "L1 (Bottom): 純黒ベース平面 (#000000)",
+        "L2: 左列パネルプリコンプ（幅640px・ピンク背景＋キャラPSDアニメーション）",
+        "L3: 中央列パネルプリコンプ（幅640px・同構成を複製し表示タイミング制御）",
+        "L4: 右列パネルプリコンプ（幅640px・反転/同期ポーズ制御）",
+        "L5 (Top): 全体リミテッド感統一用の調整レイヤー（Posterize Time）",
+        "[Audio - BGM Track] サビ前〜サビBGM（独立トラック）",
+        "[Audio - SE Track] 4つ打ちアクセント用クラップ/スナップSE（独立トラック）"
+      ],
+      "recreation_flow": [
+        "1. 640x1080の縦長プリコンプを作成し、ピンク背景とポーズ別キャラPSDを配置してタイムリマップで音ハメ。",
+        "2. 1920x1080メインコンプに黒背景を敷き、プリコンプを左・中央・右（X=320, 960, 1600）に3列配置。",
+        "3. 各列のレイヤー不透明度を0/100%のホールドキーフレームで制御し、1列移動→2列同時→3列同時へと段階展開。",
+        "4. 終盤11秒目で中央列キャラを大きくズームインする次カットへの導線を配置。"
+      ],
+      "frame_timeline": [
+        {
+          "frame": 0,
+          "time_offset_sec": 0,
+          "event": "中央1列のみ点灯（ウィンクポーズ）",
+          "params": {
+            "active_cols": [
+              2
+            ]
+          }
+        },
+        {
+          "frame": 120,
+          "time_offset_sec": 4,
+          "event": "左＋中央の2列同時点灯（口元笑いポーズ）",
+          "params": {
+            "active_cols": [
+              1,
+              2
+            ]
+          }
+        },
+        {
+          "frame": 240,
+          "time_offset_sec": 8,
+          "event": "左・中央・右の3列フル展開",
+          "params": {
+            "active_cols": [
+              1,
+              2,
+              3
+            ]
+          }
+        },
+        {
+          "frame": 330,
+          "time_offset_sec": 11,
+          "event": "3列同期ポーズからクローズアップ遷移",
+          "params": {
+            "active_cols": [
+              1,
+              2,
+              3
+            ]
+          }
+        }
+      ],
+      "effect_chain": [
+        {
+          "order": 1,
+          "tool": "After Effects",
+          "plugin": "Posterize Time",
+          "match_name": "ADBE Posterize Time",
+          "fallback_match_name": "ADBE Posterize Time",
+          "params": {
+            "frame_rate": 10
+          },
+          "keyframed_frames": [
+            0
+          ]
+        }
+      ],
+      "ae_blueprint": {
+        "schema_version": 2,
+        "source": "api_estimated",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30,
+        "duration_sec": 11,
+        "bg_color": "#000000",
+        "film_finish": false,
+        "layers": [
+          {
+            "type": "precomp_column",
+            "name": "Panel_Col_Left",
+            "width": 640,
+            "height": 1080,
+            "x": 320,
+            "start_frame": 0,
+            "duration_frames": 330,
+            "easing": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "type": "precomp_column",
+            "name": "Panel_Col_Center",
+            "width": 640,
+            "height": 1080,
+            "x": 960,
+            "start_frame": 0,
+            "duration_frames": 330,
+            "easing": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "type": "precomp_column",
+            "name": "Panel_Col_Right",
+            "width": 640,
+            "height": 1080,
+            "x": 1600,
+            "start_frame": 0,
+            "duration_frames": 330,
+            "easing": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      "transition_bridge": {
+        "source": "api_estimated",
+        "entrance_vector": "hard_cut_column_switch",
+        "exit_vector": "hard_cut_closeup_zoom",
+        "match_cue": "four_on_the_floor_beat",
+        "sfx_lead_in_frames": 0,
+        "recommended_sfx": "percussion_snap"
+      },
+      "anti_ai_slop_notes": "中途半端なフェードを使わず0/100%ホールドで切替え、3列の境界に1pxの隙間も生じさせない正確な640pxグリッド設計がプロ品質の鍵。",
+      "audio_sync_cues": "4つ打ちキックの各拍に合わせ点灯列とポーズを切替え、小節頭で2列・3列の増殖インパクトを配置。",
+      "observed_timestamps": [
+        {
+          "timestamp": "00:59",
+          "visual_evidence": "黒背景の中央パネルのみピンクで開き、亞北ネルが口元に手を当ててウィンク"
+        },
+        {
+          "timestamp": "01:03",
+          "visual_evidence": "左と中央の2列が同時表示され、2体のネルが同期ポーズで笑うカット"
+        },
+        {
+          "timestamp": "01:07",
+          "visual_evidence": "3列すべてが点灯し、3体のネルが一斉にリズムダンスを展開"
+        }
+      ],
+      "provenance": {
+        "source": "gemini_api_url_v1",
+        "visual_observation_basis": "youtube_url_video_stream",
+        "media_telemetry_status": "missing_requires_local_video",
+        "model": "gemini-4-neon",
+        "thinking_level": "high",
+        "service_tier": "standard",
+        "video_processing": {
+          "type": "static",
+          "fps": 1,
+          "content_layers": [
+            "frames",
+            "audio"
+          ],
+          "resolution": "low"
+        },
+        "input_video_tokens": 21000,
+        "pilot_attempt": 1,
+        "field_provenance": {
+          "semantic_craft_fields": "api_observed",
+          "timestamps_and_duration": "api_estimated_1fps",
+          "fps_and_frames": "api_estimated",
+          "color_palette_hex": "api_estimated",
+          "easing_and_timing": "api_estimated",
+          "media_and_telemetry": "missing"
+        }
+      },
+      "media": {
+        "available": false,
+        "status": "missing_requires_local_video",
+        "telemetry": {
+          "available": false
+        }
+      }
+    },
+    {
+      "cut_index": 3,
+      "title": "中央縦長パネル内の魚図鑑高速スライドショー＆巨大魚オチ演出",
+      "category": "graphic_design",
+      "start_mmss": "01:55",
+      "end_mmss": "02:01",
+      "start_sec": 115,
+      "end_sec": 121,
+      "fps": 30,
+      "primary_tool": "After Effects",
+      "software_stack": [
+        "After Effects",
+        "Illustrator"
+      ],
+      "tool_selection_rationale": "複数種の魚イラストを統一線幅ベクターで用意し、AEテキストレイヤーと組合わせて高速拍切替を管理するため。",
+      "plugins_used": [
+        "Motion 4"
+      ],
+      "color_palette_hex": {
+        "base": "#000000",
+        "primary": "#FFD1E3",
+        "accent": "#C7DCE6"
+      },
+      "easing_and_timing": {
+        "bpm": 133,
+        "ease_curve": "Hold Keyframe (Step)",
+        "hold_frames": 14,
+        "posterize_fps": null,
+        "notes": "小魚イラスト群を一定拍間隔でハードカット切替し、最後の大型魚で視覚的スケール落差を強調（推定）。",
+        "source": "api_estimated",
+        "verified": false
+      },
+      "layer_stack": [
+        "L1 (Bottom): 黒背景平面＋中央640x1080ピンクパネル (#FFD1E3)",
+        "L2: 魚イラスト群レイヤー（たなご・どじょう・わかさぎ・くるめさより・めだか・ゴライアス等 .ai）",
+        "L3 (Top): 編集可能テキストレイヤー（魚名・体長キャプション、ソーステキスト切替）",
+        "[Audio - BGM Track] 間奏シンセ・ベースBGM（独立トラック）",
+        "[Audio - SE Track] ページめくり/打楽器アクセントSE（独立トラック）"
+      ],
+      "recreation_flow": [
+        "1. 中央640x1080のピンクパネル内に、各種魚イラストを中央基準点揃えで配置。",
+        "2. イラスト直下に編集可能テキストレイヤーを置き、ソーステキストのホールドキーフレームで魚名とサイズ表記を切替。",
+        "3. 各カットをビートに合わせ約0.5〜0.9秒間隔でハードカット進行。",
+        "4. 02:00で「ゴライアス・タイガーフィッシュ」をパネル幅いっぱいの大サイズで表示しコミカルな落差を作る。"
+      ],
+      "frame_timeline": [
+        {
+          "frame": 0,
+          "time_offset_sec": 0,
+          "event": "「たなご 最大10cmに達する」表示",
+          "params": {
+            "fish_scale": 100
+          }
+        },
+        {
+          "frame": 60,
+          "time_offset_sec": 2,
+          "event": "「わかさぎ」→「くるめさより」高速切替",
+          "params": {
+            "fish_scale": 100
+          }
+        },
+        {
+          "frame": 120,
+          "time_offset_sec": 4,
+          "event": "「めだか 身長は約3〜4cm」極小サイズ表示",
+          "params": {
+            "fish_scale": 75
+          }
+        },
+        {
+          "frame": 150,
+          "time_offset_sec": 5,
+          "event": "「ゴライアス・タイガーフィッシュ」巨大表示",
+          "params": {
+            "fish_scale": 320
+          }
+        }
+      ],
+      "effect_chain": [
+        {
+          "order": 1,
+          "tool": "After Effects",
+          "plugin": "Transform (Native)",
+          "match_name": "ADBE Geometry2",
+          "fallback_match_name": "ADBE Geometry2",
+          "params": {
+            "scale": 320
+          },
+          "keyframed_frames": [
+            0,
+            120,
+            150
+          ]
+        }
+      ],
+      "ae_blueprint": {
+        "schema_version": 2,
+        "source": "api_estimated",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30,
+        "duration_sec": 6,
+        "bg_color": "#000000",
+        "film_finish": false,
+        "layers": [
+          {
+            "type": "kinetic_typo_animator",
+            "name": "Fish_Caption_Text",
+            "text": "ゴライアス・タイガーフィッシュ",
+            "font_size": 28,
+            "color": "#231815",
+            "start_frame": 150,
+            "duration_frames": 30,
+            "easing": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      "transition_bridge": {
+        "source": "api_estimated",
+        "entrance_vector": "hard_cut_panel_center",
+        "exit_vector": "hard_cut_column_left",
+        "match_cue": "beat_subdivision_cut",
+        "sfx_lead_in_frames": 0,
+        "recommended_sfx": "woodblock_tick"
+      },
+      "anti_ai_slop_notes": "全魚の線幅と塗りのトーンを完全に統一し、テキスト位置を固定することでサイズ差のギャグ（めだか→ゴライアス）を際立たせる。",
+      "audio_sync_cues": "間奏のベースラインとスネアの拍に合わせ、小魚から巨大魚へテンポよく切替。",
+      "observed_timestamps": [
+        {
+          "timestamp": "01:55",
+          "visual_evidence": "中央ピンクパネルに「たなご」「最大10cmに達する」のミニマルな図鑑レイアウトを表示"
+        },
+        {
+          "timestamp": "01:58",
+          "visual_evidence": "細長い「くるめさより」のイラストと説明テキストへ拍同期で切替"
+        },
+        {
+          "timestamp": "02:00",
+          "visual_evidence": "「ゴライアス・タイガーフィッシュ」の大きな魚イラストがパネル幅いっぱいに登場"
+        }
+      ],
+      "provenance": {
+        "source": "gemini_api_url_v1",
+        "visual_observation_basis": "youtube_url_video_stream",
+        "media_telemetry_status": "missing_requires_local_video",
+        "model": "gemini-4-neon",
+        "thinking_level": "high",
+        "service_tier": "standard",
+        "video_processing": {
+          "type": "static",
+          "fps": 1,
+          "content_layers": [
+            "frames",
+            "audio"
+          ],
+          "resolution": "low"
+        },
+        "input_video_tokens": 21000,
+        "pilot_attempt": 1,
+        "field_provenance": {
+          "semantic_craft_fields": "api_observed",
+          "timestamps_and_duration": "api_estimated_1fps",
+          "fps_and_frames": "api_estimated",
+          "color_palette_hex": "api_estimated",
+          "easing_and_timing": "api_estimated",
+          "media_and_telemetry": "missing"
+        }
+      },
+      "media": {
+        "available": false,
+        "status": "missing_requires_local_video",
+        "telemetry": {
+          "available": false
+        }
+      }
+    },
+    {
+      "cut_index": 4,
+      "title": "16:9全画面解放・前景ミク＆テトと背景ネルの奥行きレイヤー合成ダンス",
+      "category": "vfx_composite",
+      "start_mmss": "02:19",
+      "end_mmss": "02:28",
+      "start_sec": 139,
+      "end_sec": 148,
+      "fps": 30,
+      "primary_tool": "After Effects",
+      "software_stack": [
+        "After Effects",
+        "Photoshop"
+      ],
+      "tool_selection_rationale": "3キャラのZ軸前後関係、背景キャラの半透明・ブラー制御、最終3人横並びの合成を非破壊で精密調整できるため。",
+      "plugins_used": [
+        "Posterize Time",
+        "Motion 4"
+      ],
+      "color_palette_hex": {
+        "base": "#FFD1E3",
+        "primary": "#6FE3F2",
+        "accent": "#F0466D"
+      },
+      "easing_and_timing": {
+        "bpm": 133,
+        "ease_curve": "0/80->0/20 (Ease Out) + Hold Pose",
+        "hold_frames": 6,
+        "posterize_fps": 12,
+        "notes": "キャラ切替ポーズはコマ打ちホールド、横スライド移動や立ち上がりは滑らかなイーズ移動を併用（推定）。",
+        "source": "api_estimated",
+        "verified": false
+      },
+      "layer_stack": [
+        "L1 (Bottom): 16:9全画面パステルピンク背景 (#FFD1E3)",
+        "L2: 背景レイヤー：座ってスマホを見る亞北ネル（不透明度約55%＋軽微なブラー、終盤で100%へ復帰）",
+        "L3: 中景レイヤー：初音ミク（右→中央→左→ネルの手を引く移動アニメーション）",
+        "L4 (Top): 前景レイヤー：重音テト（左から登場し横切り、終盤で右位置へ整列）",
+        "[Audio - BGM Track] ラスサビ前ブレイク〜展開BGM（独立トラック）",
+        "[Audio - SE Track] キャラ登場・合流アクセントSE（独立トラック）"
+      ],
+      "recreation_flow": [
+        "1. 3分割黒帯を解除し16:9全画面ピンク背景を展開、右奥に座るネルを縮小・低不透明度＋軽ブラーで配置。",
+        "2. 前景に初音ミクPSDを配置し、ビートに合わせたポーズ切替と左右ステップ移動をキーフレーム設定。",
+        "3. 02:23で重音テトを左側から配置し、ミクと前後レイヤー順を交差させて立体的なステージングを構築。",
+        "4. 02:26でミクが背景のネルの手を引いて起こし、02:28に3人全員を不透明度100%で横並び同期ポーズに揃える。"
+      ],
+      "frame_timeline": [
+        {
+          "frame": 0,
+          "time_offset_sec": 0,
+          "event": "全画面解放・前景右ミク登場＆背後ネル配置",
+          "params": {
+            "neru_opacity": 55,
+            "neru_blur": 3
+          }
+        },
+        {
+          "frame": 120,
+          "time_offset_sec": 4,
+          "event": "左奥に重音テト登場・ミク中央ポーズ",
+          "params": {
+            "teto_opacity": 80
+          }
+        },
+        {
+          "frame": 210,
+          "time_offset_sec": 7,
+          "event": "前景テト＆背後でミクがネルの手を引く",
+          "params": {
+            "neru_opacity": 75
+          }
+        },
+        {
+          "frame": 270,
+          "time_offset_sec": 9,
+          "event": "ミク・ネル・テト3人横並び同期キメ",
+          "params": {
+            "neru_opacity": 100,
+            "neru_blur": 0
+          }
+        }
+      ],
+      "effect_chain": [
+        {
+          "order": 1,
+          "tool": "After Effects",
+          "plugin": "Gaussian Blur (Native)",
+          "match_name": "ADBE Gaussian Blur 2",
+          "fallback_match_name": "ADBE Gaussian Blur 2",
+          "params": {
+            "blurriness": 3.5
+          },
+          "keyframed_frames": [
+            0,
+            210,
+            270
+          ]
+        },
+        {
+          "order": 2,
+          "tool": "After Effects",
+          "plugin": "Posterize Time",
+          "match_name": "ADBE Posterize Time",
+          "fallback_match_name": "ADBE Posterize Time",
+          "params": {
+            "frame_rate": 12
+          },
+          "keyframed_frames": [
+            0
+          ]
+        }
+      ],
+      "ae_blueprint": {
+        "schema_version": 2,
+        "source": "api_estimated",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30,
+        "duration_sec": 9,
+        "bg_color": "#FFD1E3",
+        "film_finish": false,
+        "layers": [
+          {
+            "type": "character_psd_layer",
+            "name": "BG_Akita_Neru",
+            "x": 1440,
+            "y": 640,
+            "opacity": 55,
+            "start_frame": 0,
+            "duration_frames": 270,
+            "easing": [
+              0,
+              80,
+              0,
+              20
+            ]
+          },
+          {
+            "type": "character_psd_layer",
+            "name": "FG_Hatsune_Miku",
+            "x": 1520,
+            "y": 540,
+            "opacity": 100,
+            "start_frame": 0,
+            "duration_frames": 270,
+            "easing": [
+              0,
+              80,
+              0,
+              20
+            ]
+          },
+          {
+            "type": "character_psd_layer",
+            "name": "FG_Kasane_Teto",
+            "x": 420,
+            "y": 540,
+            "opacity": 100,
+            "start_frame": 120,
+            "duration_frames": 150,
+            "easing": [
+              0,
+              80,
+              0,
+              20
+            ]
+          }
+        ]
+      },
+      "transition_bridge": {
+        "source": "api_estimated",
+        "entrance_vector": "blackout_to_fullframe_pop",
+        "exit_vector": "hard_cut_closeup_zoom",
+        "match_cue": "chorus_drop_release",
+        "sfx_lead_in_frames": -3,
+        "recommended_sfx": "riser_impact_pop"
+      },
+      "anti_ai_slop_notes": "これまで続いた3分割黒枠をここで全画面解放し、背景キャラを不透明度と微ブラーで抑えることで、2D平面でも明確な奥行きと開放感を両立。",
+      "audio_sync_cues": "暗転明けのドロップ頭で全画面解放し、8拍ごとにミク→テト→3人合流の展開を明確に同期。",
+      "observed_timestamps": [
+        {
+          "timestamp": "02:19",
+          "visual_evidence": "全画面ピンク背景で右前景に初音ミク、背後に半透明ぼかし状の亞北ネルが座る構図"
+        },
+        {
+          "timestamp": "02:23",
+          "visual_evidence": "左側に重音テトが現れ、中央のミクと前後レイヤーを交差させてダンス"
+        },
+        {
+          "timestamp": "02:28",
+          "visual_evidence": "ミク・ネル・テトの3人が画面横一列に並び、同じ振り付けでキメポーズ"
+        }
+      ],
+      "provenance": {
+        "source": "gemini_api_url_v1",
+        "visual_observation_basis": "youtube_url_video_stream",
+        "media_telemetry_status": "missing_requires_local_video",
+        "model": "gemini-4-neon",
+        "thinking_level": "high",
+        "service_tier": "standard",
+        "video_processing": {
+          "type": "static",
+          "fps": 1,
+          "content_layers": [
+            "frames",
+            "audio"
+          ],
+          "resolution": "low"
+        },
+        "input_video_tokens": 21000,
+        "pilot_attempt": 1,
+        "field_provenance": {
+          "semantic_craft_fields": "api_observed",
+          "timestamps_and_duration": "api_estimated_1fps",
+          "fps_and_frames": "api_estimated",
+          "color_palette_hex": "api_estimated",
+          "easing_and_timing": "api_estimated",
+          "media_and_telemetry": "missing"
+        }
+      },
+      "media": {
+        "available": false,
+        "status": "missing_requires_local_video",
+        "telemetry": {
+          "available": false
+        }
+      }
+    }
+  ],
+  "title": "雑魚 / 亞北ネル",
+  "technique_rating": "A",
+  "provenance": {
+    "source": "gemini_api_url_v1",
+    "model": "gemini-4-neon",
+    "thinking_level": "high",
+    "service_tier": "standard",
+    "video_processing": {
+      "type": "static",
+      "fps": 1,
+      "content_layers": [
+        "frames",
+        "audio"
+      ],
+      "resolution": "low"
+    },
+    "visual_observation_basis": "youtube_url_video_stream",
+    "input_video_tokens": 21000,
+    "media_telemetry_status": "missing_requires_local_video",
+    "pilot_attempt": 1,
+    "field_provenance": {
+      "semantic_craft_fields": "api_observed",
+      "timestamps_and_duration": "api_estimated_1fps",
+      "fps_and_frames": "api_estimated",
+      "color_palette_hex": "api_estimated",
+      "easing_and_timing": "api_estimated",
+      "media_and_telemetry": "missing"
+    }
+  }
+}

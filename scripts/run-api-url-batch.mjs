@@ -147,30 +147,46 @@ export function checkBudgetGuard({
   runSpentUsd,
   runLimitUsd = DEFAULT_RUN_BUDGET_USD,
   estimatedNextCallUsd,
+  maxObservedCallCostUsd = 0,
+  observedSafetyMultiplier = 1.2,
   requestCount,
   maxRequests,
 }) {
   if (requestCount >= maxRequests) {
     return { allowed: false, reason: `max_requests_${maxRequests}_reached` };
   }
-  if (monthlySpentUsd + estimatedNextCallUsd > monthlyLimitUsd) {
+  const estVal = Number(estimatedNextCallUsd || 0);
+  const obsBufferedVal =
+    Number(maxObservedCallCostUsd || 0) > 0
+      ? Math.round(Number(maxObservedCallCostUsd) * Number(observedSafetyMultiplier || 1.2) * 1_000_000) / 1_000_000
+      : 0;
+  const effectiveNextCallUsd = Math.max(estVal, obsBufferedVal);
+  if (monthlySpentUsd + effectiveNextCallUsd > monthlyLimitUsd) {
     return {
       allowed: false,
-      reason: `monthly_budget_cap_exceeded (spent=${monthlySpentUsd.toFixed(4)}, next=${estimatedNextCallUsd.toFixed(4)}, limit=${monthlyLimitUsd.toFixed(2)})`,
+      reason: `monthly_budget_cap_exceeded (spent=${monthlySpentUsd.toFixed(4)}, next_guard=${effectiveNextCallUsd.toFixed(4)} [est=${estVal.toFixed(4)}, obs_max_x${observedSafetyMultiplier}=${obsBufferedVal.toFixed(4)}], limit=${monthlyLimitUsd.toFixed(2)})`,
     };
   }
-  if (runSpentUsd + estimatedNextCallUsd > runLimitUsd) {
+  if (runSpentUsd + effectiveNextCallUsd > runLimitUsd) {
     return {
       allowed: false,
-      reason: `run_budget_cap_exceeded (spent=${runSpentUsd.toFixed(4)}, next=${estimatedNextCallUsd.toFixed(4)}, limit=${runLimitUsd.toFixed(2)})`,
+      reason: `run_budget_cap_exceeded (spent=${runSpentUsd.toFixed(4)}, next_guard=${effectiveNextCallUsd.toFixed(4)} [est=${estVal.toFixed(4)}, obs_max_x${observedSafetyMultiplier}=${obsBufferedVal.toFixed(4)}], limit=${runLimitUsd.toFixed(2)})`,
     };
   }
-  return { allowed: true, reason: null };
+  return { allowed: true, reason: null, effective_next_call_usd: effectiveNextCallUsd };
+}
+
+export function determineRunExitCode(orch) {
+  if (!orch || !orch.stopped_early) return 0;
+  const reason = String(orch.stop_reason || "");
+  if (/3_consecutive_(?:videos_)?deferred|deferred_retry_pass_congestion/i.test(reason)) return 3;
+  if (/budget_cap_exceeded|max_requests_/i.test(reason)) return 4;
+  return 1;
 }
 
 export function classifyApiError(exitCode, errText, respObj) {
   const hay = `${errText || ""} ${JSON.stringify(respObj?.error || "")} ${respObj?.status || ""}`;
-  if (/\b402\b|PAYMENT_REQUIRED|insufficient.*balance|billing/i.test(hay)) {
+  if (/\b402\b|PAYMENT_REQUIRED|insufficient.*balance|billing|spend(?:ing)?[\s_-]*cap/i.test(hay)) {
     return { kind: "fatal_stop", code: "402", retryable: false };
   }
   if (/\b403\b|PERMISSION_DENIED|FORBIDDEN/i.test(hay)) {
@@ -607,9 +623,13 @@ export function extractUsageBreakdown(resp, durationSec = null) {
   const totalTokens = Number(u.total_tokens ?? u.totalTokenCount ?? (totalInput + totalOutput + totalThought));
   const videoTok = inputVideo ?? 0;
 
+  // Reference durations come from SQLite scenes MAX(end_sec), which can overestimate actual YouTube
+  // runtime by ~10-15% (e.g., fvbEnWLRo1s: 47,154 video tokens vs 524s scenes = 89.99 tok/s),
+  // and short idents (<10s, e.g. 6sX_BfDnyrg 5s = 515 video tokens = 103 tok/s) legitimately have <1000 tokens.
+  // Require >= max(200, floor(durationSec * 80)) when duration is known (1000 when unknown).
   const minRequired =
     typeof durationSec === "number" && Number.isFinite(durationSec) && durationSec > 0
-      ? Math.max(1000, Math.floor(durationSec * 90))
+      ? Math.max(200, Math.floor(durationSec * 80))
       : 1000;
 
   return {
@@ -1025,15 +1045,26 @@ async function main() {
   let requestCount = 0;
   let succeededCallsCount = 0;
   let runSpentUsd = 0;
+  let maxObservedCallCostUsd = 0;
+
+  const tierScaleForResume = (fromTier, toTier) => {
+    const f = PRICING_USD_PER_1M[fromTier]?.output_and_thought;
+    const t = PRICING_USD_PER_1M[toTier]?.output_and_thought;
+    if (!f || !t) return 1;
+    return t / f;
+  };
 
   if (resume && fs.existsSync(logPath)) {
     for (const line of fs.readFileSync(logPath, "utf8").split(/\r?\n/).filter(Boolean)) {
       const rec = JSON.parse(line);
       callSummaries.push(rec);
       requestCount = Math.max(requestCount, rec.call_index || 0);
-      if (rec.parse_ok && rec.exit_code === 0) {
+      if (rec.parse_ok && rec.exit_code === 0 && !rec.suspect_video_not_processed) {
         succeededCallsCount++;
-        runSpentUsd = Math.round((runSpentUsd + (rec.call_cost_usd || 0)) * 1_000_000) / 1_000_000;
+        const cUsd = Number(rec.call_cost_usd || 0);
+        runSpentUsd = Math.round((runSpentUsd + cUsd) * 1_000_000) / 1_000_000;
+        const scaled = Math.round(cUsd * tierScaleForResume(rec.service_tier || serviceTier, serviceTier) * 1_000_000) / 1_000_000;
+        if (scaled > maxObservedCallCostUsd) maxObservedCallCostUsd = scaled;
         if (!initialCompletedScores.has(rec.video_id)) initialCompletedScores.set(rec.video_id, new Map());
         initialCompletedScores.get(rec.video_id).set(rec.attempt, rec.api_score);
         if (rec.evidence_file && fs.existsSync(rec.evidence_file)) {
@@ -1050,13 +1081,15 @@ async function main() {
       }
     }
   }
+  let initialCongestionEvents = [];
   if (resume && fs.existsSync(deferredPath)) {
     const dqDoc = JSON.parse(fs.readFileSync(deferredPath, "utf8"));
     initialDeferredQueue = Array.isArray(dqDoc.deferred_calls) ? dqDoc.deferred_calls : [];
+    initialCongestionEvents = Array.isArray(dqDoc.congestion_events) ? dqDoc.congestion_events : [];
   }
 
   let consecutiveJsonErrors = 0;
-  const allCongestionEvents = [];
+  const allCongestionEvents = [...initialCongestionEvents];
 
   const orch = await runBatchOrchestrator({
     queue,
@@ -1072,6 +1105,8 @@ async function main() {
         runSpentUsd,
         runLimitUsd: runBudgetUsd,
         estimatedNextCallUsd: estNext,
+        maxObservedCallCostUsd,
+        observedSafetyMultiplier: 1.2,
         requestCount,
         maxRequests,
       });
@@ -1144,6 +1179,9 @@ async function main() {
       if (callSucceeded) {
         succeededCallsCount++;
         runSpentUsd = Math.round((runSpentUsd + cost.call_cost_usd) * 1_000_000) / 1_000_000;
+        if (cost.call_cost_usd > maxObservedCallCostUsd) {
+          maxObservedCallCostUsd = cost.call_cost_usd;
+        }
       }
 
       const callFileName = `${callIdxStr}_${item.video_id}_r${attempt}.json`;
@@ -1241,6 +1279,9 @@ async function main() {
       callSummaries.push(summaryLine);
       fs.appendFileSync(logPath, redactSecret(JSON.stringify(summaryLine) + "\n", apiKey), "utf8");
       writeEvidenceManifest({ runDir, runId, worker, logsRunDir, callEntries: evidenceEntries });
+      console.log(
+        `[${callIdxStr}] ${phase} ${item.video_id} (${item.role}) r${attempt} tier=${serviceTier} -> kind=${classification.kind} deferred=${Boolean(classification.deferred)} parse_ok=${parsedRes.ok} score=${summaryLine.api_score ?? "-"} vid_tok=${usage.input_video_tokens} cost=$${cost.call_cost_usd.toFixed(4)} cum=$${runSpentUsd.toFixed(4)} elapsed=${elapsedSec}s 503/429=${taggedCongestion.length}`
+      );
 
       if (classification.kind === "fatal_stop") {
         return { status: "fatal_stop", stopReason: `fatal_http_${classification.code}`, congestionEvents: taggedCongestion };
@@ -1275,12 +1316,24 @@ async function main() {
   saveDeferredQueue(runDir, runId, orch.deferred_queue, allCongestionEvents);
   writeEvidenceManifest({ runDir, runId, worker, logsRunDir, callEntries: evidenceEntries });
 
+  const costByServiceTier = {};
+  const callsByServiceTier = {};
+  for (const s of callSummaries) {
+    if (s.parse_ok && s.exit_code === 0 && !s.suspect_video_not_processed) {
+      const t = s.service_tier || serviceTier;
+      callsByServiceTier[t] = (callsByServiceTier[t] || 0) + 1;
+      costByServiceTier[t] = Math.round(((costByServiceTier[t] || 0) + Number(s.call_cost_usd || 0)) * 1_000_000) / 1_000_000;
+    }
+  }
+
   const runSummary = {
     schema_version: 2,
     run_id: runId,
     worker,
     purpose,
     service_tier: serviceTier,
+    calls_by_service_tier: callsByServiceTier,
+    cost_by_service_tier: costByServiceTier,
     finished_at: new Date().toISOString(),
     total_requests: requestCount,
     succeeded_calls: succeededCallsCount,
@@ -1293,6 +1346,7 @@ async function main() {
     tiebreakers_triggered: orch.videos.filter((v) => v.ensemble_rule === "median_of_3").length,
     stopped_early: orch.stopped_early,
     stop_reason: orch.stop_reason,
+    max_observed_call_cost_usd: maxObservedCallCostUsd,
     run_cost_usd: runSpentUsd,
     evidence_manifest: "evidence_manifest.json",
     deferred_queue_file: "deferred_retry_queue.json",
@@ -1309,7 +1363,9 @@ async function main() {
     updateLedger(ledgerPath, monthKey, {
       run_id: runId,
       purpose,
-      service_tier: serviceTier,
+      service_tier: Object.keys(callsByServiceTier).length > 1 ? "mixed_flex_standard" : serviceTier,
+      calls_by_service_tier: callsByServiceTier,
+      cost_by_service_tier: costByServiceTier,
       calls_count: succeededCallsCount,
       cost_usd: runSpentUsd,
       congestion_failure_count: allCongestionEvents.length,
@@ -1318,24 +1374,31 @@ async function main() {
     });
   }
 
+  const exitCode = determineRunExitCode(orch);
   console.log("=== API URL BATCH FINISHED ===");
   console.log(
     JSON.stringify(
       {
         run_id: runId,
         service_tier: serviceTier,
+        calls_by_service_tier: callsByServiceTier,
+        cost_by_service_tier: costByServiceTier,
         succeeded_calls: succeededCallsCount,
         congestion_failure_count: allCongestionEvents.length,
         deferred_remaining_count: orch.deferred_queue.length,
         videos_completed: runSummary.videos_completed,
         stopped_early: orch.stopped_early,
         stop_reason: orch.stop_reason,
+        exit_code: exitCode,
         run_cost_usd: runSpentUsd,
       },
       null,
       2
     )
   );
+  if (exitCode !== 0) {
+    process.exitCode = exitCode;
+  }
 }
 
 const isMain = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);

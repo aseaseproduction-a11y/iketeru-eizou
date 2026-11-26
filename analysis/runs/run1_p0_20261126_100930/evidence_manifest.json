@@ -1,0 +1,1393 @@
+{
+  "schema_version": 1,
+  "run_id": "run1_p0_20261126_100930",
+  "worker": "CHIBA-PC-api",
+  "generated_at": "2026-11-26T03:14:01.182Z",
+  "evidence_root": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930",
+  "calls_dir": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls",
+  "archive_compatible_with": "scripts/archive-run-evidence.mjs",
+  "summary": {
+    "file_count": 153,
+    "total_bytes": 3468728,
+    "secret_scan_passed": true
+  },
+  "files": [
+    {
+      "rel_path": "calls/001_OUQ6NV9r2Lk_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\001_OUQ6NV9r2Lk_r1.json",
+      "video_id": "OUQ6NV9r2Lk",
+      "attempt": 1,
+      "call_index": 1,
+      "size_bytes": 29581,
+      "sha256": "55c2cc254e22d40288b613b95752a58b58902ec91352abb64595172dd3b16965"
+    },
+    {
+      "rel_path": "calls/002_OUQ6NV9r2Lk_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\002_OUQ6NV9r2Lk_r2.json",
+      "video_id": "OUQ6NV9r2Lk",
+      "attempt": 2,
+      "call_index": 2,
+      "size_bytes": 23763,
+      "sha256": "292a4c9fbe55b596108e634dcd31fefcafe9b228b595b468658c1403e32e70db"
+    },
+    {
+      "rel_path": "calls/003_RFYP-tY6xOg_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\003_RFYP-tY6xOg_r1.json",
+      "video_id": "RFYP-tY6xOg",
+      "attempt": 1,
+      "call_index": 3,
+      "size_bytes": 23378,
+      "sha256": "d8428d13b9740561f4aacfdd7efd8c9b09f6eb12a349a4ad95f5ff04daa81550"
+    },
+    {
+      "rel_path": "calls/004_RFYP-tY6xOg_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\004_RFYP-tY6xOg_r2.json",
+      "video_id": "RFYP-tY6xOg",
+      "attempt": 2,
+      "call_index": 4,
+      "size_bytes": 22015,
+      "sha256": "c4fac09150e5be2c90e456582acc5e250b82b015b66c350ea4ebc1b4746e00d6"
+    },
+    {
+      "rel_path": "calls/005_U-FuKvu5RV0_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\005_U-FuKvu5RV0_r1.json",
+      "video_id": "U-FuKvu5RV0",
+      "attempt": 1,
+      "call_index": 5,
+      "size_bytes": 22411,
+      "sha256": "40420f4e0604e1afa4de702253a3e0defdf6b231abdec3b07a1d460ad6368ba8"
+    },
+    {
+      "rel_path": "calls/006_U-FuKvu5RV0_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\006_U-FuKvu5RV0_r2.json",
+      "video_id": "U-FuKvu5RV0",
+      "attempt": 2,
+      "call_index": 6,
+      "size_bytes": 26548,
+      "sha256": "28d86723b8b6f49736bbc9707bae4c57260a84c7c61fb40ba1cefbc15b3603cd"
+    },
+    {
+      "rel_path": "calls/010_dWvAJMYdTFI_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\010_dWvAJMYdTFI_r1.json",
+      "video_id": "dWvAJMYdTFI",
+      "attempt": 1,
+      "call_index": 10,
+      "size_bytes": 23172,
+      "sha256": "001c472977e951b4094f7eaafe33cc707fe7a2382878ce06699218713c48c6a8"
+    },
+    {
+      "rel_path": "calls/011_dWvAJMYdTFI_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\011_dWvAJMYdTFI_r2.json",
+      "video_id": "dWvAJMYdTFI",
+      "attempt": 2,
+      "call_index": 11,
+      "size_bytes": 20635,
+      "sha256": "8a3fe596016c5783e00930e502f141f02c5087f1e78efb030df21961af89e1a3"
+    },
+    {
+      "rel_path": "calls/012_drPEdug9fZk_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\012_drPEdug9fZk_r1.json",
+      "video_id": "drPEdug9fZk",
+      "attempt": 1,
+      "call_index": 12,
+      "size_bytes": 21628,
+      "sha256": "02182cfd8589561efdfe565b3e34c972cc94f0478935c96522a96940b988272a"
+    },
+    {
+      "rel_path": "calls/013_drPEdug9fZk_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\013_drPEdug9fZk_r2.json",
+      "video_id": "drPEdug9fZk",
+      "attempt": 2,
+      "call_index": 13,
+      "size_bytes": 23045,
+      "sha256": "42ce3ba5e31df3fd405f736aedeead7dc78e968f214663895a97568f6a3ac611"
+    },
+    {
+      "rel_path": "calls/014_eEiMPYiNZAo_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\014_eEiMPYiNZAo_r1.json",
+      "video_id": "eEiMPYiNZAo",
+      "attempt": 1,
+      "call_index": 14,
+      "size_bytes": 23281,
+      "sha256": "1af10d2bccef4e923d0144fa32fc522b327e0d19ed1d8338b3c53ee3b9049fb5"
+    },
+    {
+      "rel_path": "calls/015_eEiMPYiNZAo_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\015_eEiMPYiNZAo_r2.json",
+      "video_id": "eEiMPYiNZAo",
+      "attempt": 2,
+      "call_index": 15,
+      "size_bytes": 25939,
+      "sha256": "b085b783f022a19792185bdd35b0b88e245176d76f1ec16e670c3af6c0112ee9"
+    },
+    {
+      "rel_path": "calls/016_efXqozK4A40_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\016_efXqozK4A40_r1.json",
+      "video_id": "efXqozK4A40",
+      "attempt": 1,
+      "call_index": 16,
+      "size_bytes": 22112,
+      "sha256": "f04c231a3c79e1de95262daac9b701d029a3a3c0f405df04f10d50867ded5bb7"
+    },
+    {
+      "rel_path": "calls/017_efXqozK4A40_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\017_efXqozK4A40_r2.json",
+      "video_id": "efXqozK4A40",
+      "attempt": 2,
+      "call_index": 17,
+      "size_bytes": 20855,
+      "sha256": "4180a67a346b042d974d6778611748ff2c80a90680b9518c48f30774a76ac820"
+    },
+    {
+      "rel_path": "calls/018_iK725ck2NIk_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\018_iK725ck2NIk_r1.json",
+      "video_id": "iK725ck2NIk",
+      "attempt": 1,
+      "call_index": 18,
+      "size_bytes": 23448,
+      "sha256": "d43c1b8a5e5963261af808de47d5030e9b51fcc41a7729090adcd058fc2dbd68"
+    },
+    {
+      "rel_path": "calls/019_iK725ck2NIk_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\019_iK725ck2NIk_r2.json",
+      "video_id": "iK725ck2NIk",
+      "attempt": 2,
+      "call_index": 19,
+      "size_bytes": 22574,
+      "sha256": "1bd58d6fc73c244051707e58265168b8991b8adc8490c04509390a062935f59f"
+    },
+    {
+      "rel_path": "calls/020_mI9MSQGlbH0_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\020_mI9MSQGlbH0_r1.json",
+      "video_id": "mI9MSQGlbH0",
+      "attempt": 1,
+      "call_index": 20,
+      "size_bytes": 22526,
+      "sha256": "cfa7832092288bef237b02950ae3c0b0227ac274e99c3c1e7384dd4598d9fbc2"
+    },
+    {
+      "rel_path": "calls/021_mI9MSQGlbH0_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\021_mI9MSQGlbH0_r2.json",
+      "video_id": "mI9MSQGlbH0",
+      "attempt": 2,
+      "call_index": 21,
+      "size_bytes": 20797,
+      "sha256": "79bf9e1c35ebd6ba61d90180336e916a0274e9b0185fcf49273791cae26e47c4"
+    },
+    {
+      "rel_path": "calls/022_qe29NgNqJZw_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\022_qe29NgNqJZw_r1.json",
+      "video_id": "qe29NgNqJZw",
+      "attempt": 1,
+      "call_index": 22,
+      "size_bytes": 23558,
+      "sha256": "55e08ea67d13d8b39e6e79714e549964223f06de7aff93ebdbd44f38facecd7b"
+    },
+    {
+      "rel_path": "calls/023_qe29NgNqJZw_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\023_qe29NgNqJZw_r2.json",
+      "video_id": "qe29NgNqJZw",
+      "attempt": 2,
+      "call_index": 23,
+      "size_bytes": 27461,
+      "sha256": "68c5abaa9757a42b8f2b588f48870cafefd268ae643b7c4f7402bd6e0128cc34"
+    },
+    {
+      "rel_path": "calls/024_rolo_BHlDmQ_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\024_rolo_BHlDmQ_r1.json",
+      "video_id": "rolo_BHlDmQ",
+      "attempt": 1,
+      "call_index": 24,
+      "size_bytes": 20063,
+      "sha256": "a68a2414f893bc6c9319138f45cf72ce5ae8b36bc44afbf5cead226e06e71a73"
+    },
+    {
+      "rel_path": "calls/025_rolo_BHlDmQ_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\025_rolo_BHlDmQ_r2.json",
+      "video_id": "rolo_BHlDmQ",
+      "attempt": 2,
+      "call_index": 25,
+      "size_bytes": 22224,
+      "sha256": "5f87b7426e41188c586ef20a3c14ca8eb71f1d2af93d02478a6bce3cd5abf59a"
+    },
+    {
+      "rel_path": "calls/026_tk9mbNFEKZw_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\026_tk9mbNFEKZw_r1.json",
+      "video_id": "tk9mbNFEKZw",
+      "attempt": 1,
+      "call_index": 26,
+      "size_bytes": 24458,
+      "sha256": "80e1f5b8838359687158ea6bd2039c7b572b587023807c245275fc3b01a164ac"
+    },
+    {
+      "rel_path": "calls/027_tk9mbNFEKZw_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\027_tk9mbNFEKZw_r2.json",
+      "video_id": "tk9mbNFEKZw",
+      "attempt": 2,
+      "call_index": 27,
+      "size_bytes": 19810,
+      "sha256": "babbabfc2bb7e5455e9a4f617d18a2f887060d7225998a0fda517fae52b58101"
+    },
+    {
+      "rel_path": "calls/028_vpyeQeTDGFA_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\028_vpyeQeTDGFA_r1.json",
+      "video_id": "vpyeQeTDGFA",
+      "attempt": 1,
+      "call_index": 28,
+      "size_bytes": 22057,
+      "sha256": "c5e7208d93b579ce85f04fb062d297b25cb5273b55514fc841e43ba9fdabfebc"
+    },
+    {
+      "rel_path": "calls/029_vpyeQeTDGFA_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\029_vpyeQeTDGFA_r2.json",
+      "video_id": "vpyeQeTDGFA",
+      "attempt": 2,
+      "call_index": 29,
+      "size_bytes": 21480,
+      "sha256": "93e77d29a0f516dd1b0f1cd107716ce663f11c011df593bebfa73ae28919697f"
+    },
+    {
+      "rel_path": "calls/030_w8QgUN09cqk_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\030_w8QgUN09cqk_r1.json",
+      "video_id": "w8QgUN09cqk",
+      "attempt": 1,
+      "call_index": 30,
+      "size_bytes": 25264,
+      "sha256": "c0767325dcc3bdfb3911c95d2c23fbb48298e00df0b424fb288ed0e1beba6ff3"
+    },
+    {
+      "rel_path": "calls/031_w8QgUN09cqk_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\031_w8QgUN09cqk_r2.json",
+      "video_id": "w8QgUN09cqk",
+      "attempt": 2,
+      "call_index": 31,
+      "size_bytes": 22015,
+      "sha256": "c86912479b46d7ea1a83416dcfa026465e0ad9993de6690ddb3282f9ed9df02f"
+    },
+    {
+      "rel_path": "calls/032_x6_mbnsh6VU_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\032_x6_mbnsh6VU_r1.json",
+      "video_id": "x6_mbnsh6VU",
+      "attempt": 1,
+      "call_index": 32,
+      "size_bytes": 20418,
+      "sha256": "c932e878f1a4bbf101733640cb36b67d163641f0647042377a25e1dad2cb831f"
+    },
+    {
+      "rel_path": "calls/033_x6_mbnsh6VU_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\033_x6_mbnsh6VU_r2.json",
+      "video_id": "x6_mbnsh6VU",
+      "attempt": 2,
+      "call_index": 33,
+      "size_bytes": 22697,
+      "sha256": "50ff7f53247563aa76688425577968eaeb5ebf47cbbd9dde6807fb6b61c898ee"
+    },
+    {
+      "rel_path": "calls/034_x7mSpHbqOGs_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\034_x7mSpHbqOGs_r1.json",
+      "video_id": "x7mSpHbqOGs",
+      "attempt": 1,
+      "call_index": 34,
+      "size_bytes": 19693,
+      "sha256": "df7c3f7a151672ab1b57f79f81e32db95c4177a6b3b61bdfe2b7320277c115c7"
+    },
+    {
+      "rel_path": "calls/035_x7mSpHbqOGs_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\035_x7mSpHbqOGs_r2.json",
+      "video_id": "x7mSpHbqOGs",
+      "attempt": 2,
+      "call_index": 35,
+      "size_bytes": 21717,
+      "sha256": "5bc5e51977153caa1162d209ac9d4a67769f807e37383922b44337cf10946460"
+    },
+    {
+      "rel_path": "calls/036_xRU1XXHIpIc_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\036_xRU1XXHIpIc_r1.json",
+      "video_id": "xRU1XXHIpIc",
+      "attempt": 1,
+      "call_index": 36,
+      "size_bytes": 24767,
+      "sha256": "d15dac641a245b61a1c64005b6205a79bf510d3387208f87641d0495b7d33156"
+    },
+    {
+      "rel_path": "calls/037_xRU1XXHIpIc_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\037_xRU1XXHIpIc_r2.json",
+      "video_id": "xRU1XXHIpIc",
+      "attempt": 2,
+      "call_index": 37,
+      "size_bytes": 24709,
+      "sha256": "ff990fe92a3849c47ce7269b777d4e32f3d551a067c1985d21f340a94487cd25"
+    },
+    {
+      "rel_path": "calls/038_xnWku2LSI1o_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\038_xnWku2LSI1o_r1.json",
+      "video_id": "xnWku2LSI1o",
+      "attempt": 1,
+      "call_index": 38,
+      "size_bytes": 19215,
+      "sha256": "f61e911721f92f98ca4680fedb2d735484ee6966364aecd66fe8fa5f1c565376"
+    },
+    {
+      "rel_path": "calls/039_xnWku2LSI1o_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\039_xnWku2LSI1o_r2.json",
+      "video_id": "xnWku2LSI1o",
+      "attempt": 2,
+      "call_index": 39,
+      "size_bytes": 19734,
+      "sha256": "a34df5a636b6e37148ad4469782e132271a9c6a10aa5f9de60bb351446a15519"
+    },
+    {
+      "rel_path": "calls/040_xw5u-NoA3Ec_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\040_xw5u-NoA3Ec_r1.json",
+      "video_id": "xw5u-NoA3Ec",
+      "attempt": 1,
+      "call_index": 40,
+      "size_bytes": 21094,
+      "sha256": "e772a19bd272a1f7c490729c0775a7f7f2449518721de6ce4150393649017eef"
+    },
+    {
+      "rel_path": "calls/041_xw5u-NoA3Ec_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\041_xw5u-NoA3Ec_r2.json",
+      "video_id": "xw5u-NoA3Ec",
+      "attempt": 2,
+      "call_index": 41,
+      "size_bytes": 20884,
+      "sha256": "ca32b5317bd19a9daed1ddf209f7f364d24d31cdf24086f845aa2c441f883c88"
+    },
+    {
+      "rel_path": "calls/042_yRv-MikY3d0_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\042_yRv-MikY3d0_r1.json",
+      "video_id": "yRv-MikY3d0",
+      "attempt": 1,
+      "call_index": 42,
+      "size_bytes": 21264,
+      "sha256": "45abb2e47051c8c313d982a6d6d47de55e2e2ae276bff5c60d7a9c0438b15900"
+    },
+    {
+      "rel_path": "calls/043_yRv-MikY3d0_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\043_yRv-MikY3d0_r2.json",
+      "video_id": "yRv-MikY3d0",
+      "attempt": 2,
+      "call_index": 43,
+      "size_bytes": 21352,
+      "sha256": "9b8b25db50f70c3327b512edc5ca03cfceed43aed131cf9c8b3ce7f1f4d3876b"
+    },
+    {
+      "rel_path": "calls/044_yTASHD-MWwE_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\044_yTASHD-MWwE_r1.json",
+      "video_id": "yTASHD-MWwE",
+      "attempt": 1,
+      "call_index": 44,
+      "size_bytes": 21217,
+      "sha256": "34454e489d788f837d6903ed7c1a3749a85f19658a7fd38e267d8491c575841d"
+    },
+    {
+      "rel_path": "calls/045_yTASHD-MWwE_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\045_yTASHD-MWwE_r2.json",
+      "video_id": "yTASHD-MWwE",
+      "attempt": 2,
+      "call_index": 45,
+      "size_bytes": 28414,
+      "sha256": "9634588dbf04351a863aaa42ad79fa81dd6b5a81f8a7630176e7a724e057cdf2"
+    },
+    {
+      "rel_path": "calls/046_yVX34hPLKtI_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\046_yVX34hPLKtI_r1.json",
+      "video_id": "yVX34hPLKtI",
+      "attempt": 1,
+      "call_index": 46,
+      "size_bytes": 22652,
+      "sha256": "c37ae80114031f67a5165ff9ccf83d06e2a467f4909e95896fe1788280b72c60"
+    },
+    {
+      "rel_path": "calls/047_yVX34hPLKtI_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\047_yVX34hPLKtI_r2.json",
+      "video_id": "yVX34hPLKtI",
+      "attempt": 2,
+      "call_index": 47,
+      "size_bytes": 22469,
+      "sha256": "d057237e4e5602283db12d7068bd7028b31b90e4c2530281d993f7cfeacd186c"
+    },
+    {
+      "rel_path": "calls/048_yow8PBNcINU_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\048_yow8PBNcINU_r1.json",
+      "video_id": "yow8PBNcINU",
+      "attempt": 1,
+      "call_index": 48,
+      "size_bytes": 23512,
+      "sha256": "ae7b5acdb84f36a1a6e66d5383dd390ab62528265516101071fc25db1def23e9"
+    },
+    {
+      "rel_path": "calls/049_yow8PBNcINU_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\049_yow8PBNcINU_r2.json",
+      "video_id": "yow8PBNcINU",
+      "attempt": 2,
+      "call_index": 49,
+      "size_bytes": 22341,
+      "sha256": "3b6a0297bc12a23aec8c5016771f01e13eadcf33eb3620737c9cd9fd4992b321"
+    },
+    {
+      "rel_path": "calls/050_yu3YGphrBbI_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\050_yu3YGphrBbI_r1.json",
+      "video_id": "yu3YGphrBbI",
+      "attempt": 1,
+      "call_index": 50,
+      "size_bytes": 22202,
+      "sha256": "e7bcf78a4133c165f1dc23021ff0ff0da1a6b2ef1501fefc87e02ab233a54f18"
+    },
+    {
+      "rel_path": "calls/051_yu3YGphrBbI_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\051_yu3YGphrBbI_r2.json",
+      "video_id": "yu3YGphrBbI",
+      "attempt": 2,
+      "call_index": 51,
+      "size_bytes": 20661,
+      "sha256": "3833ab2f2d9804568e47be3831b186cc0999ec43b6a703dfa8203892fedd033b"
+    },
+    {
+      "rel_path": "calls/052_z4r3l2aAdrg_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\052_z4r3l2aAdrg_r1.json",
+      "video_id": "z4r3l2aAdrg",
+      "attempt": 1,
+      "call_index": 52,
+      "size_bytes": 23474,
+      "sha256": "5c1c3b48beed76bb9904cea1a2e4d2a68cb85153b0c4e9a0721b43610af969e1"
+    },
+    {
+      "rel_path": "calls/053_z4r3l2aAdrg_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\053_z4r3l2aAdrg_r2.json",
+      "video_id": "z4r3l2aAdrg",
+      "attempt": 2,
+      "call_index": 53,
+      "size_bytes": 21628,
+      "sha256": "47cb6eeee72b15a745ece6ec8a69939b763474bb5c3f82466a73f37865c8ca37"
+    },
+    {
+      "rel_path": "calls/054_zFvChQ6dSdk_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\054_zFvChQ6dSdk_r1.json",
+      "video_id": "zFvChQ6dSdk",
+      "attempt": 1,
+      "call_index": 54,
+      "size_bytes": 21373,
+      "sha256": "d5bf7cc6cd71521967067f1f7364f5e41f3f78d0d7df603871f3ce95713ff1ca"
+    },
+    {
+      "rel_path": "calls/055_zFvChQ6dSdk_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\055_zFvChQ6dSdk_r2.json",
+      "video_id": "zFvChQ6dSdk",
+      "attempt": 2,
+      "call_index": 55,
+      "size_bytes": 22979,
+      "sha256": "214dec369b93bf386d3091fcb27d636b43d2e56cbb9d9c4e407151fd7a839a65"
+    },
+    {
+      "rel_path": "calls/056_zJtsfgrJiWE_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\056_zJtsfgrJiWE_r1.json",
+      "video_id": "zJtsfgrJiWE",
+      "attempt": 1,
+      "call_index": 56,
+      "size_bytes": 22801,
+      "sha256": "612f61e72ec95288acccb317198b5d560cc60d8881c09d0ef569ebc0a3377901"
+    },
+    {
+      "rel_path": "calls/057_zJtsfgrJiWE_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\057_zJtsfgrJiWE_r2.json",
+      "video_id": "zJtsfgrJiWE",
+      "attempt": 2,
+      "call_index": 57,
+      "size_bytes": 22920,
+      "sha256": "b2f052000057fb53c190325cefdd7fb632ac19640644fbde93a2690bcb8a2958"
+    },
+    {
+      "rel_path": "calls/058_zP5fTB_MAXU_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\058_zP5fTB_MAXU_r1.json",
+      "video_id": "zP5fTB_MAXU",
+      "attempt": 1,
+      "call_index": 58,
+      "size_bytes": 26081,
+      "sha256": "19ad7f18ed333c0a03e9781f87f1007e74bd94622fbe26c616f383081254bbae"
+    },
+    {
+      "rel_path": "calls/059_zP5fTB_MAXU_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\059_zP5fTB_MAXU_r2.json",
+      "video_id": "zP5fTB_MAXU",
+      "attempt": 2,
+      "call_index": 59,
+      "size_bytes": 24364,
+      "sha256": "c6c97d201511bcdb74596d596aa77f80378f4bbf7370e1166ce3fcfde8f131cd"
+    },
+    {
+      "rel_path": "calls/060_zRJS0P1GwC4_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\060_zRJS0P1GwC4_r1.json",
+      "video_id": "zRJS0P1GwC4",
+      "attempt": 1,
+      "call_index": 60,
+      "size_bytes": 25565,
+      "sha256": "eedb8fdf48ee687e0efe037302c82112c5b1d9aee946955d55c90ee2c7ba8419"
+    },
+    {
+      "rel_path": "calls/061_zRJS0P1GwC4_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\061_zRJS0P1GwC4_r2.json",
+      "video_id": "zRJS0P1GwC4",
+      "attempt": 2,
+      "call_index": 61,
+      "size_bytes": 24484,
+      "sha256": "471e4d4d92965c6387f16d8a3ac571b972fbf7f5a1feb2f6054cb431ab5b7a79"
+    },
+    {
+      "rel_path": "calls/062_zSPMR9UdKuI_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\062_zSPMR9UdKuI_r1.json",
+      "video_id": "zSPMR9UdKuI",
+      "attempt": 1,
+      "call_index": 62,
+      "size_bytes": 21768,
+      "sha256": "1d823e83eb29abf63b7984a09095504392527bc42b6d20ebea2fb51f630f8c58"
+    },
+    {
+      "rel_path": "calls/063_zSPMR9UdKuI_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\063_zSPMR9UdKuI_r2.json",
+      "video_id": "zSPMR9UdKuI",
+      "attempt": 2,
+      "call_index": 63,
+      "size_bytes": 20931,
+      "sha256": "bd75d4a2ac79232e7b88b17ae13c7d9508733991a44a7853e7ba186036098517"
+    },
+    {
+      "rel_path": "calls/064_2nGPUtId7vM_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\064_2nGPUtId7vM_r1.json",
+      "video_id": "2nGPUtId7vM",
+      "attempt": 1,
+      "call_index": 64,
+      "size_bytes": 23154,
+      "sha256": "537f56a1d65f7ce3f2dba2250da752df333a241b7acb7e759890892b19f994c6"
+    },
+    {
+      "rel_path": "calls/065_2nGPUtId7vM_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\065_2nGPUtId7vM_r2.json",
+      "video_id": "2nGPUtId7vM",
+      "attempt": 2,
+      "call_index": 65,
+      "size_bytes": 22702,
+      "sha256": "b657db214f4a450fa558e9b59c5f7da1f1bfba3452031f25e7a3214f12c669cc"
+    },
+    {
+      "rel_path": "calls/066_D6flbP5cO_4_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\066_D6flbP5cO_4_r1.json",
+      "video_id": "D6flbP5cO_4",
+      "attempt": 1,
+      "call_index": 66,
+      "size_bytes": 21582,
+      "sha256": "4b6dfb65b4e6b3634201c87654d0483bf921fc3b58287d5abfb10558362c9354"
+    },
+    {
+      "rel_path": "calls/067_D6flbP5cO_4_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\067_D6flbP5cO_4_r2.json",
+      "video_id": "D6flbP5cO_4",
+      "attempt": 2,
+      "call_index": 67,
+      "size_bytes": 23090,
+      "sha256": "da786011312aae21c9e38c75aa6769cb88fca185d6e08670f04e4d7233672930"
+    },
+    {
+      "rel_path": "calls/068_EzEFCikg4tk_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\068_EzEFCikg4tk_r1.json",
+      "video_id": "EzEFCikg4tk",
+      "attempt": 1,
+      "call_index": 68,
+      "size_bytes": 25229,
+      "sha256": "64e8afa055deb51b3afb81e93232fcbf7f659c4727922c4db6b2d14a37c75001"
+    },
+    {
+      "rel_path": "calls/069_EzEFCikg4tk_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\069_EzEFCikg4tk_r2.json",
+      "video_id": "EzEFCikg4tk",
+      "attempt": 2,
+      "call_index": 69,
+      "size_bytes": 25032,
+      "sha256": "3d6c51ca683de0ed6ab4c49b6abdf07bd5d8f9516d0480f7818525c2b7479017"
+    },
+    {
+      "rel_path": "calls/070_ICs3wEegMgw_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\070_ICs3wEegMgw_r1.json",
+      "video_id": "ICs3wEegMgw",
+      "attempt": 1,
+      "call_index": 70,
+      "size_bytes": 25143,
+      "sha256": "4428f75811aac26fb72917447543334360c97f0c5dcfbbaac4db6781dffd8387"
+    },
+    {
+      "rel_path": "calls/071_ICs3wEegMgw_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\071_ICs3wEegMgw_r2.json",
+      "video_id": "ICs3wEegMgw",
+      "attempt": 2,
+      "call_index": 71,
+      "size_bytes": 20182,
+      "sha256": "e996d3ee9ea427d01649706c33816f10d29e0cb7918d394f42c19c8c456c1701"
+    },
+    {
+      "rel_path": "calls/072_ITfpkCiJIEY_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\072_ITfpkCiJIEY_r1.json",
+      "video_id": "ITfpkCiJIEY",
+      "attempt": 1,
+      "call_index": 72,
+      "size_bytes": 26678,
+      "sha256": "9f08df0bcc5a880336bef6b99977ae9daa8e0ed6c6fa1ec987c3818408eff0e2"
+    },
+    {
+      "rel_path": "calls/073_ITfpkCiJIEY_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\073_ITfpkCiJIEY_r2.json",
+      "video_id": "ITfpkCiJIEY",
+      "attempt": 2,
+      "call_index": 73,
+      "size_bytes": 24903,
+      "sha256": "f021aae5dded490789c0b11d90e8e6a26de8129295bff50ab260e36338722e84"
+    },
+    {
+      "rel_path": "calls/074_M7pWj2hq_f8_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\074_M7pWj2hq_f8_r1.json",
+      "video_id": "M7pWj2hq_f8",
+      "attempt": 1,
+      "call_index": 74,
+      "size_bytes": 24957,
+      "sha256": "309ce863aef07bd288406385dfeeec3512df0794dc85f6c3c593adf2509243f5"
+    },
+    {
+      "rel_path": "calls/075_M7pWj2hq_f8_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\075_M7pWj2hq_f8_r2.json",
+      "video_id": "M7pWj2hq_f8",
+      "attempt": 2,
+      "call_index": 75,
+      "size_bytes": 19640,
+      "sha256": "81b7a125b26c307b32515b9c9c8b96c860400c4c6d74ef2eeab9ac7171cb1c60"
+    },
+    {
+      "rel_path": "calls/076_M7pWj2hq_f8_r3.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\076_M7pWj2hq_f8_r3.json",
+      "video_id": "M7pWj2hq_f8",
+      "attempt": 3,
+      "call_index": 76,
+      "size_bytes": 22312,
+      "sha256": "2647900982652880ac049f35891bab12b6a2191ddce24fd61edffd3886fbfacb"
+    },
+    {
+      "rel_path": "calls/077_SWzfm9PED6s_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\077_SWzfm9PED6s_r1.json",
+      "video_id": "SWzfm9PED6s",
+      "attempt": 1,
+      "call_index": 77,
+      "size_bytes": 26381,
+      "sha256": "1a9a8edfc64af61fda759c394d2bb138fd5f7d5e57d3a2f3d4b60b2813bb0d25"
+    },
+    {
+      "rel_path": "calls/078_SWzfm9PED6s_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\078_SWzfm9PED6s_r2.json",
+      "video_id": "SWzfm9PED6s",
+      "attempt": 2,
+      "call_index": 78,
+      "size_bytes": 26072,
+      "sha256": "ceabf75cda4b4d97b041f6e9ad4b2305dafe0aba4d6602a47560ec74f35c5686"
+    },
+    {
+      "rel_path": "calls/079_UccHEifTIo4_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\079_UccHEifTIo4_r1.json",
+      "video_id": "UccHEifTIo4",
+      "attempt": 1,
+      "call_index": 79,
+      "size_bytes": 20010,
+      "sha256": "721a06f35e36663e7e94c25c77988264ff6b4e3b534fb0530345736f9c040444"
+    },
+    {
+      "rel_path": "calls/080_UccHEifTIo4_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\080_UccHEifTIo4_r2.json",
+      "video_id": "UccHEifTIo4",
+      "attempt": 2,
+      "call_index": 80,
+      "size_bytes": 19752,
+      "sha256": "177e9bb06b8c15fb2b14d0c0e49d38ebbfe0c91b33d00e0342cae379419f746c"
+    },
+    {
+      "rel_path": "calls/081_V8FGju_xYjo_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\081_V8FGju_xYjo_r1.json",
+      "video_id": "V8FGju_xYjo",
+      "attempt": 1,
+      "call_index": 81,
+      "size_bytes": 20666,
+      "sha256": "e48936f20efb15283f34f9be80d8bd7ff787c9f07acd8e2055e19eeec1df6812"
+    },
+    {
+      "rel_path": "calls/082_V8FGju_xYjo_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\082_V8FGju_xYjo_r2.json",
+      "video_id": "V8FGju_xYjo",
+      "attempt": 2,
+      "call_index": 82,
+      "size_bytes": 24169,
+      "sha256": "3f0d14ba5d8434c8215452c7d5062efb3fb60123b21bc323b87790ae8329d256"
+    },
+    {
+      "rel_path": "calls/083_W_yKEhESgUI_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\083_W_yKEhESgUI_r1.json",
+      "video_id": "W_yKEhESgUI",
+      "attempt": 1,
+      "call_index": 83,
+      "size_bytes": 20090,
+      "sha256": "eb04ecaf8db5cf40a9e7a5a93ace0186910946aaf87f2ae7a3747b1995587889"
+    },
+    {
+      "rel_path": "calls/084_W_yKEhESgUI_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\084_W_yKEhESgUI_r2.json",
+      "video_id": "W_yKEhESgUI",
+      "attempt": 2,
+      "call_index": 84,
+      "size_bytes": 21826,
+      "sha256": "098b8648819b1c38055c4ceca18c8441a526affd377a303c35f3b49a5cdc1aad"
+    },
+    {
+      "rel_path": "calls/085_YH2qyPanqK4_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\085_YH2qyPanqK4_r1.json",
+      "video_id": "YH2qyPanqK4",
+      "attempt": 1,
+      "call_index": 85,
+      "size_bytes": 20902,
+      "sha256": "c86d942f6265f7a16780357cbbf87fe3e239f9a29e8bf2c0d4d981a2627c97f7"
+    },
+    {
+      "rel_path": "calls/086_YH2qyPanqK4_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\086_YH2qyPanqK4_r2.json",
+      "video_id": "YH2qyPanqK4",
+      "attempt": 2,
+      "call_index": 86,
+      "size_bytes": 21125,
+      "sha256": "76c605f774506d0e9102d1d37d69f8ec0242a4e72898b9d1be853c5be38c824d"
+    },
+    {
+      "rel_path": "calls/087__OUWtPhDQpk_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\087__OUWtPhDQpk_r1.json",
+      "video_id": "_OUWtPhDQpk",
+      "attempt": 1,
+      "call_index": 87,
+      "size_bytes": 22004,
+      "sha256": "6d47af49f97b216108ada2dc45e53876578860b397b72a73ba422c79d0b320aa"
+    },
+    {
+      "rel_path": "calls/088__OUWtPhDQpk_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\088__OUWtPhDQpk_r2.json",
+      "video_id": "_OUWtPhDQpk",
+      "attempt": 2,
+      "call_index": 88,
+      "size_bytes": 24126,
+      "sha256": "f6bf92c99349a98f46162927c6ac1d57855bbce3d940b99e66c2c869720806b7"
+    },
+    {
+      "rel_path": "calls/089_dsXcE8jvESw_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\089_dsXcE8jvESw_r1.json",
+      "video_id": "dsXcE8jvESw",
+      "attempt": 1,
+      "call_index": 89,
+      "size_bytes": 17907,
+      "sha256": "bd2f28453d5f2bc17e6e2ff5cc3d25589a986148f53f06bc61f5140a17a0d747"
+    },
+    {
+      "rel_path": "calls/090_dsXcE8jvESw_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\090_dsXcE8jvESw_r2.json",
+      "video_id": "dsXcE8jvESw",
+      "attempt": 2,
+      "call_index": 90,
+      "size_bytes": 19931,
+      "sha256": "e7dc3501730e2397ad4bffa32067298b759db6f7178b222cfb99840165b34863"
+    },
+    {
+      "rel_path": "calls/092_fvbEnWLRo1s_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\092_fvbEnWLRo1s_r1.json",
+      "video_id": "fvbEnWLRo1s",
+      "attempt": 1,
+      "call_index": 92,
+      "size_bytes": 18637,
+      "sha256": "b1b4284f2de4fbd7051905aef9451fc3af385a09d58a05c5c05b1d1e8de1d539"
+    },
+    {
+      "rel_path": "calls/093_fvbEnWLRo1s_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\093_fvbEnWLRo1s_r2.json",
+      "video_id": "fvbEnWLRo1s",
+      "attempt": 2,
+      "call_index": 93,
+      "size_bytes": 22931,
+      "sha256": "ce7e8170a1a941e9492c39da331c32076a68aa34025f8922dcb49d3b9229003e"
+    },
+    {
+      "rel_path": "calls/094_gpBFiG_hSFs_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\094_gpBFiG_hSFs_r1.json",
+      "video_id": "gpBFiG_hSFs",
+      "attempt": 1,
+      "call_index": 94,
+      "size_bytes": 19083,
+      "sha256": "5ca88d8c8f6f2d443754bdc2bacb110333917ed22bdaa8ef4a93706d546c1f22"
+    },
+    {
+      "rel_path": "calls/095_gpBFiG_hSFs_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\095_gpBFiG_hSFs_r2.json",
+      "video_id": "gpBFiG_hSFs",
+      "attempt": 2,
+      "call_index": 95,
+      "size_bytes": 18935,
+      "sha256": "bcec6670c1dc8e8a7e07896d63c70dc60ed972ab7410a2782561a353f1bf36c7"
+    },
+    {
+      "rel_path": "calls/096_kw7D7Il13_k_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\096_kw7D7Il13_k_r1.json",
+      "video_id": "kw7D7Il13_k",
+      "attempt": 1,
+      "call_index": 96,
+      "size_bytes": 23323,
+      "sha256": "db3f0ce05e55c637f6551665e428b54a7311c5d8adf529d47b3e6002dfa15177"
+    },
+    {
+      "rel_path": "calls/097_kw7D7Il13_k_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\097_kw7D7Il13_k_r2.json",
+      "video_id": "kw7D7Il13_k",
+      "attempt": 2,
+      "call_index": 97,
+      "size_bytes": 19889,
+      "sha256": "38337a94d69fef313c3ba6154f8efb873c94ec1660ef411a5810afb79604d9d9"
+    },
+    {
+      "rel_path": "calls/098_lB3mij3gmVo_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\098_lB3mij3gmVo_r1.json",
+      "video_id": "lB3mij3gmVo",
+      "attempt": 1,
+      "call_index": 98,
+      "size_bytes": 23160,
+      "sha256": "5e0796b89ade82433c239e6b388665acc613e6b1df04a81a572080520dbfb492"
+    },
+    {
+      "rel_path": "calls/099_lB3mij3gmVo_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\099_lB3mij3gmVo_r2.json",
+      "video_id": "lB3mij3gmVo",
+      "attempt": 2,
+      "call_index": 99,
+      "size_bytes": 25758,
+      "sha256": "484c636b0560b0454fecb5ad37898219ff99f50cbaacb25f4a33f5fe24f189b1"
+    },
+    {
+      "rel_path": "calls/100_oXRPnu9nBpc_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\100_oXRPnu9nBpc_r1.json",
+      "video_id": "oXRPnu9nBpc",
+      "attempt": 1,
+      "call_index": 100,
+      "size_bytes": 21385,
+      "sha256": "f7c0c8e2ff55292a50ad18746ea047c78b5a97b6763fc5af8f43f17b0cc70cc5"
+    },
+    {
+      "rel_path": "calls/101_oXRPnu9nBpc_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\101_oXRPnu9nBpc_r2.json",
+      "video_id": "oXRPnu9nBpc",
+      "attempt": 2,
+      "call_index": 101,
+      "size_bytes": 23231,
+      "sha256": "e66b077139f1ca24dfc8d790a8ec3fd21a8cde212fadbb5c4cfc11c4f53e8b0a"
+    },
+    {
+      "rel_path": "calls/102_rON_9zSnU2k_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\102_rON_9zSnU2k_r1.json",
+      "video_id": "rON_9zSnU2k",
+      "attempt": 1,
+      "call_index": 102,
+      "size_bytes": 19463,
+      "sha256": "4face5c00f4971c931f0670dabe37b1cbf01b862d0545b23f6cadc1804bb4ac8"
+    },
+    {
+      "rel_path": "calls/103_rON_9zSnU2k_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\103_rON_9zSnU2k_r2.json",
+      "video_id": "rON_9zSnU2k",
+      "attempt": 2,
+      "call_index": 103,
+      "size_bytes": 23223,
+      "sha256": "24a732ee1b20eb1f37d06ad533f257f319313e995dc878a964783fe653cc998f"
+    },
+    {
+      "rel_path": "calls/104_t5jPgM_VKZo_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\104_t5jPgM_VKZo_r1.json",
+      "video_id": "t5jPgM_VKZo",
+      "attempt": 1,
+      "call_index": 104,
+      "size_bytes": 23638,
+      "sha256": "8ba11a0f6e2813703f7787fe1e91c70c21118b4a59690e0606b9df32f2657ccf"
+    },
+    {
+      "rel_path": "calls/105_t5jPgM_VKZo_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\105_t5jPgM_VKZo_r2.json",
+      "video_id": "t5jPgM_VKZo",
+      "attempt": 2,
+      "call_index": 105,
+      "size_bytes": 25052,
+      "sha256": "fb31f519679610481f157d3072b47e620a7402ac70aabfc9079cd80948b28097"
+    },
+    {
+      "rel_path": "calls/106_tpWIK6D-yVM_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\106_tpWIK6D-yVM_r1.json",
+      "video_id": "tpWIK6D-yVM",
+      "attempt": 1,
+      "call_index": 106,
+      "size_bytes": 22921,
+      "sha256": "28f8b7ade03f0396c481a704b0a5e68ffbd90cae12eba6e300517e9b84554072"
+    },
+    {
+      "rel_path": "calls/107_tpWIK6D-yVM_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\107_tpWIK6D-yVM_r2.json",
+      "video_id": "tpWIK6D-yVM",
+      "attempt": 2,
+      "call_index": 107,
+      "size_bytes": 23129,
+      "sha256": "d8d40de6334154064ddf006e873a583d37ec1859fb9868c849017a4bfd7ba56a"
+    },
+    {
+      "rel_path": "calls/108_vS6wzjpCvec_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\108_vS6wzjpCvec_r1.json",
+      "video_id": "vS6wzjpCvec",
+      "attempt": 1,
+      "call_index": 108,
+      "size_bytes": 20533,
+      "sha256": "2684be07dd72a6b536529c8a530f321402c1eb7a6367f3ebf6327c69bcfd2968"
+    },
+    {
+      "rel_path": "calls/109_vS6wzjpCvec_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\109_vS6wzjpCvec_r2.json",
+      "video_id": "vS6wzjpCvec",
+      "attempt": 2,
+      "call_index": 109,
+      "size_bytes": 22397,
+      "sha256": "8b26ecb312d731d677ba8c3d31e0fd98c2a93b880bb2150bb9efddd3c29b0e51"
+    },
+    {
+      "rel_path": "calls/110_wx_H_pxbwdE_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\110_wx_H_pxbwdE_r1.json",
+      "video_id": "wx_H_pxbwdE",
+      "attempt": 1,
+      "call_index": 110,
+      "size_bytes": 27812,
+      "sha256": "fbe1307e36639d4f44508f2d8ca0cfde07d8202734c6e872558a1692531d805e"
+    },
+    {
+      "rel_path": "calls/111_wx_H_pxbwdE_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\111_wx_H_pxbwdE_r2.json",
+      "video_id": "wx_H_pxbwdE",
+      "attempt": 2,
+      "call_index": 111,
+      "size_bytes": 23473,
+      "sha256": "963807afb42fb9d936ed52a8a8dd8489b559e81831ea86c80c4c97bae2e4bfbb"
+    },
+    {
+      "rel_path": "calls/112_xpn5Ax2pz14_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\112_xpn5Ax2pz14_r1.json",
+      "video_id": "xpn5Ax2pz14",
+      "attempt": 1,
+      "call_index": 112,
+      "size_bytes": 22691,
+      "sha256": "d7e65458ef01c6ae610132adbcdb303646d81aafe6a2bbae7c2ad7308b181c33"
+    },
+    {
+      "rel_path": "calls/113_xpn5Ax2pz14_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\113_xpn5Ax2pz14_r2.json",
+      "video_id": "xpn5Ax2pz14",
+      "attempt": 2,
+      "call_index": 113,
+      "size_bytes": 20663,
+      "sha256": "7d5d08df6229c8d715a33fa71b9c8e5ca3b0770507656f14d0f32bc2ca413887"
+    },
+    {
+      "rel_path": "calls/114_xtpEqWX-KuI_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\114_xtpEqWX-KuI_r1.json",
+      "video_id": "xtpEqWX-KuI",
+      "attempt": 1,
+      "call_index": 114,
+      "size_bytes": 24981,
+      "sha256": "57dd2b176d446e93dd214e8b6615739d0e9b0e58710308e208d48315cca7fef3"
+    },
+    {
+      "rel_path": "calls/115_xtpEqWX-KuI_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\115_xtpEqWX-KuI_r2.json",
+      "video_id": "xtpEqWX-KuI",
+      "attempt": 2,
+      "call_index": 115,
+      "size_bytes": 23955,
+      "sha256": "c09a65140426b6fc4822ca29f8bd011079e0e6041f9e52df663a40f6418ec697"
+    },
+    {
+      "rel_path": "calls/116_z02-yCIHPCY_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\116_z02-yCIHPCY_r1.json",
+      "video_id": "z02-yCIHPCY",
+      "attempt": 1,
+      "call_index": 116,
+      "size_bytes": 23908,
+      "sha256": "0e7969ab23b982189f304146e13e8ff7b249108ec5b9843f5db594c7c74fa28c"
+    },
+    {
+      "rel_path": "calls/117_z02-yCIHPCY_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\117_z02-yCIHPCY_r2.json",
+      "video_id": "z02-yCIHPCY",
+      "attempt": 2,
+      "call_index": 117,
+      "size_bytes": 19255,
+      "sha256": "eb1bf10adfc826a7aee4378b3ef55516fff42b5249c6cad09cfb3b576c9dd860"
+    },
+    {
+      "rel_path": "calls/118_zPDMm7XUpkI_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\118_zPDMm7XUpkI_r1.json",
+      "video_id": "zPDMm7XUpkI",
+      "attempt": 1,
+      "call_index": 118,
+      "size_bytes": 20427,
+      "sha256": "1d9440080b4d9b9033f09e6e8c1d533dd6d33f4d9749d7d693122dd58850c1f5"
+    },
+    {
+      "rel_path": "calls/119_zPDMm7XUpkI_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\119_zPDMm7XUpkI_r2.json",
+      "video_id": "zPDMm7XUpkI",
+      "attempt": 2,
+      "call_index": 119,
+      "size_bytes": 22451,
+      "sha256": "a9d3a0e9f82e17c53dc95250905e5072d13d8e49896dbfc05fa8959dc1e13b72"
+    },
+    {
+      "rel_path": "calls/120_zyktN7x_DSQ_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\120_zyktN7x_DSQ_r1.json",
+      "video_id": "zyktN7x_DSQ",
+      "attempt": 1,
+      "call_index": 120,
+      "size_bytes": 24737,
+      "sha256": "d9cdb8b7a9e7701812effd551eedf971d1fe2d77c5a4ce82de1c0756d0df51a2"
+    },
+    {
+      "rel_path": "calls/121_zyktN7x_DSQ_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\121_zyktN7x_DSQ_r2.json",
+      "video_id": "zyktN7x_DSQ",
+      "attempt": 2,
+      "call_index": 121,
+      "size_bytes": 29953,
+      "sha256": "31e1ef03fa1e8fb19c76b3468e06c48abb006eb561067161beed9a7a20b9c86f"
+    },
+    {
+      "rel_path": "calls/123_6sX_BfDnyrg_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\123_6sX_BfDnyrg_r1.json",
+      "video_id": "6sX_BfDnyrg",
+      "attempt": 1,
+      "call_index": 123,
+      "size_bytes": 18257,
+      "sha256": "19197b8850ec3127c04da5b0ba9c1ce7b517c2f2d5e61da14ed0c97b8b64ad2e"
+    },
+    {
+      "rel_path": "calls/124_6sX_BfDnyrg_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\124_6sX_BfDnyrg_r2.json",
+      "video_id": "6sX_BfDnyrg",
+      "attempt": 2,
+      "call_index": 124,
+      "size_bytes": 19365,
+      "sha256": "151488d80fc9614f3c5eea16a31de3323622c9266889fd8531a264c78e76953f"
+    },
+    {
+      "rel_path": "calls/125_nW2CpHcmlo4_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\125_nW2CpHcmlo4_r1.json",
+      "video_id": "nW2CpHcmlo4",
+      "attempt": 1,
+      "call_index": 125,
+      "size_bytes": 24936,
+      "sha256": "0621ffaa86d6620ab242b223239176b766b7b065f967f8630cab36b2e3162b11"
+    },
+    {
+      "rel_path": "calls/126_nW2CpHcmlo4_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\126_nW2CpHcmlo4_r2.json",
+      "video_id": "nW2CpHcmlo4",
+      "attempt": 2,
+      "call_index": 126,
+      "size_bytes": 23554,
+      "sha256": "040e13c3a13e944191957a343134d2bfebc36ab4697d0283b915d9e24e9eb4a4"
+    },
+    {
+      "rel_path": "calls/127_Y_I_NOHVwzI_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\127_Y_I_NOHVwzI_r1.json",
+      "video_id": "Y_I_NOHVwzI",
+      "attempt": 1,
+      "call_index": 127,
+      "size_bytes": 22412,
+      "sha256": "33523e9611516f5838b806613e03b4d960671f8d69da5c762342dd1f630d975b"
+    },
+    {
+      "rel_path": "calls/128_Y_I_NOHVwzI_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\128_Y_I_NOHVwzI_r2.json",
+      "video_id": "Y_I_NOHVwzI",
+      "attempt": 2,
+      "call_index": 128,
+      "size_bytes": 25293,
+      "sha256": "546986e3e84a94699e9cfabc01b0bd6f5c2b0c92f3e60522907fa019a91e0712"
+    },
+    {
+      "rel_path": "calls/129__Rvur-ySGyU_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\129__Rvur-ySGyU_r1.json",
+      "video_id": "_Rvur-ySGyU",
+      "attempt": 1,
+      "call_index": 129,
+      "size_bytes": 23330,
+      "sha256": "fa8d4b45d0eef4b054dc9358da3314c5958a88d65e45121d017a48cd5cd2b9a7"
+    },
+    {
+      "rel_path": "calls/130__Rvur-ySGyU_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\130__Rvur-ySGyU_r2.json",
+      "video_id": "_Rvur-ySGyU",
+      "attempt": 2,
+      "call_index": 130,
+      "size_bytes": 26222,
+      "sha256": "5476aa0bb5124bbaf3b128f68e429ce64b5008e6563250376415ea6a63b488f7"
+    },
+    {
+      "rel_path": "calls/131_-TBB-K6Sk0U_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\131_-TBB-K6Sk0U_r1.json",
+      "video_id": "-TBB-K6Sk0U",
+      "attempt": 1,
+      "call_index": 131,
+      "size_bytes": 22970,
+      "sha256": "2d01561448d308c1ca28847082a4baffaae05b0b79dfcae2b59aa6f5e3f56c6d"
+    },
+    {
+      "rel_path": "calls/132_-TBB-K6Sk0U_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\132_-TBB-K6Sk0U_r2.json",
+      "video_id": "-TBB-K6Sk0U",
+      "attempt": 2,
+      "call_index": 132,
+      "size_bytes": 25230,
+      "sha256": "8fbeaa41a0beda75a23443612b077048a27842d990c28c82267607c9a646e0c4"
+    },
+    {
+      "rel_path": "calls/133_-YiVSav-PZw_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\133_-YiVSav-PZw_r1.json",
+      "video_id": "-YiVSav-PZw",
+      "attempt": 1,
+      "call_index": 133,
+      "size_bytes": 21871,
+      "sha256": "c868bab84709de79172c4804d6243716cd97341e792ebca7c748744049c6d8c4"
+    },
+    {
+      "rel_path": "calls/134_-YiVSav-PZw_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\134_-YiVSav-PZw_r2.json",
+      "video_id": "-YiVSav-PZw",
+      "attempt": 2,
+      "call_index": 134,
+      "size_bytes": 29002,
+      "sha256": "4728a2bb88c9b9e8fa5443acf6dcc65ee74e1165494c9fb32395309fbc8cc5c5"
+    },
+    {
+      "rel_path": "calls/135_0kHO87Qqjpk_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\135_0kHO87Qqjpk_r1.json",
+      "video_id": "0kHO87Qqjpk",
+      "attempt": 1,
+      "call_index": 135,
+      "size_bytes": 25937,
+      "sha256": "66ab7d148e287b9cacb4d7baed033b076737032e6bb3a3c6d0f659db9612705d"
+    },
+    {
+      "rel_path": "calls/136_0kHO87Qqjpk_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\136_0kHO87Qqjpk_r2.json",
+      "video_id": "0kHO87Qqjpk",
+      "attempt": 2,
+      "call_index": 136,
+      "size_bytes": 25920,
+      "sha256": "92d0ad94db8ac254e67dbb7cf277b3578deb2728a8bbb84b2126a9c865084365"
+    },
+    {
+      "rel_path": "calls/137_BEYeHsfGXJw_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\137_BEYeHsfGXJw_r1.json",
+      "video_id": "BEYeHsfGXJw",
+      "attempt": 1,
+      "call_index": 137,
+      "size_bytes": 26116,
+      "sha256": "afc9c3600e0419ee105dd621a4cc7878bc50603e3d060d1dc7c601387d1242a7"
+    },
+    {
+      "rel_path": "calls/138_BEYeHsfGXJw_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\138_BEYeHsfGXJw_r2.json",
+      "video_id": "BEYeHsfGXJw",
+      "attempt": 2,
+      "call_index": 138,
+      "size_bytes": 21342,
+      "sha256": "5e7d1d975d31755f5e9050bc84340141f42c5d4b87676ae9316c4d6d0acb89fe"
+    },
+    {
+      "rel_path": "calls/139_-1nKzOF8-_Q_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\139_-1nKzOF8-_Q_r1.json",
+      "video_id": "-1nKzOF8-_Q",
+      "attempt": 1,
+      "call_index": 139,
+      "size_bytes": 21402,
+      "sha256": "4517c07211469c06e5805ea0b289ee6ce17402318ea17003f98b27941883dc9a"
+    },
+    {
+      "rel_path": "calls/140_-1nKzOF8-_Q_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\140_-1nKzOF8-_Q_r2.json",
+      "video_id": "-1nKzOF8-_Q",
+      "attempt": 2,
+      "call_index": 140,
+      "size_bytes": 21460,
+      "sha256": "236005841bffcecc65877af5fe976fab29f474728754e21edba52bf15aec14cf"
+    },
+    {
+      "rel_path": "calls/141_Q4C1O2A-Cqg_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\141_Q4C1O2A-Cqg_r1.json",
+      "video_id": "Q4C1O2A-Cqg",
+      "attempt": 1,
+      "call_index": 141,
+      "size_bytes": 21804,
+      "sha256": "b752b55416f7afa8f8a81edb8af3fe5096b939a653d4493d9afcf97ade7f148a"
+    },
+    {
+      "rel_path": "calls/142_Q4C1O2A-Cqg_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\142_Q4C1O2A-Cqg_r2.json",
+      "video_id": "Q4C1O2A-Cqg",
+      "attempt": 2,
+      "call_index": 142,
+      "size_bytes": 21410,
+      "sha256": "9bc9076afc8529cfebf3e294337ab3dcc636d9a0913c9495bc1adcd8a75df6e9"
+    },
+    {
+      "rel_path": "calls/143_8zxQpYYSvTM_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\143_8zxQpYYSvTM_r1.json",
+      "video_id": "8zxQpYYSvTM",
+      "attempt": 1,
+      "call_index": 143,
+      "size_bytes": 19399,
+      "sha256": "77d6255efb06e900edc46147b00b0ba7af955eed7f6617590cf15768c5b1aeb1"
+    },
+    {
+      "rel_path": "calls/144_8zxQpYYSvTM_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\144_8zxQpYYSvTM_r2.json",
+      "video_id": "8zxQpYYSvTM",
+      "attempt": 2,
+      "call_index": 144,
+      "size_bytes": 24485,
+      "sha256": "1ce769b37cf5e9d5d167eab9376925a5ac358484e0db2e4b975faf40b11d1bba"
+    },
+    {
+      "rel_path": "calls/145_mJk17F-vym8_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\145_mJk17F-vym8_r1.json",
+      "video_id": "mJk17F-vym8",
+      "attempt": 1,
+      "call_index": 145,
+      "size_bytes": 21679,
+      "sha256": "79a3e46f50a4d1183f5b488a425c6b1222b23a8dee4ed027e64626ea3419cb68"
+    },
+    {
+      "rel_path": "calls/146_mJk17F-vym8_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\146_mJk17F-vym8_r2.json",
+      "video_id": "mJk17F-vym8",
+      "attempt": 2,
+      "call_index": 146,
+      "size_bytes": 26373,
+      "sha256": "c7805364c86609056839b5809c458bdcbf884e1b128f127eb576d43208f0efd9"
+    },
+    {
+      "rel_path": "calls/147_jsEVOjI690Y_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\147_jsEVOjI690Y_r1.json",
+      "video_id": "jsEVOjI690Y",
+      "attempt": 1,
+      "call_index": 147,
+      "size_bytes": 20548,
+      "sha256": "b4c6c82ab69875e6a7a1903d79b8f2473c40f1d96cdfcdca05a58313e0922adb"
+    },
+    {
+      "rel_path": "calls/148_jsEVOjI690Y_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\148_jsEVOjI690Y_r2.json",
+      "video_id": "jsEVOjI690Y",
+      "attempt": 2,
+      "call_index": 148,
+      "size_bytes": 18636,
+      "sha256": "3acca7b5e2550288d9d52774ebfe7f45b5404b5b6ffe769c5c6e6291fbaf4208"
+    },
+    {
+      "rel_path": "calls/149_JokUSZnJBQU_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\149_JokUSZnJBQU_r1.json",
+      "video_id": "JokUSZnJBQU",
+      "attempt": 1,
+      "call_index": 149,
+      "size_bytes": 19800,
+      "sha256": "d8fe4559327829d105708281cce1c8570d54d6d0d42948500af3db1a4b1fecce"
+    },
+    {
+      "rel_path": "calls/150_JokUSZnJBQU_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\150_JokUSZnJBQU_r2.json",
+      "video_id": "JokUSZnJBQU",
+      "attempt": 2,
+      "call_index": 150,
+      "size_bytes": 20265,
+      "sha256": "3c43fbfcdc3d07fda2e3e72be36f0f14098ca14c905a558f4ac3e0dfe2832fdb"
+    },
+    {
+      "rel_path": "calls/151__9cGKFO4mm8_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\151__9cGKFO4mm8_r1.json",
+      "video_id": "_9cGKFO4mm8",
+      "attempt": 1,
+      "call_index": 151,
+      "size_bytes": 21335,
+      "sha256": "a7b2cbafe7d64b05f539d75ca387f4bd57b4b4beea0fd0c42875151ba4a195de"
+    },
+    {
+      "rel_path": "calls/152__9cGKFO4mm8_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\152__9cGKFO4mm8_r2.json",
+      "video_id": "_9cGKFO4mm8",
+      "attempt": 2,
+      "call_index": 152,
+      "size_bytes": 21433,
+      "sha256": "de33fe51023fc2285a0a3856230154a7a8ef40df9c21890493153e881ed2b483"
+    },
+    {
+      "rel_path": "calls/153_58-kBdaXKxY_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\153_58-kBdaXKxY_r1.json",
+      "video_id": "58-kBdaXKxY",
+      "attempt": 1,
+      "call_index": 153,
+      "size_bytes": 21419,
+      "sha256": "76a8ffeafd1b311f561b9f449dc0f9da69cf1452295bdd6e928430b969e6dbf1"
+    },
+    {
+      "rel_path": "calls/154_58-kBdaXKxY_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\154_58-kBdaXKxY_r2.json",
+      "video_id": "58-kBdaXKxY",
+      "attempt": 2,
+      "call_index": 154,
+      "size_bytes": 24352,
+      "sha256": "aaf00572788818ed9dfb218d0d05e21cd2d84f8b476ccd5e89cb757451a4741f"
+    },
+    {
+      "rel_path": "calls/155__PO5O3QAaVM_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\155__PO5O3QAaVM_r1.json",
+      "video_id": "_PO5O3QAaVM",
+      "attempt": 1,
+      "call_index": 155,
+      "size_bytes": 20736,
+      "sha256": "5cb6d7270dd5e46e8cc53b5cfe424841f7f791120deae59eb930968910c695f2"
+    },
+    {
+      "rel_path": "calls/156__PO5O3QAaVM_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\156__PO5O3QAaVM_r2.json",
+      "video_id": "_PO5O3QAaVM",
+      "attempt": 2,
+      "call_index": 156,
+      "size_bytes": 19394,
+      "sha256": "8f1c67e31964e5d73eb6bd7dcabc87dff154b66c00fcbabbf96b7bec3d9a6f1f"
+    },
+    {
+      "rel_path": "calls/157_Jf9F5VBqA2A_r1.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\157_Jf9F5VBqA2A_r1.json",
+      "video_id": "Jf9F5VBqA2A",
+      "attempt": 1,
+      "call_index": 157,
+      "size_bytes": 23160,
+      "sha256": "2101055196410dff09dc97366aad2307f34448404d8228be6601751fd424221e"
+    },
+    {
+      "rel_path": "calls/158_Jf9F5VBqA2A_r2.json",
+      "abs_path": "E:\\iketeru_api_url_logs\\run1_p0_20261126_100930\\calls\\158_Jf9F5VBqA2A_r2.json",
+      "video_id": "Jf9F5VBqA2A",
+      "attempt": 2,
+      "call_index": 158,
+      "size_bytes": 21844,
+      "sha256": "d1939a64a0ce6c3a0150c9ec640325a72527c49b9bc6dba0398bce63e6ab3e5f"
+    }
+  ]
+}

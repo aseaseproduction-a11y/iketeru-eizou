@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "run_id": "run1_p0_20261126_100930",
+  "updated_at": "2026-11-26T03:14:01.181Z",
+  "remaining_count": 0,
+  "deferred_calls": [],
+  "congestion_events_count": 8,
+  "congestion_events": [
+    {
+      "timestamp": "2026-11-26T01:09:44.621Z",
+      "code": "503",
+      "try_index": 1,
+      "phase": "initial_try1",
+      "video_id": "OUQ6NV9r2Lk",
+      "attempt": 1
+    },
+    {
+      "timestamp": "2026-11-26T01:16:13.549Z",
+      "code": "503",
+      "try_index": 1,
+      "phase": "initial_try1",
+      "video_id": "dWvAJMYdTFI",
+      "attempt": 1
+    },
+    {
+      "timestamp": "2026-11-26T01:17:11.425Z",
+      "code": "503",
+      "try_index": 2,
+      "phase": "initial_try2_deferred",
+      "video_id": "dWvAJMYdTFI",
+      "attempt": 1
+    },
+    {
+      "timestamp": "2026-11-26T01:17:26.781Z",
+      "code": "503",
+      "try_index": 1,
+      "phase": "initial_try1",
+      "video_id": "drPEdug9fZk",
+      "attempt": 1
+    },
+    {
+      "timestamp": "2026-11-26T01:18:25.436Z",
+      "code": "503",
+      "try_index": 2,
+      "phase": "initial_try2_deferred",
+      "video_id": "drPEdug9fZk",
+      "attempt": 1
+    },
+    {
+      "timestamp": "2026-11-26T01:18:47.655Z",
+      "code": "503",
+      "try_index": 1,
+      "phase": "initial_try1",
+      "video_id": "eEiMPYiNZAo",
+      "attempt": 1
+    },
+    {
+      "timestamp": "2026-11-26T01:19:29.674Z",
+      "code": "503",
+      "try_index": 2,
+      "phase": "initial_try2_deferred",
+      "video_id": "eEiMPYiNZAo",
+      "attempt": 1
+    },
+    {
+      "timestamp": "2026-11-26T02:43:29.189Z",
+      "code": "503",
+      "try_index": 1,
+      "phase": "initial_try1",
+      "video_id": "z02-yCIHPCY",
+      "attempt": 2
+    }
+  ]
+}

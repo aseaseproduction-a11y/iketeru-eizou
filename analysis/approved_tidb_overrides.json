@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "description": "Approved TiDB original-40-column override list (D-024). Entries take effect in Pre-D audits ONLY when status === 'approved' and approved_at is set.",
+  "overrides": [
+    {
+      "video_id": "O1DQObWYYLQ",
+      "column": "aiScoreBreakdown",
+      "after_sha256": "30a61a1926578dec06e48301f50eb7962b99d3657982a2a8963262572533bab3",
+      "reason": "Visual audit passed (verdict: 合っている; restore visualVerificationStatus=log_verified, invalidatedNoVisual=false)",
+      "decision_id": "D-024",
+      "approved_at": null,
+      "status": "pending_approval"
+    },
+    {
+      "video_id": "1018644295",
+      "column": "aiScoreBreakdown",
+      "after_sha256": "3ac5c57e64e6a7ffbbcbbb58f0e375ce3cc6f96e671be1aac690a9735cfcbfb1",
+      "reason": "Clear provisional flag after full 0-10 chapter video-observed analysis remake (analysisStatus=full_analysis, isProvisional=false, visualVerificationStatus=log_verified)",
+      "decision_id": "D-024",
+      "approved_at": null,
+      "status": "pending_approval"
+    },
+    {
+      "video_id": "Gwgo9GS4mVM",
+      "column": "aiScoreBreakdown",
+      "after_sha256": "0bd913428542b0269155214972bf1d01793ce309356df343124a832a7021e2f5",
+      "reason": "Clear provisional flag after full 0-10 chapter video-observed analysis remake (analysisStatus=full_analysis, isProvisional=false, visualVerificationStatus=log_verified)",
+      "decision_id": "D-024",
+      "approved_at": null,
+      "status": "pending_approval"
+    },
+    {
+      "video_id": "1018644295",
+      "column": "aiAnalysis",
+      "after_sha256": "5437c2fe4180407dbba43e296d5d1f7274a56681b3c3b13bdd6ab077d4e7f126",
+      "reason": "Replace truncated/mismatched analysis with visually verified full 10-chapter analysis (11921 chars, 0 backticks)",
+      "decision_id": "D-024",
+      "approved_at": null,
+      "status": "pending_approval"
+    },
+    {
+      "video_id": "Gwgo9GS4mVM",
+      "column": "aiAnalysis",
+      "after_sha256": "81bc29d06b431e8c2b662c21982c39ae9c69677998d02f3bd5f89addb9f9435e",
+      "reason": "Replace truncated/mismatched analysis with visually verified full 10-chapter analysis (11280 chars, 0 backticks)",
+      "decision_id": "D-024",
+      "approved_at": null,
+      "status": "pending_approval"
+    }
+  ]
+}
