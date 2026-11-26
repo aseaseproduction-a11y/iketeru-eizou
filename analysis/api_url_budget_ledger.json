@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-25T09:24:23.777Z",
+  "updated_at": "2026-11-26T03:14:01.188Z",
   "currency": "USD",
   "default_monthly_limit_usd": 38,
   "gcp_monthly_credit_usd": 40,
@@ -17,9 +17,9 @@
   "monthly_totals": {
     "2026-11": {
       "limit_usd": 38,
-      "spent_usd": 4.273717,
-      "calls_count": 47,
-      "congestion_failure_count": 19,
+      "spent_usd": 18.655897,
+      "calls_count": 200,
+      "congestion_failure_count": 27,
       "runs": [
         {
           "run_id": "run_20261125_125425",
@@ -101,6 +101,33 @@
           "congestion_failure_count": 0,
           "congestion_timestamps": [],
           "recorded_at": "2026-11-25T09:24:23.775Z"
+        },
+        {
+          "run_id": "run1_p0_20261126_100930",
+          "purpose": "run1_p0_58_plus_18_anchors_manual",
+          "service_tier": "mixed_flex_standard",
+          "calls_by_service_tier": {
+            "flex": 6,
+            "standard": 147
+          },
+          "cost_by_service_tier": {
+            "flex": 0.392922,
+            "standard": 13.989258
+          },
+          "calls_count": 153,
+          "cost_usd": 14.38218,
+          "congestion_failure_count": 8,
+          "congestion_timestamps": [
+            "2026-11-26T01:09:44.621Z",
+            "2026-11-26T01:16:13.549Z",
+            "2026-11-26T01:17:11.425Z",
+            "2026-11-26T01:17:26.781Z",
+            "2026-11-26T01:18:25.436Z",
+            "2026-11-26T01:18:47.655Z",
+            "2026-11-26T01:19:29.674Z",
+            "2026-11-26T02:43:29.189Z"
+          ],
+          "recorded_at": "2026-11-26T03:14:01.185Z"
         }
       ]
     }

@@ -39,8 +39,25 @@ try {
     --anchor-list analysis/pilot_gemini_api_url/anchor_selection_deviation.json `
     --run-budget-usd 8.36 `
     --max-duration-sec 900 `
-    --purpose "run1_p0_58_plus_18_anchors_flex_overnight" 2>&1 | Out-File -FilePath $logFile -Append -Encoding utf8
+    --purpose "run1_p0_58_plus_18_anchors_flex_overnight" *>> $logFile
   $rc = $LASTEXITCODE
+  $summaryPath = Join-Path $repoRoot "analysis\runs\$runId\run_summary.json"
+  if ($rc -eq 0 -and (Test-Path $summaryPath)) {
+    try {
+      $summary = Get-Content -Path $summaryPath -Raw -Encoding utf8 | ConvertFrom-Json
+      if ($summary.stopped_early -eq $true) {
+        if ($summary.stop_reason -match "3_consecutive_deferred_videos|deferred_retry_pass_congestion") {
+          $rc = 3
+        } elseif ($summary.stop_reason -match "budget_cap_exceeded|max_requests_") {
+          $rc = 4
+        } else {
+          $rc = 1
+        }
+      }
+    } catch {
+      $rc = 1
+    }
+  }
   $endTs = Get-Date -Format "yyyy-MM-dd HH:mm:ss zzz"
   "=== RUN1 SCHEDULED END_JST=$endTs EXIT_CODE=$rc ===" | Out-File -FilePath $logFile -Append -Encoding utf8
   exit $rc

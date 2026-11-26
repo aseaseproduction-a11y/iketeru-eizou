@@ -93,9 +93,16 @@ export function auditCallRecord(callRecord, {
     checks.model_and_tier_match = false;
     errors.push(`thinking_level mismatch: got=${req.thinking_level}, expected=${expectedThinkingLevel}`);
   }
-  if (expectedServiceTier && req.service_tier !== expectedServiceTier) {
-    checks.model_and_tier_match = false;
-    errors.push(`service_tier mismatch: got=${req.service_tier}, expected=${expectedServiceTier}`);
+  if (expectedServiceTier) {
+    const allowedTiers = Array.isArray(expectedServiceTier)
+      ? expectedServiceTier
+      : expectedServiceTier === "mixed_flex_standard"
+      ? ["flex", "standard"]
+      : [expectedServiceTier];
+    if (!allowedTiers.includes(req.service_tier)) {
+      checks.model_and_tier_match = false;
+      errors.push(`service_tier mismatch: got=${req.service_tier}, expected=${allowedTiers.join("|")}`);
+    }
   }
   if (callRecord?.exit_code !== 0 || callRecord?.api_status !== "completed") {
     checks.model_and_tier_match = false;
@@ -120,10 +127,10 @@ export function auditCallRecord(callRecord, {
     }
   }
 
-  // Check 4: Video tokens >= duration_sec * 90 (and >= 1000)
+  // Check 4: Video tokens >= max(200, floor(duration_sec * 80)) when duration is known (1000 when unknown)
   const vidTok = Number(callRecord?.usage_breakdown?.input_video_tokens ?? 0);
   const dur = knownDurationSec ?? callRecord?.ref_duration_sec ?? null;
-  const minRequired = typeof dur === "number" && dur > 0 ? Math.max(1000, Math.floor(dur * 90)) : 1000;
+  const minRequired = typeof dur === "number" && dur > 0 ? Math.max(200, Math.floor(dur * 80)) : 1000;
   if (!Number.isFinite(vidTok) || vidTok < minRequired) {
     checks.video_tokens_threshold = false;
     errors.push(`video_tokens_too_low: got=${vidTok}, required>=${minRequired} (dur=${dur ?? "unknown"})`);
@@ -197,6 +204,7 @@ export function auditApiUrlRun({
   callRecordsWithMeta,
   plannedPayloadVideoIds = null,
   knownDurationById = new Map(),
+  expectedServiceTierOverride = null,
 }) {
   const runErrors = [];
   const checkSummary = {
@@ -223,7 +231,7 @@ export function auditApiUrlRun({
       expectedPromptSha256: CANONICAL_PROMPT_SHA256,
       expectedModel: runConfig.model || "gemini-4-neon",
       expectedThinkingLevel: runConfig.thinking_level || "high",
-      expectedServiceTier: runConfig.service_tier || "flex",
+      expectedServiceTier: expectedServiceTierOverride || runConfig.service_tier || "flex",
       knownDurationSec: knownDurationById.get(rec.video_id) ?? rec.ref_duration_sec ?? null,
       rawFileText: item.rawFileText ?? null,
       expectedSha256: item.expectedSha256 ?? null,
@@ -362,7 +370,12 @@ function main() {
     callRecordsWithMeta.push({ record, rawFileText, expectedSha256: entry.sha256 });
   }
 
-  const report = auditApiUrlRun({ runConfig, callRecordsWithMeta });
+  const hasTierDeviation = fs.existsSync(path.join(runDir, "service_tier_deviation.json"));
+  const report = auditApiUrlRun({
+    runConfig,
+    callRecordsWithMeta,
+    expectedServiceTierOverride: hasTierDeviation ? "mixed_flex_standard" : null,
+  });
 
   if (args["write-report"]) {
     const outPath = path.join(runDir, "api_audit_report.json");

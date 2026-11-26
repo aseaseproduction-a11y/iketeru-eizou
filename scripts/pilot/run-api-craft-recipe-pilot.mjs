@@ -45,6 +45,7 @@ import {
   sha256File,
   calcCallCostUsd,
   checkBudgetGuard,
+  determineRunExitCode,
   executeWithRetry,
   runBatchOrchestrator,
   extractModelText,
@@ -638,6 +639,14 @@ async function main() {
   let requestCount = 0;
   let succeededCallsCount = 0;
   let runSpentUsd = 0;
+  let maxObservedCallCostUsd = 0;
+
+  const tierScaleForResume = (fromTier, toTier) => {
+    const f = PRICING_USD_PER_1M[fromTier]?.output_and_thought;
+    const t = PRICING_USD_PER_1M[toTier]?.output_and_thought;
+    if (!f || !t) return 1;
+    return t / f;
+  };
 
   if (resume && fs.existsSync(logPath)) {
     for (const line of fs.readFileSync(logPath, "utf8").split(/\r?\n/).filter(Boolean)) {
@@ -646,7 +655,10 @@ async function main() {
       requestCount = Math.max(requestCount, rec.call_index || 0);
       if (rec.parse_ok && rec.exit_code === 0 && !rec.suspect_video_not_processed) {
         succeededCallsCount++;
-        runSpentUsd = Math.round((runSpentUsd + (rec.call_cost_usd || 0)) * 1_000_000) / 1_000_000;
+        const cUsd = Number(rec.call_cost_usd || 0);
+        runSpentUsd = Math.round((runSpentUsd + cUsd) * 1_000_000) / 1_000_000;
+        const scaled = Math.round(cUsd * tierScaleForResume(rec.service_tier || serviceTier, serviceTier) * 1_000_000) / 1_000_000;
+        if (scaled > maxObservedCallCostUsd) maxObservedCallCostUsd = scaled;
         if (!initialCompletedScores.has(rec.video_id)) initialCompletedScores.set(rec.video_id, new Map());
         initialCompletedScores.get(rec.video_id).set(rec.attempt, rec.cuts_count || 1);
         if (rec.evidence_file && fs.existsSync(rec.evidence_file)) {
@@ -699,6 +711,8 @@ async function main() {
         runSpentUsd,
         runLimitUsd: runBudgetUsd,
         estimatedNextCallUsd: estNext,
+        maxObservedCallCostUsd,
+        observedSafetyMultiplier: 1.2,
         requestCount,
         maxRequests,
       });
@@ -803,6 +817,9 @@ async function main() {
       if (callSucceeded) {
         succeededCallsCount++;
         runSpentUsd = Math.round((runSpentUsd + cost.call_cost_usd) * 1_000_000) / 1_000_000;
+        if (cost.call_cost_usd > maxObservedCallCostUsd) {
+          maxObservedCallCostUsd = cost.call_cost_usd;
+        }
       }
 
       let draftFileRel = null;
@@ -1023,6 +1040,7 @@ async function main() {
     });
   }
 
+  const exitCode = determineRunExitCode(orch);
   console.log("=== PILOT CRAFT RECIPE RUN FINISHED ===");
   console.log(
     JSON.stringify(
@@ -1037,12 +1055,16 @@ async function main() {
         videos_completed: runSummary.videos_completed,
         stopped_early: orch.stopped_early,
         stop_reason: orch.stop_reason,
+        exit_code: exitCode,
         run_cost_usd: runSpentUsd,
       },
       null,
       2
     )
   );
+  if (exitCode !== 0) {
+    process.exitCode = exitCode;
+  }
 }
 
 const isMain = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);

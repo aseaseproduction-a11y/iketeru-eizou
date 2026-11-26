@@ -1,0 +1,219 @@
+{
+  "generated_at": "2026-11-26T03:17:04.501Z",
+  "run_id": "run1_p0_20261126_100930",
+  "anchor_count": 18,
+  "offset_estimate": {
+    "n": 18,
+    "mean_diff_offset": 3,
+    "sd": 3.058,
+    "se": 0.721,
+    "ci95": [
+      1.479,
+      4.521
+    ],
+    "raw_mae": 3.61,
+    "corrected_mae_in_sample": 2.33,
+    "raw_band_match_pct": 66.7,
+    "corrected_band_match_pct": 77.8
+  },
+  "anchors": [
+    {
+      "video_id": "6sX_BfDnyrg",
+      "baseline_score": 89.5,
+      "api_score": 90.5,
+      "raw_scores": [
+        90,
+        91
+      ],
+      "ensemble_rule": "mean_of_2",
+      "diff": 1
+    },
+    {
+      "video_id": "nW2CpHcmlo4",
+      "baseline_score": 86.5,
+      "api_score": 88.5,
+      "raw_scores": [
+        88,
+        89
+      ],
+      "ensemble_rule": "mean_of_2",
+      "diff": 2
+    },
+    {
+      "video_id": "Y_I_NOHVwzI",
+      "baseline_score": 84,
+      "api_score": 89,
+      "raw_scores": [
+        89,
+        89
+      ],
+      "ensemble_rule": "mean_of_2",
+      "diff": 5
+    },
+    {
+      "video_id": "_Rvur-ySGyU",
+      "baseline_score": 83.5,
+      "api_score": 85,
+      "raw_scores": [
+        85,
+        85
+      ],
+      "ensemble_rule": "mean_of_2",
+      "diff": 1.5
+    },
+    {
+      "video_id": "-TBB-K6Sk0U",
+      "baseline_score": 83,
+      "api_score": 84.5,
+      "raw_scores": [
+        85,
+        84
+      ],
+      "ensemble_rule": "mean_of_2",
+      "diff": 1.5
+    },
+    {
+      "video_id": "-YiVSav-PZw",
+      "baseline_score": 82.5,
+      "api_score": 85,
+      "raw_scores": [
+        85,
+        85
+      ],
+      "ensemble_rule": "mean_of_2",
+      "diff": 2.5
+    },
+    {
+      "video_id": "0kHO87Qqjpk",
+      "baseline_score": 82,
+      "api_score": 88,
+      "raw_scores": [
+        87,
+        89
+      ],
+      "ensemble_rule": "mean_of_2",
+      "diff": 6
+    },
+    {
+      "video_id": "BEYeHsfGXJw",
+      "baseline_score": 80,
+      "api_score": 84,
+      "raw_scores": [
+        84,
+        84
+      ],
+      "ensemble_rule": "mean_of_2",
+      "diff": 4
+    },
+    {
+      "video_id": "-1nKzOF8-_Q",
+      "baseline_score": 77,
+      "api_score": 83,
+      "raw_scores": [
+        82,
+        84
+      ],
+      "ensemble_rule": "mean_of_2",
+      "diff": 6
+    },
+    {
+      "video_id": "Q4C1O2A-Cqg",
+      "baseline_score": 77,
+      "api_score": 76.5,
+      "raw_scores": [
+        78,
+        75
+      ],
+      "ensemble_rule": "mean_of_2",
+      "diff": -0.5
+    },
+    {
+      "video_id": "8zxQpYYSvTM",
+      "baseline_score": 76.5,
+      "api_score": 84,
+      "raw_scores": [
+        83,
+        85
+      ],
+      "ensemble_rule": "mean_of_2",
+      "diff": 7.5
+    },
+    {
+      "video_id": "mJk17F-vym8",
+      "baseline_score": 74,
+      "api_score": 69.5,
+      "raw_scores": [
+        70,
+        69
+      ],
+      "ensemble_rule": "mean_of_2",
+      "diff": -4.5
+    },
+    {
+      "video_id": "jsEVOjI690Y",
+      "baseline_score": 73.5,
+      "api_score": 80.5,
+      "raw_scores": [
+        79,
+        82
+      ],
+      "ensemble_rule": "mean_of_2",
+      "diff": 7
+    },
+    {
+      "video_id": "JokUSZnJBQU",
+      "baseline_score": 70,
+      "api_score": 73.5,
+      "raw_scores": [
+        74,
+        73
+      ],
+      "ensemble_rule": "mean_of_2",
+      "diff": 3.5
+    },
+    {
+      "video_id": "_9cGKFO4mm8",
+      "baseline_score": 66,
+      "api_score": 69,
+      "raw_scores": [
+        69,
+        69
+      ],
+      "ensemble_rule": "mean_of_2",
+      "diff": 3
+    },
+    {
+      "video_id": "58-kBdaXKxY",
+      "baseline_score": 65.5,
+      "api_score": 68.5,
+      "raw_scores": [
+        68,
+        69
+      ],
+      "ensemble_rule": "mean_of_2",
+      "diff": 3
+    },
+    {
+      "video_id": "_PO5O3QAaVM",
+      "baseline_score": 62,
+      "api_score": 68,
+      "raw_scores": [
+        68,
+        68
+      ],
+      "ensemble_rule": "mean_of_2",
+      "diff": 6
+    },
+    {
+      "video_id": "Jf9F5VBqA2A",
+      "baseline_score": 59,
+      "api_score": 58.5,
+      "raw_scores": [
+        58,
+        59
+      ],
+      "ensemble_rule": "mean_of_2",
+      "diff": -0.5
+    }
+  ]
+}
