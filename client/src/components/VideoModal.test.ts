@@ -28,22 +28,28 @@ describe("VideoModal embed handling", () => {
     expect(source).toContain('onFilter?.({ key: rating.key, value: rating.value! })');
   });
 
-  it("AI総合評価をモーダルヘッダー中央のバッジとして表示する", () => {
+  it("校正済みスコアまたは旧AI評価バッジをモーダルヘッダー中央に表示する", () => {
     const source = readFileSync(new URL("./VideoModal.tsx", import.meta.url), "utf8");
 
-    expect(source).toContain("aiRatings.length > 0");
-    expect(source).toContain('"AI総合"');
-    expect(source).toContain('"AI演出"');
-    expect(source).toContain('"AI技術"');
+    expect(source).toContain("{(hasCalibrated || aiRatings.length > 0) && (");
+    expect(source).toContain('data-testid="modal-header-calibrated-score"');
+    expect(source).toContain('data-testid="modal-header-legacy-badge"');
+    expect(source).toContain('"旧評価 総合"');
+    expect(source).toContain('"旧評価 演出"');
+    expect(source).toContain('"旧評価 技術"');
     expect(source).toContain("getAiRatingBadgeClass(rating.value!)");
-    expect(source).toContain("aiRatings.map((rating)");
+    expect(source).toContain("{!hasCalibrated && aiRatings.map((rating) => (");
   });
 
-  it("AI分析結果をタブ式のリッチMarkdownレポートで表示する", () => {
+  it("AI分析結果を分析バージョン情報付きのタブ式リッチMarkdownレポートで表示する", () => {
     const source = readFileSync(new URL("./VideoModal.tsx", import.meta.url), "utf8");
 
     expect(source).toContain('import AiAnalysisReport from "@/components/AiAnalysisReport"');
-    expect(source).toContain("<AiAnalysisReport analysis={video.aiAnalysis} />");
+    expect(source).toContain("<AiAnalysisReport");
+    expect(source).toContain("analysis={video.aiAnalysis}");
+    expect(source).toContain("analysisVersion={video.analysisVersion}");
+    expect(source).toContain("analysisGeneratedAt={video.analysisGeneratedAt}");
+    expect(source).toContain("analysisPromptSha256={video.analysisPromptSha256}");
     expect(source).not.toContain("AI分析結果を読む");
   });
 
