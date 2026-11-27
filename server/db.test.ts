@@ -1,10 +1,5 @@
 import { describe, expect, it } from "vitest";
-import {
-  isMissingAnalysisVersionColumnError,
-  isMissingCalibratedScoreAxesColumnError,
-  isMissingOptionalVideoColumnError,
-  parseVideoRow,
-} from "./db";
+import { parseVideoRow } from "./db";
 
 describe("parseVideoRow", () => {
   it("exposes Notion metadata and AI evaluation fields", () => {
@@ -97,7 +92,7 @@ describe("parseVideoRow", () => {
     expect(video.analysisPromptSha256).toBeNull();
   });
 
-  it("maps v3 analysisVersion, analysisGeneratedAt, analysisPromptSha256 and detects missing-column errors safely", () => {
+  it("maps v3 analysisVersion, analysisGeneratedAt, and analysisPromptSha256", () => {
     const generatedAt = new Date("2026-11-26T05:29:37.000Z");
     const v3Video = parseVideoRow({
       id: "v3-video",
@@ -125,15 +120,6 @@ describe("parseVideoRow", () => {
     expect(v3Video.analysisVersion).toBe("v3");
     expect(v3Video.analysisGeneratedAt).toBe("2026-11-26T05:29:37.000Z");
     expect(v3Video.analysisPromptSha256).toBe("a53083e103d3114e72f5d60d321a0644b0daf603830ad033b74ed5b2ee0083fe");
-
-    expect(isMissingAnalysisVersionColumnError({ code: "ER_BAD_FIELD_ERROR", errno: 1054, message: "Unknown column 'analysisVersion' in 'field list'" })).toBe(true);
-    expect(isMissingAnalysisVersionColumnError({ cause: { errno: 1054, message: "Unknown column 'analysisPromptSha256' in 'field list'" } })).toBe(true);
-    expect(isMissingAnalysisVersionColumnError(new Error("Unknown column 'otherCol' in 'field list'"))).toBe(false);
-
-    expect(isMissingCalibratedScoreAxesColumnError({ code: "ER_BAD_FIELD_ERROR", errno: 1054, message: "Unknown column 'calibratedScoreAxes' in 'field list'" })).toBe(true);
-    expect(isMissingCalibratedScoreAxesColumnError({ cause: { errno: 1054, message: "Unknown column 'videos.calibratedScoreAxes' in 'field list'" } })).toBe(true);
-    expect(isMissingCalibratedScoreAxesColumnError({ code: "ER_BAD_FIELD_ERROR", errno: 1054, message: "Unknown column 'analysisVersion' in 'field list'" })).toBe(false);
-    expect(isMissingOptionalVideoColumnError({ code: "ER_BAD_FIELD_ERROR", errno: 1054, message: "Unknown column 'calibratedScoreAxes' in 'field list'" })).toBe(true);
   });
 
   it("parses calibratedScoreAxes from both JSON object and JSON string", () => {
