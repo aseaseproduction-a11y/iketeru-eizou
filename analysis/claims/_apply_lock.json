@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "status": "locked",
-  "worker": "CHIBA-PC2",
-  "run_id": "backfill_published_at_youtube_20261127",
-  "started_at": "2026-11-27T07:06:28.108Z",
+  "status": "unlocked",
+  "worker": null,
+  "run_id": null,
+  "started_at": null,
   "last_worker": "CHIBA-PC2",
-  "last_run_id": "sync_v3_video_scenes_delta70_20261127",
-  "last_started_at": "2026-11-27T06:58:02.004Z",
-  "released_at": "2026-11-27T06:58:30.785Z",
+  "last_run_id": "backfill_published_at_youtube_20261127",
+  "last_started_at": "2026-11-27T07:06:28.108Z",
+  "released_at": "2026-11-27T07:06:55.390Z",
   "released_by": "CHIBA-PC2"
 }
