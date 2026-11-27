@@ -1,12 +1,8 @@
 {
   "schema_version": 1,
-  "status": "unlocked",
-  "worker": null,
-  "run_id": null,
-  "started_at": null,
-  "last_worker": "CHIBA-PC",
-  "last_run_id": "run_20261127_104500",
-  "last_started_at": "2026-11-27T03:06:00.000Z",
-  "released_at": "2026-11-27T03:08:00.000Z",
-  "released_by": "CHIBA-PC"
+  "status": "locked",
+  "worker": "CHIBA-PC2",
+  "run_id": "ddl_and_backfill_calibrated_score_axes",
+  "started_at": "2026-11-27T03:10:37.698Z",
+  "updated_at": "2026-11-27T03:10:37.698Z"
 }
