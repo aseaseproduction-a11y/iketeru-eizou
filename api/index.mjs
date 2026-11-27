@@ -16,7 +16,7 @@ import { drizzle } from "drizzle-orm/mysql2";
 import mysql from "mysql2/promise";
 
 // drizzle/schema.ts
-import { decimal, index, int, json, mediumtext, mysqlEnum, mysqlTable, text, timestamp, uniqueIndex, varchar } from "drizzle-orm/mysql-core";
+import { datetime, decimal, index, int, json, mediumtext, mysqlEnum, mysqlTable, text, timestamp, uniqueIndex, varchar } from "drizzle-orm/mysql-core";
 var users = mysqlTable("users", {
   /**
    * Surrogate primary key. Auto-incremented numeric value managed by the database.
@@ -132,6 +132,8 @@ var videos = mysqlTable("videos", {
   embedCheckedAt: timestamp("embedCheckedAt"),
   addedDate: varchar("addedDate", { length: 16 }),
   // 'YYYY-MM-DD'
+  publishedAt: datetime("publishedAt"),
+  // 元動画の投稿日時 (UTC: YouTube snippet.publishedAt / Vimeo oEmbed upload_date)
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull()
 });
@@ -1049,6 +1051,7 @@ async function getAllVideoListItems() {
     embedReason: videos.embedReason,
     embedCheckedAt: videos.embedCheckedAt,
     addedDate: videos.addedDate,
+    publishedAt: videos.publishedAt,
     createdAt: videos.createdAt,
     updatedAt: videos.updatedAt,
     isProvisional: sql`CASE WHEN ${videos.aiScoreBreakdown} LIKE '%"analysisStatus":"provisional"%' OR ${videos.aiScoreBreakdown} LIKE '%"isProvisional":true%' THEN 1 ELSE 0 END`,
@@ -1294,6 +1297,7 @@ function parseVideoRow(row) {
     embedReason: row.embedReason ?? "",
     embedCheckedAt: row.embedCheckedAt?.toISOString() ?? "",
     addedDate: row.addedDate ?? "",
+    publishedAt: row.publishedAt instanceof Date ? row.publishedAt.toISOString() : typeof row.publishedAt === "string" ? row.publishedAt : null,
     createdAt: row.createdAt instanceof Date ? row.createdAt.toISOString() : typeof row.createdAt === "string" ? row.createdAt : null
   };
 }

@@ -123,6 +123,7 @@ export interface Video {
   embedReason?: string;
   embedCheckedAt: string;
   addedDate: string;
+  publishedAt?: string | null;
   createdAt?: string | null;
   source?: VideoSource;
   sourceLabel?: string;

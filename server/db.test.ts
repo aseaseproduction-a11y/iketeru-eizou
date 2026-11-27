@@ -202,10 +202,16 @@ describe("parseVideoRow", () => {
       aiAnalysis: "メタデータのみ一次記録", embedStatus: "unknown", embedReason: null, embedCheckedAt: null,
       addedDate: "2026-11-19", createdAt: new Date(), updatedAt: new Date(),
     };
-    const tagged = parseVideoRow({ ...baseRow, analysisObservationScope: "metadata_only_unwatched" } as never);
-    const untagged = parseVideoRow({ ...baseRow, analysisObservationScope: null } as never);
+    const tagged = parseVideoRow({
+      ...baseRow,
+      analysisObservationScope: "metadata_only_unwatched",
+      publishedAt: new Date("2024-08-27T01:42:00.000Z"),
+    } as never);
+    const untagged = parseVideoRow({ ...baseRow, analysisObservationScope: null, publishedAt: null } as never);
 
     expect(tagged.analysisObservationScope).toBe("metadata_only_unwatched");
+    expect(tagged.publishedAt).toBe("2024-08-27T01:42:00.000Z");
     expect(untagged.analysisObservationScope).toBeNull();
+    expect(untagged.publishedAt).toBeNull();
   });
 });

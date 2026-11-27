@@ -154,6 +154,50 @@ describe("videoSort", () => {
     expect(getVideoBandInfo(makeVideo("g")).bandId).toBe("unrated");
   });
 
+  it("投稿日時順（新しい／古い）で並び、投稿日時がない動画はどちらの向きでも常に最後になる", () => {
+    const videos = [
+      makeVideo("no-pub-new-added", { addedDate: "2026-11-27", publishedAt: null }),
+      makeVideo("pub-2026", { addedDate: "2026-11-20", publishedAt: "2026-10-14T12:00:11.000Z" }),
+      makeVideo("pub-2014", { addedDate: "2026-11-25", publishedAt: "2014-07-10 10:37:37" }),
+      makeVideo("pub-2024", { addedDate: "2026-11-21", publishedAt: "2024-08-27T01:42:00.000Z" }),
+    ];
+
+    expect(
+      sortVideos(videos, {
+        primaryKey: "published",
+        primaryDir: "desc",
+        secondaryKey: "none",
+        secondaryDir: "desc",
+      }).map((v) => v.id),
+    ).toEqual(["pub-2026", "pub-2024", "pub-2014", "no-pub-new-added"]);
+
+    expect(
+      sortVideos(videos, {
+        primaryKey: "published",
+        primaryDir: "asc",
+        secondaryKey: "none",
+        secondaryDir: "desc",
+      }).map((v) => v.id),
+    ).toEqual(["pub-2014", "pub-2024", "pub-2026", "no-pub-new-added"]);
+  });
+
+  it("評価順の帯の中で並べ替え2に投稿日時順を指定できる", () => {
+    const videos = [
+      makeVideo("cal-88-old-pub", { calibratedScore: 88, publishedAt: "2020-01-01T00:00:00.000Z" }),
+      makeVideo("cal-84-new-pub", { calibratedScore: 84, publishedAt: "2026-05-01T00:00:00.000Z" }),
+      makeVideo("cal-90-no-pub", { calibratedScore: 90, publishedAt: null }),
+    ];
+
+    expect(
+      sortVideos(videos, {
+        primaryKey: "score",
+        primaryDir: "desc",
+        secondaryKey: "published",
+        secondaryDir: "desc",
+      }).map((v) => v.id),
+    ).toEqual(["cal-84-new-pub", "cal-88-old-pub", "cal-90-no-pub"]);
+  });
+
   it("normalizeSortConfig と localStorage 読み書きが不正値・例外に対して安全に動作する", () => {
     expect(
       normalizeSortConfig({ primaryKey: "score", primaryDir: "desc", secondaryKey: "score", secondaryDir: "asc" }),

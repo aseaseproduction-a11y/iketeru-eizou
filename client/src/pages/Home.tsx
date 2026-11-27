@@ -17,6 +17,7 @@ import SceneCard from "@/components/SceneCard";
 import { searchScenes, loadSceneIndex, filterFallbackScenes, getSceneKeywordCategories, parseQueryWords, type SceneItem, type SceneSearchResult, type KeywordCategory, type SceneScoreFilter } from "@/lib/sceneSearch";
 import { useVideos } from "@/hooks/useVideos";
 import {
+  ALL_SORT_KEYS,
   getSortDirectionLabels,
   SORT_KEY_LABELS,
   type ActiveSortKey,
@@ -1118,7 +1119,7 @@ export default function Home() {
               </div>
               {(() => {
                 const primaryDirLabels = getSortDirectionLabels(sortConfig.primaryKey);
-                const remainingKey: ActiveSortKey = sortConfig.primaryKey === "added" ? "score" : "added";
+                const remainingKeys = ALL_SORT_KEYS.filter((k) => k !== sortConfig.primaryKey);
                 const secondaryDirLabels =
                   sortConfig.secondaryKey !== "none"
                     ? getSortDirectionLabels(sortConfig.secondaryKey)
@@ -1142,7 +1143,7 @@ export default function Home() {
                         className="text-xs bg-surface-1 border border-white/10 rounded-md px-2 py-1.5 text-foreground outline-none focus:ring-1 focus:ring-cinematic-red/40"
                       >
                         <option value="added">{SORT_KEY_LABELS.added}</option>
-                        <option value="published" disabled>{SORT_KEY_LABELS.published}</option>
+                        <option value="published">{SORT_KEY_LABELS.published}</option>
                         <option value="score">{SORT_KEY_LABELS.score}</option>
                       </select>
                       <select
@@ -1177,8 +1178,11 @@ export default function Home() {
                         className="text-xs bg-surface-1 border border-white/10 rounded-md px-2 py-1.5 text-foreground outline-none focus:ring-1 focus:ring-cinematic-red/40"
                       >
                         <option value="none">なし</option>
-                        <option value={remainingKey}>{SORT_KEY_LABELS[remainingKey]}</option>
-                        <option value="published" disabled>{SORT_KEY_LABELS.published}</option>
+                        {remainingKeys.map((key) => (
+                          <option key={key} value={key}>
+                            {SORT_KEY_LABELS[key]}
+                          </option>
+                        ))}
                       </select>
                       {sortConfig.secondaryKey !== "none" && secondaryDirLabels && (
                         <select
