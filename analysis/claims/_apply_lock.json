@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "status": "locked",
-  "worker": "CHIBA-PC2",
-  "run_id": "ddl_and_backfill_published_at_vimeo_20261127",
-  "started_at": "2026-11-27T06:43:40.775Z",
-  "last_worker": "chibatmute",
-  "last_run_id": "v3_apply_delta_20261127_r1",
-  "last_started_at": "2026-11-27T06:39:04.000Z",
-  "released_at": "2026-11-27T06:41:55.964Z",
-  "released_by": "chibatmute"
+  "status": "unlocked",
+  "worker": null,
+  "run_id": null,
+  "started_at": null,
+  "last_worker": "CHIBA-PC2",
+  "last_run_id": "ddl_and_backfill_published_at_vimeo_20261127",
+  "last_started_at": "2026-11-27T06:43:40.775Z",
+  "released_at": "2026-11-27T06:46:12.999Z",
+  "released_by": "CHIBA-PC2"
 }
