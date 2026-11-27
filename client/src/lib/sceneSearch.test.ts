@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { getSceneKeywordCategories, searchScenes, type SceneItem } from "./sceneSearch";
+import { filterFallbackScenes, getSceneKeywordCategories, searchScenes, type SceneItem } from "./sceneSearch";
 
 const sampleScenes: SceneItem[] = [
   {
@@ -75,5 +75,51 @@ describe("sceneSearch technique keywords & categories", () => {
 
     const focusResults = await searchScenes("フォーカス送り", 20, sampleScenes);
     expect(focusResults.map((r) => r.scene.id).sort()).toEqual(["v3-0", "v4-0"]);
+  });
+
+  it("filters fallback scenes strictly by calibratedScore and never mixes uncalibrated legacy scores into 78+/83+", () => {
+    const richScenes: SceneItem[] = [
+      { ...sampleScenes[0], analysisObservationScope: null, calibratedScore: 85, aiOverallScore: 80 },
+      { ...sampleScenes[1], analysisObservationScope: null, calibratedScore: 79, aiOverallScore: 75 },
+      { ...sampleScenes[2], analysisObservationScope: "triage_unverified_short", calibratedScore: null, aiOverallScore: 95 },
+      { ...sampleScenes[3], analysisObservationScope: null, calibratedScore: null, aiOverallScore: 92 },
+      { ...sampleScenes[0], id: "v5-0", videoId: "v5", analysisObservationScope: null, calibratedScore: 72, aiOverallScore: 88 },
+    ];
+    const watchedAll = filterFallbackScenes(richScenes, { excludeUnwatched: true, scoreFilter: "all" });
+    const calibratedOnly = filterFallbackScenes(richScenes, { excludeUnwatched: true, scoreFilter: "calibrated_only" });
+    const score78Plus = filterFallbackScenes(richScenes, { excludeUnwatched: true, scoreFilter: "score_78_plus" });
+    const score83Plus = filterFallbackScenes(richScenes, { excludeUnwatched: true, scoreFilter: "score_83_plus" });
+    const uncalibratedOnly = filterFallbackScenes(richScenes, { excludeUnwatched: true, scoreFilter: "uncalibrated_only" });
+
+    expect(watchedAll.map((s) => s.id)).toEqual(["v1-0", "v2-0", "v4-0", "v5-0"]);
+    expect(filterFallbackScenes(richScenes, { excludeUnwatched: false, scoreFilter: "all" }).map((s) => s.id)).toEqual([
+      "v1-0", "v2-0", "v3-0", "v4-0", "v5-0",
+    ]);
+    expect(calibratedOnly.map((s) => s.id)).toEqual(["v1-0", "v2-0", "v5-0"]);
+    // v4-0 has aiOverallScore=92 but calibratedScore=null -> MUST NOT leak into 78+ or 83+
+    expect(score78Plus.map((s) => s.id)).toEqual(["v1-0", "v2-0"]);
+    expect(score83Plus.map((s) => s.id)).toEqual(["v1-0"]);
+    expect(uncalibratedOnly.map((s) => s.id)).toEqual(["v4-0"]);
+
+    // Exact band sum reconciliation: calibrated_only + uncalibrated_only === all, and score78Plus <= calibratedOnly
+    expect(calibratedOnly.length + uncalibratedOnly.length).toBe(watchedAll.length);
+    const below78Count = calibratedOnly.filter((s) => (s.calibratedScore ?? 0) < 78).length;
+    const band78To82Count = calibratedOnly.filter((s) => (s.calibratedScore ?? 0) >= 78 && (s.calibratedScore ?? 0) < 83).length;
+    expect(score83Plus.length + band78To82Count + below78Count).toBe(calibratedOnly.length);
+  });
+
+  it("filters out legacy scenes when excludeLegacyAnalysis is true", () => {
+    const versionedScenes: SceneItem[] = [
+      { ...sampleScenes[0], analysisVersion: "v3", analysisGeneratedAt: "2026-11-26T05:29:37.000Z" },
+      { ...sampleScenes[1], analysisVersion: "legacy", analysisGeneratedAt: null },
+      { ...sampleScenes[2] }, // undefined defaults to legacy
+    ];
+
+    expect(filterFallbackScenes(versionedScenes, { excludeLegacyAnalysis: false }).map((s) => s.id)).toEqual([
+      "v1-0", "v2-0", "v3-0",
+    ]);
+    expect(filterFallbackScenes(versionedScenes, { excludeLegacyAnalysis: true }).map((s) => s.id)).toEqual([
+      "v1-0",
+    ]);
   });
 });

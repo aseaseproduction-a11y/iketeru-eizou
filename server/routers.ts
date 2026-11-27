@@ -13,9 +13,11 @@ import {
   getAllVideoListItems,
   getVideoById,
   getVideoCount,
+  getVideoSceneKeywordStats,
   listFavoriteProfiles,
   mergeLegacyFavoritesIntoProfile,
   renameFavoriteProfile,
+  searchVideoScenes,
   toggleFavoriteProfileCreator,
   toggleFavoriteProfileVideo,
   updateEmbedStatus,
@@ -327,6 +329,41 @@ export const appRouter = router({
         await deleteVideo(input.id);
         return { success: true } as const;
       }),
+  }),
+
+  scenes: router({
+    /** Search scenes in TiDB videoScenes table (returns available: false if table does not exist yet). */
+    search: publicProcedure
+      .input(
+        z.object({
+          query: z.string().max(200).default(""),
+          limit: z.number().int().min(1).max(80).default(40),
+          offset: z.number().int().min(0).max(5000).default(0),
+          excludeUnwatched: z.boolean().default(true),
+          excludeLegacyAnalysis: z.boolean().default(false),
+          scoreFilter: z.enum(["all", "calibrated_only", "score_78_plus", "score_83_plus", "uncalibrated_only"]).default("all"),
+        }),
+      )
+      .query(async ({ input }) => searchVideoScenes(input)),
+
+    /** Keyword preset counts aggregated from TiDB videoScenes (safe fallback when table is absent). */
+    keywordStats: publicProcedure
+      .input(
+        z
+          .object({
+            excludeUnwatched: z.boolean().default(true),
+            excludeLegacyAnalysis: z.boolean().default(false),
+            scoreFilter: z.enum(["all", "calibrated_only", "score_78_plus", "score_83_plus", "uncalibrated_only"]).default("all"),
+          })
+          .optional(),
+      )
+      .query(async ({ input }) =>
+        getVideoSceneKeywordStats({
+          excludeUnwatched: input?.excludeUnwatched ?? true,
+          excludeLegacyAnalysis: input?.excludeLegacyAnalysis ?? false,
+          scoreFilter: input?.scoreFilter ?? "all",
+        }),
+      ),
   }),
 });
 

@@ -1,7 +1,13 @@
 import React, { useMemo, useState, type ReactNode } from "react";
-import { Check, Clock3, Copy, FileText } from "lucide-react";
+import { AlertTriangle, Check, Clock3, Copy, FileText, ShieldCheck } from "lucide-react";
 import { toast } from "sonner";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  isLegacyAnalysisVersion,
+  LEGACY_ANALYSIS_LABEL,
+  V3_ANALYSIS_LABEL,
+  type AnalysisVersion,
+} from "@shared/analysisVersion";
 
 type ReportTabId = "planning" | "direction" | "technical" | "sound" | "all";
 
@@ -29,22 +35,81 @@ const REPORT_TABS: ReportTab[] = [
 const TIME_CODE_PATTERN = /^【\d{1,2}:\d{2}(?:\s*[-–—〜~]\s*\d{1,2}:\d{2})?】$/;
 const INLINE_TOKEN_PATTERN = /(\*\*[^*]+\*\*|`[^`]+`|【\d{1,2}:\d{2}(?:\s*[-–—〜~]\s*\d{1,2}:\d{2})?】)/g;
 const HEADING_PATTERN = /^(#{1,3})\s+(.+)$/;
-const CHAPTER_NUMBER_PATTERN = /(?:^|\s|第)\s*([0-8])\s*(?:章)?(?=\s|$|[：:.)）】、—–-])/;
-const STANDALONE_SECTION_PATTERN = /^(?:第\s*[0-8]\s*章(?=\s|$|[：:|｜—–-])|キュレーション要約|辛口クリティーク|多面的評価|企画・心理誘導|マーケティング設計|タイムライン観察記録|演出・構図|撮影・照明・美術|技術解剖|再現・拡張レシピ|音響演出|明日からのアクションプラン)/;
+const SPLIT_HEADING_PATTERN = /^(#{1,2})\s+(.+)$/;
+const LEGACY_DAI_CHAPTER_PATTERN = /^第\s*(10|[0-9])\s*章(?=\s|$|[：:.)）】、—–-])/;
+const NUMBERED_CHAPTER_PATTERN = /^(1[01]|[0-9])\s*(?:[.．:：)\]）]|\s)/;
+const STANDALONE_SECTION_PATTERN = /^(?:第\s*(?:10|[0-9])\s*章(?=\s|$|[：:|｜—–-])|キュレーション要約|辛口クリティーク|多面的評価|企画・心理誘導|マーケティング設計|タイムライン観察記録|演出・構図|撮影・照明・美術|技術解剖|再現・拡張レシピ|音響演出|明日からのアクションプラン)/;
 
-function getSectionTab(text: string): Exclude<ReportTabId, "all"> {
-  const normalized = text.replace(/\s+/g, " ").toLowerCase();
-  const chapterNumber = normalized.match(CHAPTER_NUMBER_PATTERN)?.[1];
+/**
+ * Chapter-number-based tab mapping for `## 0.` .. `## 10.` format (v3 & modern 10-chapter reports).
+ * Independent of heading wording so v3 wording differences never mis-route tabs:
+ *  - 0 (総括), 1 (ジャンル/トーン), 2 (企画/ターゲット), 9 (セールス/企画提案フック), 11 (監査) -> planning (評価・企画)
+ *  - 3 (時系列タイムスタンプ), 4 (演出・撮影・構図・照明・美術) -> direction (演出・撮影)
+ *  - 5 (編集・モーショングラフィックス・VFX), 10 (高技術カット完全再現レシピ) -> technical (技術解剖)
+ *  - 6 (サウンド・リズム・テンポ), 7 (再現性・制作体制), 8 (応用・参考ポイント) -> sound (音響・実践)
+ */
+const V3_CHAPTER_NUMBER_TAB_MAP: Record<string, Exclude<ReportTabId, "all">> = {
+  "0": "planning",
+  "1": "planning",
+  "2": "planning",
+  "3": "direction",
+  "4": "direction",
+  "5": "technical",
+  "6": "sound",
+  "7": "sound",
+  "8": "sound",
+  "9": "planning",
+  "10": "technical",
+  "11": "planning",
+};
 
-  if (chapterNumber === "0" || chapterNumber === "3" || chapterNumber === "4") return "direction";
-  if (chapterNumber === "5" || chapterNumber === "6") return "technical";
-  if (chapterNumber === "7" || chapterNumber === "8") return "sound";
-  if (chapterNumber === "1" || chapterNumber === "2") return "planning";
+/**
+ * Legacy `第0章〜第8章` (Notion v1) mapping preserved for backward compatibility:
+ *  - 第0章 タイムライン観察記録, 第3章, 第4章 -> direction
+ *  - 第1章, 第2章, 第9章 -> planning
+ *  - 第5章, 第6章, 第10章 -> technical
+ *  - 第7章, 第8章 -> sound
+ */
+const LEGACY_DAI_CHAPTER_TAB_MAP: Record<string, Exclude<ReportTabId, "all">> = {
+  "0": "direction",
+  "1": "planning",
+  "2": "planning",
+  "3": "direction",
+  "4": "direction",
+  "5": "technical",
+  "6": "technical",
+  "7": "sound",
+  "8": "sound",
+  "9": "planning",
+  "10": "technical",
+};
 
-  if (/(?:タイムライン|演出|構図|撮影|照明|美術|シーン連鎖)/.test(normalized)) return "direction";
-  if (/(?:after effects|davinci|blender|技術解剖|再現|拡張レシピ|コード|パラメータ)/.test(normalized)) return "technical";
-  if (/(?:音響|サウンド|アクションプラン|明日から)/.test(normalized)) return "sound";
-  return "planning";
+function getSectionTab(heading: string, contentPreview = ""): Exclude<ReportTabId, "all"> {
+  const cleanHeading = heading.replace(/\s+/g, " ").trim();
+
+  // 1. Explicit `## 0.` .. `## 10.` chapter number (v3 & numbered reports) — independent of wording.
+  const numberedMatch = cleanHeading.match(NUMBERED_CHAPTER_PATTERN);
+  if (numberedMatch?.[1] && V3_CHAPTER_NUMBER_TAB_MAP[numberedMatch[1]]) {
+    return V3_CHAPTER_NUMBER_TAB_MAP[numberedMatch[1]];
+  }
+
+  // 2. Legacy `第N章` chapter number
+  const daiMatch = cleanHeading.match(LEGACY_DAI_CHAPTER_PATTERN);
+  if (daiMatch?.[1] && LEGACY_DAI_CHAPTER_TAB_MAP[daiMatch[1]]) {
+    return LEGACY_DAI_CHAPTER_TAB_MAP[daiMatch[1]];
+  }
+
+  // 3. Fallback keyword matching (heading first, then body preview) for unnumbered sections
+  const classifyKeywords = (text: string): Exclude<ReportTabId, "all"> | null => {
+    const normalized = text.replace(/\s+/g, " ").toLowerCase();
+    if (/(?:タイムライン|演出|構図|撮影|照明|美術|シーン連鎖)/.test(normalized)) return "direction";
+    if (/(?:after effects|davinci|blender|技術解剖|再現|拡張レシピ|コード|パラメータ)/.test(normalized)) return "technical";
+    if (/(?:音響|サウンド|アクションプラン|明日から)/.test(normalized)) return "sound";
+    if (/(?:キュレーション|要約|企画|評価|クライアント)/.test(normalized)) return "planning";
+    return null;
+  };
+
+  return classifyKeywords(cleanHeading) ?? classifyKeywords(contentPreview) ?? "planning";
 }
 
 export function getAnalysisScale(markdown: string): 1 | 2 | 3 {
@@ -77,7 +142,7 @@ export function splitAiAnalysisByTab(markdown: string): ReportSection[] {
       continue;
     }
 
-    const markdownHeading = line.match(HEADING_PATTERN);
+    const markdownHeading = line.match(SPLIT_HEADING_PATTERN);
     const trimmed = line.trim();
     const isStandaloneSection = !inCodeFence && trimmed.length > 0 && STANDALONE_SECTION_PATTERN.test(trimmed);
 
@@ -100,18 +165,17 @@ export function splitAiAnalysisByTab(markdown: string): ReportSection[] {
   return sections
     .map((section, index) => {
       const content = section.lines.join("\n").trim();
-      const categoryText = `${section.heading}\n${content.slice(0, 240)}`;
       return {
         id: `${index}-${section.heading}`,
         heading: section.heading,
         content,
-        tab: getSectionTab(categoryText),
+        tab: getSectionTab(section.heading, content.slice(0, 240)),
       };
     })
     .filter((section) => section.content || section.heading !== "レポート概要");
 }
 
-function InlineMarkdown({ text }: { text: string }) {
+function InlineMarkdown({ text, isLegacy = false }: { text: string; isLegacy?: boolean }) {
   return (
     <>
       {text.split(INLINE_TOKEN_PATTERN).filter(Boolean).map((token, index) => {
@@ -138,6 +202,7 @@ function InlineMarkdown({ text }: { text: string }) {
           return (
             <span
               key={`${token}-${index}`}
+              title={isLegacy ? "旧分析のため時刻は目安" : undefined}
               className="mx-0.5 inline-flex items-center gap-1 rounded-full border border-sky-500/30 bg-sky-500/20 px-2 py-0.5 align-[0.08em] font-mono text-[10px] font-medium text-sky-200"
             >
               <Clock3 className="h-3 w-3" aria-hidden="true" />
@@ -185,7 +250,7 @@ function CodeBlock({ code, language }: { code: string; language?: string }) {
   );
 }
 
-function MarkdownBlocks({ markdown }: { markdown: string }) {
+function MarkdownBlocks({ markdown, isLegacy = false }: { markdown: string; isLegacy?: boolean }) {
   const lines = markdown.replace(/\r\n/g, "\n").split("\n");
   const blocks: ReactNode[] = [];
   let index = 0;
@@ -217,7 +282,7 @@ function MarkdownBlocks({ markdown }: { markdown: string }) {
       const Tag = level === 1 ? "h2" : level === 2 ? "h3" : "h4";
       blocks.push(
         <Tag key={`heading-${index}`} className={`my-5 rounded-r-lg border-l-2 bg-gradient-to-r from-white/[0.065] to-transparent px-3 py-2 font-bold tracking-[0.01em] ${headingClass}`}>
-          <InlineMarkdown text={heading[2]} />
+          <InlineMarkdown text={heading[2]} isLegacy={isLegacy} />
         </Tag>,
       );
       index += 1;
@@ -234,7 +299,7 @@ function MarkdownBlocks({ markdown }: { markdown: string }) {
         <ul key={`list-${index}`} className="my-3 space-y-2 pl-1">
           {items.map((item, itemIndex) => (
             <li key={`${item}-${itemIndex}`} className="relative pl-5 text-[13px] leading-7 text-foreground/85 before:absolute before:left-0 before:top-[0.78rem] before:h-1.5 before:w-1.5 before:rounded-full before:bg-cinematic-red/90">
-              <InlineMarkdown text={item} />
+              <InlineMarkdown text={item} isLegacy={isLegacy} />
             </li>
           ))}
         </ul>,
@@ -251,7 +316,7 @@ function MarkdownBlocks({ markdown }: { markdown: string }) {
       blocks.push(
         <ol key={`ordered-${index}`} className="my-3 list-decimal space-y-2 pl-6 marker:font-mono marker:text-sky-300/80">
           {items.map((item, itemIndex) => (
-            <li key={`${item}-${itemIndex}`} className="pl-1 text-[13px] leading-7 text-foreground/85"><InlineMarkdown text={item} /></li>
+            <li key={`${item}-${itemIndex}`} className="pl-1 text-[13px] leading-7 text-foreground/85"><InlineMarkdown text={item} isLegacy={isLegacy} /></li>
           ))}
         </ol>,
       );
@@ -277,7 +342,7 @@ function MarkdownBlocks({ markdown }: { markdown: string }) {
     }
     blocks.push(
       <p key={`paragraph-${index}`} className="my-3 whitespace-pre-line text-[13px] leading-7 text-foreground/82">
-        <InlineMarkdown text={paragraph.join("\n")} />
+        <InlineMarkdown text={paragraph.join("\n")} isLegacy={isLegacy} />
       </p>,
     );
   }
@@ -285,23 +350,39 @@ function MarkdownBlocks({ markdown }: { markdown: string }) {
   return <>{blocks}</>;
 }
 
-function AnalysisSection({ section }: { section: ReportSection }) {
+function AnalysisSection({ section, isLegacy = false }: { section: ReportSection; isLegacy?: boolean }) {
   return (
     <article className="rounded-xl border border-white/[0.075] bg-black/10 px-3.5 py-1 sm:px-4">
       {section.heading !== "レポート概要" && (
         <h2 className="mt-4 rounded-r-lg border-l-2 border-cinematic-red bg-gradient-to-r from-white/[0.065] to-transparent px-3 py-2 text-sm font-bold text-foreground sm:text-base">
-          <InlineMarkdown text={section.heading} />
+          <InlineMarkdown text={section.heading} isLegacy={isLegacy} />
         </h2>
       )}
-      {section.content ? <MarkdownBlocks markdown={section.content} /> : null}
+      {section.content ? <MarkdownBlocks markdown={section.content} isLegacy={isLegacy} /> : null}
     </article>
   );
 }
 
-export default function AiAnalysisReport({ analysis }: { analysis: string }) {
+export default function AiAnalysisReport({
+  analysis,
+  analysisVersion,
+  analysisGeneratedAt,
+  analysisPromptSha256,
+}: {
+  analysis: string;
+  analysisVersion?: AnalysisVersion | string | null;
+  analysisGeneratedAt?: string | null;
+  analysisPromptSha256?: string | null;
+}) {
   const [copied, setCopied] = useState(false);
   const sections = useMemo(() => splitAiAnalysisByTab(analysis), [analysis]);
   const scale = useMemo(() => getAnalysisScale(analysis), [analysis]);
+  const isLegacy = isLegacyAnalysisVersion(analysisVersion);
+  const v3TooltipParts = [
+    V3_ANALYSIS_LABEL,
+    analysisGeneratedAt ? `生成日時: ${analysisGeneratedAt}` : null,
+    analysisPromptSha256 ? `Prompt SHA: ${analysisPromptSha256.slice(0, 12)}` : null,
+  ].filter(Boolean);
 
   const copyFullReport = async () => {
     try {
@@ -319,12 +400,39 @@ export default function AiAnalysisReport({ analysis }: { analysis: string }) {
       <header className="border-b border-white/[0.075] bg-white/[0.025] px-3.5 py-3 sm:px-4">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div className="min-w-0">
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-2">
               <span className="flex h-6 w-6 items-center justify-center rounded-md border border-sky-400/25 bg-sky-400/10 text-sky-200"><FileText className="h-3.5 w-3.5" aria-hidden="true" /></span>
               <span className="text-[10px] font-bold tracking-[0.16em] text-sky-200/85">AI ANALYSIS REPORT</span>
               <span title="分析本文の分量に応じた表示スケール" className="rounded-full border border-cinematic-red/30 bg-cinematic-red/10 px-2 py-0.5 text-[10px] font-semibold tracking-wide text-red-200">Scale {scale}</span>
+              {isLegacy ? (
+                <span
+                  data-testid="analysis-legacy-badge"
+                  title="旧方式の分析です（実映像照合済みの v3 へ順次更新中）"
+                  className="inline-flex items-center gap-1 rounded-full border border-amber-400/40 bg-amber-950/90 px-2 py-0.5 text-[10px] font-semibold text-amber-300"
+                >
+                  <AlertTriangle className="h-3 w-3 shrink-0" aria-hidden="true" />
+                  {LEGACY_ANALYSIS_LABEL}
+                </span>
+              ) : (
+                <span
+                  data-testid="analysis-v3-badge"
+                  title={v3TooltipParts.join(" / ")}
+                  className="inline-flex items-center gap-1 rounded-full border border-emerald-400/35 bg-emerald-500/15 px-2 py-0.5 text-[10px] font-semibold text-emerald-200"
+                >
+                  <ShieldCheck className="h-3 w-3 shrink-0" aria-hidden="true" />
+                  {V3_ANALYSIS_LABEL}
+                </span>
+              )}
             </div>
             <p className="mt-2 text-xs leading-relaxed text-muted-foreground">章ごとに読み分け、制作の判断材料をすばやく取り出せます。</p>
+            {isLegacy && (
+              <p
+                data-testid="analysis-legacy-notice"
+                className="mt-2 rounded-md border border-amber-400/30 bg-amber-500/10 px-2.5 py-1.5 text-[11px] leading-relaxed text-amber-200/95"
+              >
+                旧方式の分析です。記載のタイムスタンプや細部描写は目安として参照してください（実映像照合済みの新版へ順次更新中）。
+              </p>
+            )}
           </div>
           <button
             type="button"
@@ -359,7 +467,7 @@ export default function AiAnalysisReport({ analysis }: { analysis: string }) {
             <TabsContent key={tab.id} value={tab.id} className="m-0 p-3 sm:p-4">
               {visibleSections.length ? (
                 <div className="space-y-3">
-                  {visibleSections.map((section) => <AnalysisSection key={section.id} section={section} />)}
+                  {visibleSections.map((section) => <AnalysisSection key={section.id} section={section} isLegacy={isLegacy} />)}
                 </div>
               ) : (
                 <div className="rounded-xl border border-dashed border-white/10 bg-black/15 px-4 py-7 text-center text-xs leading-relaxed text-muted-foreground">

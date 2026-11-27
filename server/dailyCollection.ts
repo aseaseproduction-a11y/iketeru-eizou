@@ -1,7 +1,7 @@
 import type { Request, Response } from "express";
 import { and, eq, inArray } from "drizzle-orm";
 import { dailyCollectionRuns, dailyCollectionSources, videos } from "../drizzle/schema";
-import { createVideo, getDb } from "./db";
+import { createVideo, getDb, selectRawVideoByIdSafe } from "./db";
 import { sdk } from "./_core/sdk";
 
 type DailyCollectionOembed = {
@@ -225,7 +225,7 @@ export async function receiveDailyCollection(req: Request, res: Response) {
       const metadataThumbnail = typeof metadata?.thumbnail_url === "string" ? metadata.thumbnail_url.trim() : "";
       const metadataAuthor = typeof metadata?.author_name === "string" ? metadata.author_name.trim() : "";
       if (!metadataTitle || !dailyCollectionIdentityIsConfirmed(sourceTitle, metadataTitle, articleVerified)) { skipped++; details.push({ id, reason: "public_oembed_or_title_mismatch" }); continue; }
-      const [existing] = await db.select().from(videos).where(eq(videos.id, id)).limit(1);
+      const existing = await selectRawVideoByIdSafe(db, id);
       if (existing) {
         const update = {
           ...getDailyCollectionExistingUpdate(existing, { thumbnail_url: metadataThumbnail, author_name: metadataAuthor }, sourceUrl),

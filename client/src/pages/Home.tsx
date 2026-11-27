@@ -14,7 +14,7 @@ import VideoCard from "@/components/VideoCard";
 import VideoModal, { type VideoModalFilter } from "@/components/VideoModal";
 import InspirationMode from "@/components/InspirationMode";
 import SceneCard from "@/components/SceneCard";
-import { searchScenes, loadSceneIndex, getSceneKeywordCategories, parseQueryWords, type SceneItem, type SceneSearchResult, type KeywordCategory } from "@/lib/sceneSearch";
+import { searchScenes, loadSceneIndex, filterFallbackScenes, getSceneKeywordCategories, parseQueryWords, type SceneItem, type SceneSearchResult, type KeywordCategory, type SceneScoreFilter } from "@/lib/sceneSearch";
 import { useVideos } from "@/hooks/useVideos";
 import { useCreatorTools } from "@/hooks/useCreatorTools";
 import { getInspirationSourceVideos } from "@/lib/inspiration";
@@ -135,25 +135,113 @@ export default function Home() {
   // View Mode: 'videos' (standard) or 'scenes' (Twelve Labs-style scene search)
   const [viewMode, setViewMode] = useState<"videos" | "scenes">("videos");
   const [sceneQuery, setSceneQuery] = useState("");
-  const [sceneResults, setSceneResults] = useState<SceneSearchResult[]>([]);
+  const [debouncedSceneQuery, setDebouncedSceneQuery] = useState("");
+  const [sceneExcludeUnwatched, setSceneExcludeUnwatched] = useState<boolean>(true);
+  const [sceneExcludeLegacyAnalysis, setSceneExcludeLegacyAnalysis] = useState<boolean>(false);
+  const [sceneScoreFilter, setSceneScoreFilter] = useState<SceneScoreFilter>("all");
+  const [scenePageLimit, setScenePageLimit] = useState<number>(40);
+  const [fallbackSceneResults, setFallbackSceneResults] = useState<SceneSearchResult[]>([]);
   const [allScenes, setAllScenes] = useState<SceneItem[]>([]);
-  const [isScenesLoading, setIsScenesLoading] = useState(false);
+  const [isFallbackScenesLoading, setIsFallbackScenesLoading] = useState(false);
   const [selectedKeywordCategory, setSelectedKeywordCategory] = useState<string>("all");
   const [isKeywordsExpanded, setIsKeywordsExpanded] = useState<boolean>(false);
 
+  // Debounce scene query for TiDB API calls
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      setDebouncedSceneQuery(sceneQuery);
+      setScenePageLimit(40);
+    }, 250);
+    return () => window.clearTimeout(timer);
+  }, [sceneQuery]);
+
+  // Reset pagination when filter toggles change
+  useEffect(() => {
+    setScenePageLimit(40);
+  }, [sceneExcludeUnwatched, sceneExcludeLegacyAnalysis, sceneScoreFilter]);
+
+  // TiDB scenes API queries (gracefully fall back to static scenes_index.json when table is not created yet)
+  const shouldQueryScenesApi = viewMode === "scenes" || Boolean(filters.search.trim());
+  const { data: apiSceneSearchData, isLoading: isApiScenesLoading, isError: isApiScenesError } = trpc.scenes.search.useQuery(
+    {
+      query: debouncedSceneQuery,
+      limit: scenePageLimit,
+      offset: 0,
+      excludeUnwatched: sceneExcludeUnwatched,
+      excludeLegacyAnalysis: sceneExcludeLegacyAnalysis,
+      scoreFilter: sceneScoreFilter,
+    },
+    {
+      enabled: shouldQueryScenesApi,
+      staleTime: 60 * 1000,
+      refetchOnWindowFocus: false,
+      retry: false,
+    },
+  );
+  const { data: apiSceneKeywordStats } = trpc.scenes.keywordStats.useQuery(
+    {
+      excludeUnwatched: sceneExcludeUnwatched,
+      excludeLegacyAnalysis: sceneExcludeLegacyAnalysis,
+      scoreFilter: sceneScoreFilter,
+    },
+    {
+      enabled: viewMode === "scenes",
+      staleTime: 5 * 60 * 1000,
+      refetchOnWindowFocus: false,
+      retry: false,
+    },
+  );
+
+  const isTiDbScenesActive = Boolean(!isApiScenesError && apiSceneSearchData?.available);
   const activeSceneWords = useMemo(() => parseQueryWords(sceneQuery), [sceneQuery]);
+
+  const videosById = useMemo(() => {
+    const map = new Map<string, Video>();
+    for (const v of allVideos) map.set(v.id, v);
+    return map;
+  }, [allVideos]);
+
+  const filteredFallbackPool = useMemo(
+    () =>
+      filterFallbackScenes(allScenes, {
+        videosById,
+        excludeUnwatched: sceneExcludeUnwatched,
+        excludeLegacyAnalysis: sceneExcludeLegacyAnalysis,
+        scoreFilter: sceneScoreFilter,
+      }),
+    [allScenes, videosById, sceneExcludeUnwatched, sceneExcludeLegacyAnalysis, sceneScoreFilter],
+  );
+
+  const sceneResults: SceneSearchResult[] = useMemo(() => {
+    if (isTiDbScenesActive && apiSceneSearchData) {
+      return apiSceneSearchData.items as SceneSearchResult[];
+    }
+    return fallbackSceneResults;
+  }, [isTiDbScenesActive, apiSceneSearchData, fallbackSceneResults]);
+
+  const totalIndexedSceneCount = isTiDbScenesActive
+    ? apiSceneSearchData?.totalIndexedScenes ?? 0
+    : filteredFallbackPool.length;
+  const totalMatchedSceneCount = isTiDbScenesActive
+    ? apiSceneSearchData?.total ?? sceneResults.length
+    : sceneResults.length;
+  const hasMoreScenes = isTiDbScenesActive ? Boolean(apiSceneSearchData?.hasMore) : false;
+  const isScenesLoading = isTiDbScenesActive ? isApiScenesLoading : isFallbackScenesLoading;
 
   // When words are selected, dynamically compute co-occurring keywords from the matching scene subset!
   const scenesForKeywords = useMemo(() => {
     if (activeSceneWords.length > 0 && sceneResults.length > 0) {
       return sceneResults.map((r) => r.scene);
     }
-    return allScenes;
-  }, [activeSceneWords, sceneResults, allScenes]);
+    return filteredFallbackPool;
+  }, [activeSceneWords, sceneResults, filteredFallbackPool]);
 
   const keywordCategories = useMemo(() => {
+    if (isTiDbScenesActive && activeSceneWords.length === 0 && apiSceneKeywordStats?.available) {
+      return apiSceneKeywordStats.categories as KeywordCategory[];
+    }
     return getSceneKeywordCategories(scenesForKeywords, activeSceneWords);
-  }, [scenesForKeywords, activeSceneWords]);
+  }, [isTiDbScenesActive, activeSceneWords, apiSceneKeywordStats, scenesForKeywords]);
 
   const handleToggleSceneKeyword = useCallback((keyword: string) => {
     const currentWords = parseQueryWords(sceneQuery);
@@ -226,20 +314,20 @@ export default function Home() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
-  // Preload scenes index and dynamically merge newly analyzed videos from DB (No Python execution needed!)
+  // Preload static fallback scenes index (used automatically when TiDB videoScenes table is not ready yet)
   useEffect(() => {
     let isMounted = true;
-    setIsScenesLoading(true);
+    setIsFallbackScenesLoading(true);
     loadSceneIndex(allVideos)
       .then((data) => {
         if (isMounted) {
           setAllScenes(data);
-          setIsScenesLoading(false);
+          setIsFallbackScenesLoading(false);
         }
       })
       .catch((err) => {
         console.error("Failed to load scene index:", err);
-        if (isMounted) setIsScenesLoading(false);
+        if (isMounted) setIsFallbackScenesLoading(false);
       });
     return () => {
       isMounted = false;
@@ -253,21 +341,25 @@ export default function Home() {
     }
   }, [filters.search]);
 
-  // Execute fast client-side scene search
+  // Execute fast client-side fallback scene search whenever TiDB table is not yet active
   useEffect(() => {
+    if (isTiDbScenesActive) return;
     let isMounted = true;
     const runSearch = async () => {
-      if (allScenes.length === 0) return;
-      const results = await searchScenes(sceneQuery, 80);
+      if (filteredFallbackPool.length === 0) {
+        if (isMounted) setFallbackSceneResults([]);
+        return;
+      }
+      const results = await searchScenes(sceneQuery, 80, filteredFallbackPool);
       if (isMounted) {
-        setSceneResults(results);
+        setFallbackSceneResults(results);
       }
     };
     runSearch();
     return () => {
       isMounted = false;
     };
-  }, [sceneQuery, allScenes]);
+  }, [sceneQuery, filteredFallbackPool, isTiDbScenesActive]);
 
   // Handle click on scene card: open VideoModal with timestamp
   const handleSceneClick = useCallback((scene: SceneItem) => {
@@ -542,11 +634,11 @@ export default function Home() {
                   Twelve Labs風
                 </span>
                 <span className="hidden sm:inline-block text-[11px] font-mono px-1.5 py-0.2 rounded-full bg-white/10 text-white/80">
-                  {sceneQuery.trim() && sceneResults.length > 0
-                    ? `${sceneResults.length}件ヒット!`
-                    : allScenes.length > 0
-                    ? `${allScenes.length}シーン`
-                    : "1,312シーン"}
+                  {sceneQuery.trim() && totalMatchedSceneCount > 0
+                    ? `${totalMatchedSceneCount.toLocaleString()}件ヒット!`
+                    : totalIndexedSceneCount > 0
+                    ? `${totalIndexedSceneCount.toLocaleString()}シーン`
+                    : "読み込み中"}
                 </span>
               </button>
             </div>
@@ -574,7 +666,23 @@ export default function Home() {
                           <Sparkles className="w-3 h-3 text-amber-400" />
                           Twelve Labs-style Scene Search
                         </span>
-                        <span className="text-[11px] text-white/40">完全¥0・API代ゼロ</span>
+                        <span
+                          data-testid="scene-search-source-badge"
+                          title={
+                            isTiDbScenesActive
+                              ? "TiDB videoScenes テーブルを直接検索しています"
+                              : "本番 TiDB に videoScenes テーブルが未作成のため、現行の静的シーンファイルに自動フォールバックしています"
+                          }
+                          className={`text-[10px] font-medium px-2 py-0.5 rounded-full border ${
+                            isTiDbScenesActive
+                              ? "border-emerald-400/35 bg-emerald-500/15 text-emerald-200"
+                              : "border-white/15 bg-white/5 text-white/60"
+                          }`}
+                        >
+                          {isTiDbScenesActive
+                            ? `TiDB 全量検索 (${(apiSceneSearchData?.totalIndexedVideos ?? 0).toLocaleString()}本)`
+                            : "静的ファイル（フォールバック中）"}
+                        </span>
                       </div>
                       <h3 className="text-lg sm:text-xl font-bold text-white mt-1">
                         自然言語シーン・タイムスタンプ検索
@@ -587,10 +695,48 @@ export default function Home() {
                     <div className="text-right">
                       <span className="text-xs text-white/50 block">解析済みシーン総数</span>
                       <span className="text-xl sm:text-2xl font-black font-mono text-amber-400">
-                        {allScenes.length.toLocaleString()}
+                        {totalIndexedSceneCount.toLocaleString()}
                         <span className="text-xs font-normal text-white/60 ml-1">シーン</span>
                       </span>
                     </div>
+                  </div>
+
+                  {/* Scene Search Filters: Score + Unwatched toggle */}
+                  <div className="flex flex-wrap items-center gap-3 pt-1">
+                    <label className="inline-flex items-center gap-2 text-xs text-white/80">
+                      <span className="text-white/55">点数絞り込み:</span>
+                      <select
+                        aria-label="シーン検索の点数絞り込み"
+                        value={sceneScoreFilter}
+                        onChange={(e) => setSceneScoreFilter(e.target.value as SceneScoreFilter)}
+                        className="rounded-lg border border-white/15 bg-black/50 px-2.5 py-1.5 text-xs text-white outline-none focus:border-amber-400/60"
+                      >
+                        <option value="all">すべての動画（校正済み＋未校正）</option>
+                        <option value="calibrated_only">校正済みのみ</option>
+                        <option value="score_78_plus">校正 78点（A-）以上</option>
+                        <option value="score_83_plus">校正 83点（受賞水準）以上</option>
+                        <option value="uncalibrated_only">未校正のみ</option>
+                      </select>
+                    </label>
+                    <label className="inline-flex items-center gap-2 text-xs text-white/80 cursor-pointer select-none">
+                      <input
+                        type="checkbox"
+                        checked={sceneExcludeUnwatched}
+                        onChange={(e) => setSceneExcludeUnwatched(e.target.checked)}
+                        className="h-3.5 w-3.5 rounded border-white/25 bg-black/50 accent-amber-400"
+                      />
+                      <span>見ずに作られた動画を除外（既定ON）</span>
+                    </label>
+                    <label className="inline-flex items-center gap-2 text-xs text-white/80 cursor-pointer select-none">
+                      <input
+                        type="checkbox"
+                        aria-label="旧分析を除く"
+                        checked={sceneExcludeLegacyAnalysis}
+                        onChange={(e) => setSceneExcludeLegacyAnalysis(e.target.checked)}
+                        className="h-3.5 w-3.5 rounded border-white/25 bg-black/50 accent-emerald-400"
+                      />
+                      <span>旧分析を除く（v3のみ表示）</span>
+                    </label>
                   </div>
 
                   {/* Main Search Input */}
@@ -777,12 +923,12 @@ export default function Home() {
                           </span>
                         ))}
                         <span className="text-white/70 ml-1">の該当シーン:</span>
-                        <span className="ml-1.5 text-base font-bold text-white font-mono">{sceneResults.length}</span> 件
+                        <span className="ml-1.5 text-base font-bold text-white font-mono">{totalMatchedSceneCount.toLocaleString()}</span> 件
                       </>
                     ) : (
                       <>
                         注目のシーン一覧:
-                        <span className="ml-1.5 text-base font-bold text-white font-mono">{sceneResults.length}</span> 件
+                        <span className="ml-1.5 text-base font-bold text-white font-mono">{totalMatchedSceneCount.toLocaleString()}</span> 件
                       </>
                     )}
                   </span>
@@ -801,18 +947,31 @@ export default function Home() {
                   ))}
                 </div>
               ) : sceneResults.length > 0 ? (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-                  {sceneResults.map((result, index) => (
-                    <SceneCard
-                      key={result.scene.id}
-                      scene={result.scene}
-                      index={index}
-                      matchedTerms={result.matchedTerms}
-                      score={result.score}
-                      onClick={handleSceneClick}
-                    />
-                  ))}
-                </div>
+                <>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+                    {sceneResults.map((result, index) => (
+                      <SceneCard
+                        key={result.scene.id}
+                        scene={result.scene}
+                        index={index}
+                        matchedTerms={result.matchedTerms}
+                        score={result.score}
+                        onClick={handleSceneClick}
+                      />
+                    ))}
+                  </div>
+                  {hasMoreScenes && (
+                    <div className="mt-8 flex justify-center">
+                      <button
+                        type="button"
+                        onClick={() => setScenePageLimit((prev) => Math.min(prev + 40, 80))}
+                        className="rounded-lg border border-amber-400/35 bg-amber-400/15 px-5 py-2.5 text-xs font-semibold text-amber-200 transition-colors hover:bg-amber-400/25"
+                      >
+                        さらにシーンを読み込む（現在 {sceneResults.length} / {totalMatchedSceneCount.toLocaleString()} 件）
+                      </button>
+                    </div>
+                  )}
+                </>
               ) : (
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}

@@ -1,4 +1,5 @@
-import { decimal, int, mediumtext, mysqlEnum, mysqlTable, text, timestamp, uniqueIndex, varchar } from "drizzle-orm/mysql-core";
+import { decimal, index, int, json, mediumtext, mysqlEnum, mysqlTable, text, timestamp, uniqueIndex, varchar } from "drizzle-orm/mysql-core";
+import type { CalibratedScoreAxesPayload } from "../shared/calibratedScoreAxes";
 
 /**
  * Core user table backing auth flow.
@@ -71,12 +72,16 @@ export const videos = mysqlTable("videos", {
   calibratedRank: varchar("calibratedRank", { length: 8 }), // S+..D
   calibratedTierBand: varchar("calibratedTierBand", { length: 24 }), // award_tier | pro_band | low_band
   calibratedBreakdown: mediumtext("calibratedBreakdown"), // JSON: 2+1各回点数・5観点内訳・監査証跡
+  calibratedScoreAxes: json("calibratedScoreAxes").$type<CalibratedScoreAxesPayload | null>(), // JSON: 校正済み5軸スコア（各20点、合計=calibratedScore）
   calibrationVersion: varchar("calibrationVersion", { length: 32 }), // 'phase2_v1'
   calibratedAt: timestamp("calibratedAt"), // 校正完了日時 (UTC)
   calibratedRoute: varchar("calibratedRoute", { length: 32 }), // video_h1 | video_h2_escalated | contact_sheet
   calibratedRunId: varchar("calibratedRunId", { length: 64 }), // analysis/runs/<run_id>
   calibrationGenreBucket: varchar("calibrationGenreBucket", { length: 64 }), // CM | MV | モーション | 3DCG/アニメ | 企業映像 | unverified:<slug>
   analysisObservationScope: varchar("analysisObservationScope", { length: 40 }), // metadata_only_unwatched | triage_boilerplate_unwatched | triage_unverified_short | missing_video_unwatched | null
+  analysisVersion: varchar("analysisVersion", { length: 16 }).notNull().default("legacy"), // 'legacy' | 'v3'
+  analysisGeneratedAt: timestamp("analysisGeneratedAt"), // v3 生成完了日時 (UTC)。legacy は NULL
+  analysisPromptSha256: varchar("analysisPromptSha256", { length: 64 }), // プロンプト SHA-256（v3 / v3.1 の識別用）
   embedStatus: varchar("embedStatus", { length: 16 }).notNull().default("unknown"), // unknown | available | restricted
   embedReason: varchar("embedReason", { length: 128 }), // unavailable_private_or_deleted | unavailable_access_restricted | unavailable_embed_restricted | unavailable_page_unavailable
   embedCheckedAt: timestamp("embedCheckedAt"),
@@ -87,6 +92,62 @@ export const videos = mysqlTable("videos", {
 
 export type Video = typeof videos.$inferSelect;
 export type InsertVideo = typeof videos.$inferInsert;
+
+/**
+ * Video scenes table — timestamped scene descriptions extracted from Ch.3 timelines.
+ * Stored independently from `videos` so existing columns remain untouched.
+ */
+export const videoScenes = mysqlTable("videoScenes", {
+  id: int("id").autoincrement().primaryKey(),
+  videoId: varchar("videoId", { length: 64 }).notNull(),
+  shotIndex: int("shotIndex").notNull(),
+  startMmss: varchar("startMmss", { length: 16 }).notNull(),
+  endMmss: varchar("endMmss", { length: 16 }).notNull(),
+  startSec: decimal("startSec", { precision: 8, scale: 2 }).notNull().default("0.00"),
+  endSec: decimal("endSec", { precision: 8, scale: 2 }).notNull().default("0.00"),
+  durationSec: decimal("durationSec", { precision: 8, scale: 2 }).notNull().default("0.00"),
+  shotTitle: varchar("shotTitle", { length: 255 }).notNull().default(""),
+  description: text("description").notNull(),
+  audioText: text("audioText"),
+  keywordsJson: text("keywordsJson").notNull(),
+  searchText: text("searchText").notNull(),
+  sceneSha256: varchar("sceneSha256", { length: 64 }),
+  analysisVersion: varchar("analysisVersion", { length: 16 }).notNull().default("legacy"),
+  analysisGeneratedAt: timestamp("analysisGeneratedAt"),
+  sourceUpdatedAt: timestamp("sourceUpdatedAt"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+}, (table) => [
+  uniqueIndex("video_scenes_video_shot_unique").on(table.videoId, table.shotIndex),
+  index("video_scenes_video_id_idx").on(table.videoId),
+  index("video_scenes_video_time_idx").on(table.videoId, table.startSec),
+  index("video_scenes_version_idx").on(table.analysisVersion),
+]);
+
+export type VideoSceneRow = typeof videoScenes.$inferSelect;
+export type InsertVideoScene = typeof videoScenes.$inferInsert;
+
+/**
+ * Archive history of previous `videos.aiAnalysis` snapshots preserved before v3 replacement.
+ * Aligned with chibatmute's write script schema (`drizzle/add_analysis_version.sql`).
+ */
+export const videoAnalysisHistory = mysqlTable("videoAnalysisHistory", {
+  id: int("id").autoincrement().primaryKey(),
+  videoId: varchar("videoId", { length: 64 }).notNull(),
+  analysisVersion: varchar("analysisVersion", { length: 16 }).notNull(),
+  aiAnalysis: mediumtext("aiAnalysis"),
+  contentSha256: varchar("contentSha256", { length: 64 }).notNull(),
+  promptSha256: varchar("promptSha256", { length: 64 }),
+  generatedAt: timestamp("generatedAt"),
+  archivedAt: timestamp("archivedAt").defaultNow().notNull(),
+  archivedBy: varchar("archivedBy", { length: 64 }).notNull(),
+}, (table) => [
+  index("video_analysis_history_video_id_idx").on(table.videoId, table.archivedAt),
+  index("video_analysis_history_version_idx").on(table.analysisVersion),
+]);
+
+export type VideoAnalysisHistoryRow = typeof videoAnalysisHistory.$inferSelect;
+export type InsertVideoAnalysisHistory = typeof videoAnalysisHistory.$inferInsert;
 
 /**
  * 公開端末でも利用者ごとにお気に入りを分離するための名前付きプロフィール。

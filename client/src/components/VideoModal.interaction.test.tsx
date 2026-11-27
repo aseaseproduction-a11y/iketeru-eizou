@@ -223,6 +223,72 @@ describe("VideoModal interactions", () => {
     expect(screen.getByRole("button", { name: /説明文をコピー/ })).toBeTruthy();
   });
 
+  it("校正済み動画では総合点と5軸バーのみを表示し、旧スコア・旧基準AI評価欄を出さない", () => {
+    const calibratedV3Video: Video = {
+      ...video,
+      calibratedScore: 88,
+      calibratedRank: "A+",
+      calibratedTierBand: "award_tier",
+      calibrationStatus: "calibrated_verified",
+      calibrationVersion: "phase2_v1",
+      calibratedScoreAxes: {
+        v: 1,
+        axes: {
+          direction: 17,
+          visual_craft: 18,
+          editing_rhythm: 17.5,
+          sound_integration: 18.5,
+          originality_finish: 17,
+        },
+        runs: 2,
+        source: "phase3",
+        offsetPerAxis: 0,
+      },
+      aiOverallRating: "S-",
+      aiDirectionRating: "A+",
+      aiTechniqueRating: "A+",
+      aiOverallScore: 91,
+      aiDirectionScore: 88,
+      aiTechniqueScore: 89,
+      analysisVersion: "v3",
+      aiAnalysis: "## 0. 映像構造と演出力・技術力評価の総括\n新版分析の本文\n\n## 10. 高技術カット完全再現レシピ\n再現手順",
+    };
+
+    render(<VideoModal video={calibratedV3Video} onClose={vi.fn()} />);
+
+    expect(screen.getByTestId("modal-header-calibrated-score").textContent).toContain("88点");
+    expect(screen.getByTestId("modal-header-calibrated-score").textContent).not.toContain("S-");
+    expect(screen.getByTestId("modal-header-calibrated-score").textContent).not.toContain("A+");
+    expect(screen.getByTestId("calibrated-score-axes")).toBeTruthy();
+    for (const label of ["演出", "映像の技術", "編集・リズム", "音", "独創性・仕上げ"]) {
+      expect(screen.getByText(label)).toBeTruthy();
+    }
+    expect(screen.queryByTestId("legacy-ai-ratings-section")).toBeNull();
+    expect(screen.queryByText(/旧基準AI評価/)).toBeNull();
+    expect(screen.queryByText("旧評価 総合")).toBeNull();
+    expect(screen.getByTestId("analysis-v3-badge").textContent).toContain("分析 v3");
+    expect(screen.queryByTestId("analysis-legacy-badge")).toBeNull();
+  });
+
+  it("未校正動画では旧評価を表示し、5軸バーは出さない", () => {
+    const legacyUncalibratedVideo: Video = {
+      ...video,
+      calibratedScore: null,
+      calibratedScoreAxes: null,
+      aiOverallScore: 84,
+      aiDirectionScore: 80,
+      aiTechniqueScore: 87,
+      analysisVersion: "legacy",
+      aiAnalysis: "## 0. 分析サマリー\n旧分析の本文",
+    };
+
+    render(<VideoModal video={legacyUncalibratedVideo} onClose={vi.fn()} />);
+
+    expect(screen.queryByTestId("calibrated-score-axes")).toBeNull();
+    expect(screen.getByTestId("legacy-ai-ratings-section").textContent).toContain("旧評価");
+    expect(screen.getByTestId("analysis-legacy-badge").textContent).toContain("旧分析・時刻は目安");
+  });
+
   it("analysisObservationScope が無い動画では未視聴警告バナーを表示しない", () => {
     render(<VideoModal video={{ ...video, analysisObservationScope: null, aiAnalysis: "実視聴分析本文" }} onClose={vi.fn()} />);
     expect(screen.queryByTestId("unwatched-warning-banner")).toBeNull();

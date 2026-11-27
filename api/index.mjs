@@ -16,7 +16,7 @@ import { drizzle } from "drizzle-orm/mysql2";
 import mysql from "mysql2/promise";
 
 // drizzle/schema.ts
-import { decimal, int, mediumtext, mysqlEnum, mysqlTable, text, timestamp, uniqueIndex, varchar } from "drizzle-orm/mysql-core";
+import { decimal, index, int, json, mediumtext, mysqlEnum, mysqlTable, text, timestamp, uniqueIndex, varchar } from "drizzle-orm/mysql-core";
 var users = mysqlTable("users", {
   /**
    * Surrogate primary key. Auto-incremented numeric value managed by the database.
@@ -105,6 +105,8 @@ var videos = mysqlTable("videos", {
   // award_tier | pro_band | low_band
   calibratedBreakdown: mediumtext("calibratedBreakdown"),
   // JSON: 2+1各回点数・5観点内訳・監査証跡
+  calibratedScoreAxes: json("calibratedScoreAxes").$type(),
+  // JSON: 校正済み5軸スコア（各20点、合計=calibratedScore）
   calibrationVersion: varchar("calibrationVersion", { length: 32 }),
   // 'phase2_v1'
   calibratedAt: timestamp("calibratedAt"),
@@ -117,6 +119,12 @@ var videos = mysqlTable("videos", {
   // CM | MV | モーション | 3DCG/アニメ | 企業映像 | unverified:<slug>
   analysisObservationScope: varchar("analysisObservationScope", { length: 40 }),
   // metadata_only_unwatched | triage_boilerplate_unwatched | triage_unverified_short | missing_video_unwatched | null
+  analysisVersion: varchar("analysisVersion", { length: 16 }).notNull().default("legacy"),
+  // 'legacy' | 'v3'
+  analysisGeneratedAt: timestamp("analysisGeneratedAt"),
+  // v3 生成完了日時 (UTC)。legacy は NULL
+  analysisPromptSha256: varchar("analysisPromptSha256", { length: 64 }),
+  // プロンプト SHA-256（v3 / v3.1 の識別用）
   embedStatus: varchar("embedStatus", { length: 16 }).notNull().default("unknown"),
   // unknown | available | restricted
   embedReason: varchar("embedReason", { length: 128 }),
@@ -127,6 +135,46 @@ var videos = mysqlTable("videos", {
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull()
 });
+var videoScenes = mysqlTable("videoScenes", {
+  id: int("id").autoincrement().primaryKey(),
+  videoId: varchar("videoId", { length: 64 }).notNull(),
+  shotIndex: int("shotIndex").notNull(),
+  startMmss: varchar("startMmss", { length: 16 }).notNull(),
+  endMmss: varchar("endMmss", { length: 16 }).notNull(),
+  startSec: decimal("startSec", { precision: 8, scale: 2 }).notNull().default("0.00"),
+  endSec: decimal("endSec", { precision: 8, scale: 2 }).notNull().default("0.00"),
+  durationSec: decimal("durationSec", { precision: 8, scale: 2 }).notNull().default("0.00"),
+  shotTitle: varchar("shotTitle", { length: 255 }).notNull().default(""),
+  description: text("description").notNull(),
+  audioText: text("audioText"),
+  keywordsJson: text("keywordsJson").notNull(),
+  searchText: text("searchText").notNull(),
+  sceneSha256: varchar("sceneSha256", { length: 64 }),
+  analysisVersion: varchar("analysisVersion", { length: 16 }).notNull().default("legacy"),
+  analysisGeneratedAt: timestamp("analysisGeneratedAt"),
+  sourceUpdatedAt: timestamp("sourceUpdatedAt"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull()
+}, (table) => [
+  uniqueIndex("video_scenes_video_shot_unique").on(table.videoId, table.shotIndex),
+  index("video_scenes_video_id_idx").on(table.videoId),
+  index("video_scenes_video_time_idx").on(table.videoId, table.startSec),
+  index("video_scenes_version_idx").on(table.analysisVersion)
+]);
+var videoAnalysisHistory = mysqlTable("videoAnalysisHistory", {
+  id: int("id").autoincrement().primaryKey(),
+  videoId: varchar("videoId", { length: 64 }).notNull(),
+  analysisVersion: varchar("analysisVersion", { length: 16 }).notNull(),
+  aiAnalysis: mediumtext("aiAnalysis"),
+  contentSha256: varchar("contentSha256", { length: 64 }).notNull(),
+  promptSha256: varchar("promptSha256", { length: 64 }),
+  generatedAt: timestamp("generatedAt"),
+  archivedAt: timestamp("archivedAt").defaultNow().notNull(),
+  archivedBy: varchar("archivedBy", { length: 64 }).notNull()
+}, (table) => [
+  index("video_analysis_history_video_id_idx").on(table.videoId, table.archivedAt),
+  index("video_analysis_history_version_idx").on(table.analysisVersion)
+]);
 var favoriteProfiles = mysqlTable("favoriteProfiles", {
   id: varchar("id", { length: 64 }).primaryKey(),
   displayName: varchar("displayName", { length: 80 }).notNull(),
@@ -499,8 +547,8 @@ function parseProductionCreditText(raw) {
     return creditFromName(value) ? [creditFromName(value)] : [];
   }
   const credits = [];
-  matches.forEach((match, index) => {
-    const nextStart = matches[index + 1]?.index ?? value.length;
+  matches.forEach((match, index2) => {
+    const nextStart = matches[index2 + 1]?.index ?? value.length;
     const roleLabel = match[0].replace(/[:：]\s*$/, "");
     const role = normalizeProductionRole(roleLabel);
     if (!role) return;
@@ -560,6 +608,309 @@ function getProductionNames(credits) {
 }
 function getProductionRoles(credits) {
   return dedupe(credits.flatMap((credit) => credit.roles));
+}
+
+// shared/sceneSearchMeta.ts
+var SCENE_SYNONYM_MAP = {
+  "\u5915\u65E5": ["\u5915\u65E5", "\u5915\u967D", "\u5915\u713C\u3051", "\u65E5\u6CA1", "\u30DE\u30B8\u30C3\u30AF\u30A2\u30EF\u30FC", "\u9EC4\u660F", "\u30B5\u30F3\u30BB\u30C3\u30C8", "sunset", "\u30AA\u30EC\u30F3\u30B8", "\u831C\u8272"],
+  "\u5915\u967D": ["\u5915\u65E5", "\u5915\u967D", "\u5915\u713C\u3051", "\u65E5\u6CA1", "\u30DE\u30B8\u30C3\u30AF\u30A2\u30EF\u30FC", "\u9EC4\u660F", "\u30B5\u30F3\u30BB\u30C3\u30C8", "sunset", "\u30AA\u30EC\u30F3\u30B8"],
+  "\u6D77": ["\u6D77", "\u6D77\u5CB8", "\u7802\u6D5C", "\u30D3\u30FC\u30C1", "\u6CE2", "\u6C34\u7740", "ocean", "beach", "sea", "\u6C34\u9762", "\u6CE2\u6253\u3061\u969B"],
+  "\u96E8": ["\u96E8", "\u8C6A\u96E8", "\u96E8\u6EF4", "\u6C34\u6EF4", "\u5098", "\u30EC\u30A4\u30F3", "rain", "\u96E8\u964D\u308A", "\u571F\u7802\u964D\u308A", "\u53F0\u98A8"],
+  "\u591C": ["\u591C", "\u591C\u666F", "\u6DF1\u591C", "\u6697\u95C7", "\u30CD\u30AA\u30F3", "\u30CA\u30A4\u30C8", "night", "\u7167\u660E", "\u8857\u706F"],
+  "\u8ECA": ["\u8ECA", "\u81EA\u52D5\u8ECA", "\u30B9\u30DD\u30FC\u30C4\u30AB\u30FC", "\u30C9\u30E9\u30A4\u30D6", "\u30AB\u30FC\u30B9\u30BF\u30F3\u30C8", "\u8D70\u884C", "car", "\u30D8\u30C3\u30C9\u30E9\u30A4\u30C8"],
+  "\u8D70\u308B": ["\u8D70\u308B", "\u75BE\u8D70", "\u30E9\u30F3\u30CB\u30F3\u30B0", "\u30C0\u30C3\u30B7\u30E5", "\u9003\u3052\u308B", "\u99C6\u3051\u629C\u3051\u308B", "\u30B9\u30D4\u30FC\u30C9"],
+  "\u8E0A\u308B": ["\u8E0A\u308B", "\u30C0\u30F3\u30B9", "\u30B9\u30C6\u30C3\u30D7", "\u632F\u4ED8", "\u30B3\u30EC\u30AA", "dance", "\u30C0\u30F3\u30B5\u30FC", "\u7FA4\u821E"],
+  "\u5149": ["\u5149", "\u767A\u5149", "\u30B9\u30C8\u30ED\u30DC", "\u9583\u5149", "\u30EC\u30F3\u30BA\u30D5\u30EC\u30A2", "\u30B0\u30ED\u30FC", "\u9006\u5149", "\u30E9\u30A4\u30C8", "light"],
+  "\u8857": ["\u8857", "\u90FD\u5E02", "\u30D3\u30EB", "\u6771\u4EAC", "\u30B9\u30C8\u30EA\u30FC\u30C8", "\u8DEF\u5730\u88CF", "\u4EA4\u5DEE\u70B9", "city", "street"],
+  "\u7159": ["\u7159", "\u30B9\u30E2\u30FC\u30AF", "\u30D5\u30A9\u30B0", "\u6E6F\u6C17", "\u7206\u767A", "\u706B\u82B1", "smoke", "fog"],
+  "\u82B1": ["\u82B1", "\u685C", "\u82B1\u3073\u3089", "\u690D\u7269", "\u81EA\u7136", "flower"],
+  "\u7A7A": ["\u7A7A", "\u9752\u7A7A", "\u96F2", "\u661F\u7A7A", "\u5B87\u5B99", "sky", "\u30AF\u30E9\u30A6\u30C9"],
+  "\u7F8E\u3057\u3044": ["\u7F8E\u3057\u3044", "\u30A8\u30E2\u30FC\u30B7\u30E7\u30CA\u30EB", "\u7DBA\u9E97", "\u5E7B\u60F3\u7684", "\u30B7\u30CD\u30DE\u30C6\u30A3\u30C3\u30AF", "\u7D76\u666F", "\u7F8E\u9E97"],
+  "\u72C2\u6C17": ["\u72C2\u6C17", "\u30DB\u30E9\u30FC", "\u4E0D\u6C17\u5473", "\u6050\u6016", "\u602A\u4F5C", "\u30AB\u30EB\u30C8", "\u66B4\u8D70"],
+  "\u7B11\u3044": ["\u7B11\u3044", "\u7B11\u9854", "\u30B3\u30DF\u30AB\u30EB", "\u30E6\u30FC\u30E2\u30A2", "\u7206\u7B11", "\u5FAE\u7B11\u307F", "\u30B9\u30DE\u30A4\u30EB"],
+  "\u30DE\u30C3\u30C1\u30AB\u30C3\u30C8": ["\u30DE\u30C3\u30C1\u30AB\u30C3\u30C8", "match cut", "\u30B0\u30E9\u30D5\u30A3\u30C3\u30AF\u30DE\u30C3\u30C1", "\u5F62\u72B6\u4E00\u81F4"],
+  "\u30B9\u30C8\u30C3\u30D7\u30E2\u30FC\u30B7\u30E7\u30F3": ["\u30B9\u30C8\u30C3\u30D7\u30E2\u30FC\u30B7\u30E7\u30F3", "\u30B3\u30DE\u64AE\u308A", "stop motion", "\u30AF\u30EC\u30A4\u30A2\u30CB\u30E1", "\u4EBA\u5F62\u30A2\u30CB\u30E1"],
+  "\u30E1\u30BF\u30E2\u30EB\u30D5\u30A9\u30FC\u30BC": ["\u30E1\u30BF\u30E2\u30EB\u30D5\u30A9\u30FC\u30BC", "\u30E2\u30FC\u30D5", "\u30E2\u30FC\u30D5\u30A3\u30F3\u30B0", "\u5909\u8EAB", "\u5F62\u614B\u5909\u5316"],
+  "\u30EF\u30F3\u30AB\u30C3\u30C8": ["\u30EF\u30F3\u30AB\u30C3\u30C8", "\u9577\u56DE\u3057", "one take", "\u30B7\u30FC\u30E0\u30EC\u30B9"],
+  "\u97F3\u30CF\u30E1": ["\u97F3\u30CF\u30E1", "\u30D3\u30FC\u30C8\u30B7\u30F3\u30AF", "\u30EA\u30BA\u30E0\u7DE8\u96C6", "\u30D3\u30FC\u30C8\u306B\u5408\u308F\u305B", "\u30B7\u30F3\u30AF\u30ED"],
+  "\u30AD\u30CD\u30C6\u30A3\u30C3\u30AF\u30BF\u30A4\u30DD\u30B0\u30E9\u30D5\u30A3": ["\u30AD\u30CD\u30C6\u30A3\u30C3\u30AF\u30BF\u30A4\u30DD\u30B0\u30E9\u30D5\u30A3", "\u30BF\u30A4\u30DD\u30B0\u30E9\u30D5\u30A3", "\u30E2\u30FC\u30B7\u30E7\u30F3\u30B0\u30E9\u30D5\u30A3\u30C3\u30AF\u30B9"],
+  "\u30C8\u30E9\u30C3\u30AD\u30F3\u30B0": ["\u30C8\u30E9\u30C3\u30AD\u30F3\u30B0", "\u30AB\u30E1\u30E9\u30C8\u30E9\u30C3\u30AF", "\u8FFD\u5F93", "tracking"],
+  "\u30C9\u30EA\u30FC": ["\u30C9\u30EA\u30FC", "\u30D7\u30C3\u30B7\u30E5\u30A4\u30F3", "\u30C8\u30E9\u30C3\u30AF\u30A4\u30F3", "\u30C9\u30EA\u30FC\u30A2\u30A6\u30C8", "dolly"],
+  "\u624B\u6301\u3061": ["\u624B\u6301\u3061", "\u30CF\u30F3\u30C7\u30A3", "\u30CF\u30F3\u30C7\u30A3\u30AB\u30E1\u30E9", "handheld"],
+  "\u30D5\u30A9\u30FC\u30AB\u30B9\u9001\u308A": ["\u30D5\u30A9\u30FC\u30AB\u30B9\u9001\u308A", "\u30E9\u30C3\u30AF\u30D5\u30A9\u30FC\u30AB\u30B9", "\u30D4\u30F3\u30C8\u79FB\u52D5", "\u30D4\u30F3\u30C8\u9001\u308A"],
+  "\u753B\u9762\u5206\u5272": ["\u753B\u9762\u5206\u5272", "\u30B9\u30D7\u30EA\u30C3\u30C8\u30B9\u30AF\u30EA\u30FC\u30F3", "\u30DE\u30EB\u30C1\u753B\u9762", "split screen"],
+  "vfx": ["vfx", "\u30B3\u30F3\u30DD\u30B8\u30C3\u30C8", "\u5408\u6210", "cg\u5408\u6210", "\u8996\u899A\u52B9\u679C"],
+  "\u30B0\u30EA\u30C3\u30C1": ["\u30B0\u30EA\u30C3\u30C1", "\u30C7\u30FC\u30BF\u30E2\u30C3\u30B7\u30E5", "\u30C7\u30B8\u30BF\u30EB\u30CE\u30A4\u30BA", "\u8D70\u67FB\u7DDA", "glitch"],
+  "\u30ED\u30C8\u30B9\u30B3\u30FC\u30D7": ["\u30ED\u30C8\u30B9\u30B3\u30FC\u30D7", "rotoscope", "\u30C8\u30EC\u30FC\u30B9"],
+  "\u30BF\u30A4\u30E0\u30E9\u30D7\u30B9": ["\u30BF\u30A4\u30E0\u30E9\u30D7\u30B9", "\u30CF\u30A4\u30D1\u30FC\u30E9\u30D7\u30B9", "timelapse"],
+  "\u30B8\u30E3\u30F3\u30D7\u30AB\u30C3\u30C8": ["\u30B8\u30E3\u30F3\u30D7\u30AB\u30C3\u30C8", "\u30AB\u30C3\u30C8\u5272\u308A", "jump cut"],
+  "\u30BA\u30FC\u30E0": ["\u30BA\u30FC\u30E0", "\u30BA\u30FC\u30E0\u30A4\u30F3", "\u30BA\u30FC\u30E0\u30A2\u30A6\u30C8", "zoom"],
+  "\u30B9\u30D4\u30FC\u30C9\u30E9\u30F3\u30D7": ["\u30B9\u30D4\u30FC\u30C9\u30E9\u30F3\u30D7", "\u7DE9\u6025", "speed ramp", "\u30B9\u30ED\u30FC\u30E2\u30FC\u30B7\u30E7\u30F3"]
+};
+var SCENE_CATEGORY_DEFINITIONS = [
+  {
+    id: "situation",
+    name: "\u30B7\u30C1\u30E5\u30A8\u30FC\u30B7\u30E7\u30F3",
+    icon: "\u{1F4CD}",
+    seedWords: [
+      "\u7A7A",
+      "\u9752\u7A7A",
+      "\u591C",
+      "\u591C\u666F",
+      "\u8857",
+      "\u90FD\u4F1A",
+      "\u30B9\u30C8\u30EA\u30FC\u30C8",
+      "\u8DEF\u5730\u88CF",
+      "\u90E8\u5C4B",
+      "\u5BA4\u5185",
+      "\u6D77",
+      "\u6D77\u5CB8",
+      "\u7802\u6D5C",
+      "\u6C34\u9762",
+      "\u96E8",
+      "\u6C34\u6EF4",
+      "\u96F2",
+      "\u661F\u7A7A",
+      "\u5B87\u5B99",
+      "\u81EA\u7136",
+      "\u68EE",
+      "\u5915\u65E5",
+      "\u5915\u66AE\u308C",
+      "\u30B9\u30BF\u30B8\u30A2\u30E0",
+      "\u5C4B\u4E0A",
+      "\u30C8\u30F3\u30CD\u30EB",
+      "\u99C5",
+      "\u96FB\u8ECA",
+      "\u968E\u6BB5"
+    ]
+  },
+  {
+    id: "technique",
+    name: "\u6F14\u51FA\u6280\u6CD5\u30FB\u7DE8\u96C6",
+    icon: "\u{1F3AC}",
+    seedWords: [
+      "\u30DE\u30C3\u30C1\u30AB\u30C3\u30C8",
+      "\u30B8\u30E3\u30F3\u30D7\u30AB\u30C3\u30C8",
+      "\u30EF\u30F3\u30AB\u30C3\u30C8",
+      "\u30B9\u30D4\u30FC\u30C9\u30E9\u30F3\u30D7",
+      "\u97F3\u30CF\u30E1",
+      "\u30B9\u30C8\u30C3\u30D7\u30E2\u30FC\u30B7\u30E7\u30F3",
+      "\u30E1\u30BF\u30E2\u30EB\u30D5\u30A9\u30FC\u30BC",
+      "\u30ED\u30C8\u30B9\u30B3\u30FC\u30D7",
+      "\u30AB\u30C3\u30C8\u30A2\u30A6\u30C8",
+      "\u30BB\u30EB\u30EB\u30C3\u30AF",
+      "\u30AD\u30CD\u30C6\u30A3\u30C3\u30AF\u30BF\u30A4\u30DD\u30B0\u30E9\u30D5\u30A3",
+      "\u30E2\u30FC\u30B7\u30E7\u30F3\u30B0\u30E9\u30D5\u30A3\u30C3\u30AF\u30B9",
+      "\u30B3\u30E9\u30FC\u30B8\u30E5",
+      "3DCG",
+      "VFX",
+      "\u30B3\u30F3\u30DD\u30B8\u30C3\u30C8",
+      "\u753B\u9762\u5206\u5272",
+      "\u30C8\u30E9\u30C3\u30AD\u30F3\u30B0",
+      "\u30C9\u30EA\u30FC",
+      "\u624B\u6301\u3061",
+      "\u30BA\u30FC\u30E0",
+      "\u30ED\u30FC\u30A2\u30F3\u30B0\u30EB",
+      "\u4FEF\u77B0",
+      "\u30AF\u30ED\u30FC\u30BA\u30A2\u30C3\u30D7",
+      "\u30D5\u30A9\u30FC\u30AB\u30B9\u9001\u308A",
+      "\u88AB\u5199\u754C\u6DF1\u5EA6",
+      "\u30B9\u30ED\u30FC\u30E2\u30FC\u30B7\u30E7\u30F3",
+      "\u30BF\u30A4\u30E0\u30E9\u30D7\u30B9",
+      "\u30B0\u30EA\u30C3\u30C1",
+      "\u8272\u53CE\u5DEE",
+      "\u30EF\u30A4\u30D7",
+      "\u30D7\u30ED\u30B8\u30A7\u30AF\u30B7\u30E7\u30F3",
+      "\u624B\u63CF\u304D",
+      "\u30DF\u30CB\u30C1\u30E5\u30A2",
+      "\u30B7\u30EB\u30A8\u30C3\u30C8",
+      "\u9006\u5149",
+      "\u30B9\u30C8\u30ED\u30DC"
+    ]
+  },
+  {
+    id: "visual",
+    name: "\u6F14\u51FA\u30FB\u30AB\u30E1\u30E9\u30FBVFX",
+    icon: "\u{1F3A5}",
+    seedWords: [
+      "\u5149",
+      "\u9006\u5149",
+      "\u30B9\u30C8\u30ED\u30DC",
+      "\u30D5\u30E9\u30C3\u30B7\u30E5",
+      "\u30A2\u30CB\u30E1\u30FC\u30B7\u30E7\u30F3",
+      "\u624B\u63CF\u304D",
+      "\u30C9\u30ED\u30FC\u30A4\u30F3\u30B0",
+      "\u6587\u5B57",
+      "\u30BF\u30A4\u30DD\u30B0\u30E9\u30D5\u30A3",
+      "\u30E2\u30FC\u30B7\u30E7\u30F3\u30B0\u30E9\u30D5\u30A3\u30C3\u30AF\u30B9",
+      "\u30B0\u30EA\u30C3\u30C1",
+      "\u30CE\u30A4\u30BA",
+      "\u8272\u53CE\u5DEE",
+      "3DCG",
+      "\u30BB\u30EB\u30EB\u30C3\u30AF",
+      "\u30B7\u30EB\u30A8\u30C3\u30C8",
+      "\u88AB\u5199\u754C\u6DF1\u5EA6",
+      "\u30D4\u30F3\u30C8",
+      "\u30B9\u30ED\u30FC\u30E2\u30FC\u30B7\u30E7\u30F3",
+      "\u4FEF\u77B0",
+      "\u30C9\u30ED\u30FC\u30F3",
+      "\u4E07\u83EF\u93E1",
+      "\u753B\u9762\u5206\u5272",
+      "\u30B9\u30D7\u30EA\u30C3\u30C8\u30B9\u30AF\u30EA\u30FC\u30F3",
+      "\u30B3\u30E9\u30FC\u30B8\u30E5",
+      "\u30A2\u30A4\u30BD\u30E1\u30C8\u30EA\u30C3\u30AF",
+      "\u5B9F\u5199"
+    ]
+  },
+  {
+    id: "action",
+    name: "\u30A2\u30AF\u30B7\u30E7\u30F3\u30FB\u88AB\u5199\u4F53",
+    icon: "\u26A1",
+    seedWords: [
+      "\u30C0\u30F3\u30B9",
+      "\u7FA4\u821E",
+      "\u30B9\u30C6\u30C3\u30D7",
+      "\u8ECA",
+      "\u30AF\u30E9\u30B7\u30C3\u30AF\u30AB\u30FC",
+      "\u30C9\u30E9\u30A4\u30D6",
+      "\u8D70\u884C",
+      "\u8D70\u308B",
+      "\u75BE\u8D70",
+      "\u5973\u6027",
+      "\u5C11\u5973",
+      "\u7537\u6027",
+      "\u76EE",
+      "\u77B3",
+      "\u6307\u5148",
+      "\u708E",
+      "\u706B\u82B1",
+      "\u82B1\u706B",
+      "\u7159",
+      "\u30B9\u30E2\u30FC\u30AF",
+      "\u82B1",
+      "\u685C",
+      "\u690D\u7269",
+      "\u7D19\u5439\u96EA",
+      "\u98A8\u8239",
+      "\u6606\u866B",
+      "\u30D0\u30B0",
+      "\u81EA\u8EE2\u8ECA"
+    ]
+  },
+  {
+    id: "mood",
+    name: "\u30E0\u30FC\u30C9\u30FB\u4E16\u754C\u89B3",
+    icon: "\u{1F3A8}",
+    seedWords: [
+      "\u30DD\u30C3\u30D7",
+      "\u30D1\u30B9\u30C6\u30EB",
+      "\u53EF\u611B\u3044",
+      "\u9759\u5BC2",
+      "\u30DF\u30CB\u30DE\u30EB",
+      "\u30A8\u30E2\u30FC\u30B7\u30E7\u30CA\u30EB",
+      "\u795D\u796D",
+      "\u591A\u5E78\u611F",
+      "\u30EC\u30C8\u30ED",
+      "\u30B7\u30CD\u30DE\u30C6\u30A3\u30C3\u30AF",
+      "\u30C0\u30FC\u30AF",
+      "\u72C2\u6C17",
+      "\u4E0D\u6C17\u5473",
+      "\u30B5\u30A4\u30D0\u30FC\u30D1\u30F3\u30AF",
+      "\u5E7B\u60F3\u7684",
+      "\u30CE\u30B9\u30BF\u30EB\u30B8\u30FC"
+    ]
+  },
+  {
+    id: "music",
+    name: "\u97F3\u697D\u30FB\u30B5\u30A6\u30F3\u30C9",
+    icon: "\u{1F3B5}",
+    seedWords: [
+      "\u30D3\u30FC\u30C8",
+      "\u30AD\u30C3\u30AF",
+      "\u30AE\u30BF\u30FC",
+      "\u30D4\u30A2\u30CE",
+      "\u30A2\u30B3\u30FC\u30B9\u30C6\u30A3\u30C3\u30AF",
+      "\u30E9\u30C3\u30D7",
+      "\u521D\u97F3\u30DF\u30AF",
+      "\u5408\u5531",
+      "\u30A6\u30A3\u30B9\u30D1\u30FC\u30DC\u30A4\u30B9",
+      "\u30D5\u30E5\u30FC\u30C1\u30E3\u30FC\u30D9\u30FC\u30B9",
+      "\u30D9\u30FC\u30B9\u30DF\u30E5\u30FC\u30B8\u30C3\u30AF",
+      "\u30DC\u30AB\u30ED",
+      "VTuber"
+    ]
+  }
+];
+function parseQueryWords(query) {
+  if (!query) return [];
+  return query.trim().split(/[\s,、。!！?？#+＋]+/).map((w) => w.trim()).filter((w) => w.length > 0);
+}
+function getSynonymsForWord(word) {
+  const normalized = word.trim().toLowerCase();
+  if (!normalized) return [];
+  const set = /* @__PURE__ */ new Set([normalized]);
+  for (const [key, syns] of Object.entries(SCENE_SYNONYM_MAP)) {
+    const keyLower = key.toLowerCase();
+    if (normalized.includes(keyLower) || keyLower.includes(normalized)) {
+      syns.forEach((s) => set.add(s.toLowerCase()));
+    }
+  }
+  return Array.from(set);
+}
+
+// shared/analysisVersion.ts
+function normalizeAnalysisVersion(value) {
+  return value === "v3" ? "v3" : "legacy";
+}
+
+// shared/calibratedScoreAxes.ts
+var CALIBRATED_AXIS_KEYS = [
+  "direction",
+  "visual_craft",
+  "editing_rhythm",
+  "sound_integration",
+  "originality_finish"
+];
+function roundScore2(value) {
+  return Math.round(value * 100) / 100;
+}
+function parseAxesRecord(raw) {
+  if (!raw || typeof raw !== "object" || Array.isArray(raw)) return null;
+  const record = raw;
+  const out = {};
+  for (const key of CALIBRATED_AXIS_KEYS) {
+    const val = Number(record[key]);
+    if (!Number.isFinite(val) || val < 0 || val > 20) return null;
+    out[key] = roundScore2(val);
+  }
+  return out;
+}
+function parseCalibratedScoreAxes(raw) {
+  if (raw === null || raw === void 0 || raw === "") return null;
+  let obj = raw;
+  if (typeof raw === "string") {
+    try {
+      obj = JSON.parse(raw);
+    } catch {
+      return null;
+    }
+  }
+  if (!obj || typeof obj !== "object" || Array.isArray(obj)) return null;
+  const rec = obj;
+  const axes = parseAxesRecord(rec.axes);
+  if (!axes) return null;
+  const runs = Number(rec.runs);
+  const offsetPerAxis = Number(rec.offsetPerAxis ?? 0);
+  const source = rec.source === "api" ? "api" : "phase3";
+  const ensembleRule = rec.ensembleRule === "mean_of_2" || rec.ensembleRule === "median_of_3_median_run" || rec.ensembleRule === "median_of_3_mean" ? rec.ensembleRule : void 0;
+  return {
+    v: 1,
+    axes,
+    runs: Number.isFinite(runs) && runs > 0 ? Math.round(runs) : 2,
+    source,
+    offsetPerAxis: Number.isFinite(offsetPerAxis) ? roundScore2(offsetPerAxis) : 0,
+    ...ensembleRule ? { ensembleRule } : {}
+  };
 }
 
 // server/db.ts
@@ -645,10 +996,160 @@ async function getUserByOpenId(openId) {
   const result = await db.select().from(users).where(eq(users.openId, openId)).limit(1);
   return result.length > 0 ? result[0] : void 0;
 }
+function isMissingAnalysisVersionColumnError(error) {
+  if (!error || typeof error !== "object") return false;
+  const err = error;
+  const msg = String(err.message ?? "");
+  if ((err.code === "ER_BAD_FIELD_ERROR" || err.errno === 1054) && /(analysisVersion|analysisGeneratedAt|analysisPromptSha256)/i.test(msg)) {
+    return true;
+  }
+  if (/Unknown column .*(analysisVersion|analysisGeneratedAt|analysisPromptSha256)/i.test(msg)) {
+    return true;
+  }
+  if (err.cause && err.cause !== error) {
+    return isMissingAnalysisVersionColumnError(err.cause);
+  }
+  return false;
+}
+function isMissingCalibratedScoreAxesColumnError(error) {
+  if (!error || typeof error !== "object") return false;
+  const err = error;
+  const msg = String(err.message ?? "");
+  if ((err.code === "ER_BAD_FIELD_ERROR" || err.errno === 1054) && /calibratedScoreAxes/i.test(msg)) {
+    return true;
+  }
+  if (/Unknown column .*calibratedScoreAxes/i.test(msg)) {
+    return true;
+  }
+  if (err.cause && err.cause !== error) {
+    return isMissingCalibratedScoreAxesColumnError(err.cause);
+  }
+  return false;
+}
+var VIDEO_FULL_BASE_SELECT = {
+  id: videos.id,
+  platform: videos.platform,
+  title: videos.title,
+  thumbnail: videos.thumbnail,
+  videoUrl: videos.videoUrl,
+  embedUrl: videos.embedUrl,
+  source: videos.source,
+  sourceLabel: videos.sourceLabel,
+  channelId: videos.channelId,
+  channelTitle: videos.channelTitle,
+  genres: videos.genres,
+  products: videos.products,
+  directions: videos.directions,
+  tones: videos.tones,
+  allTags: videos.allTags,
+  purposes: videos.purposes,
+  expressions: videos.expressions,
+  toneEmotions: videos.toneEmotions,
+  toneVisuals: videos.toneVisuals,
+  toneTechniques: videos.toneTechniques,
+  productions: videos.productions,
+  productionCredits: videos.productionCredits,
+  awards: videos.awards,
+  curationNote: videos.curationNote,
+  metadataClassificationAudit: videos.metadataClassificationAudit,
+  privateRating: videos.privateRating,
+  aiOverallRating: videos.aiOverallRating,
+  aiDirectionRating: videos.aiDirectionRating,
+  aiTechniqueRating: videos.aiTechniqueRating,
+  aiOverallScore: videos.aiOverallScore,
+  aiDirectionScore: videos.aiDirectionScore,
+  aiTechniqueScore: videos.aiTechniqueScore,
+  aiScoreBreakdown: videos.aiScoreBreakdown,
+  aiAnalysis: videos.aiAnalysis,
+  calibrationStatus: videos.calibrationStatus,
+  calibratedScore: videos.calibratedScore,
+  calibratedRank: videos.calibratedRank,
+  calibratedTierBand: videos.calibratedTierBand,
+  calibratedBreakdown: videos.calibratedBreakdown,
+  calibrationVersion: videos.calibrationVersion,
+  calibratedAt: videos.calibratedAt,
+  calibratedRoute: videos.calibratedRoute,
+  calibratedRunId: videos.calibratedRunId,
+  calibrationGenreBucket: videos.calibrationGenreBucket,
+  analysisObservationScope: videos.analysisObservationScope,
+  embedStatus: videos.embedStatus,
+  embedReason: videos.embedReason,
+  embedCheckedAt: videos.embedCheckedAt,
+  addedDate: videos.addedDate,
+  createdAt: videos.createdAt,
+  updatedAt: videos.updatedAt
+};
+var VIDEO_ANALYSIS_VERSION_SELECT = {
+  analysisVersion: videos.analysisVersion,
+  analysisGeneratedAt: videos.analysisGeneratedAt,
+  analysisPromptSha256: videos.analysisPromptSha256
+};
+async function selectAllRawVideosSafe(db, options) {
+  const order = Boolean(options?.orderByCreatedAtDesc);
+  try {
+    const q = db.select().from(videos);
+    return await (order ? q.orderBy(desc(videos.createdAt)) : q);
+  } catch (error) {
+    if (isMissingCalibratedScoreAxesColumnError(error)) {
+      try {
+        const q2 = db.select({
+          ...VIDEO_FULL_BASE_SELECT,
+          ...VIDEO_ANALYSIS_VERSION_SELECT
+        }).from(videos);
+        const rows = await (order ? q2.orderBy(desc(videos.createdAt)) : q2);
+        return rows.map((row) => ({
+          ...row,
+          calibratedScoreAxes: null
+        }));
+      } catch (innerError) {
+        if (!isMissingAnalysisVersionColumnError(innerError)) throw innerError;
+      }
+    } else if (!isMissingAnalysisVersionColumnError(error)) {
+      throw error;
+    }
+    const q = db.select(VIDEO_FULL_BASE_SELECT).from(videos);
+    const legacyRows = await (order ? q.orderBy(desc(videos.createdAt)) : q);
+    return legacyRows.map((row) => ({
+      ...row,
+      calibratedScoreAxes: null,
+      analysisVersion: "legacy",
+      analysisGeneratedAt: null,
+      analysisPromptSha256: null
+    }));
+  }
+}
+async function selectRawVideoByIdSafe(db, id) {
+  try {
+    const [row] = await db.select().from(videos).where(eq(videos.id, id)).limit(1);
+    return row ?? null;
+  } catch (error) {
+    if (isMissingCalibratedScoreAxesColumnError(error)) {
+      try {
+        const [row2] = await db.select({
+          ...VIDEO_FULL_BASE_SELECT,
+          ...VIDEO_ANALYSIS_VERSION_SELECT
+        }).from(videos).where(eq(videos.id, id)).limit(1);
+        return row2 ? { ...row2, calibratedScoreAxes: null } : null;
+      } catch (innerError) {
+        if (!isMissingAnalysisVersionColumnError(innerError)) throw innerError;
+      }
+    } else if (!isMissingAnalysisVersionColumnError(error)) {
+      throw error;
+    }
+    const [row] = await db.select(VIDEO_FULL_BASE_SELECT).from(videos).where(eq(videos.id, id)).limit(1);
+    return row ? {
+      ...row,
+      calibratedScoreAxes: null,
+      analysisVersion: "legacy",
+      analysisGeneratedAt: null,
+      analysisPromptSha256: null
+    } : null;
+  }
+}
 async function getAllVideoListItems() {
   const db = await getDb();
   if (!db) return [];
-  const rows = await db.select({
+  const baseSelect = {
     id: videos.id,
     platform: videos.platform,
     title: videos.title,
@@ -699,7 +1200,49 @@ async function getAllVideoListItems() {
     isProvisional: sql`CASE WHEN ${videos.aiScoreBreakdown} LIKE '%"analysisStatus":"provisional"%' OR ${videos.aiScoreBreakdown} LIKE '%"isProvisional":true%' THEN 1 ELSE 0 END`,
     gradeBoundary: sql`CASE WHEN ${videos.aiScoreBreakdown} LIKE '%"gradeBoundary":true%' THEN 1 ELSE 0 END`,
     visualVerificationStatus: sql`CASE WHEN ${videos.aiScoreBreakdown} LIKE '%"visualVerificationStatus":"log_verified"%' THEN 'log_verified' WHEN ${videos.aiScoreBreakdown} LIKE '%"visualVerificationStatus":"unverifiable_no_log"%' THEN 'unverifiable_no_log' WHEN ${videos.aiScoreBreakdown} LIKE '%"visualVerificationStatus":"unverified_pending"%' THEN 'unverified_pending' WHEN ${videos.aiScoreBreakdown} LIKE '%"visualVerificationStatus":"invalidated_no_visual"%' THEN 'invalidated_no_visual' ELSE 'not_audited' END`
-  }).from(videos).orderBy(desc(videos.createdAt));
+  };
+  let rows;
+  try {
+    rows = await db.select({
+      ...baseSelect,
+      ...VIDEO_ANALYSIS_VERSION_SELECT,
+      calibratedScoreAxes: videos.calibratedScoreAxes
+    }).from(videos).orderBy(desc(videos.createdAt));
+  } catch (error) {
+    if (isMissingCalibratedScoreAxesColumnError(error)) {
+      try {
+        const rowsWithoutAxes = await db.select({
+          ...baseSelect,
+          ...VIDEO_ANALYSIS_VERSION_SELECT
+        }).from(videos).orderBy(desc(videos.createdAt));
+        rows = rowsWithoutAxes.map((r) => ({
+          ...r,
+          calibratedScoreAxes: null
+        }));
+      } catch (innerError) {
+        if (!isMissingAnalysisVersionColumnError(innerError)) throw innerError;
+        const legacyRows = await db.select(baseSelect).from(videos).orderBy(desc(videos.createdAt));
+        rows = legacyRows.map((r) => ({
+          ...r,
+          analysisVersion: "legacy",
+          analysisGeneratedAt: null,
+          analysisPromptSha256: null,
+          calibratedScoreAxes: null
+        }));
+      }
+    } else if (isMissingAnalysisVersionColumnError(error)) {
+      const legacyRows = await db.select(baseSelect).from(videos).orderBy(desc(videos.createdAt));
+      rows = legacyRows.map((r) => ({
+        ...r,
+        analysisVersion: "legacy",
+        analysisGeneratedAt: null,
+        analysisPromptSha256: null,
+        calibratedScoreAxes: null
+      }));
+    } else {
+      throw error;
+    }
+  }
   return rows.map((row) => {
     const { isProvisional, gradeBoundary, visualVerificationStatus, ...rest } = row;
     const video = parseVideoRow({
@@ -730,7 +1273,7 @@ async function getVideoCount() {
 async function getVideoById(id) {
   const db = await getDb();
   if (!db) return null;
-  const [row] = await db.select().from(videos).where(eq(videos.id, id)).limit(1);
+  const row = await selectRawVideoByIdSafe(db, id);
   return row ? parseVideoRow(row) : null;
 }
 async function createVideo(input) {
@@ -922,12 +1465,16 @@ function parseVideoRow(row) {
     calibratedRank: row.calibratedRank ?? null,
     calibratedTierBand: row.calibratedTierBand ?? null,
     calibratedBreakdown: safeParseJson(row.calibratedBreakdown, void 0),
+    calibratedScoreAxes: parseCalibratedScoreAxes(row.calibratedScoreAxes),
     calibrationVersion: row.calibrationVersion ?? null,
     calibratedAt: row.calibratedAt ? row.calibratedAt.toISOString() : null,
     calibratedRoute: row.calibratedRoute ?? null,
     calibratedRunId: row.calibratedRunId ?? null,
     calibrationGenreBucket: row.calibrationGenreBucket ?? null,
     analysisObservationScope: row.analysisObservationScope ?? null,
+    analysisVersion: normalizeAnalysisVersion(row.analysisVersion),
+    analysisGeneratedAt: row.analysisGeneratedAt instanceof Date ? row.analysisGeneratedAt.toISOString() : typeof row.analysisGeneratedAt === "string" ? row.analysisGeneratedAt : null,
+    analysisPromptSha256: row.analysisPromptSha256 ?? null,
     isProvisional: isProvisionalFromBreakdown(row.aiScoreBreakdown),
     gradeBoundary: isGradeBoundaryFromBreakdown(row.aiScoreBreakdown),
     visualVerificationStatus: getVisualVerificationStatus(row.aiScoreBreakdown),
@@ -960,6 +1507,303 @@ function safeParseJson(str, fallback) {
     return JSON.parse(str);
   } catch {
     return fallback;
+  }
+}
+function isMissingVideoScenesTableError(error) {
+  if (!error || typeof error !== "object") return false;
+  const err = error;
+  if (err.code === "ER_NO_SUCH_TABLE" || err.errno === 1146) return true;
+  const msg = String(err.message ?? "");
+  if (/ER_NO_SUCH_TABLE|1146|videoScenes.*doesn't exist|Table .*videoScenes/i.test(msg)) {
+    return true;
+  }
+  if (err.cause && err.cause !== error) {
+    return isMissingVideoScenesTableError(err.cause);
+  }
+  return false;
+}
+function buildVideoSceneFilterWhere(params) {
+  const clauses = [
+    "(v.embedReason IS NULL OR v.embedReason NOT IN ('unavailable_deleted', 'unavailable_private'))"
+  ];
+  const whereParams = [];
+  if (params.excludeUnwatched !== false) {
+    clauses.push("v.analysisObservationScope IS NULL");
+  }
+  if (params.excludeLegacyAnalysis) {
+    clauses.push("s.analysisVersion = 'v3'");
+  }
+  const scoreFilter = params.scoreFilter ?? "all";
+  if (scoreFilter === "calibrated_only") {
+    clauses.push("v.calibratedScore IS NOT NULL");
+  } else if (scoreFilter === "score_78_plus") {
+    clauses.push("v.calibratedScore IS NOT NULL AND v.calibratedScore >= 78");
+  } else if (scoreFilter === "score_83_plus") {
+    clauses.push("v.calibratedScore IS NOT NULL AND v.calibratedScore >= 83");
+  } else if (scoreFilter === "uncalibrated_only") {
+    clauses.push("v.calibratedScore IS NULL");
+  }
+  const words = parseQueryWords(params.query ?? "").slice(0, 5);
+  const wordGroups = words.map((w) => getSynonymsForWord(w).slice(0, 12)).filter((g) => g.length > 0);
+  for (const group of wordGroups) {
+    const orParts = group.map(() => "s.searchText LIKE ?");
+    clauses.push(`(${orParts.join(" OR ")})`);
+    for (const term of group) {
+      whereParams.push(`%${term.replace(/[%_\\]/g, "\\$&")}%`);
+    }
+  }
+  return {
+    whereSql: clauses.join(" AND "),
+    whereParams,
+    wordGroups
+  };
+}
+function buildThumbnailUrl(platform, videoId, storedThumbnail) {
+  if (storedThumbnail && storedThumbnail.trim()) return storedThumbnail.trim();
+  if (platform === "youtube") return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+  return "";
+}
+async function searchVideoScenes(params) {
+  const pool = params.poolOverride ?? (await getDb(), _pool);
+  if (!pool) {
+    return {
+      available: false,
+      source: "table_unavailable",
+      items: [],
+      total: 0,
+      hasMore: false,
+      totalIndexedScenes: 0,
+      totalIndexedVideos: 0
+    };
+  }
+  const limit = Math.max(1, Math.min(80, Math.floor(params.limit ?? 40)));
+  const offset = Math.max(0, Math.min(5e3, Math.floor(params.offset ?? 0)));
+  const { whereSql, whereParams, wordGroups } = buildVideoSceneFilterWhere({
+    query: params.query,
+    excludeUnwatched: params.excludeUnwatched,
+    excludeLegacyAnalysis: params.excludeLegacyAnalysis,
+    scoreFilter: params.scoreFilter
+  });
+  try {
+    const [[totalsRow]] = await pool.query(
+      "SELECT COUNT(*) AS totalScenes, COUNT(DISTINCT videoId) AS totalVideos FROM videoScenes"
+    );
+    const [[countRow]] = await pool.query(
+      `SELECT COUNT(*) AS cnt
+       FROM videoScenes s
+       INNER JOIN videos v ON v.id = s.videoId
+       WHERE ${whereSql}`,
+      whereParams
+    );
+    const total = Number(countRow?.cnt ?? 0);
+    if (total === 0) {
+      return {
+        available: true,
+        source: "tidb",
+        items: [],
+        total: 0,
+        hasMore: false,
+        totalIndexedScenes: Number(totalsRow?.totalScenes ?? 0),
+        totalIndexedVideos: Number(totalsRow?.totalVideos ?? 0)
+      };
+    }
+    const [rows] = await pool.query(
+      `SELECT
+        s.id,
+        s.videoId,
+        s.shotIndex,
+        s.startMmss,
+        s.endMmss,
+        s.startSec,
+        s.endSec,
+        s.shotTitle,
+        s.description,
+        s.audioText,
+        s.keywordsJson,
+        s.analysisVersion,
+        s.analysisGeneratedAt,
+        v.title AS videoTitle,
+        v.platform,
+        v.thumbnail,
+        v.analysisObservationScope,
+        v.calibratedScore,
+        v.calibratedRank,
+        v.aiOverallScore,
+        v.aiOverallRating
+       FROM videoScenes s
+       INNER JOIN videos v ON v.id = s.videoId
+       WHERE ${whereSql}
+       ORDER BY (v.calibratedScore IS NOT NULL) DESC, COALESCE(v.calibratedScore, -1) DESC, s.id ASC
+       LIMIT ? OFFSET ?`,
+      [...whereParams, limit, offset]
+    );
+    const items = rows.map((row) => {
+      const videoId = String(row.videoId ?? "");
+      const platform = String(row.platform ?? "youtube");
+      const shotIndex = Number(row.shotIndex ?? 1);
+      const shotTitle = String(row.shotTitle ?? "").trim();
+      const description = String(row.description ?? "").trim();
+      const visual = shotTitle && description && !description.startsWith(shotTitle) ? `${shotTitle} \u2014 ${description}` : description || shotTitle;
+      const audio = String(row.audioText ?? "").trim();
+      const keywords = safeParseJson(row.keywordsJson, []);
+      const videoTitle = String(row.videoTitle ?? "");
+      const matchedTermsSet = /* @__PURE__ */ new Set();
+      let score = wordGroups.length === 0 ? 1 : 0;
+      const visualLower = visual.toLowerCase();
+      const audioLower = audio.toLowerCase();
+      const titleLower = videoTitle.toLowerCase();
+      const kwLower = keywords.map((k) => k.toLowerCase());
+      for (const group of wordGroups) {
+        let groupScore = 0;
+        for (const token of group) {
+          let hit = false;
+          if (visualLower.includes(token)) {
+            groupScore = Math.max(groupScore, 15);
+            hit = true;
+          }
+          if (kwLower.some((k) => k.includes(token) || token.includes(k))) {
+            groupScore = Math.max(groupScore, 10);
+            hit = true;
+          }
+          if (audioLower.includes(token)) {
+            groupScore = Math.max(groupScore, 8);
+            hit = true;
+          }
+          if (titleLower.includes(token)) {
+            groupScore = Math.max(groupScore, 5);
+            hit = true;
+          }
+          if (hit) matchedTermsSet.add(token);
+        }
+        score += groupScore;
+      }
+      const startSec = Number(row.startSec ?? 0);
+      const endSec = Number(row.endSec ?? 0);
+      const startMmss = String(row.startMmss ?? "00:00");
+      const endMmss = String(row.endMmss ?? "00:00");
+      return {
+        scene: {
+          id: `${videoId}_s${String(shotIndex).padStart(2, "0")}`,
+          videoId,
+          videoTitle,
+          platform,
+          sceneNumber: shotIndex,
+          startSeconds: startSec,
+          endSeconds: endSec,
+          timeRange: `${startMmss} - ${endMmss}`,
+          visual,
+          audio,
+          keywords,
+          thumbnailUrl: buildThumbnailUrl(platform, videoId, row.thumbnail ?? null),
+          analysisObservationScope: row.analysisObservationScope ?? null,
+          analysisVersion: normalizeAnalysisVersion(row.analysisVersion),
+          analysisGeneratedAt: row.analysisGeneratedAt instanceof Date ? row.analysisGeneratedAt.toISOString() : typeof row.analysisGeneratedAt === "string" ? row.analysisGeneratedAt : null,
+          calibratedScore: row.calibratedScore != null ? Number(row.calibratedScore) : null,
+          calibratedRank: row.calibratedRank ?? null,
+          aiOverallScore: row.aiOverallScore != null ? Number(row.aiOverallScore) : null,
+          aiOverallRating: row.aiOverallRating ?? null
+        },
+        score: score || 1,
+        matchedTerms: Array.from(matchedTermsSet)
+      };
+    });
+    if (wordGroups.length > 0) {
+      items.sort((a, b) => b.score - a.score);
+    }
+    return {
+      available: true,
+      source: "tidb",
+      items,
+      total,
+      hasMore: offset + items.length < total,
+      totalIndexedScenes: Number(totalsRow?.totalScenes ?? 0),
+      totalIndexedVideos: Number(totalsRow?.totalVideos ?? 0)
+    };
+  } catch (error) {
+    if (isMissingVideoScenesTableError(error)) {
+      return {
+        available: false,
+        source: "table_unavailable",
+        items: [],
+        total: 0,
+        hasMore: false,
+        totalIndexedScenes: 0,
+        totalIndexedVideos: 0
+      };
+    }
+    throw error;
+  }
+}
+async function getVideoSceneKeywordStats(params) {
+  const pool = params.poolOverride ?? (await getDb(), _pool);
+  if (!pool) {
+    return {
+      available: false,
+      source: "table_unavailable",
+      totalScenes: 0,
+      totalVideos: 0,
+      categories: []
+    };
+  }
+  const { whereSql, whereParams } = buildVideoSceneFilterWhere({
+    excludeUnwatched: params.excludeUnwatched,
+    excludeLegacyAnalysis: params.excludeLegacyAnalysis,
+    scoreFilter: params.scoreFilter
+  });
+  try {
+    const [rows] = await pool.query(
+      `SELECT s.videoId, s.searchText
+       FROM videoScenes s
+       INNER JOIN videos v ON v.id = s.videoId
+       WHERE ${whereSql}`,
+      whereParams
+    );
+    const videoIds = /* @__PURE__ */ new Set();
+    const texts = [];
+    for (const r of rows) {
+      videoIds.add(String(r.videoId));
+      texts.push(String(r.searchText ?? "").toLowerCase());
+    }
+    const categories = SCENE_CATEGORY_DEFINITIONS.map((cat) => {
+      const validKeywords = [];
+      for (const word of cat.seedWords) {
+        const terms = getSynonymsForWord(word);
+        let matchCount = 0;
+        for (let i = 0; i < texts.length; i++) {
+          if (terms.some((term) => texts[i].includes(term))) {
+            matchCount++;
+          }
+        }
+        if (matchCount >= 2) {
+          validKeywords.push({ text: word, count: matchCount });
+        }
+      }
+      validKeywords.sort((a, b) => b.count - a.count);
+      return {
+        id: cat.id,
+        name: cat.name,
+        icon: cat.icon,
+        keywords: validKeywords
+      };
+    });
+    return {
+      available: true,
+      source: "tidb",
+      totalScenes: rows.length,
+      totalVideos: videoIds.size,
+      categories
+    };
+  } catch (error) {
+    if (isMissingVideoScenesTableError(error)) {
+      return {
+        available: false,
+        source: "table_unavailable",
+        totalScenes: 0,
+        totalVideos: 0,
+        categories: []
+      };
+    }
+    throw error;
   }
 }
 
@@ -2111,6 +2955,33 @@ var appRouter = router({
       await deleteVideo(input.id);
       return { success: true };
     })
+  }),
+  scenes: router({
+    /** Search scenes in TiDB videoScenes table (returns available: false if table does not exist yet). */
+    search: publicProcedure.input(
+      z2.object({
+        query: z2.string().max(200).default(""),
+        limit: z2.number().int().min(1).max(80).default(40),
+        offset: z2.number().int().min(0).max(5e3).default(0),
+        excludeUnwatched: z2.boolean().default(true),
+        excludeLegacyAnalysis: z2.boolean().default(false),
+        scoreFilter: z2.enum(["all", "calibrated_only", "score_78_plus", "score_83_plus", "uncalibrated_only"]).default("all")
+      })
+    ).query(async ({ input }) => searchVideoScenes(input)),
+    /** Keyword preset counts aggregated from TiDB videoScenes (safe fallback when table is absent). */
+    keywordStats: publicProcedure.input(
+      z2.object({
+        excludeUnwatched: z2.boolean().default(true),
+        excludeLegacyAnalysis: z2.boolean().default(false),
+        scoreFilter: z2.enum(["all", "calibrated_only", "score_78_plus", "score_83_plus", "uncalibrated_only"]).default("all")
+      }).optional()
+    ).query(
+      async ({ input }) => getVideoSceneKeywordStats({
+        excludeUnwatched: input?.excludeUnwatched ?? true,
+        excludeLegacyAnalysis: input?.excludeLegacyAnalysis ?? false,
+        scoreFilter: input?.scoreFilter ?? "all"
+      })
+    )
   })
 });
 
@@ -2301,7 +3172,7 @@ async function receiveDailyCollection(req, res) {
         details.push({ id, reason: "public_oembed_or_title_mismatch" });
         continue;
       }
-      const [existing] = await db.select().from(videos).where(eq2(videos.id, id)).limit(1);
+      const existing = await selectRawVideoByIdSafe(db, id);
       if (existing) {
         const update = {
           ...getDailyCollectionExistingUpdate(existing, { thumbnail_url: metadataThumbnail, author_name: metadataAuthor }, sourceUrl),
@@ -2489,7 +3360,7 @@ async function runAiMetadataCompletion(req, res) {
       });
       return res.json({ ok: true, skipped: "model_backoff", retryAfter: job.retryAfter?.toISOString() ?? null });
     }
-    const rows = await db.select().from(videos);
+    const rows = await selectAllRawVideosSafe(db);
     const selected = selectUnprocessedAiInputs(rows, job.batchSize);
     const [run] = await db.insert(aiMetadataCompletionRuns).values({ taskUid, status: "running", selectedCount: selected.length }).$returningId();
     runId = run.id;
@@ -2559,8 +3430,10 @@ app.post("/api/scheduled/ai-metadata-completion", runAiMetadataCompletion);
 app.use(
   "/api/trpc",
   (req, res, next) => {
-    if (req.method === "GET" && (req.path.includes("videos.list") || req.path.includes("videos.count"))) {
+    if (req.method === "GET" && (req.path.includes("videos.list") || req.path.includes("videos.count") || req.path.includes("scenes.search"))) {
       res.setHeader("Cache-Control", "public, s-maxage=60, stale-while-revalidate=300");
+    } else if (req.method === "GET" && req.path.includes("scenes.keywordStats")) {
+      res.setHeader("Cache-Control", "public, s-maxage=300, stale-while-revalidate=600");
     }
     next();
   },

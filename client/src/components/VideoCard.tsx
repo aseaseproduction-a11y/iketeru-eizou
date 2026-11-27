@@ -4,12 +4,17 @@
  * Thumbnail fallback chain: maxresdefault → sddefault → hqdefault → placeholder
  * Features: favorite badge, note indicator, external click handler
  */
-import { useState, useCallback, useRef } from "react";
+import React, { useState, useCallback, useRef } from "react";
 import { motion } from "framer-motion";
 import { Play, Film, Bookmark, StickyNote, AlertCircle, AlertTriangle, User } from "lucide-react";
 import type { Video, VideoSource } from "@/lib/types";
 import { SOURCE_COLORS } from "@/lib/types";
 import { formatEmbedRecheckAt, isEmbedStatusRecheckDue } from "@/lib/embedStatus";
+import {
+  isLegacyAnalysisVersion,
+  LEGACY_ANALYSIS_LABEL,
+  V3_ANALYSIS_LABEL,
+} from "@shared/analysisVersion";
 import { getAnalysisObservationScopeWarning } from "@shared/analysisObservationScope";
 
 interface VideoCardProps {
@@ -295,8 +300,29 @@ export default function VideoCard({ video, index, isFavorite = false, hasNote = 
             <span className="truncate">{mainCreator}</span>
           </p>
         )}
-        {observationWarning && (
-          <div className="mt-1.5 flex items-center gap-1">
+        <div className="mt-1 flex flex-wrap items-center gap-1">
+          {isLegacyAnalysisVersion(video.analysisVersion) ? (
+            <span
+              data-testid="video-legacy-analysis-badge"
+              title="旧方式の分析です（実映像照合済みの v3 へ順次更新中）"
+              className="inline-flex items-center rounded-sm border border-amber-400/40 bg-amber-950/80 px-1.5 py-0.5 text-[8.5px] font-semibold text-amber-300"
+            >
+              {LEGACY_ANALYSIS_LABEL}
+            </span>
+          ) : (
+            <span
+              data-testid="video-v3-analysis-badge"
+              title={
+                video.analysisGeneratedAt
+                  ? `${V3_ANALYSIS_LABEL}（生成: ${video.analysisGeneratedAt.slice(0, 10)}）`
+                  : V3_ANALYSIS_LABEL
+              }
+              className="inline-flex items-center rounded-sm border border-emerald-400/35 bg-emerald-500/15 px-1.5 py-0.5 text-[8.5px] font-semibold text-emerald-200"
+            >
+              {V3_ANALYSIS_LABEL}
+            </span>
+          )}
+          {observationWarning && (
             <span
               data-testid="unwatched-warning-badge"
               data-observation-scope={observationWarning.scope}
@@ -310,8 +336,8 @@ export default function VideoCard({ video, index, isFavorite = false, hasNote = 
               <AlertTriangle className="h-2.5 w-2.5 shrink-0" aria-hidden="true" />
               <span>{observationWarning.badgeLabel}</span>
             </span>
-          </div>
-        )}
+          )}
+        </div>
         {(hasCalibrated || aiRatings.length > 0 || isLegacyUncalibrated) && (
           <div className="mt-1.5 flex flex-wrap items-center gap-1" aria-label="AI評価">
             {hasCalibrated && (
@@ -340,30 +366,27 @@ export default function VideoCard({ video, index, isFavorite = false, hasNote = 
                 )}
               </>
             )}
-            {isLegacyUncalibrated && (
+            {!hasCalibrated && isLegacyUncalibrated && (
               <span
-                title="Phase 2 校正導入前の旧基準スコアです（未校正・参考保持）"
+                data-testid="video-legacy-score-badge"
+                title="Phase 2 校正導入前の旧評価スコアです（未校正・参考保持）"
                 className="inline-flex items-center rounded-sm border border-zinc-500/35 bg-zinc-500/15 px-1.5 py-0.5 text-[8.5px] font-medium text-zinc-300"
               >
-                旧基準・未校正
+                旧評価
               </span>
             )}
-            {aiRatings.map((rating) => (
+            {!hasCalibrated && aiRatings.map((rating) => (
               <span
                 key={rating.shortLabel}
-                title={`旧基準AI評価（${rating.fullLabel}・未校正）：${rating.value}${typeof rating.score === "number" ? `（${rating.score}点）` : ""}`}
-                className={`inline-flex items-center gap-1 rounded-sm border px-1.5 py-0.5 text-[9px] font-semibold ${
-                  hasCalibrated
-                    ? "border-white/10 bg-white/[0.03] text-white/45"
-                    : "border-sky-400/20 bg-sky-400/[0.07] text-sky-300"
-                }`}
+                title={`旧評価（${rating.fullLabel}・未校正）：${rating.value}${typeof rating.score === "number" ? `（${rating.score}点）` : ""}`}
+                className="inline-flex items-center gap-1 rounded-sm border border-sky-400/20 bg-sky-400/[0.07] px-1.5 py-0.5 text-[9px] font-semibold text-sky-300"
               >
-                <span className={hasCalibrated ? "text-white/35" : "text-sky-300/65"}>
-                  {hasCalibrated ? `旧${rating.shortLabel}` : `AI ${rating.shortLabel}`}
+                <span className="text-sky-300/65">
+                  AI {rating.shortLabel}
                 </span>
-                <span className={hasCalibrated ? "text-white/55" : "text-sky-100"}>{rating.value}</span>
+                <span className="text-sky-100">{rating.value}</span>
                 {typeof rating.score === "number" && (
-                  <span className={`font-mono text-[8.5px] ${hasCalibrated ? "text-white/40" : "text-sky-300/80"}`}>
+                  <span className="font-mono text-[8.5px] text-sky-300/80">
                     {rating.score}
                   </span>
                 )}

@@ -8,8 +8,9 @@
  */
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Play, Clock, Sparkles, ExternalLink, Volume2, Eye } from "lucide-react";
+import { Play, Clock, Sparkles, ExternalLink, Volume2, Eye, AlertTriangle } from "lucide-react";
 import type { SceneItem } from "@/lib/sceneSearch";
+import { isLegacyAnalysisVersion, LEGACY_ANALYSIS_LABEL } from "@shared/analysisVersion";
 
 interface SceneCardProps {
   scene: SceneItem;
@@ -155,6 +156,8 @@ export default function SceneCard({ scene, index, matchedTerms = [], score, vide
     ? fallbackThumbnails[fallbackFrameIdx % fallbackThumbnails.length]
     : scene.thumbnailUrl;
 
+  const isLegacyAnalysis = isLegacyAnalysisVersion(scene.analysisVersion);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
@@ -202,12 +205,22 @@ export default function SceneCard({ scene, index, matchedTerms = [], score, vide
         )}
 
         {/* Top Overlay Badges */}
-        <div className="absolute top-2 left-2 right-2 flex items-center justify-between z-10 pointer-events-none">
-          {/* Timestamp Pill Badge */}
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-mono font-bold tracking-wide bg-black/85 text-amber-400 border border-amber-400/40 shadow-md backdrop-blur-md">
-            <Clock className="w-3.5 h-3.5 text-amber-400" />
-            {scene.timeRange}
-          </span>
+        <div className="absolute top-2 left-2 right-2 flex items-start justify-between gap-1.5 z-10 pointer-events-none">
+          {/* Timestamp Pill Badge + legacy analysis notice (auto-hidden for v3) */}
+          <div className="flex flex-col items-start gap-1">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-mono font-bold tracking-wide bg-black/85 text-amber-400 border border-amber-400/40 shadow-md backdrop-blur-md">
+              <Clock className="w-3.5 h-3.5 text-amber-400" />
+              {scene.timeRange}
+            </span>
+            {isLegacyAnalysis && (
+              <span
+                data-testid="scene-legacy-analysis-badge"
+                className="inline-flex items-center rounded-full border border-amber-400/40 bg-amber-950/90 px-2 py-0.5 text-[10px] font-semibold text-amber-300 shadow-md backdrop-blur-md"
+              >
+                {LEGACY_ANALYSIS_LABEL}
+              </span>
+            )}
+          </div>
 
           {/* Right badges: Match Confidence or Playing indicator */}
           <div className="flex items-center gap-1.5">
@@ -249,7 +262,14 @@ export default function SceneCard({ scene, index, matchedTerms = [], score, vide
       </div>
 
       {/* Twelve Labs-style Video Timeline Position Bar */}
-      <div className="w-full h-1.5 bg-white/10 relative overflow-hidden" title={`動画全体の ${Math.round(timelineLeftPercent)}% 付近のシーン`}>
+      <div
+        className="w-full h-1.5 bg-white/10 relative overflow-hidden"
+        title={
+          isLegacyAnalysis
+            ? `動画全体の ${Math.round(timelineLeftPercent)}% 付近のシーン（${LEGACY_ANALYSIS_LABEL}）`
+            : `動画全体の ${Math.round(timelineLeftPercent)}% 付近のシーン`
+        }
+      >
         <div
           className="absolute top-0 bottom-0 bg-gradient-to-r from-amber-400 to-amber-300 rounded-full shadow-[0_0_8px_rgba(251,191,36,0.6)]"
           style={{
@@ -262,10 +282,45 @@ export default function SceneCard({ scene, index, matchedTerms = [], score, vide
       {/* Card Body */}
       <div className="p-3.5 flex flex-col flex-grow justify-between gap-2.5">
         <div>
-          {/* Video Title */}
-          <h4 className="text-xs font-semibold text-white/90 line-clamp-1 group-hover:text-cinematic-red transition-colors">
-            {scene.videoTitle}
-          </h4>
+          {/* Video Title & Score / Observation Badges */}
+          <div className="flex items-start justify-between gap-1.5">
+            <h4 className="text-xs font-semibold text-white/90 line-clamp-1 group-hover:text-cinematic-red transition-colors flex-1">
+              {scene.videoTitle}
+            </h4>
+            {typeof scene.calibratedScore === "number" ? (
+              <span
+                title={`校正済みスコア: ${scene.calibratedScore.toFixed(1)}点`}
+                className="shrink-0 rounded border border-emerald-400/35 bg-emerald-500/15 px-1.5 py-0.2 font-mono text-[9.5px] font-bold text-emerald-200"
+              >
+                校正 {scene.calibratedScore.toFixed(1)}
+              </span>
+            ) : (
+              <span
+                data-testid="scene-uncalibrated-badge"
+                title={
+                  typeof scene.aiOverallScore === "number"
+                    ? `未校正（旧基準AI参考値: ${scene.aiOverallScore}点・点数絞り込み対象外）`
+                    : "未校正（点数絞り込み対象外）"
+                }
+                className="shrink-0 rounded border border-white/20 bg-white/8 px-1.5 py-0.2 font-mono text-[9.5px] font-medium text-white/65"
+              >
+                未校正
+              </span>
+            )}
+          </div>
+
+          {scene.analysisObservationScope && (
+            <div className="mt-1">
+              <span
+                data-testid="scene-unwatched-warning"
+                className="inline-flex items-center gap-1 rounded border border-amber-400/45 bg-amber-500/15 px-1.5 py-0.5 text-[9.5px] font-semibold text-amber-200"
+                title={`未視聴・要確認タグ: ${scene.analysisObservationScope}`}
+              >
+                <AlertTriangle className="h-2.5 w-2.5 shrink-0" />
+                未視聴・要確認 ({scene.analysisObservationScope})
+              </span>
+            </div>
+          )}
 
           {/* Visual Description */}
           <p className="mt-1.5 text-xs text-white/75 leading-relaxed line-clamp-3">
