@@ -196,6 +196,7 @@ export async function getAllVideoListItems() {
       embedReason: videos.embedReason,
       embedCheckedAt: videos.embedCheckedAt,
       addedDate: videos.addedDate,
+      publishedAt: videos.publishedAt,
       createdAt: videos.createdAt,
       updatedAt: videos.updatedAt,
       isProvisional: sql<number>`CASE WHEN ${videos.aiScoreBreakdown} LIKE '%"analysisStatus":"provisional"%' OR ${videos.aiScoreBreakdown} LIKE '%"isProvisional":true%' THEN 1 ELSE 0 END`,
@@ -506,6 +507,12 @@ export function parseVideoRow(row: typeof videos.$inferSelect) {
     embedReason: row.embedReason ?? "",
     embedCheckedAt: row.embedCheckedAt?.toISOString() ?? "",
     addedDate: row.addedDate ?? "",
+    publishedAt:
+      row.publishedAt instanceof Date
+        ? row.publishedAt.toISOString()
+        : typeof row.publishedAt === "string"
+          ? row.publishedAt
+          : null,
     createdAt:
       row.createdAt instanceof Date
         ? row.createdAt.toISOString()

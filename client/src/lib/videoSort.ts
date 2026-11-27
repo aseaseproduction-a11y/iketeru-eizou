@@ -2,9 +2,11 @@ import type { Video } from "@/lib/types";
 import { getEffectiveScore100 } from "@shared/ratingScale";
 
 export type SortKey = "added" | "published" | "score";
-export type ActiveSortKey = "added" | "score";
+export type ActiveSortKey = SortKey;
 export type SecondarySortKey = "none" | ActiveSortKey;
 export type SortDirection = "desc" | "asc";
+
+export const ALL_SORT_KEYS: readonly ActiveSortKey[] = ["added", "published", "score"] as const;
 
 export interface SortConfig {
   primaryKey: ActiveSortKey;
@@ -50,7 +52,7 @@ export interface VideoBandGroup {
 
 export const SORT_KEY_LABELS: Record<SortKey, string> = {
   added: "追加順",
-  published: "投稿日時順（準備中）",
+  published: "投稿日時順",
   score: "評価順",
 };
 
@@ -62,7 +64,7 @@ export function getSortDirectionLabels(key: ActiveSortKey): { desc: string; asc:
 }
 
 function isActiveSortKey(value: unknown): value is ActiveSortKey {
-  return value === "added" || value === "score";
+  return value === "added" || value === "published" || value === "score";
 }
 
 function isSortDirection(value: unknown): value is SortDirection {
@@ -226,6 +228,31 @@ export function compareByCreatedAtOnly(a: Video, b: Video, dir: SortDirection): 
   return dir === "desc" ? msB - msA : msA - msB;
 }
 
+function parsePublishedAtMs(publishedAt: string | null | undefined): number | null {
+  const raw = (publishedAt ?? "").trim();
+  if (!raw) return null;
+  // Support both ISO-8601 ("2024-08-27T01:42:00.000Z") and MySQL UTC ("2024-08-27 01:42:00")
+  const normalized = /^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/.test(raw)
+    ? `${raw.replace(" ", "T")}Z`
+    : raw;
+  const ms = Date.parse(normalized);
+  return Number.isFinite(ms) ? ms : null;
+}
+
+/**
+ * 投稿日時順の比較:
+ * 投稿日時がない動画は新しい順・古い順のどちらでも常に最後へ並べる。
+ */
+export function compareByPublished(a: Video, b: Video, dir: SortDirection): number {
+  const msA = parsePublishedAtMs(a.publishedAt);
+  const msB = parsePublishedAtMs(b.publishedAt);
+  if (msA === null && msB === null) return 0;
+  if (msA === null) return 1;
+  if (msB === null) return -1;
+  if (msA === msB) return 0;
+  return dir === "desc" ? msB - msA : msA - msB;
+}
+
 export function compareByAdded(a: Video, b: Video, dir: SortDirection): number {
   const byDate = compareByAddedDateOnly(a, b, dir);
   if (byDate !== 0) return byDate;
@@ -258,6 +285,13 @@ function compareBandOrder(a: Video, b: Video, dir: SortDirection): number {
   return ranks[bandA.bandId] - ranks[bandB.bandId];
 }
 
+function compareBySecondary(a: Video, b: Video, key: SecondarySortKey, dir: SortDirection): number {
+  if (key === "added") return compareByAdded(a, b, dir);
+  if (key === "published") return compareByPublished(a, b, dir);
+  if (key === "score") return compareByScore(a, b, dir);
+  return 0;
+}
+
 export function sortVideos(videos: Video[], rawConfig: SortConfig): Video[] {
   const config = normalizeSortConfig(rawConfig);
   const sorted = [...videos];
@@ -269,9 +303,9 @@ export function sortVideos(videos: Video[], rawConfig: SortConfig): Video[] {
       if (byBand !== 0) return byBand;
 
       // 帯の中は並べ替え 2 の順（なしなら点数の順）
-      if (config.secondaryKey === "added") {
-        const byAdded = compareByAdded(a, b, config.secondaryDir);
-        if (byAdded !== 0) return byAdded;
+      if (config.secondaryKey !== "none") {
+        const bySecondary = compareBySecondary(a, b, config.secondaryKey, config.secondaryDir);
+        if (bySecondary !== 0) return bySecondary;
         const byScore = compareByScore(a, b, config.primaryDir);
         if (byScore !== 0) return byScore;
       } else {
@@ -283,13 +317,29 @@ export function sortVideos(videos: Video[], rawConfig: SortConfig): Video[] {
       return a.id.localeCompare(b.id);
     }
 
-    // 追加順が 1 番目のとき: addedDate → (次に評価順があれば同日内を評価順) → createdAt → id
+    if (config.primaryKey === "published") {
+      // 投稿日時順が 1 番目のとき: 投稿日がない動画は常に最後
+      const byPublished = compareByPublished(a, b, config.primaryDir);
+      if (byPublished !== 0) return byPublished;
+
+      if (config.secondaryKey !== "none") {
+        const bySecondary = compareBySecondary(a, b, config.secondaryKey, config.secondaryDir);
+        if (bySecondary !== 0) return bySecondary;
+      }
+
+      const byAdded = compareByAdded(a, b, "desc");
+      if (byAdded !== 0) return byAdded;
+
+      return a.id.localeCompare(b.id);
+    }
+
+    // 追加順が 1 番目のとき: addedDate → (並べ替え 2 があれば同日内を並べ替え 2) → createdAt → id
     const byDate = compareByAddedDateOnly(a, b, config.primaryDir);
     if (byDate !== 0) return byDate;
 
-    if (config.secondaryKey === "score") {
-      const byScore = compareByScore(a, b, config.secondaryDir);
-      if (byScore !== 0) return byScore;
+    if (config.secondaryKey !== "none") {
+      const bySecondary = compareBySecondary(a, b, config.secondaryKey, config.secondaryDir);
+      if (bySecondary !== 0) return bySecondary;
     }
 
     const byCreated = compareByCreatedAtOnly(a, b, config.primaryDir);
