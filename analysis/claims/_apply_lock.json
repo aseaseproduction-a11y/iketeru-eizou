@@ -1,8 +1,12 @@
 {
   "schema_version": 1,
-  "status": "locked",
-  "worker": "chibatmute",
-  "run_id": "v3_apply_delta_20261127_r1",
-  "started_at": "2026-11-27T06:39:20.426Z",
-  "updated_at": "2026-11-27T06:39:20.427Z"
+  "status": "unlocked",
+  "worker": null,
+  "run_id": null,
+  "started_at": null,
+  "last_worker": "chibatmute",
+  "last_run_id": "v3_apply_delta_20261127_r1",
+  "last_started_at": "2026-11-27T06:39:04.000Z",
+  "released_at": "2026-11-27T06:41:55.964Z",
+  "released_by": "chibatmute"
 }
