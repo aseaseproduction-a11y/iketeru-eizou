@@ -1,12 +1,12 @@
-{
-  "schema_version": 1,
-  "status": "unlocked",
-  "worker": null,
-  "run_id": null,
-  "started_at": null,
-  "last_worker": "CHIBA-PC2",
-  "last_run_id": "ddl_and_backfill_calibrated_score_axes",
-  "last_started_at": "2026-11-27T03:10:37.698Z",
-  "released_at": "2026-11-27T03:17:19.926Z",
-  "released_by": "CHIBA-PC2"
+﻿{
+    "schema_version":  1,
+    "status":  "locked",
+    "worker":  "CHIBA-PC2",
+    "run_id":  "backfill_calibrated_score_axes_20261127_104500",
+    "started_at":  "2026-11-27T04:54:15.897Z",
+    "last_worker":  "CHIBA-PC2",
+    "last_run_id":  "ddl_and_backfill_calibrated_score_axes",
+    "last_started_at":  "2026-11-27T03:10:37.698Z",
+    "released_at":  "2026-11-27T03:17:19.926Z",
+    "released_by":  "CHIBA-PC2"
 }
