@@ -340,3 +340,59 @@ test("selectV3Entries --list pins exact video_ids/versions/SHA-256s regardless o
     fs.rmSync(td, { recursive: true, force: true });
   }
 });
+
+test("loadV3CanonicalManifestMap includes underscore-prefixed YouTube IDs and excludes only _docs, _prompts, and dirs without manifest.json", () => {
+  const td = fs.mkdtempSync(path.join(os.tmpdir(), "v3-underscore-ids-test-"));
+  try {
+    const makeValidVideo = (vid) => {
+      const dir = path.join(td, vid);
+      fs.mkdirSync(dir);
+      const body = "## 0. 総括\n本文\n## 3. シーン\n- #01 【00:00-00:05】 導入: テスト\n";
+      const chk = JSON.stringify({
+        video_id: vid,
+        prompt_sha256_verified: true,
+        transcript_audit: { ok: true },
+        mechanical: { all_passed: true, scenes_count: 1, chapters_count: 11 },
+      });
+      fs.writeFileSync(path.join(dir, "analysis_v3.md"), body, "utf8");
+      fs.writeFileSync(path.join(dir, "mechanical_check.json"), chk, "utf8");
+      fs.writeFileSync(
+        path.join(dir, "manifest.json"),
+        JSON.stringify({
+          video_id: vid,
+          analysis_version: "v3",
+          prompt_version: "v3.2",
+          prompt_template_sha256: "e".repeat(64),
+          created_at: "2026-11-27T00:00:00+09:00",
+          files: {
+            "analysis_v3.md": { bytes: Buffer.byteLength(body, "utf8"), sha256: sha256Str(body) },
+            "mechanical_check.json": { bytes: Buffer.byteLength(chk, "utf8"), sha256: sha256Str(chk) },
+          },
+        }),
+        "utf8"
+      );
+    };
+
+    // Real underscore-prefixed YouTube IDs MUST be loaded
+    makeValidVideo("_F6oRAbEoLY");
+    makeValidVideo("_-nLBLtidZ4");
+    makeValidVideo("normalVid01");
+
+    // _docs and _prompts MUST be excluded even if they contain manifest.json
+    for (const metaDir of ["_docs", "_prompts"]) {
+      const p = path.join(td, metaDir);
+      fs.mkdirSync(p);
+      fs.writeFileSync(path.join(p, "manifest.json"), JSON.stringify({ note: "meta manifest" }), "utf8");
+    }
+
+    // Directories without manifest.json MUST be skipped (not rejected)
+    fs.mkdirSync(path.join(td, "_scratch_no_manifest"));
+    fs.mkdirSync(path.join(td, "partial_dir_no_manifest"));
+
+    const loaded = loadV3CanonicalManifestMap(td);
+    assert.deepEqual(Array.from(loaded.valid_map.keys()).sort(), ["_-nLBLtidZ4", "_F6oRAbEoLY", "normalVid01"]);
+    assert.equal(loaded.rejected.length, 0);
+  } finally {
+    fs.rmSync(td, { recursive: true, force: true });
+  }
+});
