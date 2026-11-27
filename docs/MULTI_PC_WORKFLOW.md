@@ -120,6 +120,7 @@ node scripts/apply-phase3-batch-to-tidb.mjs <run_id> --dry-run --worker <このP
 node scripts/apply-phase3-batch-to-tidb.mjs <run_id> --apply --worker <このPC名>
 ```
    - 書き込み後の確認は **自分の `run_id` の行数（`tidb_rows_with_run_id === payload_count`）と旧40列の差分 0** を中心に行い、全体の校正済み件数（`tidb_calibration_status_counts`）は「他PCの反映分を含む累計」として記録します。
+   - **5軸スコア埋め直し（毎回必須）**：採点結果を TiDB に入れたら、ロック解放前に毎回 `node scripts/backfill-calibrated-score-axes.mjs --dry-run` → `--apply --worker <このPC名> --lock-run-id <run_id>` を流し、`calibratedScoreAxes IS NULL` の行を埋める。
 4. **ロック解除・予約完了・結果 push**
 ```powershell
 node scripts/claim-phase3-batch.mjs --release-apply-lock <run_id> --worker <このPC名>

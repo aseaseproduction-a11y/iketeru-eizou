@@ -1,6 +1,11 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { buildCalibratedScoreAxesForRow } from "./backfill-calibrated-score-axes.mjs";
+import {
+  BACKFILL_UPDATE_SQL,
+  buildCalibratedScoreAxesForRow,
+  planBackfillUpdates,
+  verifyApplyLockState,
+} from "./backfill-calibrated-score-axes.mjs";
 
 test("buildCalibratedScoreAxesForRow computes exact 2-run mean for Phase 3 (offsetPerAxis=0)", () => {
   const rawIndex = new Map([
@@ -146,4 +151,82 @@ test("buildCalibratedScoreAxesForRow applies offsetPerAxis=0.45 for API URL rout
   assert.equal(res.payload.source, "api");
   assert.equal(res.payload.offsetPerAxis, 0.45);
   assert.equal(res.payload.axes.direction, 17.55);
+});
+
+test("verifyApplyLockState enforces locked status, exact worker, and exact run_id", () => {
+  assert.equal(
+    verifyApplyLockState({ status: "unlocked", worker: null, run_id: null }, { worker: "CHIBA-PC2", expectedRunId: "r1" }).ok,
+    false,
+  );
+  assert.equal(
+    verifyApplyLockState({ status: "locked", worker: "CHIBA-PC", run_id: "r1" }, { worker: "CHIBA-PC2", expectedRunId: "r1" }).ok,
+    false,
+  );
+  assert.equal(
+    verifyApplyLockState({ status: "locked", worker: "CHIBA-PC2", run_id: "other" }, { worker: "CHIBA-PC2", expectedRunId: "r1" }).ok,
+    false,
+  );
+  assert.equal(
+    verifyApplyLockState({ status: "locked", worker: "CHIBA-PC2", run_id: "r1" }, { worker: "CHIBA-PC2", expectedRunId: "r1" }).ok,
+    true,
+  );
+});
+
+test("planBackfillUpdates skips rows missing raw_scores cleanly and UPDATE SQL touches only calibratedScoreAxes + updatedAt", () => {
+  const rawIndex = new Map([
+    [
+      "run_a::vid_ok",
+      [
+        {
+          video_id: "vid_ok",
+          mode: "video",
+          attempt: 1,
+          total_score: 80,
+          scores: { direction: 16, visual_craft: 16, editing_rhythm: 16, sound_integration: 16, originality_finish: 16 },
+        },
+        {
+          video_id: "vid_ok",
+          mode: "video",
+          attempt: 2,
+          total_score: 80,
+          scores: { direction: 16, visual_craft: 16, editing_rhythm: 16, sound_integration: 16, originality_finish: 16 },
+        },
+      ],
+    ],
+  ]);
+
+  const plan = planBackfillUpdates(
+    [
+      {
+        id: "vid_ok",
+        title: "OK",
+        calibratedScore: "80.00",
+        calibratedRoute: "video_h1",
+        calibratedRunId: "run_a",
+        calibrationVersion: "phase2_v1",
+        calibratedBreakdown: JSON.stringify({ ensembleRule: "mean_of_2" }),
+      },
+      {
+        id: "vid_missing",
+        title: "Missing Raw",
+        calibratedScore: "82.00",
+        calibratedRoute: "video_h1",
+        calibratedRunId: "run_20261127_104500",
+        calibrationVersion: "phase2_v1",
+        calibratedBreakdown: null,
+      },
+    ],
+    rawIndex,
+  );
+
+  assert.equal(plan.ready.length, 1);
+  assert.equal(plan.ready[0].id, "vid_ok");
+  assert.equal(plan.skippedMissingRaw.length, 1);
+  assert.equal(plan.skippedMissingRaw[0].id, "vid_missing");
+  assert.equal(plan.sumMismatches.length, 0);
+
+  assert.equal(
+    BACKFILL_UPDATE_SQL,
+    "UPDATE `videos` SET `calibratedScoreAxes` = ?, `updatedAt` = `updatedAt` WHERE `id` = ? AND `calibratedScoreAxes` IS NULL",
+  );
 });
