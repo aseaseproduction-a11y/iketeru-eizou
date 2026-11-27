@@ -178,6 +178,7 @@
        1. **無音区間の実測根拠化（`silencedetect` 導入）**：入力 JSON に `ffmpeg silencedetect` の実測結果を含め、「黒画面や暗転を無音と決めつけない。無音と書くのは `silencedetect` で無音と確認できた区間だけにする」を必須ルール化。
        2. **長回しの誤断定防止**：`scdet` のカットが少ない長い区間では、マスクやホイップ等の柔らかいつなぎがないかを目で確かめ、確かめられないときは「長回し」と断定しないルールを追加。
      - DB 上の `videos.analysisVersion` は `v3` パイロット・`v3.1`・`v3.2` のいずれも `'v3'` とし、プロンプト版の判別は `videos.analysisPromptSha256`（`v3`: `a53083e1…`、`v3.1`: `48b5d140…`、`v3.2`: `e42b47b5…`）で行う。既存合格済みの `v3` / `v3.1` 分析はそのまま有効とし、今後の新規生成では `v3.2`（`silencedetect` 入力付き）を標準とする。
+     - **運用実績・正式承認（2026-11-27 追記）**：`analysis_prompt_v3_2.md`（SHA-256 `e42b47b50400f23de0a5d84566338a3f6580149149c0ca8367dfdc487aff89b2`）は **2026-11-26 から使用しており、2026-11-27 に千葉さんが正式承認**した。
 - 根拠：`D:\マイドライブ\iketeru_analysis_v3\_docs\PILOT_V3_REPORT.md`、`docs/prompts/analysis_prompt_v3_1.md`、`docs/prompts/analysis_prompt_v3_2.md`、`docs/prompts/audit_prompt_v1.md`、`docs/sql/proposed_v3_analysis_ddl.sql`、`scripts/apply-reanalysis-v3-to-tidb.mjs`、`scripts/approved-tidb-overrides.mjs`、`scripts/claim-craft-batch.mjs`、`analysis/claims/v3_apply_pilot20_20261126.json`。
 
 ### D-027 YouTube 動画ダウンロードの運用ルール（2026-11-26）
