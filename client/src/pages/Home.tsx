@@ -128,6 +128,7 @@ export default function Home() {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState<Video | null>(null);
   const [selectedSceneStartTime, setSelectedSceneStartTime] = useState<number | undefined>(undefined);
+  const initialVideoQueryHandledRef = useRef(false);
   const [showInspirationMode, setShowInspirationMode] = useState(false);
   const [showFavoriteProfiles, setShowFavoriteProfiles] = useState(false);
 
@@ -183,6 +184,22 @@ export default function Home() {
   const detailedVideo = selectedVideoDetail as Video | null | undefined;
   const modalVideo = detailedVideo?.id === selectedVideo?.id ? detailedVideo : selectedVideo;
   const metadataSuggestions = useMemo(() => collectMetadataValueSuggestions(allVideos), [allVideos]);
+
+  // Open target video modal automatically when ?video=<id> is provided in URL
+  useEffect(() => {
+    if (initialVideoQueryHandledRef.current || allVideos.length === 0) return;
+    const params = new URLSearchParams(window.location.search);
+    const requestedId = params.get("video")?.trim();
+    if (!requestedId) {
+      initialVideoQueryHandledRef.current = true;
+      return;
+    }
+    const found = allVideos.find((v) => v.id === requestedId);
+    initialVideoQueryHandledRef.current = true;
+    if (found) {
+      setSelectedVideo(found);
+    }
+  }, [allVideos]);
 
   // Infinite scroll observer
   useEffect(() => {
@@ -1079,6 +1096,11 @@ export default function Home() {
           onClose={() => {
             setSelectedVideo(null);
             setSelectedSceneStartTime(undefined);
+            const url = new URL(window.location.href);
+            if (url.searchParams.has("video")) {
+              url.searchParams.delete("video");
+              window.history.replaceState({}, "", url.pathname + url.search + url.hash);
+            }
           }}
           isFavorite={isFavorite(modalVideo.id)}
           onToggleFavorite={canEditFavorites ? toggleFavorite : undefined}
