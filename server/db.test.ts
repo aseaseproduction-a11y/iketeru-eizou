@@ -1,5 +1,10 @@
 import { describe, expect, it } from "vitest";
-import { isMissingAnalysisVersionColumnError, parseVideoRow } from "./db";
+import {
+  isMissingAnalysisVersionColumnError,
+  isMissingCalibratedScoreAxesColumnError,
+  isMissingOptionalVideoColumnError,
+  parseVideoRow,
+} from "./db";
 
 describe("parseVideoRow", () => {
   it("exposes Notion metadata and AI evaluation fields", () => {
@@ -124,5 +129,71 @@ describe("parseVideoRow", () => {
     expect(isMissingAnalysisVersionColumnError({ code: "ER_BAD_FIELD_ERROR", errno: 1054, message: "Unknown column 'analysisVersion' in 'field list'" })).toBe(true);
     expect(isMissingAnalysisVersionColumnError({ cause: { errno: 1054, message: "Unknown column 'analysisPromptSha256' in 'field list'" } })).toBe(true);
     expect(isMissingAnalysisVersionColumnError(new Error("Unknown column 'otherCol' in 'field list'"))).toBe(false);
+
+    expect(isMissingCalibratedScoreAxesColumnError({ code: "ER_BAD_FIELD_ERROR", errno: 1054, message: "Unknown column 'calibratedScoreAxes' in 'field list'" })).toBe(true);
+    expect(isMissingCalibratedScoreAxesColumnError({ cause: { errno: 1054, message: "Unknown column 'videos.calibratedScoreAxes' in 'field list'" } })).toBe(true);
+    expect(isMissingCalibratedScoreAxesColumnError({ code: "ER_BAD_FIELD_ERROR", errno: 1054, message: "Unknown column 'analysisVersion' in 'field list'" })).toBe(false);
+    expect(isMissingOptionalVideoColumnError({ code: "ER_BAD_FIELD_ERROR", errno: 1054, message: "Unknown column 'calibratedScoreAxes' in 'field list'" })).toBe(true);
+  });
+
+  it("parses calibratedScoreAxes from both JSON object and JSON string", () => {
+    const axesPayload = {
+      v: 1,
+      axes: {
+        direction: 17,
+        visual_craft: 18,
+        editing_rhythm: 17.5,
+        sound_integration: 18.5,
+        originality_finish: 17,
+      },
+      runs: 2,
+      source: "phase3",
+      offsetPerAxis: 0,
+    };
+    const parsedFromObj = parseVideoRow({
+      id: "axes-obj",
+      platform: "youtube",
+      title: "Axes Object",
+      thumbnail: null,
+      videoUrl: "https://www.youtube.com/watch?v=-fYxwC8wJsk",
+      embedUrl: null,
+      source: "vook",
+      sourceLabel: null,
+      channelId: null,
+      channelTitle: null,
+      genres: "[]", products: "[]", directions: "[]", tones: "[]", allTags: "[]",
+      purposes: "[]", expressions: "[]", toneEmotions: "[]", toneVisuals: "[]", toneTechniques: "[]", productions: "[]", awards: "[]",
+      curationNote: null, metadataClassificationAudit: null,
+      privateRating: null, aiOverallRating: null, aiDirectionRating: null, aiTechniqueRating: null,
+      aiAnalysis: null,
+      calibratedScore: "88.00",
+      calibratedScoreAxes: axesPayload,
+      embedStatus: "available", embedReason: null, embedCheckedAt: null,
+      addedDate: "2026-11-26", createdAt: new Date(), updatedAt: new Date(),
+    } as never);
+    expect(parsedFromObj.calibratedScoreAxes).toEqual(axesPayload);
+
+    const parsedFromStr = parseVideoRow({
+      id: "axes-str",
+      platform: "youtube",
+      title: "Axes String",
+      thumbnail: null,
+      videoUrl: "https://www.youtube.com/watch?v=-fYxwC8wJsk",
+      embedUrl: null,
+      source: "vook",
+      sourceLabel: null,
+      channelId: null,
+      channelTitle: null,
+      genres: "[]", products: "[]", directions: "[]", tones: "[]", allTags: "[]",
+      purposes: "[]", expressions: "[]", toneEmotions: "[]", toneVisuals: "[]", toneTechniques: "[]", productions: "[]", awards: "[]",
+      curationNote: null, metadataClassificationAudit: null,
+      privateRating: null, aiOverallRating: null, aiDirectionRating: null, aiTechniqueRating: null,
+      aiAnalysis: null,
+      calibratedScore: "88.00",
+      calibratedScoreAxes: JSON.stringify(axesPayload),
+      embedStatus: "available", embedReason: null, embedCheckedAt: null,
+      addedDate: "2026-11-26", createdAt: new Date(), updatedAt: new Date(),
+    } as never);
+    expect(parsedFromStr.calibratedScoreAxes).toEqual(axesPayload);
   });
 });

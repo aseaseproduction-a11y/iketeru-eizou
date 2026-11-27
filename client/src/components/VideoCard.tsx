@@ -347,30 +347,27 @@ export default function VideoCard({ video, index, isFavorite = false, hasNote = 
                 )}
               </>
             )}
-            {isLegacyUncalibrated && (
+            {!hasCalibrated && isLegacyUncalibrated && (
               <span
-                title="Phase 2 校正導入前の旧基準スコアです（未校正・参考保持）"
+                data-testid="video-legacy-score-badge"
+                title="Phase 2 校正導入前の旧評価スコアです（未校正・参考保持）"
                 className="inline-flex items-center rounded-sm border border-zinc-500/35 bg-zinc-500/15 px-1.5 py-0.5 text-[8.5px] font-medium text-zinc-300"
               >
-                旧基準・未校正
+                旧評価
               </span>
             )}
-            {aiRatings.map((rating) => (
+            {!hasCalibrated && aiRatings.map((rating) => (
               <span
                 key={rating.shortLabel}
-                title={`旧基準AI評価（${rating.fullLabel}・未校正）：${rating.value}${typeof rating.score === "number" ? `（${rating.score}点）` : ""}`}
-                className={`inline-flex items-center gap-1 rounded-sm border px-1.5 py-0.5 text-[9px] font-semibold ${
-                  hasCalibrated
-                    ? "border-white/10 bg-white/[0.03] text-white/45"
-                    : "border-sky-400/20 bg-sky-400/[0.07] text-sky-300"
-                }`}
+                title={`旧評価（${rating.fullLabel}・未校正）：${rating.value}${typeof rating.score === "number" ? `（${rating.score}点）` : ""}`}
+                className="inline-flex items-center gap-1 rounded-sm border border-sky-400/20 bg-sky-400/[0.07] px-1.5 py-0.5 text-[9px] font-semibold text-sky-300"
               >
-                <span className={hasCalibrated ? "text-white/35" : "text-sky-300/65"}>
-                  {hasCalibrated ? `旧${rating.shortLabel}` : `AI ${rating.shortLabel}`}
+                <span className="text-sky-300/65">
+                  AI {rating.shortLabel}
                 </span>
-                <span className={hasCalibrated ? "text-white/55" : "text-sky-100"}>{rating.value}</span>
+                <span className="text-sky-100">{rating.value}</span>
                 {typeof rating.score === "number" && (
-                  <span className={`font-mono text-[8.5px] ${hasCalibrated ? "text-white/40" : "text-sky-300/80"}`}>
+                  <span className="font-mono text-[8.5px] text-sky-300/80">
                     {rating.score}
                   </span>
                 )}

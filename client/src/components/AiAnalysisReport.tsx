@@ -35,22 +35,81 @@ const REPORT_TABS: ReportTab[] = [
 const TIME_CODE_PATTERN = /^【\d{1,2}:\d{2}(?:\s*[-–—〜~]\s*\d{1,2}:\d{2})?】$/;
 const INLINE_TOKEN_PATTERN = /(\*\*[^*]+\*\*|`[^`]+`|【\d{1,2}:\d{2}(?:\s*[-–—〜~]\s*\d{1,2}:\d{2})?】)/g;
 const HEADING_PATTERN = /^(#{1,3})\s+(.+)$/;
-const CHAPTER_NUMBER_PATTERN = /(?:^|\s|第)\s*(10|[0-9])\s*(?:章)?(?=\s|$|[：:.)）】、—–-])/;
+const SPLIT_HEADING_PATTERN = /^(#{1,2})\s+(.+)$/;
+const LEGACY_DAI_CHAPTER_PATTERN = /^第\s*(10|[0-9])\s*章(?=\s|$|[：:.)）】、—–-])/;
+const NUMBERED_CHAPTER_PATTERN = /^(1[01]|[0-9])\s*(?:[.．:：)\]）]|\s)/;
 const STANDALONE_SECTION_PATTERN = /^(?:第\s*(?:10|[0-9])\s*章(?=\s|$|[：:|｜—–-])|キュレーション要約|辛口クリティーク|多面的評価|企画・心理誘導|マーケティング設計|タイムライン観察記録|演出・構図|撮影・照明・美術|技術解剖|再現・拡張レシピ|音響演出|明日からのアクションプラン)/;
 
-function getSectionTab(text: string): Exclude<ReportTabId, "all"> {
-  const normalized = text.replace(/\s+/g, " ").toLowerCase();
-  const chapterNumber = normalized.match(CHAPTER_NUMBER_PATTERN)?.[1];
+/**
+ * Chapter-number-based tab mapping for `## 0.` .. `## 10.` format (v3 & modern 10-chapter reports).
+ * Independent of heading wording so v3 wording differences never mis-route tabs:
+ *  - 0 (総括), 1 (ジャンル/トーン), 2 (企画/ターゲット), 9 (セールス/企画提案フック), 11 (監査) -> planning (評価・企画)
+ *  - 3 (時系列タイムスタンプ), 4 (演出・撮影・構図・照明・美術) -> direction (演出・撮影)
+ *  - 5 (編集・モーショングラフィックス・VFX), 10 (高技術カット完全再現レシピ) -> technical (技術解剖)
+ *  - 6 (サウンド・リズム・テンポ), 7 (再現性・制作体制), 8 (応用・参考ポイント) -> sound (音響・実践)
+ */
+const V3_CHAPTER_NUMBER_TAB_MAP: Record<string, Exclude<ReportTabId, "all">> = {
+  "0": "planning",
+  "1": "planning",
+  "2": "planning",
+  "3": "direction",
+  "4": "direction",
+  "5": "technical",
+  "6": "sound",
+  "7": "sound",
+  "8": "sound",
+  "9": "planning",
+  "10": "technical",
+  "11": "planning",
+};
 
-  if (chapterNumber === "0" || chapterNumber === "3" || chapterNumber === "4") return "direction";
-  if (chapterNumber === "5" || chapterNumber === "6") return "technical";
-  if (chapterNumber === "7" || chapterNumber === "8") return "sound";
-  if (chapterNumber === "1" || chapterNumber === "2") return "planning";
+/**
+ * Legacy `第0章〜第8章` (Notion v1) mapping preserved for backward compatibility:
+ *  - 第0章 タイムライン観察記録, 第3章, 第4章 -> direction
+ *  - 第1章, 第2章, 第9章 -> planning
+ *  - 第5章, 第6章, 第10章 -> technical
+ *  - 第7章, 第8章 -> sound
+ */
+const LEGACY_DAI_CHAPTER_TAB_MAP: Record<string, Exclude<ReportTabId, "all">> = {
+  "0": "direction",
+  "1": "planning",
+  "2": "planning",
+  "3": "direction",
+  "4": "direction",
+  "5": "technical",
+  "6": "technical",
+  "7": "sound",
+  "8": "sound",
+  "9": "planning",
+  "10": "technical",
+};
 
-  if (/(?:タイムライン|演出|構図|撮影|照明|美術|シーン連鎖)/.test(normalized)) return "direction";
-  if (/(?:after effects|davinci|blender|技術解剖|再現|拡張レシピ|コード|パラメータ)/.test(normalized)) return "technical";
-  if (/(?:音響|サウンド|アクションプラン|明日から)/.test(normalized)) return "sound";
-  return "planning";
+function getSectionTab(heading: string, contentPreview = ""): Exclude<ReportTabId, "all"> {
+  const cleanHeading = heading.replace(/\s+/g, " ").trim();
+
+  // 1. Explicit `## 0.` .. `## 10.` chapter number (v3 & numbered reports) — independent of wording.
+  const numberedMatch = cleanHeading.match(NUMBERED_CHAPTER_PATTERN);
+  if (numberedMatch?.[1] && V3_CHAPTER_NUMBER_TAB_MAP[numberedMatch[1]]) {
+    return V3_CHAPTER_NUMBER_TAB_MAP[numberedMatch[1]];
+  }
+
+  // 2. Legacy `第N章` chapter number
+  const daiMatch = cleanHeading.match(LEGACY_DAI_CHAPTER_PATTERN);
+  if (daiMatch?.[1] && LEGACY_DAI_CHAPTER_TAB_MAP[daiMatch[1]]) {
+    return LEGACY_DAI_CHAPTER_TAB_MAP[daiMatch[1]];
+  }
+
+  // 3. Fallback keyword matching (heading first, then body preview) for unnumbered sections
+  const classifyKeywords = (text: string): Exclude<ReportTabId, "all"> | null => {
+    const normalized = text.replace(/\s+/g, " ").toLowerCase();
+    if (/(?:タイムライン|演出|構図|撮影|照明|美術|シーン連鎖)/.test(normalized)) return "direction";
+    if (/(?:after effects|davinci|blender|技術解剖|再現|拡張レシピ|コード|パラメータ)/.test(normalized)) return "technical";
+    if (/(?:音響|サウンド|アクションプラン|明日から)/.test(normalized)) return "sound";
+    if (/(?:キュレーション|要約|企画|評価|クライアント)/.test(normalized)) return "planning";
+    return null;
+  };
+
+  return classifyKeywords(cleanHeading) ?? classifyKeywords(contentPreview) ?? "planning";
 }
 
 export function getAnalysisScale(markdown: string): 1 | 2 | 3 {
@@ -83,7 +142,7 @@ export function splitAiAnalysisByTab(markdown: string): ReportSection[] {
       continue;
     }
 
-    const markdownHeading = line.match(HEADING_PATTERN);
+    const markdownHeading = line.match(SPLIT_HEADING_PATTERN);
     const trimmed = line.trim();
     const isStandaloneSection = !inCodeFence && trimmed.length > 0 && STANDALONE_SECTION_PATTERN.test(trimmed);
 
@@ -106,12 +165,11 @@ export function splitAiAnalysisByTab(markdown: string): ReportSection[] {
   return sections
     .map((section, index) => {
       const content = section.lines.join("\n").trim();
-      const categoryText = `${section.heading}\n${content.slice(0, 240)}`;
       return {
         id: `${index}-${section.heading}`,
         heading: section.heading,
         content,
-        tab: getSectionTab(categoryText),
+        tab: getSectionTab(section.heading, content.slice(0, 240)),
       };
     })
     .filter((section) => section.content || section.heading !== "レポート概要");

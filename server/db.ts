@@ -25,6 +25,7 @@ import {
   normalizeAnalysisVersion,
   type AnalysisVersion,
 } from "@shared/analysisVersion";
+import { parseCalibratedScoreAxes } from "@shared/calibratedScoreAxes";
 
 let _db: ReturnType<typeof drizzle> | null = null;
 let _pool: mysql.Pool | null = null;
@@ -133,13 +134,6 @@ export async function getUserByOpenId(openId: string) {
 // Video queries
 // ============================================================
 
-export async function getAllVideos() {
-  const db = await getDb();
-  if (!db) return [];
-  const rows = await db.select().from(videos).orderBy(desc(videos.createdAt));
-  return rows.map(parseVideoRow);
-}
-
 export function isMissingAnalysisVersionColumnError(error: unknown): boolean {
   if (!error || typeof error !== "object") return false;
   const err = error as { code?: unknown; errno?: unknown; message?: unknown; cause?: unknown };
@@ -157,6 +151,196 @@ export function isMissingAnalysisVersionColumnError(error: unknown): boolean {
     return isMissingAnalysisVersionColumnError(err.cause);
   }
   return false;
+}
+
+export function isMissingCalibratedScoreAxesColumnError(error: unknown): boolean {
+  if (!error || typeof error !== "object") return false;
+  const err = error as { code?: unknown; errno?: unknown; message?: unknown; cause?: unknown };
+  const msg = String(err.message ?? "");
+  if (
+    (err.code === "ER_BAD_FIELD_ERROR" || err.errno === 1054) &&
+    /calibratedScoreAxes/i.test(msg)
+  ) {
+    return true;
+  }
+  if (/Unknown column .*calibratedScoreAxes/i.test(msg)) {
+    return true;
+  }
+  if (err.cause && err.cause !== error) {
+    return isMissingCalibratedScoreAxesColumnError(err.cause);
+  }
+  return false;
+}
+
+export function isMissingOptionalVideoColumnError(error: unknown): boolean {
+  return (
+    isMissingCalibratedScoreAxesColumnError(error) ||
+    isMissingAnalysisVersionColumnError(error)
+  );
+}
+
+const VIDEO_FULL_BASE_SELECT = {
+  id: videos.id,
+  platform: videos.platform,
+  title: videos.title,
+  thumbnail: videos.thumbnail,
+  videoUrl: videos.videoUrl,
+  embedUrl: videos.embedUrl,
+  source: videos.source,
+  sourceLabel: videos.sourceLabel,
+  channelId: videos.channelId,
+  channelTitle: videos.channelTitle,
+  genres: videos.genres,
+  products: videos.products,
+  directions: videos.directions,
+  tones: videos.tones,
+  allTags: videos.allTags,
+  purposes: videos.purposes,
+  expressions: videos.expressions,
+  toneEmotions: videos.toneEmotions,
+  toneVisuals: videos.toneVisuals,
+  toneTechniques: videos.toneTechniques,
+  productions: videos.productions,
+  productionCredits: videos.productionCredits,
+  awards: videos.awards,
+  curationNote: videos.curationNote,
+  metadataClassificationAudit: videos.metadataClassificationAudit,
+  privateRating: videos.privateRating,
+  aiOverallRating: videos.aiOverallRating,
+  aiDirectionRating: videos.aiDirectionRating,
+  aiTechniqueRating: videos.aiTechniqueRating,
+  aiOverallScore: videos.aiOverallScore,
+  aiDirectionScore: videos.aiDirectionScore,
+  aiTechniqueScore: videos.aiTechniqueScore,
+  aiScoreBreakdown: videos.aiScoreBreakdown,
+  aiAnalysis: videos.aiAnalysis,
+  calibrationStatus: videos.calibrationStatus,
+  calibratedScore: videos.calibratedScore,
+  calibratedRank: videos.calibratedRank,
+  calibratedTierBand: videos.calibratedTierBand,
+  calibratedBreakdown: videos.calibratedBreakdown,
+  calibrationVersion: videos.calibrationVersion,
+  calibratedAt: videos.calibratedAt,
+  calibratedRoute: videos.calibratedRoute,
+  calibratedRunId: videos.calibratedRunId,
+  calibrationGenreBucket: videos.calibrationGenreBucket,
+  analysisObservationScope: videos.analysisObservationScope,
+  embedStatus: videos.embedStatus,
+  embedReason: videos.embedReason,
+  embedCheckedAt: videos.embedCheckedAt,
+  addedDate: videos.addedDate,
+  createdAt: videos.createdAt,
+  updatedAt: videos.updatedAt,
+};
+
+const VIDEO_ANALYSIS_VERSION_SELECT = {
+  analysisVersion: videos.analysisVersion,
+  analysisGeneratedAt: videos.analysisGeneratedAt,
+  analysisPromptSha256: videos.analysisPromptSha256,
+};
+
+type DrizzleDb = NonNullable<Awaited<ReturnType<typeof getDb>>>;
+
+/**
+ * Safe full-table video select that degrades gracefully on MySQL/TiDB 1054
+ * when `calibratedScoreAxes` and/or `analysisVersion*` DDL has not been applied yet.
+ * Preserves `analysisVersion` when only `calibratedScoreAxes` is absent.
+ */
+export async function selectAllRawVideosSafe(
+  db: DrizzleDb,
+  options?: { orderByCreatedAtDesc?: boolean },
+): Promise<Array<typeof videos.$inferSelect>> {
+  const order = Boolean(options?.orderByCreatedAtDesc);
+
+  try {
+    const q = db.select().from(videos);
+    return (await (order ? q.orderBy(desc(videos.createdAt)) : q)) as Array<typeof videos.$inferSelect>;
+  } catch (error) {
+    if (isMissingCalibratedScoreAxesColumnError(error)) {
+      try {
+        const q = db
+          .select({
+            ...VIDEO_FULL_BASE_SELECT,
+            ...VIDEO_ANALYSIS_VERSION_SELECT,
+          })
+          .from(videos);
+        const rows = await (order ? q.orderBy(desc(videos.createdAt)) : q);
+        return rows.map((row) => ({
+          ...row,
+          calibratedScoreAxes: null,
+        })) as Array<typeof videos.$inferSelect>;
+      } catch (innerError) {
+        if (!isMissingAnalysisVersionColumnError(innerError)) throw innerError;
+      }
+    } else if (!isMissingAnalysisVersionColumnError(error)) {
+      throw error;
+    }
+
+    const q = db.select(VIDEO_FULL_BASE_SELECT).from(videos);
+    const legacyRows = await (order ? q.orderBy(desc(videos.createdAt)) : q);
+    return legacyRows.map((row) => ({
+      ...row,
+      calibratedScoreAxes: null,
+      analysisVersion: "legacy",
+      analysisGeneratedAt: null,
+      analysisPromptSha256: null,
+    })) as Array<typeof videos.$inferSelect>;
+  }
+}
+
+/**
+ * Safe single-video select by ID with the same 1054 fallback as `selectAllRawVideosSafe`.
+ */
+export async function selectRawVideoByIdSafe(
+  db: DrizzleDb,
+  id: string,
+): Promise<typeof videos.$inferSelect | null> {
+  try {
+    const [row] = await db.select().from(videos).where(eq(videos.id, id)).limit(1);
+    return row ?? null;
+  } catch (error) {
+    if (isMissingCalibratedScoreAxesColumnError(error)) {
+      try {
+        const [row] = await db
+          .select({
+            ...VIDEO_FULL_BASE_SELECT,
+            ...VIDEO_ANALYSIS_VERSION_SELECT,
+          })
+          .from(videos)
+          .where(eq(videos.id, id))
+          .limit(1);
+        return row
+          ? ({ ...row, calibratedScoreAxes: null } as typeof videos.$inferSelect)
+          : null;
+      } catch (innerError) {
+        if (!isMissingAnalysisVersionColumnError(innerError)) throw innerError;
+      }
+    } else if (!isMissingAnalysisVersionColumnError(error)) {
+      throw error;
+    }
+
+    const [row] = await db
+      .select(VIDEO_FULL_BASE_SELECT)
+      .from(videos)
+      .where(eq(videos.id, id))
+      .limit(1);
+    return row
+      ? ({
+          ...row,
+          calibratedScoreAxes: null,
+          analysisVersion: "legacy",
+          analysisGeneratedAt: null,
+          analysisPromptSha256: null,
+        } as typeof videos.$inferSelect)
+      : null;
+  }
+}
+
+export async function getAllVideos() {
+  const db = await getDb();
+  if (!db) return [];
+  const rows = await selectAllRawVideosSafe(db, { orderByCreatedAtDesc: true });
+  return rows.map(parseVideoRow);
 }
 
 /** 一覧表示用。重量の大きい分析本文・分類監査・スコア内訳はSQLレベルで除外し、詳細表示時にのみ取得する。 */
@@ -226,21 +410,48 @@ export async function getAllVideoListItems() {
     rows = (await db
       .select({
         ...baseSelect,
-        analysisVersion: videos.analysisVersion,
-        analysisGeneratedAt: videos.analysisGeneratedAt,
-        analysisPromptSha256: videos.analysisPromptSha256,
+        ...VIDEO_ANALYSIS_VERSION_SELECT,
+        calibratedScoreAxes: videos.calibratedScoreAxes,
       })
       .from(videos)
       .orderBy(desc(videos.createdAt))) as typeof rows;
   } catch (error) {
-    if (!isMissingAnalysisVersionColumnError(error)) throw error;
-    const legacyRows = await db.select(baseSelect).from(videos).orderBy(desc(videos.createdAt));
-    rows = legacyRows.map((r) => ({
-      ...r,
-      analysisVersion: "legacy",
-      analysisGeneratedAt: null,
-      analysisPromptSha256: null,
-    }));
+    if (isMissingCalibratedScoreAxesColumnError(error)) {
+      try {
+        const rowsWithoutAxes = await db
+          .select({
+            ...baseSelect,
+            ...VIDEO_ANALYSIS_VERSION_SELECT,
+          })
+          .from(videos)
+          .orderBy(desc(videos.createdAt));
+        rows = rowsWithoutAxes.map((r) => ({
+          ...r,
+          calibratedScoreAxes: null,
+        })) as typeof rows;
+      } catch (innerError) {
+        if (!isMissingAnalysisVersionColumnError(innerError)) throw innerError;
+        const legacyRows = await db.select(baseSelect).from(videos).orderBy(desc(videos.createdAt));
+        rows = legacyRows.map((r) => ({
+          ...r,
+          analysisVersion: "legacy",
+          analysisGeneratedAt: null,
+          analysisPromptSha256: null,
+          calibratedScoreAxes: null,
+        }));
+      }
+    } else if (isMissingAnalysisVersionColumnError(error)) {
+      const legacyRows = await db.select(baseSelect).from(videos).orderBy(desc(videos.createdAt));
+      rows = legacyRows.map((r) => ({
+        ...r,
+        analysisVersion: "legacy",
+        analysisGeneratedAt: null,
+        analysisPromptSha256: null,
+        calibratedScoreAxes: null,
+      }));
+    } else {
+      throw error;
+    }
   }
   return rows.map((row) => {
     const { isProvisional, gradeBoundary, visualVerificationStatus, ...rest } = row;
@@ -274,77 +485,8 @@ export async function getVideoCount(): Promise<number> {
 export async function getVideoById(id: string) {
   const db = await getDb();
   if (!db) return null;
-  try {
-    const [row] = await db.select().from(videos).where(eq(videos.id, id)).limit(1);
-    return row ? parseVideoRow(row) : null;
-  } catch (error) {
-    if (!isMissingAnalysisVersionColumnError(error)) throw error;
-    const [row] = await db
-      .select({
-        id: videos.id,
-        platform: videos.platform,
-        title: videos.title,
-        thumbnail: videos.thumbnail,
-        videoUrl: videos.videoUrl,
-        embedUrl: videos.embedUrl,
-        source: videos.source,
-        sourceLabel: videos.sourceLabel,
-        channelId: videos.channelId,
-        channelTitle: videos.channelTitle,
-        genres: videos.genres,
-        products: videos.products,
-        directions: videos.directions,
-        tones: videos.tones,
-        allTags: videos.allTags,
-        purposes: videos.purposes,
-        expressions: videos.expressions,
-        toneEmotions: videos.toneEmotions,
-        toneVisuals: videos.toneVisuals,
-        toneTechniques: videos.toneTechniques,
-        productions: videos.productions,
-        productionCredits: videos.productionCredits,
-        awards: videos.awards,
-        curationNote: videos.curationNote,
-        metadataClassificationAudit: videos.metadataClassificationAudit,
-        privateRating: videos.privateRating,
-        aiOverallRating: videos.aiOverallRating,
-        aiDirectionRating: videos.aiDirectionRating,
-        aiTechniqueRating: videos.aiTechniqueRating,
-        aiOverallScore: videos.aiOverallScore,
-        aiDirectionScore: videos.aiDirectionScore,
-        aiTechniqueScore: videos.aiTechniqueScore,
-        aiScoreBreakdown: videos.aiScoreBreakdown,
-        aiAnalysis: videos.aiAnalysis,
-        calibrationStatus: videos.calibrationStatus,
-        calibratedScore: videos.calibratedScore,
-        calibratedRank: videos.calibratedRank,
-        calibratedTierBand: videos.calibratedTierBand,
-        calibratedBreakdown: videos.calibratedBreakdown,
-        calibrationVersion: videos.calibrationVersion,
-        calibratedAt: videos.calibratedAt,
-        calibratedRoute: videos.calibratedRoute,
-        calibratedRunId: videos.calibratedRunId,
-        calibrationGenreBucket: videos.calibrationGenreBucket,
-        analysisObservationScope: videos.analysisObservationScope,
-        embedStatus: videos.embedStatus,
-        embedReason: videos.embedReason,
-        embedCheckedAt: videos.embedCheckedAt,
-        addedDate: videos.addedDate,
-        createdAt: videos.createdAt,
-        updatedAt: videos.updatedAt,
-      })
-      .from(videos)
-      .where(eq(videos.id, id))
-      .limit(1);
-    return row
-      ? parseVideoRow({
-          ...row,
-          analysisVersion: "legacy",
-          analysisGeneratedAt: null,
-          analysisPromptSha256: null,
-        })
-      : null;
-  }
+  const row = await selectRawVideoByIdSafe(db, id);
+  return row ? parseVideoRow(row) : null;
 }
 
 export async function createVideo(input: InsertVideo) {
@@ -591,6 +733,7 @@ export function parseVideoRow(row: typeof videos.$inferSelect) {
     calibratedRank: row.calibratedRank ?? null,
     calibratedTierBand: (row.calibratedTierBand ?? null) as "award_tier" | "pro_band" | "low_band" | null,
     calibratedBreakdown: safeParseJson(row.calibratedBreakdown, undefined),
+    calibratedScoreAxes: parseCalibratedScoreAxes((row as { calibratedScoreAxes?: unknown }).calibratedScoreAxes),
     calibrationVersion: row.calibrationVersion ?? null,
     calibratedAt: row.calibratedAt ? row.calibratedAt.toISOString() : null,
     calibratedRoute: (row.calibratedRoute ?? null) as "video_h1" | "video_h2_escalated" | "contact_sheet" | null,

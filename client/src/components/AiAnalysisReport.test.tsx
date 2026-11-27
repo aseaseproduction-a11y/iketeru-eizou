@@ -109,4 +109,82 @@ describe("AiAnalysisReport", () => {
     await waitFor(() => expect(allTab.getAttribute("data-state")).toBe("active"));
     expect(screen.getByText(/明日からのアクションプラン/)).toBeTruthy();
   });
+
+  it("新版（## 0.〜## 10.）を見出し文言に依存せず章番号で4タブへ振り分け、###小見出しも親章内に保持する", () => {
+    const v3Analysis = [
+      "## 0. 映像構造と演出力・技術力評価の総括",
+      "総括本文",
+      "",
+      "## 1. ジャンル・商品カテゴリ・トーンの解説",
+      "ジャンル本文",
+      "",
+      "## 2. コンセプト・企画意図・ターゲット分析",
+      "コンセプト本文",
+      "",
+      "## 3. 時系列ビジュアル・タイムスタンプ詳細（重要シーン抜粋）",
+      "- #01 【00:00-00:18】 静寂のイントロ",
+      "",
+      "## 4. 演出構成（カメラワーク・ライティング・カラー設計・構図・美術）",
+      "演出構成本文",
+      "",
+      "## 5. 編集・モーショングラフィックス・VFX技術解析",
+      "技術解析本文",
+      "",
+      "## 6. サウンド・リズム・テンポ設計（オーディオ/BGM/SE）",
+      "サウンド本文",
+      "",
+      "## 7. 実制作の再現性・制作体制・推定リソース",
+      "再現性本文",
+      "",
+      "## 8. 制作現場でそのまま使える応用・参考ポイント（改善点/注意点）",
+      "応用ポイント本文",
+      "",
+      "## 9. セールス・ビジネス活用タグと企画提案フック",
+      "活用タグ本文",
+      "",
+      "### クライアント説明用・企画意図3行まとめ",
+      "3行まとめ本文",
+      "",
+      "## 10. 高技術カット完全再現レシピ（Motion / Design / Grading Flow）",
+      "1. スケールジャンプ再現レシピ",
+    ].join("\n");
+
+    const sections = splitAiAnalysisByTab(v3Analysis);
+    const byPrefix = (prefix: string) => sections.find((s) => s.heading.startsWith(prefix));
+
+    expect(byPrefix("0.")?.tab).toBe("planning");
+    expect(byPrefix("1.")?.tab).toBe("planning");
+    expect(byPrefix("2.")?.tab).toBe("planning");
+    expect(byPrefix("3.")?.tab).toBe("direction");
+    expect(byPrefix("4.")?.tab).toBe("direction");
+    expect(byPrefix("5.")?.tab).toBe("technical");
+    expect(byPrefix("6.")?.tab).toBe("sound");
+    expect(byPrefix("7.")?.tab).toBe("sound");
+    expect(byPrefix("8.")?.tab).toBe("sound");
+    expect(byPrefix("9.")?.tab).toBe("planning");
+    expect(byPrefix("9.")?.content).toContain("クライアント説明用・企画意図3行まとめ");
+    expect(byPrefix("10.")?.tab).toBe("technical");
+
+    // 見出し文言を完全に変えても章番号だけで同一タブに振り分けられること
+    const renamed = [
+      "## 0. foo",
+      "a",
+      "## 3. bar",
+      "b",
+      "## 5. baz",
+      "c",
+      "## 6. qux",
+      "d",
+      "## 10. quux",
+      "e",
+    ].join("\n");
+    const renamedSections = splitAiAnalysisByTab(renamed);
+    expect(renamedSections.map((s) => [s.heading, s.tab])).toEqual([
+      ["0. foo", "planning"],
+      ["3. bar", "direction"],
+      ["5. baz", "technical"],
+      ["6. qux", "sound"],
+      ["10. quux", "technical"],
+    ]);
+  });
 });

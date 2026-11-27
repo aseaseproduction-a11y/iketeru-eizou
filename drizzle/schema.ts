@@ -1,4 +1,5 @@
-import { decimal, index, int, mediumtext, mysqlEnum, mysqlTable, text, timestamp, uniqueIndex, varchar } from "drizzle-orm/mysql-core";
+import { decimal, index, int, json, mediumtext, mysqlEnum, mysqlTable, text, timestamp, uniqueIndex, varchar } from "drizzle-orm/mysql-core";
+import type { CalibratedScoreAxesPayload } from "../shared/calibratedScoreAxes";
 
 /**
  * Core user table backing auth flow.
@@ -71,6 +72,7 @@ export const videos = mysqlTable("videos", {
   calibratedRank: varchar("calibratedRank", { length: 8 }), // S+..D
   calibratedTierBand: varchar("calibratedTierBand", { length: 24 }), // award_tier | pro_band | low_band
   calibratedBreakdown: mediumtext("calibratedBreakdown"), // JSON: 2+1各回点数・5観点内訳・監査証跡
+  calibratedScoreAxes: json("calibratedScoreAxes").$type<CalibratedScoreAxesPayload | null>(), // JSON: 校正済み5軸スコア（各20点、合計=calibratedScore）
   calibrationVersion: varchar("calibrationVersion", { length: 32 }), // 'phase2_v1'
   calibratedAt: timestamp("calibratedAt"), // 校正完了日時 (UTC)
   calibratedRoute: varchar("calibratedRoute", { length: 32 }), // video_h1 | video_h2_escalated | contact_sheet
