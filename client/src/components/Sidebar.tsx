@@ -48,6 +48,8 @@ interface SidebarProps {
   onShowUnavailableChange?: (value: boolean) => void;
   lowAiOverallCount?: number;
   onShowLowAiOverallChange?: (value: boolean) => void;
+  calibratedCount?: number;
+  onCalibratedOnlyChange?: (value: boolean) => void;
   onClearAll: () => void;
   activeFilterCount: number;
   onClose?: () => void;
@@ -89,6 +91,8 @@ export default function Sidebar({
   onShowUnavailableChange = () => {},
   lowAiOverallCount = 0,
   onShowLowAiOverallChange = () => {},
+  calibratedCount = 0,
+  onCalibratedOnlyChange = () => {},
   onClearAll,
   activeFilterCount,
   onClose,
@@ -127,9 +131,9 @@ export default function Sidebar({
   };
 
   const metadataGroups = [
-    { slug: "aiOverallRating", label: "AI評価（総合）", items: metadataFilterOptions.aiOverallRating, value: filters.aiOverallRating, onChange: onAiOverallRatingChange },
-    { slug: "aiDirectionRating", label: "AI評価（ディレクション）", items: metadataFilterOptions.aiDirectionRating, value: filters.aiDirectionRating, onChange: onAiDirectionRatingChange },
-    { slug: "aiTechniqueRating", label: "AI評価（技術）", items: metadataFilterOptions.aiTechniqueRating, value: filters.aiTechniqueRating, onChange: onAiTechniqueRatingChange },
+    { slug: "aiOverallRating", label: "旧評価（総合）", items: metadataFilterOptions.aiOverallRating, value: filters.aiOverallRating, onChange: onAiOverallRatingChange },
+    { slug: "aiDirectionRating", label: "旧評価（ディレクション）", items: metadataFilterOptions.aiDirectionRating, value: filters.aiDirectionRating, onChange: onAiDirectionRatingChange },
+    { slug: "aiTechniqueRating", label: "旧評価（技術）", items: metadataFilterOptions.aiTechniqueRating, value: filters.aiTechniqueRating, onChange: onAiTechniqueRatingChange },
   ].filter((group) => group.items.length > 0);
 
   const creatorSections = CREATOR_INDEX_SECTIONS
@@ -171,6 +175,29 @@ export default function Sidebar({
           すべての映像
           <span className="ml-2 text-xs opacity-70">{isLoading ? "(読み込み中…)" : `(${totalCount})`}</span>
         </button>
+
+        {/* Calibrated only checkbox */}
+        <label
+          className={`mt-2 flex w-full cursor-pointer items-center justify-between rounded-md border px-3 py-2 text-xs transition-all select-none ${
+            filters.calibratedOnly
+              ? "border-emerald-400/40 bg-emerald-500/12 text-emerald-200"
+              : "border-white/10 text-muted-foreground hover:border-emerald-400/25 hover:bg-surface-2 hover:text-foreground"
+          }`}
+        >
+          <span className="flex items-center gap-2 font-medium">
+            <input
+              type="checkbox"
+              aria-label="校正済みのみ"
+              checked={Boolean(filters.calibratedOnly)}
+              onChange={(e) => onCalibratedOnlyChange(e.target.checked)}
+              className="h-3.5 w-3.5 rounded border-white/25 bg-black/50 accent-emerald-400"
+            />
+            <span>校正済みのみ</span>
+          </span>
+          <span className="font-mono text-[11px] opacity-75">
+            {isLoading ? "…" : `(${calibratedCount})`}
+          </span>
+        </label>
 
         {unavailableCount > 0 && (
           <button
@@ -324,7 +351,7 @@ export default function Sidebar({
         </div>
         {metadataGroups.length > 0 && (
           <div className="mt-2 border-t border-white/[0.06] pt-2">
-            <p className="px-2 py-2 text-[10px] font-bold uppercase tracking-widest text-muted-foreground/70">AI評価から探す</p>
+            <p className="px-2 py-2 text-[10px] font-bold uppercase tracking-widest text-muted-foreground/70">旧評価（AIランク）から探す</p>
             {metadataGroups.map((group) => (
               <div key={group.slug}>
                 <button

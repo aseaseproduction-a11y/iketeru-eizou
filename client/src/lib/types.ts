@@ -123,6 +123,7 @@ export interface Video {
   embedReason?: string;
   embedCheckedAt: string;
   addedDate: string;
+  createdAt?: string | null;
   source?: VideoSource;
   sourceLabel?: string;
   channelId?: string;
@@ -183,6 +184,7 @@ export interface FilterState {
   aiDirectionRating: string | null;
   aiTechniqueRating: string | null;
   calibrationFilter?: CalibrationFilterMode;
+  calibratedOnly?: boolean;
   source?: string | null;
   eizo100Only: boolean;
   eizo100Year: number | null;

@@ -17,7 +17,14 @@ import type { Video, FilterState, SortType, CalibrationFilterMode } from "@/lib/
 import { trpc } from "@/lib/trpc";
 import { getProductionRoles } from "@shared/productionCredits";
 import { CREATOR_INDEX_OVERRIDES } from "@shared/creatorIndexOverrides";
-import { getEffectiveScore100 } from "@shared/ratingScale";
+import {
+  groupVideosByScoreBand,
+  loadSavedSortConfig,
+  normalizeSortConfig,
+  saveSortConfig,
+  sortVideos,
+  type SortConfig,
+} from "@/lib/videoSort";
 
 const ITEMS_PER_PAGE = 30;
 export const MISSING_FILTER_VALUE = "__missing__";
@@ -336,7 +343,7 @@ export function applyVideoFilters(allVideos: Video[], filters: FilterState, favo
     if (value) result = result.filter((video) => matchesMetadataFilter(video[videoKey], value));
   });
 
-  if (filters.calibrationFilter === "calibrated") {
+  if (filters.calibratedOnly || filters.calibrationFilter === "calibrated") {
     result = result.filter((video) => typeof video.calibratedScore === "number");
   } else if (filters.calibrationFilter === "calibrated_verified") {
     result = result.filter(
@@ -380,6 +387,7 @@ export function useVideos(favorites: string[] = []) {
     aiDirectionRating: null,
     aiTechniqueRating: null,
     calibrationFilter: "all",
+    calibratedOnly: false,
     source: null,
     eizo100Only: false,
     eizo100Year: null,
@@ -388,6 +396,7 @@ export function useVideos(favorites: string[] = []) {
     sort: "newest" as SortType,
     favoritesOnly: false,
   });
+  const [sortConfig, setSortConfigState] = useState<SortConfig>(() => loadSavedSortConfig());
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
 
   // Fetch videos from DB via tRPC
@@ -396,6 +405,10 @@ export function useVideos(favorites: string[] = []) {
   const allVideos = useMemo(() => (dbVideos as Video[] | undefined) ?? [], [dbVideos]);
   const unavailableCount = useMemo(() => allVideos.filter(isUnavailableVideo).length, [allVideos]);
   const lowAiOverallCount = useMemo(() => allVideos.filter(isLowAiOverallVideo).length, [allVideos]);
+  const calibratedCount = useMemo(
+    () => allVideos.filter((v) => typeof v.calibratedScore === "number").length,
+    [allVideos],
+  );
 
   // Compute counts for each category
   const categoryCounts = useMemo(() => {
@@ -443,54 +456,17 @@ export function useVideos(favorites: string[] = []) {
   // Filter and sort videos
   const filteredVideos = useMemo(() => {
     const result = applyVideoFilters(allVideos, filters, favorites);
-
-    // Sort
-    if (filters.sort === "newest") {
-      result.sort(
-        (a, b) =>
-          new Date(b.addedDate).getTime() - new Date(a.addedDate).getTime()
-      );
-    } else if (filters.sort === "oldest") {
-      result.sort(
-        (a, b) =>
-          new Date(a.addedDate).getTime() - new Date(b.addedDate).getTime()
-      );
-    } else if (filters.sort === "calibratedScoreDesc") {
-      result.sort((a, b) => {
-        const scoreA = typeof a.calibratedScore === "number" ? a.calibratedScore : -1;
-        const scoreB = typeof b.calibratedScore === "number" ? b.calibratedScore : -1;
-        const diff = scoreB - scoreA;
-        return diff !== 0 ? diff : new Date(b.addedDate).getTime() - new Date(a.addedDate).getTime();
-      });
-    } else if (filters.sort === "aiOverallScoreDesc") {
-      result.sort((a, b) => {
-        const diff =
-          getEffectiveScore100(b.aiOverallScore, b.aiOverallRating) -
-          getEffectiveScore100(a.aiOverallScore, a.aiOverallRating);
-        return diff !== 0 ? diff : new Date(b.addedDate).getTime() - new Date(a.addedDate).getTime();
-      });
-    } else if (filters.sort === "aiDirectionScoreDesc") {
-      result.sort((a, b) => {
-        const diff =
-          getEffectiveScore100(b.aiDirectionScore, b.aiDirectionRating) -
-          getEffectiveScore100(a.aiDirectionScore, a.aiDirectionRating);
-        return diff !== 0 ? diff : new Date(b.addedDate).getTime() - new Date(a.addedDate).getTime();
-      });
-    } else if (filters.sort === "aiTechniqueScoreDesc") {
-      result.sort((a, b) => {
-        const diff =
-          getEffectiveScore100(b.aiTechniqueScore, b.aiTechniqueRating) -
-          getEffectiveScore100(a.aiTechniqueScore, a.aiTechniqueRating);
-        return diff !== 0 ? diff : new Date(b.addedDate).getTime() - new Date(a.addedDate).getTime();
-      });
-    }
-
-    return result;
-  }, [allVideos, filters, favorites]);
+    return sortVideos(result, sortConfig);
+  }, [allVideos, filters, favorites, sortConfig]);
 
   const visibleVideos = useMemo(
     () => filteredVideos.slice(0, visibleCount),
     [filteredVideos, visibleCount]
+  );
+
+  const scoreBandGroups = useMemo(
+    () => groupVideosByScoreBand(visibleVideos, filteredVideos, sortConfig),
+    [visibleVideos, filteredVideos, sortConfig]
   );
 
   const hasMore = visibleCount < filteredVideos.length;
@@ -569,7 +545,19 @@ export function useVideos(favorites: string[] = []) {
     setVisibleCount(ITEMS_PER_PAGE);
   }, []);
   const setCalibrationFilter = useCallback((calibrationFilter: CalibrationFilterMode) => {
-    setFilters((prev) => ({ ...prev, calibrationFilter }));
+    setFilters((prev) => ({
+      ...prev,
+      calibrationFilter,
+      calibratedOnly: calibrationFilter === "calibrated",
+    }));
+    setVisibleCount(ITEMS_PER_PAGE);
+  }, []);
+  const setCalibratedOnly = useCallback((calibratedOnly: boolean) => {
+    setFilters((prev) => ({
+      ...prev,
+      calibratedOnly,
+      calibrationFilter: calibratedOnly ? "calibrated" : "all",
+    }));
     setVisibleCount(ITEMS_PER_PAGE);
   }, []);
   const setSource = useCallback((source: string | null) => {
@@ -598,6 +586,18 @@ export function useVideos(favorites: string[] = []) {
     setFilters((prev) => ({ ...prev, sort }));
   }, []);
 
+  const setSortConfig = useCallback(
+    (next: SortConfig | ((prev: SortConfig) => SortConfig)) => {
+      setSortConfigState((prev) => {
+        const resolved = normalizeSortConfig(typeof next === "function" ? next(prev) : next);
+        saveSortConfig(resolved);
+        return resolved;
+      });
+      setVisibleCount(ITEMS_PER_PAGE);
+    },
+    [],
+  );
+
   const setFavoritesOnly = useCallback((favoritesOnly: boolean) => {
     setFilters((prev) => ({ ...prev, favoritesOnly }));
     setVisibleCount(ITEMS_PER_PAGE);
@@ -622,6 +622,7 @@ export function useVideos(favorites: string[] = []) {
       aiDirectionRating: null,
       aiTechniqueRating: null,
       calibrationFilter: "all",
+      calibratedOnly: false,
       source: null,
       eizo100Only: false,
       eizo100Year: null,
@@ -649,7 +650,7 @@ export function useVideos(favorites: string[] = []) {
     if (filters.aiOverallRating) count++;
     if (filters.aiDirectionRating) count++;
     if (filters.aiTechniqueRating) count++;
-    if (filters.calibrationFilter && filters.calibrationFilter !== "all") count++;
+    if (filters.calibratedOnly || (filters.calibrationFilter && filters.calibrationFilter !== "all")) count++;
     if (filters.source) count++;
     if (filters.eizo100Only) count++;
     if (filters.showUnavailable) count++;
@@ -665,6 +666,10 @@ export function useVideos(favorites: string[] = []) {
     totalCount: allVideos.length,
     filteredCount: filteredVideos.length,
     filters,
+    sortConfig,
+    setSortConfig,
+    scoreBandGroups,
+    calibratedCount,
     categoryCounts,
     hasMore,
     loadMore,
@@ -685,6 +690,7 @@ export function useVideos(favorites: string[] = []) {
     setAiDirectionRating,
     setAiTechniqueRating,
     setCalibrationFilter,
+    setCalibratedOnly,
     setSource,
     setEizo100Only,
     setEizo100Year,
