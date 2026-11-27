@@ -1,4 +1,4 @@
-import { decimal, index, int, json, mediumtext, mysqlEnum, mysqlTable, text, timestamp, uniqueIndex, varchar } from "drizzle-orm/mysql-core";
+import { datetime, decimal, index, int, json, mediumtext, mysqlEnum, mysqlTable, text, timestamp, uniqueIndex, varchar } from "drizzle-orm/mysql-core";
 import type { CalibratedScoreAxesPayload } from "../shared/calibratedScoreAxes";
 
 /**
@@ -86,6 +86,7 @@ export const videos = mysqlTable("videos", {
   embedReason: varchar("embedReason", { length: 128 }), // unavailable_private_or_deleted | unavailable_access_restricted | unavailable_embed_restricted | unavailable_page_unavailable
   embedCheckedAt: timestamp("embedCheckedAt"),
   addedDate: varchar("addedDate", { length: 16 }),      // 'YYYY-MM-DD'
+  publishedAt: datetime("publishedAt"),                 // 元動画の投稿日時 (UTC: YouTube snippet.publishedAt / Vimeo oEmbed upload_date)
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
 });
