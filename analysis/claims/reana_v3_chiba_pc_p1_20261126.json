@@ -3,7 +3,7 @@
   "task_type": "reanalysis_v3",
   "run_id": "reana_v3_chiba_pc_p1_20261126",
   "worker": "CHIBA-PC",
-  "status": "active",
+  "status": "completed",
   "target_pool": "reanalysis_v3_ge78",
   "priority_tier": "P1",
   "imported_from": "reanalysis_v3_assignment_CHIBA-PC.json",
@@ -311,7 +311,7 @@
     "sDzPtgBJWqQ"
   ],
   "claimed_at": "2026-11-26T14:30:25+09:00",
-  "completed_at": null,
+  "completed_at": "2026-11-27T06:56:35.862Z",
   "released_at": null,
   "release_reason": null
 }
