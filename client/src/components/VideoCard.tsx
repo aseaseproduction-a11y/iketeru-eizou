@@ -6,7 +6,7 @@
  */
 import React, { useState, useCallback, useRef } from "react";
 import { motion } from "framer-motion";
-import { Play, Film, Bookmark, StickyNote, AlertCircle, User } from "lucide-react";
+import { Play, Film, Bookmark, StickyNote, AlertCircle, AlertTriangle, User } from "lucide-react";
 import type { Video, VideoSource } from "@/lib/types";
 import { SOURCE_COLORS } from "@/lib/types";
 import { formatEmbedRecheckAt, isEmbedStatusRecheckDue } from "@/lib/embedStatus";
@@ -15,6 +15,7 @@ import {
   LEGACY_ANALYSIS_LABEL,
   V3_ANALYSIS_LABEL,
 } from "@shared/analysisVersion";
+import { getAnalysisObservationScopeWarning } from "@shared/analysisObservationScope";
 
 interface VideoCardProps {
   video: Video;
@@ -136,6 +137,9 @@ export default function VideoCard({ video, index, isFavorite = false, hasNote = 
     : "";
   const embedRecheckDue = isEmbedStatusRecheckDue(video.embedStatus, video.embedCheckedAt);
   const embedRecheckAt = formatEmbedRecheckAt(video.embedCheckedAt);
+  const observationWarning = getAnalysisObservationScopeWarning(video.analysisObservationScope, {
+    hasCalibratedScore: hasCalibrated,
+  });
 
   const getTagColor = (tag: string) => {
     if (video.genres.some((g) => g.name === tag)) return "bg-cinematic-red/70 text-white";
@@ -316,6 +320,21 @@ export default function VideoCard({ video, index, isFavorite = false, hasNote = 
               className="inline-flex items-center rounded-sm border border-emerald-400/35 bg-emerald-500/15 px-1.5 py-0.5 text-[8.5px] font-semibold text-emerald-200"
             >
               {V3_ANALYSIS_LABEL}
+            </span>
+          )}
+          {observationWarning && (
+            <span
+              data-testid="unwatched-warning-badge"
+              data-observation-scope={observationWarning.scope}
+              title={observationWarning.description}
+              className={`inline-flex items-center gap-1 rounded-sm border px-1.5 py-0.5 text-[9.5px] font-semibold leading-tight ${
+                observationWarning.severity === "high"
+                  ? "border-amber-400/50 bg-amber-500/15 text-amber-200"
+                  : "border-yellow-400/40 bg-yellow-500/10 text-yellow-200"
+              }`}
+            >
+              <AlertTriangle className="h-2.5 w-2.5 shrink-0" aria-hidden="true" />
+              <span>{observationWarning.badgeLabel}</span>
             </span>
           )}
         </div>

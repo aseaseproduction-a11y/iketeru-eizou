@@ -288,4 +288,55 @@ describe("VideoModal interactions", () => {
     expect(screen.getByTestId("legacy-ai-ratings-section").textContent).toContain("旧評価");
     expect(screen.getByTestId("analysis-legacy-badge").textContent).toContain("旧分析・時刻は目安");
   });
+
+  it("analysisObservationScope が無い動画では未視聴警告バナーを表示しない", () => {
+    render(<VideoModal video={{ ...video, analysisObservationScope: null, aiAnalysis: "実視聴分析本文" }} onClose={vi.fn()} />);
+    expect(screen.queryByTestId("unwatched-warning-banner")).toBeNull();
+    expect(screen.queryByTestId("unwatched-analysis-reminder")).toBeNull();
+  });
+
+  it("analysisObservationScope の種類ごとに異なる未視聴警告バナーとAI分析直上リマインダーを表示する", () => {
+    const cases: Array<[string, string]> = [
+      ["metadata_only_unwatched", "未視聴分析（メタデータのみ）"],
+      ["triage_boilerplate_unwatched", "未視聴分析（定型速報のみ）"],
+      ["triage_unverified_short", "要確認（短文速報・実測なし）"],
+    ];
+
+    for (const [scope, expectedTitle] of cases) {
+      cleanup();
+      render(
+        <VideoModal
+          video={{
+            ...video,
+            analysisObservationScope: scope,
+            aiAnalysis: "## 1. 概要\n未視聴テキスト",
+          }}
+          onClose={vi.fn()}
+        />,
+      );
+      const banner = screen.getByTestId("unwatched-warning-banner");
+      expect(banner.getAttribute("data-observation-scope")).toBe(scope);
+      expect(banner.textContent).toContain(expectedTitle);
+      expect(banner.textContent).toContain(scope);
+      expect(screen.getByTestId("unwatched-analysis-reminder").textContent).toContain(scope);
+    }
+  });
+
+  it("未視聴本文と校正済みスコアが併存する動画では補足注記を表示する", () => {
+    render(
+      <VideoModal
+        video={{
+          ...video,
+          analysisObservationScope: "metadata_only_unwatched",
+          calibrationStatus: "calibrated_verified",
+          calibratedScore: 89.5,
+          calibratedRank: "S-",
+          aiAnalysis: "メタデータのみ一次記録",
+        }}
+        onClose={vi.fn()}
+      />,
+    );
+    const banner = screen.getByTestId("unwatched-warning-banner");
+    expect(banner.textContent).toContain("校正済みスコアは実動画視聴によるブラインド採点済み");
+  });
 });

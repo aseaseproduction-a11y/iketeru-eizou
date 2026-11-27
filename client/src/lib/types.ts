@@ -2,6 +2,9 @@ import type { ProductionCredit } from "@shared/productionCredits";
 import type { AiScoreBreakdown } from "@shared/ratingScale";
 import type { AnalysisVersion } from "@shared/analysisVersion";
 import type { CalibratedScoreAxesPayload } from "@shared/calibratedScoreAxes";
+import type { AnalysisObservationScope } from "@shared/analysisObservationScope";
+
+export type { AnalysisObservationScope };
 
 /**
  * Video data types and category definitions for イケてる映像コレクション
@@ -109,6 +112,7 @@ export interface Video {
   calibratedRoute?: "video_h1" | "video_h2_escalated" | "contact_sheet" | "gemini_api_youtube_url_v1" | null;
   calibratedRunId?: string | null;
   calibrationGenreBucket?: string | null;
+  analysisObservationScope?: AnalysisObservationScope | null;
   analysisVersion?: AnalysisVersion;
   analysisGeneratedAt?: string | null;
   analysisPromptSha256?: string | null;

@@ -16,7 +16,7 @@ import { drizzle } from "drizzle-orm/mysql2";
 import mysql from "mysql2/promise";
 
 // drizzle/schema.ts
-import { decimal, index, int, mediumtext, mysqlEnum, mysqlTable, text, timestamp, uniqueIndex, varchar } from "drizzle-orm/mysql-core";
+import { decimal, index, int, json, mediumtext, mysqlEnum, mysqlTable, text, timestamp, uniqueIndex, varchar } from "drizzle-orm/mysql-core";
 var users = mysqlTable("users", {
   /**
    * Surrogate primary key. Auto-incremented numeric value managed by the database.
@@ -105,6 +105,8 @@ var videos = mysqlTable("videos", {
   // award_tier | pro_band | low_band
   calibratedBreakdown: mediumtext("calibratedBreakdown"),
   // JSON: 2+1各回点数・5観点内訳・監査証跡
+  calibratedScoreAxes: json("calibratedScoreAxes").$type(),
+  // JSON: 校正済み5軸スコア（各20点、合計=calibratedScore）
   calibrationVersion: varchar("calibrationVersion", { length: 32 }),
   // 'phase2_v1'
   calibratedAt: timestamp("calibratedAt"),
@@ -861,6 +863,56 @@ function normalizeAnalysisVersion(value) {
   return value === "v3" ? "v3" : "legacy";
 }
 
+// shared/calibratedScoreAxes.ts
+var CALIBRATED_AXIS_KEYS = [
+  "direction",
+  "visual_craft",
+  "editing_rhythm",
+  "sound_integration",
+  "originality_finish"
+];
+function roundScore2(value) {
+  return Math.round(value * 100) / 100;
+}
+function parseAxesRecord(raw) {
+  if (!raw || typeof raw !== "object" || Array.isArray(raw)) return null;
+  const record = raw;
+  const out = {};
+  for (const key of CALIBRATED_AXIS_KEYS) {
+    const val = Number(record[key]);
+    if (!Number.isFinite(val) || val < 0 || val > 20) return null;
+    out[key] = roundScore2(val);
+  }
+  return out;
+}
+function parseCalibratedScoreAxes(raw) {
+  if (raw === null || raw === void 0 || raw === "") return null;
+  let obj = raw;
+  if (typeof raw === "string") {
+    try {
+      obj = JSON.parse(raw);
+    } catch {
+      return null;
+    }
+  }
+  if (!obj || typeof obj !== "object" || Array.isArray(obj)) return null;
+  const rec = obj;
+  const axes = parseAxesRecord(rec.axes);
+  if (!axes) return null;
+  const runs = Number(rec.runs);
+  const offsetPerAxis = Number(rec.offsetPerAxis ?? 0);
+  const source = rec.source === "api" ? "api" : "phase3";
+  const ensembleRule = rec.ensembleRule === "mean_of_2" || rec.ensembleRule === "median_of_3_median_run" || rec.ensembleRule === "median_of_3_mean" ? rec.ensembleRule : void 0;
+  return {
+    v: 1,
+    axes,
+    runs: Number.isFinite(runs) && runs > 0 ? Math.round(runs) : 2,
+    source,
+    offsetPerAxis: Number.isFinite(offsetPerAxis) ? roundScore2(offsetPerAxis) : 0,
+    ...ensembleRule ? { ensembleRule } : {}
+  };
+}
+
 // server/db.ts
 var _db = null;
 var _pool = null;
@@ -959,6 +1011,141 @@ function isMissingAnalysisVersionColumnError(error) {
   }
   return false;
 }
+function isMissingCalibratedScoreAxesColumnError(error) {
+  if (!error || typeof error !== "object") return false;
+  const err = error;
+  const msg = String(err.message ?? "");
+  if ((err.code === "ER_BAD_FIELD_ERROR" || err.errno === 1054) && /calibratedScoreAxes/i.test(msg)) {
+    return true;
+  }
+  if (/Unknown column .*calibratedScoreAxes/i.test(msg)) {
+    return true;
+  }
+  if (err.cause && err.cause !== error) {
+    return isMissingCalibratedScoreAxesColumnError(err.cause);
+  }
+  return false;
+}
+var VIDEO_FULL_BASE_SELECT = {
+  id: videos.id,
+  platform: videos.platform,
+  title: videos.title,
+  thumbnail: videos.thumbnail,
+  videoUrl: videos.videoUrl,
+  embedUrl: videos.embedUrl,
+  source: videos.source,
+  sourceLabel: videos.sourceLabel,
+  channelId: videos.channelId,
+  channelTitle: videos.channelTitle,
+  genres: videos.genres,
+  products: videos.products,
+  directions: videos.directions,
+  tones: videos.tones,
+  allTags: videos.allTags,
+  purposes: videos.purposes,
+  expressions: videos.expressions,
+  toneEmotions: videos.toneEmotions,
+  toneVisuals: videos.toneVisuals,
+  toneTechniques: videos.toneTechniques,
+  productions: videos.productions,
+  productionCredits: videos.productionCredits,
+  awards: videos.awards,
+  curationNote: videos.curationNote,
+  metadataClassificationAudit: videos.metadataClassificationAudit,
+  privateRating: videos.privateRating,
+  aiOverallRating: videos.aiOverallRating,
+  aiDirectionRating: videos.aiDirectionRating,
+  aiTechniqueRating: videos.aiTechniqueRating,
+  aiOverallScore: videos.aiOverallScore,
+  aiDirectionScore: videos.aiDirectionScore,
+  aiTechniqueScore: videos.aiTechniqueScore,
+  aiScoreBreakdown: videos.aiScoreBreakdown,
+  aiAnalysis: videos.aiAnalysis,
+  calibrationStatus: videos.calibrationStatus,
+  calibratedScore: videos.calibratedScore,
+  calibratedRank: videos.calibratedRank,
+  calibratedTierBand: videos.calibratedTierBand,
+  calibratedBreakdown: videos.calibratedBreakdown,
+  calibrationVersion: videos.calibrationVersion,
+  calibratedAt: videos.calibratedAt,
+  calibratedRoute: videos.calibratedRoute,
+  calibratedRunId: videos.calibratedRunId,
+  calibrationGenreBucket: videos.calibrationGenreBucket,
+  analysisObservationScope: videos.analysisObservationScope,
+  embedStatus: videos.embedStatus,
+  embedReason: videos.embedReason,
+  embedCheckedAt: videos.embedCheckedAt,
+  addedDate: videos.addedDate,
+  createdAt: videos.createdAt,
+  updatedAt: videos.updatedAt
+};
+var VIDEO_ANALYSIS_VERSION_SELECT = {
+  analysisVersion: videos.analysisVersion,
+  analysisGeneratedAt: videos.analysisGeneratedAt,
+  analysisPromptSha256: videos.analysisPromptSha256
+};
+async function selectAllRawVideosSafe(db, options) {
+  const order = Boolean(options?.orderByCreatedAtDesc);
+  try {
+    const q = db.select().from(videos);
+    return await (order ? q.orderBy(desc(videos.createdAt)) : q);
+  } catch (error) {
+    if (isMissingCalibratedScoreAxesColumnError(error)) {
+      try {
+        const q2 = db.select({
+          ...VIDEO_FULL_BASE_SELECT,
+          ...VIDEO_ANALYSIS_VERSION_SELECT
+        }).from(videos);
+        const rows = await (order ? q2.orderBy(desc(videos.createdAt)) : q2);
+        return rows.map((row) => ({
+          ...row,
+          calibratedScoreAxes: null
+        }));
+      } catch (innerError) {
+        if (!isMissingAnalysisVersionColumnError(innerError)) throw innerError;
+      }
+    } else if (!isMissingAnalysisVersionColumnError(error)) {
+      throw error;
+    }
+    const q = db.select(VIDEO_FULL_BASE_SELECT).from(videos);
+    const legacyRows = await (order ? q.orderBy(desc(videos.createdAt)) : q);
+    return legacyRows.map((row) => ({
+      ...row,
+      calibratedScoreAxes: null,
+      analysisVersion: "legacy",
+      analysisGeneratedAt: null,
+      analysisPromptSha256: null
+    }));
+  }
+}
+async function selectRawVideoByIdSafe(db, id) {
+  try {
+    const [row] = await db.select().from(videos).where(eq(videos.id, id)).limit(1);
+    return row ?? null;
+  } catch (error) {
+    if (isMissingCalibratedScoreAxesColumnError(error)) {
+      try {
+        const [row2] = await db.select({
+          ...VIDEO_FULL_BASE_SELECT,
+          ...VIDEO_ANALYSIS_VERSION_SELECT
+        }).from(videos).where(eq(videos.id, id)).limit(1);
+        return row2 ? { ...row2, calibratedScoreAxes: null } : null;
+      } catch (innerError) {
+        if (!isMissingAnalysisVersionColumnError(innerError)) throw innerError;
+      }
+    } else if (!isMissingAnalysisVersionColumnError(error)) {
+      throw error;
+    }
+    const [row] = await db.select(VIDEO_FULL_BASE_SELECT).from(videos).where(eq(videos.id, id)).limit(1);
+    return row ? {
+      ...row,
+      calibratedScoreAxes: null,
+      analysisVersion: "legacy",
+      analysisGeneratedAt: null,
+      analysisPromptSha256: null
+    } : null;
+  }
+}
 async function getAllVideoListItems() {
   const db = await getDb();
   if (!db) return [];
@@ -1018,19 +1205,43 @@ async function getAllVideoListItems() {
   try {
     rows = await db.select({
       ...baseSelect,
-      analysisVersion: videos.analysisVersion,
-      analysisGeneratedAt: videos.analysisGeneratedAt,
-      analysisPromptSha256: videos.analysisPromptSha256
+      ...VIDEO_ANALYSIS_VERSION_SELECT,
+      calibratedScoreAxes: videos.calibratedScoreAxes
     }).from(videos).orderBy(desc(videos.createdAt));
   } catch (error) {
-    if (!isMissingAnalysisVersionColumnError(error)) throw error;
-    const legacyRows = await db.select(baseSelect).from(videos).orderBy(desc(videos.createdAt));
-    rows = legacyRows.map((r) => ({
-      ...r,
-      analysisVersion: "legacy",
-      analysisGeneratedAt: null,
-      analysisPromptSha256: null
-    }));
+    if (isMissingCalibratedScoreAxesColumnError(error)) {
+      try {
+        const rowsWithoutAxes = await db.select({
+          ...baseSelect,
+          ...VIDEO_ANALYSIS_VERSION_SELECT
+        }).from(videos).orderBy(desc(videos.createdAt));
+        rows = rowsWithoutAxes.map((r) => ({
+          ...r,
+          calibratedScoreAxes: null
+        }));
+      } catch (innerError) {
+        if (!isMissingAnalysisVersionColumnError(innerError)) throw innerError;
+        const legacyRows = await db.select(baseSelect).from(videos).orderBy(desc(videos.createdAt));
+        rows = legacyRows.map((r) => ({
+          ...r,
+          analysisVersion: "legacy",
+          analysisGeneratedAt: null,
+          analysisPromptSha256: null,
+          calibratedScoreAxes: null
+        }));
+      }
+    } else if (isMissingAnalysisVersionColumnError(error)) {
+      const legacyRows = await db.select(baseSelect).from(videos).orderBy(desc(videos.createdAt));
+      rows = legacyRows.map((r) => ({
+        ...r,
+        analysisVersion: "legacy",
+        analysisGeneratedAt: null,
+        analysisPromptSha256: null,
+        calibratedScoreAxes: null
+      }));
+    } else {
+      throw error;
+    }
   }
   return rows.map((row) => {
     const { isProvisional, gradeBoundary, visualVerificationStatus, ...rest } = row;
@@ -1062,71 +1273,8 @@ async function getVideoCount() {
 async function getVideoById(id) {
   const db = await getDb();
   if (!db) return null;
-  try {
-    const [row] = await db.select().from(videos).where(eq(videos.id, id)).limit(1);
-    return row ? parseVideoRow(row) : null;
-  } catch (error) {
-    if (!isMissingAnalysisVersionColumnError(error)) throw error;
-    const [row] = await db.select({
-      id: videos.id,
-      platform: videos.platform,
-      title: videos.title,
-      thumbnail: videos.thumbnail,
-      videoUrl: videos.videoUrl,
-      embedUrl: videos.embedUrl,
-      source: videos.source,
-      sourceLabel: videos.sourceLabel,
-      channelId: videos.channelId,
-      channelTitle: videos.channelTitle,
-      genres: videos.genres,
-      products: videos.products,
-      directions: videos.directions,
-      tones: videos.tones,
-      allTags: videos.allTags,
-      purposes: videos.purposes,
-      expressions: videos.expressions,
-      toneEmotions: videos.toneEmotions,
-      toneVisuals: videos.toneVisuals,
-      toneTechniques: videos.toneTechniques,
-      productions: videos.productions,
-      productionCredits: videos.productionCredits,
-      awards: videos.awards,
-      curationNote: videos.curationNote,
-      metadataClassificationAudit: videos.metadataClassificationAudit,
-      privateRating: videos.privateRating,
-      aiOverallRating: videos.aiOverallRating,
-      aiDirectionRating: videos.aiDirectionRating,
-      aiTechniqueRating: videos.aiTechniqueRating,
-      aiOverallScore: videos.aiOverallScore,
-      aiDirectionScore: videos.aiDirectionScore,
-      aiTechniqueScore: videos.aiTechniqueScore,
-      aiScoreBreakdown: videos.aiScoreBreakdown,
-      aiAnalysis: videos.aiAnalysis,
-      calibrationStatus: videos.calibrationStatus,
-      calibratedScore: videos.calibratedScore,
-      calibratedRank: videos.calibratedRank,
-      calibratedTierBand: videos.calibratedTierBand,
-      calibratedBreakdown: videos.calibratedBreakdown,
-      calibrationVersion: videos.calibrationVersion,
-      calibratedAt: videos.calibratedAt,
-      calibratedRoute: videos.calibratedRoute,
-      calibratedRunId: videos.calibratedRunId,
-      calibrationGenreBucket: videos.calibrationGenreBucket,
-      analysisObservationScope: videos.analysisObservationScope,
-      embedStatus: videos.embedStatus,
-      embedReason: videos.embedReason,
-      embedCheckedAt: videos.embedCheckedAt,
-      addedDate: videos.addedDate,
-      createdAt: videos.createdAt,
-      updatedAt: videos.updatedAt
-    }).from(videos).where(eq(videos.id, id)).limit(1);
-    return row ? parseVideoRow({
-      ...row,
-      analysisVersion: "legacy",
-      analysisGeneratedAt: null,
-      analysisPromptSha256: null
-    }) : null;
-  }
+  const row = await selectRawVideoByIdSafe(db, id);
+  return row ? parseVideoRow(row) : null;
 }
 async function createVideo(input) {
   const db = await getDb();
@@ -1317,11 +1465,13 @@ function parseVideoRow(row) {
     calibratedRank: row.calibratedRank ?? null,
     calibratedTierBand: row.calibratedTierBand ?? null,
     calibratedBreakdown: safeParseJson(row.calibratedBreakdown, void 0),
+    calibratedScoreAxes: parseCalibratedScoreAxes(row.calibratedScoreAxes),
     calibrationVersion: row.calibrationVersion ?? null,
     calibratedAt: row.calibratedAt ? row.calibratedAt.toISOString() : null,
     calibratedRoute: row.calibratedRoute ?? null,
     calibratedRunId: row.calibratedRunId ?? null,
     calibrationGenreBucket: row.calibrationGenreBucket ?? null,
+    analysisObservationScope: row.analysisObservationScope ?? null,
     analysisVersion: normalizeAnalysisVersion(row.analysisVersion),
     analysisGeneratedAt: row.analysisGeneratedAt instanceof Date ? row.analysisGeneratedAt.toISOString() : typeof row.analysisGeneratedAt === "string" ? row.analysisGeneratedAt : null,
     analysisPromptSha256: row.analysisPromptSha256 ?? null,
@@ -3022,7 +3172,7 @@ async function receiveDailyCollection(req, res) {
         details.push({ id, reason: "public_oembed_or_title_mismatch" });
         continue;
       }
-      const [existing] = await db.select().from(videos).where(eq2(videos.id, id)).limit(1);
+      const existing = await selectRawVideoByIdSafe(db, id);
       if (existing) {
         const update = {
           ...getDailyCollectionExistingUpdate(existing, { thumbnail_url: metadataThumbnail, author_name: metadataAuthor }, sourceUrl),
@@ -3210,7 +3360,7 @@ async function runAiMetadataCompletion(req, res) {
       });
       return res.json({ ok: true, skipped: "model_backoff", retryAfter: job.retryAfter?.toISOString() ?? null });
     }
-    const rows = await db.select().from(videos);
+    const rows = await selectAllRawVideosSafe(db);
     const selected = selectUnprocessedAiInputs(rows, job.batchSize);
     const [run] = await db.insert(aiMetadataCompletionRuns).values({ taskUid, status: "running", selectedCount: selected.length }).$returningId();
     runId = run.id;

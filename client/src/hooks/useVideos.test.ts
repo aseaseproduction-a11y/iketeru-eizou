@@ -66,6 +66,7 @@ describe("getVideoSearchText", () => {
     };
 
     const text = getVideoSearchText(video);
+    expect(text).toContain("test-video");
     expect(text).toContain("事業・サービス紹介");
     expect(text).toContain("実写＋アニメーション");
     expect(text).toContain("key movie");

@@ -739,6 +739,7 @@ export function parseVideoRow(row: typeof videos.$inferSelect) {
     calibratedRoute: (row.calibratedRoute ?? null) as "video_h1" | "video_h2_escalated" | "contact_sheet" | null,
     calibratedRunId: row.calibratedRunId ?? null,
     calibrationGenreBucket: row.calibrationGenreBucket ?? null,
+    analysisObservationScope: row.analysisObservationScope ?? null,
     analysisVersion: normalizeAnalysisVersion((row as { analysisVersion?: unknown }).analysisVersion),
     analysisGeneratedAt:
       row.analysisGeneratedAt instanceof Date

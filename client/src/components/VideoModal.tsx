@@ -5,7 +5,7 @@
  */
 import React, { useEffect, useCallback, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ExternalLink, Calendar, Bookmark, BookmarkCheck, StickyNote, Check, Copy, Loader2, Pencil, Save } from "lucide-react";
+import { X, ExternalLink, Calendar, Bookmark, BookmarkCheck, StickyNote, Check, Copy, Loader2, Pencil, Save, AlertTriangle } from "lucide-react";
 import type { TagItem, Video, VideoSource } from "@/lib/types";
 import { SOURCE_LABELS, SOURCE_COLORS } from "@/lib/types";
 import { trpc } from "@/lib/trpc";
@@ -17,6 +17,7 @@ import {
   formatAxisScore,
   resolveCalibratedScoreAxes,
 } from "@shared/calibratedScoreAxes";
+import { getAnalysisObservationScopeWarning } from "@shared/analysisObservationScope";
 import MetadataValuePicker from "@/components/MetadataValuePicker";
 import { collectMetadataValueSuggestions, resolveSuggestedTagItems, type MetadataValueSuggestions } from "@/lib/metadataValueSuggestions";
 import { detectVideoUrl } from "@/lib/videoUrlDetection";
@@ -345,6 +346,9 @@ export default function VideoModal({
       : video.calibratedTierBand === "low_band"
       ? "低品質域 (63点未満)"
       : "";
+  const observationWarning = getAnalysisObservationScopeWarning(video.analysisObservationScope, {
+    hasCalibratedScore: hasCalibrated,
+  });
 
   const calibratedAxes = hasCalibrated
     ? resolveCalibratedScoreAxes({
@@ -691,6 +695,40 @@ export default function VideoModal({
                 </h2>
               )}
 
+              {observationWarning && (
+                <div
+                  role="alert"
+                  data-testid="unwatched-warning-banner"
+                  data-observation-scope={observationWarning.scope}
+                  className={`mb-4 rounded-lg border px-3.5 py-3 text-xs leading-relaxed ${
+                    observationWarning.severity === "high"
+                      ? "border-amber-400/50 bg-amber-500/12 text-amber-100"
+                      : "border-yellow-400/40 bg-yellow-500/10 text-yellow-100"
+                  }`}
+                >
+                  <div className="flex items-start gap-2.5">
+                    <AlertTriangle
+                      className={`mt-0.5 h-4 w-4 shrink-0 ${
+                        observationWarning.severity === "high" ? "text-amber-300" : "text-yellow-300"
+                      }`}
+                      aria-hidden="true"
+                    />
+                    <div className="min-w-0 flex-1 space-y-1">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span className="font-bold text-amber-200">{observationWarning.title}</span>
+                        <span className="rounded border border-white/15 bg-black/30 px-1.5 py-0.5 font-mono text-[10px] text-white/75">
+                          {observationWarning.scope}
+                        </span>
+                      </div>
+                      <p className="text-white/85">{observationWarning.description}</p>
+                      {observationWarning.calibratedScoreNote && (
+                        <p className="text-[11px] text-amber-200/90">{observationWarning.calibratedScoreNote}</p>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              )}
+
               {/* Tags */}
               {!isEditing && allTags.length > 0 && (
                 <div className="flex flex-wrap gap-1.5 mb-4">
@@ -875,6 +913,17 @@ export default function VideoModal({
                               );
                             })}
                           </div>
+                        </div>
+                      )}
+                      {video.aiAnalysis && observationWarning && (
+                        <div
+                          data-testid="unwatched-analysis-reminder"
+                          className="mb-3 flex items-center gap-2 rounded-md border border-amber-400/35 bg-amber-500/10 px-3 py-2 text-[11px] text-amber-200"
+                        >
+                          <AlertTriangle className="h-3.5 w-3.5 shrink-0 text-amber-300" aria-hidden="true" />
+                          <span>
+                            以下のAI分析レポートは <strong>{observationWarning.badgeLabel}</strong>（<code className="font-mono">{observationWarning.scope}</code>）として記録されています。
+                          </span>
                         </div>
                       )}
                       {video.aiAnalysis && (
