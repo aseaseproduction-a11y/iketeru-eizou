@@ -3,7 +3,7 @@
   "task_type": "craft_v2_with_v3",
   "run_id": "craft_v3_20261126_b01",
   "worker": "chibatmute",
-  "status": "active",
+  "status": "released",
   "target_pool": "craft_v2_with_v3_ge78",
   "selection_seed": "craft_v3_20261126",
   "min_calibrated_score": 78,
@@ -33,6 +33,6 @@
   ],
   "claimed_at": "2026-11-26T08:22:40.262Z",
   "completed_at": null,
-  "released_at": null,
-  "release_reason": null
+  "released_at": "2026-11-26T10:31:09.363Z",
+  "release_reason": "unprocessed_429_3_and_1_json_parse_16_of_20_published"
 }

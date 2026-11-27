@@ -1,0 +1,12 @@
+CMD: node scripts/apply-phase3-batch-to-tidb.mjs run_20261127_104500 --dry-run --worker CHIBA-PC
+EXIT: 0
+--- STDOUT ---
+Worker: CHIBA-PC
+Apply lock status: unlocked (matches_this_run=false)
+Pre-flight pre-D backup SHA-256 verified: 17856f0338c760b2f88d415543eb6d48a7977c06e76a5c04476b0d5943446a3b (E:\iketeru_backups\phase3_pre_d_20261123_153343\tidb_videos_backup.jsonl)
+Pre-flight live SQLite SHA-256: 10b4fc6949def6111efd2b395bf4ba8e15e97d46258d3d2934270f54c9bf5e13
+Payload ready: run_id=run_20261127_104500, rows=20, dry_run=true
+[DRY-RUN] Verified payload & pre-D backup SHA-256. Zero TiDB writes performed.
+
+--- STDERR ---
+

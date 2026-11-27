@@ -1,0 +1,643 @@
+{
+  "schema_version": 1,
+  "task_name": "new_videos_20261127",
+  "generated_at": "2026-11-27T10:45:55+09:00",
+  "created_by_pc": "CHIBA-PC",
+  "sort_order": "site_newest (addedDate DESC, createdAt DESC)",
+  "selection_condition": "aiAnalysis empty OR (calibratedScore IS NULL AND aiOverallScore IS NULL)",
+  "exclusion_rules": [
+    "unavailable_deleted / unavailable_private / unavailable_private_or_deleted",
+    "calibrationStatus == excluded",
+    "invalidated_no_visual",
+    "_skip_list.json (permanent / waiting_retry)",
+    "active claim-phase3-batch / claim-craft-batch overlaps",
+    "reanalysis_v3_assignment_CHIBA-PC.json overlaps",
+    "existing G:\\マイドライブ\\iketeru_analysis_v3\\<id>\\manifest.json"
+  ],
+  "counts": {
+    "selected_top30": 30,
+    "cached_ready_youtube": 21,
+    "uncached_deferred_vimeo": 9,
+    "needs_v3_analysis_cached": 21,
+    "needs_phase3_scoring_cached": 20,
+    "excluded_before_top30": 2
+  },
+  "excluded_before_top30": [
+    {
+      "id": "1245704717",
+      "title": "Les Vouèsins",
+      "platform": "vimeo",
+      "addedDate": "2026-11-20",
+      "excluded_reasons": [
+        "invalidated_no_visual"
+      ]
+    },
+    {
+      "id": "1230811867",
+      "title": "Coeur Cerise",
+      "platform": "vimeo",
+      "addedDate": "2026-11-19",
+      "excluded_reasons": [
+        "invalidated_no_visual"
+      ]
+    }
+  ],
+  "targets": [
+    {
+      "rank": 1,
+      "id": "LoNrxRUGQ6U",
+      "title": "VFX Showreel 2026 | Visual Effects | Visflix Studio",
+      "platform": "youtube",
+      "duration_sec": 97.18,
+      "addedDate": "2026-11-21",
+      "createdAt": "2026-11-20T12:42:57.000Z",
+      "missing": [
+        "aiAnalysis",
+        "scores(calibratedScore&aiOverallScore)"
+      ],
+      "needs_v3_analysis": true,
+      "needs_phase3_scoring": true,
+      "existing_calibratedScore": null,
+      "analysisObservationScope": null,
+      "cached_mp4": true,
+      "cached_bytes": 12834871,
+      "in_vimeo_login_required_list": false
+    },
+    {
+      "rank": 2,
+      "id": "Wsp5_VPb2bY",
+      "title": "Logro sorprendente a tu alcance #2d #3d #animacion #blender #greasepencil #cartoon #original",
+      "platform": "youtube",
+      "duration_sec": 58.31,
+      "addedDate": "2026-11-21",
+      "createdAt": "2026-11-20T12:42:56.000Z",
+      "missing": [
+        "aiAnalysis",
+        "scores(calibratedScore&aiOverallScore)"
+      ],
+      "needs_v3_analysis": true,
+      "needs_phase3_scoring": true,
+      "existing_calibratedScore": null,
+      "analysisObservationScope": null,
+      "cached_mp4": true,
+      "cached_bytes": 1644154,
+      "in_vimeo_login_required_list": false
+    },
+    {
+      "rank": 3,
+      "id": "EV6GL3RR-As",
+      "title": "The Fabulous Hudson Hornet || Blender animation",
+      "platform": "youtube",
+      "duration_sec": 47.95,
+      "addedDate": "2026-11-21",
+      "createdAt": "2026-11-20T12:42:55.000Z",
+      "missing": [
+        "aiAnalysis",
+        "scores(calibratedScore&aiOverallScore)"
+      ],
+      "needs_v3_analysis": true,
+      "needs_phase3_scoring": true,
+      "existing_calibratedScore": null,
+      "analysisObservationScope": null,
+      "cached_mp4": true,
+      "cached_bytes": 1552196,
+      "in_vimeo_login_required_list": false
+    },
+    {
+      "rank": 4,
+      "id": "YPo4M0njGKQ",
+      "title": "Johan Nouri – Our (Official Music Video)",
+      "platform": "youtube",
+      "duration_sec": 203.89,
+      "addedDate": "2026-11-21",
+      "createdAt": "2026-11-20T12:42:54.000Z",
+      "missing": [
+        "aiAnalysis",
+        "scores(calibratedScore&aiOverallScore)"
+      ],
+      "needs_v3_analysis": true,
+      "needs_phase3_scoring": true,
+      "existing_calibratedScore": null,
+      "analysisObservationScope": null,
+      "cached_mp4": true,
+      "cached_bytes": 27879605,
+      "in_vimeo_login_required_list": false
+    },
+    {
+      "rank": 5,
+      "id": "i5vDfdHHFWs",
+      "title": "Nkosazana Daughter & Focalistic - Kasi Lam (feat. Da Muziqal Chef & Mlooda) (Official Music Video)",
+      "platform": "youtube",
+      "duration_sec": 249.73,
+      "addedDate": "2026-11-21",
+      "createdAt": "2026-11-20T12:42:53.000Z",
+      "missing": [
+        "aiAnalysis",
+        "scores(calibratedScore&aiOverallScore)"
+      ],
+      "needs_v3_analysis": true,
+      "needs_phase3_scoring": true,
+      "existing_calibratedScore": null,
+      "analysisObservationScope": null,
+      "cached_mp4": true,
+      "cached_bytes": 36845484,
+      "in_vimeo_login_required_list": false
+    },
+    {
+      "rank": 6,
+      "id": "e4s8ZvDUT8A",
+      "title": "B-Face - NI MBI (Official Music Video)",
+      "platform": "youtube",
+      "duration_sec": 206.36,
+      "addedDate": "2026-11-21",
+      "createdAt": "2026-11-20T12:42:52.000Z",
+      "missing": [
+        "aiAnalysis",
+        "scores(calibratedScore&aiOverallScore)"
+      ],
+      "needs_v3_analysis": true,
+      "needs_phase3_scoring": true,
+      "existing_calibratedScore": null,
+      "analysisObservationScope": null,
+      "cached_mp4": true,
+      "cached_bytes": 41769876,
+      "in_vimeo_login_required_list": false
+    },
+    {
+      "rank": 7,
+      "id": "7o5TA0WcNuc",
+      "title": "Mererackz - Streets Ain’t Dead ( Official Music Video ) Dir By @Packvisuals",
+      "platform": "youtube",
+      "duration_sec": 167.16,
+      "addedDate": "2026-11-21",
+      "createdAt": "2026-11-20T12:42:50.000Z",
+      "missing": [
+        "aiAnalysis",
+        "scores(calibratedScore&aiOverallScore)"
+      ],
+      "needs_v3_analysis": true,
+      "needs_phase3_scoring": true,
+      "existing_calibratedScore": null,
+      "analysisObservationScope": null,
+      "cached_mp4": true,
+      "cached_bytes": 16477276,
+      "in_vimeo_login_required_list": false
+    },
+    {
+      "rank": 8,
+      "id": "9Io4Nx8RHk4",
+      "title": "Lllyric? - Traumatised (Official Music Video) (Dir. by @Antivisiion)",
+      "platform": "youtube",
+      "duration_sec": 194.82,
+      "addedDate": "2026-11-21",
+      "createdAt": "2026-11-20T12:42:48.000Z",
+      "missing": [
+        "aiAnalysis",
+        "scores(calibratedScore&aiOverallScore)"
+      ],
+      "needs_v3_analysis": true,
+      "needs_phase3_scoring": true,
+      "existing_calibratedScore": null,
+      "analysisObservationScope": null,
+      "cached_mp4": true,
+      "cached_bytes": 13412438,
+      "in_vimeo_login_required_list": false
+    },
+    {
+      "rank": 9,
+      "id": "413416661",
+      "title": "わたしとあさみちゃんとベロベロおじさん",
+      "platform": "vimeo",
+      "duration_sec": null,
+      "addedDate": "2026-11-21",
+      "createdAt": "2026-11-20T12:42:35.000Z",
+      "missing": [
+        "aiAnalysis",
+        "scores(calibratedScore&aiOverallScore)"
+      ],
+      "needs_v3_analysis": true,
+      "needs_phase3_scoring": true,
+      "existing_calibratedScore": null,
+      "analysisObservationScope": null,
+      "cached_mp4": false,
+      "cached_bytes": null,
+      "in_vimeo_login_required_list": true
+    },
+    {
+      "rank": 10,
+      "id": "213255139",
+      "title": "さばくのエッセイ/essay in the desert",
+      "platform": "vimeo",
+      "duration_sec": null,
+      "addedDate": "2026-11-21",
+      "createdAt": "2026-11-20T12:42:33.000Z",
+      "missing": [
+        "aiAnalysis",
+        "scores(calibratedScore&aiOverallScore)"
+      ],
+      "needs_v3_analysis": true,
+      "needs_phase3_scoring": true,
+      "existing_calibratedScore": null,
+      "analysisObservationScope": null,
+      "cached_mp4": false,
+      "cached_bytes": null,
+      "in_vimeo_login_required_list": true
+    },
+    {
+      "rank": 11,
+      "id": "299939855",
+      "title": "小旅行-short trip",
+      "platform": "vimeo",
+      "duration_sec": null,
+      "addedDate": "2026-11-21",
+      "createdAt": "2026-11-20T12:42:31.000Z",
+      "missing": [
+        "aiAnalysis",
+        "scores(calibratedScore&aiOverallScore)"
+      ],
+      "needs_v3_analysis": true,
+      "needs_phase3_scoring": true,
+      "existing_calibratedScore": null,
+      "analysisObservationScope": null,
+      "cached_mp4": false,
+      "cached_bytes": null,
+      "in_vimeo_login_required_list": true
+    },
+    {
+      "rank": 12,
+      "id": "413429188",
+      "title": "studio CLIP \"FUNSUS\"「明日も、たのしいといいな」PV",
+      "platform": "vimeo",
+      "duration_sec": null,
+      "addedDate": "2026-11-21",
+      "createdAt": "2026-11-20T12:42:30.000Z",
+      "missing": [
+        "aiAnalysis",
+        "scores(calibratedScore&aiOverallScore)"
+      ],
+      "needs_v3_analysis": true,
+      "needs_phase3_scoring": true,
+      "existing_calibratedScore": null,
+      "analysisObservationScope": null,
+      "cached_mp4": false,
+      "cached_bytes": null,
+      "in_vimeo_login_required_list": true
+    },
+    {
+      "rank": 13,
+      "id": "ci8x1vgxRBw",
+      "title": "いちやなぎ - 日々の栞（Official Music Video）",
+      "platform": "youtube",
+      "duration_sec": 183.02,
+      "addedDate": "2026-11-21",
+      "createdAt": "2026-11-20T12:42:28.000Z",
+      "missing": [
+        "aiAnalysis",
+        "scores(calibratedScore&aiOverallScore)"
+      ],
+      "needs_v3_analysis": true,
+      "needs_phase3_scoring": true,
+      "existing_calibratedScore": null,
+      "analysisObservationScope": null,
+      "cached_mp4": true,
+      "cached_bytes": 25085219,
+      "in_vimeo_login_required_list": false
+    },
+    {
+      "rank": 14,
+      "id": "ASBLP4AI1Ok",
+      "title": "TVアニメ『SPY×FAMILY』Season 3／MISSION:50「生き残れない世界」Cパートアニメオリジナル映像",
+      "platform": "youtube",
+      "duration_sec": 79.9,
+      "addedDate": "2026-11-21",
+      "createdAt": "2026-11-20T12:42:26.000Z",
+      "missing": [
+        "aiAnalysis",
+        "scores(calibratedScore&aiOverallScore)"
+      ],
+      "needs_v3_analysis": true,
+      "needs_phase3_scoring": true,
+      "existing_calibratedScore": null,
+      "analysisObservationScope": null,
+      "cached_mp4": true,
+      "cached_bytes": 7896779,
+      "in_vimeo_login_required_list": false
+    },
+    {
+      "rank": 15,
+      "id": "1233690981",
+      "title": "Without Kelly",
+      "platform": "vimeo",
+      "duration_sec": null,
+      "addedDate": "2026-11-20",
+      "createdAt": "2026-11-19T23:43:52.000Z",
+      "missing": [
+        "aiAnalysis",
+        "scores(calibratedScore&aiOverallScore)"
+      ],
+      "needs_v3_analysis": true,
+      "needs_phase3_scoring": true,
+      "existing_calibratedScore": null,
+      "analysisObservationScope": null,
+      "cached_mp4": false,
+      "cached_bytes": null,
+      "in_vimeo_login_required_list": true
+    },
+    {
+      "rank": 16,
+      "id": "1237618682",
+      "title": "Nostalgie",
+      "platform": "vimeo",
+      "duration_sec": null,
+      "addedDate": "2026-11-20",
+      "createdAt": "2026-11-19T23:43:51.000Z",
+      "missing": [
+        "aiAnalysis",
+        "scores(calibratedScore&aiOverallScore)"
+      ],
+      "needs_v3_analysis": true,
+      "needs_phase3_scoring": true,
+      "existing_calibratedScore": null,
+      "analysisObservationScope": null,
+      "cached_mp4": false,
+      "cached_bytes": null,
+      "in_vimeo_login_required_list": true
+    },
+    {
+      "rank": 17,
+      "id": "KWsNwfwEkYI",
+      "title": "\"sunset record\" motion graphics",
+      "platform": "youtube",
+      "duration_sec": 15.07,
+      "addedDate": "2026-11-20",
+      "createdAt": "2026-11-19T23:43:50.000Z",
+      "missing": [
+        "aiAnalysis",
+        "scores(calibratedScore&aiOverallScore)"
+      ],
+      "needs_v3_analysis": true,
+      "needs_phase3_scoring": true,
+      "existing_calibratedScore": null,
+      "analysisObservationScope": null,
+      "cached_mp4": true,
+      "cached_bytes": 1248618,
+      "in_vimeo_login_required_list": false
+    },
+    {
+      "rank": 18,
+      "id": "oh_CBqywDLQ",
+      "title": "\"lazy morning\" motion graphic",
+      "platform": "youtube",
+      "duration_sec": 12.05,
+      "addedDate": "2026-11-20",
+      "createdAt": "2026-11-19T23:43:49.000Z",
+      "missing": [
+        "aiAnalysis",
+        "scores(calibratedScore&aiOverallScore)"
+      ],
+      "needs_v3_analysis": true,
+      "needs_phase3_scoring": true,
+      "existing_calibratedScore": null,
+      "analysisObservationScope": null,
+      "cached_mp4": true,
+      "cached_bytes": 456672,
+      "in_vimeo_login_required_list": false
+    },
+    {
+      "rank": 19,
+      "id": "_F6oRAbEoLY",
+      "title": "\"Shape of Think\" motion graphic",
+      "platform": "youtube",
+      "duration_sec": 5.06,
+      "addedDate": "2026-11-20",
+      "createdAt": "2026-11-19T23:43:48.000Z",
+      "missing": [
+        "aiAnalysis"
+      ],
+      "needs_v3_analysis": true,
+      "needs_phase3_scoring": false,
+      "existing_calibratedScore": 69,
+      "analysisObservationScope": null,
+      "cached_mp4": true,
+      "cached_bytes": 400455,
+      "in_vimeo_login_required_list": false
+    },
+    {
+      "rank": 20,
+      "id": "67IuhtTzqGg",
+      "title": "ずっと真夜中でいいのに。『お勉強しといてよ』MV（ZUTOMAYO - STUDY ME）-STORYBOARDS",
+      "platform": "youtube",
+      "duration_sec": 285.07,
+      "addedDate": "2026-11-20",
+      "createdAt": "2026-11-19T23:43:47.000Z",
+      "missing": [
+        "aiAnalysis",
+        "scores(calibratedScore&aiOverallScore)"
+      ],
+      "needs_v3_analysis": true,
+      "needs_phase3_scoring": true,
+      "existing_calibratedScore": null,
+      "analysisObservationScope": null,
+      "cached_mp4": true,
+      "cached_bytes": 30028319,
+      "in_vimeo_login_required_list": false
+    },
+    {
+      "rank": 21,
+      "id": "Pa-bsONhIBI",
+      "title": "ずっと真夜中でいいのに。『お勉強しといてよ』MV（ZUTOMAYO - STUDY ME）メイキングムービー",
+      "platform": "youtube",
+      "duration_sec": 245.6,
+      "addedDate": "2026-11-20",
+      "createdAt": "2026-11-19T23:43:46.000Z",
+      "missing": [
+        "aiAnalysis",
+        "scores(calibratedScore&aiOverallScore)"
+      ],
+      "needs_v3_analysis": true,
+      "needs_phase3_scoring": true,
+      "existing_calibratedScore": null,
+      "analysisObservationScope": null,
+      "cached_mp4": true,
+      "cached_bytes": 50948293,
+      "in_vimeo_login_required_list": false
+    },
+    {
+      "rank": 22,
+      "id": "hD1ZF4SBJfU",
+      "title": "”time to work“ motion graphics",
+      "platform": "youtube",
+      "duration_sec": 7.55,
+      "addedDate": "2026-11-20",
+      "createdAt": "2026-11-19T23:43:45.000Z",
+      "missing": [
+        "aiAnalysis",
+        "scores(calibratedScore&aiOverallScore)"
+      ],
+      "needs_v3_analysis": true,
+      "needs_phase3_scoring": true,
+      "existing_calibratedScore": null,
+      "analysisObservationScope": null,
+      "cached_mp4": true,
+      "cached_bytes": 1033136,
+      "in_vimeo_login_required_list": false
+    },
+    {
+      "rank": 23,
+      "id": "UVy75knel4A",
+      "title": "“Blissful Ripples” motion graphics",
+      "platform": "youtube",
+      "duration_sec": 8.54,
+      "addedDate": "2026-11-20",
+      "createdAt": "2026-11-19T23:43:44.000Z",
+      "missing": [
+        "aiAnalysis",
+        "scores(calibratedScore&aiOverallScore)"
+      ],
+      "needs_v3_analysis": true,
+      "needs_phase3_scoring": true,
+      "existing_calibratedScore": null,
+      "analysisObservationScope": null,
+      "cached_mp4": true,
+      "cached_bytes": 1421981,
+      "in_vimeo_login_required_list": false
+    },
+    {
+      "rank": 24,
+      "id": "Yl3J-5Xt2wM",
+      "title": "Motion Graphics CV 2026",
+      "platform": "youtube",
+      "duration_sec": 52.85,
+      "addedDate": "2026-11-20",
+      "createdAt": "2026-11-19T23:43:43.000Z",
+      "missing": [
+        "aiAnalysis",
+        "scores(calibratedScore&aiOverallScore)"
+      ],
+      "needs_v3_analysis": true,
+      "needs_phase3_scoring": true,
+      "existing_calibratedScore": null,
+      "analysisObservationScope": null,
+      "cached_mp4": true,
+      "cached_bytes": 3083536,
+      "in_vimeo_login_required_list": false
+    },
+    {
+      "rank": 25,
+      "id": "JB14-0ZrifQ",
+      "title": "SH!N — Beyond Visuals | Design & Motion Showreel",
+      "platform": "youtube",
+      "duration_sec": 208.96,
+      "addedDate": "2026-11-20",
+      "createdAt": "2026-11-19T23:43:42.000Z",
+      "missing": [
+        "aiAnalysis",
+        "scores(calibratedScore&aiOverallScore)"
+      ],
+      "needs_v3_analysis": true,
+      "needs_phase3_scoring": true,
+      "existing_calibratedScore": null,
+      "analysisObservationScope": null,
+      "cached_mp4": true,
+      "cached_bytes": 16909152,
+      "in_vimeo_login_required_list": false
+    },
+    {
+      "rank": 26,
+      "id": "ufyHamnG51A",
+      "title": "Blanco15 x Teefase - \"Talk Shit\" (Official Music Video)",
+      "platform": "youtube",
+      "duration_sec": 122.55,
+      "addedDate": "2026-11-20",
+      "createdAt": "2026-11-19T23:43:41.000Z",
+      "missing": [
+        "aiAnalysis",
+        "scores(calibratedScore&aiOverallScore)"
+      ],
+      "needs_v3_analysis": true,
+      "needs_phase3_scoring": true,
+      "existing_calibratedScore": null,
+      "analysisObservationScope": null,
+      "cached_mp4": true,
+      "cached_bytes": 10876771,
+      "in_vimeo_login_required_list": false
+    },
+    {
+      "rank": 27,
+      "id": "TS5Lsf6Q-J0",
+      "title": "Poori - ALVEDA (Official Music Video) (Directed by @AkioXo)",
+      "platform": "youtube",
+      "duration_sec": 195.26,
+      "addedDate": "2026-11-20",
+      "createdAt": "2026-11-19T23:43:40.000Z",
+      "missing": [
+        "aiAnalysis",
+        "scores(calibratedScore&aiOverallScore)"
+      ],
+      "needs_v3_analysis": true,
+      "needs_phase3_scoring": true,
+      "existing_calibratedScore": null,
+      "analysisObservationScope": null,
+      "cached_mp4": true,
+      "cached_bytes": 18372244,
+      "in_vimeo_login_required_list": false
+    },
+    {
+      "rank": 28,
+      "id": "776884130",
+      "title": "AUTUMN WINTER 2022/23 HOLIDAY MOVIE “STREAK”",
+      "platform": "vimeo",
+      "duration_sec": null,
+      "addedDate": "2026-11-19",
+      "createdAt": "2026-11-19T05:52:40.000Z",
+      "missing": [
+        "scores(calibratedScore&aiOverallScore)"
+      ],
+      "needs_v3_analysis": true,
+      "needs_phase3_scoring": true,
+      "existing_calibratedScore": null,
+      "analysisObservationScope": "metadata_only_unwatched",
+      "cached_mp4": false,
+      "cached_bytes": null,
+      "in_vimeo_login_required_list": true
+    },
+    {
+      "rank": 29,
+      "id": "1240299939",
+      "title": "Snow In September",
+      "platform": "vimeo",
+      "duration_sec": null,
+      "addedDate": "2026-11-18",
+      "createdAt": "2026-11-19T05:52:40.000Z",
+      "missing": [
+        "scores(calibratedScore&aiOverallScore)"
+      ],
+      "needs_v3_analysis": true,
+      "needs_phase3_scoring": true,
+      "existing_calibratedScore": null,
+      "analysisObservationScope": "metadata_only_unwatched",
+      "cached_mp4": false,
+      "cached_bytes": null,
+      "in_vimeo_login_required_list": true
+    },
+    {
+      "rank": 30,
+      "id": "1165316753",
+      "title": "aflac_thumb_newgraduate",
+      "platform": "vimeo",
+      "duration_sec": null,
+      "addedDate": "2026-11-18",
+      "createdAt": "2026-11-19T05:52:40.000Z",
+      "missing": [
+        "scores(calibratedScore&aiOverallScore)"
+      ],
+      "needs_v3_analysis": true,
+      "needs_phase3_scoring": true,
+      "existing_calibratedScore": null,
+      "analysisObservationScope": "metadata_only_unwatched",
+      "cached_mp4": false,
+      "cached_bytes": null,
+      "in_vimeo_login_required_list": true
+    }
+  ]
+}

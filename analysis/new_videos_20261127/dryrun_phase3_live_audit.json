@@ -1,0 +1,337 @@
+{
+  "run_id": "run_20261127_104500",
+  "target_rows_count": 20,
+  "existing_rows_found_in_tidb": 20,
+  "overwrite_conflicts_count": 0,
+  "overwrite_conflicts": [],
+  "columns_to_update": [
+    "calibrationStatus",
+    "calibratedScore",
+    "calibratedRank",
+    "calibratedTierBand",
+    "calibratedBreakdown",
+    "calibrationVersion",
+    "calibratedAt",
+    "calibratedRoute",
+    "calibratedRunId",
+    "calibrationGenreBucket"
+  ],
+  "updatedAt_policy": "preserved (updatedAt = updatedAt)",
+  "rows_preview": [
+    {
+      "id": "LoNrxRUGQ6U",
+      "calibratedScore": 54,
+      "calibratedRank": "C",
+      "calibratedTierBand": "low_band",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedRoute": "video_h2_escalated"
+    },
+    {
+      "id": "Wsp5_VPb2bY",
+      "calibratedScore": 56,
+      "calibratedRank": "C",
+      "calibratedTierBand": "low_band",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedRoute": "contact_sheet"
+    },
+    {
+      "id": "EV6GL3RR-As",
+      "calibratedScore": 71,
+      "calibratedRank": "B",
+      "calibratedTierBand": "pro_band",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedRoute": "contact_sheet"
+    },
+    {
+      "id": "YPo4M0njGKQ",
+      "calibratedScore": 57.5,
+      "calibratedRank": "C+",
+      "calibratedTierBand": "low_band",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedRoute": "contact_sheet"
+    },
+    {
+      "id": "i5vDfdHHFWs",
+      "calibratedScore": 68.5,
+      "calibratedRank": "B",
+      "calibratedTierBand": "pro_band",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedRoute": "video_h1"
+    },
+    {
+      "id": "e4s8ZvDUT8A",
+      "calibratedScore": 61,
+      "calibratedRank": "C+",
+      "calibratedTierBand": "low_band",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedRoute": "video_h1"
+    },
+    {
+      "id": "7o5TA0WcNuc",
+      "calibratedScore": 57,
+      "calibratedRank": "C+",
+      "calibratedTierBand": "low_band",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedRoute": "video_h1"
+    },
+    {
+      "id": "9Io4Nx8RHk4",
+      "calibratedScore": 73.5,
+      "calibratedRank": "B+",
+      "calibratedTierBand": "pro_band",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedRoute": "video_h2_escalated"
+    },
+    {
+      "id": "ci8x1vgxRBw",
+      "calibratedScore": 69.5,
+      "calibratedRank": "B",
+      "calibratedTierBand": "pro_band",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedRoute": "video_h2_escalated"
+    },
+    {
+      "id": "ASBLP4AI1Ok",
+      "calibratedScore": 83.5,
+      "calibratedRank": "A",
+      "calibratedTierBand": "award_tier",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedRoute": "video_h1"
+    },
+    {
+      "id": "KWsNwfwEkYI",
+      "calibratedScore": 73.5,
+      "calibratedRank": "B+",
+      "calibratedTierBand": "pro_band",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedRoute": "contact_sheet"
+    },
+    {
+      "id": "oh_CBqywDLQ",
+      "calibratedScore": 73,
+      "calibratedRank": "B+",
+      "calibratedTierBand": "pro_band",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedRoute": "contact_sheet"
+    },
+    {
+      "id": "67IuhtTzqGg",
+      "calibratedScore": 67,
+      "calibratedRank": "B-",
+      "calibratedTierBand": "pro_band",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedRoute": "video_h1"
+    },
+    {
+      "id": "Pa-bsONhIBI",
+      "calibratedScore": 75,
+      "calibratedRank": "B+",
+      "calibratedTierBand": "pro_band",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedRoute": "video_h1"
+    },
+    {
+      "id": "hD1ZF4SBJfU",
+      "calibratedScore": 68.5,
+      "calibratedRank": "B",
+      "calibratedTierBand": "pro_band",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedRoute": "video_h2_escalated"
+    },
+    {
+      "id": "UVy75knel4A",
+      "calibratedScore": 69,
+      "calibratedRank": "B",
+      "calibratedTierBand": "pro_band",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedRoute": "contact_sheet"
+    },
+    {
+      "id": "Yl3J-5Xt2wM",
+      "calibratedScore": 53,
+      "calibratedRank": "C",
+      "calibratedTierBand": "low_band",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedRoute": "contact_sheet"
+    },
+    {
+      "id": "JB14-0ZrifQ",
+      "calibratedScore": 75,
+      "calibratedRank": "B+",
+      "calibratedTierBand": "pro_band",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedRoute": "contact_sheet"
+    },
+    {
+      "id": "ufyHamnG51A",
+      "calibratedScore": 59.5,
+      "calibratedRank": "C+",
+      "calibratedTierBand": "low_band",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedRoute": "video_h1"
+    },
+    {
+      "id": "TS5Lsf6Q-J0",
+      "calibratedScore": 73,
+      "calibratedRank": "B+",
+      "calibratedTierBand": "pro_band",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedRoute": "video_h1"
+    }
+  ],
+  "live_pre_d_40col_audit": {
+    "rows_compared": 5653,
+    "columns_compared_per_row": 40,
+    "total_cells_compared": 226120,
+    "approved_overrides_matched_count": 0,
+    "approved_overrides_matched": [],
+    "v3_manifest_matched_count": 20,
+    "v3_manifest_matched": [
+      {
+        "video_id": "-1nKzOF8-_Q",
+        "column": "aiAnalysis",
+        "after_sha256": "7e0833d16d545f783f482de7af26f992619e8261a0615fea0c4286b4ba60fb25",
+        "prompt_template_sha256": "a53083e103d3114e72f5d60d321a0644b0daf603830ad033b74ed5b2ee0083fe",
+        "analysis_version": "v3"
+      },
+      {
+        "video_id": "-Dm-7u930DI",
+        "column": "aiAnalysis",
+        "after_sha256": "46043f078579c35b4aecc4d863bed010c2894e89b57589aa842507c99e752ec0",
+        "prompt_template_sha256": "48b5d140122f691050b73bf7a16d1551176c3d46ae31c8b6d77a39357224a0df",
+        "analysis_version": "v3"
+      },
+      {
+        "video_id": "-fYxwC8wJsk",
+        "column": "aiAnalysis",
+        "after_sha256": "9296f7901a1672a5d681bd42534a277da380956c677f886de88012b3d8d2c229",
+        "prompt_template_sha256": "48b5d140122f691050b73bf7a16d1551176c3d46ae31c8b6d77a39357224a0df",
+        "analysis_version": "v3"
+      },
+      {
+        "video_id": "-Nsrg3eVBBw",
+        "column": "aiAnalysis",
+        "after_sha256": "59ef931056ed31590bb94b6b0b80ec0e4a7c526b3e9b83a636cbce0e0a010fdb",
+        "prompt_template_sha256": "48b5d140122f691050b73bf7a16d1551176c3d46ae31c8b6d77a39357224a0df",
+        "analysis_version": "v3"
+      },
+      {
+        "video_id": "-Sb4wxbHh-4",
+        "column": "aiAnalysis",
+        "after_sha256": "309a3fbfc8a558c5440e71b5c06ce70a14ca11a7c3d1d55c4b9d30a216c1cdbe",
+        "prompt_template_sha256": "e42b47b50400f23de0a5d84566338a3f6580149149c0ca8367dfdc487aff89b2",
+        "analysis_version": "v3"
+      },
+      {
+        "video_id": "-wb2PAx6aEs",
+        "column": "aiAnalysis",
+        "after_sha256": "c5947087767380ce12e5e4564b071e47d00e733d0edf66937b3a3218cb1ce1d4",
+        "prompt_template_sha256": "e42b47b50400f23de0a5d84566338a3f6580149149c0ca8367dfdc487aff89b2",
+        "analysis_version": "v3"
+      },
+      {
+        "video_id": "03iKTXFKFFU",
+        "column": "aiAnalysis",
+        "after_sha256": "5d5ae166fe5aaa1fc2e41802ea37917b3f74ee737317592029c4abd1281a7d06",
+        "prompt_template_sha256": "48b5d140122f691050b73bf7a16d1551176c3d46ae31c8b6d77a39357224a0df",
+        "analysis_version": "v3"
+      },
+      {
+        "video_id": "08TGBLLK8RE",
+        "column": "aiAnalysis",
+        "after_sha256": "c1c5cfd0bb523f007d47be3d6475c059d7afc6fb7ecfa7f4d1b8e35c04610d33",
+        "prompt_template_sha256": "48b5d140122f691050b73bf7a16d1551176c3d46ae31c8b6d77a39357224a0df",
+        "analysis_version": "v3"
+      },
+      {
+        "video_id": "09PfPoj8LAk",
+        "column": "aiAnalysis",
+        "after_sha256": "ae68c8ecdfbfd98aa155804ebf2e6884bfde8bacca5622f6fe4e5e18b7151e43",
+        "prompt_template_sha256": "a53083e103d3114e72f5d60d321a0644b0daf603830ad033b74ed5b2ee0083fe",
+        "analysis_version": "v3"
+      },
+      {
+        "video_id": "0S43IwBF0uM",
+        "column": "aiAnalysis",
+        "after_sha256": "2b0e9eca1bd2c54ebb5b51a11ab6c2cc56b7e0ac2a494e6f7036c81d1ef54f9f",
+        "prompt_template_sha256": "48b5d140122f691050b73bf7a16d1551176c3d46ae31c8b6d77a39357224a0df",
+        "analysis_version": "v3"
+      },
+      {
+        "video_id": "0Wmwc8u98lI",
+        "column": "aiAnalysis",
+        "after_sha256": "db3b8cb8eaac8cf93e74df7f5ca2706784b2979071c6b176eaa26bbe9545b5b5",
+        "prompt_template_sha256": "48b5d140122f691050b73bf7a16d1551176c3d46ae31c8b6d77a39357224a0df",
+        "analysis_version": "v3"
+      },
+      {
+        "video_id": "1018644295",
+        "column": "aiAnalysis",
+        "after_sha256": "ee9f4e5c208aac399796e7aa51b548e98f2b53b38f55faac79cb348fbd329934",
+        "prompt_template_sha256": "48b5d140122f691050b73bf7a16d1551176c3d46ae31c8b6d77a39357224a0df",
+        "analysis_version": "v3"
+      },
+      {
+        "video_id": "1032202784",
+        "column": "aiAnalysis",
+        "after_sha256": "1c0fa154ef454bb19f0b5d5e7c22e65133267a60651e06b9964f22bfa6e1b34e",
+        "prompt_template_sha256": "48b5d140122f691050b73bf7a16d1551176c3d46ae31c8b6d77a39357224a0df",
+        "analysis_version": "v3"
+      },
+      {
+        "video_id": "1064466748",
+        "column": "aiAnalysis",
+        "after_sha256": "9ad590a0fbfeb15f18979d5a60fc4249e23a563334277651147585c89a7e6e63",
+        "prompt_template_sha256": "48b5d140122f691050b73bf7a16d1551176c3d46ae31c8b6d77a39357224a0df",
+        "analysis_version": "v3"
+      },
+      {
+        "video_id": "107330133",
+        "column": "aiAnalysis",
+        "after_sha256": "eee8da534a49fe02c8c1f753d838b15c8c5489249ffe480156d084c19097621e",
+        "prompt_template_sha256": "48b5d140122f691050b73bf7a16d1551176c3d46ae31c8b6d77a39357224a0df",
+        "analysis_version": "v3"
+      },
+      {
+        "video_id": "1081049586",
+        "column": "aiAnalysis",
+        "after_sha256": "43398e60f039730320e303c54cae1660ea8743c0a3268e0829fdc20eae3efce9",
+        "prompt_template_sha256": "48b5d140122f691050b73bf7a16d1551176c3d46ae31c8b6d77a39357224a0df",
+        "analysis_version": "v3"
+      },
+      {
+        "video_id": "1119375393",
+        "column": "aiAnalysis",
+        "after_sha256": "86359e3b1ec04abe0028b82c09b25cdb03edbd2a9b34213bbcc2f8f0097eac22",
+        "prompt_template_sha256": "48b5d140122f691050b73bf7a16d1551176c3d46ae31c8b6d77a39357224a0df",
+        "analysis_version": "v3"
+      },
+      {
+        "video_id": "1154070144",
+        "column": "aiAnalysis",
+        "after_sha256": "561e2c33a35d01035a943f0ccb213c21559be55790f3b1b8d974eae0de32c0d3",
+        "prompt_template_sha256": "48b5d140122f691050b73bf7a16d1551176c3d46ae31c8b6d77a39357224a0df",
+        "analysis_version": "v3"
+      },
+      {
+        "video_id": "1155088773",
+        "column": "aiAnalysis",
+        "after_sha256": "3f01aff05598821c296e4ae42ca45639aa5cb10601d73cfd988fe1877dba639d",
+        "prompt_template_sha256": "48b5d140122f691050b73bf7a16d1551176c3d46ae31c8b6d77a39357224a0df",
+        "analysis_version": "v3"
+      },
+      {
+        "video_id": "1179837107",
+        "column": "aiAnalysis",
+        "after_sha256": "8d0a461732db921096b4f32123117c68833d72077ac4ac7e7296f562dbc9a2f1",
+        "prompt_template_sha256": "48b5d140122f691050b73bf7a16d1551176c3d46ae31c8b6d77a39357224a0df",
+        "analysis_version": "v3"
+      }
+    ],
+    "legacy_8_score_columns_mismatches": 0,
+    "all_40_original_columns_mismatches": 0,
+    "updated_at_row_mismatches": 0,
+    "sample_mismatches": [],
+    "passed": true
+  }
+}

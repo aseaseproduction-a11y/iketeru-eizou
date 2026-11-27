@@ -28,8 +28,10 @@ import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
 import {
   DEFAULT_APPROVED_OVERRIDES_PATH,
+  DEFAULT_V3_STORE_DIR,
   auditOriginalColumnsAgainstPreD,
   loadApprovedTidbOverrides,
+  loadV3CanonicalManifestMap,
 } from "./approved-tidb-overrides.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -214,7 +216,9 @@ async function main() {
   const sqliteArg = getFlagValue(process.argv, "--sqlite");
   const backupDirArg = getFlagValue(process.argv, "--backup-dir");
   const approvedOverridesArg = getFlagValue(process.argv, "--approved-overrides");
+  const v3StoreDirArg = getFlagValue(process.argv, "--v3-store-dir");
   const approvedOverrides = loadApprovedTidbOverrides(approvedOverridesArg || DEFAULT_APPROVED_OVERRIDES_PATH);
+  const v3Manifest = loadV3CanonicalManifestMap(v3StoreDirArg || DEFAULT_V3_STORE_DIR);
 
   if (!runId || runId.startsWith("--")) {
     console.error(
@@ -392,6 +396,7 @@ async function main() {
       originalColumns,
       legacyScoreColumns: LEGACY_SCORE_COLUMNS,
       approvedOverrideMap: approvedOverrides.active_map,
+      v3ManifestMap: v3Manifest.valid_map,
     });
 
     const rowsCompared = preDAudit.rows_compared;
@@ -443,6 +448,10 @@ async function main() {
         approved_overrides_file: approvedOverrides.file_path,
         approved_overrides_matched_count: preDAudit.approved_overrides_matched_count,
         approved_overrides_matched: preDAudit.approved_overrides_matched,
+        v3_manifest_store_dir: v3Manifest.store_dir,
+        v3_manifest_verified_entries_loaded: v3Manifest.valid_map.size,
+        v3_manifest_matched_count: preDAudit.v3_manifest_matched_count,
+        v3_manifest_matched: preDAudit.v3_manifest_matched,
         legacy_8_score_columns_mismatches: legacyScoreColMismatches,
         all_40_original_columns_mismatches: anyOriginalColMismatches,
         updated_at_row_mismatches: updatedAtMismatches,

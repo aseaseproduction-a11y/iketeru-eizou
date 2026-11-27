@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "task_name": "new_videos_20261127",
+  "generated_at": "2026-11-27T10:45:55+09:00",
+  "downloader_20261127_1030_note": "10:30 JST IketeruDownloaderDaily hit bot_check + cookie_invalid_warning on 8l8RIntUIm8 (manifest.jsonl) and exited with UnicodeEncodeError (cp932) at line 419 before writing STOPPED_2026-11-27.json / status_downloader.md. All 21 YouTube targets in top 30 were already cached; 0 YouTube downloads attempted.",
+  "vimeo_policy_note": "D-014: uncached Vimeo requires login/cookies (prohibited). All 9 are in _vimeo_login_required_list.json. downloader.py is YouTube-only. API not used without user approval.",
+  "deferred_count": 9,
+  "videos": [
+    {
+      "id": "413416661",
+      "title": "わたしとあさみちゃんとベロベロおじさん",
+      "platform": "vimeo",
+      "addedDate": "2026-11-21",
+      "missing": [
+        "aiAnalysis",
+        "scores(calibratedScore&aiOverallScore)"
+      ],
+      "reason": "uncached_vimeo_login_required_D014",
+      "in_vimeo_login_required_list": true
+    },
+    {
+      "id": "213255139",
+      "title": "さばくのエッセイ/essay in the desert",
+      "platform": "vimeo",
+      "addedDate": "2026-11-21",
+      "missing": [
+        "aiAnalysis",
+        "scores(calibratedScore&aiOverallScore)"
+      ],
+      "reason": "uncached_vimeo_login_required_D014",
+      "in_vimeo_login_required_list": true
+    },
+    {
+      "id": "299939855",
+      "title": "小旅行-short trip",
+      "platform": "vimeo",
+      "addedDate": "2026-11-21",
+      "missing": [
+        "aiAnalysis",
+        "scores(calibratedScore&aiOverallScore)"
+      ],
+      "reason": "uncached_vimeo_login_required_D014",
+      "in_vimeo_login_required_list": true
+    },
+    {
+      "id": "413429188",
+      "title": "studio CLIP \"FUNSUS\"「明日も、たのしいといいな」PV",
+      "platform": "vimeo",
+      "addedDate": "2026-11-21",
+      "missing": [
+        "aiAnalysis",
+        "scores(calibratedScore&aiOverallScore)"
+      ],
+      "reason": "uncached_vimeo_login_required_D014",
+      "in_vimeo_login_required_list": true
+    },
+    {
+      "id": "1233690981",
+      "title": "Without Kelly",
+      "platform": "vimeo",
+      "addedDate": "2026-11-20",
+      "missing": [
+        "aiAnalysis",
+        "scores(calibratedScore&aiOverallScore)"
+      ],
+      "reason": "uncached_vimeo_login_required_D014",
+      "in_vimeo_login_required_list": true
+    },
+    {
+      "id": "1237618682",
+      "title": "Nostalgie",
+      "platform": "vimeo",
+      "addedDate": "2026-11-20",
+      "missing": [
+        "aiAnalysis",
+        "scores(calibratedScore&aiOverallScore)"
+      ],
+      "reason": "uncached_vimeo_login_required_D014",
+      "in_vimeo_login_required_list": true
+    },
+    {
+      "id": "776884130",
+      "title": "AUTUMN WINTER 2022/23 HOLIDAY MOVIE “STREAK”",
+      "platform": "vimeo",
+      "addedDate": "2026-11-19",
+      "missing": [
+        "scores(calibratedScore&aiOverallScore)"
+      ],
+      "reason": "uncached_vimeo_login_required_D014",
+      "in_vimeo_login_required_list": true
+    },
+    {
+      "id": "1240299939",
+      "title": "Snow In September",
+      "platform": "vimeo",
+      "addedDate": "2026-11-18",
+      "missing": [
+        "scores(calibratedScore&aiOverallScore)"
+      ],
+      "reason": "uncached_vimeo_login_required_D014",
+      "in_vimeo_login_required_list": true
+    },
+    {
+      "id": "1165316753",
+      "title": "aflac_thumb_newgraduate",
+      "platform": "vimeo",
+      "addedDate": "2026-11-18",
+      "missing": [
+        "scores(calibratedScore&aiOverallScore)"
+      ],
+      "reason": "uncached_vimeo_login_required_D014",
+      "in_vimeo_login_required_list": true
+    }
+  ]
+}

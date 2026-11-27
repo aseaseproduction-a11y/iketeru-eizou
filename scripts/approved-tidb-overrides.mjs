@@ -88,6 +88,8 @@ export function loadApprovedTidbOverrides(filePath = DEFAULT_APPROVED_OVERRIDES_
 export const DEFAULT_V3_STORE_DIR =
   process.env.IKETERU_ANALYSIS_V3_DIR || "D:\\マイドライブ\\iketeru_analysis_v3";
 
+export const V3_STORE_EXCLUDED_DIRS = new Set(["_docs", "_prompts"]);
+
 function sha256Buffer(buf) {
   return crypto.createHash("sha256").update(buf).digest("hex");
 }
@@ -130,9 +132,10 @@ export function loadV3CanonicalManifestMap(storeDir = DEFAULT_V3_STORE_DIR) {
 
   if (candidateIds.length === 0) {
     for (const ent of fs.readdirSync(storeDir, { withFileTypes: true })) {
-      if (ent.isDirectory() && !ent.name.startsWith("_")) {
-        candidateIds.push(ent.name);
-      }
+      if (!ent.isDirectory()) continue;
+      if (V3_STORE_EXCLUDED_DIRS.has(ent.name)) continue;
+      if (!fs.existsSync(path.join(storeDir, ent.name, "manifest.json"))) continue;
+      candidateIds.push(ent.name);
     }
     candidateIds.sort();
   }
@@ -209,8 +212,11 @@ export function loadV3CanonicalManifestMap(storeDir = DEFAULT_V3_STORE_DIR) {
         analysis_content_sha256: contentSha256,
         analysis_bytes: analysisBuf.length,
         manifest_analysis_version: String(manifest.analysis_version || "v3"),
+        prompt_version: String(manifest.prompt_version || manifest.analysis_version || "v3"),
         db_analysis_version: "v3",
         prompt_template_sha256: manifest.prompt_template_sha256 ? String(manifest.prompt_template_sha256) : null,
+        audit_performed: Boolean(manifest.audit_performed),
+        audit_verdict: manifest.audit_verdict ?? null,
         created_at: manifest.created_at ? String(manifest.created_at) : null,
         created_by_pc: manifest.created_by_pc ? String(manifest.created_by_pc) : null,
         scenes_count: Number(mech.scenes_count || 0),

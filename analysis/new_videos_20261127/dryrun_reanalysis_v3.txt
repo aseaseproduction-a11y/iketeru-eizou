@@ -1,0 +1,574 @@
+=== [A] ALL 21 IDs (tests _F6oRAbEoLY underscore bug in approved-tidb-overrides.mjs) ===
+CMD: node scripts/apply-reanalysis-v3-to-tidb.mjs --dry-run --list analysis/new_videos_20261127/v3_ids_21.json --v3-store-dir G:\マイドライブ\iketeru_analysis_v3
+EXIT: 1
+STDOUT:
+
+STDERR:
+Pinned video_id "_F6oRAbEoLY" from E:\iketeru-eizou\analysis\new_videos_20261127\v3_ids_21.json is not a verified passing v3 entry in G:\マイドライブ\iketeru_analysis_v3
+
+
+=== [B] 20 NON-UNDERSCORE IDs (full live TiDB dry-run + simulated post-apply Pre-D 40-col audit) ===
+CMD: node scripts/apply-reanalysis-v3-to-tidb.mjs --dry-run --list analysis/new_videos_20261127/v3_ids_20_non_underscore.json --v3-store-dir G:\マイドライブ\iketeru_analysis_v3
+EXIT: 0
+STDOUT:
+{
+  "mode": "dry_run",
+  "tidb_writes_performed": 0,
+  "sqlite_writes_performed": 0,
+  "v3_store_dir": "G:\\マイドライブ\\iketeru_analysis_v3",
+  "v3_store_verified_count": 316,
+  "v3_store_rejected_count": 0,
+  "v3_store_rejected_sample": [],
+  "selected_count": 20,
+  "pinned_list_path": "E:\\iketeru-eizou\\analysis\\new_videos_20261127\\v3_ids_20_non_underscore.json",
+  "pinned_list_id": "new_videos_20261127_v3_2_non_underscore20",
+  "pinned_list_sha256": "076a274510d7c89acd56554cef76cdd82a3440125f0cff260f847b16d7297c01",
+  "pinned_list_verified_count": 20,
+  "apply_lock_status": "unlocked",
+  "pre_d_backup_sha256_verified": "17856f0338c760b2f88d415543eb6d48a7977c06e76a5c04476b0d5943446a3b",
+  "ddl_readiness": {
+    "videos_v3_columns_present": true,
+    "missing_video_columns": [],
+    "videoAnalysisHistory_table_exists": true,
+    "videoScenes_table_exists": true,
+    "ready_for_apply": true
+  },
+  "ddl_proposal_path": "E:\\iketeru-eizou\\docs\\sql\\proposed_v3_analysis_ddl.sql",
+  "planned_tables_touched": [
+    "videoAnalysisHistory (INSERT)",
+    "videos (UPDATE 4 cols)",
+    "sqlite:scenes & scenes_fts (REPLACE per video)"
+  ],
+  "planned_changes": [
+    {
+      "video_id": "LoNrxRUGQ6U",
+      "title": "VFX Showreel 2026 | Visual Effects | Visflix Studio",
+      "tidb_videos_columns_updated": [
+        "aiAnalysis",
+        "analysisVersion",
+        "analysisGeneratedAt",
+        "analysisPromptSha256"
+      ],
+      "old_analysis_version": "legacy",
+      "new_analysis_version": "v3",
+      "prompt_version": "v3.2",
+      "audit_performed": true,
+      "audit_verdict": "合っている",
+      "created_by_pc": "CHIBA-PC",
+      "old_aiAnalysis_chars": 0,
+      "new_aiAnalysis_chars": 12300,
+      "old_aiAnalysis_sha256": "NULL",
+      "new_aiAnalysis_sha256": "612b17ae3dadaea1c3089314da2837f4149525afa508a6b92d6d3f56d478cc29",
+      "analysisGeneratedAt_utc": "2026-11-27 02:06:27",
+      "analysisPromptSha256": "e42b47b50400f23de0a5d84566338a3f6580149149c0ca8367dfdc487aff89b2",
+      "videoAnalysisHistory_insert": true,
+      "sqlite_scenes_old": 0,
+      "sqlite_scenes_new": 12
+    },
+    {
+      "video_id": "Wsp5_VPb2bY",
+      "title": "Logro sorprendente a tu alcance #2d #3d #animacion #blender ",
+      "tidb_videos_columns_updated": [
+        "aiAnalysis",
+        "analysisVersion",
+        "analysisGeneratedAt",
+        "analysisPromptSha256"
+      ],
+      "old_analysis_version": "legacy",
+      "new_analysis_version": "v3",
+      "prompt_version": "v3.2",
+      "audit_performed": false,
+      "audit_verdict": null,
+      "created_by_pc": "CHIBA-PC",
+      "old_aiAnalysis_chars": 0,
+      "new_aiAnalysis_chars": 8454,
+      "old_aiAnalysis_sha256": "NULL",
+      "new_aiAnalysis_sha256": "661bb693cb0f03a4047aa3c8fcd0ca3fae8ae75bd3f09a99d4ec274f38843add",
+      "analysisGeneratedAt_utc": "2026-11-27 02:06:27",
+      "analysisPromptSha256": "e42b47b50400f23de0a5d84566338a3f6580149149c0ca8367dfdc487aff89b2",
+      "videoAnalysisHistory_insert": true,
+      "sqlite_scenes_old": 0,
+      "sqlite_scenes_new": 7
+    },
+    {
+      "video_id": "EV6GL3RR-As",
+      "title": "The Fabulous Hudson Hornet || Blender animation",
+      "tidb_videos_columns_updated": [
+        "aiAnalysis",
+        "analysisVersion",
+        "analysisGeneratedAt",
+        "analysisPromptSha256"
+      ],
+      "old_analysis_version": "legacy",
+      "new_analysis_version": "v3",
+      "prompt_version": "v3.2",
+      "audit_performed": false,
+      "audit_verdict": null,
+      "created_by_pc": "CHIBA-PC",
+      "old_aiAnalysis_chars": 0,
+      "new_aiAnalysis_chars": 11154,
+      "old_aiAnalysis_sha256": "NULL",
+      "new_aiAnalysis_sha256": "896d42837a8eb6ea3b84c5841b73e4954e2d3a191a9e4884daeb176c3f9b6680",
+      "analysisGeneratedAt_utc": "2026-11-27 02:06:27",
+      "analysisPromptSha256": "e42b47b50400f23de0a5d84566338a3f6580149149c0ca8367dfdc487aff89b2",
+      "videoAnalysisHistory_insert": true,
+      "sqlite_scenes_old": 0,
+      "sqlite_scenes_new": 10
+    },
+    {
+      "video_id": "YPo4M0njGKQ",
+      "title": "Johan Nouri – Our (Official Music Video)",
+      "tidb_videos_columns_updated": [
+        "aiAnalysis",
+        "analysisVersion",
+        "analysisGeneratedAt",
+        "analysisPromptSha256"
+      ],
+      "old_analysis_version": "legacy",
+      "new_analysis_version": "v3",
+      "prompt_version": "v3.2",
+      "audit_performed": false,
+      "audit_verdict": null,
+      "created_by_pc": "CHIBA-PC",
+      "old_aiAnalysis_chars": 0,
+      "new_aiAnalysis_chars": 10792,
+      "old_aiAnalysis_sha256": "NULL",
+      "new_aiAnalysis_sha256": "d5ba21f54c611f03117751cac0c73cdf956223ae8e2b997ae73171cd04f4e688",
+      "analysisGeneratedAt_utc": "2026-11-27 02:06:27",
+      "analysisPromptSha256": "e42b47b50400f23de0a5d84566338a3f6580149149c0ca8367dfdc487aff89b2",
+      "videoAnalysisHistory_insert": true,
+      "sqlite_scenes_old": 0,
+      "sqlite_scenes_new": 11
+    },
+    {
+      "video_id": "i5vDfdHHFWs",
+      "title": "Nkosazana Daughter & Focalistic - Kasi Lam (feat. Da Muziqal",
+      "tidb_videos_columns_updated": [
+        "aiAnalysis",
+        "analysisVersion",
+        "analysisGeneratedAt",
+        "analysisPromptSha256"
+      ],
+      "old_analysis_version": "legacy",
+      "new_analysis_version": "v3",
+      "prompt_version": "v3.2",
+      "audit_performed": false,
+      "audit_verdict": null,
+      "created_by_pc": "CHIBA-PC",
+      "old_aiAnalysis_chars": 0,
+      "new_aiAnalysis_chars": 12911,
+      "old_aiAnalysis_sha256": "NULL",
+      "new_aiAnalysis_sha256": "3a1e529f6c6204b691cb627877b9ae1346f238c4f68157d2fd74780602563b6f",
+      "analysisGeneratedAt_utc": "2026-11-27 02:06:27",
+      "analysisPromptSha256": "e42b47b50400f23de0a5d84566338a3f6580149149c0ca8367dfdc487aff89b2",
+      "videoAnalysisHistory_insert": true,
+      "sqlite_scenes_old": 0,
+      "sqlite_scenes_new": 12
+    },
+    {
+      "video_id": "e4s8ZvDUT8A",
+      "title": "B-Face - NI MBI (Official Music Video)",
+      "tidb_videos_columns_updated": [
+        "aiAnalysis",
+        "analysisVersion",
+        "analysisGeneratedAt",
+        "analysisPromptSha256"
+      ],
+      "old_analysis_version": "legacy",
+      "new_analysis_version": "v3",
+      "prompt_version": "v3.2",
+      "audit_performed": false,
+      "audit_verdict": null,
+      "created_by_pc": "CHIBA-PC",
+      "old_aiAnalysis_chars": 0,
+      "new_aiAnalysis_chars": 11085,
+      "old_aiAnalysis_sha256": "NULL",
+      "new_aiAnalysis_sha256": "5278adff1a7ab78d3ec666aa0cc45277d3750b6b2e34909ccae94a21d6dd8cd9",
+      "analysisGeneratedAt_utc": "2026-11-27 02:06:27",
+      "analysisPromptSha256": "e42b47b50400f23de0a5d84566338a3f6580149149c0ca8367dfdc487aff89b2",
+      "videoAnalysisHistory_insert": true,
+      "sqlite_scenes_old": 0,
+      "sqlite_scenes_new": 12
+    },
+    {
+      "video_id": "7o5TA0WcNuc",
+      "title": "Mererackz - Streets Ain’t Dead ( Official Music Video ) Dir ",
+      "tidb_videos_columns_updated": [
+        "aiAnalysis",
+        "analysisVersion",
+        "analysisGeneratedAt",
+        "analysisPromptSha256"
+      ],
+      "old_analysis_version": "legacy",
+      "new_analysis_version": "v3",
+      "prompt_version": "v3.2",
+      "audit_performed": false,
+      "audit_verdict": null,
+      "created_by_pc": "CHIBA-PC",
+      "old_aiAnalysis_chars": 0,
+      "new_aiAnalysis_chars": 12544,
+      "old_aiAnalysis_sha256": "NULL",
+      "new_aiAnalysis_sha256": "0a4e1a681c8be1d61e3c234276b0eec35e61afdd3c38cf32d712d9cf99dfe519",
+      "analysisGeneratedAt_utc": "2026-11-27 02:06:27",
+      "analysisPromptSha256": "e42b47b50400f23de0a5d84566338a3f6580149149c0ca8367dfdc487aff89b2",
+      "videoAnalysisHistory_insert": true,
+      "sqlite_scenes_old": 0,
+      "sqlite_scenes_new": 12
+    },
+    {
+      "video_id": "9Io4Nx8RHk4",
+      "title": "Lllyric? - Traumatised (Official Music Video) (Dir. by @Anti",
+      "tidb_videos_columns_updated": [
+        "aiAnalysis",
+        "analysisVersion",
+        "analysisGeneratedAt",
+        "analysisPromptSha256"
+      ],
+      "old_analysis_version": "legacy",
+      "new_analysis_version": "v3",
+      "prompt_version": "v3.2",
+      "audit_performed": true,
+      "audit_verdict": "合っている",
+      "created_by_pc": "CHIBA-PC",
+      "old_aiAnalysis_chars": 0,
+      "new_aiAnalysis_chars": 9522,
+      "old_aiAnalysis_sha256": "NULL",
+      "new_aiAnalysis_sha256": "1f25d98d9911213a2af698442162875bb44b4e5550cb292cf516ed53cf0318c0",
+      "analysisGeneratedAt_utc": "2026-11-27 02:06:27",
+      "analysisPromptSha256": "e42b47b50400f23de0a5d84566338a3f6580149149c0ca8367dfdc487aff89b2",
+      "videoAnalysisHistory_insert": true,
+      "sqlite_scenes_old": 0,
+      "sqlite_scenes_new": 13
+    },
+    {
+      "video_id": "ci8x1vgxRBw",
+      "title": "いちやなぎ - 日々の栞（Official Music Video）",
+      "tidb_videos_columns_updated": [
+        "aiAnalysis",
+        "analysisVersion",
+        "analysisGeneratedAt",
+        "analysisPromptSha256"
+      ],
+      "old_analysis_version": "legacy",
+      "new_analysis_version": "v3",
+      "prompt_version": "v3.2",
+      "audit_performed": true,
+      "audit_verdict": "合っている",
+      "created_by_pc": "CHIBA-PC",
+      "old_aiAnalysis_chars": 0,
+      "new_aiAnalysis_chars": 8994,
+      "old_aiAnalysis_sha256": "NULL",
+      "new_aiAnalysis_sha256": "f6e535b616bc8c8323eaccff149d7ca369449cf5510f924a157766b3895b3608",
+      "analysisGeneratedAt_utc": "2026-11-27 02:06:27",
+      "analysisPromptSha256": "e42b47b50400f23de0a5d84566338a3f6580149149c0ca8367dfdc487aff89b2",
+      "videoAnalysisHistory_insert": true,
+      "sqlite_scenes_old": 0,
+      "sqlite_scenes_new": 10
+    },
+    {
+      "video_id": "ASBLP4AI1Ok",
+      "title": "TVアニメ『SPY×FAMILY』Season 3／MISSION:50「生き残れない世界」Cパートアニメオリジナル映像",
+      "tidb_videos_columns_updated": [
+        "aiAnalysis",
+        "analysisVersion",
+        "analysisGeneratedAt",
+        "analysisPromptSha256"
+      ],
+      "old_analysis_version": "legacy",
+      "new_analysis_version": "v3",
+      "prompt_version": "v3.2",
+      "audit_performed": false,
+      "audit_verdict": null,
+      "created_by_pc": "CHIBA-PC",
+      "old_aiAnalysis_chars": 0,
+      "new_aiAnalysis_chars": 12201,
+      "old_aiAnalysis_sha256": "NULL",
+      "new_aiAnalysis_sha256": "fbd07490cb7af1a826fe10fd6f27f0713e84703ebe02fc95787a2725984c45f9",
+      "analysisGeneratedAt_utc": "2026-11-27 02:06:27",
+      "analysisPromptSha256": "e42b47b50400f23de0a5d84566338a3f6580149149c0ca8367dfdc487aff89b2",
+      "videoAnalysisHistory_insert": true,
+      "sqlite_scenes_old": 0,
+      "sqlite_scenes_new": 11
+    },
+    {
+      "video_id": "KWsNwfwEkYI",
+      "title": "\"sunset record\" motion graphics",
+      "tidb_videos_columns_updated": [
+        "aiAnalysis",
+        "analysisVersion",
+        "analysisGeneratedAt",
+        "analysisPromptSha256"
+      ],
+      "old_analysis_version": "legacy",
+      "new_analysis_version": "v3",
+      "prompt_version": "v3.2",
+      "audit_performed": false,
+      "audit_verdict": null,
+      "created_by_pc": "CHIBA-PC",
+      "old_aiAnalysis_chars": 0,
+      "new_aiAnalysis_chars": 9115,
+      "old_aiAnalysis_sha256": "NULL",
+      "new_aiAnalysis_sha256": "3a20ed3c7bdca3e490a2da0441be1a948b61a5302f33ea7322e6db63870d1cd9",
+      "analysisGeneratedAt_utc": "2026-11-27 02:24:17",
+      "analysisPromptSha256": "e42b47b50400f23de0a5d84566338a3f6580149149c0ca8367dfdc487aff89b2",
+      "videoAnalysisHistory_insert": true,
+      "sqlite_scenes_old": 0,
+      "sqlite_scenes_new": 7
+    },
+    {
+      "video_id": "oh_CBqywDLQ",
+      "title": "\"lazy morning\" motion graphic",
+      "tidb_videos_columns_updated": [
+        "aiAnalysis",
+        "analysisVersion",
+        "analysisGeneratedAt",
+        "analysisPromptSha256"
+      ],
+      "old_analysis_version": "legacy",
+      "new_analysis_version": "v3",
+      "prompt_version": "v3.2",
+      "audit_performed": true,
+      "audit_verdict": "合っている",
+      "created_by_pc": "CHIBA-PC",
+      "old_aiAnalysis_chars": 0,
+      "new_aiAnalysis_chars": 8647,
+      "old_aiAnalysis_sha256": "NULL",
+      "new_aiAnalysis_sha256": "7bed876437f8b8dd264ba6cd28b8d4c4d31a74b2a45840601132c5f404e10adf",
+      "analysisGeneratedAt_utc": "2026-11-27 02:24:17",
+      "analysisPromptSha256": "e42b47b50400f23de0a5d84566338a3f6580149149c0ca8367dfdc487aff89b2",
+      "videoAnalysisHistory_insert": true,
+      "sqlite_scenes_old": 0,
+      "sqlite_scenes_new": 7
+    },
+    {
+      "video_id": "67IuhtTzqGg",
+      "title": "ずっと真夜中でいいのに。『お勉強しといてよ』MV（ZUTOMAYO - STUDY ME）-STORYBOARDS",
+      "tidb_videos_columns_updated": [
+        "aiAnalysis",
+        "analysisVersion",
+        "analysisGeneratedAt",
+        "analysisPromptSha256"
+      ],
+      "old_analysis_version": "legacy",
+      "new_analysis_version": "v3",
+      "prompt_version": "v3.2",
+      "audit_performed": true,
+      "audit_verdict": "合っている",
+      "created_by_pc": "CHIBA-PC",
+      "old_aiAnalysis_chars": 0,
+      "new_aiAnalysis_chars": 12525,
+      "old_aiAnalysis_sha256": "NULL",
+      "new_aiAnalysis_sha256": "e7cf261084afbf4369d56ffa02ec1d858071755d810a8c398c5b3b6a1b7058af",
+      "analysisGeneratedAt_utc": "2026-11-27 02:24:17",
+      "analysisPromptSha256": "e42b47b50400f23de0a5d84566338a3f6580149149c0ca8367dfdc487aff89b2",
+      "videoAnalysisHistory_insert": true,
+      "sqlite_scenes_old": 0,
+      "sqlite_scenes_new": 15
+    },
+    {
+      "video_id": "Pa-bsONhIBI",
+      "title": "ずっと真夜中でいいのに。『お勉強しといてよ』MV（ZUTOMAYO - STUDY ME）メイキングムービー",
+      "tidb_videos_columns_updated": [
+        "aiAnalysis",
+        "analysisVersion",
+        "analysisGeneratedAt",
+        "analysisPromptSha256"
+      ],
+      "old_analysis_version": "legacy",
+      "new_analysis_version": "v3",
+      "prompt_version": "v3.2",
+      "audit_performed": false,
+      "audit_verdict": null,
+      "created_by_pc": "CHIBA-PC",
+      "old_aiAnalysis_chars": 0,
+      "new_aiAnalysis_chars": 14335,
+      "old_aiAnalysis_sha256": "NULL",
+      "new_aiAnalysis_sha256": "bf99d24e03ea10c8253f6c8e2a2a530d53db0d2b529acc4aa06809ea6c93d65a",
+      "analysisGeneratedAt_utc": "2026-11-27 02:24:17",
+      "analysisPromptSha256": "e42b47b50400f23de0a5d84566338a3f6580149149c0ca8367dfdc487aff89b2",
+      "videoAnalysisHistory_insert": true,
+      "sqlite_scenes_old": 0,
+      "sqlite_scenes_new": 15
+    },
+    {
+      "video_id": "hD1ZF4SBJfU",
+      "title": "”time to work“ motion graphics",
+      "tidb_videos_columns_updated": [
+        "aiAnalysis",
+        "analysisVersion",
+        "analysisGeneratedAt",
+        "analysisPromptSha256"
+      ],
+      "old_analysis_version": "legacy",
+      "new_analysis_version": "v3",
+      "prompt_version": "v3.2",
+      "audit_performed": false,
+      "audit_verdict": null,
+      "created_by_pc": "CHIBA-PC",
+      "old_aiAnalysis_chars": 0,
+      "new_aiAnalysis_chars": 8120,
+      "old_aiAnalysis_sha256": "NULL",
+      "new_aiAnalysis_sha256": "17111e94209de3833091f68e0dd219998dd7235da07cca41d1d7ead820e9e494",
+      "analysisGeneratedAt_utc": "2026-11-27 02:24:17",
+      "analysisPromptSha256": "e42b47b50400f23de0a5d84566338a3f6580149149c0ca8367dfdc487aff89b2",
+      "videoAnalysisHistory_insert": true,
+      "sqlite_scenes_old": 0,
+      "sqlite_scenes_new": 6
+    },
+    {
+      "video_id": "UVy75knel4A",
+      "title": "“Blissful Ripples” motion graphics",
+      "tidb_videos_columns_updated": [
+        "aiAnalysis",
+        "analysisVersion",
+        "analysisGeneratedAt",
+        "analysisPromptSha256"
+      ],
+      "old_analysis_version": "legacy",
+      "new_analysis_version": "v3",
+      "prompt_version": "v3.2",
+      "audit_performed": false,
+      "audit_verdict": null,
+      "created_by_pc": "CHIBA-PC",
+      "old_aiAnalysis_chars": 0,
+      "new_aiAnalysis_chars": 8406,
+      "old_aiAnalysis_sha256": "NULL",
+      "new_aiAnalysis_sha256": "2449e85d023c8e7099e543d54efc00a129d2ccb94d988ae53ea7d9c55be3f40a",
+      "analysisGeneratedAt_utc": "2026-11-27 02:24:17",
+      "analysisPromptSha256": "e42b47b50400f23de0a5d84566338a3f6580149149c0ca8367dfdc487aff89b2",
+      "videoAnalysisHistory_insert": true,
+      "sqlite_scenes_old": 0,
+      "sqlite_scenes_new": 6
+    },
+    {
+      "video_id": "Yl3J-5Xt2wM",
+      "title": "Motion Graphics CV 2026",
+      "tidb_videos_columns_updated": [
+        "aiAnalysis",
+        "analysisVersion",
+        "analysisGeneratedAt",
+        "analysisPromptSha256"
+      ],
+      "old_analysis_version": "legacy",
+      "new_analysis_version": "v3",
+      "prompt_version": "v3.2",
+      "audit_performed": true,
+      "audit_verdict": "合っている",
+      "created_by_pc": "CHIBA-PC",
+      "old_aiAnalysis_chars": 0,
+      "new_aiAnalysis_chars": 13851,
+      "old_aiAnalysis_sha256": "NULL",
+      "new_aiAnalysis_sha256": "06e8d488bff2decc4edb6883348528d17e0f56a39a2f4e76589d73ed9dd9a446",
+      "analysisGeneratedAt_utc": "2026-11-27 02:24:17",
+      "analysisPromptSha256": "e42b47b50400f23de0a5d84566338a3f6580149149c0ca8367dfdc487aff89b2",
+      "videoAnalysisHistory_insert": true,
+      "sqlite_scenes_old": 0,
+      "sqlite_scenes_new": 12
+    },
+    {
+      "video_id": "JB14-0ZrifQ",
+      "title": "SH!N — Beyond Visuals | Design & Motion Showreel",
+      "tidb_videos_columns_updated": [
+        "aiAnalysis",
+        "analysisVersion",
+        "analysisGeneratedAt",
+        "analysisPromptSha256"
+      ],
+      "old_analysis_version": "legacy",
+      "new_analysis_version": "v3",
+      "prompt_version": "v3.2",
+      "audit_performed": false,
+      "audit_verdict": null,
+      "created_by_pc": "CHIBA-PC",
+      "old_aiAnalysis_chars": 0,
+      "new_aiAnalysis_chars": 12888,
+      "old_aiAnalysis_sha256": "NULL",
+      "new_aiAnalysis_sha256": "7d717a2d03c56f0e9b13974b1a82c1c375d784bcbc70ff59567f6dd05d71a812",
+      "analysisGeneratedAt_utc": "2026-11-27 02:24:17",
+      "analysisPromptSha256": "e42b47b50400f23de0a5d84566338a3f6580149149c0ca8367dfdc487aff89b2",
+      "videoAnalysisHistory_insert": true,
+      "sqlite_scenes_old": 0,
+      "sqlite_scenes_new": 16
+    },
+    {
+      "video_id": "ufyHamnG51A",
+      "title": "Blanco15 x Teefase - \"Talk Shit\" (Official Music Video)",
+      "tidb_videos_columns_updated": [
+        "aiAnalysis",
+        "analysisVersion",
+        "analysisGeneratedAt",
+        "analysisPromptSha256"
+      ],
+      "old_analysis_version": "legacy",
+      "new_analysis_version": "v3",
+      "prompt_version": "v3.2",
+      "audit_performed": false,
+      "audit_verdict": null,
+      "created_by_pc": "CHIBA-PC",
+      "old_aiAnalysis_chars": 0,
+      "new_aiAnalysis_chars": 11926,
+      "old_aiAnalysis_sha256": "NULL",
+      "new_aiAnalysis_sha256": "91ad4db62b7eb0e6a6dfef638bd19bb2be1cde46fcbb60fdcca53de355d49d07",
+      "analysisGeneratedAt_utc": "2026-11-27 02:24:17",
+      "analysisPromptSha256": "e42b47b50400f23de0a5d84566338a3f6580149149c0ca8367dfdc487aff89b2",
+      "videoAnalysisHistory_insert": true,
+      "sqlite_scenes_old": 0,
+      "sqlite_scenes_new": 11
+    },
+    {
+      "video_id": "TS5Lsf6Q-J0",
+      "title": "Poori - ALVEDA (Official Music Video) (Directed by @AkioXo)",
+      "tidb_videos_columns_updated": [
+        "aiAnalysis",
+        "analysisVersion",
+        "analysisGeneratedAt",
+        "analysisPromptSha256"
+      ],
+      "old_analysis_version": "legacy",
+      "new_analysis_version": "v3",
+      "prompt_version": "v3.2",
+      "audit_performed": true,
+      "audit_verdict": "合っている",
+      "created_by_pc": "CHIBA-PC",
+      "old_aiAnalysis_chars": 0,
+      "new_aiAnalysis_chars": 13429,
+      "old_aiAnalysis_sha256": "NULL",
+      "new_aiAnalysis_sha256": "a1b5ef2ba949c15a8b95b2e618c0eca0035008abed9f09379a68b373faf0fbf6",
+      "analysisGeneratedAt_utc": "2026-11-27 02:24:50",
+      "analysisPromptSha256": "e42b47b50400f23de0a5d84566338a3f6580149149c0ca8367dfdc487aff89b2",
+      "videoAnalysisHistory_insert": true,
+      "sqlite_scenes_old": 0,
+      "sqlite_scenes_new": 13
+    }
+  ],
+  "simulated_pre_d_audit": {
+    "with_v3_manifest": {
+      "passed": true,
+      "rows_compared": 5653,
+      "total_cells_compared": 226120,
+      "v3_manifest_matched_count": 40,
+      "approved_overrides_matched_count": 0,
+      "all_40_original_columns_mismatches": 0,
+      "legacy_8_score_columns_mismatches": 0
+    },
+    "control_without_v3_manifest": {
+      "passed": false,
+      "all_40_original_columns_mismatches": 40
+    },
+    "control_tampered_sha256": {
+      "passed": false,
+      "all_40_original_columns_mismatches": 1,
+      "sample_mismatch": {
+        "id": "LoNrxRUGQ6U",
+        "col": "aiAnalysis",
+        "reason": "v3_manifest_sha256_mismatch",
+        "expected_v3_sha256": "612b17ae3dadaea1c3089314da2837f4149525afa508a6b92d6d3f56d478cc29",
+        "live_sha256": "a88bbb8f683510c467a28a77df9836ca99dfa78093d4f38bc7a8f8ee915a9457",
+        "backup_sha256": "NULL"
+      }
+    }
+  }
+}
+
+STDERR:
+

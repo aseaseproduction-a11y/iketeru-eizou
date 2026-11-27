@@ -9,7 +9,11 @@ import {
   loadV3CanonicalManifestMap,
   sha256TidbCellValue,
 } from "./approved-tidb-overrides.mjs";
-import { parseV3ScenesFromMarkdown } from "./apply-reanalysis-v3-to-tidb.mjs";
+import {
+  loadPinnedV3ApplyList,
+  parseV3ScenesFromMarkdown,
+  selectV3Entries,
+} from "./apply-reanalysis-v3-to-tidb.mjs";
 import { EXPRESSIVE_PURPOSE_VOCAB, validateRecipeGates } from "./publish-craft-recipe-to-store.mjs";
 
 function sha256Str(s) {
@@ -191,6 +195,203 @@ test("validateRecipeGates supports gemini_api_url_v1 track ONLY with explicit al
       allowApiRecipe: true,
     });
     assert.equal(apiRes.all_passed, true);
+  } finally {
+    fs.rmSync(td, { recursive: true, force: true });
+  }
+});
+
+test("apply-phase3-batch-to-tidb and restore-verified-excluded-status wire loadV3CanonicalManifestMap into Pre-D audit", () => {
+  const phase3Src = fs.readFileSync(new URL("./apply-phase3-batch-to-tidb.mjs", import.meta.url), "utf8");
+  const restoreSrc = fs.readFileSync(new URL("./restore-verified-excluded-status.mjs", import.meta.url), "utf8");
+  assert.match(phase3Src, /loadV3CanonicalManifestMap/);
+  assert.match(phase3Src, /v3ManifestMap:\s*v3Manifest\.valid_map/);
+  assert.match(restoreSrc, /loadV3CanonicalManifestMap/);
+  assert.match(restoreSrc, /v3ManifestMap:\s*v3Manifest\.valid_map/);
+
+  // Functional coexistence test: approved override on vid1 + v3 manifest aiAnalysis on vid2 BOTH pass Pre-D audit
+  const newBd1 = '{"visualVerificationStatus":"log_verified"}';
+  const newAna2 = "## 0. 総括\nv3本文";
+  const backupMap = new Map([
+    ["vid1", { id: "vid1", aiScoreBreakdown: "old_bd", aiAnalysis: "old1", updatedAt: "2026-11-20T00:00:00.000Z" }],
+    ["vid2", { id: "vid2", aiScoreBreakdown: "old_bd2", aiAnalysis: "old2", updatedAt: "2026-11-20T00:00:00.000Z" }],
+  ]);
+  const approvedMap = new Map([
+    [
+      "vid1::aiScoreBreakdown",
+      { video_id: "vid1", column: "aiScoreBreakdown", after_sha256: sha256TidbCellValue(newBd1), decision_id: "D-024", approved_at: "2026-11-26T00:00:00Z", status: "approved" },
+    ],
+  ]);
+  const v3Map = new Map([
+    ["vid2", { video_id: "vid2", analysis_content_sha256: sha256TidbCellValue(newAna2), mechanical_passed: true }],
+  ]);
+  const res = auditOriginalColumnsAgainstPreD({
+    liveRows: [
+      { id: "vid1", aiScoreBreakdown: newBd1, aiAnalysis: "old1", updatedAt: "2026-11-20T00:00:00.000Z" },
+      { id: "vid2", aiScoreBreakdown: "old_bd2", aiAnalysis: newAna2, updatedAt: "2026-11-20T00:00:00.000Z" },
+    ],
+    backupMap,
+    originalColumns: ["id", "aiScoreBreakdown", "aiAnalysis", "updatedAt"],
+    legacyScoreColumns: new Set(["aiScoreBreakdown", "aiAnalysis"]),
+    approvedOverrideMap: approvedMap,
+    v3ManifestMap: v3Map,
+  });
+  assert.equal(res.passed, true);
+  assert.equal(res.approved_overrides_matched_count, 1);
+  assert.equal(res.v3_manifest_matched_count, 1);
+});
+
+test("selectV3Entries --list pins exact video_ids/versions/SHA-256s regardless of new canonical folders and fails closed on drift", () => {
+  const td = fs.mkdtempSync(path.join(os.tmpdir(), "v3-pinned-list-test-"));
+  try {
+    const makeVideo = (vid, promptVer, promptSha, body) => {
+      const dir = path.join(td, vid);
+      fs.mkdirSync(dir);
+      const chk = JSON.stringify({
+        video_id: vid,
+        prompt_sha256_verified: true,
+        transcript_audit: { ok: true },
+        mechanical: { all_passed: true, scenes_count: 1, chapters_count: 11 },
+      });
+      fs.writeFileSync(path.join(dir, "analysis_v3.md"), body, "utf8");
+      fs.writeFileSync(path.join(dir, "mechanical_check.json"), chk, "utf8");
+      fs.writeFileSync(
+        path.join(dir, "manifest.json"),
+        JSON.stringify({
+          video_id: vid,
+          analysis_version: "v3",
+          prompt_version: promptVer,
+          prompt_template_sha256: promptSha,
+          created_at: "2026-11-26T15:00:00+09:00",
+          files: {
+            "analysis_v3.md": { bytes: Buffer.byteLength(body, "utf8"), sha256: sha256Str(body) },
+            "mechanical_check.json": { bytes: Buffer.byteLength(chk, "utf8"), sha256: sha256Str(chk) },
+          },
+        }),
+        "utf8"
+      );
+      return sha256Str(body);
+    };
+
+    const pSha1 = "1".repeat(64);
+    const pSha2 = "2".repeat(64);
+    // Add lexicographically earlier video "000_new" that is NOT in the pinned list
+    makeVideo("000_new", "v3.2", pSha2, "## 3. シーン\n- #01 【00:00-00:05】 新規: テスト\n");
+    const shaA = makeVideo("vid_a", "v3.1", pSha1, "## 3. シーン\n- #01 【00:00-00:05】 A: テスト\n");
+    const shaB = makeVideo("vid_b", "v3.2", pSha2, "## 3. シーン\n- #01 【00:00-00:05】 B: テスト\n");
+
+    const listPath = path.join(td, "pinned.json");
+    fs.writeFileSync(
+      listPath,
+      JSON.stringify({
+        list_id: "test_pinned",
+        entries: [
+          { video_id: "vid_b", prompt_version: "v3.2", prompt_template_sha256: pSha2, analysis_v3_sha256: shaB },
+          { video_id: "vid_a", prompt_version: "v3.1", prompt_template_sha256: pSha1, analysis_v3_sha256: shaA },
+        ],
+      }),
+      "utf8"
+    );
+
+    const v3Loaded = loadV3CanonicalManifestMap(td);
+    assert.equal(v3Loaded.valid_map.size, 3);
+    const pinnedMeta = loadPinnedV3ApplyList(listPath);
+    assert.equal(pinnedMeta.entries.length, 2);
+
+    // Exact pinned order preserved, "000_new" ignored
+    const { selectedEntries } = selectV3Entries({ v3Loaded, listPath, storeDir: td });
+    assert.deepEqual(
+      selectedEntries.map((e) => e.video_id),
+      ["vid_b", "vid_a"]
+    );
+
+    // Drift in analysis_v3_sha256 fails closed
+    const badShaList = path.join(td, "bad_sha.json");
+    fs.writeFileSync(
+      badShaList,
+      JSON.stringify({
+        entries: [{ video_id: "vid_a", prompt_version: "v3.1", prompt_template_sha256: pSha1, analysis_v3_sha256: "f".repeat(64) }],
+      }),
+      "utf8"
+    );
+    assert.throws(() => selectV3Entries({ v3Loaded, listPath: badShaList, storeDir: td }), /analysis_v3\.md SHA-256 mismatch/);
+
+    // Drift in prompt_template_sha256 fails closed
+    const badPromptList = path.join(td, "bad_prompt.json");
+    fs.writeFileSync(
+      badPromptList,
+      JSON.stringify({
+        entries: [{ video_id: "vid_a", prompt_version: "v3.1", prompt_template_sha256: pSha2, analysis_v3_sha256: shaA }],
+      }),
+      "utf8"
+    );
+    assert.throws(() => selectV3Entries({ v3Loaded, listPath: badPromptList, storeDir: td }), /prompt_template_sha256 mismatch/);
+
+    // Drift in prompt_version fails closed
+    const badVerList = path.join(td, "bad_ver.json");
+    fs.writeFileSync(
+      badVerList,
+      JSON.stringify({
+        entries: [{ video_id: "vid_a", prompt_version: "v3.2", prompt_template_sha256: pSha1, analysis_v3_sha256: shaA }],
+      }),
+      "utf8"
+    );
+    assert.throws(() => selectV3Entries({ v3Loaded, listPath: badVerList, storeDir: td }), /prompt_version mismatch/);
+  } finally {
+    fs.rmSync(td, { recursive: true, force: true });
+  }
+});
+
+test("loadV3CanonicalManifestMap includes underscore-prefixed YouTube IDs and excludes only _docs, _prompts, and dirs without manifest.json", () => {
+  const td = fs.mkdtempSync(path.join(os.tmpdir(), "v3-underscore-ids-test-"));
+  try {
+    const makeValidVideo = (vid) => {
+      const dir = path.join(td, vid);
+      fs.mkdirSync(dir);
+      const body = "## 0. 総括\n本文\n## 3. シーン\n- #01 【00:00-00:05】 導入: テスト\n";
+      const chk = JSON.stringify({
+        video_id: vid,
+        prompt_sha256_verified: true,
+        transcript_audit: { ok: true },
+        mechanical: { all_passed: true, scenes_count: 1, chapters_count: 11 },
+      });
+      fs.writeFileSync(path.join(dir, "analysis_v3.md"), body, "utf8");
+      fs.writeFileSync(path.join(dir, "mechanical_check.json"), chk, "utf8");
+      fs.writeFileSync(
+        path.join(dir, "manifest.json"),
+        JSON.stringify({
+          video_id: vid,
+          analysis_version: "v3",
+          prompt_version: "v3.2",
+          prompt_template_sha256: "e".repeat(64),
+          created_at: "2026-11-27T00:00:00+09:00",
+          files: {
+            "analysis_v3.md": { bytes: Buffer.byteLength(body, "utf8"), sha256: sha256Str(body) },
+            "mechanical_check.json": { bytes: Buffer.byteLength(chk, "utf8"), sha256: sha256Str(chk) },
+          },
+        }),
+        "utf8"
+      );
+    };
+
+    // Real underscore-prefixed YouTube IDs MUST be loaded
+    makeValidVideo("_F6oRAbEoLY");
+    makeValidVideo("_-nLBLtidZ4");
+    makeValidVideo("normalVid01");
+
+    // _docs and _prompts MUST be excluded even if they contain manifest.json
+    for (const metaDir of ["_docs", "_prompts"]) {
+      const p = path.join(td, metaDir);
+      fs.mkdirSync(p);
+      fs.writeFileSync(path.join(p, "manifest.json"), JSON.stringify({ note: "meta manifest" }), "utf8");
+    }
+
+    // Directories without manifest.json MUST be skipped (not rejected)
+    fs.mkdirSync(path.join(td, "_scratch_no_manifest"));
+    fs.mkdirSync(path.join(td, "partial_dir_no_manifest"));
+
+    const loaded = loadV3CanonicalManifestMap(td);
+    assert.deepEqual(Array.from(loaded.valid_map.keys()).sort(), ["_-nLBLtidZ4", "_F6oRAbEoLY", "normalVid01"]);
+    assert.equal(loaded.rejected.length, 0);
   } finally {
     fs.rmSync(td, { recursive: true, force: true });
   }

@@ -140,6 +140,14 @@ function normalizeTidbRow(row) {
     calibratedRunId: row.calibratedRunId ?? null,
     calibrationGenreBucket: row.calibrationGenreBucket ?? null,
     analysisObservationScope: row.analysisObservationScope ?? null,
+    analysisVersion: row.analysisVersion ? String(row.analysisVersion) : "legacy",
+    analysisGeneratedAt:
+      row.analysisGeneratedAt == null
+        ? null
+        : row.analysisGeneratedAt instanceof Date
+          ? row.analysisGeneratedAt.toISOString()
+          : String(row.analysisGeneratedAt),
+    analysisPromptSha256: row.analysisPromptSha256 ? String(row.analysisPromptSha256) : null,
   };
 }
 
@@ -158,10 +166,13 @@ backup_path = sys.argv[5] if len(sys.argv) > 5 and sys.argv[5] else None
 
 sys.path.insert(0, studio_root)
 from iketeru_studio.indexer import (
+    ANALYSIS_V3_COLUMNS,
     CALIBRATION_COLUMNS,
     OBSERVATION_SCOPE_COLUMNS,
     KnowledgeIndex,
     classify_observation_scope,
+    parse_analysis_sections,
+    parse_scenes,
 )
 
 tidb_rows = []
@@ -196,8 +207,9 @@ sqlite_only_ids = sorted(pre_ids - tidb_ids)
 
 cal_col_names = [c[0] for c in CALIBRATION_COLUMNS]
 obs_col_names = [c[0] for c in OBSERVATION_SCOPE_COLUMNS]
-managed_col_names = set(cal_col_names) | set(obs_col_names)
-missing_cal_cols = [c for c in [*cal_col_names, *obs_col_names] if c not in pre_cols]
+v3_col_names = [c[0] for c in ANALYSIS_V3_COLUMNS]
+managed_col_names = set(cal_col_names) | set(obs_col_names) | set(v3_col_names)
+missing_cal_cols = [c for c in [*cal_col_names, *obs_col_names, *v3_col_names] if c not in pre_cols]
 
 tidb_cal_status_counts = {}
 tidb_calibrated_ids = []
@@ -236,10 +248,19 @@ idx = KnowledgeIndex(db_path=sqlite_path)
 sync_ts_iso = datetime.now(timezone.utc).isoformat()
 
 with idx._session() as con:
-    # 1. Shared rows: update ONLY the 10 calibration_* columns + analysis_observation_scope (0 mutations to existing 34 columns)
+    # 1. Shared rows: update the 10 calibration_* columns + analysis_observation_scope + 3 analysis v3 columns;
+    #    and when analysisVersion == 'v3', also mirror updated ai_analysis, sections_json, client_pitch, FTS & scenes.
     shared_updates = []
+    v3_analysis_updated_ids = []
+    existing_ai_by_id = {
+        r["id"]: (r["ai_analysis"] or "", r["title"] or "")
+        for r in con.execute("SELECT id, ai_analysis, title FROM videos").fetchall()
+    }
     for vid in shared_ids:
         r = tidb_by_id[vid]
+        ana_ver = r.get("analysisVersion") or "legacy"
+        ana_gen_at = r.get("analysisGeneratedAt")
+        ana_prompt_sha = r.get("analysisPromptSha256")
         shared_updates.append(
             (
                 r.get("calibrationStatus"),
@@ -253,6 +274,9 @@ with idx._session() as con:
                 r.get("calibratedRunId"),
                 r.get("calibrationGenreBucket"),
                 r.get("analysisObservationScope"),
+                ana_ver,
+                ana_gen_at,
+                ana_prompt_sha,
                 vid,
             )
         )
@@ -269,11 +293,69 @@ with idx._session() as con:
             calibrated_route = ?,
             calibrated_run_id = ?,
             calibration_genre_bucket = ?,
-            analysis_observation_scope = ?
+            analysis_observation_scope = ?,
+            analysis_version = ?,
+            analysis_generated_at = ?,
+            analysis_prompt_sha256 = ?
         WHERE id = ?
         """,
         shared_updates,
     )
+
+    # Mirror v3 ai_analysis + parsed sections/client_pitch/scenes/FTS for shared rows whose TiDB analysisVersion == 'v3'
+    for vid in shared_ids:
+        r = tidb_by_id[vid]
+        if (r.get("analysisVersion") or "legacy") != "v3":
+            continue
+        new_ai = (r.get("aiAnalysis") or "").strip()
+        cur_ai, cur_title = existing_ai_by_id.get(vid, ("", ""))
+        if not new_ai or new_ai == cur_ai.strip():
+            continue
+        sections = parse_analysis_sections(new_ai)
+        pitch = (sections.get("clientPitch") or "").strip()
+        has_full = 1 if (len(new_ai) >= 2000 and "ch3" in sections) else 0
+        con.execute(
+            """
+            UPDATE videos
+            SET ai_analysis = ?,
+                sections_json = ?,
+                client_pitch = CASE WHEN ? != '' THEN ? ELSE client_pitch END,
+                has_full_analysis = MAX(?, has_full_analysis)
+            WHERE id = ?
+            """,
+            (new_ai, json.dumps(sections, ensure_ascii=False), pitch, pitch, has_full, vid),
+        )
+        # Update videos_fts analysis_text & pitch_text
+        fts_row = con.execute(
+            "SELECT title, taxonomy_text, tags_text, credits_text, pitch_text FROM videos_fts WHERE video_id = ?",
+            (vid,),
+        ).fetchone()
+        if fts_row:
+            con.execute("DELETE FROM videos_fts WHERE video_id = ?", (vid,))
+            con.execute(
+                "INSERT INTO videos_fts (video_id, title, taxonomy_text, tags_text, credits_text, pitch_text, analysis_text) VALUES (?, ?, ?, ?, ?, ?, ?)",
+                (vid, fts_row["title"], fts_row["taxonomy_text"], fts_row["tags_text"], fts_row["credits_text"], pitch or fts_row["pitch_text"], new_ai),
+            )
+        # Replace scenes & scenes_fts for this video_id
+        new_scenes = parse_scenes(new_ai)
+        if new_scenes:
+            con.execute("DELETE FROM scenes WHERE video_id = ?", (vid,))
+            con.execute("DELETE FROM scenes_fts WHERE video_id = ?", (vid,))
+            vtitle = r.get("title") or cur_title or ""
+            for s in new_scenes:
+                con.execute(
+                    """
+                    INSERT INTO scenes (
+                        video_id, shot_index, start_mmss, end_mmss, start_sec, end_sec, duration_sec, shot_title, description
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    """,
+                    (vid, s["shot_index"], s["start_mmss"], s["end_mmss"], s["start_sec"], s["end_sec"], s["duration_sec"], s["shot_title"], s["description"]),
+                )
+                con.execute(
+                    "INSERT INTO scenes_fts (video_id, shot_index, video_title, shot_title, description) VALUES (?, ?, ?, ?, ?)",
+                    (vid, s["shot_index"], vtitle, s["shot_title"], s["description"]),
+                )
+        v3_analysis_updated_ids.append(vid)
 
     # 2. TiDB-only rows: insert cleanly via KnowledgeIndex.upsert_video (preserves all 10 calibration + observation_scope columns + FTS + scenes)
     for vid in tidb_only_ids:
@@ -339,7 +421,8 @@ for row in con.execute(
     SELECT id, calibration_status, calibrated_score, calibrated_rank, calibrated_tier_band,
            calibrated_breakdown_json, calibration_version, calibrated_at,
            calibrated_route, calibrated_run_id, calibration_genre_bucket,
-           analysis_observation_scope
+           analysis_observation_scope,
+           analysis_version, analysis_generated_at, analysis_prompt_sha256, ai_analysis
     FROM videos
     """
 ).fetchall():
@@ -370,7 +453,12 @@ for vid, t in tidb_by_id.items():
         ("calibrated_run_id", t.get("calibratedRunId"), s["calibrated_run_id"]),
         ("calibration_genre_bucket", t.get("calibrationGenreBucket"), s["calibration_genre_bucket"]),
         ("analysis_observation_scope", t.get("analysisObservationScope"), s["analysis_observation_scope"]),
+        ("analysis_version", t.get("analysisVersion") or "legacy", s["analysis_version"]),
+        ("analysis_generated_at", t.get("analysisGeneratedAt"), s["analysis_generated_at"]),
+        ("analysis_prompt_sha256", t.get("analysisPromptSha256"), s["analysis_prompt_sha256"]),
     ]
+    if (t.get("analysisVersion") or "legacy") == "v3":
+        pairs.append(("ai_analysis", (t.get("aiAnalysis") or "").strip(), (s["ai_analysis"] or "").strip()))
     for fname, tv, sv in pairs:
         if tv != sv:
             diffs.append({"field": fname, "tidb": tv, "sqlite": sv})
@@ -434,6 +522,8 @@ if backup_path and os.path.exists(backup_path):
     cur_now = con.execute(f"SELECT {cols_sql} FROM videos WHERE id IN ({','.join('?' for _ in pre_ids)}) ORDER BY id ASC", sorted(pre_ids))
     bak_rows_checked = 0
     legacy_diffs = []
+    v3_updated_set = set(v3_analysis_updated_ids)
+    v3_allowed_cols = {"ai_analysis", "sections_json", "client_pitch", "has_full_analysis"}
     for br, nr in zip(cur_bak, cur_now):
         bak_rows_checked += 1
         if br["id"] != nr["id"]:
@@ -442,6 +532,8 @@ if backup_path and os.path.exists(backup_path):
                 break
             continue
         for c in bak_cols:
+            if br["id"] in v3_updated_set and c in v3_allowed_cols:
+                continue
             if br[c] != nr[c]:
                 legacy_diffs.append({"id": br["id"], "column": c})
                 if len(legacy_diffs) >= 10:
@@ -462,6 +554,8 @@ con.close()
 result["apply"] = {
     "syncTimestampUtc": sync_ts_iso,
     "sharedRowsUpdated": len(shared_updates),
+    "v3AnalysisUpdatedCount": len(v3_analysis_updated_ids),
+    "v3AnalysisUpdatedIdsSample": v3_analysis_updated_ids[:20],
     "tidbOnlyRowsInserted": len(tidb_only_ids),
     "sqliteOnlyRowsPreserved": len(sqlite_only_ids),
     "sqliteOnlyRowsTagged": sqlite_only_tagged,
@@ -481,7 +575,7 @@ result["verification"] = {
     "zeroDeletions": len(missing_sqlite_only) == 0 and post_counts["videos"] == len(pre_ids) + len(tidb_only_ids),
     "missingSqliteOnlyIds": missing_sqlite_only,
     "missingTidbOnlyIds": missing_tidb_only,
-    "scenesNonRegressing": post_counts["scenes"] >= pre_counts["scenes"],
+    "scenesNonRegressing": (post_counts["scenes"] >= pre_counts["scenes"]) if len(v3_analysis_updated_ids) == 0 else (post_counts["scenes"] > 0),
     "craftRecipesUnchanged": post_counts["craft_recipes"] == pre_counts["craft_recipes"],
     "tidbAllRowsChecked": checked_all,
     "tidbAllRowsMismatchCount": len(cal_mismatches_all),
@@ -540,6 +634,14 @@ async function main() {
           : String(preRows[0].max_upd),
     };
 
+    const [v3ColRows] = await conn.query(
+      "SELECT COLUMN_NAME FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'videos' AND COLUMN_NAME IN ('analysisVersion', 'analysisGeneratedAt', 'analysisPromptSha256')"
+    );
+    const v3ColsPresent = new Set(v3ColRows.map((r) => String(r.COLUMN_NAME)));
+    const selAnalysisVersion = v3ColsPresent.has("analysisVersion") ? "analysisVersion" : "'legacy' AS analysisVersion";
+    const selAnalysisGeneratedAt = v3ColsPresent.has("analysisGeneratedAt") ? "analysisGeneratedAt" : "NULL AS analysisGeneratedAt";
+    const selAnalysisPromptSha256 = v3ColsPresent.has("analysisPromptSha256") ? "analysisPromptSha256" : "NULL AS analysisPromptSha256";
+
     const [rows] = await conn.query(`
       SELECT
         id, platform, title, videoUrl, source, sourceLabel, channelTitle, addedDate,
@@ -551,7 +653,8 @@ async function main() {
         calibratedBreakdown, calibrationVersion,
         UNIX_TIMESTAMP(calibratedAt) AS calibratedAtEpoch,
         calibratedRoute, calibratedRunId, calibrationGenreBucket,
-        analysisObservationScope
+        analysisObservationScope,
+        ${selAnalysisVersion}, ${selAnalysisGeneratedAt}, ${selAnalysisPromptSha256}
       FROM videos
       ORDER BY id ASC
     `);
