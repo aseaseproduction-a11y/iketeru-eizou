@@ -1,5 +1,4 @@
-import { describe, expect, it } from "vitest";
-import { beforeEach, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 vi.mock("./db", () => ({
   getAllVideos: vi.fn(async () => []),
@@ -53,9 +52,33 @@ function createAuthContext(): { ctx: TrpcContext; clearedCookies: CookieCall[] }
   return { ctx, clearedCookies };
 }
 
-function createGuestContext(): TrpcContext {
+function createGuestContext(headers: Record<string, string> = {}): TrpcContext {
   return {
     user: null,
+    req: {
+      protocol: "https",
+      headers,
+    } as TrpcContext["req"],
+    res: {
+      clearCookie: () => undefined,
+    } as TrpcContext["res"],
+  };
+}
+
+function createEditorContext(overrides: Partial<AuthenticatedUser> = {}): TrpcContext {
+  return {
+    user: {
+      id: 2,
+      openId: "editor-user",
+      email: "editor@atsu-maru.co.jp",
+      name: "Editor User",
+      loginMethod: "oauth",
+      role: "user",
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      lastSignedIn: new Date(),
+      ...overrides,
+    },
     req: {
       protocol: "https",
       headers: {},
@@ -86,11 +109,14 @@ describe("auth.logout", () => {
   });
 });
 
-describe("videos public editing", () => {
+describe("videos write-protected editing", () => {
+  const TEST_ADMIN_KEY = "test-admin-api-key-independent-of-env";
+  let prevAdminApiKey: string | undefined;
+
   const videoInput = {
     id: "sample-video",
     platform: "youtube" as const,
-    title: "公開編集テスト動画",
+    title: "編集権限テスト動画",
     thumbnail: "",
     videoUrl: "https://www.youtube.com/watch?v=abcdefghijk",
     embedUrl: "",
@@ -114,19 +140,44 @@ describe("videos public editing", () => {
   };
 
   beforeEach(() => {
+    prevAdminApiKey = process.env.ADMIN_API_KEY;
+    process.env.ADMIN_API_KEY = TEST_ADMIN_KEY;
     vi.mocked(getVideoById).mockReset();
     vi.mocked(getVideoById).mockResolvedValue(null);
   });
 
-  it("permits video creation without an authenticated user", async () => {
+  afterEach(() => {
+    if (prevAdminApiKey === undefined) {
+      delete process.env.ADMIN_API_KEY;
+    } else {
+      process.env.ADMIN_API_KEY = prevAdminApiKey;
+    }
+  });
+
+  it("rejects video write mutations from an unauthenticated guest (independent of .env)", async () => {
+    delete process.env.ADMIN_API_KEY;
     const caller = appRouter.createCaller(createGuestContext());
+
+    await expect(caller.videos.create(videoInput)).rejects.toMatchObject({
+      code: "UNAUTHORIZED",
+    });
+    await expect(caller.videos.update({ ...videoInput, title: "更新済み動画" })).rejects.toMatchObject({
+      code: "UNAUTHORIZED",
+    });
+    await expect(caller.videos.delete({ id: "sample-video" })).rejects.toMatchObject({
+      code: "UNAUTHORIZED",
+    });
+  });
+
+  it("permits video creation for an authorized @atsu-maru.co.jp editor", async () => {
+    const caller = appRouter.createCaller(createEditorContext());
 
     await expect(caller.videos.create(videoInput)).resolves.toBeNull();
   });
 
   it("rejects a duplicate video before attempting a database insert", async () => {
     vi.mocked(getVideoById).mockResolvedValue({ id: videoInput.id } as never);
-    const caller = appRouter.createCaller(createGuestContext());
+    const caller = appRouter.createCaller(createEditorContext());
 
     await expect(caller.videos.create(videoInput)).rejects.toMatchObject({
       code: "CONFLICT",
@@ -134,14 +185,18 @@ describe("videos public editing", () => {
     });
   });
 
-  it("permits video updates without an authenticated user", async () => {
-    const caller = appRouter.createCaller(createGuestContext());
+  it("permits video updates with a valid x-admin-api-key header", async () => {
+    const caller = appRouter.createCaller(
+      createGuestContext({ "x-admin-api-key": TEST_ADMIN_KEY })
+    );
 
     await expect(caller.videos.update({ ...videoInput, title: "更新済み動画" })).resolves.toBeNull();
   });
 
-  it("permits video deletion without an authenticated user", async () => {
-    const caller = appRouter.createCaller(createGuestContext());
+  it("permits video deletion for an admin user", async () => {
+    const caller = appRouter.createCaller(
+      createEditorContext({ role: "admin", email: "admin@example.com" })
+    );
 
     await expect(caller.videos.delete({ id: "sample-video" })).resolves.toEqual({ success: true });
   });

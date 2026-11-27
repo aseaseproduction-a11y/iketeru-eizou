@@ -4,14 +4,18 @@ import { getMainCreatorName, formatSourceLabel } from "./VideoCard";
 import type { Video } from "@/lib/types";
 
 describe("VideoCard AI評価表示", () => {
-  it("評価済み動画の総合・ディレクション・技術評価を要約バッジで表示する", () => {
+  it("評価済み動画の校正スコアまたは旧AI評価（総合・演出・技術）を要約バッジで表示する", () => {
     const source = readFileSync(new URL("./VideoCard.tsx", import.meta.url), "utf8");
 
     expect(source).toContain('shortLabel: "総"');
     expect(source).toContain('shortLabel: "演"');
     expect(source).toContain('shortLabel: "技"');
-    expect(source).toContain("{aiRatings.length > 0 && (");
+    expect(source).toContain("{(hasCalibrated || aiRatings.length > 0 || isLegacyUncalibrated) && (");
+    expect(source).toContain("{hasCalibrated && (");
+    expect(source).toContain("{!hasCalibrated && aiRatings.map((rating) => (");
     expect(source).toContain('aria-label="AI評価"');
+    expect(source).toContain('data-testid="video-v3-analysis-badge"');
+    expect(source).toContain('data-testid="video-legacy-analysis-badge"');
   });
 
   it("X・TikTok・Instagramなど外部媒体の種別バッジを表示できる", () => {
