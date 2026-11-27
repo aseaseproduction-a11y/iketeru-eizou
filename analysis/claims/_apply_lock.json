@@ -1,12 +1,13 @@
 {
   "schema_version": 1,
-  "status": "unlocked",
+  "status": "locked",
   "worker": null,
-  "run_id": null,
+  "run_id": "v3_apply_delta_20261127_r4",
   "started_at": null,
   "last_worker": "chibatmute",
   "last_run_id": "v3_apply_delta_20261127_r3",
   "last_started_at": "2026-11-27T09:40:50.000Z",
-  "released_at": "2026-11-27T09:43:24.283Z",
-  "released_by": "chibatmute"
+  "locked_by": "chibatmute",
+  "locked_at": "2026-11-27T19:37:36+09:00",
+  "purpose": "Routine delta apply of 50 newly verified v3.2 analyses to TiDB (659 -> 709)"
 }
