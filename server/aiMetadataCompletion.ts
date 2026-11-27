@@ -10,7 +10,7 @@ import {
   TONE_OPTIONS,
   toCategoryNameMap,
 } from "@shared/metadataOptions";
-import { getDb, selectAllRawVideosSafe } from "./db";
+import { getDb } from "./db";
 import { sdk } from "./_core/sdk";
 
 const JOB_ID = "ai_metadata_completion";
@@ -190,7 +190,7 @@ export async function runAiMetadataCompletion(req: Request, res: Response) {
       });
       return res.json({ ok: true, skipped: "model_backoff", retryAfter: job.retryAfter?.toISOString() ?? null });
     }
-    const rows = await selectAllRawVideosSafe(db);
+    const rows = await db.select().from(videos);
     const selected = selectUnprocessedAiInputs(rows, job.batchSize);
     const [run] = await db.insert(aiMetadataCompletionRuns).values({ taskUid, status: "running", selectedCount: selected.length }).$returningId(); runId = run.id;
     const details: any[] = []; let savedValueCount = 0; let analyzedCount = 0;
