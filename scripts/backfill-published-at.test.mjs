@@ -5,16 +5,30 @@ import {
   buildDownloadExcludeListPayload,
   classifyYouTubeApiBatch,
   normalizeToMysqlDatetimeUtc,
+  normalizeVimeoUploadDateToUtc,
   parseArgs,
   verifyApplyLockState,
 } from "./backfill-published-at.mjs";
 
-test("normalizeToMysqlDatetimeUtc converts ISO-8601 and Vimeo oEmbed upload_date cleanly", () => {
-  assert.equal(normalizeToMysqlDatetimeUtc("2024-08-26 21:42:00"), "2024-08-26 21:42:00");
+test("normalizeToMysqlDatetimeUtc converts YouTube ISO-8601 UTC and offset timestamps cleanly", () => {
   assert.equal(normalizeToMysqlDatetimeUtc("2024-10-11T01:03:05Z"), "2024-10-11 01:03:05");
   assert.equal(normalizeToMysqlDatetimeUtc("2024-10-11T10:03:05+09:00"), "2024-10-11 01:03:05");
   assert.equal(normalizeToMysqlDatetimeUtc(""), null);
   assert.equal(normalizeToMysqlDatetimeUtc("not-a-date"), null);
+});
+
+test("normalizeVimeoUploadDateToUtc converts America/New_York (EDT UTC-4 / EST UTC-5) to exact UTC", () => {
+  // Empirically verified against Vimeo video page JSON-LD uploadDate (+00:00):
+  // 1003005012 (summer EDT, UTC-4 -> +4h)
+  assert.equal(normalizeVimeoUploadDateToUtc("2024-08-26 21:42:00"), "2024-08-27 01:42:00");
+  // 100398359 (summer EDT, UTC-4 -> +4h)
+  assert.equal(normalizeVimeoUploadDateToUtc("2014-07-10 06:37:37"), "2014-07-10 10:37:37");
+  // 1032202784 (winter EST, UTC-5 -> +5h)
+  assert.equal(normalizeVimeoUploadDateToUtc("2024-11-21 23:49:36"), "2024-11-22 04:49:36");
+  // Explicit ISO offset passes through cleanly
+  assert.equal(normalizeVimeoUploadDateToUtc("2024-08-27T01:42:00+00:00"), "2024-08-27 01:42:00");
+  assert.equal(normalizeVimeoUploadDateToUtc(""), null);
+  assert.equal(normalizeVimeoUploadDateToUtc("invalid"), null);
 });
 
 test("classifyYouTubeApiBatch distinguishes public, unlisted, private, upload_deleted, and missing IDs", () => {

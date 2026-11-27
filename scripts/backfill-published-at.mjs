@@ -41,33 +41,82 @@ export const YOUTUBE_BATCH_SIZE = 50;
 export const PUBLISHED_AT_UPDATE_SQL =
   "UPDATE `videos` SET `publishedAt` = ?, `updatedAt` = `updatedAt` WHERE `id` = ? AND `publishedAt` IS NULL";
 
+export const VIMEO_OEMBED_TIMEZONE = "America/New_York";
+
+function formatMysqlDatetimeUtc(dt) {
+  const pad = (n) => String(n).padStart(2, "0");
+  return (
+    `${dt.getUTCFullYear()}-${pad(dt.getUTCMonth() + 1)}-${pad(dt.getUTCDate())} ` +
+    `${pad(dt.getUTCHours())}:${pad(dt.getUTCMinutes())}:${pad(dt.getUTCSeconds())}`
+  );
+}
+
+function getTimeZoneWallClockAsUtcMs(utcMs, timeZone) {
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hourCycle: "h23",
+  }).formatToParts(new Date(utcMs));
+  const map = {};
+  for (const p of parts) {
+    if (p.type !== "literal") map[p.type] = Number(p.value);
+  }
+  const hour = map.hour === 24 ? 0 : map.hour;
+  return Date.UTC(map.year, map.month - 1, map.day, hour, map.minute, map.second);
+}
+
 /**
- * Normalize ISO-8601 (`2024-08-26T21:42:00Z`) or Vimeo (`2024-08-26 21:42:00`) timestamp
- * into MySQL/TiDB DATETIME UTC string `YYYY-MM-DD HH:MM:SS`.
+ * Convert Vimeo oEmbed `upload_date` (which Vimeo returns in `America/New_York` EST/EDT
+ * without an offset suffix, verified empirically against Vimeo JSON-LD `uploadDate` in UTC:
+ * summer EDT = UTC-4, winter EST = UTC-5) into true UTC MySQL DATETIME `YYYY-MM-DD HH:MM:SS`.
+ * If the string already contains an explicit timezone offset (`Z` or `±HH:MM`), parses as ISO-8601 directly.
+ */
+export function normalizeVimeoUploadDateToUtc(raw, timeZone = VIMEO_OEMBED_TIMEZONE) {
+  if (!raw || typeof raw !== "string") return null;
+  const trimmed = raw.trim();
+  if (!trimmed) return null;
+
+  if (/(?:Z|[+-]\d{2}:?\d{2})$/i.test(trimmed)) {
+    return normalizeToMysqlDatetimeUtc(trimmed);
+  }
+
+  const m = trimmed.match(/^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2}):(\d{2})$/);
+  if (!m) return null;
+
+  const year = Number(m[1]);
+  const month = Number(m[2]);
+  const day = Number(m[3]);
+  const hour = Number(m[4]);
+  const minute = Number(m[5]);
+  const second = Number(m[6]);
+  const wallTargetMs = Date.UTC(year, month - 1, day, hour, minute, second);
+  if (!Number.isFinite(wallTargetMs)) return null;
+
+  // Two-pass IANA offset refinement (accurate across DST boundaries)
+  const offset1 = getTimeZoneWallClockAsUtcMs(wallTargetMs, timeZone) - wallTargetMs;
+  const utc1 = wallTargetMs - offset1;
+  const offset2 = getTimeZoneWallClockAsUtcMs(utc1, timeZone) - utc1;
+  const utcFinal = wallTargetMs - offset2;
+  return formatMysqlDatetimeUtc(new Date(utcFinal));
+}
+
+/**
+ * Normalize ISO-8601 timestamp with explicit timezone (e.g. YouTube `snippet.publishedAt`:
+ * `2024-10-11T01:03:05Z` or `2024-10-11T10:03:05+09:00`) into MySQL/TiDB DATETIME UTC `YYYY-MM-DD HH:MM:SS`.
  */
 export function normalizeToMysqlDatetimeUtc(raw) {
   if (!raw || typeof raw !== "string") return null;
   const trimmed = raw.trim();
   if (!trimmed) return null;
 
-  // Vimeo oEmbed format: "YYYY-MM-DD HH:MM:SS" (already UTC/EST-like date string)
-  const mysqlMatch = trimmed.match(/^(\d{4}-\d{2}-\d{2})[ T](\d{2}:\d{2}:\d{2})$/);
-  if (mysqlMatch) {
-    const dt = new Date(`${mysqlMatch[1]}T${mysqlMatch[2]}Z`);
-    if (!Number.isNaN(dt.getTime())) {
-      return `${mysqlMatch[1]} ${mysqlMatch[2]}`;
-    }
-    return null;
-  }
-
-  // ISO-8601 (e.g. YouTube snippet.publishedAt: "2024-10-11T01:03:05Z")
   const dt = new Date(trimmed);
   if (Number.isNaN(dt.getTime())) return null;
-  const pad = (n) => String(n).padStart(2, "0");
-  return (
-    `${dt.getUTCFullYear()}-${pad(dt.getUTCMonth() + 1)}-${pad(dt.getUTCDate())} ` +
-    `${pad(dt.getUTCHours())}:${pad(dt.getUTCMinutes())}:${pad(dt.getUTCSeconds())}`
-  );
+  return formatMysqlDatetimeUtc(dt);
 }
 
 /**
@@ -283,7 +332,13 @@ async function runVimeo(conn, opts, hasPublishedAtCol) {
   for (const row of targets) {
     const id = String(row.id);
     if (cached.has(id)) {
-      results.push(cached.get(id));
+      const c = cached.get(id);
+      const publishedAt = c.upload_date ? normalizeVimeoUploadDateToUtc(c.upload_date) : null;
+      results.push({
+        ...c,
+        ok: Boolean(publishedAt),
+        publishedAt,
+      });
       continue;
     }
     const wait = opts.intervalMs - (Date.now() - lastReqAt);
@@ -300,7 +355,7 @@ async function runVimeo(conn, opts, hasPublishedAtCol) {
       });
       if (res.ok) {
         const data = await res.json();
-        const publishedAt = normalizeToMysqlDatetimeUtc(data.upload_date ?? null);
+        const publishedAt = normalizeVimeoUploadDateToUtc(data.upload_date ?? null);
         entry = {
           id,
           title: String(row.title || "").slice(0, 60),
