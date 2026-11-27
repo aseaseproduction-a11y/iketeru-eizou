@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-11-27",
+  "task_name": "new_videos_20261127",
+  "purpose": "chibatmute craft_v2_with_v3 candidate list (calibratedScore >= 78); NOT claimed by CHIBA-PC",
+  "threshold": 78.0,
+  "count": 1,
+  "candidates": [
+    {
+      "id": "ASBLP4AI1Ok",
+      "title": "TVアニメ『SPY×FAMILY』Season 3／MISSION:50「生き残れない世界」Cパートアニメオリジナル映像",
+      "platform": "youtube",
+      "duration_sec": null,
+      "addedDate": "2026-11-21",
+      "calibratedScore": 83.5,
+      "calibratedRank": "A",
+      "calibratedTierBand": "award_tier",
+      "calibrationStatus": "calibrated_unverified_genre",
+      "calibratedRoute": "video_h1",
+      "v3_manifest_path": "G:\\マイドライブ\\iketeru_analysis_v3\\ASBLP4AI1Ok\\manifest.json"
+    }
+  ]
+}
