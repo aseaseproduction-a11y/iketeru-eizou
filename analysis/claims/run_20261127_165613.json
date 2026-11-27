@@ -9,7 +9,7 @@
     "cached_only": true,
     "verify_media": true
   },
-  "status": "active",
+  "status": "completed",
   "claimed_at": "2026-11-27T07:56:31.173Z",
   "video_ids": [
     "bKA-ePajnTY",
@@ -30,5 +30,6 @@
     "W73yqEnXBmA",
     "XPm7zy-X_fI",
     "xz7dvSS2lI8"
-  ]
+  ],
+  "completed_at": "2026-11-27T08:30:56.673Z"
 }
