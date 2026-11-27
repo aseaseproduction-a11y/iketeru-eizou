@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "status": "unlocked",
-  "worker": null,
-  "run_id": null,
-  "started_at": null,
+  "status": "locked",
+  "worker": "CHIBA-PC2",
+  "run_id": "ddl_and_backfill_published_at_vimeo_20261127",
+  "started_at": "2026-11-27T06:43:40.775Z",
   "last_worker": "chibatmute",
   "last_run_id": "v3_apply_delta_20261127_r1",
   "last_started_at": "2026-11-27T06:39:04.000Z",
