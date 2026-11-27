@@ -1481,7 +1481,8 @@ function parseVideoRow(row) {
     embedStatus: row.embedStatus ?? "unknown",
     embedReason: row.embedReason ?? "",
     embedCheckedAt: row.embedCheckedAt?.toISOString() ?? "",
-    addedDate: row.addedDate ?? ""
+    addedDate: row.addedDate ?? "",
+    createdAt: row.createdAt instanceof Date ? row.createdAt.toISOString() : typeof row.createdAt === "string" ? row.createdAt : null
   };
 }
 function isProvisionalFromBreakdown(aiScoreBreakdown) {

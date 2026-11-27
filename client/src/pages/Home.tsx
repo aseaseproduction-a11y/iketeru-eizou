@@ -16,6 +16,13 @@ import InspirationMode from "@/components/InspirationMode";
 import SceneCard from "@/components/SceneCard";
 import { searchScenes, loadSceneIndex, filterFallbackScenes, getSceneKeywordCategories, parseQueryWords, type SceneItem, type SceneSearchResult, type KeywordCategory, type SceneScoreFilter } from "@/lib/sceneSearch";
 import { useVideos } from "@/hooks/useVideos";
+import {
+  getSortDirectionLabels,
+  SORT_KEY_LABELS,
+  type ActiveSortKey,
+  type SecondarySortKey,
+  type SortDirection,
+} from "@/lib/videoSort";
 import { useCreatorTools } from "@/hooks/useCreatorTools";
 import { getInspirationSourceVideos } from "@/lib/inspiration";
 import { trpc } from "@/lib/trpc";
@@ -85,6 +92,10 @@ export default function Home() {
     totalCount,
     filteredCount,
     filters,
+    sortConfig,
+    setSortConfig,
+    scoreBandGroups,
+    calibratedCount,
     categoryCounts,
     hasMore,
     loadMore,
@@ -104,12 +115,11 @@ export default function Home() {
     setAiOverallRating,
     setAiDirectionRating,
     setAiTechniqueRating,
-    setCalibrationFilter,
+    setCalibratedOnly,
     setSource,
     setEizo100Only,
     setEizo100Year,
     setShowUnavailable,
-    setSort,
     setFavoritesOnly,
     clearAllFilters,
     activeFilterCount,
@@ -414,10 +424,11 @@ export default function Home() {
   if (filters.toneVisual) activeFilters.push({ label: filters.toneVisual, type: "toneVisual", onRemove: () => setToneVisual(null) });
   if (filters.toneTechnique) activeFilters.push({ label: filters.toneTechnique, type: "toneTechnique", onRemove: () => setToneTechnique(null) });
   if (filters.production) activeFilters.push({ label: filters.production, type: "production", onRemove: () => setProduction(null) });
+  if (filters.calibratedOnly) activeFilters.push({ label: "校正済みのみ", type: "calibratedOnly", onRemove: () => setCalibratedOnly(false) });
   if (filters.privateRating) activeFilters.push({ label: `評価 ${filters.privateRating}`, type: "privateRating", onRemove: () => setPrivateRating(null) });
-  if (filters.aiOverallRating) activeFilters.push({ label: `AI評価（総合） ${filters.aiOverallRating}`, type: "aiOverallRating", onRemove: () => setAiOverallRating(null) });
-  if (filters.aiDirectionRating) activeFilters.push({ label: `AI評価（ディレクション） ${filters.aiDirectionRating}`, type: "aiDirectionRating", onRemove: () => setAiDirectionRating(null) });
-  if (filters.aiTechniqueRating) activeFilters.push({ label: `AI評価（技術） ${filters.aiTechniqueRating}`, type: "aiTechniqueRating", onRemove: () => setAiTechniqueRating(null) });
+  if (filters.aiOverallRating) activeFilters.push({ label: `旧評価（総合） ${filters.aiOverallRating}`, type: "aiOverallRating", onRemove: () => setAiOverallRating(null) });
+  if (filters.aiDirectionRating) activeFilters.push({ label: `旧評価（ディレクション） ${filters.aiDirectionRating}`, type: "aiDirectionRating", onRemove: () => setAiDirectionRating(null) });
+  if (filters.aiTechniqueRating) activeFilters.push({ label: `旧評価（技術） ${filters.aiTechniqueRating}`, type: "aiTechniqueRating", onRemove: () => setAiTechniqueRating(null) });
   if (filters.source) activeFilters.push({ label: `出典 ${sourceFilterOptions.find((item) => item.value === filters.source)?.label || filters.source}`, type: "source", onRemove: () => setSource(null) });
   if (filters.eizo100Only) activeFilters.push({ label: filters.eizo100Year ? `映像作家100人 ${filters.eizo100Year}` : "映像作家100人", type: "eizo100", onRemove: () => setEizo100Only(false) });
   if (filters.showUnavailable) activeFilters.push({ label: "再生不可・非公開を表示", type: "unavailable", onRemove: () => setShowUnavailable(false) });
@@ -500,6 +511,8 @@ export default function Home() {
                 onShowUnavailableChange={setShowUnavailable}
                 lowAiOverallCount={lowAiOverallCount}
                 onShowLowAiOverallChange={setShowLowAiOverall}
+                calibratedCount={calibratedCount}
+                onCalibratedOnlyChange={setCalibratedOnly}
                 onClearAll={clearAllFilters}
                 activeFilterCount={activeFilterCount}
               />
@@ -562,6 +575,8 @@ export default function Home() {
                     onShowUnavailableChange={(v) => { setShowUnavailable(v); setSidebarOpen(false); }}
                     lowAiOverallCount={lowAiOverallCount}
                     onShowLowAiOverallChange={(v) => { setShowLowAiOverall(v); setSidebarOpen(false); }}
+                    calibratedCount={calibratedCount}
+                    onCalibratedOnlyChange={(v) => { setCalibratedOnly(v); setSidebarOpen(false); }}
                     onClearAll={() => { clearAllFilters(); setSidebarOpen(false); }}
                     activeFilterCount={activeFilterCount}
                     onClose={() => setSidebarOpen(false)}
@@ -1101,31 +1116,90 @@ export default function Home() {
                   </button>
                 )}
               </div>
-              <div className="flex items-center gap-2 flex-shrink-0 flex-wrap">
-                <select
-                  aria-label="校正ステータス絞り込み"
-                  value={filters.calibrationFilter ?? "all"}
-                  onChange={(e) => setCalibrationFilter(e.target.value as import("@/lib/types").CalibrationFilterMode)}
-                  className="text-xs bg-surface-1 border border-white/10 rounded-md px-2.5 py-1.5 text-foreground outline-none focus:ring-1 focus:ring-cinematic-red/40"
-                >
-                  <option value="all">評価基準：すべて</option>
-                  <option value="calibrated">校正済みのみ (Phase 2 v1)</option>
-                  <option value="calibrated_verified">校正済み（検証済5ジャンルのみ）</option>
-                  <option value="legacy_uncalibrated">旧基準・未校正のみ</option>
-                </select>
-                <select
-                  value={filters.sort}
-                  onChange={(e) => setSort(e.target.value as import("@/lib/types").SortType)}
-                  className="text-xs bg-surface-1 border border-white/10 rounded-md px-2.5 py-1.5 text-foreground outline-none focus:ring-1 focus:ring-cinematic-red/40"
-                >
-                  <option value="newest">新しい順</option>
-                  <option value="oldest">古い順</option>
-                  <option value="calibratedScoreDesc">校正済みスコア 高い順</option>
-                  <option value="aiOverallScoreDesc">旧基準AI総合 高い順</option>
-                  <option value="aiDirectionScoreDesc">旧基準AI演出 高い順</option>
-                  <option value="aiTechniqueScoreDesc">旧基準AI技術 高い順</option>
-                </select>
-              </div>
+              {(() => {
+                const primaryDirLabels = getSortDirectionLabels(sortConfig.primaryKey);
+                const remainingKey: ActiveSortKey = sortConfig.primaryKey === "added" ? "score" : "added";
+                const secondaryDirLabels =
+                  sortConfig.secondaryKey !== "none"
+                    ? getSortDirectionLabels(sortConfig.secondaryKey)
+                    : null;
+                return (
+                  <div className="flex items-center gap-2 flex-shrink-0 flex-wrap" data-testid="video-sort-controls">
+                    <div className="flex items-center gap-1">
+                      <span className="text-[11px] text-muted-foreground hidden sm:inline">並べ替え</span>
+                      <select
+                        aria-label="並べ替え 1"
+                        value={sortConfig.primaryKey}
+                        onChange={(e) => {
+                          const nextPrimary = e.target.value as ActiveSortKey;
+                          setSortConfig((prev) => ({
+                            ...prev,
+                            primaryKey: nextPrimary,
+                            primaryDir: "desc",
+                            secondaryKey: prev.secondaryKey === nextPrimary ? "none" : prev.secondaryKey,
+                          }));
+                        }}
+                        className="text-xs bg-surface-1 border border-white/10 rounded-md px-2 py-1.5 text-foreground outline-none focus:ring-1 focus:ring-cinematic-red/40"
+                      >
+                        <option value="added">{SORT_KEY_LABELS.added}</option>
+                        <option value="published" disabled>{SORT_KEY_LABELS.published}</option>
+                        <option value="score">{SORT_KEY_LABELS.score}</option>
+                      </select>
+                      <select
+                        aria-label="並べ替え 1 の向き"
+                        value={sortConfig.primaryDir}
+                        onChange={(e) =>
+                          setSortConfig((prev) => ({
+                            ...prev,
+                            primaryDir: e.target.value as SortDirection,
+                          }))
+                        }
+                        className="text-xs bg-surface-1 border border-white/10 rounded-md px-2 py-1.5 text-foreground outline-none focus:ring-1 focus:ring-cinematic-red/40"
+                      >
+                        <option value="desc">{primaryDirLabels.desc}</option>
+                        <option value="asc">{primaryDirLabels.asc}</option>
+                      </select>
+                    </div>
+
+                    <div className="flex items-center gap-1">
+                      <span className="text-[11px] text-muted-foreground">次に</span>
+                      <select
+                        aria-label="並べ替え 2"
+                        value={sortConfig.secondaryKey}
+                        onChange={(e) => {
+                          const nextSecondary = e.target.value as SecondarySortKey;
+                          setSortConfig((prev) => ({
+                            ...prev,
+                            secondaryKey: nextSecondary,
+                            secondaryDir: "desc",
+                          }));
+                        }}
+                        className="text-xs bg-surface-1 border border-white/10 rounded-md px-2 py-1.5 text-foreground outline-none focus:ring-1 focus:ring-cinematic-red/40"
+                      >
+                        <option value="none">なし</option>
+                        <option value={remainingKey}>{SORT_KEY_LABELS[remainingKey]}</option>
+                        <option value="published" disabled>{SORT_KEY_LABELS.published}</option>
+                      </select>
+                      {sortConfig.secondaryKey !== "none" && secondaryDirLabels && (
+                        <select
+                          aria-label="並べ替え 2 の向き"
+                          value={sortConfig.secondaryDir}
+                          onChange={(e) =>
+                            setSortConfig((prev) => ({
+                              ...prev,
+                              secondaryDir: e.target.value as SortDirection,
+                            }))
+                          }
+                          className="text-xs bg-surface-1 border border-white/10 rounded-md px-2 py-1.5 text-foreground outline-none focus:ring-1 focus:ring-cinematic-red/40"
+                        >
+                          <option value="desc">{secondaryDirLabels.desc}</option>
+                          <option value="asc">{secondaryDirLabels.asc}</option>
+                        </select>
+                      )}
+                    </div>
+                  </div>
+                );
+              })()}
             </div>
           </div>
 
@@ -1138,18 +1212,58 @@ export default function Home() {
                 ))}
               </div>
             ) : videos.length > 0 ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 sm:gap-5">
-                {videos.map((video, index) => (
-                  <VideoCard
-                    key={video.id}
-                    video={video}
-                    index={index}
-                    isFavorite={isFavorite(video.id)}
-                    hasNote={!!getNote(video.id)}
-                    onClick={() => setSelectedVideo(video)}
-                  />
-                ))}
-              </div>
+              scoreBandGroups ? (
+                <div className="space-y-8" data-testid="score-band-groups">
+                  {scoreBandGroups.map((group) => (
+                    <section key={group.key} data-testid={`score-band-${group.key}`}>
+                      <div className="mb-3 flex items-center gap-2.5 border-b border-white/10 pb-2">
+                        {group.scaleLabel && (
+                          <span
+                            className={`rounded px-2 py-0.5 text-[11px] font-semibold border ${
+                              group.scale === "calibrated"
+                                ? "border-emerald-400/35 bg-emerald-500/15 text-emerald-200"
+                                : "border-white/15 bg-white/5 text-white/70"
+                            }`}
+                          >
+                            {group.scaleLabel}
+                          </span>
+                        )}
+                        <h3 className="text-sm sm:text-base font-bold text-foreground tracking-tight">
+                          {group.bandLabel}
+                        </h3>
+                        <span className="text-xs font-mono text-muted-foreground">
+                          ({group.totalCount.toLocaleString()}本)
+                        </span>
+                      </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 sm:gap-5">
+                        {group.videos.map((video, index) => (
+                          <VideoCard
+                            key={video.id}
+                            video={video}
+                            index={index}
+                            isFavorite={isFavorite(video.id)}
+                            hasNote={!!getNote(video.id)}
+                            onClick={() => setSelectedVideo(video)}
+                          />
+                        ))}
+                      </div>
+                    </section>
+                  ))}
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 sm:gap-5">
+                  {videos.map((video, index) => (
+                    <VideoCard
+                      key={video.id}
+                      video={video}
+                      index={index}
+                      isFavorite={isFavorite(video.id)}
+                      hasNote={!!getNote(video.id)}
+                      onClick={() => setSelectedVideo(video)}
+                    />
+                  ))}
+                </div>
+              )
             ) : filters.search.trim() && sceneResults.length > 0 ? (
               /* Smart Scene Fallback when title search returns 0 videos */
               <div className="py-6">

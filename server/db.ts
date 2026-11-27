@@ -755,6 +755,12 @@ export function parseVideoRow(row: typeof videos.$inferSelect) {
     embedReason: row.embedReason ?? "",
     embedCheckedAt: row.embedCheckedAt?.toISOString() ?? "",
     addedDate: row.addedDate ?? "",
+    createdAt:
+      row.createdAt instanceof Date
+        ? row.createdAt.toISOString()
+        : typeof row.createdAt === "string"
+          ? row.createdAt
+          : null,
   };
 }
 
