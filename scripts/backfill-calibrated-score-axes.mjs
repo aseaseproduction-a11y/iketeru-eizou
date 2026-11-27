@@ -45,7 +45,7 @@ import {
   DEFAULT_APPROVED_OVERRIDES_PATH,
   auditOriginalColumnsAgainstPreD,
   loadApprovedTidbOverrides,
-  loadV3CanonicalManifestMap,
+  sha256TidbCellValue,
 } from "./approved-tidb-overrides.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -362,6 +362,39 @@ export function planBackfillUpdates(targetRows, rawIndex) {
 export const BACKFILL_UPDATE_SQL =
   "UPDATE `videos` SET `calibratedScoreAxes` = ?, `updatedAt` = `updatedAt` WHERE `id` = ? AND `calibratedScoreAxes` IS NULL";
 
+function loadVerifiedV3ManifestsForIds(storeDir, videoIds) {
+  const validMap = new Map();
+  if (!storeDir || !fs.existsSync(storeDir)) return { store_dir: storeDir, valid_map: validMap };
+  for (const vid of videoIds) {
+    const dir = path.join(storeDir, vid);
+    const mPath = path.join(dir, "manifest.json");
+    const aPath = path.join(dir, "analysis_v3.md");
+    const cPath = path.join(dir, "mechanical_check.json");
+    if (!fs.existsSync(mPath) || !fs.existsSync(aPath) || !fs.existsSync(cPath)) continue;
+    try {
+      const manifest = JSON.parse(fs.readFileSync(mPath, "utf8"));
+      const check = JSON.parse(fs.readFileSync(cPath, "utf8"));
+      if (String(manifest.video_id || "") !== vid) continue;
+      const analysisBuf = fs.readFileSync(aPath);
+      const actualSha = crypto.createHash("sha256").update(analysisBuf).digest("hex");
+      const expectedSha = String(manifest.files?.["analysis_v3.md"]?.sha256 || "").toLowerCase();
+      if (!expectedSha || actualSha !== expectedSha) continue;
+      if (check?.mechanical?.all_passed !== true || check?.transcript_audit?.ok !== true) continue;
+      if (check?.prompt_sha256_verified === false) continue;
+      validMap.set(vid, {
+        video_id: vid,
+        analysis_file_sha256: actualSha,
+        analysis_content_sha256: sha256TidbCellValue(analysisBuf.toString("utf8")),
+        prompt_template_sha256: manifest.prompt_template_sha256 || null,
+        mechanical_passed: true,
+      });
+    } catch {
+      continue;
+    }
+  }
+  return { store_dir: storeDir, valid_map: validMap };
+}
+
 async function runPreD40ColumnAudit(conn, { preDBackupPath, approvedOverridesPath, v3StoreDir }) {
   const manifest = JSON.parse(fs.readFileSync(BACKUP_MANIFEST_PATH, "utf8"));
   const resolvedBackupPath =
@@ -386,8 +419,12 @@ async function runPreD40ColumnAudit(conn, { preDBackupPath, approvedOverridesPat
 
   const colSelect = originalColumns.map((c) => `\`${c}\``).join(", ");
   const [liveRows] = await conn.query(`SELECT ${colSelect} FROM \`videos\` ORDER BY id ASC`);
+  const [v3IdRows] = await conn.query("SELECT id FROM `videos` WHERE analysisVersion = 'v3'");
   const approvedOverrides = loadApprovedTidbOverrides(approvedOverridesPath || DEFAULT_APPROVED_OVERRIDES_PATH);
-  const v3Store = loadV3CanonicalManifestMap(resolveV3StoreDir(v3StoreDir));
+  const v3Store = loadVerifiedV3ManifestsForIds(
+    resolveV3StoreDir(v3StoreDir),
+    v3IdRows.map((r) => String(r.id)),
+  );
 
   const audit = auditOriginalColumnsAgainstPreD({
     liveRows,
